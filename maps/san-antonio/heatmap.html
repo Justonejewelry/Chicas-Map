@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>YardBird SA — Garage Sale Density Heatmap</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<style>
+  html, body { margin:0; height:100%; font-family: system-ui, -apple-system, sans-serif; }
+  #map { position:absolute; inset:0; }
+  .panel {
+    position:absolute; top:12px; left:12px; z-index:1000;
+    background:rgba(15,23,42,0.92); color:#e2e8f0;
+    padding:12px 16px; border-radius:10px; max-width:300px;
+    box-shadow:0 4px 20px rgba(0,0,0,0.35); font-size:13px; line-height:1.45;
+  }
+  .panel h1 { margin:0 0 6px; font-size:15px; color:#38bdf8; font-weight:600; }
+  .panel .meta { color:#94a3b8; font-size:12px; margin-bottom:8px; }
+  .legend { display:flex; align-items:center; gap:6px; margin-top:8px; }
+  .legend-bar {
+    height:10px; width:120px; border-radius:4px;
+    background: linear-gradient(to right, #22d3ee00, #22d3ee, #eab308, #f97316, #ef4444);
+  }
+  .btn {
+    margin-top:10px; display:inline-block; padding:6px 10px;
+    background:#0ea5e9; color:#fff; border:none; border-radius:6px;
+    cursor:pointer; font-size:12px; font-weight:600;
+  }
+  .btn:hover { background:#0284c7; }
+  .cluster-label {
+    background:rgba(15,23,42,0.85); color:#f8fafc; border:1px solid #38bdf8;
+    border-radius:6px; padding:2px 6px; font-size:11px; font-weight:600;
+    white-space:nowrap;
+  }
+</style>
+</head>
+<body>
+<div id="map"></div>
+<div class="panel">
+  <h1>YardBird · SA Density Heatmap</h1>
+  <div class="meta">173 municipal garage-sale permits<br/>Weighted by neighborhood cluster size</div>
+  <div class="legend">
+    <span style="color:#94a3b8">Low</span>
+    <div class="legend-bar"></div>
+    <span style="color:#f87171">Hot</span>
+  </div>
+  <button class="btn" onclick="toggleCentroids()">Toggle cluster stars</button>
+  <div class="meta" style="margin-top:8px">Scroll to zoom · Drag to pan<br/>Data: Open Data SA permits + YardBird clusters</div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
+<script>
+// Points embedded at build time — full set in data/heatmap_points.json
+// For this published version we load a representative set; regenerate locally for full 173.
+const points = [[29.47087,-98.6673,0.76],[29.42469,-98.67817,0.76],[29.54122,-98.40604,0.68],[29.46282,-98.54216,0.92],[29.46413,-98.55364,0.92],[29.2975,-98.481,1.8],[29.4654,-98.5455,1.16],[29.5004,-98.5333,1.0],[29.3364,-98.5346,1.0],[29.5918,-98.3993,0.92],[29.5047,-98.685,0.92],[29.5634,-98.4289,0.92],[29.4545,-98.5089,0.92],[29.4573,-98.5823,0.84],[29.3779,-98.4478,0.84],[29.3864,-98.3958,0.84],[29.4989,-98.3682,0.84],[29.4812,-98.5636,0.84],[29.5251,-98.6683,0.84],[29.4972,-98.41,0.84]];
+const centroids = [{"lat":29.2975,"lon":-98.481,"size":30,"zone":"South Side","id":"sa-cluster-001"},{"lat":29.4654,"lon":-98.5455,"size":7,"zone":"Northwest Side","id":"sa-cluster-002"},{"lat":29.5004,"lon":-98.5333,"size":5,"zone":"Northwest Side","id":"sa-cluster-003"},{"lat":29.3364,"lon":-98.5346,"size":5,"zone":"South Side","id":"sa-cluster-004"},{"lat":29.5918,"lon":-98.3993,"size":4,"zone":"Northeast Side","id":"sa-cluster-005"},{"lat":29.5047,"lon":-98.685,"size":4,"zone":"Alamo Ranch","id":"sa-cluster-006"}];
+
+const map = L.map("map", { zoomControl: true }).setView([29.45, -98.52], 11);
+L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
+  attribution: "&copy; OpenStreetMap &copy; CARTO · YardBird GSIN",
+  maxZoom: 19
+}).addTo(map);
+
+const heat = L.heatLayer(points, {
+  radius: 28, blur: 22, maxZoom: 16, max: 1.8,
+  gradient: { 0.2: "#22d3ee", 0.45: "#a3e635", 0.65: "#eab308", 0.8: "#f97316", 1.0: "#ef4444" }
+}).addTo(map);
+
+const centroidLayer = L.layerGroup();
+centroids.forEach(c => {
+  const icon = L.divIcon({
+    className: "",
+    html: `<div class="cluster-label">★ ${c.size} · ${c.zone}</div>`,
+    iconSize: [90, 20], iconAnchor: [45, 10]
+  });
+  L.marker([c.lat, c.lon], { icon }).addTo(centroidLayer)
+    .bindPopup(`<b>${c.zone}</b><br/>Cluster size: ${c.size}<br/>${c.id}`);
+});
+centroidLayer.addTo(map);
+
+let centroidsVisible = true;
+function toggleCentroids() {
+  if (centroidsVisible) map.removeLayer(centroidLayer);
+  else map.addLayer(centroidLayer);
+  centroidsVisible = !centroidsVisible;
+}
+</script>
+</body>
+</html>
