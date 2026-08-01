@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>YardBird — San Antonio Garage Sale Intelligence</title>
+  <title>YardBird — Texas Garage Sale Intelligence</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="stylesheet" href="css/app.css" />
 </head>
@@ -13,10 +13,24 @@
       <span class="logo">YB</span>
       <div>
         <h1>YardBird</h1>
-        <p class="tag">Garage Sale Intelligence Network · San Antonio</p>
+        <p class="tag">Garage Sale Intelligence Network · Texas</p>
       </div>
     </div>
-    <div class="meta" id="editionMeta">Loading…</div>
+    <div class="controls">
+      <label class="ctrl">
+        City
+        <select id="citySelect"></select>
+      </label>
+      <label class="ctrl">
+        Map
+        <select id="mapEngine">
+          <option value="leaflet-carto">OpenStreetMap · Carto Dark</option>
+          <option value="leaflet-osm">OpenStreetMap · Standard</option>
+          <option value="leaflet-voyager">OpenStreetMap · Voyager</option>
+        </select>
+      </label>
+      <div class="meta" id="editionMeta">Loading…</div>
+    </div>
   </header>
 
   <main class="layout">
@@ -52,11 +66,12 @@
         <span><i class="dot yellow"></i> Fundraiser</span>
         <span><i class="dot blue"></i> Permit</span>
       </div>
+      <div class="map-note">Primary map: <strong>Leaflet + OpenStreetMap</strong> (no Google key). KML still available for Google My Maps import.</div>
     </section>
   </main>
 
   <footer class="footer">
-    <span>Sources: YardSaleSearch · GarageSaleFinder · estatesales.net · City of SA permits</span>
+    <span id="footerSources">YardBird multi-city · SA · Austin · Houston · Dallas · Lubbock</span>
     <a href="https://github.com/Justonejewelry/Project-YardBird" target="_blank" rel="noopener">GitHub</a>
   </footer>
 
