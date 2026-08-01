@@ -1,0 +1,99 @@
+name: Update YardBird feed
+
+on:
+  schedule:
+    # 11:00 UTC ≈ 6:00 AM CDT — morning discovery window
+    - cron: "0 11 * * *"
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: "Why is this run being triggered?"
+        required: false
+        default: "manual"
+
+permissions:
+  contents: write
+
+jobs:
+  rebuild-feed:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Rebuild feed from discovery JSON
+        run: |
+          set -euo pipefail
+          python3 << 'PY'
+          from __future__ import annotations
+          import json
+          from pathlib import Path
+          from datetime import datetime, timezone
+
+          root = Path(".")
+          candidates = sorted(
+              list(root.glob("data/*discovery*.json")) + list(root.glob("data/sunday_discovery*.json")),
+              key=lambda p: p.stat().st_mtime,
+              reverse=True,
+          )
+          if not candidates:
+              raise SystemExit("No discovery JSON under data/")
+
+          src_path = candidates[0]
+          print(f"using {src_path}")
+          src = json.loads(src_path.read_text(encoding="utf-8"))
+          sales = src.get("sales") or []
+          public = [s for s in sales if s.get("type") != "permit"]
+          permits = sorted(
+              [s for s in sales if s.get("type") == "permit"],
+              key=lambda x: float(x.get("confidence") or 0),
+              reverse=True,
+          )[:80]
+
+          feed = {
+              "edition": src.get("edition") or "Yard-Bird Discovery",
+              "date": src.get("date") or datetime.now(timezone.utc).date().isoformat(),
+              "generated_at": src.get("generated_at") or datetime.now(timezone.utc).isoformat(timespec="seconds"),
+              "refreshed_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+              "total_locations": src.get("total_locations") or len(sales),
+              "sources": src.get("sources") or [],
+              "public": public,
+              "permits": permits,
+              "permit_total": sum(1 for s in sales if s.get("type") == "permit"),
+              "hot_zones": src.get("hot_zones") or [
+                  {"name": "South Side", "badge": "CLUSTER-HOT", "size": 30, "lat": 29.2975, "lon": -98.481},
+                  {"name": "Northwest Side", "badge": "ACTIVE", "lat": 29.55, "lon": -98.62},
+                  {"name": "Northeast Side", "badge": "ACTIVE", "lat": 29.54, "lon": -98.40},
+                  {"name": "Alamo Ranch", "badge": "ACTIVE", "lat": 29.48, "lon": -98.70},
+              ],
+              "source_file": str(src_path).replace("\\", "/"),
+          }
+
+          out = root / "webapp" / "data" / "feed.json"
+          out.parent.mkdir(parents=True, exist_ok=True)
+          out.write_text(json.dumps(feed, indent=2), encoding="utf-8")
+          print(f"wrote {out} bytes={out.stat().st_size} public={len(public)} permits={len(permits)}")
+
+          latest = root / "data" / "latest_discovery.json"
+          if src_path.resolve() != latest.resolve():
+              latest.write_text(json.dumps(src, indent=2), encoding="utf-8")
+              print(f"updated {latest}")
+          PY
+
+      - name: Commit and push if changed
+        run: |
+          set -euo pipefail
+          git config user.name "yardbird-bot"
+          git config user.email "yardbird-bot@users.noreply.github.com"
+          git add webapp/data/feed.json data/latest_discovery.json || true
+          if git diff --staged --quiet; then
+            echo "No feed changes"
+            exit 0
+          fi
+          git commit -m "chore(feed): automated webapp feed refresh [skip ci]"
+          git push
