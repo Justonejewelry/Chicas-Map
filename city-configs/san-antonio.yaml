@@ -1,6 +1,7 @@
 # San Antonio — Reference City Config (YAML)
 # Project YardBird / GSIN
 # Machine-readable. Prefer this over the .md version for scripts and agents.
+# Updated 2026-08-01: full public source inventory included.
 
 slug: san-antonio
 name: San Antonio
@@ -40,29 +41,99 @@ hot_zones:
   - Northeast Side
 
 sources:
+  # --- Tier 1: Highest trust / structured ---
+  estatesales:
+    urls:
+      - https://www.estatesales.net/TX/San-Antonio
+      - https://www.estatesales.org
+    notes: "Professional estate sales. Current strongest automated backbone."
+    agents: [Heritage]
+    priority: high
+
+  municipal_permits:
+    open_data: https://data.sanantonio.gov/dataset/building-permits
+    notes: >
+      City of San Antonio garage/yard/estate sale permits are public records.
+      Open Data SA publishes bulk CSVs that include garage sale permits issued
+      (2020–2024 historical + ongoing yearly extracts). Accela Citizen Access
+      allows public record search. Texas Public Information Act applies.
+      Highest trust when a matching permit exists.
+    agents: [Permit]
+    priority: high
+
+  # --- Tier 1.5: Public aggregators ---
+  yardsalesearch:
+    url: https://www.yardsalesearch.com/garage-sales-san-antonio-tx.html
+    notes: "Large national user-posted garage/yard sale network. Public HTML."
+    agents: [Press]
+    priority: medium-high
+
+  garagesalefinder:
+    url: https://garagesalefinder.com/yard-sales/san-antonio-tx/
+    notes: "Aggregator network with live SA listings (addresses, dates, descriptions)."
+    agents: [Press]
+    priority: medium-high
+
+  # --- Tier 2: Local classifieds & constrained platforms ---
   craigslist:
     domain: sanantonio.craigslist.org
     gms_path: /search/gms
     rss: https://sanantonio.craigslist.org/search/gms?format=rss
-    notes: "Primary. Currently rate-limited / blocked for automated access. Handled by Mercury Swarm (RSS → Browser → Cache → Aggregator)."
+    notes: "Classic classifieds. Currently rate-limited/blocked for heavy automation. Mercury Swarm handles multi-path resilience."
     agents: [Mercury-RSS, Mercury-Browser, Mercury-Cache, Mercury-Aggregator, Mercury-Dedupe]
-  estatesales:
-    - https://www.estatesales.net/TX/San-Antonio
-    - https://www.estatesales.org
-    agents: [Heritage]
-  facebook:
-    notes: "Marketplace + local buy/sell groups for SA, Helotes, Boerne, Schertz, Alamo Ranch, Stone Oak. Public content only."
+    priority: medium
+
+  express_news:
+    url: https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio
+    notes: "San Antonio Express-News / Hearst Marketplace. Dedicated Estate-Garage Sales category. Public classifieds."
+    agents: [Press]
+    priority: medium
+
+  facebook_public:
+    notes: >
+      Public content only (public pages, public events, hashtags, user tips).
+      No Graph API for Marketplace or Groups (deprecated / non-existent).
+      Echo Swarm remains non-API for primary targets.
     agents: [Echo-Marketplace, Echo-Groups, Echo-Public, Echo-Hashtag, Echo-Lens]
+    priority: medium-low
+
+  # --- Tier 3: Community & supporting ---
+  reddit:
+    subreddits: ["r/sanantonio", "r/SanAntonio"]
+    notes: "Local community posts."
+    agents: [Crow]
+    priority: low-medium
+
   nextdoor:
-    notes: "HOA and neighborhood pages in hot zones"
+    notes: "HOA and neighborhood pages in hot zones. Mostly account-walled; limited public view."
     agents: [Neighbor]
-  municipal:
-    - "City of San Antonio garage sale permit rules"
-    agents: [Permit]
-  other:
-    - subreddits: ["r/sanantonio", "r/SanAntonio"]
-    - hashtags: ["#SAGarageSale", "#SanAntonioYardSale", "#AlamoRanchSale"]
-    agents: [Crow, Signal]
+    priority: low
+
+  yard_sale_treasure_map:
+    notes: "User-submitted map/app listings. Craigslist feed license ended; now mostly voluntary posts."
+    agents: [Press]
+    priority: low
+
+  church_school_nonprofit:
+    notes: "Church bulletins, school newsletters, non-profit rummage/bazaar announcements."
+    agents: [Parish]
+    priority: low
+
+  offerup_similar:
+    notes: "Item marketplaces. Occasional multi-item 'yard sale' style posts. Noisy, low priority."
+    agents: [Signal]
+    priority: low
+
+  search_engine_indexes:
+    notes: "Google/Bing indexed public posts (including some public Facebook pages). Secondary signal only."
+    agents: [Mercury-Cache, Signal]
+    priority: low
+
+  hashtags_social:
+    hashtags: ["#SAGarageSale", "#SanAntonioYardSale", "#AlamoRanchSale", "#HelotesSale"]
+    notes: "Cross-platform hashtag monitoring."
+    agents: [Signal, Echo-Hashtag]
+    priority: low
 
 value_notes:
   high_demand: [tools, mid-century furniture, vintage toys, electronics, antiques, records, cameras]
