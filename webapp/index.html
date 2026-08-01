@@ -3,43 +3,47 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>YardBird — Texas Garage Sale Intelligence</title>
+  <title>Yowl Lawnda · Garage Sale Forecaster</title>
+  <meta name="description" content="Yowl Lawnda maps the best garage sales in San Antonio and across Texas. Weekly updates. Top picks. New sales." />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="stylesheet" href="css/app.css" />
 </head>
 <body>
   <header class="topbar">
     <div class="brand">
-      <span class="logo">YB</span>
+      <div class="logo-mark" aria-hidden="true">🐕</div>
       <div>
-        <h1>YardBird</h1>
-        <p class="tag">Garage Sale Intelligence Network · Texas</p>
+        <h1>Yowl <span>Lawnda</span></h1>
+        <p class="tag">Garage Sale Forecaster · Texas</p>
       </div>
     </div>
     <div class="controls">
       <label class="ctrl">City
         <select id="citySelect">
-          <option value="texas">Texas (all cities)</option>
+          <option value="san-antonio">San Antonio</option>
+          <option value="austin">Austin</option>
+          <option value="houston">Houston</option>
+          <option value="dallas">Dallas</option>
+          <option value="lubbock">Lubbock</option>
+          <option value="texas">Texas (all)</option>
         </select>
       </label>
       <label class="ctrl">Map
         <select id="mapEngine">
-          <option value="leaflet-carto">OpenStreetMap · Carto Dark</option>
-          <option value="leaflet-osm">OpenStreetMap · Standard</option>
-          <option value="leaflet-voyager">OpenStreetMap · Voyager</option>
+          <option value="leaflet-voyager">Street · Bright</option>
+          <option value="leaflet-osm">Street · Classic</option>
+          <option value="leaflet-carto">Street · Dark</option>
         </select>
       </label>
       <div class="meta" id="editionMeta">Loading…</div>
     </div>
   </header>
   <main class="layout">
-    <aside class="panel left">
-      <section class="forecast" id="forecast">
-        <h2>Weekend Forecast</h2>
-        <div id="hotZones"></div>
-      </section>
+    <aside class="panel">
+      <section class="hero-chip"><span class="pulse"></span> Howdy — weekly map is live</section>
+      <section class="forecast"><h2>Weekend Forecast</h2><div id="hotZones"></div></section>
       <section class="filters">
-        <input type="search" id="search" placeholder="Search address, title, zip…" />
+        <input type="search" id="search" placeholder="Search address, neighborhood, zip…" />
         <div class="chips">
           <button class="chip active" data-filter="all">All</button>
           <button class="chip" data-filter="garage">Garage</button>
@@ -53,22 +57,23 @@
         <ul id="saleList" class="sale-list"></ul>
       </section>
       <div id="detailDrawer" class="detail-drawer hidden">
-        <button type="button" id="detailClose" class="detail-close">×</button>
+        <button type="button" id="detailClose" class="detail-close" aria-label="Close">×</button>
         <div id="detailBody"></div>
       </div>
     </aside>
     <section class="map-wrap">
       <div id="map"></div>
       <div class="map-legend">
-        <span><i class="dot green"></i> Garage</span>
-        <span><i class="dot purple"></i> Estate</span>
-        <span><i class="dot yellow"></i> Fundraiser</span>
-        <span><i class="dot blue"></i> Permit</span>
+        <span><i class="pin top"></i> Top Pick</span>
+        <span><i class="pin new"></i> New Sale</span>
+        <span><i class="pin estate"></i> Estate</span>
+        <span><i class="pin permit"></i> Permit cluster</span>
       </div>
+      <div class="map-hint" id="mapHint">Tap a red cluster to see every address inside</div>
     </section>
   </main>
   <footer class="footer">
-    <span id="footerSources">San Antonio · Austin · Houston · Dallas · Lubbock</span>
+    <span id="footerSources">YardBird · GSIN · San Antonio first</span>
     <a href="https://github.com/Justonejewelry/Project-YardBird" target="_blank" rel="noopener">GitHub</a>
   </footer>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
