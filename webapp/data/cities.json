@@ -1,0 +1,11 @@
+{
+  "default_city": "san-antonio",
+  "map_engine": "leaflet-carto",
+  "map_engines_available": [
+    {"id": "leaflet-carto", "label": "OpenStreetMap (Carto Dark)", "requires_key": false},
+    {"id": "leaflet-osm", "label": "OpenStreetMap Standard", "requires_key": false},
+    {"id": "leaflet-voyager", "label": "OpenStreetMap Voyager", "requires_key": false},
+    {"id": "google-kml", "label": "Google My Maps (KML import)", "requires_key": false}
+  ],
+  "cities": ["san-antonio", "austin", "houston", "dallas", "lubbock"]
+}

@@ -1,0 +1,16 @@
+{
+  "edition": "Lubbock Yard-Bird Discovery",
+  "date": "2026-08-01",
+  "city": "lubbock",
+  "total_locations": 0,
+  "status": "seed — discovery pending",
+  "sources": ["Craigslist Lubbock", "YardSaleSearch", "local Facebook groups"],
+  "public": [],
+  "permits": [],
+  "permit_total": 0,
+  "hot_zones": [
+    {"name": "Southwest Lubbock", "badge": "WATCH", "lat": 33.54, "lon": -101.90},
+    {"name": "Tech / Central", "badge": "WATCH", "lat": 33.58, "lon": -101.87},
+    {"name": "North Lubbock", "badge": "WATCH", "lat": 33.62, "lon": -101.85}
+  ]
+}

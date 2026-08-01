@@ -1,0 +1,17 @@
+{
+  "edition": "Austin Yard-Bird Discovery",
+  "date": "2026-08-01",
+  "city": "austin",
+  "total_locations": 0,
+  "status": "seed — discovery pending",
+  "sources": ["Craigslist Austin", "estatesales.net Austin", "YardSaleSearch"],
+  "public": [],
+  "permits": [],
+  "permit_total": 0,
+  "hot_zones": [
+    {"name": "South Austin", "badge": "WATCH", "lat": 30.22, "lon": -97.77},
+    {"name": "North Austin", "badge": "WATCH", "lat": 30.35, "lon": -97.72},
+    {"name": "East Austin", "badge": "WATCH", "lat": 30.27, "lon": -97.70},
+    {"name": "Round Rock / North", "badge": "WATCH", "lat": 30.51, "lon": -97.68}
+  ]
+}
