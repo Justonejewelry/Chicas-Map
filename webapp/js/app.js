@@ -1,18 +1,43 @@
 (function () {
-  const SA_CENTER = [29.4241, -98.4936];
+  const CITY_META = {
+    "san-antonio": { name: "San Antonio", center: [29.4241, -98.4936], zoom: 11 },
+    austin: { name: "Austin", center: [30.2672, -97.7431], zoom: 11 },
+    houston: { name: "Houston", center: [29.7604, -95.3698], zoom: 10 },
+    dallas: { name: "Dallas", center: [32.7767, -96.797], zoom: 10 },
+    lubbock: { name: "Lubbock", center: [33.5779, -101.8552], zoom: 12 },
+  };
+
+  const TILES = {
+    "leaflet-carto": {
+      url: "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+      attr: "&copy; OpenStreetMap &copy; CARTO",
+    },
+    "leaflet-osm": {
+      url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+      attr: "&copy; OpenStreetMap contributors",
+    },
+    "leaflet-voyager": {
+      url: "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png",
+      attr: "&copy; OpenStreetMap &copy; CARTO",
+    },
+  };
+
   let feed = null;
   let filter = "all";
   let query = "";
   let markers = [];
-  let map, layer;
+  let map, layer, tileLayer;
+  let city = localStorage.getItem("yb_city") || "san-antonio";
+  let engine = localStorage.getItem("yb_map") || "leaflet-carto";
 
-  const colorFor = (type) => ({
-    estate: "#a855f7",
-    fundraiser: "#eab308",
-    permit: "#60a5fa",
-    garage: "#22c55e",
-    moving: "#22c55e",
-  }[type] || "#22c55e");
+  const colorFor = (type) =>
+    ({
+      estate: "#a855f7",
+      fundraiser: "#eab308",
+      permit: "#60a5fa",
+      garage: "#22c55e",
+      moving: "#22c55e",
+    }[type] || "#22c55e");
 
   function allSales() {
     if (!feed) return [];
@@ -30,6 +55,13 @@
     });
   }
 
+  function esc(str) {
+    return String(str || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;");
+  }
+
   function popupHtml(s) {
     return `<div class="popup-title">${esc(s.title || s.address)}</div>
       <div>${esc(s.address || "")}</div>
@@ -38,17 +70,16 @@
       <div class="popup-meta">Source: ${esc(s.source || "")} · conf ${s.confidence ?? "—"}</div>`;
   }
 
-  function esc(str) {
-    return String(str || "")
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;");
-  }
-
   function renderList() {
     const items = filtered();
     const ul = document.getElementById("saleList");
     document.getElementById("listCount").textContent = String(items.length);
+    if (!items.length) {
+      ul.innerHTML = `<li class="empty"><div class="title">No pins yet</div><div class="addr">${
+        feed && feed.status ? esc(feed.status) : "Discovery pending for this city"
+      }</div></li>`;
+      return;
+    }
     ul.innerHTML = items
       .map((s, i) => {
         const t = s.type || "garage";
@@ -104,7 +135,7 @@
 
   function renderForecast() {
     const el = document.getElementById("hotZones");
-    const zones = feed.hot_zones || [];
+    const zones = (feed && feed.hot_zones) || [];
     el.innerHTML = zones
       .map(
         (z) => `<div class="zone">
@@ -120,22 +151,63 @@
     renderMarkers();
   }
 
-  async function boot() {
-    map = L.map("map", { zoomControl: true }).setView(SA_CENTER, 11);
-    L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
-      attribution: "&copy; OpenStreetMap &copy; CARTO",
-      maxZoom: 19,
-    }).addTo(map);
+  function setTiles(id) {
+    engine = id;
+    localStorage.setItem("yb_map", engine);
+    const t = TILES[engine] || TILES["leaflet-carto"];
+    if (tileLayer) map.removeLayer(tileLayer);
+    tileLayer = L.tileLayer(t.url, { attribution: t.attr, maxZoom: 19 }).addTo(map);
+  }
 
-    const res = await fetch("data/feed.json");
-    feed = await res.json();
-    document.getElementById("editionMeta").innerHTML =
-      `<strong>${esc(feed.date)}</strong><br/>${feed.total_locations} locations · ${
-        (feed.public || []).length
-      } public · ${feed.permit_total || 0} permits`;
+  async function loadCity(slug) {
+    city = slug;
+    localStorage.setItem("yb_city", city);
+    const meta = CITY_META[city] || CITY_META["san-antonio"];
+    map.setView(meta.center, meta.zoom);
 
+    let url = `data/cities/${city}.json`;
+    if (city === "san-antonio") {
+      try {
+        const r = await fetch(url);
+        if (r.ok) feed = await r.json();
+        else throw new Error("no city feed");
+      } catch {
+        const r2 = await fetch("data/feed.json");
+        feed = await r2.json();
+      }
+    } else {
+      const r = await fetch(url);
+      feed = await r.json();
+    }
+
+    document.getElementById("editionMeta").innerHTML = `<strong>${esc(
+      meta.name
+    )}</strong><br/>${feed.date || "—"} · ${feed.total_locations || 0} locations`;
+    document.getElementById("footerSources").textContent = (
+      feed.sources || []
+    ).join(" · ") || "YardBird Texas";
     renderForecast();
     refresh();
+  }
+
+  async function boot() {
+    const meta = CITY_META[city] || CITY_META["san-antonio"];
+    map = L.map("map", { zoomControl: true }).setView(meta.center, meta.zoom);
+    setTiles(engine);
+
+    const sel = document.getElementById("citySelect");
+    Object.entries(CITY_META).forEach(([slug, m]) => {
+      const opt = document.createElement("option");
+      opt.value = slug;
+      opt.textContent = m.name;
+      if (slug === city) opt.selected = true;
+      sel.appendChild(opt);
+    });
+    sel.addEventListener("change", (e) => loadCity(e.target.value));
+
+    const eng = document.getElementById("mapEngine");
+    eng.value = engine;
+    eng.addEventListener("change", (e) => setTiles(e.target.value));
 
     document.getElementById("search").addEventListener("input", (e) => {
       query = e.target.value;
@@ -149,6 +221,8 @@
         refresh();
       });
     });
+
+    await loadCity(city);
   }
 
   boot();
