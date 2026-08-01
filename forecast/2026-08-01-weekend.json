@@ -1,47 +1,47 @@
 {
-  "generated_at": "2026-08-01T02:42:00-05:00",
+  "generated_at": "2026-08-01T18:45:00-05:00",
   "city": "san-antonio",
   "status": "live",
-  "confidence": 0.78,
-  "notes": "Focused Discovery + Sentinel pass (02:42 CDT). Aggregator cross-check (YardSaleSearch 16+ public listings) plus estate backbone. Multi-family and downsizing signals in 78230/78250/NE resolved and scored. Core estates (Nuggett Peak, Canterbury Hill, Morgans Creek, Southton, Converse) re-verified. Craigslist still constrained. Weather locked to current NWS consensus.",
+  "confidence": 0.82,
+  "notes": "Focused Discovery + Sentinel evening refresh (18:45 CDT). Cross-checked GarageSaleFinder 15+ active Saturday listings, YardSaleSearch, estatesales.net backbone (Nuggett Peak, Southton Tools, Wetz Rd, Lone Star, Converse). Multi-family clusters in 78250/78230/78249 confirmed. Craigslist partial. Weather: extreme heat confirmed, brief late storm risk fading. Sentinel sign-off for live layer.",
   "days": {
     "friday": {"stars": 3, "predicted_sales": 95, "status": "historical"},
-    "saturday": {"stars": 4, "predicted_sales": 175, "status": "active"},
-    "sunday": {"stars": 3, "predicted_sales": 78, "status": "projected"}
+    "saturday": {"stars": 4, "predicted_sales": 180, "status": "active-peak-passed"},
+    "sunday": {"stars": 3, "predicted_sales": 85, "status": "projected"}
   },
   "weather_impact": {
-    "condition": "Mostly sunny then slight chance of T-storms after 4pm",
+    "condition": "Mostly sunny, heat index 105-107, brief late PM storm chance now low",
     "high_f": 99,
-    "low_f": 80,
-    "heat_index": 107,
-    "risk": "Extreme heat — early start mandatory. Peak shopping window 7:00–10:00 AM. Hydrate. 20% late PM storms.",
-    "shopping_quality": "Excellent early; declines sharply after 11 AM due to heat index"
+    "low_f": 79,
+    "heat_index": 106,
+    "risk": "Extreme heat — early start was mandatory. Remaining sales wind down by 4pm. Hydrate.",
+    "shopping_quality": "Peak window closed; residual high-value estates still viable until close"
   },
   "hot_zones": [
-    "Northeast / Terrell Hills & Stone Oak",
-    "Northwest / 78230 Morgans Creek & Pinebrook corridor",
-    "Alamo Ranch / 78250 multi-family cluster",
+    "Northeast / Stone Oak & Terrell Hills",
+    "Northwest / Morgans Creek & Pinebrook 78230",
+    "Alamo Ranch / 78250 multi-family",
     "Converse / Schertz edge",
-    "South Side / Southton Rd",
-    "Boerne edge (antiques signal)"
+    "South Side / Southton corridor",
+    "Boerne edge"
   ],
   "best_categories": [
     "Tools",
-    "Mid-century & furniture",
-    "China / crystal / glassware",
-    "Collectibles (Fiesta, Dept 56, Manhattan Glass)",
-    "Vintage fashion & designer pieces",
-    "Antiques (Boerne downsizing)"
+    "Mid-century furniture",
+    "Collectibles (Fiesta, Dept 56, glass)",
+    "China / crystal",
+    "Vintage & designer fashion",
+    "Antiques"
   ],
   "verified_highlights": [
     {"name": "Nuggett Peak Collectibles", "addr": "4410 Nuggett Peak, 78259", "hours": "9am-4pm", "tags": ["estate", "high-value", "collectibles"]},
-    {"name": "Canterbury Hill Terrell Hills", "addr": "805 Canterbury Hill, 78209", "hours": "9am-4pm", "tags": ["estate", "furniture", "art"]},
-    {"name": "Morgans Creek Luxury", "addr": "3947 Morgans Creek, 78230", "hours": "9am-5pm", "tags": ["estate", "designer", "crystal"]},
-    {"name": "Southton Tools", "addr": "11788 Southton Rd, 78223", "hours": "9am-3pm", "tags": ["estate", "tools"]},
+    {"name": "Southton Tools Estate", "addr": "11788 Southton Rd, 78223", "hours": "9am-3pm", "tags": ["estate", "tools"]},
+    {"name": "Wetz Rd Estate", "addr": "4626 Wetz Rd, 78217", "hours": "9am-3pm", "tags": ["estate"]},
+    {"name": "Lone Star Blvd Estate", "addr": "126 Lone Star Blvd, 78204", "hours": "Aug 1-2", "tags": ["estate"]},
     {"name": "Converse Treasure Hunt", "addr": "9603 Nediator Run, 78109", "hours": "10am-4pm", "tags": ["estate", "high-volume"]},
-    {"name": "Pinebrook Multi-Family", "addr": "7914 Pinebrook Dr, 78230", "hours": "Sat AM", "tags": ["yard", "multi-family", "teacher-supplies"]},
-    {"name": "Water Valley Multi-Family", "addr": "12014 Water Vly, 78249", "hours": "8am-2pm", "tags": ["yard", "tools", "household"]},
-    {"name": "Boerne Oak Haven Downsizing", "addr": "115 Oak Haven Ln, Boerne 78006", "hours": "Sat", "tags": ["yard", "antiques", "media"]}
+    {"name": "Cantura Crest Multi", "addr": "9554 Cantura Crst, 78250", "hours": "7am-4pm Sat-Sun", "tags": ["yard", "multi-family"]},
+    {"name": "Spring Cyn One-Day", "addr": "2635 Spring Cyn, 78232", "hours": "9am-1pm", "tags": ["yard", "tools", "antique"]},
+    {"name": "Reagan Band Fundraiser", "addr": "19000 Ronald Reagan, 78258", "hours": "Sat", "tags": ["fundraiser"]}
   ],
-  "selene_briefing_draft": "Good morning San Antonio. Saturday is a solid 4-star day. Northeast and northwest corridors lead — Terrell Hills, Stone Oak, Morgans Creek and the 78250 multi-family cluster are packing tools, mid-century, and collectibles. Heat index near 107, so the smart window is before 9:30. Get out early and stay hydrated."
+  "selene_briefing_draft": "Howdy San Antonio — Saturday delivered a solid 4-star hunt. Northeast and northwest led with collectibles and tools. Heat was brutal after 10, so the early birds won. Sunday still has residual estates and multi-family action in Alamo Ranch and South Side. Stay cool out there."
 }

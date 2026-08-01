@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>YardBird San Antonio — 2026-08-01 Live Refresh</name>
+    <description>Sentinel-approved evening refresh. Confidence 0.82. Focused Discovery pass confirmed 15+ aggregator listings + estate backbone. Import to Google My Maps.</description>
+
+    <Placemark>
+      <name>Nuggett Peak Collectibles Estate</name>
+      <description>Sat-Sun • 4410 Nuggett Peak, 78259 • Fiesta, Manhattan Glass, Dept 56 • High-value</description>
+      <Point><coordinates>-98.45,29.62,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Southton Tools Estate</name>
+      <description>Sat • 11788 Southton Rd, 78223 • Tools focus • Estate</description>
+      <Point><coordinates>-98.42,29.28,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Wetz Rd Southern Charm Estate</name>
+      <description>Sat-Sun • 4626 Wetz Rd, 78217 • Estate</description>
+      <Point><coordinates>-98.41,29.54,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Lone Star Blvd Estate</name>
+      <description>Sat-Sun • 126 Lone Star Blvd, 78204 • Estate</description>
+      <Point><coordinates>-98.505,29.39,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Converse Nediator Run Treasure Hunt</name>
+      <description>Sat-Sun • 9603 Nediator Run, 78109 • High volume • Estate</description>
+      <Point><coordinates>-98.30,29.52,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Cantura Crest Multi-Family</name>
+      <description>Sat-Sun 7am-4pm • 9554 Cantura Crst, 78250 • Household, toys, furniture • Multi</description>
+      <Point><coordinates>-98.668,29.5085,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Spring Cyn Tools & Antique</name>
+      <description>Sat 9am-1pm • 2635 Spring Cyn, 78232 • Dryer, tools, antique bedroom</description>
+      <Point><coordinates>-98.475,29.582,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Water Valley Multi-Family</name>
+      <description>Sat 8am-2pm • 12014 Water Vly, 78249 • Tools, household</description>
+      <Point><coordinates>-98.62,29.565,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Pinebrook Multi-Family</name>
+      <description>Sat • 7914 Pinebrook Dr, 78230 • Teacher supplies, household</description>
+      <Point><coordinates>-98.558,29.548,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Reagan Band/Guard Fundraiser</name>
+      <description>Sat • 19000 Ronald Reagan, 78258 • School cafeteria</description>
+      <Point><coordinates>-98.48,29.61,0</coordinates></Point>
+    </Placemark>
+
+  </Document>
+</kml>
