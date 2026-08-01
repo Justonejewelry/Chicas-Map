@@ -5,39 +5,18 @@
   "total_locations": 197,
   "status": "live",
   "sources": ["yardsalesearch.com", "garagesalefinder.com", "estatesales.net", "City of SA permits"],
+  "clusters_url": "data/cities/san-antonio-clusters.json",
   "hot_zones": [
-    {"name": "South Side", "badge": "CLUSTER-HOT", "size": 40, "lat": 29.2975, "lon": -98.481},
+    {"name": "South Side", "badge": "CLUSTER-HOT", "size": 30, "lat": 29.2975, "lon": -98.481},
     {"name": "Northwest Side", "badge": "ACTIVE", "size": 18, "lat": 29.55, "lon": -98.62},
     {"name": "Northeast Side", "badge": "ACTIVE", "size": 11, "lat": 29.54, "lon": -98.4},
     {"name": "Alamo Ranch", "badge": "ACTIVE", "size": 8, "lat": 29.48, "lon": -98.7}
   ],
   "public": [
     {"address": "9554 Cantura Crst, San Antonio, TX 78250", "dates": "Sat-Sun", "hours": "7am-4pm", "title": "Garage sale Saturday & Sunday", "details": "Household, clothes, toys, furniture", "source": "YardSaleSearch", "photos": 11, "type": "garage", "confidence": 0.85, "lat": 29.5085, "lon": -98.668},
-    {"address": "4410 Nuggett Peak, San Antonio, TX 78259", "dates": "Aug 1-2", "title": "Estate — From Trash To Treasure", "details": "Professional estate sale", "source": "estatesales.net", "photos": 187, "type": "estate", "confidence": 0.92, "lat": 29.62, "lon": -98.45},
-    {"address": "11788 Southton Rd, San Antonio, TX 78223", "dates": "Aug 1", "title": "Estate — Top Hat", "details": "Professional estate sale", "source": "estatesales.net", "photos": 324, "type": "estate", "confidence": 0.92, "lat": 29.28, "lon": -98.42}
+    {"address": "4410 Nuggett Peak, San Antonio, TX 78259", "dates": "Aug 1-2", "title": "Estate — From Trash To Treasure", "details": "Professional estate sale", "source": "estatesales.net", "photos": 187, "type": "estate", "confidence": 0.92, "lat": 29.62, "lon": -98.45}
   ],
   "permits": [],
   "permit_total": 174,
-  "clusters": [
-    {
-      "cluster_id": "sa-cluster-001",
-      "name": "South Side",
-      "badge": "CLUSTER-HOT",
-      "size": 30,
-      "lat": 29.2975,
-      "lon": -98.481,
-      "members": [
-        {"address": "12719 LORENA OCHOA, San Antonio, TX", "title": "Garage sale — 12719 LORENA OCHOA", "lat": 29.29335, "lon": -98.473718, "dates": "2026-07-24", "type": "permit", "confidence": 0.98, "source": "City of SA permits", "details": "Permit CLUSTER-HOT", "cluster_id": "sa-cluster-001", "photos": 0},
-        {"address": "11910 CHIPPER LANDING, San Antonio, TX", "title": "Garage sale — 11910 CHIPPER LANDING", "lat": 29.295, "lon": -98.48, "dates": "2026-07-24", "type": "permit", "confidence": 0.95, "source": "City of SA permits", "details": "Permit cluster member", "cluster_id": "sa-cluster-001", "photos": 0},
-        {"address": "707 PELICAN LANDING, San Antonio, TX", "title": "Garage sale — 707 PELICAN LANDING", "lat": 29.29, "lon": -98.47, "dates": "2026-07-24", "type": "permit", "confidence": 0.95, "source": "City of SA permits", "details": "Permit cluster member", "cluster_id": "sa-cluster-001", "photos": 0},
-        {"address": "1130 TWO WOOD WAY, San Antonio, TX", "title": "Garage sale — 1130 TWO WOOD WAY", "lat": 29.3, "lon": -98.485, "dates": "2026-07-24", "type": "permit", "confidence": 0.94, "source": "City of SA permits", "details": "Permit cluster member", "cluster_id": "sa-cluster-001", "photos": 0},
-        {"address": "11627 TIGER WOODS, San Antonio, TX", "title": "Garage sale — 11627 TIGER WOODS", "lat": 29.288, "lon": -98.478, "dates": "2026-07-24", "type": "permit", "confidence": 0.94, "source": "City of SA permits", "details": "Permit cluster member", "cluster_id": "sa-cluster-001", "photos": 0},
-        {"address": "1403 HUNTER BLVD, San Antonio, TX", "title": "Garage sale — 1403 HUNTER BLVD", "lat": 29.333482, "lon": -98.5294, "dates": "2026-07-24", "type": "permit", "confidence": 0.96, "source": "City of SA permits", "details": "Permit cluster member", "cluster_id": "sa-cluster-001", "photos": 0},
-        {"address": "11815 FAIRWAY LANDING, San Antonio, TX", "title": "Garage sale — 11815 FAIRWAY LANDING", "lat": 29.291, "lon": -98.476, "dates": "2026-07-24", "type": "permit", "confidence": 0.93, "source": "City of SA permits", "details": "Permit cluster member", "cluster_id": "sa-cluster-001", "photos": 0},
-        {"address": "12002 LINKS LANDING, San Antonio, TX", "title": "Garage sale — 12002 LINKS LANDING", "lat": 29.294, "lon": -98.482, "dates": "2026-07-24", "type": "permit", "confidence": 0.93, "source": "City of SA permits", "details": "Permit cluster member", "cluster_id": "sa-cluster-001", "photos": 0},
-        {"address": "11550 ROUGH CUT, San Antonio, TX", "title": "Garage sale — 11550 ROUGH CUT", "lat": 29.287, "lon": -98.471, "dates": "2026-07-24", "type": "permit", "confidence": 0.92, "source": "City of SA permits", "details": "Permit cluster member", "cluster_id": "sa-cluster-001", "photos": 0},
-        {"address": "12100 GREENBRIAR LANDING, San Antonio, TX", "title": "Garage sale — 12100 GREENBRIAR LANDING", "lat": 29.296, "lon": -98.479, "dates": "2026-07-24", "type": "permit", "confidence": 0.92, "source": "City of SA permits", "details": "Permit cluster member", "cluster_id": "sa-cluster-001", "photos": 0}
-      ]
-    }
-  ]
+  "clusters": []
 }
