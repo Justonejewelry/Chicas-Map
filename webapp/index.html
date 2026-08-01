@@ -69,13 +69,28 @@
         <span><i class="pin estate"></i> Estate</span>
         <span><i class="pin permit"></i> Permit cluster</span>
       </div>
-      <div class="map-hint">Tap a red cluster to see every address inside</div>
+      <div class="map-hint" id="mapHint">Tap a red cluster to see every address inside</div>
     </section>
   </main>
   <footer class="footer">
-    <span id="footerSources">YardBird · GSIN · San Antonio first</span>
+    <span id="footerSources" title="Data sources">YardBird · GSIN</span>
     <a href="https://github.com/Justonejewelry/Project-YardBird" target="_blank" rel="noopener">GitHub</a>
   </footer>
+  <div class="yowl-ambassador" id="yowlAmbassador">
+    <button type="button" class="yowl-dismiss" id="yowlDismiss" aria-label="Dismiss">×</button>
+    <div class="yowl-card">
+      <img src="assets/yowl.png" alt="Yowl Lawnda" width="72" height="72" onerror="this.style.display='none'" />
+      <div class="yowl-copy">
+        <strong>Yowl Lawnda</strong>
+        <p>Howdy! Share the map so more neighbors find the good stuff.</p>
+        <div class="yowl-actions">
+          <button type="button" class="share" id="yowlShare">↗ Share</button>
+          <button type="button" class="like" id="yowlLike">♥ Like</button>
+          <a class="follow" id="yowlFollow" href="https://github.com/Justonejewelry/Project-YardBird" target="_blank" rel="noopener">★ Follow</a>
+        </div>
+      </div>
+    </div>
+  </div>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="js/app.js"></script>
 </body>
