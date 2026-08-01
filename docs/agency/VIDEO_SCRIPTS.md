@@ -1,10 +1,10 @@
 # Yowl Lawnda — AI Video Scripts (CHARACTER LOCKED)
 
-**Always attach official reference.** Yowl must match the locked face/harness 100%.
+**Always match the official face.** Harness is optional.
 
 ## Global style stem
 ```
-Exact character match to official Yowl Lawnda reference photo: brown chihuahua, cream chest and muzzle, large soft brown eyes, pink inner ears, black studded leather harness with silver studs and buckles, friendly smile, same face from any angle. Clean 2D cartoon. Do not redesign the dog.
+Exact character match to official Yowl Lawnda reference: brown chihuahua, cream chest and muzzle, large soft brown eyes, pink inner ears, friendly smile, same face from any angle (harness optional). Clean 2D cartoon. Do not redesign the dog.
 ```
 
 ## SCRIPT A — Weekly Forecast (12–15s)
