@@ -27,3 +27,11 @@ Updated 2026-08-01 01:00 CDT after Mercury/Echo swarm expansion + forecast auto-
 - [ ] Marker icon expansion beyond basic KML limits
 - [ ] Second city proof (Houston or Dallas next?)
 - [ ] End-to-end test of populate_forecast.py against real verified sales dump
+
+## Graph API note (2026-08-01 01:15 CDT)
+
+- [x] Reality-checked Facebook Graph API for Marketplace / Groups
+- [x] Documented that Marketplace has **no official Graph API**
+- [x] Groups API confirmed deprecated
+- [x] Echo Swarm policy locked to public-content / non-API for primary targets
+- [x] Reserved future-compliant Page/Event path only after App Review

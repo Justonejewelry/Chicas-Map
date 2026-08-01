@@ -23,8 +23,8 @@ Mercury (Craigslist) and Echo (Facebook) are elevated from single agents to **le
 
 | Sub-Agent | Role | Primary Method | Fallback |
 |-----------|------|----------------|----------|
-| **Echo-Marketplace** | Public Marketplace keyword scan | “garage sale”, “yard sale”, “estate sale” + San Antonio geo | Manual operator seed |
-| **Echo-Groups** | Local buy/sell & neighborhood groups | Public posts in SA / Helotes / Boerne / Schertz / Alamo Ranch / Stone Oak groups | Group admin relationship (future) |
+| **Echo-Marketplace** | Public Marketplace-style signals | Manual seed + public observation + user tips (no Graph API) | See facebook-graph-api-status.md |
+| **Echo-Groups** | Local buy/sell & neighborhood groups | Public posts only; operator seed (Groups API deprecated) | See facebook-graph-api-status.md |
 | **Echo-Public** | Public page & event scanner | Facebook Events + public sale pages | Cross-post detection via Signal |
 | **Echo-Hashtag** | Hashtag & mention monitor | #SAGarageSale #SanAntonioYardSale #AlamoRanchSale etc. | Cross-platform via Signal |
 | **Echo-Lens** | Photo / flyer OCR on FB posts | Feed images to Lens → Scholar | Manual review queue |
