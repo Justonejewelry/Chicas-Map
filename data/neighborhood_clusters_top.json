@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-08-01T08:56:50+00:00",
+  "method": "single-linkage density clustering",
+  "radius_m": 1200,
+  "total_permits_with_coords": 173,
+  "total_clusters": 82,
+  "note": "Top 20 clusters by size from recent municipal permits",
+  "top_clusters": [
+    {"cluster_id": "sa-cluster-001", "size": 30, "centroid": {"lat": 29.2975, "lon": -98.481}, "hot_zone_label": "South Side", "issued_dates": ["2026-07-22", "2026-07-23", "2026-07-24"]},
+    {"cluster_id": "sa-cluster-002", "size": 7, "centroid": {"lat": 29.4654, "lon": -98.5455}, "hot_zone_label": "Northwest Side", "issued_dates": ["2026-07-21", "2026-07-22", "2026-07-24"]},
+    {"cluster_id": "sa-cluster-003", "size": 5, "centroid": {"lat": 29.5004, "lon": -98.5333}, "hot_zone_label": "Northwest Side", "issued_dates": ["2026-07-17", "2026-07-21", "2026-07-24"]},
+    {"cluster_id": "sa-cluster-004", "size": 5, "centroid": {"lat": 29.3364, "lon": -98.5346}, "hot_zone_label": "South Side", "issued_dates": ["2026-07-17", "2026-07-23", "2026-07-24"]},
+    {"cluster_id": "sa-cluster-005", "size": 4, "centroid": {"lat": 29.5918, "lon": -98.3993}, "hot_zone_label": "Northeast Side", "issued_dates": ["2026-07-24"]},
+    {"cluster_id": "sa-cluster-006", "size": 4, "centroid": {"lat": 29.5047, "lon": -98.685}, "hot_zone_label": "Alamo Ranch", "issued_dates": ["2026-07-13", "2026-07-17", "2026-07-24"]},
+    {"cluster_id": "sa-cluster-007", "size": 4, "centroid": {"lat": 29.5634, "lon": -98.4289}, "hot_zone_label": "Northeast Side", "issued_dates": ["2026-07-16", "2026-07-17", "2026-07-23"]},
+    {"cluster_id": "sa-cluster-008", "size": 4, "centroid": {"lat": 29.4545, "lon": -98.5089}, "hot_zone_label": "Alamo Heights", "issued_dates": ["2026-07-17", "2026-07-19", "2026-07-21"]},
+    {"cluster_id": "sa-cluster-009", "size": 3, "centroid": {"lat": 29.4573, "lon": -98.5823}, "hot_zone_label": "West Side", "issued_dates": ["2026-07-15", "2026-07-18", "2026-07-24"]},
+    {"cluster_id": "sa-cluster-010", "size": 3, "centroid": {"lat": 29.3779, "lon": -98.4478}, "hot_zone_label": "South Side", "issued_dates": ["2026-07-17", "2026-07-24"]}
+  ]
+}
