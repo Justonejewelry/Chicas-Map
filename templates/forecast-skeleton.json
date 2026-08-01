@@ -1,0 +1,38 @@
+{
+  "generated_at": null,
+  "city": null,
+  "status": "skeleton",
+  "confidence": 0.0,
+  "notes": "Auto-populated by populate_forecast.py from verified intelligence layer. Do not hand-edit live files.",
+  "days": {
+    "friday":   {"stars": 0, "predicted_sales": 0, "status": "projected"},
+    "saturday": {"stars": 0, "predicted_sales": 0, "status": "projected"},
+    "sunday":   {"stars": 0, "predicted_sales": 0, "status": "projected"}
+  },
+  "weather_impact": {
+    "condition": null,
+    "high_f": null,
+    "low_f": null,
+    "risk": null,
+    "shopping_quality": null
+  },
+  "hot_zones": [],
+  "best_categories": [],
+  "verified_highlights": [],
+  "source_breakdown": {
+    "estate": 0,
+    "craigslist": 0,
+    "facebook": 0,
+    "nextdoor": 0,
+    "permit": 0,
+    "other": 0
+  },
+  "selene_briefing_draft": null,
+  "meta": {
+    "mercury_records": 0,
+    "echo_records": 0,
+    "heritage_records": 0,
+    "last_sentinel_pass": null,
+    "schema_version": "1.1"
+  }
+}

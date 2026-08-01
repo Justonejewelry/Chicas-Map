@@ -44,19 +44,25 @@ sources:
     domain: sanantonio.craigslist.org
     gms_path: /search/gms
     rss: https://sanantonio.craigslist.org/search/gms?format=rss
-    notes: "Primary. Currently rate-limited / blocked for automated access. Use RSS + browser fallback + Google cache when needed."
+    notes: "Primary. Currently rate-limited / blocked for automated access. Handled by Mercury Swarm (RSS → Browser → Cache → Aggregator)."
+    agents: [Mercury-RSS, Mercury-Browser, Mercury-Cache, Mercury-Aggregator, Mercury-Dedupe]
   estatesales:
     - https://www.estatesales.net/TX/San-Antonio
     - https://www.estatesales.org
+    agents: [Heritage]
   facebook:
-    notes: "Marketplace + local buy/sell groups for SA, Helotes, Boerne, Schertz, Alamo Ranch, Stone Oak"
+    notes: "Marketplace + local buy/sell groups for SA, Helotes, Boerne, Schertz, Alamo Ranch, Stone Oak. Public content only."
+    agents: [Echo-Marketplace, Echo-Groups, Echo-Public, Echo-Hashtag, Echo-Lens]
   nextdoor:
     notes: "HOA and neighborhood pages in hot zones"
+    agents: [Neighbor]
   municipal:
     - "City of San Antonio garage sale permit rules"
+    agents: [Permit]
   other:
     - subreddits: ["r/sanantonio", "r/SanAntonio"]
     - hashtags: ["#SAGarageSale", "#SanAntonioYardSale", "#AlamoRanchSale"]
+    agents: [Crow, Signal]
 
 value_notes:
   high_demand: [tools, mid-century furniture, vintage toys, electronics, antiques, records, cameras]
