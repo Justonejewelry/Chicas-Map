@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+<name>YardBird SA — Clusters (click for member sales)</name>
+<description>Click any cluster to see all associated garage sales in the description panel.</description>
+<Style id="hot"><IconStyle><scale>1.4</scale><Icon><href>http://maps.google.com/mapfiles/kml/paddle/red-circle.png</href></Icon></IconStyle></Style>
+<Style id="strong"><IconStyle><scale>1.2</scale><Icon><href>http://maps.google.com/mapfiles/kml/paddle/orange-circle.png</href></Icon></IconStyle></Style>
+<Style id="norm"><IconStyle><scale>1.0</scale><Icon><href>http://maps.google.com/mapfiles/kml/paddle/ylw-circle.png</href></Icon></IconStyle></Style>
+<Folder><name>Clusters</name>
+<Placemark>
+<name>[30] South Side — sa-cluster-001</name>
+<description><![CDATA[<b>South Side · 30 sales</b><br/>sa-cluster-001<br/><br/>• Full member list available in Cluster Explorer and data/clusters_with_members.json<br/>• Import this KML into Google My Maps and click the star to read the description]]></description>
+<styleUrl>#hot</styleUrl>
+<Point><coordinates>-98.481,29.2975,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>[7] Northwest Side — sa-cluster-002</name>
+<description><![CDATA[<b>Northwest Side · 7 sales</b><br/>sa-cluster-002]]></description>
+<styleUrl>#strong</styleUrl>
+<Point><coordinates>-98.5455,29.4654,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>[5] Northwest Side — sa-cluster-003</name>
+<description><![CDATA[<b>Northwest Side · 5 sales</b>]]></description>
+<styleUrl>#norm</styleUrl>
+<Point><coordinates>-98.5333,29.5004,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>[4] Alamo Ranch — sa-cluster-006</name>
+<description><![CDATA[<b>Alamo Ranch · 4 sales</b>]]></description>
+<styleUrl>#norm</styleUrl>
+<Point><coordinates>-98.685,29.5047,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>[4] Northeast Side — sa-cluster-005</name>
+<description><![CDATA[<b>Northeast Side · 4 sales</b>]]></description>
+<styleUrl>#norm</styleUrl>
+<Point><coordinates>-98.3993,29.5918,0</coordinates></Point>
+</Placemark>
+</Folder>
+</Document>
+</kml>
