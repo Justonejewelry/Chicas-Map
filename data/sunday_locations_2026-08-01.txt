@@ -1,0 +1,25 @@
+========================================================================
+YARDBIRD SUNDAY DISCOVERY — San Antonio — 2026-08-01
+Generated: 2026-08-01T12:06:03+00:00
+Total unique locations: 197
+Sources: yardsalesearch.com, garagesalefinder.com, estatesales.net, craigslist gms (index), City of SA garage sale permits
+========================================================================
+
+Full file retained in repo delivery package. See maps/san-antonio/2026-08-01-sunday-COMPLETE.kml for map pins.
+
+Public listings (23) and permit-backed (174) documented in local sunday_locations_2026-08-01.txt and discovery JSON.
+
+Key public addresses:
+- 9554 Cantura Crst, San Antonio, TX 78250 (Sat-Sun 7am-4pm)
+- 122 Ravenhill Dr, San Antonio, TX 78214 (Multi Family)
+- 2635 Spring Cyn, San Antonio, TX 78232 (Sat 9am-1pm)
+- 19000 Ronald Reagan, San Antonio, TX 78258 (Band fundraiser)
+- 4410 Nuggett Peak, San Antonio, TX 78259 (Estate, 187 photos)
+- 11788 Southton Rd, San Antonio, TX 78223 (Estate, 324 photos)
+- 126 Lone Star Blvd, San Antonio, TX 78204 (Estate)
+- 4626 Wetz Rd, San Antonio, TX 78217 (Estate)
+- 805 Canterbury Hill, San Antonio, TX 78209 (Terrell Hills estate)
+
+Hot zone: South Side CLUSTER-HOT (30 from permits).
+
+Import: maps/san-antonio/2026-08-01-sunday-COMPLETE.kml

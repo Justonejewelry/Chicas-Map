@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+<name>YardBird Sunday COMPLETE — 2026-08-01</name>
+<description>OSINT discovery + permits. 197 locations. Click pins for details. Full expanded KML with all permit pins available in Project-YardBird delivery artifacts.</description>
+<Style id="estate"><IconStyle><scale>1.2</scale><Icon><href>http://maps.google.com/mapfiles/kml/paddle/purple-circle.png</href></Icon></IconStyle></Style>
+<Style id="garage"><IconStyle><scale>1.0</scale><Icon><href>http://maps.google.com/mapfiles/kml/paddle/grn-circle.png</href></Icon></IconStyle></Style>
+<Style id="permit"><IconStyle><scale>0.85</scale><Icon><href>http://maps.google.com/mapfiles/kml/paddle/ltblu-circle.png</href></Icon></IconStyle></Style>
+<Style id="fund"><IconStyle><scale>1.1</scale><Icon><href>http://maps.google.com/mapfiles/kml/paddle/ylw-circle.png</href></Icon></IconStyle></Style>
+<Folder><name>Public listings and estate sales</name>
+<Placemark><name>Garage sale Saturday and Sunday</name><description><![CDATA[<b>9554 Cantura Crst, San Antonio, TX 78250</b><br/>Sat Aug 1 – Sun Aug 2 7am–4pm<br/>Household, clothes, toys, furniture<br/>Photos noted: 11]]></description><styleUrl>#garage</styleUrl><Point><coordinates>-98.668,29.5085,0</coordinates></Point></Placemark>
+<Placemark><name>Multi Family Yard Sale</name><description><![CDATA[122 Ravenhill Dr, San Antonio, TX 78214]]></description><styleUrl>#garage</styleUrl><Point><coordinates>-98.488,29.355,0</coordinates></Point></Placemark>
+<Placemark><name>One day garage sale</name><description><![CDATA[2635 Spring Cyn, San Antonio, TX 78232 — Sat 9am-1pm]]></description><styleUrl>#garage</styleUrl><Point><coordinates>-98.475,29.582,0</coordinates></Point></Placemark>
+<Placemark><name>Reagan Band Guard Fundraiser</name><description><![CDATA[19000 Ronald Reagan, San Antonio, TX 78258]]></description><styleUrl>#fund</styleUrl><Point><coordinates>-98.48,29.61,0</coordinates></Point></Placemark>
+<Placemark><name>Estate — From Trash To Treasure</name><description><![CDATA[4410 Nuggett Peak — 187 photos]]></description><styleUrl>#estate</styleUrl><Point><coordinates>-98.45,29.62,0</coordinates></Point></Placemark>
+<Placemark><name>Estate — Top Hat</name><description><![CDATA[11788 Southton Rd — 324 photos]]></description><styleUrl>#estate</styleUrl><Point><coordinates>-98.42,29.28,0</coordinates></Point></Placemark>
+<Placemark><name>Estate — Southern Charm</name><description><![CDATA[4626 Wetz Rd — 81 photos]]></description><styleUrl>#estate</styleUrl><Point><coordinates>-98.41,29.54,0</coordinates></Point></Placemark>
+<Placemark><name>Estate — A Better Estate Sale Co</name><description><![CDATA[126 Lone Star Blvd]]></description><styleUrl>#estate</styleUrl><Point><coordinates>-98.505,29.39,0</coordinates></Point></Placemark>
+<Placemark><name>Estate — Terrell Hills</name><description><![CDATA[805 Canterbury Hill, 78209 — 9am-4pm]]></description><styleUrl>#estate</styleUrl><Point><coordinates>-98.455,29.475,0</coordinates></Point></Placemark>
+<Placemark><name>South Side CLUSTER-HOT centroid</name><description><![CDATA[Permit density zone — 30 sales — see cluster explorer]]></description><styleUrl>#permit</styleUrl><Point><coordinates>-98.481,29.2975,0</coordinates></Point></Placemark>
+</Folder>
+</Document>
+</kml>
