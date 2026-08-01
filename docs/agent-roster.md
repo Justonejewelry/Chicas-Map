@@ -1,6 +1,6 @@
 # GSIN Agent Roster — Project YardBird
 
-Approximately 40 specialized agents. Operate only the ones required for the current task. Atlas assigns; Forge coordinates; Sentinel gates.
+Approximately 45 specialized agents. Operate only the ones required for the current task. Atlas assigns; Forge coordinates; Sentinel gates.
 
 ## Executive Layer
 
@@ -19,11 +19,13 @@ Approximately 40 specialized agents. Operate only the ones required for the curr
 | Heritage | EstateSales.net, EstateSales.org, auction and liquidation sites |
 | Neighbor | Nextdoor HOA announcements, community garage weekends, neighborhood-wide events |
 | Parish | Church bulletins, mission sites, school newsletters |
-| Permit | City garage-sale permits, municipal announcements, official feeds |
-| Press | Digital classifieds, weekend newspaper announcements, local papers |
+| Permit | **Lead** — City garage-sale permits + Open Data SA. Commands Permit-Extractor + Permit-Matcher. Highest-trust source. |
+| Press | Digital classifieds, weekend newspaper, Express-News / Hearst Marketplace. Also owns Aggregator-Yard + Aggregator-Finder. |
 | Crow | Local subreddits |
 | Festival | Church bazaars, craft fairs, swap meets, vendor events, flea markets |
 | Signal | Instagram, Threads, TikTok, X, Pinterest |
+| Scout | Targeted public-web discovery (search queries for weekend sales) |
+| CrossChecker | Multi-source identity resolution before Mirror |
 
 ## Extraction Division
 
@@ -98,5 +100,3 @@ Approximately 40 specialized agents. Operate only the ones required for the curr
 - Friday: What’s New Overnight
 - Saturday: Live Morning Briefing (Selene)
 - Sunday: Weekend Wrap-Up (optional)
-
-The lower 25 % of the map interface is reserved for the permanent WEEKEND FORECAST panel (stars, predicted counts, weather impact, hot zones, best categories, confidence).
