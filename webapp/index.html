@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>YardBird — San Antonio Garage Sale Intelligence</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">YB</span>
+      <div>
+        <h1>YardBird</h1>
+        <p class="tag">Garage Sale Intelligence Network · San Antonio</p>
+      </div>
+    </div>
+    <div class="meta" id="editionMeta">Loading…</div>
+  </header>
+
+  <main class="layout">
+    <aside class="panel left">
+      <section class="forecast" id="forecast">
+        <h2>Weekend Forecast</h2>
+        <div id="hotZones"></div>
+      </section>
+      <section class="filters">
+        <input type="search" id="search" placeholder="Search address, title, zip…" />
+        <div class="chips">
+          <button class="chip active" data-filter="all">All</button>
+          <button class="chip" data-filter="garage">Garage</button>
+          <button class="chip" data-filter="estate">Estate</button>
+          <button class="chip" data-filter="permit">Permit</button>
+          <button class="chip" data-filter="fundraiser">Fundraiser</button>
+        </div>
+      </section>
+      <section class="list-wrap">
+        <div class="list-head">
+          <h2>Locations</h2>
+          <span id="listCount">0</span>
+        </div>
+        <ul id="saleList" class="sale-list"></ul>
+      </section>
+    </aside>
+
+    <section class="map-wrap">
+      <div id="map"></div>
+      <div class="map-legend">
+        <span><i class="dot green"></i> Garage</span>
+        <span><i class="dot purple"></i> Estate</span>
+        <span><i class="dot yellow"></i> Fundraiser</span>
+        <span><i class="dot blue"></i> Permit</span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Sources: YardSaleSearch · GarageSaleFinder · estatesales.net · City of SA permits</span>
+    <a href="https://github.com/Justonejewelry/Project-YardBird" target="_blank" rel="noopener">GitHub</a>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
