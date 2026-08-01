@@ -1,40 +1,42 @@
 {
-  "generated_at": "2026-08-01T00:50:00-05:00",
+  "generated_at": "2026-08-01T02:45:00-05:00",
   "city": "san-antonio",
   "status": "live",
-  "confidence": 0.74,
-  "notes": "Focused Discovery + Sentinel pass (00:50 CDT). Estate sales remain the verified backbone. Nuggett Peak, Morgans Creek, Canterbury Hill, Southton Tools, and Converse corridor confirmed active. Additional yard signals partially cleared. Craigslist still constrained. Weather model updated to current NWS/AccuWeather consensus.",
+  "confidence": 0.81,
+  "notes": "Focused Discovery + Sentinel pass (02:45 CDT Saturday). Estate sales backbone re-verified. Added multi-family signals in Northwest (78250/78249) and Reagan fundraising confirmed. Sentinel cleared 8 high-confidence pins. Craigslist remains rate-limited. Weather updated with KSAT scattered shower risk early then heat.",
   "days": {
     "friday": {"stars": 3, "predicted_sales": 95, "status": "historical"},
-    "saturday": {"stars": 4, "predicted_sales": 160, "status": "active"},
-    "sunday": {"stars": 3, "predicted_sales": 72, "status": "projected"}
+    "saturday": {"stars": 4, "predicted_sales": 175, "status": "active"},
+    "sunday": {"stars": 3, "predicted_sales": 78, "status": "projected"}
   },
   "weather_impact": {
-    "condition": "Mostly sunny and hot",
+    "condition": "Mostly sunny, isolated early showers possible then hot",
     "high_f": 99,
     "low_f": 76,
-    "risk": "Heat — early start mandatory. Peak shopping window 7:00–10:00 AM. Hydrate.",
-    "shopping_quality": "Excellent early; declines sharply after 11 AM due to heat index"
+    "risk": "Heat index rising fast after 10 AM. Isolated showers early. Peak window 7:00–10:00 AM. Hydrate and start early.",
+    "shopping_quality": "Excellent early; declines after 11 AM due to heat"
   },
   "hot_zones": [
-    "Northeast / Terrell Hills & Stone Oak",
-    "Northwest / 78230 Morgans Creek corridor",
+    "Northeast / Stone Oak & Terrell Hills",
+    "Northwest / Alamo Ranch & 78250 corridor",
     "Converse / Schertz edge",
-    "South Side / Southton Rd"
+    "South Side / Southton Rd tools"
   ],
   "best_categories": [
     "Tools",
-    "Mid-century & furniture",
-    "China / crystal / glassware",
+    "Mid-century furniture",
     "Collectibles (Fiesta, Dept 56, Manhattan Glass)",
-    "Vintage fashion & designer pieces"
+    "China / crystal / glassware",
+    "Vintage fashion"
   ],
   "verified_highlights": [
     {"name": "Nuggett Peak Collectibles", "addr": "4410 Nuggett Peak, 78259", "hours": "9am-4pm", "tags": ["estate", "high-value", "collectibles"]},
     {"name": "Canterbury Hill Terrell Hills", "addr": "805 Canterbury Hill, 78209", "hours": "9am-4pm", "tags": ["estate", "furniture", "art"]},
     {"name": "Morgans Creek Luxury", "addr": "3947 Morgans Creek, 78230", "hours": "9am-5pm", "tags": ["estate", "designer", "crystal"]},
     {"name": "Southton Tools", "addr": "11788 Southton Rd, 78223", "hours": "9am-3pm", "tags": ["estate", "tools"]},
-    {"name": "Converse Treasure Hunt", "addr": "9603 Nediator Run, 78109", "hours": "10am-4pm", "tags": ["estate", "high-volume"]}
+    {"name": "Converse Treasure Hunt", "addr": "9603 Nediator Run, 78109", "hours": "10am-4pm", "tags": ["estate", "high-volume"]},
+    {"name": "Reagan Band Fundraising", "addr": "19000 Ronald Reagan, 78258", "hours": "Sat AM", "tags": ["fundraising", "school"]},
+    {"name": "Water Valley Multi-Family", "addr": "12014 Water Vly, 78249", "hours": "8am-2pm", "tags": ["multi-family", "tools", "household"]}
   ],
-  "selene_briefing_draft": "Good morning San Antonio. Saturday is a solid 4-star day on the estate-sale circuit. Northeast and northwest corridors are leading — Terrell Hills, Stone Oak, and the 78230 area are packing the best furniture, tools, and collectibles. Heat is the real factor: high near 99, so the smart window is before 9:30. Our models show tools and mid-century pieces moving fastest. Get out early and stay hydrated."
+  "selene_briefing_draft": "Good morning San Antonio! Saturday is a solid 4-star YardBird day. Northeast Stone Oak and Northwest corridors are leading with tools, furniture, and collectibles. Isolated early showers possible then heat climbing to 99 — the smart window is before 9:30. Get out early and stay hydrated."
 }

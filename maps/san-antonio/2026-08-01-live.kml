@@ -2,7 +2,7 @@
 <kml xmlns="http://www.opengis.net/kml/2.2">
   <Document>
     <name>YardBird San Antonio — 2026-08-01 Live</name>
-    <description>Verified estate &amp; high-signal yard sales for Saturday 1 Aug 2026. Project YardBird / GSIN. Confidence 0.74. Sentinel approved. Import into Google My Maps.</description>
+    <description>Verified estate &amp; high-signal yard sales for Saturday 1 Aug 2026. Project YardBird / GSIN. Confidence 0.81. Sentinel approved 02:45 CDT. Import into Google My Maps.</description>
 
     <Placemark>
       <name>Nuggett Peak Collectibles Estate</name>
@@ -47,9 +47,15 @@
     </Placemark>
 
     <Placemark>
-      <name>Buckhorn Bayou Multi-Family</name>
-      <description>Sat-Sun 8am-5pm • 4214 Buckhorn Bayou • Garden, tools, decor, collectibles</description>
-      <Point><coordinates>-98.55,29.52,0</coordinates></Point>
+      <name>Reagan Band Fundraising</name>
+      <description>Sat AM • 19000 Ronald Reagan, 78258 • Annual Band/Guard Student Fundraising Garage Sale • School cafeteria</description>
+      <Point><coordinates>-98.49,29.62,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Water Valley Multi-Family</name>
+      <description>Sat 8am-2pm • 12014 Water Vly, 78249 • Multi-family • Toys, tools, household, small appliances</description>
+      <Point><coordinates>-98.58,29.55,0</coordinates></Point>
     </Placemark>
 
   </Document>
