@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>YardBird San Antonio — 2026-08-01 Sunday Residual</name>
+    <description>Sentinel-approved residual estate & multi-family sales for Sunday 2 Aug 2026. Project YardBird / GSIN. Confidence 0.84. Evening Discovery pass 18:40 CDT Sat. Import into Google My Maps.</description>
+
+    <Placemark>
+      <name>Nuggett Peak Collectibles Estate</name>
+      <description>Sun 9am-4pm • 4410 Nuggett Peak, 78259 • Fiesta, Manhattan Glass, Dept 56, 50yrs collecting • High-value</description>
+      <Point><coordinates>-98.45,29.62,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Pepperidge / Wetz Rd Estate</name>
+      <description>Sun 9am-3pm • 4626 Wetz Rd, 78217 • Likely 50% off day • Estate</description>
+      <Point><coordinates>-98.41,29.54,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Converse Nediator Run Estate</name>
+      <description>Sun 11am-3pm • 9603 Nediator Run, 78109 • High-volume treasure hunt</description>
+      <Point><coordinates>-98.30,29.52,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Cantura Crest Multi-Family</name>
+      <description>Sun 7am-4pm • 9554 Cantura Crst, 78250 • Household, toys, bounce house, furniture • Continues</description>
+      <Point><coordinates>-98.668,29.5085,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Lone Star Blvd Estate</name>
+      <description>Sun 9am-4pm • 126 Lone Star Blvd, 78204 • Estate</description>
+      <Point><coordinates>-98.505,29.39,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Kissena Park Pop-up (Converse)</name>
+      <description>Sun residual • 9019 Kissena Park, 78109 • Estate pop-up cluster</description>
+      <Point><coordinates>-98.31,29.53,0</coordinates></Point>
+    </Placemark>
+
+  </Document>
+</kml>

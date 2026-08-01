@@ -1,0 +1,45 @@
+{
+  "generated_at": "2026-08-01T18:40:00-05:00",
+  "city": "san-antonio",
+  "status": "live",
+  "confidence": 0.84,
+  "notes": "Atlas Director focused Discovery + Sentinel evening pass (18:40 CDT Saturday). Confirmed residual Sunday estates: Nuggett Peak Collectibles (78259), Pepperidge/Wetz Rd (78217), Converse Nediator/Kissena cluster, Alamo Ranch multi-family carryover (Cantura Crest), Southton Tools closed. Heat index still extreme. Sentinel approved live residual layer. Peak Saturday inventory largely exhausted after 11am heat.",
+  "days": {
+    "friday": {"stars": 3, "predicted_sales": 95, "status": "historical"},
+    "saturday": {"stars": 4, "predicted_sales": 175, "status": "peak-passed"},
+    "sunday": {"stars": 3.5, "predicted_sales": 95, "status": "active-residual"}
+  },
+  "weather_impact": {
+    "condition": "Clear to mostly sunny, extreme heat, heat index ~105, low storm risk overnight into Sunday",
+    "high_f": 99,
+    "low_f": 78,
+    "heat_index": 105,
+    "risk": "Extreme heat continues Sunday. Early start critical (before 9am). Hydrate, shade, short windows.",
+    "shopping_quality": "Sunday residual high-value estates still viable early; multi-family thinning fast in heat"
+  },
+  "hot_zones": [
+    "Northeast / Stone Oak & Nuggett Peak corridor",
+    "Northeast / Wetz Rd & Pepperidge",
+    "Converse / Schertz edge (Nediator + Kissena)",
+    "Alamo Ranch / 78250 multi-family residual",
+    "Northwest / Pinebrook & Water Valley carryover",
+    "South Side residual clusters"
+  ],
+  "best_categories": [
+    "Collectibles (Fiesta, Dept 56, Manhattan Glass)",
+    "Tools",
+    "Mid-century & antique furniture",
+    "China / crystal",
+    "Designer & vintage fashion",
+    "Electronics & small appliances"
+  ],
+  "verified_highlights": [
+    {"name": "Nuggett Peak Collectibles", "addr": "4410 Nuggett Peak, 78259", "hours": "Sun 9am-4pm", "tags": ["estate", "high-value", "collectibles"], "status": "resumes Sunday"},
+    {"name": "Pepperidge / Wetz Rd Estate", "addr": "4626 Wetz Rd, 78217", "hours": "Sun 9am-3pm (50% off day likely)", "tags": ["estate"], "status": "resumes Sunday"},
+    {"name": "Converse Nediator Run", "addr": "9603 Nediator Run, 78109", "hours": "Sun 11am-3pm", "tags": ["estate", "high-volume"], "status": "resumes Sunday"},
+    {"name": "Cantura Crest Multi", "addr": "9554 Cantura Crst, 78250", "hours": "Sun 7am-4pm", "tags": ["yard", "multi-family"], "status": "continues"},
+    {"name": "Lone Star Blvd Estate", "addr": "126 Lone Star Blvd, 78204", "hours": "Sun 9am-4pm", "tags": ["estate"], "status": "resumes"},
+    {"name": "Spring Cyn residual", "addr": "2635 Spring Cyn, 78232", "hours": "closed (one-day)", "tags": ["yard", "tools"], "status": "closed"}
+  ],
+  "selene_briefing_draft": "Howdy San Antonio — Saturday packed a solid 4-star punch before the heat shut it down. Sunday still has real juice: Nuggett Peak collectibles, Pepperidge estate, and the Converse cluster are your best bets. Get out early, stay hydrated, and hunt smart. Be hunting, y'all!"
+}
