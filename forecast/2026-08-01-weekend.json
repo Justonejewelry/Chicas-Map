@@ -1,0 +1,32 @@
+{
+  "generated_at": "2026-08-01T00:30:00-05:00",
+  "city": "san-antonio",
+  "confidence": 0.62,
+  "notes": "Thin but real inventory. Estate sales currently dominate verified signal. Craigslist discovery constrained. Numbers will rise as more sources clear Sentinel.",
+  "days": {
+    "thursday": {"stars": 2, "predicted_sales": 40, "status": "historical"},
+    "friday": {"stars": 3, "predicted_sales": 95, "status": "partial"},
+    "saturday": {"stars": 4, "predicted_sales": 140, "status": "active"},
+    "sunday": {"stars": 2, "predicted_sales": 55, "status": "projected"}
+  },
+  "weather_impact": {
+    "condition": "Hot and mostly clear",
+    "high_f": 93,
+    "risk": "Heat — early start strongly recommended",
+    "shopping_quality": "Good if you start before 9 AM"
+  },
+  "hot_zones": [
+    "Northeast / Terrell Hills corridor",
+    "Northwest / 78230 area",
+    "Converse / Schertz edge",
+    "South / Southton Rd"
+  ],
+  "best_categories": [
+    "Tools",
+    "Furniture & mid-century",
+    "China / crystal / glass",
+    "Collectibles (Dept 56, Fiesta)",
+    "Vintage fashion & designer"
+  ],
+  "selene_briefing_draft": "Good morning. Saturday is looking solid on the estate-sale side, especially northeast and northwest corridors. Several multi-day sales are still open with furniture, tools, and collectibles. It will be hot — high near 93 — so the best window is early. Get to the high-value stops before 9 if you can. More garage and yard listings are still clearing verification."
+}
