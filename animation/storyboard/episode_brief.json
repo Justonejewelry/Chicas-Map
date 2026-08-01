@@ -1,0 +1,21 @@
+{
+  "episode": "Sunday Yard-Bird Update",
+  "date": "2026-08-01",
+  "runtime_target_s": [14, 18],
+  "lead_cluster": {
+    "zone": "South Side",
+    "size": 30,
+    "badge": "CLUSTER-HOT"
+  },
+  "secondaries": ["Northwest Side", "Northeast Side"],
+  "weather_note": "Heat high · early start recommended",
+  "cta": "Be hunting, y'all!",
+  "map_asset": "maps/san-antonio/2026-08-01-clustered.kml",
+  "shots": [
+    {"id": "S01", "name": "logo_open", "t": [0.0, 2.8]},
+    {"id": "S02", "name": "host_intro", "t": [2.8, 5.5]},
+    {"id": "S03", "name": "map_point", "t": [5.5, 9.5]},
+    {"id": "S04", "name": "map_dense", "t": [9.5, 12.5]},
+    {"id": "S05", "name": "closer_cta", "t": [12.5, 17.0]}
+  ]
+}
