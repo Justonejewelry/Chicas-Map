@@ -6,25 +6,32 @@ Continuous discovery, verification, scoring, prediction, and mapping of garage, 
 **Primary output:** Living custom Google Map + weekend forecast intelligence  
 **Launch city:** San Antonio, TX (unified multi-city rules ready)
 
-## Current Status (2026-08-01 00:30 CDT)
+## Current Status (2026-08-01 01:05 CDT)
 
-- Repository initialized
-- San Antonio city config seeded
-- Sample + seed KML available under `maps/san-antonio/`
-- Forecast panel skeleton ready
-- Discovery: EstateSales.net yielding strong weekend inventory; Craigslist access currently constrained
-- Sentinel gate: active for all map publishes
+- San Antonio city config + live KML + forecast live
+- **Mercury Swarm** (Craigslist) and **Echo Swarm** (Facebook) defined with specialized sub-agents for resilient detection
+- Forecast skeleton + `scripts/populate_forecast.py` for automatic population from verified sales
+- EstateSales.net remains strongest verified backbone; Craigslist still constrained but multi-path ready
+- Sentinel gate active for all map publishes
 
 ## Structure
 
 ```
 maps/
-  san-antonio/          # KML / GeoJSON layers
-data/
-  sales/                # Canonical JSON records
-city-configs/           # Per-city rules (San Antonio is reference)
-forecast/               # Weekend forecast panel data
-docs/                   # Architecture notes
+  san-antonio/              # KML / GeoJSON layers
+city-configs/               # Per-city rules (YAML authoritative)
+forecast/                   # Weekend forecast panel data (auto-populated)
+templates/
+  forecast-skeleton.json    # Starting template for populate_forecast.py
+scripts/
+  populate_forecast.py      # Turns verified sales → full forecast JSON
+  geocode.py
+docs/
+  agent-roster.md
+  agent-roster-expansion.md # Mercury & Echo sub-swarms
+  craigslist-swarm.md
+  facebook-swarm.md
+  improvements-backlog.md
 ```
 
 ## Quick Start for Map
@@ -36,7 +43,8 @@ docs/                   # Architecture notes
 ## Swarm Overview
 
 Executive: Atlas (Director) • Forge (Ops) • Sentinel (QC)  
-Full roster and operating rules live in the companion `gsin-yardbird` skill.
+Discovery Leads: **Mercury** (Craigslist multi-path) • **Echo** (Facebook public) • Heritage  
+Full roster and operating rules live in the companion `gsin-yardbird` skill and `docs/`.
 
 ## License / Notes
 
