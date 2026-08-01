@@ -32,11 +32,11 @@
     ({ estate: "#a855f7", fundraiser: "#f59e0b", permit: "#38bdf8", garage: "#22c55e", zone: "#f59e0b" }[t] || "#22c55e");
 
   function esc(s) {
-    return String(s || "")
-      .replace(/&/g, "&")
-      .replace(/</g, "<")
-      .replace(/>/g, ">")
-      .replace(/"/g, """);
+    return String(s == null ? "" : s)
+      .replace(/&/g, "&" + "amp;")
+      .replace(/</g, "&" + "lt;")
+      .replace(/>/g, "&" + "gt;")
+      .replace(/"/g, "&" + "quot;");
   }
 
   function normalizeFeed(raw) {
@@ -224,7 +224,7 @@
       );
       return;
     }
-    const items = feed.hot_zones || [];
+    const items = (feed && feed.hot_zones) || [];
     el.innerHTML = items.length
       ? items
           .map(
