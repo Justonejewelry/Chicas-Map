@@ -1,32 +1,40 @@
 {
-  "generated_at": "2026-08-01T00:30:00-05:00",
+  "generated_at": "2026-08-01T05:45:00-05:00",
   "city": "san-antonio",
-  "confidence": 0.62,
-  "notes": "Thin but real inventory. Estate sales currently dominate verified signal. Craigslist discovery constrained. Numbers will rise as more sources clear Sentinel.",
+  "status": "live",
+  "confidence": 0.71,
+  "notes": "Focused Discovery + Sentinel pass complete. Estate sales form the backbone of verified inventory. Additional yard/garage signals from Treasure Map and Facebook groups cleared partial verification. Craigslist remains rate-limited. Numbers still conservative.",
   "days": {
-    "thursday": {"stars": 2, "predicted_sales": 40, "status": "historical"},
-    "friday": {"stars": 3, "predicted_sales": 95, "status": "partial"},
-    "saturday": {"stars": 4, "predicted_sales": 140, "status": "active"},
-    "sunday": {"stars": 2, "predicted_sales": 55, "status": "projected"}
+    "friday": {"stars": 3, "predicted_sales": 95, "status": "historical"},
+    "saturday": {"stars": 4, "predicted_sales": 155, "status": "active"},
+    "sunday": {"stars": 3, "predicted_sales": 70, "status": "projected"}
   },
   "weather_impact": {
     "condition": "Hot and mostly clear",
-    "high_f": 93,
-    "risk": "Heat — early start strongly recommended",
-    "shopping_quality": "Good if you start before 9 AM"
+    "high_f": 94,
+    "low_f": 76,
+    "risk": "Heat — early start strongly recommended. Peak shopping window 7:30–10:00 AM.",
+    "shopping_quality": "Excellent early, declines after 11 AM due to heat"
   },
   "hot_zones": [
-    "Northeast / Terrell Hills corridor",
-    "Northwest / 78230 area",
+    "Northeast / Terrell Hills & Stone Oak",
+    "Northwest / 78230 Morgans Creek corridor",
     "Converse / Schertz edge",
-    "South / Southton Rd"
+    "South Side / Southton Rd"
   ],
   "best_categories": [
     "Tools",
-    "Furniture & mid-century",
-    "China / crystal / glass",
-    "Collectibles (Dept 56, Fiesta)",
-    "Vintage fashion & designer"
+    "Mid-century & furniture",
+    "China / crystal / glassware",
+    "Collectibles (Fiesta, Dept 56, Manhattan Glass)",
+    "Vintage fashion & designer pieces"
   ],
-  "selene_briefing_draft": "Good morning. Saturday is looking solid on the estate-sale side, especially northeast and northwest corridors. Several multi-day sales are still open with furniture, tools, and collectibles. It will be hot — high near 93 — so the best window is early. Get to the high-value stops before 9 if you can. More garage and yard listings are still clearing verification."
+  "verified_highlights": [
+    {"name": "Nuggett Peak Collectibles", "addr": "4410 Nuggett Peak, 78259", "hours": "9am-4pm", "tags": ["estate", "high-value"]},
+    {"name": "Canterbury Hill Terrell Hills", "addr": "805 Canterbury Hill, 78209", "hours": "9am-4pm", "tags": ["estate", "furniture", "art"]},
+    {"name": "Morgans Creek Luxury", "addr": "3947 Morgans Creek, 78230", "hours": "9am-5pm", "tags": ["estate", "designer", "crystal"]},
+    {"name": "Southton Tools", "addr": "11788 Southton Rd, 78223", "hours": "9am-3pm", "tags": ["estate", "tools"]},
+    {"name": "Converse Treasure Hunt", "addr": "9603 Nediator Run, 78109", "hours": "10am-4pm", "tags": ["estate"]}
+  ],
+  "selene_briefing_draft": "Good morning San Antonio. Saturday is a solid 4-star day on the estate-sale circuit. Northeast and northwest corridors are leading — Terrell Hills, Stone Oak, and the 78230 area are packing the best furniture, tools, and collectibles. Heat is the real factor: high near 94, so the smart window is before 9:30. Our models show tools and mid-century pieces moving fastest. Get out early and stay hydrated."
 }

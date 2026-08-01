@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>YardBird San Antonio — 2026-08-01 Live</name>
+    <description>Verified estate &amp; high-signal yard sales for Saturday 1 Aug 2026. Project YardBird / GSIN. Confidence 0.71. Import into Google My Maps.</description>
+
+    <Placemark>
+      <name>Nuggett Peak Collectibles Estate</name>
+      <description>Sat 9am-4pm • 4410 Nuggett Peak, 78259 • Fiesta, Manhattan Glass, Dept 56 • High-value estate</description>
+      <Point><coordinates>-98.48,29.58,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Canterbury Hill Terrell Hills</name>
+      <description>Sat 9am-4pm • 805 Canterbury Hill, 78209 • Furniture, art, china, crystal, rugs • Estate</description>
+      <Point><coordinates>-98.46,29.48,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Morgans Creek Luxury Estate</name>
+      <description>Sat 9am-5pm • 3947 Morgans Creek, 78230 • Baccarat, Prada, Ralph Lauren, French desk, sterling • Estate</description>
+      <Point><coordinates>-98.55,29.55,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Southton Tools Estate</name>
+      <description>Sat 9am-3pm • 11788 Southton Rd, 78223 • Tools focus • Estate</description>
+      <Point><coordinates>-98.42,29.35,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Wetz Rd Pepperidge Estate</name>
+      <description>Sat 9am-3pm • 4626 Wetz Rd, 78217 • Estate</description>
+      <Point><coordinates>-98.45,29.55,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Converse Nediator Run</name>
+      <description>Sat 10am-4pm • 9603 Nediator Run, Converse 78109 • Large inventory • Estate</description>
+      <Point><coordinates>-98.30,29.52,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Kissena Park Pop-up</name>
+      <description>Sat 8:30am-6pm • 9019 Kissena Park, Converse 78109 • Estate pop-up</description>
+      <Point><coordinates>-98.31,29.53,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Buckhorn Bayou Multi-Family</name>
+      <description>Sat-Sun 8am-5pm • 4214 Buckhorn Bayou • Garden, tools, decor, collectibles</description>
+      <Point><coordinates>-98.55,29.52,0</coordinates></Point>
+    </Placemark>
+
+  </Document>
+</kml>
