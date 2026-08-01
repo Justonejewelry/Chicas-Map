@@ -1,35 +1,30 @@
 # Project YardBird — Improvements Backlog
-Updated 2026-08-01 by Atlas
+Updated 2026-08-01 by Atlas (post-execution)
 
 ## Completed This Cycle
-- [x] Full public information source inventory (city config + docs/information-sources.md)
+- [x] Full public information source inventory
 - [x] Mercury + Echo sub-swarm definitions
-- [x] Facebook Graph API feasibility analysis (documented as non-viable for Marketplace/Groups)
-- [x] Auto-populate forecast skeleton (scripts/populate_forecast.py)
-- [x] Detection Swarm v2 strategy (docs/detection-swarm-v2.md)
-- [x] Permit-Extractor stub (scripts/permit_extractor_stub.py)
-- [x] New agents: Permit-Extractor, Permit-Matcher, Aggregator-Yard, Aggregator-Finder, Scout, CrossChecker
+- [x] Facebook Graph API feasibility analysis (non-viable for Marketplace/Groups)
+- [x] Auto-populate forecast skeleton
+- [x] Detection Swarm v2 strategy
+- [x] Permit-Extractor **production version** against real Open Data SA schema
+- [x] Extracted 174 recent garage-sale permits (last 21 days) → data/permits_recent.json
+- [x] New agents registered: Permit-Extractor, Permit-Matcher, Aggregator-Yard/Finder, Scout, CrossChecker
+- [x] Scout query set defined
 
-## High Priority — Detection Yield
-- [ ] Implement real Permit-Extractor against current Open Data SA CSV schema
-- [ ] Build Aggregator-Yard and Aggregator-Finder HTML parsers (respectful rate limits)
-- [ ] Wire CrossChecker into verification pipeline
-- [ ] Add Scout scheduled query set for Thu–Sat windows
-- [ ] Expand Heritage depth (multi-page EstateSales.net + estatesales.org)
+## High Priority — Next
+- [ ] Build Aggregator-Yard and Aggregator-Finder HTML parsers (respectful)
+- [ ] Wire CrossChecker + Permit-Matcher into verification confidence model
+- [ ] Activate Scout scheduled runs for Thu–Sat windows
+- [ ] Expand Heritage multi-page depth
+- [ ] Refresh live KML / forecast with any permit-backed sales that still fall in active window
 
 ## Medium Priority
-- [ ] Confidence model: multi-source boost + permit uplift formalized in Sherlock
-- [ ] Historical permit archive for seasonal learning (Archive agent)
-- [ ] Live KML delta publishing (Cartographer incremental)
+- [ ] Historical permit archive for Archive / Neighborhood DNA learning
+- [ ] Live KML delta publishing
 - [ ] Selene briefing auto-generation from forecast JSON
 
-## Lower Priority / Future
-- [ ] Compliant Facebook Page/Event Graph path after proper App Review (if ever useful)
-- [ ] Austin city config full activation + first map
-- [ ] Neighborhood DNA long-term profiles
-- [ ] Real-time weather overlay from Nimbus
-
-## Policy Anchors (do not regress)
+## Policy Anchors
 - Public content only
 - Sentinel gate on every map pin
 - Source tagging mandatory
