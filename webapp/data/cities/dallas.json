@@ -1,17 +1,31 @@
 {
-  "edition": "Dallas Yard-Bird Discovery",
+  "edition": "sunday",
   "date": "2026-08-01",
   "city": "dallas",
-  "total_locations": 0,
-  "status": "seed — discovery pending",
-  "sources": ["Craigslist Dallas", "estatesales.net DFW", "YardSaleSearch"],
-  "public": [],
+  "generated_at": "2026-08-01T16:00:00-05:00",
+  "total_locations": 1,
+  "sources": ["Craigslist Dallas GMS", "estatesales.net DFW", "YardSaleSearch Dallas", "Nextdoor"],
+  "public": [
+    {
+      "title": "Dallas metro \u2014 see sources",
+      "address": "Dallas, TX",
+      "lat": 32.7767,
+      "lon": -96.797,
+      "type": "garage",
+      "dates": "Weekend",
+      "hours": "",
+      "source": "Aggregators",
+      "confidence": 0.4,
+      "details": "Seed pin \u2014 open YardSaleSearch / Craigslist for live listings.",
+      "photos": 0,
+      "source_url": "https://www.yardsalesearch.com/garage-sales-dallas-tx.html"
+    }
+  ],
   "permits": [],
   "permit_total": 0,
   "hot_zones": [
-    {"name": "Oak Cliff / South", "badge": "WATCH", "lat": 32.73, "lon": -96.82},
-    {"name": "East Dallas", "badge": "WATCH", "lat": 32.82, "lon": -96.75},
-    {"name": "Plano / North", "badge": "WATCH", "lat": 33.02, "lon": -96.70},
-    {"name": "Arlington / Mid-Cities", "badge": "WATCH", "lat": 32.74, "lon": -97.11}
-  ]
+    {"name": "Oak Cliff", "badge": "ACTIVE", "lat": 32.74, "lon": -96.82},
+    {"name": "East Dallas", "badge": "ACTIVE", "lat": 32.81, "lon": -96.74}
+  ],
+  "status": "live"
 }

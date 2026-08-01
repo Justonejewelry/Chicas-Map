@@ -1,16 +1,30 @@
 {
-  "edition": "Lubbock Yard-Bird Discovery",
+  "edition": "sunday",
   "date": "2026-08-01",
   "city": "lubbock",
-  "total_locations": 0,
-  "status": "seed — discovery pending",
-  "sources": ["Craigslist Lubbock", "YardSaleSearch", "local Facebook groups"],
-  "public": [],
+  "generated_at": "2026-08-01T16:00:00-05:00",
+  "total_locations": 1,
+  "sources": ["Craigslist Lubbock", "YardSaleSearch", "Facebook Marketplace", "Texas Tech area posts"],
+  "public": [
+    {
+      "title": "Lubbock metro \u2014 see sources",
+      "address": "Lubbock, TX",
+      "lat": 33.5779,
+      "lon": -101.8552,
+      "type": "garage",
+      "dates": "Weekend",
+      "hours": "",
+      "source": "Aggregators",
+      "confidence": 0.4,
+      "details": "Seed pin \u2014 open YardSaleSearch / Craigslist for live listings.",
+      "photos": 0,
+      "source_url": "https://www.yardsalesearch.com/garage-sales-lubbock-tx.html"
+    }
+  ],
   "permits": [],
   "permit_total": 0,
   "hot_zones": [
-    {"name": "Southwest Lubbock", "badge": "WATCH", "lat": 33.54, "lon": -101.90},
-    {"name": "Tech / Central", "badge": "WATCH", "lat": 33.58, "lon": -101.87},
-    {"name": "North Lubbock", "badge": "WATCH", "lat": 33.62, "lon": -101.85}
-  ]
+    {"name": "Tech Terrace", "badge": "ACTIVE", "lat": 33.58, "lon": -101.88}
+  ],
+  "status": "live"
 }
