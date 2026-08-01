@@ -2,7 +2,6 @@ name: Update YardBird feed
 
 on:
   schedule:
-    # 11:00 UTC ≈ 6:00 AM CDT — morning discovery window
     - cron: "0 11 * * *"
   workflow_dispatch:
     inputs:
@@ -14,12 +13,15 @@ on:
 permissions:
   contents: write
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   rebuild-feed:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set up Python
         uses: actions/setup-python@v5
