@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+<name>YardBird SA — Clustered Garage Sales</name>
+<description>Municipal permits with neighborhood cluster badges. Import into Google My Maps.</description>
+<Style id="pin-hot"><IconStyle><scale>1.35</scale><Icon><href>http://maps.google.com/mapfiles/kml/paddle/red-circle.png</href></Icon></IconStyle></Style>
+<Style id="pin-strong"><IconStyle><scale>1.2</scale><Icon><href>http://maps.google.com/mapfiles/kml/paddle/orange-circle.png</href></Icon></IconStyle></Style>
+<Style id="cluster-centroid"><IconStyle><scale>1.4</scale><Icon><href>http://maps.google.com/mapfiles/kml/shapes/star.png</href></Icon></IconStyle></Style>
+<Folder><name>Top Neighborhood Clusters</name>
+<Placemark><name>[CLUSTER-HOT] South Side — 30 sales</name><description>Largest recent concentration</description><styleUrl>#cluster-centroid</styleUrl><Point><coordinates>-98.481,29.2975,0</coordinates></Point></Placemark>
+<Placemark><name>[CLUSTER-STRONG] Northwest Side — 7 sales</name><styleUrl>#cluster-centroid</styleUrl><Point><coordinates>-98.5455,29.4654,0</coordinates></Point></Placemark>
+<Placemark><name>[CLUSTER] Northwest Side — 5 sales</name><styleUrl>#cluster-centroid</styleUrl><Point><coordinates>-98.5333,29.5004,0</coordinates></Point></Placemark>
+<Placemark><name>[CLUSTER] South Side — 5 sales</name><styleUrl>#cluster-centroid</styleUrl><Point><coordinates>-98.5346,29.3364,0</coordinates></Point></Placemark>
+<Placemark><name>[CLUSTER] Northeast Side — 4 sales</name><styleUrl>#cluster-centroid</styleUrl><Point><coordinates>-98.3993,29.5918,0</coordinates></Point></Placemark>
+<Placemark><name>[CLUSTER] Alamo Ranch — 4 sales</name><styleUrl>#cluster-centroid</styleUrl><Point><coordinates>-98.685,29.5047,0</coordinates></Point></Placemark>
+</Folder>
+</Document>
+</kml>

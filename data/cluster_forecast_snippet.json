@@ -1,0 +1,13 @@
+{
+  "cluster_intelligence": {
+    "total_clusters": 82,
+    "top_cluster_size": 30,
+    "selene_language": "Watch the neighborhood clusters: we are seeing a major concentration of 30 sales on the South Side, a 7-sale pocket in Northwest Side, a 5-sale pocket in Northwest Side, a 5-sale pocket in South Side, and a 4-sale pocket in Northeast Side. These denser pockets tend to reward an early start and shorter hops between stops.",
+    "badge_legend": {
+      "CLUSTER-HOT": "15+ sales within 1.2 km",
+      "CLUSTER-STRONG": "8–14 sales",
+      "CLUSTER": "4–7 sales",
+      "MULTI": "2–3 sales"
+    }
+  }
+}
