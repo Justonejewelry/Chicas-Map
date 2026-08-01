@@ -1,0 +1,73 @@
+# Austin — First Multi-City Clone
+# Project YardBird / GSIN
+# Cloned from san-antonio.yaml structure. Agent behavior remains identical.
+
+slug: austin
+name: Austin
+state: TX
+timezone: America/Chicago
+typical_sale_window: "Fri-Sun, peak Sat 07:00-11:00"
+synonyms:
+  - garage sale
+  - yard sale
+  - estate sale
+  - moving sale
+  - community sale
+  - rummage sale
+
+bounds:
+  center: [30.2672, -97.7431]
+  north: 30.55
+  south: 30.05
+  east: -97.50
+  west: -98.00
+  notes: "Includes Round Rock, Cedar Park, Pflugerville, Lakeway, West Lake Hills, South Austin, East Austin"
+
+hot_zones:
+  - West Lake Hills
+  - Tarrytown
+  - Hyde Park
+  - Mueller
+  - South Congress / SoCo
+  - East Austin
+  - Round Rock
+  - Cedar Park
+  - Lakeway
+  - Steiner Ranch
+  - Circle C
+  - Barton Hills
+  - Zilker
+  - North Central
+
+sources:
+  craigslist:
+    domain: austin.craigslist.org
+    gms_path: /search/gms
+    rss: https://austin.craigslist.org/search/gms?format=rss
+    notes: "Primary. Same resilience needs as San Antonio."
+  estatesales:
+    - https://www.estatesales.net/TX/Austin
+    - https://www.estatesales.org
+  facebook:
+    notes: "Marketplace + Austin, Round Rock, Cedar Park, Lakeway buy/sell groups"
+  nextdoor:
+    notes: "Strong HOA presence in West Lake, Steiner Ranch, Circle C"
+  municipal:
+    - "City of Austin temporary sales / garage sale guidelines"
+  other:
+    - subreddits: ["r/Austin", "r/AustinClassifieds"]
+    - hashtags: ["#ATXGarageSale", "#AustinYardSale", "#AustinEstateSale"]
+
+value_notes:
+  high_demand: [mid-century modern, vinyl records, vintage clothing, tools, outdoor gear, tech]
+  weather_sensitivity: high
+  peak_advice: "Early Saturday still best; heat and traffic matter"
+
+map_defaults:
+  default_zoom: "central Austin + northwest suburbs"
+  clustering: true
+  priority_badges: ["early-start", "high-value", "estate"]
+
+status: clone
+cloned_from: san-antonio
+last_updated: "2026-08-01"

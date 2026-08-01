@@ -1,0 +1,72 @@
+# San Antonio — Reference City Config (YAML)
+# Project YardBird / GSIN
+# Machine-readable. Prefer this over the .md version for scripts and agents.
+
+slug: san-antonio
+name: San Antonio
+state: TX
+timezone: America/Chicago
+typical_sale_window: "Fri-Sun, peak Sat 07:00-11:00"
+synonyms:
+  - garage sale
+  - yard sale
+  - estate sale
+  - moving sale
+  - community sale
+  - rummage sale
+
+bounds:
+  center: [29.4241, -98.4936]
+  north: 29.65
+  south: 29.20
+  east: -98.20
+  west: -98.80
+  notes: "Includes Helotes, Boerne, Schertz/Cibolo, Alamo Ranch, Stone Oak"
+
+hot_zones:
+  - Alamo Ranch
+  - Stone Oak
+  - Helotes
+  - Boerne
+  - Schertz
+  - The Dominion
+  - Fair Oaks Ranch
+  - Leon Springs
+  - Shavano Park
+  - Hollywood Park
+  - Terrell Hills
+  - Alamo Heights
+  - Northwest Side
+  - Northeast Side
+
+sources:
+  craigslist:
+    domain: sanantonio.craigslist.org
+    gms_path: /search/gms
+    rss: https://sanantonio.craigslist.org/search/gms?format=rss
+    notes: "Primary. Currently rate-limited / blocked for automated access. Use RSS + browser fallback + Google cache when needed."
+  estatesales:
+    - https://www.estatesales.net/TX/San-Antonio
+    - https://www.estatesales.org
+  facebook:
+    notes: "Marketplace + local buy/sell groups for SA, Helotes, Boerne, Schertz, Alamo Ranch, Stone Oak"
+  nextdoor:
+    notes: "HOA and neighborhood pages in hot zones"
+  municipal:
+    - "City of San Antonio garage sale permit rules"
+  other:
+    - subreddits: ["r/sanantonio", "r/SanAntonio"]
+    - hashtags: ["#SAGarageSale", "#SanAntonioYardSale", "#AlamoRanchSale"]
+
+value_notes:
+  high_demand: [tools, mid-century furniture, vintage toys, electronics, antiques, records, cameras]
+  weather_sensitivity: high
+  peak_advice: "Get there before 9 AM for best selection"
+
+map_defaults:
+  default_zoom: "metro Alamo Ranch to Schertz corridor"
+  clustering: true
+  priority_badges: ["early-start", "high-value", "estate"]
+
+status: reference
+last_updated: "2026-08-01"
