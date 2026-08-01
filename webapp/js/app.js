@@ -79,6 +79,13 @@
     });
   }
 
+  function sourceLink(s) {
+    const url = s.source_url || s.gallery || s.url || s.link;
+    const label = s.source || "Source";
+    if (url) return `<a href="${esc(url)}" target="_blank" rel="noopener">${esc(label)} ↗</a>`;
+    return esc(label);
+  }
+
   function showDetail(s) {
     const drawer = document.getElementById("detailDrawer");
     const body = document.getElementById("detailBody");
@@ -87,10 +94,10 @@
       <div class="d-addr">${esc(s.address || "")}</div>
       <div class="d-meta">${esc(s.dates || "")} ${esc(s.hours || "")}</div>
       <div class="d-meta">Type: ${esc(s.type || "garage")} · Confidence: ${s.confidence ?? "—"}</div>
-      <div class="d-meta">Source: ${esc(s.source || "")}</div>
+      <div class="d-meta">Source: ${sourceLink(s)}</div>
       <div class="d-body">${esc(s.details || "No description.")}</div>
       ${s.photos ? `<div class="d-meta">📷 ${s.photos} photos noted at source</div>` : ""}
-      ${s.gallery ? `<div class="d-meta"><a href="${esc(s.gallery)}" target="_blank" rel="noopener">Open listing / photos</a></div>` : ""}`;
+      ${(s.source_url || s.gallery || s.url) ? `<div class="d-meta"><a class="source-btn" href="${esc(s.source_url || s.gallery || s.url)}" target="_blank" rel="noopener">Open source listing ↗</a></div>` : ""}`;
     drawer.classList.remove("hidden");
   }
 
@@ -103,6 +110,7 @@
     return `<div class="popup-title">${esc(s.title || s.address)}</div>
       <div>${esc(s.address || "")}</div>
       <div class="popup-meta">${esc(s.dates || "")}</div>
+      <div class="popup-meta">${sourceLink(s)}</div>
       ${s.photos ? `<div class="popup-meta">📷 ${s.photos} photos</div>` : ""}`;
   }
 
@@ -123,6 +131,7 @@
         <div class="row">
           <span class="pill ${s.type || "garage"}">${s.type || "garage"}</span>
           ${s.photos ? `<span class="pill">${s.photos} photos</span>` : ""}
+          ${(s.source_url || s.gallery || s.url) ? `<a class="pill source" href="${esc(s.source_url || s.gallery || s.url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">Source ↗</a>` : (s.source ? `<span class="pill">${esc(s.source)}</span>` : "")}
         </div>
       </li>`
       )
