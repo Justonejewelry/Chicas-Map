@@ -79,8 +79,42 @@
     });
   }
 
+  function resolveSourceUrl(s) {
+    const direct = s.source_url || s.gallery || s.url || s.link;
+    if (direct) return direct;
+    const src = String(s.source || "").toLowerCase();
+    const cityPages = {
+      "san-antonio": "https://www.yardsalesearch.com/garage-sales-san-antonio-tx.html",
+      austin: "https://www.yardsalesearch.com/garage-sales-austin-tx.html",
+      houston: "https://www.yardsalesearch.com/garage-sales-houston-tx.html",
+      dallas: "https://www.yardsalesearch.com/garage-sales-dallas-tx.html",
+      lubbock: "https://www.yardsalesearch.com/garage-sales-lubbock-tx.html",
+    };
+    if (src.includes("permit") || src.includes("open data") || src.includes("city of sa"))
+      return "https://data.sanantonio.gov/";
+    if (src.includes("craigslist")) {
+      const cl = {
+        "san-antonio": "https://sanantonio.craigslist.org/search/gms",
+        austin: "https://austin.craigslist.org/search/gms",
+        houston: "https://houston.craigslist.org/search/gms",
+        dallas: "https://dallas.craigslist.org/search/gms",
+        lubbock: "https://lubbock.craigslist.org/search/gms",
+      };
+      return cl[city] || "https://www.craigslist.org/";
+    }
+    if (src.includes("garagesalefinder"))
+      return "https://www.garagesalefinder.com/garage-sales/" + (city || "san-antonio") + "/tx/";
+    if (src.includes("estatesales") || (src.includes("estate") && !src.includes("garage")))
+      return "https://www.estatesales.net/TX";
+    if (src.includes("facebook")) return "https://www.facebook.com/marketplace/";
+    if (src.includes("nextdoor")) return "https://nextdoor.com/";
+    if (src.includes("yardsale") || src.includes("garage"))
+      return cityPages[city] || cityPages["san-antonio"];
+    return cityPages[city] || "https://www.yardsalesearch.com/";
+  }
+
   function sourceLink(s) {
-    const url = s.source_url || s.gallery || s.url || s.link;
+    const url = resolveSourceUrl(s);
     const label = s.source || "Source";
     if (url) return `<a href="${esc(url)}" target="_blank" rel="noopener">${esc(label)} ↗</a>`;
     return esc(label);
@@ -97,7 +131,7 @@
       <div class="d-meta">Source: ${sourceLink(s)}</div>
       <div class="d-body">${esc(s.details || "No description.")}</div>
       ${s.photos ? `<div class="d-meta">📷 ${s.photos} photos noted at source</div>` : ""}
-      ${(s.source_url || s.gallery || s.url) ? `<div class="d-meta"><a class="source-btn" href="${esc(s.source_url || s.gallery || s.url)}" target="_blank" rel="noopener">Open source listing ↗</a></div>` : ""}`;
+      ${resolveSourceUrl(s) ? `<div class="d-meta"><a class="source-btn" href="${esc(resolveSourceUrl(s))}" target="_blank" rel="noopener">Open source listing ↗</a></div>` : ""}`;
     drawer.classList.remove("hidden");
   }
 
@@ -131,7 +165,7 @@
         <div class="row">
           <span class="pill ${s.type || "garage"}">${s.type || "garage"}</span>
           ${s.photos ? `<span class="pill">${s.photos} photos</span>` : ""}
-          ${(s.source_url || s.gallery || s.url) ? `<a class="pill source" href="${esc(s.source_url || s.gallery || s.url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">Source ↗</a>` : (s.source ? `<span class="pill">${esc(s.source)}</span>` : "")}
+          ${resolveSourceUrl(s) ? `<a class="pill source" href="${esc(resolveSourceUrl(s))}" target="_blank" rel="noopener" onclick="event.stopPropagation()">Source ↗</a>` : (s.source ? `<span class="pill">${esc(s.source)}</span>` : "")}
         </div>
       </li>`
       )
