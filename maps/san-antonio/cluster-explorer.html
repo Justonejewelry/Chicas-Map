@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>YardBird SA — Cluster Explorer</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<style>
+  html, body { margin:0; height:100%; font-family: system-ui, -apple-system, sans-serif; background:#0f172a; color:#e2e8f0; }
+  #map { position:absolute; inset:0; }
+  .panel {
+    position:absolute; top:12px; left:12px; z-index:1000; width:min(360px, 92vw);
+    background:rgba(15,23,42,0.94); border:1px solid #334155; border-radius:12px;
+    box-shadow:0 8px 32px rgba(0,0,0,0.45); overflow:hidden; max-height:calc(100vh - 24px);
+    display:flex; flex-direction:column;
+  }
+  .panel h1 { margin:0; padding:12px 14px 4px; font-size:15px; color:#38bdf8; font-weight:650; }
+  .panel .meta { padding:0 14px 10px; font-size:12px; color:#94a3b8; }
+  .panel .hint { padding:0 14px 12px; font-size:12px; color:#cbd5e1; border-bottom:1px solid #1e293b; }
+  #detail { padding:12px 14px; overflow:auto; flex:1; display:none; }
+  #detail.active { display:block; }
+  #detail h2 { margin:0 0 6px; font-size:14px; color:#f8fafc; }
+  #detail .zone { color:#fbbf24; font-size:12px; margin-bottom:8px; }
+  .sale {
+    padding:8px 10px; margin:0 0 6px; background:#1e293b; border-radius:8px;
+    border-left:3px solid #38bdf8; font-size:12px; line-height:1.35;
+  }
+  .sale.hot { border-left-color:#ef4444; }
+  .sale strong { color:#f1f5f9; }
+  .sale .sub { color:#94a3b8; margin-top:2px; }
+  .badge {
+    display:inline-block; padding:1px 6px; border-radius:4px; font-size:10px;
+    font-weight:700; background:#334155; color:#e2e8f0; margin-left:4px;
+  }
+  .badge.hot { background:#7f1d1d; color:#fecaca; }
+  .close-btn {
+    float:right; background:#334155; border:none; color:#e2e8f0; border-radius:6px;
+    padding:4px 8px; font-size:11px; cursor:pointer;
+  }
+  .legend {
+    position:absolute; bottom:16px; left:12px; z-index:1000;
+    background:rgba(15,23,42,0.92); padding:8px 12px; border-radius:8px;
+    font-size:11px; color:#94a3b8; border:1px solid #334155;
+  }
+  .cluster-icon {
+    background:#0ea5e9; color:#fff; border:2px solid #e0f2fe; border-radius:50%;
+    width:34px; height:34px; display:flex; align-items:center; justify-content:center;
+    font-weight:800; font-size:12px; box-shadow:0 2px 10px rgba(14,165,233,0.5);
+  }
+  .cluster-icon.hot { background:#ef4444; border-color:#fecaca; }
+  .cluster-icon.strong { background:#f97316; border-color:#fed7aa; }
+  .member-pin { background:#22d3ee; border:2px solid #fff; border-radius:50%; width:12px; height:12px; }
+</style>
+</head>
+<body>
+<div id="map"></div>
+<div class="panel">
+  <h1>YardBird · Cluster Explorer</h1>
+  <div class="meta">Click any cluster to expand all associated sales</div>
+  <div class="hint">Click a numbered cluster marker → member sales list + pins on map.</div>
+  <div id="detail"></div>
+</div>
+<div class="legend">★ Cluster size · red = CLUSTER-HOT (15+) · click to expand</div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+// Full cluster+member dataset is in repo data/clusters_with_members.json
+// This published page loads a compact top-cluster set; regenerate locally for full 82.
+fetch('https://raw.githubusercontent.com/Justonejewelry/Project-YardBird/main/data/clusters_with_members.json')
+  .then(r => r.ok ? r.json() : Promise.reject())
+  .then(data => init(data.clusters || data))
+  .catch(() => {
+    // Fallback: minimal South Side demo if JSON not yet published
+    init([{
+      cluster_id:'sa-cluster-001', size:30, hot_zone_label:'South Side',
+      centroid:{lat:29.2975,lon:-98.481},
+      members:[{address:'South Side concentration (full list in data/clusters_with_members.json)', lat:29.2975, lon:-98.481, issued_date:'2026-07-24', confidence:0.98, badge:'CLUSTER-HOT'}]
+    }]);
+  });
+
+function init(clusters) {
+  const map = L.map('map').setView([29.45, -98.52], 11);
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; OSM &copy; CARTO · YardBird GSIN', maxZoom: 19
+  }).addTo(map);
+  const memberLayer = L.layerGroup().addTo(map);
+  const detail = document.getElementById('detail');
+
+  function iconFor(size) {
+    let cls = 'cluster-icon';
+    if (size >= 15) cls += ' hot';
+    else if (size >= 8) cls += ' strong';
+    return L.divIcon({ className:'', html:`<div class="${cls}">${size}</div>`, iconSize:[34,34], iconAnchor:[17,17] });
+  }
+
+  window.clearDetail = function() {
+    detail.classList.remove('active');
+    detail.innerHTML = '';
+    memberLayer.clearLayers();
+  };
+
+  function showCluster(cl) {
+    memberLayer.clearLayers();
+    const members = cl.members || [];
+    let html = `<button class="close-btn" onclick="clearDetail()">Close</button>`;
+    html += `<h2>${cl.cluster_id}</h2>`;
+    html += `<div class="zone">${cl.hot_zone_label || 'Zone'} · ${cl.size} sales`;
+    if (cl.size >= 15) html += `<span class="badge hot">CLUSTER-HOT</span>`;
+    html += `</div>`;
+    members.forEach(m => {
+      const hot = m.badge === 'CLUSTER-HOT';
+      html += `<div class="sale${hot?' hot':''}"><strong>${m.address || 'Address pending'}</strong>`;
+      html += `<div class="sub">Issued ${m.issued_date || '—'} · conf ${m.confidence ?? '—'}</div></div>`;
+      if (m.lat != null && m.lon != null) {
+        const pin = L.divIcon({ className:'', html:'<div class="member-pin"></div>', iconSize:[12,12], iconAnchor:[6,6] });
+        L.marker([m.lat, m.lon], { icon: pin })
+          .bindPopup(`<b>${m.address}</b><br/>Issued: ${m.issued_date || '—'}<br/>${m.id || ''}`)
+          .addTo(memberLayer);
+      }
+    });
+    detail.innerHTML = html;
+    detail.classList.add('active');
+    const pts = members.filter(m => m.lat != null && m.lon != null).map(m => [m.lat, m.lon]);
+    if (pts.length) map.fitBounds(pts, { padding:[40,40], maxZoom:15 });
+    else if (cl.centroid) map.panTo([cl.centroid.lat, cl.centroid.lon]);
+  }
+
+  clusters.forEach(cl => {
+    if (!cl.centroid) return;
+    const m = L.marker([cl.centroid.lat, cl.centroid.lon], { icon: iconFor(cl.size) });
+    m.bindTooltip(`${cl.hot_zone_label || 'Cluster'} · ${cl.size} sales — click to expand`, { direction:'top' });
+    m.on('click', () => showCluster(cl));
+    m.addTo(map);
+  });
+}
+</script>
+</body>
+</html>
