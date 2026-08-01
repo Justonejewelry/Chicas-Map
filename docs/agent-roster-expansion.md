@@ -1,52 +1,57 @@
-# GSIN Agent Roster Expansion — Craigslist & Facebook Detection Swarms
-# Project YardBird / Atlas directive 2026-08-01
+# GSIN Agent Roster Expansion — Detection Focus
+# Project YardBird / Atlas directive 2026-08-01 (v2)
 
-Mercury (Craigslist) and Echo (Facebook) are elevated from single agents to **lead agents** with dedicated sub-swarms. Goal: raise Craigslist and Facebook signal yield and resilience without increasing block risk.
+Mercury (Craigslist) and Echo (Facebook) remain lead agents with sub-swarms.
+New high-ROI agents added for municipal permits and public aggregators.
 
 ## Mercury Swarm — Craigslist Detection (Lead: Mercury)
 
 | Sub-Agent | Role | Primary Method | Fallback |
 |-----------|------|----------------|----------|
-| **Mercury-RSS** | Continuous RSS poller | `https://sanantonio.craigslist.org/search/gms?format=rss` (and city variants) | Cache last good feed; alert Phoenix on empty/403 |
-| **Mercury-Browser** | Headless / human-seed browser | Realistic fingerprint, slow cadence, only high-value windows (Thu–Sat AM) | Manual seed queue by operator |
-| **Mercury-Cache** | Search-engine cache hunter | Google/Bing `site:sanantonio.craigslist.org (garage OR yard OR estate) sale` + date filters | Archive.org snapshots |
-| **Mercury-Aggregator** | Secondary aggregator cross-check | Public pages from known CL mirrors / aggregators | Score as low-confidence until Mirror confirms |
-| **Mercury-Dedupe** | Intra-Craigslist duplicate + spam filter | Title/address/hash matching within 48 h window | Feed into Mirror (Verification) |
+| **Mercury-RSS** | Continuous RSS poller | sanantonio.craigslist.org/search/gms?format=rss | Cache last good feed; alert Phoenix on empty/403 |
+| **Mercury-Browser** | Headless / human-seed browser | Realistic fingerprint, slow cadence, Thu–Sat AM only | Manual seed queue |
+| **Mercury-Cache** | Search-engine cache hunter | Google/Bing site: + date filters | Archive.org snapshots |
+| **Mercury-Aggregator** | Secondary aggregator cross-check | Public CL mirrors / aggregators | Low confidence until Mirror |
+| **Mercury-Dedupe** | Intra-CL duplicate + spam filter | Title/address/hash matching (48 h) | Feed into Mirror |
 
-**Operating rules (Forge / Guardian enforced)**  
-- RSS first, always. Escalate only on empty or blocked.  
-- Aggressive local cache (Flash). Never hammer.  
-- Every block logged → Phoenix pattern detection.  
-- Confidence starts lower (0.55–0.70) until multi-path confirmation.
-
-## Echo Swarm — Facebook Detection (Lead: Echo)
+## Echo Swarm — Facebook Detection (Lead: Echo) — Public only
 
 | Sub-Agent | Role | Primary Method | Fallback |
 |-----------|------|----------------|----------|
-| **Echo-Marketplace** | Public Marketplace-style signals | Manual seed + public observation + user tips (no Graph API) | See facebook-graph-api-status.md |
-| **Echo-Groups** | Local buy/sell & neighborhood groups | Public posts only; operator seed (Groups API deprecated) | See facebook-graph-api-status.md |
-| **Echo-Public** | Public page & event scanner | Facebook Events + public sale pages | Cross-post detection via Signal |
-| **Echo-Hashtag** | Hashtag & mention monitor | #SAGarageSale #SanAntonioYardSale #AlamoRanchSale etc. | Cross-platform via Signal |
-| **Echo-Lens** | Photo / flyer OCR on FB posts | Feed images to Lens → Scholar | Manual review queue |
+| **Echo-Marketplace** | Public Marketplace keyword scan | garage/yard/estate + SA geo | Operator seed |
+| **Echo-Groups** | Local buy/sell & neighborhood groups | Public posts only | Future admin relationships |
+| **Echo-Public** | Public page & event scanner | Facebook Events + public sale pages | Signal cross-post |
+| **Echo-Hashtag** | Hashtag & mention monitor | #SAGarageSale etc. | Cross-platform via Signal |
+| **Echo-Lens** | Photo / flyer OCR on FB posts | Lens → Scholar | Manual review queue |
 
-**Operating rules**  
-- Prefer public content only. No private group scraping.  
-- Rate-limit aggressively; treat Facebook as high-block-risk.  
-- All Echo records start with platform tag `facebook` and lower initial confidence until Handshake / Sherlock clear.  
-- Strong preference for posts that include address + hours + photos.
+## Permit Swarm (NEW — highest trust)
 
-## Integration into Forecast Auto-Population
+| Sub-Agent | Role | Primary Method |
+|-----------|------|----------------|
+| **Permit** | Lead — municipal strategy | Open Data SA + Accela public records |
+| **Permit-Extractor** | CSV / public search parser | Bulk permits → canonical GSIN records (see scripts/permit_extractor_stub.py) |
+| **Permit-Matcher** | Confidence booster | Links permit address/date to other public listings |
 
-Verified sales from Mercury* and Echo* feed the shared intelligence layer.  
-`scripts/populate_forecast.py` (or future agent “Nimbus + Tomorrow”) then auto-fills:
+## Aggregator Swarm (NEW — volume)
 
-- `days.*.predicted_sales` ← count of active + high-confidence records by day
-- `days.*.stars` ← quality-weighted score (value_score + attendance_score + source diversity)
-- `hot_zones` ← geo-cluster of high-confidence points against city config hot_zones
-- `best_categories` ← top categories by Treasure score
-- `verified_highlights` ← top-N by value_score + confidence
-- `weather_impact` ← Nimbus live pull (stubbed until live weather connector)
-- `confidence` ← mean confidence of contributing records + source diversity bonus
-- `selene_briefing_draft` ← template filled by Storyteller / Selene from the above fields
+| Sub-Agent | Role | Primary Method |
+|-----------|------|----------------|
+| **Aggregator-Yard** | YardSaleSearch.com SA parser | Public HTML listings |
+| **Aggregator-Finder** | GarageSaleFinder.com SA parser | Public HTML listings |
 
-Craigslist and Facebook records that survive Sentinel raise the overall forecast confidence and can push a day from 3★ → 4★ when volume + quality thresholds are met.
+## Cross-Source Layer (NEW)
+
+| Sub-Agent | Role |
+|-----------|------|
+| **Scout** | Targeted public-web discovery (search queries for weekend sales) |
+| **CrossChecker** | Multi-source identity resolution before Mirror |
+
+## Operating Rules (Forge / Guardian)
+
+- Public content only. No private Facebook groups. No Graph API Marketplace.
+- RSS / bulk public data first; browser paths only when necessary and rate-limited.
+- Every candidate still requires Scholar → Compass → Latitude → Mirror → Sentinel.
+- Permit-backed records receive automatic confidence uplift (0.85+).
+- Aggressive local caching (Flash). Never hammer source sites.
+
+See also: docs/detection-swarm-v2.md, docs/information-sources.md, city-configs/san-antonio.yaml

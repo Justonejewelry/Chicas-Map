@@ -1,37 +1,36 @@
-# YardBird Improvement Backlog
+# Project YardBird — Improvements Backlog
+Updated 2026-08-01 by Atlas
 
-Updated 2026-08-01 01:00 CDT after Mercury/Echo swarm expansion + forecast auto-populate.
+## Completed This Cycle
+- [x] Full public information source inventory (city config + docs/information-sources.md)
+- [x] Mercury + Echo sub-swarm definitions
+- [x] Facebook Graph API feasibility analysis (documented as non-viable for Marketplace/Groups)
+- [x] Auto-populate forecast skeleton (scripts/populate_forecast.py)
+- [x] Detection Swarm v2 strategy (docs/detection-swarm-v2.md)
+- [x] Permit-Extractor stub (scripts/permit_extractor_stub.py)
+- [x] New agents: Permit-Extractor, Permit-Matcher, Aggregator-Yard, Aggregator-Finder, Scout, CrossChecker
 
-## Completed this cycle
+## High Priority — Detection Yield
+- [ ] Implement real Permit-Extractor against current Open Data SA CSV schema
+- [ ] Build Aggregator-Yard and Aggregator-Finder HTML parsers (respectful rate limits)
+- [ ] Wire CrossChecker into verification pipeline
+- [ ] Add Scout scheduled query set for Thu–Sat windows
+- [ ] Expand Heritage depth (multi-page EstateSales.net + estatesales.org)
 
-- [x] YAML city configs (San Antonio reference + Austin first clone)
-- [x] Formal geocoding pipeline (scripts/geocode.py + cache, Nominatim)
-- [x] Live vs Seed tagging rules added to skill and KML comments
-- [x] Craigslist resilience notes documented
-- [x] Archive scaffolding created
-- [x] Austin multi-city clone
-- [x] **Mercury Swarm** (RSS / Browser / Cache / Aggregator / Dedupe) defined and documented
-- [x] **Echo Swarm** (Marketplace / Groups / Public / Hashtag / Lens) defined and documented
-- [x] Forecast skeleton template (`templates/forecast-skeleton.json`)
-- [x] Auto-populate script (`scripts/populate_forecast.py`) — turns verified sales → full forecast JSON
-- [x] Agent roster updated to mark Mercury & Echo as Lead agents with sub-swarms
+## Medium Priority
+- [ ] Confidence model: multi-source boost + permit uplift formalized in Sherlock
+- [ ] Historical permit archive for seasonal learning (Archive agent)
+- [ ] Live KML delta publishing (Cartographer incremental)
+- [ ] Selene briefing auto-generation from forecast JSON
 
-## Still open
+## Lower Priority / Future
+- [ ] Compliant Facebook Page/Event Graph path after proper App Review (if ever useful)
+- [ ] Austin city config full activation + first map
+- [ ] Neighborhood DNA long-term profiles
+- [ ] Real-time weather overlay from Nimbus
 
-- [ ] Wire Mercury-RSS live poller (currently intermittent / blocked)
-- [ ] Wire Echo-Marketplace + Echo-Groups public scanners
-- [ ] Daily automation cadence (platform-side limits still constrain)
-- [ ] Nimbus live weather pull into forecast JSON (currently manual override)
-- [ ] Promote seed KML fully after deeper multi-source Sentinel pass
-- [ ] Populate first archive records from this weekend
-- [ ] Marker icon expansion beyond basic KML limits
-- [ ] Second city proof (Houston or Dallas next?)
-- [ ] End-to-end test of populate_forecast.py against real verified sales dump
-
-## Graph API note (2026-08-01 01:15 CDT)
-
-- [x] Reality-checked Facebook Graph API for Marketplace / Groups
-- [x] Documented that Marketplace has **no official Graph API**
-- [x] Groups API confirmed deprecated
-- [x] Echo Swarm policy locked to public-content / non-API for primary targets
-- [x] Reserved future-compliant Page/Event path only after App Review
+## Policy Anchors (do not regress)
+- Public content only
+- Sentinel gate on every map pin
+- Source tagging mandatory
+- No private group or ToS-violating access
