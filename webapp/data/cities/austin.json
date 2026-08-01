@@ -2,16 +2,27 @@
   "edition": "Austin Yard-Bird Discovery",
   "date": "2026-08-01",
   "city": "austin",
-  "total_locations": 0,
-  "status": "seed — discovery pending",
-  "sources": ["Craigslist Austin", "estatesales.net Austin", "YardSaleSearch"],
-  "public": [],
+  "total_locations": 10,
+  "status": "live",
+  "sources": ["YardSaleSearch Austin", "GarageSaleFinder", "estatesales.net Austin"],
+  "hot_zones": [
+    {"name": "South Austin", "badge": "ACTIVE", "lat": 30.22, "lon": -97.77},
+    {"name": "North Austin", "badge": "ACTIVE", "lat": 30.35, "lon": -97.72},
+    {"name": "East Austin", "badge": "ACTIVE", "lat": 30.27, "lon": -97.7},
+    {"name": "Round Rock / North", "badge": "ACTIVE", "lat": 30.51, "lon": -97.68}
+  ],
   "permits": [],
   "permit_total": 0,
-  "hot_zones": [
-    {"name": "South Austin", "badge": "WATCH", "lat": 30.22, "lon": -97.77},
-    {"name": "North Austin", "badge": "WATCH", "lat": 30.35, "lon": -97.72},
-    {"name": "East Austin", "badge": "WATCH", "lat": 30.27, "lon": -97.70},
-    {"name": "Round Rock / North", "badge": "WATCH", "lat": 30.51, "lon": -97.68}
+  "public": [
+    {"address": "1133 Vincent Pl, Pflugerville, TX 78660", "dates": "Sat Aug 1", "hours": "8:00 AM–2:00 PM", "title": "Garage sale", "details": "Various household items", "source": "YardSaleSearch", "photos": 331, "type": "garage", "confidence": 0.85, "lat": 30.439, "lon": -97.62, "gallery": "https://www.yardsalesearch.com/garage-sales-austin-tx.html"},
+    {"address": "10512 Timbercrest Ln, Austin, TX 78750", "dates": "Fri Jul 31 – Sun Aug 2", "title": "Estate sale (3-day)", "details": "Large estate sale event", "source": "YardSaleSearch", "photos": 289, "type": "estate", "confidence": 0.9, "lat": 30.45, "lon": -97.8, "gallery": "https://www.yardsalesearch.com/garage-sales-austin-tx.html"},
+    {"address": "15205 Origins Ln, Austin, TX 78734", "dates": "Sat Aug 1 – Sun Aug 2", "title": "Estate sale — timeless treasures", "details": "Estate sale", "source": "YardSaleSearch", "photos": 156, "type": "estate", "confidence": 0.88, "lat": 30.38, "lon": -97.95},
+    {"address": "208 Little Lake Rd, Hutto, TX 78634", "dates": "Sat Aug 1", "hours": "8 AM–6:00 PM", "title": "Huge back-to-school multi-family", "details": "Multi-family garage sale", "source": "YardSaleSearch", "photos": 50, "type": "garage", "confidence": 0.85, "lat": 30.54, "lon": -97.55},
+    {"address": "507 Decker Dr, Hutto, TX 78634", "dates": "Sat Aug 1", "title": "Garage sale", "details": "Queen bed, desk, children's clothing, books, kitchen items, table", "source": "YardSaleSearch", "photos": 38, "type": "garage", "confidence": 0.84, "lat": 30.545, "lon": -97.545},
+    {"address": "2005 Oxford Blvd, Round Rock, TX 78664", "dates": "Sat Aug 1", "title": "Garage sale", "details": "Plants, silver jewelry, toys, books, table games, clothes", "source": "YardSaleSearch", "photos": 22, "type": "garage", "confidence": 0.82, "lat": 30.508, "lon": -97.678},
+    {"address": "1307 Corona Dr, Austin, TX 78723", "dates": "Sat Aug 1", "title": "Furniture sale", "details": "Dining table and chairs, mid-century modern pieces", "source": "YardSaleSearch", "photos": 18, "type": "garage", "confidence": 0.84, "lat": 30.3, "lon": -97.69},
+    {"address": "12332 Limerick Ave, Austin, TX 78758", "dates": "Sat Aug 1", "title": "Garage sale", "details": "Furniture, clothing, home goods", "source": "YardSaleSearch", "photos": 12, "type": "garage", "confidence": 0.8, "lat": 30.37, "lon": -97.72},
+    {"address": "312 Shawii Pass, Leander, TX 78641", "dates": "Fri Jul 31 – Sun Aug 2", "title": "Garage sale", "details": "Various items", "source": "YardSaleSearch", "photos": 10, "type": "garage", "confidence": 0.8, "lat": 30.56, "lon": -97.85},
+    {"address": "105 S Kings Canyon Dr, Cedar Park, TX 78613", "dates": "Sat Aug 1", "title": "Garage sale", "details": "Kitchen items, collectables, crates, containers, books", "source": "YardSaleSearch", "photos": 7, "type": "garage", "confidence": 0.8, "lat": 30.505, "lon": -97.82}
   ]
 }
