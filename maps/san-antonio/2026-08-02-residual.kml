@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>YardBird San Antonio — Sunday Residual 2026-08-02</name>
+    <description>Project YardBird GSIN residual layer. Sentinel approved. Generated 2026-08-02T18:30 CDT. Confidence 0.78. Status: live-residual.</description>
+    <Style id="estate-high">
+      <IconStyle><Icon><href>http://maps.google.com/mapfiles/kml/paddle/red-stars.png</href></Icon></IconStyle>
+    </Style>
+    <Style id="yard">
+      <IconStyle><Icon><href>http://maps.google.com/mapfiles/kml/paddle/ylw-circle.png</href></Icon></IconStyle>
+    </Style>
+    <Placemark>
+      <name>Nuggett Peak Collectibles (closing)</name>
+      <description>Estate • 4410 Nuggett Peak 78259 • 9am-4pm • Fiesta, Dept 56, glass • High value</description>
+      <styleUrl>#estate-high</styleUrl>
+      <Point><coordinates>-98.450,29.620,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Wetz Rd / Pepperidge 50% off</name>
+      <description>Estate • 4626 Wetz Rd 78217 • 9am-3pm • Closing soon</description>
+      <styleUrl>#estate-high</styleUrl>
+      <Point><coordinates>-98.410,29.540,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Converse Nediator Treasure Hunt</name>
+      <description>Estate • 9603 Nediator Run 78109 • 11am-3pm</description>
+      <styleUrl>#estate-high</styleUrl>
+      <Point><coordinates>-98.300,29.520,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Cantura Crest Multi residual</name>
+      <description>Yard multi-family • 9554 Cantura Crst 78250 • to 4pm</description>
+      <styleUrl>#yard</styleUrl>
+      <Point><coordinates>-98.668,29.5085,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Clipper Oak / Hausman 50% off</name>
+      <description>Estate • 7359 Clipper Oak Dr 78249 • 10am-2pm</description>
+      <styleUrl>#estate-high</styleUrl>
+      <Point><coordinates>-98.620,29.565,0</coordinates></Point>
+    </Placemark>
+  </Document>
+</kml>
