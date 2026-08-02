@@ -1,22 +1,39 @@
 {
-  "edition": "San Antonio Yard-Bird Discovery",
+  "edition": "Sunday Yard-Bird Discovery",
   "date": "2026-08-01",
-  "city": "san-antonio",
+  "generated_at": "2026-08-02T11:51:56+00:00",
+  "refreshed_at": "2026-08-02T11:51:56+00:00",
   "total_locations": 197,
-  "status": "live",
-  "sources": ["yardsalesearch.com", "garagesalefinder.com", "estatesales.net", "City of SA permits"],
-  "clusters_url": "data/cities/san-antonio-clusters.json",
-  "hot_zones": [
-    {"name": "South Side", "badge": "CLUSTER-HOT", "size": 30, "lat": 29.2975, "lon": -98.481},
-    {"name": "Northwest Side", "badge": "ACTIVE", "size": 18, "lat": 29.55, "lon": -98.62},
-    {"name": "Northeast Side", "badge": "ACTIVE", "size": 11, "lat": 29.54, "lon": -98.4},
-    {"name": "Alamo Ranch", "badge": "ACTIVE", "size": 8, "lat": 29.48, "lon": -98.7}
-  ],
-  "public": [
-    {"address": "9554 Cantura Crst, San Antonio, TX 78250", "dates": "Sat-Sun", "hours": "7am-4pm", "title": "Garage sale Saturday & Sunday", "details": "Household, clothes, toys, furniture", "source": "YardSaleSearch", "photos": 11, "type": "garage", "confidence": 0.85, "lat": 29.5085, "lon": -98.668},
-    {"address": "4410 Nuggett Peak, San Antonio, TX 78259", "dates": "Aug 1-2", "title": "Estate — From Trash To Treasure", "details": "Professional estate sale", "source": "estatesales.net", "photos": 187, "type": "estate", "confidence": 0.92, "lat": 29.62, "lon": -98.45}
-  ],
+  "sources": [],
+  "public": [],
   "permits": [],
-  "permit_total": 174,
-  "clusters": []
+  "permit_total": 0,
+  "hot_zones": [
+    {
+      "name": "South Side",
+      "badge": "CLUSTER-HOT",
+      "size": 30,
+      "lat": 29.2975,
+      "lon": -98.481
+    },
+    {
+      "name": "Northwest Side",
+      "badge": "ACTIVE",
+      "lat": 29.55,
+      "lon": -98.62
+    },
+    {
+      "name": "Northeast Side",
+      "badge": "ACTIVE",
+      "lat": 29.54,
+      "lon": -98.4
+    },
+    {
+      "name": "Alamo Ranch",
+      "badge": "ACTIVE",
+      "lat": 29.48,
+      "lon": -98.7
+    }
+  ],
+  "source_file": "data/latest_discovery.json"
 }
