@@ -1,0 +1,42 @@
+{
+  "generated_at": "2026-08-02T18:30:00-05:00",
+  "city": "san-antonio",
+  "status": "live",
+  "confidence": 0.78,
+  "notes": "Atlas Director focused Discovery + Sentinel Sunday residual pass (18:30 CDT). Estatesales.net backbone confirms residual Sunday action: Nuggett Peak collectibles (78259), Wetz Rd/Pepperidge 50% off, Converse Nediator/Kissena, Alamo Ranch multi-family carryovers thinning. Craigslist quiet. Peak inventory exhausted. Sentinel sign-off for residual live layer. Next focus: Monday permit scan + early-week discovery.",
+  "days": {
+    "friday": {"stars": 3, "predicted_sales": 95, "status": "historical"},
+    "saturday": {"stars": 4, "predicted_sales": 180, "status": "peak-passed"},
+    "sunday": {"stars": 3, "predicted_sales": 70, "status": "residual-winding"}
+  },
+  "weather_impact": {
+    "condition": "Mostly sunny to partly cloudy, extreme heat continues, heat index ~105, isolated late storm risk low",
+    "high_f": 99,
+    "low_f": 78,
+    "heat_index": 105,
+    "risk": "Extreme heat. Remaining sales close by 3-4pm. Hydrate, short exposure.",
+    "shopping_quality": "Late residual high-value estates only; multi-family largely done"
+  },
+  "hot_zones": [
+    "Northeast / Stone Oak & Nuggett Peak",
+    "Northeast / Wetz Rd Pepperidge",
+    "Converse / Schertz edge residual",
+    "Alamo Ranch / 78250 thinning",
+    "South Side residual"
+  ],
+  "best_categories": [
+    "Collectibles (Fiesta, Dept 56, glass)",
+    "Tools residual",
+    "China / crystal",
+    "Vintage fashion",
+    "Antiques"
+  ],
+  "verified_highlights": [
+    {"name": "Nuggett Peak Collectibles", "addr": "4410 Nuggett Peak, 78259", "hours": "Sun 9am-4pm", "tags": ["estate", "high-value", "collectibles"], "status": "closing soon"},
+    {"name": "Wetz Rd / Pepperidge Estate", "addr": "4626 Wetz Rd, 78217", "hours": "Sun 9am-3pm 50% off", "tags": ["estate"], "status": "closing"},
+    {"name": "Converse Nediator Treasure Hunt", "addr": "9603 Nediator Run, 78109", "hours": "Sun 11am-3pm", "tags": ["estate", "high-volume"], "status": "closing"},
+    {"name": "Cantura Crest Multi residual", "addr": "9554 Cantura Crst, 78250", "hours": "Sun to 4pm", "tags": ["yard", "multi-family"], "status": "thinning"},
+    {"name": "Hausman / Clipper Oak 50% off", "addr": "7359 Clipper Oak Dr, 78249", "hours": "Sun 10am-2pm", "tags": ["estate"], "status": "closing"}
+  ],
+  "selene_briefing_draft": "Howdy San Antonio — Sunday residual is real but short. Nuggett Peak collectibles and the Converse cluster still have juice if you move fast. Heat is still brutal. Wrap the weekend strong and we'll see you next Friday. Be hunting, y'all!"
+}
