@@ -1,18 +1,24 @@
 {
   "edition": "San Antonio Yard-Bird Discovery",
-  "date": "2026-08-01",
+  "date": "2026-08-03",
   "city": "san-antonio",
-  "total_locations": 197,
+  "total_locations": 202,
   "status": "live",
-  "sources": ["yardsalesearch.com", "garagesalefinder.com", "estatesales.net", "City of SA permits"],
+  "sources": ["yardsalesearch.com", "garagesalefinder.com", "estatesales.net", "EstateSales.org email", "City of SA permits"],
   "clusters_url": "data/cities/san-antonio-clusters.json",
   "hot_zones": [
+    {"name": "Fair Oaks / Boerne", "badge": "CLUSTER-HOT", "size": 4, "lat": 29.74, "lon": -98.64},
     {"name": "South Side", "badge": "CLUSTER-HOT", "size": 30, "lat": 29.2975, "lon": -98.481},
     {"name": "Northwest Side", "badge": "ACTIVE", "size": 18, "lat": 29.55, "lon": -98.62},
     {"name": "Northeast Side", "badge": "ACTIVE", "size": 11, "lat": 29.54, "lon": -98.4},
     {"name": "Alamo Ranch", "badge": "ACTIVE", "size": 8, "lat": 29.48, "lon": -98.7}
   ],
   "public": [
+    {"address": "San Antonio, TX 78239", "dates": "Closing ~Aug 2", "title": "A Journey Home — Australian & European Estate", "details": "Caring Transitions of San Antonio Central. High photo count online estate.", "source": "EstateSales.org email", "photos": 69, "type": "estate", "confidence": 0.88, "lat": 29.52, "lon": -98.48},
+    {"address": "Boerne / Fair Oaks Ranch, TX 78015", "dates": "Closing Mon Aug 3", "title": "Premium Quality & Vintage Estate — Fair Oaks Ranch", "details": "Caring Transitions of Boerne, Fredericksburg & Kerrville. 214 photos.", "source": "EstateSales.org email", "photos": 214, "type": "estate", "confidence": 0.9, "lat": 29.74, "lon": -98.64},
+    {"address": "Boerne / Fair Oaks, TX 78015", "dates": "Closing Wed Aug 5", "title": "Trains, Heirlooms & Timeless Elegance — Fair Oaks", "details": "Caring Transitions. 243 photos. Strong multi-day signal.", "source": "EstateSales.org email", "photos": 243, "type": "estate", "confidence": 0.9, "lat": 29.745, "lon": -98.635},
+    {"address": "San Antonio, TX 78247", "dates": "Closing Wed Aug 5", "title": "San Antonio Heirloom Online Auction", "details": "Caring Transitions of Bulverde & Canyon Lake. 159 photos.", "source": "EstateSales.org email", "photos": 159, "type": "estate", "confidence": 0.88, "lat": 29.58, "lon": -98.42},
+    {"address": "Boerne / Fair Oaks, TX 78015", "dates": "Closing Sun Aug 9", "title": "Exceptional Finds in Fair Oaks", "details": "Caring Transitions. Still active into next weekend. 99 photos.", "source": "EstateSales.org email", "photos": 99, "type": "estate", "confidence": 0.87, "lat": 29.738, "lon": -98.645},
     {"address": "9554 Cantura Crst, San Antonio, TX 78250", "dates": "Sat-Sun", "hours": "7am-4pm", "title": "Garage sale Saturday & Sunday", "details": "Household, clothes, toys, furniture", "source": "YardSaleSearch", "photos": 11, "type": "garage", "confidence": 0.85, "lat": 29.5085, "lon": -98.668},
     {"address": "4410 Nuggett Peak, San Antonio, TX 78259", "dates": "Aug 1-2", "title": "Estate — From Trash To Treasure", "details": "Professional estate sale", "source": "estatesales.net", "photos": 187, "type": "estate", "confidence": 0.92, "lat": 29.62, "lon": -98.45},
     {"address": "11788 Southton Rd, San Antonio, TX 78223", "dates": "Aug 1", "title": "Estate — Top Hat", "details": "Professional estate sale", "source": "estatesales.net", "photos": 324, "type": "estate", "confidence": 0.92, "lat": 29.28, "lon": -98.42},
