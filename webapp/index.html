@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Chica · Garage Sale Map</title>
   <meta name="description" content="Chica maps the best garage and estate sales in San Antonio and across Texas. Find sales nearest to you." />
+  <meta name="theme-color" content="#f59e0b" />
+  <link rel="manifest" href="manifest.webmanifest" />
   <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet" />
   <link rel="stylesheet" href="css/app.css" />
   <style>
@@ -71,11 +73,14 @@
     <aside class="panel">
       <section class="hero-chip"><span class="pulse"></span> Howdy from Chica — find sales near you</section>
 
+      <!-- Weather -->
+      <section class="weather-strip" id="weatherStrip" hidden>
+        <span id="weatherText">Weather…</span>
+      </section>
+
       <section class="near-bar" id="nearBar">
         <div class="near-row">
-          <button type="button" class="near-btn primary" id="btnNearMe" title="Use my current location">
-            📍 Near me
-          </button>
+          <button type="button" class="near-btn primary" id="btnNearMe" title="Use my current location">📍 Near me</button>
           <select id="radiusSelect" class="radius-select" title="Max distance">
             <option value="5">5 mi</option>
             <option value="10" selected>10 mi</option>
@@ -91,7 +96,19 @@
         <div class="near-status" id="nearStatus" hidden></div>
       </section>
 
-      <section class="forecast"><h2>Weekend Forecast</h2><div id="hotZones"></div></section>
+      <!-- Quick tools -->
+      <section class="tools-bar">
+        <button type="button" class="tool-btn" id="btnFavorites" title="Show saved sales">★ Saved <span id="favCount">0</span></button>
+        <button type="button" class="tool-btn" id="btnRoute" title="Plan a multi-stop route">🧭 Route <span id="routeCount">0</span></button>
+        <button type="button" class="tool-btn" id="btnExport" title="Copy current list">📋 Export</button>
+      </section>
+
+      <section class="forecast">
+        <h2>Weekend Forecast</h2>
+        <div id="hotZones"></div>
+        <div class="quick-areas" id="quickAreas"></div>
+      </section>
+
       <section class="filters">
         <input type="search" id="search" placeholder="Filter by keyword…" />
         <div class="chips">
@@ -100,8 +117,10 @@
           <button class="chip" data-filter="estate">Estate</button>
           <button class="chip" data-filter="permit">Permit</button>
           <button class="chip" data-filter="fundraiser">Fundraiser</button>
+          <button class="chip" data-filter="photos" title="Listings with photo counts">📷 Photos</button>
         </div>
       </section>
+
       <section class="list-wrap">
         <div class="list-head">
           <h2 id="listTitle">Locations</h2>
@@ -109,9 +128,20 @@
         </div>
         <ul id="saleList" class="sale-list"></ul>
       </section>
+
       <div id="detailDrawer" class="detail-drawer hidden">
         <button type="button" id="detailClose" class="detail-close" aria-label="Close">×</button>
         <div id="detailBody"></div>
+      </div>
+
+      <!-- Route tray -->
+      <div id="routeTray" class="route-tray hidden">
+        <div class="route-head">
+          <strong>Route planner</strong>
+          <button type="button" class="near-btn clear-loc" id="btnClearRoute">Clear</button>
+        </div>
+        <ol id="routeStops" class="route-stops"></ol>
+        <button type="button" class="near-btn primary" id="btnOpenRoute" style="width:100%;margin-top:8px">Open in Google Maps</button>
       </div>
     </aside>
     <section class="map-wrap">
@@ -139,15 +169,15 @@
       <img src="assets/chica.svg" alt="Chica" width="72" height="72" style="border-radius:50%;background:#fef3c7" />
       <div class="yowl-copy">
         <strong>Chica</strong>
-        <p>Howdy! Share the map — then visit my Backyard for the weekly blog &amp; videos.</p>
+        <p>Howdy! Star sales, plan a route, and check the weather before you roll.</p>
         <div class="yowl-actions">
           <button type="button" class="share" id="chicaShare">↗ Share</button>
           <a class="follow" href="backyard.html">🏡 Backyard</a>
-          <a class="follow" id="chicaFollow" href="https://github.com/Justonejewelry/Project-YardBird" target="_blank" rel="noopener">★ Follow</a>
         </div>
       </div>
     </div>
   </div>
+  <div id="toast" class="toast hidden"></div>
   <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
   <script src="js/app.js"></script>
 </body>
