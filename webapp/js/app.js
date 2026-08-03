@@ -18,8 +18,7 @@
   let city = localStorage.getItem("yb_city") || "san-antonio";
   let engine = localStorage.getItem("yb_map") || "liberty";
   let filter = "all", query = "";
-  // User origin for distance sorting
-  let userLoc = null; // { lat, lon, label }
+  let userLoc = null;
   let maxMiles = 10;
 
   function esc(s) {
@@ -30,7 +29,6 @@
       .replace(/"/g, "&quot;");
   }
 
-  // Haversine distance in miles
   function milesBetween(lat1, lon1, lat2, lon2) {
     const R = 3958.8;
     const toRad = (d) => (d * Math.PI) / 180;
@@ -94,9 +92,7 @@
       if (!q) return true;
       return `${s.title || ""} ${s.address || ""} ${s.details || ""}`.toLowerCase().includes(q);
     });
-    if (userLoc) {
-      items.sort((a, b) => (a._miles ?? 9999) - (b._miles ?? 9999));
-    }
+    if (userLoc) items.sort((a, b) => (a._miles ?? 9999) - (b._miles ?? 9999));
     return items;
   }
 
@@ -123,7 +119,6 @@
   function directionsUrl(s) {
     if (s.lat == null || s.lon == null) return null;
     const dest = encodeURIComponent(s.address || `${s.lat},${s.lon}`);
-    // Google Maps directions — works on mobile + desktop
     return `https://www.google.com/maps/dir/?api=1&destination=${dest}`;
   }
 
@@ -207,9 +202,7 @@
       li.addEventListener("click", () => {
         const s = items[+li.dataset.i];
         showDetail(s);
-        if (s.lat != null && s.lon != null) {
-          map.flyTo({ center: [s.lon, s.lat], zoom: 14, essential: true });
-        }
+        if (s.lat != null && s.lon != null) map.flyTo({ center: [s.lon, s.lat], zoom: 14, essential: true });
       });
     });
   }
@@ -412,15 +405,16 @@
     const btn = document.getElementById("btnLocSearch");
     if (btn) btn.disabled = true;
     try {
-      // Prefer Texas bias for short queries / ZIPs
       const isZip = /^\d{5}(-\d{4})?$/.test(query);
-      const searchQ = isZip ? query + ", Texas, USA" : query.includes("TX") || query.includes("Texas") ? query : query + ", Texas, USA";
+      const searchQ = isZip
+        ? query + ", Texas, USA"
+        : query.includes("TX") || query.includes("Texas")
+          ? query
+          : query + ", Texas, USA";
       const url =
         "https://nominatim.openstreetmap.org/search?format=json&limit=1&countrycodes=us&q=" +
         encodeURIComponent(searchQ);
-      const res = await fetch(url, {
-        headers: { Accept: "application/json" },
-      });
+      const res = await fetch(url, { headers: { Accept: "application/json" } });
       const data = await res.json();
       if (!data || !data.length) {
         setNearStatus("No match for that address/ZIP — try again", "error");
@@ -453,7 +447,7 @@
       feed = normalizeFeed({ public: [], permits: [], total_locations: 5 });
       document.getElementById("editionMeta").innerHTML = "<strong>Texas</strong><br/>5 cities";
       const fs = document.getElementById("footerSources");
-      if (fs) fs.textContent = "YardBird · multi-city · MapLibre";
+      if (fs) fs.textContent = "YardBird · multi-city · Chica";
       refresh();
       return;
     }
@@ -488,37 +482,33 @@
     const short = [...new Set(srcs)].slice(0, 3).join(" · ") || "YardBird · GSIN";
     const fs = document.getElementById("footerSources");
     if (fs) {
-      fs.textContent = short + " · MapLibre";
+      fs.textContent = short + " · Chica";
       fs.title = (feed.sources || []).join(" · ") || short;
     }
     setTimeout(refresh, 80);
   }
 
-  function wireYowl() {
-    const root = document.getElementById("yowlAmbassador");
+  function wireChica() {
+    const root = document.getElementById("chicaAmbassador");
     if (!root) return;
-    if (sessionStorage.getItem("yowl_dismissed") === "1") {
+    if (sessionStorage.getItem("chica_dismissed") === "1") {
       root.style.display = "none";
       return;
     }
-    document.getElementById("yowlDismiss")?.addEventListener("click", () => {
+    document.getElementById("chicaDismiss")?.addEventListener("click", () => {
       root.style.display = "none";
-      sessionStorage.setItem("yowl_dismissed", "1");
+      sessionStorage.setItem("chica_dismissed", "1");
     });
-    document.getElementById("yowlShare")?.addEventListener("click", async () => {
+    document.getElementById("chicaShare")?.addEventListener("click", async () => {
       const url = location.href;
-      const text = "Howdy — Yowl Lawnda mapped this weekend's garage sales.";
+      const text = "Howdy — Chica mapped this weekend's garage sales in Texas.";
       try {
-        if (navigator.share) await navigator.share({ title: "Yowl Lawnda", text, url });
+        if (navigator.share) await navigator.share({ title: "Chica Map", text, url });
         else {
           await navigator.clipboard.writeText(url);
           alert("Link copied — share it with the neighborhood!");
         }
       } catch (_) {}
-    });
-    document.getElementById("yowlLike")?.addEventListener("click", (e) => {
-      e.currentTarget.textContent = "♥ Liked";
-      e.currentTarget.disabled = true;
     });
   }
 
@@ -538,7 +528,6 @@
       maxMiles = parseFloat(e.target.value) || 0;
       if (userLoc) refresh();
     });
-    // Restore last location
     try {
       const saved = localStorage.getItem("yb_user_loc");
       if (saved) {
@@ -591,7 +580,7 @@
       })
     );
     document.getElementById("detailClose")?.addEventListener("click", hideDetail);
-    wireYowl();
+    wireChica();
     wireNearMe();
 
     map.on("load", () => loadCity(city));
