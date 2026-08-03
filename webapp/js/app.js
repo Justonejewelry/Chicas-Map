@@ -20,6 +20,27 @@
   let filter = "all", query = "";
   let userLoc = null;
   let maxMiles = 10;
+  let showFavOnly = false;
+  let favorites = loadJson("yb_favorites", {});
+  let routeIds = loadJson("yb_route", []);
+
+  function loadJson(key, fallback) {
+    try {
+      const v = localStorage.getItem(key);
+      return v ? JSON.parse(v) : fallback;
+    } catch (_) {
+      return fallback;
+    }
+  }
+  function saveJson(key, val) {
+    try {
+      localStorage.setItem(key, JSON.stringify(val));
+    } catch (_) {}
+  }
+
+  function saleKey(s) {
+    return `${(s.address || "").toLowerCase()}|${s.lat}|${s.lon}|${s.title || ""}`;
+  }
 
   function esc(s) {
     return String(s == null ? "" : s)
@@ -47,6 +68,15 @@
     return Math.round(m) + " mi";
   }
 
+  function toast(msg) {
+    const el = document.getElementById("toast");
+    if (!el) return;
+    el.textContent = msg;
+    el.classList.remove("hidden");
+    clearTimeout(toast._t);
+    toast._t = setTimeout(() => el.classList.add("hidden"), 2200);
+  }
+
   function normalizeFeed(raw) {
     if (!raw) return { public: [], permits: [], clusters: [], hot_zones: [], sources: [], total_locations: 0 };
     return {
@@ -70,10 +100,10 @@
     const seen = new Set();
     const out = [];
     for (const s of [...base, ...extra]) {
-      const key = `${(s.address || "").toLowerCase()}|${s.lat}|${s.lon}|${s.title || ""}`;
+      const key = saleKey(s);
       if (seen.has(key)) continue;
       seen.add(key);
-      const copy = { ...s };
+      const copy = { ...s, _key: key };
       if (userLoc && s.lat != null && s.lon != null) {
         copy._miles = milesBetween(userLoc.lat, userLoc.lon, s.lat, s.lon);
       } else {
@@ -87,7 +117,12 @@
   function filtered() {
     const q = query.trim().toLowerCase();
     let items = allSales().filter((s) => {
-      if (filter !== "all" && (s.type || "garage") !== filter) return false;
+      if (showFavOnly && !favorites[s._key]) return false;
+      if (filter === "photos") {
+        if (!(s.photos > 0)) return false;
+      } else if (filter !== "all" && (s.type || "garage") !== filter) {
+        return false;
+      }
       if (userLoc && maxMiles > 0 && s._miles != null && s._miles > maxMiles) return false;
       if (!q) return true;
       return `${s.title || ""} ${s.address || ""} ${s.details || ""}`.toLowerCase().includes(q);
@@ -122,10 +157,142 @@
     return `https://www.google.com/maps/dir/?api=1&destination=${dest}`;
   }
 
+  function toggleFavorite(s) {
+    const k = s._key || saleKey(s);
+    if (favorites[k]) {
+      delete favorites[k];
+      toast("Removed from saved");
+    } else {
+      favorites[k] = {
+        title: s.title,
+        address: s.address,
+        lat: s.lat,
+        lon: s.lon,
+        type: s.type,
+        dates: s.dates,
+      };
+      toast("Saved ★");
+    }
+    saveJson("yb_favorites", favorites);
+    updateToolCounts();
+    renderList();
+  }
+
+  function toggleRouteStop(s) {
+    const k = s._key || saleKey(s);
+    const idx = routeIds.indexOf(k);
+    if (idx >= 0) {
+      routeIds.splice(idx, 1);
+      toast("Removed from route");
+    } else {
+      if (routeIds.length >= 8) {
+        toast("Max 8 stops — remove one first");
+        return;
+      }
+      routeIds.push(k);
+      toast("Added to route");
+    }
+    saveJson("yb_route", routeIds);
+    updateToolCounts();
+    renderRouteTray();
+    renderList();
+  }
+
+  function updateToolCounts() {
+    const fc = document.getElementById("favCount");
+    const rc = document.getElementById("routeCount");
+    if (fc) fc.textContent = String(Object.keys(favorites).length);
+    if (rc) rc.textContent = String(routeIds.length);
+    const favBtn = document.getElementById("btnFavorites");
+    if (favBtn) favBtn.classList.toggle("active", showFavOnly);
+  }
+
+  function renderRouteTray() {
+    const tray = document.getElementById("routeTray");
+    const list = document.getElementById("routeStops");
+    if (!tray || !list) return;
+    if (!routeIds.length) {
+      tray.classList.add("hidden");
+      return;
+    }
+    tray.classList.remove("hidden");
+    const byKey = {};
+    allSales().forEach((s) => (byKey[s._key] = s));
+    // also pull from favorites store if not in current feed
+    routeIds.forEach((k) => {
+      if (!byKey[k] && favorites[k]) byKey[k] = { ...favorites[k], _key: k };
+    });
+    list.innerHTML = routeIds
+      .map((k, i) => {
+        const s = byKey[k] || { title: "Saved stop", address: k };
+        return `<li><span class="num">${i + 1}</span> <span>${esc(s.title || s.address || "Stop")}</span></li>`;
+      })
+      .join("");
+  }
+
+  function openMultiRoute() {
+    const byKey = {};
+    allSales().forEach((s) => (byKey[s._key] = s));
+    routeIds.forEach((k) => {
+      if (!byKey[k] && favorites[k]) byKey[k] = favorites[k];
+    });
+    const stops = routeIds.map((k) => byKey[k]).filter((s) => s && (s.lat != null || s.address));
+    if (stops.length < 1) {
+      toast("Add at least one stop");
+      return;
+    }
+    // Google Maps: origin optional, waypoints, destination
+    const origin = userLoc
+      ? `${userLoc.lat},${userLoc.lon}`
+      : stops[0].lat != null
+        ? `${stops[0].lat},${stops[0].lon}`
+        : encodeURIComponent(stops[0].address || "");
+    const destStop = stops[stops.length - 1];
+    const destination =
+      destStop.lat != null ? `${destStop.lat},${destStop.lon}` : encodeURIComponent(destStop.address || "");
+    const middle = stops.slice(userLoc ? 0 : 1, -1);
+    const waypoints = middle
+      .map((s) => (s.lat != null ? `${s.lat},${s.lon}` : encodeURIComponent(s.address || "")))
+      .join("|");
+    let url = `https://www.google.com/maps/dir/?api=1&origin=${origin}&destination=${destination}`;
+    if (waypoints) url += `&waypoints=${waypoints}`;
+    window.open(url, "_blank", "noopener");
+  }
+
+  function exportList() {
+    const items = filtered();
+    if (!items.length) {
+      toast("Nothing to export");
+      return;
+    }
+    const lines = items.map((s, i) => {
+      const dist = s._miles != null ? ` (${formatMiles(s._miles)})` : "";
+      return `${i + 1}. ${s.title || "Sale"}${dist}\n   ${s.address || ""}\n   ${s.dates || ""} ${s.hours || ""}`.trim();
+    });
+    const text = `Chica Map — ${CITY_META[city]?.name || city}\n${new Date().toLocaleDateString()}\n\n${lines.join("\n\n")}\n\nhttps://justonejewelry.github.io/Project-YardBird/`;
+    navigator.clipboard.writeText(text).then(
+      () => toast("List copied to clipboard"),
+      () => toast("Could not copy — select manually")
+    );
+  }
+
+  function shareSale(s) {
+    const text = `${s.title || "Garage sale"}\n${s.address || ""}\n${s.dates || ""}\nVia Chica Map`;
+    const url = location.href;
+    if (navigator.share) {
+      navigator.share({ title: s.title || "Sale", text, url }).catch(() => {});
+    } else {
+      navigator.clipboard.writeText(text + "\n" + url).then(() => toast("Sale details copied"));
+    }
+  }
+
   function showDetail(s) {
     const drawer = document.getElementById("detailDrawer");
     const body = document.getElementById("detailBody");
     if (!drawer || !body) return;
+    const k = s._key || saleKey(s);
+    const isFav = !!favorites[k];
+    const onRoute = routeIds.includes(k);
     const dist = s._miles != null ? `<div class="d-meta"><strong>${formatMiles(s._miles)}</strong> away</div>` : "";
     const dirs = directionsUrl(s);
     body.innerHTML = `<h3>${esc(s.title || "Sale")}</h3>
@@ -137,26 +304,32 @@
       <div class="d-body">${esc(s.details || "No description.")}</div>
       ${s.photos ? `<div class="d-meta">📷 ${s.photos} photos noted at source</div>` : ""}
       <div class="action-row">
-        ${dirs ? `<a class="action-btn dirs" href="${esc(dirs)}" target="_blank" rel="noopener">🧭 Directions</a>` : ""}
-        ${s.address ? `<button type="button" class="action-btn" id="btnCopyAddr">📋 Copy address</button>` : ""}
-        ${resolveSourceUrl(s) ? `<a class="action-btn" href="${esc(resolveSourceUrl(s))}" target="_blank" rel="noopener">Source ↗</a>` : ""}
+        <button type="button" class="action-btn" id="btnFav">${isFav ? "★ Saved" : "☆ Save"}</button>
+        <button type="button" class="action-btn" id="btnAddRoute">${onRoute ? "✓ On route" : "＋ Route"}</button>
+        ${dirs ? `<a class="action-btn dirs" href="${esc(dirs)}" target="_blank" rel="noopener">🧭 Go</a>` : ""}
+        <button type="button" class="action-btn" id="btnShareSale">↗ Share</button>
+        ${s.address ? `<button type="button" class="action-btn" id="btnCopyAddr">📋 Address</button>` : ""}
       </div>`;
     drawer.classList.remove("hidden");
-    const copyBtn = document.getElementById("btnCopyAddr");
-    if (copyBtn && s.address) {
-      copyBtn.onclick = async () => {
-        try {
-          await navigator.clipboard.writeText(s.address);
-          copyBtn.textContent = "✓ Copied";
-          setTimeout(() => (copyBtn.textContent = "📋 Copy address"), 1500);
-        } catch (_) {}
-      };
-    }
+    document.getElementById("btnFav")?.addEventListener("click", () => {
+      toggleFavorite(s);
+      showDetail({ ...s, _key: k });
+    });
+    document.getElementById("btnAddRoute")?.addEventListener("click", () => {
+      toggleRouteStop(s);
+      showDetail({ ...s, _key: k });
+    });
+    document.getElementById("btnShareSale")?.addEventListener("click", () => shareSale(s));
+    document.getElementById("btnCopyAddr")?.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(s.address);
+        toast("Address copied");
+      } catch (_) {}
+    });
   }
 
   function hideDetail() {
-    const d = document.getElementById("detailDrawer");
-    if (d) d.classList.add("hidden");
+    document.getElementById("detailDrawer")?.classList.add("hidden");
   }
 
   function popupHtml(s) {
@@ -167,7 +340,6 @@
       ${dist}
       <div class="popup-meta">${esc(s.dates || "")}</div>
       <div class="popup-meta">${sourceLink(s)}</div>
-      ${s.photos ? `<div class="popup-meta">📷 ${s.photos} photos</div>` : ""}
       ${dirs ? `<div class="popup-meta" style="margin-top:6px"><a href="${esc(dirs)}" target="_blank" rel="noopener">🧭 Directions</a></div>` : ""}`;
   }
 
@@ -176,33 +348,53 @@
     const countEl = document.getElementById("listCount");
     const titleEl = document.getElementById("listTitle");
     if (countEl) countEl.textContent = String(items.length);
-    if (titleEl) titleEl.textContent = userLoc ? "Closest first" : "Locations";
+    if (titleEl) {
+      titleEl.textContent = showFavOnly ? "Saved sales" : userLoc ? "Closest first" : "Locations";
+    }
     if (!ul) return;
     if (!items.length) {
-      ul.innerHTML = `<li class="empty"><div class="title">${esc(emptyMsg || "No sales in range")}</div><div class="addr">Try a larger radius or clear location</div></li>`;
+      ul.innerHTML = `<li class="empty"><div class="title">${esc(emptyMsg || "No sales")}</div><div class="addr">Try clearing filters or expanding radius</div></li>`;
       return;
     }
     ul.innerHTML = items
-      .map(
-        (s, i) => `<li data-i="${i}" class="${i === 0 && userLoc ? "closest" : ""}">
+      .map((s, i) => {
+        const fav = favorites[s._key] ? "★" : "☆";
+        const onR = routeIds.includes(s._key);
+        return `<li data-i="${i}" class="${i === 0 && userLoc && !showFavOnly ? "closest" : ""}">
         <div class="title">
           <span>${esc(s.title || s.address)}</span>
-          ${s._miles != null ? `<span class="dist-pill">${formatMiles(s._miles)}</span>` : ""}
+          <span class="title-actions">
+            ${s._miles != null ? `<span class="dist-pill">${formatMiles(s._miles)}</span>` : ""}
+            <button type="button" class="icon-btn fav" data-fav="${i}" title="Save">${fav}</button>
+            <button type="button" class="icon-btn route ${onR ? "on" : ""}" data-route="${i}" title="Add to route">＋</button>
+          </span>
         </div>
         <div class="addr">${esc(s.address || "")}</div>
         <div class="row">
           <span class="pill ${s.type || "garage"}">${s.type || "garage"}</span>
           ${s.photos ? `<span class="pill">${s.photos} photos</span>` : ""}
-          ${resolveSourceUrl(s) ? `<a class="pill source" href="${esc(resolveSourceUrl(s))}" target="_blank" rel="noopener" onclick="event.stopPropagation()">Source ↗</a>` : ""}
         </div>
-      </li>`
-      )
+      </li>`;
+      })
       .join("");
     ul.querySelectorAll("li[data-i]").forEach((li) => {
-      li.addEventListener("click", () => {
+      li.addEventListener("click", (e) => {
+        if (e.target.closest(".icon-btn")) return;
         const s = items[+li.dataset.i];
         showDetail(s);
         if (s.lat != null && s.lon != null) map.flyTo({ center: [s.lon, s.lat], zoom: 14, essential: true });
+      });
+    });
+    ul.querySelectorAll("[data-fav]").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        toggleFavorite(items[+btn.dataset.fav]);
+      });
+    });
+    ul.querySelectorAll("[data-route]").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        toggleRouteStop(items[+btn.dataset.route]);
       });
     });
   }
@@ -215,7 +407,7 @@
   function makeMarkerEl(s) {
     const el = document.createElement("div");
     el.className = `yb-marker ${s.type || "garage"}`;
-    if (s.confidence >= 0.9) el.classList.add("top");
+    if (s.confidence >= 0.9 || favorites[s._key]) el.classList.add("top");
     el.title = (s.title || s.address || "Sale") + (s._miles != null ? ` · ${formatMiles(s._miles)}` : "");
     return el;
   }
@@ -251,11 +443,15 @@
   }
 
   function renderList() {
-    listSales(filtered(), userLoc ? "No sales within this radius" : "No matching sales");
+    listSales(
+      filtered(),
+      showFavOnly ? "No saved sales yet — tap ☆ on a listing" : userLoc ? "No sales within this radius" : "No matching sales"
+    );
   }
 
   function renderForecast() {
     const el = document.getElementById("hotZones");
+    const qa = document.getElementById("quickAreas");
     if (!el) return;
     if (city === "texas") {
       el.innerHTML = Object.entries(CITY_META)
@@ -270,6 +466,7 @@
           loadCity(n.dataset.jump);
         })
       );
+      if (qa) qa.innerHTML = "";
       return;
     }
     const items = (feed && feed.hot_zones) || [];
@@ -290,6 +487,21 @@
         if (z && z.lat != null) map.flyTo({ center: [z.lon, z.lat], zoom: 12.5 });
       });
     });
+    if (qa) {
+      qa.innerHTML = items
+        .slice(0, 5)
+        .map(
+          (z, i) =>
+            `<button type="button" class="area-chip" data-ai="${i}">${esc(z.name.split("/")[0].trim())}</button>`
+        )
+        .join("");
+      qa.querySelectorAll("[data-ai]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const z = items[+btn.dataset.ai];
+          if (z && z.lat != null) map.flyTo({ center: [z.lon, z.lat], zoom: 12.5 });
+        });
+      });
+    }
   }
 
   function renderTexasOverview() {
@@ -321,6 +533,43 @@
     renderList();
     renderMarkers();
     renderForecast();
+    renderRouteTray();
+    updateToolCounts();
+  }
+
+  async function loadWeather() {
+    const strip = document.getElementById("weatherStrip");
+    const text = document.getElementById("weatherText");
+    if (!strip || !text) return;
+    const meta = CITY_META[city];
+    if (!meta || city === "texas") {
+      strip.hidden = true;
+      return;
+    }
+    const [lon, lat] = meta.center;
+    try {
+      const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=weathercode,temperature_2m_max,temperature_2m_min,precipitation_probability_max&temperature_unit=fahrenheit&timezone=America/Chicago&forecast_days=3`;
+      const res = await fetch(url);
+      const data = await res.json();
+      const d = data.daily;
+      if (!d || !d.time) {
+        strip.hidden = true;
+        return;
+      }
+      // Pick today + next
+      const parts = d.time.slice(0, 3).map((t, i) => {
+        const day = new Date(t + "T12:00:00").toLocaleDateString(undefined, { weekday: "short" });
+        const hi = Math.round(d.temperature_2m_max[i]);
+        const lo = Math.round(d.temperature_2m_min[i]);
+        const pop = d.precipitation_probability_max[i];
+        const rain = pop >= 40 ? ` · ${pop}% rain` : "";
+        return `${day} ${hi}°/${lo}°${rain}`;
+      });
+      text.textContent = `🌤 ${meta.name}: ${parts.join(" · ")}`;
+      strip.hidden = false;
+    } catch (_) {
+      strip.hidden = true;
+    }
   }
 
   function setNearStatus(msg, kind) {
@@ -339,9 +588,7 @@
 
   function setUserLoc(lat, lon, label) {
     userLoc = { lat, lon, label: label || "Your location" };
-    try {
-      localStorage.setItem("yb_user_loc", JSON.stringify(userLoc));
-    } catch (_) {}
+    saveJson("yb_user_loc", userLoc);
     setNearStatus(`Sorted by distance from ${userLoc.label}`, "ok");
     const hint = document.getElementById("mapHint");
     if (hint) hint.textContent = "Closest sales listed first · blue dot = you";
@@ -388,11 +635,12 @@
           btn.disabled = false;
           btn.textContent = "📍 Near me";
         }
-        const msg =
+        setNearStatus(
           err.code === 1
             ? "Location permission denied — try entering a ZIP instead"
-            : "Could not get location — try an address or ZIP";
-        setNearStatus(msg, "error");
+            : "Could not get location — try an address or ZIP",
+          "error"
+        );
       },
       { enableHighAccuracy: true, timeout: 12000, maximumAge: 60000 }
     );
@@ -421,10 +669,11 @@
         return;
       }
       const hit = data[0];
-      const lat = parseFloat(hit.lat);
-      const lon = parseFloat(hit.lon);
-      const label = isZip ? query : hit.display_name.split(",").slice(0, 2).join(",");
-      setUserLoc(lat, lon, label);
+      setUserLoc(
+        parseFloat(hit.lat),
+        parseFloat(hit.lon),
+        isZip ? query : hit.display_name.split(",").slice(0, 2).join(",")
+      );
     } catch (e) {
       setNearStatus("Lookup failed — check connection and try again", "error");
     } finally {
@@ -435,19 +684,20 @@
   function setStyle(id) {
     engine = id;
     localStorage.setItem("yb_map", engine);
-    const styleUrl = STYLES[engine] || STYLES.liberty;
-    if (map) map.setStyle(styleUrl);
+    if (map) map.setStyle(STYLES[engine] || STYLES.liberty);
   }
 
   async function loadCity(slug) {
     city = slug;
     localStorage.setItem("yb_city", city);
+    showFavOnly = false;
     if (city === "texas") {
       map.flyTo({ center: TEXAS.center, zoom: TEXAS.zoom });
       feed = normalizeFeed({ public: [], permits: [], total_locations: 5 });
       document.getElementById("editionMeta").innerHTML = "<strong>Texas</strong><br/>5 cities";
       const fs = document.getElementById("footerSources");
       if (fs) fs.textContent = "YardBird · multi-city · Chica";
+      document.getElementById("weatherStrip").hidden = true;
       refresh();
       return;
     }
@@ -468,10 +718,7 @@
       try {
         const cu = (raw && raw.clusters_url) || `data/cities/${city}-clusters.json`;
         const cr = await fetch(cu);
-        if (cr.ok) {
-          const cd = await cr.json();
-          feed.clusters = cd.clusters || [];
-        }
+        if (cr.ok) feed.clusters = (await cr.json()).clusters || [];
       } catch (_) {}
     }
     const n = allSales().length;
@@ -485,6 +732,7 @@
       fs.textContent = short + " · Chica";
       fs.title = (feed.sources || []).join(" · ") || short;
     }
+    loadWeather();
     setTimeout(refresh, 80);
   }
 
@@ -506,17 +754,45 @@
         if (navigator.share) await navigator.share({ title: "Chica Map", text, url });
         else {
           await navigator.clipboard.writeText(url);
-          alert("Link copied — share it with the neighborhood!");
+          toast("Link copied");
         }
       } catch (_) {}
     });
   }
 
+  function wireTools() {
+    document.getElementById("btnFavorites")?.addEventListener("click", () => {
+      showFavOnly = !showFavOnly;
+      updateToolCounts();
+      renderList();
+      renderMarkers();
+      toast(showFavOnly ? "Showing saved only" : "Showing all sales");
+    });
+    document.getElementById("btnRoute")?.addEventListener("click", () => {
+      const tray = document.getElementById("routeTray");
+      if (!routeIds.length) {
+        toast("Tap ＋ on listings to build a route");
+        return;
+      }
+      tray?.classList.toggle("hidden");
+      renderRouteTray();
+    });
+    document.getElementById("btnExport")?.addEventListener("click", exportList);
+    document.getElementById("btnClearRoute")?.addEventListener("click", () => {
+      routeIds = [];
+      saveJson("yb_route", routeIds);
+      updateToolCounts();
+      renderRouteTray();
+      renderList();
+      toast("Route cleared");
+    });
+    document.getElementById("btnOpenRoute")?.addEventListener("click", openMultiRoute);
+  }
+
   function wireNearMe() {
     document.getElementById("btnNearMe")?.addEventListener("click", useGeolocation);
     document.getElementById("btnLocSearch")?.addEventListener("click", () => {
-      const q = document.getElementById("locInput")?.value || "";
-      geocodeAddress(q);
+      geocodeAddress(document.getElementById("locInput")?.value || "");
     });
     document.getElementById("locInput")?.addEventListener("keydown", (e) => {
       if (e.key === "Enter") {
@@ -582,6 +858,8 @@
     document.getElementById("detailClose")?.addEventListener("click", hideDetail);
     wireChica();
     wireNearMe();
+    wireTools();
+    updateToolCounts();
 
     map.on("load", () => loadCity(city));
   }
