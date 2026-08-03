@@ -56,7 +56,7 @@
 .by-meta { color: var(--gold-deep); font-weight: 700; font-size: 0.85rem; margin-bottom: 16px; }
 .by-body { line-height: 1.65; font-size: 1rem; white-space: pre-wrap; }
 .by-grid.hidden { display: none; }
-.meat-cheeks {
+.meet-cheeks {
   background: #fff;
   border: 2px solid var(--border);
   border-radius: 20px;
@@ -64,7 +64,7 @@
   margin-bottom: 28px;
   box-shadow: var(--shadow);
 }
-.meat-cheeks.hidden { display: none; }
+.meet-cheeks.hidden { display: none; }
 .mc-header h2 {
   margin: 0 0 4px;
   font-size: 1.45rem;
@@ -142,6 +142,7 @@
   color: var(--muted);
   line-height: 1.3;
 }
+.mc-fig.missing img { opacity: 0.25; }
 @media (max-width: 720px) {
   .by-grid { grid-template-columns: 1fr; }
   .mc-bio-card { grid-template-columns: 1fr; justify-items: center; text-align: center; }

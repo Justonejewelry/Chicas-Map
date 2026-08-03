@@ -26,7 +26,7 @@
       key: "smile",
       src: "assets/chica/smile.jpg",
       alt: "Chica smiling on her back, showing her teeth",
-      caption: "The official Meat Cheeks smile",
+      caption: "The official Meet Cheeks smile",
     },
     {
       key: "cape",
@@ -48,7 +48,7 @@
     },
   ];
 
-  function renderMeatCheeks() {
+  function renderMeetCheeks() {
     const gallery = document.getElementById("mcGallery");
     const hero = document.getElementById("mcHero");
     const headerImg = document.getElementById("headerChica");
@@ -78,7 +78,7 @@
 
   function showPost(post) {
     document.querySelector(".by-grid")?.classList.add("hidden");
-    document.getElementById("meatCheeks")?.classList.add("hidden");
+    document.getElementById("meetCheeks")?.classList.add("hidden");
     const view = document.getElementById("postView");
     view.classList.remove("hidden");
     document.getElementById("postTitle").textContent = post.title;
@@ -91,7 +91,7 @@
   function hidePost() {
     document.getElementById("postView")?.classList.add("hidden");
     document.querySelector(".by-grid")?.classList.remove("hidden");
-    document.getElementById("meatCheeks")?.classList.remove("hidden");
+    document.getElementById("meetCheeks")?.classList.remove("hidden");
   }
 
   function renderBlog(posts) {
@@ -142,7 +142,7 @@
   }
 
   async function boot() {
-    renderMeatCheeks();
+    renderMeetCheeks();
     document.getElementById("btnBackPosts")?.addEventListener("click", hidePost);
     try {
       const res = await fetch("data/backyard.json");
