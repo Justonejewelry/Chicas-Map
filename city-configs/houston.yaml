@@ -1,0 +1,67 @@
+# Houston — Multi-City Clone
+# Project YardBird / GSIN
+
+slug: houston
+name: Houston
+state: TX
+timezone: America/Chicago
+typical_sale_window: "Fri-Sun, peak Sat 07:00-11:00"
+synonyms:
+  - garage sale
+  - yard sale
+  - estate sale
+  - moving sale
+  - community sale
+  - rummage sale
+
+bounds:
+  center: [29.7604, -95.3698]
+  north: 30.15
+  south: 29.40
+  east: -94.90
+  west: -95.90
+  notes: "Includes Katy, Sugar Land, The Woodlands, Pearland, Pasadena, Cypress, Spring"
+
+hot_zones:
+  - The Woodlands
+  - Katy
+  - Sugar Land
+  - Memorial / Energy Corridor
+  - Heights
+  - Montrose
+  - Pearland
+  - Cypress
+  - Spring
+  - Friendswood
+  - Clear Lake
+
+sources:
+  craigslist:
+    domain: houston.craigslist.org
+    gms_path: /search/gms
+    rss: https://houston.craigslist.org/search/gms?format=rss
+    notes: "Primary volume source. Apply same resilience playbook as San Antonio."
+  estatesales:
+    - https://www.estatesales.net/TX/Houston
+    - https://www.estatesales.org
+  reddit:
+    - r/houston
+    - r/HoustonClassifieds
+  facebook:
+    notes: "Public Marketplace search + major local buy/sell groups"
+  other:
+    - hashtags: ["#HoustonGarageSale", "#HoustonYardSale", "#HTXGarageSale"]
+
+value_notes:
+  high_demand: [tools, outdoor / patio, furniture, electronics, kids items, vintage]
+  weather_sensitivity: high
+  peak_advice: "Early start critical; traffic and heat both factors"
+
+map_defaults:
+  default_zoom: "central Houston + major suburbs"
+  clustering: true
+  priority_badges: ["early-start", "high-value", "estate"]
+
+status: clone
+cloned_from: san-antonio
+last_updated: "2026-08-03"

@@ -1,0 +1,70 @@
+# Dallas–Fort Worth — Multi-City Clone
+# Project YardBird / GSIN
+
+slug: dallas
+name: Dallas–Fort Worth
+state: TX
+timezone: America/Chicago
+typical_sale_window: "Fri-Sun, peak Sat 07:00-11:00"
+synonyms:
+  - garage sale
+  - yard sale
+  - estate sale
+  - moving sale
+  - community sale
+  - rummage sale
+
+bounds:
+  center: [32.7767, -96.7970]
+  north: 33.30
+  south: 32.40
+  east: -96.40
+  west: -97.50
+  notes: "DFW metro — Dallas, Fort Worth, Plano, Arlington, Frisco, McKinney, Irving, Garland"
+
+hot_zones:
+  - Plano
+  - Frisco
+  - McKinney
+  - Southlake / Colleyville
+  - Highland Park / University Park
+  - Lakewood
+  - Fort Worth (west side / TCU area)
+  - Arlington
+  - Irving
+  - Richardson
+  - Allen
+  - Flower Mound
+
+sources:
+  craigslist:
+    domain: dallas.craigslist.org
+    gms_path: /search/gms
+    rss: https://dallas.craigslist.org/search/gms?format=rss
+    notes: "Also check fortworth.craigslist.org. Apply resilience playbook."
+  estatesales:
+    - https://www.estatesales.net/TX/Dallas
+    - https://www.estatesales.net/TX/Fort-Worth
+    - https://www.estatesales.org
+  reddit:
+    - r/Dallas
+    - r/dfw
+    - r/fortworth
+  facebook:
+    notes: "Public Marketplace + large DFW buy/sell groups"
+  other:
+    - hashtags: ["#DFWGarageSale", "#DallasYardSale", "#FortWorthGarageSale"]
+
+value_notes:
+  high_demand: [furniture, tools, kids / baby gear, electronics, designer / vintage clothing]
+  weather_sensitivity: high
+  peak_advice: "Saturday early is still king; multiple strong suburban corridors"
+
+map_defaults:
+  default_zoom: "DFW core + northern suburbs"
+  clustering: true
+  priority_badges: ["early-start", "high-value", "estate"]
+
+status: clone
+cloned_from: san-antonio
+last_updated: "2026-08-03"

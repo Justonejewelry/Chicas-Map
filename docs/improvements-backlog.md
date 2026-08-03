@@ -1,31 +1,23 @@
-# Project YardBird — Improvements Backlog
-Updated 2026-08-01 by Atlas (post-execution)
+# YardBird Improvement Backlog
 
-## Completed This Cycle
-- [x] Full public information source inventory
-- [x] Mercury + Echo sub-swarm definitions
-- [x] Facebook Graph API feasibility analysis (non-viable for Marketplace/Groups)
-- [x] Auto-populate forecast skeleton
-- [x] Detection Swarm v2 strategy
-- [x] Permit-Extractor **production version** against real Open Data SA schema
-- [x] Extracted 174 recent garage-sale permits (last 21 days) → data/permits_recent.json
-- [x] New agents registered: Permit-Extractor, Permit-Matcher, Aggregator-Yard/Finder, Scout, CrossChecker
-- [x] Scout query set defined
+Updated 2026-08-03
 
-## High Priority — Next
-- [ ] Build Aggregator-Yard and Aggregator-Finder HTML parsers (respectful)
-- [ ] Wire CrossChecker + Permit-Matcher into verification confidence model
-- [ ] Activate Scout scheduled runs for Thu–Sat windows
-- [ ] Expand Heritage multi-page depth
-- [ ] Refresh live KML / forecast with any permit-backed sales that still fall in active window
+## Completed
 
-## Medium Priority
-- [ ] Historical permit archive for Archive / Neighborhood DNA learning
-- [ ] Live KML delta publishing
-- [ ] Selene briefing auto-generation from forecast JSON
+- [x] YAML city configs (San Antonio, Austin, Houston, Dallas–Fort Worth)
+- [x] Formal geocoding pipeline
+- [x] Live vs Seed tagging rules
+- [x] Craigslist resilience notes
+- [x] Archive scaffolding
+- [x] Non-email Discovery Playbook (primary focus)
+- [x] Expanded Texas coverage via public sources
 
-## Policy Anchors
-- Public content only
-- Sentinel gate on every map pin
-- Source tagging mandatory
-- No private group or ToS-violating access
+## Open / Next
+
+- [ ] Make Mercury’s Craigslist fallbacks more automated (Google site-search + RSS monitoring)
+- [ ] Deeper Heritage extraction (structured address + hours parsing)
+- [ ] Crow Reddit monitoring templates per city
+- [ ] Nimbus live weather integration
+- [ ] Promote seed layers to verified after stronger Sentinel passes
+- [ ] First real Archive records from a full weekend cycle
+- [ ] Additional mid-size Texas cities (San Marcos, New Braunfels, College Station, etc.) as needed
