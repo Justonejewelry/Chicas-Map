@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chica's Backyard · Blog &amp; Weekly Videos</title>
-  <meta name="description" content="Chica's Backyard — weekly garage sale blog and video updates for San Antonio and Texas." />
+  <title>Chica's Backyard · Meat Cheeks</title>
+  <meta name="description" content="Chica's Backyard — Meat Cheeks gallery, bio, blog, and weekly videos." />
   <link rel="stylesheet" href="css/app.css" />
   <link rel="stylesheet" href="css/backyard.css" />
 </head>
 <body class="backyard-page">
   <header class="topbar">
     <a class="brand" href="index.html" style="text-decoration:none;color:inherit">
-      <img class="logo-mark img" src="assets/chica.svg" alt="Chica" width="48" height="48" />
+      <img class="logo-mark img" id="headerChica" src="assets/chica.svg" alt="Chica" width="48" height="48" />
       <div>
         <h1>Chica's <span>Backyard</span></h1>
-        <p class="tag">Blog · Weekly videos · Yard-sale intel</p>
+        <p class="tag">Meat Cheeks · Blog · Weekly videos</p>
       </div>
     </a>
     <div class="controls">
@@ -23,12 +23,28 @@
   </header>
 
   <main class="by-layout">
-    <section class="by-hero">
-      <img src="assets/chica.svg" alt="Chica the chihuahua" class="by-hero-avatar" width="120" height="120" />
-      <div>
-        <h2>Welcome to the backyard</h2>
-        <p class="by-lead">I'm <strong>Chica</strong> — brown chihuahua, a little grey on the face, white tips on my feet and tail. This is where I keep the weekly briefing: blog notes and video updates for every map refresh.</p>
+    <section class="meat-cheeks" id="meatCheeks">
+      <div class="mc-header">
+        <h2>🍖 Meat Cheeks</h2>
+        <p class="mc-sub">Official Chica only — identical likeness, no substitutes</p>
       </div>
+
+      <div class="mc-bio-card">
+        <div class="mc-bio-photo-wrap">
+          <img id="mcHero" alt="Chica" class="mc-hero-photo" />
+        </div>
+        <div class="mc-bio">
+          <h3>Hi. I'm Chica.</h3>
+          <div class="mc-bio-body">
+            <p>They call me <strong>Meat Cheeks</strong> — and if you've seen the smile, you know why. I'm a brown chihuahua with a little grey on my face, white on my feet, and a tip of white on my tail. I nap hard (tongue out is standard equipment), I rock a sparkly cape when the mission calls for it, and I go on adventures with my human.</p>
+            <p>This backyard is mine. The map? I help run that too. When I'm not supervising garage-sale intel, I'm either mid-power-nap on a purple blanket or showing off the famous Meat Cheeks grin.</p>
+            <p>Welcome to my corner. Wipe your paws.</p>
+            <p class="mc-sign">— Chica</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mc-gallery" id="mcGallery"></div>
     </section>
 
     <div class="by-grid">
@@ -51,10 +67,11 @@
   </main>
 
   <footer class="footer">
-    <span>Chica's Backyard · Project YardBird / GSIN</span>
+    <span>Meat Cheeks · Chica's Backyard · Project YardBird</span>
     <a href="index.html">Map</a>
   </footer>
 
+  <script src="js/chica-photos.js"></script>
   <script src="js/backyard.js"></script>
 </body>
 </html>
