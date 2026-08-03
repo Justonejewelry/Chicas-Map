@@ -20,12 +20,44 @@
     }
   }
 
+  function renderMeatCheeks() {
+    const photos = window.CHICA_PHOTOS || {};
+    const order = ["smile", "cape", "napping", "adventures"];
+    const gallery = document.getElementById("mcGallery");
+    const hero = document.getElementById("mcHero");
+    const headerImg = document.getElementById("headerChica");
+    if (!gallery) return;
+
+    const smile = photos.smile;
+    if (smile && hero) {
+      hero.src = smile.src;
+      hero.alt = smile.alt || "Chica";
+    }
+    if (smile && headerImg) {
+      headerImg.src = smile.src;
+      headerImg.alt = "Chica";
+    }
+
+    gallery.innerHTML = order
+      .map((key) => {
+        const p = photos[key];
+        if (!p) return "";
+        return `<figure class="mc-fig">
+          <img src="${p.src}" alt="${esc(p.alt || "Chica")}" loading="lazy" />
+          <figcaption>${esc(p.caption || "")}</figcaption>
+        </figure>`;
+      })
+      .join("");
+  }
+
   function showPost(post) {
     document.querySelector(".by-grid")?.classList.add("hidden");
+    document.getElementById("meatCheeks")?.classList.add("hidden");
     const view = document.getElementById("postView");
     view.classList.remove("hidden");
     document.getElementById("postTitle").textContent = post.title;
-    document.getElementById("postMeta").textContent = formatDate(post.date) + (post.tags ? " · " + post.tags.join(" · ") : "");
+    document.getElementById("postMeta").textContent =
+      formatDate(post.date) + (post.tags ? " · " + post.tags.join(" · ") : "");
     document.getElementById("postBody").textContent = post.body || post.excerpt || "";
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
@@ -33,13 +65,14 @@
   function hidePost() {
     document.getElementById("postView")?.classList.add("hidden");
     document.querySelector(".by-grid")?.classList.remove("hidden");
+    document.getElementById("meatCheeks")?.classList.remove("hidden");
   }
 
   function renderBlog(posts) {
     const el = document.getElementById("blogList");
     if (!el) return;
     if (!posts.length) {
-      el.innerHTML = "<p class=\"excerpt\">No posts yet — check back after the next weekend pass.</p>";
+      el.innerHTML = '<p class="excerpt">No posts yet — check back after the next weekend pass.</p>';
       return;
     }
     el.innerHTML = posts
@@ -61,7 +94,7 @@
     const el = document.getElementById("videoList");
     if (!el) return;
     if (!videos.length) {
-      el.innerHTML = "<p class=\"excerpt\">Weekly videos will land here.</p>";
+      el.innerHTML = '<p class="excerpt">Weekly videos will land here.</p>';
       return;
     }
     el.innerHTML = videos
@@ -83,6 +116,7 @@
   }
 
   async function boot() {
+    renderMeatCheeks();
     document.getElementById("btnBackPosts")?.addEventListener("click", hidePost);
     try {
       const res = await fetch("data/backyard.json");
@@ -90,8 +124,10 @@
       renderBlog(data.blog || []);
       renderVideos(data.videos || []);
     } catch (e) {
-      document.getElementById("blogList").textContent = "Could not load backyard posts.";
-      document.getElementById("videoList").textContent = "Could not load videos.";
+      const b = document.getElementById("blogList");
+      const v = document.getElementById("videoList");
+      if (b) b.textContent = "Could not load backyard posts.";
+      if (v) v.textContent = "Could not load videos.";
     }
   }
 
