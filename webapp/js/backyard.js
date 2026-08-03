@@ -20,34 +20,60 @@
     }
   }
 
+  // Official Chica photos — identical likeness only (real photos in assets/chica/)
+  const CHICA_GALLERY = [
+    {
+      key: "smile",
+      src: "assets/chica/smile.jpg",
+      alt: "Chica smiling on her back, showing her teeth",
+      caption: "The official Meat Cheeks smile",
+    },
+    {
+      key: "cape",
+      src: "assets/chica/cape.jpg",
+      alt: "Chica in a sparkly blue superhero cape",
+      caption: "Super Chica reporting for duty",
+    },
+    {
+      key: "napping",
+      src: "assets/chica/napping.jpg",
+      alt: "Chica napping with tongue out on a purple blanket",
+      caption: "Power nap mode: tongue deployed",
+    },
+    {
+      key: "adventures",
+      src: "assets/chica/adventures.jpg",
+      alt: "Chica in a pink harness with her person",
+      caption: "Adventure days with my human",
+    },
+  ];
+
   function renderMeatCheeks() {
-    const photos = window.CHICA_PHOTOS || {};
-    const order = ["smile", "cape", "napping", "adventures"];
     const gallery = document.getElementById("mcGallery");
     const hero = document.getElementById("mcHero");
     const headerImg = document.getElementById("headerChica");
     if (!gallery) return;
 
-    const smile = photos.smile;
+    const smile = CHICA_GALLERY[0];
     if (smile && hero) {
       hero.src = smile.src;
-      hero.alt = smile.alt || "Chica";
+      hero.alt = smile.alt;
+      hero.onerror = function () {
+        this.style.display = "none";
+      };
     }
     if (smile && headerImg) {
       headerImg.src = smile.src;
       headerImg.alt = "Chica";
     }
 
-    gallery.innerHTML = order
-      .map((key) => {
-        const p = photos[key];
-        if (!p) return "";
-        return `<figure class="mc-fig">
-          <img src="${p.src}" alt="${esc(p.alt || "Chica")}" loading="lazy" />
-          <figcaption>${esc(p.caption || "")}</figcaption>
-        </figure>`;
-      })
-      .join("");
+    gallery.innerHTML = CHICA_GALLERY.map(
+      (p) => `<figure class="mc-fig">
+          <img src="${esc(p.src)}" alt="${esc(p.alt)}" loading="lazy"
+            onerror="this.parentElement.classList.add('missing')" />
+          <figcaption>${esc(p.caption)}</figcaption>
+        </figure>`
+    ).join("");
   }
 
   function showPost(post) {
