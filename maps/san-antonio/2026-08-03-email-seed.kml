@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>YardBird San Antonio — 2026-08-03 Email Seed</name>
+    <description>Seed layer from EstateSales.org daily digests (2 Aug + 1 Aug). Status: seed. Confidence: 0.70. Source: email secondary channel. Import into Google My Maps.</description>
+
+    <Placemark>
+      <name>A Journey Home — Australian &amp; European Estate (78239)</name>
+      <description>Caring Transitions of San Antonio Central · San Antonio 78239 · Online / bidding closed or closing Sun Aug 2 · High photo count</description>
+      <Point><coordinates>-98.48,29.52,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Premium Quality &amp; Vintage — Fair Oaks Ranch</name>
+      <description>Caring Transitions of Boerne / Fredericksburg / Kerrville · Boerne 78015 · Closing Mon Aug 3 · 214 photos · High value</description>
+      <Point><coordinates>-98.64,29.74,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Trains, Heirlooms &amp; Timeless Elegance — Fair Oaks</name>
+      <description>Same company · Boerne 78015 · Closing Wed Aug 5 · 243 photos</description>
+      <Point><coordinates>-98.64,29.74,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>San Antonio Heirloom Online Auction (78247)</name>
+      <description>Caring Transitions of Bulverde &amp; Canyon Lake · San Antonio 78247 · Closing Wed Aug 5 · 159 photos</description>
+      <Point><coordinates>-98.42,29.58,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Exceptional Finds in Fair Oaks</name>
+      <description>Caring Transitions · Boerne 78015 · Closing Sun Aug 9 · 99 photos · Still active into next weekend</description>
+      <Point><coordinates>-98.64,29.74,0</coordinates></Point>
+    </Placemark>
+
+  </Document>
+</kml>
