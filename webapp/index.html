@@ -4,41 +4,32 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Yowl Lawnda · Garage Sale Forecaster</title>
-  <meta name="description" content="Yowl Lawnda maps the best garage and estate sales in San Antonio and across Texas." />
+  <meta name="description" content="Yowl Lawnda maps the best garage and estate sales in San Antonio and across Texas. Find sales nearest to you." />
   <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet" />
   <link rel="stylesheet" href="css/app.css" />
   <style>
-    /* MapLibre popup polish */
     .maplibregl-popup-content {
-      background: #fff;
-      color: #0f172a;
-      border-radius: 14px;
-      box-shadow: 0 8px 30px rgba(15,23,42,0.12);
-      border: 2px solid #e2e8f0;
-      padding: 12px 14px;
-      font-family: inherit;
-      min-width: 180px;
+      background: #fff; color: #0f172a; border-radius: 14px;
+      box-shadow: 0 8px 30px rgba(15,23,42,0.12); border: 2px solid #e2e8f0;
+      padding: 12px 14px; font-family: inherit; min-width: 180px;
     }
-    .maplibregl-popup-close-button {
-      font-size: 18px;
-      padding: 4px 8px;
-      color: #64748b;
-    }
+    .maplibregl-popup-close-button { font-size: 18px; padding: 4px 8px; color: #64748b; }
     .maplibregl-ctrl-attrib { font-size: 10px; }
     .yb-marker {
-      width: 18px;
-      height: 18px;
-      border-radius: 50% 50% 50% 0;
-      transform: rotate(-45deg);
-      border: 2.5px solid #fff;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.25);
-      cursor: pointer;
+      width: 18px; height: 18px; border-radius: 50% 50% 50% 0;
+      transform: rotate(-45deg); border: 2.5px solid #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.25); cursor: pointer;
     }
     .yb-marker.garage { background: #22c55e; }
     .yb-marker.estate { background: #a855f7; }
     .yb-marker.fundraiser { background: #f59e0b; }
     .yb-marker.permit { background: #38bdf8; }
     .yb-marker.top { background: #f59e0b; width: 20px; height: 20px; }
+    .yb-user-dot {
+      width: 16px; height: 16px; border-radius: 50%;
+      background: #2563eb; border: 3px solid #fff;
+      box-shadow: 0 0 0 4px rgba(37,99,235,0.25), 0 2px 8px rgba(0,0,0,0.3);
+    }
   </style>
 </head>
 <body>
@@ -73,10 +64,32 @@
   </header>
   <main class="layout">
     <aside class="panel">
-      <section class="hero-chip"><span class="pulse"></span> Howdy — MapLibre map is live</section>
+      <section class="hero-chip"><span class="pulse"></span> Howdy — find sales near you</section>
+
+      <!-- Near Me bar -->
+      <section class="near-bar" id="nearBar">
+        <div class="near-row">
+          <button type="button" class="near-btn primary" id="btnNearMe" title="Use my current location">
+            📍 Near me
+          </button>
+          <select id="radiusSelect" class="radius-select" title="Max distance">
+            <option value="5">5 mi</option>
+            <option value="10" selected>10 mi</option>
+            <option value="25">25 mi</option>
+            <option value="50">50 mi</option>
+            <option value="0">Any</option>
+          </select>
+        </div>
+        <div class="near-row">
+          <input type="text" id="locInput" class="loc-input" placeholder="Address or ZIP (e.g. 78209)" enterkeyhint="search" />
+          <button type="button" class="near-btn" id="btnLocSearch" title="Search this address">Go</button>
+        </div>
+        <div class="near-status" id="nearStatus" hidden></div>
+      </section>
+
       <section class="forecast"><h2>Weekend Forecast</h2><div id="hotZones"></div></section>
       <section class="filters">
-        <input type="search" id="search" placeholder="Search address, neighborhood, zip…" />
+        <input type="search" id="search" placeholder="Filter by keyword…" />
         <div class="chips">
           <button class="chip active" data-filter="all">All</button>
           <button class="chip" data-filter="garage">Garage</button>
@@ -86,7 +99,10 @@
         </div>
       </section>
       <section class="list-wrap">
-        <div class="list-head"><h2>Locations</h2><span id="listCount">0</span></div>
+        <div class="list-head">
+          <h2 id="listTitle">Locations</h2>
+          <span id="listCount">0</span>
+        </div>
         <ul id="saleList" class="sale-list"></ul>
       </section>
       <div id="detailDrawer" class="detail-drawer hidden">
@@ -102,7 +118,7 @@
         <span><i class="pin estate"></i> Estate</span>
         <span><i class="pin permit"></i> Permit</span>
       </div>
-      <div class="map-hint" id="mapHint">Every sale is on the map — tap a pin for details</div>
+      <div class="map-hint" id="mapHint">Tap 📍 Near me or enter a ZIP to sort by distance</div>
     </section>
   </main>
   <footer class="footer">
