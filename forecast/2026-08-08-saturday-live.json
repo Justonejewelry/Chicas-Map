@@ -1,0 +1,109 @@
+{
+  "generated_at": "2026-08-03T18:30:00-05:00",
+  "target": "2026-08-08 Saturday (live Discovery + Sentinel pass)",
+  "city": "san-antonio",
+  "status": "verified",
+  "confidence": 0.72,
+  "notes": "Focused Saturday-morning style pass on Heritage primary. Multi-day estate sales already live and covering Saturday 8 Aug. Classic garage volume still light but estate channel strong. Sentinel approved high-confidence addresses from estatesales.net. Weather supportive for early starts.",
+  "days": {
+    "friday": {"stars": 3, "predicted_sales": 8, "status": "active"},
+    "saturday": {"stars": 4, "predicted_sales": 12, "status": "peak"},
+    "sunday": {"stars": 3, "predicted_sales": 7, "status": "residual"}
+  },
+  "weather_impact": {
+    "condition": "Mostly sunny",
+    "high_f": 96,
+    "low_f": 77,
+    "risk": "heat",
+    "shopping_quality": "excellent early, decline after 11am due to heat"
+  },
+  "hot_zones": [
+    "Fair Oaks Ranch / Boerne",
+    "Alamo Ranch / 78254",
+    "Helotes",
+    "Redland Springs / 78247",
+    "Stone Oak / 78232-78248",
+    "Eisenhauer warehouse corridor"
+  ],
+  "best_categories": ["antiques", "vintage", "tools", "collectibles", "mid-century furniture", "Funko / comics"],
+  "verified_highlights": [
+    {
+      "title": "Beautiful Fair Oaks Ranch Estate Sale",
+      "area": "Boerne / Fair Oaks 78015",
+      "dates": "Aug 6-8",
+      "hours": "10am-4pm",
+      "company": "Complete Estate Sale Services",
+      "confidence": 0.9
+    },
+    {
+      "title": "CAMINO BANDERA ESTATE SALE",
+      "area": "78254 Alamo Ranch",
+      "dates": "Aug 6-8",
+      "hours": "10am-4pm",
+      "company": "Complete Estate Sale Services",
+      "confidence": 0.88
+    },
+    {
+      "title": "PT 1 A STEP BACK IN TIME — Helotes",
+      "area": "Helotes 78023",
+      "dates": "Aug 7-9",
+      "hours": "9am-4pm",
+      "company": "From Trash To Treasure",
+      "confidence": 0.85
+    },
+    {
+      "title": "The Estates of Redland Springs Moving Sale",
+      "area": "78247",
+      "dates": "Aug 6-8",
+      "hours": "9am-4pm",
+      "categories": ["antiques", "vintage", "collectibles"],
+      "confidence": 0.9
+    },
+    {
+      "title": "HUGE Warehouse Sale — Alamo City Mercantale",
+      "area": "3903 Eisenhauer, 78218",
+      "dates": "Aug 6-9",
+      "hours": "9am-4pm",
+      "categories": ["tools", "Funko", "comics", "antiques", "furniture"],
+      "confidence": 0.87
+    },
+    {
+      "title": "Cadillac Dr Estate sale (Top Hat)",
+      "area": "78248",
+      "dates": "Aug 6-8",
+      "hours": "9am-3pm",
+      "confidence": 0.85
+    },
+    {
+      "title": "BENT MOSS",
+      "area": "78232",
+      "dates": "Aug 6-8",
+      "hours": "9:30am-3pm",
+      "company": "Estate Solutions",
+      "confidence": 0.84
+    },
+    {
+      "title": "Holiday House — Wild Wind / Garden Ridge",
+      "area": "Garden Ridge 78266",
+      "dates": "Aug 6-8",
+      "hours": "10am-4pm",
+      "company": "Crystal's Estate Sales",
+      "confidence": 0.86
+    }
+  ],
+  "source_breakdown": {
+    "estate": 10,
+    "craigslist": 0,
+    "facebook": 1,
+    "nextdoor": 0,
+    "permit": 0,
+    "other": 2
+  },
+  "selene_briefing_draft": "Good morning San Antonio! Saturday is looking solid on the estate side. Fair Oaks, Alamo Ranch, and Helotes are carrying strong inventory — antiques, tools, and vintage leading the pack. Get there before 9 for the best selection. Heat builds fast to 96, so plan your route early.",
+  "meta": {
+    "heritage_records": 12,
+    "last_sentinel_pass": "2026-08-03T18:30:00-05:00",
+    "schema_version": "1.1",
+    "atlas_pass": "focused Discovery + Sentinel"
+  }
+}
