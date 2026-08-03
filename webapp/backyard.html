@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chica's Backyard · Blog &amp; Weekly Videos</title>
+  <meta name="description" content="Chica's Backyard — weekly garage sale blog and video updates for San Antonio and Texas." />
+  <link rel="stylesheet" href="css/app.css" />
+  <link rel="stylesheet" href="css/backyard.css" />
+</head>
+<body class="backyard-page">
+  <header class="topbar">
+    <a class="brand" href="index.html" style="text-decoration:none;color:inherit">
+      <img class="logo-mark img" src="assets/chica.svg" alt="Chica" width="48" height="48" />
+      <div>
+        <h1>Chica's <span>Backyard</span></h1>
+        <p class="tag">Blog · Weekly videos · Yard-sale intel</p>
+      </div>
+    </a>
+    <div class="controls">
+      <a class="nav-pill" href="index.html">← Back to map</a>
+    </div>
+  </header>
+
+  <main class="by-layout">
+    <section class="by-hero">
+      <img src="assets/chica.svg" alt="Chica the chihuahua" class="by-hero-avatar" width="120" height="120" />
+      <div>
+        <h2>Welcome to the backyard</h2>
+        <p class="by-lead">I'm <strong>Chica</strong> — brown chihuahua, a little grey on the face, white tips on my feet and tail. This is where I keep the weekly briefing: blog notes and video updates for every map refresh.</p>
+      </div>
+    </section>
+
+    <div class="by-grid">
+      <section class="by-col">
+        <h3 class="by-section-title">📝 Chica's Blog</h3>
+        <div id="blogList" class="by-posts">Loading posts…</div>
+      </section>
+      <section class="by-col">
+        <h3 class="by-section-title">🎬 Weekly Videos</h3>
+        <div id="videoList" class="by-videos">Loading videos…</div>
+      </section>
+    </div>
+
+    <article id="postView" class="by-post-view hidden">
+      <button type="button" class="near-btn" id="btnBackPosts">← All posts</button>
+      <h2 id="postTitle"></h2>
+      <div class="by-meta" id="postMeta"></div>
+      <div class="by-body" id="postBody"></div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <span>Chica's Backyard · Project YardBird / GSIN</span>
+    <a href="index.html">Map</a>
+  </footer>
+
+  <script src="js/backyard.js"></script>
+</body>
+</html>

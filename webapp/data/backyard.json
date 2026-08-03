@@ -1,0 +1,42 @@
+{
+  "host": "Chica",
+  "tagline": "Weekly yard-sale intel from the backyard",
+  "blog": [
+    {
+      "id": "2026-08-03",
+      "date": "2026-08-03",
+      "title": "Fair Oaks is heating up",
+      "excerpt": "Howdy neighbors — Chica here. This week's map picked up a strong cluster of estate sales in the Fair Oaks / Boerne corridor, plus fresh San Antonio 78239 and 78247 listings from the email digests.",
+      "body": "Weekend watch: Fair Oaks Ranch and Boerne are the hottest pocket right now. Several Caring Transitions sales are running multi-day with big photo counts (200+). On the SA side, keep an eye on 78247 and the northeast.\n\nI also got Near Me working — share your location or drop a ZIP and I'll sort the closest sales first.\n\nSee you on the map. — Chica",
+      "tags": ["San Antonio", "Fair Oaks", "estate", "weekly"]
+    },
+    {
+      "id": "2026-08-01",
+      "date": "2026-08-01",
+      "title": "Map goes live — first Saturday pass",
+      "excerpt": "First public MapLibre build is up. Heritage estate sales and early garage signals for San Antonio are on the board.",
+      "body": "Project YardBird's public map is live. We're starting with San Antonio and already wired for Austin, Houston, Dallas, and Lubbock.\n\nThis Saturday pass focused on verified estate backbone plus seed garage listings. More Discovery paths (and fewer gaps) every week.\n\n— Chica",
+      "tags": ["launch", "San Antonio", "weekly"]
+    }
+  ],
+  "videos": [
+    {
+      "id": "v-2026-08-03",
+      "date": "2026-08-03",
+      "title": "Week of Aug 3 — Fair Oaks cluster + Near Me",
+      "description": "Chica's weekly update: hottest zones, new email leads, and how to use Near Me.",
+      "youtube_id": "",
+      "status": "placeholder",
+      "duration": "~3 min"
+    },
+    {
+      "id": "v-2026-08-01",
+      "date": "2026-08-01",
+      "title": "Week of Aug 1 — Map launch recap",
+      "description": "First weekly video: what's on the map and how the swarm works.",
+      "youtube_id": "",
+      "status": "placeholder",
+      "duration": "~2 min"
+    }
+  ]
+}

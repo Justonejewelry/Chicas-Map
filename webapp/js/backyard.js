@@ -1,0 +1,99 @@
+(function () {
+  function esc(s) {
+    return String(s == null ? "" : s)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
+  function formatDate(d) {
+    try {
+      return new Date(d + "T12:00:00").toLocaleDateString(undefined, {
+        weekday: "short",
+        month: "short",
+        day: "numeric",
+        year: "numeric",
+      });
+    } catch (_) {
+      return d;
+    }
+  }
+
+  function showPost(post) {
+    document.querySelector(".by-grid")?.classList.add("hidden");
+    const view = document.getElementById("postView");
+    view.classList.remove("hidden");
+    document.getElementById("postTitle").textContent = post.title;
+    document.getElementById("postMeta").textContent = formatDate(post.date) + (post.tags ? " · " + post.tags.join(" · ") : "");
+    document.getElementById("postBody").textContent = post.body || post.excerpt || "";
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  function hidePost() {
+    document.getElementById("postView")?.classList.add("hidden");
+    document.querySelector(".by-grid")?.classList.remove("hidden");
+  }
+
+  function renderBlog(posts) {
+    const el = document.getElementById("blogList");
+    if (!el) return;
+    if (!posts.length) {
+      el.innerHTML = "<p class=\"excerpt\">No posts yet — check back after the next weekend pass.</p>";
+      return;
+    }
+    el.innerHTML = posts
+      .map(
+        (p, i) => `<article class="by-card" data-i="${i}">
+        <div class="date">${esc(formatDate(p.date))}</div>
+        <h4>${esc(p.title)}</h4>
+        <p class="excerpt">${esc(p.excerpt || "")}</p>
+        <div class="by-tags">${(p.tags || []).map((t) => `<span class="by-tag">${esc(t)}</span>`).join("")}</div>
+      </article>`
+      )
+      .join("");
+    el.querySelectorAll("[data-i]").forEach((card) => {
+      card.addEventListener("click", () => showPost(posts[+card.dataset.i]));
+    });
+  }
+
+  function renderVideos(videos) {
+    const el = document.getElementById("videoList");
+    if (!el) return;
+    if (!videos.length) {
+      el.innerHTML = "<p class=\"excerpt\">Weekly videos will land here.</p>";
+      return;
+    }
+    el.innerHTML = videos
+      .map((v) => {
+        const hasYt = v.youtube_id && v.status !== "placeholder";
+        const thumb = hasYt
+          ? `<a href="https://www.youtube.com/watch?v=${esc(v.youtube_id)}" target="_blank" rel="noopener" class="by-video-thumb" style="background:url(https://img.youtube.com/vi/${esc(v.youtube_id)}/hqdefault.jpg) center/cover"><span class="play">▶</span></a>`
+          : `<div class="by-video-thumb"><span class="play">▶</span><span style="position:absolute;bottom:10px;font-size:0.75rem;opacity:0.9">Coming soon</span></div>`;
+        return `<article class="by-video-card ${hasYt ? "" : "placeholder"}">
+          ${thumb}
+          <div class="by-video-body">
+            <h4>${esc(v.title)}</h4>
+            <p>${esc(v.description || "")}</p>
+            <div class="by-video-meta">${esc(formatDate(v.date))}${v.duration ? " · " + esc(v.duration) : ""}</div>
+          </div>
+        </article>`;
+      })
+      .join("");
+  }
+
+  async function boot() {
+    document.getElementById("btnBackPosts")?.addEventListener("click", hidePost);
+    try {
+      const res = await fetch("data/backyard.json");
+      const data = await res.json();
+      renderBlog(data.blog || []);
+      renderVideos(data.videos || []);
+    } catch (e) {
+      document.getElementById("blogList").textContent = "Could not load backyard posts.";
+      document.getElementById("videoList").textContent = "Could not load videos.";
+    }
+  }
+
+  boot();
+})();
