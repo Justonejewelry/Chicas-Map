@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Yowl Lawnda · Garage Sale Forecaster</title>
-  <meta name="description" content="Yowl Lawnda maps the best garage and estate sales in San Antonio and across Texas. Find sales nearest to you." />
+  <title>Chica · Garage Sale Map</title>
+  <meta name="description" content="Chica maps the best garage and estate sales in San Antonio and across Texas. Find sales nearest to you." />
   <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet" />
   <link rel="stylesheet" href="css/app.css" />
   <style>
@@ -30,18 +30,23 @@
       background: #2563eb; border: 3px solid #fff;
       box-shadow: 0 0 0 4px rgba(37,99,235,0.25), 0 2px 8px rgba(0,0,0,0.3);
     }
+    .logo-mark.img {
+      width: 48px; height: 48px; border-radius: 50%; border: 3px solid #fff;
+      box-shadow: 0 4px 12px rgba(196,122,58,0.4); background: #fef3c7; object-fit: cover;
+    }
   </style>
 </head>
 <body>
   <header class="topbar">
     <div class="brand">
-      <div class="logo-mark">🦉</div>
+      <img class="logo-mark img" src="assets/chica.svg" alt="Chica" width="48" height="48" />
       <div>
-        <h1>Yowl <span>Lawnda</span></h1>
+        <h1>Chica <span>Map</span></h1>
         <p class="tag">Garage Sale Forecaster · Texas</p>
       </div>
     </div>
     <div class="controls">
+      <a class="nav-pill" href="backyard.html" title="Chica's Backyard">🏡 Backyard</a>
       <label class="ctrl">City
         <select id="citySelect">
           <option value="san-antonio">San Antonio</option>
@@ -64,9 +69,8 @@
   </header>
   <main class="layout">
     <aside class="panel">
-      <section class="hero-chip"><span class="pulse"></span> Howdy — find sales near you</section>
+      <section class="hero-chip"><span class="pulse"></span> Howdy from Chica — find sales near you</section>
 
-      <!-- Near Me bar -->
       <section class="near-bar" id="nearBar">
         <div class="near-row">
           <button type="button" class="near-btn primary" id="btnNearMe" title="Use my current location">
@@ -122,20 +126,24 @@
     </section>
   </main>
   <footer class="footer">
-    <span id="footerSources" title="Data sources">YardBird · GSIN · MapLibre</span>
-    <a href="https://github.com/Justonejewelry/Project-YardBird" target="_blank" rel="noopener">GitHub</a>
+    <span id="footerSources" title="Data sources">YardBird · GSIN · Chica</span>
+    <span>
+      <a href="backyard.html">Chica's Backyard</a>
+      ·
+      <a href="https://github.com/Justonejewelry/Project-YardBird" target="_blank" rel="noopener">GitHub</a>
+    </span>
   </footer>
-  <div class="yowl-ambassador" id="yowlAmbassador">
-    <button type="button" class="yowl-dismiss" id="yowlDismiss" aria-label="Dismiss">×</button>
+  <div class="yowl-ambassador" id="chicaAmbassador">
+    <button type="button" class="yowl-dismiss" id="chicaDismiss" aria-label="Dismiss">×</button>
     <div class="yowl-card">
-      <div style="font-size:2.5rem;line-height:1">🦉</div>
+      <img src="assets/chica.svg" alt="Chica" width="72" height="72" style="border-radius:50%;background:#fef3c7" />
       <div class="yowl-copy">
-        <strong>Yowl Lawnda</strong>
-        <p>Howdy! Share the map so more neighbors find the good stuff.</p>
+        <strong>Chica</strong>
+        <p>Howdy! Share the map — then visit my Backyard for the weekly blog &amp; videos.</p>
         <div class="yowl-actions">
-          <button type="button" class="share" id="yowlShare">↗ Share</button>
-          <button type="button" class="like" id="yowlLike">♥ Like</button>
-          <a class="follow" id="yowlFollow" href="https://github.com/Justonejewelry/Project-YardBird" target="_blank" rel="noopener">★ Follow</a>
+          <button type="button" class="share" id="chicaShare">↗ Share</button>
+          <a class="follow" href="backyard.html">🏡 Backyard</a>
+          <a class="follow" id="chicaFollow" href="https://github.com/Justonejewelry/Project-YardBird" target="_blank" rel="noopener">★ Follow</a>
         </div>
       </div>
     </div>
