@@ -1,0 +1,70 @@
+{
+  "generated_at": "2026-08-03T01:58:00-04:00",
+  "target_weekend": "2026-08-07 to 2026-08-09",
+  "cities": ["san-antonio", "austin"],
+  "method": "non-email Discovery playbook (Heritage primary, Mercury site-search + RSS attempt, Crow Reddit)",
+  "overall_confidence": 0.58,
+  "notes": "Early-week pass. Estate sales already listing multi-day events that cover the coming weekend. Classic garage/yard volume still light this far out (typical). Craigslist RSS remains blocked; Google site-search queries generated and ready for use.",
+  "san_antonio": {
+    "heritage_signal": "strong",
+    "notable_sales": [
+      {
+        "title": "The Estates of Redland Springs Moving Sale",
+        "area": "78247",
+        "dates": "Aug 6-8",
+        "hours": "9am-4pm",
+        "categories": ["antiques", "vintage", "collectibles", "decor"]
+      },
+      {
+        "title": "Cadillac Dr Estate sale (Top Hat)",
+        "area": "78248",
+        "dates": "Aug 6-8",
+        "hours": "9am-3pm"
+      },
+      {
+        "title": "HUGE Warehouse Sale — Alamo City Mercantale",
+        "area": "3903 Eisenhauer, 78218",
+        "dates": "Aug 6-9",
+        "hours": "9am-4pm",
+        "categories": ["tools", "collectibles", "Funko", "comics", "furniture", "antiques"]
+      },
+      {
+        "title": "Camino Bandera Estate Sale",
+        "area": "78254 (Alamo Ranch side)",
+        "dates": "Aug 6-8",
+        "hours": "10am-4pm"
+      },
+      {
+        "title": "Beautiful Fair Oaks Ranch Estate Sale",
+        "area": "Boerne / Fair Oaks 78015",
+        "dates": "Aug 6-8",
+        "hours": "10am-4pm"
+      },
+      {
+        "title": "Holiday House — Wild Wind / Garden Ridge",
+        "area": "Garden Ridge 78266",
+        "dates": "Aug 6-8",
+        "hours": "10am-4pm"
+      }
+    ],
+    "hot_zones_emerging": ["78247 / Redland", "78254 Alamo Ranch corridor", "Fair Oaks / Boerne", "78218 Eisenhauer", "Garden Ridge"],
+    "predicted_saturday_strength": "moderate-to-strong on estate side; garage volume TBD closer to weekend"
+  },
+  "austin": {
+    "heritage_signal": "thin at this early point",
+    "notable_sales": [],
+    "notes": "EstateSales.net page showed limited future-dated inventory for Aug 7-10 at time of pass. Expect more listings Wed–Fri. Classic garage/yard will likely appear on Craigslist and public Facebook closer to the weekend.",
+    "predicted_saturday_strength": "unknown / low confidence this early"
+  },
+  "mercury_status": {
+    "rss": "still blocked (confirmed 2026-08-03)",
+    "site_search_queries_ready": true,
+    "script": "scripts/mercury_monitor.py now available for query generation + RSS attempts + logging"
+  },
+  "next_actions": [
+    "Re-run Heritage Thursday morning",
+    "Execute Mercury Google site-search queries Wed/Thu",
+    "Crow scan of r/sanantonio and r/Austin Thursday evening",
+    "Sentinel pass on any new high-value addresses before map publish"
+  ]
+}
