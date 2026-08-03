@@ -14,6 +14,12 @@ html, body { height: 100%; margin: 0; background: linear-gradient(180deg, #f0f9f
 .brand h1 span { color: var(--gold-deep); }
 .tag { margin: 0; color: var(--muted); font-size: 0.8rem; font-weight: 600; }
 .controls { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.nav-pill {
+  display: inline-block; padding: 10px 14px; border-radius: 999px;
+  background: linear-gradient(135deg, #fef3c7, #dcfce7); border: 2px solid #f59e0b;
+  font-weight: 800; color: #854d0e; text-decoration: none; font-size: 0.85rem;
+}
+.nav-pill:hover { filter: brightness(1.03); }
 .ctrl { display: flex; flex-direction: column; gap: 2px; font-size: 0.65rem; color: var(--muted); text-transform: uppercase; font-weight: 700; letter-spacing: 0.04em; }
 .ctrl select { background: var(--panel-2); color: var(--ink); border: 2px solid var(--border); border-radius: 12px; padding: 8px 12px; font-size: 0.9rem; min-width: 150px; font-weight: 600; }
 .meta { color: var(--gold-deep); font-size: 0.85rem; font-weight: 700; text-align: right; line-height: 1.3; }
@@ -22,8 +28,6 @@ html, body { height: 100%; margin: 0; background: linear-gradient(180deg, #f0f9f
 .hero-chip { margin: 12px 14px 0; padding: 10px 14px; border-radius: 999px; background: linear-gradient(90deg, #fef3c7, #dcfce7); font-weight: 700; font-size: 0.85rem; color: #854d0e; display: flex; align-items: center; gap: 8px; }
 .pulse { width: 10px; height: 10px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 0 rgba(34,197,94,0.6); animation: pulse 1.6s infinite; }
 @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(34,197,94,0.55); } 70% { box-shadow: 0 0 0 10px rgba(34,197,94,0); } 100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); } }
-
-/* Near-me bar */
 .near-bar { padding: 12px 14px; border-bottom: 1px solid var(--border); background: linear-gradient(180deg, #fffbeb 0%, #fff 100%); }
 .near-row { display: flex; gap: 8px; margin-bottom: 8px; }
 .near-row:last-of-type { margin-bottom: 0; }
@@ -39,7 +43,7 @@ html, body { height: 100%; margin: 0; background: linear-gradient(180deg, #f0f9f
 }
 .near-btn.primary:hover { filter: brightness(1.05); }
 .near-btn:disabled { opacity: 0.6; cursor: wait; }
-.near-btn.clear-loc { background: #fef2f2; color: #b91c1c; border-color: #fecaca; padding: 6px 10px; font-size: 0.78rem; }
+.near-btn clear-loc, .near-btn.clear-loc { background: #fef2f2; color: #b91c1c; border-color: #fecaca; padding: 6px 10px; font-size: 0.78rem; }
 .radius-select {
   border: 2px solid var(--border); border-radius: 12px; padding: 10px 8px;
   font-weight: 700; font-size: 0.85rem; background: var(--panel-2); min-width: 72px;
@@ -69,7 +73,6 @@ html, body { height: 100%; margin: 0; background: linear-gradient(180deg, #f0f9f
 }
 .action-btn:hover { border-color: var(--gold); }
 .action-btn.dirs { background: #2563eb; color: #fff; border-color: #2563eb; }
-
 .forecast { padding: 14px; border-bottom: 1px solid var(--border); }
 .forecast h2, .list-head h2 { margin: 0 0 10px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); font-weight: 800; }
 .zone { background: var(--panel-2); border-radius: 14px; padding: 12px 14px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center; border: 2px solid transparent; transition: 0.15s ease; cursor: pointer; }
@@ -120,12 +123,7 @@ html, body { height: 100%; margin: 0; background: linear-gradient(180deg, #f0f9f
 .detail-drawer .d-meta { color: var(--muted); font-size: 0.82rem; margin-bottom: 4px; }
 .detail-drawer .d-body { font-size: 0.9rem; line-height: 1.45; margin: 10px 0; }
 .detail-drawer a { color: var(--green-deep); font-weight: 700; }
-
-/* Yowl ambassador */
-.yowl-ambassador {
-  position: fixed; right: 16px; bottom: 56px; z-index: 50;
-  max-width: 300px;
-}
+.yowl-ambassador { position: fixed; right: 16px; bottom: 56px; z-index: 50; max-width: 300px; }
 .yowl-card {
   background: #fff; border: 2px solid var(--border); border-radius: 18px;
   padding: 14px; box-shadow: var(--shadow); display: flex; gap: 12px; align-items: flex-start;
@@ -143,7 +141,6 @@ html, body { height: 100%; margin: 0; background: linear-gradient(180deg, #f0f9f
   border-radius: 50%; border: none; background: #fff; box-shadow: var(--shadow);
   cursor: pointer; font-weight: 700; color: var(--muted);
 }
-
 @media (max-width: 900px) {
   .layout { grid-template-columns: 1fr; grid-template-rows: 48% 52%; }
   .panel { border-right: none; border-bottom: 1px solid var(--border); }
