@@ -1,11 +1,41 @@
-/* Sitewide grass — uses uploaded texture + soft overlay */
+/* Sitewide grass + wind parallax */
 :root {
-  --grass-deep: #14532d;
   --grass-mid: #166534;
+  --wind-x: 0px;
+  --wind-y: 0px;
+  --wind-skew: 0deg;
 }
 
-html {
+html { background-color: var(--grass-mid); }
+
+/* Fixed grass layer so we can animate without scrolling lag */
+.grass-layer {
+  position: fixed;
+  inset: -40px;
+  z-index: -1;
+  pointer-events: none;
   background-color: var(--grass-mid);
+  background-image:
+    linear-gradient(180deg, rgba(20, 83, 45, 0.45) 0%, rgba(15, 61, 36, 0.65) 100%),
+    url("../4267751-green-grass-texture-that-tiles-seamlessly-as-a-pattern.jpg");
+  background-size: auto, 280px 280px;
+  background-repeat: no-repeat, repeat;
+  background-position:
+    center,
+    var(--wind-x) var(--wind-y);
+  transform: skewX(var(--wind-skew));
+  transform-origin: 50% 100%;
+  transition: background-position 0.15s ease-out, transform 0.2s ease-out;
+  will-change: background-position, transform;
+}
+
+/* Gentle idle breeze */
+@keyframes grassBreeze {
+  0%, 100% { --wind-skew: -0.4deg; }
+  50% { --wind-skew: 0.5deg; }
+}
+@supports (background: paint(something)) {
+  /* noop — custom props in keyframes limited; use class animation on layer */
 }
 
 body.grass-site,
@@ -13,18 +43,12 @@ body.landing.grass-site,
 body.backyard-page.grass-site,
 body.sponsor-page.grass-site,
 body.grass-map {
-  background-color: var(--grass-mid) !important;
-  background-image:
-    linear-gradient(180deg, rgba(20, 83, 45, 0.55) 0%, rgba(15, 61, 36, 0.7) 100%),
-    url("../4267751-green-grass-texture-that-tiles-seamlessly-as-a-pattern.jpg") !important;
-  background-size: auto, 280px 280px !important;
-  background-repeat: no-repeat, repeat !important;
-  background-attachment: fixed, fixed !important;
-  background-position: center, 0 0 !important;
+  background: transparent !important;
   min-height: 100vh;
+  position: relative;
 }
 
-/* Readable frosted panels on grass */
+/* Readable frosted panels */
 body.grass-site .hero-frame,
 body.grass-site .feat,
 body.grass-site .sp-card,
@@ -54,14 +78,12 @@ body.grass-site .lbrand {
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
 }
 body.grass-site .lnav .llinks a:hover { color: #fff; }
-
 body.grass-site .lfoot,
 body.grass-site .lfoot strong {
   color: #ecfdf5;
   border-top-color: rgba(255, 255, 255, 0.2);
 }
 body.grass-site .lfoot-links a { color: #bbf7d0; }
-
 body.grass-site .features h2,
 body.grass-site .by-section-title {
   color: #f0fdf4 !important;
@@ -69,13 +91,7 @@ body.grass-site .by-section-title {
 }
 body.grass-site .features-lead {
   color: #dcfce7 !important;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
 }
 
-/* Map: grass around chrome only */
-body.grass-map .topbar {
-  border-bottom: 2px solid #86efac !important;
-}
-body.grass-map .footer {
-  border-top: 2px solid #86efac !important;
-}
+body.grass-map .topbar { border-bottom: 2px solid #86efac !important; }
+body.grass-map .footer { border-top: 2px solid #86efac !important; }
