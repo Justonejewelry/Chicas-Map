@@ -43,8 +43,35 @@
       font-weight: 900;
       box-shadow: 0 4px 14px rgba(245,158,11,0.35);
       padding: 10px 18px;
+      text-decoration: none;
     }
     .nav-pill.backyard-cta:hover { filter: brightness(1.05); transform: translateY(-1px); }
+    .nav-pill.sponsor-cta {
+      background: linear-gradient(135deg, #92400e, #b45309);
+      border: 2px solid #78350f;
+      color: #fff !important;
+      font-weight: 900;
+      box-shadow: 0 4px 14px rgba(146,64,14,0.4);
+      padding: 10px 16px;
+      text-decoration: none;
+    }
+    .nav-pill.sponsor-cta:hover { filter: brightness(1.08); transform: translateY(-1px); }
+    .sponsor-banner {
+      display: block;
+      margin: 10px 0 12px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #92400e, #c47a3a);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 0.92rem;
+      line-height: 1.35;
+      box-shadow: 0 6px 18px rgba(146,64,14,0.35);
+      border: 2px solid #78350f;
+    }
+    .sponsor-banner:hover { filter: brightness(1.06); }
+    .sponsor-banner small { display: block; font-weight: 600; opacity: 0.9; font-size: 0.78rem; margin-top: 2px; }
   </style>
 </head>
 <body>
@@ -57,6 +84,7 @@
       </div>
     </div>
     <div class="controls">
+      <a class="nav-pill sponsor-cta" href="sponsor.html" title="Sponsor Chica's weekend video & map">★ Sponsor</a>
       <a class="nav-pill backyard-cta" href="backyard.html" title="Chica's Backyard — Meet Chica, tips & adventures">🏡 Meet Chica · Backyard</a>
       <label class="ctrl">City
         <select id="citySelect">
@@ -81,6 +109,11 @@
   <main class="layout">
     <aside class="panel">
       <section class="hero-chip"><span class="pulse"></span> Howdy from Chica — find sales near you</section>
+
+      <a class="sponsor-banner" href="sponsor.html">
+        ★ Sponsor Chica's Weekend
+        <small>Exclusive video + map briefing · from $100</small>
+      </a>
 
       <section class="weather-strip" id="weatherStrip" hidden>
         <span id="weatherText">Weather…</span>
@@ -164,6 +197,8 @@
   <footer class="footer">
     <span id="footerSources" title="Data sources">YardBird · GSIN · Chica</span>
     <span>
+      <a href="sponsor.html" style="font-weight:900;color:#92400e">★ Sponsor</a>
+      ·
       <a href="backyard.html" style="font-weight:900;color:#b45309">🏡 Chica's Backyard</a>
       ·
       <a href="https://github.com/Justonejewelry/Project-YardBird" target="_blank" rel="noopener">GitHub</a>
@@ -179,6 +214,7 @@
         <div class="yowl-actions">
           <button type="button" class="share" id="chicaShare">↗ Share</button>
           <a class="follow" href="backyard.html">🏡 Backyard</a>
+          <a class="follow" href="sponsor.html" style="background:#92400e;border-color:#78350f;color:#fff">★ Sponsor</a>
           <button type="button" class="share" id="chicaTipBtn" style="background:#f59e0b;border-color:#f59e0b">Tip</button>
         </div>
       </div>

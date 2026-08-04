@@ -7,6 +7,36 @@
   <meta name="description" content="Chica's Backyard — Meet Chica gallery, bio, blog, weekly videos, and interactive tips from San Antonio's favorite garage-sale Chihuahua." />
   <link rel="stylesheet" href="css/app.css" />
   <link rel="stylesheet" href="css/backyard.css" />
+  <style>
+    .nav-pill.sponsor-cta {
+      background: linear-gradient(135deg, #92400e, #b45309);
+      border: 2px solid #78350f;
+      color: #fff !important;
+      font-weight: 900;
+      box-shadow: 0 4px 14px rgba(146,64,14,0.4);
+      padding: 10px 16px;
+      text-decoration: none;
+      margin-right: 8px;
+    }
+    .nav-pill.sponsor-cta:hover { filter: brightness(1.08); }
+    .sponsor-banner {
+      display: block;
+      margin: 0 0 22px;
+      padding: 16px 18px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #92400e, #c47a3a);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 1rem;
+      line-height: 1.4;
+      box-shadow: 0 8px 24px rgba(146,64,14,0.35);
+      border: 2px solid #78350f;
+      text-align: center;
+    }
+    .sponsor-banner:hover { filter: brightness(1.06); }
+    .sponsor-banner small { display: block; font-weight: 600; opacity: 0.92; font-size: 0.82rem; margin-top: 4px; }
+  </style>
 </head>
 <body class="backyard-page">
   <header class="topbar">
@@ -18,12 +48,17 @@
       </div>
     </a>
     <div class="controls">
+      <a class="nav-pill sponsor-cta" href="sponsor.html">★ Sponsor</a>
       <a class="nav-pill" href="index.html">← Back to map</a>
     </div>
   </header>
 
   <main class="by-layout">
-    <!-- INTERACTIVE CHICA (Carfax-style) -->
+    <a class="sponsor-banner" href="sponsor.html">
+      ★ Sponsor Chica's Weekend Video &amp; Map
+      <small>Exclusive local partnership · from $100 / weekend · one seat only</small>
+    </a>
+
     <section class="chica-talk" id="chicaTalk">
       <div class="ct-card">
         <img id="ctAvatar" src="assets/chica.svg" alt="Chica" width="80" height="80" class="ct-avatar" />
@@ -62,7 +97,6 @@
       <div class="mc-gallery" id="mcGallery"></div>
     </section>
 
-    <!-- FEATURED ADVENTURE -->
     <section class="featured-adventure" id="featuredAdventure">
       <h3 class="by-section-title">🎬 Featured Adventure</h3>
       <div class="fa-card">
@@ -101,7 +135,11 @@
 
   <footer class="footer">
     <span>Meet Chica · Chica's Backyard · Project YardBird</span>
-    <a href="index.html">Map</a>
+    <span>
+      <a href="sponsor.html" style="font-weight:900;color:#92400e">★ Sponsor</a>
+      ·
+      <a href="index.html">Map</a>
+    </span>
   </footer>
 
   <script src="js/backyard.js"></script>
