@@ -1,4 +1,4 @@
-/* Chica with sponsor sign — high-visibility CTA */
+/* Chica with sponsor sign — transparent PNG, no checkerboard */
 .chica-sign {
   display: block;
   text-decoration: none;
@@ -14,12 +14,10 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  /* Knock out white / light gray backdrop so grass shows through */
-  mix-blend-mode: multiply;
   background: transparent;
+  /* no mix-blend — PNG has real alpha */
 }
 
-/* Home */
 .chica-sign-home {
   max-width: 260px;
   margin: 0 auto 8px;
@@ -40,13 +38,12 @@
   font-size: 0.95rem;
 }
 
-/* Map — lower right */
 .chica-sign-map {
   position: absolute;
   right: 12px;
   bottom: 52px;
   z-index: 5;
-  width: 118px;
+  width: 100px;
   filter: drop-shadow(0 8px 16px rgba(15, 23, 42, 0.28));
 }
 .chica-sign-map:hover {
@@ -54,20 +51,23 @@
 }
 @media (max-width: 720px) {
   .chica-sign-map {
-    width: 96px;
+    width: 84px;
     bottom: 44px;
     right: 10px;
   }
 }
 
-/* Backyard */
 .chica-sign-backyard {
-  max-width: 220px;
+  max-width: 200px;
   margin: 0 auto 18px;
   filter: drop-shadow(0 10px 18px rgba(15, 23, 42, 0.2));
 }
 
-/* On white cards, multiply still works; optional solid fallback wrapper */
-.chica-sign-on-light img {
-  mix-blend-mode: darken;
+/* Quiet sponsor strip on Voss landing */
+.v-sponsor-inner img {
+  width: 64px;
+  height: auto;
+  flex-shrink: 0;
+  background: transparent;
+  mix-blend-mode: normal;
 }
