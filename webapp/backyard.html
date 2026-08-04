@@ -4,20 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Chica's Backyard · Meet Chica</title>
-  <meta name="description" content="Meet Chica — blog, weekly videos, and tips from San Antonio's garage-sale Chihuahua." />
+  <meta name="description" content="Meet Chica — leave a note, share the map, blog, and weekly videos from San Antonio's garage-sale Chihuahua." />
+  <meta property="og:title" content="Chica's Backyard · Garage Sale Map" />
+  <meta property="og:description" content="Verified garage & estate sales with Chica — San Antonio and Texas." />
+  <meta property="og:url" content="https://justonejewelry.github.io/Project-YardBird/backyard.html" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/landing.css" />
   <link rel="stylesheet" href="css/backyard.css" />
   <style>
-    body.backyard-page { background: #f8fafc; font-family: Inter, system-ui, sans-serif; margin: 0; }
-    .by-layout { max-width: 960px; margin: 0 auto; padding: 12px 20px 48px; }
     .sponsor-banner {
       display: block; margin: 0 0 20px; padding: 16px 18px; border-radius: 16px;
       background: #0f172a; color: #fff; text-decoration: none; font-weight: 800;
       text-align: center; border: 1px solid #1e293b;
     }
     .sponsor-banner small { display: block; font-weight: 600; opacity: 0.85; font-size: 0.82rem; margin-top: 4px; }
-    .mc-hero-photo { width: 100%; max-width: 320px; border-radius: 20px; box-shadow: 0 12px 32px rgba(15,23,42,0.12); object-fit: cover; }
+    .mc-hero-photo { width: 100%; max-width: 320px; border-radius: 20px; box-shadow: 0 12px 32px rgba(0,0,0,0.2); object-fit: cover; }
   </style>
 </head>
 <body class="backyard-page landing">
@@ -33,17 +34,19 @@
       <a class="lbtn primary" href="map.html">Open map</a>
     </div>
   </header>
+
   <main class="by-layout">
     <a class="sponsor-banner" href="sponsor.html">
       ★ Sponsor Chica's Weekend Video &amp; Map
       <small>Exclusive local partnership · from $100 / weekend · one seat only</small>
     </a>
+
     <section class="chica-talk" id="chicaTalk">
       <div class="ct-card">
-        <img id="ctAvatar" data-chica-hero src="assets/chica.svg" alt="Chica" width="80" height="80" class="ct-avatar" style="object-fit:cover;border-radius:50%;background:#eff6ff" />
+        <img id="ctAvatar" data-chica-hero src="assets/chica.svg" alt="Chica" width="80" height="80" class="ct-avatar" style="object-fit:cover;border-radius:50%" />
         <div class="ct-bubble">
           <strong id="ctName">Chica</strong>
-          <p id="ctMessage">Howdy! Click me or hit the button — I'll give you a tip or a secret from the map.</p>
+          <p id="ctMessage">Howdy! You're in my backyard. Leave a note, share the map, or grab a tip before you hunt.</p>
           <div class="ct-actions">
             <button type="button" class="near-btn primary" id="btnTalk">Talk to Chica</button>
             <button type="button" class="near-btn" id="btnTip">Random tip</button>
@@ -51,6 +54,24 @@
         </div>
       </div>
     </section>
+
+    <!-- SHARE -->
+    <section class="share-section" id="shareSection">
+      <h3>Share Chica's map</h3>
+      <p class="share-lead">Send the backyard (or the live map) to friends before Saturday.</p>
+      <div class="share-grid" id="shareGrid">
+        <a class="share-btn x" id="shareX" target="_blank" rel="noopener">𝕏 Post</a>
+        <a class="share-btn fb" id="shareFb" target="_blank" rel="noopener">Facebook</a>
+        <a class="share-btn wa" id="shareWa" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="share-btn li" id="shareLi" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="share-btn rd" id="shareRd" target="_blank" rel="noopener">Reddit</a>
+        <a class="share-btn tg" id="shareTg" target="_blank" rel="noopener">Telegram</a>
+        <a class="share-btn mail" id="shareMail">Email</a>
+        <button type="button" class="share-btn copy" id="shareCopy">Copy link</button>
+        <button type="button" class="share-btn copy" id="shareNative" hidden>Share…</button>
+      </div>
+    </section>
+
     <section class="meet-cheeks" id="meetCheeks">
       <div class="mc-header">
         <h2>Meet Chica</h2>
@@ -72,6 +93,24 @@
       </div>
       <div class="mc-gallery" id="mcGallery"></div>
     </section>
+
+    <!-- COMMENTS FOR CHICA -->
+    <section class="comment-section" id="commentSection">
+      <h3>Leave a note for Chica</h3>
+      <p class="comment-lead">Sale tips, finds, or just a howdy — Chica reads every one (on this device).</p>
+      <form class="comment-form" id="commentForm">
+        <div class="row">
+          <input type="text" id="commentName" placeholder="Your name" maxlength="40" required />
+          <input type="text" id="commentCity" placeholder="City (optional)" maxlength="40" />
+        </div>
+        <textarea id="commentBody" placeholder="Hey Chica — found a great estate sale on the north side…" maxlength="500" required></textarea>
+        <button type="submit">Post note</button>
+      </form>
+      <div class="comment-list" id="commentList">
+        <p class="comment-empty" id="commentEmpty">No notes yet. Be the first to say howdy.</p>
+      </div>
+    </section>
+
     <section class="featured-adventure" id="featuredAdventure">
       <h3 class="by-section-title">🎬 Featured Adventure</h3>
       <div class="fa-card">
@@ -87,6 +126,7 @@
         </div>
       </div>
     </section>
+
     <div class="by-grid">
       <section class="by-col">
         <h3 class="by-section-title">📝 Chica's Blog</h3>
@@ -97,6 +137,7 @@
         <div id="videoList" class="by-videos">Loading videos…</div>
       </section>
     </div>
+
     <article id="postView" class="by-post-view hidden">
       <button type="button" class="near-btn" id="btnBackPosts">← All posts</button>
       <h2 id="postTitle"></h2>
@@ -104,6 +145,7 @@
       <div class="by-body" id="postBody"></div>
     </article>
   </main>
+
   <footer class="lfoot">
     <div><strong>Chica's Backyard</strong><span>Project YardBird · GSIN</span></div>
     <div class="lfoot-links">
@@ -112,7 +154,95 @@
       <a href="sponsor.html">Sponsor</a>
     </div>
   </footer>
+
   <script src="js/backyard.js"></script>
   <script src="assets/chica-hero-p1.js"></script>
+  <script>
+  (function () {
+    // Grass photo tile if present
+    var g = new Image();
+    g.onload = function () { document.body.classList.add('has-grass-photo'); };
+    g.src = 'assets/grass-tile.jpg';
+
+    // Share links
+    var pageUrl = encodeURIComponent('https://justonejewelry.github.io/Project-YardBird/backyard.html');
+    var mapUrl = encodeURIComponent('https://justonejewelry.github.io/Project-YardBird/map.html');
+    var text = encodeURIComponent("Chica's Garage Sale Map — verified sales in San Antonio. Howdy from the backyard!");
+    var shareText = "Chica's Garage Sale Map — verified sales in San Antonio. Howdy from the backyard!";
+    var abs = 'https://justonejewelry.github.io/Project-YardBird/backyard.html';
+
+    document.getElementById('shareX').href = 'https://twitter.com/intent/tweet?text=' + text + '&url=' + pageUrl;
+    document.getElementById('shareFb').href = 'https://www.facebook.com/sharer/sharer.php?u=' + pageUrl;
+    document.getElementById('shareWa').href = 'https://wa.me/?text=' + text + '%20' + pageUrl;
+    document.getElementById('shareLi').href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + pageUrl;
+    document.getElementById('shareRd').href = 'https://www.reddit.com/submit?url=' + pageUrl + '&title=' + text;
+    document.getElementById('shareTg').href = 'https://t.me/share/url?url=' + pageUrl + '&text=' + text;
+    document.getElementById('shareMail').href = 'mailto:?subject=' + encodeURIComponent("Chica's Garage Sale Map") + '&body=' + text + '%0A%0A' + pageUrl;
+
+    document.getElementById('shareCopy').addEventListener('click', function () {
+      navigator.clipboard.writeText(abs).then(function () {
+        var b = document.getElementById('shareCopy');
+        b.textContent = 'Copied!';
+        setTimeout(function () { b.textContent = 'Copy link'; }, 1500);
+      });
+    });
+
+    if (navigator.share) {
+      var nativeBtn = document.getElementById('shareNative');
+      nativeBtn.hidden = false;
+      nativeBtn.addEventListener('click', function () {
+        navigator.share({ title: "Chica's Backyard", text: shareText, url: abs }).catch(function () {});
+      });
+    }
+
+    // Comments (localStorage guestbook)
+    var KEY = 'chica_backyard_comments_v1';
+    function load() {
+      try { return JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (e) { return []; }
+    }
+    function save(list) {
+      localStorage.setItem(KEY, JSON.stringify(list.slice(0, 50)));
+    }
+    function render() {
+      var list = load();
+      var el = document.getElementById('commentList');
+      var empty = document.getElementById('commentEmpty');
+      el.querySelectorAll('.comment-item').forEach(function (n) { n.remove(); });
+      if (!list.length) {
+        if (empty) empty.style.display = 'block';
+        return;
+      }
+      if (empty) empty.style.display = 'none';
+      list.forEach(function (c) {
+        var div = document.createElement('div');
+        div.className = 'comment-item';
+        var where = c.city ? ' · ' + c.city : '';
+        div.innerHTML = '<div class="c-head"><span class="c-name"></span><span class="c-date"></span></div><p class="c-body"></p>';
+        div.querySelector('.c-name').textContent = c.name + where;
+        div.querySelector('.c-date').textContent = c.date;
+        div.querySelector('.c-body').textContent = c.body;
+        el.appendChild(div);
+      });
+    }
+    document.getElementById('commentForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var name = document.getElementById('commentName').value.trim();
+      var city = document.getElementById('commentCity').value.trim();
+      var body = document.getElementById('commentBody').value.trim();
+      if (!name || !body) return;
+      var list = load();
+      list.unshift({
+        name: name.slice(0, 40),
+        city: city.slice(0, 40),
+        body: body.slice(0, 500),
+        date: new Date().toLocaleString()
+      });
+      save(list);
+      document.getElementById('commentForm').reset();
+      render();
+    });
+    render();
+  })();
+  </script>
 </body>
 </html>
