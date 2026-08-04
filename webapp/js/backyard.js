@@ -20,37 +20,19 @@
     }
   }
 
-  // Only paths that exist in the repo right now
-  const CAPE = "assets/file_000000009f8c71fda0f56075f84270f7.png";
+  // Prefer optimized JPEGs; fall back to originals that already work in browsers
+  const CAPE = "assets/chica/cape.jpg";
+  const CAPE_FALLBACK = "assets/file_000000009f8c71fda0f56075f84270f7.png";
   const SMILE = "assets/chica/smile.jpg";
+  const SMILE_FALLBACK = "assets/chica/napping.jpg"; // smile.jpg is currently HEIC on server
   const NAP = "assets/chica/napping.jpg";
   const HUMAN = "assets/1.jpg";
 
   const CHICA_GALLERY = [
-    {
-      key: "cape",
-      src: CAPE,
-      alt: "Chica in a red superhero cape flying",
-      caption: "Super Chica",
-    },
-    {
-      key: "smile",
-      src: SMILE,
-      alt: "Chica smiling — Meet Chica",
-      caption: "The famous smile",
-    },
-    {
-      key: "napping",
-      src: NAP,
-      alt: "Chica napping with tongue out",
-      caption: "Power nap mode",
-    },
-    {
-      key: "human",
-      src: HUMAN,
-      alt: "Chica and her human",
-      caption: "Chica & her human",
-    },
+    { key: "cape", src: CAPE, fallback: CAPE_FALLBACK, alt: "Chica in a red superhero cape", caption: "Super Chica" },
+    { key: "smile", src: SMILE, fallback: SMILE_FALLBACK, alt: "Chica smiling — Meet Chica", caption: "The famous smile" },
+    { key: "napping", src: NAP, fallback: NAP, alt: "Chica napping", caption: "Power nap mode" },
+    { key: "human", src: HUMAN, fallback: HUMAN, alt: "Chica and her human", caption: "Chica & her human" },
   ];
 
   const DEFAULT_TIPS = [
@@ -61,12 +43,21 @@
     "Star a sale if you plan to go. I'll help you build a route.",
     "Near Me works best with a ZIP. Try 78254 or 78015.",
     "I nap hard. You hunt hard. Deal?",
-    "Howdy! I'm Chica. This backyard is mine. The map is ours.",
-    "Look for the yellow stars on the map — those are my top picks.",
   ];
 
   let tips = DEFAULT_TIPS.slice();
   let tipIndex = 0;
+
+  function wireImg(el, src, fallback) {
+    if (!el) return;
+    el.loading = "lazy";
+    el.decoding = "async";
+    el.onerror = function () {
+      if (fallback && this.src.indexOf(fallback) === -1) this.src = fallback;
+      else this.parentElement && this.parentElement.classList.add("missing");
+    };
+    el.src = src;
+  }
 
   function renderMeetChica() {
     const gallery = document.getElementById("mcGallery");
@@ -74,26 +65,15 @@
     const avatar = document.getElementById("ctAvatar");
     if (!gallery) return;
 
-    // Bio hero = Super Chica cape
-    if (hero) {
-      hero.src = CAPE;
-      hero.alt = "Chica in a red superhero cape";
-      hero.onerror = function () {
-        this.src = SMILE;
-      };
-    }
-    if (avatar) {
-      avatar.src = SMILE;
-      avatar.alt = "Chica";
-      avatar.onerror = function () {
-        this.src = "assets/chica.svg";
-      };
-    }
+    wireImg(hero, CAPE, CAPE_FALLBACK);
+    if (hero) hero.alt = "Chica in a red superhero cape";
+    wireImg(avatar, SMILE, SMILE_FALLBACK);
+    if (avatar) avatar.alt = "Chica";
 
     gallery.innerHTML = CHICA_GALLERY.map(
       (p) => `<figure class="mc-fig">
-          <img src="${esc(p.src)}" alt="${esc(p.alt)}" loading="lazy"
-            onerror="this.parentElement.classList.add('missing')" />
+          <img src="${esc(p.src)}" alt="${esc(p.alt)}" loading="lazy" decoding="async"
+            onerror="this.onerror=null;this.src='${esc(p.fallback)}'" />
           <figcaption>${esc(p.caption)}</figcaption>
         </figure>`
     ).join("");
@@ -101,11 +81,9 @@
 
   function showPost(post) {
     document.querySelector(".by-grid")?.classList.add("hidden");
-    document.getElementById("meetCheeks")?.classList.add("hidden");
-    document.getElementById("featuredAdventure")?.classList.add("hidden");
-    document.getElementById("chicaTalk")?.classList.add("hidden");
-    document.getElementById("shareSection")?.classList.add("hidden");
-    document.getElementById("commentSection")?.classList.add("hidden");
+    ["meetCheeks", "featuredAdventure", "chicaTalk", "shareSection", "commentSection"].forEach((id) => {
+      document.getElementById(id)?.classList.add("hidden");
+    });
     const view = document.getElementById("postView");
     view.classList.remove("hidden");
     document.getElementById("postTitle").textContent = post.title;
@@ -118,11 +96,9 @@
   function hidePost() {
     document.getElementById("postView")?.classList.add("hidden");
     document.querySelector(".by-grid")?.classList.remove("hidden");
-    document.getElementById("meetCheeks")?.classList.remove("hidden");
-    document.getElementById("featuredAdventure")?.classList.remove("hidden");
-    document.getElementById("chicaTalk")?.classList.remove("hidden");
-    document.getElementById("shareSection")?.classList.remove("hidden");
-    document.getElementById("commentSection")?.classList.remove("hidden");
+    ["meetCheeks", "featuredAdventure", "chicaTalk", "shareSection", "commentSection"].forEach((id) => {
+      document.getElementById(id)?.classList.remove("hidden");
+    });
   }
 
   function renderBlog(posts) {
@@ -155,12 +131,13 @@
       return;
     }
     const list = videos.filter((v) => !v.featured);
+    const thumbBg = CAPE_FALLBACK;
     el.innerHTML = list
       .map((v) => {
         const hasYt = v.youtube_id && v.status !== "placeholder";
         const thumb = hasYt
           ? `<a href="https://www.youtube.com/watch?v=${esc(v.youtube_id)}" target="_blank" rel="noopener" class="by-video-thumb" style="background:url(https://img.youtube.com/vi/${esc(v.youtube_id)}/hqdefault.jpg) center/cover"><span class="play">▶</span></a>`
-          : `<div class="by-video-thumb" style="background:url(${CAPE}) center/cover"><span class="play">▶</span><span style="position:absolute;bottom:10px;font-size:0.75rem;opacity:0.9;color:#fff;text-shadow:0 1px 2px #000">${v.status === "local" ? "Local" : "Coming soon"}</span></div>`;
+          : `<div class="by-video-thumb" style="background:url(${thumbBg}) center/cover"><span class="play">▶</span><span style="position:absolute;bottom:10px;font-size:0.75rem;opacity:0.9;color:#fff;text-shadow:0 1px 2px #000">${v.status === "local" ? "Local" : "Coming soon"}</span></div>`;
         return `<article class="by-video-card ${hasYt || v.status === "local" ? "" : "placeholder"}">
           ${thumb}
           <div class="by-video-body">
@@ -176,14 +153,8 @@
   function talkToChica() {
     const msg = document.getElementById("ctMessage");
     if (!msg) return;
-    const next = tips[tipIndex % tips.length];
+    msg.textContent = tips[tipIndex % tips.length];
     tipIndex++;
-    msg.textContent = next;
-    const card = document.querySelector(".ct-card");
-    if (card) {
-      card.style.transform = "scale(1.02)";
-      setTimeout(() => (card.style.transform = ""), 180);
-    }
   }
 
   function boot() {
@@ -193,23 +164,19 @@
     document.getElementById("btnTip")?.addEventListener("click", talkToChica);
     document.getElementById("ctAvatar")?.addEventListener("click", talkToChica);
 
-    try {
-      fetch("data/backyard.json")
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.tips && data.tips.length) tips = data.tips;
-          renderBlog(data.blog || []);
-          renderVideos(data.videos || []);
-        })
-        .catch(() => {
-          const b = document.getElementById("blogList");
-          const v = document.getElementById("videoList");
-          if (b) b.textContent = "Could not load backyard posts.";
-          if (v) v.textContent = "Could not load videos.";
-        });
-    } catch (e) {
-      console.warn(e);
-    }
+    fetch("data/backyard.json")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.tips && data.tips.length) tips = data.tips;
+        renderBlog(data.blog || []);
+        renderVideos(data.videos || []);
+      })
+      .catch(() => {
+        const b = document.getElementById("blogList");
+        const v = document.getElementById("videoList");
+        if (b) b.textContent = "Could not load backyard posts.";
+        if (v) v.textContent = "Could not load videos.";
+      });
   }
 
   boot();
