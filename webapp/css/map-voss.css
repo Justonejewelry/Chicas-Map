@@ -1,0 +1,108 @@
+/**
+ * Map chrome — Aurora Voss
+ * Map is the product. UI is glass, not furniture.
+ */
+body.grass-map {
+  /* Override loud grass — calm canvas so map tiles + pins read first */
+  background: #eef1ec !important;
+}
+body.grass-map .grass-layer,
+body.grass-map .grass-layer-near {
+  opacity: 0.35;
+  filter: saturate(0.7);
+}
+
+body.grass-map .topbar {
+  background: rgba(255, 255, 255, 0.92) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid #e6e1d8 !important;
+  box-shadow: 0 1px 0 rgba(20, 17, 15, 0.03);
+}
+
+body.grass-map .topbar h1 {
+  font-weight: 750;
+  letter-spacing: -0.02em;
+}
+body.grass-map .topbar h1 span {
+  color: #1a6b3c;
+  font-weight: 650;
+}
+
+body.grass-map .panel {
+  background: rgba(255, 255, 255, 0.96) !important;
+  border-right: 1px solid #e6e1d8;
+  backdrop-filter: blur(12px);
+}
+
+body.grass-map .footer {
+  background: rgba(255, 255, 255, 0.92) !important;
+  border-top: 1px solid #e6e1d8 !important;
+  color: #7a736b;
+  font-size: 0.8rem;
+}
+
+body.grass-map .footer a {
+  color: #1a6b3c;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+/* FABs — quieter */
+body.grass-map .map-fab {
+  background: #fff;
+  border: 1px solid #e6e1d8;
+  box-shadow: 0 4px 16px rgba(20, 17, 15, 0.1);
+}
+body.grass-map .map-fab.active {
+  border-color: #1a6b3c;
+  box-shadow: 0 4px 16px rgba(26, 107, 60, 0.2);
+}
+
+/* Sponsor sign on map — smaller, less dominant */
+body.grass-map .chica-sign-map {
+  width: 88px;
+  opacity: 0.92;
+}
+body.grass-map .chica-sign-map:hover {
+  opacity: 1;
+}
+
+/* Popovers */
+body.grass-map .map-pop {
+  border-radius: 16px;
+  border: 1px solid #e6e1d8;
+  box-shadow: 0 12px 40px rgba(20, 17, 15, 0.12);
+}
+body.grass-map .map-pop h3 {
+  font-weight: 750;
+  letter-spacing: -0.01em;
+}
+
+/* Menu */
+body.grass-map .menu-btn {
+  border-radius: 999px;
+  font-weight: 650;
+  border-color: #e6e1d8;
+}
+body.grass-map .clean-select {
+  border-radius: 10px;
+  border-color: #e6e1d8;
+  font-weight: 600;
+}
+
+/* Tool buttons */
+body.grass-map .tool-btn {
+  border-radius: 10px;
+  font-weight: 650;
+}
+
+/* Legend */
+body.grass-map .map-legend {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  border: 1px solid #e6e1d8;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.75rem;
+}

@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chica · Garage Sale Map</title>
-  <meta name="description" content="Chica maps the best garage and estate sales in San Antonio and across Texas." />
-  <meta name="theme-color" content="#166534" />
+  <title>Chica Map — Verified Sales</title>
+  <meta name="description" content="Live map of verified garage and estate sales in San Antonio and Texas." />
+  <meta name="theme-color" content="#1a6b3c" />
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
   <link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
@@ -16,13 +16,14 @@
   <link rel="stylesheet" href="css/map-clean.css" />
   <link rel="stylesheet" href="css/map-fabs.css" />
   <link rel="stylesheet" href="css/chica-sign.css" />
+  <link rel="stylesheet" href="css/map-voss.css" />
   <style>
     .maplibregl-popup-content {
-      background: #fff; color: #0f172a; border-radius: 12px;
-      box-shadow: 0 8px 24px rgba(15,23,42,0.12); border: 1px solid #e2e8f0;
+      background: #fff; color: #14110f; border-radius: 14px;
+      box-shadow: 0 12px 32px rgba(20,17,15,0.12); border: 1px solid #e6e1d8;
       padding: 12px 14px; font-family: inherit; min-width: 180px;
     }
-    .maplibregl-popup-close-button { font-size: 18px; padding: 4px 8px; color: #64748b; }
+    .maplibregl-popup-close-button { font-size: 18px; padding: 4px 8px; color: #7a736b; }
     .maplibregl-ctrl-attrib { font-size: 10px; }
     .yb-marker {
       width: 18px; height: 18px; border-radius: 50% 50% 50% 0;
@@ -33,7 +34,7 @@
     .yb-marker.estate { background: #a855f7; }
     .yb-marker.fundraiser { background: #f59e0b; }
     .yb-marker.permit { background: #38bdf8; }
-    .yb-marker.top { background: #f59e0b; width: 20px; height: 20px; }
+    .yb-marker.top { background: #c45c26; width: 20px; height: 20px; }
     .yb-user-dot {
       width: 16px; height: 16px; border-radius: 50%;
       background: #2563eb; border: 3px solid #fff;
@@ -41,7 +42,7 @@
     }
     .logo-mark.img {
       width: 40px; height: 40px; border-radius: 50%; border: 2px solid #fff;
-      box-shadow: 0 2px 8px rgba(22,101,52,0.3); object-fit: cover; background: transparent;
+      box-shadow: 0 2px 8px rgba(26,107,60,0.25); object-fit: cover; background: transparent;
     }
     .chips { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
   </style>
@@ -90,7 +91,7 @@
     <aside class="panel">
       <section class="tools-bar">
         <button type="button" class="tool-btn" id="btnFavorites">★ Saved <span id="favCount">0</span></button>
-        <button type="button" class="tool-btn" id="btnRoute">🧭 Route <span id="routeCount">0</span></button>
+        <button type="button" class="tool-btn" id="btnRoute">↗ Route <span id="routeCount">0</span></button>
         <button type="button" class="tool-btn" id="btnExport" hidden>Export</button>
       </section>
 
@@ -138,8 +139,8 @@
 
       <a class="chica-sign chica-sign-map" href="sponsor.html" title="Become a weekly sponsor">
         <img src="sponsor%20sign.jpg"
-             alt="Chica: Become a Weekly Sponsor"
-             width="120" height="160"
+             alt="Sponsor with Chica"
+             width="88" height="120"
              onerror="this.onerror=null;this.src='chicarar.png'" />
       </a>
 
@@ -167,8 +168,8 @@
       <div class="map-pop" id="popSearch" role="dialog" aria-label="Search">
         <h3>Search &amp; filters</h3>
         <div class="filters">
-          <input type="search" id="search" placeholder="Keyword…" style="width:100%;margin-bottom:8px;padding:10px 12px;border:1px solid #e2e8f0;border-radius:10px;font-weight:600" />
-          <select id="filterSelect" title="Filter by type" style="width:100%;padding:10px 12px;border:1px solid #e2e8f0;border-radius:10px;font-weight:600;background:#f8fafc">
+          <input type="search" id="search" placeholder="Keyword…" style="width:100%;margin-bottom:8px;padding:10px 12px;border:1px solid #e6e1d8;border-radius:10px;font-weight:600" />
+          <select id="filterSelect" title="Filter by type" style="width:100%;padding:10px 12px;border:1px solid #e6e1d8;border-radius:10px;font-weight:600;background:#f6f4ef">
             <option value="all">All types</option>
             <option value="garage">Garage</option>
             <option value="estate">Estate</option>
@@ -193,7 +194,7 @@
         <span><i class="pin estate"></i> Estate</span>
         <span><i class="pin permit"></i> Permit</span>
       </div>
-      <div class="map-hint" id="mapHint">Tap the icons (lower left) for Near me or Search</div>
+      <div class="map-hint" id="mapHint">Near me &amp; Search — lower left</div>
     </section>
   </main>
 
