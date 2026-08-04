@@ -1,0 +1,90 @@
+/* Sitewide grass yard — pure CSS, no image upload required */
+:root {
+  --grass-1: #0f3d24;
+  --grass-2: #166534;
+  --grass-3: #15803d;
+  --grass-4: #22c55e;
+  --grass-blade: rgba(187, 247, 208, 0.12);
+}
+
+body.grass-site,
+body.landing.grass-site,
+body.backyard-page.grass-site {
+  background-color: var(--grass-2) !important;
+  background-image:
+    /* soft light patches */
+    radial-gradient(ellipse 80% 50% at 10% 0%, rgba(34, 197, 94, 0.35), transparent 55%),
+    radial-gradient(ellipse 60% 40% at 90% 100%, rgba(21, 128, 61, 0.45), transparent 50%),
+    /* blade-like fine lines */
+    repeating-linear-gradient(
+      -12deg,
+      transparent 0 7px,
+      var(--grass-blade) 7px 8px
+    ),
+    repeating-linear-gradient(
+      18deg,
+      transparent 0 11px,
+      rgba(0, 0, 0, 0.04) 11px 12px
+    ),
+    /* base depth */
+    linear-gradient(180deg, #15803d 0%, #166534 35%, #14532d 70%, #0f3d24 100%) !important;
+  background-attachment: fixed !important;
+  min-height: 100vh;
+}
+
+/* Frosted cards stay readable on grass */
+body.grass-site .hero-frame,
+body.grass-site .feat,
+body.grass-site .sp-card,
+body.grass-site .meet-cheeks,
+body.grass-site .fa-card,
+body.grass-site .ct-card,
+body.grass-site .share-section,
+body.grass-site .comment-section,
+body.grass-site .by-card,
+body.grass-site .by-video-card,
+body.grass-site .by-post-view,
+body.grass-site .panel,
+body.grass-site .topbar,
+body.grass-site .footer,
+body.grass-site .lfoot {
+  background: rgba(255, 255, 255, 0.94) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+body.grass-site .lnav .llinks a,
+body.grass-site .lbrand {
+  color: #ecfdf5;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+body.grass-site .lnav .llinks a:hover {
+  color: #fff;
+}
+body.grass-site .lfoot,
+body.grass-site .lfoot strong {
+  color: #ecfdf5;
+  border-top-color: rgba(255, 255, 255, 0.15);
+}
+body.grass-site .lfoot-links a {
+  color: #bbf7d0;
+}
+body.grass-site .features h2,
+body.grass-site .features-lead,
+body.grass-site .by-section-title {
+  color: #ecfdf5 !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+body.grass-site .features-lead {
+  color: #bbf7d0 !important;
+}
+
+/* Map page: grass only on chrome, keep map readable */
+body.grass-map {
+  background: linear-gradient(180deg, #166534 0%, #14532d 100%) !important;
+}
+body.grass-map .topbar,
+body.grass-map .footer {
+  background: rgba(255, 255, 255, 0.96) !important;
+  border-color: #86efac !important;
+}
