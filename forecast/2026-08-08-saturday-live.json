@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-08-03T18:30:00-05:00",
+  "generated_at": "2026-08-08T07:15:00-05:00",
   "target": "2026-08-08 Saturday (live Discovery + Sentinel pass)",
   "city": "san-antonio",
   "status": "verified",
-  "confidence": 0.72,
-  "notes": "Focused Saturday-morning style pass on Heritage primary. Multi-day estate sales already live and covering Saturday 8 Aug. Classic garage volume still light but estate channel strong. Sentinel approved high-confidence addresses from estatesales.net. Weather supportive for early starts.",
+  "confidence": 0.78,
+  "notes": "Saturday-morning focused Discovery + Sentinel. Heritage multi-day estates remain the backbone. Sentinel re-verified high-confidence addresses from estatesales.net and Professional Estate Sales. Classic garage volume still modest; estate channel carrying the day. Weather supportive for early starts (heat builds to 96).",
   "days": {
     "friday": {"stars": 3, "predicted_sales": 8, "status": "active"},
-    "saturday": {"stars": 4, "predicted_sales": 12, "status": "peak"},
+    "saturday": {"stars": 4, "predicted_sales": 14, "status": "peak"},
     "sunday": {"stars": 3, "predicted_sales": 7, "status": "residual"}
   },
   "weather_impact": {
-    "condition": "Mostly sunny",
+    "condition": "Partly cloudy / mostly sunny",
     "high_f": 96,
     "low_f": 77,
     "risk": "heat",
-    "shopping_quality": "excellent early, decline after 11am due to heat"
+    "shopping_quality": "excellent early (before 9-10am), decline after 11am due to heat index ~105"
   },
   "hot_zones": [
     "Fair Oaks Ranch / Boerne",
@@ -92,18 +92,18 @@
     }
   ],
   "source_breakdown": {
-    "estate": 10,
+    "estate": 12,
     "craigslist": 0,
     "facebook": 1,
     "nextdoor": 0,
     "permit": 0,
     "other": 2
   },
-  "selene_briefing_draft": "Good morning San Antonio! Saturday is looking solid on the estate side. Fair Oaks, Alamo Ranch, and Helotes are carrying strong inventory — antiques, tools, and vintage leading the pack. Get there before 9 for the best selection. Heat builds fast to 96, so plan your route early.",
+  "selene_briefing_draft": "Good morning San Antonio! Saturday is solid on the estate side. Fair Oaks, Alamo Ranch, and Helotes are carrying strong inventory — antiques, tools, and vintage leading the pack. Get there before 9 for the best selection. Heat builds fast to 96, so plan your route early.",
   "meta": {
-    "heritage_records": 12,
-    "last_sentinel_pass": "2026-08-03T18:30:00-05:00",
+    "heritage_records": 14,
+    "last_sentinel_pass": "2026-08-08T07:15:00-05:00",
     "schema_version": "1.1",
-    "atlas_pass": "focused Discovery + Sentinel"
+    "atlas_pass": "focused Discovery + Sentinel Saturday morning"
   }
 }
