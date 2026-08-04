@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chica's Backyard · Meet Cheeks</title>
-  <meta name="description" content="Chica's Backyard — Meet Cheeks gallery, bio, blog, and weekly videos." />
+  <title>Chica's Backyard · Meet Chica</title>
+  <meta name="description" content="Chica's Backyard — Meet Chica gallery, bio, blog, weekly videos, and interactive tips from San Antonio's favorite garage-sale Chihuahua." />
   <link rel="stylesheet" href="css/app.css" />
   <link rel="stylesheet" href="css/backyard.css" />
 </head>
@@ -14,7 +14,7 @@
       <img class="logo-mark img" id="headerChica" src="assets/chica.svg" alt="Chica" width="48" height="48" />
       <div>
         <h1>Chica's <span>Backyard</span></h1>
-        <p class="tag">Meet Cheeks · Blog · Weekly videos</p>
+        <p class="tag">Meet Chica · Blog · Adventures · Tips</p>
       </div>
     </a>
     <div class="controls">
@@ -23,9 +23,24 @@
   </header>
 
   <main class="by-layout">
+    <!-- INTERACTIVE CHICA (Carfax-style) -->
+    <section class="chica-talk" id="chicaTalk">
+      <div class="ct-card">
+        <img id="ctAvatar" src="assets/chica.svg" alt="Chica" width="80" height="80" class="ct-avatar" />
+        <div class="ct-bubble">
+          <strong id="ctName">Chica</strong>
+          <p id="ctMessage">Howdy! Click me or hit the button — I'll give you a tip or a secret from the map.</p>
+          <div class="ct-actions">
+            <button type="button" class="near-btn primary" id="btnTalk">Talk to Chica</button>
+            <button type="button" class="near-btn" id="btnTip">Random tip</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="meet-cheeks" id="meetCheeks">
       <div class="mc-header">
-        <h2>Meet Cheeks</h2>
+        <h2>Meet Chica</h2>
         <p class="mc-sub">Official Chica only — identical likeness, no substitutes</p>
       </div>
 
@@ -36,8 +51,8 @@
         <div class="mc-bio">
           <h3>Hi. I'm Chica.</h3>
           <div class="mc-bio-body">
-            <p>They call me <strong>Meet Cheeks</strong> — and if you've seen the smile, you know why. I'm a brown chihuahua with a little grey on my face, white on my feet, and a tip of white on my tail. I nap hard (tongue out is standard equipment), I rock a sparkly cape when the mission calls for it, and I go on adventures with my human.</p>
-            <p>This backyard is mine. The map? I help run that too. When I'm not supervising garage-sale intel, I'm either mid-power-nap on a purple blanket or showing off the famous Meet Cheeks grin.</p>
+            <p>They call me <strong>Meet Chica</strong> — and if you've seen the smile, you know why. I'm a brown Chihuahua with a little grey on my face, white on my feet, and a tip of white on my tail. I nap hard (tongue out is standard equipment), I rock a sparkly cape when the mission calls for it, and I go on adventures with my human.</p>
+            <p>This backyard is mine. The map? I help run that too. When I'm not supervising garage-sale intel, I'm either mid-power-nap on a purple blanket or showing off the famous Meet Chica grin.</p>
             <p>Welcome to my corner. Wipe your paws.</p>
             <p class="mc-sign">— Chica</p>
           </div>
@@ -45,6 +60,24 @@
       </div>
 
       <div class="mc-gallery" id="mcGallery"></div>
+    </section>
+
+    <!-- FEATURED ADVENTURE -->
+    <section class="featured-adventure" id="featuredAdventure">
+      <h3 class="by-section-title">🎬 Featured Adventure</h3>
+      <div class="fa-card">
+        <div class="fa-video-wrap">
+          <video id="adventureVideo" controls playsinline poster="assets/chica.svg" style="width:100%;border-radius:14px;background:#0f172a">
+            <source src="assets/videos/chica_highway_adventure.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="fa-copy">
+          <h4>Highway to San Antonio — Chica's Sale Hunt</h4>
+          <p>From the big-box shopping cart to the open highway. I spotted garage sales, moving sales, and a whole neighborhood of treasures. 14 seconds of pure scouting energy.</p>
+          <p class="fa-meta">Aug 4, 2026 · 14 sec · Adventure</p>
+        </div>
+      </div>
     </section>
 
     <div class="by-grid">
@@ -67,7 +100,7 @@
   </main>
 
   <footer class="footer">
-    <span>Meet Cheeks · Chica's Backyard · Project YardBird</span>
+    <span>Meet Chica · Chica's Backyard · Project YardBird</span>
     <a href="index.html">Map</a>
   </footer>
 

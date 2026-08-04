@@ -1,7 +1,15 @@
 {
   "host": "Chica",
-  "tagline": "Weekly yard-sale intel from the backyard",
+  "tagline": "Weekly yard-sale intel from the backyard — and a little adventure",
   "blog": [
+    {
+      "id": "2026-08-04",
+      "date": "2026-08-04",
+      "title": "Highway to San Antonio — the adventure begins",
+      "excerpt": "Howdy! I hopped in the cart, then the truck, and hit the highway looking for sales. Fair Oaks, Alamo Ranch, Helotes… the treasures are out there. Watch the new adventure video in my Backyard!",
+      "body": "They say a Chihuahua's place is on the couch. I say my place is in the passenger seat of a silver Ford, tongue out, eyes on the next garage sale sign.\n\nThis weekend the estate channel is strong — Fair Oaks Ranch, Camino Bandera (Alamo Ranch side), Helotes, Redland Springs, and that big warehouse on Eisenhauer. Get out early. Heat hits 96.\n\nI filmed a little road-trip just for you. Check the Weekly Videos section. And if you see me in a shopping cart at the big box store… wave. I'm scouting.\n\nWipe your paws. — Chica",
+      "tags": ["adventure", "San Antonio", "video", "weekend"]
+    },
     {
       "id": "2026-08-03",
       "date": "2026-08-03",
@@ -21,6 +29,17 @@
   ],
   "videos": [
     {
+      "id": "v-2026-08-04-adventure",
+      "date": "2026-08-04",
+      "title": "Highway to San Antonio — Chica's Sale Hunt",
+      "description": "From the big-box cart to the open highway. I found garage sales, moving sales, and a whole neighborhood of treasures. Watch me scout!",
+      "youtube_id": "",
+      "status": "local",
+      "local_src": "assets/videos/chica_highway_adventure.mp4",
+      "duration": "14 sec",
+      "featured": true
+    },
+    {
       "id": "v-2026-08-03",
       "date": "2026-08-03",
       "title": "Week of Aug 3 — Fair Oaks cluster + Near Me",
@@ -38,5 +57,14 @@
       "status": "placeholder",
       "duration": "~2 min"
     }
+  ],
+  "tips": [
+    "Get there before 9 — the good tools disappear first.",
+    "Estate sales often have the mid-century furniture. Garage sales have the surprises.",
+    "Hot zones this weekend: Fair Oaks, Alamo Ranch, Helotes.",
+    "96 degrees. Hydrate. And wipe your paws.",
+    "Star a sale if you plan to go. I'll help you build a route.",
+    "Near Me works best with a ZIP. Try 78254 or 78015.",
+    "I nap hard. You hunt hard. Deal?"
   ]
 }
