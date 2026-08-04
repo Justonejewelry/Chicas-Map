@@ -5,21 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sponsor Chica's Weekend · Project YardBird</title>
   <meta name="description" content="Exclusive weekend sponsorship on Chica's garage sale map and weekly video — San Antonio." />
+  <meta name="theme-color" content="#166534" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/landing.css" />
+  <link rel="stylesheet" href="css/grass.css" />
   <style>
-    body.sponsor-page { background: #f8fafc; font-family: Inter, system-ui, sans-serif; margin: 0; min-height: 100vh; }
+    body.sponsor-page { font-family: Inter, system-ui, sans-serif; margin: 0; min-height: 100vh; }
     .sp-wrap { max-width: 720px; margin: 0 auto; padding: 24px 18px 56px; }
     .sp-hero { text-align: center; margin-bottom: 22px; }
-    .sp-hero h1 { margin: 0 0 6px; font-size: 1.85rem; font-weight: 800; letter-spacing: -0.02em; }
+    .sp-hero h1 { margin: 0 0 6px; font-size: 1.85rem; font-weight: 800; letter-spacing: -0.02em; color: #ecfdf5; text-shadow: 0 1px 3px rgba(0,0,0,.35); }
     .sp-hero h1 span {
-      background: linear-gradient(90deg, #2563eb, #7c3aed);
+      background: linear-gradient(90deg, #86efac, #fde68a);
       -webkit-background-clip: text; background-clip: text; color: transparent;
     }
-    .sp-hero p { margin: 0; color: #64748b; font-weight: 600; }
+    .sp-hero p { margin: 0; color: #bbf7d0; font-weight: 600; }
     .sp-card {
-      background: #fff; border: 1px solid #e2e8f0; border-radius: 18px;
-      padding: 20px 22px; margin-bottom: 16px; box-shadow: 0 8px 24px rgba(15,23,42,0.04);
+      background: rgba(255,255,255,0.94); border: 1px solid #e2e8f0; border-radius: 18px;
+      padding: 20px 22px; margin-bottom: 16px; box-shadow: 0 8px 24px rgba(15,23,42,0.08);
     }
     .sp-card h2 { margin: 0 0 10px; font-size: 1.05rem; color: #0f172a; }
     .sp-card p, .sp-card li { color: #334155; font-size: 0.95rem; line-height: 1.55; }
@@ -40,13 +42,21 @@
       box-shadow: 0 8px 20px rgba(37,99,235,0.28);
     }
     .sp-cta:hover { background: #1d4ed8; }
-    .sp-note { text-align: center; font-size: 0.82rem; color: #64748b; margin-top: 14px; }
-    .sp-hero-img { width: 96px; height: 96px; border-radius: 20px; object-fit: cover; margin: 0 auto 14px; display: block; box-shadow: 0 12px 28px rgba(15,23,42,0.12); }
+    .sp-note { text-align: center; font-size: 0.82rem; color: #bbf7d0; margin-top: 14px; }
+    .sp-note a { color: #ecfdf5; font-weight: 700; }
+    .sp-hero-img {
+      width: 110px; height: 110px; border-radius: 24px; object-fit: cover;
+      margin: 0 auto 14px; display: block;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.25); border: 3px solid #fff;
+    }
   </style>
 </head>
-<body class="sponsor-page landing">
+<body class="sponsor-page landing grass-site">
   <header class="lnav">
-    <a class="lbrand" href="index.html"><span class="lmark">🐕</span><span>Sponsor Chica</span></a>
+    <a class="lbrand" href="index.html">
+      <img src="assets/chica/smile.jpg" alt="Chica" width="36" height="36" style="border-radius:10px;object-fit:cover;border:2px solid #fff" />
+      <span>Sponsor Chica</span>
+    </a>
     <nav class="llinks">
       <a href="index.html">Home</a>
       <a href="map.html">Map</a>
@@ -57,16 +67,19 @@
       <a class="lbtn primary" href="map.html">Open map</a>
     </div>
   </header>
+
   <main class="sp-wrap">
     <div class="sp-hero">
-      <img class="sp-hero-img" data-chica-hero src="assets/chica.svg" alt="Chica in a red cape" />
+      <img class="sp-hero-img" src="assets/chica/smile.jpg" alt="Chica" />
       <h1>Sponsor <span>Chica's Weekend</span></h1>
       <p>One local partner. One weekend. The map people actually open.</p>
     </div>
+
     <div class="sp-card">
       <h2>The opportunity</h2>
       <p>Every Thursday–Saturday, San Antonio shoppers use <strong>Project YardBird</strong> (Chica's Garage Sale Map) to find verified garage, yard, and estate sales. We're offering a single exclusive sponsorship seat each weekend on the weekly video and live map briefing.</p>
     </div>
+
     <div class="sp-card">
       <h2>What's included</h2>
       <ul>
@@ -76,6 +89,7 @@
         <li><strong>Exclusive</strong> — only one sponsor per weekend</li>
       </ul>
     </div>
+
     <div class="sp-card">
       <h2>Investment</h2>
       <div class="sp-price-grid">
@@ -93,6 +107,7 @@
         </div>
       </div>
     </div>
+
     <div class="sp-card">
       <h2>Best fit for</h2>
       <ul>
@@ -103,9 +118,11 @@
         <li>Local coffee &amp; “make a day of it” spots near sale zones</li>
       </ul>
     </div>
+
     <a class="sp-cta" href="mailto:mr.jsciaraffa@gmail.com?subject=Sponsor%20Chica%27s%20Weekend&body=Hi%20—%20I'd%20like%20to%20sponsor%20a%20weekend.%20Preferred%20dates%3A%0A%0ABusiness%20name%3A%0ALogo%20attached%3A%20">Request a weekend →</a>
-    <p class="sp-note">Email <a href="mailto:mr.jsciaraffa@gmail.com">mr.jsciaraffa@gmail.com</a> with preferred dates and your logo.<br/>Map: justonejewelry.github.io/Project-YardBird</p>
+    <p class="sp-note">Email <a href="mailto:mr.jsciaraffa@gmail.com">mr.jsciaraffa@gmail.com</a> with preferred dates and your logo.</p>
   </main>
+
   <footer class="lfoot">
     <div><strong>Project YardBird</strong><span>GSIN · Chica</span></div>
     <div class="lfoot-links">
@@ -114,6 +131,5 @@
       <a href="backyard.html">Backyard</a>
     </div>
   </footer>
-  <script src="assets/chica-hero-p1.js"></script>
 </body>
 </html>
