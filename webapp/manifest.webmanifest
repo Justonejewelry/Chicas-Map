@@ -1,12 +1,22 @@
 {
-  "name": "Chica Garage Sale Map",
-  "short_name": "Chica Map",
-  "description": "Find garage and estate sales near you in Texas",
-  "start_url": "./index.html",
+  "name": "Chica — Garage Sale Map",
+  "short_name": "Chica",
+  "description": "Verified garage, yard, and estate sales near you in Texas",
+  "start_url": "./map.html",
   "display": "standalone",
-  "background_color": "#fff7ed",
-  "theme_color": "#f59e0b",
+  "background_color": "#f6f4ef",
+  "theme_color": "#1a6b3c",
   "icons": [
+    {
+      "src": "favicon-48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
     {
       "src": "assets/chica.svg",
       "sizes": "any",

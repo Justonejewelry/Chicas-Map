@@ -3,108 +3,127 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chica · Garage Sale Map</title>
-  <meta name="description" content="Chica finds every garage, yard, and estate sale near you. Verified map for San Antonio and Texas." />
-  <meta name="theme-color" content="#166534" />
+  <title>Chica — Verified Garage Sale Map</title>
+  <meta name="description" content="Find verified garage, yard, and estate sales near you. Near Me, routes, and weekend intel for San Antonio and Texas." />
+  <meta name="theme-color" content="#1a6b3c" />
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
   <link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   <link rel="manifest" href="manifest.webmanifest" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/landing.css" />
-  <link rel="stylesheet" href="css/grass.css" />
-  <link rel="stylesheet" href="css/chica-sign.css" />
+  <link rel="stylesheet" href="css/voss.css" />
 </head>
-<body class="landing grass-site">
-  <header class="lnav">
-    <a class="lbrand" href="index.html">
+<body>
+  <header class="v-nav">
+    <a class="v-brand" href="index.html">
       <img src="chicarar.png" alt="Chica" width="36" height="36"
-        style="border-radius:10px;object-fit:cover;border:2px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.2);background:transparent"
         onerror="this.onerror=null;this.src='chicarar.jpg'" />
-      <span>Chica</span>
+      Chica
     </a>
-    <nav class="llinks">
+    <nav class="v-links" aria-label="Primary">
       <a href="map.html">Map</a>
       <a href="backyard.html">Backyard</a>
       <a href="sponsor.html">Sponsor</a>
     </nav>
-    <div class="lnav-actions">
-      <a class="lbtn ghost" href="backyard.html">Meet Chica</a>
-      <a class="lbtn primary" href="map.html">Open map</a>
+    <div class="v-nav-actions">
+      <a class="v-btn v-btn-ghost" href="backyard.html">Meet Chica</a>
+      <a class="v-btn v-btn-primary" href="map.html">Open map</a>
     </div>
   </header>
 
   <main>
-    <section class="hero">
-      <div class="hero-frame">
-        <div class="float card-note">
-          <div class="note-title">This weekend</div>
-          <div class="note-body">Fair Oaks · Alamo Ranch · Helotes — verified before they hit the map.</div>
+    <section class="v-hero">
+      <div class="v-hero-card">
+        <div class="v-hero-copy">
+          <div class="v-eyebrow">San Antonio · Live</div>
+          <h1>Every sale.<br/><span>Verified first.</span></h1>
+          <p class="v-lead">
+            Chica maps garage, yard, and estate sales before the weekend rush —
+            with Near Me, multi-stop routes, and confidence you can act on.
+          </p>
+          <div class="v-hero-cta">
+            <a class="v-btn v-btn-primary v-btn-lg" href="map.html">Open the map</a>
+            <a class="v-btn v-btn-ghost v-btn-lg" href="backyard.html">Chica's Backyard</a>
+          </div>
+          <div class="v-hero-meta">
+            <span><strong>Near Me</strong> · distance sort</span>
+            <span><strong>Routes</strong> · one tap</span>
+            <span><strong>Texas</strong> · expanding</span>
+          </div>
         </div>
-        <div class="float card-check"><span class="check">✓</span></div>
-        <div class="float card-stat">
-          <div class="stat-label">Near me</div>
-          <div class="stat-value">Sales sorted by distance</div>
-        </div>
-        <div class="float card-route">
-          <div class="stat-label">🧭 Route planner</div>
-          <div class="stat-value">Multi-stop · one tap</div>
-        </div>
-        <div class="float card-chica">
-          <img src="chicarar.png" alt="Chica" width="200" height="200" loading="eager"
-            style="object-fit:contain;background:transparent"
+        <div class="v-hero-visual">
+          <img src="chicarar.png" alt="Chica"
             onerror="this.onerror=null;this.src='chicarar.jpg'" />
-        </div>
-        <div class="hero-copy">
-          <h1>Find every sale.<br/><em>Trust the map.</em></h1>
-          <p class="hero-sub">Chica maps verified garage, yard, and estate sales across San Antonio — with Near Me, routes, and weekend intel.</p>
-          <div class="hero-cta">
-            <a class="lbtn primary lg" href="map.html">Open the map</a>
-            <a class="lbtn ghost lg" href="backyard.html">Visit the Backyard</a>
+          <div class="v-hero-badge">
+            This weekend
+            <small>Fair Oaks · Alamo Ranch · Helotes</small>
           </div>
         </div>
       </div>
     </section>
 
-    <div class="chica-sign-band">
-      <a class="chica-sign chica-sign-home" href="sponsor.html" title="Become a weekly sponsor">
-        <img src="sponsor%20sign.jpg"
-             alt="Chica holding a sign: Click Here Become a Weekly Sponsor"
-             width="260" height="354"
-             onerror="this.onerror=null;this.src='chicarar.png'" />
-      </a>
-      <p>Tap Chica’s sign to partner for a weekend</p>
-    </div>
-
-    <section class="features">
-      <h2>Built for the weekend hunt</h2>
-      <p class="features-lead">A clean intelligence layer on top of the chaos of classifieds.</p>
-      <div class="feat-grid">
-        <article class="feat"><div class="feat-icon">📍</div><h3>Near Me</h3><p>Share your location or enter a ZIP. Sales sort by distance so you stop guessing.</p></article>
-        <article class="feat"><div class="feat-icon">✅</div><h3>Verified first</h3><p>Duplicates, fakes, and dead addresses get filtered before they reach the map.</p></article>
-        <article class="feat"><div class="feat-icon">🧭</div><h3>Route planner</h3><p>Star sales, build a multi-stop route, open it in Google Maps in one tap.</p></article>
-        <article class="feat"><div class="feat-icon">🐕</div><h3>Chica's intel</h3><p>Weekly forecast, tips, and Backyard updates from the smallest supervisor on the block.</p></article>
+    <section class="v-section">
+      <div class="v-section-head">
+        <h2>Built for the hunt</h2>
+        <p>Less noise. More signal. Designed for Thursday through Saturday.</p>
+      </div>
+      <div class="v-grid-4">
+        <article class="v-card">
+          <div class="v-card-icon">📍</div>
+          <h3>Near Me</h3>
+          <p>Share location or enter a ZIP. Sales sort by distance so you stop guessing.</p>
+        </article>
+        <article class="v-card">
+          <div class="v-card-icon">✓</div>
+          <h3>Verified</h3>
+          <p>Duplicates, fakes, and dead addresses are filtered before they hit the map.</p>
+        </article>
+        <article class="v-card">
+          <div class="v-card-icon">↗</div>
+          <h3>Routes</h3>
+          <p>Star stops, build a multi-stop path, open it in Google Maps in one tap.</p>
+        </article>
+        <article class="v-card">
+          <div class="v-card-icon">🐕</div>
+          <h3>Intel</h3>
+          <p>Weekend forecast and tips from Chica — the smallest supervisor on the block.</p>
+        </article>
       </div>
     </section>
 
-    <section class="cta-band">
-      <div class="cta-inner">
+    <!-- Quiet sponsor — secondary, not competing with the map CTA -->
+    <div class="v-sponsor-strip">
+      <a class="v-sponsor-inner" href="sponsor.html">
+        <img src="sponsor%20sign.jpg" alt="" width="72" height="96"
+          onerror="this.style.display='none'" />
+        <div class="v-sponsor-copy">
+          <strong>Partner with Chica this weekend</strong>
+          <span>Local businesses · featured map presence · video mention</span>
+        </div>
+        <span class="v-sponsor-cta">Details →</span>
+      </a>
+    </div>
+
+    <section class="v-cta">
+      <div class="v-cta-inner">
         <h2>Ready for Saturday?</h2>
-        <p>Open the live map for San Antonio — free, fast, and built around real sales.</p>
-        <a class="lbtn primary lg" href="map.html">Launch Chica Map</a>
+        <p>Open the live map — free, fast, and built around real sales.</p>
+        <a class="v-btn v-btn-primary v-btn-lg" href="map.html">Launch Chica Map</a>
       </div>
     </section>
   </main>
 
-  <footer class="lfoot">
-    <div><strong>Chica · Garage Sale Map</strong><span>Project YardBird · GSIN</span></div>
-    <div class="lfoot-links">
+  <footer class="v-foot">
+    <div>
+      <strong>Chica · Garage Sale Map</strong>
+      Project YardBird · GSIN
+    </div>
+    <div class="v-foot-links">
       <a href="map.html">Map</a>
       <a href="backyard.html">Backyard</a>
       <a href="sponsor.html">Sponsor</a>
       <a href="mailto:mr.jsciaraffa@gmail.com">Contact</a>
     </div>
   </footer>
-  <script src="js/grass-wind.js"></script>
 </body>
 </html>
