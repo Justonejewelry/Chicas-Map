@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="css/app.css" />
   <link rel="stylesheet" href="css/grass.css" />
   <link rel="stylesheet" href="css/map-clean.css" />
+  <link rel="stylesheet" href="css/map-fabs.css" />
   <style>
     .maplibregl-popup-content {
       background: #fff; color: #0f172a; border-radius: 12px;
@@ -38,14 +39,14 @@
       width: 40px; height: 40px; border-radius: 50%; border: 2px solid #fff;
       box-shadow: 0 2px 8px rgba(22,101,52,0.3); object-fit: cover;
     }
-    /* keep chips in DOM for JS, hide visually */
     .chips { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
   </style>
 </head>
 <body class="grass-map">
   <header class="topbar">
     <a class="brand" href="index.html" style="text-decoration:none;color:inherit">
-      <img class="logo-mark img" src="assets/chica/smile.jpg" alt="Chica" width="40" height="40" />
+      <img class="logo-mark img" src="assets/chica/napping.jpg" alt="Chica" width="40" height="40"
+        onerror="this.src='assets/file_000000009f8c71fda0f56075f84270f7.png'" />
       <div>
         <h1>Chica <span>Map</span></h1>
       </div>
@@ -83,48 +84,10 @@
 
   <main class="layout">
     <aside class="panel">
-      <section class="near-bar" id="nearBar">
-        <div class="near-row">
-          <button type="button" class="near-btn primary" id="btnNearMe">📍 Near me</button>
-          <select id="radiusSelect" class="radius-select" title="Radius">
-            <option value="5">5 mi</option>
-            <option value="10" selected>10 mi</option>
-            <option value="25">25 mi</option>
-            <option value="50">50 mi</option>
-            <option value="0">Any</option>
-          </select>
-        </div>
-        <div class="near-row">
-          <input type="text" id="locInput" class="loc-input" placeholder="ZIP or address" enterkeyhint="search" />
-          <button type="button" class="near-btn" id="btnLocSearch">Go</button>
-        </div>
-        <div class="near-status" id="nearStatus" hidden></div>
-      </section>
-
       <section class="tools-bar">
         <button type="button" class="tool-btn" id="btnFavorites">★ Saved <span id="favCount">0</span></button>
         <button type="button" class="tool-btn" id="btnRoute">🧭 Route <span id="routeCount">0</span></button>
         <button type="button" class="tool-btn" id="btnExport" hidden>Export</button>
-      </section>
-
-      <section class="filters">
-        <input type="search" id="search" placeholder="Search sales…" />
-        <select id="filterSelect" title="Filter by type">
-          <option value="all">All types</option>
-          <option value="garage">Garage</option>
-          <option value="estate">Estate</option>
-          <option value="permit">Permit</option>
-          <option value="fundraiser">Fundraiser</option>
-          <option value="photos">With photos</option>
-        </select>
-        <div class="chips" aria-hidden="true">
-          <button class="chip active" data-filter="all">All</button>
-          <button class="chip" data-filter="garage">Garage</button>
-          <button class="chip" data-filter="estate">Estate</button>
-          <button class="chip" data-filter="permit">Permit</button>
-          <button class="chip" data-filter="fundraiser">Fundraiser</button>
-          <button class="chip" data-filter="photos">📷 Photos</button>
-        </div>
       </section>
 
       <details class="panel-block" id="forecastBlock">
@@ -159,13 +122,70 @@
 
     <section class="map-wrap">
       <div id="map"></div>
+
+      <!-- Lower-left FABs -->
+      <div class="map-fabs" id="mapFabs">
+        <button type="button" class="map-fab" id="fabNear" title="Near me" aria-label="Near me options" aria-expanded="false">
+          <img src="nearme.png" alt="" width="40" height="40" />
+        </button>
+        <button type="button" class="map-fab" id="fabSearch" title="Search &amp; filters" aria-label="Search options" aria-expanded="false">
+          <img src="search.png" alt="" width="40" height="40" />
+        </button>
+      </div>
+
+      <!-- Near Me popover -->
+      <div class="map-pop" id="popNear" role="dialog" aria-label="Near me">
+        <h3>Near me</h3>
+        <div class="near-bar" id="nearBar">
+          <div class="near-row">
+            <button type="button" class="near-btn primary" id="btnNearMe">📍 Use my location</button>
+            <select id="radiusSelect" class="radius-select" title="Radius">
+              <option value="5">5 mi</option>
+              <option value="10" selected>10 mi</option>
+              <option value="25">25 mi</option>
+              <option value="50">50 mi</option>
+              <option value="0">Any</option>
+            </select>
+          </div>
+          <div class="near-row">
+            <input type="text" id="locInput" class="loc-input" placeholder="ZIP or address" enterkeyhint="search" />
+            <button type="button" class="near-btn" id="btnLocSearch">Go</button>
+          </div>
+          <div class="near-status" id="nearStatus" hidden></div>
+        </div>
+      </div>
+
+      <!-- Search / filter popover -->
+      <div class="map-pop" id="popSearch" role="dialog" aria-label="Search">
+        <h3>Search &amp; filters</h3>
+        <div class="filters">
+          <input type="search" id="search" placeholder="Keyword…" style="width:100%;margin-bottom:8px;padding:10px 12px;border:1px solid #e2e8f0;border-radius:10px;font-weight:600" />
+          <select id="filterSelect" title="Filter by type" style="width:100%;padding:10px 12px;border:1px solid #e2e8f0;border-radius:10px;font-weight:600;background:#f8fafc">
+            <option value="all">All types</option>
+            <option value="garage">Garage</option>
+            <option value="estate">Estate</option>
+            <option value="permit">Permit</option>
+            <option value="fundraiser">Fundraiser</option>
+            <option value="photos">With photos</option>
+          </select>
+          <div class="chips" aria-hidden="true">
+            <button class="chip active" data-filter="all">All</button>
+            <button class="chip" data-filter="garage">Garage</button>
+            <button class="chip" data-filter="estate">Estate</button>
+            <button class="chip" data-filter="permit">Permit</button>
+            <button class="chip" data-filter="fundraiser">Fundraiser</button>
+            <button class="chip" data-filter="photos">📷 Photos</button>
+          </div>
+        </div>
+      </div>
+
       <div class="map-legend">
         <span><i class="pin top"></i> Top</span>
         <span><i class="pin new"></i> Garage</span>
         <span><i class="pin estate"></i> Estate</span>
         <span><i class="pin permit"></i> Permit</span>
       </div>
-      <div class="map-hint" id="mapHint">Near me or enter a ZIP to sort by distance</div>
+      <div class="map-hint" id="mapHint">Tap the icons (lower left) for Near me or Search</div>
     </section>
   </main>
 
@@ -179,9 +199,10 @@
 
   <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/grass-wind.js"></script>
   <script>
   (function () {
-    // Menu dropdown
+    // Menu
     var wrap = document.getElementById('menuWrap');
     var btn = document.getElementById('menuBtn');
     btn.addEventListener('click', function (e) {
@@ -189,20 +210,60 @@
       var open = wrap.classList.toggle('open');
       btn.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
+
+    // FABs → popovers
+    var fabNear = document.getElementById('fabNear');
+    var fabSearch = document.getElementById('fabSearch');
+    var popNear = document.getElementById('popNear');
+    var popSearch = document.getElementById('popSearch');
+
+    function closePops() {
+      popNear.classList.remove('open');
+      popSearch.classList.remove('open');
+      fabNear.classList.remove('active');
+      fabSearch.classList.remove('active');
+      fabNear.setAttribute('aria-expanded', 'false');
+      fabSearch.setAttribute('aria-expanded', 'false');
+    }
+
+    fabNear.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var willOpen = !popNear.classList.contains('open');
+      closePops();
+      if (willOpen) {
+        popNear.classList.add('open');
+        fabNear.classList.add('active');
+        fabNear.setAttribute('aria-expanded', 'true');
+      }
+    });
+
+    fabSearch.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var willOpen = !popSearch.classList.contains('open');
+      closePops();
+      if (willOpen) {
+        popSearch.classList.add('open');
+        fabSearch.classList.add('active');
+        fabSearch.setAttribute('aria-expanded', 'true');
+      }
+    });
+
+    popNear.addEventListener('click', function (e) { e.stopPropagation(); });
+    popSearch.addEventListener('click', function (e) { e.stopPropagation(); });
+
     document.addEventListener('click', function () {
       wrap.classList.remove('open');
       btn.setAttribute('aria-expanded', 'false');
+      closePops();
     });
 
-    // Filter dropdown → existing chip buttons (app.js listens to chips)
-    var filterSelect = document.getElementById('filterSelect');
-    filterSelect.addEventListener('change', function () {
-      var val = filterSelect.value;
+    // Filter select → chips
+    document.getElementById('filterSelect').addEventListener('change', function () {
+      var val = this.value;
       var chip = document.querySelector('.chip[data-filter="' + val + '"]');
       if (chip) chip.click();
     });
 
-    // Menu export → hidden export button
     document.getElementById('menuExport').addEventListener('click', function () {
       document.getElementById('btnExport').click();
       wrap.classList.remove('open');

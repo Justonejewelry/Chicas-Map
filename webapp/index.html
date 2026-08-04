@@ -7,8 +7,6 @@
   <meta name="description" content="Chica finds every garage, yard, and estate sale near you. Verified map for San Antonio and Texas." />
   <meta name="theme-color" content="#166534" />
   <link rel="manifest" href="manifest.webmanifest" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/landing.css" />
   <link rel="stylesheet" href="css/grass.css" />
@@ -16,7 +14,9 @@
 <body class="landing grass-site">
   <header class="lnav">
     <a class="lbrand" href="index.html">
-      <img src="assets/chica/smile.jpg" alt="Chica" width="36" height="36" style="border-radius:10px;object-fit:cover;border:2px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.2)" />
+      <img src="assets/chica/napping.jpg" alt="Chica" width="36" height="36"
+        style="border-radius:10px;object-fit:cover;border:2px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.2)"
+        onerror="this.src='assets/file_000000009f8c71fda0f56075f84270f7.png'" />
       <span>Chica</span>
     </a>
     <nav class="llinks">
@@ -47,7 +47,7 @@
           <div class="stat-value">Multi-stop · one tap</div>
         </div>
         <div class="float card-chica">
-          <img src="assets/file_000000009f8c71fda0f56075f84270f7.png" alt="Chica in a red superhero cape" width="200" height="200" />
+          <img src="assets/file_000000009f8c71fda0f56075f84270f7.png" alt="Chica in a red superhero cape" width="200" height="200" loading="eager" />
         </div>
         <div class="hero-copy">
           <h1>Find every sale.<br/><em>Trust the map.</em></h1>
@@ -89,5 +89,6 @@
       <a href="mailto:mr.jsciaraffa@gmail.com">Contact</a>
     </div>
   </footer>
+  <script src="js/grass-wind.js"></script>
 </body>
 </html>
