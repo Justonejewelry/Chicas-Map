@@ -1,1 +1,128 @@
-PLACEHOLDER_BACKYARD
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chica's Backyard · Meet Chica</title>
+  <meta name="description" content="Meet Chica — blog, weekly videos, and tips from San Antonio's garage-sale Chihuahua." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/landing.css" />
+  <link rel="stylesheet" href="css/backyard.css" />
+  <style>
+    body.backyard-page { background: #f8fafc; font-family: Inter, system-ui, sans-serif; margin: 0; }
+    .by-layout { max-width: 960px; margin: 0 auto; padding: 12px 20px 48px; }
+    .sponsor-banner {
+      display: block; margin: 0 0 20px; padding: 16px 18px; border-radius: 16px;
+      background: #0f172a; color: #fff; text-decoration: none; font-weight: 800;
+      text-align: center; border: 1px solid #1e293b;
+    }
+    .sponsor-banner small { display: block; font-weight: 600; opacity: 0.85; font-size: 0.82rem; margin-top: 4px; }
+    .mc-hero-photo { width: 100%; max-width: 320px; border-radius: 20px; box-shadow: 0 12px 32px rgba(15,23,42,0.12); object-fit: cover; }
+  </style>
+</head>
+<body class="backyard-page landing">
+  <header class="lnav">
+    <a class="lbrand" href="index.html"><span class="lmark">🐕</span><span>Chica's Backyard</span></a>
+    <nav class="llinks">
+      <a href="index.html">Home</a>
+      <a href="map.html">Map</a>
+      <a href="sponsor.html">Sponsor</a>
+    </nav>
+    <div class="lnav-actions">
+      <a class="lbtn ghost" href="index.html">Home</a>
+      <a class="lbtn primary" href="map.html">Open map</a>
+    </div>
+  </header>
+  <main class="by-layout">
+    <a class="sponsor-banner" href="sponsor.html">
+      ★ Sponsor Chica's Weekend Video &amp; Map
+      <small>Exclusive local partnership · from $100 / weekend · one seat only</small>
+    </a>
+    <section class="chica-talk" id="chicaTalk">
+      <div class="ct-card">
+        <img id="ctAvatar" data-chica-hero alt="Chica" width="80" height="80" class="ct-avatar" style="object-fit:cover;border-radius:50%;background:#eff6ff" />
+        <div class="ct-bubble">
+          <strong id="ctName">Chica</strong>
+          <p id="ctMessage">Howdy! Click me or hit the button — I'll give you a tip or a secret from the map.</p>
+          <div class="ct-actions">
+            <button type="button" class="near-btn primary" id="btnTalk">Talk to Chica</button>
+            <button type="button" class="near-btn" id="btnTip">Random tip</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="meet-cheeks" id="meetCheeks">
+      <div class="mc-header">
+        <h2>Meet Chica</h2>
+        <p class="mc-sub">Official Chica only — identical likeness, no substitutes</p>
+      </div>
+      <div class="mc-bio-card">
+        <div class="mc-bio-photo-wrap">
+          <img id="mcHero" data-chica-hero alt="Chica in a red superhero cape" class="mc-hero-photo" />
+        </div>
+        <div class="mc-bio">
+          <h3>Hi. I'm Chica.</h3>
+          <div class="mc-bio-body">
+            <p>They call me <strong>Meet Chica</strong> — and if you've seen the smile, you know why. I'm a brown Chihuahua with a little grey on my face, white on my feet, and a tip of white on my tail. I nap hard, I rock a cape when the mission calls for it, and I go on adventures with my human.</p>
+            <p>This backyard is mine. The map? I help run that too.</p>
+            <p>Welcome to my corner. Wipe your paws.</p>
+            <p class="mc-sign">— Chica</p>
+          </div>
+        </div>
+      </div>
+      <div class="mc-gallery" id="mcGallery"></div>
+    </section>
+    <section class="featured-adventure" id="featuredAdventure">
+      <h3 class="by-section-title">🎬 Featured Adventure</h3>
+      <div class="fa-card">
+        <div class="fa-video-wrap">
+          <video id="adventureVideo" controls playsinline style="width:100%;border-radius:14px;background:#0f172a">
+            <source src="assets/videos/chica_highway_adventure.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="fa-copy">
+          <h4>Highway to San Antonio — Chica's Sale Hunt</h4>
+          <p>From the shopping cart to the open highway. Garage sales, moving sales, and neighborhood treasures.</p>
+          <p class="fa-meta">Aug 4, 2026 · Adventure</p>
+        </div>
+      </div>
+    </section>
+    <div class="by-grid">
+      <section class="by-col">
+        <h3 class="by-section-title">📝 Chica's Blog</h3>
+        <div id="blogList" class="by-posts">Loading posts…</div>
+      </section>
+      <section class="by-col">
+        <h3 class="by-section-title">🎬 Weekly Videos</h3>
+        <div id="videoList" class="by-videos">Loading videos…</div>
+      </section>
+    </div>
+    <article id="postView" class="by-post-view hidden">
+      <button type="button" class="near-btn" id="btnBackPosts">← All posts</button>
+      <h2 id="postTitle"></h2>
+      <div class="by-meta" id="postMeta"></div>
+      <div class="by-body" id="postBody"></div>
+    </article>
+  </main>
+  <footer class="lfoot">
+    <div><strong>Chica's Backyard</strong><span>Project YardBird · GSIN</span></div>
+    <div class="lfoot-links">
+      <a href="index.html">Home</a>
+      <a href="map.html">Map</a>
+      <a href="sponsor.html">Sponsor</a>
+    </div>
+  </footer>
+  <script src="js/backyard.js"></script>
+  <script src="assets/chica-hero-data.js"></script>
+  <script>
+  (function(){
+    function apply(uri){
+      document.querySelectorAll("[data-chica-hero]").forEach(function(el){ el.src = uri; });
+      var v = document.getElementById("adventureVideo");
+      if (v) v.setAttribute("poster", uri);
+    }
+    if (window.CHICA_HERO_B64) apply("data:image/jpeg;base64," + window.CHICA_HERO_B64);
+  })();
+  </script>
+</body>
+</html>
