@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chica's Backyard · Meet Chica</title>
-  <meta name="theme-color" content="#166534" />
+  <title>Chica's Backyard · Meet Cheeks</title>
+  <meta name="theme-color" content="#1a6b3c" />
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
   <link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
@@ -15,6 +15,18 @@
   <link rel="stylesheet" href="css/chica-sign.css" />
   <style>
     .mc-hero-photo { width:100%;height:100%;object-fit:contain;border-radius:16px;background:transparent; }
+    .mc-bio-body p { margin: 0 0 0.85em; }
+    .mc-bio-body ul.mc-roles {
+      margin: 0.5em 0 1em;
+      padding: 0;
+      list-style: none;
+    }
+    .mc-bio-body ul.mc-roles li {
+      margin: 0 0 0.55em;
+      padding-left: 0;
+      line-height: 1.45;
+    }
+    .mc-bio-body ul.mc-roles strong { font-weight: 750; }
   </style>
 </head>
 <body class="backyard-page landing grass-site">
@@ -45,8 +57,8 @@
       <div class="ct-card">
         <img id="ctAvatar" src="chicarar.png" alt="Chica" width="80" height="80" class="ct-avatar" style="object-fit:cover;border-radius:50%;background:transparent" onerror="this.onerror=null;this.src='chicarar.jpg'" />
         <div class="ct-bubble">
-          <strong id="ctName">Chica</strong>
-          <p id="ctMessage">Howdy! You're in my backyard. Leave a note, share the map, or grab a tip before you hunt.</p>
+          <strong id="ctName">Cheeks</strong>
+          <p id="ctMessage">Wipe your paws. Leave a belly rub. And if you happen to have a snack… we can definitely be best friends.</p>
           <div class="ct-actions">
             <button type="button" class="near-btn primary" id="btnTalk">Talk to Chica</button>
             <button type="button" class="near-btn" id="btnTip">Random tip</button>
@@ -55,8 +67,8 @@
       </div>
     </section>
     <section class="share-section" id="shareSection">
-      <h3>Share Chica's map</h3>
-      <p class="share-lead">Send the backyard (or the live map) to friends before Saturday.</p>
+      <h3>Share with the pack</h3>
+      <p class="share-lead">Facebook, Nextdoor, Instagram — wherever good humans gather. Every share helps more people find the map.</p>
       <div class="share-grid" id="shareGrid">
         <a class="share-btn x" id="shareX" target="_blank" rel="noopener">𝕏 Post</a>
         <a class="share-btn fb" id="shareFb" target="_blank" rel="noopener">Facebook</a>
@@ -70,30 +82,40 @@
       </div>
     </section>
     <section class="meet-cheeks" id="meetCheeks">
-      <div class="mc-header"><h2>Meet Chica</h2><p class="mc-sub">Official Chica only — identical likeness, no substitutes</p></div>
+      <div class="mc-header"><h2>Meet Cheeks</h2><p class="mc-sub">Also answers to Chica, "Who's a good girl?", and the sound of a cheese wrapper</p></div>
       <div class="mc-bio-card">
-        <div class="mc-bio-photo-wrap"><img id="mcHero" src="chicarar.png" alt="Chica" class="mc-hero-photo" onerror="this.onerror=null;this.src='chicarar.jpg'" /></div>
+        <div class="mc-bio-photo-wrap"><img id="mcHero" src="chicarar.png" alt="Chica (Cheeks)" class="mc-hero-photo" onerror="this.onerror=null;this.src='chicarar.jpg'" /></div>
         <div class="mc-bio">
-          <h3>Hi. I'm Chica.</h3>
+          <h3>Hi! I'm Chica. 👋</h3>
           <div class="mc-bio-body">
-            <p>They call me <strong>Meet Chica</strong> — and if you've seen the smile, you know why. I'm a brown Chihuahua with a little grey on my face, white on my feet, and a tip of white on my tail. I nap hard, I rock a cape when the mission calls for it, and I go on adventures with my human.</p>
-            <p>This backyard is mine. The map? I help run that too.</p>
-            <p>Welcome to my corner. Wipe your paws.</p>
-            <p class="mc-sign">— Chica</p>
+            <p>If you're family, friends, or one of my loyal fans, you probably know me as <strong>Cheeks</strong>. Nobody remembers how it started… but somehow it stuck. I answer to Chica, Cheeks, "Who's a good girl?", and the unmistakable sound of a cheese wrapper.</p>
+            <p>I'm a tiny brown Chihuahua with a frosted little face, white socks, and a white-tipped tail that operates at maximum wag whenever snacks are nearby.</p>
+            <p><strong>Here's what you should know:</strong></p>
+            <ul class="mc-roles">
+              <li>🐿️ <strong>Backyard Security Chief</strong> — Squirrels are under constant surveillance.</li>
+              <li>🦴 <strong>Professional Napper</strong> — I can sleep through a thunderstorm… unless someone opens the treat jar.</li>
+              <li>🦸 <strong>Part-Time Superhero</strong> — I have a cape. That's all the proof you need.</li>
+              <li>🗺️ <strong>Chief Sniffing Officer</strong> — My human built the garage sale map. I inspect it for quality control… and hidden snack locations.</li>
+            </ul>
+            <p>People say my human runs this place.<br/>That's adorable.<br/>I simply allow him to think that.</p>
+            <p>If you enjoy following my adventures, my backyard investigations, and all the fun projects we get into, do me one tiny favor…</p>
+            <p>❤️ Share this page with your friends and family on Facebook, Nextdoor, Instagram, or wherever good humans gather. Every share helps more people discover our adventures, support our projects, and join the pack.</p>
+            <p>Now come on in.<br/>Wipe your paws.<br/>Leave a belly rub.<br/>And if you happen to have a snack…<br/>…we can definitely be best friends.</p>
+            <p class="mc-sign">🐾 — Cheeks</p>
           </div>
         </div>
       </div>
       <div class="mc-gallery" id="mcGallery"></div>
     </section>
     <section class="comment-section" id="commentSection">
-      <h3>Leave a note for Chica</h3>
-      <p class="comment-lead">Sale tips, finds, or just a howdy — notes stay on this device.</p>
+      <h3>Leave a note for Cheeks</h3>
+      <p class="comment-lead">Sale tips, finds, belly rubs, or just a howdy — notes stay on this device.</p>
       <form class="comment-form" id="commentForm">
         <div class="row">
           <input type="text" id="commentName" placeholder="Your name" maxlength="40" required />
           <input type="text" id="commentCity" placeholder="City (optional)" maxlength="40" />
         </div>
-        <textarea id="commentBody" placeholder="Hey Chica…" maxlength="500" required></textarea>
+        <textarea id="commentBody" placeholder="Hey Cheeks…" maxlength="500" required></textarea>
         <button type="submit">Post note</button>
       </form>
       <div class="comment-list" id="commentList"><p class="comment-empty" id="commentEmpty">No notes yet. Be the first to say howdy.</p></div>
@@ -133,7 +155,7 @@
   <script>
   (function () {
     var pageUrl = encodeURIComponent('https://justonejewelry.github.io/Project-YardBird/backyard.html');
-    var text = encodeURIComponent("Chica's Garage Sale Map — verified sales in San Antonio.");
+    var text = encodeURIComponent("Meet Cheeks (Chica) — backyard boss & Chief Sniffing Officer of the garage sale map.");
     var abs = 'https://justonejewelry.github.io/Project-YardBird/backyard.html';
     document.getElementById('shareX').href = 'https://twitter.com/intent/tweet?text=' + text + '&url=' + pageUrl;
     document.getElementById('shareFb').href = 'https://www.facebook.com/sharer/sharer.php?u=' + pageUrl;
@@ -141,7 +163,7 @@
     document.getElementById('shareLi').href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + pageUrl;
     document.getElementById('shareRd').href = 'https://www.reddit.com/submit?url=' + pageUrl + '&title=' + text;
     document.getElementById('shareTg').href = 'https://t.me/share/url?url=' + pageUrl + '&text=' + text;
-    document.getElementById('shareMail').href = 'mailto:?subject=Chica&body=' + text + '%0A' + pageUrl;
+    document.getElementById('shareMail').href = 'mailto:?subject=Meet%20Cheeks&body=' + text + '%0A' + pageUrl;
     document.getElementById('shareCopy').addEventListener('click', function () {
       navigator.clipboard.writeText(abs).then(function () {
         var b = document.getElementById('shareCopy'); b.textContent = 'Copied!'; setTimeout(function(){ b.textContent='Copy link'; }, 1500);
@@ -149,7 +171,7 @@
     });
     if (navigator.share) {
       var n = document.getElementById('shareNative'); n.hidden = false;
-      n.addEventListener('click', function () { navigator.share({ title: "Chica's Backyard", url: abs }).catch(function(){}); });
+      n.addEventListener('click', function () { navigator.share({ title: "Chica's Backyard — Meet Cheeks", url: abs }).catch(function(){}); });
     }
     var KEY = 'chica_backyard_comments_v1';
     function load() { try { return JSON.parse(localStorage.getItem(KEY)||'[]'); } catch(e){ return []; } }
