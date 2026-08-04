@@ -20,33 +20,26 @@
     }
   }
 
+  // Main photo: transparent chicarar.png (fallback to jpg)
+  const MAIN = "chicarar.png";
+  const MAIN_FALLBACK = "chicarar.jpg";
   const CAPE = "assets/file_000000009f8c71fda0f56075f84270f7.png";
-  const NAP = "assets/chica/napping.jpg";
   const HUMAN = "assets/1.jpg";
-  const NEW_PIC = "chicarar.jpg"; // uploaded for Backyard
 
-  // One of each — no duplicates
   const CHICA_GALLERY = [
+    {
+      key: "main",
+      src: MAIN,
+      fallback: MAIN_FALLBACK,
+      alt: "Chica",
+      caption: "Chica",
+    },
     {
       key: "cape",
       src: CAPE,
       fallback: CAPE,
       alt: "Chica in a red superhero cape",
       caption: "Super Chica",
-    },
-    {
-      key: "chicarar",
-      src: NEW_PIC,
-      fallback: NAP,
-      alt: "Chica",
-      caption: "Chica in the backyard",
-    },
-    {
-      key: "napping",
-      src: NAP,
-      fallback: NAP,
-      alt: "Chica napping",
-      caption: "Power nap mode",
     },
     {
       key: "human",
@@ -87,10 +80,9 @@
     const avatar = document.getElementById("ctAvatar");
     if (!gallery) return;
 
-    // Hero prefers new backyard photo, then cape
-    wireImg(hero, NEW_PIC, CAPE);
+    wireImg(hero, MAIN, MAIN_FALLBACK);
     if (hero) hero.alt = "Chica";
-    wireImg(avatar, NAP, CAPE);
+    wireImg(avatar, MAIN, MAIN_FALLBACK);
     if (avatar) avatar.alt = "Chica";
 
     gallery.innerHTML = CHICA_GALLERY.map(
