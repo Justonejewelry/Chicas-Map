@@ -20,32 +20,36 @@
     }
   }
 
-  // Official Chica photos — identical likeness only (real photos in assets/chica/)
-  // NOTE: Use smile.jpg (Meet Chica). Never "meat-cheeks".
+  // Only paths that exist in the repo right now
+  const CAPE = "assets/file_000000009f8c71fda0f56075f84270f7.png";
+  const SMILE = "assets/chica/smile.jpg";
+  const NAP = "assets/chica/napping.jpg";
+  const HUMAN = "assets/1.jpg";
+
   const CHICA_GALLERY = [
     {
-      key: "smile",
-      src: "assets/chica/smile.jpg",
-      alt: "Chica smiling on her back, showing her teeth — Meet Chica",
-      caption: "The official Meet Chica smile",
+      key: "cape",
+      src: CAPE,
+      alt: "Chica in a red superhero cape flying",
+      caption: "Super Chica",
     },
     {
-      key: "cape",
-      src: "assets/chica/cape.jpg",
-      alt: "Chica in a sparkly blue superhero cape",
-      caption: "Super Chica reporting for duty",
+      key: "smile",
+      src: SMILE,
+      alt: "Chica smiling — Meet Chica",
+      caption: "The famous smile",
     },
     {
       key: "napping",
-      src: "assets/chica/napping.jpg",
-      alt: "Chica napping with tongue out on a purple blanket",
-      caption: "Power nap mode: tongue deployed",
+      src: NAP,
+      alt: "Chica napping with tongue out",
+      caption: "Power nap mode",
     },
     {
-      key: "adventures",
-      src: "assets/chica/adventures.jpg",
-      alt: "Chica in a pink harness with her person",
-      caption: "Adventure days with my human",
+      key: "human",
+      src: HUMAN,
+      alt: "Chica and her human",
+      caption: "Chica & her human",
     },
   ];
 
@@ -67,20 +71,23 @@
   function renderMeetChica() {
     const gallery = document.getElementById("mcGallery");
     const hero = document.getElementById("mcHero");
-    const headerImg = document.getElementById("headerChica");
+    const avatar = document.getElementById("ctAvatar");
     if (!gallery) return;
 
-    const smile = CHICA_GALLERY[0];
-    if (smile && hero) {
-      hero.src = smile.src;
-      hero.alt = smile.alt;
+    // Bio hero = Super Chica cape
+    if (hero) {
+      hero.src = CAPE;
+      hero.alt = "Chica in a red superhero cape";
       hero.onerror = function () {
-        this.style.display = "none";
+        this.src = SMILE;
       };
     }
-    if (smile && headerImg) {
-      headerImg.src = smile.src;
-      headerImg.alt = "Chica";
+    if (avatar) {
+      avatar.src = SMILE;
+      avatar.alt = "Chica";
+      avatar.onerror = function () {
+        this.src = "assets/chica.svg";
+      };
     }
 
     gallery.innerHTML = CHICA_GALLERY.map(
@@ -97,6 +104,8 @@
     document.getElementById("meetCheeks")?.classList.add("hidden");
     document.getElementById("featuredAdventure")?.classList.add("hidden");
     document.getElementById("chicaTalk")?.classList.add("hidden");
+    document.getElementById("shareSection")?.classList.add("hidden");
+    document.getElementById("commentSection")?.classList.add("hidden");
     const view = document.getElementById("postView");
     view.classList.remove("hidden");
     document.getElementById("postTitle").textContent = post.title;
@@ -112,6 +121,8 @@
     document.getElementById("meetCheeks")?.classList.remove("hidden");
     document.getElementById("featuredAdventure")?.classList.remove("hidden");
     document.getElementById("chicaTalk")?.classList.remove("hidden");
+    document.getElementById("shareSection")?.classList.remove("hidden");
+    document.getElementById("commentSection")?.classList.remove("hidden");
   }
 
   function renderBlog(posts) {
@@ -149,7 +160,7 @@
         const hasYt = v.youtube_id && v.status !== "placeholder";
         const thumb = hasYt
           ? `<a href="https://www.youtube.com/watch?v=${esc(v.youtube_id)}" target="_blank" rel="noopener" class="by-video-thumb" style="background:url(https://img.youtube.com/vi/${esc(v.youtube_id)}/hqdefault.jpg) center/cover"><span class="play">▶</span></a>`
-          : `<div class="by-video-thumb"><span class="play">▶</span><span style="position:absolute;bottom:10px;font-size:0.75rem;opacity:0.9">${v.status === "local" ? "Local" : "Coming soon"}</span></div>`;
+          : `<div class="by-video-thumb" style="background:url(${CAPE}) center/cover"><span class="play">▶</span><span style="position:absolute;bottom:10px;font-size:0.75rem;opacity:0.9;color:#fff;text-shadow:0 1px 2px #000">${v.status === "local" ? "Local" : "Coming soon"}</span></div>`;
         return `<article class="by-video-card ${hasYt || v.status === "local" ? "" : "placeholder"}">
           ${thumb}
           <div class="by-video-body">
