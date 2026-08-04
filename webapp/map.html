@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="css/grass.css" />
   <link rel="stylesheet" href="css/map-clean.css" />
   <link rel="stylesheet" href="css/map-fabs.css" />
+  <link rel="stylesheet" href="css/chica-sign.css" />
   <style>
     .maplibregl-popup-content {
       background: #fff; color: #0f172a; border-radius: 12px;
@@ -123,7 +124,6 @@
     <section class="map-wrap">
       <div id="map"></div>
 
-      <!-- Lower-left FABs -->
       <div class="map-fabs" id="mapFabs">
         <button type="button" class="map-fab" id="fabNear" title="Near me" aria-label="Near me options" aria-expanded="false">
           <img src="nearme.png" alt="" width="40" height="40" />
@@ -133,7 +133,14 @@
         </button>
       </div>
 
-      <!-- Near Me popover -->
+      <!-- Chica sponsor sign — high visibility, lower right -->
+      <a class="chica-sign chica-sign-map" href="sponsor.html" title="Become a weekly sponsor">
+        <img src="assets/chica/sponsor-sign.png"
+             alt="Chica: Become a Weekly Sponsor"
+             width="120" height="160"
+             onerror="this.src='assets/file_000000009f8c71fda0f56075f84270f7.png'" />
+      </a>
+
       <div class="map-pop" id="popNear" role="dialog" aria-label="Near me">
         <h3>Near me</h3>
         <div class="near-bar" id="nearBar">
@@ -155,7 +162,6 @@
         </div>
       </div>
 
-      <!-- Search / filter popover -->
       <div class="map-pop" id="popSearch" role="dialog" aria-label="Search">
         <h3>Search &amp; filters</h3>
         <div class="filters">
@@ -202,7 +208,6 @@
   <script src="js/grass-wind.js"></script>
   <script>
   (function () {
-    // Menu
     var wrap = document.getElementById('menuWrap');
     var btn = document.getElementById('menuBtn');
     btn.addEventListener('click', function (e) {
@@ -211,7 +216,6 @@
       btn.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
 
-    // FABs → popovers
     var fabNear = document.getElementById('fabNear');
     var fabSearch = document.getElementById('fabSearch');
     var popNear = document.getElementById('popNear');
@@ -257,7 +261,6 @@
       closePops();
     });
 
-    // Filter select → chips
     document.getElementById('filterSelect').addEventListener('change', function () {
       var val = this.value;
       var chip = document.querySelector('.chip[data-filter="' + val + '"]');

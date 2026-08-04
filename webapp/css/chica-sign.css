@@ -1,0 +1,78 @@
+/* Chica with sponsor sign — high-visibility CTA */
+.chica-sign {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.18s ease, filter 0.18s ease;
+}
+.chica-sign:hover {
+  transform: translateY(-4px) scale(1.03);
+  filter: drop-shadow(0 12px 20px rgba(15, 23, 42, 0.25));
+}
+.chica-sign img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+
+/* Home — prominent mid-page + hero accent */
+.chica-sign-home {
+  max-width: 280px;
+  margin: 0 auto 8px;
+}
+.chica-sign-band {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 28px 16px 8px;
+  text-align: center;
+}
+.chica-sign-band p {
+  margin: 0;
+  font-weight: 700;
+  color: #ecfdf5;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.35);
+  font-size: 0.95rem;
+}
+
+/* Map — floating lower-right (opposite FABs) */
+.chica-sign-map {
+  position: absolute;
+  right: 12px;
+  bottom: 52px;
+  z-index: 5;
+  width: 120px;
+  filter: drop-shadow(0 8px 16px rgba(15, 23, 42, 0.3));
+}
+.chica-sign-map:hover {
+  transform: translateY(-3px) scale(1.06);
+}
+@media (max-width: 720px) {
+  .chica-sign-map {
+    width: 96px;
+    bottom: 44px;
+    right: 10px;
+  }
+}
+
+/* Backyard — top of page, replaces text banner */
+.chica-sign-backyard {
+  max-width: 240px;
+  margin: 0 auto 20px;
+  filter: drop-shadow(0 10px 18px rgba(15, 23, 42, 0.2));
+}
+
+/* Dismissible note under map sign (optional) */
+.chica-sign-caption {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-align: center;
+  color: #166534;
+  background: rgba(255,255,255,0.92);
+  border-radius: 999px;
+  padding: 4px 10px;
+  margin-top: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
