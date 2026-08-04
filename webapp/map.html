@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Chica · Garage Sale Map</title>
   <meta name="description" content="Chica maps the best garage and estate sales in San Antonio and across Texas. Find sales nearest to you." />
-  <meta name="theme-color" content="#2563eb" />
+  <meta name="theme-color" content="#166534" />
   <link rel="manifest" href="manifest.webmanifest" />
   <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet" />
   <link rel="stylesheet" href="css/app.css" />
+  <link rel="stylesheet" href="css/grass.css" />
   <style>
     .maplibregl-popup-content {
       background: #fff; color: #0f172a; border-radius: 14px;
@@ -34,7 +35,7 @@
     }
     .logo-mark.img {
       width: 48px; height: 48px; border-radius: 50%; border: 3px solid #fff;
-      box-shadow: 0 4px 12px rgba(37,99,235,0.25); background: #eff6ff; object-fit: cover;
+      box-shadow: 0 4px 12px rgba(22,101,52,0.35); background: #dcfce7; object-fit: cover;
     }
     .nav-pill {
       display: inline-block; padding: 10px 16px; border-radius: 999px;
@@ -42,10 +43,6 @@
       color: #0f172a; text-decoration: none; font-size: 0.88rem;
     }
     .nav-pill:hover { border-color: #cbd5e1; }
-    .nav-pill.primary {
-      background: #2563eb; border-color: #2563eb; color: #fff;
-      box-shadow: 0 4px 14px rgba(37,99,235,0.3);
-    }
     .nav-pill.sponsor-cta {
       background: #0f172a; border-color: #0f172a; color: #fff !important;
     }
@@ -58,10 +55,10 @@
     .sponsor-banner small { display: block; font-weight: 600; opacity: 0.85; font-size: 0.78rem; margin-top: 2px; }
   </style>
 </head>
-<body>
+<body class="grass-map">
   <header class="topbar">
     <a class="brand" href="index.html" style="text-decoration:none;color:inherit">
-      <img class="logo-mark img" src="assets/chica.svg" alt="Chica" width="48" height="48" />
+      <img class="logo-mark img" src="assets/chica/smile.jpg" alt="Chica" width="48" height="48" />
       <div>
         <h1>Chica <span>Map</span></h1>
         <p class="tag">Garage Sale Forecaster · Texas</p>
@@ -181,7 +178,7 @@
   <div class="yowl-ambassador" id="chicaAmbassador">
     <button type="button" class="yowl-dismiss" id="chicaDismiss" aria-label="Dismiss">×</button>
     <div class="yowl-card">
-      <img src="assets/chica.svg" alt="Chica" width="72" height="72" style="border-radius:50%;background:#eff6ff;cursor:pointer" id="chicaAmbassadorImg" />
+      <img src="assets/chica/smile.jpg" alt="Chica" width="72" height="72" style="border-radius:50%;object-fit:cover;cursor:pointer" id="chicaAmbassadorImg" />
       <div class="yowl-copy">
         <strong>Chica</strong>
         <p id="chicaTipText">Howdy! Star sales, plan a route, and check the weather before you roll.</p>
