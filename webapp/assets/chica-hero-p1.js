@@ -1,0 +1,1 @@
+window.CHICA_HERO_B64_P1 = "LOADING";
