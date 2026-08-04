@@ -5,19 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Chica's Backyard · Meet Chica</title>
   <meta name="theme-color" content="#166534" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/landing.css" />
   <link rel="stylesheet" href="css/backyard.css" />
   <link rel="stylesheet" href="css/grass.css" />
   <link rel="stylesheet" href="css/chica-sign.css" />
   <style>
-    .mc-hero-photo { width:100%;height:100%;object-fit:cover;border-radius:16px; }
+    .mc-hero-photo { width:100%;height:100%;object-fit:contain;border-radius:16px;background:transparent; }
   </style>
 </head>
 <body class="backyard-page landing grass-site">
   <header class="lnav">
     <a class="lbrand" href="index.html">
-      <img src="assets/chica/napping.jpg" alt="Chica" width="36" height="36" style="border-radius:10px;object-fit:cover;border:2px solid #fff" onerror="this.src='assets/file_000000009f8c71fda0f56075f84270f7.png'" />
+      <img src="chicarar.png" alt="Chica" width="36" height="36" style="border-radius:10px;object-fit:cover;border:2px solid #fff;background:transparent" onerror="this.onerror=null;this.src='chicarar.jpg'" />
       <span>Chica's Backyard</span>
     </a>
     <nav class="llinks">
@@ -35,12 +38,12 @@
       <img src="sponsor%20sign.jpg"
            alt="Chica holding a sign: Click Here Become a Weekly Sponsor"
            width="220" height="300"
-           onerror="this.onerror=null;this.src='assets/file_000000009f8c71fda0f56075f84270f7.png'" />
+           onerror="this.onerror=null;this.src='chicarar.png'" />
     </a>
 
     <section class="chica-talk" id="chicaTalk">
       <div class="ct-card">
-        <img id="ctAvatar" src="assets/chica/napping.jpg" alt="Chica" width="80" height="80" class="ct-avatar" style="object-fit:cover;border-radius:50%" onerror="this.src='assets/file_000000009f8c71fda0f56075f84270f7.png'" />
+        <img id="ctAvatar" src="chicarar.png" alt="Chica" width="80" height="80" class="ct-avatar" style="object-fit:cover;border-radius:50%;background:transparent" onerror="this.onerror=null;this.src='chicarar.jpg'" />
         <div class="ct-bubble">
           <strong id="ctName">Chica</strong>
           <p id="ctMessage">Howdy! You're in my backyard. Leave a note, share the map, or grab a tip before you hunt.</p>
@@ -69,7 +72,7 @@
     <section class="meet-cheeks" id="meetCheeks">
       <div class="mc-header"><h2>Meet Chica</h2><p class="mc-sub">Official Chica only — identical likeness, no substitutes</p></div>
       <div class="mc-bio-card">
-        <div class="mc-bio-photo-wrap"><img id="mcHero" src="chicarar.jpg" alt="Chica" class="mc-hero-photo" onerror="this.src='assets/file_000000009f8c71fda0f56075f84270f7.png'" /></div>
+        <div class="mc-bio-photo-wrap"><img id="mcHero" src="chicarar.png" alt="Chica" class="mc-hero-photo" onerror="this.onerror=null;this.src='chicarar.jpg'" /></div>
         <div class="mc-bio">
           <h3>Hi. I'm Chica.</h3>
           <div class="mc-bio-body">
@@ -99,7 +102,7 @@
       <h3 class="by-section-title">🎬 Featured Adventure</h3>
       <div class="fa-card">
         <div class="fa-video-wrap">
-          <video controls playsinline poster="chicarar.jpg" style="width:100%;border-radius:14px;background:#0f172a">
+          <video controls playsinline poster="chicarar.png" style="width:100%;border-radius:14px;background:#0f172a">
             <source src="assets/videos/chica_highway_adventure.mp4" type="video/mp4" />
           </video>
         </div>
