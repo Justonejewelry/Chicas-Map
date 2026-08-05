@@ -10,6 +10,7 @@
   <link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="preload" as="image" href="chicarar.webp" type="image/webp" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/voss.css" />
   <link rel="stylesheet" href="css/chica-sign.css" />
@@ -18,6 +19,7 @@
   <header class="v-nav">
     <a class="v-brand" href="index.html">
       <img src="chicarar.png" alt="Chica" width="36" height="36"
+        decoding="async" fetchpriority="high"
         onerror="this.onerror=null;this.src='chicarar.jpg'" />
       Chica
     </a>
@@ -53,8 +55,12 @@
           </div>
         </div>
         <div class="v-hero-visual">
-          <img src="chicarar.png" alt="Chica"
-            onerror="this.onerror=null;this.src='chicarar.jpg'" />
+          <picture>
+            <source srcset="chicarar.webp" type="image/webp" />
+            <img src="chicarar.png" alt="Chica" width="400" height="424"
+              decoding="async" fetchpriority="high"
+              onerror="this.onerror=null;this.src='chicarar.jpg'" />
+          </picture>
           <div class="v-hero-badge">
             This weekend
             <small>Fair Oaks · Alamo Ranch · Helotes</small>
@@ -94,8 +100,12 @@
 
     <div class="v-sponsor-strip">
       <a class="v-sponsor-inner" href="sponsor.html">
-        <img src="sponsorsign.png" alt="Cheeks sponsor sign" width="64" height="87"
-          onerror="this.onerror=null;this.style.display='none'" />
+        <picture>
+          <source srcset="sponsorsign.webp" type="image/webp" />
+          <img src="sponsorsign.png" alt="Cheeks sponsor sign" width="64" height="87"
+            loading="lazy" decoding="async"
+            onerror="this.onerror=null;this.style.display='none'" />
+        </picture>
         <div class="v-sponsor-copy">
           <strong>Partner with Chica this weekend</strong>
           <span>Local businesses · featured map presence · video mention</span>
