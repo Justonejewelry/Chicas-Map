@@ -2,10 +2,14 @@ name: Map feed refresh
 
 on:
   schedule:
-    # Every 2 hours (UTC). Covers SA business day densely.
+    # Every 2 hours (UTC)
     - cron: "0 */2 * * *"
   workflow_dispatch:
     inputs:
+      cities:
+        description: "Cities to discover (comma-separated)"
+        required: false
+        default: "san-antonio,austin"
       reason:
         description: "Why is this manual run?"
         required: false
@@ -19,9 +23,9 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  purge-and-publish:
+  discover-purge-publish:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -33,33 +37,17 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: HTTP discover + parse (GarageSaleFinder)
+        id: discover
+        env:
+          CITIES: ${{ github.event.inputs.cities || 'san-antonio,austin' }}
+        run: |
+          set -e
+          python3 webapp/scripts/discover_sales.py --cities "$CITIES" | tee discover.log
+
       - name: Purge expired listings
-        id: purge
         run: |
           python3 webapp/scripts/purge_expired.py | tee purge.log
-          if grep -qE 'removed=[1-9]' purge.log; then
-            echo "changed=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "changed=false" >> "$GITHUB_OUTPUT"
-          fi
-          # Always stamp last_refresh even if nothing removed
-          python3 - <<'PY'
-          import json
-          from datetime import datetime
-          from pathlib import Path
-          from zoneinfo import ZoneInfo
-          CT = ZoneInfo("America/Chicago")
-          now = datetime.now(CT).isoformat(timespec="seconds")
-          today = datetime.now(CT).date().isoformat()
-          for p in Path("webapp/data/cities").glob("*.json"):
-              if p.name.endswith("-clusters.json"):
-                  continue
-              data = json.loads(p.read_text(encoding="utf-8"))
-              data["last_refresh"] = now
-              data["date"] = today
-              p.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-          print("stamped last_refresh", now)
-          PY
 
       - name: Detect git changes
         id: diff
@@ -77,17 +65,25 @@ jobs:
           git config user.name "yardbird-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add webapp/data/cities/*.json
-          MSG="Map refresh $(date -u +%Y-%m-%dT%H:%MZ) — purge expired [skip ci]"
+          MSG="Map refresh $(date -u +%Y-%m-%dT%H:%MZ) — discover+purge [skip ci]"
           git commit -m "$MSG" || exit 0
           git push
 
       - name: Summary
         run: |
-          echo "### Map refresh" >> "$GITHUB_STEP_SUMMARY"
-          echo "" >> "$GITHUB_STEP_SUMMARY"
-          echo "- Trigger: ${{ github.event_name }}" >> "$GITHUB_STEP_SUMMARY"
-          echo "- Changes committed: ${{ steps.diff.outputs.dirty }}" >> "$GITHUB_STEP_SUMMARY"
-          echo "" >> "$GITHUB_STEP_SUMMARY"
-          echo '```' >> "$GITHUB_STEP_SUMMARY"
-          cat purge.log >> "$GITHUB_STEP_SUMMARY" || true
-          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          {
+            echo "### Map refresh (discover + purge)"
+            echo ""
+            echo "- Trigger: ${{ github.event_name }}"
+            echo "- Cities: ${{ github.event.inputs.cities || 'san-antonio,austin' }}"
+            echo "- Changes committed: ${{ steps.diff.outputs.dirty }}"
+            echo ""
+            echo "#### Discover"
+            echo '```'
+            cat discover.log 2>/dev/null || echo "(no log)"
+            echo '```'
+            echo "#### Purge"
+            echo '```'
+            cat purge.log 2>/dev/null || echo "(no log)"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
