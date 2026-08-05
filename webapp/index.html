@@ -107,6 +107,7 @@
           <p>Friday briefing: hot zones, new sales, and weekend routes. Free. No spam.</p>
         </div>
         <form class="v-email-form" id="emailForm">
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true" />
           <input type="email" id="emailInput" name="email" required placeholder="you@email.com" autocomplete="email" />
           <button type="submit" class="v-btn v-btn-primary">Join Friday list</button>
         </form>
@@ -156,26 +157,17 @@
     </div>
   </footer>
 
+  <script src="js/chica-config.js"></script>
+  <script src="js/chica-forms.js"></script>
   <script src="js/chica-pwa.js"></script>
   <script>
   (function () {
-    var form = document.getElementById("emailForm");
-    var status = document.getElementById("emailStatus");
-    if (!form) return;
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      var email = document.getElementById("emailInput").value.trim();
-      if (!email) return;
-      var subject = encodeURIComponent("Join Chica Friday Email Updates");
-      var body = encodeURIComponent(
-        "Please add me to Chica’s Friday email updates.\n\nEmail: " + email +
-        "\n\nI understand updates publish every Friday with weekend garage sale intel."
-      );
-      window.location.href = "mailto:mr.jsciaraffa@gmail.com?subject=" + subject + "&body=" + body;
-      status.hidden = false;
-      status.className = "v-form-status";
-      status.textContent = "Email opened — send it to join the Friday list. You’ll hear from Chica every Friday.";
-    });
+    if (window.ChicaForms) {
+      ChicaForms.bindEmailForm(document.getElementById("emailForm"), {
+        statusEl: document.getElementById("emailStatus"),
+        source: "home",
+      });
+    }
   })();
   </script>
 </body>
