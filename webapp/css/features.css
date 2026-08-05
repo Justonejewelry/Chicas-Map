@@ -1,0 +1,65 @@
+/* Feature pack UI */
+.feat-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 8px 10px;
+  border-bottom: 1px solid #e6e1d8;
+  background: rgba(255,255,255,0.92);
+}
+.feat-bar .tool-btn {
+  font-size: 0.78rem;
+  padding: 6px 10px;
+}
+.feat-bar .tool-btn.active {
+  background: #e8f5ee;
+  border-color: #1a6b3c;
+  color: #145530;
+}
+.pill.sniff { background: #fdf0e9; color: #9a3412; }
+.pill.early { background: #e0f2fe; color: #0369a1; }
+.pill.wish { background: #fce7f3; color: #9d174d; }
+
+.yb-cameo {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #1a6b3c;
+  display: grid; place-items: center;
+  font-size: 14px;
+  box-shadow: 0 4px 12px rgba(26,107,60,0.35);
+  cursor: pointer;
+}
+.yb-sponsor-pin {
+  width: 22px; height: 22px;
+  border-radius: 6px;
+  background: #1a6b3c;
+  color: #fff;
+  font-weight: 800;
+  font-size: 12px;
+  display: grid; place-items: center;
+  box-shadow: 0 2px 8px rgba(26,107,60,0.4);
+  cursor: pointer;
+  border: 2px solid #fff;
+}
+
+#wishlistPanel {
+  padding: 10px 12px;
+  border-bottom: 1px solid #e6e1d8;
+  background: #f6f4ef;
+}
+#wishlistPanel.hidden { display: none; }
+#wishlistPanel h4 { margin: 0 0 8px; font-size: 0.85rem; }
+#wishlistPanel .wish-row {
+  display: flex; gap: 6px; margin-bottom: 8px;
+}
+#wishlistPanel input {
+  flex: 1; padding: 8px 10px; border: 1px solid #e6e1d8;
+  border-radius: 10px; font-weight: 600; font-size: 0.85rem;
+}
+#wishList { list-style: none; margin: 0; padding: 0; }
+#wishList li {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 6px 0; font-size: 0.85rem; border-bottom: 1px solid #e6e1d8;
+}
+#wishList li.empty { color: #7a736b; border: 0; }

@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="css/map-fabs.css" />
   <link rel="stylesheet" href="css/chica-sign.css" />
   <link rel="stylesheet" href="css/map-voss.css" />
+  <link rel="stylesheet" href="css/features.css" />
   <style>
     .maplibregl-popup-content {
       background: #fff; color: #14110f; border-radius: 14px;
@@ -92,8 +93,26 @@
       <section class="tools-bar">
         <button type="button" class="tool-btn" id="btnFavorites">★ Saved <span id="favCount">0</span></button>
         <button type="button" class="tool-btn" id="btnRoute">↗ Route <span id="routeCount">0</span></button>
+        <button type="button" class="tool-btn" id="btnShareRoute" title="Share route story">Share route</button>
         <button type="button" class="tool-btn" id="btnExport" hidden>Export</button>
       </section>
+
+      <section class="feat-bar" aria-label="Smart filters">
+        <button type="button" class="tool-btn" id="btnRadar" title="Thursday/Friday weekend nudge">📡 Radar</button>
+        <button type="button" class="tool-btn" id="btnDnaHeat" title="Neighborhood DNA heat">🧬 DNA</button>
+        <button type="button" class="tool-btn" id="btnFirst30" title="Early open + high sniff">⏱ First 30</button>
+        <button type="button" class="tool-btn" id="btnWishlist" title="I'm hunting for…">🎯 Hunt</button>
+      </section>
+
+      <div id="wishlistPanel" class="hidden">
+        <h4>I'm hunting for…</h4>
+        <div class="wish-row">
+          <input type="text" id="wishInput" placeholder="tools, records, cameras…" maxlength="80" />
+          <button type="button" class="near-btn primary" id="btnWishAdd">Add</button>
+        </div>
+        <button type="button" class="tool-btn" id="btnWishFilter">Show matches only</button>
+        <ul id="wishList"></ul>
+      </div>
 
       <details class="panel-block" id="forecastBlock">
         <summary>Weekend forecast</summary>
@@ -122,6 +141,7 @@
         </div>
         <ol id="routeStops" class="route-stops"></ol>
         <button type="button" class="near-btn primary" id="btnOpenRoute" style="width:100%;margin-top:8px">Open in Google Maps</button>
+        <button type="button" class="near-btn" id="btnShareRoute2" style="width:100%;margin-top:6px" onclick="document.getElementById('btnShareRoute').click()">Share route card</button>
       </div>
     </aside>
 
@@ -192,9 +212,10 @@
         <span><i class="pin top"></i> Top</span>
         <span><i class="pin new"></i> Garage</span>
         <span><i class="pin estate"></i> Estate</span>
-        <span><i class="pin permit"></i> Permit</span>
+        <span>★ Partner</span>
+        <span>🐕 Cameo</span>
       </div>
-      <div class="map-hint" id="mapHint">Near me &amp; Search — lower left</div>
+      <div class="map-hint" id="mapHint">Near me · Search · DNA · First 30</div>
     </section>
   </main>
 
@@ -207,6 +228,7 @@
   <div class="yowl-ambassador" id="chicaAmbassador" hidden></div>
 
   <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+  <script src="js/features.js"></script>
   <script src="js/app.js"></script>
   <script src="js/grass-wind.js"></script>
   <script>
