@@ -1,39 +1,7 @@
 {
-  "edition": "Sunday Yard-Bird Discovery",
-  "date": "2026-08-01",
-  "generated_at": "2026-08-04T12:52:04+00:00",
-  "refreshed_at": "2026-08-04T12:52:04+00:00",
-  "total_locations": 197,
-  "sources": [],
-  "public": [],
-  "permits": [],
-  "permit_total": 0,
-  "hot_zones": [
-    {
-      "name": "South Side",
-      "badge": "CLUSTER-HOT",
-      "size": 30,
-      "lat": 29.2975,
-      "lon": -98.481
-    },
-    {
-      "name": "Northwest Side",
-      "badge": "ACTIVE",
-      "lat": 29.55,
-      "lon": -98.62
-    },
-    {
-      "name": "Northeast Side",
-      "badge": "ACTIVE",
-      "lat": 29.54,
-      "lon": -98.4
-    },
-    {
-      "name": "Alamo Ranch",
-      "badge": "ACTIVE",
-      "lat": 29.48,
-      "lon": -98.7
-    }
-  ],
-  "source_file": "data/latest_discovery.json"
+  "edition": "Texas multi-city",
+  "date": "2026-08-04",
+  "last_refresh": "2026-08-04T20:55:00-05:00",
+  "cities": ["san-antonio", "austin"],
+  "note": "Primary feeds live under data/cities/<slug>.json"
 }
