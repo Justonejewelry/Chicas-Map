@@ -28,113 +28,86 @@ html {
       rgba(15, 61, 36, 0.55) 55%,
       rgba(12, 50, 30, 0.7) 100%
     ),
-    url("../4267751-green-grass-texture-that-tiles-seamlessly-as-a-pattern.jpg");
+    url("../grass.jpg");
   background-size: auto, 300px 300px;
   background-repeat: no-repeat, repeat;
   background-position: center, var(--wind-x) var(--wind-y);
   transform: skewX(var(--wind-skew)) scale(var(--wind-scale));
   transform-origin: 50% 100%;
   will-change: background-position, transform;
-  /* no CSS transition — JS RAF drives motion (avoids lag fight) */
 }
 
-/* Near grass (faster parallax + soft light) */
+/* Near grass (faster parallax) */
 .grass-layer-near {
   position: fixed;
-  inset: -40px;
+  inset: -80px;
   z-index: -1;
   pointer-events: none;
-  background-image:
-    radial-gradient(
-      ellipse 70% 50% at 50% 100%,
-      rgba(34, 197, 94, calc(0.12 + var(--gust) * 0.12)) 0%,
-      transparent 70%
-    ),
-    url("../4267751-green-grass-texture-that-tiles-seamlessly-as-a-pattern.jpg");
-  background-size: auto, 220px 220px;
-  background-repeat: no-repeat, repeat;
-  background-position: center, var(--wind-x2) var(--wind-y2);
-  opacity: 0.55;
-  mix-blend-mode: soft-light;
-  transform: skewX(calc(var(--wind-skew) * 1.35)) scale(calc(var(--wind-scale) * 1.02));
-  transform-origin: 50% 100%;
-  will-change: background-position, transform, opacity;
-}
-
-/* Soft sun patch that drifts with wind */
-.grass-layer-near::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    circle 280px at calc(50% + var(--wind-x2) * 2) calc(30% + var(--wind-y2)),
-    rgba(254, 240, 138, calc(0.08 + var(--gust) * 0.1)),
-    transparent 70%
-  );
-  pointer-events: none;
+  background-image: url("../grass.jpg");
+  background-size: 220px 220px;
+  background-repeat: repeat;
+  background-position: var(--wind-x2) var(--wind-y2);
+  opacity: 0.35;
+  mix-blend-mode: multiply;
+  will-change: background-position;
 }
 
 body.grass-site,
-body.landing.grass-site,
-body.backyard-page.grass-site,
-body.sponsor-page.grass-site,
-body.grass-map {
-  background: transparent !important;
-  min-height: 100vh;
+body.grass-map,
+body.backyard-page {
   position: relative;
+  min-height: 100vh;
 }
 
-/* Readable frosted panels */
-body.grass-site .hero-frame,
-body.grass-site .feat,
-body.grass-site .sp-card,
-body.grass-site .meet-cheeks,
-body.grass-site .fa-card,
-body.grass-site .ct-card,
-body.grass-site .share-section,
-body.grass-site .comment-section,
-body.grass-site .by-card,
-body.grass-site .by-video-card,
-body.grass-site .by-post-view,
-body.grass-site .panel,
-body.grass-site .topbar,
-body.grass-site .footer,
-body.grass-site .lfoot,
-body.grass-map .topbar,
-body.grass-map .footer,
-body.grass-map .panel {
-  background: rgba(255, 255, 255, 0.95) !important;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+body.grass-site::before,
+body.grass-map::before,
+body.backyard-page::before {
+  content: "";
+  position: fixed;
+  inset: -60px;
+  z-index: -2;
+  pointer-events: none;
+  background-color: var(--grass-mid);
+  background-image:
+    linear-gradient(
+      180deg,
+      rgba(20, 83, 45, 0.45) 0%,
+      rgba(15, 61, 36, 0.5) 55%,
+      rgba(12, 50, 30, 0.65) 100%
+    ),
+    url("../grass.jpg");
+  background-size: auto, 300px 300px;
+  background-repeat: no-repeat, repeat;
+  background-position: center, var(--wind-x) var(--wind-y);
+  transform: skewX(var(--wind-skew)) scale(var(--wind-scale));
+  transform-origin: 50% 100%;
+  will-change: background-position, transform;
 }
 
-body.grass-site .lnav .llinks a,
-body.grass-site .lbrand {
-  color: #f0fdf4;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
+body.grass-site::after,
+body.grass-map::after,
+body.backyard-page::after {
+  content: "";
+  position: fixed;
+  inset: -80px;
+  z-index: -1;
+  pointer-events: none;
+  background-image: url("../grass.jpg");
+  background-size: 220px 220px;
+  background-repeat: repeat;
+  background-position: var(--wind-x2) var(--wind-y2);
+  opacity: 0.28;
+  mix-blend-mode: multiply;
+  will-change: background-position;
 }
-body.grass-site .lnav .llinks a:hover { color: #fff; }
-body.grass-site .lfoot,
-body.grass-site .lfoot strong {
-  color: #ecfdf5;
-  border-top-color: rgba(255, 255, 255, 0.2);
-}
-body.grass-site .lfoot-links a { color: #bbf7d0; }
-body.grass-site .features h2,
-body.grass-site .by-section-title {
-  color: #f0fdf4 !important;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
-}
-body.grass-site .features-lead {
-  color: #dcfce7 !important;
-}
-
-body.grass-map .topbar { border-bottom: 2px solid #86efac !important; }
-body.grass-map .footer { border-top: 2px solid #86efac !important; }
 
 @media (prefers-reduced-motion: reduce) {
-  .grass-layer,
-  .grass-layer-near {
-    transform: none !important;
+  :root {
+    --wind-x: 0px !important;
+    --wind-y: 0px !important;
+    --wind-x2: 0px !important;
+    --wind-y2: 0px !important;
+    --wind-skew: 0deg !important;
+    --wind-scale: 1 !important;
   }
 }

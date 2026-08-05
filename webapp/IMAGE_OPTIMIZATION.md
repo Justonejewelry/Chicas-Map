@@ -1,19 +1,19 @@
-# Image optimization (Aug 2026)
+# Image optimization (upload these over existing files)
 
-Overwrite these files in `webapp/` (and assets) with the optimized versions from the agent artifacts folder `web-opt/`:
+Download `optimized-images.zip` from the agent artifacts, unzip, and upload into `webapp/` (and cape into `webapp/assets/`).
 
-| File | Target path | Before → After |
-|------|-------------|----------------|
-| `chicarar.jpg` | `webapp/chicarar.jpg` | ~928 KB → ~73 KB |
-| `sponsorcheeks.jpg` | `webapp/sponsorcheeks.jpg` | ~277 KB → ~39 KB |
-| grass tile | `webapp/4267751-green-grass-texture-that-tiles-seamlessly-as-a-pattern.jpg` | ~418 KB → ~80 KB |
-| cape PNG | `webapp/assets/file_000000009f8c71fda0f56075f84270f7.png` | ~2.3 MB → ~404 KB |
-| `napping.jpg` | `webapp/assets/chica/napping.jpg` | ~35 KB → ~22 KB |
-| `nearme.png` | `webapp/nearme.png` | ~39 KB → ~11 KB |
-| `search.png` | `webapp/search.png` | ~5 KB → ~2 KB |
+| File | Before | After | Notes |
+|------|--------|-------|-------|
+| chicarar.png | ~1.2 MB | ~336 KB | Max 512px, transparency kept |
+| chicarar.webp | — | ~60 KB | Prefer via `<picture>` |
+| chicarar.jpg | ~951 KB | ~35 KB | Fallback |
+| sponsorsign.png | ~2.7 MB | ~160 KB | Max 480px |
+| sponsorsign.webp | — | ~33 KB | Prefer via `<picture>` |
+| nearme.png | ~40 KB | ~11 KB | 128px |
+| grass.jpg | ~428 KB | ~151 KB | Tile; CSS now points here |
+| assets/cape.jpg | ~2.3 MB PNG | ~96 KB | Gallery |
+| favicon-32/48 + apple-touch | broken (14 B) | real PNGs | From Chica |
 
-**Total savings: ~3.5 MB+** on first load.
+HTML already uses `loading="lazy"`, `decoding="async"`, `fetchpriority="high"` on LCP, and WebP `<picture>` where supported.
 
-HTML already uses `loading="lazy"` / `decoding="async"` where appropriate. Hero images use `fetchpriority="high"`.
-
-Prefer JPEG for photos, PNG only when transparency is required. Keep display sizes ≤ 2× CSS size for retina.
+Upload path: https://github.com/Justonejewelry/Project-YardBird/upload/main/webapp
