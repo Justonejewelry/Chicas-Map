@@ -26,9 +26,11 @@
     <nav class="v-links" aria-label="Primary">
       <a href="map.html">Map</a>
       <a href="backyard.html">Backyard</a>
+      <a href="submit.html">List a sale</a>
       <a href="sponsor.html">Sponsor</a>
     </nav>
     <div class="v-nav-actions">
+      <button type="button" class="v-btn v-btn-ghost v-btn-sm v-btn-install" data-chica-install hidden>Add to Home</button>
       <a class="v-btn v-btn-ghost" href="backyard.html">Meet Chica</a>
       <a class="v-btn v-btn-primary" href="map.html">Open map</a>
     </div>
@@ -46,7 +48,7 @@
           </p>
           <div class="v-hero-cta">
             <a class="v-btn v-btn-primary v-btn-lg" href="map.html">Open the map</a>
-            <a class="v-btn v-btn-ghost v-btn-lg" href="backyard.html">Chica's Backyard</a>
+            <a class="v-btn v-btn-ghost v-btn-lg" href="submit.html">List your sale free</a>
           </div>
           <div class="v-hero-meta">
             <span><strong>Near Me</strong> · distance sort</span>
@@ -98,6 +100,20 @@
       </div>
     </section>
 
+    <div class="v-email-strip">
+      <div class="v-email-card">
+        <div>
+          <h3>Join Chica’s Email Updates</h3>
+          <p>Friday briefing: hot zones, new sales, and weekend routes. Free. No spam.</p>
+        </div>
+        <form class="v-email-form" id="emailForm">
+          <input type="email" id="emailInput" name="email" required placeholder="you@email.com" autocomplete="email" />
+          <button type="submit" class="v-btn v-btn-primary">Join Friday list</button>
+        </form>
+      </div>
+      <p id="emailStatus" class="v-form-status" hidden style="max-width:1120px;margin:12px auto 0"></p>
+    </div>
+
     <div class="v-sponsor-strip">
       <a class="v-sponsor-inner" href="sponsor.html">
         <picture>
@@ -118,7 +134,10 @@
       <div class="v-cta-inner">
         <h2>Ready for Saturday?</h2>
         <p>Open the live map — free, fast, and built around real sales.</p>
-        <a class="v-btn v-btn-primary v-btn-lg" href="map.html">Launch Chica Map</a>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center">
+          <a class="v-btn v-btn-primary v-btn-lg" href="map.html">Launch Chica Map</a>
+          <a class="v-btn v-btn-ghost v-btn-lg" href="submit.html" style="background:transparent;color:#f6f4ef;border-color:rgba(246,244,239,0.35)">List a sale free</a>
+        </div>
       </div>
     </section>
   </main>
@@ -131,9 +150,33 @@
     <div class="v-foot-links">
       <a href="map.html">Map</a>
       <a href="backyard.html">Backyard</a>
+      <a href="submit.html">List a sale</a>
       <a href="sponsor.html">Sponsor</a>
       <a href="mailto:mr.jsciaraffa@gmail.com">Contact</a>
     </div>
   </footer>
+
+  <script src="js/chica-pwa.js"></script>
+  <script>
+  (function () {
+    var form = document.getElementById("emailForm");
+    var status = document.getElementById("emailStatus");
+    if (!form) return;
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var email = document.getElementById("emailInput").value.trim();
+      if (!email) return;
+      var subject = encodeURIComponent("Join Chica Friday Email Updates");
+      var body = encodeURIComponent(
+        "Please add me to Chica’s Friday email updates.\n\nEmail: " + email +
+        "\n\nI understand updates publish every Friday with weekend garage sale intel."
+      );
+      window.location.href = "mailto:mr.jsciaraffa@gmail.com?subject=" + subject + "&body=" + body;
+      status.hidden = false;
+      status.className = "v-form-status";
+      status.textContent = "Email opened — send it to join the Friday list. You’ll hear from Chica every Friday.";
+    });
+  })();
+  </script>
 </body>
 </html>
