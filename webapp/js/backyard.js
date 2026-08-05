@@ -23,7 +23,7 @@
   // Main photo: transparent chicarar.png (fallback to jpg)
   const MAIN = "chicarar.png";
   const MAIN_FALLBACK = "chicarar.jpg";
-  const CAPE = "assets/file_000000009f8c71fda0f56075f84270f7.png";
+  const CAPE = "assets/cape.jpg";
   const HUMAN = "assets/1.jpg";
 
   const CHICA_GALLERY = [
@@ -78,120 +78,92 @@
     const gallery = document.getElementById("mcGallery");
     const hero = document.getElementById("mcHero");
     const avatar = document.getElementById("ctAvatar");
-    if (!gallery) return;
-
     wireImg(hero, MAIN, MAIN_FALLBACK);
-    if (hero) hero.alt = "Chica";
     wireImg(avatar, MAIN, MAIN_FALLBACK);
-    if (avatar) avatar.alt = "Chica";
-
+    if (!gallery) return;
     gallery.innerHTML = CHICA_GALLERY.map(
-      (p) => `<figure class="mc-fig">
-          <img src="${esc(p.src)}" alt="${esc(p.alt)}" loading="lazy" decoding="async"
-            onerror="this.onerror=null;this.src='${esc(p.fallback)}'" />
-          <figcaption>${esc(p.caption)}</figcaption>
+      (g) =>
+        `<figure class="mc-shot" data-key="${esc(g.key)}">
+          <img src="${esc(g.src)}" alt="${esc(g.alt)}" loading="lazy" decoding="async" />
+          <figcaption>${esc(g.caption)}</figcaption>
         </figure>`
     ).join("");
-  }
-
-  function showPost(post) {
-    document.querySelector(".by-grid")?.classList.add("hidden");
-    ["meetCheeks", "featuredAdventure", "chicaTalk", "shareSection", "commentSection"].forEach((id) => {
-      document.getElementById(id)?.classList.add("hidden");
-    });
-    const view = document.getElementById("postView");
-    view.classList.remove("hidden");
-    document.getElementById("postTitle").textContent = post.title;
-    document.getElementById("postMeta").textContent =
-      formatDate(post.date) + (post.tags ? " · " + post.tags.join(" · ") : "");
-    document.getElementById("postBody").textContent = post.body || post.excerpt || "";
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }
-
-  function hidePost() {
-    document.getElementById("postView")?.classList.add("hidden");
-    document.querySelector(".by-grid")?.classList.remove("hidden");
-    ["meetCheeks", "featuredAdventure", "chicaTalk", "shareSection", "commentSection"].forEach((id) => {
-      document.getElementById(id)?.classList.remove("hidden");
+    gallery.querySelectorAll("img").forEach((img, i) => {
+      const g = CHICA_GALLERY[i];
+      if (g) wireImg(img, g.src, g.fallback);
     });
   }
 
-  function renderBlog(posts) {
-    const el = document.getElementById("blogList");
-    if (!el) return;
-    if (!posts.length) {
-      el.innerHTML = '<p class="excerpt">No posts yet — check back after the next weekend pass.</p>';
-      return;
-    }
-    el.innerHTML = posts
-      .map(
-        (p, i) => `<article class="by-card" data-i="${i}">
-        <div class="date">${esc(formatDate(p.date))}</div>
-        <h4>${esc(p.title)}</h4>
-        <p class="excerpt">${esc(p.excerpt || "")}</p>
-        <div class="by-tags">${(p.tags || []).map((t) => `<span class="by-tag">${esc(t)}</span>`).join("")}</div>
-      </article>`
-      )
-      .join("");
-    el.querySelectorAll("[data-i]").forEach((card) => {
-      card.addEventListener("click", () => showPost(posts[+card.dataset.i]));
+  function setTip(i) {
+    tipIndex = ((i % tips.length) + tips.length) % tips.length;
+    const el = document.getElementById("ctMessage");
+    if (el) el.textContent = tips[tipIndex];
+  }
+
+  function wireTalk() {
+    document.getElementById("btnTalk")?.addEventListener("click", () => setTip(tipIndex + 1));
+    document.getElementById("btnTip")?.addEventListener("click", () => {
+      setTip(Math.floor(Math.random() * tips.length));
     });
   }
 
-  function renderVideos(videos) {
-    const el = document.getElementById("videoList");
-    if (!el) return;
-    if (!videos.length) {
-      el.innerHTML = '<p class="excerpt">Weekly videos will land here.</p>';
-      return;
-    }
-    const list = videos.filter((v) => !v.featured);
-    el.innerHTML = list
-      .map((v) => {
-        const hasYt = v.youtube_id && v.status !== "placeholder";
-        const thumb = hasYt
-          ? `<a href="https://www.youtube.com/watch?v=${esc(v.youtube_id)}" target="_blank" rel="noopener" class="by-video-thumb" style="background:url(https://img.youtube.com/vi/${esc(v.youtube_id)}/hqdefault.jpg) center/cover"><span class="play">▶</span></a>`
-          : `<div class="by-video-thumb" style="background:url(${CAPE}) center/cover"><span class="play">▶</span><span style="position:absolute;bottom:10px;font-size:0.75rem;opacity:0.9;color:#fff;text-shadow:0 1px 2px #000">${v.status === "local" ? "Local" : "Coming soon"}</span></div>`;
-        return `<article class="by-video-card ${hasYt || v.status === "local" ? "" : "placeholder"}">
-          ${thumb}
-          <div class="by-video-body">
-            <h4>${esc(v.title)}</h4>
-            <p>${esc(v.description || "")}</p>
-            <div class="by-video-meta">${esc(formatDate(v.date))}${v.duration ? " · " + esc(v.duration) : ""}</div>
-          </div>
-        </article>`;
-      })
-      .join("");
-  }
-
-  function talkToChica() {
-    const msg = document.getElementById("ctMessage");
-    if (!msg) return;
-    msg.textContent = tips[tipIndex % tips.length];
-    tipIndex++;
-  }
-
-  function boot() {
-    renderMeetChica();
-    document.getElementById("btnBackPosts")?.addEventListener("click", hidePost);
-    document.getElementById("btnTalk")?.addEventListener("click", talkToChica);
-    document.getElementById("btnTip")?.addEventListener("click", talkToChica);
-    document.getElementById("ctAvatar")?.addEventListener("click", talkToChica);
-
-    fetch("data/backyard.json")
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.tips && data.tips.length) tips = data.tips;
-        renderBlog(data.blog || []);
-        renderVideos(data.videos || []);
-      })
-      .catch(() => {
-        const b = document.getElementById("blogList");
-        const v = document.getElementById("videoList");
-        if (b) b.textContent = "Could not load backyard posts.";
-        if (v) v.textContent = "Could not load videos.";
+  async function loadFeed() {
+    let data = null;
+    try {
+      const r = await fetch("data/backyard.json");
+      if (r.ok) data = await r.json();
+    } catch (_) {}
+    const blog = document.getElementById("blogList");
+    const videos = document.getElementById("videoList");
+    if (data && data.tips && data.tips.length) tips = data.tips.concat(DEFAULT_TIPS);
+    if (blog) {
+      const posts = (data && data.posts) || [];
+      blog.innerHTML = posts.length
+        ? posts
+            .map(
+              (p) =>
+                `<article class="by-post" data-id="${esc(p.id || p.title)}">
+                  <h4>${esc(p.title)}</h4>
+                  <div class="by-meta">${esc(formatDate(p.date || ""))}</div>
+                  <p>${esc((p.excerpt || p.body || "").slice(0, 140))}</p>
+                </article>`
+            )
+            .join("")
+        : `<p class="comment-empty">New posts land here each week.</p>`;
+      blog.querySelectorAll(".by-post").forEach((card) => {
+        card.addEventListener("click", () => {
+          const id = card.dataset.id;
+          const post = posts.find((p) => (p.id || p.title) === id);
+          if (!post) return;
+          document.getElementById("postView")?.classList.remove("hidden");
+          document.getElementById("postTitle").textContent = post.title || "";
+          document.getElementById("postMeta").textContent = formatDate(post.date || "");
+          document.getElementById("postBody").textContent = post.body || post.excerpt || "";
+          document.getElementById("postView")?.scrollIntoView({ behavior: "smooth" });
+        });
       });
+    }
+    if (videos) {
+      const vids = (data && data.videos) || [];
+      videos.innerHTML = vids.length
+        ? vids
+            .map(
+              (v) =>
+                `<article class="by-video">
+                  <h4>${esc(v.title)}</h4>
+                  <div class="by-meta">${esc(formatDate(v.date || ""))}</div>
+                  <p>${esc(v.note || "")}</p>
+                </article>`
+            )
+            .join("")
+        : `<p class="comment-empty">Weekly video drops appear here.</p>`;
+    }
+    document.getElementById("btnBackPosts")?.addEventListener("click", () => {
+      document.getElementById("postView")?.classList.add("hidden");
+    });
   }
 
-  boot();
+  renderMeetChica();
+  wireTalk();
+  loadFeed();
 })();
