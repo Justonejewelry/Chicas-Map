@@ -8,11 +8,13 @@
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
   <link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="manifest" href="manifest.webmanifest" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/landing.css" />
   <link rel="stylesheet" href="css/backyard.css" />
   <link rel="stylesheet" href="css/grass.css" />
   <link rel="stylesheet" href="css/chica-sign.css" />
+  <link rel="stylesheet" href="css/voss.css" />
   <style>
     .mc-hero-photo { width:100%;height:100%;object-fit:contain;border-radius:16px;background:transparent; }
     .mc-bio-body p { margin: 0 0 0.85em; }
@@ -38,9 +40,11 @@
     <nav class="llinks">
       <a href="index.html">Home</a>
       <a href="map.html">Map</a>
+      <a href="submit.html">List a sale</a>
       <a href="sponsor.html">Sponsor</a>
     </nav>
     <div class="lnav-actions">
+      <button type="button" class="lbtn ghost" data-chica-install hidden style="font-weight:700">Add to Home</button>
       <a class="lbtn ghost" href="index.html">Home</a>
       <a class="lbtn primary" href="map.html">Open map</a>
     </div>
@@ -70,6 +74,21 @@
         </div>
       </div>
     </section>
+
+    <div class="v-email-strip" style="max-width:720px;margin:0 auto 28px;padding:0 16px">
+      <div class="v-email-card">
+        <div>
+          <h3>Join Chica’s Email Updates</h3>
+          <p>Every Friday: hot zones, new sales, weekend routes. Free.</p>
+        </div>
+        <form class="v-email-form" id="emailFormBy">
+          <input type="email" id="emailInputBy" required placeholder="you@email.com" autocomplete="email" />
+          <button type="submit" class="v-btn v-btn-primary">Join Friday list</button>
+        </form>
+      </div>
+      <p id="emailStatusBy" class="v-form-status" hidden style="margin-top:10px"></p>
+    </div>
+
     <section class="share-section" id="shareSection">
       <h3>Share with the pack</h3>
       <p class="share-lead">Facebook, Nextdoor, Instagram — wherever good humans gather. Every share helps more people find the map.</p>
@@ -152,10 +171,16 @@
   </main>
   <footer class="lfoot">
     <div><strong>Chica's Backyard</strong><span>Project YardBird · GSIN</span></div>
-    <div class="lfoot-links"><a href="index.html">Home</a><a href="map.html">Map</a><a href="sponsor.html">Sponsor</a></div>
+    <div class="lfoot-links">
+      <a href="index.html">Home</a>
+      <a href="map.html">Map</a>
+      <a href="submit.html">List a sale</a>
+      <a href="sponsor.html">Sponsor</a>
+    </div>
   </footer>
   <script src="js/backyard.js"></script>
   <script src="js/grass-wind.js"></script>
+  <script src="js/chica-pwa.js"></script>
   <script>
   (function () {
     var pageUrl = encodeURIComponent('https://justonejewelry.github.io/Project-YardBird/backyard.html');
@@ -204,6 +229,24 @@
       save(list); document.getElementById('commentForm').reset(); render();
     });
     render();
+
+    var ef = document.getElementById('emailFormBy');
+    if (ef) {
+      ef.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var email = document.getElementById('emailInputBy').value.trim();
+        if (!email) return;
+        var subject = encodeURIComponent('Join Chica Friday Email Updates');
+        var body = encodeURIComponent('Please add me to Chica’s Friday email updates.\n\nEmail: ' + email + '\n\nI understand updates publish every Friday with weekend garage sale intel.');
+        window.location.href = 'mailto:mr.jsciaraffa@gmail.com?subject=' + subject + '&body=' + body;
+        var st = document.getElementById('emailStatusBy');
+        if (st) {
+          st.hidden = false;
+          st.className = 'v-form-status';
+          st.textContent = 'Email opened — send it to join the Friday list.';
+        }
+      });
+    }
   })();
   </script>
 </body>
