@@ -119,6 +119,8 @@ button, input, select, textarea { font: inherit; }
 }
 .v-btn-ghost:hover { border-color: var(--v-line-strong); }
 .v-btn-lg { padding: 14px 26px; font-size: 0.98rem; }
+.v-btn-sm { padding: 8px 14px; font-size: 0.82rem; }
+.v-btn:disabled { opacity: 0.55; cursor: not-allowed; }
 
 /* —— Hero —— */
 .v-hero {
@@ -403,12 +405,272 @@ button, input, select, textarea { font: inherit; }
 .v-foot-links {
   display: flex;
   gap: 18px;
+  flex-wrap: wrap;
 }
 .v-foot-links a {
   text-decoration: none;
   font-weight: 600;
 }
 .v-foot-links a:hover { color: var(--v-ink); }
+
+/* —— Forms (sale + email) —— */
+.v-form-wrap {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 0 20px 64px;
+}
+.v-form-card {
+  background: var(--v-surface);
+  border: 1px solid var(--v-line);
+  border-radius: var(--v-radius-lg);
+  box-shadow: var(--v-shadow-lg);
+  padding: 32px 28px;
+}
+.v-form-card h1 {
+  margin: 0 0 6px;
+  font-size: 1.55rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+.v-form-card .v-form-lead {
+  margin: 0 0 24px;
+  color: var(--v-muted);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+.v-field {
+  margin-bottom: 16px;
+}
+.v-field label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--v-muted);
+  margin-bottom: 6px;
+}
+.v-field input,
+.v-field select,
+.v-field textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--v-line);
+  border-radius: 12px;
+  background: var(--v-surface);
+  color: var(--v-ink);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.v-field input:focus,
+.v-field select:focus,
+.v-field textarea:focus {
+  outline: none;
+  border-color: var(--v-accent);
+  box-shadow: 0 0 0 3px var(--v-accent-soft);
+}
+.v-field textarea { min-height: 96px; resize: vertical; }
+.v-field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.v-check-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+}
+.v-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 550;
+  color: var(--v-ink-2);
+  cursor: pointer;
+}
+.v-check input { width: auto; accent-color: var(--v-accent); }
+.v-form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+}
+.v-form-legal {
+  margin: 16px 0 0;
+  font-size: 0.78rem;
+  color: var(--v-muted);
+  line-height: 1.45;
+}
+.v-form-status {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: var(--v-accent-soft);
+  color: var(--v-accent-hover);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+.v-form-status.error {
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+/* —— Email signup strip —— */
+.v-email-strip {
+  max-width: 1120px;
+  margin: 0 auto 40px;
+  padding: 0 20px;
+}
+.v-email-card {
+  background: var(--v-accent-soft);
+  border: 1px solid #c5e6d4;
+  border-radius: var(--v-radius);
+  padding: 22px 24px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  align-items: center;
+}
+.v-email-card h3 {
+  margin: 0 0 4px;
+  font-size: 1.05rem;
+  font-weight: 750;
+}
+.v-email-card p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--v-ink-2);
+  font-weight: 500;
+}
+.v-email-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+.v-email-form input[type="email"] {
+  min-width: 200px;
+  padding: 11px 14px;
+  border: 1px solid var(--v-line);
+  border-radius: var(--v-radius-pill);
+  background: #fff;
+}
+.v-email-form input:focus {
+  outline: none;
+  border-color: var(--v-accent);
+  box-shadow: 0 0 0 3px rgba(26, 107, 60, 0.15);
+}
+
+/* —— Install / Add to Home —— */
+.v-btn-install {
+  background: var(--v-surface);
+  color: var(--v-accent);
+  border-color: var(--v-accent);
+  font-weight: 700;
+}
+.v-btn-install:hover {
+  background: var(--v-accent-soft);
+}
+
+/* Toast */
+.chica-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--v-ink);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: var(--v-radius-pill);
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: var(--v-shadow-lg);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s, transform 0.2s;
+  z-index: 10000;
+  max-width: min(90vw, 360px);
+  text-align: center;
+}
+.chica-toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* iOS Add to Home sheet */
+.chica-ios-sheet {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.chica-ios-sheet.open {
+  pointer-events: auto;
+  opacity: 1;
+}
+.chica-ios-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 17, 15, 0.45);
+}
+.chica-ios-card {
+  position: relative;
+  width: min(100%, 420px);
+  background: var(--v-surface);
+  border-radius: 20px 20px 0 0;
+  padding: 28px 24px 32px;
+  box-shadow: 0 -8px 40px rgba(0,0,0,0.12);
+  transform: translateY(100%);
+  transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.chica-ios-sheet.open .chica-ios-card {
+  transform: translateY(0);
+}
+.chica-ios-close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  border: none;
+  background: var(--v-surface-2);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--v-muted);
+}
+.chica-ios-card h3 {
+  margin: 0 0 8px;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+.chica-ios-card p {
+  margin: 0 0 16px;
+  color: var(--v-muted);
+  font-weight: 500;
+}
+.chica-ios-card ol {
+  margin: 0 0 16px;
+  padding-left: 1.2rem;
+  color: var(--v-ink-2);
+  font-weight: 500;
+  line-height: 1.55;
+}
+.chica-ios-card ol li { margin-bottom: 8px; }
+.ios-share {
+  display: inline-block;
+  font-size: 1.1rem;
+  vertical-align: middle;
+}
+.chica-ios-hint {
+  font-size: 0.8rem !important;
+  margin-bottom: 18px !important;
+}
 
 /* —— Responsive —— */
 @media (max-width: 900px) {
@@ -417,12 +679,15 @@ button, input, select, textarea { font: inherit; }
   .v-hero-copy { padding: 36px 28px; }
   .v-grid-4 { grid-template-columns: 1fr 1fr; }
   .v-links { display: none; }
+  .v-email-card { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {
   .v-grid-4 { grid-template-columns: 1fr; }
   .v-nav-actions .v-btn-ghost { display: none; }
   .v-sponsor-inner { flex-wrap: wrap; }
   .v-hero-meta { gap: 12px; }
+  .v-field-row { grid-template-columns: 1fr; }
+  .v-form-card { padding: 24px 18px; }
 }
 
 /* Reduce motion */
