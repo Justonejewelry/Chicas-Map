@@ -32,7 +32,7 @@
 <body class="backyard-page landing grass-site">
   <header class="lnav">
     <a class="lbrand" href="index.html">
-      <img src="chicarar.png" alt="Chica" width="36" height="36" style="border-radius:10px;object-fit:cover;border:2px solid #fff;background:transparent" onerror="this.onerror=null;this.src='chicarar.jpg'" />
+      <img src="chicarar.png" alt="Chica" width="36" height="36" style="border-radius:10px;object-fit:cover;border:2px solid #fff;background:transparent" decoding="async" fetchpriority="high" onerror="this.onerror=null;this.src='chicarar.jpg'" />
       <span>Chica's Backyard</span>
     </a>
     <nav class="llinks">
@@ -47,15 +47,19 @@
   </header>
   <main class="by-layout">
     <a class="chica-sign chica-sign-backyard" href="sponsor.html" title="Become a weekly sponsor">
-      <img src="sponsorsign.png"
-           alt="Cheeks: Click Here Become a Weekly Sponsor"
-           width="220" height="300"
-           onerror="this.onerror=null;this.style.display='none'" />
+      <picture>
+        <source srcset="sponsorsign.webp" type="image/webp" />
+        <img src="sponsorsign.png"
+             alt="Cheeks: Click Here Become a Weekly Sponsor"
+             width="220" height="300"
+             loading="lazy" decoding="async"
+             onerror="this.onerror=null;this.style.display='none'" />
+      </picture>
     </a>
 
     <section class="chica-talk" id="chicaTalk">
       <div class="ct-card">
-        <img id="ctAvatar" src="chicarar.png" alt="Chica" width="80" height="80" class="ct-avatar" style="object-fit:cover;border-radius:50%;background:transparent" onerror="this.onerror=null;this.src='chicarar.jpg'" />
+        <img id="ctAvatar" src="chicarar.png" alt="Chica" width="80" height="80" class="ct-avatar" style="object-fit:cover;border-radius:50%;background:transparent" decoding="async" loading="lazy" onerror="this.onerror=null;this.src='chicarar.jpg'" />
         <div class="ct-bubble">
           <strong id="ctName">Cheeks</strong>
           <p id="ctMessage">Wipe your paws. Leave a belly rub. And if you happen to have a snack… we can definitely be best friends.</p>
@@ -84,7 +88,7 @@
     <section class="meet-cheeks" id="meetCheeks">
       <div class="mc-header"><h2>Meet Cheeks</h2><p class="mc-sub">Also answers to Chica, "Who's a good girl?", and the sound of a cheese wrapper</p></div>
       <div class="mc-bio-card">
-        <div class="mc-bio-photo-wrap"><img id="mcHero" src="chicarar.png" alt="Chica (Cheeks)" class="mc-hero-photo" onerror="this.onerror=null;this.src='chicarar.jpg'" /></div>
+        <div class="mc-bio-photo-wrap"><img id="mcHero" src="chicarar.png" alt="Chica (Cheeks)" class="mc-hero-photo" decoding="async" fetchpriority="high" onerror="this.onerror=null;this.src='chicarar.jpg'" /></div>
         <div class="mc-bio">
           <h3>Hi! I'm Chica. 👋</h3>
           <div class="mc-bio-body">
@@ -124,7 +128,7 @@
       <h3 class="by-section-title">🎬 Featured Adventure</h3>
       <div class="fa-card">
         <div class="fa-video-wrap">
-          <video controls playsinline poster="chicarar.png" style="width:100%;border-radius:14px;background:#0f172a">
+          <video controls playsinline poster="chicarar.jpg" style="width:100%;border-radius:14px;background:#0f172a">
             <source src="assets/videos/chica_highway_adventure.mp4" type="video/mp4" />
           </video>
         </div>
