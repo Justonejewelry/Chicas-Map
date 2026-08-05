@@ -16,19 +16,20 @@ import csv
 import io
 import json
 import re
+import subprocess
 import sys
+import urllib.error
 import urllib.request
 from datetime import date, datetime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
 CT = ZoneInfo("America/Chicago")
-UA = (
-    "Mozilla/5.0 (compatible; YardBirdBot/1.0; "
-    "+https://github.com/Justonejewelry/Project-YardBird)"
+BROWSER_UA = (
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+    "AppleWebKit/537.36 (KHTML, like Gecko) "
+    "Chrome/120.0.0.0 Safari/537.36"
 )
-
-# Rolling "PERMITS ISSUED" (includes Garage Sale)
 PERMITS_URL = (
     "https://data.sanantonio.gov/dataset/05012dcb-ba1b-4ade-b5f3-7403bc7f52eb/"
     "resource/c21106f9-3ef5-4f3a-8604-f992b4db7512/download/permits_issued.csv"
@@ -54,13 +55,46 @@ def parse_date(s: str) -> date | None:
 
 def clean_address(addr: str) -> str:
     a = (addr or "").strip()
-    a = re.sub(r",\s*City of San Antonio,\s*TX", ", San Antonio, TX", a, flags=re.I)
+    a = re.sub(
+        r",\s*City of San Antonio,\s*TX", ", San Antonio, TX", a, flags=re.I
+    )
     a = re.sub(r"\s+", " ", a)
     return a
 
 
 def fetch_csv(url: str) -> str:
-    req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "text/csv"})
+    """Download CSV. Prefer curl (Open Data often 403s bare urllib)."""
+    try:
+        result = subprocess.run(
+            [
+                "curl",
+                "-sL",
+                "--max-time",
+                "120",
+                "-A",
+                BROWSER_UA,
+                "-H",
+                "Accept: text/csv,application/csv,*/*",
+                url,
+            ],
+            check=True,
+            capture_output=True,
+        )
+        text = result.stdout.decode("utf-8", errors="replace")
+        if text.startswith("PERMIT") or "," in text[:200]:
+            return text
+        raise RuntimeError(f"curl returned unexpected body ({len(text)} bytes)")
+    except (FileNotFoundError, subprocess.CalledProcessError, RuntimeError) as e:
+        print(f"curl fallback reason: {e}", file=sys.stderr)
+
+    req = urllib.request.Request(
+        url,
+        headers={
+            "User-Agent": BROWSER_UA,
+            "Accept": "text/csv,application/csv,*/*",
+            "Accept-Language": "en-US,en;q=0.9",
+        },
+    )
     with urllib.request.urlopen(req, timeout=120) as resp:
         return resp.read().decode("utf-8", errors="replace")
 
@@ -70,9 +104,7 @@ def rows_from_csv(text: str) -> list[dict]:
 
 
 def permit_to_sale(row: dict, issued: date) -> dict:
-    """Normalize a permit row. Sale dates are not in the feed — use issue window."""
     addr = clean_address(row.get("ADDRESS") or "")
-    # City publishes lon in X_COORD, lat in Y_COORD
     try:
         lon = float(row.get("X_COORD") or 0)
         lat = float(row.get("Y_COORD") or 0)
@@ -81,15 +113,15 @@ def permit_to_sale(row: dict, issued: date) -> dict:
     if not (-99.2 < lon < -98.0 and 29.1 < lat < 29.9):
         lat, lon = 0.0, 0.0
 
-    # Heuristic: permit usually used within ~7 days; pin stays "hot" through that window
     end = issued + timedelta(days=7)
     title = (row.get("PROJECT NAME") or "").strip() or "Permitted garage sale"
     if title.upper() == addr.upper() or title.replace(",", "") == addr.split(",")[0]:
         title = "City-permitted garage / yard sale"
 
+    mon = issued.strftime("%a %b")
     return {
         "address": addr,
-        "dates": f"Permit issued {issued.strftime('%a %b')} {issued.day} · typical use within 7 days",
+        "dates": f"Permit issued {mon} {issued.day} · typical use within 7 days",
         "date_from": issued.isoformat(),
         "date_to": end.isoformat(),
         "end_date": end.isoformat(),
@@ -127,18 +159,8 @@ def load_city() -> dict:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument(
-        "--days",
-        type=int,
-        default=14,
-        help="Keep permits issued within this many days (default 14)",
-    )
-    ap.add_argument(
-        "--max",
-        type=int,
-        default=200,
-        help="Cap permit pins written to the map (default 200)",
-    )
+    ap.add_argument("--days", type=int, default=14)
+    ap.add_argument("--max", type=int, default=200)
     args = ap.parse_args()
 
     today = today_ct()
@@ -161,10 +183,8 @@ def main() -> int:
         issued = parse_date(row.get("DATE ISSUED") or "")
         if not issued or issued < cutoff:
             continue
-        # Still useful if issued slightly in the future (timezone/data quirks)
         selected.append(permit_to_sale(row, issued))
 
-    # Newest first; drop rows without address
     selected = [s for s in selected if s.get("address")]
     selected.sort(key=lambda s: s.get("date_from") or "", reverse=True)
     selected = selected[: args.max]
@@ -182,8 +202,13 @@ def main() -> int:
     data["sources"] = sorted(srcs)
 
     CITY_PATH.parent.mkdir(parents=True, exist_ok=True)
-    CITY_PATH.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    print(f"wrote {CITY_PATH} permits={len(selected)} total_locations={data['total_locations']}")
+    CITY_PATH.write_text(
+        json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
+    )
+    print(
+        f"wrote {CITY_PATH} permits={len(selected)} "
+        f"total_locations={data['total_locations']}"
+    )
     return 0
 
 
