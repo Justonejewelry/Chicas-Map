@@ -1,4 +1,4 @@
-/* Chica / Cheeks sponsor sign */
+/* Chica / Cheeks sponsor sign — transparent PNG preferred */
 .chica-sign {
   display: block;
   text-decoration: none;
@@ -15,7 +15,9 @@
   height: auto;
   max-width: 100%;
   background: transparent;
-  /* Knock out light/gray checkerboard on JPEG */
+}
+/* If browser loads the .jpg fallback, multiply helps knock out light bg */
+.chica-sign img[src$=".jpg"] {
   mix-blend-mode: multiply;
 }
 
@@ -64,11 +66,12 @@
   filter: drop-shadow(0 10px 18px rgba(15, 23, 42, 0.2));
 }
 
-/* Voss landing sponsor strip */
 .v-sponsor-inner img {
   width: 64px;
   height: auto;
   flex-shrink: 0;
   background: transparent;
+}
+.v-sponsor-inner img[src$=".jpg"] {
   mix-blend-mode: multiply;
 }
