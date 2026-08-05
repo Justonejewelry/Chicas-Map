@@ -6,9 +6,13 @@
   <title>Sponsor Chica's Weekend · Project YardBird</title>
   <meta name="description" content="Exclusive weekend sponsorship on Chica's garage sale map and weekly video — San Antonio." />
   <meta name="theme-color" content="#166534" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="manifest" href="manifest.webmanifest" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/landing.css" />
   <link rel="stylesheet" href="css/grass.css" />
+  <link rel="stylesheet" href="css/voss.css" />
   <style>
     body.sponsor-page { font-family: Inter, system-ui, sans-serif; margin: 0; min-height: 100vh; }
     .sp-wrap { max-width: 720px; margin: 0 auto; padding: 24px 18px 56px; }
@@ -60,9 +64,11 @@
     <nav class="llinks">
       <a href="index.html">Home</a>
       <a href="map.html">Map</a>
+      <a href="submit.html">List a sale</a>
       <a href="backyard.html">Backyard</a>
     </nav>
     <div class="lnav-actions">
+      <button type="button" class="lbtn ghost" data-chica-install hidden style="font-weight:700">Add to Home</button>
       <a class="lbtn ghost" href="index.html">Home</a>
       <a class="lbtn primary" href="map.html">Open map</a>
     </div>
@@ -111,11 +117,11 @@
     <div class="sp-card">
       <h2>Best fit for</h2>
       <ul>
-        <li>Antique malls, thrift &amp; consignment</li>
-        <li>Estate sale companies &amp; liquidators</li>
+        <li>Antique malls, thrift & consignment</li>
+        <li>Estate sale companies & liquidators</li>
         <li>Junk removal / haul-away</li>
-        <li>Self-storage &amp; moving help</li>
-        <li>Local coffee &amp; “make a day of it” spots near sale zones</li>
+        <li>Self-storage & moving help</li>
+        <li>Local coffee & “make a day of it” spots near sale zones</li>
       </ul>
     </div>
 
@@ -128,8 +134,10 @@
     <div class="lfoot-links">
       <a href="index.html">Home</a>
       <a href="map.html">Map</a>
+      <a href="submit.html">List a sale</a>
       <a href="backyard.html">Backyard</a>
     </div>
   </footer>
+  <script src="js/chica-pwa.js"></script>
 </body>
 </html>
