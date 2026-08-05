@@ -52,6 +52,7 @@
   <header class="topbar">
     <a class="brand" href="index.html" style="text-decoration:none;color:inherit">
       <img class="logo-mark img" src="chicarar.png" alt="Chica" width="40" height="40"
+        decoding="async" fetchpriority="high"
         onerror="this.onerror=null;this.src='chicarar.jpg'" />
       <div>
         <h1>Chica <span>Map</span></h1>
@@ -150,18 +151,22 @@
 
       <div class="map-fabs" id="mapFabs">
         <button type="button" class="map-fab" id="fabNear" title="Near me" aria-label="Near me options" aria-expanded="false">
-          <img src="nearme.png" alt="" width="40" height="40" />
+          <img src="nearme.png" alt="" width="40" height="40" decoding="async" />
         </button>
-        <button type="button" class="map-fab" id="fabSearch" title="Search &amp; filters" aria-label="Search options" aria-expanded="false">
-          <img src="search.png" alt="" width="40" height="40" />
+        <button type="button" class="map-fab" id="fabSearch" title="Search & filters" aria-label="Search options" aria-expanded="false">
+          <img src="search.png" alt="" width="40" height="40" decoding="async" loading="lazy" />
         </button>
       </div>
 
       <a class="chica-sign chica-sign-map" href="sponsor.html" title="Become a weekly sponsor">
-        <img src="sponsorsign.png"
-             alt="Cheeks: Become a Weekly Sponsor"
-             width="88" height="120"
-             onerror="this.onerror=null;this.style.display='none'" />
+        <picture>
+          <source srcset="sponsorsign.webp" type="image/webp" />
+          <img src="sponsorsign.png"
+               alt="Cheeks: Become a Weekly Sponsor"
+               width="88" height="120"
+               loading="lazy" decoding="async"
+               onerror="this.onerror=null;this.style.display='none'" />
+        </picture>
       </a>
 
       <div class="map-pop" id="popNear" role="dialog" aria-label="Near me">
@@ -186,7 +191,7 @@
       </div>
 
       <div class="map-pop" id="popSearch" role="dialog" aria-label="Search">
-        <h3>Search &amp; filters</h3>
+        <h3>Search & filters</h3>
         <div class="filters">
           <input type="search" id="search" placeholder="Keyword…" style="width:100%;margin-bottom:8px;padding:10px 12px;border:1px solid #e6e1d8;border-radius:10px;font-weight:600" />
           <select id="filterSelect" title="Filter by type" style="width:100%;padding:10px 12px;border:1px solid #e6e1d8;border-radius:10px;font-weight:600;background:#f6f4ef">
