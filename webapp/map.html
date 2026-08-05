@@ -56,9 +56,7 @@
       <img class="logo-mark img" src="chicarar.png" alt="Chica" width="36" height="36"
         decoding="async" fetchpriority="high"
         onerror="this.onerror=null;this.src='chicarar.jpg'" />
-      <div>
-        <h1>Chica <span>Map</span></h1>
-      </div>
+      <div><h1>Chica <span>Map</span></h1></div>
     </a>
     <div class="controls">
       <label class="ctrl keep-mobile">
@@ -94,7 +92,6 @@
   <div class="rail-backdrop" id="railBackdrop" hidden></div>
 
   <main class="layout">
-    <!-- LEFT STACK: all chrome (desktop always visible; mobile as bottom sheet) -->
     <aside class="panel rail" id="sideRail" aria-label="Map tools and listings">
       <div class="rail-scroll">
         <div class="rail-section rail-desktop-tools">
@@ -144,10 +141,10 @@
             <button type="button" class="tool-btn" id="btnExport" hidden>Export</button>
           </section>
           <section class="feat-bar" aria-label="Smart filters" style="margin-top:8px">
-            <button type="button" class="tool-btn" id="btnRadar" title="Thursday/Friday weekend nudge">📡 Radar</button>
-            <button type="button" class="tool-btn" id="btnDnaHeat" title="Neighborhood DNA heat">🧬 DNA</button>
-            <button type="button" class="tool-btn" id="btnFirst30" title="Early open + high sniff">⏱ First 30</button>
-            <button type="button" class="tool-btn" id="btnWishlist" title="I'm hunting for…">🎯 Hunt</button>
+            <button type="button" class="tool-btn" id="btnRadar">📡 Radar</button>
+            <button type="button" class="tool-btn" id="btnDnaHeat">🧬 DNA</button>
+            <button type="button" class="tool-btn" id="btnFirst30">⏱ First 30</button>
+            <button type="button" class="tool-btn" id="btnWishlist">🎯 Hunt</button>
           </section>
           <div id="wishlistPanel" class="hidden" style="margin-top:8px">
             <h4>I'm hunting for…</h4>
@@ -181,7 +178,7 @@
           <div id="detailBody"></div>
           <div id="detailTipSlot"></div>
           <button type="button" class="near-btn" id="btnOpenTipForm" style="width:100%;margin-top:10px" hidden>
-            I'm the permit holder — add schedule &amp; what’s for sale
+            I'm the permit holder — add schedule & what’s for sale
           </button>
         </div>
 
@@ -195,7 +192,6 @@
           <button type="button" class="near-btn" id="btnShareRoute2" style="width:100%;margin-top:6px">Share route card</button>
         </div>
 
-        <!-- Permit holder tip — moderated, not instant public write -->
         <div class="permit-tip-box hidden" id="permitTipForm">
           <h4>Permit holder tip</h4>
           <p class="legal">
@@ -228,11 +224,9 @@
       </div>
     </aside>
 
-    <!-- MAP: maximum vertical real estate -->
     <section class="map-stage">
       <div class="map-wrap">
         <div id="map"></div>
-
         <div class="map-fabs" id="mapFabs">
           <button type="button" class="map-fab" id="fabNear" title="Near me" aria-label="Near me" aria-expanded="false">
             <img src="nearme.png" alt="" width="28" height="28" onerror="this.style.display='none';this.parentNode.textContent='📍'" />
@@ -241,7 +235,6 @@
             <img src="search.png" alt="" width="28" height="28" onerror="this.style.display='none';this.parentNode.textContent='🔍'" />
           </button>
         </div>
-
         <div class="map-pop" id="popNear" role="dialog" aria-label="Near me">
           <h3>Near me</h3>
           <div class="near-row">
@@ -254,14 +247,11 @@
               <option value="0">Any</option>
             </select>
           </div>
-          <p style="font-size:0.75rem;color:#7a736b;margin:8px 0 0">Or use Find in the list panel for ZIP search.</p>
         </div>
-
         <div class="map-pop" id="popSearch" role="dialog" aria-label="Search">
           <h3>Search</h3>
-          <p style="font-size:0.8rem;color:#7a736b;margin:0">Open the list panel for full filters — or type a keyword in the left Find box on desktop.</p>
+          <p style="font-size:0.8rem;color:#7a736b;margin:0">Open List for full filters on mobile.</p>
         </div>
-
         <div class="map-legend">
           <span><i class="pin top"></i> Top</span>
           <span><i class="pin new"></i> Garage</span>
@@ -286,12 +276,12 @@
   </footer>
 
   <div id="toast" class="toast hidden"></div>
-  <div class="yowl-ambassador" id="chicaAmbassador" hidden></div>
 
   <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
   <script src="js/features.js"></script>
   <script src="js/permit-tips.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/detail-bridge.js"></script>
   <script src="js/grass-wind.js"></script>
   <script>
   (function () {
@@ -299,148 +289,80 @@
     var btn = document.getElementById('menuBtn');
     var rail = document.getElementById('sideRail');
     var backdrop = document.getElementById('railBackdrop');
-
-    function closeMenu() {
-      wrap.classList.remove('open');
-      btn.setAttribute('aria-expanded', 'false');
-    }
+    function closeMenu() { wrap.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }
     function openRail() {
       rail.classList.add('open');
-      backdrop.hidden = false;
-      backdrop.classList.add('open');
+      backdrop.hidden = false; backdrop.classList.add('open');
       document.getElementById('dockList')?.classList.add('active');
     }
     function closeRail() {
       rail.classList.remove('open');
-      backdrop.classList.remove('open');
-      backdrop.hidden = true;
+      backdrop.classList.remove('open'); backdrop.hidden = true;
       document.getElementById('dockList')?.classList.remove('active');
     }
-    function toggleRail() {
-      if (rail.classList.contains('open')) closeRail();
-      else openRail();
-    }
-
+    function toggleRail() { rail.classList.contains('open') ? closeRail() : openRail(); }
     btn.addEventListener('click', function (e) {
       e.stopPropagation();
       var open = wrap.classList.toggle('open');
       btn.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
-
-    document.getElementById('dockList')?.addEventListener('click', function (e) {
-      e.stopPropagation();
-      toggleRail();
-    });
+    document.getElementById('dockList')?.addEventListener('click', function (e) { e.stopPropagation(); toggleRail(); });
     document.getElementById('dockMenu')?.addEventListener('click', function (e) {
-      e.stopPropagation();
-      openRail();
-      wrap.classList.add('open');
-      btn.setAttribute('aria-expanded', 'true');
+      e.stopPropagation(); openRail(); wrap.classList.add('open'); btn.setAttribute('aria-expanded', 'true');
     });
-    document.getElementById('dockNear')?.addEventListener('click', function () {
-      document.getElementById('fabNear')?.click();
-    });
-    document.getElementById('dockSearch')?.addEventListener('click', function () {
-      openRail();
-      document.getElementById('search')?.focus();
-    });
+    document.getElementById('dockNear')?.addEventListener('click', function () { document.getElementById('fabNear')?.click(); });
+    document.getElementById('dockSearch')?.addEventListener('click', function () { openRail(); document.getElementById('search')?.focus(); });
     backdrop.addEventListener('click', closeRail);
-
     var fabNear = document.getElementById('fabNear');
     var fabSearch = document.getElementById('fabSearch');
     var popNear = document.getElementById('popNear');
     var popSearch = document.getElementById('popSearch');
-
     function closePops() {
-      popNear.classList.remove('open');
-      popSearch.classList.remove('open');
-      fabNear.classList.remove('active');
-      fabSearch.classList.remove('active');
-      fabNear.setAttribute('aria-expanded', 'false');
-      fabSearch.setAttribute('aria-expanded', 'false');
+      popNear.classList.remove('open'); popSearch.classList.remove('open');
+      fabNear.classList.remove('active'); fabSearch.classList.remove('active');
+      fabNear.setAttribute('aria-expanded', 'false'); fabSearch.setAttribute('aria-expanded', 'false');
     }
-
     fabNear.addEventListener('click', function (e) {
       e.stopPropagation();
       var willOpen = !popNear.classList.contains('open');
       closePops();
-      if (willOpen) {
-        popNear.classList.add('open');
-        fabNear.classList.add('active');
-        fabNear.setAttribute('aria-expanded', 'true');
-      }
+      if (willOpen) { popNear.classList.add('open'); fabNear.classList.add('active'); fabNear.setAttribute('aria-expanded', 'true'); }
     });
     fabSearch.addEventListener('click', function (e) {
       e.stopPropagation();
       var willOpen = !popSearch.classList.contains('open');
       closePops();
       if (willOpen) {
-        // Mobile: open rail to full search; desktop pop is lightweight
-        if (window.matchMedia('(max-width: 900px)').matches) {
-          openRail();
-          document.getElementById('search')?.focus();
-        } else {
-          popSearch.classList.add('open');
-          fabSearch.classList.add('active');
-          fabSearch.setAttribute('aria-expanded', 'true');
-        }
+        if (window.matchMedia('(max-width: 900px)').matches) { openRail(); document.getElementById('search')?.focus(); }
+        else { popSearch.classList.add('open'); fabSearch.classList.add('active'); fabSearch.setAttribute('aria-expanded', 'true'); }
       }
     });
-
-    document.getElementById('btnNearMeFab')?.addEventListener('click', function () {
-      document.getElementById('btnNearMe')?.click();
-      closePops();
-    });
+    document.getElementById('btnNearMeFab')?.addEventListener('click', function () { document.getElementById('btnNearMe')?.click(); closePops(); });
     document.getElementById('radiusSelectFab')?.addEventListener('change', function () {
       var r = document.getElementById('radiusSelect');
-      if (r) r.value = this.value;
-      r?.dispatchEvent(new Event('change'));
+      if (r) { r.value = this.value; r.dispatchEvent(new Event('change')); }
     });
-
-    document.getElementById('btnShareRoute2')?.addEventListener('click', function () {
-      document.getElementById('btnShareRoute')?.click();
-    });
-
-    document.getElementById('btnTipCancel')?.addEventListener('click', function () {
-      document.getElementById('permitTipForm')?.classList.add('hidden');
-    });
+    document.getElementById('btnShareRoute2')?.addEventListener('click', function () { document.getElementById('btnShareRoute')?.click(); });
+    document.getElementById('btnTipCancel')?.addEventListener('click', function () { document.getElementById('permitTipForm')?.classList.add('hidden'); });
     document.getElementById('btnOpenTipForm')?.addEventListener('click', function () {
       if (window.YardBirdTips) window.YardBirdTips.openTipForm(window.__YB_LAST_SALE || null);
     });
-
+    // Sync type filter dropdown with list (chips were the only wired path)
+    document.getElementById('filterSelect')?.addEventListener('change', function () {
+      var v = this.value || 'all';
+      document.querySelectorAll('.chip').forEach(function (b) {
+        b.classList.toggle('active', b.dataset.filter === v);
+        if (b.dataset.filter === v) b.click();
+      });
+    });
     popNear.addEventListener('click', function (e) { e.stopPropagation(); });
     popSearch.addEventListener('click', function (e) { e.stopPropagation(); });
-
-    document.addEventListener('click', function () {
-      closeMenu();
-      closePops();
-    });
-
-    // Tips + detail enrichment
-    if (window.YardBirdTips) {
-      window.YardBirdTips.loadTips();
-      window.YardBirdTips.bindForm();
-    }
-
-    // When a detail is shown on mobile, open the rail so the stack is visible
+    document.addEventListener('click', function () { closeMenu(); closePops(); });
+    if (window.YardBirdTips) { window.YardBirdTips.loadTips(); window.YardBirdTips.bindForm(); }
     var detailDrawer = document.getElementById('detailDrawer');
     if (detailDrawer && window.MutationObserver) {
       new MutationObserver(function () {
-        if (!detailDrawer.classList.contains('hidden') && window.matchMedia('(max-width: 900px)').matches) {
-          openRail();
-        }
-        // Permit tip button visibility
-        var sale = window.__YB_LAST_SALE;
-        var tipBtn = document.getElementById('btnOpenTipForm');
-        if (tipBtn) {
-          var isPermit = sale && (sale.type === 'permit' || sale.permit_number);
-          tipBtn.hidden = !isPermit;
-        }
-        var slot = document.getElementById('detailTipSlot');
-        if (slot && window.YardBirdTips && sale) {
-          var tip = window.YardBirdTips.findTip(sale);
-          slot.innerHTML = tip ? window.YardBirdTips.tipHtml(tip) : '';
-        }
+        if (!detailDrawer.classList.contains('hidden') && window.matchMedia('(max-width: 900px)').matches) openRail();
       }).observe(detailDrawer, { attributes: true, attributeFilter: ['class'] });
     }
   })();
