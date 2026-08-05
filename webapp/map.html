@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="css/map-voss.css" />
   <link rel="stylesheet" href="css/features.css" />
   <link rel="stylesheet" href="css/map-rail.css" />
+  <link rel="stylesheet" href="css/voss.css" />
   <style>
     .maplibregl-popup-content {
       background: #fff; color: #14110f; border-radius: 14px;
@@ -48,6 +49,20 @@
     }
     .chips { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
     .hidden { display: none !important; }
+    .rail-cta {
+      display: block;
+      margin: 8px 12px 4px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 0.88rem;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: #e8f5ee;
+      color: #145530;
+      border: 1px solid #c5e6d4;
+      text-decoration: none;
+    }
+    .rail-cta:hover { background: #d4edd8; }
   </style>
 </head>
 <body class="grass-map">
@@ -81,7 +96,10 @@
         <div class="menu-drop" id="menuDrop">
           <a href="index.html">Home</a>
           <a href="backyard.html">Backyard</a>
+          <a href="submit.html">List a sale free</a>
           <a href="sponsor.html">Sponsor</a>
+          <button type="button" data-chica-install hidden>Add to Home Screen</button>
+          <button type="button" id="menuEmail">Join Friday email</button>
           <button type="button" id="menuExport">Export list</button>
         </div>
       </div>
@@ -94,6 +112,8 @@
   <main class="layout">
     <aside class="panel rail" id="sideRail" aria-label="Map tools and listings">
       <div class="rail-scroll">
+        <a class="rail-cta" href="submit.html">＋ List your sale free</a>
+
         <div class="rail-section rail-desktop-tools">
           <div class="rail-label">Find</div>
           <div class="rail-row" style="margin-bottom:8px">
@@ -272,7 +292,11 @@
 
   <footer class="footer">
     <span id="footerSources">Chica · YardBird</span>
-    <span><a href="backyard.html">Backyard</a> · <a href="sponsor.html">Sponsor</a></span>
+    <span>
+      <a href="submit.html">List a sale</a> ·
+      <a href="backyard.html">Backyard</a> ·
+      <a href="sponsor.html">Sponsor</a>
+    </span>
   </footer>
 
   <div id="toast" class="toast hidden"></div>
@@ -283,6 +307,7 @@
   <script src="js/app.js"></script>
   <script src="js/detail-bridge.js"></script>
   <script src="js/grass-wind.js"></script>
+  <script src="js/chica-pwa.js"></script>
   <script>
   (function () {
     var wrap = document.getElementById('menuWrap');
@@ -347,13 +372,18 @@
     document.getElementById('btnOpenTipForm')?.addEventListener('click', function () {
       if (window.YardBirdTips) window.YardBirdTips.openTipForm(window.__YB_LAST_SALE || null);
     });
-    // Sync type filter dropdown with list (chips were the only wired path)
     document.getElementById('filterSelect')?.addEventListener('change', function () {
       var v = this.value || 'all';
       document.querySelectorAll('.chip').forEach(function (b) {
         b.classList.toggle('active', b.dataset.filter === v);
         if (b.dataset.filter === v) b.click();
       });
+    });
+    document.getElementById('menuEmail')?.addEventListener('click', function () {
+      var subject = encodeURIComponent('Join Chica Friday Email Updates');
+      var body = encodeURIComponent('Please add me to Chica’s Friday email updates.\n\nEmail: \n\nI understand updates publish every Friday with weekend garage sale intel.');
+      window.location.href = 'mailto:mr.jsciaraffa@gmail.com?subject=' + subject + '&body=' + body;
+      closeMenu();
     });
     popNear.addEventListener('click', function (e) { e.stopPropagation(); });
     popSearch.addEventListener('click', function (e) { e.stopPropagation(); });
