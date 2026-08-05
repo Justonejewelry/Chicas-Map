@@ -2,9 +2,9 @@
   "edition": "San Antonio Yard-Bird Discovery",
   "date": "2026-08-05",
   "city": "san-antonio",
-  "total_locations": 186,
+  "total_locations": 187,
   "status": "live",
-  "last_refresh": "2026-08-05T06:57:54-05:00",
+  "last_refresh": "2026-08-05T09:19:44-05:00",
   "sources": [
     "data.sanantonio.gov",
     "estatesales.net",
@@ -405,6 +405,24 @@
       "status": "verified",
       "lat": 29.51,
       "lon": -98.67,
+      "geocode": "zip-centroid"
+    },
+    {
+      "address": "2815 Redland Trl, San Antonio, TX 78259",
+      "dates": "Sat Aug 8 – Sat Aug 8",
+      "date_from": "08/08/2026",
+      "date_to": "08/08/2026",
+      "end_date": "2026-08-08",
+      "title": "HUGE Multi Family Garage Sale",
+      "details": "",
+      "source": "GarageSaleFinder",
+      "url": "https://garagesalefinder.com/s/N9kRj/2815-redland-trl-san-antonio-tx-78259",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.85,
+      "status": "verified",
+      "lat": 29.63,
+      "lon": -98.44,
       "geocode": "zip-centroid"
     }
   ],
