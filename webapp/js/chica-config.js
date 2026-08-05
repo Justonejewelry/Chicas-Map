@@ -2,19 +2,13 @@
  * Chica / YardBird public config
  * Aurora Voss — keep secrets out of this file. Formspree form IDs are public by design.
  *
- * Setup (2 minutes):
- * 1. https://formspree.io → New Form
- * 2. Name: "Chica Friday Email Updates"
- * 3. Notification email: mr.jsciaraffa@gmail.com
- * 4. Copy the form ID from the endpoint (https://formspree.io/f/XXXXXX)
- * 5. Paste XXXXXX below as FORMSPREE_EMAIL_ID
- *
- * Optional second form for free sale listings → FORMSPREE_SALE_ID
+ * Formspree Friday list: https://formspree.io/f/myegykrq
+ * Notification email should be mr.jsciaraffa@gmail.com in the Formspree dashboard.
  */
 (function (global) {
   global.ChicaConfig = {
-    /** Friday email list — required for AJAX signup */
-    FORMSPREE_EMAIL_ID: "",
+    /** Friday email list */
+    FORMSPREE_EMAIL_ID: "myegykrq",
 
     /** Free sale submissions (optional; falls back to mailto if empty) */
     FORMSPREE_SALE_ID: "",
