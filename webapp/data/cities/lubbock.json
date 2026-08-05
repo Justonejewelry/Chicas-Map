@@ -1,13 +1,18 @@
 {
   "edition": "sunday",
-  "date": "2026-08-01",
+  "date": "2026-08-05",
   "city": "lubbock",
   "generated_at": "2026-08-01T16:00:00-05:00",
   "total_locations": 1,
-  "sources": ["Craigslist Lubbock", "YardSaleSearch", "Facebook Marketplace", "Texas Tech area posts"],
+  "sources": [
+    "Craigslist Lubbock",
+    "YardSaleSearch",
+    "Facebook Marketplace",
+    "Texas Tech area posts"
+  ],
   "public": [
     {
-      "title": "Lubbock metro \u2014 see sources",
+      "title": "Lubbock metro — see sources",
       "address": "Lubbock, TX",
       "lat": 33.5779,
       "lon": -101.8552,
@@ -16,7 +21,7 @@
       "hours": "",
       "source": "Aggregators",
       "confidence": 0.4,
-      "details": "Seed pin \u2014 open YardSaleSearch / Craigslist for live listings.",
+      "details": "Seed pin — open YardSaleSearch / Craigslist for live listings.",
       "photos": 0,
       "source_url": "https://www.yardsalesearch.com/garage-sales-lubbock-tx.html"
     }
@@ -24,7 +29,13 @@
   "permits": [],
   "permit_total": 0,
   "hot_zones": [
-    {"name": "Tech Terrace", "badge": "ACTIVE", "lat": 33.58, "lon": -101.88}
+    {
+      "name": "Tech Terrace",
+      "badge": "ACTIVE",
+      "lat": 33.58,
+      "lon": -101.88
+    }
   ],
-  "status": "live"
+  "status": "live",
+  "last_refresh": "2026-08-05T00:12:45-05:00"
 }

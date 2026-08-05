@@ -1,25 +1,55 @@
 {
   "edition": "Houston Yard-Bird Discovery",
-  "date": "2026-08-01",
+  "date": "2026-08-05",
   "city": "houston",
-  "total_locations": 7,
+  "total_locations": 1,
   "status": "live",
-  "sources": ["YardSaleSearch Houston", "GarageSaleFinder Houston", "estatesales.net Houston"],
+  "sources": [
+    "YardSaleSearch Houston",
+    "GarageSaleFinder Houston",
+    "estatesales.net Houston"
+  ],
   "hot_zones": [
-    {"name": "Heights / Near North", "badge": "ACTIVE", "lat": 29.8, "lon": -95.4},
-    {"name": "SW / Sugar Land arc", "badge": "ACTIVE", "lat": 29.65, "lon": -95.55},
-    {"name": "Clear Lake / SE", "badge": "ACTIVE", "lat": 29.56, "lon": -95.1},
-    {"name": "NW / Cypress", "badge": "ACTIVE", "lat": 29.95, "lon": -95.6}
+    {
+      "name": "Heights / Near North",
+      "badge": "ACTIVE",
+      "lat": 29.8,
+      "lon": -95.4
+    },
+    {
+      "name": "SW / Sugar Land arc",
+      "badge": "ACTIVE",
+      "lat": 29.65,
+      "lon": -95.55
+    },
+    {
+      "name": "Clear Lake / SE",
+      "badge": "ACTIVE",
+      "lat": 29.56,
+      "lon": -95.1
+    },
+    {
+      "name": "NW / Cypress",
+      "badge": "ACTIVE",
+      "lat": 29.95,
+      "lon": -95.6
+    }
   ],
   "permits": [],
   "permit_total": 0,
   "public": [
-    {"address": "11303 Hughes Rd, Houston, TX 77089", "dates": "Sat Aug 1", "title": "Garage sale", "details": "Clothing, shoes, toys, books, household goods — donations from 20+ households", "source": "YardSaleSearch", "photos": 34, "type": "garage", "confidence": 0.85, "lat": 29.6, "lon": -95.2, "gallery": "https://www.yardsalesearch.com/garage-sales-houston-tx.html"},
-    {"address": "1518 Tannehill Dr, Houston, TX 77008", "dates": "Sat Aug 1 – Sun Aug 2", "title": "Garage sale near 18th & Ella", "details": "Cash preferred. Heights area.", "source": "YardSaleSearch", "photos": 50, "type": "garage", "confidence": 0.86, "lat": 29.8, "lon": -95.42},
-    {"address": "1061 W 16th St, Houston, TX 77008", "dates": "Thu Jul 30 – Sat Aug 1", "hours": "8 AM–5 PM", "title": "Big three-day Heights garage sale", "details": "Houston Heights multi-day sale", "source": "GarageSaleFinder", "photos": 0, "type": "garage", "confidence": 0.88, "lat": 29.802, "lon": -95.41},
-    {"address": "Parkway Ave, Rosenberg, TX 77471", "dates": "Sat Aug 1 – Sun Aug 2", "title": "Vintage Tupperware / Pyrex sale", "details": "Vintage Tupperware, Corning Ware, Pyrex, retro glassware, stoneware", "source": "YardSaleSearch", "photos": 42, "type": "garage", "confidence": 0.84, "lat": 29.55, "lon": -95.8},
-    {"address": "4421 E 24th St, Dickinson, TX 77539", "dates": "Fri Jul 31 – Sun Aug 2", "title": "Huge garage sale", "details": "Mainly kitchen items and household", "source": "YardSaleSearch", "photos": 38, "type": "garage", "confidence": 0.83, "lat": 29.46, "lon": -95.05},
-    {"address": "6618 Blue Bottle Ln, Katy, TX 77449", "dates": "Fri Jul 31 – Sun Aug 2", "title": "Kids & family clothes sale", "details": "Toys, kids/baby/women/men clothes and dresses", "source": "YardSaleSearch", "photos": 31, "type": "garage", "confidence": 0.82, "lat": 29.8, "lon": -95.75},
-    {"address": "7777 Blankenship Dr, Houston, TX 77055", "dates": "through Aug 16", "title": "Online estate auction 750+ lots", "details": "Lewis & Maese online estate auction", "source": "YardSaleSearch", "photos": 200, "type": "estate", "confidence": 0.9, "lat": 29.78, "lon": -95.47}
-  ]
+    {
+      "address": "7777 Blankenship Dr, Houston, TX 77055",
+      "dates": "through Aug 16",
+      "title": "Online estate auction 750+ lots",
+      "details": "Lewis & Maese online estate auction",
+      "source": "YardSaleSearch",
+      "photos": 200,
+      "type": "estate",
+      "confidence": 0.9,
+      "lat": 29.78,
+      "lon": -95.47
+    }
+  ],
+  "last_refresh": "2026-08-05T00:12:45-05:00"
 }
