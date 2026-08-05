@@ -1,8 +1,10 @@
 /**
- * Chica form helpers — Formspree AJAX + mailto fallback
- * Aurora Voss: stay on page, one clear success state, never silent failure.
+ * Chica form helpers — Formspree AJAX + reCAPTCHA v3 + mailto fallback
+ * Aurora Voss: stay on page, invisible captcha, never silent failure.
  */
 (function (global) {
+  var recaptchaReady = null;
+
   function cfg() {
     return global.ChicaConfig || {};
   }
@@ -15,13 +17,81 @@
   }
 
   /**
+   * Load Google reCAPTCHA v3 once. Resolves when grecaptcha.ready fires.
+   */
+  function ensureRecaptcha() {
+    var siteKey = (cfg().RECAPTCHA_SITE_KEY || "").trim();
+    if (!siteKey) return Promise.resolve(null);
+
+    if (recaptchaReady) return recaptchaReady;
+
+    recaptchaReady = new Promise(function (resolve) {
+      if (global.grecaptcha && global.grecaptcha.execute) {
+        global.grecaptcha.ready(function () {
+          resolve(siteKey);
+        });
+        return;
+      }
+
+      var existing = document.querySelector('script[data-chica-recaptcha]');
+      if (existing) {
+        existing.addEventListener("load", function () {
+          if (global.grecaptcha) {
+            global.grecaptcha.ready(function () {
+              resolve(siteKey);
+            });
+          } else resolve(null);
+        });
+        return;
+      }
+
+      var s = document.createElement("script");
+      s.src =
+        "https://www.google.com/recaptcha/api.js?render=" +
+        encodeURIComponent(siteKey);
+      s.async = true;
+      s.defer = true;
+      s.dataset.chicaRecaptcha = "1";
+      s.onload = function () {
+        if (global.grecaptcha) {
+          global.grecaptcha.ready(function () {
+            resolve(siteKey);
+          });
+        } else resolve(null);
+      };
+      s.onerror = function () {
+        resolve(null);
+      };
+      document.head.appendChild(s);
+    });
+
+    return recaptchaReady;
+  }
+
+  /**
+   * Get a v3 token for the configured action. Returns null if captcha disabled/unavailable.
+   */
+  async function getRecaptchaToken() {
+    var siteKey = await ensureRecaptcha();
+    if (!siteKey || !global.grecaptcha || !global.grecaptcha.execute) return null;
+
+    var action = cfg().RECAPTCHA_ACTION || "submit";
+    try {
+      return await global.grecaptcha.execute(siteKey, { action: action });
+    } catch (e) {
+      console.warn("reCAPTCHA execute failed", e);
+      return null;
+    }
+  }
+
+  /**
    * Submit payload to Formspree. Returns { ok, error? }
    */
   async function postFormspree(formId, data) {
-    const url = cfg().formspreeUrl && cfg().formspreeUrl(formId);
+    var url = cfg().formspreeUrl && cfg().formspreeUrl(formId);
     if (!url) return { ok: false, error: "no_form_id" };
 
-    const res = await fetch(url, {
+    var res = await fetch(url, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -30,21 +100,23 @@
       body: JSON.stringify(data),
     });
 
-    let body = null;
+    var body = null;
     try {
       body = await res.json();
     } catch (_) {}
 
     if (res.ok) return { ok: true, body };
-    const errMsg =
-      (body && body.errors && body.errors.map((e) => e.message).join(" ")) ||
+    var errMsg =
+      (body && body.errors && body.errors.map(function (e) {
+        return e.message;
+      }).join(" ")) ||
       (body && body.error) ||
       "Submission failed";
-    return { ok: false, error: errMsg, body };
+    return { ok: false, error: errMsg, body: body };
   }
 
   function mailtoFallback(subject, body) {
-    const to = cfg().REVIEW_EMAIL || "mr.jsciaraffa@gmail.com";
+    var to = cfg().REVIEW_EMAIL || "mr.jsciaraffa@gmail.com";
     window.location.href =
       "mailto:" +
       to +
@@ -56,29 +128,32 @@
 
   /**
    * Wire a Friday email signup form.
-   * Expected fields: input[type=email] (or #id), optional name.
-   * statusEl optional for success/error message.
    */
   function bindEmailForm(form, options) {
     if (!form || form.dataset.chicaBound) return;
     form.dataset.chicaBound = "1";
-    const opts = options || {};
-    const statusEl = opts.statusEl || null;
-    const emailInput =
+    var opts = options || {};
+    var statusEl = opts.statusEl || null;
+    var emailInput =
       opts.emailInput ||
       form.querySelector('input[type="email"]') ||
       form.querySelector("[name=email]");
-    const submitBtn = form.querySelector('[type="submit"]');
+    var submitBtn = form.querySelector('[type="submit"]');
+
+    // Preload reCAPTCHA when a site key is configured
+    if ((cfg().RECAPTCHA_SITE_KEY || "").trim()) {
+      ensureRecaptcha();
+    }
 
     form.addEventListener("submit", async function (e) {
       e.preventDefault();
-      const email = (emailInput && emailInput.value.trim()) || "";
+      var email = (emailInput && emailInput.value.trim()) || "";
       if (!email) {
         setStatus(statusEl, "Please enter your email.", "error");
         return;
       }
 
-      const payload = {
+      var payload = {
         email: email,
         _subject: "Chica Friday Email Updates — new subscriber",
         source: opts.source || "web",
@@ -86,8 +161,8 @@
         submitted_at: new Date().toISOString(),
       };
 
-      // Honeypot (if present)
-      const hp = form.querySelector('[name="_gotcha"]');
+      // Honeypot
+      var hp = form.querySelector('[name="_gotcha"]');
       if (hp && hp.value) return;
 
       if (submitBtn) {
@@ -96,7 +171,7 @@
         submitBtn.textContent = "Joining…";
       }
 
-      const formId = cfg().FORMSPREE_EMAIL_ID;
+      var formId = cfg().FORMSPREE_EMAIL_ID;
       if (!formId) {
         mailtoFallback(
           "Join Chica Friday Email Updates",
@@ -117,7 +192,16 @@
       }
 
       try {
-        const result = await postFormspree(formId, payload);
+        // Invisible reCAPTCHA v3 token (Formspree expects g-recaptcha-response)
+        var token = await getRecaptchaToken();
+        if (token) {
+          payload["g-recaptcha-response"] = token;
+        } else if ((cfg().RECAPTCHA_SITE_KEY || "").trim()) {
+          // Key configured but token failed — still attempt; Formspree may reject if CAPTCHA required
+          console.warn("reCAPTCHA token unavailable; submitting without token");
+        }
+
+        var result = await postFormspree(formId, payload);
         if (result.ok) {
           setStatus(
             statusEl,
@@ -143,9 +227,6 @@
     });
   }
 
-  /**
-   * Open mailto for “Join Friday” from a button (map menu).
-   */
   function openEmailSignupMailto() {
     mailtoFallback(
       "Join Chica Friday Email Updates",
@@ -154,9 +235,11 @@
   }
 
   global.ChicaForms = {
-    postFormspree,
-    bindEmailForm,
-    openEmailSignupMailto,
-    setStatus,
+    postFormspree: postFormspree,
+    bindEmailForm: bindEmailForm,
+    openEmailSignupMailto: openEmailSignupMailto,
+    setStatus: setStatus,
+    ensureRecaptcha: ensureRecaptcha,
+    getRecaptchaToken: getRecaptchaToken,
   };
 })(window);
