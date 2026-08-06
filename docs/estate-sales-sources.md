@@ -86,9 +86,23 @@ Only runs when GitHub secret `APIFY_TOKEN` is present. Safe to ignore forever fo
 6. EstateSales.net lightweight free
 7. Apify optional
 8. Purge expired
-9. Commit if dirty
+9. **Scraper health check** → writes `webapp/data/scraper-health.json`
+10. Commit if dirty
+11. **Alert** — if any primary free source failed/zero, open or comment on a GitHub Issue labeled `scraper-failure`
 
 Schedule: every 2 hours UTC + manual `workflow_dispatch`.
+
+## Scraper health monitoring
+
+- Script: `webapp/scripts/check_scraper_health.py`
+- Primary (critical) sources: EstateSales.org, YardSaleSearch, Craigslist
+- Secondary: GSF, permits, EstateSales.net lightweight, Apify
+- On critical failure the workflow still succeeds (soft-fail) but:
+  - Health table appears in the Actions step summary
+  - `webapp/data/scraper-health.json` is committed when data changes
+  - A GitHub Issue with label `scraper-failure` is created or updated so you get notified
+
+Watch the repo Issues for the `scraper-failure` label (or enable Issues notifications).
 
 ## Live example (2026-08-06)
 
