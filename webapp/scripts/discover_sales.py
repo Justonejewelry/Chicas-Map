@@ -4,6 +4,8 @@
 Primary source: GarageSaleFinder city pages (structured sale-address / sale-date).
 Writes/merges into webapp/data/cities/<slug>.json
 
+Uses city_io middleware so PLACEHOLDER / corrupt JSON never crashes the job.
+
 Usage (repo root):
   python3 webapp/scripts/discover_sales.py
   python3 webapp/scripts/discover_sales.py --cities san-antonio,austin
@@ -12,23 +14,21 @@ from __future__ import annotations
 
 import argparse
 import html as html_mod
-import json
 import re
 import sys
 import time
 import urllib.error
 import urllib.request
 from datetime import date, datetime
-from pathlib import Path
 from zoneinfo import ZoneInfo
+
+from city_io import safe_load_city, safe_write_city
 
 CT = ZoneInfo("America/Chicago")
 UA = (
     "Mozilla/5.0 (compatible; YardBirdBot/1.0; "
     "+https://github.com/Justonejewelry/Project-YardBird)"
 )
-ROOT = Path(__file__).resolve().parents[1]  # webapp/
-CITY_DIR = ROOT / "data" / "cities"
 
 # Approximate ZIP centroids (enough for map pins without external geocode API)
 ZIP_COORDS: dict[str, tuple[float, float]] = {
@@ -247,19 +247,9 @@ def normalize_key(address: str) -> str:
 
 
 def merge_city(slug: str, discovered: list[dict], today: date) -> tuple[int, int]:
-    path = CITY_DIR / f"{slug}.json"
     cfg = CITY_SOURCES[slug]
-    if path.exists():
-        data = json.loads(path.read_text(encoding="utf-8"))
-    else:
-        data = {
-            "edition": f"{cfg['name']} Yard-Bird Discovery",
-            "city": slug,
-            "public": [],
-            "permits": [],
-            "hot_zones": [],
-            "sources": [],
-        }
+    # Middleware: never crashes on PLACEHOLDER / corrupt JSON
+    data = safe_load_city(slug)
 
     # Filter active by end_date
     active = []
@@ -321,8 +311,7 @@ def merge_city(slug: str, discovered: list[dict], today: date) -> tuple[int, int
     data["sources"] = sorted(srcs)
     data["city"] = slug
 
-    CITY_DIR.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    safe_write_city(slug, data)
     return added, len(kept)
 
 
