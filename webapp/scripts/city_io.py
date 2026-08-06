@@ -4,6 +4,22 @@
 Provides resilient load/write helpers so a single bad or PLACEHOLDER
 file can never crash the entire GitHub Actions job or leave the map empty.
 
+Atomic write strategy
+---------------------
+safe_write_city uses a four-step pattern that is both atomic and
+concurrent-safe on Linux (GitHub Actions runners):
+
+  1. Create a uniquely-named temp file in the *same directory*
+     (guarantees same filesystem → rename is atomic).
+  2. Acquire an exclusive flock on the final target path (or a
+     sibling lock file) so concurrent writers serialize.
+  3. Write the full payload, then fsync so data is durable before
+     the name swap.
+  4. os.replace(tmp, final) — atomic on POSIX.
+
+On any failure the temp file is cleaned up and the previous good
+file (if any) is left untouched.
+
 Usage from any scraper:
 
     from city_io import safe_load_city, safe_write_city, CITY_DIR
@@ -15,11 +31,18 @@ Usage from any scraper:
 from __future__ import annotations
 
 import json
+import os
 import sys
+import tempfile
 from datetime import datetime
 from pathlib import Path
-from zoneinfo import ZoneInfo
 from typing import Any
+from zoneinfo import ZoneInfo
+
+try:
+    import fcntl  # POSIX only — fine on GitHub Actions Ubuntu runners
+except ImportError:  # pragma: no cover
+    fcntl = None  # type: ignore
 
 CT = ZoneInfo("America/Chicago")
 ROOT = Path(__file__).resolve().parents[1]  # webapp/
@@ -106,13 +129,32 @@ def safe_load_city(slug_or_path: str | Path = "san-antonio") -> dict[str, Any]:
     return data
 
 
-def safe_write_city(slug_or_path: str | Path, data: dict[str, Any]) -> Path:
-    """Write a city feed atomically and safely.
+def _acquire_lock(lock_path: Path):
+    """Return an open file handle holding an exclusive flock, or None."""
+    if fcntl is None:
+        return None
+    try:
+        # Sibling lock file keeps the real data file free of lock metadata
+        fh = open(lock_path, "a+", encoding="utf-8")
+        fcntl.flock(fh.fileno(), fcntl.LOCK_EX)
+        return fh
+    except OSError as e:
+        print(f"[city_io] lock acquire failed ({e}); continuing without lock", file=sys.stderr)
+        return None
 
-    - Ensures parent directory exists
-    - Forces required metadata
-    - Writes with trailing newline
-    - Never writes the string PLACEHOLDER
+
+def safe_write_city(slug_or_path: str | Path, data: dict[str, Any]) -> Path:
+    """Write a city feed with atomic + concurrent-safe semantics.
+
+    Strategy (Linux / GitHub Actions):
+      1. Unique temp file in the same directory (same FS → rename atomic)
+      2. Exclusive flock on a sibling .lock file (serializes concurrent writers)
+      3. Full write + fsync (data durable before name swap)
+      4. os.replace(tmp, final) — atomic on POSIX
+      5. Always clean up the temp file on any path
+
+    Never writes the string PLACEHOLDER. Never leaves a partial file
+    as the published name.
     """
     path = _path_for(slug_or_path)
     slug = path.stem
@@ -135,17 +177,49 @@ def safe_write_city(slug_or_path: str | Path, data: dict[str, Any]) -> Path:
 
     path.parent.mkdir(parents=True, exist_ok=True)
     text = json.dumps(data, indent=2, ensure_ascii=False) + "\n"
+    payload = text.encode("utf-8")
 
-    # Atomic-ish write (temp then replace) to reduce partial-write races
-    tmp = path.with_suffix(path.suffix + ".tmp")
+    lock_path = path.with_suffix(path.suffix + ".lock")
+    lock_fh = _acquire_lock(lock_path)
+    tmp_path: Path | None = None
+
     try:
-        tmp.write_text(text, encoding="utf-8")
-        tmp.replace(path)
-    except OSError:
-        # Fallback to direct write if replace fails (e.g. cross-device)
-        path.write_text(text, encoding="utf-8")
-        if tmp.exists():
-            tmp.unlink(missing_ok=True)
+        # Unique name in same directory → same filesystem → atomic rename
+        fd, tmp_name = tempfile.mkstemp(
+            prefix=f".{path.stem}.",
+            suffix=".json.tmp",
+            dir=str(path.parent),
+        )
+        tmp_path = Path(tmp_name)
+        try:
+            with os.fdopen(fd, "wb") as f:
+                f.write(payload)
+                f.flush()
+                os.fsync(f.fileno())  # durable before the name swap
+            # Atomic publish
+            os.replace(tmp_path, path)
+            tmp_path = None  # successfully moved; don't unlink later
+        except Exception:
+            # Ensure the temp file does not linger on any write error
+            if tmp_path is not None and tmp_path.exists():
+                try:
+                    tmp_path.unlink()
+                except OSError:
+                    pass
+            raise
+    finally:
+        if lock_fh is not None:
+            try:
+                fcntl.flock(lock_fh.fileno(), fcntl.LOCK_UN)
+                lock_fh.close()
+            except OSError:
+                pass
+            # Best-effort cleanup of the lock file itself
+            try:
+                if lock_path.exists() and lock_path.stat().st_size == 0:
+                    lock_path.unlink(missing_ok=True)
+            except OSError:
+                pass
 
     return path
 
