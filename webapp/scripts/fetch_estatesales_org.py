@@ -4,6 +4,8 @@
 Parses server-rendered HTML that embeds full sale JSON (id, address, lat/lon,
 dates, company, in-person vs online). No API key. No paid services.
 
+Uses city_io middleware so PLACEHOLDER / corrupt JSON never crashes the job.
+
 Usage:
   python3 webapp/scripts/fetch_estatesales_org.py --city san-antonio
   python3 webapp/scripts/fetch_estatesales_org.py --cities san-antonio,austin --dry-run
@@ -18,16 +20,15 @@ import time
 import urllib.error
 import urllib.request
 from datetime import date, datetime
-from pathlib import Path
 from zoneinfo import ZoneInfo
+
+from city_io import safe_load_city, safe_write_city
 
 CT = ZoneInfo("America/Chicago")
 UA = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
     "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 )
-ROOT = Path(__file__).resolve().parents[1]
-CITY_DIR = ROOT / "data" / "cities"
 
 CITY_CFG = {
     "san-antonio": {
@@ -237,17 +238,8 @@ def normalize_sale(raw: dict, cfg: dict) -> dict | None:
 
 
 def merge(slug: str, sales: list[dict], today: date) -> tuple[int, int]:
-    path = CITY_DIR / f"{slug}.json"
-    if path.exists():
-        data = json.loads(path.read_text(encoding="utf-8"))
-    else:
-        data = {
-            "edition": f"{CITY_CFG[slug]['name']} Yard-Bird Discovery",
-            "city": slug,
-            "public": [],
-            "permits": [],
-            "sources": [],
-        }
+    # Middleware: never crashes on PLACEHOLDER / corrupt JSON
+    data = safe_load_city(slug)
 
     by_key: dict[str, dict] = {}
     for s in data.get("public") or []:
@@ -319,8 +311,7 @@ def merge(slug: str, sales: list[dict], today: date) -> tuple[int, int]:
     data["status"] = "live"
     data["sources"] = sorted(set(data.get("sources") or []) | {"estatesales.org"})
     data["city"] = slug
-    CITY_DIR.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    safe_write_city(slug, data)
     return added, len(unique)
 
 
