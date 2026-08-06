@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     inputs:
       cities:
-        description: "Cities to discover via GSF (comma-separated)"
+        description: "Cities to discover (comma-separated)"
         required: false
         default: "san-antonio,austin"
       permit_days:
@@ -29,7 +29,7 @@ concurrency:
 jobs:
   discover-purge-publish:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 30
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -62,6 +62,22 @@ jobs:
           set -e
           # Free HTML + embedded JSON — no API key, no paid service
           python3 webapp/scripts/fetch_estatesales_org.py --cities "$CITIES" | tee estatesales-org.log || true
+
+      - name: YardSaleSearch free discovery
+        env:
+          CITIES: ${{ github.event.inputs.cities || 'san-antonio,austin' }}
+        run: |
+          set -e
+          # schema.org Place/PostalAddress + lat/lon — free, no key
+          python3 webapp/scripts/fetch_yardsalesearch.py --cities "$CITIES" | tee yardsalesearch.log || true
+
+      - name: Craigslist free discovery
+        env:
+          CITIES: ${{ github.event.inputs.cities || 'san-antonio,austin' }}
+        run: |
+          set -e
+          # static search results + bounded detail enrichment — free, no key
+          python3 webapp/scripts/fetch_craigslist.py --cities "$CITIES" | tee craigslist.log || true
 
       - name: EstateSales.net lightweight discovery
         env:
@@ -100,14 +116,14 @@ jobs:
           git config user.name "yardbird-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add webapp/data/cities/*.json
-          MSG="Map refresh $(date -u +%Y-%m-%dT%H:%MZ) — GSF + permits + ESO free + purge [skip ci]"
+          MSG="Map refresh $(date -u +%Y-%m-%dT%H:%MZ) — GSF + permits + ESO + YSS + CL free + purge [skip ci]"
           git commit -m "$MSG" || exit 0
           git push
 
       - name: Summary
         run: |
           {
-            echo "### Map refresh (free sources + optional Apify)"
+            echo "### Map refresh (all free sources + optional Apify)"
             echo ""
             echo "- Trigger: ${{ github.event_name }}"
             echo "- Cities: ${{ github.event.inputs.cities || 'san-antonio,austin' }}"
@@ -125,6 +141,14 @@ jobs:
             echo "#### EstateSales.org (free)"
             echo '```'
             cat estatesales-org.log 2>/dev/null || echo "(no log)"
+            echo '```'
+            echo "#### YardSaleSearch (free)"
+            echo '```'
+            cat yardsalesearch.log 2>/dev/null || echo "(no log)"
+            echo '```'
+            echo "#### Craigslist (free)"
+            echo '```'
+            cat craigslist.log 2>/dev/null || echo "(no log)"
             echo '```'
             echo "#### EstateSales.net (lightweight free)"
             echo '```'
