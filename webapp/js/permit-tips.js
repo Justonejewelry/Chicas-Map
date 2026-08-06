@@ -1,11 +1,12 @@
 /**
  * Permit-holder community tips (moderated).
  * Legal posture: user attestation + public disclaimer + owner moderation via permit-tips.json.
- * Static hosting: form builds a review email; published tips only come from the JSON file.
+ * Static hosting: form builds a review email with Approve deep-link; published tips only from JSON.
  */
 (function (global) {
   const TIPS_URL = "data/permit-tips.json";
   const REVIEW_EMAIL = "mr.jsciaraffa@gmail.com";
+  const APPROVE_BASE = "https://justonejewelry.github.io/Project-YardBird/admin/approve.html";
   let tipsIndex = {}; // key: normalized address or permit #
 
   function normKey(s) {
@@ -13,6 +14,15 @@
       .toLowerCase()
       .replace(/[^a-z0-9]/g, "")
       .slice(0, 48);
+  }
+
+  function toBase64Url(str) {
+    try {
+      const b64 = btoa(unescape(encodeURIComponent(str)));
+      return b64.replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/g, "");
+    } catch (_) {
+      return "";
+    }
   }
 
   async function loadTips() {
@@ -59,10 +69,10 @@
 
   function esc(s) {
     return String(s || "")
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;");
+      .replace(/&/g, "&")
+      .replace(/</g, "<")
+      .replace(/>/g, ">")
+      .replace(/"/g, """);
   }
 
   function openTipForm(sale) {
@@ -101,19 +111,34 @@
         alert("Address and schedule are required.");
         return;
       }
+
+      const compact = JSON.stringify(payload);
+      const approveUrl = APPROVE_BASE + "#tip=" + toBase64Url(compact);
+      const pretty = JSON.stringify(payload, null, 2);
+
       const subject = encodeURIComponent("YardBird permit tip — review");
       const body = encodeURIComponent(
-        "Please review this permit-holder tip for the map.\n\n" +
-          JSON.stringify(payload, null, 2) +
-          "\n\nAttestation: submitter checked permit-holder/agent, accuracy, and public-tip terms."
+        "YardBird permit tip — review\n\n" +
+          "APPROVE (opens tip pre-filled; then one click to push):\n" +
+          approveUrl +
+          "\n\n" +
+          "Alternate — GitHub Actions:\n" +
+          "https://github.com/Justonejewelry/Project-YardBird/actions/workflows/publish-tip.yml\n" +
+          "Run workflow → paste tip_json → Run\n\n" +
+          "——— TIP JSON ———\n" +
+          pretty +
+          "\n\nAttestation: submitter checked permit-holder/agent, accuracy, and public-tip terms.\n" +
+          "Tips stay labeled unverified on the map until you publish."
       );
-      // Open mail client for moderated publish (static site — no silent public write)
-      window.location.href = `mailto:${REVIEW_EMAIL}?subject=${subject}&body=${body}`;
+
+      // Prefer opening approve link for the operator when body is huge for some mail clients
+      window.location.href = "mailto:" + REVIEW_EMAIL + "?subject=" + subject + "&body=" + body;
+
       const status = document.getElementById("tipFormStatus");
       if (status) {
         status.hidden = false;
-        status.textContent =
-          "Review email opened. Tips appear on the map only after moderation — never instantly.";
+        status.innerHTML =
+          'Review email opened with an <b>Approve</b> link. Tips appear on the map only after you approve.';
       }
     });
   }
