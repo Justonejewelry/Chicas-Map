@@ -140,7 +140,8 @@ jobs:
         run: |
           set -e
           TITLE="Scraper failure alert — primary free source(s) unhealthy"
-          BODY=$(cat <<'EOF'
+          HEALTH_SNIPPET=$(cat health.log 2>/dev/null || echo "(no health.log)")
+          BODY=$(cat <<EOF
           ## Scraper health alert
 
           One or more **primary free sources** (EstateSales.org, YardSaleSearch, Craigslist) reported failure or zero listings on the latest map-refresh run.
@@ -150,13 +151,13 @@ jobs:
           - Trigger: ${{ github.event_name }}
 
           ### Health log
-          ```
-          $(cat health.log 2>/dev/null || echo "(no health.log)")
-          ```
+          \`\`\`
+          ${HEALTH_SNIPPET}
+          \`\`\`
 
           Soft-fail policy keeps the map pipeline running. Investigate the failing source(s) and re-run after a fix.
 
-          Label: `scraper-failure`
+          Label: \`scraper-failure\`
           EOF
           )
           # Avoid duplicate open issues
