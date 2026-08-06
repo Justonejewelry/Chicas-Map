@@ -1,1 +1,71 @@
-{"status":"live"}
+{
+  "edition": "midweek",
+  "date": "2026-08-06",
+  "city": "san-antonio",
+  "generated_at": "2026-08-06T07:00:00-05:00",
+  "last_refresh": "2026-08-06T07:00:00-05:00",
+  "total_locations": 1,
+  "sources": [
+    "User submit (approved)",
+    "City of SA permits",
+    "GarageSaleFinder"
+  ],
+  "public": [
+    {
+      "title": "Mission del Lago — Moving sale",
+      "address": "12103 Darian Way, San Antonio, TX 78221",
+      "lat": 29.3056051,
+      "lon": -98.4772119,
+      "type": "garage",
+      "dates": "Fri Aug 8 – Sat Aug 9",
+      "start_date": "2026-08-08",
+      "end_date": "2026-08-09",
+      "hours": "8am–3pm",
+      "source": "User submit (approved)",
+      "confidence": 0.85,
+      "details": "Lots of everything! Clothes, kitchen items, supplies — moving soon. Furniture, tools, clothes, electronics, toys, antiques, collectibles. Weekend Fri–Sat only.",
+      "photos": 0,
+      "status": "verified",
+      "geocode": "street",
+      "categories": [
+        "furniture",
+        "tools",
+        "clothes",
+        "electronics",
+        "toys",
+        "antiques",
+        "collectibles",
+        "other"
+      ],
+      "submitted_at": "2026-08-05T16:55:13.633Z",
+      "approved_at": "2026-08-06T02:30:00Z"
+    }
+  ],
+  "permits": [],
+  "permit_total": 0,
+  "hot_zones": [
+    {
+      "name": "South Side",
+      "badge": "ACTIVE",
+      "lat": 29.2975,
+      "lon": -98.481,
+      "size": 8
+    },
+    {
+      "name": "Alamo Ranch",
+      "badge": "ACTIVE",
+      "lat": 29.48,
+      "lon": -98.7
+    },
+    {
+      "name": "Northwest Side",
+      "badge": "ACTIVE",
+      "lat": 29.55,
+      "lon": -98.62
+    }
+  ],
+  "status": "live",
+  "purge_rate": 0.42,
+  "confidence": 0.85,
+  "notes": "Live layer restored. Discovery swarm + permit extract scheduled; user-approved sales merged. Purge rate from last overnight expired pass."
+}
