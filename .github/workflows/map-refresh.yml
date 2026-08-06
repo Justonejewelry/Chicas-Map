@@ -29,7 +29,7 @@ concurrency:
 jobs:
   discover-purge-publish:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 25
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -48,12 +48,29 @@ jobs:
           set -e
           python3 webapp/scripts/discover_sales.py --cities "$CITIES" | tee discover.log
 
-      - name: Fetch SA garage-sale permits (Open Data SA)
+      - name: Fetch SA garage/estate permits (Open Data SA)
         env:
           DAYS: ${{ github.event.inputs.permit_days || '14' }}
         run: |
           set -e
           python3 webapp/scripts/fetch_permits.py --days "$DAYS" | tee permits.log
+
+      - name: EstateSales.net lightweight discovery
+        env:
+          CITIES: ${{ github.event.inputs.cities || 'san-antonio,austin' }}
+        run: |
+          set -e
+          # Free HTTP path — often thin because site is SPA; still useful when SSR leaks data
+          python3 webapp/scripts/fetch_estatesales.py --cities "$CITIES" | tee estatesales.log || true
+
+      - name: EstateSales.net via Apify (optional)
+        env:
+          CITIES: ${{ github.event.inputs.cities || 'san-antonio,austin' }}
+          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+        run: |
+          set -e
+          # Skips cleanly when APIFY_TOKEN secret is not configured
+          python3 webapp/scripts/fetch_estatesales_apify.py --cities "$CITIES" | tee estatesales-apify.log || true
 
       - name: Purge expired listings
         run: |
@@ -75,27 +92,35 @@ jobs:
           git config user.name "yardbird-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add webapp/data/cities/*.json
-          MSG="Map refresh $(date -u +%Y-%m-%dT%H:%MZ) — GSF + SA permits + purge [skip ci]"
+          MSG="Map refresh $(date -u +%Y-%m-%dT%H:%MZ) — GSF + SA permits + estate + purge [skip ci]"
           git commit -m "$MSG" || exit 0
           git push
 
       - name: Summary
         run: |
           {
-            echo "### Map refresh (GSF + permits + purge)"
+            echo "### Map refresh (GSF + permits + estate + purge)"
             echo ""
             echo "- Trigger: ${{ github.event_name }}"
             echo "- Cities: ${{ github.event.inputs.cities || 'san-antonio,austin' }}"
             echo "- Permit lookback: ${{ github.event.inputs.permit_days || '14' }} days"
             echo "- Changes committed: ${{ steps.diff.outputs.dirty }}"
             echo ""
-            echo "#### Discover"
+            echo "#### Discover (GSF)"
             echo '```'
             cat discover.log 2>/dev/null || echo "(no log)"
             echo '```'
-            echo "#### Permits"
+            echo "#### Permits (estate-tagged)"
             echo '```'
             cat permits.log 2>/dev/null || echo "(no log)"
+            echo '```'
+            echo "#### EstateSales.net (lightweight)"
+            echo '```'
+            cat estatesales.log 2>/dev/null || echo "(no log)"
+            echo '```'
+            echo "#### EstateSales.net (Apify)"
+            echo '```'
+            cat estatesales-apify.log 2>/dev/null || echo "(no log / no token)"
             echo '```'
             echo "#### Purge"
             echo '```'

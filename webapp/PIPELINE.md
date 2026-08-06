@@ -7,10 +7,10 @@ discovery → verification → map → forecast → daily edition.
 ## Architecture (v1 — shipped)
 
 ```
-[Discovery sources]          [Permit Open Data]
-        \                        /
-         \                      /
-          v                    v
+[Discovery sources]   [EstateSales.net]   [Permit Open Data]
+        \                   |                  /
+         \                  |                 /
+          v                 v                v
      offline OSINT / scripts (Atlas swarm)
                   |
                   v
@@ -33,7 +33,8 @@ discovery → verification → map → forecast → daily edition.
 | Stage | Capability | Implementation path |
 |-------|------------|---------------------|
 | v1 | Map + list + forecast from frozen feed | **Done** — this folder |
-| v2 | Auto-refresh feed on schedule | GitHub Action nightly → rebuild feed.json → commit |
+| v2 | Auto-refresh feed on schedule | GitHub Action every 2h → GSF + SA permits (estate-tagged) + EstateSales.net (HTTP + optional Apify) → purge → commit |
+| v2.1 | Estate sales layer | Lightweight scraper + Apify actor; permit heuristic tags estate vs garage |
 | v3 | Live discovery API | Lightweight backend (Cloudflare Worker / FastAPI) proxying public sources |
 | v4 | User accounts / saved routes | Optional auth + route optimizer |
 | v5 | Yowl video embed + daily briefing | Media CDN + edition player page |
