@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Lightweight EstateSales.net discovery for YardBird / GSIN.
 SPA-heavy site; free HTTP often thin. Prefer fetch_estatesales_apify.py for production.
+Uses city_io middleware so PLACEHOLDER / corrupt JSON never crashes the job.
 Usage: python3 webapp/scripts/fetch_estatesales.py --city san-antonio
 """
 from __future__ import annotations
@@ -8,6 +9,8 @@ import argparse, json, re, sys, time, urllib.error, urllib.parse, urllib.request
 from datetime import date, datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
+
+from city_io import safe_load_city, safe_write_city
 
 CT = ZoneInfo("America/Chicago")
 UA = "Mozilla/5.0 (compatible; YardBirdBot/1.1; +https://github.com/Justonejewelry/Project-YardBird)"
@@ -110,8 +113,8 @@ def parse_embedded(html):
     return found
 
 def merge(slug, sales, today):
-    path = CITY_DIR / f"{slug}.json"
-    data = json.loads(path.read_text()) if path.exists() else {"edition": f"{CITY_CFG[slug]['name']} Yard-Bird Discovery", "city": slug, "public": [], "permits": [], "sources": []}
+    # Middleware: never crashes on PLACEHOLDER / corrupt JSON
+    data = safe_load_city(slug)
     by_key = {normalize_key(s.get("address") or s.get("title") or ""): s for s in (data.get("public") or [])}
     added = 0
     for s in sales:
@@ -143,8 +146,7 @@ def merge(slug, sales, today):
     data["status"] = "live"
     data["sources"] = sorted(set(data.get("sources") or []) | {"estatesales.net"})
     data["city"] = slug
-    CITY_DIR.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    safe_write_city(slug, data)
     return added, len(kept)
 
 def discover(slug):
