@@ -17,7 +17,6 @@ from __future__ import annotations
 import argparse
 import csv
 import io
-import json
 import re
 import subprocess
 import sys
@@ -26,6 +25,9 @@ import urllib.request
 from datetime import date, datetime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
+
+# Shared error-handling middleware
+from city_io import safe_load_city, safe_write_city
 
 CT = ZoneInfo("America/Chicago")
 BROWSER_UA = (
@@ -197,70 +199,6 @@ def permit_to_sale(row: dict, issued: date) -> dict:
     }
 
 
-def empty_city_skeleton() -> dict:
-    """Clean starting point when the on-disk feed is missing or corrupt."""
-    return {
-        "edition": "San Antonio Yard-Bird Discovery",
-        "city": "san-antonio",
-        "public": [],
-        "permits": [],
-        "hot_zones": [],
-        "sources": [],
-        "status": "live",
-    }
-
-
-def safe_load_city(path: Path = CITY_PATH) -> dict:
-    """Load city JSON robustly.
-
-    Never raises on missing file, empty file, the literal string
-    "PLACEHOLDER", or any other invalid JSON. Returns a clean skeleton
-    and prints a warning so the map-refresh can recover instead of
-    crashing the whole job.
-    """
-    if not path.exists():
-        print(f"safe_load: {path.name} missing → starting empty", file=sys.stderr)
-        return empty_city_skeleton()
-
-    try:
-        raw = path.read_text(encoding="utf-8").strip()
-    except OSError as e:
-        print(f"safe_load: cannot read {path.name}: {e} → starting empty", file=sys.stderr)
-        return empty_city_skeleton()
-
-    if not raw or raw == "PLACEHOLDER" or raw == '"PLACEHOLDER"':
-        print(
-            f"safe_load: {path.name} is empty/PLACEHOLDER → starting empty",
-            file=sys.stderr,
-        )
-        return empty_city_skeleton()
-
-    try:
-        data = json.loads(raw)
-    except json.JSONDecodeError as e:
-        print(
-            f"safe_load: {path.name} invalid JSON ({e}) → starting empty",
-            file=sys.stderr,
-        )
-        return empty_city_skeleton()
-
-    if not isinstance(data, dict):
-        print(
-            f"safe_load: {path.name} is not a JSON object → starting empty",
-            file=sys.stderr,
-        )
-        return empty_city_skeleton()
-
-    # Ensure required keys exist so later code never KeyErrors
-    data.setdefault("public", [])
-    data.setdefault("permits", [])
-    data.setdefault("hot_zones", [])
-    data.setdefault("sources", [])
-    data.setdefault("city", "san-antonio")
-    data.setdefault("status", "live")
-    return data
-
-
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--days", type=int, default=14)
@@ -298,7 +236,8 @@ def main() -> int:
     selected = selected[: args.max]
     print(f"garage/estate permits in window={len(selected)} (estate-tagged={estate_count})")
 
-    data = safe_load_city()
+    # Use shared middleware — never crashes on PLACEHOLDER / corrupt JSON
+    data = safe_load_city("san-antonio")
     data["permits"] = selected
     data["permit_total"] = len(selected)
     data["permit_estate_count"] = estate_count
@@ -310,12 +249,9 @@ def main() -> int:
     srcs.add("data.sanantonio.gov")
     data["sources"] = sorted(srcs)
 
-    CITY_PATH.parent.mkdir(parents=True, exist_ok=True)
-    CITY_PATH.write_text(
-        json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
-    )
+    out = safe_write_city("san-antonio", data)
     print(
-        f"wrote {CITY_PATH} permits={len(selected)} estate={estate_count} "
+        f"wrote {out} permits={len(selected)} estate={estate_count} "
         f"total_locations={data['total_locations']}"
     )
     return 0
