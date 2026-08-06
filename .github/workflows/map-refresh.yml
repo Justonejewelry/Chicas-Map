@@ -21,6 +21,7 @@ on:
 
 permissions:
   contents: write
+  issues: write
 
 concurrency:
   group: map-refresh
@@ -100,14 +101,23 @@ jobs:
         run: |
           python3 webapp/scripts/purge_expired.py | tee purge.log
 
+      - name: Scraper health check
+        id: health
+        run: |
+          set +e
+          python3 webapp/scripts/check_scraper_health.py | tee health.log
+          echo "exit_code=$?" >> "$GITHUB_OUTPUT"
+          # Always continue — soft-fail policy; alerts are via issues + summary
+          exit 0
+
       - name: Detect git changes
         id: diff
         run: |
-          if git diff --quiet -- webapp/data/cities; then
+          if git diff --quiet -- webapp/data/cities webapp/data/scraper-health.json; then
             echo "dirty=false" >> "$GITHUB_OUTPUT"
           else
             echo "dirty=true" >> "$GITHUB_OUTPUT"
-            git diff --stat -- webapp/data/cities
+            git diff --stat -- webapp/data/cities webapp/data/scraper-health.json || true
           fi
 
       - name: Commit and push
@@ -116,12 +126,49 @@ jobs:
           set -e
           git config user.name "yardbird-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add webapp/data/cities/*.json
-          MSG="Map refresh $(date -u +%Y-%m-%dT%H:%MZ) — GSF + permits + ESO + YSS + CL free + purge [skip ci]"
+          git add webapp/data/cities/*.json webapp/data/scraper-health.json || true
+          MSG="Map refresh $(date -u +%Y-%m-%dT%H:%MZ) — GSF + permits + ESO + YSS + CL free + purge + health [skip ci]"
           git commit -m "$MSG" || exit 0
           # Rebase onto any concurrent commits (docs, manual fixes) then push
           git pull --rebase origin main
           git push origin HEAD:main
+
+      - name: Open or update scraper-failure issue
+        if: steps.health.outputs.exit_code == '1'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -e
+          TITLE="Scraper failure alert — primary free source(s) unhealthy"
+          BODY=$(cat <<'EOF'
+          ## Scraper health alert
+
+          One or more **primary free sources** (EstateSales.org, YardSaleSearch, Craigslist) reported failure or zero listings on the latest map-refresh run.
+
+          - Workflow: [Map feed refresh](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
+          - Run: #${{ github.run_number }}
+          - Trigger: ${{ github.event_name }}
+
+          ### Health log
+          ```
+          $(cat health.log 2>/dev/null || echo "(no health.log)")
+          ```
+
+          Soft-fail policy keeps the map pipeline running. Investigate the failing source(s) and re-run after a fix.
+
+          Label: `scraper-failure`
+          EOF
+          )
+          # Avoid duplicate open issues
+          EXISTING=$(gh issue list --label scraper-failure --state open --json number --jq '.[0].number' || true)
+          if [ -n "$EXISTING" ]; then
+            gh issue comment "$EXISTING" --body "$BODY"
+            echo "Updated existing issue #$EXISTING"
+          else
+            gh issue create --title "$TITLE" --body "$BODY" --label "scraper-failure" || \
+              gh issue create --title "$TITLE" --body "$BODY"
+            echo "Created new scraper-failure issue"
+          fi
 
       - name: Summary
         run: |
@@ -132,6 +179,12 @@ jobs:
             echo "- Cities: ${{ github.event.inputs.cities || 'san-antonio,austin' }}"
             echo "- Permit lookback: ${{ github.event.inputs.permit_days || '14' }} days"
             echo "- Changes committed: ${{ steps.diff.outputs.dirty }}"
+            echo "- Health exit: ${{ steps.health.outputs.exit_code }}"
+            echo ""
+            echo "#### Scraper health"
+            echo '```'
+            cat health.log 2>/dev/null || echo "(no health.log)"
+            echo '```'
             echo ""
             echo "#### Discover (GSF)"
             echo '```'
