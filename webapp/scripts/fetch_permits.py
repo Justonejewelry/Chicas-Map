@@ -51,6 +51,7 @@ COMPANY_HINT = re.compile(
     r"\b(llc|inc\.?|company|estate\s*sales?|auctions?|liquidators?|appraisers?)\b", re.I,
 )
 
+
 def is_estate_sale(row: dict) -> bool:
     text = " ".join([
         row.get("PROJECT NAME") or "",
@@ -196,9 +197,8 @@ def permit_to_sale(row: dict, issued: date) -> dict:
     }
 
 
-def load_city() -> dict:
-    if CITY_PATH.exists():
-        return json.loads(CITY_PATH.read_text(encoding="utf-8"))
+def empty_city_skeleton() -> dict:
+    """Clean starting point when the on-disk feed is missing or corrupt."""
     return {
         "edition": "San Antonio Yard-Bird Discovery",
         "city": "san-antonio",
@@ -206,7 +206,59 @@ def load_city() -> dict:
         "permits": [],
         "hot_zones": [],
         "sources": [],
+        "status": "live",
     }
+
+
+def safe_load_city(path: Path = CITY_PATH) -> dict:
+    """Load city JSON robustly.
+
+    Never raises on missing file, empty file, the literal string
+    "PLACEHOLDER", or any other invalid JSON. Returns a clean skeleton
+    and prints a warning so the map-refresh can recover instead of
+    crashing the whole job.
+    """
+    if not path.exists():
+        print(f"safe_load: {path.name} missing → starting empty", file=sys.stderr)
+        return empty_city_skeleton()
+
+    try:
+        raw = path.read_text(encoding="utf-8").strip()
+    except OSError as e:
+        print(f"safe_load: cannot read {path.name}: {e} → starting empty", file=sys.stderr)
+        return empty_city_skeleton()
+
+    if not raw or raw == "PLACEHOLDER" or raw == '"PLACEHOLDER"':
+        print(
+            f"safe_load: {path.name} is empty/PLACEHOLDER → starting empty",
+            file=sys.stderr,
+        )
+        return empty_city_skeleton()
+
+    try:
+        data = json.loads(raw)
+    except json.JSONDecodeError as e:
+        print(
+            f"safe_load: {path.name} invalid JSON ({e}) → starting empty",
+            file=sys.stderr,
+        )
+        return empty_city_skeleton()
+
+    if not isinstance(data, dict):
+        print(
+            f"safe_load: {path.name} is not a JSON object → starting empty",
+            file=sys.stderr,
+        )
+        return empty_city_skeleton()
+
+    # Ensure required keys exist so later code never KeyErrors
+    data.setdefault("public", [])
+    data.setdefault("permits", [])
+    data.setdefault("hot_zones", [])
+    data.setdefault("sources", [])
+    data.setdefault("city", "san-antonio")
+    data.setdefault("status", "live")
+    return data
 
 
 def main() -> int:
@@ -246,7 +298,7 @@ def main() -> int:
     selected = selected[: args.max]
     print(f"garage/estate permits in window={len(selected)} (estate-tagged={estate_count})")
 
-    data = load_city()
+    data = safe_load_city()
     data["permits"] = selected
     data["permit_total"] = len(selected)
     data["permit_estate_count"] = estate_count
