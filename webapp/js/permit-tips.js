@@ -1,8 +1,6 @@
 /**
- * Permit-holder community tips (moderated).
- * - Email + Approve deep-link (default)
- * - Optional POST to webhook-config.json inbound_url (Make/Zapier/n8n)
- * - Map only shows tips from data/permit-tips.json after approve webhook/admin
+ * Permit-holder tips — moderated publish only.
+ * Easiest approve for owner: paste JSON in chat and say "approve this tip".
  */
 (function (global) {
   const TIPS_URL = "data/permit-tips.json";
@@ -105,17 +103,16 @@
     const pretty = JSON.stringify(payload, null, 2);
     const subject = encodeURIComponent("YardBird permit tip — review");
     const body = encodeURIComponent(
-      "YardBird permit tip — review\n\n" +
-        "APPROVE (opens tip pre-filled):\n" +
+      "YardBird permit tip — REVIEW\n\n" +
+        "EASIEST APPROVE:\n" +
+        "1) Copy the TIP JSON below\n" +
+        "2) Open Grok (GitHub connected)\n" +
+        "3) Paste JSON and say: approve this tip\n\n" +
+        "OR click Approve page:\n" +
         approveUrl +
-        "\n\n" +
-        "Webhook approve (automation):\n" +
-        "POST repository_dispatch event_type tip_approve — see docs/WEBHOOKS.md\n\n" +
-        "Actions UI:\n" +
-        "https://github.com/Justonejewelry/Project-YardBird/actions/workflows/tip-webhook.yml\n\n" +
+        "\n\nOR GitHub: new issue → paste JSON in ```json block → label tip-approved\n\n" +
         "——— TIP JSON ———\n" +
-        pretty +
-        "\n\nAttestation: permit-holder/agent, accuracy, public-tip terms checked."
+        pretty
     );
     return "mailto:" + REVIEW_EMAIL + "?subject=" + subject + "&body=" + body;
   }
@@ -131,7 +128,6 @@
           event: "tip_submit",
           source: "yardbird_map",
           tip: payload,
-          approve_hint: "repository_dispatch tip_approve or admin/approve.html",
         }),
       });
       return { ok: res.ok, status: res.status };
@@ -177,27 +173,15 @@
         status.textContent = "Submitting for review…";
       }
 
-      const hook = await postInbound(payload);
+      await postInbound(payload);
 
       if (webhookConfig.also_mailto || !webhookConfig.inbound_url) {
         window.location.href = buildMail(payload);
       }
 
       if (status) {
-        if (hook.ok) {
-          status.innerHTML =
-            "Sent to automation webhook" +
-            (webhookConfig.also_mailto ? " and opened review email." : ".") +
-            " Tips appear on the map only after approval.";
-        } else if (hook.skipped) {
-          status.innerHTML =
-            "Review email opened with an <b>Approve</b> link. Tips appear only after you approve.";
-        } else {
-          status.innerHTML =
-            "Webhook failed (" +
-            esc(hook.error || String(hook.status || "")) +
-            "). Review email still opened.";
-        }
+        status.innerHTML =
+          "Review email opened. Tips go live only after you approve (easiest: paste JSON here and say <b>approve this tip</b>)."
       }
     });
   }
