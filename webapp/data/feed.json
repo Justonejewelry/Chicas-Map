@@ -1,50 +1,39 @@
 {
-  "edition": "Weekend Live — Thursday refresh",
-  "date": "2026-08-06",
-  "generated_at": "2026-08-06T09:05:00-05:00",
-  "refreshed_at": "2026-08-06T09:05:00-05:00",
-  "total_locations": 9,
-  "sources": [
-    "User submit (approved)",
-    "EstateSales.net",
-    "GarageSaleFinder",
-    "Heritage swarm"
-  ],
+  "edition": "Sunday Yard-Bird Discovery",
+  "date": "2026-08-01",
+  "generated_at": "2026-08-06T14:47:31+00:00",
+  "refreshed_at": "2026-08-06T14:47:31+00:00",
+  "total_locations": 197,
+  "sources": [],
   "public": [],
   "permits": [],
   "permit_total": 0,
   "hot_zones": [
     {
-      "name": "Redland / NE Side",
-      "badge": "HOT",
-      "lat": 29.58,
-      "lon": -98.43
+      "name": "South Side",
+      "badge": "CLUSTER-HOT",
+      "size": 30,
+      "lat": 29.2975,
+      "lon": -98.481
     },
     {
-      "name": "Alamo Ranch / Camino Bandera",
+      "name": "Northwest Side",
       "badge": "ACTIVE",
-      "lat": 29.53,
-      "lon": -98.65
+      "lat": 29.55,
+      "lon": -98.62
     },
     {
-      "name": "Eisenhauer / East Side",
+      "name": "Northeast Side",
       "badge": "ACTIVE",
-      "lat": 29.50,
-      "lon": -98.42
+      "lat": 29.54,
+      "lon": -98.4
     },
     {
-      "name": "Garden Ridge / Fair Oaks corridor",
+      "name": "Alamo Ranch",
       "badge": "ACTIVE",
-      "lat": 29.63,
-      "lon": -98.31
-    },
-    {
-      "name": "South Side / Mission del Lago",
-      "badge": "ACTIVE",
-      "lat": 29.31,
-      "lon": -98.48
+      "lat": 29.48,
+      "lon": -98.7
     }
   ],
-  "source_file": "webapp/data/cities/san-antonio.json",
-  "notes": "Primary data now lives in cities/san-antonio.json (weekend-live). Old July cluster purged."
+  "source_file": "data/latest_discovery.json"
 }
