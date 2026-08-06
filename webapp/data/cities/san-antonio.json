@@ -1,1 +1,131 @@
-PLACEHOLDER
+{
+  "public": [
+    {
+      "title": "Beautiful Fair Oaks Ranch Estate Sale",
+      "address": "Fair Oaks Ranch, TX",
+      "lat": 29.745,
+      "lon": -98.643,
+      "type": "estate",
+      "dates": "Aug 6-8",
+      "hours": "10am-4pm",
+      "details": "Complete Estate Sale Services • High confidence",
+      "confidence": 0.9,
+      "source": "YardBird"
+    },
+    {
+      "title": "CAMINO BANDERA ESTATE SALE — Alamo Ranch",
+      "address": "Alamo Ranch, 78254",
+      "lat": 29.49,
+      "lon": -98.745,
+      "type": "estate",
+      "dates": "Aug 6-8",
+      "hours": "10am-4pm",
+      "details": "Complete Estate Sale Services",
+      "confidence": 0.85,
+      "source": "YardBird"
+    },
+    {
+      "title": "Helotes — A STEP BACK IN TIME",
+      "address": "Helotes 78023",
+      "lat": 29.565,
+      "lon": -98.689,
+      "type": "estate",
+      "dates": "Aug 7-9",
+      "hours": "9am-4pm",
+      "details": "From Trash To Treasure",
+      "confidence": 0.9,
+      "source": "YardBird"
+    },
+    {
+      "title": "Redland Springs Moving Sale",
+      "address": "78247",
+      "lat": 29.58,
+      "lon": -98.42,
+      "type": "estate",
+      "dates": "Aug 6-8",
+      "hours": "9am-4pm",
+      "details": "Antiques, vintage, collectibles",
+      "confidence": 0.8,
+      "source": "YardBird"
+    },
+    {
+      "title": "Alamo City Mercantile Warehouse",
+      "address": "3903 Eisenhauer 78218",
+      "lat": 29.5,
+      "lon": -98.4,
+      "type": "estate",
+      "dates": "Aug 6-9",
+      "hours": "9am-4pm",
+      "details": "Tools, Funko, comics, antiques",
+      "confidence": 0.85,
+      "source": "YardBird"
+    },
+    {
+      "title": "Cadillac Dr Estate (Top Hat)",
+      "address": "78248",
+      "lat": 29.58,
+      "lon": -98.55,
+      "type": "estate",
+      "dates": "Aug 6-8",
+      "hours": "9am-3pm",
+      "details": "",
+      "confidence": 0.8,
+      "source": "YardBird"
+    },
+    {
+      "title": "BENT MOSS — Estate Solutions",
+      "address": "78232 Stone Oak side",
+      "lat": 29.59,
+      "lon": -98.49,
+      "type": "estate",
+      "dates": "Aug 6-8",
+      "hours": "9:30am-3pm",
+      "details": "",
+      "confidence": 0.8,
+      "source": "YardBird"
+    },
+    {
+      "title": "Holiday House — Garden Ridge",
+      "address": "Wild Wind gated, Garden Ridge",
+      "lat": 29.63,
+      "lon": -98.3,
+      "type": "estate",
+      "dates": "Aug 6-8",
+      "hours": "10am-4pm",
+      "details": "Crystal's Estate Sales",
+      "confidence": 0.9,
+      "source": "YardBird"
+    }
+  ],
+  "permits": [],
+  "clusters": [],
+  "hot_zones": [
+    {
+      "name": "Fair Oaks / Helotes",
+      "badge": "HOT",
+      "lat": 29.65,
+      "lon": -98.65
+    },
+    {
+      "name": "Alamo Ranch",
+      "badge": "ACTIVE",
+      "lat": 29.49,
+      "lon": -98.74
+    },
+    {
+      "name": "Stone Oak / 78232",
+      "badge": "ACTIVE",
+      "lat": 29.59,
+      "lon": -98.49
+    }
+  ],
+  "sources": [
+    "YardBird GSIN",
+    "Estate layer 2026-08-08"
+  ],
+  "total_locations": 8,
+  "last_refresh": "2026-08-06T21:00:00Z",
+  "generated_at": "2026-08-06T21:00:00Z",
+  "status": "live",
+  "confidence": 0.72
+}
