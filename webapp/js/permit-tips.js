@@ -1,13 +1,16 @@
 /**
  * Permit-holder community tips (moderated).
- * Legal posture: user attestation + public disclaimer + owner moderation via permit-tips.json.
- * Static hosting: form builds a review email with Approve deep-link; published tips only from JSON.
+ * - Email + Approve deep-link (default)
+ * - Optional POST to webhook-config.json inbound_url (Make/Zapier/n8n)
+ * - Map only shows tips from data/permit-tips.json after approve webhook/admin
  */
 (function (global) {
   const TIPS_URL = "data/permit-tips.json";
+  const WEBHOOK_CONFIG_URL = "data/webhook-config.json";
   const REVIEW_EMAIL = "mr.jsciaraffa@gmail.com";
   const APPROVE_BASE = "https://justonejewelry.github.io/Project-YardBird/admin/approve.html";
-  let tipsIndex = {}; // key: normalized address or permit #
+  let tipsIndex = {};
+  let webhookConfig = { inbound_url: "", also_mailto: true };
 
   function normKey(s) {
     return String(s || "")
@@ -23,6 +26,26 @@
     } catch (_) {
       return "";
     }
+  }
+
+  function esc(s) {
+    return String(s || "")
+      .replace(/&/g, "&")
+      .replace(/</g, "<")
+      .replace(/>/g, ">")
+      .replace(/"/g, """);
+  }
+
+  async function loadWebhookConfig() {
+    try {
+      const res = await fetch(WEBHOOK_CONFIG_URL + "?t=" + Date.now(), { cache: "no-store" });
+      if (!res.ok) return;
+      const data = await res.json();
+      webhookConfig = {
+        inbound_url: (data.inbound_url || "").trim(),
+        also_mailto: data.also_mailto !== false,
+      };
+    } catch (_) {}
   }
 
   async function loadTips() {
@@ -67,14 +90,6 @@
     </div>`;
   }
 
-  function esc(s) {
-    return String(s || "")
-      .replace(/&/g, "&")
-      .replace(/</g, "<")
-      .replace(/>/g, ">")
-      .replace(/"/g, """);
-  }
-
   function openTipForm(sale) {
     const box = document.getElementById("permitTipForm");
     if (!box) return;
@@ -84,11 +99,54 @@
     box.scrollIntoView({ behavior: "smooth", block: "nearest" });
   }
 
+  function buildMail(payload) {
+    const compact = JSON.stringify(payload);
+    const approveUrl = APPROVE_BASE + "#tip=" + toBase64Url(compact);
+    const pretty = JSON.stringify(payload, null, 2);
+    const subject = encodeURIComponent("YardBird permit tip — review");
+    const body = encodeURIComponent(
+      "YardBird permit tip — review\n\n" +
+        "APPROVE (opens tip pre-filled):\n" +
+        approveUrl +
+        "\n\n" +
+        "Webhook approve (automation):\n" +
+        "POST repository_dispatch event_type tip_approve — see docs/WEBHOOKS.md\n\n" +
+        "Actions UI:\n" +
+        "https://github.com/Justonejewelry/Project-YardBird/actions/workflows/tip-webhook.yml\n\n" +
+        "——— TIP JSON ———\n" +
+        pretty +
+        "\n\nAttestation: permit-holder/agent, accuracy, public-tip terms checked."
+    );
+    return "mailto:" + REVIEW_EMAIL + "?subject=" + subject + "&body=" + body;
+  }
+
+  async function postInbound(payload) {
+    const url = webhookConfig.inbound_url;
+    if (!url) return { ok: false, skipped: true };
+    try {
+      const res = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          event: "tip_submit",
+          source: "yardbird_map",
+          tip: payload,
+          approve_hint: "repository_dispatch tip_approve or admin/approve.html",
+        }),
+      });
+      return { ok: res.ok, status: res.status };
+    } catch (e) {
+      return { ok: false, error: String(e && e.message ? e.message : e) };
+    }
+  }
+
   function bindForm() {
     const form = document.getElementById("permitTipFormEl");
     if (!form || form.dataset.bound) return;
     form.dataset.bound = "1";
-    form.addEventListener("submit", function (e) {
+    loadWebhookConfig();
+
+    form.addEventListener("submit", async function (e) {
       e.preventDefault();
       const attest = document.getElementById("tipAttest");
       const accurate = document.getElementById("tipAccurate");
@@ -106,39 +164,40 @@
         public_contact: document.getElementById("tipPublicContact")?.checked === true,
         submitted_at: new Date().toISOString(),
         status: "pending_review",
+        id: "tip_" + Date.now().toString(36),
       };
       if (!payload.address || !payload.schedule) {
         alert("Address and schedule are required.");
         return;
       }
 
-      const compact = JSON.stringify(payload);
-      const approveUrl = APPROVE_BASE + "#tip=" + toBase64Url(compact);
-      const pretty = JSON.stringify(payload, null, 2);
-
-      const subject = encodeURIComponent("YardBird permit tip — review");
-      const body = encodeURIComponent(
-        "YardBird permit tip — review\n\n" +
-          "APPROVE (opens tip pre-filled; then one click to push):\n" +
-          approveUrl +
-          "\n\n" +
-          "Alternate — GitHub Actions:\n" +
-          "https://github.com/Justonejewelry/Project-YardBird/actions/workflows/publish-tip.yml\n" +
-          "Run workflow → paste tip_json → Run\n\n" +
-          "——— TIP JSON ———\n" +
-          pretty +
-          "\n\nAttestation: submitter checked permit-holder/agent, accuracy, and public-tip terms.\n" +
-          "Tips stay labeled unverified on the map until you publish."
-      );
-
-      // Prefer opening approve link for the operator when body is huge for some mail clients
-      window.location.href = "mailto:" + REVIEW_EMAIL + "?subject=" + subject + "&body=" + body;
-
       const status = document.getElementById("tipFormStatus");
       if (status) {
         status.hidden = false;
-        status.innerHTML =
-          'Review email opened with an <b>Approve</b> link. Tips appear on the map only after you approve.';
+        status.textContent = "Submitting for review…";
+      }
+
+      const hook = await postInbound(payload);
+
+      if (webhookConfig.also_mailto || !webhookConfig.inbound_url) {
+        window.location.href = buildMail(payload);
+      }
+
+      if (status) {
+        if (hook.ok) {
+          status.innerHTML =
+            "Sent to automation webhook" +
+            (webhookConfig.also_mailto ? " and opened review email." : ".") +
+            " Tips appear on the map only after approval.";
+        } else if (hook.skipped) {
+          status.innerHTML =
+            "Review email opened with an <b>Approve</b> link. Tips appear only after you approve.";
+        } else {
+          status.innerHTML =
+            "Webhook failed (" +
+            esc(hook.error || String(hook.status || "")) +
+            "). Review email still opened.";
+        }
       }
     });
   }
@@ -149,5 +208,6 @@
     tipHtml,
     openTipForm,
     bindForm,
+    loadWebhookConfig,
   };
 })(window);
