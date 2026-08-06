@@ -5,6 +5,9 @@ Source: https://data.sanantonio.gov/dataset/building-permits
 Filters PERMIT TYPE == "Garage Sale", recent issue dates, writes into
 webapp/data/cities/san-antonio.json → permits[].
 
+Estate sales are auto-tagged via PROJECT NAME / PRIMARY CONTACT heuristics
+(type=estate, categories include estate-sale).
+
 Usage:
   python3 webapp/scripts/fetch_permits.py
   python3 webapp/scripts/fetch_permits.py --days 14
@@ -37,6 +40,31 @@ PERMITS_URL = (
 
 ROOT = Path(__file__).resolve().parents[1]
 CITY_PATH = ROOT / "data" / "cities" / "san-antonio.json"
+
+ESTATE_PATTERNS = re.compile(
+    r"\b(estate\s*sale|estate\s*liquidation|estate\s*auction|moving\s*sale|tag\s*sale|"
+    r"liquidat(?:e|or|ion)|auctioneer|executor|executrix|probate|downsizing|"
+    r"contents\s*of\s*(?:the\s*)?home|whole\s*house|entire\s*estate)\b",
+    re.I,
+)
+COMPANY_HINT = re.compile(
+    r"\b(llc|inc\.?|company|estate\s*sales?|auctions?|liquidators?|appraisers?)\b", re.I,
+)
+
+def is_estate_sale(row: dict) -> bool:
+    text = " ".join([
+        row.get("PROJECT NAME") or "",
+        row.get("PRIMARY CONTACT") or "",
+        row.get("DESCRIPTION") or "",
+        row.get("WORK DESCRIPTION") or "",
+        row.get("COMMENTS") or "",
+    ])
+    if ESTATE_PATTERNS.search(text):
+        return True
+    contact = row.get("PRIMARY CONTACT") or ""
+    if COMPANY_HINT.search(contact) and len(contact.split()) >= 2:
+        return True
+    return False
 
 
 def today_ct() -> date:
@@ -114,9 +142,34 @@ def permit_to_sale(row: dict, issued: date) -> dict:
         lat, lon = 0.0, 0.0
 
     end = issued + timedelta(days=7)
-    title = (row.get("PROJECT NAME") or "").strip() or "Permitted garage sale"
-    if title.upper() == addr.upper() or title.replace(",", "") == addr.split(",")[0]:
-        title = "City-permitted garage / yard sale"
+    estate = is_estate_sale(row)
+    contact = (row.get("PRIMARY CONTACT") or "").strip()
+    raw_title = (row.get("PROJECT NAME") or "").strip()
+    if estate:
+        title = raw_title if raw_title and "garage" not in raw_title.lower() else "City-permitted estate sale"
+        if title.upper() == addr.upper() or title.replace(",", "") == addr.split(",")[0]:
+            title = "City-permitted estate sale"
+        details = (
+            "Official City of San Antonio permit flagged as estate / professional "
+            "liquidation. Legal hours 9 a.m.–6 p.m. Exact sale day not published — verify on-site."
+        )
+        sale_type = "estate"
+        categories = ["estate-sale", "permit"]
+        source = "Open Data SA (Estate / Garage Sale permit)"
+        confidence = 0.92 if lat else 0.75
+    else:
+        title = raw_title or "Permitted garage sale"
+        if title.upper() == addr.upper() or title.replace(",", "") == addr.split(",")[0]:
+            title = "City-permitted garage / yard sale"
+        details = (
+            "Official City of San Antonio garage-sale permit. "
+            "Legal sale hours 9 a.m.–6 p.m. Exact sale day not published in open data — "
+            "verify on-site or with seller."
+        )
+        sale_type = "permit"
+        categories = ["garage-sale", "permit"]
+        source = "Open Data SA (Garage Sale permit)"
+        confidence = 0.9 if lat else 0.7
 
     mon = issued.strftime("%a %b")
     return {
@@ -126,21 +179,20 @@ def permit_to_sale(row: dict, issued: date) -> dict:
         "date_to": end.isoformat(),
         "end_date": end.isoformat(),
         "title": title[:120],
-        "details": (
-            "Official City of San Antonio garage-sale permit. "
-            "Legal sale hours 9 a.m.–6 p.m. Exact sale day not published in open data — "
-            "verify on-site or with seller."
-        ),
-        "source": "Open Data SA (Garage Sale permit)",
+        "details": details,
+        "source": source,
         "permit_number": (row.get("PERMIT #") or "").strip(),
+        "primary_contact": contact or None,
         "photos": 0,
-        "type": "permit",
-        "confidence": 0.9 if lat else 0.7,
+        "type": sale_type,
+        "categories": categories,
+        "confidence": confidence,
         "status": "verified",
         "lat": lat or None,
         "lon": lon or None,
         "geocode": "city-open-data" if lat else "missing",
         "hours": "9 a.m. – 6 p.m. (city rule)",
+        "is_estate": estate,
     }
 
 
@@ -177,22 +229,27 @@ def main() -> int:
     print(f"csv rows={len(raw)}")
 
     selected: list[dict] = []
+    estate_count = 0
     for row in raw:
         if (row.get("PERMIT TYPE") or "").strip() != "Garage Sale":
             continue
         issued = parse_date(row.get("DATE ISSUED") or "")
         if not issued or issued < cutoff:
             continue
-        selected.append(permit_to_sale(row, issued))
+        sale = permit_to_sale(row, issued)
+        if sale.get("is_estate"):
+            estate_count += 1
+        selected.append(sale)
 
     selected = [s for s in selected if s.get("address")]
     selected.sort(key=lambda s: s.get("date_from") or "", reverse=True)
     selected = selected[: args.max]
-    print(f"garage permits in window={len(selected)}")
+    print(f"garage/estate permits in window={len(selected)} (estate-tagged={estate_count})")
 
     data = load_city()
     data["permits"] = selected
     data["permit_total"] = len(selected)
+    data["permit_estate_count"] = estate_count
     data["total_locations"] = len(data.get("public") or []) + len(selected)
     data["date"] = today.isoformat()
     data["last_refresh"] = datetime.now(CT).isoformat(timespec="seconds")
@@ -206,7 +263,7 @@ def main() -> int:
         json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
     )
     print(
-        f"wrote {CITY_PATH} permits={len(selected)} "
+        f"wrote {CITY_PATH} permits={len(selected)} estate={estate_count} "
         f"total_locations={data['total_locations']}"
     )
     return 0
