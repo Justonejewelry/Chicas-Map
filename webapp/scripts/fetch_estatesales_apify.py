@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Apify-backed EstateSales.net ingestion for YardBird. Requires APIFY_TOKEN env/secret.
+Uses city_io middleware so PLACEHOLDER / corrupt JSON never crashes the job.
 Usage: APIFY_TOKEN=... python3 webapp/scripts/fetch_estatesales_apify.py --city san-antonio
 Skips cleanly (exit 0) when token missing so map-refresh stays optional.
 """
@@ -8,6 +9,8 @@ import argparse, json, os, re, sys, time, urllib.request
 from datetime import date, datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
+
+from city_io import safe_load_city, safe_write_city
 
 CT = ZoneInfo("America/Chicago")
 ROOT = Path(__file__).resolve().parents[1]
@@ -82,8 +85,8 @@ def normalize(item, cfg):
 def nkey(a): return re.sub(r"[^a-z0-9]", "", (a or "").lower())[:48]
 
 def merge(slug, sales, today):
-    path = CITY_DIR / f"{slug}.json"
-    data = json.loads(path.read_text()) if path.exists() else {"edition": f"{CITY_CFG[slug]['name']} Yard-Bird Discovery", "city": slug, "public": [], "permits": [], "sources": []}
+    # Middleware: never crashes on PLACEHOLDER / corrupt JSON
+    data = safe_load_city(slug)
     by_key = {nkey(s.get("address") or s.get("title") or ""): s for s in (data.get("public") or [])}
     added = 0
     for s in sales:
@@ -115,8 +118,7 @@ def merge(slug, sales, today):
     data["status"] = "live"
     data["sources"] = sorted(set(data.get("sources") or []) | {"estatesales.net", "apify"})
     data["city"] = slug
-    CITY_DIR.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    safe_write_city(slug, data)
     return added, len(kept)
 
 def main():
