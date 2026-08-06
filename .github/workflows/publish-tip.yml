@@ -1,0 +1,76 @@
+name: Publish permit tip
+
+on:
+  workflow_dispatch:
+    inputs:
+      tip_json:
+        description: "Full tip JSON object (address, schedule, summary, …)"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Merge tip into permit-tips.json
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const path = 'webapp/data/permit-tips.json';
+            let tip;
+            try {
+              tip = JSON.parse(process.env.TIP_JSON);
+            } catch (e) {
+              core.setFailed('tip_json is not valid JSON: ' + e.message);
+              return;
+            }
+            if (!tip.address || !tip.schedule) {
+              core.setFailed('Tip must include address and schedule');
+              return;
+            }
+            tip.status = 'published';
+            tip.published_at = new Date().toISOString();
+            tip.published_via = 'github_actions';
+
+            let data = { updated: '', disclaimer: '', tips: [] };
+            if (fs.existsSync(path)) {
+              data = JSON.parse(fs.readFileSync(path, 'utf8'));
+            }
+            if (!Array.isArray(data.tips)) data.tips = [];
+
+            const norm = (s) => String(s || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+            const addr = norm(tip.address);
+            const pmt = norm(tip.permit_number);
+            data.tips = data.tips.filter((t) => {
+              const sameAddr = addr && norm(t.address) === addr;
+              const samePmt = pmt && norm(t.permit_number) === pmt;
+              return !(sameAddr || samePmt);
+            });
+            data.tips.push(tip);
+            data.updated = new Date().toISOString().slice(0, 10);
+            if (!data.disclaimer) {
+              data.disclaimer =
+                'Tips are submitted by users who attest they are the permit holder or agent. YardBird and the City of San Antonio do not verify identity or accuracy. Tips are not official city records.';
+            }
+            fs.writeFileSync(path, JSON.stringify(data, null, 2) + '\n');
+            core.info('Published tip for: ' + tip.address);
+        env:
+          TIP_JSON: ${{ inputs.tip_json }}
+
+      - name: Commit and push
+        run: |
+          git config user.name "YardBird Tip Bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add webapp/data/permit-tips.json
+          if git diff --staged --quiet; then
+            echo "No changes"
+            exit 0
+          fi
+          git commit -m "Publish moderated permit tip"
+          git push
