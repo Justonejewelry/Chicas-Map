@@ -2,7 +2,7 @@
 <kml xmlns="http://www.opengis.net/kml/2.2">
   <Document>
     <name>YardBird San Antonio — Saturday 2026-08-08 Live</name>
-    <description>Project YardBird GSIN focused Discovery + Sentinel pass. Status: verified. Confidence: 0.72. Generated 2026-08-03. High-value estate layer for Saturday peak.</description>
+    <description>Project YardBird GSIN focused Discovery + Sentinel pass. Status: verified. Confidence: 0.82. Generated 2026-08-08. High-value estate layer for Saturday peak.</description>
     <Style id="estate">
       <IconStyle>
         <color>ff0000ff</color>
@@ -25,52 +25,40 @@
       </IconStyle>
     </Style>
     <Placemark>
-      <name>Beautiful Fair Oaks Ranch Estate Sale</name>
-      <description>Aug 6-8 • 10am-4pm • Complete Estate Sale Services • High confidence</description>
-      <styleUrl>#high-value</styleUrl>
-      <Point><coordinates>-98.6430,29.7450,0</coordinates></Point>
-    </Placemark>
-    <Placemark>
-      <name>CAMINO BANDERA ESTATE SALE — Alamo Ranch</name>
-      <description>Aug 6-8 • 10am-4pm • 78254 • Complete Estate Sale Services</description>
-      <styleUrl>#estate</styleUrl>
-      <Point><coordinates>-98.7450,29.4900,0</coordinates></Point>
-    </Placemark>
-    <Placemark>
       <name>Helotes — A STEP BACK IN TIME</name>
-      <description>Aug 7-9 • 9am-4pm • From Trash To Treasure • Helotes 78023</description>
+      <description>Aug 7-9 • 9am-4pm • From Trash To Treasure • Helotes 78023 • Rare items, sewing, electronics</description>
       <styleUrl>#high-value</styleUrl>
       <Point><coordinates>-98.6890,29.5650,0</coordinates></Point>
     </Placemark>
     <Placemark>
       <name>Redland Springs Moving Sale</name>
-      <description>Aug 6-8 • 9am-4pm • Antiques, vintage, collectibles • 78247</description>
+      <description>Aug 7-8 • 9am-4pm • Antiques, vintage, collectibles • 16522 Calico Creek 78247</description>
       <styleUrl>#estate</styleUrl>
       <Point><coordinates>-98.4200,29.5800,0</coordinates></Point>
     </Placemark>
     <Placemark>
-      <name>Alamo City Mercantale Warehouse</name>
-      <description>Aug 6-9 • 9am-4pm • Tools, Funko, comics, antiques • 3903 Eisenhauer 78218</description>
-      <styleUrl>#warehouse</styleUrl>
-      <Point><coordinates>-98.4000,29.5000,0</coordinates></Point>
-    </Placemark>
-    <Placemark>
       <name>Cadillac Dr Estate (Top Hat)</name>
-      <description>Aug 6-8 • 9am-3pm • 78248</description>
+      <description>Aug 7-8 • 9am-3pm • 14684 Cadillac Dr 78248</description>
       <styleUrl>#estate</styleUrl>
       <Point><coordinates>-98.5500,29.5800,0</coordinates></Point>
     </Placemark>
     <Placemark>
-      <name>BENT MOSS — Estate Solutions</name>
-      <description>Aug 6-8 • 9:30am-3pm • 78232 Stone Oak side</description>
-      <styleUrl>#estate</styleUrl>
-      <Point><coordinates>-98.4900,29.5900,0</coordinates></Point>
+      <name>Alamo City Mercantale Warehouse</name>
+      <description>Aug 7-9 • 9am-4pm • Tools, Funko, comics, antiques • 3903 Eisenhauer 78218</description>
+      <styleUrl>#warehouse</styleUrl>
+      <Point><coordinates>-98.4000,29.5000,0</coordinates></Point>
     </Placemark>
     <Placemark>
       <name>Holiday House — Garden Ridge</name>
-      <description>Aug 6-8 • 10am-4pm • Crystal's Estate Sales • Wild Wind gated</description>
+      <description>Aug 7-8 • 10am-4pm • Crystal's Estate Sales • 19835 Brandywine Cove</description>
       <styleUrl>#high-value</styleUrl>
       <Point><coordinates>-98.3000,29.6300,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Quaintly Windcrest</name>
+      <description>Aug 7+ • 8am start • Heritage Senior Downsizing • 78239</description>
+      <styleUrl>#estate</styleUrl>
+      <Point><coordinates>-98.3800,29.5500,0</coordinates></Point>
     </Placemark>
   </Document>
 </kml>
