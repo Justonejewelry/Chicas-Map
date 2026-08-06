@@ -17,11 +17,25 @@
       "photos": 0,
       "status": "verified",
       "geocode": "street",
-      "categories": ["furniture", "tools", "clothes", "electronics", "toys", "antiques", "collectibles", "other"],
+      "categories": [
+        "furniture",
+        "tools",
+        "clothes",
+        "electronics",
+        "toys",
+        "antiques",
+        "collectibles",
+        "other"
+      ],
       "submitted_at": "2026-08-05T16:55:13.633Z",
       "approved_at": "2026-08-06T02:30:00Z",
       "submitter_name": "Gloria Ortiz",
       "public_contact": false
     }
-  ]
+  ],
+  "permits": [],
+  "total_locations": 1,
+  "date": "2026-08-06",
+  "last_refresh": "2026-08-06T01:27:34-05:00",
+  "status": "live"
 }
