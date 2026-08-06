@@ -2,64 +2,68 @@
 
 Last updated: 2026-08-06
 
+## Policy
+
+**Default stack is free-only.** No paid external scrapers are required for map refresh.
+Apify remains an optional upgrade if you later add `APIFY_TOKEN`; it is skipped automatically when the secret is absent.
+
 ## Summary
-
-There is **no free public read API** for EstateSales.net listings. The site is a client-rendered Angular SPA. The old 2017 Vintage Software “Public API (Beta)” is effectively dead for third-party consumers. Company API keys still exist only for *authenticated estate-sale companies* to *publish* their own sales (Wavebid-style marketing integration).
-
-YardBird therefore uses three complementary paths:
 
 | Path | Script | Cost | Reliability | Notes |
 |------|--------|------|-------------|-------|
-| City of SA permits | `webapp/scripts/fetch_permits.py` | Free | High for location/date | Estate vs garage tagged by project-name / contact heuristics |
-| Lightweight HTTP | `webapp/scripts/fetch_estatesales.py` | Free | Low–medium | Probes internal endpoints + embedded JSON; often thin |
-| Apify actor | `webapp/scripts/fetch_estatesales_apify.py` | Paid (~$4/1k) | High | Requires `APIFY_TOKEN` secret |
+| City of SA permits | `webapp/scripts/fetch_permits.py` | Free | High for location/date | Estate vs garage tagged by project-name heuristics |
+| GarageSaleFinder | `webapp/scripts/discover_sales.py` | Free | Medium | Garage/yard + some estate |
+| **EstateSales.org** | `webapp/scripts/fetch_estatesales_org.py` | **Free** | **High** | Parses embedded sale JSON from HTML (address, lat/lon, hours) |
+| EstateSales.net lightweight | `webapp/scripts/fetch_estatesales.py` | Free | Low–medium | SPA-heavy; often thin |
+| Apify EstateSales.net | `webapp/scripts/fetch_estatesales_apify.py` | Optional paid | High | Only if `APIFY_TOKEN` secret is set |
 
-## 1. San Antonio permits (estate-tagged)
+## EstateSales.org (primary free estate layer)
+
+```bash
+python3 webapp/scripts/fetch_estatesales_org.py --city san-antonio
+python3 webapp/scripts/fetch_estatesales_org.py --cities san-antonio,austin --dry-run
+```
+
+How it works:
+
+1. Fetches `https://estatesales.org/estate-sales/tx/<city>` with a normal browser User-Agent.
+2. Parses embedded JSON sale objects in the HTML (id, title, address, lat/lon, company, in-person vs online, dateTimes).
+3. Merges into `webapp/data/cities/<slug>.json` `public[]` with `type: "estate"`, `source: "EstateSales.org"`, and `external_id: eso-<id>`.
+4. Prefer in-person sales for map pins (confidence ~0.9). Online auctions kept at lower confidence when geocoded.
+
+No API key. No Apify. No paid site.
+
+## San Antonio permits (estate-tagged)
 
 - Open Data: https://data.sanantonio.gov/dataset/building-permits
-- Estate sales inside city limits require the **same Garage Sale Permit**.
-- `fetch_permits.py` and `scripts/permit_extractor.py` now set:
-  - `type: "estate"` when PROJECT NAME / PRIMARY CONTACT match estate/liquidator language
-  - `categories: ["estate-sale", "permit"]`
-  - higher confidence (0.92–0.94)
-- Map legend can color estate pins purple independently of blue permit pins.
+- Same garage-sale permit covers estate events inside city limits.
+- `fetch_permits.py` sets `type: "estate"` when project/contact text matches estate/liquidator language.
 
-## 2. Lightweight EstateSales.net scraper
+## Lightweight EstateSales.net
 
 ```bash
 python3 webapp/scripts/fetch_estatesales.py --city san-antonio
-python3 webapp/scripts/fetch_estatesales.py --cities san-antonio,austin --dry-run
 ```
 
-Tries a few `/api/sales…` shapes and parses any SSR / ld+json blobs. Because the site is SPA-heavy, expect frequent zero-result runs. Merges into `webapp/data/cities/<slug>.json` `public[]` with `type: "estate"`.
+Probes internal endpoints + ld+json. Often returns zero because the site is a client SPA. Kept as a free secondary probe.
 
-## 3. Apify integration (recommended for production estate coverage)
+## Optional Apify (not required)
 
-1. Create an Apify account and generate a token.
-2. Add GitHub secret **`APIFY_TOKEN`** on `Justonejewelry/Project-YardBird`.
-3. Optional local test:
-   ```bash
-   export APIFY_TOKEN=apify_api_...
-   python3 webapp/scripts/fetch_estatesales_apify.py --city san-antonio --radius 30
-   ```
-4. Default actor: `scrapersdelight~estatesales-net-scraper`  
-   Override with `--actor` if you prefer another community actor.
+Only runs when GitHub secret `APIFY_TOKEN` is present. Safe to ignore forever for a free-only deployment.
 
-When the secret is absent the step exits 0 and the rest of map-refresh continues (GSF + permits + purge).
+## Map-refresh workflow order
 
-## Map-refresh workflow
+1. GarageSaleFinder
+2. SA permits (estate-tagged)
+3. **EstateSales.org free**
+4. EstateSales.net lightweight free
+5. Apify optional
+6. Purge expired
+7. Commit if dirty
 
-`.github/workflows/map-refresh.yml` now runs, in order:
+## Live example (2026-08-06 dry-run)
 
-1. GarageSaleFinder discover
-2. SA permits (with estate tagging)
-3. EstateSales.net lightweight
-4. EstateSales.net Apify (optional)
-5. Purge expired
-6. Commit if dirty
-
-## Future options
-
-- Partner inquiry to ATG / EstateSales.NET for a read feed (unlikely free).
-- Secondary scrape of EstateSales.org via a second Apify actor.
-- Probate / distressed open-data feeds for *predicted* future estate sales (not live inventory).
+- **Destination Commonwealth** — 4246 Roark Dr, San Antonio TX 78219  
+  Fri–Sat Aug 7–8, 10:00 am–3:00 pm  
+  Caring Transitions of San Antonio Central  
+  Source: EstateSales.org (free)

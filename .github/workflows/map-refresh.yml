@@ -55,6 +55,14 @@ jobs:
           set -e
           python3 webapp/scripts/fetch_permits.py --days "$DAYS" | tee permits.log
 
+      - name: EstateSales.org free discovery
+        env:
+          CITIES: ${{ github.event.inputs.cities || 'san-antonio,austin' }}
+        run: |
+          set -e
+          # Free HTML + embedded JSON — no API key, no paid service
+          python3 webapp/scripts/fetch_estatesales_org.py --cities "$CITIES" | tee estatesales-org.log || true
+
       - name: EstateSales.net lightweight discovery
         env:
           CITIES: ${{ github.event.inputs.cities || 'san-antonio,austin' }}
@@ -63,13 +71,13 @@ jobs:
           # Free HTTP path — often thin because site is SPA; still useful when SSR leaks data
           python3 webapp/scripts/fetch_estatesales.py --cities "$CITIES" | tee estatesales.log || true
 
-      - name: EstateSales.net via Apify (optional)
+      - name: EstateSales.net via Apify (optional — skipped without token)
         env:
           CITIES: ${{ github.event.inputs.cities || 'san-antonio,austin' }}
           APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
         run: |
           set -e
-          # Skips cleanly when APIFY_TOKEN secret is not configured
+          # Not required. Exits cleanly when APIFY_TOKEN is absent.
           python3 webapp/scripts/fetch_estatesales_apify.py --cities "$CITIES" | tee estatesales-apify.log || true
 
       - name: Purge expired listings
@@ -92,14 +100,14 @@ jobs:
           git config user.name "yardbird-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add webapp/data/cities/*.json
-          MSG="Map refresh $(date -u +%Y-%m-%dT%H:%MZ) — GSF + SA permits + estate + purge [skip ci]"
+          MSG="Map refresh $(date -u +%Y-%m-%dT%H:%MZ) — GSF + permits + ESO free + purge [skip ci]"
           git commit -m "$MSG" || exit 0
           git push
 
       - name: Summary
         run: |
           {
-            echo "### Map refresh (GSF + permits + estate + purge)"
+            echo "### Map refresh (free sources + optional Apify)"
             echo ""
             echo "- Trigger: ${{ github.event_name }}"
             echo "- Cities: ${{ github.event.inputs.cities || 'san-antonio,austin' }}"
@@ -114,11 +122,15 @@ jobs:
             echo '```'
             cat permits.log 2>/dev/null || echo "(no log)"
             echo '```'
-            echo "#### EstateSales.net (lightweight)"
+            echo "#### EstateSales.org (free)"
+            echo '```'
+            cat estatesales-org.log 2>/dev/null || echo "(no log)"
+            echo '```'
+            echo "#### EstateSales.net (lightweight free)"
             echo '```'
             cat estatesales.log 2>/dev/null || echo "(no log)"
             echo '```'
-            echo "#### EstateSales.net (Apify)"
+            echo "#### EstateSales.net (Apify optional)"
             echo '```'
             cat estatesales-apify.log 2>/dev/null || echo "(no log / no token)"
             echo '```'
