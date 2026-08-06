@@ -1,1 +1,165 @@
-/* placeholder -- will be full in next */
+/**
+ * Chica Design System — Aurora Voss
+ * Calm utility. One accent. Trust first.
+ * Primary accent #1a6b3c (forest). Supporting #c45c26 (warm clay).
+ */
+:root {
+  --v-bg: #f7f5f1;
+  --v-surface: #ffffff;
+  --v-ink: #14110f;
+  --v-muted: #7a736b;
+  --v-line: #e6e1d8;
+  --v-accent: #1a6b3c;
+  --v-accent-soft: #e8f5ee;
+  --v-warm: #c45c26;
+  --v-radius: 14px;
+  --v-font: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: var(--v-font);
+  background: var(--v-bg);
+  color: var(--v-ink);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--v-accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.v-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 20px;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--v-line);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.v-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: var(--v-ink);
+  text-decoration: none;
+}
+.v-brand img { border-radius: 50%; border: 2px solid #fff; box-shadow: 0 2px 8px rgba(26,107,60,0.2); }
+.v-links { display: flex; gap: 18px; font-weight: 600; font-size: 0.92rem; }
+.v-links a { color: var(--v-muted); text-decoration: none; }
+.v-links a:hover { color: var(--v-ink); }
+.v-nav-actions { display: flex; gap: 8px; align-items: center; }
+.v-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.88rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.15s ease;
+}
+.v-btn-primary { background: var(--v-accent); color: #fff; }
+.v-btn-primary:hover { background: #145530; text-decoration: none; }
+.v-btn-ghost { background: transparent; color: var(--v-ink); border-color: var(--v-line); }
+.v-btn-ghost:hover { background: var(--v-surface); text-decoration: none; }
+.v-btn-sm { padding: 6px 12px; font-size: 0.8rem; }
+
+.v-hero {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 48px 20px 32px;
+}
+.v-hero-card {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 32px;
+  align-items: center;
+  background: var(--v-surface);
+  border: 1px solid var(--v-line);
+  border-radius: 24px;
+  padding: 36px;
+  box-shadow: 0 20px 50px rgba(20,17,15,0.06);
+}
+.v-eyebrow {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--v-accent);
+  margin-bottom: 10px;
+}
+.v-hero h1 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 1.15;
+  margin: 0 0 14px;
+  letter-spacing: -0.02em;
+}
+.v-hero h1 span { color: var(--v-accent); }
+.v-hero p {
+  color: var(--v-muted);
+  font-size: 1.05rem;
+  margin: 0 0 22px;
+  max-width: 42ch;
+}
+.v-hero-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.v-hero-visual {
+  border-radius: 18px;
+  overflow: hidden;
+  background: var(--v-accent-soft);
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.v-hero-visual img { max-width: 100%; height: auto; display: block; }
+
+.v-features {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 12px 20px 48px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+.v-card {
+  background: var(--v-surface);
+  border: 1px solid var(--v-line);
+  border-radius: var(--v-radius);
+  padding: 18px;
+}
+.v-card h3 { margin: 0 0 6px; font-size: 1rem; }
+.v-card p { margin: 0; color: var(--v-muted); font-size: 0.9rem; }
+
+.v-footer {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 20px 40px;
+  color: var(--v-muted);
+  font-size: 0.85rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--v-line);
+}
+
+@media (max-width: 900px) {
+  .v-hero-card { grid-template-columns: 1fr; padding: 24px; }
+  .v-features { grid-template-columns: 1fr 1fr; }
+  .v-links { display: none; }
+}
+@media (max-width: 560px) {
+  .v-features { grid-template-columns: 1fr; }
+  .v-nav { padding: 10px 14px; }
+}
