@@ -1,44 +1,5 @@
 {
-  "clusters": [
-    {
-      "cluster_id": "sa-cluster-001",
-      "name": "South Side",
-      "badge": "CLUSTER-HOT",
-      "size": 30,
-      "lat": 29.2975,
-      "lon": -98.481,
-      "members": [
-        {"address": "12719 LORENA OCHOA, San Antonio, TX", "title": "Garage sale — 12719 LORENA OCHOA", "lat": 29.29335, "lon": -98.473718, "dates": "2026-07-24", "type": "permit", "confidence": 0.98, "source": "City of SA permits", "details": "Permit CLUSTER-HOT", "cluster_id": "sa-cluster-001", "photos": 0},
-        {"address": "11910 CHIPPER LANDING, San Antonio, TX", "title": "Garage sale — 11910 CHIPPER LANDING", "lat": 29.295, "lon": -98.48, "dates": "2026-07-24", "type": "permit", "confidence": 0.95, "source": "City of SA permits", "details": "Permit", "cluster_id": "sa-cluster-001", "photos": 0},
-        {"address": "707 PELICAN LANDING, San Antonio, TX", "title": "Garage sale — 707 PELICAN LANDING", "lat": 29.29, "lon": -98.47, "dates": "2026-07-24", "type": "permit", "confidence": 0.95, "source": "City of SA permits", "details": "Permit", "cluster_id": "sa-cluster-001", "photos": 0},
-        {"address": "1130 TWO WOOD WAY, San Antonio, TX", "title": "Garage sale — 1130 TWO WOOD WAY", "lat": 29.3, "lon": -98.485, "dates": "2026-07-24", "type": "permit", "confidence": 0.94, "source": "City of SA permits", "details": "Permit", "cluster_id": "sa-cluster-001", "photos": 0},
-        {"address": "12715 LORENA OCHOA, San Antonio, TX", "title": "Garage sale — 12715 LORENA OCHOA", "lat": 29.293, "lon": -98.474, "dates": "2026-07-24", "type": "permit", "confidence": 0.94, "source": "City of SA permits", "details": "Permit", "cluster_id": "sa-cluster-001", "photos": 0},
-        {"address": "11627 TIGER WOODS, San Antonio, TX", "title": "Garage sale — 11627 TIGER WOODS", "lat": 29.288, "lon": -98.478, "dates": "2026-07-24", "type": "permit", "confidence": 0.94, "source": "City of SA permits", "details": "Permit", "cluster_id": "sa-cluster-001", "photos": 0},
-        {"address": "11222 FOUR IRON WAY, San Antonio, TX", "title": "Garage sale — 11222 FOUR IRON WAY", "lat": 29.285, "lon": -98.475, "dates": "2026-07-24", "type": "permit", "confidence": 0.93, "source": "City of SA permits", "details": "Permit", "cluster_id": "sa-cluster-001", "photos": 0},
-        {"address": "12826 LORENA OCHOA, San Antonio, TX", "title": "Garage sale — 12826 LORENA OCHOA", "lat": 29.294, "lon": -98.473, "dates": "2026-07-24", "type": "permit", "confidence": 0.93, "source": "City of SA permits", "details": "Permit", "cluster_id": "sa-cluster-001", "photos": 0},
-        {"address": "12123 CHI CHIS COVE, San Antonio, TX", "title": "Garage sale — 12123 CHI CHIS COVE", "lat": 29.298, "lon": -98.477, "dates": "2026-07-24", "type": "permit", "confidence": 0.93, "source": "City of SA permits", "details": "Permit", "cluster_id": "sa-cluster-001", "photos": 0},
-        {"address": "847 COOK BEND, San Antonio, TX", "title": "Garage sale — 847 COOK BEND", "lat": 29.286, "lon": -98.469, "dates": "2026-07-24", "type": "permit", "confidence": 0.92, "source": "City of SA permits", "details": "Permit", "cluster_id": "sa-cluster-001", "photos": 0},
-        {"address": "11514 PLOVER PLACE, San Antonio, TX", "title": "Garage sale — 11514 PLOVER PLACE", "lat": 29.289, "lon": -98.481, "dates": "2026-07-24", "type": "permit", "confidence": 0.92, "source": "City of SA permits", "details": "Permit", "cluster_id": "sa-cluster-001", "photos": 0},
-        {"address": "11835 PLOVER PLACE, San Antonio, TX", "title": "Garage sale — 11835 PLOVER PLACE", "lat": 29.291, "lon": -98.482, "dates": "2026-07-24", "type": "permit", "confidence": 0.92, "source": "City of SA permits", "details": "Permit", "cluster_id": "sa-cluster-001", "photos": 0},
-        {"address": "1327 MISSION GRANDE, San Antonio, TX", "title": "Garage sale — 1327 MISSION GRANDE", "lat": 29.302, "lon": -98.49, "dates": "2026-07-24", "type": "permit", "confidence": 0.91, "source": "City of SA permits", "details": "Permit", "cluster_id": "sa-cluster-001", "photos": 0},
-        {"address": "1311 ART WALL WAY, San Antonio, TX", "title": "Garage sale — 1311 ART WALL WAY", "lat": 29.301, "lon": -98.488, "dates": "2026-07-24", "type": "permit", "confidence": 0.91, "source": "City of SA permits", "details": "Permit", "cluster_id": "sa-cluster-001", "photos": 0},
-        {"address": "1239 JORDAN CROSSING, San Antonio, TX", "title": "Garage sale — 1239 JORDAN CROSSING", "lat": 29.299, "lon": -98.486, "dates": "2026-07-24", "type": "permit", "confidence": 0.91, "source": "City of SA permits", "details": "Permit", "cluster_id": "sa-cluster-001", "photos": 0},
-        {"address": "12131 JIMMER, San Antonio, TX", "title": "Garage sale — 12131 JIMMER", "lat": 29.297, "lon": -98.484, "dates": "2026-07-24", "type": "permit", "confidence": 0.9, "source": "City of SA permits", "details": "Permit", "cluster_id": "sa-cluster-001", "photos": 0},
-        {"address": "12634 COURSE VIEW DR, San Antonio, TX", "title": "Garage sale — 12634 COURSE VIEW DR", "lat": 29.292, "lon": -98.472, "dates": "2026-07-24", "type": "permit", "confidence": 0.9, "source": "City of SA permits", "details": "Permit", "cluster_id": "sa-cluster-001", "photos": 0},
-        {"address": "12538 COURSE VIEW DR, San Antonio, TX", "title": "Garage sale — 12538 COURSE VIEW DR", "lat": 29.2915, "lon": -98.4715, "dates": "2026-07-24", "type": "permit", "confidence": 0.9, "source": "City of SA permits", "details": "Permit", "cluster_id": "sa-cluster-001", "photos": 0},
-        {"address": "718 PELICAN LANDING, San Antonio, TX", "title": "Garage sale — 718 PELICAN LANDING", "lat": 29.2905, "lon": -98.4705, "dates": "2026-07-24", "type": "permit", "confidence": 0.9, "source": "City of SA permits", "details": "Permit", "cluster_id": "sa-cluster-001", "photos": 0},
-        {"address": "11323 TIGER WOODS, San Antonio, TX", "title": "Garage sale — 11323 TIGER WOODS", "lat": 29.2865, "lon": -98.4765, "dates": "2026-07-24", "type": "permit", "confidence": 0.89, "source": "City of SA permits", "details": "Permit", "cluster_id": "sa-cluster-001", "photos": 0},
-        {"address": "1235 JORDAN CROSSING, San Antonio, TX", "title": "Garage sale — 1235 JORDAN CROSSING", "lat": 29.2985, "lon": -98.4855, "dates": "2026-07-24", "type": "permit", "confidence": 0.89, "source": "City of SA permits", "details": "Permit", "cluster_id": "sa-cluster-001", "photos": 0},
-        {"address": "12606 NINE IRON WAY, San Antonio, TX", "title": "Garage sale — 12606 NINE IRON WAY", "lat": 29.2925, "lon": -98.4745, "dates": "2026-07-24", "type": "permit", "confidence": 0.89, "source": "City of SA permits", "details": "Permit", "cluster_id": "sa-cluster-001", "photos": 0},
-        {"address": "13319 DUTRA RD, San Antonio, TX", "title": "Garage sale — 13319 DUTRA RD", "lat": 29.305, "lon": -98.492, "dates": "2026-07-24", "type": "permit", "confidence": 0.88, "source": "City of SA permits", "details": "Permit", "cluster_id": "sa-cluster-001", "photos": 0},
-        {"address": "1014 STADLER BEND, San Antonio, TX", "title": "Garage sale — 1014 STADLER BEND", "lat": 29.284, "lon": -98.468, "dates": "2026-07-24", "type": "permit", "confidence": 0.88, "source": "City of SA permits", "details": "Permit", "cluster_id": "sa-cluster-001", "photos": 0},
-        {"address": "731 PELICAN POINT, San Antonio, TX", "title": "Garage sale — 731 PELICAN POINT", "lat": 29.2895, "lon": -98.4695, "dates": "2026-07-24", "type": "permit", "confidence": 0.88, "source": "City of SA permits", "details": "Permit", "cluster_id": "sa-cluster-001", "photos": 0},
-        {"address": "946 HAGEN WAY, San Antonio, TX", "title": "Garage sale — 946 HAGEN WAY", "lat": 29.283, "lon": -98.467, "dates": "2026-07-24", "type": "permit", "confidence": 0.87, "source": "City of SA permits", "details": "Permit", "cluster_id": "sa-cluster-001", "photos": 0},
-        {"address": "11531 TIGER WOODS, San Antonio, TX", "title": "Garage sale — 11531 TIGER WOODS", "lat": 29.2875, "lon": -98.4775, "dates": "2026-07-24", "type": "permit", "confidence": 0.87, "source": "City of SA permits", "details": "Permit", "cluster_id": "sa-cluster-001", "photos": 0},
-        {"address": "1011 MAGRUM WAY, San Antonio, TX", "title": "Garage sale — 1011 MAGRUM WAY", "lat": 29.282, "lon": -98.466, "dates": "2026-07-24", "type": "permit", "confidence": 0.87, "source": "City of SA permits", "details": "Permit", "cluster_id": "sa-cluster-001", "photos": 0},
-        {"address": "1030 SNEDEKER DR, San Antonio, TX", "title": "Garage sale — 1030 SNEDEKER DR", "lat": 29.281, "lon": -98.465, "dates": "2026-07-24", "type": "permit", "confidence": 0.86, "source": "City of SA permits", "details": "Permit", "cluster_id": "sa-cluster-001", "photos": 0},
-        {"address": "12067 PEWEE, San Antonio, TX", "title": "Garage sale — 12067 PEWEE", "lat": 29.2965, "lon": -98.4805, "dates": "2026-07-24", "type": "permit", "confidence": 0.86, "source": "City of SA permits", "details": "Permit", "cluster_id": "sa-cluster-001", "photos": 0}
-      ]
-    }
-  ]
+  "clusters": [],
+  "notes": "July 24 2026 permit cluster fully expired and removed 2026-08-06. New weekend clusters will be rebuilt by neighborhood-event-clustering after Friday discovery pass.",
+  "purged_at": "2026-08-06T09:05:00-05:00"
 }
