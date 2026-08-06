@@ -6,15 +6,19 @@ Run from repo root or webapp/:
 
 Keeps a sale if its end date is on or after today (America/Chicago).
 Updates date, last_refresh, total_locations. Exits 0 always; prints summary.
+
+Uses city_io middleware so a PLACEHOLDER or corrupt file never crashes the job.
 """
 from __future__ import annotations
 
-import json
 import re
 import sys
-from datetime import date, datetime, timezone
+from datetime import date, datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
+
+# Shared error-handling middleware
+from city_io import CITY_DIR, safe_load_city, safe_write_city
 
 CT = ZoneInfo("America/Chicago")
 MONTHS = {
@@ -44,9 +48,6 @@ for i, m in enumerate(
     0,
 ):
     MONTHS[m] = i
-
-ROOT = Path(__file__).resolve().parents[1]  # webapp/
-CITY_DIR = ROOT / "data" / "cities"
 
 
 def today_ct() -> date:
@@ -130,7 +131,9 @@ def is_active(sale: dict, today: date, year: int) -> bool:
 
 
 def process_city(path: Path, today: date) -> tuple[int, int]:
-    raw = json.loads(path.read_text(encoding="utf-8"))
+    """Purge expired listings using the shared safe loader/writer."""
+    slug = path.stem
+    raw = safe_load_city(slug)  # never raises on PLACEHOLDER / corrupt JSON
     year = today.year
     before = len(raw.get("public") or []) + len(raw.get("permits") or [])
 
@@ -144,7 +147,7 @@ def process_city(path: Path, today: date) -> tuple[int, int]:
     raw["last_refresh"] = datetime.now(CT).isoformat(timespec="seconds")
     raw["status"] = "live"
 
-    path.write_text(json.dumps(raw, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    safe_write_city(slug, raw)
     after = len(public) + len(permits)
     removed = before - after
     return removed, after
@@ -159,12 +162,13 @@ def main() -> int:
     total_removed = 0
     total_kept = 0
     for path in sorted(CITY_DIR.glob("*.json")):
-        if path.name.endswith("-clusters.json"):
+        if path.name.endswith("-clusters.json") or path.name.endswith("-user.json"):
             continue
         try:
             removed, kept = process_city(path, today)
         except Exception as e:
-            print(f"skip {path.name}: {e}", file=sys.stderr)
+            # Final safety net — never let one city kill the whole purge pass
+            print(f"skip {path.name}: {type(e).__name__}: {e}", file=sys.stderr)
             continue
         total_removed += removed
         total_kept += kept
