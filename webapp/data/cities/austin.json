@@ -3,7 +3,7 @@
   "date": "2026-08-06",
   "city": "austin",
   "generated_at": "2026-08-05T18:20:56-05:00",
-  "total_locations": 10,
+  "total_locations": 13,
   "sources": [
     "GarageSaleFinder",
     "estatesales.net",
@@ -203,6 +203,60 @@
       "lat": 30.08,
       "lon": -97.84,
       "geocode": "zip-centroid"
+    },
+    {
+      "address": "8313 Siringo Pass, Austin, TX 78749",
+      "dates": "Sat Aug 8 – Sat Aug 8",
+      "date_from": "08/08/2026",
+      "date_to": "08/08/2026",
+      "end_date": "2026-08-08",
+      "title": "MULTIPLE FAMILIES GARAGE SALE",
+      "details": "",
+      "source": "GarageSaleFinder",
+      "url": "https://garagesalefinder.com/s/N95ku/8313-siringo-pass-austin-tx-78749",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.85,
+      "status": "verified",
+      "lat": 30.21,
+      "lon": -97.86,
+      "geocode": "zip-centroid"
+    },
+    {
+      "address": "13800 Farm To Market Rd 1826, Austin, TX 78737",
+      "dates": "Sat Aug 8 – Sat Aug 8",
+      "date_from": "08/08/2026",
+      "date_to": "08/08/2026",
+      "end_date": "2026-08-08",
+      "title": "Estate Sale",
+      "details": "",
+      "source": "GarageSaleFinder",
+      "url": "https://garagesalefinder.com/s/N95HY/13800-farm-to-market-rd-1826-austin-tx-78737",
+      "photos": 0,
+      "type": "estate",
+      "confidence": 0.85,
+      "status": "verified",
+      "lat": 30.2,
+      "lon": -97.95,
+      "geocode": "zip-centroid"
+    },
+    {
+      "address": "311 Wildhorse Creek, Buda, TX 78610",
+      "dates": "Fri Aug 7 – Sun Aug 9",
+      "date_from": "08/07/2026",
+      "date_to": "08/09/2026",
+      "end_date": "2026-08-09",
+      "title": "BUDA-FUL Downsizing Sale",
+      "details": "",
+      "source": "GarageSaleFinder",
+      "url": "https://garagesalefinder.com/s/N9faa/311-wildhorse-creek-buda-tx-78610",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.85,
+      "status": "verified",
+      "lat": 30.08,
+      "lon": -97.84,
+      "geocode": "zip-centroid"
     }
   ],
   "permits": [],
@@ -234,5 +288,5 @@
     }
   ],
   "status": "live",
-  "last_refresh": "2026-08-06T05:35:29-05:00"
+  "last_refresh": "2026-08-06T09:00:27-05:00"
 }
