@@ -12,8 +12,15 @@
     bright: "https://tiles.openfreemap.org/styles/bright",
     dark: "https://tiles.openfreemap.org/styles/dark",
   };
+  const PIN_COLORS = {
+    garage: "#22c55e",
+    estate: "#a855f7",
+    fundraiser: "#f59e0b",
+    permit: "#38bdf8",
+    top: "#c45c26",
+  };
 
-  let map, markers = [], userMarker = null;
+  let map, userMarker = null;
   let feed = null;
   let city = localStorage.getItem("yb_city") || "san-antonio";
   let engine = localStorage.getItem("yb_map") || "liberty";
@@ -26,8 +33,10 @@
   let first30Only = false;
   let dnaHeatOn = localStorage.getItem("yb_dna_heat") === "1";
   let wishlistOnly = false;
-  let sponsorMarkers = [];
-  let cameoMarker = null;
+  let _salesCache = null;
+  let _salesCacheKey = "";
+  let _refreshTimer = null;
+  let _pinSourceReady = false;
 
   const METRICS_KEY = "yb_hard_metrics";
   let metrics = loadJson(METRICS_KEY, { clicks: 0, saves: 0, route_opens: 0, active_days: {}, first_seen: null });
@@ -37,6 +46,26 @@
   }
   function saveJson(key, val) {
     try { localStorage.setItem(key, JSON.stringify(val)); } catch (_) {}
+  }
+
+  /** Close rail + FABs so the map fills the screen again (mobile + desktop). */
+  function returnToMap() {
+    const rail = document.getElementById("sideRail");
+    const backdrop = document.getElementById("railBackdrop");
+    if (rail) rail.classList.remove("open");
+    if (backdrop) {
+      backdrop.classList.remove("open");
+      backdrop.hidden = true;
+    }
+    document.getElementById("dockList")?.classList.remove("active");
+    document.getElementById("popNear")?.classList.remove("open");
+    document.getElementById("popSearch")?.classList.remove("open");
+    document.getElementById("fabNear")?.classList.remove("active");
+    document.getElementById("fabSearch")?.classList.remove("active");
+    // Let layout settle then tell MapLibre the container size changed
+    requestAnimationFrame(() => {
+      try { map && map.resize(); } catch (_) {}
+    });
   }
 
   function trackMetric(kind) {
@@ -132,18 +161,29 @@
       total_locations: raw.total_locations || 0,
     };
   }
+
+  function invalidateSalesCache() {
+    _salesCache = null;
+    _salesCacheKey = "";
+  }
+
   function allSales() {
     if (!feed) return [];
+    const key = `${city}|${userLoc ? userLoc.lat + "," + userLoc.lon : "noloc"}|${(feed.public || []).length}|${(feed.permits || []).length}`;
+    if (_salesCache && _salesCacheKey === key) return _salesCache;
     const base = [...(feed.public || []), ...(feed.permits || [])];
-    return base.map((s) => {
+    const hz = feed.hot_zones || [];
+    const out = base.map((s) => {
       const copy = { ...s, _key: saleKey(s) };
       if (userLoc && s.lat != null && s.lon != null) copy._miles = milesBetween(userLoc.lat, userLoc.lon, s.lat, s.lon);
-      if (window.ChicaFeatures) {
-        copy._sniff = ChicaFeatures.sniffScore(s, feed.hot_zones || []);
-      }
+      if (window.ChicaFeatures) copy._sniff = ChicaFeatures.sniffScore(s, hz);
       return copy;
     });
+    _salesCache = out;
+    _salesCacheKey = key;
+    return out;
   }
+
   function filtered() {
     let list = allSales();
     if (filter && filter !== "all") {
@@ -264,6 +304,13 @@
         <button type="button" class="action-btn" id="btnShareSale">↗ Share</button>
       </div>`;
     drawer.classList.remove("hidden");
+    // On mobile, open rail so detail is visible; user can close to return to map
+    if (window.matchMedia("(max-width: 900px)").matches) {
+      document.getElementById("sideRail")?.classList.add("open");
+      const bd = document.getElementById("railBackdrop");
+      if (bd) { bd.hidden = false; bd.classList.add("open"); }
+      document.getElementById("dockList")?.classList.add("active");
+    }
     document.getElementById("btnFav")?.addEventListener("click", () => { toggleFavorite(s); showDetail({ ...s, _key: k }); });
     document.getElementById("btnAddRoute")?.addEventListener("click", () => { toggleRouteStop(s); showDetail({ ...s, _key: k }); });
     document.getElementById("btnShareSale")?.addEventListener("click", async () => {
@@ -316,24 +363,114 @@
       });
     });
   }
-  function clearMarkers() {
-    markers.forEach((m) => m.remove());
-    markers = [];
-    if (cameoMarker) { cameoMarker.remove(); cameoMarker = null; }
+
+  /** Fast path: one GeoJSON source + circle layer instead of 170 DOM markers. */
+  function ensurePinLayers() {
+    if (!map || _pinSourceReady) return;
+    if (!map.getSource) return;
+    try {
+      if (!map.getSource("yb-pins")) {
+        map.addSource("yb-pins", {
+          type: "geojson",
+          data: { type: "FeatureCollection", features: [] },
+          cluster: true,
+          clusterMaxZoom: 13,
+          clusterRadius: 42,
+        });
+        map.addLayer({
+          id: "yb-clusters",
+          type: "circle",
+          source: "yb-pins",
+          filter: ["has", "point_count"],
+          paint: {
+            "circle-color": "#1a6b3c",
+            "circle-radius": ["step", ["get", "point_count"], 16, 8, 20, 25, 26],
+            "circle-opacity": 0.88,
+            "circle-stroke-width": 2,
+            "circle-stroke-color": "#fff",
+          },
+        });
+        map.addLayer({
+          id: "yb-cluster-count",
+          type: "symbol",
+          source: "yb-pins",
+          filter: ["has", "point_count"],
+          layout: {
+            "text-field": "{point_count_abbreviated}",
+            "text-size": 12,
+            "text-font": ["Open Sans Bold", "Arial Unicode MS Bold"],
+          },
+          paint: { "text-color": "#ffffff" },
+        });
+        map.addLayer({
+          id: "yb-unclustered",
+          type: "circle",
+          source: "yb-pins",
+          filter: ["!", ["has", "point_count"]],
+          paint: {
+            "circle-color": [
+              "match",
+              ["get", "kind"],
+              "estate", PIN_COLORS.estate,
+              "permit", PIN_COLORS.permit,
+              "fundraiser", PIN_COLORS.fundraiser,
+              "top", PIN_COLORS.top,
+              PIN_COLORS.garage,
+            ],
+            "circle-radius": ["case", ["==", ["get", "kind"], "top"], 9, 7],
+            "circle-stroke-width": 2,
+            "circle-stroke-color": "#ffffff",
+            "circle-opacity": 0.95,
+          },
+        });
+
+        map.on("click", "yb-clusters", (e) => {
+          const features = map.queryRenderedFeatures(e.point, { layers: ["yb-clusters"] });
+          const clusterId = features[0]?.properties?.cluster_id;
+          const src = map.getSource("yb-pins");
+          if (!src || clusterId == null) return;
+          src.getClusterExpansionZoom(clusterId, (err, zoom) => {
+            if (err) return;
+            map.easeTo({ center: features[0].geometry.coordinates, zoom: Math.min(zoom, 15) });
+          });
+        });
+        map.on("click", "yb-unclustered", (e) => {
+          const f = e.features && e.features[0];
+          if (!f) return;
+          const key = f.properties && f.properties.key;
+          const s = allSales().find((x) => x._key === key);
+          if (s) showDetail(s);
+        });
+        map.on("mouseenter", "yb-clusters", () => { map.getCanvas().style.cursor = "pointer"; });
+        map.on("mouseleave", "yb-clusters", () => { map.getCanvas().style.cursor = ""; });
+        map.on("mouseenter", "yb-unclustered", () => { map.getCanvas().style.cursor = "pointer"; });
+        map.on("mouseleave", "yb-unclustered", () => { map.getCanvas().style.cursor = ""; });
+      }
+      _pinSourceReady = true;
+    } catch (err) {
+      console.warn("pin layers", err);
+    }
   }
+
   function renderMarkers() {
-    clearMarkers();
     if (!map) return;
+    ensurePinLayers();
     const items = filtered();
-    items.forEach((s) => {
-      if (s.lat == null || s.lon == null) return;
-      const el = document.createElement("div");
-      el.className = "yb-marker " + (s.type || "garage");
-      if (s.confidence >= 0.9 || favorites[s._key] || (s._sniff && s._sniff >= 5)) el.classList.add("top");
-      el.addEventListener("click", () => showDetail(s));
-      const m = new maplibregl.Marker({ element: el }).setLngLat([s.lon, s.lat]).addTo(map);
-      markers.push(m);
-    });
+    const features = [];
+    for (let i = 0; i < items.length; i++) {
+      const s = items[i];
+      if (s.lat == null || s.lon == null) continue;
+      let kind = (s.type || "garage").toLowerCase();
+      if (s.confidence >= 0.9 || favorites[s._key] || (s._sniff && s._sniff >= 5)) kind = "top";
+      features.push({
+        type: "Feature",
+        properties: { key: s._key, kind, title: s.title || "Sale" },
+        geometry: { type: "Point", coordinates: [s.lon, s.lat] },
+      });
+    }
+    const src = map.getSource("yb-pins");
+    if (src) src.setData({ type: "FeatureCollection", features });
+
     if (window.ChicaFeatures && dnaHeatOn) {
       const geo = ChicaFeatures.heatFeatures(items, feed?.hot_zones || []);
       ChicaFeatures.ensureHeatLayer(map, geo);
@@ -341,6 +478,7 @@
       ChicaFeatures.removeHeatLayer(map);
     }
   }
+
   function renderForecast() {
     const hz = document.getElementById("hotZones");
     const qa = document.getElementById("quickAreas");
@@ -351,20 +489,15 @@
     qa?.querySelectorAll("[data-jump]").forEach((btn) => {
       btn.addEventListener("click", () => {
         const [lat, lon] = btn.dataset.jump.split(",").map(Number);
-        if (map && !isNaN(lat)) map.flyTo({ center: [lon, lat], zoom: 12 });
+        if (map && !isNaN(lat)) {
+          map.flyTo({ center: [lon, lat], zoom: 12 });
+          returnToMap();
+        }
       });
     });
   }
+
   function refresh() {
-    if (city === "texas") {
-      renderList();
-      renderMarkers();
-      renderForecast();
-      renderRouteTray();
-      updateToolCounts();
-      renderHardMetrics();
-      return;
-    }
     renderList();
     renderMarkers();
     renderForecast();
@@ -372,16 +505,25 @@
     updateToolCounts();
     renderHardMetrics();
   }
+
+  function scheduleRefresh() {
+    clearTimeout(_refreshTimer);
+    _refreshTimer = setTimeout(refresh, 40);
+  }
+
   async function loadCity(slug) {
     city = slug;
     localStorage.setItem("yb_city", city);
     showFavOnly = false;
+    invalidateSalesCache();
+    _pinSourceReady = false;
     if (city === "texas") {
       map.flyTo({ center: TEXAS.center, zoom: TEXAS.zoom });
       feed = normalizeFeed({ public: [], permits: [], total_locations: 5, last_refresh: new Date().toISOString() });
       document.getElementById("editionMeta").innerHTML = "<strong>Texas</strong><br/>overview";
       renderHardMetrics();
       refresh();
+      returnToMap();
       return;
     }
     const meta = CITY_META[city] || CITY_META["san-antonio"];
@@ -398,6 +540,7 @@
       try { raw = await (await fetch("data/feed.json")).json(); } catch (_) {}
     }
     feed = normalizeFeed(raw || {});
+    invalidateSalesCache();
     if (!(feed.clusters || []).length) {
       try {
         const cr = await fetch(`data/cities/${city}-clusters.json`);
@@ -413,14 +556,23 @@
     const fs = document.getElementById("footerSources");
     if (fs) { fs.textContent = short + " · Chica"; fs.title = (feed.sources || []).join(" · ") || short; }
     renderHardMetrics();
-    setTimeout(refresh, 80);
+    // Re-add pin layers after style is ready
+    if (map.isStyleLoaded()) {
+      _pinSourceReady = false;
+      scheduleRefresh();
+    } else {
+      map.once("idle", () => { _pinSourceReady = false; scheduleRefresh(); });
+    }
+    returnToMap();
   }
+
   function wireNearMe() {
     document.getElementById("btnNearMe")?.addEventListener("click", () => {
       if (!navigator.geolocation) { toast("Geolocation unavailable"); return; }
       navigator.geolocation.getCurrentPosition(
         (pos) => {
           userLoc = { lat: pos.coords.latitude, lon: pos.coords.longitude };
+          invalidateSalesCache();
           if (userMarker) userMarker.remove();
           const el = document.createElement("div");
           el.className = "yb-user-dot";
@@ -428,6 +580,7 @@
           map.flyTo({ center: [userLoc.lon, userLoc.lat], zoom: 12 });
           toast("Located — sorting by distance");
           refresh();
+          returnToMap();
         },
         () => toast("Location permission denied"),
         { enableHighAccuracy: true, timeout: 10000 }
@@ -436,6 +589,14 @@
     document.getElementById("radiusSelect")?.addEventListener("change", (e) => {
       maxMiles = Number(e.target.value) || 10;
       refresh();
+      returnToMap();
+    });
+    document.getElementById("radiusSelectFab")?.addEventListener("change", (e) => {
+      maxMiles = Number(e.target.value) || 10;
+      const r = document.getElementById("radiusSelect");
+      if (r) r.value = e.target.value;
+      refresh();
+      returnToMap();
     });
     document.getElementById("btnLocSearch")?.addEventListener("click", async () => {
       const q = (document.getElementById("locInput")?.value || "").trim();
@@ -445,13 +606,20 @@
         const data = await r.json();
         if (data[0]) {
           userLoc = { lat: +data[0].lat, lon: +data[0].lon };
+          invalidateSalesCache();
           map.flyTo({ center: [userLoc.lon, userLoc.lat], zoom: 12 });
           toast("Centered on " + q);
           refresh();
+          returnToMap();
         } else toast("Not found");
       } catch (_) { toast("Search failed"); }
     });
+    // Enter key on location input
+    document.getElementById("locInput")?.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") document.getElementById("btnLocSearch")?.click();
+    });
   }
+
   function wireTools() {
     document.getElementById("btnFavorites")?.addEventListener("click", () => {
       showFavOnly = !showFavOnly;
@@ -505,6 +673,7 @@
       refresh();
     });
   }
+
   async function boot() {
     trackMetric("session");
     const start = CITY_META[city] || TEXAS;
@@ -514,44 +683,71 @@
       center: userLoc ? [userLoc.lon, userLoc.lat] : start.center,
       zoom: start.zoom || 11,
       attributionControl: true,
+      // Performance: fewer animations / lower GPU load on mobile
+      fadeDuration: 0,
+      maxPitch: 0,
+      dragRotate: false,
+      pitchWithRotate: false,
     });
-    map.addControl(new maplibregl.NavigationControl({ visualizePitch: false }), "top-right");
-    map.addControl(new maplibregl.ScaleControl({ maxWidth: 120 }), "bottom-left");
+    map.addControl(new maplibregl.NavigationControl({ visualizePitch: false, showCompass: false }), "top-right");
+    map.addControl(new maplibregl.ScaleControl({ maxWidth: 100 }), "bottom-left");
+
+    // Expose returnToMap for the inline map.html script
+    window.__YB_returnToMap = returnToMap;
+
     const sel = document.getElementById("citySelect");
     if (sel) {
       sel.value = city;
-      sel.addEventListener("change", (e) => loadCity(e.target.value));
+      sel.addEventListener("change", (e) => {
+        loadCity(e.target.value);
+      });
     }
     document.getElementById("mapEngine")?.addEventListener("change", (e) => {
       engine = e.target.value;
       localStorage.setItem("yb_map", engine);
+      _pinSourceReady = false;
       map.setStyle(STYLES[engine] || STYLES.liberty);
-      map.once("styledata", () => setTimeout(refresh, 120));
+      map.once("idle", () => {
+        _pinSourceReady = false;
+        scheduleRefresh();
+      });
     });
     document.querySelectorAll(".chip").forEach((btn) => {
       btn.addEventListener("click", () => {
         document.querySelectorAll(".chip").forEach((b) => b.classList.remove("active"));
         btn.classList.add("active");
         filter = btn.dataset.filter;
-        if (city !== "texas") { renderList(); renderMarkers(); }
+        scheduleRefresh();
+        returnToMap();
       });
     });
-    document.getElementById("detailClose")?.addEventListener("click", hideDetail);
+    document.getElementById("detailClose")?.addEventListener("click", () => {
+      hideDetail();
+      returnToMap();
+    });
     document.getElementById("scopeNear")?.addEventListener("click", () => {
       document.getElementById("scopeNear")?.classList.add("active");
       document.getElementById("scopeCity")?.classList.remove("active");
       maxMiles = Number(document.getElementById("radiusSelect")?.value) || 10;
       refresh();
+      returnToMap();
     });
     document.getElementById("scopeCity")?.addEventListener("click", () => {
       document.getElementById("scopeCity")?.classList.add("active");
       document.getElementById("scopeNear")?.classList.remove("active");
       maxMiles = 0;
       refresh();
+      returnToMap();
     });
     wireNearMe();
     wireTools();
     updateToolCounts();
+
+    // Resize when orientation / viewport changes
+    window.addEventListener("resize", () => {
+      try { map.resize(); } catch (_) {}
+    }, { passive: true });
+
     map.on("load", () => loadCity(city));
   }
   boot();
