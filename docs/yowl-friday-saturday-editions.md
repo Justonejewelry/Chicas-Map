@@ -1,5 +1,5 @@
-# Yowl Lawnda — Friday & Saturday Yard-Bird Update Editions
-Project YardBird / GSIN  •  Atlas  •  2026-08-01
+# Yowl Lawnda — Friday & Saturday Chicas Map Update Editions
+Chicas Map / GSIN  •  Atlas  •  2026-08-01
 
 Format and graphics locked to the Yowl Lawnda cartoon style:
 - Brown Chihuahua host, black studded harness
@@ -11,8 +11,8 @@ All map callouts driven by live intelligence (Open Data SA permits + neighborhoo
 
 ---
 
-## FRIDAY YARD-BIRD UPDATE
-**Title:** FRIDAY YARD-BIRD UPDATE · Weekend Preview — 4★ Saturday Ahead
+## FRIDAY CHICAS MAP UPDATE
+**Title:** FRIDAY CHICAS MAP UPDATE · Weekend Preview — 4★ Saturday Ahead
 
 ### Narration
 Howdy y’all, it’s Yowl Lawnda, your garage sale forecaster.  
@@ -29,8 +29,8 @@ Be hunting, y’all!
 
 ---
 
-## SATURDAY YARD-BIRD UPDATE
-**Title:** SATURDAY YARD-BIRD UPDATE · Live Morning
+## SATURDAY CHICAS MAP UPDATE
+**Title:** SATURDAY CHICAS MAP UPDATE · Live Morning
 
 ### Narration
 Howdy y’all, it’s Yowl Lawnda — live Saturday update.  
@@ -60,6 +60,6 @@ Be hunting, y’all!
 
 ### Google My Maps upload
 Import this KML into Google My Maps:  
-https://raw.githubusercontent.com/Justonejewelry/Project-YardBird/main/maps/san-antonio/2026-08-01-clustered.kml
+https://raw.githubusercontent.com/Justonejewelry/Chicas-Map/main/maps/san-antonio/2026-08-01-clustered.kml
 
 Graphics queue: **completed** for this edition cycle.

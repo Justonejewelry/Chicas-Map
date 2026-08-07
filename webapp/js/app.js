@@ -276,7 +276,7 @@
   }
   function sourceLink(s) {
     if (s.source_url || s.url) return `<a href="${esc(s.source_url || s.url)}" target="_blank" rel="noopener">${esc(s.source || "source")}</a>`;
-    return esc(s.source || "YardBird");
+    return esc(s.source || "Chicas Map");
   }
   function showDetail(s) {
     const drawer = document.getElementById("detailDrawer");
@@ -324,7 +324,7 @@
     document.getElementById("btnFav")?.addEventListener("click", () => { toggleFavorite(s); showDetail({ ...s, _key: k }); });
     document.getElementById("btnAddRoute")?.addEventListener("click", () => { toggleRouteStop(s); showDetail({ ...s, _key: k }); });
     document.getElementById("btnShareSale")?.addEventListener("click", async () => {
-      const text = `${s.title || "Sale"} — ${s.address || ""}\n${s.dates || ""} ${s.hours || ""}\nhttps://justonejewelry.github.io/Project-YardBird/map.html`;
+      const text = `${s.title || "Sale"} — ${s.address || ""}\n${s.dates || ""} ${s.hours || ""}\nhttps://justonejewelry.github.io/Chicas-Map/map.html`;
       try {
         if (navigator.share) await navigator.share({ title: s.title || "Chica sale", text });
         else { await navigator.clipboard.writeText(text); toast("Copied"); }
@@ -547,7 +547,7 @@
     document.getElementById("editionMeta").innerHTML = `<strong>${esc(meta.name)}</strong><br/>${formatRelative(last)} · ${n || feed.total_locations || 0} live`;
     document.getElementById("editionMeta").title = last ? `Last refresh: ${last}` : "";
     const srcs = (feed.sources || []).map((s) => String(s).trim());
-    const short = [...new Set(srcs)].slice(0, 3).join(" · ") || "YardBird · GSIN";
+    const short = [...new Set(srcs)].slice(0, 3).join(" · ") || "Chicas Map · GSIN";
     const fs = document.getElementById("footerSources");
     if (fs) { fs.textContent = short + " · Chica"; fs.title = (feed.sources || []).join(" · ") || short; }
     renderHardMetrics();
