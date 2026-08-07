@@ -217,8 +217,8 @@
       "external_id": "yss-311wildhorsecreekbudatx78610-2026-08-07",
       "categories": [
         "in-person",
-        "garage-sale",
-        "estate-sale"
+        "estate-sale",
+        "garage-sale"
       ]
     },
     {
@@ -235,8 +235,8 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "in-person",
-        "estate-sale"
+        "estate-sale",
+        "in-person"
       ],
       "confidence": 0.9,
       "status": "verified",
@@ -261,13 +261,13 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "in-person",
-        "estate-sale"
+        "estate-sale",
+        "in-person"
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.05889381940352,
-      "lon": -97.8407830713615,
+      "lat": 30.06290927035573,
+      "lon": -97.84009804462134,
       "geocode": "source",
       "company": "Creative Estate Sales",
       "in_person": true,
@@ -762,5 +762,5 @@
   "total_locations": 32,
   "status": "live",
   "date": "2026-08-07",
-  "last_refresh": "2026-08-07T02:11:13-05:00"
+  "last_refresh": "2026-08-07T03:56:58-05:00"
 }
