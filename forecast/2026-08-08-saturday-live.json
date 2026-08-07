@@ -1,31 +1,32 @@
 {
-  "generated_at": "2026-08-08T08:30:00-05:00",
-  "target": "2026-08-08 Saturday (focused Discovery + Sentinel pass)",
+  "generated_at": "2026-08-08T09:15:00-05:00",
+  "target": "2026-08-08 Saturday (focused Discovery + Sentinel pass — Atlas morning update)",
   "city": "san-antonio",
   "status": "verified",
-  "confidence": 0.82,
-  "notes": "Saturday-morning focused Discovery + Sentinel. Heritage multi-day estates remain the backbone. Sentinel re-verified high-confidence addresses from estatesales.net, Professional Estate Sales, Top Hat, and aggregators. Classic garage volume modest; estate + warehouse channel carrying the day. Weather supportive for early starts (heat builds to 97-99, heat index ~105).",
+  "confidence": 0.85,
+  "notes": "Focused Saturday-morning Discovery + Sentinel. Heritage multi-day estates remain backbone. Additional classic garage volume confirmed via aggregators (GarageSaleFinder, YardSales.net, Craigslist residuals). Sentinel re-verified high-confidence addresses. Weather supportive for early starts (mostly sunny, high 97-99°F, heat index ~105). Classic + estate mix solid.",
   "days": {
     "friday": {"stars": 3, "predicted_sales": 9, "status": "active"},
-    "saturday": {"stars": 4, "predicted_sales": 15, "status": "peak"},
-    "sunday": {"stars": 3, "predicted_sales": 7, "status": "residual"}
+    "saturday": {"stars": 4, "predicted_sales": 18, "status": "peak"},
+    "sunday": {"stars": 3, "predicted_sales": 8, "status": "residual"}
   },
   "weather_impact": {
-    "condition": "Mostly sunny",
+    "condition": "Mostly sunny / hot",
     "high_f": 99,
-    "low_f": 77,
+    "low_f": 75,
     "risk": "heat",
     "shopping_quality": "excellent early (before 9-10am), decline after 11am due to heat index ~105"
   },
   "hot_zones": [
     "Helotes",
     "Redland Springs / 78247",
-    "Stone Oak / 78248",
+    "Stone Oak / 78248-78259",
     "Alamo Ranch / 78254",
     "Garden Ridge / Windcrest",
-    "Eisenhauer warehouse corridor"
+    "Eisenhauer warehouse corridor",
+    "Northeast (78233) & Southside multi-family"
   ],
-  "best_categories": ["antiques", "vintage", "tools", "collectibles", "mid-century furniture", "Funko / comics", "LPS"],
+  "best_categories": ["antiques", "vintage", "tools", "collectibles", "mid-century furniture", "household", "camping gear"],
   "verified_highlights": [
     {
       "title": "PT 1 A STEP BACK IN TIME — Helotes",
@@ -67,27 +68,27 @@
       "confidence": 0.86
     },
     {
-      "title": "Quaintly Windcrest",
-      "area": "78239",
-      "dates": "Aug 7 onward",
-      "hours": "8am start",
-      "company": "Heritage Senior Downsizing",
-      "confidence": 0.84
+      "title": "Multi-family & classic garages (South / NE)",
+      "area": "78224 / 78233 / 78237",
+      "dates": "Aug 8-9",
+      "hours": "7-8am starts",
+      "categories": ["furniture", "tools", "household", "clothes"],
+      "confidence": 0.78
     }
   ],
   "source_breakdown": {
     "estate": 14,
-    "craigslist": 0,
+    "craigslist": 4,
     "facebook": 1,
     "nextdoor": 0,
     "permit": 0,
-    "other": 3
+    "other": 6
   },
-  "selene_briefing_draft": "¡Buenos días San Antonio! Saturday is solid on the estate side. Helotes, Redland Springs, and Alamo Ranch are carrying strong inventory — antiques, tools, and vintage leading the pack. Get there before 9 for the best selection. Heat builds fast to 99, so plan your route early.",
+  "selene_briefing_draft": "¡Buenos días San Antonio! Saturday is solid on the estate side with classic garage support. Helotes, Redland Springs, Stone Oak and Alamo Ranch leading — antiques, tools and vintage strong. Get there before 9. Heat builds to 99 with heat index over 100, so early route is key.",
   "meta": {
     "heritage_records": 14,
-    "last_sentinel_pass": "2026-08-08T08:30:00-05:00",
+    "last_sentinel_pass": "2026-08-08T09:15:00-05:00",
     "schema_version": "1.1",
-    "atlas_pass": "focused Discovery + Sentinel Saturday morning"
+    "atlas_pass": "focused Discovery + Sentinel Saturday morning update"
   }
 }
