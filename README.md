@@ -1,9 +1,9 @@
-# Project YardBird — Garage Sale Intelligence Network (GSIN)
+# Chicas Map — Garage Sale Intelligence Network (GSIN)
 
 Continuous discovery, verification, scoring, prediction, and mapping of garage, yard, and estate sales.
 
-**Codename:** Project YardBird  
-**Primary output:** Living custom Google Map + weekend forecast intelligence  
+**Codename:** Chicas Map  
+**Primary output:** Living custom map + weekend forecast intelligence  
 **Launch city:** San Antonio, TX (unified multi-city rules ready)
 
 ## Current Status (2026-08-01 01:05 CDT)
@@ -39,6 +39,8 @@ docs/
 1. Download the latest `.kml` from `maps/san-antonio/`
 2. Import into [Google My Maps](https://www.google.com/maps/d/)
 3. Or load the GeoJSON into any modern map library
+
+Public map: https://justonejewelry.github.io/Chicas-Map/
 
 ## Swarm Overview
 

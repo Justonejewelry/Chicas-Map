@@ -1,4 +1,4 @@
-name: Deploy YardBird webapp to GitHub Pages
+name: Deploy Chicas Map webapp to GitHub Pages
 
 on:
   push:

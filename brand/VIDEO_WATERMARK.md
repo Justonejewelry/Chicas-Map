@@ -1,6 +1,6 @@
 # Video watermark (mandatory)
 
-**From 2026-08-04 onward, every YardBird / Chica video includes this watermark.**
+**From 2026-08-04 onward, every Chicas Map / Chica video includes this watermark.**
 
 ## Lockup
 - QR code + text: **Chica · Garage Sale Map**
@@ -17,7 +17,7 @@
 
 ## Link target
 QR should open the public map:
-https://justonejewelry.github.io/Project-YardBird/
+https://justonejewelry.github.io/Chicas-Map/
 
 ## ffmpeg example
 ```bash
