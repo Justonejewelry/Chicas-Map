@@ -126,9 +126,9 @@
       "external_id": "yss-4246roarkdrsanantoniotx78219-2026-08-07",
       "geocode": "source",
       "categories": [
+        "in-person",
         "estate-sale",
-        "garage-sale",
-        "in-person"
+        "garage-sale"
       ]
     },
     {
@@ -405,14 +405,14 @@
     },
     {
       "address": "1311 Cougar Run, San Antonio, TX 78258",
-      "dates": "2026-08-07 – 2026-08-08",
-      "date_from": "2026-08-07",
-      "date_to": "2026-08-08",
+      "dates": "Fri Aug 7 – Sat Aug 8",
+      "date_from": "08/07/2026",
+      "date_to": "08/08/2026",
       "end_date": "2026-08-08",
-      "title": "Kids And Home Decor Sale",
+      "title": "Kids and home decor sale",
       "details": "",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196339113",
+      "source": "GarageSaleFinder",
+      "url": "https://garagesalefinder.com/s/N950n/1311-cougar-run-san-antonio-tx-78258",
       "photos": 0,
       "type": "garage",
       "confidence": 0.88,
@@ -857,6 +857,50 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "cl-familyyardsale6jg1qjmprs1ctrc7wva9w2"
+    },
+    {
+      "address": "1627 Gaddis Blvd, San Antonio, TX 78224",
+      "dates": "2026-08-08 – 2026-08-09",
+      "date_from": "2026-08-08",
+      "date_to": "2026-08-09",
+      "end_date": "2026-08-09",
+      "title": "Big Yard Sale",
+      "details": "",
+      "source": "YardSaleSearch",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196339341",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.88,
+      "status": "verified",
+      "lat": 29.343,
+      "lon": -98.535782,
+      "geocode": "source",
+      "external_id": "yss-1627gaddisblvdsanantoniotx78224-2026-08-08",
+      "categories": [
+        "garage-sale"
+      ]
+    },
+    {
+      "address": "San Antonio, TX",
+      "dates": "2026-08-07 – 2026-08-09",
+      "date_from": "2026-08-07",
+      "date_to": "2026-08-09",
+      "end_date": "2026-08-09",
+      "title": "BUDA-FUL Downsizing Sale",
+      "details": "Estate Sale",
+      "source": "EstateSales.net",
+      "url": "https://www.estatesales.net/TX/Buda/78610/5013879",
+      "photos": 0,
+      "type": "estate",
+      "categories": [
+        "estate-sale"
+      ],
+      "confidence": 0.65,
+      "status": "verified",
+      "lat": 29.4241,
+      "lon": -98.4936,
+      "geocode": "city-center",
+      "company": null
     }
   ],
   "permits": [
@@ -4706,8 +4750,8 @@
     "yardsales.net",
     "yardsalesearch.com"
   ],
-  "total_locations": 193,
-  "last_refresh": "2026-08-06T18:56:26-05:00",
+  "total_locations": 195,
+  "last_refresh": "2026-08-06T21:35:18-05:00",
   "generated_at": "2026-08-06T23:10:00Z",
   "status": "live",
   "confidence": 0.82,

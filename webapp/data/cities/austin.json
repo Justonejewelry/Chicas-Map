@@ -67,9 +67,9 @@
       "external_id": "yss-311wildhorsecreekbudatx78610-2026-08-07",
       "geocode": "source",
       "categories": [
+        "in-person",
         "estate-sale",
-        "garage-sale",
-        "in-person"
+        "garage-sale"
       ]
     },
     {
@@ -92,8 +92,8 @@
       "external_id": "yss-683oystercrkbudatx78610-2026-08-07",
       "geocode": "source",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ]
     },
     {
@@ -234,8 +234,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.05879500517427,
-      "lon": -97.84459223520447,
+      "lat": 30.062451131656484,
+      "lon": -97.84428085941349,
       "geocode": "source",
       "company": "Creative Estate Sales",
       "in_person": true,
@@ -678,14 +678,14 @@
     },
     {
       "address": "Austin, TX",
-      "dates": "2026-08-06 – 2026-08-09",
-      "date_from": "2026-08-06",
+      "dates": "2026-08-07 – 2026-08-09",
+      "date_from": "2026-08-07",
       "date_to": "2026-08-09",
       "end_date": "2026-08-09",
-      "title": "Smart Tech, Big Toys & Brand-New Finds: Texas Sisters Estate Sales in Georgetown- Shady Oaks",
+      "title": "This Could Be the Most Incredible Estate Sale of the Summer!",
       "details": "Estate Sale",
       "source": "EstateSales.net",
-      "url": "https://www.estatesales.net/TX/Georgetown/78633/4986105",
+      "url": "https://www.estatesales.net/TX/Cedar Creek/78612/5022750",
       "photos": 0,
       "type": "estate",
       "categories": [
@@ -697,6 +697,125 @@
       "lon": -97.7431,
       "geocode": "city-center",
       "company": null
+    },
+    {
+      "address": "605 Elderberry Cv, Austin, TX 78745",
+      "dates": "2026-08-08 – 2026-08-08",
+      "date_from": "2026-08-08",
+      "date_to": "2026-08-08",
+      "end_date": "2026-08-08",
+      "title": "2 Home Yard Sale",
+      "details": "",
+      "source": "YardSaleSearch",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196339213",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.88,
+      "status": "verified",
+      "lat": 30.185796,
+      "lon": -97.790327,
+      "geocode": "source",
+      "external_id": "yss-605elderberrycvaustintx78745-2026-08-08",
+      "categories": [
+        "garage-sale"
+      ]
+    },
+    {
+      "address": "13800 Fm 1826, Austin, TX",
+      "dates": "2026-08-06 – 2026-08-08",
+      "date_from": "2026-08-06",
+      "date_to": "2026-08-08",
+      "end_date": "2026-08-08",
+      "hours": null,
+      "title": "Estate Sale - Business and Home",
+      "details": "QR Code Link to This Post Business Closing Estate Sale! A local business is closing its doors, and everything must go! If you're setting up a home office, upgrading your workspace, or looking for great deals, you won't want to miss this sale. You'll find: • Office desks • Laptops • Executive &amp; office chairs • Bookshelves • Microphones • Office supplies &amp; organizers • Printers, monitors &am",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/austin-estate-sale-business-and-home/qRJsJPgE9HiPCYMPSX6vAd",
+      "photos": 0,
+      "type": "estate",
+      "categories": [
+        "estate-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 30.2107,
+      "lon": -97.9427,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-businessandhomeqrjsjpge9hipcympsx6vad"
+    },
+    {
+      "address": "1603 Barcus Dr, Austin, TX",
+      "dates": "2026-08-06 – 2026-08-08",
+      "date_from": "2026-08-06",
+      "date_to": "2026-08-08",
+      "end_date": "2026-08-08",
+      "hours": null,
+      "title": "Estate Sale including 2021 Toyota Rav4 sat & Sun",
+      "details": "QR Code Link to This Post Estate sale everything must go!!! Exception of a few items that are already spoken for. No early birds, Event starts Saturday (August 8th) 8am ~ 4pm and Sunday (August 9th) 9am~ 2pm. 2021 Toyota Rav4 low mileage and garage kept 35k miles. **Please bring help for loading heavy furniture.**",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/georgetown-estate-sale-including-2021/receJ9SLRn3MXfcCRZVWmV",
+      "photos": 0,
+      "type": "estate",
+      "categories": [
+        "estate-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 30.6319,
+      "lon": -97.6588,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-leincluding2021recej9slrn3mxfccrzvwmv"
+    },
+    {
+      "address": "11304 brixey lane near Dessau Road, Austin, TX",
+      "dates": "2026-08-06 – 2026-08-08",
+      "date_from": "2026-08-06",
+      "date_to": "2026-08-08",
+      "end_date": "2026-08-08",
+      "hours": null,
+      "title": "Estate Sale/Moving Sale by Owner – Everything Must Go!",
+      "details": "QR Code Link to This Post We have thousands of items and are preparing the house for rental so we sell everything : furniture, kitchen items, tools, electronics, home décor, collectibles, books, clothing, and many other household items. All items are priced to sell. No estate sale company—this is a sale conducted directly by the homeowner.",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/austin-estate-sale-moving-sale-by-owner/pSb8mWGXVsRg2aCijd9ecK",
+      "photos": 0,
+      "type": "estate",
+      "categories": [
+        "estate-sale",
+        "moving-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 30.371665,
+      "lon": -97.663194,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-ingsalebyownerpsb8mwgxvsrg2acijd9eck"
+    },
+    {
+      "address": "Elderberry Cove near Elderberry Drive, Austin, TX",
+      "dates": "2026-08-06 – 2026-08-08",
+      "date_from": "2026-08-06",
+      "date_to": "2026-08-08",
+      "end_date": "2026-08-08",
+      "hours": null,
+      "title": "2 Home Garage Sale",
+      "details": "QR Code Link to This Post Saturday Aug 8th, 8am-12pm Garage Sale Furniture, new clothes, costumes, books, shoes, vintage, games, home goods, astrology and more! At least 2 homes will have their wares out Saturday morning, Elderberry Cove (off of elderberry drive on South first/Dittmar)",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/austin-home-garage-sale/9GwB884xKThj59jxhoBnN2",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 30.184713,
+      "lon": -97.790723,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-homegaragesale9gwb884xkthj59jxhobnn2"
     }
   ],
   "permits": [],
@@ -736,8 +855,8 @@
     "garagesalefinder.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 30,
-  "last_refresh": "2026-08-06T18:56:26-05:00",
+  "total_locations": 35,
+  "last_refresh": "2026-08-06T21:35:18-05:00",
   "generated_at": "2026-08-06T23:10:00Z",
   "status": "live",
   "confidence": 0.78,
