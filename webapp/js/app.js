@@ -62,7 +62,6 @@
     document.getElementById("popSearch")?.classList.remove("open");
     document.getElementById("fabNear")?.classList.remove("active");
     document.getElementById("fabSearch")?.classList.remove("active");
-    // Let layout settle then tell MapLibre the container size changed
     requestAnimationFrame(() => {
       try { map && map.resize(); } catch (_) {}
     });
@@ -304,7 +303,6 @@
         <button type="button" class="action-btn" id="btnShareSale">↗ Share</button>
       </div>`;
     drawer.classList.remove("hidden");
-    // On mobile, open rail so detail is visible; user can close to return to map
     if (window.matchMedia("(max-width: 900px)").matches) {
       document.getElementById("sideRail")?.classList.add("open");
       const bd = document.getElementById("railBackdrop");
@@ -364,7 +362,7 @@
     });
   }
 
-  /** Fast path: one GeoJSON source + circle layer instead of 170 DOM markers. */
+  /** Individual pins only — no clustering. Every sale gets its own circle. */
   function ensurePinLayers() {
     if (!map || _pinSourceReady) return;
     if (!map.getSource) return;
@@ -373,40 +371,11 @@
         map.addSource("yb-pins", {
           type: "geojson",
           data: { type: "FeatureCollection", features: [] },
-          cluster: true,
-          clusterMaxZoom: 13,
-          clusterRadius: 42,
         });
         map.addLayer({
-          id: "yb-clusters",
+          id: "yb-pins-layer",
           type: "circle",
           source: "yb-pins",
-          filter: ["has", "point_count"],
-          paint: {
-            "circle-color": "#1a6b3c",
-            "circle-radius": ["step", ["get", "point_count"], 16, 8, 20, 25, 26],
-            "circle-opacity": 0.88,
-            "circle-stroke-width": 2,
-            "circle-stroke-color": "#fff",
-          },
-        });
-        map.addLayer({
-          id: "yb-cluster-count",
-          type: "symbol",
-          source: "yb-pins",
-          filter: ["has", "point_count"],
-          layout: {
-            "text-field": "{point_count_abbreviated}",
-            "text-size": 12,
-            "text-font": ["Open Sans Bold", "Arial Unicode MS Bold"],
-          },
-          paint: { "text-color": "#ffffff" },
-        });
-        map.addLayer({
-          id: "yb-unclustered",
-          type: "circle",
-          source: "yb-pins",
-          filter: ["!", ["has", "point_count"]],
           paint: {
             "circle-color": [
               "match",
@@ -417,34 +386,27 @@
               "top", PIN_COLORS.top,
               PIN_COLORS.garage,
             ],
-            "circle-radius": ["case", ["==", ["get", "kind"], "top"], 9, 7],
+            "circle-radius": [
+              "interpolate", ["linear"], ["zoom"],
+              9, ["case", ["==", ["get", "kind"], "top"], 6, 5],
+              12, ["case", ["==", ["get", "kind"], "top"], 9, 7],
+              15, ["case", ["==", ["get", "kind"], "top"], 12, 10],
+            ],
             "circle-stroke-width": 2,
             "circle-stroke-color": "#ffffff",
             "circle-opacity": 0.95,
           },
         });
 
-        map.on("click", "yb-clusters", (e) => {
-          const features = map.queryRenderedFeatures(e.point, { layers: ["yb-clusters"] });
-          const clusterId = features[0]?.properties?.cluster_id;
-          const src = map.getSource("yb-pins");
-          if (!src || clusterId == null) return;
-          src.getClusterExpansionZoom(clusterId, (err, zoom) => {
-            if (err) return;
-            map.easeTo({ center: features[0].geometry.coordinates, zoom: Math.min(zoom, 15) });
-          });
-        });
-        map.on("click", "yb-unclustered", (e) => {
+        map.on("click", "yb-pins-layer", (e) => {
           const f = e.features && e.features[0];
           if (!f) return;
           const key = f.properties && f.properties.key;
           const s = allSales().find((x) => x._key === key);
           if (s) showDetail(s);
         });
-        map.on("mouseenter", "yb-clusters", () => { map.getCanvas().style.cursor = "pointer"; });
-        map.on("mouseleave", "yb-clusters", () => { map.getCanvas().style.cursor = ""; });
-        map.on("mouseenter", "yb-unclustered", () => { map.getCanvas().style.cursor = "pointer"; });
-        map.on("mouseleave", "yb-unclustered", () => { map.getCanvas().style.cursor = ""; });
+        map.on("mouseenter", "yb-pins-layer", () => { map.getCanvas().style.cursor = "pointer"; });
+        map.on("mouseleave", "yb-pins-layer", () => { map.getCanvas().style.cursor = ""; });
       }
       _pinSourceReady = true;
     } catch (err) {
@@ -556,7 +518,6 @@
     const fs = document.getElementById("footerSources");
     if (fs) { fs.textContent = short + " · Chica"; fs.title = (feed.sources || []).join(" · ") || short; }
     renderHardMetrics();
-    // Re-add pin layers after style is ready
     if (map.isStyleLoaded()) {
       _pinSourceReady = false;
       scheduleRefresh();
@@ -614,7 +575,6 @@
         } else toast("Not found");
       } catch (_) { toast("Search failed"); }
     });
-    // Enter key on location input
     document.getElementById("locInput")?.addEventListener("keydown", (e) => {
       if (e.key === "Enter") document.getElementById("btnLocSearch")?.click();
     });
@@ -683,7 +643,6 @@
       center: userLoc ? [userLoc.lon, userLoc.lat] : start.center,
       zoom: start.zoom || 11,
       attributionControl: true,
-      // Performance: fewer animations / lower GPU load on mobile
       fadeDuration: 0,
       maxPitch: 0,
       dragRotate: false,
@@ -692,7 +651,6 @@
     map.addControl(new maplibregl.NavigationControl({ visualizePitch: false, showCompass: false }), "top-right");
     map.addControl(new maplibregl.ScaleControl({ maxWidth: 100 }), "bottom-left");
 
-    // Expose returnToMap for the inline map.html script
     window.__YB_returnToMap = returnToMap;
 
     const sel = document.getElementById("citySelect");
@@ -743,7 +701,6 @@
     wireTools();
     updateToolCounts();
 
-    // Resize when orientation / viewport changes
     window.addEventListener("resize", () => {
       try { map.resize(); } catch (_) {}
     }, { passive: true });
