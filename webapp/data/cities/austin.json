@@ -190,9 +190,10 @@
       "in_person": true,
       "external_id": "yss-683oystercrkbudatx78610-2026-08-07",
       "categories": [
-        "in-person",
-        "estate-sale"
-      ]
+        "estate-sale",
+        "in-person"
+      ],
+      "hours": "2026-08-07 10:00 am-3:00 am; 2026-08-07 10:00 am-3:00 am"
     },
     {
       "address": "311 Wildhorse Creek, Buda, TX 78610",
@@ -216,9 +217,9 @@
       "in_person": true,
       "external_id": "yss-311wildhorsecreekbudatx78610-2026-08-07",
       "categories": [
-        "in-person",
         "garage-sale",
-        "estate-sale"
+        "estate-sale",
+        "in-person"
       ]
     },
     {
@@ -266,8 +267,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.062522996550484,
-      "lon": -97.84093875925699,
+      "lat": 30.05972026568451,
+      "lon": -97.83977628963734,
       "geocode": "source",
       "company": "Creative Estate Sales",
       "in_person": true,
@@ -757,7 +758,7 @@
       "end_date": "2026-08-09",
       "hours": null,
       "title": "✈️ MOVING out of the country - 25 years of treasure need new homes!",
-      "details": "QR Code Link to This Post After 25 years in my home, I’m letting go of a lot of things — a mix of useful, beautiful, unusual, COOL and fun finds at good prices. ✨ Artisan pieces &amp; artwork, 🎨🪇 🪑 Furniture, lamps &amp; unique décor 🪞 Mirrors &amp; one-of-a-kind finds; VINTAGE 🏖️ 📚 Great books 🐶 Pet items 🎶 Eclectic VINYL records — 70s, 80s, rock, disco, pop, indie &amp; more! 🎵 Hundreds to choos",
+      "details": "QR Code Link to This Post CHANGED TO SATURDAY (Sorry) After 25 years in my home, I’m letting go of a lot of things — a mix of useful, beautiful, unusual, COOL and fun finds at good pricing!! ✨ Artisan pieces &amp; artwork, 🎨🪇 🪑 Furniture, lamps &amp; unique décor 🪞 Mirrors &amp; one-of-a-kind finds; VINTAGE 🏖️ 📚 Great books 🐶 Pet items 🎶 Eclectic VINYL records — 70s, 80s, rock, disco, pop, indie &",
       "source": "Craigslist",
       "url": "https://www.craigslist.org/view/d/austin-moving-out-of-the-country-25/5Bzv7uYFky84QL3gjM4qkM",
       "photos": 0,
@@ -773,6 +774,31 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "cl-ofthecountry255bzv7uyfky84ql3gjm4qkm"
+    },
+    {
+      "address": "11300 Brixey Lane near Braker Lane/Dessaue, Austin, TX",
+      "dates": "2026-08-07 – 2026-08-09",
+      "date_from": "2026-08-07",
+      "date_to": "2026-08-09",
+      "end_date": "2026-08-09",
+      "hours": null,
+      "title": "Garasale/moving sale - Priced to sale everything",
+      "details": "QR Code Link to This Post 🏡 HUGE MOVING SALE – EVERYTHING MUST GO! 🏡 We're moving and everything is priced to sell! Come find great deals on a wide variety of household items. Items include: Furniture Home décor &amp; mirrors Kitchenware Small appliances Lamps Wall art Storage items Tools Holiday decorations Electronics Books Clothing &amp; shoes And much more! 💲 Most items are priced to sell. Bun",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/austin-garasale-moving-sale-priced-to/gdwWTMQ9BRXEdszG8P6Dsg",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale",
+        "moving-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 30.3423,
+      "lon": -97.6673,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-ngsalepricedtogdwwtmq9brxedszg8p6dsg"
     }
   ],
   "permits": [],
@@ -784,8 +810,8 @@
     "garagesalefinder.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 33,
+  "total_locations": 34,
   "status": "live",
   "date": "2026-08-07",
-  "last_refresh": "2026-08-07T07:57:00-05:00"
+  "last_refresh": "2026-08-07T09:51:34-05:00"
 }
