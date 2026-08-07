@@ -1,7 +1,7 @@
 {
   "date": "2026-08-07",
-  "last_refresh": "2026-08-07T11:52:01-05:00",
-  "total_locations": 176,
+  "last_refresh": "2026-08-07T13:52:45-05:00",
+  "total_locations": 177,
   "status": "live",
   "confidence": 0.82,
   "city": "san-antonio",
@@ -28,9 +28,9 @@
       "in_person": true,
       "external_id": "yss-4246roarkdrsanantoniotx78219-2026-08-07",
       "categories": [
-        "in-person",
+        "garage-sale",
         "estate-sale",
-        "garage-sale"
+        "in-person"
       ]
     },
     {
@@ -145,14 +145,14 @@
     },
     {
       "address": "5706 Bienville Dr, San Antonio, TX 78233",
-      "dates": "2026-08-08 – 2026-08-08",
-      "date_from": "2026-08-08",
-      "date_to": "2026-08-08",
+      "dates": "Sat Aug 8 – Sat Aug 8",
+      "date_from": "08/08/2026",
+      "date_to": "08/08/2026",
       "end_date": "2026-08-08",
-      "title": "Clothes Clothes Clothes",
+      "title": "Clothes clothes clothes",
       "details": "",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196337833",
+      "source": "GarageSaleFinder",
+      "url": "https://garagesalefinder.com/s/N95kv/5706-bienville-dr-san-antonio-tx-78233",
       "photos": 0,
       "type": "garage",
       "confidence": 0.88,
@@ -902,6 +902,28 @@
       "lon": -98.5048561,
       "geocode": "source",
       "external_id": "yss-511wmandalaydrsanantoniotx78212-2026-08-07",
+      "categories": [
+        "garage-sale"
+      ]
+    },
+    {
+      "address": "3211 Sagehill, San Antonio, TX 78230",
+      "dates": "2026-08-07 – 2026-08-07",
+      "date_from": "2026-08-07",
+      "date_to": "2026-08-07",
+      "end_date": "2026-08-07",
+      "title": "Plants",
+      "details": "",
+      "source": "YardSaleSearch",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196340299",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.88,
+      "status": "verified",
+      "lat": 29.510026,
+      "lon": -98.54646,
+      "geocode": "source",
+      "external_id": "yss-3211sagehillsanantoniotx78230-2026-08-07",
       "categories": [
         "garage-sale"
       ]

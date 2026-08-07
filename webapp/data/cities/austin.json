@@ -190,8 +190,8 @@
       "in_person": true,
       "external_id": "yss-683oystercrkbudatx78610-2026-08-07",
       "categories": [
-        "in-person",
-        "estate-sale"
+        "estate-sale",
+        "in-person"
       ],
       "hours": "2026-08-07 10:00 am-3:00 am; 2026-08-07 10:00 am-3:00 am"
     },
@@ -217,9 +217,9 @@
       "in_person": true,
       "external_id": "yss-311wildhorsecreekbudatx78610-2026-08-07",
       "categories": [
-        "in-person",
+        "garage-sale",
         "estate-sale",
-        "garage-sale"
+        "in-person"
       ]
     },
     {
@@ -236,8 +236,8 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
@@ -262,13 +262,13 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.063133848149477,
-      "lon": -97.84429123860652,
+      "lat": 30.062451131656484,
+      "lon": -97.84383455411309,
       "geocode": "source",
       "company": "Creative Estate Sales",
       "in_person": true,
@@ -821,6 +821,42 @@
       "categories": [
         "garage-sale"
       ]
+    },
+    {
+      "address": "13213 Forest Sage St, Manor, TX 78653",
+      "dates": "Sat Aug 8 – Sat Aug 8",
+      "date_from": "08/08/2026",
+      "date_to": "08/08/2026",
+      "end_date": "2026-08-08",
+      "title": "Garage Sale..Lots of stuff",
+      "details": "",
+      "source": "GarageSaleFinder",
+      "url": "https://garagesalefinder.com/s/N95rG/13213-forest-sage-st-manor-tx-78653",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.85,
+      "status": "verified",
+      "lat": 30.3,
+      "lon": -97.52,
+      "geocode": "zip-centroid"
+    },
+    {
+      "address": "417 Ft William St, Hutto, TX 78634",
+      "dates": "Sat Aug 8 – Sat Aug 8",
+      "date_from": "08/08/2026",
+      "date_to": "08/08/2026",
+      "end_date": "2026-08-08",
+      "title": "Multi Family Garage Sale!",
+      "details": "",
+      "source": "GarageSaleFinder",
+      "url": "https://garagesalefinder.com/s/N953M/417-ft-william-st-hutto-tx-78634",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.65,
+      "status": "verified",
+      "lat": 30.2672,
+      "lon": -97.7431,
+      "geocode": "city-center"
     }
   ],
   "permits": [],
@@ -832,8 +868,8 @@
     "garagesalefinder.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 35,
+  "total_locations": 37,
   "status": "live",
   "date": "2026-08-07",
-  "last_refresh": "2026-08-07T11:52:01-05:00"
+  "last_refresh": "2026-08-07T13:52:45-05:00"
 }
