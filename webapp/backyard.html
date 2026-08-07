@@ -15,6 +15,8 @@
   <link rel="stylesheet" href="css/grass.css" />
   <link rel="stylesheet" href="css/chica-sign.css" />
   <link rel="stylesheet" href="css/voss.css" />
+  <script src="js/chica-config.js"></script>
+  <script src="js/chica-analytics.js"></script>
   <style>
     .mc-hero-photo { width:100%;height:100%;object-fit:contain;border-radius:16px;background:transparent; }
     .mc-bio-body p { margin: 0 0 0.85em; }
@@ -181,7 +183,6 @@
   </footer>
   <script src="js/backyard.js"></script>
   <script src="js/grass-wind.js"></script>
-  <script src="js/chica-config.js"></script>
   <script src="js/chica-forms.js"></script>
   <script src="js/chica-pwa.js"></script>
   <script>
@@ -207,7 +208,7 @@
     }
     var KEY = 'chica_backyard_comments_v1';
     function load() { try { return JSON.parse(localStorage.getItem(KEY)||'[]'); } catch(e){ return []; } }
-    function save(list) { localStorage.setItem(KEY, JSON.stringify(list.slice(0,50))); }
+    function save(list) { localStorage.setItem(KEY, JSON.stringify(list.slice(0,50)); }
     function render() {
       var list = load(), el = document.getElementById('commentList'), empty = document.getElementById('commentEmpty');
       el.querySelectorAll('.comment-item').forEach(function(n){ n.remove(); });
