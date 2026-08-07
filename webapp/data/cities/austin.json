@@ -190,8 +190,8 @@
       "in_person": true,
       "external_id": "yss-683oystercrkbudatx78610-2026-08-07",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "hours": "2026-08-07 10:00 am-3:00 am; 2026-08-07 10:00 am-3:00 am"
     },
@@ -217,9 +217,9 @@
       "in_person": true,
       "external_id": "yss-311wildhorsecreekbudatx78610-2026-08-07",
       "categories": [
-        "garage-sale",
+        "in-person",
         "estate-sale",
-        "in-person"
+        "garage-sale"
       ]
     },
     {
@@ -267,8 +267,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.059477721667264,
-      "lon": -97.84076231297544,
+      "lat": 30.063133848149477,
+      "lon": -97.84429123860652,
       "geocode": "source",
       "company": "Creative Estate Sales",
       "in_person": true,
@@ -799,6 +799,28 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "cl-ngsalepricedtogdwwtmq9brxedszg8p6dsg"
+    },
+    {
+      "address": "1133 Vincent Pl, Pflugerville, TX 78660",
+      "dates": "2026-08-08 – 2026-08-08",
+      "date_from": "2026-08-08",
+      "date_to": "2026-08-08",
+      "end_date": "2026-08-08",
+      "title": "Garage Sale:   Saturday, August 8Th, 2026",
+      "details": "",
+      "source": "YardSaleSearch",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196340173",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.88,
+      "status": "verified",
+      "lat": 30.445374,
+      "lon": -97.655394,
+      "geocode": "source",
+      "external_id": "yss-1133vincentplpflugervilletx78660-2026-08-08",
+      "categories": [
+        "garage-sale"
+      ]
     }
   ],
   "permits": [],
@@ -810,8 +832,8 @@
     "garagesalefinder.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 34,
+  "total_locations": 35,
   "status": "live",
   "date": "2026-08-07",
-  "last_refresh": "2026-08-07T10:15:36-05:00"
+  "last_refresh": "2026-08-07T11:52:01-05:00"
 }

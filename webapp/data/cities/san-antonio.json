@@ -1,7 +1,7 @@
 {
   "date": "2026-08-07",
-  "last_refresh": "2026-08-07T10:15:36-05:00",
-  "total_locations": 175,
+  "last_refresh": "2026-08-07T11:52:01-05:00",
+  "total_locations": 176,
   "status": "live",
   "confidence": 0.82,
   "city": "san-antonio",
@@ -28,9 +28,9 @@
       "in_person": true,
       "external_id": "yss-4246roarkdrsanantoniotx78219-2026-08-07",
       "categories": [
-        "garage-sale",
+        "in-person",
         "estate-sale",
-        "in-person"
+        "garage-sale"
       ]
     },
     {
@@ -167,14 +167,14 @@
     },
     {
       "address": "6147 Royal Pt, San Antonio, TX 78239",
-      "dates": "2026-08-08 – 2026-08-08",
-      "date_from": "2026-08-08",
-      "date_to": "2026-08-08",
+      "dates": "Sat Aug 8 – Sat Aug 8",
+      "date_from": "08/08/2026",
+      "date_to": "08/08/2026",
       "end_date": "2026-08-08",
       "title": "Garage/Yard Sale",
       "details": "",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196338577",
+      "source": "GarageSaleFinder",
+      "url": "https://garagesalefinder.com/s/N95Jx/6147-royal-pt-san-antonio-tx-78239",
       "photos": 0,
       "type": "garage",
       "confidence": 0.88,
@@ -880,6 +880,28 @@
       "lon": -98.5803,
       "geocode": "source",
       "external_id": "yss-747sw39thstsanantoniotx78237-2026-08-09",
+      "categories": [
+        "garage-sale"
+      ]
+    },
+    {
+      "address": "511 W Mandalay Dr, San Antonio, TX 78212",
+      "dates": "2026-08-07 – 2026-08-09",
+      "date_from": "2026-08-07",
+      "date_to": "2026-08-09",
+      "end_date": "2026-08-09",
+      "title": "Big Yard Sale",
+      "details": "",
+      "source": "YardSaleSearch",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196340155",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.88,
+      "status": "verified",
+      "lat": 29.4815395,
+      "lon": -98.5048561,
+      "geocode": "source",
+      "external_id": "yss-511wmandalaydrsanantoniotx78212-2026-08-07",
       "categories": [
         "garage-sale"
       ]
