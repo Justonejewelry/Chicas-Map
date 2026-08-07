@@ -48,6 +48,15 @@
     try { localStorage.setItem(key, JSON.stringify(val)); } catch (_) {}
   }
 
+  /** Fire named Clarity / GA event when analytics is loaded. */
+  function trackEvent(name, props) {
+    try {
+      if (window.ChicaAnalytics && typeof window.ChicaAnalytics.track === "function") {
+        window.ChicaAnalytics.track(name, props || {});
+      }
+    } catch (_) {}
+  }
+
   /** Close rail + FABs so the map fills the screen again (mobile + desktop). */
   function returnToMap() {
     const rail = document.getElementById("sideRail");
@@ -80,6 +89,12 @@
     Object.keys(metrics.active_days).forEach((d) => { if (d < cut) delete metrics.active_days[d]; });
     saveJson(METRICS_KEY, metrics);
     renderHardMetrics();
+
+    // Bridge to Clarity / GA named events
+    if (kind === "click") trackEvent("pin_click", { city: city });
+    else if (kind === "save") trackEvent("save", { city: city });
+    else if (kind === "route_open") trackEvent("route_open", { city: city, stops: routeIds.length });
+    else if (kind === "session") trackEvent("map_session", { city: city });
   }
 
   function weeklyActiveUsersApprox() {
@@ -206,6 +221,7 @@
     if (favorites[k]) {
       delete favorites[k];
       toast("Removed from saved");
+      trackEvent("unsave", { city: city });
     } else {
       favorites[k] = { title: s.title, address: s.address, lat: s.lat, lon: s.lon, type: s.type, dates: s.dates };
       toast("Saved ★");
@@ -221,10 +237,12 @@
     if (idx >= 0) {
       routeIds.splice(idx, 1);
       toast("Removed from route");
+      trackEvent("route_remove", { city: city });
     } else {
       if (routeIds.length >= 8) { toast("Max 8 stops"); return; }
       routeIds.push(k);
       toast("Added to route");
+      trackEvent("route_add", { city: city, stops: routeIds.length });
     }
     saveJson("yb_route", routeIds);
     updateToolCounts();
@@ -325,6 +343,7 @@
     document.getElementById("btnAddRoute")?.addEventListener("click", () => { toggleRouteStop(s); showDetail({ ...s, _key: k }); });
     document.getElementById("btnShareSale")?.addEventListener("click", async () => {
       const text = `${s.title || "Sale"} — ${s.address || ""}\n${s.dates || ""} ${s.hours || ""}\nhttps://justonejewelry.github.io/Chicas-Map/map.html`;
+      trackEvent("share_sale", { city: city });
       try {
         if (navigator.share) await navigator.share({ title: s.title || "Chica sale", text });
         else { await navigator.clipboard.writeText(text); toast("Copied"); }
@@ -486,6 +505,7 @@
         const [lat, lon] = btn.dataset.jump.split(",").map(Number);
         if (map && !isNaN(lat)) {
           map.flyTo({ center: [lon, lat], zoom: 12 });
+          trackEvent("hot_zone_jump", { city: city });
           returnToMap();
         }
       });
@@ -507,8 +527,10 @@
   }
 
   async function loadCity(slug) {
+    const prev = city;
     city = slug;
     localStorage.setItem("yb_city", city);
+    if (prev !== city) trackEvent("city_change", { city: city, from: prev });
     showFavOnly = false;
     invalidateSalesCache();
     _pinSourceReady = false;
@@ -573,15 +595,20 @@
           userMarker = new maplibregl.Marker({ element: el }).setLngLat([userLoc.lon, userLoc.lat]).addTo(map);
           map.flyTo({ center: [userLoc.lon, userLoc.lat], zoom: 12 });
           toast("Located — sorting by distance");
+          trackEvent("near_me", { city: city });
           refresh();
           returnToMap();
         },
-        () => toast("Location permission denied"),
+        () => {
+          toast("Location permission denied");
+          trackEvent("near_me_denied", { city: city });
+        },
         { enableHighAccuracy: true, timeout: 10000 }
       );
     });
     document.getElementById("radiusSelect")?.addEventListener("change", (e) => {
       maxMiles = Number(e.target.value) || 10;
+      trackEvent("radius_change", { city: city, miles: maxMiles });
       refresh();
       returnToMap();
     });
@@ -589,6 +616,7 @@
       maxMiles = Number(e.target.value) || 10;
       const r = document.getElementById("radiusSelect");
       if (r) r.value = e.target.value;
+      trackEvent("radius_change", { city: city, miles: maxMiles });
       refresh();
       returnToMap();
     });
@@ -603,6 +631,7 @@
           invalidateSalesCache();
           map.flyTo({ center: [userLoc.lon, userLoc.lat], zoom: 12 });
           toast("Centered on " + q);
+          trackEvent("loc_search", { city: city, query: q });
           refresh();
           returnToMap();
         } else toast("Not found");
@@ -616,6 +645,7 @@
   function wireTools() {
     document.getElementById("btnFavorites")?.addEventListener("click", () => {
       showFavOnly = !showFavOnly;
+      trackEvent("filter_saved", { city: city, on: showFavOnly });
       updateToolCounts();
       refresh();
     });
@@ -625,6 +655,7 @@
     document.getElementById("btnOpenRoute")?.addEventListener("click", openMultiRoute);
     document.getElementById("btnClearRoute")?.addEventListener("click", () => {
       routeIds = []; saveJson("yb_route", routeIds); renderRouteTray(); updateToolCounts(); toast("Route cleared");
+      trackEvent("route_clear", { city: city });
     });
     document.getElementById("btnShareRoute")?.addEventListener("click", async () => {
       if (!window.ChicaFeatures) return;
@@ -632,23 +663,27 @@
       const stops = routeIds.map((k) => byKey[k] || favorites[k]).filter(Boolean);
       const text = ChicaFeatures.buildRouteStory(stops, CITY_META[city]?.name);
       const ok = await ChicaFeatures.shareRouteStory(text);
+      trackEvent("share_route", { city: city, stops: stops.length });
       toast(ok ? "Route shared / copied" : "Could not share");
     });
     document.getElementById("btnRadar")?.addEventListener("click", async () => {
       if (!window.ChicaFeatures) return;
       const r = await ChicaFeatures.enableRadar();
+      trackEvent("radar", { city: city });
       toast(r.msg);
     });
     document.getElementById("btnDnaHeat")?.addEventListener("click", () => {
       dnaHeatOn = !dnaHeatOn;
       localStorage.setItem("yb_dna_heat", dnaHeatOn ? "1" : "0");
       document.getElementById("btnDnaHeat")?.classList.toggle("active", dnaHeatOn);
+      trackEvent("dna_heat", { city: city, on: dnaHeatOn });
       refresh();
       toast(dnaHeatOn ? "Neighborhood DNA on" : "DNA heat off");
     });
     document.getElementById("btnFirst30")?.addEventListener("click", () => {
       first30Only = !first30Only;
       document.getElementById("btnFirst30")?.classList.toggle("active", first30Only);
+      trackEvent("first30", { city: city, on: first30Only });
       refresh();
     });
     document.getElementById("btnWishlist")?.addEventListener("click", () => {
@@ -659,10 +694,12 @@
       const v = document.getElementById("wishInput")?.value;
       ChicaFeatures.addWishlistItem(v);
       document.getElementById("wishInput").value = "";
+      trackEvent("wishlist_add", { city: city });
       toast("Added to hunt list");
     });
     document.getElementById("btnWishFilter")?.addEventListener("click", () => {
       wishlistOnly = !wishlistOnly;
+      trackEvent("wishlist_filter", { city: city, on: wishlistOnly });
       refresh();
     });
   }
@@ -696,6 +733,7 @@
     document.getElementById("mapEngine")?.addEventListener("change", (e) => {
       engine = e.target.value;
       localStorage.setItem("yb_map", engine);
+      trackEvent("map_style", { style: engine });
       _pinSourceReady = false;
       map.setStyle(STYLES[engine] || STYLES.liberty);
       map.once("idle", () => {
@@ -708,6 +746,7 @@
         document.querySelectorAll(".chip").forEach((b) => b.classList.remove("active"));
         btn.classList.add("active");
         filter = btn.dataset.filter;
+        trackEvent("filter_type", { city: city, filter: filter });
         scheduleRefresh();
         returnToMap();
       });
@@ -720,6 +759,7 @@
       document.getElementById("scopeNear")?.classList.add("active");
       document.getElementById("scopeCity")?.classList.remove("active");
       maxMiles = Number(document.getElementById("radiusSelect")?.value) || 10;
+      trackEvent("scope_near", { city: city });
       refresh();
       returnToMap();
     });
@@ -727,6 +767,7 @@
       document.getElementById("scopeCity")?.classList.add("active");
       document.getElementById("scopeNear")?.classList.remove("active");
       maxMiles = 0;
+      trackEvent("scope_city", { city: city });
       refresh();
       returnToMap();
     });
