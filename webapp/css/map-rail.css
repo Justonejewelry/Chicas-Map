@@ -1,1 +1,363 @@
-PLACEHOLDER
+/**
+ * Map rail + layout — map is the product.
+ * Mobile: 100% map; rail = slide-over drawer.
+ * Desktop: narrow rail, max map real-estate.
+ */
+
+/* —— Layout shell —— */
+body.grass-map {
+  overflow: hidden;
+  height: 100%;
+  height: 100dvh;
+}
+
+body.grass-map .topbar {
+  padding: 8px 12px !important;
+  min-height: 52px;
+  flex-shrink: 0;
+}
+
+body.grass-map .footer {
+  display: none !important; /* reclaim vertical space; sources live in meta */
+}
+
+body.grass-map .layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 320px) 1fr;
+  height: calc(100dvh - 52px);
+  height: calc(100vh - 52px);
+  position: relative;
+  overflow: hidden;
+}
+
+body.grass-map .map-stage {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+}
+
+body.grass-map .map-wrap {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+}
+
+body.grass-map #map {
+  position: absolute;
+  inset: 0;
+  height: 100% !important;
+  width: 100% !important;
+}
+
+/* —— Rail (desktop always visible; mobile drawer) —— */
+body.grass-map .panel.rail {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  height: 100%;
+  z-index: 30;
+  background: rgba(255, 255, 255, 0.97);
+  border-right: 1px solid #e6e1d8;
+}
+
+body.grass-map .rail-scroll {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
+.rail-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 17, 15, 0.35);
+  z-index: 25;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+.rail-backdrop.open {
+  display: block;
+}
+
+/* —— Mobile dock —— */
+.mobile-dock {
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 40;
+  height: 56px;
+  padding: 0 4px env(safe-area-inset-bottom, 0);
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid #e6e1d8;
+  box-shadow: 0 -4px 20px rgba(20, 17, 15, 0.08);
+  justify-content: space-around;
+  align-items: stretch;
+}
+.mobile-dock button {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-weight: 700;
+  font-size: 0.68rem;
+  color: #7a736b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  cursor: pointer;
+  padding: 6px 4px;
+  border-radius: 10px;
+}
+.mobile-dock button span {
+  font-size: 1.15rem;
+  line-height: 1;
+}
+.mobile-dock button.active,
+.mobile-dock button:active {
+  color: #1a6b3c;
+  background: #e8f5ee;
+}
+
+/* Scope / near tools */
+.scope-toggle {
+  display: flex;
+  gap: 4px;
+  margin: 0 12px 8px;
+  background: #f1f5f9;
+  border-radius: 12px;
+  padding: 3px;
+}
+.scope-btn {
+  flex: 1;
+  border: none;
+  background: transparent;
+  border-radius: 10px;
+  padding: 8px 6px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: #64748b;
+  cursor: pointer;
+}
+.scope-btn.active {
+  background: #fff;
+  color: #145530;
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.08);
+}
+.rail-section {
+  padding: 8px 0;
+  border-bottom: 1px solid #e6e1d8;
+}
+.rail-label {
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #7a736b;
+  padding: 4px 12px 6px;
+}
+.rail-row {
+  display: flex;
+  gap: 6px;
+  padding: 0 12px;
+  align-items: center;
+}
+.near-radius-row .near-btn { flex: 1; }
+.loc-input {
+  flex: 1;
+  min-width: 0;
+  padding: 9px 10px;
+  border-radius: 10px;
+  border: 1px solid #e6e1d8;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+/* Sale list items (compact) */
+.sale-list {
+  list-style: none;
+  margin: 0;
+  padding: 6px 10px 20px;
+}
+.sale-item {
+  display: flex;
+  align-items: stretch;
+  gap: 4px;
+  background: #fff;
+  border: 1px solid #e6e1d8;
+  border-radius: 12px;
+  margin-bottom: 6px;
+  overflow: hidden;
+}
+.sale-main {
+  flex: 1;
+  text-align: left;
+  border: none;
+  background: transparent;
+  padding: 10px 12px;
+  cursor: pointer;
+  min-width: 0;
+}
+.sale-title {
+  display: block;
+  font-weight: 750;
+  font-size: 0.88rem;
+  color: #14110f;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.sale-meta {
+  display: block;
+  font-size: 0.75rem;
+  color: #7a736b;
+  margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.sale-meta .dist {
+  color: #1d4ed8;
+  font-weight: 700;
+  margin-right: 6px;
+}
+.sale-fav {
+  border: none;
+  background: #f8fafc;
+  padding: 0 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #94a3b8;
+}
+.sale-fav:hover { color: #f59e0b; }
+.sale-list .empty {
+  padding: 16px;
+  text-align: center;
+  color: #7a736b;
+  font-size: 0.85rem;
+  border: none;
+  background: transparent;
+}
+
+/* —— Mobile: full-bleed map —— */
+@media (max-width: 900px) {
+  body.grass-map .layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    height: calc(100dvh - 52px - 56px);
+    height: calc(100vh - 52px - 56px);
+  }
+
+  body.grass-map .map-stage {
+    grid-row: 1;
+    grid-column: 1;
+  }
+
+  /* Rail becomes overlay drawer — hidden by default */
+  body.grass-map .panel.rail {
+    position: fixed;
+    top: 52px;
+    left: 0;
+    bottom: 56px;
+    width: min(100%, 380px);
+    max-width: 100%;
+    transform: translateX(-105%);
+    transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+    box-shadow: none;
+    border-right: none;
+    border-radius: 0 16px 16px 0;
+  }
+
+  body.grass-map .panel.rail.open {
+    transform: translateX(0);
+    box-shadow: 8px 0 32px rgba(20, 17, 15, 0.18);
+  }
+
+  .mobile-dock {
+    display: flex;
+  }
+
+  /* FABs sit above dock */
+  body.grass-map .map-fabs {
+    bottom: 12px !important;
+  }
+  body.grass-map .map-legend {
+    bottom: 12px !important;
+    left: 72px !important;
+  }
+
+  /* Hide bulky desktop-only chrome on small screens when rail closed */
+  body.grass-map .topbar .ctrl:not(.keep-mobile) {
+    display: none;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 380px) {
+  body.grass-map .topbar {
+    padding: 6px 8px !important;
+  }
+  .mobile-dock button {
+    font-size: 0.62rem;
+  }
+}
+
+/* Prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  body.grass-map .panel.rail {
+    transition: none;
+  }
+}
+
+/* —— Sale detail sheet (pin click / list click) —— */
+body.grass-map .detail-drawer {
+  position: sticky;
+  bottom: 0;
+  z-index: 50;
+  margin-top: 8px;
+  max-height: min(55vh, 420px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  background: #fff;
+  border-top: 3px solid #c45c26;
+  border-radius: 16px 16px 0 0;
+  box-shadow: 0 -12px 40px rgba(20, 17, 15, 0.18);
+  padding: 14px 16px 18px;
+}
+body.grass-map .detail-drawer.hidden {
+  display: none !important;
+}
+body.grass-map .detail-drawer.open {
+  display: block;
+}
+body.grass-map .detail-close {
+  position: sticky;
+  top: 0;
+  float: right;
+  z-index: 2;
+  background: #f1f5f9;
+}
+/* Pin popup polish */
+.yb-pin-popup .maplibregl-popup-content {
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-size: 0.88rem;
+}
+.yb-pin-popup .popup-title {
+  font-weight: 800;
+  margin-bottom: 2px;
+  color: #14110f;
+}
+.yb-pin-popup .popup-meta {
+  color: #7a736b;
+  font-size: 0.8rem;
+}
