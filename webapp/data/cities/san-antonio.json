@@ -1,7 +1,7 @@
 {
   "date": "2026-08-07",
-  "last_refresh": "2026-08-07T00:38:47-05:00",
-  "total_locations": 170,
+  "last_refresh": "2026-08-07T02:11:13-05:00",
+  "total_locations": 171,
   "status": "live",
   "confidence": 0.82,
   "city": "san-antonio",
@@ -28,9 +28,9 @@
       "in_person": true,
       "external_id": "yss-4246roarkdrsanantoniotx78219-2026-08-07",
       "categories": [
-        "estate-sale",
         "in-person",
-        "garage-sale"
+        "garage-sale",
+        "estate-sale"
       ]
     },
     {
@@ -765,6 +765,30 @@
       "lon": -98.4936,
       "geocode": "city-center",
       "company": null
+    },
+    {
+      "address": "W Crestline, San Antonio, TX",
+      "dates": "2026-08-07 – 2026-08-09",
+      "date_from": "2026-08-07",
+      "date_to": "2026-08-09",
+      "end_date": "2026-08-09",
+      "hours": null,
+      "title": "GARAGE SALE",
+      "details": "QR Code Link to This Post GARAGE SALE Women’s clothing Girls clothing Men’s clothing Toys Shoes Kitchen items Backpacks Handbags",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/san-antonio-garage-sale/1Czdqd4GubgpSydVe1tUhx",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 29.485147,
+      "lon": -98.565742,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-toniogaragesale1czdqd4gubgpsydve1tuhx"
     }
   ],
   "permits": [

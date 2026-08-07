@@ -190,8 +190,8 @@
       "in_person": true,
       "external_id": "yss-683oystercrkbudatx78610-2026-08-07",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ]
     },
     {
@@ -216,9 +216,9 @@
       "in_person": true,
       "external_id": "yss-311wildhorsecreekbudatx78610-2026-08-07",
       "categories": [
-        "estate-sale",
         "in-person",
-        "garage-sale"
+        "garage-sale",
+        "estate-sale"
       ]
     },
     {
@@ -235,8 +235,8 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
@@ -261,13 +261,13 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.05890280251527,
-      "lon": -97.8446337519766,
+      "lat": 30.05889381940352,
+      "lon": -97.8407830713615,
       "geocode": "source",
       "company": "Creative Estate Sales",
       "in_person": true,
@@ -730,6 +730,24 @@
       "lon": -97.7431,
       "geocode": "city-center",
       "company": null
+    },
+    {
+      "address": "241 Konrad Creek Dr, Lockhart, TX 78644",
+      "dates": "Fri Aug 7 – Sun Aug 9",
+      "date_from": "08/07/2026",
+      "date_to": "08/09/2026",
+      "end_date": "2026-08-09",
+      "title": "Lockhart Blue Moon Estate Sale Original Art, Unique Home Decor, Outdoor Furniture and More",
+      "details": "",
+      "source": "GarageSaleFinder",
+      "url": "https://garagesalefinder.com/s/NI4hM/241-konrad-creek-dr-lockhart-tx-78644",
+      "photos": 0,
+      "type": "estate",
+      "confidence": 0.85,
+      "status": "verified",
+      "lat": 29.88,
+      "lon": -97.67,
+      "geocode": "zip-centroid"
     }
   ],
   "permits": [],
@@ -741,8 +759,8 @@
     "garagesalefinder.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 31,
+  "total_locations": 32,
   "status": "live",
   "date": "2026-08-07",
-  "last_refresh": "2026-08-07T00:38:47-05:00"
+  "last_refresh": "2026-08-07T02:11:13-05:00"
 }
