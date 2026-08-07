@@ -190,8 +190,8 @@
       "in_person": true,
       "external_id": "yss-683oystercrkbudatx78610-2026-08-07",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ]
     },
     {
@@ -216,8 +216,8 @@
       "in_person": true,
       "external_id": "yss-311wildhorsecreekbudatx78610-2026-08-07",
       "categories": [
-        "garage-sale",
         "in-person",
+        "garage-sale",
         "estate-sale"
       ]
     },
@@ -266,8 +266,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.062343334315486,
-      "lon": -97.8407207962033,
+      "lat": 30.062522996550484,
+      "lon": -97.84093875925699,
       "geocode": "source",
       "company": "Creative Estate Sales",
       "in_person": true,
@@ -787,5 +787,5 @@
   "total_locations": 33,
   "status": "live",
   "date": "2026-08-07",
-  "last_refresh": "2026-08-07T06:07:49-05:00"
+  "last_refresh": "2026-08-07T07:57:00-05:00"
 }

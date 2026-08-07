@@ -1,7 +1,7 @@
 {
   "date": "2026-08-07",
-  "last_refresh": "2026-08-07T06:07:49-05:00",
-  "total_locations": 171,
+  "last_refresh": "2026-08-07T07:57:00-05:00",
+  "total_locations": 174,
   "status": "live",
   "confidence": 0.82,
   "city": "san-antonio",
@@ -28,8 +28,8 @@
       "in_person": true,
       "external_id": "yss-4246roarkdrsanantoniotx78219-2026-08-07",
       "categories": [
-        "garage-sale",
         "in-person",
+        "garage-sale",
         "estate-sale"
       ]
     },
@@ -789,6 +789,78 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "cl-toniogaragesale1czdqd4gubgpsydve1tuhx"
+    },
+    {
+      "address": "N Park Blvd near Marian, San Antonio, TX",
+      "dates": "2026-08-07 – 2026-08-09",
+      "date_from": "2026-08-07",
+      "date_to": "2026-08-09",
+      "end_date": "2026-08-09",
+      "hours": null,
+      "title": "**Huge Yard sale**",
+      "details": "QR Code Link to This Post Too many things to list! Friday 7th and Sat 8th 8:30 am. 629 N Park Blvd 78204",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/san-antonio-huge-yard-sale/jEmGyqgggPvLEJEJpYwZQu",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 29.399328,
+      "lon": -98.524261,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-iohugeyardsalejemgyqgggpvlejejpywzqu"
+    },
+    {
+      "address": "5302 Neer ave., San Antonio, TX",
+      "dates": "2026-08-07 – 2026-08-09",
+      "date_from": "2026-08-07",
+      "date_to": "2026-08-09",
+      "end_date": "2026-08-09",
+      "hours": null,
+      "title": "Garage sale",
+      "details": "QR Code Link to This Post Garage sale Everything must to go 5302 Neer ave.",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/san-antonio-garage-sale/mBKptw4GjBxiuywDMJsBiw",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 29.502655,
+      "lon": -98.522473,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-toniogaragesalembkptw4gjbxiuywdmjsbiw"
+    },
+    {
+      "address": "14022 Emerald crk, San Antonio, TX",
+      "dates": "2026-08-07 – 2026-08-09",
+      "date_from": "2026-08-07",
+      "date_to": "2026-08-09",
+      "end_date": "2026-08-09",
+      "hours": null,
+      "title": "Garage sale",
+      "details": "QR Code Link to This Post Garage sale for a variety of items. Power wheels electric dinosaur 4 wheeler, punching bag set, household items, clothes, some tools, deep freezer,etc.",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/san-antonio-garage-sale/esJrnrcgdSZBbidveW5ZzX",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 29.5407,
+      "lon": -98.5521,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-toniogaragesaleesjrnrcgdszbbidvew5zzx"
     }
   ],
   "permits": [
