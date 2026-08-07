@@ -1,6 +1,6 @@
 {
   "date": "2026-08-07",
-  "last_refresh": "2026-08-07T13:52:45-05:00",
+  "last_refresh": "2026-08-07T15:38:07-05:00",
   "total_locations": 177,
   "status": "live",
   "confidence": 0.82,
@@ -28,9 +28,9 @@
       "in_person": true,
       "external_id": "yss-4246roarkdrsanantoniotx78219-2026-08-07",
       "categories": [
-        "garage-sale",
         "estate-sale",
-        "in-person"
+        "in-person",
+        "garage-sale"
       ]
     },
     {
@@ -750,10 +750,10 @@
       "date_from": "2026-08-07",
       "date_to": "2026-08-09",
       "end_date": "2026-08-09",
-      "title": "BUDA-FUL Downsizing Sale",
+      "title": "This Could Be the Most Incredible Estate Sale of the Summer!",
       "details": "Estate Sale",
       "source": "EstateSales.net",
-      "url": "https://www.estatesales.net/TX/Buda/78610/5013879",
+      "url": "https://www.estatesales.net/TX/Cedar Creek/78612/5022750",
       "photos": 0,
       "type": "estate",
       "categories": [

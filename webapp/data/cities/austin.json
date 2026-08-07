@@ -217,9 +217,9 @@
       "in_person": true,
       "external_id": "yss-311wildhorsecreekbudatx78610-2026-08-07",
       "categories": [
-        "garage-sale",
         "estate-sale",
-        "in-person"
+        "in-person",
+        "garage-sale"
       ]
     },
     {
@@ -236,8 +236,8 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "in-person",
-        "estate-sale"
+        "estate-sale",
+        "in-person"
       ],
       "confidence": 0.9,
       "status": "verified",
@@ -262,13 +262,13 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "in-person",
-        "estate-sale"
+        "estate-sale",
+        "in-person"
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.062451131656484,
-      "lon": -97.84383455411309,
+      "lat": 30.059307042544017,
+      "lon": -97.84348166154997,
       "geocode": "source",
       "company": "Creative Estate Sales",
       "in_person": true,
@@ -378,7 +378,7 @@
       "end_date": "2026-08-09",
       "hours": null,
       "title": "Estate Sale Friday and Saturday at 9 am in South Austin",
-      "details": "QR Code Link to This Post Vintage Estate Sale in 78745 on Friday Aug 7th and Saturday Aug 8th (if there’s anything left- priced to sell) 9 am 3102 Jeanne Marie ct Lots of items are $1 Vintage bedroom set and bedding Vintage Wooden Chest Dresser Vintage wall decor Vintage Kitchen supplies galore Precious Moments Plastic bins Folding tables Garage stuff Books Christmas decor Crafts Vintage decor Clo",
+      "details": "QR Code Link to This Post 25 % off -Vintage Estate Sale in 78745 on Friday Aug 7th and Saturday Aug 8th (if there’s anything left- priced to sell) 9 am- 1 pm 3102 Jeanne Marie ct Lots of items are $1 Plants Vintage bedroom set and bedding Vintage Wooden Chest Dresser Vintage wall decor Vintage Kitchen supplies galore Precious Moments Plastic bins Folding tables Garage stuff Books Christmas decor C",
       "source": "Craigslist",
       "url": "https://www.craigslist.org/view/d/austin-estate-sale-friday-and-saturday/nXUKTe7oFHPwK1yXfbaCPJ",
       "photos": 0,
@@ -871,5 +871,5 @@
   "total_locations": 37,
   "status": "live",
   "date": "2026-08-07",
-  "last_refresh": "2026-08-07T13:52:45-05:00"
+  "last_refresh": "2026-08-07T15:38:07-05:00"
 }
