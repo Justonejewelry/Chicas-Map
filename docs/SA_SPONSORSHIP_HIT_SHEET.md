@@ -1,6 +1,6 @@
-# Project YardBird — San Antonio Sponsorship Hit Sheet
+# Chicas Map — San Antonio Sponsorship Hit Sheet
 **Phone Ninja Edition** · GSIN / Chica's Map  
-Contact: **mr.jsciaraffa@gmail.com** · Map: https://justonejewelry.github.io/Project-YardBird/
+Contact: **mr.jsciaraffa@gmail.com** · Map: https://justonejewelry.github.io/Chicas-Map/
 
 > **Rule:** You are not begging for ad money. You are offering **qualified weekend traffic** to businesses that already live off garage-sale, moving, estate, and thrift demand.
 
@@ -81,7 +81,7 @@ If pushed:
 > “It’s about **weekend map traffic** for people already out doing garage sales — not a cold pitch deck. Thirty seconds with the right person.”
 
 ### Decision-maker open (pattern interrupt)
-> “Hi [Name] — [Your name] with **YardBird**, the garage-sale map for San Antonio.  
+> “Hi [Name] — [Your name] with **Chicas Map**, the garage-sale map for San Antonio.  
 > Not calling to sell you a banner nobody clicks.  
 > Calling because **thousands of SA treasure hunters** open our map Thu–Sat looking for sales — and the businesses next to those routes print money.  
 > Got 45 seconds?”
@@ -89,7 +89,7 @@ If pushed:
 *(Pause. Let them say yes.)*
 
 ### 30-second core pitch
-> “YardBird is a live map of **verified garage, yard, and estate sales** across San Antonio.  
+> “Chicas Map is a live map of **verified garage, yard, and estate sales** across San Antonio.  
 > Shoppers open it to plan their Saturday loop.  
 > We’re placing a limited number of **partner pins** — U-Haul, storage, estate companies, flea markets — right where those routes run.  
 > You’re not buying ‘awareness.’ You’re buying **presence in the moment someone decides where to drive and what to haul.**  
@@ -102,7 +102,7 @@ If pushed:
 3. **Binary:** “Better fit — **map pin near the Northwest clusters**, or **weekend title on the forecast panel**?”
 
 ### Voicemail (max 20 seconds)
-> “[Name], [Your name] with YardBird — the San Antonio garage-sale map.  
+> “[Name], [Your name] with Chicas Map — the San Antonio garage-sale map.  
 > Partner pins for [moving / estate / flea] are limited this month.  
 > I’ll try you again [day]. Or grab me at [phone] / mr.jsciaraffa@gmail.com.  
 > It’s about weekend traffic, not another banner.”
@@ -188,7 +188,7 @@ If pushed:
 ## 7. After They Say Yes (simple fulfillment)
 
 1. Confirm tier + start date + logo (PNG/SVG, transparent).
-2. Invoice or Venmo/Cash App note: *YardBird SA [Tier] [Month]*.
+2. Invoice or Venmo/Cash App note: *Chicas Map SA [Tier] [Month]*.
 3. Add to `webapp/data/sponsors.json` → status `active`.
 4. Pin goes live on map within 24–48 hrs.
 5. Send screenshot proof + link.
@@ -208,4 +208,4 @@ If pushed:
 
 ---
 
-*YardBird · Project GSIN · San Antonio first · Then the state.*
+*Chicas Map · GSIN · San Antonio first · Then the state.*
