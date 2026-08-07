@@ -1,5 +1,5 @@
 /**
- * Chica / YardBird public config
+ * Chica / Chicas Map public config
  * Aurora Voss — keep secrets out of this file.
  * Formspree form IDs and reCAPTCHA *site* keys are public by design.
  * Never put the reCAPTCHA *secret* key here — only in Formspree dashboard.
@@ -7,11 +7,8 @@
  * Formspree Friday list: https://formspree.io/f/myegykrq
  * Notification email: mr.jsciaraffa@gmail.com
  *
- * reCAPTCHA setup:
- * 1. https://www.google.com/recaptcha/admin → Create (v3)
- * 2. Domains: justonejewelry.github.io  (+ localhost for local test)
- * 3. Paste SITE key below as RECAPTCHA_SITE_KEY
- * 4. In Formspree form Settings → CAPTCHA on → Custom reCAPTCHA → paste SECRET key
+ * Analytics: Microsoft Clarity (free heatmaps + click rates)
+ * Project ID is public by design (same as GA measurement IDs).
  */
 (function (global) {
   global.ChicaConfig = {
@@ -29,6 +26,12 @@
 
     /** Review / notification address (mailto fallback) */
     REVIEW_EMAIL: "mr.jsciaraffa@gmail.com",
+
+    /** Microsoft Clarity project ID (free heatmaps + click analytics) */
+    CLARITY_PROJECT_ID: "xyurojj2kb",
+
+    /** Optional Google Analytics 4 Measurement ID (e.g. G-XXXXXXXX). Leave empty to skip. */
+    GA_MEASUREMENT_ID: "",
 
     formspreeUrl: function (id) {
       if (!id || !String(id).trim()) return null;
