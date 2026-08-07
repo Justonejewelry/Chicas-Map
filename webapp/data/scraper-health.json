@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-07T09:51:34-05:00",
+  "generated_at": "2026-08-07T10:15:36-05:00",
   "overall": "critical",
   "primary_failures": [
     "estatesales_org",
@@ -10,7 +10,7 @@
     {
       "source": "garagesalefinder",
       "status": "ok",
-      "detail": "merge added=5",
+      "detail": "merge added=4",
       "primary": false
     },
     {
