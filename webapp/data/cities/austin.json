@@ -201,7 +201,7 @@
       "date_from": "2026-08-07",
       "date_to": "2026-08-09",
       "end_date": "2026-08-09",
-      "title": "Buda-Ful Downsizing Sale",
+      "title": "25% Off Saturday - Buda-Ful Downsizing Sale",
       "details": "",
       "source": "YardSaleSearch",
       "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196325459",
@@ -218,8 +218,8 @@
       "external_id": "yss-311wildhorsecreekbudatx78610-2026-08-07",
       "categories": [
         "estate-sale",
-        "in-person",
-        "garage-sale"
+        "garage-sale",
+        "in-person"
       ]
     },
     {
@@ -236,8 +236,8 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
@@ -262,13 +262,13 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.059307042544017,
-      "lon": -97.84348166154997,
+      "lat": 30.06299011836148,
+      "lon": -97.84103217199429,
       "geocode": "source",
       "company": "Creative Estate Sales",
       "in_person": true,
@@ -716,10 +716,10 @@
       "date_from": "2026-08-07",
       "date_to": "2026-08-09",
       "end_date": "2026-08-09",
-      "title": "This Could Be the Most Incredible Estate Sale of the Summer!",
+      "title": "25% Saturday! Estate of Curiosities",
       "details": "Estate Sale",
       "source": "EstateSales.net",
-      "url": "https://www.estatesales.net/TX/Cedar Creek/78612/5022750",
+      "url": "https://www.estatesales.net/TX/Austin/78721/5025279",
       "photos": 0,
       "type": "estate",
       "categories": [
@@ -857,6 +857,52 @@
       "lat": 30.2672,
       "lon": -97.7431,
       "geocode": "city-center"
+    },
+    {
+      "address": "901 County Rd 290, Leander, TX 78641",
+      "dates": "2026-08-08 – 2026-08-08",
+      "date_from": "2026-08-08",
+      "date_to": "2026-08-08",
+      "end_date": "2026-08-08",
+      "title": "Multi Family Garage/Moving Sale!",
+      "details": "",
+      "source": "YardSaleSearch",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196340643",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.88,
+      "status": "verified",
+      "lat": 30.564532,
+      "lon": -97.913952,
+      "geocode": "source",
+      "external_id": "yss-901countyrd290leandertx78641-2026-08-08",
+      "categories": [
+        "garage-sale"
+      ]
+    },
+    {
+      "address": "1101 Speer Ln Austin TX 78745 near Emerald Forest, Austin, TX",
+      "dates": "2026-08-07 – 2026-08-09",
+      "date_from": "2026-08-07",
+      "date_to": "2026-08-09",
+      "end_date": "2026-08-09",
+      "hours": null,
+      "title": "+++++ Clearing Out Estate Sale - Welcome Resellers +++++",
+      "details": "QR Code Link to This Post 8-11 AM only. We're STILL uncovering many new boxes full of treasures that could be yours... Rugs Mid century Modern fireplace Tables Sofa Tools, Musical instruments Camera and video, Audio, China, Art, Books, Household, Medical, Furniture, Wool Rug, Shelving, Cabinets, Auto, Sinks, Lights, Tool Boxes Men's Clothes Office, Hardware, Antiques MORE!!!",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/austin-clearing-out-estate-sale-welcome/jq6KCj1VD5c8mtGv4AmacC",
+      "photos": 0,
+      "type": "estate",
+      "categories": [
+        "estate-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 30.1991,
+      "lon": -97.7959,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-tatesalewelcomejq6kcj1vd5c8mtgv4amacc"
     }
   ],
   "permits": [],
@@ -868,8 +914,8 @@
     "garagesalefinder.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 37,
+  "total_locations": 39,
   "status": "live",
   "date": "2026-08-07",
-  "last_refresh": "2026-08-07T15:38:07-05:00"
+  "last_refresh": "2026-08-07T17:32:26-05:00"
 }
