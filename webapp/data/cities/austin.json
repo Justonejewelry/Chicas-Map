@@ -190,8 +190,8 @@
       "in_person": true,
       "external_id": "yss-683oystercrkbudatx78610-2026-08-07",
       "categories": [
-        "in-person",
-        "estate-sale"
+        "estate-sale",
+        "in-person"
       ]
     },
     {
@@ -216,8 +216,8 @@
       "in_person": true,
       "external_id": "yss-311wildhorsecreekbudatx78610-2026-08-07",
       "categories": [
-        "in-person",
         "estate-sale",
+        "in-person",
         "garage-sale"
       ]
     },
@@ -235,8 +235,8 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
@@ -261,13 +261,13 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.06290927035573,
-      "lon": -97.84009804462134,
+      "lat": 30.059172295867768,
+      "lon": -97.84383455411309,
       "geocode": "source",
       "company": "Creative Estate Sales",
       "in_person": true,
@@ -748,6 +748,31 @@
       "lat": 29.88,
       "lon": -97.67,
       "geocode": "zip-centroid"
+    },
+    {
+      "address": "1518 Villanova Drive near Burrell dr/ Anderson Lane/ Ohlen, Austin, TX",
+      "dates": "2026-08-07 – 2026-08-09",
+      "date_from": "2026-08-07",
+      "date_to": "2026-08-09",
+      "end_date": "2026-08-09",
+      "hours": null,
+      "title": "✈️ MOVING out of the country - 25 years of treasure need new homes!",
+      "details": "QR Code Link to This Post After 25 years in my home, I’m letting go of a lot of things — a mix of useful, beautiful, unusual, COOL and fun finds at good prices. ✨ Artisan pieces &amp; artwork, 🎨🪇 🪑 Furniture, lamps &amp; unique décor 🪞 Mirrors &amp; one-of-a-kind finds; VINTAGE 🏖️ 📚 Great books 🐶 Pet items 🎶 Eclectic VINYL records — 70s, 80s, rock, disco, pop, indie &amp; more! 🎵 Hundreds to choos",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/austin-moving-out-of-the-country-25/5Bzv7uYFky84QL3gjM4qkM",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale",
+        "moving-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 30.359594,
+      "lon": -97.72031,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-ofthecountry255bzv7uyfky84ql3gjm4qkm"
     }
   ],
   "permits": [],
@@ -759,8 +784,8 @@
     "garagesalefinder.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 32,
+  "total_locations": 33,
   "status": "live",
   "date": "2026-08-07",
-  "last_refresh": "2026-08-07T03:56:58-05:00"
+  "last_refresh": "2026-08-07T05:50:44-05:00"
 }

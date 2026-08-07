@@ -1,6 +1,6 @@
 {
   "date": "2026-08-07",
-  "last_refresh": "2026-08-07T03:56:58-05:00",
+  "last_refresh": "2026-08-07T05:50:44-05:00",
   "total_locations": 171,
   "status": "live",
   "confidence": 0.82,
@@ -28,8 +28,8 @@
       "in_person": true,
       "external_id": "yss-4246roarkdrsanantoniotx78219-2026-08-07",
       "categories": [
-        "in-person",
         "estate-sale",
+        "in-person",
         "garage-sale"
       ]
     },
