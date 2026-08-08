@@ -696,6 +696,30 @@
       "lat": 29.4241,
       "lon": -98.4936,
       "geocode": "city-center"
+    },
+    {
+      "address": "206 Conway dr, San Antonio, TX",
+      "dates": "2026-08-08 – 2026-08-10",
+      "date_from": "2026-08-08",
+      "date_to": "2026-08-10",
+      "end_date": "2026-08-10",
+      "hours": null,
+      "title": "Garage Sale!!!",
+      "details": "QR Code Link to This Post Home decor, kitchen items-coffee maker,coffee grinder,pots and pans,- throw pillows,bar stools, kids items mens jeans 36x32 and 38 x32. Women's jeans size 10 shoes 7-9.craft items. Come make an offer!!",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/san-antonio-garage-sale/mn3MfZpP9tbAgYrBJW89op",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 29.4821,
+      "lon": -98.4554,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-toniogaragesalemn3mfzpp9tbagyrbjw89op"
     }
   ],
   "permits": [
@@ -2834,10 +2858,10 @@
     "garagesalefinder.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 117,
+  "total_locations": 118,
   "status": "live",
   "date": "2026-08-08",
-  "last_refresh": "2026-08-08T01:46:50-05:00",
+  "last_refresh": "2026-08-08T03:37:39-05:00",
   "permit_total": 85,
   "permit_estate_count": 1
 }
