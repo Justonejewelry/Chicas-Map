@@ -46,8 +46,8 @@
       "in_person": true,
       "external_id": "yss-4246roarkdrsanantoniotx78219-2026-08-07",
       "categories": [
-        "estate-sale",
         "garage-sale",
+        "estate-sale",
         "in-person"
       ]
     },
@@ -191,14 +191,14 @@
     },
     {
       "address": "111 Coney St, San Antonio, TX 78223",
-      "dates": "2026-08-07 – 2026-08-08",
-      "date_from": "2026-08-07",
-      "date_to": "2026-08-08",
+      "dates": "Fri Aug 7 – Sat Aug 8",
+      "date_from": "08/07/2026",
+      "date_to": "08/08/2026",
       "end_date": "2026-08-08",
-      "title": "🚨 **Huge Moving Garage Sale – Everything Must Go🚨",
+      "title": "🚨 **HUGE MOVING GARAGE SALE – EVERYTHING MUST GO🚨",
       "details": "",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196337243",
+      "source": "GarageSaleFinder",
+      "url": "https://garagesalefinder.com/s/N9kKu/111-coney-st-san-antonio-tx-78223",
       "photos": 0,
       "type": "garage",
       "confidence": 0.88,
@@ -1017,6 +1017,28 @@
       "lon": -98.4936,
       "geocode": "city-center",
       "company": null
+    },
+    {
+      "address": "6415 Peace Pipe Dr, San Antonio, TX 78238",
+      "dates": "2026-08-08 – 2026-08-08",
+      "date_from": "2026-08-08",
+      "date_to": "2026-08-08",
+      "end_date": "2026-08-08",
+      "title": "Yard Sale/Plant Sale",
+      "details": "",
+      "source": "YardSaleSearch",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196341613",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.88,
+      "status": "verified",
+      "lat": 29.468379,
+      "lon": -98.612879,
+      "geocode": "source",
+      "external_id": "yss-6415peacepipedrsanantoniotx78238-2026-08-08",
+      "categories": [
+        "garage-sale"
+      ]
     }
   ],
   "permits": [],
@@ -1029,10 +1051,10 @@
     "garagesalefinder.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 46,
+  "total_locations": 47,
   "status": "live",
   "date": "2026-08-08",
-  "last_refresh": "2026-08-08T07:06:04-05:00",
-  "permit_total": 0,
-  "permit_estate_count": 0
+  "last_refresh": "2026-08-08T07:41:35-05:00",
+  "permit_total": 85,
+  "permit_estate_count": 1
 }
