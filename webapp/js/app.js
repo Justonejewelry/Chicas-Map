@@ -25,6 +25,7 @@
   let city = localStorage.getItem("yb_city") || "san-antonio";
   let engine = localStorage.getItem("yb_map") || "liberty";
   let filter = "all", query = "";
+  let dayFilters = { fri: true, sat: true, sun: true };
   let userLoc = null;
   let maxMiles = 10;
   let showFavOnly = false;
@@ -48,7 +49,6 @@
     try { localStorage.setItem(key, JSON.stringify(val)); } catch (_) {}
   }
 
-  /** Fire named Clarity / GA event when analytics is loaded. */
   function trackEvent(name, props) {
     try {
       if (window.ChicaAnalytics && typeof window.ChicaAnalytics.track === "function") {
@@ -57,7 +57,6 @@
     } catch (_) {}
   }
 
-  /** Close rail + FABs so the map fills the screen again (mobile + desktop). */
   function returnToMap() {
     const rail = document.getElementById("sideRail");
     const backdrop = document.getElementById("railBackdrop");
@@ -89,8 +88,6 @@
     Object.keys(metrics.active_days).forEach((d) => { if (d < cut) delete metrics.active_days[d]; });
     saveJson(METRICS_KEY, metrics);
     renderHardMetrics();
-
-    // Bridge to Clarity / GA named events
     if (kind === "click") trackEvent("pin_click", { city: city });
     else if (kind === "save") trackEvent("save", { city: city });
     else if (kind === "route_open") trackEvent("route_open", { city: city, stops: routeIds.length });
@@ -143,7 +140,7 @@
     return `${(s.address || "").toLowerCase()}|${s.lat}|${s.lon}|${s.title || ""}`;
   }
   function esc(s) {
-    return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+    return String(s == null ? "" : s).replace(/&/g, "&").replace(/</g, "<").replace(/>/g, ">").replace(/"/g, """);
   }
   function milesBetween(lat1, lon1, lat2, lon2) {
     const R = 3958.8; const toRad = (d) => (d * Math.PI) / 180;
@@ -181,6 +178,21 @@
     _salesCacheKey = "";
   }
 
+  function saleMatchesDay(s) {
+    const allOn = dayFilters.fri && dayFilters.sat && dayFilters.sun;
+    if (allOn) return true;
+    const blob = `${s.dates || ""} ${s.hours || ""} ${s.start_date || ""} ${s.end_date || ""} ${s.title || ""}`.toLowerCase();
+    const hasFri = /\bfri(day)?\b|\bthurs?\b|weekend/.test(blob);
+    const hasSat = /\bsat(urday)?\b|weekend/.test(blob);
+    const hasSun = /\bsun(day)?\b|weekend/.test(blob);
+    const anyDayMention = hasFri || hasSat || hasSun;
+    if (!anyDayMention) return true; // no day info → keep visible
+    if (dayFilters.fri && hasFri) return true;
+    if (dayFilters.sat && hasSat) return true;
+    if (dayFilters.sun && hasSun) return true;
+    return false;
+  }
+
   function allSales() {
     if (!feed) return [];
     const key = `${city}|${userLoc ? userLoc.lat + "," + userLoc.lon : "noloc"}|${(feed.public || []).length}|${(feed.permits || []).length}`;
@@ -206,8 +218,9 @@
     }
     if (query) {
       const q = query.toLowerCase();
-      list = list.filter((s) => `${s.title || ""} ${s.address || ""} ${s.details || ""}`.toLowerCase().includes(q));
+      list = list.filter((s) => `${s.title || ""} ${s.address || ""} ${s.details || ""} ${(s.categories || []).join(" ")}`.toLowerCase().includes(q));
     }
+    list = list.filter(saleMatchesDay);
     if (showFavOnly) list = list.filter((s) => favorites[s._key]);
     if (wishlistOnly && window.ChicaFeatures) list = list.filter((s) => ChicaFeatures.matchesWishlist(s));
     if (first30Only && window.ChicaFeatures) list = list.filter((s) => ChicaFeatures.isEarlyOpen(s) || (s._sniff || 0) >= 4);
@@ -271,31 +284,72 @@
       return `<li><span class="num">${i + 1}</span> <span>${esc(s.title || s.address || "Stop")}</span></li>`;
     }).join("");
   }
-  function openMultiRoute() {
-    const byKey = {};
-    allSales().forEach((s) => (byKey[s._key] = s));
-    routeIds.forEach((k) => { if (!byKey[k] && favorites[k]) byKey[k] = favorites[k]; });
-    const stops = routeIds.map((k) => byKey[k]).filter((s) => s && (s.lat != null || s.address));
-    if (stops.length < 1) { toast("Add at least one stop"); return; }
+
+  function buildNavUrls(stops) {
+    if (!stops || !stops.length) return null;
     const origin = userLoc ? `${userLoc.lat},${userLoc.lon}` : (stops[0].lat != null ? `${stops[0].lat},${stops[0].lon}` : encodeURIComponent(stops[0].address || ""));
     const destStop = stops[stops.length - 1];
     const destination = destStop.lat != null ? `${destStop.lat},${destStop.lon}` : encodeURIComponent(destStop.address || "");
     const middle = stops.slice(userLoc ? 0 : 1, -1);
     const waypoints = middle.map((s) => (s.lat != null ? `${s.lat},${s.lon}` : encodeURIComponent(s.address || ""))).join("|");
-    let url = `https://www.google.com/maps/dir/?api=1&origin=${origin}&destination=${destination}`;
-    if (waypoints) url += `&waypoints=${waypoints}`;
-    trackMetric("route_open");
-    window.open(url, "_blank", "noopener");
+    let google = `https://www.google.com/maps/dir/?api=1&origin=${origin}&destination=${destination}`;
+    if (waypoints) google += `&waypoints=${waypoints}`;
+    const apple = destStop.lat != null
+      ? `https://maps.apple.com/?daddr=${destStop.lat},${destStop.lon}`
+      : `https://maps.apple.com/?daddr=${encodeURIComponent(destStop.address || "")}`;
+    const waze = destStop.lat != null
+      ? `https://waze.com/ul?ll=${destStop.lat},${destStop.lon}&navigate=yes`
+      : `https://waze.com/ul?q=${encodeURIComponent(destStop.address || "")}&navigate=yes`;
+    return { google, apple, waze };
   }
-  function directionsUrl(s) {
-    if (s.lat != null && s.lon != null) return `https://www.google.com/maps/dir/?api=1&destination=${s.lat},${s.lon}`;
-    if (s.address) return `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(s.address)}`;
+
+  function openMultiRoute(app) {
+    const byKey = {};
+    allSales().forEach((s) => (byKey[s._key] = s));
+    routeIds.forEach((k) => { if (!byKey[k] && favorites[k]) byKey[k] = favorites[k]; });
+    const stops = routeIds.map((k) => byKey[k]).filter((s) => s && (s.lat != null || s.address));
+    if (stops.length < 1) { toast("Add at least one stop"); return; }
+    const urls = buildNavUrls(stops);
+    if (!urls) return;
+    trackMetric("route_open");
+    const target = app === "apple" ? urls.apple : app === "waze" ? urls.waze : urls.google;
+    window.open(target, "_blank", "noopener");
+  }
+
+  function directionsUrls(s) {
+    if (s.lat != null && s.lon != null) {
+      return {
+        google: `https://www.google.com/maps/dir/?api=1&destination=${s.lat},${s.lon}`,
+        apple: `https://maps.apple.com/?daddr=${s.lat},${s.lon}`,
+        waze: `https://waze.com/ul?ll=${s.lat},${s.lon}&navigate=yes`,
+      };
+    }
+    if (s.address) {
+      const q = encodeURIComponent(s.address);
+      return {
+        google: `https://www.google.com/maps/dir/?api=1&destination=${q}`,
+        apple: `https://maps.apple.com/?daddr=${q}`,
+        waze: `https://waze.com/ul?q=${q}&navigate=yes`,
+      };
+    }
     return null;
   }
+
   function sourceLink(s) {
     if (s.source_url || s.url) return `<a href="${esc(s.source_url || s.url)}" target="_blank" rel="noopener">${esc(s.source || "source")}</a>`;
     return esc(s.source || "Chicas Map");
   }
+
+  function reportSale(s, reason) {
+    const subject = encodeURIComponent(`Chica Map — ${reason}: ${s.title || s.address || "sale"}`);
+    const body = encodeURIComponent(
+      `Report type: ${reason}\n\nTitle: ${s.title || ""}\nAddress: ${s.address || ""}\nLat/Lon: ${s.lat},${s.lon}\nDates: ${s.dates || ""}\nSource: ${s.source || ""}\n\nReported from map at ${new Date().toISOString()}`
+    );
+    trackEvent("report_sale", { city: city, reason });
+    window.location.href = `mailto:mr.jsciaraffa@gmail.com?subject=${subject}&body=${body}`;
+    toast("Report email opened — thank you");
+  }
+
   function showDetail(s) {
     const drawer = document.getElementById("detailDrawer");
     const body = document.getElementById("detailBody");
@@ -305,7 +359,7 @@
     const isFav = !!favorites[k];
     const onRoute = routeIds.includes(k);
     const dist = s._miles != null ? `<div class="d-meta"><strong>${formatMiles(s._miles)}</strong> away</div>` : "";
-    const dirs = directionsUrl(s);
+    const dirs = directionsUrls(s);
     body.innerHTML = `<h3>${esc(s.title || "Sale")}</h3>
       <div class="d-addr">${esc(s.address || "")}</div>
       ${dist}
@@ -317,23 +371,28 @@
       <div class="action-row">
         <button type="button" class="action-btn" id="btnFav">${isFav ? "★ Saved" : "☆ Save"}</button>
         <button type="button" class="action-btn" id="btnAddRoute">${onRoute ? "✓ On route" : "＋ Route"}</button>
-        ${dirs ? `<a class="action-btn dirs" href="${esc(dirs)}" target="_blank" rel="noopener">🧭 Go</a>` : ""}
         <button type="button" class="action-btn" id="btnShareSale">↗ Share</button>
+      </div>
+      ${dirs ? `<div class="nav-apps">
+        <a class="nav-app-btn google" href="${esc(dirs.google)}" target="_blank" rel="noopener">Google</a>
+        <a class="nav-app-btn apple" href="${esc(dirs.apple)}" target="_blank" rel="noopener">Apple</a>
+        <a class="nav-app-btn waze" href="${esc(dirs.waze)}" target="_blank" rel="noopener">Waze</a>
+      </div>` : ""}
+      <div class="report-row">
+        <button type="button" class="report-btn" id="btnReportClosed">Report Closed</button>
+        <button type="button" class="report-btn" id="btnReportWrong">Wrong Address</button>
       </div>`;
     drawer.classList.remove("hidden");
     drawer.classList.add("open");
-    // Always open the rail so the detail is visible (mobile + desktop)
     document.getElementById("sideRail")?.classList.add("open");
     const bd = document.getElementById("railBackdrop");
     if (bd) { bd.hidden = false; bd.classList.add("open"); }
     document.getElementById("dockList")?.classList.add("active");
-    // Bring detail into view (sticky sheet sits at bottom of rail)
     requestAnimationFrame(() => {
       try {
         drawer.scrollIntoView({ behavior: "smooth", block: "nearest" });
         const sc = document.querySelector(".rail-scroll");
         if (sc) {
-          // Prefer showing the detail near the bottom of the visible rail
           const target = drawer.offsetTop - Math.max(0, sc.clientHeight - drawer.offsetHeight - 24);
           sc.scrollTo({ top: Math.max(0, target), behavior: "smooth" });
         }
@@ -349,6 +408,8 @@
         else { await navigator.clipboard.writeText(text); toast("Copied"); }
       } catch (_) {}
     });
+    document.getElementById("btnReportClosed")?.addEventListener("click", () => reportSale(s, "Sale Closed / Ended"));
+    document.getElementById("btnReportWrong")?.addEventListener("click", () => reportSale(s, "Wrong Address"));
     window.__YB_LAST_SALE = s;
     const tipBtn = document.getElementById("btnOpenTipForm");
     if (tipBtn) tipBtn.hidden = !(s.type === "permit" || (s.source || "").toLowerCase().includes("permit"));
@@ -379,7 +440,7 @@
         </button>
         <button type="button" class="sale-fav" title="Save">${fav}</button>
       </li>`;
-    }).join("") || `<li class="empty">No sales match. Try City-wide or a wider radius.</li>`;
+    }).join("") || `<li class="empty">No sales match. Try City-wide, clear search, or widen days.</li>`;
     ul.querySelectorAll(".sale-main").forEach((btn) => {
       btn.addEventListener("click", () => {
         const key = btn.closest("li")?.dataset.key;
@@ -397,7 +458,6 @@
     });
   }
 
-  /** Individual pins only — no clustering. Every sale gets its own circle. */
   function ensurePinLayers() {
     if (!map || _pinSourceReady) return;
     if (!map.getSource) return;
@@ -440,11 +500,9 @@
           const key = f.properties && f.properties.key;
           let s = allSales().find((x) => x._key === key);
           if (!s && f.properties) {
-            // Fallback: rebuild minimal sale from feature props if cache miss
             s = { _key: key, title: f.properties.title, lat: f.geometry.coordinates[1], lon: f.geometry.coordinates[0], type: f.properties.kind === "top" ? "garage" : f.properties.kind };
           }
           if (!s) return;
-          // Brief map popup for instant feedback, then full detail drawer
           try {
             if (window.__ybPinPopup) { window.__ybPinPopup.remove(); window.__ybPinPopup = null; }
             const html = `<div class="popup-title">${esc(s.title || "Sale")}</div>
@@ -652,7 +710,9 @@
     document.getElementById("btnRoute")?.addEventListener("click", () => {
       document.getElementById("routeTray")?.classList.toggle("hidden");
     });
-    document.getElementById("btnOpenRoute")?.addEventListener("click", openMultiRoute);
+    document.getElementById("btnOpenRoute")?.addEventListener("click", () => openMultiRoute("google"));
+    document.getElementById("btnOpenRouteApple")?.addEventListener("click", () => openMultiRoute("apple"));
+    document.getElementById("btnOpenRouteWaze")?.addEventListener("click", () => openMultiRoute("waze"));
     document.getElementById("btnClearRoute")?.addEventListener("click", () => {
       routeIds = []; saveJson("yb_route", routeIds); renderRouteTray(); updateToolCounts(); toast("Route cleared");
       trackEvent("route_clear", { city: city });
@@ -701,6 +761,39 @@
       wishlistOnly = !wishlistOnly;
       trackEvent("wishlist_filter", { city: city, on: wishlistOnly });
       refresh();
+    });
+
+    // Keyword search
+    const kw = document.getElementById("keywordInput");
+    if (kw) {
+      let t;
+      kw.addEventListener("input", () => {
+        clearTimeout(t);
+        t = setTimeout(() => {
+          query = (kw.value || "").trim();
+          trackEvent("keyword_search", { city: city, q: query });
+          scheduleRefresh();
+        }, 180);
+      });
+    }
+
+    // Day toggles
+    document.querySelectorAll(".day-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const d = btn.dataset.day;
+        if (!d) return;
+        dayFilters[d] = !dayFilters[d];
+        btn.classList.toggle("active", dayFilters[d]);
+        // prevent all-off
+        if (!dayFilters.fri && !dayFilters.sat && !dayFilters.sun) {
+          dayFilters[d] = true;
+          btn.classList.add("active");
+          toast("Keep at least one day");
+          return;
+        }
+        trackEvent("day_filter", { city: city, days: dayFilters });
+        scheduleRefresh();
+      });
     });
   }
 
