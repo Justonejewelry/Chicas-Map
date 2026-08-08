@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-07T23:54:19-05:00",
+  "generated_at": "2026-08-08T01:46:50-05:00",
   "overall": "critical",
   "primary_failures": [
     "estatesales_org",
@@ -10,7 +10,7 @@
     {
       "source": "garagesalefinder",
       "status": "ok",
-      "detail": "merge added=6",
+      "detail": "merge added=3",
       "primary": false
     },
     {
@@ -51,11 +51,10 @@
     }
   ],
   "json_source_counts": {
-    "yardsalesearch": 28,
-    "garagesalefinder": 22,
-    "estatesales.org": 2,
-    "craigslist": 36,
-    "estatesales.net": 2,
+    "yardsalesearch": 16,
+    "garagesalefinder": 19,
+    "estatesales.org": 3,
+    "craigslist": 31,
     "aggregators": 2,
     "user submit (approved)": 1
   },
