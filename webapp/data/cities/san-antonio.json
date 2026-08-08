@@ -72,8 +72,8 @@
       "in_person": false,
       "external_id": "eso-2455066",
       "categories": [
-        "online-auction",
-        "estate-sale"
+        "estate-sale",
+        "online-auction"
       ]
     },
     {
@@ -97,8 +97,8 @@
       "in_person": false,
       "external_id": "eso-2455225",
       "categories": [
-        "online-auction",
-        "estate-sale"
+        "estate-sale",
+        "online-auction"
       ]
     },
     {
@@ -507,39 +507,47 @@
     },
     {
       "address": "2815 Redland Trl, San Antonio, TX 78259",
-      "dates": "Sat Aug 8 – Sat Aug 8",
-      "date_from": "08/08/2026",
-      "date_to": "08/08/2026",
+      "dates": "2026-08-08 – 2026-08-08",
+      "date_from": "2026-08-08",
+      "date_to": "2026-08-08",
       "end_date": "2026-08-08",
-      "title": "HUGE Multi Family Garage Sale",
+      "title": "Huge Multi Family Garage Sale",
       "details": "",
-      "source": "GarageSaleFinder",
-      "url": "https://garagesalefinder.com/s/N9kRj/2815-redland-trl-san-antonio-tx-78259",
+      "source": "YardSaleSearch",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196336835",
       "photos": 0,
       "type": "garage",
-      "confidence": 0.85,
+      "confidence": 0.88,
       "status": "verified",
-      "lat": 29.63,
-      "lon": -98.44,
-      "geocode": "zip-centroid"
+      "lat": 29.61429,
+      "lon": -98.445702,
+      "geocode": "source",
+      "external_id": "yss-2815redlandtrlsanantoniotx78259-2026-08-08",
+      "categories": [
+        "garage-sale"
+      ]
     },
     {
       "address": "12041 White Birch St, San Antonio, TX 78245",
-      "dates": "Sat Aug 8 – Sun Aug 9",
-      "date_from": "08/08/2026",
-      "date_to": "08/09/2026",
+      "dates": "2026-08-08 – 2026-08-09",
+      "date_from": "2026-08-08",
+      "date_to": "2026-08-09",
       "end_date": "2026-08-09",
-      "title": "Moving out sale !!",
+      "title": "Moving Out Sale !!",
       "details": "",
-      "source": "GarageSaleFinder",
-      "url": "https://garagesalefinder.com/s/N9wc2/12041-white-birch-st-san-antonio-tx-78245",
+      "source": "YardSaleSearch",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196342197",
       "photos": 0,
       "type": "garage",
-      "confidence": 0.85,
+      "confidence": 0.88,
       "status": "verified",
-      "lat": 29.42,
-      "lon": -98.7,
-      "geocode": "zip-centroid"
+      "lat": 29.423421,
+      "lon": -98.731554,
+      "geocode": "source",
+      "external_id": "yss-12041whitebirchstsanantoniotx78245-2026-08-08",
+      "categories": [
+        "garage-sale"
+      ]
     },
     {
       "address": "1311 Cougar Run, San Antonio, TX 78258",
@@ -1147,7 +1155,7 @@
   "total_locations": 51,
   "status": "live",
   "date": "2026-08-08",
-  "last_refresh": "2026-08-08T14:46:22-05:00",
+  "last_refresh": "2026-08-08T15:26:37-05:00",
   "permit_total": 85,
   "permit_estate_count": 1
 }

@@ -107,8 +107,8 @@
       "in_person": false,
       "external_id": "eso-2455523",
       "categories": [
-        "online-auction",
-        "estate-sale"
+        "estate-sale",
+        "online-auction"
       ]
     },
     {
@@ -497,8 +497,8 @@
       "in_person": false,
       "external_id": "eso-2454880",
       "categories": [
-        "online-auction",
-        "estate-sale"
+        "estate-sale",
+        "online-auction"
       ]
     },
     {
@@ -634,8 +634,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.05878602206252,
-      "lon": -97.84004614865619,
+      "lat": 30.063277577937477,
+      "lon": -97.84079345055453,
       "geocode": "source",
       "company": "Creative Estate Sales",
       "in_person": true,
@@ -1089,5 +1089,5 @@
   "total_locations": 47,
   "status": "live",
   "date": "2026-08-08",
-  "last_refresh": "2026-08-08T14:46:21-05:00"
+  "last_refresh": "2026-08-08T15:26:37-05:00"
 }
