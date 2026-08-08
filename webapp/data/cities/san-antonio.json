@@ -20,22 +20,36 @@
       "lon": -98.575072,
       "geocode": "source",
       "external_id": "yss-8645fredericksburgrdsanantoniotx78240-2026-08-02",
-      "categories": [
-        "garage-sale"
-      ]
+      "categories": ["garage-sale"]
+    },
+    {
+      "address": "4246 Roark Dr, San Antonio, TX 78219",
+      "dates": "2026-08-07 – 2026-08-08",
+      "date_from": "2026-08-07",
+      "date_to": "2026-08-08",
+      "end_date": "2026-08-08",
+      "title": "Destination Commonwealth",
+      "details": "",
+      "source": "YardSaleSearch",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196336127",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.9,
+      "status": "verified",
+      "lat": 29.4251165,
+      "lon": -98.4125036,
+      "geocode": "source",
+      "hours": "2026-08-07 10:00 am-3:00 pm; 2026-08-08 10:00 am-3:00 pm",
+      "company": "Caring Transitions of San Antonio Central",
+      "in_person": true,
+      "external_id": "yss-4246roarkdrsanantoniotx78219-2026-08-07",
+      "categories": ["garage-sale", "estate-sale", "in-person"]
     }
   ],
   "permits": [],
   "hot_zones": [],
-  "sources": [
-    "craigslist.org",
-    "data.sanantonio.gov",
-    "estatesales.net",
-    "estatesales.org",
-    "garagesalefinder.com",
-    "yardsalesearch.com"
-  ],
-  "total_locations": 1,
+  "sources": ["craigslist.org", "data.sanantonio.gov", "estatesales.net", "estatesales.org", "garagesalefinder.com", "yardsalesearch.com"],
+  "total_locations": 47,
   "status": "live",
   "date": "2026-08-08",
   "last_refresh": "2026-08-08T07:41:35-05:00",
