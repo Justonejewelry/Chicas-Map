@@ -73,9 +73,9 @@
               decoding="async" fetchpriority="high"
               onerror="this.onerror=null;this.src='chicarar.jpg'" />
           </picture>
-          <div class="v-hero-badge">
+          <div class="v-hero-badge" id="weekendBadge">
             This weekend
-            <small>Fair Oaks · Alamo Ranch · Helotes</small>
+            <small id="weekendZones">Loading hot zones…</small>
           </div>
         </div>
       </div>
@@ -177,6 +177,17 @@
         source: "home",
       });
     }
+    // Dynamic weekend badge from live hot_zones
+    fetch("data/cities/san-antonio.json").then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+      var el = document.getElementById("weekendZones");
+      if (!el || !d) return;
+      var zones = (d.hot_zones || []).slice(0, 3).map(function (z) { return z.name.split(" / ")[0]; });
+      if (zones.length) el.textContent = zones.join(" · ");
+      else el.textContent = "San Antonio live";
+    }).catch(function () {
+      var el = document.getElementById("weekendZones");
+      if (el) el.textContent = "Fair Oaks · Alamo Ranch · Helotes";
+    });
   })();
   </script>
 </body>
