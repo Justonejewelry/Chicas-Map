@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-08T03:37:39-05:00",
+  "generated_at": "2026-08-08T05:29:34-05:00",
   "overall": "critical",
   "primary_failures": [
     "estatesales_org",
@@ -33,7 +33,7 @@
     {
       "source": "craigslist",
       "status": "ok",
-      "detail": "merge added=2",
+      "detail": "merge added=1",
       "primary": true
     },
     {

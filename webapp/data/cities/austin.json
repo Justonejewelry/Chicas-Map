@@ -375,8 +375,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.062496047215234,
-      "lon": -97.84374114137579,
+      "lat": 30.06000772526051,
+      "lon": -97.84066890023814,
       "geocode": "source",
       "company": "Creative Estate Sales",
       "in_person": true,
@@ -825,5 +825,5 @@
   "total_locations": 36,
   "status": "live",
   "date": "2026-08-08",
-  "last_refresh": "2026-08-08T03:37:39-05:00"
+  "last_refresh": "2026-08-08T05:29:34-05:00"
 }
