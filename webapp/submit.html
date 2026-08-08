@@ -6,7 +6,6 @@
   <title>List your garage sale free · Chica Map</title>
   <meta name="description" content="Add your garage, yard, or estate sale to Chica's verified map. Free. Moderated before it goes live." />
   <meta name="theme-color" content="#1a6b3c" />
-  <!-- Microsoft Clarity -->
   <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
       c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -20,6 +19,7 @@
   <link rel="manifest" href="manifest.webmanifest" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/voss.css" />
+  <link rel="stylesheet" href="css/map-voss-ux.css" />
   <script src="js/chica-config.js"></script>
   <script src="js/chica-analytics.js"></script>
 </head>
@@ -102,6 +102,16 @@
             placeholder="Short list of highlights — tools, kids clothes, patio set…"></textarea>
         </div>
 
+        <div class="featured-opt">
+          <label>
+            <input type="checkbox" id="saleFeatured" name="featured" />
+            <span>
+              Feature this sale ($5)
+              <small>Gold pin + priority placement for the weekend. We’ll email payment instructions after review.</small>
+            </span>
+          </label>
+        </div>
+
         <div class="v-field-row">
           <div class="v-field">
             <label for="saleName">Your name</label>
@@ -151,7 +161,7 @@
         <p class="v-form-legal">
           Listings are free. They appear on the map only after review by Chicas Map.
           We do not publish private information beyond what you mark public. False or
-          misleading submissions may be removed.
+          misleading submissions may be removed. See <a href="terms.html">Terms</a> & <a href="privacy.html">Privacy</a>.
         </p>
         <p id="saleStatus" class="v-form-status" hidden></p>
       </form>
@@ -168,6 +178,8 @@
       <a href="backyard.html">Backyard</a>
       <a href="sponsor.html">Sponsor</a>
       <a href="submit.html">List a sale</a>
+      <a href="terms.html">Terms</a>
+      <a href="privacy.html">Privacy</a>
     </div>
   </footer>
 
@@ -205,6 +217,7 @@
         submitter_name: document.getElementById("saleName").value.trim(),
         contact: document.getElementById("saleContact").value.trim() || null,
         public_contact: document.getElementById("salePublicContact").checked,
+        featured_request: document.getElementById("saleFeatured").checked,
         submitted_at: new Date().toISOString(),
         status: "pending_review",
         source: "user_submit_free"
@@ -217,11 +230,16 @@
         return;
       }
 
-      var subject = encodeURIComponent("Chica Map — free sale listing for review");
+      var subject = encodeURIComponent(
+        payload.featured_request
+          ? "Chica Map — FEATURED sale listing for review ($5)"
+          : "Chica Map — free sale listing for review"
+      );
       var body = encodeURIComponent(
-        "Please review this free user-submitted garage sale for the map.\n\n" +
+        "Please review this user-submitted garage sale for the map.\n\n" +
         JSON.stringify(payload, null, 2) +
-        "\n\nAttestation: seller/agent, accuracy, and moderation terms checked."
+        "\n\nAttestation: seller/agent, accuracy, and moderation terms checked." +
+        (payload.featured_request ? "\n\nFEATURED REQUESTED — send $5 payment instructions." : "")
       );
 
       window.location.href = "mailto:" + REVIEW + "?subject=" + subject + "&body=" + body;
