@@ -1,4 +1,9 @@
-/** Bridges private app detail drawer → permit tips + trust signals without patching app.js */
+/** Bridges private app detail drawer → permit tips + trust signals + mobile detail sheet
+ *  without patching the pinned app.js.
+ *  Fix: when detail opens, release/hide the rail "menu" (list + tools) so the detail
+ *  sheet becomes the sole scrollable surface. Users can then freely scroll and tap
+ *  Google / Apple / Waze without nested-scroll fights or buried buttons.
+ */
 (function () {
   function formatRelative(iso) {
     if (!iso) return "—";
@@ -48,10 +53,43 @@
     }
   }
 
+  /** Release the rail menu behind the detail so the sheet is freely movable/scrollable. */
+  function setDetailMode(on) {
+    var rail = document.getElementById("sideRail");
+    var drawer = document.getElementById("detailDrawer");
+    if (!rail) return;
+    if (on) {
+      rail.classList.add("detail-mode");
+      // Ensure rail is open on mobile so the sheet is visible
+      rail.classList.add("open");
+      var bd = document.getElementById("railBackdrop");
+      if (bd) {
+        bd.hidden = false;
+        bd.classList.add("open");
+      }
+      document.getElementById("dockList")?.classList.add("active");
+      // Reset scroll so top of detail (and nav buttons) are reachable immediately
+      if (drawer) {
+        drawer.scrollTop = 0;
+        // Also pin the parent scroller to the detail
+        var sc = document.querySelector(".rail-scroll");
+        if (sc) sc.scrollTop = 0;
+      }
+    } else {
+      rail.classList.remove("detail-mode");
+    }
+  }
+
   function syncFromDom() {
     var drawer = document.getElementById("detailDrawer");
     var body = document.getElementById("detailBody");
-    if (!drawer || !body || drawer.classList.contains("hidden")) return;
+    if (!drawer) return;
+
+    var isOpen = !drawer.classList.contains("hidden");
+    setDetailMode(isOpen);
+
+    if (!isOpen || !body) return;
+
     var addr =
       (body.querySelector(".d-addr") && body.querySelector(".d-addr").textContent.trim()) || "";
     var meta = Array.prototype.map
@@ -98,13 +136,26 @@
   }
 
   function start() {
+    var drawer = document.getElementById("detailDrawer");
     observe(
-      document.getElementById("detailDrawer"),
+      drawer,
       { attributes: true, attributeFilter: ["class"], childList: true, subtree: true },
       syncFromDom
     );
     observe(document.getElementById("detailBody"), { childList: true, subtree: true }, syncFromDom);
     observe(document.getElementById("saleList"), { childList: true }, enhanceEmptyState);
+
+    // Close button already calls hideDetail in core; we also watch for class changes.
+    // Extra safety: if user taps backdrop while in detail-mode, clear mode on rail close.
+    var backdrop = document.getElementById("railBackdrop");
+    if (backdrop) {
+      backdrop.addEventListener("click", function () {
+        setDetailMode(false);
+      });
+    }
+
+    // Initial sync in case detail is already open
+    syncFromDom();
   }
 
   if (document.readyState === "loading") {
