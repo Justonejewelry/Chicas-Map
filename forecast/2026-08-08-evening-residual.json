@@ -1,0 +1,65 @@
+{
+  "generated_at": "2026-08-08T18:30:00-05:00",
+  "target": "2026-08-08 Saturday evening residual + Sunday outlook (Atlas Discovery + Sentinel evening pass)",
+  "city": "san-antonio",
+  "status": "verified",
+  "confidence": 0.82,
+  "notes": "Evening Sentinel close-out after morning peak. Heritage multi-day estates (Helotes, Eisenhauer warehouse) carry into Sunday. Classic garage volume thinned by heat. Aggregators confirm residual multi-family and early Sunday starts south/NE. Weather remains supportive only for early windows.",
+  "days": {
+    "saturday": {"stars": 4, "predicted_sales": 18, "status": "peak-closed"},
+    "sunday": {"stars": 3, "predicted_sales": 9, "status": "residual"}
+  },
+  "weather_impact": {
+    "condition": "Mostly sunny / hot",
+    "high_f": 99,
+    "low_f": 76,
+    "risk": "heat",
+    "shopping_quality": "excellent before 9am, sharp decline after 10:30am (heat index ~105)"
+  },
+  "hot_zones": [
+    "Helotes (multi-day)",
+    "Eisenhauer warehouse corridor",
+    "Redland Springs / 78247 residuals",
+    "Stone Oak / 78248-78259",
+    "Southside & NE multi-family (78224/78233)"
+  ],
+  "best_categories": ["antiques", "vintage", "tools", "collectibles", "furniture", "household"],
+  "verified_highlights": [
+    {
+      "title": "PT 1 A STEP BACK IN TIME — Helotes",
+      "area": "Helotes 78023",
+      "dates": "Aug 7-9",
+      "hours": "9am-4pm",
+      "company": "From Trash To Treasure",
+      "confidence": 0.88
+    },
+    {
+      "title": "HUGE Warehouse Sale — Alamo City Mercantale",
+      "area": "3903 Eisenhauer, 78218",
+      "dates": "Aug 7-9",
+      "hours": "9am-4pm",
+      "categories": ["tools", "Funko", "comics", "antiques", "furniture"],
+      "confidence": 0.89
+    },
+    {
+      "title": "Multi-family residuals (South / NE)",
+      "area": "78224 / 78233",
+      "dates": "Aug 8-9",
+      "hours": "7-8am starts",
+      "categories": ["furniture", "tools", "household"],
+      "confidence": 0.75
+    }
+  ],
+  "source_breakdown": {
+    "estate": 12,
+    "craigslist": 5,
+    "facebook": 1,
+    "other": 4
+  },
+  "selene_briefing_draft": "Evening wrap: Saturday delivered solid estate volume. Sunday residual leaner but Helotes and Eisenhauer still open. Heat rules — early only. ¡Hasta mañana!",
+  "meta": {
+    "last_sentinel_pass": "2026-08-08T18:30:00-05:00",
+    "schema_version": "1.1",
+    "atlas_pass": "focused Discovery + Sentinel Saturday evening residual"
+  }
+}
