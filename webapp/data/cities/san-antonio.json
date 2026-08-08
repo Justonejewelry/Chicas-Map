@@ -72,8 +72,8 @@
       "in_person": false,
       "external_id": "eso-2455066",
       "categories": [
-        "online-auction",
-        "estate-sale"
+        "estate-sale",
+        "online-auction"
       ]
     },
     {
@@ -97,8 +97,8 @@
       "in_person": false,
       "external_id": "eso-2455225",
       "categories": [
-        "online-auction",
-        "estate-sale"
+        "estate-sale",
+        "online-auction"
       ]
     },
     {
@@ -640,7 +640,7 @@
       "end_date": "2026-08-10",
       "hours": null,
       "title": "🚚Moving Sale-kitchen,furniture-everything must go-8:30-1",
-      "details": "QR Code Link to This Post Friday 4-8pm - all reasonable offers accepted Saturday 8:30am-1pm - all reasonable offers accepted Sunday 8:30am-1pm - All offers accepted on this date - everything must be sold by 1pm!! Furniture (TV stand, sewing table, storage shelves, sofa table, and more) Kitchen items (small appliances, plates, bowls, silverware, OXO pop storage containers, etc.) Household items (te",
+      "details": "QR Code Link to This Post Friday 4-8pm - all reasonable offers accepted Saturday 8:30am-1pm - all reasonable offers accepted Sunday 8:30am-1pm - All offers accepted on this date - everything must be sold by 1pm!! Furniture (TV stand, sewing table, storage shelves, and more) Kitchen items (small appliances, bowls, silverware, OXO pop storage containers, etc.) Household items (ironing board, hangers",
       "source": "Craigslist",
       "url": "https://www.craigslist.org/view/d/san-antonio-moving-sale/i4xj1HJNQE9AxHDXss5WnS",
       "photos": 0,
@@ -1124,7 +1124,7 @@
   "total_locations": 50,
   "status": "live",
   "date": "2026-08-08",
-  "last_refresh": "2026-08-08T09:30:09-05:00",
+  "last_refresh": "2026-08-08T10:03:21-05:00",
   "permit_total": 85,
   "permit_estate_count": 1
 }

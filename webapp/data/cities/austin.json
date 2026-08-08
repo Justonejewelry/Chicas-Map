@@ -107,8 +107,8 @@
       "in_person": false,
       "external_id": "eso-2455523",
       "categories": [
-        "online-auction",
-        "estate-sale"
+        "estate-sale",
+        "online-auction"
       ]
     },
     {
@@ -369,14 +369,14 @@
     },
     {
       "address": "701 Elder Way, Round Rock, TX 78664",
-      "dates": "2026-08-08 – 2026-08-08",
-      "date_from": "2026-08-08",
-      "date_to": "2026-08-08",
+      "dates": "Sat Aug 8 – Sat Aug 8",
+      "date_from": "08/08/2026",
+      "date_to": "08/08/2026",
       "end_date": "2026-08-08",
-      "title": "Clearing The Attic!",
+      "title": "Clearing the attic!",
       "details": "",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196341171",
+      "source": "GarageSaleFinder",
+      "url": "https://garagesalefinder.com/s/N95eN/701-elder-way-round-rock-tx-78664",
       "photos": 0,
       "type": "garage",
       "confidence": 0.88,
@@ -450,8 +450,8 @@
       "in_person": false,
       "external_id": "eso-2454880",
       "categories": [
-        "online-auction",
-        "estate-sale"
+        "estate-sale",
+        "online-auction"
       ]
     },
     {
@@ -504,8 +504,8 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "in-person",
-        "estate-sale"
+        "estate-sale",
+        "in-person"
       ],
       "confidence": 0.9,
       "status": "verified",
@@ -530,8 +530,8 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "in-person",
-        "estate-sale"
+        "estate-sale",
+        "in-person"
       ],
       "confidence": 0.9,
       "status": "verified",
@@ -556,13 +556,13 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "in-person",
-        "estate-sale"
+        "estate-sale",
+        "in-person"
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.059163312756016,
-      "lon": -97.8407207962033,
+      "lat": 30.059244160761768,
+      "lon": -97.84032638686807,
       "geocode": "source",
       "company": "Creative Estate Sales",
       "in_person": true,
@@ -1013,6 +1013,46 @@
       "lat": 30.2672,
       "lon": -97.7431,
       "geocode": "city-center"
+    },
+    {
+      "address": "9521 Sanford Dr, Austin, TX 78748",
+      "dates": "2026-08-08 – 2026-08-08",
+      "date_from": "2026-08-08",
+      "date_to": "2026-08-08",
+      "end_date": "2026-08-08",
+      "title": "Moving Sale",
+      "details": "",
+      "source": "YardSaleSearch",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196341895",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.88,
+      "status": "verified",
+      "lat": 30.182362,
+      "lon": -97.836075,
+      "geocode": "source",
+      "external_id": "yss-9521sanforddraustintx78748-2026-08-08",
+      "categories": [
+        "garage-sale"
+      ]
+    },
+    {
+      "address": "208 Banner Ave, Leander, TX 78641",
+      "dates": "Sat Aug 8 – Sat Aug 8",
+      "date_from": "08/08/2026",
+      "date_to": "08/08/2026",
+      "end_date": "2026-08-08",
+      "title": "Garage sale!! Furniture, clothes, papasan, dodge Challenger parts and much more!",
+      "details": "",
+      "source": "GarageSaleFinder",
+      "url": "https://garagesalefinder.com/s/N9wHC/208-banner-ave-leander-tx-78641",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.85,
+      "status": "verified",
+      "lat": 30.56,
+      "lon": -97.86,
+      "geocode": "zip-centroid"
     }
   ],
   "permits": [],
@@ -1024,8 +1064,8 @@
     "garagesalefinder.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 45,
+  "total_locations": 47,
   "status": "live",
   "date": "2026-08-08",
-  "last_refresh": "2026-08-08T09:30:09-05:00"
+  "last_refresh": "2026-08-08T10:03:21-05:00"
 }
