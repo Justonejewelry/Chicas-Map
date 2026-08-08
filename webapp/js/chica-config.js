@@ -1,41 +1,49 @@
 /**
  * Chica / Chicas Map public config
- * Aurora Voss — keep secrets out of this file.
- * Formspree form IDs and reCAPTCHA *site* keys are public by design.
- * Never put the reCAPTCHA *secret* key here — only in Formspree dashboard.
- *
- * Formspree Friday list: https://formspree.io/f/myegykrq
- * Notification email: mr.jsciaraffa@gmail.com
- *
- * Analytics: Microsoft Clarity (free heatmaps + click rates)
- * Project ID is public by design (same as GA measurement IDs).
+ * Keep secrets out of this file.
  */
 (function (global) {
   global.ChicaConfig = {
-    /** Friday email list */
     FORMSPREE_EMAIL_ID: "myegykrq",
-
-    /** Free sale submissions (optional; falls back to mailto if empty) */
     FORMSPREE_SALE_ID: "",
-
-    /** Google reCAPTCHA v3 site key (public). Leave empty to skip client captcha. */
     RECAPTCHA_SITE_KEY: "",
-
-    /** reCAPTCHA v3 action name sent with token */
     RECAPTCHA_ACTION: "chica_friday_signup",
-
-    /** Review / notification address (mailto fallback) */
     REVIEW_EMAIL: "mr.jsciaraffa@gmail.com",
-
-    /** Microsoft Clarity project ID (free heatmaps + click analytics) */
     CLARITY_PROJECT_ID: "xyurojj2kb",
-
-    /** Optional Google Analytics 4 Measurement ID (e.g. G-XXXXXXXX). Leave empty to skip. */
     GA_MEASUREMENT_ID: "",
-
     formspreeUrl: function (id) {
       if (!id || !String(id).trim()) return null;
       return "https://formspree.io/f/" + String(id).trim();
     },
   };
+
+  /*
+   * Brand normalization for the map shell. The map predates the current
+   * master logo, so keep the HTML fallback intact while upgrading the
+   * rendered mark to the official Chicas Garage Sale Map artwork.
+   */
+  document.addEventListener("DOMContentLoaded", function () {
+    if (!document.body || !document.body.classList.contains("grass-map")) return;
+
+    var logo = document.querySelector(".topbar .brand .logo-mark.img");
+    if (logo) {
+      logo.src = "assets/chica/chica-logo.svg";
+      logo.alt = "Chicas Garage Sale Map";
+      logo.removeAttribute("onerror");
+      logo.style.objectFit = "contain";
+      logo.style.background = "#fff";
+      logo.style.borderRadius = "10px";
+      logo.style.padding = "1px";
+    }
+
+    var style = document.createElement("style");
+    style.textContent = [
+      ".grass-map .topbar .brand .logo-mark.img{width:42px;height:42px;border:1px solid #e6e1d8;box-shadow:0 3px 12px rgba(20,17,15,.12);object-fit:contain;background:#fff;padding:1px}",
+      ".grass-map .topbar .brand{gap:10px}",
+      ".grass-map .topbar .brand h1{letter-spacing:-.035em}",
+      ".grass-map .topbar .brand h1 span{color:#1a6b3c}",
+      "@media(max-width:700px){.grass-map .topbar .brand .logo-mark.img{width:38px;height:38px}.grass-map .topbar .brand h1{font-size:1rem}}"
+    ].join("");
+    document.head.appendChild(style);
+  });
 })(window);
