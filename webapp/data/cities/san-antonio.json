@@ -47,8 +47,8 @@
       "external_id": "yss-4246roarkdrsanantoniotx78219-2026-08-07",
       "categories": [
         "garage-sale",
-        "in-person",
-        "estate-sale"
+        "estate-sale",
+        "in-person"
       ]
     },
     {
@@ -551,14 +551,14 @@
     },
     {
       "address": "409 E San Antonio St, Marion, TX 78124",
-      "dates": "2026-08-07 – 2026-08-08",
-      "date_from": "2026-08-07",
-      "date_to": "2026-08-08",
+      "dates": "Fri Aug 7 – Sat Aug 8",
+      "date_from": "08/07/2026",
+      "date_to": "08/08/2026",
       "end_date": "2026-08-08",
-      "title": "Fm 78 & Hackberry St - Huge Multi-Family",
+      "title": "FM 78 & Hackberry St - HUGE MULTI-FAMILY",
       "details": "",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196334655",
+      "source": "GarageSaleFinder",
+      "url": "https://garagesalefinder.com/s/N9ktj/409-e-san-antonio-st-marion-tx-78124",
       "photos": 0,
       "type": "garage",
       "confidence": 0.88,
@@ -1039,6 +1039,76 @@
       "lon": -98.4936,
       "geocode": "city-center",
       "company": null
+    },
+    {
+      "address": "2483 W Southcross Blvd, San Antonio, TX 78211",
+      "dates": "2026-08-08 – 2026-08-08",
+      "date_from": "2026-08-08",
+      "date_to": "2026-08-08",
+      "end_date": "2026-08-08",
+      "title": "Huge Yard Sale",
+      "details": "",
+      "source": "YardSaleSearch",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196341701",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.88,
+      "status": "verified",
+      "lat": 29.369703,
+      "lon": -98.551686,
+      "geocode": "source",
+      "external_id": "yss-2483wsouthcrossblvdsanantoniotx78211-2026-08-08",
+      "categories": [
+        "garage-sale"
+      ]
+    },
+    {
+      "address": "138 Carousel near Springvale, San Antonio, TX",
+      "dates": "2026-08-08 – 2026-08-10",
+      "date_from": "2026-08-08",
+      "date_to": "2026-08-10",
+      "end_date": "2026-08-10",
+      "hours": null,
+      "title": "!!HUGE YARD SALE!!",
+      "details": "QR Code Link to This Post !!HUGE YARD SALE!! SATURDAY!! 08/08 Lackland Area @ Valley Hi - 138 Carousel -Tools -Plumbing -Electrical -Fans -Houshold -Books -Appliances -ETC....",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/jbsa-lackland-huge-yard-sale/mmszECdtsckN8L1TL4qoNH",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 29.377351,
+      "lon": -98.635715,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-ndhugeyardsalemmszecdtsckn8l1tl4qonh"
+    },
+    {
+      "address": "8615 ridge mile , san antonio 78239, San Antonio, TX",
+      "dates": "2026-08-08 – 2026-08-10",
+      "date_from": "2026-08-08",
+      "date_to": "2026-08-10",
+      "end_date": "2026-08-10",
+      "hours": null,
+      "title": "Garage sale",
+      "details": "QR Code Link to This Post Big garage sale this weekend. Come early because the good stuff will go fast.",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/san-antonio-garage-sale/dwB32x89boeUYncqF7zYCe",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 29.517,
+      "lon": -98.363,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-toniogaragesaledwb32x89boeuyncqf7zyce"
     }
   ],
   "permits": [],
@@ -1051,10 +1121,10 @@
     "garagesalefinder.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 47,
+  "total_locations": 50,
   "status": "live",
   "date": "2026-08-08",
-  "last_refresh": "2026-08-08T07:58:07-05:00",
+  "last_refresh": "2026-08-08T09:30:09-05:00",
   "permit_total": 85,
   "permit_estate_count": 1
 }

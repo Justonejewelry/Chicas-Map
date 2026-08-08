@@ -175,14 +175,14 @@
     },
     {
       "address": "4103 W Slaughter Ln, Austin, TX 78749",
-      "dates": "2026-08-08 – 2026-08-08",
-      "date_from": "2026-08-08",
-      "date_to": "2026-08-08",
+      "dates": "Sat Aug 8 – Sat Aug 8",
+      "date_from": "08/08/2026",
+      "date_to": "08/08/2026",
       "end_date": "2026-08-08",
-      "title": "Mega Bowie High School Garage & Thrift Sale",
+      "title": "Mega Bowie High School garage & thrift sale",
       "details": "",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196341373",
+      "source": "GarageSaleFinder",
+      "url": "https://garagesalefinder.com/s/N958J/4103-w-slaughter-ln-austin-tx-78749",
       "photos": 0,
       "type": "garage",
       "confidence": 0.88,
@@ -504,8 +504,8 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
@@ -530,8 +530,8 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
@@ -556,13 +556,13 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.062415199209486,
-      "lon": -97.84063776265904,
+      "lat": 30.059163312756016,
+      "lon": -97.8407207962033,
       "geocode": "source",
       "company": "Creative Estate Sales",
       "in_person": true,
@@ -977,6 +977,42 @@
       "lon": -97.7431,
       "geocode": "city-center",
       "company": null
+    },
+    {
+      "address": "9206 Collinfield Dr, Austin, TX 78758",
+      "dates": "Sat Aug 8 – Sat Aug 8",
+      "date_from": "08/08/2026",
+      "date_to": "08/08/2026",
+      "end_date": "2026-08-08",
+      "title": "🔴SATURDAY YARD SALE🔴08-08🔴",
+      "details": "",
+      "source": "GarageSaleFinder",
+      "url": "https://garagesalefinder.com/s/N9wkU/9206-collinfield-dr-austin-tx-78758",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.85,
+      "status": "verified",
+      "lat": 30.38,
+      "lon": -97.71,
+      "geocode": "zip-centroid"
+    },
+    {
+      "address": "111 Flinn St, Hutto, TX 78634",
+      "dates": "Sat Aug 8 – Sat Aug 8",
+      "date_from": "08/08/2026",
+      "date_to": "08/08/2026",
+      "end_date": "2026-08-08",
+      "title": "Yard Sale",
+      "details": "",
+      "source": "GarageSaleFinder",
+      "url": "https://garagesalefinder.com/s/N9wwz/111-flinn-st-hutto-tx-78634",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.65,
+      "status": "verified",
+      "lat": 30.2672,
+      "lon": -97.7431,
+      "geocode": "city-center"
     }
   ],
   "permits": [],
@@ -988,8 +1024,8 @@
     "garagesalefinder.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 43,
+  "total_locations": 45,
   "status": "live",
   "date": "2026-08-08",
-  "last_refresh": "2026-08-08T07:58:07-05:00"
+  "last_refresh": "2026-08-08T09:30:09-05:00"
 }
