@@ -1,246 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chica's Backyard · Meet Cheeks</title>
-  <meta name="theme-color" content="#1a6b3c" />
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
-  <link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png" />
-  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-  <link rel="manifest" href="manifest.webmanifest" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/landing.css" />
-  <link rel="stylesheet" href="css/backyard.css" />
-  <link rel="stylesheet" href="css/grass.css" />
-  <link rel="stylesheet" href="css/chica-sign.css" />
-  <link rel="stylesheet" href="css/voss.css" />
-  <script src="js/chica-config.js"></script>
-  <script src="js/chica-analytics.js"></script>
-  <style>
-    .mc-hero-photo { width:100%;height:100%;object-fit:contain;border-radius:16px;background:transparent; }
-    .mc-bio-body p { margin: 0 0 0.85em; }
-    .mc-bio-body ul.mc-roles {
-      margin: 0.5em 0 1em;
-      padding: 0;
-      list-style: none;
-    }
-    .mc-bio-body ul.mc-roles li {
-      margin: 0 0 0.55em;
-      padding-left: 0;
-      line-height: 1.45;
-    }
-    .mc-bio-body ul.mc-roles strong { font-weight: 750; }
-  </style>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chica's Backyard · Meet Cheeks</title><meta name="theme-color" content="#1a6b3c" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" /><link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png" /><link rel="apple-touch-icon" href="apple-touch-icon.png" /><link rel="manifest" href="manifest.webmanifest" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/landing.css" /><link rel="stylesheet" href="css/backyard.css" /><link rel="stylesheet" href="css/grass.css" /><link rel="stylesheet" href="css/chica-sign.css" /><link rel="stylesheet" href="css/voss.css" /><link rel="stylesheet" href="css/chica-polish.css" />
+  <script src="js/chica-config.js"></script><script src="js/chica-analytics.js"></script>
+  <style>.mc-hero-photo{width:100%;height:100%;object-fit:contain;border-radius:16px;background:transparent}.mc-bio-body p{margin:0 0 .85em}.mc-bio-body ul.mc-roles{margin:.5em 0 1em;padding:0;list-style:none}.mc-bio-body ul.mc-roles li{margin:0 0 .55em;padding-left:0;line-height:1.45}.mc-bio-body ul.mc-roles strong{font-weight:750}</style>
 </head>
 <body class="backyard-page landing grass-site">
-  <header class="lnav">
-    <a class="lbrand" href="index.html">
-      <img src="chicarar.png" alt="Chica" width="36" height="36" style="border-radius:10px;object-fit:cover;border:2px solid #fff;background:transparent" decoding="async" fetchpriority="high" onerror="this.onerror=null;this.src='chicarar.jpg'" />
-      <span>Chica's Backyard</span>
-    </a>
-    <nav class="llinks">
-      <a href="index.html">Home</a>
-      <a href="map.html">Map</a>
-      <a href="submit.html">List a sale</a>
-      <a href="sponsor.html">Sponsor</a>
-    </nav>
-    <div class="lnav-actions">
-      <button type="button" class="lbtn ghost" data-chica-install hidden style="font-weight:700">Add to Home</button>
-      <a class="lbtn ghost" href="index.html">Home</a>
-      <a class="lbtn primary" href="map.html">Open map</a>
-    </div>
-  </header>
+  <header class="lnav"><a class="lbrand" href="index.html"><img src="chicarar.png" alt="Chica" width="36" height="36" decoding="async" onerror="this.onerror=null;this.src='chicarar.jpg'" /><span>Chica's Backyard</span></a><nav class="llinks"><a href="index.html">Home</a><a href="map.html">Map</a><a href="submit.html">List a sale</a><a href="sponsor.html">Sponsor</a></nav><div class="lnav-actions"><button type="button" class="lbtn ghost" data-chica-install hidden>Add to Home</button><a class="lbtn ghost" href="index.html">Home</a><a class="lbtn primary" href="map.html">Open map</a></div></header>
   <main class="by-layout">
-    <a class="chica-sign chica-sign-backyard" href="sponsor.html" title="Become a weekly sponsor">
-      <picture>
-        <source srcset="sponsorsign.webp" type="image/webp" />
-        <img src="sponsorsign.png"
-             alt="Cheeks: Click Here Become a Weekly Sponsor"
-             width="220" height="300"
-             loading="lazy" decoding="async"
-             onerror="this.onerror=null;this.style.display='none'" />
-      </picture>
-    </a>
-
-    <section class="chica-talk" id="chicaTalk">
-      <div class="ct-card">
-        <img id="ctAvatar" src="chicarar.png" alt="Chica" width="80" height="80" class="ct-avatar" style="object-fit:cover;border-radius:50%;background:transparent" decoding="async" loading="lazy" onerror="this.onerror=null;this.src='chicarar.jpg'" />
-        <div class="ct-bubble">
-          <strong id="ctName">Cheeks</strong>
-          <p id="ctMessage">Wipe your paws. Leave a belly rub. And if you happen to have a snack… we can definitely be best friends.</p>
-          <div class="ct-actions">
-            <button type="button" class="near-btn primary" id="btnTalk">Talk to Chica</button>
-            <button type="button" class="near-btn" id="btnTip">Random tip</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="v-email-strip" style="max-width:720px;margin:0 auto 28px;padding:0 16px">
-      <div class="v-email-card">
-        <div>
-          <h3>Join Chica’s Email Updates</h3>
-          <p>Every Friday: hot zones, new sales, weekend routes. Free.</p>
-        </div>
-        <form class="v-email-form" id="emailFormBy">
-          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true" />
-          <input type="email" id="emailInputBy" name="email" required placeholder="you@email.com" autocomplete="email" />
-          <button type="submit" class="v-btn v-btn-primary">Join Friday list</button>
-        </form>
-      </div>
-      <p id="emailStatusBy" class="v-form-status" hidden style="margin-top:10px"></p>
-    </div>
-
-    <section class="share-section" id="shareSection">
-      <h3>Share with the pack</h3>
-      <p class="share-lead">Facebook, Nextdoor, Instagram — wherever good humans gather. Every share helps more people find the map.</p>
-      <div class="share-grid" id="shareGrid">
-        <a class="share-btn x" id="shareX" target="_blank" rel="noopener">𝕏 Post</a>
-        <a class="share-btn fb" id="shareFb" target="_blank" rel="noopener">Facebook</a>
-        <a class="share-btn wa" id="shareWa" target="_blank" rel="noopener">WhatsApp</a>
-        <a class="share-btn li" id="shareLi" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="share-btn rd" id="shareRd" target="_blank" rel="noopener">Reddit</a>
-        <a class="share-btn tg" id="shareTg" target="_blank" rel="noopener">Telegram</a>
-        <a class="share-btn mail" id="shareMail">Email</a>
-        <button type="button" class="share-btn copy" id="shareCopy">Copy link</button>
-        <button type="button" class="share-btn copy" id="shareNative" hidden>Share…</button>
-      </div>
-    </section>
-    <section class="meet-cheeks" id="meetCheeks">
-      <div class="mc-header"><h2>Meet Cheeks</h2><p class="mc-sub">Also answers to Chica, "Who's a good girl?", and the sound of a cheese wrapper</p></div>
-      <div class="mc-bio-card">
-        <div class="mc-bio-photo-wrap"><img id="mcHero" src="chicarar.png" alt="Chica (Cheeks)" class="mc-hero-photo" decoding="async" fetchpriority="high" onerror="this.onerror=null;this.src='chicarar.jpg'" /></div>
-        <div class="mc-bio">
-          <h3>Hi! I'm Chica. 👋</h3>
-          <div class="mc-bio-body">
-            <p>If you're family, friends, or one of my loyal fans, you probably know me as <strong>Cheeks</strong>. Nobody remembers how it started… but somehow it stuck. I answer to Chica, Cheeks, "Who's a good girl?", and the unmistakable sound of a cheese wrapper.</p>
-            <p>I'm a tiny brown Chihuahua with a frosted little face, white socks, and a white-tipped tail that operates at maximum wag whenever snacks are nearby.</p>
-            <p><strong>Here's what you should know:</strong></p>
-            <ul class="mc-roles">
-              <li>🐿️ <strong>Backyard Security Chief</strong> — Squirrels are under constant surveillance.</li>
-              <li>🦴 <strong>Professional Napper</strong> — I can sleep through a thunderstorm… unless someone opens the treat jar.</li>
-              <li>🦸 <strong>Part-Time Superhero</strong> — I have a cape. That's all the proof you need.</li>
-              <li>🗺️ <strong>Chief Sniffing Officer</strong> — My human built the garage sale map. I inspect it for quality control… and hidden snack locations.</li>
-            </ul>
-            <p>People say my human runs this place.<br/>That's adorable.<br/>I simply allow him to think that.</p>
-            <p>If you enjoy following my adventures, my backyard investigations, and all the fun projects we get into, do me one tiny favor…</p>
-            <p>❤️ Share this page with your friends and family on Facebook, Nextdoor, Instagram, or wherever good humans gather. Every share helps more people discover our adventures, support our projects, and join the pack.</p>
-            <p>Now come on in.<br/>Wipe your paws.<br/>Leave a belly rub.<br/>And if you happen to have a snack…<br/>…we can definitely be best friends.</p>
-            <p class="mc-sign">🐾 — Cheeks</p>
-          </div>
-        </div>
-      </div>
-      <div class="mc-gallery" id="mcGallery"></div>
-    </section>
-    <section class="comment-section" id="commentSection">
-      <h3>Leave a note for Cheeks</h3>
-      <p class="comment-lead">Sale tips, finds, belly rubs, or just a howdy — notes stay on this device.</p>
-      <form class="comment-form" id="commentForm">
-        <div class="row">
-          <input type="text" id="commentName" placeholder="Your name" maxlength="40" required />
-          <input type="text" id="commentCity" placeholder="City (optional)" maxlength="40" />
-        </div>
-        <textarea id="commentBody" placeholder="Hey Cheeks…" maxlength="500" required></textarea>
-        <button type="submit">Post note</button>
-      </form>
-      <div class="comment-list" id="commentList"><p class="comment-empty" id="commentEmpty">No notes yet. Be the first to say howdy.</p></div>
-    </section>
-    <section class="featured-adventure" id="featuredAdventure">
-      <h3 class="by-section-title">🎬 Featured Adventure</h3>
-      <div class="fa-card">
-        <div class="fa-video-wrap">
-          <video controls playsinline poster="chicarar.jpg" style="width:100%;border-radius:14px;background:#0f172a">
-            <source src="assets/videos/chica_highway_adventure.mp4" type="video/mp4" />
-          </video>
-        </div>
-        <div class="fa-copy">
-          <h4>Highway to San Antonio — Chica's Sale Hunt</h4>
-          <p>From the shopping cart to the open highway.</p>
-          <p class="fa-meta">Aug 4, 2026 · Adventure</p>
-        </div>
-      </div>
-    </section>
-    <div class="by-grid">
-      <section class="by-col"><h3 class="by-section-title">📝 Chica's Blog</h3><div id="blogList" class="by-posts">Loading…</div></section>
-      <section class="by-col"><h3 class="by-section-title">🎬 Weekly Videos</h3><div id="videoList" class="by-videos">Loading…</div></section>
-    </div>
-    <article id="postView" class="by-post-view hidden">
-      <button type="button" class="near-btn" id="btnBackPosts">← All posts</button>
-      <h2 id="postTitle"></h2>
-      <div class="by-meta" id="postMeta"></div>
-      <div class="by-body" id="postBody"></div>
-    </article>
+    <a class="chica-sign chica-sign-backyard" href="sponsor.html" title="Become a weekly sponsor"><picture><source srcset="sponsorsign.webp" type="image/webp" /><img src="sponsorsign.png" alt="Cheeks: Click Here Become a Weekly Sponsor" width="220" height="300" loading="lazy" decoding="async" onerror="this.onerror=null;this.style.display='none'" /></picture></a>
+    <section class="chica-talk" id="chicaTalk"><div class="ct-card"><img id="ctAvatar" src="chicarar.png" alt="Chica" width="80" height="80" class="ct-avatar" decoding="async" loading="lazy" onerror="this.onerror=null;this.src='chicarar.jpg'" /><div class="ct-bubble"><strong id="ctName">Cheeks</strong><p id="ctMessage">Wipe your paws. Leave a belly rub. And if you happen to have a snack… we can definitely be best friends.</p><div class="ct-actions"><button type="button" class="near-btn primary" id="btnTalk">Talk to Chica</button><button type="button" class="near-btn" id="btnTip">Random tip</button></div></div></div></section>
+    <div class="v-email-strip" style="max-width:720px;margin:0 auto 28px;padding:0 16px"><div class="v-email-card"><div><h3>Join Chica’s Email Updates</h3><p>Every Friday: hot zones, new sales, weekend routes. Free.</p></div><form class="v-email-form" id="emailFormBy"><input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true" /><input type="email" id="emailInputBy" name="email" required placeholder="you@email.com" autocomplete="email" /><button type="submit" class="v-btn v-btn-primary">Join Friday list</button></form></div><p id="emailStatusBy" class="v-form-status" hidden style="margin-top:10px"></p></div>
+    <section class="share-section" id="shareSection"><h3>Share with the pack</h3><p class="share-lead">Facebook, Nextdoor, Instagram — wherever good humans gather. Every share helps more people find the map.</p><div class="share-grid" id="shareGrid"><a class="share-btn x" id="shareX" target="_blank" rel="noopener">𝕏 Post</a><a class="share-btn fb" id="shareFb" target="_blank" rel="noopener">Facebook</a><a class="share-btn wa" id="shareWa" target="_blank" rel="noopener">WhatsApp</a><a class="share-btn li" id="shareLi" target="_blank" rel="noopener">LinkedIn</a><a class="share-btn rd" id="shareRd" target="_blank" rel="noopener">Reddit</a><a class="share-btn tg" id="shareTg" target="_blank" rel="noopener">Telegram</a><a class="share-btn mail" id="shareMail">Email</a><button type="button" class="share-btn copy" id="shareCopy">Copy link</button><button type="button" class="share-btn copy" id="shareNative" hidden>Share…</button></div></section>
+    <section class="meet-cheeks" id="meetCheeks"><div class="mc-header"><h2>Meet Cheeks</h2><p class="mc-sub">Also answers to Chica, "Who's a good girl?", and the sound of a cheese wrapper</p></div><div class="mc-bio-card"><div class="mc-bio-photo-wrap"><img id="mcHero" src="chicarar.png" alt="Chica (Cheeks)" class="mc-hero-photo" decoding="async" fetchpriority="high" onerror="this.onerror=null;this.src='chicarar.jpg'" /></div><div class="mc-bio"><h3>Hi! I'm Chica. 👋</h3><div class="mc-bio-body"><p>If you're family, friends, or one of my loyal fans, you probably know me as <strong>Cheeks</strong>. Nobody remembers how it started… but somehow it stuck. I answer to Chica, Cheeks, "Who's a good girl?", and the unmistakable sound of a cheese wrapper.</p><p>I'm a tiny brown Chihuahua with a frosted little face, white socks, and a white-tipped tail that operates at maximum wag whenever snacks are nearby.</p><p><strong>Here's what you should know:</strong></p><ul class="mc-roles"><li>🐿️ <strong>Backyard Security Chief</strong> — Squirrels are under constant surveillance.</li><li>🦴 <strong>Professional Napper</strong> — I can sleep through a thunderstorm… unless someone opens the treat jar.</li><li>🦸 <strong>Part-Time Superhero</strong> — I have a cape. That's all the proof you need.</li><li>🗺️ <strong>Chief Sniffing Officer</strong> — My human built the garage sale map. I inspect it for quality control… and hidden snack locations.</li></ul><p>People say my human runs this place.<br/>That's adorable.<br/>I simply allow him to think that.</p><p>If you enjoy following my adventures, my backyard investigations, and all the fun projects we get into, do me one tiny favor…</p><p>❤️ Share this page with your friends and family on Facebook, Nextdoor, Instagram, or wherever good humans gather. Every share helps more people discover our adventures, support our projects, and join the pack.</p><p>Now come on in.<br/>Wipe your paws.<br/>Leave a belly rub.<br/>And if you happen to have a snack…<br/>…we can definitely be best friends.</p><p class="mc-sign">🐾 — Cheeks</p></div></div></div><div class="mc-gallery" id="mcGallery"></div></section>
+    <section class="comment-section" id="commentSection"><h3>Leave a note for Cheeks</h3><p class="comment-lead">Sale tips, finds, belly rubs, or just a howdy — notes stay on this device.</p><form class="comment-form" id="commentForm"><div class="row"><input type="text" id="commentName" placeholder="Your name" maxlength="40" required /><input type="text" id="commentCity" placeholder="City (optional)" maxlength="40" /></div><textarea id="commentBody" placeholder="Hey Cheeks…" maxlength="500" required></textarea><button type="submit">Post note</button></form><div class="comment-list" id="commentList"><p class="comment-empty" id="commentEmpty">No notes yet. Be the first to say howdy.</p></div></section>
+    <section class="featured-adventure" id="featuredAdventure"><h3 class="by-section-title">🎬 Featured Adventure</h3><div class="fa-card"><div class="fa-video-wrap"><video controls playsinline poster="chicarar.jpg" style="width:100%;border-radius:14px;background:#0f172a"><source src="assets/videos/chica_highway_adventure.mp4" type="video/mp4" /></video></div><div class="fa-copy"><h4>Highway to San Antonio — Chica's Sale Hunt</h4><p>From the shopping cart to the open highway.</p><p class="fa-meta">Aug 4, 2026 · Adventure</p></div></div></section>
+    <div class="by-grid"><section class="by-col"><h3 class="by-section-title">📝 Chica's Blog</h3><div id="blogList" class="by-posts">Loading…</div></section><section class="by-col"><h3 class="by-section-title">🎬 Weekly Videos</h3><div id="videoList" class="by-videos">Loading…</div></section></div>
+    <article id="postView" class="by-post-view hidden"><button type="button" class="near-btn" id="btnBackPosts">← All posts</button><h2 id="postTitle"></h2><div class="by-meta" id="postMeta"></div><div class="by-body" id="postBody"></div></article>
   </main>
-  <footer class="lfoot">
-    <div><strong>Chica's Backyard</strong><span>Chicas Map · GSIN</span></div>
-    <div class="lfoot-links">
-      <a href="index.html">Home</a>
-      <a href="map.html">Map</a>
-      <a href="submit.html">List a sale</a>
-      <a href="sponsor.html">Sponsor</a>
-    </div>
-  </footer>
-  <script src="js/backyard.js"></script>
-  <script src="js/grass-wind.js"></script>
-  <script src="js/chica-forms.js"></script>
-  <script src="js/chica-pwa.js"></script>
+  <footer class="lfoot"><div><strong>Chica's Backyard</strong><span>Chicas Map · GSIN</span></div><div class="lfoot-links"><a href="index.html">Home</a><a href="map.html">Map</a><a href="submit.html">List a sale</a><a href="sponsor.html">Sponsor</a></div></footer>
+  <script src="js/backyard.js"></script><script src="js/grass-wind.js"></script><script src="js/chica-forms.js"></script><script src="js/chica-pwa.js"></script>
   <script>
-  (function () {
-    var pageUrl = encodeURIComponent('https://justonejewelry.github.io/Chicas-Map/backyard.html');
-    var text = encodeURIComponent("Meet Cheeks (Chica) — backyard boss & Chief Sniffing Officer of the garage sale map.");
-    var abs = 'https://justonejewelry.github.io/Chicas-Map/backyard.html';
-    document.getElementById('shareX').href = 'https://twitter.com/intent/tweet?text=' + text + '&url=' + pageUrl;
-    document.getElementById('shareFb').href = 'https://www.facebook.com/sharer/sharer.php?u=' + pageUrl;
-    document.getElementById('shareWa').href = 'https://wa.me/?text=' + text + '%20' + pageUrl;
-    document.getElementById('shareLi').href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + pageUrl;
-    document.getElementById('shareRd').href = 'https://www.reddit.com/submit?url=' + pageUrl + '&title=' + text;
-    document.getElementById('shareTg').href = 'https://t.me/share/url?url=' + pageUrl + '&text=' + text;
-    document.getElementById('shareMail').href = 'mailto:?subject=Meet%20Cheeks&body=' + text + '%0A' + pageUrl;
-    document.getElementById('shareCopy').addEventListener('click', function () {
-      navigator.clipboard.writeText(abs).then(function () {
-        var b = document.getElementById('shareCopy'); b.textContent = 'Copied!'; setTimeout(function(){ b.textContent='Copy link'; }, 1500);
-      });
-    });
-    if (navigator.share) {
-      var n = document.getElementById('shareNative'); n.hidden = false;
-      n.addEventListener('click', function () { navigator.share({ title: "Chica's Backyard — Meet Cheeks", url: abs }).catch(function(){}); });
-    }
-    var KEY = 'chica_backyard_comments_v1';
-    function load() { try { return JSON.parse(localStorage.getItem(KEY)||'[]'); } catch(e){ return []; } }
-    function save(list) { localStorage.setItem(KEY, JSON.stringify(list.slice(0,50))); }
-    function render() {
-      var list = load(), el = document.getElementById('commentList'), empty = document.getElementById('commentEmpty');
-      el.querySelectorAll('.comment-item').forEach(function(n){ n.remove(); });
-      if (!list.length) { if (empty) empty.style.display='block'; return; }
-      if (empty) empty.style.display='none';
-      list.forEach(function(c){
-        var div = document.createElement('div'); div.className='comment-item';
-        div.innerHTML = '<div class="c-head"><span class="c-name"></span><span class="c-date"></span></div><p class="c-body"></p>';
-        div.querySelector('.c-name').textContent = c.name + (c.city ? ' · '+c.city : '');
-        div.querySelector('.c-date').textContent = c.date;
-        div.querySelector('.c-body').textContent = c.body;
-        el.appendChild(div);
-      });
-    }
-    document.getElementById('commentForm').addEventListener('submit', function(e){
-      e.preventDefault();
-      var name=document.getElementById('commentName').value.trim();
-      var city=document.getElementById('commentCity').value.trim();
-      var body=document.getElementById('commentBody').value.trim();
-      if(!name||!body) return;
-      var list=load(); list.unshift({name:name.slice(0,40),city:city.slice(0,40),body:body.slice(0,500),date:new Date().toLocaleString()});
-      save(list); document.getElementById('commentForm').reset(); render();
-    });
-    render();
-
-    if (window.ChicaForms) {
-      ChicaForms.bindEmailForm(document.getElementById('emailFormBy'), {
-        statusEl: document.getElementById('emailStatusBy'),
-        source: 'backyard',
-      });
-    }
-  })();
+  (function(){var pageUrl=encodeURIComponent('https://justonejewelry.github.io/Chicas-Map/backyard.html'),text=encodeURIComponent("Meet Cheeks (Chica) — backyard boss & Chief Sniffing Officer of the garage sale map."),abs='https://justonejewelry.github.io/Chicas-Map/backyard.html';document.getElementById('shareX').href='https://twitter.com/intent/tweet?text='+text+'&url='+pageUrl;document.getElementById('shareFb').href='https://www.facebook.com/sharer/sharer.php?u='+pageUrl;document.getElementById('shareWa').href='https://wa.me/?text='+text+'%20'+pageUrl;document.getElementById('shareLi').href='https://www.linkedin.com/sharing/share-offsite/?url='+pageUrl;document.getElementById('shareRd').href='https://www.reddit.com/submit?url='+pageUrl+'&title='+text;document.getElementById('shareTg').href='https://t.me/share/url?url='+pageUrl+'&text='+text;document.getElementById('shareMail').href='mailto:?subject=Meet%20Cheeks&body='+text+'%0A'+pageUrl;document.getElementById('shareCopy').addEventListener('click',function(){navigator.clipboard.writeText(abs).then(function(){var b=document.getElementById('shareCopy');b.textContent='Copied!';setTimeout(function(){b.textContent='Copy link'},1500)})});if(navigator.share){var n=document.getElementById('shareNative');n.hidden=false;n.addEventListener('click',function(){navigator.share({title:"Chica's Backyard — Meet Cheeks",url:abs}).catch(function(){})})}var KEY='chica_backyard_comments_v1';function load(){try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){return []}}function save(list){localStorage.setItem(KEY,JSON.stringify(list.slice(0,50)))}function render(){var list=load(),el=document.getElementById('commentList'),empty=document.getElementById('commentEmpty');el.querySelectorAll('.comment-item').forEach(function(n){n.remove()});if(!list.length){if(empty)empty.style.display='block';return}if(empty)empty.style.display='none';list.forEach(function(c){var div=document.createElement('div');div.className='comment-item';div.innerHTML='<div class="c-head"><span class="c-name"></span><span class="c-date"></span></div><p class="c-body"></p>';div.querySelector('.c-name').textContent=c.name+(c.city?' · '+c.city:'');div.querySelector('.c-date').textContent=c.date;div.querySelector('.c-body').textContent=c.body;el.appendChild(div)})}document.getElementById('commentForm').addEventListener('submit',function(e){e.preventDefault();var name=document.getElementById('commentName').value.trim(),city=document.getElementById('commentCity').value.trim(),body=document.getElementById('commentBody').value.trim();if(!name||!body)return;var list=load();list.unshift({name:name.slice(0,40),city:city.slice(0,40),body:body.slice(0,500),date:new Date().toLocaleString()});save(list);document.getElementById('commentForm').reset();render()});render();if(window.ChicaForms){ChicaForms.bindEmailForm(document.getElementById('emailFormBy'),{statusEl:document.getElementById('emailStatusBy'),source:'backyard'})}})();
   </script>
 </body>
 </html>
