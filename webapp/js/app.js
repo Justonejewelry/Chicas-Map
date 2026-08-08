@@ -141,10 +141,10 @@
   }
   function esc(s) {
     return String(s == null ? "" : s)
-      .replace(/&/g, "&")
-      .replace(/</g, "<")
-      .replace(/>/g, ">")
-      .replace(/"/g, """);
+      .replace(/&/g, "\u0026amp;")
+      .replace(/</g, "\u0026lt;")
+      .replace(/>/g, "\u0026gt;")
+      .replace(/"/g, "\u0026quot;");
   }
   function milesBetween(lat1, lon1, lat2, lon2) {
     const R = 3958.8; const toRad = (d) => (d * Math.PI) / 180;
@@ -767,7 +767,6 @@
       refresh();
     });
 
-    // Keyword search
     const kw = document.getElementById("keywordInput");
     if (kw) {
       let t;
@@ -781,7 +780,6 @@
       });
     }
 
-    // Day toggles
     document.querySelectorAll(".day-btn").forEach((btn) => {
       btn.addEventListener("click", () => {
         const d = btn.dataset.day;
