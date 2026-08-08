@@ -259,7 +259,7 @@
           <button type="button" class="map-fab" id="fabNear" title="Near me" aria-label="Near me" aria-expanded="false">
             <img src="nearme.png" alt="" width="28" height="28" onerror="this.style.display='none';this.parentNode.textContent='📍'" />
           </button>
-          <button type="button" class="map-fab" id="fabSearch" title="Search" aria-label="Search" aria-expanded="false">
+          <button type="button" class="map-fab" id="fabSearch" title="Search sales" aria-label="Search sales">
             <img src="search.png" alt="" width="28" height="28" onerror="this.style.display='none';this.parentNode.textContent='🔍'" />
           </button>
         </div>
@@ -275,10 +275,6 @@
               <option value="0">Any</option>
             </select>
           </div>
-        </div>
-        <div class="map-pop" id="popSearch" role="dialog" aria-label="Search">
-          <h3>Search</h3>
-          <p style="font-size:0.8rem;color:#7a736b;margin:0">Open List for keyword search and day filters.</p>
         </div>
         <div class="map-legend">
           <span><i class="pin top"></i> Top</span>
@@ -348,67 +344,98 @@
     var btn = document.getElementById('menuBtn');
     var rail = document.getElementById('sideRail');
     var backdrop = document.getElementById('railBackdrop');
-    function closeMenu() { wrap.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }
+
+    function closeMenu() {
+      wrap.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    }
     function openRail() {
       rail.classList.add('open');
-      backdrop.hidden = false; backdrop.classList.add('open');
+      backdrop.hidden = false;
+      backdrop.classList.add('open');
       document.getElementById('dockList')?.classList.add('active');
     }
     function closeRail() {
       rail.classList.remove('open');
-      backdrop.classList.remove('open'); backdrop.hidden = true;
+      backdrop.classList.remove('open');
+      backdrop.hidden = true;
       document.getElementById('dockList')?.classList.remove('active');
       if (typeof window.__YB_returnToMap === 'function') window.__YB_returnToMap();
       else try { window.dispatchEvent(new Event('resize')); } catch (_) {}
     }
-    function toggleRail() { rail.classList.contains('open') ? closeRail() : openRail(); }
+    function toggleRail() {
+      rail.classList.contains('open') ? closeRail() : openRail();
+    }
+
+    /** Always open the rail and focus keyword search */
+    function focusSearch() {
+      openRail();
+      closePops();
+      // slight delay so the rail is visible before focus (mobile keyboard)
+      setTimeout(function () {
+        var kw = document.getElementById('keywordInput');
+        if (kw) {
+          kw.focus();
+          kw.select();
+        }
+      }, 80);
+    }
+
     btn.addEventListener('click', function (e) {
       e.stopPropagation();
       var open = wrap.classList.toggle('open');
       btn.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
-    document.getElementById('dockList')?.addEventListener('click', function (e) { e.stopPropagation(); toggleRail(); });
+
+    document.getElementById('dockList')?.addEventListener('click', function (e) {
+      e.stopPropagation();
+      toggleRail();
+    });
     document.getElementById('dockMenu')?.addEventListener('click', function (e) {
-      e.stopPropagation(); openRail(); wrap.classList.add('open'); btn.setAttribute('aria-expanded', 'true');
+      e.stopPropagation();
+      openRail();
+      wrap.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
     });
     document.getElementById('dockNear')?.addEventListener('click', function () {
       document.getElementById('fabNear')?.click();
     });
-    document.getElementById('dockSearch')?.addEventListener('click', function () {
-      openRail();
-      document.getElementById('keywordInput')?.focus();
+    document.getElementById('dockSearch')?.addEventListener('click', function (e) {
+      e.stopPropagation();
+      focusSearch();
     });
+
     backdrop.addEventListener('click', closeRail);
+
     var fabNear = document.getElementById('fabNear');
     var fabSearch = document.getElementById('fabSearch');
     var popNear = document.getElementById('popNear');
-    var popSearch = document.getElementById('popSearch');
+
     function closePops() {
-      popNear.classList.remove('open'); popSearch.classList.remove('open');
-      fabNear.classList.remove('active'); fabSearch.classList.remove('active');
-      fabNear.setAttribute('aria-expanded', 'false'); fabSearch.setAttribute('aria-expanded', 'false');
+      popNear.classList.remove('open');
+      fabNear.classList.remove('active');
+      fabNear.setAttribute('aria-expanded', 'false');
+      fabSearch.classList.remove('active');
     }
+
     fabNear.addEventListener('click', function (e) {
       e.stopPropagation();
       var willOpen = !popNear.classList.contains('open');
       closePops();
-      if (willOpen) { popNear.classList.add('open'); fabNear.classList.add('active'); fabNear.setAttribute('aria-expanded', 'true'); }
-    });
-    fabSearch.addEventListener('click', function (e) {
-      e.stopPropagation();
-      var willOpen = !popSearch.classList.contains('open');
-      closePops();
       if (willOpen) {
-        if (window.matchMedia('(max-width: 900px)').matches) {
-          openRail();
-          document.getElementById('keywordInput')?.focus();
-        } else {
-          popSearch.classList.add('open');
-          fabSearch.classList.add('active');
-          fabSearch.setAttribute('aria-expanded', 'true');
-        }
+        popNear.classList.add('open');
+        fabNear.classList.add('active');
+        fabNear.setAttribute('aria-expanded', 'true');
       }
     });
+
+    // Search FAB: always open rail + focus keyword (desktop and mobile)
+    fabSearch.addEventListener('click', function (e) {
+      e.stopPropagation();
+      focusSearch();
+      fabSearch.classList.add('active');
+    });
+
     document.getElementById('btnNearMeFab')?.addEventListener('click', function () {
       document.getElementById('btnNearMe')?.click();
       closePops();
@@ -419,8 +446,12 @@
       if (r) { r.value = this.value; r.dispatchEvent(new Event('change')); }
       closePops();
     });
-    document.getElementById('btnShareRoute2')?.addEventListener('click', function () { document.getElementById('btnShareRoute')?.click(); });
-    document.getElementById('btnTipCancel')?.addEventListener('click', function () { document.getElementById('permitTipForm')?.classList.add('hidden'); });
+    document.getElementById('btnShareRoute2')?.addEventListener('click', function () {
+      document.getElementById('btnShareRoute')?.click();
+    });
+    document.getElementById('btnTipCancel')?.addEventListener('click', function () {
+      document.getElementById('permitTipForm')?.classList.add('hidden');
+    });
     document.getElementById('btnOpenTipForm')?.addEventListener('click', function () {
       if (window.YardBirdTips) window.YardBirdTips.openTipForm(window.__YB_LAST_SALE || null);
     });
@@ -430,10 +461,18 @@
       window.location.href = 'mailto:mr.jsciaraffa@gmail.com?subject=' + subject + '&body=' + body;
       closeMenu();
     });
+
     popNear.addEventListener('click', function (e) { e.stopPropagation(); });
-    popSearch.addEventListener('click', function (e) { e.stopPropagation(); });
-    document.addEventListener('click', function () { closeMenu(); closePops(); });
-    if (window.YardBirdTips) { window.YardBirdTips.loadTips(); window.YardBirdTips.bindForm(); }
+
+    document.addEventListener('click', function () {
+      closeMenu();
+      closePops();
+    });
+
+    if (window.YardBirdTips) {
+      window.YardBirdTips.loadTips();
+      window.YardBirdTips.bindForm();
+    }
   })();
   </script>
 </body>
