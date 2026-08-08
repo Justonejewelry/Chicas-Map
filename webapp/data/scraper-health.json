@@ -1,36 +1,39 @@
 {
-  "generated_at": "2026-08-08T06:37:00-05:00",
-  "overall": "ok",
-  "primary_failures": [],
+  "generated_at": "2026-08-08T06:44:27-05:00",
+  "overall": "critical",
+  "primary_failures": [
+    "estatesales_org",
+    "yardsalesearch"
+  ],
   "sources": [
     {
       "source": "garagesalefinder",
       "status": "ok",
-      "detail": "merge added=28 (SA) +23 (ATX)",
-      "primary": true
+      "detail": "merge added=25",
+      "primary": false
     },
     {
       "source": "permits",
-      "status": "ok",
-      "detail": "85 SA garage/estate permits in 14d window",
-      "primary": true
+      "status": "unknown",
+      "detail": "log present but no clear success/fail pattern",
+      "primary": false
     },
     {
       "source": "estatesales_org",
-      "status": "ok",
-      "detail": "normalized=3 SA +7 ATX",
+      "status": "zero",
+      "detail": "normalized/added = 0",
       "primary": true
     },
     {
       "source": "yardsalesearch",
-      "status": "ok",
-      "detail": "normalized=15 SA +13 ATX",
+      "status": "zero",
+      "detail": "normalized/added = 0",
       "primary": true
     },
     {
       "source": "craigslist",
       "status": "ok",
-      "detail": "enriched=18 SA +18 ATX, added substantial",
+      "detail": "merge added=17",
       "primary": true
     },
     {
@@ -38,16 +41,20 @@
       "status": "ok",
       "detail": "normalized=1",
       "primary": false
+    },
+    {
+      "source": "estatesales_apify",
+      "status": "missing",
+      "detail": "no log file",
+      "primary": false
     }
   ],
   "json_source_counts": {
-    "yardsalesearch": 16,
-    "garagesalefinder": 19,
-    "estatesales.org": 3,
-    "craigslist": 31,
-    "aggregators": 2,
+    "yardsalesearch": 6,
+    "garagesalefinder": 11,
     "user submit (approved)": 2,
-    "permits": 85
+    "craigslist": 16,
+    "aggregators": 2
   },
-  "notes": "Manual Atlas/Forge refresh 2026-08-08 morning. PLACEHOLDER fixed. All free sources re-run successfully. SA total_locations=118 (33 public + 85 permits). Austin=36. Target 150-200 still constrained by free-source volume + heat-season weekend; Sentinel approved live status."
+  "notes": "Primary free sources: estatesales_org, yardsalesearch, craigslist. Soft-fail workflow continues; this report only alerts."
 }

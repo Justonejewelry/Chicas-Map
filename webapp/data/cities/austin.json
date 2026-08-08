@@ -1,1 +1,12 @@
-PLACEHOLDER
+{
+  "edition": "Austin Yard-Bird Discovery",
+  "city": "austin",
+  "public": [],
+  "permits": [],
+  "hot_zones": [],
+  "sources": [],
+  "total_locations": 0,
+  "status": "live",
+  "date": "2026-08-08",
+  "last_refresh": "2026-08-08T06:44:27-05:00"
+}
