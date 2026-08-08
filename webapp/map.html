@@ -6,6 +6,16 @@
   <title>Chica Map — Verified Sales</title>
   <meta name="description" content="Live map of verified garage and estate sales in San Antonio and Texas. Map-first." />
   <meta name="theme-color" content="#1a6b3c" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://justonejewelry.github.io/Chicas-Map/map.html" />
+  <meta property="og:title" content="Chica Map — Verified Garage & Estate Sales" />
+  <meta property="og:description" content="Live verified sales map. Near Me, multi-stop routes, keyword search, day filters." />
+  <meta property="og:image" content="https://justonejewelry.github.io/Chicas-Map/chicarar.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Chica Map — Verified Sales" />
+  <meta name="twitter:description" content="Live verified garage & estate sales. Near Me · Routes · Search." />
+  <meta name="twitter:image" content="https://justonejewelry.github.io/Chicas-Map/chicarar.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
   <link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
@@ -19,6 +29,7 @@
   <link rel="stylesheet" href="css/features.css" />
   <link rel="stylesheet" href="css/map-rail.css" />
   <link rel="stylesheet" href="css/voss.css" />
+  <link rel="stylesheet" href="css/map-voss-ux.css" />
   <script src="js/chica-config.js"></script>
   <script src="js/chica-analytics.js"></script>
   <style>
@@ -89,6 +100,8 @@
           <a href="backyard.html">Backyard</a>
           <a href="submit.html">List a sale free</a>
           <a href="sponsor.html">Sponsor</a>
+          <a href="terms.html">Terms</a>
+          <a href="privacy.html">Privacy</a>
           <button type="button" data-chica-install hidden>Add to Home Screen</button>
           <button type="button" id="menuEmail">Join Friday email</button>
           <button type="button" id="menuExport">Export list</button>
@@ -123,6 +136,14 @@
           <div class="rail-row" style="margin-top:6px">
             <input type="text" id="locInput" class="loc-input" placeholder="ZIP or address" enterkeyhint="search" />
             <button type="button" class="near-btn" id="btnLocSearch">Go</button>
+          </div>
+          <div class="keyword-row">
+            <input type="search" id="keywordInput" class="keyword-input" placeholder="Search: tools, furniture, baby…" enterkeyhint="search" autocomplete="off" />
+          </div>
+          <div class="day-toggle" role="group" aria-label="Day of week">
+            <button type="button" class="day-btn active" data-day="fri">Fri</button>
+            <button type="button" class="day-btn active" data-day="sat">Sat</button>
+            <button type="button" class="day-btn active" data-day="sun">Sun</button>
           </div>
           <div class="near-status" id="nearStatus" hidden></div>
           <div class="chips" aria-hidden="true">
@@ -191,7 +212,11 @@
             <button type="button" class="near-btn clear-loc" id="btnClearRoute">Clear</button>
           </div>
           <ol id="routeStops" class="route-stops"></ol>
-          <button type="button" class="near-btn primary" id="btnOpenRoute" style="width:100%;margin-top:8px">Open in Google Maps</button>
+          <div class="nav-apps" id="routeNavApps" style="margin-top:10px">
+            <button type="button" class="nav-app-btn google" id="btnOpenRoute">Google</button>
+            <button type="button" class="nav-app-btn apple" id="btnOpenRouteApple">Apple</button>
+            <button type="button" class="nav-app-btn waze" id="btnOpenRouteWaze">Waze</button>
+          </div>
           <button type="button" class="near-btn" id="btnShareRoute2" style="width:100%;margin-top:6px">Share route card</button>
         </div>
 
@@ -253,7 +278,7 @@
         </div>
         <div class="map-pop" id="popSearch" role="dialog" aria-label="Search">
           <h3>Search</h3>
-          <p style="font-size:0.8rem;color:#7a736b;margin:0">Open List for full filters on mobile.</p>
+          <p style="font-size:0.8rem;color:#7a736b;margin:0">Open List for keyword search and day filters.</p>
         </div>
         <div class="map-legend">
           <span><i class="pin top"></i> Top</span>
@@ -278,7 +303,9 @@
     <span>
       <a href="submit.html">List a sale</a> ·
       <a href="backyard.html">Backyard</a> ·
-      <a href="sponsor.html">Sponsor</a>
+      <a href="sponsor.html">Sponsor</a> ·
+      <a href="terms.html">Terms</a> ·
+      <a href="privacy.html">Privacy</a>
     </span>
   </footer>
 
@@ -314,7 +341,6 @@
   </script>
   <script src="js/app.js"></script>
   <script src="js/detail-bridge.js"></script>
-  <!-- grass-wind intentionally omitted on map — continuous rAF caused jank -->
   <script src="js/chica-pwa.js"></script>
   <script>
   (function () {
@@ -350,7 +376,7 @@
     });
     document.getElementById('dockSearch')?.addEventListener('click', function () {
       openRail();
-      document.getElementById('locInput')?.focus();
+      document.getElementById('keywordInput')?.focus();
     });
     backdrop.addEventListener('click', closeRail);
     var fabNear = document.getElementById('fabNear');
@@ -375,7 +401,7 @@
       if (willOpen) {
         if (window.matchMedia('(max-width: 900px)').matches) {
           openRail();
-          document.getElementById('locInput')?.focus();
+          document.getElementById('keywordInput')?.focus();
         } else {
           popSearch.classList.add('open');
           fabSearch.classList.add('active');
@@ -383,7 +409,6 @@
         }
       }
     });
-    // Near me FAB → locate then immediately return to full map
     document.getElementById('btnNearMeFab')?.addEventListener('click', function () {
       document.getElementById('btnNearMe')?.click();
       closePops();
