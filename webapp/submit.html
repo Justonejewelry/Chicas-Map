@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>List your garage sale free · Chica Map</title>
   <meta name="description" content="Add your garage, yard, or estate sale to Chica's verified map. Free. Moderated before it goes live." />
-  <meta name="theme-color" content="#1a6b3c" />
+  <meta name="theme-color" content="#17633a" />
   <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
       c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -17,19 +17,19 @@
   <link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   <link rel="manifest" href="manifest.webmanifest" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/voss.css" />
   <link rel="stylesheet" href="css/map-voss-ux.css" />
+  <link rel="stylesheet" href="css/chica-submit.css" />
   <script src="js/chica-config.js"></script>
   <script src="js/chica-analytics.js"></script>
 </head>
-<body>
+<body class="submit-page">
   <header class="v-nav">
-    <a class="v-brand" href="index.html">
-      <img src="chicarar.png" alt="Chica" width="36" height="36"
-        decoding="async" fetchpriority="high"
+    <a class="v-brand" href="index.html" aria-label="Chicas Garage Sale Map home">
+      <img src="chicarar.png" alt="Chica" width="40" height="40" decoding="async" fetchpriority="high"
         onerror="this.onerror=null;this.src='chicarar.jpg'" />
-      Chica
+      Chicas
     </a>
     <nav class="v-links" aria-label="Primary">
       <a href="map.html">Map</a>
@@ -43,143 +43,209 @@
     </div>
   </header>
 
-  <main class="v-form-wrap">
-    <div class="v-form-card">
-      <div class="v-eyebrow">Free · Moderated</div>
-      <h1>List your garage sale</h1>
-      <p class="v-form-lead">
-        Put your sale on the map people actually open. Free. We review every submission
-        before it appears — usually the same day for weekend sales.
-      </p>
-
-      <form id="saleForm" novalidate>
-        <div class="v-field">
-          <label for="saleTitle">Sale title</label>
-          <input type="text" id="saleTitle" name="title" maxlength="80" required
-            placeholder="e.g. Alamo Ranch multi-family garage sale" autocomplete="off" />
-        </div>
-
-        <div class="v-field">
-          <label for="saleAddress">Full address</label>
-          <input type="text" id="saleAddress" name="address" maxlength="160" required
-            placeholder="Street, City, TX ZIP" autocomplete="street-address" />
-        </div>
-
-        <div class="v-field-row">
-          <div class="v-field">
-            <label for="saleStart">Start date</label>
-            <input type="date" id="saleStart" name="start" required />
-          </div>
-          <div class="v-field">
-            <label for="saleEnd">End date</label>
-            <input type="date" id="saleEnd" name="end" />
-          </div>
-        </div>
-
-        <div class="v-field">
-          <label for="saleHours">Hours</label>
-          <input type="text" id="saleHours" name="hours" maxlength="80" required
-            placeholder="Sat 8am–2pm, Sun 9am–1pm" />
-        </div>
-
-        <div class="v-field">
-          <label>Categories</label>
-          <div class="v-check-grid">
-            <label class="v-check"><input type="checkbox" name="cat" value="furniture" /> Furniture</label>
-            <label class="v-check"><input type="checkbox" name="cat" value="tools" /> Tools</label>
-            <label class="v-check"><input type="checkbox" name="cat" value="clothes" /> Clothes</label>
-            <label class="v-check"><input type="checkbox" name="cat" value="electronics" /> Electronics</label>
-            <label class="v-check"><input type="checkbox" name="cat" value="toys" /> Toys / kids</label>
-            <label class="v-check"><input type="checkbox" name="cat" value="antiques" /> Antiques</label>
-            <label class="v-check"><input type="checkbox" name="cat" value="collectibles" /> Collectibles</label>
-            <label class="v-check"><input type="checkbox" name="cat" value="other" /> Other</label>
-          </div>
-        </div>
-
-        <div class="v-field">
-          <label for="saleSummary">What’s for sale?</label>
-          <textarea id="saleSummary" name="summary" maxlength="500" required
-            placeholder="Short list of highlights — tools, kids clothes, patio set…"></textarea>
-        </div>
-
-        <div class="featured-opt">
-          <label>
-            <input type="checkbox" id="saleFeatured" name="featured" />
-            <span>
-              Feature this sale ($5)
-              <small>Gold pin + priority placement for the weekend. We’ll email payment instructions after review.</small>
-            </span>
-          </label>
-        </div>
-
-        <div class="v-field-row">
-          <div class="v-field">
-            <label for="saleName">Your name</label>
-            <input type="text" id="saleName" name="name" maxlength="60" required
-              autocomplete="name" />
-          </div>
-          <div class="v-field">
-            <label for="saleContact">Contact (optional)</label>
-            <input type="text" id="saleContact" name="contact" maxlength="80"
-              placeholder="email or phone" />
-          </div>
-        </div>
-
-        <div class="v-field">
-          <label class="v-check">
-            <input type="checkbox" id="salePublicContact" name="public_contact" />
-            Show contact publicly if published
-          </label>
-        </div>
-
-        <div class="v-field">
-          <label class="v-check">
-            <input type="checkbox" id="saleAttest" required />
-            I am the seller or authorized agent for this address
-          </label>
-        </div>
-        <div class="v-field">
-          <label class="v-check">
-            <input type="checkbox" id="saleAccurate" required />
-            The details above are accurate to my knowledge
-          </label>
-        </div>
-        <div class="v-field">
-          <label class="v-check">
-            <input type="checkbox" id="saleTerms" required />
-            I understand this is moderated, free, and may be edited or declined
-          </label>
-        </div>
-
-        <div class="v-form-actions">
-          <button type="submit" class="v-btn v-btn-primary v-btn-lg" id="saleSubmit">
-            Submit for review
-          </button>
-          <a class="v-btn v-btn-ghost" href="map.html">Cancel</a>
-        </div>
-
-        <p class="v-form-legal">
-          Listings are free. They appear on the map only after review by Chicas Map.
-          We do not publish private information beyond what you mark public. False or
-          misleading submissions may be removed. See <a href="terms.html">Terms</a> & <a href="privacy.html">Privacy</a>.
+  <main class="submit-shell">
+    <section class="submit-hero" aria-labelledby="submit-title">
+      <div class="submit-hero-copy">
+        <div class="submit-kicker">Free listing · Human reviewed</div>
+        <h1 id="submit-title">Put your sale<br /><span>on Chica's map.</span></h1>
+        <p class="submit-hero-lead">
+          Give local shoppers one clean, trustworthy listing to follow. Tell us what you’re selling,
+          where to find you, and when you’ll be open. We review every submission before it goes live.
         </p>
-        <p id="saleStatus" class="v-form-status" hidden></p>
-      </form>
+        <div class="submit-proof" aria-label="Listing benefits">
+          <span>✓ Free to list</span>
+          <span>✓ Moderated before publishing</span>
+          <span>✓ Built for weekend shoppers</span>
+        </div>
+      </div>
+      <div class="submit-chica-card" aria-label="Meet Chica">
+        <div class="submit-chica-badge">
+          <strong>Chica is watching the map.</strong>
+          <small>Accurate details help shoppers trust the hunt.</small>
+        </div>
+        <picture>
+          <source srcset="chicarar.webp" type="image/webp" />
+          <img src="chicarar.png" alt="Chica, the Chicas Garage Sale Map mascot" width="250" height="265"
+            decoding="async" onerror="this.onerror=null;this.src='chicarar.jpg'" />
+        </picture>
+      </div>
+    </section>
+
+    <div class="submit-layout">
+      <section class="submit-form-card" aria-labelledby="form-heading">
+        <div class="submit-form-top">
+          <div>
+            <h2 id="form-heading">Sale details</h2>
+            <p>About 2 minutes. Required fields are marked.</p>
+          </div>
+          <div class="submit-progress" aria-live="polite">
+            <div class="submit-progress-label" id="progressLabel">0% complete</div>
+            <div class="submit-progress-bar" aria-hidden="true"><i id="progressBar"></i></div>
+          </div>
+        </div>
+
+        <form id="saleForm" class="submit-form" novalidate>
+          <section class="submit-section" aria-labelledby="section-sale">
+            <div class="submit-section-head">
+              <div class="submit-section-number">01</div>
+              <div><h3 id="section-sale">The basics</h3><p>Help shoppers recognize your sale at a glance.</p></div>
+            </div>
+            <div class="submit-field">
+              <label for="saleTitle">Sale title <span class="submit-required">Required</span></label>
+              <input type="text" id="saleTitle" name="title" maxlength="80" required
+                placeholder="e.g. Alamo Ranch multi-family garage sale" autocomplete="off" />
+            </div>
+            <div class="submit-field">
+              <label for="saleAddress">Full address <span class="submit-required">Required</span></label>
+              <input type="text" id="saleAddress" name="address" maxlength="160" required
+                placeholder="Street, City, TX ZIP" autocomplete="street-address" />
+              <p class="submit-helper">Use the actual sale address. Accurate pins are critical to Chica Map.</p>
+            </div>
+          </section>
+
+          <section class="submit-section" aria-labelledby="section-when">
+            <div class="submit-section-head">
+              <div class="submit-section-number">02</div>
+              <div><h3 id="section-when">When to shop</h3><p>Give shoppers enough information to plan a stop.</p></div>
+            </div>
+            <div class="submit-field-row">
+              <div class="submit-field">
+                <label for="saleStart">Start date <span class="submit-required">Required</span></label>
+                <input type="date" id="saleStart" name="start" required />
+              </div>
+              <div class="submit-field">
+                <label for="saleEnd">End date <span style="color:#8b837a">Optional</span></label>
+                <input type="date" id="saleEnd" name="end" />
+              </div>
+            </div>
+            <div class="submit-field">
+              <label for="saleHours">Hours <span class="submit-required">Required</span></label>
+              <input type="text" id="saleHours" name="hours" maxlength="80" required
+                placeholder="Sat 8am–2pm, Sun 9am–1pm" />
+            </div>
+          </section>
+
+          <section class="submit-section" aria-labelledby="section-inventory">
+            <div class="submit-section-head">
+              <div class="submit-section-number">03</div>
+              <div><h3 id="section-inventory">What’s worth stopping for?</h3><p>Categories make your listing easier to discover.</p></div>
+            </div>
+            <div class="submit-field">
+              <label>Categories <span style="color:#8b837a">Choose all that fit</span></label>
+              <div class="submit-check-grid">
+                <label class="submit-check"><input type="checkbox" name="cat" value="furniture" /> Furniture</label>
+                <label class="submit-check"><input type="checkbox" name="cat" value="tools" /> Tools</label>
+                <label class="submit-check"><input type="checkbox" name="cat" value="clothes" /> Clothes</label>
+                <label class="submit-check"><input type="checkbox" name="cat" value="electronics" /> Electronics</label>
+                <label class="submit-check"><input type="checkbox" name="cat" value="toys" /> Toys / kids</label>
+                <label class="submit-check"><input type="checkbox" name="cat" value="antiques" /> Antiques</label>
+                <label class="submit-check"><input type="checkbox" name="cat" value="collectibles" /> Collectibles</label>
+                <label class="submit-check"><input type="checkbox" name="cat" value="other" /> Other</label>
+              </div>
+            </div>
+            <div class="submit-field">
+              <label for="saleSummary">What’s for sale? <span class="submit-required">Required</span><span class="submit-char" id="summaryCount">0 / 500</span></label>
+              <textarea id="saleSummary" name="summary" maxlength="500" required
+                placeholder="Short list of highlights — tools, kids clothes, patio set, vintage kitchenware…"></textarea>
+              <p class="submit-helper">Lead with the good stuff. Specific brands, categories, or standout items help shoppers decide.</p>
+            </div>
+            <div class="submit-featured">
+              <label>
+                <input type="checkbox" id="saleFeatured" name="featured" />
+                <span>
+                  <span class="submit-featured-price">$5</span>
+                  <strong>Feature this sale</strong>
+                  <small>Request a gold pin and priority placement for the weekend. Payment instructions are emailed after review.</small>
+                </span>
+              </label>
+            </div>
+          </section>
+
+          <section class="submit-section" aria-labelledby="section-contact">
+            <div class="submit-section-head">
+              <div class="submit-section-number">04</div>
+              <div><h3 id="section-contact">Your contact</h3><p>Used for review questions and listing follow-up.</p></div>
+            </div>
+            <div class="submit-field-row">
+              <div class="submit-field">
+                <label for="saleName">Your name <span class="submit-required">Required</span></label>
+                <input type="text" id="saleName" name="name" maxlength="60" required autocomplete="name" />
+              </div>
+              <div class="submit-field">
+                <label for="saleContact">Contact <span style="color:#8b837a">Optional</span></label>
+                <input type="text" id="saleContact" name="contact" maxlength="80" placeholder="email or phone" />
+              </div>
+            </div>
+            <div class="submit-field">
+              <label class="submit-check"><input type="checkbox" id="salePublicContact" name="public_contact" /> Show contact publicly if published</label>
+            </div>
+          </section>
+
+          <section class="submit-section" aria-labelledby="section-confirm">
+            <div class="submit-section-head">
+              <div class="submit-section-number">05</div>
+              <div><h3 id="section-confirm">One last check</h3><p>These confirmations protect sellers and shoppers.</p></div>
+            </div>
+            <div class="submit-attestations">
+              <label class="submit-check"><input type="checkbox" id="saleAttest" required /> <span>I am the seller or authorized agent for this address.</span></label>
+              <label class="submit-check"><input type="checkbox" id="saleAccurate" required /> <span>The details above are accurate to my knowledge.</span></label>
+              <label class="submit-check"><input type="checkbox" id="saleTerms" required /> <span>I understand this is moderated, free, and may be edited or declined.</span></label>
+            </div>
+          </section>
+
+          <div class="submit-actions">
+            <a class="v-btn v-btn-ghost v-btn-lg" href="map.html">Back to map</a>
+            <button type="submit" class="v-btn v-btn-primary v-btn-lg" id="saleSubmit">Submit for review →</button>
+          </div>
+          <p id="saleStatus" class="submit-status" hidden></p>
+          <p class="submit-legal">
+            Listings are free. They appear on the map only after review by Chicas Map. We do not publish private information beyond what you mark public.
+            False or misleading submissions may be removed. See <a href="terms.html">Terms</a> &amp; <a href="privacy.html">Privacy</a>.
+          </p>
+        </form>
+      </section>
+
+      <aside class="submit-sidebar" aria-label="What happens after submission">
+        <div class="submit-side-card submit-trust">
+          <h3>Why the review step?</h3>
+          <p>Chica Map is built around trust. A clean listing beats a bigger pile of questionable listings.</p>
+          <div class="submit-trust-list">
+            <span><b>✓</b> We check the submission before publishing.</span>
+            <span><b>✓</b> Shoppers get a more reliable map.</span>
+            <span><b>✓</b> Bad or misleading listings can be removed.</span>
+          </div>
+        </div>
+
+        <div class="submit-side-card">
+          <h3>What happens next</h3>
+          <div class="submit-steps">
+            <div class="submit-step"><i>1</i><div><strong>You submit</strong><span>Your sale details are packaged into a review request.</span></div></div>
+            <div class="submit-step"><i>2</i><div><strong>Chica checks it</strong><span>We review the address, timing, and listing details.</span></div></div>
+            <div class="submit-step"><i>3</i><div><strong>It goes live</strong><span>Approved sales are added to the map for shoppers.</span></div></div>
+          </div>
+        </div>
+
+        <a class="submit-side-card submit-back-map" href="map.html">
+          <div><strong>See the live map</strong><div style="color:#8b837a;font-size:.7rem;margin-top:3px">See what shoppers see.</div></div>
+          <span>↗</span>
+        </a>
+      </aside>
     </div>
   </main>
 
   <footer class="v-foot">
     <div>
-      <strong>Chica · Garage Sale Map</strong>
-      Chicas Map · GSIN
+      <strong>Chicas Garage Sale Map</strong>
+      GSIN
     </div>
     <div class="v-foot-links">
       <a href="map.html">Map</a>
       <a href="backyard.html">Backyard</a>
-      <a href="sponsor.html">Sponsor</a>
       <a href="submit.html">List a sale</a>
+      <a href="sponsor.html">Sponsor</a>
       <a href="terms.html">Terms</a>
       <a href="privacy.html">Privacy</a>
+      <a href="mailto:mr.jsciaraffa@gmail.com">Contact</a>
     </div>
   </footer>
 
@@ -189,31 +255,68 @@
     var REVIEW = "mr.jsciaraffa@gmail.com";
     var form = document.getElementById("saleForm");
     var status = document.getElementById("saleStatus");
+    var progressBar = document.getElementById("progressBar");
+    var progressLabel = document.getElementById("progressLabel");
+    var summary = document.getElementById("saleSummary");
+    var summaryCount = document.getElementById("summaryCount");
+    var requiredFields = ["saleTitle", "saleAddress", "saleStart", "saleHours", "saleSummary", "saleName"];
+    var checks = ["saleAttest", "saleAccurate", "saleTerms"];
+
+    function updateProgress() {
+      var complete = requiredFields.filter(function (id) {
+        return document.getElementById(id).value.trim();
+      }).length + checks.filter(function (id) {
+        return document.getElementById(id).checked;
+      }).length;
+      var total = requiredFields.length + checks.length;
+      var pct = Math.round((complete / total) * 100);
+      progressBar.style.width = pct + "%";
+      progressLabel.textContent = pct + "% complete";
+    }
+
+    function updateCount() {
+      summaryCount.textContent = summary.value.length + " / 500";
+    }
+
+    form.addEventListener("input", function () { updateProgress(); updateCount(); });
+    form.addEventListener("change", updateProgress);
+    updateProgress();
+    updateCount();
 
     form.addEventListener("submit", function (e) {
       e.preventDefault();
+      if (!form.reportValidity()) return;
+
       if (!document.getElementById("saleAttest").checked ||
           !document.getElementById("saleAccurate").checked ||
           !document.getElementById("saleTerms").checked) {
         status.hidden = false;
-        status.className = "v-form-status error";
-        status.textContent = "Please check all three attestation boxes.";
+        status.className = "submit-status error";
+        status.textContent = "Please confirm all three statements before submitting.";
+        return;
+      }
+
+      var start = document.getElementById("saleStart").value;
+      var end = document.getElementById("saleEnd").value;
+      if (end && start && end < start) {
+        status.hidden = false;
+        status.className = "submit-status error";
+        status.textContent = "The end date cannot be earlier than the start date.";
+        document.getElementById("saleEnd").focus();
         return;
       }
 
       var cats = [];
-      form.querySelectorAll('input[name="cat"]:checked').forEach(function (c) {
-        cats.push(c.value);
-      });
+      form.querySelectorAll('input[name="cat"]:checked').forEach(function (c) { cats.push(c.value); });
 
       var payload = {
         title: document.getElementById("saleTitle").value.trim(),
         address: document.getElementById("saleAddress").value.trim(),
-        start_date: document.getElementById("saleStart").value,
-        end_date: document.getElementById("saleEnd").value || null,
+        start_date: start,
+        end_date: end || null,
         hours: document.getElementById("saleHours").value.trim(),
         categories: cats,
-        summary: document.getElementById("saleSummary").value.trim(),
+        summary: summary.value.trim(),
         submitter_name: document.getElementById("saleName").value.trim(),
         contact: document.getElementById("saleContact").value.trim() || null,
         public_contact: document.getElementById("salePublicContact").checked,
@@ -222,13 +325,6 @@
         status: "pending_review",
         source: "user_submit_free"
       };
-
-      if (!payload.title || !payload.address || !payload.hours || !payload.summary || !payload.submitter_name) {
-        status.hidden = false;
-        status.className = "v-form-status error";
-        status.textContent = "Please fill every required field.";
-        return;
-      }
 
       var subject = encodeURIComponent(
         payload.featured_request
@@ -243,12 +339,11 @@
       );
 
       window.location.href = "mailto:" + REVIEW + "?subject=" + subject + "&body=" + body;
-
       status.hidden = false;
-      status.className = "v-form-status";
-      status.textContent =
-        "Review email opened. Your sale appears on the map only after we verify it — usually same day for weekend listings. Thank you!";
+      status.className = "submit-status";
+      status.textContent = "Review email opened. Your sale appears on the map only after verification — usually the same day for weekend listings.";
       document.getElementById("saleSubmit").disabled = true;
+      updateProgress();
     });
   })();
   </script>
