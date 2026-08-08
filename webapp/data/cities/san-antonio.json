@@ -1109,6 +1109,30 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "cl-toniogaragesaledwb32x89boeuyncqf7zyce"
+    },
+    {
+      "address": "1902 chihuahua st, San Antonio, TX",
+      "dates": "2026-08-08 – 2026-08-10",
+      "date_from": "2026-08-08",
+      "date_to": "2026-08-10",
+      "end_date": "2026-08-10",
+      "hours": null,
+      "title": "1902 chihuahua st 78207",
+      "details": "QR Code Link to This Post Today 11-5",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/san-antonio-1902-chihuahua-st-78207/wSXAm1vXHTLxWGEjj6X1uX",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 29.4167,
+      "lon": -98.5262,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-hihuahuast78207wsxam1vxhtlxwgejj6x1ux"
     }
   ],
   "permits": [],
@@ -1121,10 +1145,10 @@
     "garagesalefinder.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 50,
+  "total_locations": 51,
   "status": "live",
   "date": "2026-08-08",
-  "last_refresh": "2026-08-08T10:03:21-05:00",
+  "last_refresh": "2026-08-08T11:29:56-05:00",
   "permit_total": 85,
   "permit_estate_count": 1
 }
