@@ -1,5 +1,5 @@
 /* Chica Map service worker — offline packet + asset cache */
-const CACHE = "chica-v1";
+const CACHE = "chica-v2";
 const PRECACHE = [
   "./map.html",
   "./index.html",
@@ -13,6 +13,7 @@ const PRECACHE = [
   "./data/sponsors.json",
   "./favicon-48.png",
   "./manifest.webmanifest",
+  "./assets/chica/chica-logo.svg?v=2",
 ];
 
 self.addEventListener("install", (e) => {
