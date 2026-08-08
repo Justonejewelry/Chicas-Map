@@ -1,16 +1,15 @@
 {
-  "generated_at": "2026-08-07T17:32:26-05:00",
+  "generated_at": "2026-08-07T20:20:25-05:00",
   "overall": "critical",
   "primary_failures": [
     "estatesales_org",
-    "yardsalesearch",
-    "craigslist"
+    "yardsalesearch"
   ],
   "sources": [
     {
       "source": "garagesalefinder",
       "status": "ok",
-      "detail": "merge added=6",
+      "detail": "merge added=26",
       "primary": false
     },
     {
@@ -33,14 +32,14 @@
     },
     {
       "source": "craigslist",
-      "status": "zero",
-      "detail": "normalized/added = 0",
+      "status": "ok",
+      "detail": "merge added=18",
       "primary": true
     },
     {
       "source": "estatesales_net",
-      "status": "zero",
-      "detail": "normalized/added = 0",
+      "status": "ok",
+      "detail": "normalized=1",
       "primary": false
     },
     {
@@ -51,13 +50,19 @@
     }
   ],
   "json_source_counts": {
-    "yardsalesearch": 24,
-    "garagesalefinder": 12,
+    "yardsalesearch": 27,
+    "garagesalefinder": 15,
     "estatesales.org": 2,
-    "craigslist": 42,
-    "estatesales.net": 2,
-    "aggregators": 2,
-    "user submit (approved)": 1
+    "craigslist": 36,
+    "estatesales.net": 3,
+    "user submit (approved)": 2,
+    "from trash to treasure": 1,
+    "top hat estate sales": 1,
+    "yardbird gsin": 1,
+    "crystal's estate sales": 1,
+    "heritage senior downsizing": 1,
+    "yardsalesearch / garagesalefinder": 1,
+    "aggregators": 2
   },
   "notes": "Primary free sources: estatesales_org, yardsalesearch, craigslist. Soft-fail workflow continues; this report only alerts."
 }
