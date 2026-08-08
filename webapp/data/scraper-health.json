@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-08T15:26:37-05:00",
+  "generated_at": "2026-08-08T17:25:47-05:00",
   "overall": "critical",
   "primary_failures": [
     "estatesales_org",
@@ -9,8 +9,8 @@
   "sources": [
     {
       "source": "garagesalefinder",
-      "status": "zero",
-      "detail": "normalized/added = 0",
+      "status": "ok",
+      "detail": "merge added=1",
       "primary": false
     },
     {
@@ -52,7 +52,7 @@
   ],
   "json_source_counts": {
     "yardsalesearch": 30,
-    "garagesalefinder": 26,
+    "garagesalefinder": 28,
     "estatesales.org": 8,
     "craigslist": 33,
     "estatesales.net": 2,

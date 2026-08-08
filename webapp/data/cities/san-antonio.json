@@ -1096,14 +1096,14 @@
     },
     {
       "address": "San Antonio, TX",
-      "dates": "2026-08-07 – 2026-08-09",
-      "date_from": "2026-08-07",
-      "date_to": "2026-08-09",
-      "end_date": "2026-08-09",
-      "title": "25% OFF Saturday - BUDA-FUL Downsizing Sale",
+      "dates": "2026-08-08 – 2026-08-08",
+      "date_from": "2026-08-08",
+      "date_to": "2026-08-08",
+      "end_date": "2026-08-08",
+      "title": "Spicewood Springs and Mesa Super ONE DAY Wonder Estate Sale!",
       "details": "Estate Sale",
       "source": "EstateSales.net",
-      "url": "https://www.estatesales.net/TX/Buda/78610/5013879",
+      "url": "https://www.estatesales.net/TX/Austin/78731/5011200",
       "photos": 0,
       "type": "estate",
       "categories": [
@@ -1115,6 +1115,24 @@
       "lon": -98.4936,
       "geocode": "city-center",
       "company": null
+    },
+    {
+      "address": "1142 Stagecoach Dr, Canyon Lake, TX 78133",
+      "dates": "Sun Aug 9 – Sun Aug 9",
+      "date_from": "08/09/2026",
+      "date_to": "08/09/2026",
+      "end_date": "2026-08-09",
+      "title": "Canyon Lake Vintage Treasures by Legacy Sky",
+      "details": "",
+      "source": "GarageSaleFinder",
+      "url": "https://garagesalefinder.com/s/N9wtx/1142-stagecoach-dr-canyon-lake-tx-78133",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.65,
+      "status": "verified",
+      "lat": 29.4241,
+      "lon": -98.4936,
+      "geocode": "city-center"
     }
   ],
   "permits": [],
@@ -1152,10 +1170,10 @@
     "garagesalefinder.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 51,
+  "total_locations": 52,
   "status": "live",
   "date": "2026-08-08",
-  "last_refresh": "2026-08-08T15:26:37-05:00",
+  "last_refresh": "2026-08-08T17:25:47-05:00",
   "permit_total": 85,
   "permit_estate_count": 1
 }

@@ -373,9 +373,9 @@
       "in_person": true,
       "external_id": "yss-311wildhorsecreekbudatx78610-2026-08-07",
       "categories": [
+        "estate-sale",
         "in-person",
-        "garage-sale",
-        "estate-sale"
+        "garage-sale"
       ]
     },
     {
@@ -634,8 +634,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.063277577937477,
-      "lon": -97.84079345055453,
+      "lat": 30.059414839885015,
+      "lon": -97.84095951764306,
       "geocode": "source",
       "company": "Creative Estate Sales",
       "in_person": true,
@@ -1031,14 +1031,14 @@
     },
     {
       "address": "Austin, TX",
-      "dates": "2026-08-07 – 2026-08-09",
-      "date_from": "2026-08-07",
-      "date_to": "2026-08-09",
-      "end_date": "2026-08-09",
-      "title": "This Could Be the Most Incredible Estate Sale of the Summer!",
+      "dates": "2026-08-08 – 2026-08-08",
+      "date_from": "2026-08-08",
+      "date_to": "2026-08-08",
+      "end_date": "2026-08-08",
+      "title": "Spicewood Springs and Mesa Super ONE DAY Wonder Estate Sale!",
       "details": "Estate Sale",
       "source": "EstateSales.net",
-      "url": "https://www.estatesales.net/TX/Cedar Creek/78612/5022750",
+      "url": "https://www.estatesales.net/TX/Austin/78731/5011200",
       "photos": 0,
       "type": "estate",
       "categories": [
@@ -1050,6 +1050,24 @@
       "lon": -97.7431,
       "geocode": "city-center",
       "company": null
+    },
+    {
+      "address": "1142 Stagecoach Dr, Canyon Lake, TX 78133",
+      "dates": "Sun Aug 9 – Sun Aug 9",
+      "date_from": "08/09/2026",
+      "date_to": "08/09/2026",
+      "end_date": "2026-08-09",
+      "title": "Canyon Lake Vintage Treasures by Legacy Sky",
+      "details": "",
+      "source": "GarageSaleFinder",
+      "url": "https://garagesalefinder.com/s/N9wtx/1142-stagecoach-dr-canyon-lake-tx-78133",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.65,
+      "status": "verified",
+      "lat": 30.2672,
+      "lon": -97.7431,
+      "geocode": "city-center"
     }
   ],
   "permits": [],
@@ -1086,8 +1104,8 @@
     "garagesalefinder.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 47,
+  "total_locations": 48,
   "status": "live",
   "date": "2026-08-08",
-  "last_refresh": "2026-08-08T15:26:37-05:00"
+  "last_refresh": "2026-08-08T17:25:47-05:00"
 }
