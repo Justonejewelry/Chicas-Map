@@ -361,3 +361,42 @@ body.grass-map .detail-close {
   color: #7a736b;
   font-size: 0.8rem;
 }
+
+/* —— Detail mode: release the rail menu so the detail sheet is freely scrollable ——
+   When a pin/list item is selected, hide the tools/list/forecast behind the detail.
+   The detail becomes the sole content of the rail drawer. This eliminates nested
+   scroll conflicts on iOS and makes Google / Apple / Waze buttons immediately tappable.
+*/
+body.grass-map .panel.rail.detail-mode .rail-scroll > :not(#detailDrawer) {
+  display: none !important;
+}
+
+body.grass-map .panel.rail.detail-mode .detail-drawer {
+  position: relative;
+  bottom: auto;
+  max-height: none;
+  height: 100%;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+  border-top: none;
+  padding: 16px 16px calc(18px + env(safe-area-inset-bottom, 0));
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
+body.grass-map .panel.rail.detail-mode .detail-close {
+  position: sticky;
+  top: 0;
+  float: right;
+  z-index: 5;
+  margin-bottom: 8px;
+}
+
+/* Keep a little breathing room above the mobile dock */
+@media (max-width: 900px) {
+  body.grass-map .panel.rail.detail-mode .detail-drawer {
+    min-height: 100%;
+  }
+}
