@@ -128,14 +128,14 @@
     },
     {
       "address": "8313 Siringo Pass, Austin, TX 78749",
-      "dates": "2026-08-08 – 2026-08-08",
-      "date_from": "2026-08-08",
-      "date_to": "2026-08-08",
+      "dates": "Sat Aug 8 – Sat Aug 8",
+      "date_from": "08/08/2026",
+      "date_to": "08/08/2026",
       "end_date": "2026-08-08",
-      "title": "Multiple Families Garage Sale",
+      "title": "MULTIPLE FAMILIES GARAGE SALE",
       "details": "",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196337863",
+      "source": "GarageSaleFinder",
+      "url": "https://garagesalefinder.com/s/N95ku/8313-siringo-pass-austin-tx-78749",
       "photos": 0,
       "type": "garage",
       "confidence": 0.88,
@@ -257,9 +257,9 @@
       "in_person": true,
       "external_id": "yss-311wildhorsecreekbudatx78610-2026-08-07",
       "categories": [
-        "garage-sale",
         "estate-sale",
-        "in-person"
+        "in-person",
+        "garage-sale"
       ]
     },
     {
@@ -316,8 +316,8 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
@@ -342,13 +342,13 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.062334351203734,
-      "lon": -97.84445730569504,
+      "lat": 30.05908246475027,
+      "lon": -97.84105293038034,
       "geocode": "source",
       "company": "Creative Estate Sales",
       "in_person": true,
@@ -813,6 +813,137 @@
       "lon": -97.7431,
       "geocode": "city-center",
       "company": null
+    },
+    {
+      "address": "2521 Elara Dr, Austin, TX 78725",
+      "dates": "2026-08-08 – 2026-08-08",
+      "date_from": "2026-08-08",
+      "date_to": "2026-08-08",
+      "end_date": "2026-08-08",
+      "title": "Garage Sale!",
+      "details": "",
+      "source": "YardSaleSearch",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196341189",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.88,
+      "status": "verified",
+      "lat": 30.213111,
+      "lon": -97.637313,
+      "geocode": "source",
+      "external_id": "yss-2521elaradraustintx78725-2026-08-08",
+      "categories": [
+        "garage-sale"
+      ]
+    },
+    {
+      "address": "11112 Furrow Hill Dr, Austin, TX 78754",
+      "dates": "2026-08-08 – 2026-08-08",
+      "date_from": "2026-08-08",
+      "date_to": "2026-08-08",
+      "end_date": "2026-08-08",
+      "title": "Garage Sale",
+      "details": "",
+      "source": "YardSaleSearch",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196341099",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.88,
+      "status": "verified",
+      "lat": 30.357771,
+      "lon": -97.640941,
+      "geocode": "source",
+      "external_id": "yss-11112furrowhilldraustintx78754-2026-08-08",
+      "categories": [
+        "garage-sale"
+      ]
+    },
+    {
+      "address": "124 Desert Primrose Dr, Austin, TX 78748",
+      "dates": "2026-08-08 – 2026-08-08",
+      "date_from": "2026-08-08",
+      "date_to": "2026-08-08",
+      "end_date": "2026-08-08",
+      "title": "Multi Item Garage Sale",
+      "details": "",
+      "source": "YardSaleSearch",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196341095",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.88,
+      "status": "verified",
+      "lat": 30.146118,
+      "lon": -97.805623,
+      "geocode": "source",
+      "external_id": "yss-124desertprimrosedraustintx78748-2026-08-08",
+      "categories": [
+        "garage-sale"
+      ]
+    },
+    {
+      "address": "701 Elder Way, Round Rock, TX 78664",
+      "dates": "2026-08-08 – 2026-08-08",
+      "date_from": "2026-08-08",
+      "date_to": "2026-08-08",
+      "end_date": "2026-08-08",
+      "title": "Clearing The Attic!",
+      "details": "",
+      "source": "YardSaleSearch",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196341171",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.88,
+      "status": "verified",
+      "lat": 30.50343,
+      "lon": -97.654717,
+      "geocode": "source",
+      "external_id": "yss-701elderwayroundrocktx78664-2026-08-08",
+      "categories": [
+        "garage-sale"
+      ]
+    },
+    {
+      "address": "500 Parker Dr, San Marcos, TX 78666",
+      "dates": "Sat Aug 8 – Sun Aug 9",
+      "date_from": "08/08/2026",
+      "date_to": "08/09/2026",
+      "end_date": "2026-08-09",
+      "title": "Indoor Garage sale",
+      "details": "",
+      "source": "GarageSaleFinder",
+      "url": "https://garagesalefinder.com/s/N954t/500-parker-dr-san-marcos-tx-78666",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.65,
+      "status": "verified",
+      "lat": 30.2672,
+      "lon": -97.7431,
+      "geocode": "city-center"
+    },
+    {
+      "address": "4518 San Simeon Drive, Austin, TX",
+      "dates": "2026-08-07 – 2026-08-09",
+      "date_from": "2026-08-07",
+      "date_to": "2026-08-09",
+      "end_date": "2026-08-09",
+      "hours": null,
+      "title": "Round 2 moving next weekend so clearing out as much as possible",
+      "details": "QR Code Link to This Post Huge sale tool , power and hand tools Plumbing fittings and electrical materials Ridgid tile saw music gear, stage and studio fishing poles, reels, tackle, nets hunting and camping gear, ladder's, Power asher Kitchen stuff BBQ pit, coolers, propain bottles, burners and huge pots and pans, 2 poker tables Vw motor and trans Ford 12ft box truck Custom Motorcycles bike and pa",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/austin-round-moving-next-weekend-so/4vT9xUcjbWMfdvEZ3XaW88",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale",
+        "moving-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 30.208737,
+      "lon": -97.851508,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-gnextweekendso4vt9xucjbwmfdvez3xaw88"
     }
   ],
   "permits": [],
@@ -824,8 +955,8 @@
     "garagesalefinder.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 35,
+  "total_locations": 41,
   "status": "live",
   "date": "2026-08-07",
-  "last_refresh": "2026-08-07T20:20:25-05:00"
+  "last_refresh": "2026-08-07T21:58:18-05:00"
 }
