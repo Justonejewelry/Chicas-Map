@@ -1,1 +1,62 @@
-{{FILE_CONTENT}}
+{
+  "generated_at": "2026-08-08T07:06:04-05:00",
+  "overall": "critical",
+  "primary_failures": [
+    "estatesales_org",
+    "yardsalesearch"
+  ],
+  "sources": [
+    {
+      "source": "garagesalefinder",
+      "status": "ok",
+      "detail": "merge added=28",
+      "primary": false
+    },
+    {
+      "source": "permits",
+      "status": "unknown",
+      "detail": "log present but no clear success/fail pattern",
+      "primary": false
+    },
+    {
+      "source": "estatesales_org",
+      "status": "zero",
+      "detail": "normalized/added = 0",
+      "primary": true
+    },
+    {
+      "source": "yardsalesearch",
+      "status": "zero",
+      "detail": "normalized/added = 0",
+      "primary": true
+    },
+    {
+      "source": "craigslist",
+      "status": "ok",
+      "detail": "merge added=17",
+      "primary": true
+    },
+    {
+      "source": "estatesales_net",
+      "status": "ok",
+      "detail": "normalized=1",
+      "primary": false
+    },
+    {
+      "source": "estatesales_apify",
+      "status": "missing",
+      "detail": "no log file",
+      "primary": false
+    }
+  ],
+  "json_source_counts": {
+    "yardsalesearch": 16,
+    "estatesales.org": 2,
+    "garagesalefinder": 11,
+    "craigslist": 17,
+    "estatesales.net": 1,
+    "aggregators": 2,
+    "user submit (approved)": 1
+  },
+  "notes": "Primary free sources: estatesales_org, yardsalesearch, craigslist. Soft-fail workflow continues; this report only alerts."
+}
