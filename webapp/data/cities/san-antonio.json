@@ -1,1 +1,44 @@
-{{FILE_CONTENT}}
+{
+  "edition": "San Antonio Yard-Bird Discovery",
+  "city": "san-antonio",
+  "public": [
+    {
+      "address": "8645 Fredericksburg Rd, San Antonio, TX 78240",
+      "dates": "2026-08-02 – 2026-08-16",
+      "date_from": "2026-08-02",
+      "date_to": "2026-08-16",
+      "end_date": "2026-08-16",
+      "title": "Art Work Framed And Matted Multiple Sizes And Shapes And Some Wall Hanging S",
+      "details": "",
+      "source": "YardSaleSearch",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196334551",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.88,
+      "status": "verified",
+      "lat": 29.522833,
+      "lon": -98.575072,
+      "geocode": "source",
+      "external_id": "yss-8645fredericksburgrdsanantoniotx78240-2026-08-02",
+      "categories": [
+        "garage-sale"
+      ]
+    }
+  ],
+  "permits": [],
+  "hot_zones": [],
+  "sources": [
+    "craigslist.org",
+    "data.sanantonio.gov",
+    "estatesales.net",
+    "estatesales.org",
+    "garagesalefinder.com",
+    "yardsalesearch.com"
+  ],
+  "total_locations": 1,
+  "status": "live",
+  "date": "2026-08-08",
+  "last_refresh": "2026-08-08T07:41:35-05:00",
+  "permit_total": 85,
+  "permit_estate_count": 1
+}
