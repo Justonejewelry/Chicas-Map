@@ -45,8 +45,8 @@
       "in_person": false,
       "external_id": "eso-2455066",
       "categories": [
-        "online-auction",
-        "estate-sale"
+        "estate-sale",
+        "online-auction"
       ]
     },
     {
@@ -881,6 +881,28 @@
       "lon": -98.7381663,
       "geocode": "source",
       "external_id": "yss-5822holbrookwaysanantoniotx78253-2026-08-09",
+      "categories": [
+        "garage-sale"
+      ]
+    },
+    {
+      "address": "7227 Horizon Star, San Antonio, TX 78252",
+      "dates": "2026-08-09 – 2026-08-09",
+      "date_from": "2026-08-09",
+      "date_to": "2026-08-09",
+      "end_date": "2026-08-09",
+      "title": "Yard Sale",
+      "details": "",
+      "source": "YardSaleSearch",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196342497",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.88,
+      "status": "verified",
+      "lat": 29.358555,
+      "lon": -98.636673,
+      "geocode": "source",
+      "external_id": "yss-7227horizonstarsanantoniotx78252-2026-08-09",
       "categories": [
         "garage-sale"
       ]
@@ -2772,10 +2794,10 @@
     "garagesalefinder.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 112,
+  "total_locations": 113,
   "status": "live",
   "date": "2026-08-09",
-  "last_refresh": "2026-08-09T03:39:18-05:00",
+  "last_refresh": "2026-08-09T05:31:52-05:00",
   "permit_total": 155,
   "permit_estate_count": 2
 }
