@@ -906,6 +906,30 @@
       "categories": [
         "garage-sale"
       ]
+    },
+    {
+      "address": "14415 Briarmist Street, San Antonio, TX",
+      "dates": "2026-08-09 – 2026-08-11",
+      "date_from": "2026-08-09",
+      "date_to": "2026-08-11",
+      "end_date": "2026-08-11",
+      "hours": null,
+      "title": "Garage Sale",
+      "details": "QR Code Link to This Post Lots of baby stuff, baby clothes and women’s clothes. We have a kayak for sale and a few other outdoors items. All clothing $2/grocery bag. Great opportunity to get clothes for a baby or toddler!",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/san-antonio-garage-sale/5EKwc78u6E9SqegDtrDFXm",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 29.577195,
+      "lon": -98.408264,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-toniogaragesale5ekwc78u6e9sqegdtrdfxm"
     }
   ],
   "permits": [
@@ -2794,10 +2818,10 @@
     "garagesalefinder.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 113,
+  "total_locations": 114,
   "status": "live",
   "date": "2026-08-09",
-  "last_refresh": "2026-08-09T07:43:48-05:00",
+  "last_refresh": "2026-08-09T09:31:57-05:00",
   "permit_total": 155,
   "permit_estate_count": 2
 }
