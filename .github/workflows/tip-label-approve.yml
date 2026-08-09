@@ -62,7 +62,7 @@ jobs:
             let data = {
               updated: '',
               disclaimer:
-                'Tips are submitted by users who attest they are the permit holder or agent. YardBird and the City of San Antonio do not verify identity or accuracy. Tips are not official city records.',
+                'Tips are submitted by users who attest they are the permit holder or agent. Chicas-Map and the City of San Antonio do not verify identity or accuracy. Tips are not official city records.',
               tips: [],
             };
             if (fs.existsSync(path)) data = JSON.parse(fs.readFileSync(path, 'utf8'));
@@ -95,7 +95,7 @@ jobs:
 
       - name: Commit
         run: |
-          git config user.name "YardBird Tip Bot"
+          git config user.name "Chicas-Map Tip Bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add webapp/data/permit-tips.json webapp/data/permit-tips-pending.json || true
           if git diff --staged --quiet; then
@@ -113,7 +113,7 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: context.payload.issue.number,
-              body: 'Published to the map (label `tip-approved`). Hard-refresh: https://justonejewelry.github.io/Project-YardBird/map.html',
+              body: 'Published to the map (label `tip-approved`). Hard-refresh: https://justonejewelry.github.io/Chicas-Map/map.html',
             });
             await github.rest.issues.update({
               owner: context.repo.owner,
