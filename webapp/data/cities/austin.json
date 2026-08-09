@@ -357,7 +357,7 @@
       "date_from": "2026-08-07",
       "date_to": "2026-08-09",
       "end_date": "2026-08-09",
-      "title": "25% Off Saturday - Buda-Ful Downsizing Sale",
+      "title": "50% Off Sunday - Buda-Ful Downsizing Sale",
       "details": "",
       "source": "YardSaleSearch",
       "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196325459",
@@ -373,9 +373,9 @@
       "in_person": true,
       "external_id": "yss-311wildhorsecreekbudatx78610-2026-08-07",
       "categories": [
-        "estate-sale",
+        "garage-sale",
         "in-person",
-        "garage-sale"
+        "estate-sale"
       ]
     },
     {
@@ -634,8 +634,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.059414839885015,
-      "lon": -97.84095951764306,
+      "lat": 30.05979213057851,
+      "lon": -97.84352317832212,
       "geocode": "source",
       "company": "Creative Estate Sales",
       "in_person": true,
@@ -672,10 +672,10 @@
       "date_to": "2026-08-10",
       "end_date": "2026-08-10",
       "hours": null,
-      "title": "ESTATE SALE by the GYPSY JUNK LADY !!!",
-      "details": "QR Code Link to This Post Time for another fabulous sale !!!! Sat Aug. 8th 8-3 Sun Aug. 9th 9-1 705 E. Umlang St Thorndale 76577 See details and photos @ ESTATESALES.NET CASH OR CHECKS ONLY...NO CARDS..NO APPS..",
+      "title": "1/2 PRICE SUNDAY !! ESTATE SALE by the GYPSY JUNK LADY !!!",
+      "details": "QR Code Link to This Post Time for another fabulous sale !!!! ALL REMAINING MERCHANDISE 1/2 PRICE SUNDAY !! Sat Aug. 8th 8-3 Sun Aug. 9th 9-1 705 E. Umlang St Thorndale 76577 See details and photos @ ESTATESALES.NET CASH OR CHECKS ONLY...NO CARDS..NO APPS..",
       "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/thorndale-estate-sale-by-the-gypsy-junk/j3y2hj69ycTKoBh9KSZEUi",
+      "url": "https://www.craigslist.org/view/d/thorndale-2-price-sunday-estate-sale-by/j3y2hj69ycTKoBh9KSZEUi",
       "photos": 0,
       "type": "estate",
       "categories": [
@@ -687,7 +687,7 @@
       "lon": -97.197325,
       "geocode": "source",
       "in_person": true,
-      "external_id": "cl-bythegypsyjunkj3y2hj69yctkobh9kszeui"
+      "external_id": "cl-ayestatesalebyj3y2hj69yctkobh9kszeui"
     },
     {
       "address": "Ten Oaks, Austin, TX",
@@ -1031,14 +1031,14 @@
     },
     {
       "address": "Austin, TX",
-      "dates": "2026-08-08 – 2026-08-08",
-      "date_from": "2026-08-08",
-      "date_to": "2026-08-08",
-      "end_date": "2026-08-08",
-      "title": "Spicewood Springs and Mesa Super ONE DAY Wonder Estate Sale!",
+      "dates": "2026-08-07 – 2026-08-09",
+      "date_from": "2026-08-07",
+      "date_to": "2026-08-09",
+      "end_date": "2026-08-09",
+      "title": "This Could Be the Most Incredible Estate Sale of the Summer!",
       "details": "Estate Sale",
       "source": "EstateSales.net",
-      "url": "https://www.estatesales.net/TX/Austin/78731/5011200",
+      "url": "https://www.estatesales.net/TX/Cedar Creek/78612/5022750",
       "photos": 0,
       "type": "estate",
       "categories": [
@@ -1068,6 +1068,152 @@
       "lat": 30.2672,
       "lon": -97.7431,
       "geocode": "city-center"
+    },
+    {
+      "address": "Fiorellino Place,, Austin, TX",
+      "dates": "2026-08-08 – 2026-08-10",
+      "date_from": "2026-08-08",
+      "date_to": "2026-08-10",
+      "end_date": "2026-08-10",
+      "hours": null,
+      "title": "Moving Sale",
+      "details": "QR Code Link to This Post Large bundle of used kids toys including - two X-Shot blasters $45 - a collection of die-cast toy cars $8 - Minecraft plush figures $10 - City road play mat $7 - Children’s activity books $1-$10 - small bagged figures $2 onwards - games, puzzles, legos - Tesla Hot Wheels cyber truck with quad bike $60 - boys clothes, t-shirts, shorts, pants, swim sets age 3y to 8y - boys ",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/austin-moving-sale-garage-sale-lots-of/wWK9kd3Y49h5hHoqq5YvHD",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale",
+        "moving-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 30.454798,
+      "lon": -97.853336,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-ragesalelotsofwwk9kd3y49h5hhoqq5yvhd"
+    },
+    {
+      "address": "1518 Villanova Drive near Burrell dr/ Anderson Lane/ Ohlen, Austin, TX",
+      "dates": "2026-08-08 – 2026-08-10",
+      "date_from": "2026-08-08",
+      "date_to": "2026-08-10",
+      "end_date": "2026-08-10",
+      "hours": null,
+      "title": "✈️ MOVING out of the country - 25 years of treasure need new homes!",
+      "details": "QR Code Link to This Post SATURDAY/Sunday After 25 years in my home, I’m letting go of a lot of things — a mix of useful, beautiful, unusual, COOL and fun finds at good pricing!! ✨ Artisan pieces &amp; artwork, 🎨🪇 🪑 Furniture, lamps &amp; unique décor 🪞 Mirrors &amp; one-of-a-kind finds; VINTAGE 🏖️ 📚 Great books 🐶 Pet items 🎶 Eclectic VINYL records — 70s, 80s, rock, disco, pop, indie &amp; more! 🎵",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/austin-moving-out-of-the-country-25/5Bzv7uYFky84QL3gjM4qkM",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale",
+        "moving-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 30.359594,
+      "lon": -97.72031,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-ofthecountry255bzv7uyfky84ql3gjm4qkm"
+    },
+    {
+      "address": "Ben White, Austin, TX",
+      "dates": "2026-08-08 – 2026-08-10",
+      "date_from": "2026-08-08",
+      "date_to": "2026-08-10",
+      "end_date": "2026-08-10",
+      "hours": null,
+      "title": "30 Years Accumulation",
+      "details": "QR Code Link to This Post Check out More Ads By This User. I'll be kicking it off at 9:00 AM . 1234 Redd Street 78745 No early birds. I am selling most of my tools. Bring cash and your best haggle. Western Red Cedar 6\" V-groove. Powermatic woodworking machines, band saws, table saw, jointer, dovetail jigs, routers, drills, saws, CLAMPS, benches . . . Project Miller Blue Star, LUMBER, PLYWOOD, fenc",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/austin-30-years-accumulation/jrok5Qqfmu9kXT3r5HJLhq",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 30.2063,
+      "lon": -97.7956,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-earsaccumulationjrok5qqfmu9kxt3r5hjlhq"
+    },
+    {
+      "address": "1601 s i35 frontage rd, Austin, TX",
+      "dates": "2026-08-08 – 2026-08-10",
+      "date_from": "2026-08-08",
+      "date_to": "2026-08-10",
+      "end_date": "2026-08-10",
+      "hours": null,
+      "title": "ANTIQUES COMICS TOYS VINYL RECORDS AND MUCH MUCH MORE (Round Rock)",
+      "details": "QR Code Link to This Post Located at round rock antique mall Open m-sat 10am to 6pm Sunday 12-6pm When you walk in turn left and go all the way down to find us!",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/round-rock-antiques-comics-toys-vinyl/uWNyPxSGGniy9cuxaRvrsF",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 30.494679,
+      "lon": -97.676311,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-comicstoysvinyluwnypxsggniy9cuxarvrsf"
+    },
+    {
+      "address": "Spicewood Springs, Austin, TX",
+      "dates": "2026-08-08 – 2026-08-10",
+      "date_from": "2026-08-08",
+      "date_to": "2026-08-10",
+      "end_date": "2026-08-10",
+      "hours": null,
+      "title": "CLOSET CLEAN OUT | New w/ Tags & Pre-owned Vintage Designer Clothing",
+      "details": "QR Code Link to This Post Closet Clean Out | New with Tags and Pre-owned Vintage Designer Women's Clothing * New items added regularly. * Please see \"more ads by this user\" &amp; search \"clothing\" items for specifics, photos + pricing. * Please message with any questions or to request craigslist link to all clothing items. * Sale is pick up by appointment. * Designer brands (some vintage): Free Pe",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/austin-closet-clean-out-new-tags-pre/aYHjY7BbM4pEWbA1Rg4vGR",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 30.430093,
+      "lon": -97.807757,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-outnewtagspreayhjy7bbm4pewba1rg4vgr"
+    },
+    {
+      "address": "1916 Running Brook Drive near Greenbrook, Austin, TX",
+      "dates": "2026-08-08 – 2026-08-10",
+      "date_from": "2026-08-08",
+      "date_to": "2026-08-10",
+      "end_date": "2026-08-10",
+      "hours": null,
+      "title": "Everything must go!!!",
+      "details": "QR Code Link to This Post Big sale. Power Tools. Hand Tools. Archery. Camping. Household goods. Furniture. Collectibles.",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/austin-everything-must-go/2B7H5JPnY9dL44AVHokspy",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 30.305905,
+      "lon": -97.691846,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-verythingmustgo2b7h5jpny9dl44avhokspy"
     }
   ],
   "permits": [],
@@ -1104,8 +1250,8 @@
     "garagesalefinder.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 48,
+  "total_locations": 54,
   "status": "live",
   "date": "2026-08-08",
-  "last_refresh": "2026-08-08T17:25:47-05:00"
+  "last_refresh": "2026-08-08T20:25:44-05:00"
 }
