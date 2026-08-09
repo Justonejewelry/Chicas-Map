@@ -85,8 +85,8 @@
       "in_person": false,
       "external_id": "eso-2455523",
       "categories": [
-        "online-auction",
-        "estate-sale"
+        "estate-sale",
+        "online-auction"
       ]
     },
     {
@@ -129,9 +129,9 @@
       "in_person": true,
       "external_id": "yss-311wildhorsecreekbudatx78610-2026-08-07",
       "categories": [
-        "in-person",
+        "garage-sale",
         "estate-sale",
-        "garage-sale"
+        "in-person"
       ]
     },
     {
@@ -155,8 +155,8 @@
       "in_person": false,
       "external_id": "eso-2454880",
       "categories": [
-        "online-auction",
-        "estate-sale"
+        "estate-sale",
+        "online-auction"
       ]
     },
     {
@@ -266,8 +266,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.063115881925977,
-      "lon": -97.84379303734096,
+      "lat": 30.063044017031977,
+      "lon": -97.84040942041233,
       "geocode": "source",
       "company": "Creative Estate Sales",
       "in_person": true,
@@ -886,5 +886,5 @@
   "total_locations": 36,
   "status": "live",
   "date": "2026-08-09",
-  "last_refresh": "2026-08-09T00:01:56-05:00"
+  "last_refresh": "2026-08-09T01:52:58-05:00"
 }
