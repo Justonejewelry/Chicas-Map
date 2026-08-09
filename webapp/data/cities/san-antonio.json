@@ -45,8 +45,8 @@
       "in_person": false,
       "external_id": "eso-2455066",
       "categories": [
-        "estate-sale",
-        "online-auction"
+        "online-auction",
+        "estate-sale"
       ]
     },
     {
@@ -70,8 +70,8 @@
       "in_person": false,
       "external_id": "eso-2456237",
       "categories": [
-        "estate-sale",
-        "online-auction"
+        "online-auction",
+        "estate-sale"
       ]
     },
     {
@@ -300,8 +300,8 @@
       "date_to": "2026-08-11",
       "end_date": "2026-08-11",
       "hours": null,
-      "title": "🚚Moving Sale-LAST DAY-everything must go-8:30-1",
-      "details": "QR Code Link to This Post Sunday 8:30am-1pm - Reasonable offers accepted - all offers accepted starting at 12pm - everything must be sold by 1pm!! Furniture (TV stand, sewing machine table, storage shelves, folding chairs, office chair, outdoor hanging swing [located in the backyard, ask to see], and more) Kitchen items (blender, toaster, bowls, silverware, OXO cereal keepers, etc.) Household item",
+      "title": "🚚Moving Sale-LAST DAY-everything must go-8:30-2",
+      "details": "QR Code Link to This Post Sunday 8:30am-2pm - Reasonable offers accepted - all offers accepted starting at 12pm - everything must be sold by 2pm!! Furniture (TV stand, sewing machine table, cube storage shelf, office chair, outdoor hanging swing [located in the backyard, ask to see]) Kitchen items (blender, toaster, bowls, silverware, OXO cereal keepers, etc.) Household items (ironing board, hange",
       "source": "Craigslist",
       "url": "https://www.craigslist.org/view/d/san-antonio-moving-sale-last-day/i4xj1HJNQE9AxHDXss5WnS",
       "photos": 0,
@@ -952,6 +952,28 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "cl-toniogaragesale5ekwc78u6e9sqegdtrdfxm"
+    },
+    {
+      "address": "3211 Sagehill, San Antonio, TX 78230",
+      "dates": "2026-08-09 – 2026-08-09",
+      "date_from": "2026-08-09",
+      "date_to": "2026-08-09",
+      "end_date": "2026-08-09",
+      "title": "Plant Sale",
+      "details": "",
+      "source": "YardSaleSearch",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196342811",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.88,
+      "status": "verified",
+      "lat": 29.510026,
+      "lon": -98.54646,
+      "geocode": "source",
+      "external_id": "yss-3211sagehillsanantoniotx78230-2026-08-09",
+      "categories": [
+        "garage-sale"
+      ]
     }
   ],
   "permits": [
@@ -2840,10 +2862,10 @@
     "garagesalefinder.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 115,
+  "total_locations": 116,
   "status": "live",
   "date": "2026-08-09",
-  "last_refresh": "2026-08-09T11:31:23-05:00",
+  "last_refresh": "2026-08-09T13:36:43-05:00",
   "permit_total": 155,
   "permit_estate_count": 2
 }

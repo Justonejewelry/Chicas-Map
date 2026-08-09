@@ -85,8 +85,8 @@
       "in_person": false,
       "external_id": "eso-2455523",
       "categories": [
-        "estate-sale",
-        "online-auction"
+        "online-auction",
+        "estate-sale"
       ]
     },
     {
@@ -147,8 +147,8 @@
       "in_person": true,
       "external_id": "yss-311wildhorsecreekbudatx78610-2026-08-07",
       "categories": [
-        "in-person",
         "estate-sale",
+        "in-person",
         "garage-sale"
       ]
     },
@@ -173,8 +173,8 @@
       "in_person": false,
       "external_id": "eso-2454880",
       "categories": [
-        "estate-sale",
-        "online-auction"
+        "online-auction",
+        "estate-sale"
       ]
     },
     {
@@ -284,8 +284,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.06294520280273,
-      "lon": -97.84451958085324,
+      "lat": 30.062325368091987,
+      "lon": -97.84388645007824,
       "geocode": "source",
       "company": "Creative Estate Sales",
       "in_person": true,
@@ -654,6 +654,30 @@
       "lon": -97.7431,
       "geocode": "city-center",
       "company": null
+    },
+    {
+      "address": "4423 banister lane, Austin, TX",
+      "dates": "2026-08-09 – 2026-08-11",
+      "date_from": "2026-08-09",
+      "date_to": "2026-08-11",
+      "end_date": "2026-08-11",
+      "hours": null,
+      "title": "4423 banister lane",
+      "details": "QR Code Link to This Post Garage sale, kids clothes, pantry shelf, vintage pantry door, lululemon, kitchen stuff",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/austin-4423-banister-lane/hnRFYXZMaEWAcTsd7QxRhP",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 30.225062,
+      "lon": -97.781175,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-423banisterlanehnrfyxzmaewactsd7qxrhp"
     }
   ],
   "permits": [],
@@ -665,8 +689,8 @@
     "garagesalefinder.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 28,
+  "total_locations": 29,
   "status": "live",
   "date": "2026-08-09",
-  "last_refresh": "2026-08-09T11:31:23-05:00"
+  "last_refresh": "2026-08-09T13:36:43-05:00"
 }
