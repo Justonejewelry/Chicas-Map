@@ -657,14 +657,14 @@
     },
     {
       "address": "San Antonio, TX",
-      "dates": "2026-08-07 – 2026-08-09",
-      "date_from": "2026-08-07",
-      "date_to": "2026-08-09",
-      "end_date": "2026-08-09",
-      "title": "50% OFF Sunday - BUDA-FUL Downsizing Sale",
+      "dates": "2026-08-08 – 2026-08-10",
+      "date_from": "2026-08-08",
+      "date_to": "2026-08-10",
+      "end_date": "2026-08-10",
+      "title": "Hidden Gems Estate Sale – Vintage • Furniture • Décor Everything Must Go!",
       "details": "Estate Sale",
       "source": "EstateSales.net",
-      "url": "https://www.estatesales.net/TX/Buda/78610/5013879",
+      "url": "https://www.estatesales.net/TX/San Antonio/78227/5013915",
       "photos": 0,
       "type": "estate",
       "categories": [
@@ -995,6 +995,54 @@
       "date_from": "2026-08-09",
       "source": "Email Scraper",
       "url": "https://email.garagesalefinder.com/c/eJxskDtu6zAQRVczah6eMBzSQ7JgEUBQkDor4GdkM6EcQ1S-qw_sIF36cw9wbglJOztIUNax8gpRD6eQzMGgRHY6GSxJW1E-lZjZL5yFlqEGQmJ06BQpRBrtwiQ2WUlEicSDwWPc4lF6bLLUc5FtzC_r0MJp3y-g74BmoLm3Ov7FAc251fwMeu6gJ4doLRDvoKezvPcm-y4bEPcv0JMl9-EVELcKerq_6R5jk_mmA-L1CjmUg86mGEuMhlWx7I21Ek12vkQgvoCeWFtDSPr_zx_o_WHYwrqNTz3XuMVlide0NdZ26-mv6aGE39Wwh2tH_1dibZ_DW6DvAAAA__9zPGeH\""
+    },
+    {
+      "address": "9015 Timber Hunt near Timber Haven, San Antonio, TX",
+      "dates": "2026-08-09 – 2026-08-11",
+      "date_from": "2026-08-09",
+      "date_to": "2026-08-11",
+      "end_date": "2026-08-11",
+      "hours": null,
+      "title": "Garage Sale today",
+      "details": "QR Code Link to This Post Selling Tools, household items, Mens and Womens clothing and shoes. Auto parts, pet supplies, medical uniforms. Kiddie pools.",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/san-antonio-garage-sale-today/wYDLrNfp8f13rVGzTncVYJ",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 29.5054,
+      "lon": -98.6688,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-garagesaletodaywydlrnfp8f13rvgztncvyj"
+    },
+    {
+      "address": "1842 w mistletoe, San Antonio, TX",
+      "dates": "2026-08-09 – 2026-08-11",
+      "date_from": "2026-08-09",
+      "date_to": "2026-08-11",
+      "end_date": "2026-08-11",
+      "hours": null,
+      "title": "Last minute dogwear, doggy diapers doggy accessories, patriotic flags",
+      "details": "QR Code Link to This Post Last minute dogwear, doggy diapers doggy accessories, patriotic flags will be here till 6:00 today. Tin signs Everything reasonable price ready to go. All sizes available everything must Go.",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/san-antonio-last-minute-dogwear-doggy/7k51NSS92CvDqpU6XkakxX",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 29.455189,
+      "lon": -98.526905,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-utedogweardoggy7k51nss92cvdqpu6xkakxx"
     }
   ],
   "permits": [
@@ -2883,10 +2931,10 @@
     "garagesalefinder.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 119,
+  "total_locations": 121,
   "status": "live",
   "date": "2026-08-09",
-  "last_refresh": "2026-08-09T15:28:42-05:00",
+  "last_refresh": "2026-08-09T17:27:53-05:00",
   "permit_total": 155,
   "permit_estate_count": 2
 }

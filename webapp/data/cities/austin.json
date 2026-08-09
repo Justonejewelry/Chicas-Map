@@ -284,8 +284,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.06309791570248,
-      "lon": -97.84437427215079,
+      "lat": 30.05894771807402,
+      "lon": -97.84040942041233,
       "geocode": "source",
       "company": "Creative Estate Sales",
       "in_person": true,
@@ -635,14 +635,14 @@
     },
     {
       "address": "Austin, TX",
-      "dates": "2026-08-07 – 2026-08-09",
-      "date_from": "2026-08-07",
-      "date_to": "2026-08-09",
-      "end_date": "2026-08-09",
-      "title": "Estate Sale",
+      "dates": "2026-08-08 – 2026-08-10",
+      "date_from": "2026-08-08",
+      "date_to": "2026-08-10",
+      "end_date": "2026-08-10",
+      "title": "Hidden Gems Estate Sale – Vintage • Furniture • Décor Everything Must Go!",
       "details": "Estate Sale",
       "source": "EstateSales.net",
-      "url": "https://www.estatesales.net/TX/Austin/78721/5025279",
+      "url": "https://www.estatesales.net/TX/San Antonio/78227/5013915",
       "photos": 0,
       "type": "estate",
       "categories": [
@@ -692,5 +692,5 @@
   "total_locations": 29,
   "status": "live",
   "date": "2026-08-09",
-  "last_refresh": "2026-08-09T15:28:42-05:00"
+  "last_refresh": "2026-08-09T17:27:53-05:00"
 }
