@@ -1,4 +1,4 @@
-name: Update YardBird feed
+name: Update Chicas-Map feed
 
 on:
   schedule:
@@ -58,7 +58,7 @@ jobs:
           )[:80]
 
           feed = {
-              "edition": src.get("edition") or "Yard-Bird Discovery",
+              "edition": src.get("edition") or "Chicas-Map Discovery",
               "date": src.get("date") or datetime.now(timezone.utc).date().isoformat(),
               "generated_at": src.get("generated_at") or datetime.now(timezone.utc).isoformat(timespec="seconds"),
               "refreshed_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
@@ -90,8 +90,8 @@ jobs:
       - name: Commit and push if changed
         run: |
           set -euo pipefail
-          git config user.name "yardbird-bot"
-          git config user.email "yardbird-bot@users.noreply.github.com"
+          git config user.name "chicas-map-bot"
+          git config user.email "chicas-map-bot@users.noreply.github.com"
           git add webapp/data/feed.json data/latest_discovery.json || true
           if git diff --staged --quiet; then
             echo "No feed changes"
