@@ -107,8 +107,8 @@
       "in_person": false,
       "external_id": "eso-2455523",
       "categories": [
-        "estate-sale",
-        "online-auction"
+        "online-auction",
+        "estate-sale"
       ]
     },
     {
@@ -335,10 +335,10 @@
     },
     {
       "address": "13213 Forest Sage St, Manor, TX 78653",
-      "dates": "Sat Aug 8 – Sat Aug 8",
-      "date_from": "08/08/2026",
-      "date_to": "08/08/2026",
-      "end_date": "2026-08-08",
+      "dates": "Sun Aug 9 – Sun Aug 9",
+      "date_from": "08/09/2026",
+      "date_to": "08/09/2026",
+      "end_date": "2026-08-09",
       "title": "Garage Sale..Lots of stuff",
       "details": "",
       "source": "GarageSaleFinder",
@@ -497,8 +497,8 @@
       "in_person": false,
       "external_id": "eso-2454880",
       "categories": [
-        "estate-sale",
-        "online-auction"
+        "online-auction",
+        "estate-sale"
       ]
     },
     {
@@ -634,8 +634,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.05979213057851,
-      "lon": -97.84352317832212,
+      "lat": 30.062199604527486,
+      "lon": -97.84470640632783,
       "geocode": "source",
       "company": "Creative Estate Sales",
       "in_person": true,
@@ -1214,6 +1214,30 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "cl-verythingmustgo2b7h5jpny9dl44avhokspy"
+    },
+    {
+      "address": "1716 Maize Bend Dr near Will Rogers, Austin, TX",
+      "dates": "2026-08-08 – 2026-08-10",
+      "date_from": "2026-08-08",
+      "date_to": "2026-08-10",
+      "end_date": "2026-08-10",
+      "hours": null,
+      "title": "FANTASTIC CHILDREN  COLLECTIONS",
+      "details": "QR Code Link to This Post FANTASTIC CHILDREN’S COLLECTIONS: Our Generation Dolls &amp; Accessories, Polly Pocket, Kendi Kids, Favorite Books, Jewelry, Stuffies, Roller Skates, and MORE. Come see the Popular Collections. Saturday &amp; Sunday, 7 am to 1 pm. Call for a special appointment.",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/austin-fantastic-children-collections/ct1WSTKuqk4Lz5KuHC4zvm",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 30.42627,
+      "lon": -97.680887,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-ldrencollectionsct1wstkuqk4lz5kuhc4zvm"
     }
   ],
   "permits": [],
@@ -1250,8 +1274,8 @@
     "garagesalefinder.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 54,
+  "total_locations": 55,
   "status": "live",
   "date": "2026-08-08",
-  "last_refresh": "2026-08-08T20:25:44-05:00"
+  "last_refresh": "2026-08-08T22:39:54-05:00"
 }

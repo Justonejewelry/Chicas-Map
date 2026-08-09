@@ -72,8 +72,8 @@
       "in_person": false,
       "external_id": "eso-2455066",
       "categories": [
-        "estate-sale",
-        "online-auction"
+        "online-auction",
+        "estate-sale"
       ]
     },
     {
@@ -97,8 +97,8 @@
       "in_person": false,
       "external_id": "eso-2456237",
       "categories": [
-        "estate-sale",
-        "online-auction"
+        "online-auction",
+        "estate-sale"
       ]
     },
     {
@@ -529,14 +529,14 @@
     },
     {
       "address": "12041 White Birch St, San Antonio, TX 78245",
-      "dates": "2026-08-08 – 2026-08-09",
-      "date_from": "2026-08-08",
-      "date_to": "2026-08-09",
+      "dates": "Sat Aug 8 – Sun Aug 9",
+      "date_from": "08/08/2026",
+      "date_to": "08/09/2026",
       "end_date": "2026-08-09",
-      "title": "Moving Out Sale !!",
+      "title": "Moving out sale !!",
       "details": "",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196342197",
+      "source": "GarageSaleFinder",
+      "url": "https://garagesalefinder.com/s/N9wc2/12041-white-birch-st-san-antonio-tx-78245",
       "photos": 0,
       "type": "garage",
       "confidence": 0.88,
@@ -1301,6 +1301,28 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "cl-redoingitagain2wo9rqfs7ngug5tpmlkjyc"
+    },
+    {
+      "address": "5822 Holbrook Way, San Antonio, TX 78253",
+      "dates": "2026-08-09 – 2026-08-09",
+      "date_from": "2026-08-09",
+      "date_to": "2026-08-09",
+      "end_date": "2026-08-09",
+      "title": "Yard Sale",
+      "details": "",
+      "source": "YardSaleSearch",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196342423",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.88,
+      "status": "verified",
+      "lat": 29.4908496,
+      "lon": -98.7381663,
+      "geocode": "source",
+      "external_id": "yss-5822holbrookwaysanantoniotx78253-2026-08-09",
+      "categories": [
+        "garage-sale"
+      ]
     }
   ],
   "permits": [],
@@ -1338,10 +1360,10 @@
     "garagesalefinder.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 59,
+  "total_locations": 60,
   "status": "live",
   "date": "2026-08-08",
-  "last_refresh": "2026-08-08T20:25:44-05:00",
+  "last_refresh": "2026-08-08T22:39:54-05:00",
   "permit_total": 85,
   "permit_estate_count": 1
 }
