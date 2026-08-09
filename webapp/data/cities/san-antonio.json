@@ -45,8 +45,8 @@
       "in_person": false,
       "external_id": "eso-2455066",
       "categories": [
-        "estate-sale",
-        "online-auction"
+        "online-auction",
+        "estate-sale"
       ]
     },
     {
@@ -393,15 +393,15 @@
     },
     {
       "address": "1902 chihuahua st, San Antonio, TX",
-      "dates": "2026-08-08 – 2026-08-10",
-      "date_from": "2026-08-08",
-      "date_to": "2026-08-10",
-      "end_date": "2026-08-10",
+      "dates": "2026-08-09 – 2026-08-11",
+      "date_from": "2026-08-09",
+      "date_to": "2026-08-11",
+      "end_date": "2026-08-11",
       "hours": null,
-      "title": "1902 chihuahua st 78207",
-      "details": "QR Code Link to This Post Today 11-5",
+      "title": "1902 chihuahua st satx 78207",
+      "details": "QR Code Link to This Post Multi family garage sale Today Sunday at 9 am",
       "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/san-antonio-1902-chihuahua-st-78207/wSXAm1vXHTLxWGEjj6X1uX",
+      "url": "https://www.craigslist.org/view/d/san-antonio-1902-chihuahua-st-satx-78207/rzvraUK4actceYcA3TpX4s",
       "photos": 0,
       "type": "garage",
       "categories": [
@@ -409,11 +409,11 @@
       ],
       "confidence": 0.82,
       "status": "verified",
-      "lat": 29.4167,
-      "lon": -98.5262,
+      "lat": 29.4161,
+      "lon": -98.5264,
       "geocode": "source",
       "in_person": true,
-      "external_id": "cl-hihuahuast78207wsxam1vxhtlxwgejj6x1ux"
+      "external_id": "cl-huastsatx78207rzvrauk4actceyca3tpx4s"
     },
     {
       "address": "1643 McKinley Ave, San Antonio, TX",
@@ -2797,7 +2797,7 @@
   "total_locations": 113,
   "status": "live",
   "date": "2026-08-09",
-  "last_refresh": "2026-08-09T05:31:52-05:00",
+  "last_refresh": "2026-08-09T07:43:48-05:00",
   "permit_total": 155,
   "permit_estate_count": 2
 }
