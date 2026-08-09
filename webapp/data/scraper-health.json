@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-09T14:03:30-05:00",
+  "generated_at": "2026-08-09T15:28:42-05:00",
   "overall": "critical",
   "primary_failures": [
     "estatesales_org",
@@ -56,6 +56,7 @@
     "estatesales.org": 7,
     "craigslist": 39,
     "estatesales.net": 2,
+    "email scraper": 3,
     "aggregators": 2,
     "user submit (approved)": 1
   },

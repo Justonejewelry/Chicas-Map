@@ -284,8 +284,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.063026050808478,
-      "lon": -97.84106330957339,
+      "lat": 30.06309791570248,
+      "lon": -97.84437427215079,
       "geocode": "source",
       "company": "Creative Estate Sales",
       "in_person": true,
@@ -639,10 +639,10 @@
       "date_from": "2026-08-07",
       "date_to": "2026-08-09",
       "end_date": "2026-08-09",
-      "title": "This Could Be the Most Incredible Estate Sale of the Summer!",
+      "title": "Estate Sale",
       "details": "Estate Sale",
       "source": "EstateSales.net",
-      "url": "https://www.estatesales.net/TX/Cedar Creek/78612/5022750",
+      "url": "https://www.estatesales.net/TX/Austin/78721/5025279",
       "photos": 0,
       "type": "estate",
       "categories": [
@@ -692,5 +692,5 @@
   "total_locations": 29,
   "status": "live",
   "date": "2026-08-09",
-  "last_refresh": "2026-08-09T14:03:30-05:00"
+  "last_refresh": "2026-08-09T15:28:42-05:00"
 }
