@@ -62,7 +62,7 @@ jobs:
       - name: Commit pack
         if: steps.diff.outputs.dirty == 'true'
         run: |
-          git config user.name "yardbird-bot"
+          git config user.name "chicas-map-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add packs/
           git commit -m "chore(packs): daily pack $(date -u +%Y-%m-%d) [skip ci]" || exit 0
