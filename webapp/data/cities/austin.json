@@ -41,8 +41,8 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "in-person",
-        "estate-sale"
+        "estate-sale",
+        "in-person"
       ],
       "confidence": 0.9,
       "status": "verified",
@@ -67,8 +67,8 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "in-person",
-        "estate-sale"
+        "estate-sale",
+        "in-person"
       ],
       "confidence": 0.9,
       "status": "verified",
@@ -93,13 +93,13 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.062073840962988,
-      "lon": -97.84009804462134,
+      "lat": 30.061975026733737,
+      "lon": -97.84055472911479,
       "geocode": "source",
       "company": "Creative Estate Sales",
       "in_person": true,
@@ -359,5 +359,5 @@
   "status": "live",
   "total_locations": 15,
   "date": "2026-08-10",
-  "last_refresh": "2026-08-10T02:26:40-05:00"
+  "last_refresh": "2026-08-10T04:16:55-05:00"
 }
