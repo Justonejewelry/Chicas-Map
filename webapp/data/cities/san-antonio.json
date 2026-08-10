@@ -147,14 +147,14 @@
     },
     {
       "address": "San Antonio, TX",
-      "dates": "2026-08-10 – 2026-08-17",
-      "date_from": "2026-08-10",
-      "date_to": "2026-08-17",
-      "end_date": "2026-08-17",
-      "title": "ONLINE Items Vintage, Art & Everyday Elegance NWHills",
-      "details": "Online Estate Sale",
+      "dates": "2026-08-08 – 2026-08-10",
+      "date_from": "2026-08-08",
+      "date_to": "2026-08-10",
+      "end_date": "2026-08-10",
+      "title": "Hidden Gems Estate Sale – Vintage • Furniture • Décor Everything Must Go!",
+      "details": "Estate Sale",
       "source": "EstateSales.net",
-      "url": "https://www.estatesales.net/TX/Austin/78731/5031555",
+      "url": "https://www.estatesales.net/TX/San Antonio/78227/5013915",
       "photos": 0,
       "type": "estate",
       "categories": [
@@ -166,6 +166,46 @@
       "lon": -98.4936,
       "geocode": "city-center",
       "company": null
+    },
+    {
+      "address": "123 Northview Cir, Cibolo, TX 78108",
+      "dates": "2026-08-14 – 2026-08-15",
+      "date_from": "2026-08-14",
+      "date_to": "2026-08-15",
+      "end_date": "2026-08-15",
+      "title": "Multifamily Yard Sale-Everything Must Go!!",
+      "details": "",
+      "source": "YardSaleSearch",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196342241",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.88,
+      "status": "verified",
+      "lat": 29.523325,
+      "lon": -98.1903,
+      "geocode": "source",
+      "external_id": "yss-123northviewcircibolotx78108-2026-08-14",
+      "categories": [
+        "garage-sale"
+      ]
+    },
+    {
+      "address": "350 Anchor Hill Rd, San Marcos, TX 78666",
+      "dates": "Sat Aug 15 – Sat Aug 15",
+      "date_from": "08/15/2026",
+      "date_to": "08/15/2026",
+      "end_date": "2026-08-15",
+      "title": "Huge Garage Sale!",
+      "details": "",
+      "source": "GarageSaleFinder",
+      "url": "https://garagesalefinder.com/s/N9w60/350-anchor-hill-rd-san-marcos-tx-78666",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.65,
+      "status": "verified",
+      "lat": 29.4241,
+      "lon": -98.4936,
+      "geocode": "city-center"
     }
   ],
   "note": "RESTORE FAILED - use local",
@@ -2006,9 +2046,9 @@
     "yardsalesearch.com"
   ],
   "status": "live",
-  "total_locations": 80,
+  "total_locations": 82,
   "date": "2026-08-10",
-  "last_refresh": "2026-08-10T00:23:52-05:00",
+  "last_refresh": "2026-08-10T02:26:40-05:00",
   "permit_total": 147,
   "permit_estate_count": 1
 }

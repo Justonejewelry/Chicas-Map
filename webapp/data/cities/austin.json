@@ -34,15 +34,15 @@
       "date_to": "2026-08-15",
       "end_date": "2026-08-15",
       "hours": "2026-08-12 6:00 pm-8:30 pm; 2026-08-13 10:00 am-4:00 pm; 2026-08-14 10:00 am-4:00 pm; 2026-08-15 9:00 am-3:00 pm",
-      "title": "Lakeway Luxury Estate Sale Three Day Sale with a Special *VIP Evening Event*",
-      "details": "Blue Moon Estate Sale Company. Step into a Lakeway luxury home where the details do the talking, designer-style furnishings, elevated décor, and statement pieces that feel collected, not mass-produced. If you love quality, clean lines, and the kind of home finds that instantly upg...",
-      "source": "EstateSales.org",
-      "url": "https://estatesales.org/estate-sales/tx/lakeway/78738/lakeway-luxury-estate-sale-three-2449246",
+      "title": "Lakeway Luxury Estate Sale Three Day Sale With A Special *Vip Evening Event*",
+      "details": "",
+      "source": "YardSaleSearch",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196291505",
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
@@ -51,7 +51,7 @@
       "geocode": "source",
       "company": "Blue Moon Estate Sale Company",
       "in_person": true,
-      "external_id": "eso-2449246"
+      "external_id": "yss-224goldenbeardraustintx78738-2026-08-12"
     },
     {
       "address": "308 Portsmouth Dr, Georgetown, TX 78633",
@@ -60,15 +60,15 @@
       "date_to": "2026-08-15",
       "end_date": "2026-08-15",
       "hours": "2026-08-14 9:00 am-4:00 pm; 2026-08-15 9:00 am-4:00 pm",
-      "title": "CHANTAL'S PROMOTES ANOTHER SWEET SUN CITY ESTATE SALE OFFERING PRE-SALE ON LARGE ITEMS",
-      "details": "Chantal's Estate Sales. FAULOUS ESTATE SALE IN SUN CITY",
-      "source": "EstateSales.org",
-      "url": "https://estatesales.org/estate-sales/tx/georgetown/78633/chantals-promotes-another-sweet-sun-2456132",
+      "title": "Chantal's Promotes Another Sweet Sun City Estate Sale Offering Pre-Sale On Large Items",
+      "details": "",
+      "source": "YardSaleSearch",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196341427",
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
@@ -77,7 +77,7 @@
       "geocode": "source",
       "company": "Chantal's Estate Sales",
       "in_person": true,
-      "external_id": "eso-2456132"
+      "external_id": "yss-308portsmouthdrgeorgetowntx78633-2026-08-14"
     },
     {
       "address": "hidden, Buda, TX 78610",
@@ -98,8 +98,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.06194807739849,
-      "lon": -97.8399215983398,
+      "lat": 30.062073840962988,
+      "lon": -97.84009804462134,
       "geocode": "source",
       "company": "Creative Estate Sales",
       "in_person": true,
@@ -254,14 +254,14 @@
     },
     {
       "address": "Austin, TX",
-      "dates": "2026-08-10 – 2026-08-17",
-      "date_from": "2026-08-10",
-      "date_to": "2026-08-17",
-      "end_date": "2026-08-17",
-      "title": "ONLINE Items Vintage, Art & Everyday Elegance NWHills",
-      "details": "Online Estate Sale",
+      "dates": "2026-08-08 – 2026-08-10",
+      "date_from": "2026-08-08",
+      "date_to": "2026-08-10",
+      "end_date": "2026-08-10",
+      "title": "Hidden Gems Estate Sale – Vintage • Furniture • Décor Everything Must Go!",
+      "details": "Estate Sale",
       "source": "EstateSales.net",
-      "url": "https://www.estatesales.net/TX/Austin/78731/5031555",
+      "url": "https://www.estatesales.net/TX/San Antonio/78227/5013915",
       "photos": 0,
       "type": "estate",
       "categories": [
@@ -273,6 +273,78 @@
       "lon": -97.7431,
       "geocode": "city-center",
       "company": null
+    },
+    {
+      "address": "Hutto, TX 78634",
+      "dates": "Fri Aug 14 – Sun Aug 16",
+      "date_from": "08/14/2026",
+      "date_to": "08/16/2026",
+      "end_date": "2026-08-16",
+      "title": "The “If You Only Hit One Sale This Year, This Should Be The One…” Estate Sale",
+      "details": "",
+      "source": "GarageSaleFinder",
+      "url": "https://garagesalefinder.com/s/N9kiL/hutto-tx-78634",
+      "photos": 0,
+      "type": "estate",
+      "confidence": 0.65,
+      "status": "verified",
+      "lat": 30.2672,
+      "lon": -97.7431,
+      "geocode": "city-center"
+    },
+    {
+      "address": "Johnson City, TX 78636",
+      "dates": "Wed Aug 12 – Sun Aug 16",
+      "date_from": "08/12/2026",
+      "date_to": "08/16/2026",
+      "end_date": "2026-08-16",
+      "title": "Johnson City Takes You Back in Time! Appt Day is Wednesday!",
+      "details": "",
+      "source": "GarageSaleFinder",
+      "url": "https://garagesalefinder.com/s/NIKkU/johnson-city-tx-78636",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.65,
+      "status": "verified",
+      "lat": 30.2672,
+      "lon": -97.7431,
+      "geocode": "city-center"
+    },
+    {
+      "address": "350 Anchor Hill Rd, San Marcos, TX 78666",
+      "dates": "Sat Aug 15 – Sat Aug 15",
+      "date_from": "08/15/2026",
+      "date_to": "08/15/2026",
+      "end_date": "2026-08-15",
+      "title": "Huge Garage Sale!",
+      "details": "",
+      "source": "GarageSaleFinder",
+      "url": "https://garagesalefinder.com/s/N9w60/350-anchor-hill-rd-san-marcos-tx-78666",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.65,
+      "status": "verified",
+      "lat": 30.2672,
+      "lon": -97.7431,
+      "geocode": "city-center"
+    },
+    {
+      "address": "1940 TH Johnson, Taylor, TX 76574",
+      "dates": "Sat Aug 15 – Sat Aug 15",
+      "date_from": "08/15/2026",
+      "date_to": "08/15/2026",
+      "end_date": "2026-08-15",
+      "title": "Garage Sale",
+      "details": "",
+      "source": "GarageSaleFinder",
+      "url": "https://garagesalefinder.com/s/N9wzt/1940-th-johnson-taylor-tx-76574",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.65,
+      "status": "verified",
+      "lat": 30.2672,
+      "lon": -97.7431,
+      "geocode": "city-center"
     }
   ],
   "permits": [],
@@ -285,7 +357,7 @@
     "yardsalesearch.com"
   ],
   "status": "live",
-  "total_locations": 11,
+  "total_locations": 15,
   "date": "2026-08-10",
-  "last_refresh": "2026-08-10T00:23:52-05:00"
+  "last_refresh": "2026-08-10T02:26:40-05:00"
 }
