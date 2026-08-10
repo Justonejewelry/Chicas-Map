@@ -98,8 +98,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.059423822996763,
-      "lon": -97.84429123860652,
+      "lat": 30.06205587473949,
+      "lon": -97.8397659104443,
       "geocode": "source",
       "company": "Creative Estate Sales",
       "in_person": true,
@@ -345,6 +345,30 @@
       "lat": 30.2672,
       "lon": -97.7431,
       "geocode": "city-center"
+    },
+    {
+      "address": "1112 Smith Dr near wood, Austin, TX",
+      "dates": "2026-08-10 – 2026-08-12",
+      "date_from": "2026-08-10",
+      "date_to": "2026-08-12",
+      "end_date": "2026-08-12",
+      "hours": null,
+      "title": "Selling OUT ALL 42'' Club Cadet xt-1 AND much to go with it",
+      "details": "QR Code Link to This Post SELLING OUT ALL ( Stop And SEE Before You Say No way or Call ) Please call me first Selling ALL that goes with this 42'' c;ub cadet xt 1 1-full set of tires and rims a home made wagon with all new parts for the deck, new blades and good ones also, belts, Selling for 1,550.00 Cash only Price is FIRM, and with a spreader a blade stand to sharping them AND A NEW LIFT JACK Se",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/killeen-selling-out-all-42-club-cadet/oXUEBy8BhmKLhnvKfDrzK8",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 31.123235,
+      "lon": -97.713567,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-all42clubcadetoxueby8bhmklhnvkfdrzk8"
     }
   ],
   "permits": [],
@@ -357,7 +381,7 @@
     "yardsalesearch.com"
   ],
   "status": "live",
-  "total_locations": 15,
+  "total_locations": 16,
   "date": "2026-08-10",
-  "last_refresh": "2026-08-10T08:00:47-05:00"
+  "last_refresh": "2026-08-10T09:55:23-05:00"
 }
