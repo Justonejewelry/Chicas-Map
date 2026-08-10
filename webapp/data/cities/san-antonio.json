@@ -1,15 +1,1 @@
-{
-  "edition": "San Antonio Yard-Bird Discovery",
-  "city": "san-antonio",
-  "public": [],
-  "note": "restored placeholder - full data pending",
-  "permits": [],
-  "hot_zones": ["Northwest Side", "Far West (78250)", "Southside (78223)", "Alamo Heights area", "Stone Oak / 78258", "Cibolo / Schertz"],
-  "sources": ["craigslist.org", "data.sanantonio.gov", "estatesales.net", "estatesales.org", "garagesalefinder.com", "yardsalesearch.com"],
-  "status": "live",
-  "total_locations": 82,
-  "date": "2026-08-10",
-  "last_refresh": "2026-08-10T10:05:24-05:00",
-  "permit_total": 73,
-  "permit_estate_count": 1
-}
+{"edition":"San Antonio Yard-Bird Discovery","city":"san-antonio","public":[{"address":"8645 Fredericksburg Rd, San Antonio, TX 78240","dates":"2026-08-02 – 2026-08-16","date_from":"2026-08-02","date_to":"2026-08-16","end_date":"2026-08-16","title":"Art Work Framed And Matted Multiple Sizes And Shapes And Some Wall Hanging S","details":"","source":"YardSaleSearch","url":"https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196334551","photos":0,"type":"garage","confidence":0.88,"status":"verified","lat":29.522833,"lon":-98.575072,"geocode":"source","external_id":"yss-8645fredericksburgrdsanantoniotx78240-2026-08-02","categories":["garage-sale"]}],"hot_zones":["Northwest Side","Far West (78250)","Southside (78223)","Alamo Heights area","Stone Oak / 78258","Cibolo / Schertz"],"sources":["craigslist.org","data.sanantonio.gov","estatesales.net","estatesales.org","garagesalefinder.com","yardsalesearch.com"],"status":"live","total_locations":82,"date":"2026-08-10","last_refresh":"2026-08-10T10:05:24-05:00","permit_total":73,"permit_estate_count":1}
