@@ -169,8 +169,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.05979213057851,
-      "lon": -97.84373076218276,
+      "lat": 30.05896568429752,
+      "lon": -97.84079345055453,
       "geocode": "source",
       "company": "Creative Estate Sales",
       "in_person": true,
@@ -296,6 +296,31 @@
       "lon": -97.7431,
       "geocode": "city-center",
       "company": null
+    },
+    {
+      "address": "2028 Monarch Dr near first house behind Dollar Store, Austin, TX",
+      "dates": "2026-08-11 – 2026-08-13",
+      "date_from": "2026-08-11",
+      "date_to": "2026-08-13",
+      "end_date": "2026-08-13",
+      "hours": null,
+      "title": "Moving and Unique sale Items",
+      "details": "QR Code Link to This Post Moving to different part of country and need to sell some items that won't be useful for me in new place. Mostly new and untouched, some lightly demonstrated. Hurry in since these deals won't last long. This Saturday and Sunday (15 &amp; 16 of August) from 8:00am-12:00pm All-in-one PCs, Square Credit card processing units, Solar security cameras, Beauty Trolly, Heat press",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/austin-moving-and-unique-sale-items/tatXHehGV2UeCgBEjWbnd5",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale",
+        "moving-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 30.176186,
+      "lon": -97.822978,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-uniquesaleitemstatxhehgv2uecgbejwbnd5"
     }
   ],
   "hot_zones": [],
@@ -307,8 +332,8 @@
     "yardsalesearch.com"
   ],
   "status": "live",
-  "total_locations": 13,
+  "total_locations": 14,
   "date": "2026-08-11",
-  "last_refresh": "2026-08-11T00:05:35-05:00",
+  "last_refresh": "2026-08-11T02:02:07-05:00",
   "permits": []
 }
