@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>YardBird SA Saturday 2026-08-15</name>
+    <description>Focused Discovery + Sentinel — Atlas</description>
+    <Style id="sale">
+      <IconStyle>
+        <scale>1.1</scale>
+        <Icon><href>http://maps.google.com/mapfiles/kml/paddle/red-circle.png</href></Icon>
+      </IconStyle>
+    </Style>
+    <Placemark>
+      <name>710 N Olive St — Tools & Household</name>
+      <description>Sat-Sun Aug 15-16 | clothes, tools, household</description>
+      <styleUrl>#sale</styleUrl>
+      <Point><coordinates>-98.4795,29.4305,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>2122 Fallow Run — Huge Garage (Stone Oak)</name>
+      <description>Fri-Sat Aug 14-15 | brand clothing, jewelry, furniture, baby</description>
+      <styleUrl>#sale</styleUrl>
+      <Point><coordinates>-98.4960,29.6100,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>123 Northview Cir Cibolo — Multi-family</name>
+      <description>Fri-Sat 9am-3pm | antiques, name brand clothes, fixtures</description>
+      <styleUrl>#sale</styleUrl>
+      <Point><coordinates>-98.2300,29.5600,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>9215 Osage Valley — Community Yard Sale</name>
+      <description>Sat Aug 15</description>
+      <styleUrl>#sale</styleUrl>
+      <Point><coordinates>-98.5200,29.4800,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>8645 Fredericksburg Rd — Art Liquidation</name>
+      <description>Through Aug 16 | framed art, wall hangings</description>
+      <styleUrl>#sale</styleUrl>
+      <Point><coordinates>-98.5800,29.5300,0</coordinates></Point>
+    </Placemark>
+  </Document>
+</kml>
