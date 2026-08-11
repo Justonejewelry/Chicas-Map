@@ -1,0 +1,84 @@
+{
+  "generated_at": "2026-08-11T18:30:00-05:00",
+  "target": "2026-08-15 Saturday (focused Discovery + Sentinel pass — Atlas weekend prep)",
+  "city": "san-antonio",
+  "status": "verified",
+  "confidence": 0.82,
+  "notes": "Focused Discovery + Sentinel for upcoming Saturday. Classic garage volume confirmed via GarageSaleFinder, YardSales.net, Craigslist. Multi-family and tools/furniture strong. Estate residual activity in Helotes corridor and north. Weather hot/partly cloudy supportive for early starts.",
+  "days": {
+    "friday": {"stars": 3, "predicted_sales": 7, "status": "warmup"},
+    "saturday": {"stars": 4, "predicted_sales": 14, "status": "peak"},
+    "sunday": {"stars": 3, "predicted_sales": 6, "status": "residual"}
+  },
+  "weather_impact": {
+    "condition": "Partly cloudy / hot",
+    "high_f": 97,
+    "low_f": 78,
+    "risk": "heat",
+    "shopping_quality": "excellent early (before 9am), heat index ~105-110 after 10-11am"
+  },
+  "hot_zones": [
+    "Stone Oak / 78248",
+    "Cibolo / Northview",
+    "Eastside / 78202 Olive corridor",
+    "Alamo Ranch / Far West",
+    "Northeast / 78233",
+    "Helotes residual estates"
+  ],
+  "best_categories": ["tools", "furniture", "brand clothing", "household", "baby items", "antiques", "jewelry"],
+  "verified_highlights": [
+    {
+      "title": "Garage Sale — tools & household",
+      "area": "710 N Olive St, 78202",
+      "dates": "Aug 15-16",
+      "hours": "weekend",
+      "categories": ["tools", "clothes", "household"],
+      "confidence": 0.88
+    },
+    {
+      "title": "Huge Garage Sale — brand clothing & furniture",
+      "area": "2122 Fallow Run, 78248 (Stone Oak)",
+      "dates": "Aug 14-15",
+      "hours": "Fri-Sat",
+      "categories": ["clothing", "shoes", "jewelry", "furniture", "baby"],
+      "confidence": 0.90
+    },
+    {
+      "title": "Multi-family — antiques & name brand",
+      "area": "123 Northview Cir, Cibolo 78108",
+      "dates": "Aug 14-15",
+      "hours": "9am-3pm",
+      "categories": ["antiques", "clothes", "fixtures"],
+      "confidence": 0.87
+    },
+    {
+      "title": "Community Yard Sale",
+      "area": "9215 Osage Valley",
+      "dates": "Aug 15",
+      "hours": "Saturday",
+      "confidence": 0.80
+    },
+    {
+      "title": "Ongoing art liquidation",
+      "area": "8645 Fredericksburg Rd, 78240",
+      "dates": "through Aug 16",
+      "categories": ["art", "wall hangings"],
+      "confidence": 0.85
+    }
+  ],
+  "source_breakdown": {
+    "estate": 5,
+    "craigslist": 3,
+    "facebook": 0,
+    "nextdoor": 0,
+    "permit": 0,
+    "other": 8
+  },
+  "selene_briefing_draft": "¡Buenos días San Antonio! Saturday peak looking solid. Stone Oak, Cibolo and Eastside leading with tools, furniture and brand finds. Partly cloudy, high around 97 with heat building — hit the early routes before 9. Be hunting, y'all!",
+  "meta": {
+    "heritage_records": 5,
+    "last_sentinel_pass": "2026-08-11T18:30:00-05:00",
+    "schema_version": "1.1",
+    "atlas_pass": "focused Discovery + Sentinel Saturday prep"
+  }
+}
