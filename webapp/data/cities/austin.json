@@ -24,8 +24,8 @@
       "in_person": true,
       "external_id": "yss-224goldenbeardraustintx78738-2026-08-12",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ]
     },
     {
@@ -147,8 +147,8 @@
       "in_person": true,
       "external_id": "yss-308portsmouthdrgeorgetowntx78633-2026-08-14",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ]
     },
     {
@@ -170,8 +170,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.062361300538985,
-      "lon": -97.84472716471389,
+      "lat": 30.062999101473228,
+      "lon": -97.8440317587807,
       "geocode": "source",
       "company": "Creative Estate Sales",
       "in_person": true,
@@ -350,14 +350,14 @@
     },
     {
       "address": "Austin, TX",
-      "dates": "2026-08-08 – 2026-08-10",
-      "date_from": "2026-08-08",
-      "date_to": "2026-08-10",
-      "end_date": "2026-08-10",
-      "title": "Moving Sale",
-      "details": "Moving Sale",
+      "dates": "2026-08-11 – 2026-08-15",
+      "date_from": "2026-08-11",
+      "date_to": "2026-08-15",
+      "end_date": "2026-08-15",
+      "title": "Extraordinary Curated Collection | • Vintage Textiles • Art • Fabrics • Silver • Fine China •Books",
+      "details": "By Appointment",
       "source": "EstateSales.net",
-      "url": "https://www.estatesales.net/TX/San Antonio/78229/5029254",
+      "url": "https://www.estatesales.net/TX/Austin/78746/5028987",
       "photos": 0,
       "type": "estate",
       "categories": [
@@ -383,5 +383,5 @@
   "status": "live",
   "total_locations": 16,
   "date": "2026-08-10",
-  "last_refresh": "2026-08-10T17:34:32-05:00"
+  "last_refresh": "2026-08-10T20:24:51-05:00"
 }
