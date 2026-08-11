@@ -252,6 +252,28 @@
       "lon": -98.4936,
       "geocode": "city-center",
       "company": null
+    },
+    {
+      "address": "2122 Fallow Run, San Antonio, TX 78248",
+      "dates": "2026-08-14 – 2026-08-15",
+      "date_from": "2026-08-14",
+      "date_to": "2026-08-15",
+      "end_date": "2026-08-15",
+      "title": "Huge Garage Sale",
+      "details": "",
+      "source": "YardSaleSearch",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196344219",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.88,
+      "status": "verified",
+      "lat": 29.591323,
+      "lon": -98.52612,
+      "geocode": "source",
+      "external_id": "yss-2122fallowrunsanantoniotx78248-2026-08-14",
+      "categories": [
+        "garage-sale"
+      ]
     }
   ],
   "permits": [
@@ -1940,10 +1962,10 @@
     "garagesalefinder.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 78,
+  "total_locations": 79,
   "status": "live",
   "date": "2026-08-11",
-  "last_refresh": "2026-08-11T07:58:22-05:00",
+  "last_refresh": "2026-08-11T09:55:22-05:00",
   "permit_total": 144,
   "permit_estate_count": 1
 }
