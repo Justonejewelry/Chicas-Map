@@ -23,8 +23,8 @@
       "in_person": true,
       "external_id": "yss-224goldenbeardraustintx78738-2026-08-12",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ]
     },
     {
@@ -168,8 +168,8 @@
       "in_person": true,
       "external_id": "yss-308portsmouthdrgeorgetowntx78633-2026-08-14",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ]
     },
     {
@@ -191,8 +191,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.059396873661516,
-      "lon": -97.84458185601143,
+      "lat": 30.062451131656484,
+      "lon": -97.84333635284752,
       "geocode": "source",
       "company": "Creative Estate Sales",
       "in_person": true,
@@ -392,6 +392,30 @@
       "lon": -97.7431,
       "geocode": "city-center",
       "company": null
+    },
+    {
+      "address": "Golden Bear Dr., Austin, TX",
+      "dates": "2026-08-13 – 2026-08-13",
+      "date_from": "2026-08-13",
+      "date_to": "2026-08-13",
+      "end_date": "2026-08-13",
+      "hours": null,
+      "title": "AUG 13-14 | Lakeway Blue Moon Estate Sale",
+      "details": "QR Code Link to This Post Lakeway, you ready? This one’s got clean lines, quality pieces, and the kind of finds you’ll be talking about all weekend. Full details (address, photos, updates): https://bluemoonestatesales.com/george-town-round-rock/estate-sale/lakeway-luxury-estate-sale-vip-evening-preview-3-day-sale/",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/austin-aug-lakeway-blue-moon-estate-sale/isUQKf4TiUNcLuqyDT54hf",
+      "photos": 0,
+      "type": "estate",
+      "categories": [
+        "estate-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 30.3337,
+      "lon": -97.9824,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-moonestatesaleisuqkf4tiuncluqydt54hf"
     }
   ],
   "permits": [],
@@ -413,7 +437,7 @@
     "yardsalesearch.com"
   ],
   "status": "live",
-  "total_locations": 17,
+  "total_locations": 18,
   "date": "2026-08-11",
-  "last_refresh": "2026-08-11T15:39:44-05:00"
+  "last_refresh": "2026-08-11T17:38:38-05:00"
 }

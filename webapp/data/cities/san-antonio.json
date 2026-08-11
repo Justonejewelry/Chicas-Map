@@ -45,8 +45,8 @@
       "in_person": false,
       "external_id": "eso-2456237",
       "categories": [
-        "estate-sale",
-        "online-auction"
+        "online-auction",
+        "estate-sale"
       ]
     },
     {
@@ -2044,7 +2044,7 @@
   "total_locations": 82,
   "status": "live",
   "date": "2026-08-11",
-  "last_refresh": "2026-08-11T15:39:44-05:00",
+  "last_refresh": "2026-08-11T17:38:38-05:00",
   "permit_total": 144,
   "permit_estate_count": 1
 }
