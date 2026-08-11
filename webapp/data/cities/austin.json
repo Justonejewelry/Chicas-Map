@@ -23,8 +23,8 @@
       "in_person": true,
       "external_id": "yss-224goldenbeardraustintx78738-2026-08-12",
       "categories": [
-        "in-person",
-        "estate-sale"
+        "estate-sale",
+        "in-person"
       ]
     },
     {
@@ -66,8 +66,8 @@
       "in_person": false,
       "external_id": "eso-2455523",
       "categories": [
-        "online-auction",
-        "estate-sale"
+        "estate-sale",
+        "online-auction"
       ]
     },
     {
@@ -146,8 +146,8 @@
       "in_person": true,
       "external_id": "yss-308portsmouthdrgeorgetowntx78633-2026-08-14",
       "categories": [
-        "in-person",
-        "estate-sale"
+        "estate-sale",
+        "in-person"
       ]
     },
     {
@@ -169,8 +169,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.063205713043477,
-      "lon": -97.84465451036266,
+      "lat": 30.059612468343513,
+      "lon": -97.84366848702456,
       "geocode": "source",
       "company": "Creative Estate Sales",
       "in_person": true,
@@ -334,6 +334,6 @@
   "status": "live",
   "total_locations": 14,
   "date": "2026-08-11",
-  "last_refresh": "2026-08-11T03:51:22-05:00",
+  "last_refresh": "2026-08-11T05:48:20-05:00",
   "permits": []
 }
