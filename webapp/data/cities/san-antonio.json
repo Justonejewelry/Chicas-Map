@@ -45,8 +45,8 @@
       "in_person": false,
       "external_id": "eso-2456237",
       "categories": [
-        "online-auction",
-        "estate-sale"
+        "estate-sale",
+        "online-auction"
       ]
     },
     {
@@ -296,6 +296,55 @@
       "lon": -98.4936,
       "geocode": "city-center",
       "company": null
+    },
+    {
+      "address": "Schertz, TX 78154",
+      "dates": "2026-08-11 – 2026-08-18",
+      "date_from": "2026-08-11",
+      "date_to": "2026-08-18",
+      "end_date": "2026-08-18",
+      "title": "Vintage Charm: One-of-a-Kind Online Auction by Caring Transitions - Ends 8/18!",
+      "details": "Caring Transitions of New Braunfels, TX. Caring Transitions of New Braunfels & Seguin, TX warmly welcomes you to our Vintage Charm: One-of-a-Kind Online Auction on CTBids! This distinctive auction brings together elegant vintage furniture, fine tableware, sterling silver, decorative art, a...",
+      "source": "EstateSales.org",
+      "url": "https://estatesales.org/estate-sales/tx/schertz/78154/vintage-charm-oneofakind-online-auction-2456673",
+      "photos": 0,
+      "type": "estate",
+      "confidence": 0.65,
+      "status": "verified",
+      "lat": 29.587207,
+      "lon": -98.2978951,
+      "geocode": "source",
+      "company": "Caring Transitions of New Braunfels, TX",
+      "in_person": false,
+      "external_id": "eso-2456673",
+      "categories": [
+        "estate-sale",
+        "online-auction"
+      ]
+    },
+    {
+      "address": "11218 Quail Pass, San Antonio, TX",
+      "dates": "2026-08-11 – 2026-08-13",
+      "date_from": "2026-08-11",
+      "date_to": "2026-08-13",
+      "end_date": "2026-08-13",
+      "hours": null,
+      "title": "Estate Sale - Furniture",
+      "details": "QR Code Link to This Post Beautiful Estate Sale Furniture – Quality Pieces at a Fraction of the Original Cost Please come on Friday between 3:00 and 6:00 PM to view and purchase these beautiful furniture pieces: * Cherry-finish bookcase * Elegant armoire * Bombay-style accent stand * Beautiful sleeper sofa * Two sets of solid oak chairs: one set of 4 and one set of 7 * Wooden desk * Dining and acc",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/san-antonio-estate-sale-furniture/nUuAQfPR8MnhGWyQXgZ3Wp",
+      "photos": 0,
+      "type": "estate",
+      "categories": [
+        "estate-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 29.5612,
+      "lon": -98.6117,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-tesalefurniturenuuaqfpr8mnhgwyqxgz3wp"
     }
   ],
   "permits": [
@@ -1992,10 +2041,10 @@
     "yardsales.net",
     "yardsalesearch.com"
   ],
-  "total_locations": 80,
+  "total_locations": 82,
   "status": "live",
   "date": "2026-08-11",
-  "last_refresh": "2026-08-11T11:55:27-05:00",
+  "last_refresh": "2026-08-11T13:58:25-05:00",
   "permit_total": 144,
   "permit_estate_count": 1
 }

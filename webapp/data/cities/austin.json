@@ -23,8 +23,8 @@
       "in_person": true,
       "external_id": "yss-224goldenbeardraustintx78738-2026-08-12",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ]
     },
     {
@@ -66,8 +66,8 @@
       "in_person": false,
       "external_id": "eso-2455523",
       "categories": [
-        "online-auction",
-        "estate-sale"
+        "estate-sale",
+        "online-auction"
       ]
     },
     {
@@ -146,8 +146,8 @@
       "in_person": true,
       "external_id": "yss-308portsmouthdrgeorgetowntx78633-2026-08-14",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ]
     },
     {
@@ -169,8 +169,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.062091807186487,
-      "lon": -97.84103217199429,
+      "lat": 30.062280452533237,
+      "lon": -97.84456109762537,
       "geocode": "source",
       "company": "Creative Estate Sales",
       "in_person": true,
@@ -346,6 +346,28 @@
       "lon": -97.7431,
       "geocode": "city-center",
       "company": null
+    },
+    {
+      "address": "7709 Mullen Dr, Austin, TX 78757",
+      "dates": "2026-08-14 – 2026-08-16",
+      "date_from": "2026-08-14",
+      "date_to": "2026-08-16",
+      "end_date": "2026-08-16",
+      "title": "Crestview Moving Sale August 14-16",
+      "details": "",
+      "source": "YardSaleSearch",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196344409",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.88,
+      "status": "verified",
+      "lat": 30.351409,
+      "lon": -97.72732,
+      "geocode": "source",
+      "external_id": "yss-7709mullendraustintx78757-2026-08-14",
+      "categories": [
+        "garage-sale"
+      ]
     }
   ],
   "permits": [],
@@ -367,7 +389,7 @@
     "yardsalesearch.com"
   ],
   "status": "live",
-  "total_locations": 15,
+  "total_locations": 16,
   "date": "2026-08-11",
-  "last_refresh": "2026-08-11T11:55:27-05:00"
+  "last_refresh": "2026-08-11T13:58:25-05:00"
 }
