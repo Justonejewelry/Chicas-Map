@@ -23,8 +23,8 @@
       "in_person": true,
       "external_id": "yss-224goldenbeardraustintx78738-2026-08-12",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ]
     },
     {
@@ -146,8 +146,8 @@
       "in_person": true,
       "external_id": "yss-308portsmouthdrgeorgetowntx78633-2026-08-14",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ]
     },
     {
@@ -164,13 +164,13 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.062154688968736,
-      "lon": -97.84350241993604,
+      "lat": 30.05979213057851,
+      "lon": -97.84373076218276,
       "geocode": "source",
       "company": "Creative Estate Sales",
       "in_person": true,
@@ -178,10 +178,10 @@
     },
     {
       "address": "11300 Brixey Lane near Braker Lane/Dessaue, Austin, TX",
-      "dates": "2026-08-10 – 2026-08-12",
-      "date_from": "2026-08-10",
-      "date_to": "2026-08-12",
-      "end_date": "2026-08-12",
+      "dates": "2026-08-11 – 2026-08-13",
+      "date_from": "2026-08-11",
+      "date_to": "2026-08-13",
+      "end_date": "2026-08-13",
       "hours": null,
       "title": "Garasale/moving sale - Priced to sale everything",
       "details": "QR Code Link to This Post 🏡 HUGE MOVING SALE – EVERYTHING MUST GO! 🏡 We're moving and everything is priced to sell! Come find great deals on a wide variety of household items. Items include: Furniture Home décor &amp; mirrors Kitchenware Small appliances Lamps Wall art Storage items Tools Holiday decorations Electronics Books Clothing &amp; shoes And much more! 💲 Most items are priced to sell. Bun",
@@ -203,10 +203,10 @@
     },
     {
       "address": "2009 Delwood Ct near Rogge & Berkman, Austin, TX",
-      "dates": "2026-08-10 – 2026-08-12",
-      "date_from": "2026-08-10",
-      "date_to": "2026-08-12",
-      "end_date": "2026-08-12",
+      "dates": "2026-08-11 – 2026-08-13",
+      "date_from": "2026-08-11",
+      "date_to": "2026-08-13",
+      "end_date": "2026-08-13",
       "hours": null,
       "title": "🏡 HUGE ESTATE & MOVING SALE — TWO DAYS! 🏡",
       "details": "QR Code Link to This Post SUNDAY - 8am - 3pm 2009 Delwood Ct., Austin, TX 78723 SUNDAY 8/9 **ALL CLOTHES $3 - $1 after 1pm/Free from 3pm to 4pm (limit to 10 per person) **ALL Framed Art Prints $6 - $3 after 1pm/Free after 3pm ALL FURNITURE $20 - Free after 1pm (with exception of new in box items0 So many items. I have pared down my eBay business, so there are hundreds of clothing items (Men’s Clot",
@@ -228,10 +228,10 @@
     },
     {
       "address": "903 Burnt Oak Cir, Austin, TX",
-      "dates": "2026-08-10 – 2026-08-12",
-      "date_from": "2026-08-10",
-      "date_to": "2026-08-12",
-      "end_date": "2026-08-12",
+      "dates": "2026-08-11 – 2026-08-13",
+      "date_from": "2026-08-11",
+      "date_to": "2026-08-13",
+      "end_date": "2026-08-13",
       "hours": null,
       "title": "Free stuff, tools, outdoor chairs and more",
       "details": "QR Code Link to This Post Moving out…everything is free",
@@ -253,10 +253,10 @@
     },
     {
       "address": "1112 Smith Dr near wood, Austin, TX",
-      "dates": "2026-08-10 – 2026-08-12",
-      "date_from": "2026-08-10",
-      "date_to": "2026-08-12",
-      "end_date": "2026-08-12",
+      "dates": "2026-08-11 – 2026-08-13",
+      "date_from": "2026-08-11",
+      "date_to": "2026-08-13",
+      "end_date": "2026-08-13",
       "hours": null,
       "title": "Selling OUT ALL 42'' Club Cadet xt-1 AND much to go with it",
       "details": "QR Code Link to This Post SELLING OUT ALL ( Stop And SEE Before You Say No way or Call ) Please call me first Selling ALL that goes with this 42'' c;ub cadet xt 1 1-full set of tires and rims a home made wagon with all new parts for the deck, new blades and good ones also, belts, Selling for 1,550.00 Cash only Price is FIRM, and with a spreader a blade stand to sharping them AND A NEW LIFT JACK Se",
@@ -308,7 +308,7 @@
   ],
   "status": "live",
   "total_locations": 13,
-  "date": "2026-08-10",
-  "last_refresh": "2026-08-10T22:41:32-05:00",
+  "date": "2026-08-11",
+  "last_refresh": "2026-08-11T00:05:35-05:00",
   "permits": []
 }
