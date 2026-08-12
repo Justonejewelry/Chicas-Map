@@ -1,11 +1,11 @@
 /* Chica Map — premium page polish */
-:root{--cp-green:#17633a;--cp-green-dark:#0d3f25;--cp-red:#c92323;--cp-gold:#d69b35;--cp-cream:#fffaf0;--cp-ink:#171513;--cp-muted:#6f675d;--cp-line:#e7e0d5;--cp-shadow:0 22px 65px rgba(30,25,18,.11)}
+:root{--cp-green:#17633a;--cp-green-dark:#0d3f25;--cp-red:#c92323;--cp-gold:#d69b35;--cp-cream:#fffaf0;--cp-ink:#171513;--cp-muted:#6f675d;--cp-line:#e7e0d5;--cp-shadow:0 22px 65px rgba(30,25,18,.1)}
 body{color:var(--cp-ink)}
-.v-nav,.lnav{backdrop-filter:blur(16px);background:rgba(255,255,255,.9)!important;border-bottom:1px solid rgba(231,224,213,.8);box-shadow:0 8px 30px rgba(30,25,18,.045);position:sticky;top:0;z-index:100}
+.v-nav,.lnav{backdrop-filter:blur(16px);background:rgba(255,255,255,.9)!important;border-bottom:1px solid rgba(231,224,213,.8);box-shadow:0 8px 30px rgba(30,25,18,.045);position:sticky;top:0;z-index:1100}
 .v-brand,.lbrand{font-weight:900;letter-spacing:-.035em}
 .v-brand img,.lbrand img{box-shadow:0 3px 10px rgba(0,0,0,.12)}
-.v-hero{padding:clamp(30px,6vw,72px) 18px 28px!important;background:radial-gradient(circle at 80% 20%,rgba(214,155,53,.13),transparent 28rem),radial-gradient(circle at 12% 12%,rgba(23,99,58,.10),transparent 25rem),#f7f5f0}
-.v-hero-card{max-width:1180px!important;border:1px solid var(--cp-line)!important;border-radius:34px!important;box-shadow:var(--cp-shadow)!important;overflow:hidden!important;background:linear-gradient(135deg,#fff 0%,#f9f7f1 58%,#eef7f0 100%)!important}
+.v-hero{padding:clamp(30px,6vw,72px) 18px 28px!important;background:radial-gradient(circle at 80% 20%,rgba(214,155,53,.13),transparent 28rem),radial-gradient(circle at 12% 12%,rgba(23,99,58,.10),transparent 24rem),#f6f4ef!important}
+.v-hero-card{max-width:1180px!important;border:1px solid var(--cp-line)!important;border-radius:34px!important;box-shadow:var(--cp-shadow)!important;overflow:hidden!important;background:linear-gradient(180deg,#fff,#fbfaf7)}
 .v-hero-copy{padding:clamp(26px,5vw,62px)!important}
 .v-eyebrow{background:#eaf5ee!important;color:var(--cp-green)!important;border-color:#cde2d4!important;font-weight:900!important}
 .v-hero h1{font-size:clamp(3rem,7vw,6.1rem)!important;letter-spacing:-.065em!important}
@@ -13,9 +13,10 @@ body{color:var(--cp-ink)}
 .v-lead{max-width:680px!important;font-size:1.08rem!important}
 .v-hero-visual{min-height:430px!important;background:linear-gradient(160deg,#e9f5ee,#fff8eb)!important;position:relative;display:grid!important;place-items:center!important}
 .v-hero-visual picture{display:none!important}
-.v-hero-visual:before{content:"CHICAS";display:block;font-size:clamp(4rem,8vw,7.2rem);font-weight:1000;font-style:italic;letter-spacing:-.08em;color:#fff;line-height:.8;text-shadow:2px 2px 0 var(--cp-red),-2px -2px 0 var(--cp-red),0 12px 25px rgba(0,0,0,.13);transform:rotate(-5deg);font-family:Georgia,serif}
-.v-hero-visual:after{content:"GARAGE SALE  •  MAP";position:absolute;bottom:27%;left:10%;right:10%;padding:13px 12px;background:var(--cp-red);color:#fff;border:5px solid #15120f;box-shadow:0 8px 0 rgba(21,18,15,.18);font-size:clamp(1rem,2vw,1.6rem);font-weight:1000;letter-spacing:.16em;text-align:center;transform:rotate(-2deg);clip-path:polygon(3% 0,97% 0,100% 50%,97% 100%,3% 100%,0 50%)}
-.v-hero-badge{z-index:3;bottom:24px!important;right:24px!important;background:rgba(255,255,255,.94)!important;border:1px solid var(--cp-line)!important;box-shadow:0 12px 30px rgba(30,25,18,.10)!important}
+.v-hero-visual:before{content:"CHICAS";display:block;font-size:clamp(4rem,8vw,7.2rem);font-weight:1000;font-style:italic;letter-spacing:-.08em;color:#fff;line-height:.8;text-shadow:2px 2px 0 var(--cp-green-dark)}
+/* Removed the red "GARAGE SALE • MAP" banner overlay */
+.v-hero-visual:after{display:none!important}
+.v-hero-badge{z-index:3;bottom:24px!important;right:24px!important;background:rgba(255,255,255,.94)!important;border:1px solid var(--cp-line)!important;box-shadow:0 12px 30px rgba(30,25,18,.10)!important;padding:8px 12px;border-radius:10px!important}
 .v-section{padding-top:64px!important;padding-bottom:64px!important}
 .v-card{border:1px solid var(--cp-line)!important;border-radius:20px!important;box-shadow:0 12px 35px rgba(30,25,18,.055)!important;transition:transform .2s ease,box-shadow .2s ease!important}
 .v-card:hover{transform:translateY(-4px);box-shadow:0 18px 42px rgba(30,25,18,.10)!important}
@@ -31,7 +32,7 @@ body{color:var(--cp-ink)}
 .sponsor-page .sp-hero{padding:42px 20px 30px;border-radius:32px;background:linear-gradient(135deg,#123e27,#17633a 55%,#215f3e);box-shadow:var(--cp-shadow);margin-bottom:22px;position:relative;overflow:hidden}
 .sponsor-page .sp-hero:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-150px;top:-210px;background:rgba(255,255,255,.07)}
 .sponsor-page .sp-hero-img{display:none!important}
-.sponsor-page .sp-hero:after{content:"CHICAS\A GARAGE SALE MAP";white-space:pre;display:block;margin:0 auto 18px;color:#fff;font-family:Georgia,serif;font-style:italic;font-weight:900;font-size:clamp(2.3rem,6vw,5.2rem);line-height:.82;letter-spacing:-.06em;text-shadow:2px 3px 0 var(--cp-red);transform:rotate(-3deg);max-width:800px}
+.sponsor-page .sp-hero:after{content:"CHICAS\A GARAGE SALE MAP";white-space:pre;display:block;margin:0 auto 18px;color:#fff;font-family:Georgia,serif;font-style:italic;font-weight:900;font-size:clamp(1.5rem,3.5vw,2.8rem);text-align:center}
 .sponsor-page .sp-hero h1{font-size:clamp(2rem,4.5vw,4rem)!important;margin-top:6px!important;position:relative;z-index:2}
 .sponsor-page .sp-hero p{position:relative;z-index:2;font-size:1rem!important}
 .sponsor-page .sp-card{border:1px solid var(--cp-line)!important;border-radius:22px!important;padding:25px 27px!important;box-shadow:0 12px 38px rgba(30,25,18,.06)!important}
@@ -47,15 +48,15 @@ body{color:var(--cp-ink)}
 .backyard-page{background:radial-gradient(circle at 12% 10%,rgba(23,99,58,.09),transparent 25rem),radial-gradient(circle at 90% 8%,rgba(214,155,53,.11),transparent 22rem),#f5f3ee!important}
 .backyard-page .by-layout{max-width:1120px!important;margin:0 auto!important;padding:38px 18px 70px!important}
 .backyard-page .chica-talk{margin:0 auto 28px!important}
-.backyard-page .ct-card{border:1px solid var(--cp-line)!important;border-radius:24px!important;box-shadow:var(--cp-shadow)!important;background:linear-gradient(135deg,#fff,#f2f8f3)!important;padding:22px!important}
+.backyard-page .ct-card{border:1px solid var(--cp-line)!important;border-radius:24px!important;box-shadow:var(--cp-shadow)!important;background:linear-gradient(135deg,#fff,#f2f8f3)!important;padding:18px!important}
 .backyard-page .ct-avatar{width:92px!important;height:92px!important;border:4px solid #fff!important;box-shadow:0 10px 25px rgba(0,0,0,.10)!important}
 .backyard-page .ct-bubble{border-radius:20px!important;border:1px solid #dfe9e2!important;background:#fff!important}
-.backyard-page .meet-cheeks,.backyard-page .share-section,.backyard-page .comment-section,.backyard-page .featured-adventure,.backyard-page .by-col,.backyard-page .by-post-view{border:1px solid var(--cp-line)!important;border-radius:24px!important;background:rgba(255,255,255,.86)!important;box-shadow:0 14px 45px rgba(30,25,18,.065)!important}
+.backyard-page .meet-cheeks,.backyard-page .share-section,.backyard-page .comment-section,.backyard-page .featured-adventure,.backyard-page .by-col,.backyard-page .by-post-view{border:1px solid var(--cp-line)!important}
 .backyard-page .meet-cheeks{padding:28px!important;margin-bottom:24px}
 .backyard-page .mc-header h2{font-size:clamp(2rem,4vw,3rem)!important;letter-spacing:-.05em}
 .backyard-page .mc-bio-card{border:1px solid #e5dfd5!important;border-radius:22px!important;background:linear-gradient(135deg,#fff,#fffaf0)!important;box-shadow:none!important;overflow:hidden}
 .backyard-page .mc-bio-photo-wrap{background:linear-gradient(145deg,#eaf5ee,#fff5df)!important}
-.backyard-page .mc-bio-photo-wrap:after{content:"CHICAS\A GARAGE SALE MAP";white-space:pre;display:block;color:#fff;font-family:Georgia,serif;font-style:italic;font-weight:900;font-size:clamp(1.5rem,3vw,2.6rem);line-height:.85;text-align:center;text-shadow:2px 2px 0 var(--cp-red);transform:rotate(-4deg);margin:12px auto}
+.backyard-page .mc-bio-photo-wrap:after{content:"CHICAS\A GARAGE SALE MAP";white-space:pre;display:block;color:#fff;font-family:Georgia,serif;font-style:italic;font-weight:900;font-size:clamp(1.5rem,3.5vw,2rem)}
 .backyard-page #mcHero{display:none!important}
 .backyard-page .share-section,.backyard-page .comment-section,.backyard-page .featured-adventure{padding:25px!important;margin-bottom:24px}
 .backyard-page .share-grid{gap:9px!important}
@@ -64,4 +65,4 @@ body{color:var(--cp-ink)}
 .backyard-page .by-grid{gap:24px!important}
 .backyard-page .by-col{padding:24px!important}
 .backyard-page .by-section-title{font-size:1.15rem!important;letter-spacing:-.02em}
-@media(max-width:700px){.v-hero-visual{min-height:300px!important}.v-hero-visual:after{bottom:24%}.sponsor-page .sp-hero:after{font-size:2.4rem}.backyard-page .by-layout{padding:22px 12px 50px!important}.backyard-page .ct-card{padding:15px!important}}
+@media(max-width:700px){.v-hero-visual{min-height:300px!important}.v-hero-visual:after{bottom:24%}.sponsor-page .sp-hero:after{font-size:2.4rem}.backyard-page .by-layout{padding:22px 12px 50px!important}}
