@@ -66,8 +66,8 @@
       "in_person": false,
       "external_id": "eso-2455523",
       "categories": [
-        "online-auction",
-        "estate-sale"
+        "estate-sale",
+        "online-auction"
       ]
     },
     {
@@ -186,13 +186,13 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.062451131656484,
-      "lon": -97.84333635284752,
+      "lat": 30.062136722745237,
+      "lon": -97.83971401447914,
       "geocode": "source",
       "company": "Creative Estate Sales",
       "in_person": true,
@@ -416,6 +416,30 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "cl-moonestatesaleisuqkf4tiuncluqydt54hf"
+    },
+    {
+      "address": "1430 big bend dr near Hill country, Austin, TX",
+      "dates": "2026-08-11 – 2026-08-13",
+      "date_from": "2026-08-11",
+      "date_to": "2026-08-13",
+      "end_date": "2026-08-13",
+      "hours": null,
+      "title": "Garage sale    Toys.  Clothes.   Tools.   Car Parts",
+      "details": "QR Code Link to This Post Garage sale on Big Bend this weekend clothes. (Adult male/L boy) Toys. - hot wheels, Pokémon,nerf things Tools - large air compressor,welder Car parts - 66 T-Bird, 2spd glide, moon cap rims, ‘67 Impala trim…. Lots of random stuff ** 1430 Big Bend Dr, cedar park ** The garages are connected behind the houses with an ally way. Sat and Sunday…. I’ll be out there about 7:30",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/cedar-park-garage-sale-toys-clothes/r3Gkb95zZUFye1QjBFxkjo",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 30.529243,
+      "lon": -97.824905,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-saletoysclothesr3gkb95zzufye1qjbfxkjo"
     }
   ],
   "permits": [],
@@ -437,7 +461,7 @@
     "yardsalesearch.com"
   ],
   "status": "live",
-  "total_locations": 18,
+  "total_locations": 19,
   "date": "2026-08-11",
-  "last_refresh": "2026-08-11T17:38:38-05:00"
+  "last_refresh": "2026-08-11T20:42:10-05:00"
 }
