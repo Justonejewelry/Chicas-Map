@@ -23,8 +23,8 @@
       "in_person": true,
       "external_id": "yss-224goldenbeardraustintx78738-2026-08-12",
       "categories": [
-        "in-person",
-        "estate-sale"
+        "estate-sale",
+        "in-person"
       ]
     },
     {
@@ -66,8 +66,8 @@
       "in_person": false,
       "external_id": "eso-2455523",
       "categories": [
-        "estate-sale",
-        "online-auction"
+        "online-auction",
+        "estate-sale"
       ]
     },
     {
@@ -168,8 +168,8 @@
       "in_person": true,
       "external_id": "yss-308portsmouthdrgeorgetowntx78633-2026-08-14",
       "categories": [
-        "in-person",
-        "estate-sale"
+        "estate-sale",
+        "in-person"
       ]
     },
     {
@@ -186,13 +186,13 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "in-person",
-        "estate-sale"
+        "estate-sale",
+        "in-person"
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.062136722745237,
-      "lon": -97.83971401447914,
+      "lat": 30.06286435479698,
+      "lon": -97.84471678552086,
       "geocode": "source",
       "company": "Creative Estate Sales",
       "in_person": true,
@@ -440,6 +440,31 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "cl-saletoysclothesr3gkb95zzufye1qjbfxkjo"
+    },
+    {
+      "address": "404 Hunt LN, Austin, TX",
+      "dates": "2026-08-11 – 2026-08-13",
+      "date_from": "2026-08-11",
+      "date_to": "2026-08-13",
+      "end_date": "2026-08-13",
+      "hours": null,
+      "title": "Moving to smaller place must lighten the load",
+      "details": "QR Code Link to This Post Tools, Fishing gear, Hunting clothes and gear, Wood finishing material, TV, Computer monitor and equipment, Cd player, VHS player, TV stand, and 26 years of \"I'll keep that, might need it someday\" stuff. Friday 5pm til 9pm-Sat 7Am til 1pm",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/manchaca-moving-to-smaller-place-must/mgFFgTgjpUfDu73Bb32Svv",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale",
+        "moving-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 30.124172,
+      "lon": -97.861752,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-mallerplacemustmgffgtgjpufdu73bb32svv"
     }
   ],
   "permits": [],
@@ -461,7 +486,7 @@
     "yardsalesearch.com"
   ],
   "status": "live",
-  "total_locations": 19,
+  "total_locations": 20,
   "date": "2026-08-11",
-  "last_refresh": "2026-08-11T20:42:10-05:00"
+  "last_refresh": "2026-08-11T23:04:34-05:00"
 }
