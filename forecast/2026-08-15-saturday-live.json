@@ -1,0 +1,92 @@
+{
+  "generated_at": "2026-08-15T07:00:00-05:00",
+  "target": "2026-08-15 Saturday LIVE (focused Discovery + Sentinel morning pass — Atlas)",
+  "city": "san-antonio",
+  "status": "verified",
+  "confidence": 0.85,
+  "notes": "Saturday morning live pass. Classic volume confirmed. Added 3211 Morning Creek multi-family. Stone Oak, Cibolo, Eastside, Northeast strong. Tools, brand clothing, furniture, antiques leading. Heat risk high — early start mandatory.",
+  "days": {
+    "friday": {"stars": 3, "predicted_sales": 8, "status": "warmup"},
+    "saturday": {"stars": 4, "predicted_sales": 16, "status": "peak-live"},
+    "sunday": {"stars": 3, "predicted_sales": 7, "status": "residual"}
+  },
+  "weather_impact": {
+    "condition": "Partly cloudy / hot",
+    "high_f": 96,
+    "low_f": 77,
+    "risk": "heat",
+    "shopping_quality": "excellent before 9am; heat index ~105 after 10am — hydrate and early routes only"
+  },
+  "hot_zones": [
+    "Stone Oak / 78248",
+    "Cibolo / Northview",
+    "Eastside / Olive corridor 78202",
+    "Northeast / 78247 Morning Creek",
+    "Alamo Ranch / Far West",
+    "Helotes residual estates"
+  ],
+  "best_categories": ["tools", "furniture", "brand clothing", "household", "baby items", "antiques", "jewelry", "electronics"],
+  "verified_highlights": [
+    {
+      "title": "Garage Sale — tools & household",
+      "area": "710 N Olive St, 78202",
+      "dates": "Aug 15-16",
+      "hours": "weekend",
+      "categories": ["tools", "clothes", "household"],
+      "confidence": 0.90
+    },
+    {
+      "title": "Huge Garage Sale — brand clothing & furniture",
+      "area": "2122 Fallow Run, 78248 (Stone Oak)",
+      "dates": "Aug 14-15",
+      "hours": "8am-3pm",
+      "categories": ["clothing", "shoes", "jewelry", "furniture", "baby"],
+      "confidence": 0.92
+    },
+    {
+      "title": "Multi-family — antiques & name brand",
+      "area": "123 Northview Cir, Cibolo 78108",
+      "dates": "Aug 14-15",
+      "hours": "9am-3pm",
+      "categories": ["antiques", "clothes", "fixtures", "electronics"],
+      "confidence": 0.90
+    },
+    {
+      "title": "Multi Family Garage Sale — electronics & vintage",
+      "area": "3211 Morning Crk, 78247",
+      "dates": "Aug 14-15",
+      "hours": "Fri-Sat",
+      "categories": ["electronics", "furniture", "vintage", "decor"],
+      "confidence": 0.88
+    },
+    {
+      "title": "Community Yard Sale",
+      "area": "9215 Osage Valley",
+      "dates": "Aug 15",
+      "hours": "Saturday",
+      "confidence": 0.82
+    },
+    {
+      "title": "Ongoing art liquidation",
+      "area": "8645 Fredericksburg Rd, 78240",
+      "dates": "through Aug 16",
+      "categories": ["art", "wall hangings"],
+      "confidence": 0.85
+    }
+  ],
+  "source_breakdown": {
+    "estate": 5,
+    "craigslist": 4,
+    "facebook": 0,
+    "nextdoor": 0,
+    "permit": 0,
+    "other": 9
+  },
+  "selene_briefing_draft": "¡Buenos días San Antonio! Saturday peak is live. Stone Oak, Cibolo, Eastside and Morning Creek leading with tools, furniture and brand finds. Partly cloudy, high 96 with heat index near 105 — hit the early routes before 9. Be hunting, y'all!",
+  "meta": {
+    "heritage_records": 5,
+    "last_sentinel_pass": "2026-08-15T07:00:00-05:00",
+    "schema_version": "1.1",
+    "atlas_pass": "focused Discovery + Sentinel Saturday morning live"
+  }
+}
