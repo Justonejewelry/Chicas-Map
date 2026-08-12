@@ -23,8 +23,8 @@
       "in_person": true,
       "external_id": "yss-224goldenbeardraustintx78738-2026-08-12",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ]
     },
     {
@@ -66,8 +66,8 @@
       "in_person": false,
       "external_id": "eso-2455523",
       "categories": [
-        "online-auction",
-        "estate-sale"
+        "estate-sale",
+        "online-auction"
       ]
     },
     {
@@ -168,8 +168,8 @@
       "in_person": true,
       "external_id": "yss-308portsmouthdrgeorgetowntx78633-2026-08-14",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ]
     },
     {
@@ -191,8 +191,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.062594861444484,
-      "lon": -97.840305628482,
+      "lat": 30.05987297858426,
+      "lon": -97.84083496732666,
       "geocode": "source",
       "company": "Creative Estate Sales",
       "in_person": true,
@@ -465,6 +465,28 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "cl-mallerplacemustmgffgtgjpufdu73bb32svv"
+    },
+    {
+      "address": "200 Cottontail Ln, Georgetown, TX 78626",
+      "dates": "2026-08-15 – 2026-08-16",
+      "date_from": "2026-08-15",
+      "date_to": "2026-08-16",
+      "end_date": "2026-08-16",
+      "title": "Estate Sale",
+      "details": "",
+      "source": "YardSaleSearch",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196345057",
+      "photos": 0,
+      "type": "estate",
+      "confidence": 0.88,
+      "status": "verified",
+      "lat": 30.61128,
+      "lon": -97.671561,
+      "geocode": "source",
+      "external_id": "yss-200cottontaillngeorgetowntx78626-2026-08-15",
+      "categories": [
+        "estate-sale"
+      ]
     }
   ],
   "permits": [],
@@ -486,7 +508,7 @@
     "yardsalesearch.com"
   ],
   "status": "live",
-  "total_locations": 20,
+  "total_locations": 21,
   "date": "2026-08-12",
-  "last_refresh": "2026-08-12T02:20:40-05:00"
+  "last_refresh": "2026-08-12T04:08:54-05:00"
 }
