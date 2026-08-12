@@ -1,60 +1,561 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chicas Garage Sale Map — Verified Sales</title>
-  <meta name="description" content="Find verified garage, yard, and estate sales near you. Near Me, routes, and weekend intel for San Antonio and Texas." />
-  <meta name="theme-color" content="#1a6b3c" />
-  <meta property="og:type" content="website" /><meta property="og:url" content="https://justonejewelry.github.io/Chicas-Map/" /><meta property="og:title" content="Chicas Garage Sale Map" /><meta pr[...]
- 
-  <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getEle
-  <link rel="icon" type="image/x-icon" href="favicon.ico" /><link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" /><link rel="icon" type="image/png" sizes="48x48" href="favicon-48[...]
-  <link rel="preload" as="image" href="assets/chica/chica-logo.png?v=3" type="image/png" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/voss.css" /><link rel="stylesheet" href="css/chica-sign.css" /><link rel="stylesheet" href="css/chica-polish.css" />
-  <style>
-    .v-brand img { object-fit:contain; border-radius:10px; background:#fff; }
-    .v-hero-visual { display:flex; align-items:center; justify-content:center; min-height:420px; padding:18px; }
-    .chica-master-logo { display:block; width:min(100%,520px); height:auto; filter:drop-shadow(0 24px 38px rgba(0,0,0,.16)); }
-    @media (max-width:700px) { .v-hero-visual { min-height:300px; padding:8px; } .chica-master-logo { width:min(100%,390px); } }
-  </style>
-  <script src="js/chica-config.js"></script><script src="js/chica-analytics.js"></script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Chicas Garage Sale Map — Verified Sales, San Antonio</title>
+<meta name="description" content="Find verified garage, yard, and estate sales near you. Near Me, routes, and weekend intel for San Antonio and Texas." />
+<meta name="theme-color" content="#14532b" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#1c1712;
+    --sand:#f5efe2;
+    --sand-deep:#ece2cc;
+    --paper:#fffdf8;
+    --pine:#14532b;
+    --pine-deep:#0c3a1d;
+    --pine-soft:#e3ede4;
+    --clay:#a8461f;
+    --clay-soft:#f6ded0;
+    --line:#ddd2b8;
+    --muted:#6b6152;
+    --display: "Fraunces", Georgia, serif;
+    --body: "Inter", system-ui, -apple-system, sans-serif;
+    --mono: "Space Mono", ui-monospace, monospace;
+    --radius: 22px;
+    --shadow: 0 30px 70px -30px rgba(20,15,10,0.35);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} *{animation:none !important; transition:none !important;} }
+  body{
+    margin:0; background:var(--sand); color:var(--ink);
+    font-family:var(--body); line-height:1.55; -webkit-font-smoothing:antialiased;
+    background-image: radial-gradient(circle at 8% 4%, rgba(20,83,43,0.06), transparent 32rem),
+                       radial-gradient(circle at 96% 12%, rgba(168,70,31,0.05), transparent 28rem);
+  }
+  a{color:inherit;}
+  img{max-width:100%; display:block;}
+  :focus-visible{outline:3px solid var(--clay); outline-offset:3px; border-radius:6px;}
+
+  .wrap{max-width:1180px; margin:0 auto; padding-inline:24px;}
+
+  /* ---------- Nav ---------- */
+  .cm-nav{
+    position:sticky; top:0; z-index:40;
+    background:rgba(245,239,226,0.86); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .cm-nav-row{display:flex; align-items:center; gap:28px; padding:14px 24px;}
+  .cm-brand{display:flex; align-items:center; gap:10px; font-family:var(--display); font-weight:600; font-size:1.2rem; letter-spacing:-0.01em; text-decoration:none;}
+  .cm-brand .paw{color:var(--clay); font-size:1rem;}
+  .cm-links{display:flex; gap:6px; margin-left:8px; font-weight:600; font-size:0.92rem;}
+  .cm-nav-actions{margin-left:auto; display:flex; gap:10px; align-items:center;}
+
+  /* ---------- Desktop menu groups ---------- */
+  .cm-menu{position:relative;}
+  .cm-menu-btn{
+    display:flex; align-items:center; gap:6px; background:none; border:none; cursor:pointer;
+    font-family:var(--body); font-weight:600; font-size:0.92rem; color:var(--muted);
+    padding:8px 10px; border-radius:8px;
+  }
+  .cm-menu-btn .car{font-size:0.65rem; transition:transform .15s ease; color:var(--clay);}
+  .cm-menu-btn:hover{color:var(--pine-deep); background:var(--pine-soft);}
+  .cm-menu.open .cm-menu-btn{color:var(--pine-deep); background:var(--pine-soft);}
+  .cm-menu.open .cm-menu-btn .car{transform:rotate(180deg);}
+  .cm-menu-drop{
+    position:absolute; top:calc(100% + 8px); left:0; min-width:190px;
+    background:var(--paper); border:1px solid var(--line); border-radius:14px;
+    box-shadow:0 20px 40px -16px rgba(20,15,10,0.28); padding:8px; z-index:60;
+    opacity:0; visibility:hidden; transform:translateY(-4px);
+    transition:opacity .12s ease, transform .12s ease, visibility .12s;
+  }
+  .cm-menu.open .cm-menu-drop{opacity:1; visibility:visible; transform:translateY(0);}
+  .cm-menu-drop a{
+    display:flex; flex-direction:column; gap:2px; text-decoration:none; color:var(--ink);
+    padding:9px 10px; border-radius:8px; font-weight:600; font-size:0.9rem;
+  }
+  .cm-menu-drop a:hover, .cm-menu-drop a:focus-visible{background:var(--pine-soft); color:var(--pine-deep);}
+  .cm-menu-drop a small{font-weight:500; color:var(--muted); font-size:0.76rem;}
+
+  /* ---------- Mobile hamburger + panel ---------- */
+  .cm-hamburger{
+    display:none; background:none; border:1px solid var(--line); border-radius:10px;
+    width:40px; height:40px; align-items:center; justify-content:center; cursor:pointer; color:var(--pine-deep);
+  }
+  .cm-mobile-panel{
+    display:none; position:fixed; inset:0; z-index:80;
+  }
+  .cm-mobile-panel.open{display:block;}
+  .cm-mobile-backdrop{position:absolute; inset:0; background:rgba(20,15,10,0.4);}
+  .cm-mobile-sheet{
+    position:absolute; top:0; right:0; bottom:0; width:min(84vw,340px);
+    background:var(--sand); border-left:1px solid var(--line); padding:18px;
+    display:flex; flex-direction:column; gap:22px; overflow-y:auto;
+  }
+  .cm-mobile-head{display:flex; align-items:center; justify-content:space-between;}
+  .cm-mobile-close{background:none; border:1px solid var(--line); border-radius:10px; width:36px; height:36px; cursor:pointer; font-size:1.1rem;}
+  .cm-mobile-group h4{
+    margin:0 0 10px; font-family:var(--mono); font-size:0.7rem; text-transform:uppercase;
+    letter-spacing:0.08em; color:var(--clay);
+  }
+  .cm-mobile-group a{
+    display:block; text-decoration:none; color:var(--ink); font-weight:700; font-size:1.02rem;
+    padding:10px 4px; border-bottom:1px solid var(--line);
+  }
+  .cm-mobile-group a:last-child{border-bottom:none;}
+
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    font-family:var(--body); font-weight:700; font-size:0.92rem;
+    padding:12px 20px; border-radius:999px; border:1px solid transparent; cursor:pointer;
+    text-decoration:none; transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+  }
+  .btn:hover{transform:translateY(-1px);}
+  .btn-primary{background:var(--pine); color:#fff; box-shadow:0 14px 30px -12px rgba(20,83,43,0.55);}
+  .btn-primary:hover{background:var(--pine-deep);}
+  .btn-ghost{background:transparent; color:var(--pine-deep); border-color:var(--line);}
+  .btn-ghost:hover{background:var(--paper); border-color:var(--pine);}
+  .btn-sm{padding:8px 14px; font-size:0.82rem;}
+
+  /* ---------- Hero ---------- */
+  .cm-hero{padding:64px 0 40px;}
+  .hero-grid{display:grid; grid-template-columns:1.05fr 0.95fr; gap:56px; align-items:center; position:relative;}
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px; font-family:var(--mono); font-size:0.72rem;
+    letter-spacing:0.08em; text-transform:uppercase; color:var(--pine-deep);
+    background:var(--pine-soft); border:1px solid #cfe0d1; padding:6px 12px; border-radius:999px; margin-bottom:20px;
+  }
+  .eyebrow::before{content:""; width:7px; height:7px; border-radius:50%; background:var(--pine); box-shadow:0 0 0 4px rgba(20,83,43,0.14);}
+  .cm-hero h1{
+    font-family:var(--display); font-weight:600; font-size:clamp(2.6rem, 5vw, 4.3rem);
+    line-height:0.98; letter-spacing:-0.02em; margin:0 0 20px; max-width:12ch;
+  }
+  .cm-hero h1 em{font-style:italic; color:var(--pine); font-weight:500;}
+  .hero-lead{font-size:1.12rem; color:var(--muted); max-width:46ch; margin:0 0 30px;}
+  .hero-cta{display:flex; flex-wrap:wrap; gap:12px; margin-bottom:28px;}
+  .hero-stats{display:flex; flex-wrap:wrap; gap:22px; font-size:0.85rem; color:var(--muted);}
+  .hero-stats strong{display:block; color:var(--ink); font-family:var(--mono); font-size:0.95rem;}
+
+  .hero-visual{position:relative;}
+  .hero-card{
+    position:relative; border-radius:var(--radius); background:linear-gradient(160deg,#eef3ec,var(--paper));
+    border:1px solid var(--line); box-shadow:var(--shadow); overflow:hidden;
+    aspect-ratio:1/1.02; display:flex; align-items:flex-end; justify-content:center; padding:10px;
+  }
+  .hero-card img{width:88%; height:auto; object-fit:contain; filter:drop-shadow(0 20px 26px rgba(20,15,10,0.22));}
+  .hero-fallback{width:100%; height:100%; display:none; align-items:center; justify-content:center;}
+  .hero-card.is-fallback .hero-fallback{display:flex;}
+  .hero-card.is-fallback img{display:none;}
+  .hero-badge{
+    position:absolute; left:16px; bottom:16px; right:16px;
+    background:rgba(255,253,248,0.95); border:1px solid var(--line); border-radius:14px;
+    padding:11px 14px; display:flex; align-items:center; justify-content:space-between; gap:10px;
+    font-size:0.85rem; font-weight:700; box-shadow:0 8px 22px rgba(20,15,10,0.1);
+  }
+  .hero-badge small{display:block; font-weight:600; color:var(--muted); font-size:0.74rem; margin-top:2px;}
+  .hero-badge .dot{width:8px; height:8px; border-radius:50%; background:var(--pine); flex-shrink:0; box-shadow:0 0 0 3px rgba(20,83,43,0.15);}
+
+  /* dashed route connecting headline to visual */
+  .route-line{position:absolute; inset:0; pointer-events:none; z-index:-1;}
+  .route-line svg{width:100%; height:100%;}
+  .route-line path{
+    fill:none; stroke:var(--clay); stroke-width:2.5; stroke-linecap:round;
+    stroke-dasharray:1 12; opacity:0.55;
+  }
+
+  /* ---------- Ticker ---------- */
+  .cm-ticker{
+    background:var(--pine-deep); color:#f3ece0; padding:16px 0; margin:44px 0 0;
+  }
+  .ticker-row{display:flex; flex-wrap:wrap; gap:14px 32px; align-items:center; justify-content:center; font-size:0.86rem;}
+  .ticker-row b{font-family:var(--mono); color:#fff; font-weight:700;}
+  .ticker-row span.sep{opacity:0.35;}
+
+  /* ---------- Hunt flow ---------- */
+  .cm-hunt{padding:76px 0 60px;}
+  .section-head{max-width:60ch; margin-bottom:48px;}
+  .section-kicker{font-family:var(--mono); font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--clay); margin-bottom:10px;}
+  .cm-hunt h2{font-family:var(--display); font-weight:600; font-size:clamp(1.9rem,3vw,2.5rem); margin:0 0 10px; letter-spacing:-0.015em;}
+  .section-head p{color:var(--muted); margin:0; font-size:1.02rem;}
+
+  .hunt-steps{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:0; position:relative; counter-reset:step;
+  }
+  .hunt-steps::before{
+    content:""; position:absolute; top:26px; left:calc(12.5% - 2px); right:calc(12.5% - 2px); height:0;
+    border-top:2px dashed #cbb98f;
+  }
+  .hunt-step{position:relative; padding:0 18px 0 0;}
+  .hunt-step:last-child{padding-right:0;}
+  .step-num{
+    width:52px; height:52px; border-radius:50%; background:var(--paper); border:2px solid var(--pine);
+    color:var(--pine-deep); font-family:var(--mono); font-weight:700; font-size:1.05rem;
+    display:flex; align-items:center; justify-content:center; margin-bottom:20px; position:relative; z-index:2;
+  }
+  .hunt-step h3{font-family:var(--display); font-weight:600; font-size:1.15rem; margin:0 0 8px;}
+  .hunt-step p{margin:0; color:var(--muted); font-size:0.92rem;}
+
+  .hunt-more{margin-top:40px; text-align:center;}
+  .hunt-more a{font-weight:700; color:var(--pine-deep); text-decoration:none; border-bottom:2px solid var(--clay); padding-bottom:2px; font-size:0.92rem;}
+
+  /* ---------- Email ---------- */
+  .cm-email{padding:0 0 76px;}
+  .email-card{
+    background:var(--paper); border:1px solid var(--line); border-radius:var(--radius);
+    padding:36px 40px; display:flex; align-items:center; justify-content:space-between; gap:30px; flex-wrap:wrap;
+    box-shadow:0 18px 40px -22px rgba(20,15,10,0.25);
+  }
+  .email-copy h3{font-family:var(--display); font-weight:600; font-size:1.4rem; margin:0 0 6px;}
+  .email-copy p{margin:0; color:var(--muted); font-size:0.94rem;}
+  .email-form{display:flex; gap:10px; flex-wrap:wrap;}
+  .email-form input[type="email"]{
+    border:1px solid var(--line); border-radius:999px; padding:12px 16px; font-family:inherit;
+    font-size:0.92rem; min-width:220px; background:var(--sand);
+  }
+  .email-form input:focus{outline:none; border-color:var(--pine);}
+
+  /* ---------- CTA ---------- */
+  .cm-cta{padding:0 0 80px;}
+  .cta-inner{
+    background:radial-gradient(circle at 15% 20%, rgba(255,255,255,0.08), transparent 60%), linear-gradient(135deg,var(--pine-deep),var(--pine));
+    color:#f3ece0; border-radius:28px; padding:56px 40px; text-align:center; position:relative; overflow:hidden;
+  }
+  .cta-inner h2{font-family:var(--display); font-weight:600; font-size:clamp(1.8rem,3.4vw,2.6rem); margin:0 0 12px; color:#fff;}
+  .cta-inner p{margin:0 0 26px; opacity:0.85; font-size:1.02rem;}
+  .cta-inner .btn-primary{background:#fff; color:var(--pine-deep); box-shadow:0 14px 30px -10px rgba(0,0,0,0.35);}
+  .cta-inner .btn-primary:hover{background:var(--sand);}
+
+  /* ---------- Footer ---------- */
+  .cm-foot{border-top:1px solid var(--line); padding:44px 0 40px;}
+  .foot-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:32px;}
+  .foot-brand strong{display:block; color:var(--ink); font-family:var(--display); font-size:1.15rem; font-weight:600; margin-bottom:6px;}
+  .foot-brand p{margin:0; color:var(--muted); font-size:0.88rem; max-width:32ch;}
+  .foot-group h4{
+    margin:0 0 12px; font-family:var(--mono); font-size:0.7rem; text-transform:uppercase;
+    letter-spacing:0.08em; color:var(--clay);
+  }
+  .foot-group ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:9px;}
+  .foot-group a{text-decoration:none; font-weight:600; font-size:0.9rem; color:var(--muted);}
+  .foot-group a:hover{color:var(--pine-deep);}
+  .foot-bottom{
+    max-width:1180px; margin:32px auto 0; padding:18px 24px 0; border-top:1px solid var(--line);
+    font-size:0.8rem; color:var(--muted);
+  }
+  @media (max-width:700px){
+    .foot-grid{grid-template-columns:1fr 1fr; gap:28px 20px;}
+    .foot-brand{grid-column:1 / -1;}
+  }
+
+  @media (max-width: 940px){
+    .hero-grid{grid-template-columns:1fr; gap:36px;}
+    .hero-visual{order:-1; max-width:340px; margin:0 auto;}
+    .cm-links{display:none;}
+    .cm-hamburger{display:flex;}
+    .hunt-steps{grid-template-columns:1fr 1fr; gap:32px 20px;}
+    .hunt-steps::before{display:none;}
+    .email-card{padding:28px 24px;}
+  }
+  @media (min-width: 941px){
+    .cm-mobile-panel{display:none !important;}
+  }
+  @media (max-width: 560px){
+    .hunt-steps{grid-template-columns:1fr;}
+    .cm-nav-row{gap:14px; padding:12px 18px;}
+    .cm-hero{padding:40px 0 24px;}
+    .cta-inner{padding:40px 22px;}
+  }
+</style>
 </head>
 <body>
-  <header class="v-nav">
-    <a class="v-brand" href="index.html">Chicas</a>
-    <nav class="v-links" aria-label="Primary"><a href="map.html">Map</a><a href="backyard.html">Backyard</a><a href="submit.html">List a sale</a><a href="sponsor.html">Sponsor</a></nav>
-    <div class="v-nav-actions"><button type="button" class="v-btn v-btn-ghost v-btn-sm v-btn-install" data-chica-install hidden>Add to Home</button><a class="v-btn v-btn-ghost" href="backyard.html[...]
-  </header>
-  <main>
-    <section class="v-hero">
-      <div class="v-hero-card">
-        <div class="v-hero-copy">
-          <div class="v-eyebrow">San Antonio · Live</div>
-          <h1>Every sale.<br/><span>Verified first.</span></h1>
-          <p class="v-lead">Chicas Garage Sale Map finds yard, garage, and estate sales before the weekend rush — with Near Me, multi-stop routes, and confidence you can act on.</p>
-          <div class="v-hero-cta"><a class="v-btn v-btn-primary v-btn-lg" href="map.html">Open the map</a><a class="v-btn v-btn-ghost v-btn-lg" href="submit.html">List your sale free</a></div>
-          <div class="v-hero-meta"><span><strong>Near Me</strong> · distance sort</span><span><strong>Routes</strong> · one tap</span><span><strong>Texas</strong> · expanding</span></div>
-        </div>
-        <div class="v-hero-visual" aria-label="Chicas Garage Sale Map logo">
-          <img class="chica-master-logo" src="assets/chica/chica-logo.png?v=3" alt="Chicas Garage Sale Map — Chica flying over a map of garage sale locations" width="500" height="500" decoding="[...]
-          <div class="v-hero-badge" id="weekendBadge">This weekend<small id="weekendZones">Loading hot zones…</small></div>
+
+<header class="cm-nav">
+  <div class="cm-nav-row wrap" style="max-width:1180px;margin:0 auto;">
+    <a class="cm-brand" href="index.html"><span class="paw">🐾</span> Chicas Map</a>
+
+    <nav class="cm-links" aria-label="Primary">
+      <div class="cm-menu" id="menuExplore">
+        <button type="button" class="cm-menu-btn" aria-haspopup="true" aria-expanded="false">Explore <span class="car">▾</span></button>
+        <div class="cm-menu-drop" role="menu">
+          <a href="map.html" role="menuitem">Map<small>Search &amp; route live sales</small></a>
+          <a href="backyard.html" role="menuitem">Backyard<small>Chica's blog &amp; videos</small></a>
         </div>
       </div>
-    </section>
-    <section class="v-section"><div class="v-section-head"><h2>Built for the hunt</h2><p>Less noise. More signal. Designed for Thursday through Saturday.</p></div><div class="v-grid-4">
-      <article class="v-card"><div class="v-card-icon">📍</div><h3>Near Me</h3><p>Share location or enter a ZIP. Sales sort by distance so you stop guessing.</p></article>
-      <article class="v-card"><div class="v-card-icon">✓</div><h3>Verified</h3><p>Duplicates, fakes, and dead addresses are filtered before they hit the map.</p></article>
-      <article class="v-card"><div class="v-card-icon">↗</div><h3>Routes</h3><p>Star stops, build a multi-stop path, open it in Google, Apple Maps, or Waze.</p></article>
-      <article class="v-card"><div class="v-card-icon">🐕</div><h3>Intel</h3><p>Weekend forecast and tips from Chica — the smallest supervisor on the block.</p></article>
-    </div></section>
-    <div class="v-email-strip"><div class="v-email-card"><div><h3>Join Chica’s Email Updates</h3><p>Friday briefing: hot zones, new sales, and weekend routes. Free. No spam.</p></div><form class[...]
-    <div class="v-sponsor-strip"><a class="v-sponsor-inner" href="sponsor.html"><picture><source srcset="sponsorsign.webp" type="image/webp" /><img src="sponsorsign.png" alt="Cheeks sponsor sign" [...]
-    <section class="v-cta"><div class="v-cta-inner"><h2>Ready for Saturday?</h2><p>Open the live map — free, fast, and built around real sales.</p><div style="display:flex;flex-wrap:wrap;gap:10p[...]
-  </main>
-  <footer class="v-foot"><div><strong>Chicas Garage Sale Map</strong>GSIN</div><div class="v-foot-links"><a href="map.html">Map</a><a href="backyard.html">Backyard</a><a href="submit.html">List a sale</a><a href="sponsor.html">Sponsor</a></div></footer>
-  <script src="js/chica-forms.js"></script><script src="js/chica-pwa.js"></script>
-  <script>(function(){if(window.ChicaForms){ChicaForms.bindEmailForm(document.getElementById("emailForm"),{statusEl:document.getElementById("emailStatus"),source:"home"});}fetch("data/cities/san-a[...]
+      <div class="cm-menu" id="menuCommunity">
+        <button type="button" class="cm-menu-btn" aria-haspopup="true" aria-expanded="false">Community <span class="car">▾</span></button>
+        <div class="cm-menu-drop" role="menu">
+          <a href="submit.html" role="menuitem">List a sale<small>Free, verified listing</small></a>
+          <a href="sponsor.html" role="menuitem">Sponsor<small>Support the map</small></a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="cm-nav-actions">
+      <button type="button" class="btn btn-ghost btn-sm" data-chica-install hidden>Add to Home</button>
+      <a class="btn btn-primary btn-sm" href="map.html">Open the map</a>
+      <button type="button" class="cm-hamburger" id="mobileMenuBtn" aria-haspopup="true" aria-expanded="false" aria-controls="mobilePanel" aria-label="Open menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<div class="cm-mobile-panel" id="mobilePanel">
+  <div class="cm-mobile-backdrop" id="mobileBackdrop"></div>
+  <div class="cm-mobile-sheet" role="dialog" aria-modal="true" aria-label="Site menu">
+    <div class="cm-mobile-head">
+      <span class="cm-brand" style="font-size:1.05rem;"><span class="paw">🐾</span> Chicas Map</span>
+      <button type="button" class="cm-mobile-close" id="mobileCloseBtn" aria-label="Close menu">×</button>
+    </div>
+    <div class="cm-mobile-group">
+      <h4>Explore</h4>
+      <a href="map.html">Map</a>
+      <a href="backyard.html">Backyard</a>
+    </div>
+    <div class="cm-mobile-group">
+      <h4>Community</h4>
+      <a href="submit.html">List a sale</a>
+      <a href="sponsor.html">Sponsor</a>
+    </div>
+    <a class="btn btn-primary" href="map.html" style="margin-top:auto;">Open the map</a>
+  </div>
+</div>
+
+<main>
+  <section class="cm-hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">San Antonio · Live</span>
+        <h1>Every sale.<br /><em>Verified first.</em></h1>
+        <p class="hero-lead">Chicas Garage Sale Map finds yard, garage, and estate sales before the weekend rush — with Near Me search, multi-stop routes, and confidence you can act on.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="map.html">Open the map</a>
+          <a class="btn btn-ghost" href="submit.html">List your sale, free</a>
+        </div>
+        <div class="hero-stats">
+          <span><strong>Near Me</strong>distance sort</span>
+          <span><strong>Routes</strong>one tap to go</span>
+          <span><strong>Texas</strong>expanding weekly</span>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="route-line" aria-hidden="true">
+          <svg viewBox="0 0 400 420" preserveAspectRatio="none">
+            <path d="M -20 40 C 120 10, 180 120, 340 90 S 420 220, 300 260" />
+          </svg>
+        </div>
+        <div class="hero-card" id="heroCard">
+          <img id="heroLogo" src="assets/chica/chica-logo.png?v=4" alt="Chica, a chihuahua in a red cape, flying over a map of garage sale pins" width="480" height="480" />
+          <div class="hero-fallback" aria-hidden="true">
+            <svg viewBox="0 0 220 220" width="72%" role="img" aria-label="Route map illustration">
+              <circle cx="110" cy="110" r="96" fill="none" stroke="#cfe0d1" stroke-width="2"/>
+              <path d="M30 150 C 60 90, 110 170, 150 90 S 190 60, 195 40" fill="none" stroke="#a8461f" stroke-width="2.5" stroke-dasharray="1 10" stroke-linecap="round"/>
+              <circle cx="30" cy="150" r="8" fill="#14532b"/>
+              <circle cx="150" cy="90" r="8" fill="#14532b"/>
+              <circle cx="195" cy="40" r="10" fill="#a8461f"/>
+            </svg>
+          </div>
+          <div class="hero-badge">
+            <span>This weekend<small id="weekendZones">Loading hot zones…</small></span>
+            <span class="dot" aria-hidden="true"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cm-ticker">
+    <div class="wrap ticker-row">
+      <span><b>48</b> live sales</span>
+      <span class="sep">—</span>
+      <span>updated <b>4h</b> ago</span>
+      <span class="sep">—</span>
+      <span>weekend forecast <b>ready</b></span>
+    </div>
+  </div>
+
+  <section class="cm-hunt">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-kicker">How it works</div>
+        <h2>Four steps, then you're hunting.</h2>
+        <p>Less noise, more signal — designed for Thursday through Saturday.</p>
+      </div>
+      <div class="hunt-steps">
+        <div class="hunt-step">
+          <div class="step-num">01</div>
+          <h3>Set Near Me</h3>
+          <p>Share your location or enter a ZIP. Sales sort by distance so you stop guessing.</p>
+        </div>
+        <div class="hunt-step">
+          <div class="step-num">02</div>
+          <h3>See what's verified</h3>
+          <p>Duplicates, fakes, and dead addresses are filtered before they ever hit the map.</p>
+        </div>
+        <div class="hunt-step">
+          <div class="step-num">03</div>
+          <h3>Build your route</h3>
+          <p>Star the stops you want, and Chica strings them into one multi-stop plan.</p>
+        </div>
+        <div class="hunt-step">
+          <div class="step-num">04</div>
+          <h3>Go</h3>
+          <p>Open your route in Google Maps, Apple Maps, or Waze — and start the hunt.</p>
+        </div>
+      </div>
+      <div class="hunt-more"><a href="map.html">See every feature on the map →</a></div>
+    </div>
+  </section>
+
+  <section class="cm-email">
+    <div class="wrap">
+      <div class="email-card">
+        <div class="email-copy">
+          <h3>Join Chica's Friday briefing</h3>
+          <p>Hot zones, new sales, and weekend routes. Free. No spam.</p>
+        </div>
+        <form class="email-form" id="emailForm">
+          <label for="emailInput" style="position:absolute;left:-9999px;">Email address</label>
+          <input type="email" id="emailInput" name="email" placeholder="you@email.com" required />
+          <button type="submit" class="btn btn-primary">Join the list</button>
+        </form>
+      </div>
+      <p id="emailStatus" role="status" style="min-height:1.2em;margin:10px 4px 0;font-size:0.85rem;color:var(--pine-deep);font-weight:600;" hidden></p>
+    </div>
+  </section>
+
+  <section class="cm-cta">
+    <div class="wrap">
+      <div class="cta-inner">
+        <h2>Ready for Saturday?</h2>
+        <p>Open the live map — free, fast, and built around real sales.</p>
+        <a class="btn btn-primary" href="map.html">Open Chica Map</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="cm-foot">
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <strong>Chicas Garage Sale Map</strong>
+      <p>Verified garage, yard, and estate sales for San Antonio — expanding across Texas.</p>
+    </div>
+    <div class="foot-group">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="map.html">Map</a></li>
+        <li><a href="backyard.html">Backyard</a></li>
+      </ul>
+    </div>
+    <div class="foot-group">
+      <h4>Community</h4>
+      <ul>
+        <li><a href="submit.html">List a sale</a></li>
+        <li><a href="sponsor.html">Sponsor</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">Chica's Garage Sale Map — built for the hunt.</div>
+</footer>
+
+<script>
+  // Graceful fallback if the logo artwork isn't present at this path yet.
+  (function () {
+    var img = document.getElementById("heroLogo");
+    var card = document.getElementById("heroCard");
+    if (!img || !card) return;
+    img.addEventListener("error", function () {
+      card.classList.add("is-fallback");
+    });
+  })();
+
+  // Desktop dropdown menus (Explore / Community)
+  (function () {
+    var menus = Array.prototype.slice.call(document.querySelectorAll(".cm-menu"));
+    if (!menus.length) return;
+
+    function closeAll(except) {
+      menus.forEach(function (m) {
+        if (m === except) return;
+        m.classList.remove("open");
+        var btn = m.querySelector(".cm-menu-btn");
+        if (btn) btn.setAttribute("aria-expanded", "false");
+      });
+    }
+
+    menus.forEach(function (menu) {
+      var btn = menu.querySelector(".cm-menu-btn");
+      if (!btn) return;
+      btn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        var isOpen = menu.classList.contains("open");
+        closeAll();
+        if (!isOpen) {
+          menu.classList.add("open");
+          btn.setAttribute("aria-expanded", "true");
+        }
+      });
+    });
+
+    document.addEventListener("click", function () { closeAll(); });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") closeAll();
+    });
+  })();
+
+  // Mobile off-canvas menu
+  (function () {
+    var openBtn = document.getElementById("mobileMenuBtn");
+    var closeBtn = document.getElementById("mobileCloseBtn");
+    var backdrop = document.getElementById("mobileBackdrop");
+    var panel = document.getElementById("mobilePanel");
+    if (!openBtn || !panel) return;
+
+    function open() {
+      panel.classList.add("open");
+      openBtn.setAttribute("aria-expanded", "true");
+      document.body.style.overflow = "hidden";
+    }
+    function close() {
+      panel.classList.remove("open");
+      openBtn.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
+    }
+
+    openBtn.addEventListener("click", open);
+    if (closeBtn) closeBtn.addEventListener("click", close);
+    if (backdrop) backdrop.addEventListener("click", close);
+    panel.querySelectorAll("a").forEach(function (a) {
+      a.addEventListener("click", close);
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") close();
+    });
+  })();
+</script>
+<script src="js/chica-config.js"></script>
+<script src="js/chica-analytics.js"></script>
+<script src="js/chica-forms.js"></script>
+<script src="js/chica-pwa.js"></script>
+<script>
+  (function () {
+    if (window.ChicaForms) {
+      ChicaForms.bindEmailForm(document.getElementById("emailForm"), {
+        statusEl: document.getElementById("emailStatus"),
+        source: "home",
+      });
+    }
+    fetch("data/cities/san-antonio.json")
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (data) {
+        var el = document.getElementById("weekendZones");
+        if (el && data && data.hot_zones) el.textContent = data.hot_zones.join(", ");
+      })
+      .catch(function () {});
+  })();
+</script>
 </body>
 </html>
