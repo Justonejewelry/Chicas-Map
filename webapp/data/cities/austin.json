@@ -1,0 +1,11 @@
+{
+  "edition": "Austin Yard-Bird Discovery",
+  "city": "austin",
+  "public": [],
+  "hot_zones": ["North Austin", "Northwest Hills", "Lakeway", "Round Rock", "Cedar Park", "South Austin"],
+  "sources": ["craigslist.org", "estatesales.net", "estatesales.org", "garagesalefinder.com", "yardsalesearch.com"],
+  "total_locations": 25,
+  "status": "live",
+  "date": "2026-08-12",
+  "last_refresh": "2026-08-12T14:06:06-05:00"
+}
