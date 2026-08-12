@@ -1,6 +1,6 @@
 {
   "edition": "sunday",
-  "date": "2026-08-11",
+  "date": "2026-08-12",
   "city": "lubbock",
   "generated_at": "2026-08-01T16:00:00-05:00",
   "total_locations": 1,
@@ -37,5 +37,5 @@
     }
   ],
   "status": "live",
-  "last_refresh": "2026-08-11T20:42:10-05:00"
+  "last_refresh": "2026-08-12T05:58:51-05:00"
 }
