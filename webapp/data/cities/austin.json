@@ -72,11 +72,11 @@
     },
     {
       "address": "Johnson City, TX 78636",
-      "dates": "Wed Aug 12 – Sun Aug 16",
-      "date_from": "08/12/2026",
+      "dates": "Sat Aug 15 – Sun Aug 16",
+      "date_from": "08/15/2026",
       "date_to": "08/16/2026",
       "end_date": "2026-08-16",
-      "title": "Johnson City Takes You Back in Time! Appt Day is Wednesday!",
+      "title": "Johnson City Takes You Back in Time!",
       "details": "",
       "source": "GarageSaleFinder",
       "url": "https://garagesalefinder.com/s/NIKkU/johnson-city-tx-78636",
@@ -191,8 +191,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.05987297858426,
-      "lon": -97.84083496732666,
+      "lat": 30.059208228314766,
+      "lon": -97.84375152056883,
       "geocode": "source",
       "company": "Creative Estate Sales",
       "in_person": true,
@@ -510,5 +510,5 @@
   "status": "live",
   "total_locations": 21,
   "date": "2026-08-12",
-  "last_refresh": "2026-08-12T04:08:54-05:00"
+  "last_refresh": "2026-08-12T05:58:51-05:00"
 }
