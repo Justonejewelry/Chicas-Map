@@ -45,8 +45,8 @@
       "in_person": false,
       "external_id": "eso-2456237",
       "categories": [
-        "estate-sale",
-        "online-auction"
+        "online-auction",
+        "estate-sale"
       ]
     },
     {
@@ -296,8 +296,8 @@
       "in_person": false,
       "external_id": "eso-2456673",
       "categories": [
-        "estate-sale",
-        "online-auction"
+        "online-auction",
+        "estate-sale"
       ]
     },
     {
@@ -347,6 +347,52 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "cl-ntageestatesaledsbxpvkpkkbz16oht23msp"
+    },
+    {
+      "address": "3211 Morning Crk, San Antonio, TX 78247",
+      "dates": "2026-08-14 – 2026-08-15",
+      "date_from": "2026-08-14",
+      "date_to": "2026-08-15",
+      "end_date": "2026-08-15",
+      "title": "Multi Family Garage Sale",
+      "details": "",
+      "source": "YardSaleSearch",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196345095",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.88,
+      "status": "verified",
+      "lat": 29.575751,
+      "lon": -98.43519,
+      "geocode": "source",
+      "external_id": "yss-3211morningcrksanantoniotx78247-2026-08-14",
+      "categories": [
+        "garage-sale"
+      ]
+    },
+    {
+      "address": "3211 Morning Creek near Thousand Oaks/Jones Maltsberger, San Antonio, TX",
+      "dates": "2026-08-12 – 2026-08-14",
+      "date_from": "2026-08-12",
+      "date_to": "2026-08-14",
+      "end_date": "2026-08-14",
+      "hours": null,
+      "title": "Multi Family Garage Sale",
+      "details": "QR Code Link to This Post Wii Fit, PPS4, Furntirue, CDs and DVDs, Christmas decorations, vintage tupperware, yard and fence art, household items, and much, much more",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/san-antonio-multi-family-garage-sale/xxGfKyvupqRLz9oBk3KYh4",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 29.575668,
+      "lon": -98.43648,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-amilygaragesalexxgfkyvupqrlz9obk3kyh4"
     }
   ],
   "permits": [
@@ -1943,10 +1989,10 @@
     "yardsales.net",
     "yardsalesearch.com"
   ],
-  "total_locations": 78,
+  "total_locations": 80,
   "status": "live",
   "date": "2026-08-12",
-  "last_refresh": "2026-08-12T05:58:51-05:00",
+  "last_refresh": "2026-08-12T08:02:28-05:00",
   "permit_total": 138,
   "permit_estate_count": 1
 }
