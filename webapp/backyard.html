@@ -2,28 +2,254 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chica's Backyard · Meet Cheeks</title><meta name="theme-color" content="#1a6b3c" />
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" /><link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png" /><link rel="apple-touch-icon" href="apple-touch-icon.png" /><link rel="manifest" href="manifest.webmanifest" />
+  <title>Chica's Backyard · Meet Cheeks</title>
+  <meta name="description" content="Meet Cheeks — the tiny Chihuahua behind Chicas Garage Sale Map. Backyard Security Chief, professional napper, part-time superhero." />
+  <meta name="theme-color" content="#1a6b3c" />
+  <meta property="og:type" content="website" /><meta property="og:url" content="https://justonejewelry.github.io/Chicas-Map/backyard.html" /><meta property="og:title" content="Meet Cheeks — Chica's Backyard" /><meta property="og:description" content="Backyard Security Chief. Professional napper. Part-time superhero. Meet the dog behind the map." /><meta property="og:image" content="https://justonejewelry.github.io/Chicas-Map/assets/backyard/hero-cape.png" />
+  <meta name="twitter:card" content="summary_large_image" /><meta name="twitter:title" content="Meet Cheeks — Chica's Backyard" /><meta name="twitter:description" content="Backyard Security Chief. Professional napper. Part-time superhero." /><meta name="twitter:image" content="https://justonejewelry.github.io/Chicas-Map/assets/backyard/hero-cape.png" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" /><link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" /><link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png" /><link rel="apple-touch-icon" href="apple-touch-icon.png" /><link rel="manifest" href="manifest.webmanifest" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/landing.css" /><link rel="stylesheet" href="css/backyard.css" /><link rel="stylesheet" href="css/grass.css" /><link rel="stylesheet" href="css/chica-sign.css" /><link rel="stylesheet" href="css/voss.css" /><link rel="stylesheet" href="css/chica-polish.css" />
+  <link rel="stylesheet" href="css/voss.css" /><link rel="stylesheet" href="css/chica-sign.css" /><link rel="stylesheet" href="css/chica-polish.css" />
   <script src="js/chica-config.js"></script><script src="js/chica-analytics.js"></script>
-  <style>.mc-hero-photo{width:100%;height:100%;object-fit:contain;border-radius:16px;background:transparent}.mc-bio-body p{margin:0 0 .85em}.mc-bio-body ul.mc-roles{margin:.5em 0 1em;padding:0;list-style:none}.mc-bio-body ul.mc-roles li{margin:0 0 .55em;padding-left:0;line-height:1.45}.mc-bio-body ul.mc-roles strong{font-weight:750}</style>
+  <style>
+    :root{ --by-green:#1a6b3c; --by-cream:#f6f4ef; --by-ink:#1c2420; --by-line:#e6e2d8; }
+    .by-body{ background:var(--by-cream); }
+
+    /* Hero */
+    .by-hero{ position:relative; overflow:hidden; background:linear-gradient(160deg,#1a6b3c 0%,#0f4a29 100%); padding:64px 20px 0; }
+    .by-hero-inner{ max-width:1120px; margin:0 auto; display:grid; grid-template-columns:1.05fr 0.95fr; gap:32px; align-items:end; }
+    .by-hero-copy{ color:#f6f4ef; padding-bottom:56px; }
+    .by-eyebrow{ display:inline-flex; align-items:center; gap:8px; font-size:13px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:#bfe6cd; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.18); padding:6px 12px; border-radius:999px; margin-bottom:18px; }
+    .by-hero-copy h1{ font-size:clamp(34px,5vw,54px); line-height:1.05; margin:0 0 14px; font-weight:800; }
+    .by-hero-copy h1 span{ display:block; color:#bfe6cd; font-size:0.5em; font-weight:700; letter-spacing:.01em; margin-top:6px; }
+    .by-hero-lead{ font-size:17px; line-height:1.6; color:#e7f3ea; max-width:46ch; margin:0 0 26px; }
+    .by-hero-cta{ display:flex; flex-wrap:wrap; gap:12px; }
+    .by-btn{ display:inline-flex; align-items:center; justify-content:center; padding:13px 22px; border-radius:12px; font-weight:700; font-size:15px; text-decoration:none; transition:transform .15s ease, box-shadow .15s ease; border:1px solid transparent; }
+    .by-btn:hover{ transform:translateY(-1px); }
+    .by-btn-primary{ background:#fff; color:#12442a; box-shadow:0 10px 24px rgba(0,0,0,.18); }
+    .by-btn-ghost{ background:rgba(255,255,255,.06); color:#f6f4ef; border-color:rgba(255,255,255,.35); }
+    .by-hero-photo-wrap{ position:relative; display:flex; align-items:flex-end; justify-content:center; height:100%; }
+    .by-hero-photo{ width:min(100%,420px); height:auto; display:block; filter:drop-shadow(0 30px 40px rgba(0,0,0,.35)); }
+
+    /* Stat strip */
+    .by-stats{ max-width:1120px; margin:0 auto; display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--by-line); border:1px solid var(--by-line); border-radius:16px; overflow:hidden; transform:translateY(28px); box-shadow:0 18px 40px rgba(20,40,30,.10); }
+    .by-stat{ background:#fff; padding:20px 16px; text-align:center; }
+    .by-stat b{ display:block; font-size:22px; color:var(--by-green); margin-bottom:2px; }
+    .by-stat span{ font-size:12.5px; color:#5b6660; font-weight:600; }
+    @media (max-width:760px){ .by-stats{ grid-template-columns:repeat(2,1fr);} }
+
+    /* Section shell */
+    .by-shell{ max-width:1120px; margin:0 auto; padding:64px 20px 0; }
+    .by-shell.tight{ padding-top:36px; }
+    .by-head{ text-align:center; max-width:640px; margin:0 auto 34px; }
+    .by-head h2{ font-size:clamp(24px,3vw,34px); margin:0 0 8px; color:var(--by-ink); font-weight:800; }
+    .by-head p{ color:#5b6660; font-size:15.5px; margin:0; }
+
+    /* Bio */
+    .by-bio-card{ background:#fff; border:1px solid var(--by-line); border-radius:20px; padding:36px; display:grid; grid-template-columns:0.85fr 1.15fr; gap:36px; align-items:center; box-shadow:0 18px 40px rgba(20,40,30,.06); }
+    .by-bio-photo{ width:100%; border-radius:16px; object-fit:cover; aspect-ratio:3/4; box-shadow:0 14px 30px rgba(0,0,0,.14); }
+    .by-bio h3{ font-size:22px; margin:0 0 12px; color:var(--by-ink); }
+    .by-bio p{ color:#3d453f; line-height:1.65; margin:0 0 14px; font-size:15.5px; }
+    .by-roles{ list-style:none; margin:6px 0 16px; padding:0; display:grid; gap:10px; }
+    .by-roles li{ display:flex; gap:10px; align-items:flex-start; font-size:15px; color:#3d453f; line-height:1.5; }
+    .by-roles .emoji{ font-size:19px; line-height:1.4; }
+    .by-sign{ font-weight:700; color:var(--by-green); margin-top:10px; }
+    @media (max-width:760px){ .by-bio-card{ grid-template-columns:1fr; padding:24px; } .by-bio-photo{ aspect-ratio:4/3; } }
+
+    /* Gallery */
+    .by-gallery{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+    .by-gallery figure{ margin:0; border-radius:16px; overflow:hidden; position:relative; background:#e9e6dc; box-shadow:0 12px 26px rgba(20,40,30,.10); aspect-ratio:4/5; }
+    .by-gallery img{ width:100%; height:100%; object-fit:cover; display:block; transition:transform .35s ease; }
+    .by-gallery figure:hover img{ transform:scale(1.05); }
+    .by-gallery figcaption{ position:absolute; left:0; right:0; bottom:0; padding:14px 14px 12px; background:linear-gradient(180deg,transparent,rgba(10,20,15,.72)); color:#fff; font-size:13.5px; font-weight:600; }
+    @media (max-width:760px){ .by-gallery{ grid-template-columns:1fr 1fr; } }
+
+    /* Talk-to-chica bubble */
+    .by-talk{ background:#fff; border:1px solid var(--by-line); border-radius:20px; padding:22px 26px; display:flex; gap:16px; align-items:flex-start; box-shadow:0 14px 30px rgba(20,40,30,.06); }
+    .by-talk img{ width:64px; height:64px; border-radius:50%; object-fit:cover; flex:none; box-shadow:0 6px 14px rgba(0,0,0,.15); }
+    .by-talk-bubble strong{ display:block; font-size:15px; color:var(--by-green); margin-bottom:4px; }
+    .by-talk-bubble p{ margin:0 0 12px; color:#3d453f; font-size:15px; line-height:1.5; }
+    .by-talk-actions{ display:flex; gap:10px; flex-wrap:wrap; }
+    .by-mini-btn{ border:1px solid var(--by-line); background:#f6f4ef; color:var(--by-ink); font-weight:700; font-size:13.5px; padding:9px 14px; border-radius:10px; cursor:pointer; }
+    .by-mini-btn.primary{ background:var(--by-green); color:#fff; border-color:var(--by-green); }
+
+    /* Email + share */
+    .by-email{ background:linear-gradient(135deg,#1a6b3c,#0f4a29); border-radius:20px; padding:30px; color:#fff; display:flex; flex-wrap:wrap; gap:20px; align-items:center; justify-content:space-between; }
+    .by-email h3{ margin:0 0 4px; font-size:19px; }
+    .by-email p{ margin:0; color:#e7f3ea; font-size:14.5px; }
+    .by-email form{ display:flex; gap:10px; flex-wrap:wrap; }
+    .by-email input{ padding:12px 14px; border-radius:10px; border:1px solid rgba(255,255,255,.3); background:rgba(255,255,255,.08); color:#fff; min-width:220px; font-size:14.5px; }
+    .by-email input::placeholder{ color:#cfe6d8; }
+    .by-share{ text-align:center; }
+    .by-share-grid{ display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-top:16px; }
+    .by-share-btn{ padding:10px 16px; border-radius:10px; border:1px solid var(--by-line); background:#fff; color:var(--by-ink); font-weight:700; font-size:13.5px; text-decoration:none; cursor:pointer; }
+
+    /* Notes / comments */
+    .by-notes{ background:#fff; border:1px solid var(--by-line); border-radius:20px; padding:30px; }
+    .by-notes h3{ margin:0 0 4px; font-size:19px; color:var(--by-ink); }
+    .by-notes p{ margin:0 0 18px; color:#5b6660; font-size:14.5px; }
+    .by-notes .row{ display:flex; gap:10px; margin-bottom:10px; flex-wrap:wrap; }
+    .by-notes input, .by-notes textarea{ flex:1; min-width:180px; padding:11px 13px; border-radius:10px; border:1px solid var(--by-line); font-size:14.5px; font-family:inherit; }
+    .by-notes textarea{ width:100%; min-height:90px; resize:vertical; }
+    .by-notes button{ background:var(--by-green); color:#fff; border:none; padding:11px 20px; border-radius:10px; font-weight:700; cursor:pointer; }
+    .comment-item{ border-top:1px solid var(--by-line); padding:14px 0; }
+    .comment-item .c-head{ display:flex; justify-content:space-between; font-size:13px; color:#5b6660; margin-bottom:4px; }
+    .comment-item .c-name{ font-weight:700; color:var(--by-ink); }
+    .comment-item .c-body{ margin:0; color:#3d453f; font-size:14.5px; }
+    .comment-empty{ color:#5b6660; font-size:14.5px; }
+
+    /* Video / blog */
+    .by-video-card{ background:#fff; border:1px solid var(--by-line); border-radius:20px; overflow:hidden; box-shadow:0 18px 40px rgba(20,40,30,.06); }
+    .by-video-card video{ width:100%; display:block; background:#0f172a; }
+    .by-video-copy{ padding:22px 26px; }
+    .by-video-copy h4{ margin:0 0 6px; font-size:18px; color:var(--by-ink); }
+    .by-video-copy p{ margin:0 0 6px; color:#3d453f; font-size:14.5px; }
+    .by-video-copy .meta{ color:#5b6660; font-size:13px; }
+    .by-grid2{ display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+    .by-col h3{ font-size:18px; margin:0 0 14px; color:var(--by-ink); }
+    @media (max-width:760px){ .by-grid2{ grid-template-columns:1fr; } .by-hero-inner{ grid-template-columns:1fr; } .by-hero-photo-wrap{ order:-1; } }
+
+    /* Fallback styling for dynamically-injected blog/video items (backyard.js) */
+    #blogList, #videoList{ display:grid; gap:12px; }
+    #blogList > *, #videoList > *{ background:#fff; border:1px solid var(--by-line); border-radius:14px; padding:14px 16px; font-size:14.5px; color:#3d453f; }
+    #blogList a, #videoList a{ color:var(--by-green); font-weight:700; text-decoration:none; }
+    #blogList img, #videoList img{ border-radius:10px; max-width:100%; }
+  </style>
 </head>
-<body class="backyard-page landing grass-site">
-  <header class="lnav"><a class="lbrand" href="index.html"><img src="chicarar.png" alt="Chica" width="36" height="36" decoding="async" onerror="this.onerror=null;this.src='chicarar.jpg'" /><span>Chica's Backyard</span></a><nav class="llinks"><a href="index.html">Home</a><a href="map.html">Map</a><a href="submit.html">List a sale</a><a href="sponsor.html">Sponsor</a></nav><div class="lnav-actions"><button type="button" class="lbtn ghost" data-chica-install hidden>Add to Home</button><a class="lbtn ghost" href="index.html">Home</a><a class="lbtn primary" href="map.html">Open map</a></div></header>
-  <main class="by-layout">
-    <a class="chica-sign chica-sign-backyard" href="sponsor.html" title="Become a weekly sponsor"><picture><source srcset="sponsorsign.webp" type="image/webp" /><img src="sponsorsign.png" alt="Cheeks: Click Here Become a Weekly Sponsor" width="220" height="300" loading="lazy" decoding="async" onerror="this.onerror=null;this.style.display='none'" /></picture></a>
-    <section class="chica-talk" id="chicaTalk"><div class="ct-card"><img id="ctAvatar" src="chicarar.png" alt="Chica" width="80" height="80" class="ct-avatar" decoding="async" loading="lazy" onerror="this.onerror=null;this.src='chicarar.jpg'" /><div class="ct-bubble"><strong id="ctName">Cheeks</strong><p id="ctMessage">Wipe your paws. Leave a belly rub. And if you happen to have a snack… we can definitely be best friends.</p><div class="ct-actions"><button type="button" class="near-btn primary" id="btnTalk">Talk to Chica</button><button type="button" class="near-btn" id="btnTip">Random tip</button></div></div></div></section>
-    <div class="v-email-strip" style="max-width:720px;margin:0 auto 28px;padding:0 16px"><div class="v-email-card"><div><h3>Join Chica’s Email Updates</h3><p>Every Friday: hot zones, new sales, weekend routes. Free.</p></div><form class="v-email-form" id="emailFormBy"><input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true" /><input type="email" id="emailInputBy" name="email" required placeholder="you@email.com" autocomplete="email" /><button type="submit" class="v-btn v-btn-primary">Join Friday list</button></form></div><p id="emailStatusBy" class="v-form-status" hidden style="margin-top:10px"></p></div>
-    <section class="share-section" id="shareSection"><h3>Share with the pack</h3><p class="share-lead">Facebook, Nextdoor, Instagram — wherever good humans gather. Every share helps more people find the map.</p><div class="share-grid" id="shareGrid"><a class="share-btn x" id="shareX" target="_blank" rel="noopener">𝕏 Post</a><a class="share-btn fb" id="shareFb" target="_blank" rel="noopener">Facebook</a><a class="share-btn wa" id="shareWa" target="_blank" rel="noopener">WhatsApp</a><a class="share-btn li" id="shareLi" target="_blank" rel="noopener">LinkedIn</a><a class="share-btn rd" id="shareRd" target="_blank" rel="noopener">Reddit</a><a class="share-btn tg" id="shareTg" target="_blank" rel="noopener">Telegram</a><a class="share-btn mail" id="shareMail">Email</a><button type="button" class="share-btn copy" id="shareCopy">Copy link</button><button type="button" class="share-btn copy" id="shareNative" hidden>Share…</button></div></section>
-    <section class="meet-cheeks" id="meetCheeks"><div class="mc-header"><h2>Meet Cheeks</h2><p class="mc-sub">Also answers to Chica, "Who's a good girl?", and the sound of a cheese wrapper</p></div><div class="mc-bio-card"><div class="mc-bio-photo-wrap"><img id="mcHero" src="chicarar.png" alt="Chica (Cheeks)" class="mc-hero-photo" decoding="async" fetchpriority="high" onerror="this.onerror=null;this.src='chicarar.jpg'" /></div><div class="mc-bio"><h3>Hi! I'm Chica. 👋</h3><div class="mc-bio-body"><p>If you're family, friends, or one of my loyal fans, you probably know me as <strong>Cheeks</strong>. Nobody remembers how it started… but somehow it stuck. I answer to Chica, Cheeks, "Who's a good girl?", and the unmistakable sound of a cheese wrapper.</p><p>I'm a tiny brown Chihuahua with a frosted little face, white socks, and a white-tipped tail that operates at maximum wag whenever snacks are nearby.</p><p><strong>Here's what you should know:</strong></p><ul class="mc-roles"><li>🐿️ <strong>Backyard Security Chief</strong> — Squirrels are under constant surveillance.</li><li>🦴 <strong>Professional Napper</strong> — I can sleep through a thunderstorm… unless someone opens the treat jar.</li><li>🦸 <strong>Part-Time Superhero</strong> — I have a cape. That's all the proof you need.</li><li>🗺️ <strong>Chief Sniffing Officer</strong> — My human built the garage sale map. I inspect it for quality control… and hidden snack locations.</li></ul><p>People say my human runs this place.<br/>That's adorable.<br/>I simply allow him to think that.</p><p>If you enjoy following my adventures, my backyard investigations, and all the fun projects we get into, do me one tiny favor…</p><p>❤️ Share this page with your friends and family on Facebook, Nextdoor, Instagram, or wherever good humans gather. Every share helps more people discover our adventures, support our projects, and join the pack.</p><p>Now come on in.<br/>Wipe your paws.<br/>Leave a belly rub.<br/>And if you happen to have a snack…<br/>…we can definitely be best friends.</p><p class="mc-sign">🐾 — Cheeks</p></div></div></div><div class="mc-gallery" id="mcGallery"></div></section>
-    <section class="comment-section" id="commentSection"><h3>Leave a note for Cheeks</h3><p class="comment-lead">Sale tips, finds, belly rubs, or just a howdy — notes stay on this device.</p><form class="comment-form" id="commentForm"><div class="row"><input type="text" id="commentName" placeholder="Your name" maxlength="40" required /><input type="text" id="commentCity" placeholder="City (optional)" maxlength="40" /></div><textarea id="commentBody" placeholder="Hey Cheeks…" maxlength="500" required></textarea><button type="submit">Post note</button></form><div class="comment-list" id="commentList"><p class="comment-empty" id="commentEmpty">No notes yet. Be the first to say howdy.</p></div></section>
-    <section class="featured-adventure" id="featuredAdventure"><h3 class="by-section-title">🎬 Featured Adventure</h3><div class="fa-card"><div class="fa-video-wrap"><video controls playsinline poster="chicarar.jpg" style="width:100%;border-radius:14px;background:#0f172a"><source src="assets/videos/chica_highway_adventure.mp4" type="video/mp4" /></video></div><div class="fa-copy"><h4>Highway to San Antonio — Chica's Sale Hunt</h4><p>From the shopping cart to the open highway.</p><p class="fa-meta">Aug 4, 2026 · Adventure</p></div></div></section>
-    <div class="by-grid"><section class="by-col"><h3 class="by-section-title">📝 Chica's Blog</h3><div id="blogList" class="by-posts">Loading…</div></section><section class="by-col"><h3 class="by-section-title">🎬 Weekly Videos</h3><div id="videoList" class="by-videos">Loading…</div></section></div>
-    <article id="postView" class="by-post-view hidden"><button type="button" class="near-btn" id="btnBackPosts">← All posts</button><h2 id="postTitle"></h2><div class="by-meta" id="postMeta"></div><div class="by-body" id="postBody"></div></article>
+<body class="by-body">
+  <header class="v-nav">
+    <a class="v-brand" href="index.html"><img src="assets/chica/chica-logo.png?v=3" alt="Chicas Garage Sale Map" width="44" height="44" decoding="async" fetchpriority="high" />Chicas</a>
+    <nav class="v-links" aria-label="Primary"><a href="map.html">Map</a><a href="backyard.html">Backyard</a><a href="submit.html">List a sale</a><a href="sponsor.html">Sponsor</a></nav>
+    <div class="v-nav-actions"><button type="button" class="v-btn v-btn-ghost v-btn-sm v-btn-install" data-chica-install hidden>Add to Home</button><a class="v-btn v-btn-ghost" href="index.html">Home</a><a class="v-btn v-btn-primary" href="map.html">Open map</a></div>
+  </header>
+
+  <main>
+    <section class="by-hero">
+      <div class="by-hero-inner">
+        <div class="by-hero-copy">
+          <span class="by-eyebrow">🐾 Backyard Security Chief</span>
+          <h1>Meet Cheeks.<span>Chief Sniffing Officer of the garage sale map.</span></h1>
+          <p class="by-hero-lead">Tiny Chihuahua. Big opinions. Also answers to Chica, "who's a good girl?", and the sound of a cheese wrapper.</p>
+          <div class="by-hero-cta">
+            <a class="by-btn by-btn-primary" href="#meet">Meet Cheeks</a>
+            <a class="by-btn by-btn-ghost" href="map.html">Open the map</a>
+          </div>
+        </div>
+        <div class="by-hero-photo-wrap">
+          <img class="by-hero-photo" src="assets/backyard/hero-cape.png" alt="Cheeks the Chihuahua wearing a red superhero cape" width="420" height="280" decoding="async" fetchpriority="high" />
+        </div>
+      </div>
+      <div class="by-stats">
+        <div class="by-stat"><b>🐿️</b><span>Squirrels surveilled</span></div>
+        <div class="by-stat"><b>🦴</b><span>Naps per day: many</span></div>
+        <div class="by-stat"><b>🦸</b><span>Capes owned: 1</span></div>
+        <div class="by-stat"><b>🗺️</b><span>Sales inspected: all</span></div>
+      </div>
+    </section>
+
+    <section class="by-shell" style="padding-top:76px" id="meet">
+      <div class="by-head"><h2>Hi, I'm Chica 👋</h2><p>If you're family, friends, or one of my loyal fans, you probably know me as Cheeks.</p></div>
+      <div class="by-bio-card">
+        <img class="by-bio-photo" src="assets/backyard/gallery-smile.jpg" alt="Cheeks smiling next to her human" />
+        <div class="by-bio">
+          <h3>The story so far</h3>
+          <p>Nobody remembers how "Cheeks" started… but somehow it stuck. I answer to Chica, Cheeks, "who's a good girl?", and the unmistakable sound of a cheese wrapper.</p>
+          <p>I'm a tiny brown Chihuahua with a frosted little face, white socks, and a white-tipped tail that operates at maximum wag whenever snacks are nearby.</p>
+          <ul class="by-roles">
+            <li><span class="emoji">🐿️</span><span><strong>Backyard Security Chief</strong> — squirrels are under constant surveillance.</span></li>
+            <li><span class="emoji">🦴</span><span><strong>Professional Napper</strong> — I can sleep through a thunderstorm… unless someone opens the treat jar.</span></li>
+            <li><span class="emoji">🦸</span><span><strong>Part-Time Superhero</strong> — I have a cape. That's all the proof you need.</span></li>
+            <li><span class="emoji">🗺️</span><span><strong>Chief Sniffing Officer</strong> — my human built the garage sale map. I inspect it for quality control… and hidden snack locations.</span></li>
+          </ul>
+          <p>People say my human runs this place. That's adorable. I simply allow him to think that.</p>
+          <p class="by-sign">🐾 — Cheeks</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="by-shell">
+      <div class="by-head"><h2>Adventures & mischief</h2><p>A few favorites from the field.</p></div>
+      <div class="by-gallery">
+        <figure><img src="assets/backyard/hero-cape.png" alt="Cheeks in her red superhero cape" loading="lazy" /><figcaption>Part-time superhero</figcaption></figure>
+        <figure><img src="assets/backyard/gallery-stroller.jpg" alt="Cheeks riding in her stroller" loading="lazy" /><figcaption>Field patrol, VIP transport</figcaption></figure>
+        <figure><img src="assets/backyard/gallery-justin-cheeks.jpg" alt="Cheeks with her human, Justin" loading="lazy" /><figcaption>Cheeks & her human</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="by-shell tight">
+      <div class="by-talk" id="chicaTalk">
+        <img id="ctAvatar" src="assets/backyard/hero-cape.png" alt="Chica" />
+        <div class="by-talk-bubble">
+          <strong id="ctName">Cheeks</strong>
+          <p id="ctMessage">Wipe your paws. Leave a belly rub. And if you happen to have a snack… we can definitely be best friends.</p>
+          <div class="by-talk-actions">
+            <button type="button" class="by-mini-btn primary" id="btnTalk">Talk to Chica</button>
+            <button type="button" class="by-mini-btn" id="btnTip">Random tip</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="by-shell tight">
+      <div class="by-email">
+        <div><h3>Join Chica's Email Updates</h3><p>Every Friday: hot zones, new sales, weekend routes. Free. No spam.</p></div>
+        <form id="emailFormBy"><input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true" /><input type="email" id="emailInputBy" name="email" required placeholder="you@email.com" autocomplete="email" /><button type="submit" class="by-btn by-btn-primary">Join Friday list</button></form>
+      </div>
+      <p id="emailStatusBy" class="v-form-status" hidden style="margin-top:10px;text-align:center"></p>
+    </section>
+
+    <section class="by-shell tight">
+      <div class="by-share">
+        <h3 style="margin:0 0 6px;font-size:19px;color:var(--by-ink)">Share with the pack</h3>
+        <p style="margin:0;color:#5b6660;font-size:14.5px">Facebook, Nextdoor, Instagram — wherever good humans gather. Every share helps more people find the map.</p>
+        <div class="by-share-grid" id="shareGrid">
+          <a class="by-share-btn" id="shareX" target="_blank" rel="noopener">𝕏 Post</a>
+          <a class="by-share-btn" id="shareFb" target="_blank" rel="noopener">Facebook</a>
+          <a class="by-share-btn" id="shareWa" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="by-share-btn" id="shareLi" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="by-share-btn" id="shareRd" target="_blank" rel="noopener">Reddit</a>
+          <a class="by-share-btn" id="shareTg" target="_blank" rel="noopener">Telegram</a>
+          <a class="by-share-btn" id="shareMail">Email</a>
+          <button type="button" class="by-share-btn" id="shareCopy">Copy link</button>
+          <button type="button" class="by-share-btn" id="shareNative" hidden>Share…</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="by-shell tight">
+      <div class="by-notes" id="commentSection">
+        <h3>Leave a note for Cheeks</h3>
+        <p>Sale tips, finds, belly rubs, or just a howdy — notes stay on this device.</p>
+        <form id="commentForm">
+          <div class="row"><input type="text" id="commentName" placeholder="Your name" maxlength="40" required /><input type="text" id="commentCity" placeholder="City (optional)" maxlength="40" /></div>
+          <textarea id="commentBody" placeholder="Hey Cheeks…" maxlength="500" required></textarea>
+          <div style="margin-top:12px"><button type="submit">Post note</button></div>
+        </form>
+        <div class="comment-list" id="commentList" style="margin-top:8px"><p class="comment-empty" id="commentEmpty">No notes yet. Be the first to say howdy.</p></div>
+      </div>
+    </section>
+
+    <section class="by-shell tight">
+      <div class="by-head" style="margin-bottom:20px"><h2>🎬 Featured Adventure</h2></div>
+      <div class="by-video-card">
+        <video controls playsinline poster="assets/backyard/gallery-smile.jpg" style="width:100%"><source src="assets/videos/chica_highway_adventure.mp4" type="video/mp4" /></video>
+        <div class="by-video-copy"><h4>Highway to San Antonio — Chica's Sale Hunt</h4><p>From the shopping cart to the open highway.</p><p class="meta">Aug 4, 2026 · Adventure</p></div>
+      </div>
+    </section>
+
+    <section class="by-shell" style="padding-bottom:70px">
+      <div class="by-grid2">
+        <div class="by-col"><h3>📝 Chica's Blog</h3><div id="blogList">Loading…</div></div>
+        <div class="by-col"><h3>🎬 Weekly Videos</h3><div id="videoList">Loading…</div></div>
+      </div>
+    </section>
+
+    <article id="postView" class="by-shell hidden" style="display:none"><button type="button" class="by-mini-btn" id="btnBackPosts">← All posts</button><h2 id="postTitle"></h2><div id="postMeta"></div><div id="postBody"></div></article>
   </main>
-  <footer class="lfoot"><div><strong>Chica's Backyard</strong><span>Chicas Map · GSIN</span></div><div class="lfoot-links"><a href="index.html">Home</a><a href="map.html">Map</a><a href="submit.html">List a sale</a><a href="sponsor.html">Sponsor</a></div></footer>
-  <script src="js/backyard.js"></script><script src="js/grass-wind.js"></script><script src="js/chica-forms.js"></script><script src="js/chica-pwa.js"></script>
+
+  <footer class="v-foot"><div><strong>Chicas Garage Sale Map</strong>GSIN</div><div class="v-foot-links"><a href="index.html">Home</a><a href="map.html">Map</a><a href="backyard.html">Backyard</a><a href="submit.html">List a sale</a><a href="sponsor.html">Sponsor</a><a href="mailto:mr.jsciaraffa@gmail.com">Contact</a></div></footer>
+
+  <script src="js/backyard.js"></script><script src="js/chica-forms.js"></script><script src="js/chica-pwa.js"></script>
   <script>
   (function(){var pageUrl=encodeURIComponent('https://justonejewelry.github.io/Chicas-Map/backyard.html'),text=encodeURIComponent("Meet Cheeks (Chica) — backyard boss & Chief Sniffing Officer of the garage sale map."),abs='https://justonejewelry.github.io/Chicas-Map/backyard.html';document.getElementById('shareX').href='https://twitter.com/intent/tweet?text='+text+'&url='+pageUrl;document.getElementById('shareFb').href='https://www.facebook.com/sharer/sharer.php?u='+pageUrl;document.getElementById('shareWa').href='https://wa.me/?text='+text+'%20'+pageUrl;document.getElementById('shareLi').href='https://www.linkedin.com/sharing/share-offsite/?url='+pageUrl;document.getElementById('shareRd').href='https://www.reddit.com/submit?url='+pageUrl+'&title='+text;document.getElementById('shareTg').href='https://t.me/share/url?url='+pageUrl+'&text='+text;document.getElementById('shareMail').href='mailto:?subject=Meet%20Cheeks&body='+text+'%0A'+pageUrl;document.getElementById('shareCopy').addEventListener('click',function(){navigator.clipboard.writeText(abs).then(function(){var b=document.getElementById('shareCopy');b.textContent='Copied!';setTimeout(function(){b.textContent='Copy link'},1500)})});if(navigator.share){var n=document.getElementById('shareNative');n.hidden=false;n.addEventListener('click',function(){navigator.share({title:"Chica's Backyard — Meet Cheeks",url:abs}).catch(function(){})})}var KEY='chica_backyard_comments_v1';function load(){try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){return []}}function save(list){localStorage.setItem(KEY,JSON.stringify(list.slice(0,50)))}function render(){var list=load(),el=document.getElementById('commentList'),empty=document.getElementById('commentEmpty');el.querySelectorAll('.comment-item').forEach(function(n){n.remove()});if(!list.length){if(empty)empty.style.display='block';return}if(empty)empty.style.display='none';list.forEach(function(c){var div=document.createElement('div');div.className='comment-item';div.innerHTML='<div class="c-head"><span class="c-name"></span><span class="c-date"></span></div><p class="c-body"></p>';div.querySelector('.c-name').textContent=c.name+(c.city?' · '+c.city:'');div.querySelector('.c-date').textContent=c.date;div.querySelector('.c-body').textContent=c.body;el.appendChild(div)})}document.getElementById('commentForm').addEventListener('submit',function(e){e.preventDefault();var name=document.getElementById('commentName').value.trim(),city=document.getElementById('commentCity').value.trim(),body=document.getElementById('commentBody').value.trim();if(!name||!body)return;var list=load();list.unshift({name:name.slice(0,40),city:city.slice(0,40),body:body.slice(0,500),date:new Date().toLocaleString()});save(list);document.getElementById('commentForm').reset();render()});render();if(window.ChicaForms){ChicaForms.bindEmailForm(document.getElementById('emailFormBy'),{statusEl:document.getElementById('emailStatusBy'),source:'backyard'})}})();
   </script>
