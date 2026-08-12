@@ -45,8 +45,8 @@
       "in_person": false,
       "external_id": "eso-2456237",
       "categories": [
-        "estate-sale",
-        "online-auction"
+        "online-auction",
+        "estate-sale"
       ]
     },
     {
@@ -94,28 +94,6 @@
       ]
     },
     {
-      "address": "7634 Agave Bnd, San Antonio, TX 78253",
-      "dates": "2026-08-11 – 2026-08-11",
-      "date_from": "2026-08-11",
-      "date_to": "2026-08-11",
-      "end_date": "2026-08-11",
-      "title": "Full House Garage Sale",
-      "details": "",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196344367",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.88,
-      "status": "verified",
-      "lat": 29.510911,
-      "lon": -98.766276,
-      "geocode": "source",
-      "external_id": "yss-7634agavebndsanantoniotx78253-2026-08-11",
-      "categories": [
-        "garage-sale"
-      ]
-    },
-    {
       "address": "123 Northview Cir, Cibolo, TX 78108",
       "dates": "2026-08-14 – 2026-08-15",
       "date_from": "2026-08-14",
@@ -157,10 +135,10 @@
     },
     {
       "address": "US 35n near Cibilo Valley exit, San Antonio, TX",
-      "dates": "2026-08-11 – 2026-08-13",
-      "date_from": "2026-08-11",
-      "date_to": "2026-08-13",
-      "end_date": "2026-08-13",
+      "dates": "2026-08-12 – 2026-08-14",
+      "date_from": "2026-08-12",
+      "date_to": "2026-08-14",
+      "end_date": "2026-08-14",
       "hours": null,
       "title": "Unbelievable collection liquidation",
       "details": "QR Code Link to This Post Attention Resellers!!! Huge sell off liquidation of decades of collecting!!! Starting Saturday-Sunday 22nd and 23rd Booths 383 and 306 at Busseys flea market Front aisle right of the parking lot. See pics. More and more new inventory every weekend until December.",
@@ -181,10 +159,10 @@
     },
     {
       "address": "6151 NW Loop 410, San Antonio, TX",
-      "dates": "2026-08-11 – 2026-08-13",
-      "date_from": "2026-08-11",
-      "date_to": "2026-08-13",
-      "end_date": "2026-08-13",
+      "dates": "2026-08-12 – 2026-08-14",
+      "date_from": "2026-08-12",
+      "date_to": "2026-08-14",
+      "end_date": "2026-08-14",
       "hours": null,
       "title": "Alamo Craft Co. Antiques & More",
       "details": "QR Code Link to This Post OPEN TUES - SAT 10AM-6PM 6151 NW Loop 410, #302 SATX 78238 A hidden gem in San Antonio! Here you'll find unique antiques, vintage items, collectibles, hand-crafted items &amp; so much more. Come by &amp; see all the fun stuff! Ask for your frequent buyer card &amp; get punches with every purchase.",
@@ -205,10 +183,10 @@
     },
     {
       "address": "9215 Osage Valley, San Antonio, TX",
-      "dates": "2026-08-11 – 2026-08-13",
-      "date_from": "2026-08-11",
-      "date_to": "2026-08-13",
-      "end_date": "2026-08-13",
+      "dates": "2026-08-12 – 2026-08-14",
+      "date_from": "2026-08-12",
+      "date_to": "2026-08-14",
+      "end_date": "2026-08-14",
       "hours": null,
       "title": "Community Yard Sale, 08/15/26, Saturday",
       "details": "QR Code Link to This Post Community yard sale. 9215 Osage Valley, San Antonio TX Saturday, 08/15/26 9am Toys Furniture Clothes Household items Shoes Lots more",
@@ -229,10 +207,10 @@
     },
     {
       "address": "710 N Olive near Nolan, San Antonio, TX",
-      "dates": "2026-08-11 – 2026-08-13",
-      "date_from": "2026-08-11",
-      "date_to": "2026-08-13",
-      "end_date": "2026-08-13",
+      "dates": "2026-08-12 – 2026-08-14",
+      "date_from": "2026-08-12",
+      "date_to": "2026-08-14",
+      "end_date": "2026-08-14",
       "hours": null,
       "title": "Garage Sale",
       "details": "QR Code Link to This Post Toys, clothes, tools, furniture",
@@ -324,10 +302,10 @@
     },
     {
       "address": "11218 Quail Pass, San Antonio, TX",
-      "dates": "2026-08-11 – 2026-08-13",
-      "date_from": "2026-08-11",
-      "date_to": "2026-08-13",
-      "end_date": "2026-08-13",
+      "dates": "2026-08-12 – 2026-08-14",
+      "date_from": "2026-08-12",
+      "date_to": "2026-08-14",
+      "end_date": "2026-08-14",
       "hours": null,
       "title": "Estate Sale - Furniture",
       "details": "QR Code Link to This Post Beautiful Estate Sale Furniture – Quality Pieces at a Fraction of the Original Cost Please come on Friday between 3:00 and 6:00 PM to view and purchase these beautiful furniture pieces: * Cherry-finish bookcase * Elegant armoire * Bombay-style accent stand * Beautiful sleeper sofa * Two sets of solid oak chairs: one set of 4 and one set of 7 * Wooden desk * Dining and acc",
@@ -345,6 +323,30 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "cl-tesalefurniturenuuaqfpr8mnhgwyqxgz3wp"
+    },
+    {
+      "address": "1104 Fawn Dr, San Antonio, TX",
+      "dates": "2026-08-12 – 2026-08-14",
+      "date_from": "2026-08-12",
+      "date_to": "2026-08-14",
+      "end_date": "2026-08-14",
+      "hours": null,
+      "title": "ANTIQUE & VINTAGE ESTATE SALE",
+      "details": "QR Code Link to This Post EVERYTHING AND MORE FOR SALE WITH LOW PRICES!",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/schertz-antique-vintage-estate-sale/dSBXpvkpkKBz16ohT23mSp",
+      "photos": 0,
+      "type": "estate",
+      "categories": [
+        "estate-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 29.590393,
+      "lon": -98.274201,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-ntageestatesaledsbxpvkpkkbz16oht23msp"
     }
   ],
   "permits": [
@@ -1922,106 +1924,6 @@
       "geocode": "city-open-data",
       "hours": "9 a.m. – 6 p.m. (city rule)",
       "is_estate": false
-    },
-    {
-      "address": "5623 TIMBER RAIN, San Antonio, TX 78250",
-      "dates": "Permit issued Tue Aug 4 · typical use within 7 days",
-      "date_from": "2026-08-04",
-      "date_to": "2026-08-11",
-      "end_date": "2026-08-11",
-      "title": "City-permitted garage / yard sale",
-      "details": "Official City of San Antonio garage-sale permit. Legal sale hours 9 a.m.–6 p.m. Exact sale day not published in open data — verify on-site or with seller.",
-      "source": "Open Data SA (Garage Sale permit)",
-      "permit_number": "BLDG-GS-PMT-13819983",
-      "primary_contact": "Taylor Terrazas",
-      "photos": 0,
-      "type": "permit",
-      "categories": [
-        "garage-sale",
-        "permit"
-      ],
-      "confidence": 0.9,
-      "status": "verified",
-      "lat": 29.493714,
-      "lon": -98.658361,
-      "geocode": "city-open-data",
-      "hours": "9 a.m. – 6 p.m. (city rule)",
-      "is_estate": false
-    },
-    {
-      "address": "6451 FOREST VILLAGE, San Antonio, TX 78250",
-      "dates": "Permit issued Tue Aug 4 · typical use within 7 days",
-      "date_from": "2026-08-04",
-      "date_to": "2026-08-11",
-      "end_date": "2026-08-11",
-      "title": "City-permitted garage / yard sale",
-      "details": "Official City of San Antonio garage-sale permit. Legal sale hours 9 a.m.–6 p.m. Exact sale day not published in open data — verify on-site or with seller.",
-      "source": "Open Data SA (Garage Sale permit)",
-      "permit_number": "BLDG-GS-PMT-13819984",
-      "primary_contact": "Emily Claycomb",
-      "photos": 0,
-      "type": "permit",
-      "categories": [
-        "garage-sale",
-        "permit"
-      ],
-      "confidence": 0.9,
-      "status": "verified",
-      "lat": 29.496279,
-      "lon": -98.674327,
-      "geocode": "city-open-data",
-      "hours": "9 a.m. – 6 p.m. (city rule)",
-      "is_estate": false
-    },
-    {
-      "address": "5203 OLD PEARSALL RD, San Antonio, TX 78242",
-      "dates": "Permit issued Tue Aug 4 · typical use within 7 days",
-      "date_from": "2026-08-04",
-      "date_to": "2026-08-11",
-      "end_date": "2026-08-11",
-      "title": "City-permitted garage / yard sale",
-      "details": "Official City of San Antonio garage-sale permit. Legal sale hours 9 a.m.–6 p.m. Exact sale day not published in open data — verify on-site or with seller.",
-      "source": "Open Data SA (Garage Sale permit)",
-      "permit_number": "BLDG-GS-PMT-13819985",
-      "primary_contact": "Marissa Rodriguez",
-      "photos": 0,
-      "type": "permit",
-      "categories": [
-        "garage-sale",
-        "permit"
-      ],
-      "confidence": 0.9,
-      "status": "verified",
-      "lat": 29.359098,
-      "lon": -98.599159,
-      "geocode": "city-open-data",
-      "hours": "9 a.m. – 6 p.m. (city rule)",
-      "is_estate": false
-    },
-    {
-      "address": "13700 JUDSON RD, San Antonio, TX 78233",
-      "dates": "Permit issued Tue Aug 4 · typical use within 7 days",
-      "date_from": "2026-08-04",
-      "date_to": "2026-08-11",
-      "end_date": "2026-08-11",
-      "title": "City-permitted garage / yard sale",
-      "details": "Official City of San Antonio garage-sale permit. Legal sale hours 9 a.m.–6 p.m. Exact sale day not published in open data — verify on-site or with seller.",
-      "source": "Open Data SA (Garage Sale permit)",
-      "permit_number": "BLDG-GS-PMT-13819986",
-      "primary_contact": "Daniela Trevino",
-      "photos": 0,
-      "type": "permit",
-      "categories": [
-        "garage-sale",
-        "permit"
-      ],
-      "confidence": 0.9,
-      "status": "verified",
-      "lat": 29.562853,
-      "lon": -98.361099,
-      "geocode": "city-open-data",
-      "hours": "9 a.m. – 6 p.m. (city rule)",
-      "is_estate": false
     }
   ],
   "hot_zones": [
@@ -2041,10 +1943,10 @@
     "yardsales.net",
     "yardsalesearch.com"
   ],
-  "total_locations": 82,
+  "total_locations": 78,
   "status": "live",
-  "date": "2026-08-11",
-  "last_refresh": "2026-08-11T23:04:34-05:00",
-  "permit_total": 144,
+  "date": "2026-08-12",
+  "last_refresh": "2026-08-12T02:20:40-05:00",
+  "permit_total": 138,
   "permit_estate_count": 1
 }
