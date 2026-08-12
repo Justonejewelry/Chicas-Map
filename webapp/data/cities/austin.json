@@ -89,8 +89,8 @@
       "in_person": false,
       "external_id": "eso-2455523",
       "categories": [
-        "online-auction",
-        "estate-sale"
+        "estate-sale",
+        "online-auction"
       ]
     },
     {
@@ -232,8 +232,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.06281943923823,
-      "lon": -97.84062738346601,
+      "lat": 30.059486704779015,
+      "lon": -97.84388645007824,
       "geocode": "source",
       "company": "Creative Estate Sales",
       "in_person": true,
@@ -505,6 +505,30 @@
       "lon": -97.7431,
       "geocode": "city-center",
       "company": null
+    },
+    {
+      "address": "1716 Maize Bend Dr near Will Rogers, Austin, TX",
+      "dates": "2026-08-12 – 2026-08-14",
+      "date_from": "2026-08-12",
+      "date_to": "2026-08-14",
+      "end_date": "2026-08-14",
+      "hours": null,
+      "title": "MANY  FREE  ITEMS:  SOME FOR SALE:  GARAGE",
+      "details": "QR Code Link to This Post MANY FREE ITEMS: SOME FOR SALE: GARAGE SALE. Make an offer—children’s books, women’s clothing, skates, camping tent &amp; sleeping bags, yoga mats, Our Generation Dolls &amp; Many Accessories, Jewelry, Molly Pockets Puddles, Kendi Kids Dolls, Medical Ambulance, &amp; Accessories, ELLIPTICAL EXERCISER, Kids Ride-On Scooter Luggage, Carry-On Suitcase, Amazon Price--$119, My",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/austin-many-free-items-some-for-sale/dxpcZYn9EAsoibV6YZAv3J",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 30.42627,
+      "lon": -97.680887,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-emssomeforsaledxpczyn9easoibv6yzav3j"
     }
   ],
   "hot_zones": [
@@ -522,9 +546,9 @@
     "garagesalefinder.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 22,
+  "total_locations": 23,
   "status": "live",
   "date": "2026-08-12",
-  "last_refresh": "2026-08-12T10:50:30-05:00",
+  "last_refresh": "2026-08-12T11:55:04-05:00",
   "permits": []
 }
