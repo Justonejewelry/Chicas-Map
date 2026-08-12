@@ -23,8 +23,8 @@
       "in_person": true,
       "external_id": "yss-224goldenbeardraustintx78738-2026-08-12",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ]
     },
     {
@@ -66,8 +66,8 @@
       "in_person": false,
       "external_id": "eso-2455523",
       "categories": [
-        "online-auction",
-        "estate-sale"
+        "estate-sale",
+        "online-auction"
       ]
     },
     {
@@ -168,8 +168,8 @@
       "in_person": true,
       "external_id": "yss-308portsmouthdrgeorgetowntx78633-2026-08-14",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ]
     },
     {
@@ -191,8 +191,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.059576535896515,
-      "lon": -97.84416668829013,
+      "lat": 30.06273859123248,
+      "lon": -97.84422896344833,
       "geocode": "source",
       "company": "Creative Estate Sales",
       "in_person": true,
@@ -487,6 +487,24 @@
       "categories": [
         "estate-sale"
       ]
+    },
+    {
+      "address": "948 Divine Way, New Braunfels, TX 78130",
+      "dates": "Sat Aug 15 – Sat Aug 15",
+      "date_from": "08/15/2026",
+      "date_to": "08/15/2026",
+      "end_date": "2026-08-15",
+      "title": "Garage Sale - 8/15 @ 7AM",
+      "details": "",
+      "source": "GarageSaleFinder",
+      "url": "https://garagesalefinder.com/s/N9w8G/948-divine-way-new-braunfels-tx-78130",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.65,
+      "status": "verified",
+      "lat": 30.2672,
+      "lon": -97.7431,
+      "geocode": "city-center"
     }
   ],
   "permits": [],
@@ -508,7 +526,7 @@
     "yardsalesearch.com"
   ],
   "status": "live",
-  "total_locations": 21,
+  "total_locations": 22,
   "date": "2026-08-12",
-  "last_refresh": "2026-08-12T08:02:28-05:00"
+  "last_refresh": "2026-08-12T09:53:50-05:00"
 }

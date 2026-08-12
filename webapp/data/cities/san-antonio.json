@@ -45,8 +45,8 @@
       "in_person": false,
       "external_id": "eso-2456237",
       "categories": [
-        "online-auction",
-        "estate-sale"
+        "estate-sale",
+        "online-auction"
       ]
     },
     {
@@ -296,8 +296,8 @@
       "in_person": false,
       "external_id": "eso-2456673",
       "categories": [
-        "online-auction",
-        "estate-sale"
+        "estate-sale",
+        "online-auction"
       ]
     },
     {
@@ -393,6 +393,28 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "cl-amilygaragesalexxgfkyvupqrlz9obk3kyh4"
+    },
+    {
+      "address": "948 Divine Way, New Braunfels, TX 78130",
+      "dates": "2026-08-15 – 2026-08-15",
+      "date_from": "2026-08-15",
+      "date_to": "2026-08-15",
+      "end_date": "2026-08-15",
+      "title": "Garage Sale - 8/15 @ 7Am",
+      "details": "",
+      "source": "YardSaleSearch",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196345229",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.88,
+      "status": "verified",
+      "lat": 29.661249,
+      "lon": -98.11058,
+      "geocode": "source",
+      "external_id": "yss-948divinewaynewbraunfelstx78130-2026-08-15",
+      "categories": [
+        "garage-sale"
+      ]
     }
   ],
   "permits": [
@@ -1989,10 +2011,10 @@
     "yardsales.net",
     "yardsalesearch.com"
   ],
-  "total_locations": 80,
+  "total_locations": 81,
   "status": "live",
   "date": "2026-08-12",
-  "last_refresh": "2026-08-12T08:02:28-05:00",
+  "last_refresh": "2026-08-12T09:53:50-05:00",
   "permit_total": 138,
   "permit_estate_count": 1
 }
