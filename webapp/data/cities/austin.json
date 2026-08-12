@@ -89,8 +89,8 @@
       "in_person": false,
       "external_id": "eso-2455523",
       "categories": [
-        "online-auction",
-        "estate-sale"
+        "estate-sale",
+        "online-auction"
       ]
     },
     {
@@ -227,13 +227,13 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.062280452533237,
-      "lon": -97.84449882246717,
+      "lat": 30.059639417678763,
+      "lon": -97.84043017879839,
       "geocode": "source",
       "company": "Creative Estate Sales",
       "in_person": true,
@@ -518,7 +518,7 @@
       "title": "Selling OUT ALL 42'' Club Cadet xt-1 AND much to go with it",
       "details": "QR Code Link to This Post SELLING OUT ALL ( Stop And SEE Before You Say No way or Call ) Please call me first Selling ALL that goes with this 42'' c;ub cadet xt 1 1-full set of tires and rims a home made wagon with all new parts for the deck, new blades and good ones also, belts, Selling for 1,550.00 Cash only Price is FIRM, and with a spreader a blade stand to sharping them AND A NEW LIFT JACK Se",
       "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/killeen-selling-out-all-42-club-cadet/oXUEBy8BhmKLhnvKfDrzK8",
+      "url": "https://www.craigslist.org/view/d/killeen-selling-out-all-42-club-cadet/98DCqHuEpjB5s2zvSqXocT",
       "photos": 0,
       "type": "garage",
       "categories": [
@@ -530,7 +530,7 @@
       "lon": -97.713567,
       "geocode": "source",
       "in_person": true,
-      "external_id": "cl-all42clubcadetoxueby8bhmklhnvkfdrzk8"
+      "external_id": "cl-all42clubcadet98dcqhuepjb5s2zvsqxoct"
     },
     {
       "address": "3300 Hemlock Avenue, Austin, TX",
@@ -577,6 +577,53 @@
       "lon": -97.7431,
       "geocode": "city-center",
       "company": null
+    },
+    {
+      "address": "1701 W 33rd St, Austin, TX 78703",
+      "dates": "2026-08-14 – 2026-08-16",
+      "date_from": "2026-08-14",
+      "date_to": "2026-08-16",
+      "end_date": "2026-08-16",
+      "title": "Estate/Moving Sale",
+      "details": "",
+      "source": "YardSaleSearch",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196345945",
+      "photos": 0,
+      "type": "estate",
+      "confidence": 0.9,
+      "status": "verified",
+      "lat": 30.3052012,
+      "lon": -97.7534088,
+      "geocode": "source",
+      "hours": "2026-08-14 9:00 am-6:00 pm; 2026-08-15 10:30 am-4:00 pm; 2026-08-16 9:30 am-1:00 pm",
+      "in_person": true,
+      "external_id": "yss-1701w33rdstaustintx78703-2026-08-14",
+      "categories": [
+        "estate-sale",
+        "in-person"
+      ]
+    },
+    {
+      "address": "105 Red Oak Ct, Georgetown, TX 78628",
+      "dates": "2026-08-14 – 2026-08-15",
+      "date_from": "2026-08-14",
+      "date_to": "2026-08-15",
+      "end_date": "2026-08-15",
+      "title": "Multi Family Garage Sale, Even The Boys Are Involved!",
+      "details": "",
+      "source": "YardSaleSearch",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196345859",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.88,
+      "status": "verified",
+      "lat": 30.611776,
+      "lon": -97.707752,
+      "geocode": "source",
+      "external_id": "yss-105redoakctgeorgetowntx78628-2026-08-14",
+      "categories": [
+        "garage-sale"
+      ]
     }
   ],
   "hot_zones": [
@@ -594,9 +641,9 @@
     "garagesalefinder.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 25,
+  "total_locations": 27,
   "status": "live",
   "date": "2026-08-12",
-  "last_refresh": "2026-08-12T15:40:50-05:00",
+  "last_refresh": "2026-08-12T17:37:29-05:00",
   "permits": []
 }

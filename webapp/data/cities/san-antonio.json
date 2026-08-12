@@ -45,8 +45,8 @@
       "in_person": false,
       "external_id": "eso-2456673",
       "categories": [
-        "online-auction",
-        "estate-sale"
+        "estate-sale",
+        "online-auction"
       ]
     },
     {
@@ -415,6 +415,32 @@
       "lon": -98.4936,
       "geocode": "city-center",
       "company": null
+    },
+    {
+      "address": "hidden, San Antonio, TX 78210",
+      "dates": "2026-08-21 – 2026-08-23",
+      "date_from": "2026-08-21",
+      "date_to": "2026-08-23",
+      "end_date": "2026-08-23",
+      "hours": "2026-08-21 9:00 am-3:00 pm; 2026-08-22 9:00 am-3:00 pm; 2026-08-23 9:00 am-3:00 pm",
+      "title": "Craftsman’s Estate Sale — Packed Garage, Tools, Machinery & More!",
+      "details": "Caring Transitions of San Antonio Central. Calling all craftsmen, welders, woodworkers, mechanics, contractors, DIYers and tool hunters! Caring Transitions of San Antonio Central invites you to a unique estate sale featuring the garage and workshop of a longtime welder and skilled craftsman....",
+      "source": "EstateSales.org",
+      "url": "https://estatesales.org/estate-sales/tx/san-antonio/78210/craftsmans-estate-sale-packed-garage-2456907",
+      "photos": 0,
+      "type": "estate",
+      "categories": [
+        "estate-sale",
+        "in-person"
+      ],
+      "confidence": 0.9,
+      "status": "verified",
+      "lat": 29.392604665684512,
+      "lon": -98.47117924726601,
+      "geocode": "source",
+      "company": "Caring Transitions of San Antonio Central",
+      "in_person": true,
+      "external_id": "eso-2456907"
     }
   ],
   "permits": [
@@ -2003,10 +2029,10 @@
     "garagesalefinder.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 81,
+  "total_locations": 82,
   "status": "live",
   "date": "2026-08-12",
-  "last_refresh": "2026-08-12T15:40:50-05:00",
+  "last_refresh": "2026-08-12T17:37:29-05:00",
   "permit_total": 138,
   "permit_estate_count": 1
 }
