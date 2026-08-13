@@ -1,5 +1,9 @@
-/** Upgrade featured checkbox UI to Boost 6-month pass */
+/** Upgrade featured checkbox UI to Boost 6-month pass + Square pay link */
 (function () {
+  var PAY =
+    (window.ChicaConfig && window.ChicaConfig.BOOST_PAYMENT_URL) ||
+    "https://square.link/u/xiJuZ66C";
+
   function run() {
     var old = document.querySelector(".submit-featured");
     if (!old || document.querySelector(".submit-boost")) return;
@@ -22,8 +26,14 @@
       "<li>“Boosted” badge on each card</li>" +
       "<li>One payment — covers all your garage sales this season</li>" +
       "</ul>" +
-      "<small>Payment instructions emailed after review. Your first listing and any later ones in the next 6 months stay boosted.</small>" +
+      "<small>Listing stays free and reviewed. If you check Boost, you’ll pay $9 securely via Square after submit. Boost activates after payment <em>and</em> approval.</small>" +
       "</span></label>" +
+      '<p class="submit-boost-pay" style="margin:10px 0 0;font-size:.85rem">' +
+      '<a href="' +
+      PAY +
+      '" target="_blank" rel="noopener noreferrer">Pay Boost $9 now (Square)</a>' +
+      " · or check the box above and pay right after you submit." +
+      "</p>" +
       '<p class="submit-boost-sponsor">Local business? See <a href="sponsor.html">weekend sponsorship packages</a> from $100.</p>';
     old.replaceWith(wrap);
   }
@@ -41,11 +51,15 @@
         .replace("BOOSTED sale listing for review ($9)", "BOOST 6-MONTH PASS ($9)")
         .replace(
           "FEATURED REQUESTED — send $5 payment instructions.",
-          "6-MONTH BOOST PASS REQUESTED — send $9 payment instructions. Covers all sales from this submitter for 6 months."
+          "6-MONTH BOOST PASS REQUESTED — Square Payment Link: https://square.link/u/xiJuZ66C"
         )
         .replace(
           "BOOST REQUESTED — send $9 Venmo/payment instructions for weekend boost.",
-          "6-MONTH BOOST PASS REQUESTED — send $9 payment instructions. Covers all sales from this submitter for 6 months."
+          "6-MONTH BOOST PASS REQUESTED — Square Payment Link: https://square.link/u/xiJuZ66C"
+        )
+        .replace(
+          "6-MONTH BOOST PASS REQUESTED — send $9 payment instructions. Covers all sales from this submitter for 6 months from approval date.",
+          "6-MONTH BOOST PASS REQUESTED — payer sent to Square: https://square.link/u/xiJuZ66C — activate Boost after payment + listing approval."
         );
     }
     return orig(s);

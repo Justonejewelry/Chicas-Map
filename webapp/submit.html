@@ -20,7 +20,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/voss.css" />
   <link rel="stylesheet" href="css/map-voss-ux.css" />
-  <link rel="stylesheet" href="css/chica-submit.css?v=boost6mo" />
+  <link rel="stylesheet" href="css/chica-submit.css?v=boostsquare1" />
   <script src="js/chica-config.js"></script>
   <script src="js/chica-analytics.js"></script>
 </head>
@@ -83,6 +83,8 @@
             <div class="submit-progress-bar" aria-hidden="true"><i id="progressBar"></i></div>
           </div>
         </div>
+
+        <p id="boostBanner" class="submit-status" hidden style="margin-bottom:14px"></p>
 
         <form id="saleForm" class="submit-form" novalidate>
           <section class="submit-section" aria-labelledby="section-sale">
@@ -155,7 +157,7 @@
                 <span>
                   <span class="submit-featured-price">$9</span>
                   <strong>6-month Boost pass</strong>
-                  <small>Gold pin on every sale you list for 6 months. One payment covers the whole season. Payment instructions emailed after review.</small>
+                  <small>Gold pin for 6 months. Pay securely with Square after you submit. Boost activates after payment and listing approval.</small>
                 </span>
               </label>
             </div>
@@ -250,6 +252,13 @@
         </div>
 
         <div class="submit-side-card">
+          <h3>Boost ($9)</h3>
+          <p style="font-size:.85rem;color:#5c534a;line-height:1.45">
+            Optional. Pay via Square after submit. Gold pin activates only after payment <strong>and</strong> listing approval.
+          </p>
+        </div>
+
+        <div class="submit-side-card">
           <h3>Community tips</h3>
           <p style="font-size:.85rem;color:#5c534a;line-height:1.45">
             Saw a good sale on Nextdoor or a Facebook group? Use the Community origin section so we can verify it and put a clean pin on the map for everyone.
@@ -281,10 +290,11 @@
   </footer>
 
   <script src="js/chica-pwa.js"></script>
-  <script src="js/boost-upgrade.js?v=6mo"></script>
+  <script src="js/boost-upgrade.js?v=square1"></script>
   <script>
   (function () {
-    var REVIEW = "mr.jsciaraffa@gmail.com";
+    var REVIEW = (window.ChicaConfig && window.ChicaConfig.REVIEW_EMAIL) || "mr.jsciaraffa@gmail.com";
+    var BOOST_URL = (window.ChicaConfig && window.ChicaConfig.BOOST_PAYMENT_URL) || "https://square.link/u/xiJuZ66C";
     var form = document.getElementById("saleForm");
     var status = document.getElementById("saleStatus");
     var progressBar = document.getElementById("progressBar");
@@ -293,6 +303,22 @@
     var summaryCount = document.getElementById("summaryCount");
     var requiredFields = ["saleTitle", "saleAddress", "saleStart", "saleHours", "saleSummary", "saleName"];
     var checks = ["saleAttest", "saleAccurate", "saleTerms"];
+
+    // Success / cancel return from Square (if redirect is configured later)
+    try {
+      var params = new URLSearchParams(window.location.search);
+      var boostFlag = params.get("boost");
+      var banner = document.getElementById("boostBanner");
+      if (banner && boostFlag === "success") {
+        banner.hidden = false;
+        banner.className = "submit-status";
+        banner.textContent = "Payment received (or in progress). Your listing still needs review — Boost activates after approval.";
+      } else if (banner && boostFlag === "cancel") {
+        banner.hidden = false;
+        banner.className = "submit-status error";
+        banner.textContent = "Boost payment canceled. You can still list free without Boost.";
+      }
+    } catch (_) {}
 
     function updateProgress() {
       var complete = requiredFields.filter(function (id) {
@@ -343,6 +369,7 @@
 
       var communitySource = document.getElementById("saleCommunitySource").value || null;
       var communityLink = document.getElementById("saleCommunityLink").value.trim() || null;
+      var wantBoost = !!(document.getElementById("saleFeatured") && document.getElementById("saleFeatured").checked);
 
       var payload = {
         title: document.getElementById("saleTitle").value.trim(),
@@ -355,8 +382,10 @@
         submitter_name: document.getElementById("saleName").value.trim(),
         contact: document.getElementById("saleContact").value.trim() || null,
         public_contact: document.getElementById("salePublicContact").checked,
-        featured_request: document.getElementById("saleFeatured").checked,
-        boost_pass_months: document.getElementById("saleFeatured").checked ? 6 : 0,
+        featured_request: wantBoost,
+        boost_pass_months: wantBoost ? 6 : 0,
+        boost_payment_url: wantBoost ? BOOST_URL : null,
+        payment_provider: wantBoost ? "square" : null,
         community_source: communitySource,
         community_link_or_notes: communityLink,
         submitted_at: new Date().toISOString(),
@@ -366,7 +395,7 @@
 
       var subject = encodeURIComponent(
         payload.featured_request
-          ? "Chica Map — BOOST 6-MONTH PASS ($9)"
+          ? "Chica Map — BOOST 6-MONTH PASS ($9 Square)"
           : (payload.source === "community_tip"
               ? "Chica Map — community tip for review"
               : "Chica Map — free sale listing for review")
@@ -376,17 +405,30 @@
         JSON.stringify(payload, null, 2) +
         "\n\nAttestation: seller/agent, accuracy, and moderation terms checked." +
         (payload.featured_request
-          ? "\n\n6-MONTH BOOST PASS REQUESTED — send $9 payment instructions. Covers all sales from this submitter for 6 months from approval date."
+          ? "\n\n6-MONTH BOOST PASS REQUESTED — payer directed to Square Payment Link: " +
+            BOOST_URL +
+            " — activate Boost only after Square payment confirmation AND listing approval."
           : "") +
         (payload.community_source
           ? "\n\nCommunity origin: " + payload.community_source + (payload.community_link_or_notes ? " — " + payload.community_link_or_notes : "")
           : "")
       );
 
+      // 1) Open review email
       window.location.href = "mailto:" + REVIEW + "?subject=" + subject + "&body=" + body;
+
+      // 2) If Boost checked, open Square Payment Link in a new tab shortly after
+      if (wantBoost && BOOST_URL) {
+        setTimeout(function () {
+          window.open(BOOST_URL, "_blank", "noopener,noreferrer");
+        }, 600);
+      }
+
       status.hidden = false;
       status.className = "submit-status";
-      status.textContent = "Review email opened. Your sale appears on the map only after verification — usually the same day for weekend listings.";
+      status.textContent = wantBoost
+        ? "Review email opened. Square checkout opens next for the $9 Boost — listing still needs approval before the gold pin goes live."
+        : "Review email opened. Your sale appears on the map only after verification — usually the same day for weekend listings.";
       document.getElementById("saleSubmit").disabled = true;
       updateProgress();
     });

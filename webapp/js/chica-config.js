@@ -13,6 +13,10 @@
     GA_MEASUREMENT_ID: "",
     /** Optional direct donation link. Leave empty to use sponsor.html */
     DONATION_URL: "",
+    /** Square Payment Link — 6-month Boost pass ($9) */
+    BOOST_PAYMENT_URL: "https://square.link/u/xiJuZ66C",
+    BOOST_PRICE_USD: 9,
+    BOOST_MONTHS: 6,
     formspreeUrl: function (id) {
       if (!id || !String(id).trim()) return null;
       return "https://formspree.io/f/" + String(id).trim();
