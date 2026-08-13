@@ -161,9 +161,33 @@
             </div>
           </section>
 
-          <section class="submit-section" aria-labelledby="section-contact">
+          <section class="submit-section" aria-labelledby="section-community">
             <div class="submit-section-head">
               <div class="submit-section-number">04</div>
+              <div><h3 id="section-community">Community origin <span style="color:#8b837a;font-weight:500">Optional</span></h3><p>Saw this sale on Nextdoor, Facebook, or Reddit? Help us verify it faster.</p></div>
+            </div>
+            <div class="submit-field">
+              <label for="saleCommunitySource">Where did you see it?</label>
+              <select id="saleCommunitySource" name="community_source">
+                <option value="">— Not from a community post —</option>
+                <option value="nextdoor">Nextdoor</option>
+                <option value="facebook">Facebook group / post</option>
+                <option value="reddit">Reddit (r/sanantonio etc.)</option>
+                <option value="other_community">Other local forum</option>
+                <option value="own_listing">This is my own sale</option>
+              </select>
+            </div>
+            <div class="submit-field">
+              <label for="saleCommunityLink">Link or key details <span style="color:#8b837a">Optional</span></label>
+              <textarea id="saleCommunityLink" name="community_link" maxlength="400" rows="2"
+                placeholder="Paste the Nextdoor / Facebook / Reddit link, or a short note (neighborhood, poster name, etc.)"></textarea>
+              <p class="submit-helper">Public links and tips only. This helps Chica verify faster and keeps the map accurate.</p>
+            </div>
+          </section>
+
+          <section class="submit-section" aria-labelledby="section-contact">
+            <div class="submit-section-head">
+              <div class="submit-section-number">05</div>
               <div><h3 id="section-contact">Your contact</h3><p>Used for review questions and listing follow-up.</p></div>
             </div>
             <div class="submit-field-row">
@@ -183,7 +207,7 @@
 
           <section class="submit-section" aria-labelledby="section-confirm">
             <div class="submit-section-head">
-              <div class="submit-section-number">05</div>
+              <div class="submit-section-number">06</div>
               <div><h3 id="section-confirm">One last check</h3><p>These confirmations protect sellers and shoppers.</p></div>
             </div>
             <div class="submit-attestations">
@@ -223,6 +247,13 @@
             <div class="submit-step"><i>2</i><div><strong>Chica checks it</strong><span>We review the address, timing, and listing details.</span></div></div>
             <div class="submit-step"><i>3</i><div><strong>It goes live</strong><span>Approved sales are added to the map for shoppers.</span></div></div>
           </div>
+        </div>
+
+        <div class="submit-side-card">
+          <h3>Community tips</h3>
+          <p style="font-size:.85rem;color:#5c534a;line-height:1.45">
+            Saw a good sale on Nextdoor or a Facebook group? Use the Community origin section so we can verify it and put a clean pin on the map for everyone.
+          </p>
         </div>
 
         <a class="submit-side-card submit-back-map" href="map.html">
@@ -310,6 +341,9 @@
       var cats = [];
       form.querySelectorAll('input[name="cat"]:checked').forEach(function (c) { cats.push(c.value); });
 
+      var communitySource = document.getElementById("saleCommunitySource").value || null;
+      var communityLink = document.getElementById("saleCommunityLink").value.trim() || null;
+
       var payload = {
         title: document.getElementById("saleTitle").value.trim(),
         address: document.getElementById("saleAddress").value.trim(),
@@ -323,15 +357,19 @@
         public_contact: document.getElementById("salePublicContact").checked,
         featured_request: document.getElementById("saleFeatured").checked,
         boost_pass_months: document.getElementById("saleFeatured").checked ? 6 : 0,
+        community_source: communitySource,
+        community_link_or_notes: communityLink,
         submitted_at: new Date().toISOString(),
         status: "pending_review",
-        source: "user_submit_free"
+        source: communitySource && communitySource !== "own_listing" ? "community_tip" : "user_submit_free"
       };
 
       var subject = encodeURIComponent(
         payload.featured_request
           ? "Chica Map — BOOST 6-MONTH PASS ($9)"
-          : "Chica Map — free sale listing for review"
+          : (payload.source === "community_tip"
+              ? "Chica Map — community tip for review"
+              : "Chica Map — free sale listing for review")
       );
       var body = encodeURIComponent(
         "Please review this user-submitted garage sale for the map.\n\n" +
@@ -339,6 +377,9 @@
         "\n\nAttestation: seller/agent, accuracy, and moderation terms checked." +
         (payload.featured_request
           ? "\n\n6-MONTH BOOST PASS REQUESTED — send $9 payment instructions. Covers all sales from this submitter for 6 months from approval date."
+          : "") +
+        (payload.community_source
+          ? "\n\nCommunity origin: " + payload.community_source + (payload.community_link_or_notes ? " — " + payload.community_link_or_notes : "")
           : "")
       );
 
