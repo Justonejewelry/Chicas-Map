@@ -2,50 +2,318 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sponsor Chica's Weekend · Chicas Map</title>
-  <meta name="description" content="Exclusive weekend sponsorship on Chica's garage sale map and weekly video — San Antonio." />
-  <meta name="theme-color" content="#166534" />
-  <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script","xyurojj2kb");</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Sponsor Chica Map · Reach weekend shoppers</title>
+  <meta name="description" content="Put your business in front of San Antonio shoppers who are already out looking for deals this weekend. Exclusive map + email sponsorship." />
+  <meta name="theme-color" content="#1a6b3c" />
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   <link rel="manifest" href="manifest.webmanifest" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/landing.css" />
-  <link rel="stylesheet" href="css/grass.css" />
-  <link rel="stylesheet" href="css/voss.css" />
-  <link rel="stylesheet" href="css/chica-polish.css" />
-  <style>.sp-hero h1 span{background:linear-gradient(90deg,#86efac,#fde68a);-webkit-background-clip:text;background-clip:text;color:transparent}.sp-hero p{margin:0}.sp-card p,.sp-card li{color:#334155;line-height:1.55}.sp-price-grid{display:grid;gap:10px}.sp-price{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center}.sp-price span{font-size:.88rem;color:#64748b}.sp-cta{display:block;text-align:center;text-decoration:none;color:#fff;font-weight:900}.sp-note{text-align:center}.sp-note a{font-weight:800}</style>
-  <script src="js/chica-config.js"></script>
-  <script src="js/chica-analytics.js"></script>
+  <style>
+    :root {
+      --green: #1a6b3c;
+      --green-deep: #145530;
+      --cream: #f7f5f0;
+      --ink: #1c2420;
+      --muted: #7a736b;
+      --border: #e6e1d8;
+      --gold: #c9a227;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: Inter, system-ui, -apple-system, sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--green); }
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 20px; background: #fff; border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 20;
+    }
+    .nav-brand {
+      display: flex; align-items: center; gap: 10px;
+      text-decoration: none; color: var(--ink); font-weight: 800; font-size: 1.05rem;
+    }
+    .nav-brand img { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; border: 2px solid #fff; box-shadow: 0 2px 8px rgba(26,107,60,.2); }
+    .nav-links { display: flex; gap: 18px; font-size: .88rem; font-weight: 600; }
+    .nav-links a { text-decoration: none; color: var(--muted); }
+    .nav-links a:hover { color: var(--green); }
+    .nav-cta {
+      background: var(--green); color: #fff !important; padding: 8px 14px;
+      border-radius: 999px; text-decoration: none; font-weight: 700; font-size: .85rem;
+    }
+    @media (max-width: 700px) { .nav-links { display: none; } }
+    .hero {
+      max-width: 920px; margin: 0 auto; padding: 48px 20px 28px; text-align: center;
+    }
+    .hero-kicker {
+      display: inline-block; font-size: .72rem; font-weight: 800; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--green); background: #e8f5ee;
+      padding: 6px 12px; border-radius: 999px; margin-bottom: 16px;
+    }
+    .hero h1 {
+      margin: 0 0 14px; font-size: clamp(1.8rem, 4.5vw, 2.75rem);
+      font-weight: 900; letter-spacing: -0.03em; line-height: 1.15;
+    }
+    .hero h1 em {
+      font-style: normal;
+      background: linear-gradient(90deg, #1a6b3c, #c9a227);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .hero p {
+      margin: 0 auto 24px; max-width: 540px; color: var(--muted);
+      font-size: 1.05rem; font-weight: 500;
+    }
+    .hero-proof {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 18px;
+      font-size: .82rem; font-weight: 600; color: var(--muted);
+    }
+    .hero-proof span { display: inline-flex; align-items: center; gap: 6px; }
+    .hero-proof b { color: var(--green); }
+    .section { max-width: 920px; margin: 0 auto; padding: 12px 20px 40px; }
+    .section-label {
+      font-size: .7rem; font-weight: 800; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--muted); margin: 0 0 14px;
+    }
+    .packages { display: grid; grid-template-columns: 1fr; gap: 14px; }
+    @media (min-width: 720px) {
+      .packages { grid-template-columns: 1.15fr 1fr 1fr; align-items: stretch; }
+    }
+    .pkg {
+      background: #fff; border: 1.5px solid var(--border); border-radius: 18px;
+      padding: 22px 20px; display: flex; flex-direction: column; gap: 12px;
+      box-shadow: 0 2px 12px rgba(20,17,15,.04);
+    }
+    .pkg.featured {
+      border-color: var(--green);
+      box-shadow: 0 12px 36px rgba(26,107,60,.14);
+      position: relative;
+    }
+    .pkg-badge {
+      position: absolute; top: -11px; left: 18px;
+      background: var(--green); color: #fff; font-size: .68rem; font-weight: 800;
+      padding: 4px 10px; border-radius: 999px; letter-spacing: .04em;
+    }
+    .pkg h3 { margin: 0; font-size: 1.05rem; font-weight: 800; }
+    .pkg .price {
+      font-size: 2rem; font-weight: 900; letter-spacing: -0.03em; color: var(--ink);
+    }
+    .pkg .price span { font-size: .85rem; font-weight: 600; color: var(--muted); }
+    .pkg ul {
+      margin: 0; padding: 0; list-style: none; flex: 1;
+      display: flex; flex-direction: column; gap: 8px;
+    }
+    .pkg li {
+      font-size: .88rem; color: #3d3a35; font-weight: 500;
+      padding-left: 22px; position: relative;
+    }
+    .pkg li::before {
+      content: "✓"; position: absolute; left: 0; color: var(--green); font-weight: 800;
+    }
+    .pkg-cta {
+      display: block; text-align: center; text-decoration: none;
+      padding: 12px 16px; border-radius: 12px; font-weight: 800; font-size: .9rem;
+      background: #f1efe9; color: var(--ink); border: 1.5px solid var(--border);
+      transition: .15s ease;
+    }
+    .pkg-cta:hover { border-color: var(--green); background: #e8f5ee; color: var(--green-deep); }
+    .pkg.featured .pkg-cta {
+      background: var(--green); color: #fff; border-color: var(--green);
+    }
+    .pkg.featured .pkg-cta:hover { background: var(--green-deep); color: #fff; }
+    .grid-2 { display: grid; gap: 14px; }
+    @media (min-width: 700px) { .grid-2 { grid-template-columns: 1fr 1fr; } }
+    .card {
+      background: #fff; border: 1.5px solid var(--border); border-radius: 16px;
+      padding: 20px;
+    }
+    .card h3 { margin: 0 0 10px; font-size: 1rem; font-weight: 800; }
+    .card p, .card li { color: var(--muted); font-size: .92rem; font-weight: 500; }
+    .card ul { margin: 0; padding-left: 18px; }
+    .card li { margin-bottom: 6px; }
+    .steps { display: grid; gap: 12px; }
+    @media (min-width: 700px) { .steps { grid-template-columns: repeat(3, 1fr); } }
+    .step {
+      background: #fff; border: 1.5px solid var(--border); border-radius: 16px;
+      padding: 18px; text-align: left;
+    }
+    .step i {
+      display: grid; place-items: center; width: 28px; height: 28px;
+      border-radius: 50%; background: #e8f5ee; color: var(--green);
+      font-style: normal; font-weight: 900; font-size: .85rem; margin-bottom: 10px;
+    }
+    .step strong { display: block; font-size: .95rem; margin-bottom: 4px; }
+    .step span { font-size: .85rem; color: var(--muted); font-weight: 500; }
+    .bottom-cta {
+      max-width: 920px; margin: 8px auto 48px; padding: 28px 24px;
+      background: linear-gradient(135deg, #1a6b3c, #145530);
+      border-radius: 20px; text-align: center; color: #fff;
+    }
+    .bottom-cta h2 { margin: 0 0 8px; font-size: 1.35rem; font-weight: 900; letter-spacing: -0.02em; }
+    .bottom-cta p { margin: 0 0 18px; opacity: .9; font-weight: 500; }
+    .bottom-cta a {
+      display: inline-block; background: #fff; color: var(--green-deep);
+      padding: 12px 22px; border-radius: 12px; font-weight: 800;
+      text-decoration: none; font-size: .95rem;
+    }
+    footer {
+      border-top: 1px solid var(--border); padding: 18px 20px;
+      display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between;
+      font-size: .82rem; color: var(--muted); font-weight: 600;
+      background: #fff;
+    }
+    footer a { color: var(--green-deep); text-decoration: none; font-weight: 700; margin-left: 12px; }
+  </style>
 </head>
-<body class="sponsor-page landing grass-site">
-  <header class="lnav">
-    <a class="lbrand" href="index.html"><img src="chicarar.png" alt="Chica" width="36" height="36" decoding="async" onerror="this.onerror=null;this.src='chicarar.jpg'" /><span>Sponsor Chica</span></a>
-    <nav class="llinks" aria-label="Primary"><a href="index.html">Home</a><a href="map.html">Map</a><a href="submit.html">List a sale</a><a href="backyard.html">Backyard</a></nav>
-    <div class="lnav-actions"><button type="button" class="lbtn ghost" data-chica-install hidden>Add to Home</button><a class="lbtn ghost" href="index.html">Home</a><a class="lbtn primary" href="map.html">Open map</a></div>
+<body>
+  <header class="nav">
+    <a class="nav-brand" href="index.html">
+      <img src="chicarar.png" alt="Chica" width="36" height="36"
+        onerror="this.onerror=null;this.src='chicarar.jpg'" />
+      Chica Map
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="map.html">Map</a>
+      <a href="submit.html">List a sale</a>
+      <a href="backyard.html">Backyard</a>
+      <a href="sponsor.html" aria-current="page">Sponsor</a>
+    </nav>
+    <a class="nav-cta" href="mailto:mr.jsciaraffa@gmail.com?subject=Sponsor%20Chica%20Map%20weekend&body=Hi%20—%20I'd%20like%20to%20sponsor%20a%20weekend.%0A%0ABusiness%20name%3A%0APreferred%20dates%3A%0APackage%3A%20Weekend%20%2F%20Month%20%2F%20Pin%20add-on%0A">Request a weekend</a>
   </header>
 
-  <main class="sp-wrap">
-    <div class="sp-hero">
-      <img class="sp-hero-img" src="assets/file_000000009f8c71fda0f56075f84270f7.png" alt="Chica in a red cape" />
-      <h1>Sponsor <span>Chica's Weekend</span></h1>
-      <p>One local partner. One weekend. The map people actually open.</p>
+  <section class="hero">
+    <div class="hero-kicker">San Antonio · Weekend sponsorship</div>
+    <h1>Reach people who are<br /><em>already out shopping.</em></h1>
+    <p>
+      Chica Map is open when wallets are open — Thursday through Saturday.
+      One exclusive partner per weekend. No banner clutter. Real intent.
+    </p>
+    <div class="hero-proof">
+      <span><b>✓</b> Live verified sales map</span>
+      <span><b>✓</b> Friday intel email</span>
+      <span><b>✓</b> One sponsor only</span>
     </div>
+  </section>
 
-    <div class="sp-card"><h2>The opportunity</h2><p>Every Thursday–Saturday, San Antonio shoppers use <strong>Chicas Map</strong> (Chica's Garage Sale Map) to find verified garage, yard, and estate sales. We're offering a single exclusive sponsorship seat each weekend on the weekly video and live map briefing.</p></div>
-    <div class="sp-card"><h2>What's included</h2><ul><li><strong>Chica's weekly video</strong> — verbal shout-out + on-screen name/logo</li><li><strong>Map briefing strip</strong> — “This weekend's intel brought to you by…” Fri–Sat</li><li><strong>Backyard mention</strong> — logo/name on that week's update</li><li><strong>Exclusive</strong> — only one sponsor per weekend</li></ul></div>
-    <div class="sp-card"><h2>Investment</h2><div class="sp-price-grid">
-      <div class="sp-price featured"><div><strong style="color:#0f172a;font-size:1rem">Weekend Sponsor</strong><br/><span>Video + map strip + Backyard · one partner only</span></div><strong>$100</strong></div>
-      <div class="sp-price"><div><strong style="color:#0f172a;font-size:1rem">Month of Weekends</strong><br/><span>4 weekends · priority on peak weeks · save $50</span></div><strong>$350</strong></div>
-      <div class="sp-price"><div><strong style="color:#0f172a;font-size:1rem">Featured Pin add-on</strong><br/><span>Boost a sale on the map the same weekend</span></div><strong>+$35</strong></div>
-    </div></div>
-    <div class="sp-card"><h2>Best fit for</h2><ul><li>Antique malls, thrift & consignment</li><li>Estate sale companies & liquidators</li><li>Junk removal / haul-away</li><li>Self-storage & moving help</li><li>Local coffee & “make a day of it” spots near sale zones</li></ul></div>
+  <section class="section">
+    <p class="section-label">Packages</p>
+    <div class="packages">
+      <article class="pkg featured">
+        <span class="pkg-badge">Most chosen</span>
+        <h3>Weekend Sponsor</h3>
+        <div class="price">$100 <span>/ weekend</span></div>
+        <ul>
+          <li>Name + logo on the Friday email</li>
+          <li>“Brought to you by…” on the map briefing</li>
+          <li>Shout-out on Chica’s weekly video</li>
+          <li>Backyard update mention</li>
+          <li>Exclusive — only one partner that weekend</li>
+        </ul>
+        <a class="pkg-cta" href="mailto:mr.jsciaraffa@gmail.com?subject=Weekend%20Sponsor%20%24100&body=Hi%20—%20I'd%20like%20the%20Weekend%20Sponsor%20package%20(%24100).%0A%0ABusiness%3A%0APreferred%20weekend%3A%0ALogo%20attached%3A%20">Book this weekend →</a>
+      </article>
 
-    <a class="sp-cta" href="mailto:mr.jsciaraffa@gmail.com?subject=Sponsor%20Chica%27s%20Weekend&body=Hi%20—%20I'd%20like%20to%20sponsor%20a%20weekend.%20Preferred%20dates%3A%0A%0ABusiness%20name%3A%0ALogo%20attached%3A%20">Request a weekend →</a>
-    <p class="sp-note">Email <a href="mailto:mr.jsciaraffa@gmail.com">mr.jsciaraffa@gmail.com</a> with preferred dates and your logo.</p>
-  </main>
-  <footer class="lfoot"><div><strong>Chicas Map</strong><span>GSIN · Chica</span></div><div class="lfoot-links"><a href="index.html">Home</a><a href="map.html">Map</a><a href="submit.html">List a sale</a><a href="backyard.html">Backyard</a></div></footer>
+      <article class="pkg">
+        <h3>Month of Weekends</h3>
+        <div class="price">$350 <span>/ 4 weekends</span></div>
+        <ul>
+          <li>Everything in Weekend Sponsor</li>
+          <li>Priority on peak sale weekends</li>
+          <li>Save $50 vs weekly</li>
+          <li>Consistent presence all month</li>
+        </ul>
+        <a class="pkg-cta" href="mailto:mr.jsciaraffa@gmail.com?subject=Month%20of%20Weekends%20%24350&body=Hi%20—%20I'd%20like%20the%20Month%20of%20Weekends%20package%20(%24350).%0A%0ABusiness%3A%0AStart%20month%3A%0A">Lock in a month →</a>
+      </article>
+
+      <article class="pkg">
+        <h3>Featured Pin add-on</h3>
+        <div class="price">+$35 <span>/ weekend</span></div>
+        <ul>
+          <li>Boosted pin on the live map</li>
+          <li>Priority in Closest / list</li>
+          <li>Pairs with any sponsor package</li>
+          <li>Or buy alone for a single sale</li>
+        </ul>
+        <a class="pkg-cta" href="mailto:mr.jsciaraffa@gmail.com?subject=Featured%20Pin%20add-on%20%2B%2435&body=Hi%20—%20I'd%20like%20a%20Featured%20Pin%20(%2B%2435).%0A%0ABusiness%20or%20sale%20address%3A%0AWeekend%3A%0A">Add a pin →</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <p class="section-label">Why this works</p>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Intent, not interruption</h3>
+        <p>
+          Shoppers open Chica Map because they’re planning a route this weekend —
+          not because an ad followed them around the internet. Your name shows up
+          in the same moment they’re deciding where to drive.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Best fit for</h3>
+        <ul>
+          <li>Antique malls, thrift & consignment</li>
+          <li>Estate sale companies & liquidators</li>
+          <li>Junk removal / haul-away</li>
+          <li>Self-storage & moving help</li>
+          <li>Coffee & breakfast spots near sale clusters</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <p class="section-label">How it works</p>
+    <div class="steps">
+      <div class="step">
+        <i>1</i>
+        <strong>Pick a weekend</strong>
+        <span>Email preferred dates. One exclusive seat per weekend.</span>
+      </div>
+      <div class="step">
+        <i>2</i>
+        <strong>Send logo + line</strong>
+        <span>Simple brand assets. We handle placement on map, email, and video.</span>
+      </div>
+      <div class="step">
+        <i>3</i>
+        <strong>Show up where it counts</strong>
+        <span>Thursday–Saturday, your name is on the intel shoppers actually open.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="card">
+      <h3>Also available: Boost a single sale — $9</h3>
+      <p style="margin:0 0 12px">
+        Home sellers listing free on the map can request a gold “Boosted” pin for the weekend.
+        Payment instructions are sent after review. Start from the
+        <a href="submit.html">list a sale</a> form.
+      </p>
+    </div>
+  </section>
+
+  <div class="bottom-cta">
+    <h2>One partner. One weekend. Real shoppers.</h2>
+    <p>Tell us your dates — we’ll confirm availability the same day.</p>
+    <a href="mailto:mr.jsciaraffa@gmail.com?subject=Sponsor%20Chica%20Map%20weekend&body=Hi%20—%20I'd%20like%20to%20sponsor%20a%20weekend.%0A%0ABusiness%20name%3A%0APreferred%20dates%3A%0APackage%3A%0A">Request a weekend →</a>
+  </div>
+
+  <footer>
+    <div><strong>Chica Map</strong> · San Antonio & Texas</div>
+    <div>
+      <a href="map.html">Map</a>
+      <a href="submit.html">List a sale</a>
+      <a href="backyard.html">Backyard</a>
+      <a href="mailto:mr.jsciaraffa@gmail.com">Contact</a>
+    </div>
+  </footer>
   <script src="js/chica-pwa.js"></script>
 </body>
 </html>
