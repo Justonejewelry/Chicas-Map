@@ -5,6 +5,10 @@ Chica Map — Master Daily Orchestrator
 1 AM San Antonio runs on Thursday / Friday / Saturday → target is TODAY.
 Gathers candidates, deep-follows listing pages, normalizes, dedupes,
 runs Sentinel, writes canonical files + social + Update Pack.
+
+Optional secondary channel: email digests via scripts/email_leads.py
+  --email-messages path/to/gmail_messages.json
+  --email-leads-json path/to/preparsed_sale_dicts.json
 """
 
 from __future__ import annotations
@@ -39,6 +43,14 @@ try:
 except ImportError:
     def enrich_batch(sales, max_follow=40):
         return sales
+
+try:
+    from email_leads import parse_messages, filter_passed, leads_to_sale_dicts, summarize as email_summarize
+except ImportError:
+    parse_messages = None  # type: ignore
+    filter_passed = None  # type: ignore
+    leads_to_sale_dicts = None  # type: ignore
+    email_summarize = None  # type: ignore
 
 CT = ZoneInfo("America/Chicago")
 
@@ -81,6 +93,52 @@ def load_city_public(slug: str = "san-antonio") -> list[dict]:
         except Exception as e:
             print(f"  could not load {path}: {e}")
     return []
+
+
+def load_email_lead_dicts(
+    messages_path: str | None,
+    leads_json_path: str | None,
+    target: date,
+) -> list[dict]:
+    """Load and aggressively filter email-sourced sale dicts."""
+    out: list[dict] = []
+    if leads_json_path:
+        path = Path(leads_json_path)
+        if path.exists():
+            data = json.loads(path.read_text(encoding="utf-8"))
+            if isinstance(data, list):
+                out.extend(data)
+            elif isinstance(data, dict):
+                out.extend(data.get("sales") or data.get("leads") or [])
+            print(f"  email leads-json loaded: {len(out)} from {path}")
+        else:
+            print(f"  email leads-json missing: {path}")
+
+    if messages_path and parse_messages is not None:
+        path = Path(messages_path)
+        if path.exists():
+            raw = json.loads(path.read_text(encoding="utf-8"))
+            if isinstance(raw, dict):
+                msgs = raw.get("messages") or []
+                if not msgs and "threads" in raw:
+                    msgs = []
+                    for t in raw["threads"]:
+                        msgs.extend(t.get("messages") or [])
+            else:
+                msgs = list(raw)
+            leads = parse_messages(msgs)
+            if email_summarize:
+                print(email_summarize(leads))
+            passed = filter_passed(leads) if filter_passed else []
+            converted = leads_to_sale_dicts(passed, target) if leads_to_sale_dicts else []
+            print(f"  email messages parsed: {len(leads)} total, {len(converted)} passed filter")
+            out.extend(converted)
+        else:
+            print(f"  email messages file missing: {path}")
+    elif messages_path and parse_messages is None:
+        print("  email_leads module not available — skip --email-messages")
+
+    return out
 
 
 def _usable_address(address: str) -> bool:
@@ -210,7 +268,12 @@ def to_geojson(sales: list[Sale], target: str) -> dict:
     }
 
 
-def run(target: date, dry_run: bool = False) -> int:
+def run(
+    target: date,
+    dry_run: bool = False,
+    email_messages: str | None = None,
+    email_leads_json: str | None = None,
+) -> int:
     target_str = target.isoformat()
     run_time = now_ct_iso()
     print("=== Chica Daily Run ===")
@@ -219,6 +282,10 @@ def run(target: date, dry_run: bool = False) -> int:
     print(f"Dry run: {dry_run}")
 
     raw_public = load_city_public("san-antonio")
+    email_raw = load_email_lead_dicts(email_messages, email_leads_json, target)
+    if email_raw:
+        print(f"  merging {len(email_raw)} email-sourced candidates into pool")
+        raw_public = list(raw_public) + email_raw
     candidates = len(raw_public)
 
     sales: list[Sale] = []
@@ -315,6 +382,7 @@ def run(target: date, dry_run: bool = False) -> int:
         "Craigslist San Antonio",
         "City of San Antonio permits",
         "Yard Sale Treasure Map (config registered)",
+        "Email digests (EstateSales.org / GarageSaleFinder) — aggressive filter",
     ]
     pack_content = build_update_pack(
         target_date=target_str,
@@ -357,12 +425,25 @@ def main() -> int:
     ap = argparse.ArgumentParser(description="Chica Master Daily Orchestrator")
     ap.add_argument("--date", help="Force target date YYYY-MM-DD")
     ap.add_argument("--dry-run", action="store_true", help="Do not write files")
+    ap.add_argument(
+        "--email-messages",
+        help="JSON file of Gmail message dicts (from assisted scrape) for email_leads parser",
+    )
+    ap.add_argument(
+        "--email-leads-json",
+        help="Pre-parsed sale dicts JSON already filtered by email_leads.py",
+    )
     args = ap.parse_args()
     if args.date:
         target = date.fromisoformat(args.date)
     else:
         target = target_date_for_run()
-    return run(target, dry_run=args.dry_run)
+    return run(
+        target,
+        dry_run=args.dry_run,
+        email_messages=args.email_messages,
+        email_leads_json=args.email_leads_json,
+    )
 
 
 if __name__ == "__main__":
