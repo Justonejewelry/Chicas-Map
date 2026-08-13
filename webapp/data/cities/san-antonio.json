@@ -45,8 +45,8 @@
       "in_person": false,
       "external_id": "eso-2456237",
       "categories": [
-        "estate-sale",
-        "online-auction"
+        "online-auction",
+        "estate-sale"
       ]
     },
     {
@@ -70,8 +70,8 @@
       "in_person": false,
       "external_id": "eso-2456673",
       "categories": [
-        "estate-sale",
-        "online-auction"
+        "online-auction",
+        "estate-sale"
       ]
     },
     {
@@ -281,14 +281,14 @@
       "type": "estate",
       "confidence": 0.9,
       "status": "verified",
-      "lat": 29.39600926503773,
-      "lon": -98.46786960463291,
+      "lat": 29.392272290549766,
+      "lon": -98.47141638676932,
       "geocode": "source",
       "in_person": true,
       "external_id": "eso-2456907",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "hours": "2026-08-21 9:00 am-3:00 pm; 2026-08-22 9:00 am-3:00 pm; 2026-08-23 9:00 am-3:00 pm",
       "details": "Caring Transitions of San Antonio Central. Calling all craftsmen, welders, woodworkers, mechanics, contractors, DIYers and tool hunters! Caring Transitions of San Antonio Central invites you to a unique estate sale featuring the garage and workshop of a longtime welder and skilled craftsman....",
@@ -491,6 +491,30 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "cl-uncommunityyard3qo7rn4pffmbieerjwtxfn"
+    },
+    {
+      "address": "Braun Rd, San Antonio, TX 78254",
+      "dates": "2026-08-12 – 2026-08-12",
+      "date_from": "2026-08-12",
+      "date_to": "2026-08-12",
+      "end_date": "2026-08-12",
+      "title": "Estate Sale",
+      "details": "Estate Sale – Everything Must Go! 📍 Location: Northwest San Antonio; Braun Road and Tezel area. Address will be posted Friday! 📅 Dates: Saturday, Aug 15 & Sunday, Aug 16 ⏰ Time: 10:00 AM – 5:00 PM 💵 CASH ONLY. No cards, checks, or digital pay...",
+      "source": "EstateSales.org",
+      "url": "https://estatesales.org/estate-sales/tx/san-antonio/78254/estate-sale-2456981",
+      "photos": 0,
+      "type": "estate",
+      "confidence": 0.9,
+      "status": "verified",
+      "lat": 29.535888,
+      "lon": -98.681228,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "eso-2456981",
+      "categories": [
+        "in-person",
+        "estate-sale"
+      ]
     }
   ],
   "permits": [
@@ -2079,11 +2103,11 @@
     "garagesalefinder.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 85,
+  "total_locations": 86,
   "status": "live",
   "date": "2026-08-12",
-  "last_refresh": "2026-08-12T22:34:26-05:00",
+  "last_refresh": "2026-08-12T22:54:50-05:00",
   "note": "Weekend accuracy recovery — 19 verified public listings from Craigslist, YardSaleSearch, GarageSaleFinder, EstateSales.org",
-  "permit_total": 63,
+  "permit_total": 138,
   "permit_estate_count": 1
 }
