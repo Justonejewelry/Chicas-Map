@@ -19,12 +19,14 @@
   "hot_zones": [],
   "best_categories": [],
   "verified_highlights": [],
+  "community_signals": [],
   "source_breakdown": {
     "estate": 0,
     "craigslist": 0,
     "facebook": 0,
     "nextdoor": 0,
     "permit": 0,
+    "community_tip": 0,
     "other": 0
   },
   "selene_briefing_draft": null,
@@ -32,7 +34,8 @@
     "mercury_records": 0,
     "echo_records": 0,
     "heritage_records": 0,
+    "community_records": 0,
     "last_sentinel_pass": null,
-    "schema_version": "1.1"
+    "schema_version": "1.2"
   }
 }

@@ -29,6 +29,12 @@ STAR_THRESHOLDS = [
     (200, 5),
 ]
 
+COMMUNITY_PLATFORMS = {
+    "nextdoor", "facebook", "facebook_public", "reddit",
+    "community_tip", "community", "other_community",
+}
+
+
 def stars_for_count(count: int, quality_bonus: float = 0.0) -> int:
     adjusted = count + int(quality_bonus * 20)
     for threshold, stars in reversed(STAR_THRESHOLDS):
@@ -56,6 +62,31 @@ def day_key(d: str | None) -> str | None:
         return None
 
 
+def normalize_platform(raw: str | None) -> str:
+    p = (raw or "other").lower().strip()
+    if p in ("facebook_public", "fb"):
+        return "facebook"
+    if p in ("community", "other_community"):
+        return "community_tip"
+    return p
+
+
+def is_community_sale(s: dict) -> bool:
+    cs = (s.get("community_source") or "").lower()
+    if cs in COMMUNITY_PLATFORMS:
+        return True
+    for src in s.get("sources") or []:
+        if isinstance(src, dict):
+            if normalize_platform(src.get("platform")) in COMMUNITY_PLATFORMS:
+                return True
+        elif isinstance(src, str) and src.lower() in COMMUNITY_PLATFORMS:
+            return True
+    for name in s.get("source_names") or []:
+        if str(name).lower() in COMMUNITY_PLATFORMS:
+            return True
+    return False
+
+
 def populate(
     sales: list[dict],
     city: str,
@@ -75,31 +106,52 @@ def populate(
     sources: Counter = Counter()
     neighborhoods: Counter = Counter()
     highlights = []
+    community_signals = []
 
     for s in active:
-        d = day_key(s.get("start_date")) or day_key(s.get("end_date"))
+        d = day_key(s.get("start_date") or s.get("date_start")) or day_key(s.get("end_date") or s.get("date_end"))
         if d in ("friday", "saturday", "sunday"):
             by_day[d].append(s)
         for c in s.get("categories") or []:
-            cats[c.lower()] += 1
+            cats[str(c).lower()] += 1
+
+        # Source counting (dict or string styles)
         for src in s.get("sources") or []:
-            platform = (src.get("platform") or "other").lower()
+            if isinstance(src, dict):
+                platform = normalize_platform(src.get("platform"))
+            else:
+                platform = normalize_platform(str(src))
             sources[platform] += 1
+        for name in s.get("source_names") or []:
+            sources[normalize_platform(str(name))] += 1
+        if s.get("community_source"):
+            sources[normalize_platform(s.get("community_source"))] += 1
+
         nb = s.get("neighborhood") or s.get("city") or "unknown"
         neighborhoods[nb] += 1
 
         highlights.append({
             "name": s.get("title") or s.get("name") or "Unnamed sale",
-            "addr": s.get("address_resolved") or s.get("address_raw") or "",
+            "addr": s.get("address_resolved") or s.get("address") or s.get("address_raw") or "",
             "hours": s.get("hours") or "",
-            "tags": (s.get("categories") or [])[:4] + (["estate"] if "estate" in str(s.get("title","")).lower() else []),
+            "tags": (s.get("categories") or [])[:4] + (["estate"] if "estate" in str(s.get("title", "")).lower() else []),
             "confidence": round(float(s.get("confidence", 0)), 2),
             "value_score": round(float(s.get("value_score", 0)), 2),
         })
 
+        if is_community_sale(s):
+            community_signals.append({
+                "name": s.get("title") or s.get("name") or "Community tip",
+                "source": normalize_platform(s.get("community_source") or "community_tip"),
+                "addr": s.get("address") or s.get("address_resolved") or "",
+                "hours": s.get("hours") or "",
+                "note": (s.get("community_link_or_notes") or s.get("notes") or "")[:160],
+            })
+
     # Sort highlights by value_score * confidence
     highlights.sort(key=lambda h: h["value_score"] * h["confidence"], reverse=True)
     top_highlights = highlights[:8]
+    community_signals = community_signals[:6]
 
     # Hot zones: top neighborhoods that appear in city config style
     hot_zones = [n for n, _ in neighborhoods.most_common(6) if n != "unknown"]
@@ -109,12 +161,18 @@ def populate(
 
     # Day stats
     days = {}
-    quality_bonus = min(1.0, sources.get("estate", 0) * 0.05 + sources.get("craigslist", 0) * 0.03)
+    quality_bonus = min(
+        1.0,
+        sources.get("estate", 0) * 0.05
+        + sources.get("craigslist", 0) * 0.03
+        + sources.get("nextdoor", 0) * 0.04
+        + sources.get("community_tip", 0) * 0.03,
+    )
     for day in ("friday", "saturday", "sunday"):
         cnt = len(by_day[day])
         days[day] = {
             "stars": stars_for_count(cnt, quality_bonus),
-            "predicted_sales": cnt if cnt > 0 else max(0, int(cnt * 1.1)),  # slight projection if needed
+            "predicted_sales": cnt if cnt > 0 else max(0, int(cnt * 1.1)),
             "status": "active" if cnt > 0 else "projected",
         }
     # If saturday has good data, keep others projected with scaled estimates
@@ -144,12 +202,22 @@ def populate(
     top_zone = hot_zones[0] if hot_zones else "the metro"
     top_cat = best_categories[0] if best_categories else "mixed inventory"
     sat_stars = days["saturday"]["stars"]
+    community_note = ""
+    if community_signals:
+        community_note = f" {len(community_signals)} community-origin tip(s) in the mix."
     briefing = (
         f"Good morning. Saturday is shaping up as a {sat_stars}-star day. "
         f"{top_zone} and nearby corridors are leading. "
         f"Watch for {top_cat.lower()} and related finds. "
         f"Weather risk: {wx.get('risk', 'check local conditions')}. "
-        f"Get there early."
+        f"Get there early.{community_note}"
+    )
+
+    community_count = (
+        sources.get("nextdoor", 0)
+        + sources.get("facebook", 0)
+        + sources.get("community_tip", 0)
+        + sources.get("reddit", 0)
     )
 
     forecast = {
@@ -160,7 +228,7 @@ def populate(
         "notes": (
             f"Auto-populated from {len(active)} verified records. "
             f"Mercury (CL)={sources.get('craigslist',0)}, Echo (FB)={sources.get('facebook',0)}, "
-            f"Heritage={sources.get('estate',0)}. "
+            f"Heritage={sources.get('estate',0)}, Community={community_count}. "
             f"Sentinel gate applied."
         ),
         "days": days,
@@ -171,12 +239,14 @@ def populate(
             {k: v for k, v in h.items() if k not in ("confidence", "value_score")}
             for h in top_highlights
         ],
+        "community_signals": community_signals,
         "source_breakdown": {
             "estate": sources.get("estate", 0),
             "craigslist": sources.get("craigslist", 0),
             "facebook": sources.get("facebook", 0),
             "nextdoor": sources.get("nextdoor", 0),
             "permit": sources.get("permit", 0),
+            "community_tip": sources.get("community_tip", 0) + sources.get("reddit", 0),
             "other": sources.get("other", 0),
         },
         "selene_briefing_draft": briefing,
@@ -184,8 +254,9 @@ def populate(
             "mercury_records": sources.get("craigslist", 0),
             "echo_records": sources.get("facebook", 0),
             "heritage_records": sources.get("estate", 0),
+            "community_records": community_count,
             "last_sentinel_pass": now,
-            "schema_version": "1.1",
+            "schema_version": "1.2",
             "total_active": len(active),
         },
     }

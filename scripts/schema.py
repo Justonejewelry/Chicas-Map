@@ -16,6 +16,17 @@ CT = ZoneInfo("America/Chicago")
 # Publication threshold — do not lower without explicit decision
 MIN_CONFIDENCE = 70
 
+# Recognized community / local-forum source names (lowercase)
+COMMUNITY_SOURCES = {
+    "nextdoor",
+    "facebook",
+    "facebook_public",
+    "reddit",
+    "community_tip",
+    "community",
+    "other_community",
+}
+
 
 @dataclass
 class Sale:
@@ -45,6 +56,9 @@ class Sale:
     status: str = "verified"   # verified | probable | rejected
     geocode_method: str = ""
     notes: str = ""
+    # Community forums integration (optional)
+    community_source: str = ""          # nextdoor | facebook | reddit | community_tip | ...
+    community_link_or_notes: str = ""   # public link or short tip text
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -54,6 +68,12 @@ class Sale:
         known = {f.name for f in cls.__dataclass_fields__.values()}
         filtered = {k: v for k, v in d.items() if k in known}
         return cls(**filtered)
+
+    def is_community_origin(self) -> bool:
+        names = {n.lower() for n in (self.source_names or [])}
+        if self.community_source and self.community_source.lower() in COMMUNITY_SOURCES:
+            return True
+        return bool(names & COMMUNITY_SOURCES)
 
 
 def make_sale_id(date_start: str, address: str, title: str = "") -> str:
@@ -106,6 +126,13 @@ def score_confidence(sale: Sale) -> int:
         score += 4
     if sale.description and len(sale.description) > 40:
         score += 4
+
+    # Community origin: modest boost when a public link or multi-source confirmation exists
+    if sale.is_community_origin():
+        if sale.community_link_or_notes or sale.original_url:
+            score += 4
+        # Pure community tip without strong address still needs the normal address penalty
+
     # Penalties
     if not sale.address:
         score -= 25
