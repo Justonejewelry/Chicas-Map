@@ -20,7 +20,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/voss.css" />
   <link rel="stylesheet" href="css/map-voss-ux.css" />
-  <link rel="stylesheet" href="css/chica-submit.css" />
+  <link rel="stylesheet" href="css/chica-submit.css?v=boost9" />
   <script src="js/chica-config.js"></script>
   <script src="js/chica-analytics.js"></script>
 </head>
@@ -200,7 +200,7 @@
           <p id="saleStatus" class="submit-status" hidden></p>
           <p class="submit-legal">
             Listings are free. They appear on the map only after review by Chicas Map. We do not publish private information beyond what you mark public.
-            False or misleading submissions may be removed. See <a href="terms.html">Terms</a> &amp; <a href="privacy.html">Privacy</a>.
+            False or misleading submissions may be removed. See <a href="terms.html">Terms</a> & <a href="privacy.html">Privacy</a>.
           </p>
         </form>
       </section>
@@ -250,6 +250,7 @@
   </footer>
 
   <script src="js/chica-pwa.js"></script>
+  <script src="js/boost-upgrade.js"></script>
   <script>
   (function () {
     var REVIEW = "mr.jsciaraffa@gmail.com";
@@ -328,14 +329,14 @@
 
       var subject = encodeURIComponent(
         payload.featured_request
-          ? "Chica Map — FEATURED sale listing for review ($5)"
+          ? "Chica Map — BOOSTED sale listing for review ($9)"
           : "Chica Map — free sale listing for review"
       );
       var body = encodeURIComponent(
         "Please review this user-submitted garage sale for the map.\n\n" +
         JSON.stringify(payload, null, 2) +
         "\n\nAttestation: seller/agent, accuracy, and moderation terms checked." +
-        (payload.featured_request ? "\n\nFEATURED REQUESTED — send $5 payment instructions." : "")
+        (payload.featured_request ? "\n\nBOOST REQUESTED — send $9 Venmo/payment instructions for weekend boost." : "")
       );
 
       window.location.href = "mailto:" + REVIEW + "?subject=" + subject + "&body=" + body;
