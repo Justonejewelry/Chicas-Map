@@ -20,7 +20,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/voss.css" />
   <link rel="stylesheet" href="css/map-voss-ux.css" />
-  <link rel="stylesheet" href="css/chica-submit.css?v=boost9" />
+  <link rel="stylesheet" href="css/chica-submit.css?v=boost6mo" />
   <script src="js/chica-config.js"></script>
   <script src="js/chica-analytics.js"></script>
 </head>
@@ -153,9 +153,9 @@
               <label>
                 <input type="checkbox" id="saleFeatured" name="featured" />
                 <span>
-                  <span class="submit-featured-price">$5</span>
-                  <strong>Feature this sale</strong>
-                  <small>Request a gold pin and priority placement for the weekend. Payment instructions are emailed after review.</small>
+                  <span class="submit-featured-price">$9</span>
+                  <strong>6-month Boost pass</strong>
+                  <small>Gold pin on every sale you list for 6 months. One payment covers the whole season. Payment instructions emailed after review.</small>
                 </span>
               </label>
             </div>
@@ -250,7 +250,7 @@
   </footer>
 
   <script src="js/chica-pwa.js"></script>
-  <script src="js/boost-upgrade.js"></script>
+  <script src="js/boost-upgrade.js?v=6mo"></script>
   <script>
   (function () {
     var REVIEW = "mr.jsciaraffa@gmail.com";
@@ -322,6 +322,7 @@
         contact: document.getElementById("saleContact").value.trim() || null,
         public_contact: document.getElementById("salePublicContact").checked,
         featured_request: document.getElementById("saleFeatured").checked,
+        boost_pass_months: document.getElementById("saleFeatured").checked ? 6 : 0,
         submitted_at: new Date().toISOString(),
         status: "pending_review",
         source: "user_submit_free"
@@ -329,14 +330,16 @@
 
       var subject = encodeURIComponent(
         payload.featured_request
-          ? "Chica Map — BOOSTED sale listing for review ($9)"
+          ? "Chica Map — BOOST 6-MONTH PASS ($9)"
           : "Chica Map — free sale listing for review"
       );
       var body = encodeURIComponent(
         "Please review this user-submitted garage sale for the map.\n\n" +
         JSON.stringify(payload, null, 2) +
         "\n\nAttestation: seller/agent, accuracy, and moderation terms checked." +
-        (payload.featured_request ? "\n\nBOOST REQUESTED — send $9 Venmo/payment instructions for weekend boost." : "")
+        (payload.featured_request
+          ? "\n\n6-MONTH BOOST PASS REQUESTED — send $9 payment instructions. Covers all sales from this submitter for 6 months from approval date."
+          : "")
       );
 
       window.location.href = "mailto:" + REVIEW + "?subject=" + subject + "&body=" + body;
