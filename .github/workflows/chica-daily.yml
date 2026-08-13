@@ -1,0 +1,118 @@
+name: Chica Daily (Master Workflow)
+
+# Runs at ~1 AM San Antonio time on Thursday, Friday, and Saturday.
+# CDT (UTC-5) → 06:00 UTC | CST (UTC-6) → 07:00 UTC
+# We schedule both so the job fires near 1 AM local year-round.
+# The orchestrator always uses America/Chicago for the target date (today).
+
+on:
+  schedule:
+    - cron: "0 6 * * 4,5,6"   # ~1 AM CDT Thu/Fri/Sat
+    - cron: "0 7 * * 4,5,6"   # ~1 AM CST Thu/Fri/Sat
+  workflow_dispatch:
+    inputs:
+      target_date:
+        description: "Target date YYYY-MM-DD (leave empty = today in America/Chicago)"
+        required: false
+        default: ""
+      dry_run:
+        description: "Dry run (no commit)"
+        required: false
+        default: "false"
+      reason:
+        description: "Why is this manual run?"
+        required: false
+        default: "manual"
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: chica-daily
+  cancel-in-progress: false
+
+jobs:
+  daily:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Ensure directories
+        run: |
+          mkdir -p scripts data/sales daily-packs social
+
+      - name: Run continuous discovery once (same sources as old 2h job)
+        env:
+          CITIES: san-antonio
+        run: |
+          set -e
+          python3 webapp/scripts/discover_sales.py --cities "$CITIES" | tee discover.log || true
+          python3 webapp/scripts/fetch_permits.py --days 14 | tee permits.log || true
+          python3 webapp/scripts/fetch_estatesales_org.py --cities "$CITIES" | tee estatesales-org.log || true
+          python3 webapp/scripts/fetch_yardsalesearch.py --cities "$CITIES" | tee yardsalesearch.log || true
+          python3 webapp/scripts/fetch_craigslist.py --cities "$CITIES" | tee craigslist.log || true
+          python3 webapp/scripts/fetch_estatesales.py --cities "$CITIES" | tee estatesales.log || true
+          python3 webapp/scripts/purge_expired.py | tee purge.log || true
+
+      - name: Run Chica Daily Orchestrator (with deep link enrichment)
+        id: run
+        run: |
+          set -euo pipefail
+          ARGS=""
+          if [ -n "${{ github.event.inputs.target_date }}" ]; then
+            ARGS="--date ${{ github.event.inputs.target_date }}"
+          fi
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            ARGS="$ARGS --dry-run"
+          fi
+          python3 scripts/chica_daily.py $ARGS | tee daily-run.log
+
+      - name: Detect changes
+        id: diff
+        if: github.event.inputs.dry_run != 'true'
+        run: |
+          if git diff --quiet -- data/sales daily-packs social webapp/data/cities 2>/dev/null; then
+            echo "dirty=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "dirty=true" >> "$GITHUB_OUTPUT"
+            git status --short -- data/sales daily-packs social webapp/data/cities || true
+          fi
+
+      - name: Commit daily pack
+        if: steps.diff.outputs.dirty == 'true' && github.event.inputs.dry_run != 'true'
+        run: |
+          set -e
+          git config user.name "chicas-map-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/sales/ daily-packs/ social/ webapp/data/cities/ || true
+          DATE=$(ls data/sales/*.json 2>/dev/null | xargs -n1 basename 2>/dev/null | sed 's/.json//' | sort | tail -1 || date -u +%Y-%m-%d)
+          MSG="Chica daily pack — ${DATE}"
+          git commit -m "$MSG" || exit 0
+          git pull --rebase origin main || true
+          git push origin HEAD:main
+
+      - name: Summary
+        run: |
+          {
+            echo "### Chica Daily Master Run (1 AM CT schedule)"
+            echo ""
+            echo "- Trigger: ${{ github.event_name }}"
+            echo "- Target input: ${{ github.event.inputs.target_date || 'auto (today CT)' }}"
+            echo "- Dry run: ${{ github.event.inputs.dry_run || 'false' }}"
+            echo "- Changes: ${{ steps.diff.outputs.dirty || 'n/a' }}"
+            echo ""
+            echo "#### Run log"
+            echo '```'
+            cat daily-run.log 2>/dev/null || echo "(no log)"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
