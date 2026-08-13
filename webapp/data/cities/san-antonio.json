@@ -281,8 +281,8 @@
       "type": "estate",
       "confidence": 0.9,
       "status": "verified",
-      "lat": 29.395182818756737,
-      "lon": -98.4703853454506,
+      "lat": 29.392478902120015,
+      "lon": -98.47057093288797,
       "geocode": "source",
       "in_person": true,
       "external_id": "eso-2456907",
@@ -512,8 +512,8 @@
       "in_person": true,
       "external_id": "yss-braunrdsanantoniotx78254-2026-08-15",
       "categories": [
-        "in-person",
-        "estate-sale"
+        "estate-sale",
+        "in-person"
       ]
     }
   ],
@@ -1881,7 +1881,7 @@
   "total_locations": 77,
   "status": "live",
   "date": "2026-08-13",
-  "last_refresh": "2026-08-13T02:14:43-05:00",
+  "last_refresh": "2026-08-13T03:22:37-05:00",
   "note": "Weekend accuracy recovery — 19 verified public listings from Craigslist, YardSaleSearch, GarageSaleFinder, EstateSales.org",
   "permit_total": 127,
   "permit_estate_count": 1
