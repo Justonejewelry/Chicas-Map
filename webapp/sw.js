@@ -1,14 +1,18 @@
 /* Chica Map service worker — offline packet + asset cache */
-const CACHE = "chica-v2";
+const CACHE = "chica-v3";
 const PRECACHE = [
   "./map.html",
   "./index.html",
   "./css/app.css",
+  "./css/map-clean.css",
+  "./css/map-rail.css",
   "./css/map-voss.css",
   "./css/map-fabs.css",
   "./css/chica-sign.css",
   "./js/app.js",
   "./js/features.js",
+  "./js/detail-bridge.js",
+  "./js/chica-pwa.js",
   "./data/cities/san-antonio.json",
   "./data/sponsors.json",
   "./favicon-48.png",
@@ -46,7 +50,20 @@ self.addEventListener("fetch", (e) => {
     );
     return;
   }
-  // Cache-first for app shell
+  // Network-first for HTML so map-first fixes land quickly
+  if (url.pathname.endsWith(".html") || url.pathname.endsWith("/")) {
+    e.respondWith(
+      fetch(e.request)
+        .then((res) => {
+          const copy = res.clone();
+          caches.open(CACHE).then((c) => c.put(e.request, copy));
+          return res;
+        })
+        .catch(() => caches.match(e.request).then((h) => h || caches.match("./map.html")))
+    );
+    return;
+  }
+  // Cache-first for static assets
   e.respondWith(
     caches.match(e.request).then((hit) => hit || fetch(e.request).then((res) => {
       if (res.ok && url.origin === self.location.origin) {
