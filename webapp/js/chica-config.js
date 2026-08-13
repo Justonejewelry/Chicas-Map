@@ -11,6 +11,8 @@
     REVIEW_EMAIL: "mr.jsciaraffa@gmail.com",
     CLARITY_PROJECT_ID: "xyurojj2kb",
     GA_MEASUREMENT_ID: "",
+    /** Optional direct donation link. Leave empty to use sponsor.html */
+    DONATION_URL: "",
     formspreeUrl: function (id) {
       if (!id || !String(id).trim()) return null;
       return "https://formspree.io/f/" + String(id).trim();
