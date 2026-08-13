@@ -30,6 +30,7 @@
   <link rel="stylesheet" href="css/map-fabs.css" />
   <link rel="stylesheet" href="css/chica-sign.css" />
   <link rel="stylesheet" href="css/map-voss.css" />
+  <link rel="stylesheet" href="css/boost-pins.css?v=1" />
   <style>
     .maplibregl-popup-content {
       background: #fff; color: #14110f; border-radius: 14px;
@@ -300,6 +301,7 @@
           </div>
         </div>
         <div class="map-legend">
+          <span><i class="pin boost"></i> Boost</span>
           <span><i class="pin top"></i> Top</span>
           <span><i class="pin new"></i> Garage</span>
           <span><i class="pin estate"></i> Estate</span>
@@ -338,6 +340,7 @@
   <div id="toast" class="toast hidden"></div>
 
   <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+  <script src="js/boost-pins.js?v=1"></script>
   <script src="js/features.js"></script>
   <script src="js/permit-tips.js"></script>
   <script src="js/user-overlay.js"></script>
@@ -352,7 +355,9 @@
           var city = (url.match(/cities\/([a-z0-9-]+)\.json/) || [])[1];
           if (city && city !== "texas") {
             var data = await res.clone().json();
+            if (window.ChicaBoostPins) data = window.ChicaBoostPins.ingestFeed(data);
             var merged = await YardBirdUserOverlay.mergeUserOverlay(city, data);
+            if (window.ChicaBoostPins) merged = window.ChicaBoostPins.ingestFeed(merged);
             return new Response(JSON.stringify(merged), {
               status: res.status,
               statusText: res.statusText,
