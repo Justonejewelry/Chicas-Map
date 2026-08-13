@@ -24,7 +24,7 @@
   <link rel="manifest" href="manifest.webmanifest" />
   <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet" />
   <link rel="stylesheet" href="css/app.css" />
-  <link rel="stylesheet" href="css/map-clean.css" />
+  <link rel="stylesheet" href="css/map-clean.css?v=mapfirst2" />
   <link rel="stylesheet" href="css/map-fabs.css" />
   <link rel="stylesheet" href="css/chica-sign.css" />
   <link rel="stylesheet" href="css/map-voss.css" />
@@ -476,6 +476,14 @@
       window.YardBirdTips.loadTips();
       window.YardBirdTips.bindForm();
     }
+
+    // Always start map-first: rail closed, detail hidden
+    closeRail();
+    var dd = document.getElementById('detailDrawer');
+    if (dd) { dd.classList.add('hidden'); dd.classList.remove('open'); }
+    document.getElementById('detailClose')?.addEventListener('click', function () {
+      closeRail();
+    });
   })();
   </script>
 </body>
