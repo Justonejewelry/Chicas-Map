@@ -91,8 +91,8 @@
       "lon": -98.4936,
       "geocode": "approx",
       "categories": [
-        "estate-sale",
-        "garage-sale"
+        "garage-sale",
+        "estate-sale"
       ],
       "details": "Online Only Auction"
     },
@@ -281,8 +281,8 @@
       "type": "estate",
       "confidence": 0.9,
       "status": "verified",
-      "lat": 29.395533160114983,
-      "lon": -98.4670757028175,
+      "lat": 29.39600926503773,
+      "lon": -98.46786960463291,
       "geocode": "source",
       "in_person": true,
       "external_id": "eso-2456907",
@@ -2082,7 +2082,7 @@
   "total_locations": 85,
   "status": "live",
   "date": "2026-08-12",
-  "last_refresh": "2026-08-12T22:29:57-05:00",
+  "last_refresh": "2026-08-12T22:34:26-05:00",
   "note": "Weekend accuracy recovery — 19 verified public listings from Craigslist, YardSaleSearch, GarageSaleFinder, EstateSales.org",
   "permit_total": 63,
   "permit_estate_count": 1
