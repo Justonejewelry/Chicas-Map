@@ -204,9 +204,15 @@ html, body { height: 100%; margin: 0; background: linear-gradient(180deg, #f0f9f
   border-radius: 50%; border: none; background: #fff; box-shadow: var(--shadow);
   cursor: pointer; font-weight: 700; color: var(--muted);
 }
+/* Mobile: NEVER split the screen 48/52 — map is full height; rail overlays */
 @media (max-width: 900px) {
-  .layout { grid-template-columns: 1fr; grid-template-rows: 48% 52%; }
-  .panel { border-right: none; border-bottom: 1px solid var(--border); }
+  .layout {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: 1fr !important;
+    height: calc(100vh - 56px - 52px) !important;
+    height: calc(100dvh - 56px - 52px) !important;
+  }
+  .panel { border-right: none; border-bottom: none; }
   .map-hint { display: none; }
   .yowl-ambassador { display: none; }
 }
