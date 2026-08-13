@@ -1,1 +1,48 @@
-PLACEHOLDER
+{
+  "host": "Chica",
+  "tagline": "Weekly yard-sale intel from the backyard — and a little adventure",
+  "blog": [
+    {
+      "id": "2026-08-13",
+      "date": "2026-08-13",
+      "title": "1 AM sniff — deeper trails, better map",
+      "excerpt": "Howdy pack. Starting this week I wake up at 1 AM on Thursday, Friday, and Saturday, follow the real listing pages (not just the search results), verify addresses, and only then publish the day's map. Fewer pins. Better pins.",
+      "body": "They used to run the map every two hours. That was a lot of noise and not enough depth.\n\nNew rule: I wake up at 1 AM San Antonio time on Thursday, Friday, and Saturday. I pull the list pages, then I actually open the individual sale listings — the real pages with the address, the times, the photos, the \"more information\" links. I follow those trails. I merge the duplicates. I score confidence. Only the sales that pass Sentinel get on the map.\n\nWhat you get:\n• One clean map for that day\n• Source + original listing on every pin\n• Google Maps and Street View links\n• No expired junk\n• No invented inventory\n\nIf a sale is missing, list it free on the site. If you find a treasure, tell the pack.\n\nWipe your paws. — Chica",
+      "tags": ["workflow", "San Antonio", "verified", "1am", "deep-link"]
+    },
+    {
+      "id": "2026-08-04",
+      "date": "2026-08-04",
+      "title": "Highway to San Antonio — the adventure begins",
+      "excerpt": "Howdy! I hopped in the cart, then the truck, and hit the highway looking for sales. Fair Oaks, Alamo Ranch, Helotes… the treasures are out there. Watch the new adventure video in my Backyard!",
+      "body": "They say a Chihuahua's place is on the couch. I say my place is in the passenger seat of a silver Ford, tongue out, eyes on the next garage sale sign.\n\nThis weekend the estate channel is strong — Fair Oaks Ranch, Camino Bandera (Alamo Ranch side), Helotes, Redland Springs, and that big warehouse on Eisenhauer. Get out early. Heat hits 96.\n\nI filmed a little road-trip just for you. Check the Weekly Videos section. And if you see me in a shopping cart at the big box store… wave. I'm scouting.\n\nWipe your paws. — Chica",
+      "tags": ["adventure", "San Antonio", "video", "weekend"]
+    },
+    {
+      "id": "2026-08-03",
+      "date": "2026-08-03",
+      "title": "Fair Oaks is heating up",
+      "excerpt": "Howdy neighbors — Chica here. This week's map picked up a strong cluster of estate sales in the Fair Oaks / Boerne corridor, plus fresh San Antonio 78239 and 78247 listings from the email digests.",
+      "body": "Weekend watch: Fair Oaks Ranch and Boerne are the hottest pocket right now. Several Caring Transitions sales are running multi-day with big photo counts (200+). On the SA side, keep an eye on 78247 and the northeast.\n\nI also got Near Me working — share your location or drop a ZIP and I'll sort the closest sales first.\n\nSee you on the map. — Chica",
+      "tags": ["San Antonio", "Fair Oaks", "estate", "weekly"]
+    },
+    {
+      "id": "2026-08-01",
+      "date": "2026-08-01",
+      "title": "Map goes live — first Saturday pass",
+      "excerpt": "First public MapLibre build is up. Near Me, routes, and verified pins for San Antonio. This is only the beginning.",
+      "body": "The map is live. I'm still learning the neighborhoods, but the pins are real and the sources are listed.\n\nOpen it, share your location, and go find something weird.\n\n— Chica",
+      "tags": ["launch", "San Antonio", "map"]
+    }
+  ],
+  "videos": [
+    {
+      "id": "highway-2026-08-04",
+      "title": "Highway to San Antonio — Chica's Sale Hunt",
+      "date": "2026-08-04",
+      "src": "assets/videos/chica_highway_adventure.mp4",
+      "poster": "assets/backyard/gallery-smile.jpg",
+      "caption": "From the shopping cart to the open highway."
+    }
+  ]
+}
