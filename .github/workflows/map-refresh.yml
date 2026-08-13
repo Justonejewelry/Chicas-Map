@@ -1,9 +1,9 @@
 name: Map feed refresh
 
 on:
-  schedule:
-    # Every 2 hours (UTC)
-    - cron: "0 */2 * * *"
+  # Continuous 2-hour schedule REMOVED per Master Workflow.
+  # Discovery now runs via Chica Daily at 1 AM CT on Thu/Fri/Sat
+  # (and can still be triggered manually here).
   workflow_dispatch:
     inputs:
       cities:
@@ -61,7 +61,6 @@ jobs:
           CITIES: ${{ github.event.inputs.cities || 'san-antonio,austin' }}
         run: |
           set -e
-          # Free HTML + embedded JSON — no API key, no paid service
           python3 webapp/scripts/fetch_estatesales_org.py --cities "$CITIES" | tee estatesales-org.log || true
 
       - name: YardSaleSearch free discovery
@@ -69,7 +68,6 @@ jobs:
           CITIES: ${{ github.event.inputs.cities || 'san-antonio,austin' }}
         run: |
           set -e
-          # schema.org Place/PostalAddress + lat/lon — free, no key
           python3 webapp/scripts/fetch_yardsalesearch.py --cities "$CITIES" | tee yardsalesearch.log || true
 
       - name: Craigslist free discovery
@@ -77,7 +75,6 @@ jobs:
           CITIES: ${{ github.event.inputs.cities || 'san-antonio,austin' }}
         run: |
           set -e
-          # static search results + bounded detail enrichment — free, no key
           python3 webapp/scripts/fetch_craigslist.py --cities "$CITIES" | tee craigslist.log || true
 
       - name: EstateSales.net lightweight discovery
@@ -85,7 +82,6 @@ jobs:
           CITIES: ${{ github.event.inputs.cities || 'san-antonio,austin' }}
         run: |
           set -e
-          # Free HTTP path — often thin because site is SPA; still useful when SSR leaks data
           python3 webapp/scripts/fetch_estatesales.py --cities "$CITIES" | tee estatesales.log || true
 
       - name: EstateSales.net via Apify (optional — skipped without token)
@@ -94,7 +90,6 @@ jobs:
           APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
         run: |
           set -e
-          # Not required. Exits cleanly when APIFY_TOKEN is absent.
           python3 webapp/scripts/fetch_estatesales_apify.py --cities "$CITIES" | tee estatesales-apify.log || true
 
       - name: Purge expired listings
@@ -107,7 +102,6 @@ jobs:
           set +e
           python3 webapp/scripts/check_scraper_health.py | tee health.log
           echo "exit_code=$?" >> "$GITHUB_OUTPUT"
-          # Always continue — soft-fail policy; alerts are via issues + summary
           exit 0
 
       - name: Detect git changes
@@ -127,96 +121,17 @@ jobs:
           git config user.name "chicas-map-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add webapp/data/cities/*.json webapp/data/scraper-health.json || true
-          MSG="Map refresh $(date -u +%Y-%m-%dT%H:%MZ) — GSF + permits + ESO + YSS + CL free + purge + health [skip ci]"
+          MSG="Map refresh $(date -u +%Y-%m-%dT%H:%MZ) — manual discovery [skip ci]"
           git commit -m "$MSG" || exit 0
-          # Rebase onto any concurrent commits (docs, manual fixes) then push
           git pull --rebase origin main
           git push origin HEAD:main
-
-      - name: Open or update scraper-failure issue
-        if: steps.health.outputs.exit_code == '1'
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          set -e
-          TITLE="Scraper failure alert — primary free source(s) unhealthy"
-          HEALTH_SNIPPET=$(cat health.log 2>/dev/null || echo "(no health.log)")
-          BODY=$(cat <<EOF
-          ## Scraper health alert
-
-          One or more **primary free sources** (EstateSales.org, YardSaleSearch, Craigslist) reported failure or zero listings on the latest map-refresh run.
-
-          - Workflow: [Map feed refresh](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
-          - Run: #${{ github.run_number }}
-          - Trigger: ${{ github.event_name }}
-
-          ### Health log
-          \`\`\`
-          ${HEALTH_SNIPPET}
-          \`\`\`
-
-          Soft-fail policy keeps the map pipeline running. Investigate the failing source(s) and re-run after a fix.
-
-          Label: \`scraper-failure\`
-          EOF
-          )
-          # Avoid duplicate open issues
-          EXISTING=$(gh issue list --label scraper-failure --state open --json number --jq '.[0].number' || true)
-          if [ -n "$EXISTING" ]; then
-            gh issue comment "$EXISTING" --body "$BODY"
-            echo "Updated existing issue #$EXISTING"
-          else
-            gh issue create --title "$TITLE" --body "$BODY" --label "scraper-failure" || \
-              gh issue create --title "$TITLE" --body "$BODY"
-            echo "Created new scraper-failure issue"
-          fi
 
       - name: Summary
         run: |
           {
-            echo "### Map refresh (all free sources + optional Apify)"
+            echo "### Map refresh (manual only)"
             echo ""
             echo "- Trigger: ${{ github.event_name }}"
-            echo "- Cities: ${{ github.event.inputs.cities || 'san-antonio,austin' }}"
-            echo "- Permit lookback: ${{ github.event.inputs.permit_days || '14' }} days"
+            echo "- Continuous 2h schedule: REMOVED"
             echo "- Changes committed: ${{ steps.diff.outputs.dirty }}"
-            echo "- Health exit: ${{ steps.health.outputs.exit_code }}"
-            echo ""
-            echo "#### Scraper health"
-            echo '```'
-            cat health.log 2>/dev/null || echo "(no health.log)"
-            echo '```'
-            echo ""
-            echo "#### Discover (GSF)"
-            echo '```'
-            cat discover.log 2>/dev/null || echo "(no log)"
-            echo '```'
-            echo "#### Permits (estate-tagged)"
-            echo '```'
-            cat permits.log 2>/dev/null || echo "(no log)"
-            echo '```'
-            echo "#### EstateSales.org (free)"
-            echo '```'
-            cat estatesales-org.log 2>/dev/null || echo "(no log)"
-            echo '```'
-            echo "#### YardSaleSearch (free)"
-            echo '```'
-            cat yardsalesearch.log 2>/dev/null || echo "(no log)"
-            echo '```'
-            echo "#### Craigslist (free)"
-            echo '```'
-            cat craigslist.log 2>/dev/null || echo "(no log)"
-            echo '```'
-            echo "#### EstateSales.net (lightweight free)"
-            echo '```'
-            cat estatesales.log 2>/dev/null || echo "(no log)"
-            echo '```'
-            echo "#### EstateSales.net (Apify optional)"
-            echo '```'
-            cat estatesales-apify.log 2>/dev/null || echo "(no log / no token)"
-            echo '```'
-            echo "#### Purge"
-            echo '```'
-            cat purge.log 2>/dev/null || echo "(no log)"
-            echo '```'
           } >> "$GITHUB_STEP_SUMMARY"
