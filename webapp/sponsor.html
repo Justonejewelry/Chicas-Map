@@ -12,21 +12,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --green: #1a6b3c;
-      --green-deep: #145530;
-      --cream: #f7f5f0;
-      --ink: #1c2420;
-      --muted: #7a736b;
-      --border: #e6e1d8;
-      --gold: #c9a227;
+      --green: #1a6b3c; --green-deep: #145530; --cream: #f7f5f0; --ink: #1c2420;
+      --muted: #7a736b; --border: #e6e1d8; --gold: #c9a227;
     }
     * { box-sizing: border-box; }
     html, body { margin: 0; padding: 0; }
     body {
       font-family: Inter, system-ui, -apple-system, sans-serif;
-      background: var(--cream);
-      color: var(--ink);
-      line-height: 1.5;
+      background: var(--cream); color: var(--ink); line-height: 1.5;
       -webkit-font-smoothing: antialiased;
     }
     a { color: var(--green); }
@@ -48,9 +41,7 @@
       border-radius: 999px; text-decoration: none; font-weight: 700; font-size: .85rem;
     }
     @media (max-width: 700px) { .nav-links { display: none; } }
-    .hero {
-      max-width: 920px; margin: 0 auto; padding: 48px 20px 28px; text-align: center;
-    }
+    .hero { max-width: 920px; margin: 0 auto; padding: 48px 20px 28px; text-align: center; }
     .hero-kicker {
       display: inline-block; font-size: .72rem; font-weight: 800; letter-spacing: .12em;
       text-transform: uppercase; color: var(--green); background: #e8f5ee;
@@ -65,10 +56,7 @@
       background: linear-gradient(90deg, #1a6b3c, #c9a227);
       -webkit-background-clip: text; background-clip: text; color: transparent;
     }
-    .hero p {
-      margin: 0 auto 24px; max-width: 540px; color: var(--muted);
-      font-size: 1.05rem; font-weight: 500;
-    }
+    .hero p { margin: 0 auto 24px; max-width: 540px; color: var(--muted); font-size: 1.05rem; font-weight: 500; }
     .hero-proof {
       display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 18px;
       font-size: .82rem; font-weight: 600; color: var(--muted);
@@ -100,48 +88,27 @@
       padding: 4px 10px; border-radius: 999px; letter-spacing: .04em;
     }
     .pkg h3 { margin: 0; font-size: 1.05rem; font-weight: 800; }
-    .pkg .price {
-      font-size: 2rem; font-weight: 900; letter-spacing: -0.03em; color: var(--ink);
-    }
+    .pkg .price { font-size: 2rem; font-weight: 900; letter-spacing: -0.03em; color: var(--ink); }
     .pkg .price span { font-size: .85rem; font-weight: 600; color: var(--muted); }
-    .pkg ul {
-      margin: 0; padding: 0; list-style: none; flex: 1;
-      display: flex; flex-direction: column; gap: 8px;
-    }
-    .pkg li {
-      font-size: .88rem; color: #3d3a35; font-weight: 500;
-      padding-left: 22px; position: relative;
-    }
-    .pkg li::before {
-      content: "✓"; position: absolute; left: 0; color: var(--green); font-weight: 800;
-    }
+    .pkg ul { margin: 0; padding: 0; list-style: none; flex: 1; display: flex; flex-direction: column; gap: 8px; }
+    .pkg li { font-size: .88rem; color: #3d3a35; font-weight: 500; padding-left: 22px; position: relative; }
+    .pkg li::before { content: "✓"; position: absolute; left: 0; color: var(--green); font-weight: 800; }
     .pkg-cta {
       display: block; text-align: center; text-decoration: none;
       padding: 12px 16px; border-radius: 12px; font-weight: 800; font-size: .9rem;
       background: #f1efe9; color: var(--ink); border: 1.5px solid var(--border);
-      transition: .15s ease;
     }
-    .pkg-cta:hover { border-color: var(--green); background: #e8f5ee; color: var(--green-deep); }
-    .pkg.featured .pkg-cta {
-      background: var(--green); color: #fff; border-color: var(--green);
-    }
-    .pkg.featured .pkg-cta:hover { background: var(--green-deep); color: #fff; }
+    .pkg.featured .pkg-cta { background: var(--green); color: #fff; border-color: var(--green); }
     .grid-2 { display: grid; gap: 14px; }
     @media (min-width: 700px) { .grid-2 { grid-template-columns: 1fr 1fr; } }
-    .card {
-      background: #fff; border: 1.5px solid var(--border); border-radius: 16px;
-      padding: 20px;
-    }
+    .card { background: #fff; border: 1.5px solid var(--border); border-radius: 16px; padding: 20px; }
     .card h3 { margin: 0 0 10px; font-size: 1rem; font-weight: 800; }
     .card p, .card li { color: var(--muted); font-size: .92rem; font-weight: 500; }
     .card ul { margin: 0; padding-left: 18px; }
     .card li { margin-bottom: 6px; }
     .steps { display: grid; gap: 12px; }
     @media (min-width: 700px) { .steps { grid-template-columns: repeat(3, 1fr); } }
-    .step {
-      background: #fff; border: 1.5px solid var(--border); border-radius: 16px;
-      padding: 18px; text-align: left;
-    }
+    .step { background: #fff; border: 1.5px solid var(--border); border-radius: 16px; padding: 18px; }
     .step i {
       display: grid; place-items: center; width: 28px; height: 28px;
       border-radius: 50%; background: #e8f5ee; color: var(--green);
@@ -154,18 +121,16 @@
       background: linear-gradient(135deg, #1a6b3c, #145530);
       border-radius: 20px; text-align: center; color: #fff;
     }
-    .bottom-cta h2 { margin: 0 0 8px; font-size: 1.35rem; font-weight: 900; letter-spacing: -0.02em; }
+    .bottom-cta h2 { margin: 0 0 8px; font-size: 1.35rem; font-weight: 900; }
     .bottom-cta p { margin: 0 0 18px; opacity: .9; font-weight: 500; }
     .bottom-cta a {
       display: inline-block; background: #fff; color: var(--green-deep);
-      padding: 12px 22px; border-radius: 12px; font-weight: 800;
-      text-decoration: none; font-size: .95rem;
+      padding: 12px 22px; border-radius: 12px; font-weight: 800; text-decoration: none;
     }
     footer {
       border-top: 1px solid var(--border); padding: 18px 20px;
       display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between;
-      font-size: .82rem; color: var(--muted); font-weight: 600;
-      background: #fff;
+      font-size: .82rem; color: var(--muted); font-weight: 600; background: #fff;
     }
     footer a { color: var(--green-deep); text-decoration: none; font-weight: 700; margin-left: 12px; }
   </style>
@@ -183,7 +148,7 @@
       <a href="backyard.html">Backyard</a>
       <a href="sponsor.html" aria-current="page">Sponsor</a>
     </nav>
-    <a class="nav-cta" href="mailto:mr.jsciaraffa@gmail.com?subject=Sponsor%20Chica%20Map%20weekend&body=Hi%20—%20I'd%20like%20to%20sponsor%20a%20weekend.%0A%0ABusiness%20name%3A%0APreferred%20dates%3A%0APackage%3A%20Weekend%20%2F%20Month%20%2F%20Pin%20add-on%0A">Request a weekend</a>
+    <a class="nav-cta" href="mailto:mr.jsciaraffa@gmail.com?subject=Sponsor%20Chica%20Map%20weekend">Request a weekend</a>
   </header>
 
   <section class="hero">
@@ -214,9 +179,8 @@
           <li>Backyard update mention</li>
           <li>Exclusive — only one partner that weekend</li>
         </ul>
-        <a class="pkg-cta" href="mailto:mr.jsciaraffa@gmail.com?subject=Weekend%20Sponsor%20%24100&body=Hi%20—%20I'd%20like%20the%20Weekend%20Sponsor%20package%20(%24100).%0A%0ABusiness%3A%0APreferred%20weekend%3A%0ALogo%20attached%3A%20">Book this weekend →</a>
+        <a class="pkg-cta" href="mailto:mr.jsciaraffa@gmail.com?subject=Weekend%20Sponsor%20%24100">Book this weekend →</a>
       </article>
-
       <article class="pkg">
         <h3>Month of Weekends</h3>
         <div class="price">$350 <span>/ 4 weekends</span></div>
@@ -226,9 +190,8 @@
           <li>Save $50 vs weekly</li>
           <li>Consistent presence all month</li>
         </ul>
-        <a class="pkg-cta" href="mailto:mr.jsciaraffa@gmail.com?subject=Month%20of%20Weekends%20%24350&body=Hi%20—%20I'd%20like%20the%20Month%20of%20Weekends%20package%20(%24350).%0A%0ABusiness%3A%0AStart%20month%3A%0A">Lock in a month →</a>
+        <a class="pkg-cta" href="mailto:mr.jsciaraffa@gmail.com?subject=Month%20of%20Weekends%20%24350">Lock in a month →</a>
       </article>
-
       <article class="pkg">
         <h3>Featured Pin add-on</h3>
         <div class="price">+$35 <span>/ weekend</span></div>
@@ -238,7 +201,7 @@
           <li>Pairs with any sponsor package</li>
           <li>Or buy alone for a single sale</li>
         </ul>
-        <a class="pkg-cta" href="mailto:mr.jsciaraffa@gmail.com?subject=Featured%20Pin%20add-on%20%2B%2435&body=Hi%20—%20I'd%20like%20a%20Featured%20Pin%20(%2B%2435).%0A%0ABusiness%20or%20sale%20address%3A%0AWeekend%3A%0A">Add a pin →</a>
+        <a class="pkg-cta" href="mailto:mr.jsciaraffa@gmail.com?subject=Featured%20Pin%20add-on%20%2B%2435">Add a pin →</a>
       </article>
     </div>
   </section>
@@ -270,30 +233,18 @@
   <section class="section">
     <p class="section-label">How it works</p>
     <div class="steps">
-      <div class="step">
-        <i>1</i>
-        <strong>Pick a weekend</strong>
-        <span>Email preferred dates. One exclusive seat per weekend.</span>
-      </div>
-      <div class="step">
-        <i>2</i>
-        <strong>Send logo + line</strong>
-        <span>Simple brand assets. We handle placement on map, email, and video.</span>
-      </div>
-      <div class="step">
-        <i>3</i>
-        <strong>Show up where it counts</strong>
-        <span>Thursday–Saturday, your name is on the intel shoppers actually open.</span>
-      </div>
+      <div class="step"><i>1</i><strong>Pick a weekend</strong><span>Email preferred dates. One exclusive seat per weekend.</span></div>
+      <div class="step"><i>2</i><strong>Send logo + line</strong><span>Simple brand assets. We handle placement on map, email, and video.</span></div>
+      <div class="step"><i>3</i><strong>Show up where it counts</strong><span>Thursday–Saturday, your name is on the intel shoppers actually open.</span></div>
     </div>
   </section>
 
   <section class="section">
     <div class="card">
-      <h3>Also available: Boost a single sale — $9</h3>
+      <h3>Also available: 6-month Boost pass — $9</h3>
       <p style="margin:0 0 12px">
-        Home sellers listing free on the map can request a gold “Boosted” pin for the weekend.
-        Payment instructions are sent after review. Start from the
+        Home sellers can unlock a gold “Boosted” pin for <strong>every sale they list over the next 6 months</strong> —
+        one payment, whole season. Payment instructions are sent after review. Start from the
         <a href="submit.html">list a sale</a> form.
       </p>
     </div>
@@ -302,7 +253,7 @@
   <div class="bottom-cta">
     <h2>One partner. One weekend. Real shoppers.</h2>
     <p>Tell us your dates — we’ll confirm availability the same day.</p>
-    <a href="mailto:mr.jsciaraffa@gmail.com?subject=Sponsor%20Chica%20Map%20weekend&body=Hi%20—%20I'd%20like%20to%20sponsor%20a%20weekend.%0A%0ABusiness%20name%3A%0APreferred%20dates%3A%0APackage%3A%0A">Request a weekend →</a>
+    <a href="mailto:mr.jsciaraffa@gmail.com?subject=Sponsor%20Chica%20Map%20weekend">Request a weekend →</a>
   </div>
 
   <footer>
