@@ -1,0 +1,275 @@
+name: Boost pass registry
+
+# Upserts ops/boost-passes.json for the $9 / 6-month Boost product.
+#
+# Triggers:
+#   repository_dispatch event_type: boost_paid  (from Square webhook worker)
+#   workflow_dispatch: manual add / set_status / expire_stale
+
+on:
+  repository_dispatch:
+    types: [boost_paid]
+  workflow_dispatch:
+    inputs:
+      action:
+        description: "add | set_status | expire_stale"
+        required: true
+        type: choice
+        options: [add, set_status, expire_stale]
+      contact_key:
+        description: "Email or phone (required for add unless payment-only)"
+        required: false
+        type: string
+      payment_id:
+        description: "Square payment id"
+        required: false
+        type: string
+      paid_at:
+        description: "YYYY-MM-DD or ISO (default today)"
+        required: false
+        type: string
+      display_name:
+        description: "Optional seller name"
+        required: false
+        type: string
+      status:
+        description: "For set_status: active | expired | refunded | pending_contact"
+        required: false
+        type: string
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  registry:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Update boost-passes.json
+        id: upsert
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const path = 'ops/boost-passes.json';
+
+            function normKey(s) {
+              if (!s) return '';
+              let t = String(s).trim().toLowerCase();
+              if (t.includes('@')) return t;
+              const digits = t.replace(/\D/g, '');
+              return digits || t;
+            }
+
+            function addMonths(iso, months) {
+              const d = new Date(iso);
+              if (Number.isNaN(d.getTime())) {
+                const fallback = new Date();
+                fallback.setUTCMonth(fallback.getUTCMonth() + months);
+                return fallback.toISOString().slice(0, 10);
+              }
+              const day = d.getUTCDate();
+              d.setUTCMonth(d.getUTCMonth() + months);
+              // clamp end-of-month overflow (e.g. Jan 31 + 1 month)
+              if (d.getUTCDate() < day) d.setUTCDate(0);
+              return d.toISOString().slice(0, 10);
+            }
+
+            function load() {
+              const empty = {
+                schema_version: 1,
+                product: 'boost_pass_6mo',
+                price_usd: 9,
+                duration_months: 6,
+                updated: new Date().toISOString().slice(0, 10),
+                notes:
+                  'Ops registry — not map feed. Match sellers by contact_key.',
+                passes: [],
+              };
+              if (!fs.existsSync(path)) return empty;
+              try {
+                const data = JSON.parse(fs.readFileSync(path, 'utf8'));
+                if (!Array.isArray(data.passes)) data.passes = [];
+                return data;
+              } catch (e) {
+                core.warning('Could not parse registry, starting fresh: ' + e.message);
+                return empty;
+              }
+            }
+
+            function save(data) {
+              data.updated = new Date().toISOString().slice(0, 10);
+              fs.writeFileSync(path, JSON.stringify(data, null, 2) + '\n');
+            }
+
+            const data = load();
+            const months = data.duration_months || 6;
+            let action = 'add';
+            let payload = {};
+
+            if (context.eventName === 'repository_dispatch') {
+              action = 'add';
+              payload = context.payload.client_payload || {};
+            } else {
+              action = process.env.WF_ACTION || 'add';
+              payload = {
+                contact_key: process.env.WF_CONTACT || '',
+                payment_id: process.env.WF_PAYMENT || '',
+                paid_at: process.env.WF_PAID_AT || '',
+                display_name: process.env.WF_NAME || '',
+                status: process.env.WF_STATUS || '',
+              };
+            }
+
+            if (action === 'expire_stale') {
+              const today = new Date().toISOString().slice(0, 10);
+              let n = 0;
+              for (const p of data.passes) {
+                if (p.status === 'active' && p.boost_until && p.boost_until < today) {
+                  p.status = 'expired';
+                  p.expired_at = new Date().toISOString();
+                  n++;
+                }
+              }
+              save(data);
+              core.setOutput('summary', 'expired ' + n + ' passes');
+              core.info('Expired ' + n + ' passes');
+              return;
+            }
+
+            if (action === 'set_status') {
+              const pid = String(payload.payment_id || '').trim();
+              const st = String(payload.status || '').trim().toLowerCase();
+              if (!pid || !st) {
+                core.setFailed('set_status requires payment_id and status');
+                return;
+              }
+              const row = data.passes.find((p) => p.payment_id === pid);
+              if (!row) {
+                core.setFailed('No pass with payment_id ' + pid);
+                return;
+              }
+              row.status = st;
+              row.status_updated_at = new Date().toISOString();
+              save(data);
+              core.setOutput('summary', 'status ' + st + ' for ' + pid);
+              return;
+            }
+
+            // action === add
+            const paymentId =
+              String(payload.payment_id || payload.id || '').trim() ||
+              ('manual_' + Date.now().toString(36));
+            const paidAtRaw =
+              payload.paid_at ||
+              payload.created_at ||
+              payload.verified_at ||
+              new Date().toISOString();
+            const paidAtDate = String(paidAtRaw).slice(0, 10);
+            const boostUntil = addMonths(paidAtRaw, months);
+
+            let contactKey = normKey(
+              payload.contact_key ||
+                payload.buyer_email ||
+                payload.email ||
+                payload.contact ||
+                ''
+            );
+            const displayName = String(
+              payload.display_name || payload.name || payload.submitter_name || ''
+            ).trim();
+
+            let status = 'active';
+            if (!contactKey) status = 'pending_contact';
+
+            const amount =
+              payload.amount_cents != null
+                ? Number(payload.amount_cents)
+                : payload.amount_money && payload.amount_money.amount != null
+                  ? Number(payload.amount_money.amount)
+                  : 900;
+
+            const existingIdx = data.passes.findIndex((p) => p.payment_id === paymentId);
+            const row = {
+              contact_key: contactKey || (existingIdx >= 0 ? data.passes[existingIdx].contact_key : ''),
+              display_name:
+                displayName ||
+                (existingIdx >= 0 ? data.passes[existingIdx].display_name : '') ||
+                null,
+              payment_id: paymentId,
+              paid_at: paidAtDate,
+              boost_until: boostUntil,
+              status:
+                contactKey || (existingIdx >= 0 && data.passes[existingIdx].contact_key)
+                  ? 'active'
+                  : status,
+              amount_cents: amount,
+              currency: payload.currency || 'USD',
+              source: payload.source || (String(paymentId).startsWith('manual_') ? 'manual' : 'square'),
+              receipt_url: payload.receipt_url || null,
+              event_id: payload.event_id || null,
+              recorded_at: new Date().toISOString(),
+            };
+
+            // Prefer non-empty contact_key when updating
+            if (existingIdx >= 0) {
+              const prev = data.passes[existingIdx];
+              if (!row.contact_key && prev.contact_key) row.contact_key = prev.contact_key;
+              if (row.contact_key) row.status = prev.status === 'refunded' ? 'refunded' : 'active';
+              data.passes[existingIdx] = { ...prev, ...row };
+            } else {
+              data.passes.unshift(row);
+            }
+
+            save(data);
+            core.setOutput(
+              'summary',
+              row.payment_id + ' until ' + row.boost_until + ' status=' + row.status
+            );
+            core.info(JSON.stringify(row, null, 2));
+
+            // Open ops issue when contact missing so you can attach email from the review form
+            if (row.status === 'pending_contact') {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: '[boost] needs contact_key — ' + row.payment_id,
+                body: [
+                  '## Boost payment recorded without seller contact',
+                  '',
+                  'Square (or manual) payment is in `ops/boost-passes.json` but **contact_key** is empty.',
+                  'Match it to the review email / submit form, then either:',
+                  '',
+                  '1. Edit the JSON row, or',
+                  '2. Actions → **Boost pass registry** → `add` with same `payment_id` + `contact_key`.',
+                  '',
+                  '```json',
+                  JSON.stringify(row, null, 2),
+                  '```',
+                  '',
+                  '**boost_until:** `' + row.boost_until + '`',
+                ].join('\n'),
+                labels: ['boost-pending-contact'],
+              });
+            }
+        env:
+          WF_ACTION: ${{ inputs.action }}
+          WF_CONTACT: ${{ inputs.contact_key }}
+          WF_PAYMENT: ${{ inputs.payment_id }}
+          WF_PAID_AT: ${{ inputs.paid_at }}
+          WF_NAME: ${{ inputs.display_name }}
+          WF_STATUS: ${{ inputs.status }}
+
+      - name: Commit registry
+        run: |
+          git config user.name "Chicas-Map Boost Bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add ops/boost-passes.json
+          if git diff --staged --quiet; then
+            echo "No registry changes"
+            exit 0
+          fi
+          git commit -m "boost: update pass registry (${{ steps.upsert.outputs.summary }})"
+          git push

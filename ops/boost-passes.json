@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "product": "boost_pass_6mo",
+  "price_usd": 9,
+  "duration_months": 6,
+  "updated": "2026-08-13",
+  "notes": "Ops registry — not map feed. Match sellers by contact_key (normalized email/phone). Stamp boost+boost_until on approved listings only while status=active and today<=boost_until. Repo is public: prefer contact_key over full free-text notes with extra PII.",
+  "passes": []
+}

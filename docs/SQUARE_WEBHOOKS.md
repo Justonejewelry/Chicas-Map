@@ -13,8 +13,9 @@ GitHub Pages cannot receive webhooks. Verification runs on a small **Cloudflare 
 3. On **COMPLETED** payment of about **$9.00 USD**, worker:
    - Dedupes by `event_id`
    - Emails review inbox (Formspree or mailto-compatible POST)
-   - Optionally fires GitHub `repository_dispatch` → `boost_paid`
-4. You activate the gold pin **only after** listing approval **and** this paid signal.
+   - Fires GitHub `repository_dispatch` → `boost_paid`
+4. Workflow **Boost pass registry** writes [`ops/boost-passes.json`](../ops/boost-passes.json) with `paid_at` + `boost_until` (+6 months).
+5. You activate the gold pin **only after** listing approval **and** an active registry row (see `docs/BOOST_PASSES.md`).
 
 ## Square Dashboard setup
 
@@ -40,7 +41,7 @@ GitHub Pages cannot receive webhooks. Verification runs on a small **Cloudflare 
 | `BOOST_CURRENCY` | No | Default `USD` |
 | `NOTIFY_FORMSPREE_ID` | Recommended | e.g. existing Formspree id for email alerts |
 | `NOTIFY_EMAIL_TO` | Optional | Shown in alert body |
-| `GITHUB_TOKEN` | Optional | PAT for `repository_dispatch` |
+| `GITHUB_TOKEN` | **Yes for registry** | PAT with `repo` scope for `repository_dispatch` |
 | `GITHUB_REPO` | Optional | `Justonejewelry/Chicas-Map` |
 
 ```bash
@@ -49,8 +50,8 @@ npm i -g wrangler   # if needed
 wrangler secret put SQUARE_SIGNATURE_KEY
 wrangler secret put SQUARE_NOTIFICATION_URL
 wrangler secret put NOTIFY_FORMSPREE_ID
-# optional:
 wrangler secret put GITHUB_TOKEN
+wrangler deploy
 ```
 
 Set vars in `wrangler.toml` or dashboard:
@@ -61,12 +62,6 @@ BOOST_AMOUNT_CENTS = "900"
 BOOST_CURRENCY = "USD"
 GITHUB_REPO = "Justonejewelry/Chicas-Map"
 NOTIFY_EMAIL_TO = "mr.jsciaraffa@gmail.com"
-```
-
-Deploy:
-
-```bash
-wrangler deploy
 ```
 
 ## Signature rules (do not skip)
@@ -83,17 +78,17 @@ Invalid signature → **401**. Always return **2xx** quickly after accepting a v
 ## Fulfillment rule
 
 ```
-Boost active  ⇔  Square payment COMPLETED (~$9)  AND  listing approved
+Boost active  ⇔  registry row active through boost_until  AND  listing approved
 ```
 
-Do not publish a gold pin from webhook alone.
+Do not publish a gold pin from webhook alone. Tracking details: **`docs/BOOST_PASSES.md`**.
 
 ## Manual test
 
 1. Deploy worker; paste URL into Square webhook subscription.
-2. In Square, send a test notification (if available) or pay **$9 in sandbox / a real $9 you refund**.
-3. Worker logs should show `signature ok` and `boost_paid`.
-4. You receive an email / GitHub dispatch with payment id, amount, status, buyer email if present.
+2. Pay **$9** (refund if needed) or use sandbox.
+3. Confirm `ops/boost-passes.json` gained a row (via `boost_paid` dispatch).
+4. If `status: pending_contact`, attach email from the listing review form.
 
 ## Local reference implementation
 
@@ -101,6 +96,7 @@ See `workers/square-boost-webhook/src/index.js`.
 
 ## Related
 
-- Payment Link wired in `webapp/js/chica-config.js` → `BOOST_PAYMENT_URL`
-- Submit flow: `webapp/submit.html`
+- Payment Link: `webapp/js/chica-config.js` → `BOOST_PAYMENT_URL`
+- Registry: `ops/boost-passes.json`
+- Lookup helper: `scripts/boost_lookup.py`
 - Tip webhooks (separate): `docs/WEBHOOKS.md`
