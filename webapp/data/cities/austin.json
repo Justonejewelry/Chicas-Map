@@ -69,31 +69,6 @@
       "geocode": "city-center"
     },
     {
-      "address": "Georgetown, TX 78633",
-      "dates": "2026-08-04 – 2026-08-12",
-      "date_from": "2026-08-04",
-      "date_to": "2026-08-12",
-      "end_date": "2026-08-12",
-      "title": "Hill Country Heritage & Home Collection",
-      "details": "Caring Transitions of West Austin and Georgetown. Welcome to the Hill Country Heritage & Home CTBids Auction, a beautifully curated collection featuring select premium items across multiple categories. This sale includes a Samsung washer and dryer set with modern digital controls, a Villeroy & Boch ...",
-      "source": "EstateSales.org",
-      "url": "https://estatesales.org/estate-sales/tx/georgetown/78633/hill-country-heritage-home-collection-2455523",
-      "photos": 0,
-      "type": "estate",
-      "confidence": 0.65,
-      "status": "verified",
-      "lat": 30.7216604,
-      "lon": -97.7525352,
-      "geocode": "source",
-      "company": "Caring Transitions of West Austin and Georgetown",
-      "in_person": false,
-      "external_id": "eso-2455523",
-      "categories": [
-        "estate-sale",
-        "online-auction"
-      ]
-    },
-    {
       "address": "Johnson City, TX 78636",
       "dates": "Sat Aug 15 – Sun Aug 16",
       "date_from": "08/15/2026",
@@ -641,9 +616,9 @@
     "garagesalefinder.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 27,
+  "total_locations": 26,
   "status": "live",
-  "date": "2026-08-12",
-  "last_refresh": "2026-08-12T22:54:50-05:00",
+  "date": "2026-08-13",
+  "last_refresh": "2026-08-13T02:14:43-05:00",
   "permits": []
 }
