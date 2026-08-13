@@ -4,7 +4,7 @@
  * Works with the CDN-pinned core app.js without forking it:
  * 1) Tags sales from city JSON when boost && boost_until >= today
  * 2) Rewrites yb-pins GeoJSON so kind === "boost"
- * 3) Updates circle paint so boost = gold
+ * 3) Updates circle paint so boost = gold (+ hover glow via feature-state)
  * 4) Adds “Boosted” badge on list rows + detail drawer when possible
  *
  * Public listing fields (ops stamps these on approve):
@@ -12,11 +12,14 @@
  */
 (function (global) {
   var GOLD = "#eab308";
+  var GOLD_HOVER = "#facc15";
   var LAYER = "yb-pins-layer";
   var SOURCE = "yb-pins";
   var boostByKey = Object.create(null);
   var paintReady = false;
+  var hoverBound = false;
   var watching = false;
+  var hoveredFeatureId = null;
 
   function todayStr() {
     return new Date().toISOString().slice(0, 10);
@@ -47,7 +50,6 @@
     boostByKey[k] = {
       boost_until: (s.boost_until || s.boostUntil || "").toString().slice(0, 10) || null,
     };
-    // Common core key shapes
     if (s._key) boostByKey[String(s._key)] = boostByKey[k];
     if (s.id) boostByKey[String(s.id)] = boostByKey[k];
   }
@@ -74,7 +76,6 @@
           s._boost = true;
           rememberSale(s);
         } else if (s.boost === true || s.boosted === true) {
-          // Explicitly expired — strip so UI does not show gold
           s._boost = false;
         }
       }
@@ -90,17 +91,29 @@
   function enhanceCollection(data) {
     if (!data || !Array.isArray(data.features)) return data;
     var changed = false;
-    var features = data.features.map(function (f) {
+    var features = data.features.map(function (f, idx) {
       if (!f || !f.properties) return f;
       var key = f.properties.key;
-      if (!keyIsBoosted(key)) return f;
-      if (f.properties.kind === "boost") return f;
-      changed = true;
-      return {
-        type: f.type,
-        properties: Object.assign({}, f.properties, { kind: "boost", boost: true }),
-        geometry: f.geometry,
-      };
+      var isBoost = keyIsBoosted(key);
+      var nextProps = f.properties;
+      var needsId = f.id == null;
+
+      if (isBoost && f.properties.kind !== "boost") {
+        changed = true;
+        nextProps = Object.assign({}, f.properties, { kind: "boost", boost: true });
+      }
+      // Stable numeric id helps feature-state hover
+      if (needsId || isBoost) {
+        changed = true;
+        var id = f.id != null ? f.id : idx + 1;
+        return {
+          type: f.type,
+          id: id,
+          properties: nextProps === f.properties ? Object.assign({}, f.properties) : nextProps,
+          geometry: f.geometry,
+        };
+      }
+      return f;
     });
     if (!changed) return data;
     return { type: "FeatureCollection", features: features };
@@ -109,40 +122,118 @@
   function applyBoostPaint(map) {
     if (!map || !map.getLayer || !map.getLayer(LAYER)) return false;
     try {
+      // Promote id for feature-state
+      try {
+        if (map.getSource(SOURCE) && map.getSource(SOURCE).setData) {
+          /* promoteId set at source create; if missing, feature-state may no-op */
+        }
+      } catch (_) {}
+
       map.setPaintProperty(LAYER, "circle-color", [
-        "match",
-        ["get", "kind"],
-        "boost",
-        GOLD,
-        "estate",
-        "#a855f7",
-        "permit",
-        "#38bdf8",
-        "fundraiser",
-        "#f59e0b",
-        "top",
-        "#c45c26",
-        "#22c55e",
+        "case",
+        [
+          "all",
+          ["==", ["get", "kind"], "boost"],
+          ["boolean", ["feature-state", "hover"], false],
+        ],
+        GOLD_HOVER,
+        [
+          "match",
+          ["get", "kind"],
+          "boost",
+          GOLD,
+          "estate",
+          "#a855f7",
+          "permit",
+          "#38bdf8",
+          "fundraiser",
+          "#f59e0b",
+          "top",
+          "#c45c26",
+          "#22c55e",
+        ],
       ]);
+
       map.setPaintProperty(LAYER, "circle-radius", [
         "interpolate",
         ["linear"],
         ["zoom"],
         9,
-        ["case", ["any", ["==", ["get", "kind"], "top"], ["==", ["get", "kind"], "boost"]], 7.5, 6],
+        [
+          "case",
+          [
+            "all",
+            ["==", ["get", "kind"], "boost"],
+            ["boolean", ["feature-state", "hover"], false],
+          ],
+          10,
+          ["any", ["==", ["get", "kind"], "top"], ["==", ["get", "kind"], "boost"]],
+          7.5,
+          6,
+        ],
         12,
-        ["case", ["any", ["==", ["get", "kind"], "top"], ["==", ["get", "kind"], "boost"]], 12, 9],
+        [
+          "case",
+          [
+            "all",
+            ["==", ["get", "kind"], "boost"],
+            ["boolean", ["feature-state", "hover"], false],
+          ],
+          15,
+          ["any", ["==", ["get", "kind"], "top"], ["==", ["get", "kind"], "boost"]],
+          12,
+          9,
+        ],
         15,
-        ["case", ["any", ["==", ["get", "kind"], "top"], ["==", ["get", "kind"], "boost"]], 15, 12],
+        [
+          "case",
+          [
+            "all",
+            ["==", ["get", "kind"], "boost"],
+            ["boolean", ["feature-state", "hover"], false],
+          ],
+          18,
+          ["any", ["==", ["get", "kind"], "top"], ["==", ["get", "kind"], "boost"]],
+          15,
+          12,
+        ],
       ]);
+
+      map.setPaintProperty(LAYER, "circle-stroke-width", [
+        "case",
+        [
+          "all",
+          ["==", ["get", "kind"], "boost"],
+          ["boolean", ["feature-state", "hover"], false],
+        ],
+        3,
+        2,
+      ]);
+
       map.setPaintProperty(LAYER, "circle-stroke-color", [
-        "match",
-        ["get", "kind"],
-        "boost",
-        "#713f12",
-        "#ffffff",
+        "case",
+        [
+          "all",
+          ["==", ["get", "kind"], "boost"],
+          ["boolean", ["feature-state", "hover"], false],
+        ],
+        "#422006",
+        ["match", ["get", "kind"], "boost", "#713f12", "#ffffff"],
       ]);
+
+      map.setPaintProperty(LAYER, "circle-opacity", [
+        "case",
+        [
+          "all",
+          ["==", ["get", "kind"], "boost"],
+          ["boolean", ["feature-state", "hover"], false],
+        ],
+        1,
+        0.95,
+      ]);
+
       paintReady = true;
+      bindHover(map);
       return true;
     } catch (e) {
       console.warn("boost paint", e);
@@ -150,17 +241,59 @@
     }
   }
 
+  function clearHover(map) {
+    if (hoveredFeatureId != null && map && map.setFeatureState) {
+      try {
+        map.setFeatureState({ source: SOURCE, id: hoveredFeatureId }, { hover: false });
+      } catch (_) {}
+    }
+    hoveredFeatureId = null;
+    var root = document.getElementById("map");
+    if (root) root.classList.remove("boost-pin-hover");
+    if (map && map.getCanvas) {
+      try {
+        map.getCanvas().style.cursor = "";
+      } catch (_) {}
+    }
+  }
+
+  function bindHover(map) {
+    if (!map || hoverBound || !map.on) return;
+    hoverBound = true;
+
+    map.on("mousemove", LAYER, function (e) {
+      if (!e.features || !e.features.length) return;
+      var f = e.features[0];
+      var kind = f.properties && f.properties.kind;
+      var id = f.id;
+      if (kind !== "boost" || id == null) {
+        if (kind !== "boost") clearHover(map);
+        map.getCanvas().style.cursor = "pointer";
+        return;
+      }
+      if (hoveredFeatureId !== id) {
+        clearHover(map);
+        hoveredFeatureId = id;
+        try {
+          map.setFeatureState({ source: SOURCE, id: id }, { hover: true });
+        } catch (_) {}
+        var root = document.getElementById("map");
+        if (root) root.classList.add("boost-pin-hover");
+      }
+      map.getCanvas().style.cursor = "pointer";
+    });
+
+    map.on("mouseleave", LAYER, function () {
+      clearHover(map);
+    });
+  }
+
   function findMap() {
-    // Prefer maplibre instance attached to #map canvas container
     var el = document.getElementById("map");
     if (!el) return null;
     if (el._map) return el._map;
-    // MapLibre stores the map on the container in some builds
-    if (global.maplibregl && global.maplibregl.Map) {
-      // Heuristic: walk known global hooks some enhancers set
-      if (global.__ybMap) return global.__ybMap;
-    }
-    return global.__ybMap || null;
+    if (global.__ybMap) return global.__ybMap;
+    return null;
   }
 
   function recolorAndRewrite() {
@@ -185,7 +318,6 @@
     Src.prototype.setData = function (data) {
       var enhanced = data;
       try {
-        // Only rewrite the sales pin source (id not always available; detect by caller layer usage)
         enhanced = enhanceCollection(data);
       } catch (_) {
         enhanced = data;
@@ -295,7 +427,6 @@
     }
   }
 
-  // Public helpers for approve tooling / console
   global.ChicaBoostPins = {
     isBoostActive: isBoostActive,
     ingestFeed: ingestFeed,
@@ -303,6 +434,7 @@
     keyIsBoosted: keyIsBoosted,
     recolorAndRewrite: recolorAndRewrite,
     GOLD: GOLD,
+    GOLD_HOVER: GOLD_HOVER,
   };
 
   patchFetch();

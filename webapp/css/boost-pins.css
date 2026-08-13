@@ -1,7 +1,37 @@
-/* Boost gold pins + badges */
+/* Boost gold pins + badges + hover */
+
 .map-legend .pin.boost {
   background: #eab308;
   box-shadow: 0 0 0 1px #713f12;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+
+.map-legend span:has(.pin.boost):hover .pin.boost,
+.map-legend .pin.boost:hover {
+  transform: rotate(-45deg) scale(1.35);
+  box-shadow:
+    0 0 0 2px #713f12,
+    0 0 10px 2px rgba(234, 179, 8, 0.85),
+    0 0 18px 4px rgba(250, 204, 21, 0.45);
+  filter: brightness(1.12);
+  z-index: 1;
+}
+
+/* List rows */
+.sale-list li.is-boosted {
+  border-left: 3px solid #eab308;
+  transition: background 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.sale-list li.is-boosted:hover {
+  background: #fffbeb;
+  border-left-color: #ca8a04;
+  box-shadow: inset 0 0 0 1px rgba(234, 179, 8, 0.35);
+}
+
+.sale-list li.is-boosted:hover .boost-badge {
+  filter: brightness(1.05);
+  box-shadow: 0 0 0 1px #ca8a04, 0 2px 8px rgba(234, 179, 8, 0.45);
 }
 
 .boost-badge {
@@ -17,6 +47,13 @@
   background: linear-gradient(180deg, #fde68a 0%, #eab308 100%);
   border: 1px solid #ca8a04;
   vertical-align: middle;
+  transition: filter 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.boost-badge:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+  box-shadow: 0 2px 10px rgba(234, 179, 8, 0.5);
 }
 
 .boost-banner {
@@ -28,8 +65,38 @@
   color: #78350f;
   font-size: 0.85rem;
   line-height: 1.35;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
-.sale-list li.is-boosted {
-  border-left: 3px solid #eab308;
+.boost-banner:hover {
+  border-color: #eab308;
+  box-shadow: 0 0 0 1px rgba(234, 179, 8, 0.35), 0 4px 14px rgba(234, 179, 8, 0.2);
+}
+
+/* Map canvas cursor when over a pin (set by boost-pins.js) */
+.maplibregl-canvas-container.boost-pin-hover,
+.maplibregl-map.boost-pin-hover .maplibregl-canvas {
+  cursor: pointer;
+}
+
+/* Optional HTML marker fallback if ever used */
+.yb-boost-marker {
+  width: 18px;
+  height: 18px;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  background: radial-gradient(circle at 35% 30%, #fde68a, #eab308 55%, #ca8a04);
+  border: 2px solid #713f12;
+  box-shadow: 0 2px 6px rgba(113, 63, 18, 0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+
+.yb-boost-marker:hover,
+.yb-boost-marker.is-hover {
+  transform: rotate(-45deg) scale(1.4);
+  filter: brightness(1.1);
+  box-shadow:
+    0 0 0 2px #713f12,
+    0 0 12px 3px rgba(234, 179, 8, 0.9),
+    0 4px 14px rgba(202, 138, 4, 0.45);
 }
