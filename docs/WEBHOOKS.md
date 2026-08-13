@@ -8,10 +8,11 @@ Automate permit-tip intake and approval without hand-editing JSON.
 |---------------|--------------|
 | `tip_submit`  | Writes `webapp/data/permit-tips-pending.json` + opens a GitHub issue labeled `tip-pending` |
 | `tip_approve` | Publishes tip to `webapp/data/permit-tips.json` (map reads this) |
+| `boost_paid`  | Fired by Square webhook worker when a verified ~$9 Boost payment completes (see `docs/SQUARE_WEBHOOKS.md`) |
 
 **Endpoint**
 ```http
-POST https://api.github.com/repos/Justonejewelry/Project-YardBird/dispatches
+POST https://api.github.com/repos/Justonejewelry/Chicas-Map/dispatches
 Authorization: Bearer YOUR_GITHUB_TOKEN
 Accept: application/vnd.github+json
 Content-Type: application/json
@@ -22,7 +23,7 @@ Content-Type: application/json
 curl -X POST \
   -H "Authorization: Bearer $GH_TOKEN" \
   -H "Accept: application/vnd.github+json" \
-  https://api.github.com/repos/Justonejewelry/Project-YardBird/dispatches \
+  https://api.github.com/repos/Justonejewelry/Chicas-Map/dispatches \
   -d '{
     "event_type": "tip_approve",
     "client_payload": {
@@ -37,6 +38,12 @@ curl -X POST \
 ```
 
 Token needs: **Contents: write**, **Issues: write** (for submit).
+
+## Square Boost payments
+
+Payment Link: configured in `webapp/js/chica-config.js` (`BOOST_PAYMENT_URL`).
+
+Webhook verification + Boost alerts: **`docs/SQUARE_WEBHOOKS.md`** and `workers/square-boost-webhook/`.
 
 ## Recommended automation setups
 
@@ -58,11 +65,11 @@ Token needs: **Contents: write**, **Issues: write** (for submit).
 3. On label **Approve** (or star), fire `tip_approve` dispatch.
 
 ### C) Admin page (no Make)
-https://justonejewelry.github.io/Project-YardBird/admin/approve.html  
+https://justonejewelry.github.io/Chicas-Map/admin/approve.html  
 Email **Approve** link pre-fills the tip; you push with a PAT.
 
 ### D) GitHub Actions UI
-[Tip webhooks workflow](https://github.com/Justonejewelry/Project-YardBird/actions/workflows/tip-webhook.yml)  
+[Tip webhooks workflow](https://github.com/Justonejewelry/Chicas-Map/actions/workflows/tip-webhook.yml)  
 Run workflow → `approve` → paste `tip_json`.
 
 ## Form behavior
@@ -75,6 +82,7 @@ Run workflow → `approve` → paste `tip_json`.
 ## Security
 
 - Never put a GitHub PAT in the static site or in email links.
-- Keep automation tokens only in Make/Zapier/n8n/GitHub Secrets.
+- Keep automation tokens only in Make/Zapier/n8n/GitHub Secrets / Cloudflare secrets.
 - Inbound catch-hook URLs are secrets — treat like passwords.
+- Never put Square signature keys or access tokens in the public repo.
 - Published tips remain labeled **Seller tip · unverified** on the map.

@@ -1,0 +1,14 @@
+{
+  "name": "chicas-square-boost-webhook",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Square webhook verifier for Chicas Map $9 Boost",
+  "main": "src/index.js",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev"
+  },
+  "devDependencies": {
+    "wrangler": "^3.99.0"
+  }
+}
