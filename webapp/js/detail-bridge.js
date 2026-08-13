@@ -3,10 +3,12 @@
  *  Fix: when detail opens, release/hide the rail "menu" (list + tools) so the detail
  *  sheet becomes the sole scrollable surface. Users can then freely scroll and tap
  *  Google / Apple / Waze without nested-scroll fights or buried buttons.
+ *
+ *  Also enforces map-first on load: detail stays closed until the user taps a pin/list row.
  */
 (function () {
   function formatRelative(iso) {
-    if (!iso) return "—";
+    if (!iso) return "\u2014";
     try {
       var t = new Date(iso);
       if (isNaN(t.getTime())) return String(iso).slice(0, 16);
@@ -19,6 +21,26 @@
     } catch (_) {
       return String(iso).slice(0, 19);
     }
+  }
+
+  function forceMapFirst() {
+    var rail = document.getElementById("sideRail");
+    var drawer = document.getElementById("detailDrawer");
+    var bd = document.getElementById("railBackdrop");
+    if (rail) {
+      rail.classList.remove("open");
+      rail.classList.remove("detail-mode");
+    }
+    if (drawer) {
+      drawer.classList.add("hidden");
+      drawer.classList.remove("open");
+      drawer.style.display = "";
+    }
+    if (bd) {
+      bd.classList.remove("open");
+      bd.hidden = true;
+    }
+    document.getElementById("dockList")?.classList.remove("active");
   }
 
   function enhanceTrustSignals() {
@@ -41,7 +63,7 @@
         var line = document.createElement("div");
         line.className = "d-meta";
         line.innerHTML =
-          "Last verified · <strong>" +
+          "Last verified \u00b7 <strong>" +
           formatRelative(window.__YB_LAST_SALE.last_verified) +
           "</strong>";
         var src = Array.prototype.find.call(metas, function (el) {
@@ -60,7 +82,6 @@
     if (!rail) return;
     if (on) {
       rail.classList.add("detail-mode");
-      // Ensure rail is open on mobile so the sheet is visible
       rail.classList.add("open");
       var bd = document.getElementById("railBackdrop");
       if (bd) {
@@ -68,10 +89,9 @@
         bd.classList.add("open");
       }
       document.getElementById("dockList")?.classList.add("active");
-      // Reset scroll so top of detail (and nav buttons) are reachable immediately
       if (drawer) {
+        drawer.style.display = "";
         drawer.scrollTop = 0;
-        // Also pin the parent scroller to the detail
         var sc = document.querySelector(".rail-scroll");
         if (sc) sc.scrollTop = 0;
       }
@@ -85,10 +105,16 @@
     var body = document.getElementById("detailBody");
     if (!drawer) return;
 
-    var isOpen = !drawer.classList.contains("hidden");
-    setDetailMode(isOpen);
+    // Open only when drawer is visible AND has real content (user tapped a pin/row)
+    var hasContent = !!(body && body.textContent && body.textContent.trim().length > 0);
+    var isOpen = !drawer.classList.contains("hidden") && hasContent;
 
-    if (!isOpen || !body) return;
+    if (!isOpen) {
+      setDetailMode(false);
+      return;
+    }
+
+    setDetailMode(true);
 
     var addr =
       (body.querySelector(".d-addr") && body.querySelector(".d-addr").textContent.trim()) || "";
@@ -136,6 +162,8 @@
   }
 
   function start() {
+    forceMapFirst();
+
     var drawer = document.getElementById("detailDrawer");
     observe(
       drawer,
@@ -145,17 +173,22 @@
     observe(document.getElementById("detailBody"), { childList: true, subtree: true }, syncFromDom);
     observe(document.getElementById("saleList"), { childList: true }, enhanceEmptyState);
 
-    // Close button already calls hideDetail in core; we also watch for class changes.
-    // Extra safety: if user taps backdrop while in detail-mode, clear mode on rail close.
     var backdrop = document.getElementById("railBackdrop");
     if (backdrop) {
       backdrop.addEventListener("click", function () {
         setDetailMode(false);
+        forceMapFirst();
       });
     }
 
-    // Initial sync in case detail is already open
-    syncFromDom();
+    document.getElementById("detailClose")?.addEventListener("click", function () {
+      setDetailMode(false);
+      forceMapFirst();
+    });
+
+    // Re-assert map-first after pinned app.js may have run
+    setTimeout(forceMapFirst, 300);
+    setTimeout(forceMapFirst, 1200);
   }
 
   if (document.readyState === "loading") {
