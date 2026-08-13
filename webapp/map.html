@@ -1,1 +1,482 @@
-PLACEHOLDER
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Chica Map — Verified Sales</title>
+  <meta name="description" content="Live map of verified garage and estate sales in San Antonio and Texas. Map-first." />
+  <meta name="theme-color" content="#1a6b3c" />
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xyurojj2kb");
+  </script>
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://justonejewelry.github.io/Chicas-Map/map.html" />
+  <meta property="og:title" content="Chica Map — Verified Garage & Estate Sales" />
+  <meta property="og:description" content="Live verified sales map. Near Me, multi-stop routes, keyword search, day filters." />
+  <meta property="og:image" content="https://justonejewelry.github.io/Chicas-Map/chicarar.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/app.css" />
+  <link rel="stylesheet" href="css/map-clean.css" />
+  <link rel="stylesheet" href="css/map-fabs.css" />
+  <link rel="stylesheet" href="css/chica-sign.css" />
+  <link rel="stylesheet" href="css/map-voss.css" />
+  <style>
+    .maplibregl-popup-content {
+      background: #fff; color: #14110f; border-radius: 14px;
+      box-shadow: 0 12px 32px rgba(20,17,15,0.12); border: 1px solid #e6e1d8;
+      padding: 12px 14px; font-family: inherit; min-width: 180px;
+    }
+    .maplibregl-popup-close-button { font-size: 18px; padding: 4px 8px; color: #7a736b; }
+    .maplibregl-ctrl-attrib { font-size: 10px; }
+    .yb-user-dot {
+      width: 16px; height: 16px; border-radius: 50%;
+      background: #2563eb; border: 3px solid #fff;
+      box-shadow: 0 0 0 4px rgba(37,99,235,0.25), 0 2px 8px rgba(0,0,0,0.3);
+    }
+    .logo-mark.img {
+      width: 36px; height: 36px; border-radius: 50%; border: 2px solid #fff;
+      box-shadow: 0 2px 8px rgba(26,107,60,0.25); object-fit: cover; background: transparent;
+    }
+    .chips { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
+    .hidden { display: none !important; }
+    .rail-cta {
+      display: block; margin: 8px 12px 4px; text-align: center; font-weight: 700;
+      font-size: 0.88rem; padding: 10px 12px; border-radius: 12px;
+      background: #e8f5ee; color: #145530; border: 1px solid #c5e6d4; text-decoration: none;
+    }
+    .rail-cta:hover { background: #d4edd8; }
+    .by-map-invite {
+      background: linear-gradient(90deg, #f6f4ef 0%, #eaf5ee 100%);
+      border-top: 1px solid #e6e2d8;
+      padding: 12px 16px;
+      text-align: center;
+      font-size: 0.92rem;
+      color: #1c2420;
+    }
+    .by-map-invite a {
+      color: #1a6b3c;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .by-map-invite a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body class="grass-map">
+  <header class="topbar">
+    <a class="brand" href="index.html" style="text-decoration:none;color:inherit">
+      <img class="logo-mark img" src="chicarar.png" alt="Chica" width="36" height="36"
+        decoding="async" fetchpriority="high"
+        onerror="this.onerror=null;this.src='chicarar.jpg'" />
+      <div><h1>Chica <span>Map</span></h1></div>
+    </a>
+    <div class="controls">
+      <label class="ctrl keep-mobile">
+        <select id="citySelect" class="clean-select" title="City">
+          <option value="san-antonio">San Antonio</option>
+          <option value="austin">Austin</option>
+          <option value="houston">Houston</option>
+          <option value="dallas">Dallas</option>
+          <option value="lubbock">Lubbock</option>
+          <option value="texas">Texas (all)</option>
+        </select>
+      </label>
+      <label class="ctrl">
+        <select id="mapEngine" class="clean-select" title="Map style">
+          <option value="liberty">Street</option>
+          <option value="bright">Bright</option>
+          <option value="dark">Dark</option>
+        </select>
+      </label>
+      <div class="menu-wrap" id="menuWrap">
+        <button type="button" class="menu-btn" id="menuBtn" aria-expanded="false">Menu ▾</button>
+        <div class="menu-drop" id="menuDrop">
+          <a href="index.html">Home</a>
+          <a href="backyard.html">Backyard</a>
+          <a href="submit.html">List a sale free</a>
+          <a href="sponsor.html">Sponsor</a>
+          <a href="terms.html">Terms</a>
+          <a href="privacy.html">Privacy</a>
+          <button type="button" data-chica-install hidden>Add to Home Screen</button>
+          <button type="button" id="menuEmail">Join Friday email</button>
+          <button type="button" id="menuExport">Export list</button>
+        </div>
+      </div>
+      <div class="meta" id="editionMeta">…</div>
+    </div>
+  </header>
+
+  <div class="rail-backdrop" id="railBackdrop" hidden></div>
+
+  <main class="layout">
+    <aside class="panel rail" id="sideRail" aria-label="Map tools and listings">
+      <div class="rail-scroll">
+        <a class="rail-cta" href="submit.html">＋ List your sale free</a>
+
+        <div class="rail-section rail-desktop-tools">
+          <div class="rail-label">Find</div>
+          <div class="scope-toggle" role="group" aria-label="Map scope">
+            <button type="button" class="scope-btn active" id="scopeNear" data-scope="near">Closest</button>
+            <button type="button" class="scope-btn" id="scopeCity" data-scope="city">City-wide</button>
+          </div>
+          <div class="rail-row near-radius-row" id="nearRadiusRow">
+            <button type="button" class="near-btn primary" id="btnNearMe">📍 Near me</button>
+            <select id="radiusSelect" class="radius-select" title="Radius">
+              <option value="5">5 mi</option>
+              <option value="10" selected>10 mi</option>
+              <option value="25">25 mi</option>
+              <option value="50">50 mi</option>
+            </select>
+          </div>
+          <div class="rail-row" style="margin-top:6px">
+            <input type="text" id="locInput" class="loc-input" placeholder="ZIP or address" enterkeyhint="search" />
+            <button type="button" class="near-btn" id="btnLocSearch">Go</button>
+          </div>
+          <div class="keyword-row">
+            <input type="search" id="keywordInput" class="keyword-input" placeholder="Search: tools, furniture, baby…" enterkeyhint="search" autocomplete="off" />
+          </div>
+          <div class="day-toggle" role="group" aria-label="Day of week">
+            <button type="button" class="day-btn active" data-day="fri">Fri</button>
+            <button type="button" class="day-btn active" data-day="sat">Sat</button>
+            <button type="button" class="day-btn active" data-day="sun">Sun</button>
+          </div>
+          <div class="near-status" id="nearStatus" hidden></div>
+          <div class="chips" aria-hidden="true">
+            <button class="chip active" data-filter="all">All</button>
+            <button class="chip" data-filter="garage">Garage</button>
+            <button class="chip" data-filter="estate">Estate</button>
+            <button class="chip" data-filter="permit">Permit</button>
+            <button class="chip" data-filter="fundraiser">Fundraiser</button>
+            <button class="chip" data-filter="photos">📷 Photos</button>
+          </div>
+        </div>
+
+        <div class="rail-section">
+          <div class="rail-label">Tools</div>
+          <section class="tools-bar">
+            <button type="button" class="tool-btn" id="btnFavorites">★ Saved <span id="favCount">0</span></button>
+            <button type="button" class="tool-btn" id="btnRoute">↗ Route <span id="routeCount">0</span></button>
+            <button type="button" class="tool-btn" id="btnShareRoute" title="Share route story">Share route</button>
+            <button type="button" class="tool-btn" id="btnExport" hidden>Export</button>
+          </section>
+          <section class="feat-bar" aria-label="Smart filters" style="margin-top:8px">
+            <button type="button" class="tool-btn" id="btnRadar">📡 Radar</button>
+            <button type="button" class="tool-btn" id="btnDnaHeat">🧬 DNA</button>
+            <button type="button" class="tool-btn" id="btnFirst30">⏱ First 30</button>
+            <button type="button" class="tool-btn" id="btnWishlist">🎯 Hunt</button>
+          </section>
+          <div id="wishlistPanel" class="hidden" style="margin-top:8px">
+            <h4>I'm hunting for…</h4>
+            <div class="wish-row">
+              <input type="text" id="wishInput" placeholder="tools, records, cameras…" maxlength="80" />
+              <button type="button" class="near-btn primary" id="btnWishAdd">Add</button>
+            </div>
+            <button type="button" class="tool-btn" id="btnWishFilter">Show matches only</button>
+            <ul id="wishList"></ul>
+          </div>
+        </div>
+
+        <details class="panel-block rail-section" id="forecastBlock" style="border:none;padding:0">
+          <summary style="padding:10px 12px">Weekend forecast</summary>
+          <div class="block-body" style="padding:0 12px 12px">
+            <div id="hotZones"></div>
+            <div class="quick-areas" id="quickAreas"></div>
+          </div>
+        </details>
+
+        <section class="list-wrap">
+          <div class="list-head">
+            <h2 id="listTitle">Sales</h2>
+            <span id="listCount">0</span>
+          </div>
+          <ul id="saleList" class="sale-list"></ul>
+        </section>
+
+        <div id="detailDrawer" class="detail-drawer hidden">
+          <button type="button" id="detailClose" class="detail-close" aria-label="Close">×</button>
+          <div id="detailBody"></div>
+          <div id="detailTipSlot"></div>
+          <button type="button" class="near-btn" id="btnOpenTipForm" style="width:100%;margin-top:10px" hidden>
+            I'm the permit holder — add schedule & what’s for sale
+          </button>
+        </div>
+
+        <div id="routeTray" class="route-tray hidden" style="margin:8px 12px">
+          <div class="route-head">
+            <strong>Route</strong>
+            <button type="button" class="near-btn clear-loc" id="btnClearRoute">Clear</button>
+          </div>
+          <ol id="routeStops" class="route-stops"></ol>
+          <div class="nav-apps" id="routeNavApps" style="margin-top:10px">
+            <button type="button" class="nav-app-btn google" id="btnOpenRoute">Google</button>
+            <button type="button" class="nav-app-btn apple" id="btnOpenRouteApple">Apple</button>
+            <button type="button" class="nav-app-btn waze" id="btnOpenRouteWaze">Waze</button>
+          </div>
+          <button type="button" class="near-btn" id="btnShareRoute2" style="width:100%;margin-top:6px">Share route card</button>
+        </div>
+
+        <div class="permit-tip-box hidden" id="permitTipForm">
+          <h4>Permit holder tip</h4>
+          <p class="legal">
+            City open data shows <b>permit issue date + address</b>, not your sale hours or inventory.
+            You may submit a tip for <b>moderation</b>. Tips are <b>not</b> official City records and are
+            <b>not verified</b> by Chicas Map. False or misleading tips may be removed. Do not post others’ private info.
+          </p>
+          <form id="permitTipFormEl">
+            <label class="rail-label" for="tipAddress">Sale address</label>
+            <input type="text" id="tipAddress" required maxlength="120" autocomplete="street-address" />
+            <label class="rail-label" for="tipPermit">Permit # (optional)</label>
+            <input type="text" id="tipPermit" maxlength="40" placeholder="BLDG-GS-PMT-…" />
+            <label class="rail-label" for="tipSchedule">When is the sale? (required)</label>
+            <input type="text" id="tipSchedule" required maxlength="120" placeholder="Sat Aug 9, 9am–2pm" />
+            <label class="rail-label" for="tipSummary">What’s for sale? (short)</label>
+            <textarea id="tipSummary" rows="3" maxlength="400" placeholder="Tools, kids clothes, furniture…"></textarea>
+            <label class="rail-label" for="tipContact">Contact (optional)</label>
+            <input type="text" id="tipContact" maxlength="80" placeholder="email or phone" />
+            <label class="check"><input type="checkbox" id="tipPublicContact" /> Show contact publicly if published</label>
+            <label class="check"><input type="checkbox" id="tipAttest" required /> I am the permit holder or authorized agent for this address</label>
+            <label class="check"><input type="checkbox" id="tipAccurate" required /> The schedule and summary are accurate to my knowledge</label>
+            <label class="check"><input type="checkbox" id="tipTerms" required /> I understand this tip is public if approved, is not City-verified, and Chicas Map may edit or remove it</label>
+            <div class="tip-actions">
+              <button type="submit" class="near-btn primary">Submit for review</button>
+              <button type="button" class="near-btn" id="btnTipCancel">Cancel</button>
+            </div>
+            <p id="tipFormStatus" class="legal" hidden></p>
+          </form>
+        </div>
+      </div>
+    </aside>
+
+    <section class="map-stage">
+      <div class="map-wrap">
+        <div id="map"></div>
+        <div class="map-fabs" id="mapFabs">
+          <button type="button" class="map-fab" id="fabNear" title="Near me" aria-label="Near me" aria-expanded="false">
+            <img src="nearme.png" alt="" width="28" height="28" onerror="this.style.display='none';this.parentNode.textContent='📍'" />
+          </button>
+          <button type="button" class="map-fab" id="fabSearch" title="Search sales" aria-label="Search sales">
+            <img src="search.png" alt="" width="28" height="28" onerror="this.style.display='none';this.parentNode.textContent='🔍'" />
+          </button>
+        </div>
+        <div class="map-pop" id="popNear" role="dialog" aria-label="Near me">
+          <h3>Near me</h3>
+          <div class="near-row">
+            <button type="button" class="near-btn primary" id="btnNearMeFab">📍 Use my location</button>
+            <select id="radiusSelectFab" class="radius-select" title="Radius">
+              <option value="5">5 mi</option>
+              <option value="10" selected>10 mi</option>
+              <option value="25">25 mi</option>
+              <option value="50">50 mi</option>
+              <option value="0">Any</option>
+            </select>
+          </div>
+        </div>
+        <div class="map-legend">
+          <span><i class="pin top"></i> Top</span>
+          <span><i class="pin new"></i> Garage</span>
+          <span><i class="pin estate"></i> Estate</span>
+          <span><i class="pin" style="background:#38bdf8"></i> Permit</span>
+        </div>
+        <div class="map-hint" id="mapHint">Map-first · open List for details</div>
+      </div>
+    </section>
+  </main>
+
+  <nav class="mobile-dock" id="mobileDock" aria-label="Map actions">
+    <button type="button" id="dockList" aria-controls="sideRail"><span>📋</span>List</button>
+    <button type="button" id="dockNear"><span>📍</span>Closest</button>
+    <button type="button" id="dockSearch"><span>🔍</span>Search</button>
+    <button type="button" id="dockMenu"><span>☰</span>Menu</button>
+  </nav>
+
+  <div class="by-map-invite" id="byInvite">
+    <span>🐾</span>
+    <a href="backyard.html">Wanna see what happens when Chica gets home?</a>
+    <span style="opacity:.65"> · </span>
+    <a href="backyard.html">Visit the Backyard</a>
+  </div>
+
+  <footer class="footer">
+    <span id="footerSources">Chica · Chicas Map</span>
+    <span>
+      <a href="submit.html">List a sale</a> ·
+      <a href="backyard.html">Backyard</a> ·
+      <a href="sponsor.html">Sponsor</a> ·
+      <a href="terms.html">Terms</a> ·
+      <a href="privacy.html">Privacy</a>
+    </span>
+  </footer>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+  <script src="js/features.js"></script>
+  <script src="js/permit-tips.js"></script>
+  <script src="js/user-overlay.js"></script>
+  <script>
+  (function () {
+    var orig = window.fetch;
+    window.fetch = async function (input, init) {
+      var res = await orig.apply(this, arguments);
+      try {
+        var url = typeof input === "string" ? input : (input && input.url) || "";
+        if (/data\/cities\/[a-z0-9-]+\.json/.test(url) && !/-user\.json/.test(url) && window.YardBirdUserOverlay) {
+          var city = (url.match(/cities\/([a-z0-9-]+)\.json/) || [])[1];
+          if (city && city !== "texas") {
+            var data = await res.clone().json();
+            var merged = await YardBirdUserOverlay.mergeUserOverlay(city, data);
+            return new Response(JSON.stringify(merged), {
+              status: res.status,
+              statusText: res.statusText,
+              headers: { "Content-Type": "application/json" },
+            });
+          }
+        }
+      } catch (e) {}
+      return res;
+    };
+  })();
+  </script>
+  <script src="js/app.js"></script>
+  <script src="js/chica-go-fix.js"></script>
+  <script src="js/detail-bridge.js"></script>
+  <script src="js/chica-pwa.js"></script>
+  <script>
+  (function () {
+    var wrap = document.getElementById('menuWrap');
+    var btn = document.getElementById('menuBtn');
+    var rail = document.getElementById('sideRail');
+    var backdrop = document.getElementById('railBackdrop');
+
+    function closeMenu() {
+      wrap.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+    function openRail() {
+      rail.classList.add('open');
+      backdrop.hidden = false;
+      backdrop.classList.add('open');
+      document.getElementById('dockList')?.classList.add('active');
+    }
+    function closeRail() {
+      rail.classList.remove('open');
+      backdrop.classList.remove('open');
+      backdrop.hidden = true;
+      document.getElementById('dockList')?.classList.remove('active');
+      if (typeof window.__YB_returnToMap === 'function') window.__YB_returnToMap();
+      else try { window.dispatchEvent(new Event('resize')); } catch (_) {}
+    }
+    function toggleRail() {
+      rail.classList.contains('open') ? closeRail() : openRail();
+    }
+    function focusSearch() {
+      openRail();
+      closePops();
+      setTimeout(function () {
+        var kw = document.getElementById('keywordInput');
+        if (kw) { kw.focus(); kw.select(); }
+      }, 80);
+    }
+
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var open = wrap.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+    document.getElementById('dockList')?.addEventListener('click', function (e) {
+      e.stopPropagation();
+      toggleRail();
+    });
+    document.getElementById('dockMenu')?.addEventListener('click', function (e) {
+      e.stopPropagation();
+      openRail();
+      wrap.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+    });
+    document.getElementById('dockNear')?.addEventListener('click', function () {
+      document.getElementById('fabNear')?.click();
+    });
+    document.getElementById('dockSearch')?.addEventListener('click', function (e) {
+      e.stopPropagation();
+      focusSearch();
+    });
+
+    backdrop.addEventListener('click', closeRail);
+
+    var fabNear = document.getElementById('fabNear');
+    var fabSearch = document.getElementById('fabSearch');
+    var popNear = document.getElementById('popNear');
+
+    function closePops() {
+      popNear.classList.remove('open');
+      fabNear.classList.remove('active');
+      fabNear.setAttribute('aria-expanded', 'false');
+      fabSearch.classList.remove('active');
+    }
+
+    fabNear.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var willOpen = !popNear.classList.contains('open');
+      closePops();
+      if (willOpen) {
+        popNear.classList.add('open');
+        fabNear.classList.add('active');
+        fabNear.setAttribute('aria-expanded', 'true');
+      }
+    });
+
+    fabSearch.addEventListener('click', function (e) {
+      e.stopPropagation();
+      focusSearch();
+      fabSearch.classList.add('active');
+    });
+
+    document.getElementById('btnNearMeFab')?.addEventListener('click', function () {
+      document.getElementById('btnNearMe')?.click();
+      closePops();
+      if (typeof window.__YB_returnToMap === 'function') window.__YB_returnToMap();
+    });
+    document.getElementById('radiusSelectFab')?.addEventListener('change', function () {
+      var r = document.getElementById('radiusSelect');
+      if (r) { r.value = this.value; r.dispatchEvent(new Event('change')); }
+      closePops();
+    });
+    document.getElementById('btnShareRoute2')?.addEventListener('click', function () {
+      document.getElementById('btnShareRoute')?.click();
+    });
+    document.getElementById('btnTipCancel')?.addEventListener('click', function () {
+      document.getElementById('permitTipForm')?.classList.add('hidden');
+    });
+    document.getElementById('btnOpenTipForm')?.addEventListener('click', function () {
+      if (window.YardBirdTips) window.YardBirdTips.openTipForm(window.__YB_LAST_SALE || null);
+    });
+    document.getElementById('menuEmail')?.addEventListener('click', function () {
+      var subject = encodeURIComponent('Join Chica Friday Email Updates');
+      var body = encodeURIComponent('Please add me to Chica’s Friday email updates.\n\nEmail: \n\nI understand updates publish every Friday with weekend garage sale intel.');
+      window.location.href = 'mailto:mr.jsciaraffa@gmail.com?subject=' + subject + '&body=' + body;
+      closeMenu();
+    });
+
+    popNear.addEventListener('click', function (e) { e.stopPropagation(); });
+
+    document.addEventListener('click', function () {
+      closeMenu();
+      closePops();
+    });
+
+    if (window.YardBirdTips) {
+      window.YardBirdTips.loadTips();
+      window.YardBirdTips.bindForm();
+    }
+  })();
+  </script>
+</body>
+</html>
