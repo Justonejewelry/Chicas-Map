@@ -171,7 +171,133 @@ details.panel-block .block-body {
   padding: 0 12px !important;
 }
 
+/* ── Mobile map-first ───────────────────────────────────────────────
+   Default: full-screen map. List/details only appear when List is tapped.
+   Overrides the old 48%/52% split in app.css. */
 @media (max-width: 900px) {
   .meta { display: none; }
   .ctrl select { max-width: 110px; }
+
+  /* Full-height map layout — no permanent list panel */
+  .layout {
+    display: block !important;
+    height: calc(100vh - 56px - 52px) !important; /* topbar + dock */
+    position: relative;
+    overflow: hidden;
+  }
+  .layout .map-wrap {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  /* Rail starts closed (off-screen). Opens as bottom sheet when .open */
+  .panel.rail {
+    position: fixed !important;
+    left: 0;
+    right: 0;
+    bottom: 52px; /* above mobile dock */
+    top: auto;
+    height: min(72vh, 560px);
+    max-height: calc(100vh - 56px - 52px);
+    width: 100% !important;
+    border-right: none !important;
+    border-top: 1px solid #e2e8f0;
+    border-radius: 18px 18px 0 0;
+    box-shadow: 0 -12px 40px rgba(15, 23, 42, 0.18) !important;
+    z-index: 40;
+    transform: translateY(110%);
+    transition: transform 0.28s ease;
+    background: #fff !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+  .panel.rail.open {
+    transform: translateY(0);
+  }
+  .panel.rail .rail-scroll {
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    min-height: 0;
+  }
+
+  /* Dimmed backdrop behind open rail */
+  .rail-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.35);
+    z-index: 35;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+  }
+  .rail-backdrop.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Bottom dock always visible on mobile */
+  .mobile-dock {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 52px;
+    display: flex !important;
+    align-items: stretch;
+    justify-content: space-around;
+    background: rgba(255, 255, 255, 0.97);
+    border-top: 1px solid #e6e1d8;
+    z-index: 45;
+    padding-bottom: env(safe-area-inset-bottom, 0);
+    box-shadow: 0 -4px 16px rgba(15, 23, 42, 0.06);
+  }
+  .mobile-dock button {
+    flex: 1;
+    border: none;
+    background: transparent;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: #64748b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    cursor: pointer;
+    padding: 6px 4px;
+  }
+  .mobile-dock button span {
+    font-size: 1.15rem;
+    line-height: 1;
+  }
+  .mobile-dock button.active {
+    color: #1a6b3c;
+  }
+
+  /* Detail drawer sits inside the open rail */
+  .detail-drawer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    max-height: none;
+    height: 100%;
+    border-radius: 18px 18px 0 0;
+    z-index: 22;
+  }
+
+  /* Hide desktop-only chrome on small screens */
+  .rail-desktop-tools { display: none; }
+  .footer { display: none !important; }
+}
+
+/* Desktop: hide mobile dock */
+@media (min-width: 901px) {
+  .mobile-dock { display: none !important; }
+  .rail-backdrop { display: none !important; }
 }
