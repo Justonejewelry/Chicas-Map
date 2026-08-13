@@ -258,6 +258,10 @@
             <input type="text" id="tipPermit" maxlength="40" placeholder="BLDG-GS-PMT-…" />
             <label class="rail-label" for="tipSchedule">When is the sale? (required)</label>
             <input type="text" id="tipSchedule" required maxlength="120" placeholder="Sat Aug 9, 9am–2pm" />
+            <label class="rail-label" for="tipSummary">What’s for sale? (short)</label>
+            <textarea id="tipSummary" rows="3" maxlength="400" placeholder="Tools, kids clothes, furniture…"></textarea>
+            <label class="rail-label" for="tipContact">Contact (optional)</label>
+            <input type="text" id="tipContact" maxlength="80" placeholder="email or phone" />
             <label class="check"><input type="checkbox" id="tipPublicContact" /> Show contact publicly if published</label>
             <label class="check"><input type="checkbox" id="tipAttest" required /> I am the permit holder or authorized agent for this address</label>
             <label class="check"><input type="checkbox" id="tipAccurate" required /> The schedule and summary are accurate to my knowledge</label>
@@ -434,7 +438,7 @@
 
     function closePops() {
       popNear.classList.remove('open');
-      fabNear.classList.add('active');
+      fabNear.classList.remove('active');
       fabNear.setAttribute('aria-expanded', 'false');
       fabSearch.classList.remove('active');
     }
