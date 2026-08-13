@@ -83,15 +83,24 @@ def load_city_public(slug: str = "san-antonio") -> list[dict]:
     return []
 
 
+def _usable_address(address: str) -> bool:
+    """Same rule as Sentinel: must contain at least one digit (street number)."""
+    return bool(address and any(c.isdigit() for c in address))
+
+
 def normalize_existing(raw: dict, target: date) -> Sale | None:
     address = (raw.get("address") or "").strip()
-    if not address:
+    if not _usable_address(address):
         return None
     date_start = ""
     date_end = ""
     if raw.get("date_from"):
         try:
-            date_start = datetime.strptime(raw["date_from"], "%m/%d/%Y").date().isoformat()
+            # Prefer ISO already present
+            if len(str(raw["date_from"])) >= 10 and str(raw["date_from"])[4] == "-":
+                date_start = str(raw["date_from"])[:10]
+            else:
+                date_start = datetime.strptime(raw["date_from"], "%m/%d/%Y").date().isoformat()
         except Exception:
             pass
     if raw.get("end_date"):
@@ -230,6 +239,10 @@ def run(target: date, dry_run: bool = False) -> int:
     sales = []
     for d in payload_dicts:
         s = Sale.from_dict(d)
+        # Re-apply usable-address rule after enrich (deep-follow can overwrite)
+        if not _usable_address(s.address or ""):
+            rejected += 1
+            continue
         s.confidence = max(s.confidence, score_confidence(s))
         if s.confidence < MIN_CONFIDENCE:
             rejected += 1
