@@ -88,11 +88,10 @@ a{color:inherit}img{max-width:100%;display:block}:focus-visible{outline:3px soli
 .email-copy p{margin:0;color:var(--muted);font-size:.9rem}
 .email-form{display:flex;flex-wrap:wrap;gap:10px}
 .email-form input[type=email]{padding:12px 14px;border-radius:12px;border:1.5px solid var(--line);font:inherit;min-width:200px}
-.cm-foot{padding:12px 0 28px}
+.cm-foot{padding:8px 0 28px}
+.foot-bottom{max-width:1120px;margin:12px auto 0;padding:14px 24px 0;border-top:1px solid var(--line);font-size:.8rem;color:var(--muted);text-align:center}
+#chicaSocialHomeHost .chica-social-bar,#chicaSocialHome .chica-social-bar{margin:0 auto}
 @media (max-width:900px){.hero-grid{grid-template-columns:1fr}.trust-grid{grid-template-columns:1fr}.hero-card{max-width:360px;margin:0 auto}}
-html, body, a, button, .btn, .zone-chip, .cm-brand, .cm-brand-drop a {
-  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Cellipse cx='14' cy='18' rx='7' ry='6' fill='%230f3d24'/%3E%3Ccircle cx='6' cy='9' r='3.2' fill='%230f3d24'/%3E%3Ccircle cx='11.5' cy='6.5' r='3.2' fill='%230f3d24'/%3E%3Ccircle cx='17.5' cy='6.5' r='3.2' fill='%230f3d24'/%3E%3Ccircle cx='22.5' cy='9' r='3.2' fill='%230f3d24'/%3E%3C/svg%3E") 6 2, pointer;
-}
 .hero-video-card{padding:0;background:#0f3d24}
 .hero-video{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover;background:#0f3d24}
 </style>
@@ -145,7 +144,6 @@ html, body, a, button, .btn, .zone-chip, .cm-brand, .cm-brand-drop a {
           playsinline
           muted
           autoplay
-          loop
           controls
         >
           <source src="assets/chica-intro.mp4" type="video/mp4" />
@@ -196,7 +194,10 @@ html, body, a, button, .btn, .zone-chip, .cm-brand, .cm-brand-drop a {
   </section>
 </main>
 
-<footer class="cm-foot" style="padding:12px 0 20px"></footer>
+<footer class="cm-foot">
+  <div class="wrap" id="chicaSocialHomeHost" style="padding:20px 0 8px"></div>
+  <div class="foot-bottom">Chica's Garage Sale Map — built for the hunt.</div>
+</footer>
 
 <script>
 (function(){
@@ -233,6 +234,7 @@ fetch("data/cities/san-antonio.json").then(function(r){return r.ok?r.json():null
 <script src="js/chica-analytics.js"></script>
 <script src="js/chica-forms.js"></script>
 <script src="js/chica-pwa.js"></script>
+<script src="js/chica-social.js"></script>
 <script>
 (function(){if(window.ChicaForms){ChicaForms.bindEmailForm(document.getElementById("emailForm"),{statusEl:document.getElementById("emailStatus"),source:"home"})}})();
 </script>
