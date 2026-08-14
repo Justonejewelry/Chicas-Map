@@ -20,7 +20,7 @@
   }
 
   // ---- Daily posts (one a day) ----
-  // These will be introduced one per day. For now Day 1 is live.
+  // These will be introduced one per day.
   var dailyPosts = [
     {
       day: 1,
@@ -85,7 +85,7 @@ It gets better when people participate. You can help by sharing it, by sending t
   ];
 
   // Control which day is currently live (change this number when you want to advance)
-  var CURRENT_DAY = 1;
+  var CURRENT_DAY = 2;
 
   function renderDaily() {
     var el = document.getElementById("dailyPost");
@@ -97,10 +97,10 @@ It gets better when people participate. You can help by sharing it, by sending t
   // ---- Blog feed (future posts) ----
   function esc(s) {
     return String(s == null ? "" : s)
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;");
+      .replace(/&/g, "&")
+      .replace(/</g, "<")
+      .replace(/>/g, ">")
+      .replace(/"/g, """);
   }
 
   function formatDate(d) {
