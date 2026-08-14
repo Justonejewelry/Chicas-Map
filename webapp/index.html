@@ -32,7 +32,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+<link rel="icon" href="favicon.ico" />
 <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 <link rel="manifest" href="manifest.webmanifest" />
 <link rel="stylesheet" href="css/voss.css" />
@@ -40,13 +40,45 @@
 <link rel="stylesheet" href="css/chica-social.css" />
 <script src="js/chica-config.js"></script>
 <script src="js/chica-analytics.js"></script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","name":"Chica Map","url":"https://justonejewelry.github.io/Chicas-Map/","description":"Verified garage, yard, and estate sales map for San Antonio and Texas","publisher":{"@type":"Organization","name":"Chica Map / GSIN"}}
-</script>
 </head>
-<body>
-<!-- Index body preserved via separate verify - if truncated, restore from history -->
-<p style="font-family:system-ui;padding:2rem">Loading Chica Map home… If this persists, hard-refresh.</p>
+<body class="landing">
+<header class="v-nav">
+  <a class="v-brand" href="index.html"><img src="assets/chica/chica-logo.webp" alt="Chica Map" width="44" height="44" onerror="this.onerror=null;this.src='chicarar.png'"/>Chicas</a>
+  <nav class="v-links" aria-label="Primary">
+    <a href="map.html">Map</a>
+    <a href="backyard.html">Backyard</a>
+    <a href="submit.html">List a sale</a>
+    <a href="sponsor.html">Sponsor</a>
+  </nav>
+  <div class="v-nav-actions">
+    <a class="v-btn v-btn-primary" href="map.html">Open map</a>
+  </div>
+</header>
+<main>
+  <section class="hero">
+    <h1>Garage sales San Antonio — verified & live</h1>
+    <p>Chica sniffs the listings so you can hunt the treasure. Clean map. No ad clutter. Local & veteran owned.</p>
+    <p><a class="v-btn v-btn-primary" href="map.html">Open the map</a> <a class="v-btn v-btn-ghost" href="submit.html">List a sale free</a></p>
+  </section>
+  <section class="features">
+    <h2>Why Chica Map</h2>
+    <ul>
+      <li>Verified garage, yard, and estate sales</li>
+      <li>Near Me + multi-stop routes</li>
+      <li>No banner ads — built for shoppers</li>
+      <li>San Antonio first · expanding Texas</li>
+    </ul>
+  </section>
+</main>
+<footer class="v-foot">
+  <div><strong>Chica Map</strong> · GSIN · San Antonio</div>
+  <div class="v-foot-links">
+    <a href="map.html">Map</a>
+    <a href="backyard.html">Backyard</a>
+    <a href="submit.html">List a sale</a>
+    <a href="sponsor.html">Sponsor</a>
+  </div>
+</footer>
 <script src="js/chica-pwa.js"></script>
 <script src="js/chica-social.js"></script>
 </body>
