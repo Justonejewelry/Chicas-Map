@@ -42,7 +42,7 @@
 <link rel="stylesheet" href="css/voss.css"/>
 <link rel="stylesheet" href="css/backyard.css"/>
 <script src="js/chica-config.js"></script>
-<script src="js/chica-analytics.js"></script>
+<script src="js/chica-analytics.js" defer></script>
 <style>
   /* Action card grid matching the illustration set */
   .by-actions {
@@ -136,7 +136,7 @@
 </head>
 <body class="by-body">
 <header class="v-nav">
-<a class="v-brand" href="index.html"><img src="assets/chica/chica-logo.png?v=3" alt="Chicas Garage Sale Map" width="44" height="44" decoding="async"/>Chicas</a>
+<a class="v-brand" href="index.html"><img src="assets/chica/chica-logo.webp" alt="Chicas Garage Sale Map" width="44" height="44" decoding="async" onerror="this.onerror=null;this.src='assets/chica/chica-logo.png'"/>Chicas</a>
 <nav class="v-links" aria-label="Primary"><a href="map.html">Map</a><a href="backyard.html" aria-current="page">🐾 Backyard</a><a href="submit.html">List a sale</a><a href="sponsor.html">Sponsor</a></nav>
 <div class="v-nav-actions"><a class="v-btn v-btn-ghost" href="index.html">Home</a><a class="v-btn v-btn-primary" href="map.html">Open map</a></div>
 </header>
@@ -184,12 +184,15 @@
       </div>
     </div>
     <div class="by-hero-visual">
-      <img id="chicaHero" 
-           src="assets/backyard/webapp:assets:backyard:chica-doghouse.png" 
-           alt="Chica" 
-           width="900" height="900" 
-           decoding="async" 
-           fetchpriority="high"/>
+      <picture>
+        <source id="chicaHeroWebp" srcset="assets/backyard/chica-doghouse.webp" type="image/webp" />
+        <img id="chicaHero" 
+             src="assets/backyard/chica-doghouse.png" 
+             alt="Chica in her doghouse" 
+             width="900" height="900" 
+             decoding="async" 
+             fetchpriority="high"/>
+      </picture>
     </div>
   </div>
 </section>
@@ -243,7 +246,7 @@
 </footer>
 
 <script src="js/backyard.js"></script>
-<script src="js/chica-pwa.js"></script>
+<script src="js/chica-pwa.js" defer></script>
 <script>
 (function(){
   var form = document.getElementById("packForm");
