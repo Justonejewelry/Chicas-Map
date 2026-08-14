@@ -45,8 +45,8 @@
       "in_person": false,
       "external_id": "eso-2456237",
       "categories": [
-        "online-auction",
-        "estate-sale"
+        "estate-sale",
+        "online-auction"
       ]
     },
     {
@@ -70,8 +70,8 @@
       "in_person": false,
       "external_id": "eso-2456673",
       "categories": [
-        "online-auction",
-        "estate-sale"
+        "estate-sale",
+        "online-auction"
       ]
     },
     {
@@ -281,8 +281,8 @@
       "type": "estate",
       "confidence": 0.9,
       "status": "verified",
-      "lat": 29.392649581243262,
-      "lon": -98.47104521189458,
+      "lat": 29.395551126338482,
+      "lon": -98.46786960463291,
       "geocode": "source",
       "in_person": true,
       "external_id": "eso-2456907",
@@ -1559,7 +1559,7 @@
   "total_locations": 65,
   "status": "live",
   "date": "2026-08-14",
-  "last_refresh": "2026-08-14T02:10:46-05:00",
+  "last_refresh": "2026-08-14T03:17:29-05:00",
   "note": "Weekend accuracy recovery — 19 verified public listings from Craigslist, YardSaleSearch, GarageSaleFinder, EstateSales.org",
   "permit_total": 104,
   "permit_estate_count": 1
