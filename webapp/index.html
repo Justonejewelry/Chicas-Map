@@ -32,54 +32,707 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-<link rel="icon" href="favicon.ico" />
-<link rel="apple-touch-icon" href="apple-touch-icon.png" />
-<link rel="manifest" href="manifest.webmanifest" />
-<link rel="stylesheet" href="css/voss.css" />
-<link rel="stylesheet" href="css/landing.css" />
-<link rel="stylesheet" href="css/chica-social.css" />
-<script src="js/chica-config.js"></script>
-<script src="js/chica-analytics.js"></script>
+<style>
+  :root{
+    --ink:#1a1f1c;
+    --cream:#f7f4ec;
+    --cream-2:#f0ece2;
+    --paper:#ffffff;
+    --pine:#0f3d24;
+    --pine-mid:#1a5c38;
+    --pine-soft:#e8f2eb;
+    --line:#e4e0d4;
+    --muted:#6b736c;
+    --display:"Fraunces", Georgia, serif;
+    --body:"Inter", system-ui, -apple-system, sans-serif;
+    --radius:24px;
+    --shadow:0 24px 60px -28px rgba(15,30,20,0.28);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*{animation:none!important;transition:none!important;}}
+  body{
+    margin:0; background:var(--cream); color:var(--ink);
+    font-family:var(--body); line-height:1.55; -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  img{max-width:100%; display:block;}
+  :focus-visible{outline:3px solid var(--pine-mid); outline-offset:3px; border-radius:8px;}
+
+  .wrap{max-width:1120px; margin:0 auto; padding-inline:28px;}
+
+  /* Nav */
+  .cm-nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(247,244,236,0.92); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px);
+    border-bottom:1px solid rgba(228,224,212,0.9);
+  }
+  .cm-nav-row{
+    max-width:1120px; margin:0 auto; padding:14px 28px;
+    display:flex; align-items:center; gap:28px;
+  }
+  .cm-brand{
+    display:flex; align-items:center; gap:10px; text-decoration:none;
+    font-family:var(--display); font-weight:700; font-size:1.28rem; letter-spacing:-0.02em; color:var(--ink);
+  }
+  .cm-brand-mark{
+    width:34px; height:34px; border-radius:50%; background:var(--pine);
+    display:grid; place-items:center; color:#fff; flex-shrink:0;
+  }
+  .cm-brand-mark svg{width:18px; height:18px;}
+  .cm-links{display:flex; gap:6px; align-items:center;}
+  .cm-links a{
+    display:inline-flex; align-items:center; gap:7px;
+    text-decoration:none; color:var(--muted); font-weight:600; font-size:0.92rem;
+    padding:8px 12px; border-radius:10px; border-bottom:2px solid transparent;
+  }
+  .cm-links a svg{width:15px; height:15px; opacity:0.85;}
+  .cm-links a:hover{color:var(--pine); background:var(--pine-soft);}
+  .cm-links a.is-active{color:var(--pine); border-bottom-color:var(--pine); border-radius:10px 10px 0 0;}
+  .cm-nav-actions{margin-left:auto; display:flex; gap:10px; align-items:center;}
+
+  .cm-hamburger{
+    display:none; background:var(--paper); border:1px solid var(--line); border-radius:12px;
+    width:40px; height:40px; align-items:center; justify-content:center; cursor:pointer; color:var(--pine);
+  }
+  .cm-mobile-panel{display:none; position:fixed; inset:0; z-index:80;}
+  .cm-mobile-panel.open{display:block;}
+  .cm-mobile-backdrop{position:absolute; inset:0; background:rgba(15,30,20,0.35);}
+  .cm-mobile-sheet{
+    position:absolute; top:0; right:0; bottom:0; width:min(84vw,340px);
+    background:var(--cream); border-left:1px solid var(--line); padding:20px;
+    display:flex; flex-direction:column; gap:8px; overflow-y:auto;
+  }
+  .cm-mobile-head{display:flex; align-items:center; justify-content:space-between; margin-bottom:12px;}
+  .cm-mobile-close{background:var(--paper); border:1px solid var(--line); border-radius:10px; width:36px; height:36px; cursor:pointer; font-size:1.15rem;}
+  .cm-mobile-sheet > a{
+    display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--ink);
+    font-weight:700; font-size:1.05rem; padding:12px 6px; border-bottom:1px solid var(--line);
+  }
+
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    font-family:var(--body); font-weight:700; font-size:0.92rem;
+    padding:12px 20px; border-radius:999px; border:1.5px solid transparent; cursor:pointer;
+    text-decoration:none; transition:transform .15s ease, box-shadow .15s ease, background .15s ease, border-color .15s ease;
+  }
+  .btn:hover{transform:translateY(-1px);}
+  .btn-primary{
+    background:var(--pine); color:#fff;
+    box-shadow:0 12px 28px -10px rgba(15,61,36,0.45);
+  }
+  .btn-primary:hover{background:#0a2e1a;}
+  .btn-ghost{
+    background:var(--paper); color:var(--pine); border-color:var(--line);
+  }
+  .btn-ghost:hover{border-color:var(--pine-mid); background:#fff;}
+  .btn-sm{padding:9px 16px; font-size:0.84rem;}
+  .btn svg{width:14px; height:14px;}
+
+  /* Hero */
+  .cm-hero{padding:52px 0 36px;}
+  .hero-grid{
+    display:grid; grid-template-columns:1.05fr 0.95fr; gap:48px; align-items:center;
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:0.72rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase;
+    color:var(--pine); background:var(--pine-soft); border:1px solid #cfe3d5;
+    padding:7px 14px; border-radius:999px; margin-bottom:22px;
+  }
+  .eyebrow .pulse{
+    width:8px; height:8px; border-radius:50%; background:#22c55e;
+    box-shadow:0 0 0 4px rgba(34,197,94,0.2);
+  }
+  .cm-hero h1{
+    font-family:var(--display); font-weight:600; font-size:clamp(2.7rem,5.2vw,4.35rem);
+    line-height:1.02; letter-spacing:-0.03em; margin:0 0 18px; color:var(--ink);
+  }
+  .cm-hero h1 em{
+    font-style:italic; font-weight:600; color:var(--pine); display:block;
+  }
+  .hero-lead{
+    font-size:1.05rem; color:var(--muted); max-width:42ch; margin:0 0 28px; font-weight:500;
+  }
+  .hero-cta{display:flex; flex-wrap:wrap; gap:12px; margin-bottom:28px;}
+
+  .micro-trust{
+    display:flex; flex-wrap:wrap; gap:18px 28px;
+  }
+  .micro-item{
+    display:flex; align-items:flex-start; gap:10px; max-width:160px;
+  }
+  .micro-icon{
+    width:36px; height:36px; border-radius:50%; background:var(--pine-soft);
+    display:grid; place-items:center; color:var(--pine-mid); flex-shrink:0;
+  }
+  .micro-icon svg{width:16px; height:16px;}
+  .micro-item strong{display:block; font-size:0.82rem; font-weight:700; color:var(--ink); line-height:1.25;}
+  .micro-item span{display:block; font-size:0.75rem; color:var(--muted); margin-top:2px;}
+
+  .hero-visual{position:relative;}
+  .hero-card{
+    position:relative; border-radius:28px; background:var(--paper);
+    border:1px solid var(--line); box-shadow:var(--shadow); overflow:hidden;
+    padding:18px 18px 72px; display:flex; align-items:center; justify-content:center;
+  }
+  .hero-card img{
+    width:92%; max-width:420px; height:auto; object-fit:contain;
+    filter:drop-shadow(0 16px 28px rgba(15,30,20,0.18));
+  }
+  .hero-fallback{width:100%; min-height:280px; display:none; align-items:center; justify-content:center;}
+  .hero-card.is-fallback .hero-fallback{display:flex;}
+  .hero-card.is-fallback img{display:none;}
+  .hero-badge{
+    position:absolute; left:16px; right:16px; bottom:16px;
+    background:rgba(255,255,255,0.96); border:1px solid var(--line); border-radius:16px;
+    padding:12px 14px; display:flex; align-items:center; justify-content:space-between; gap:12px;
+    box-shadow:0 10px 24px rgba(15,30,20,0.08);
+  }
+  .hero-badge-left{display:flex; align-items:center; gap:10px;}
+  .hero-badge-ico{
+    width:34px; height:34px; border-radius:10px; background:var(--pine-soft);
+    display:grid; place-items:center; color:var(--pine); flex-shrink:0;
+  }
+  .hero-badge-ico svg{width:16px; height:16px;}
+  .hero-badge strong{display:block; font-size:0.88rem; font-weight:700;}
+  .hero-badge small{display:block; font-size:0.76rem; color:var(--muted); font-weight:500; margin-top:1px;}
+  .live-pill{
+    display:inline-flex; align-items:center; gap:6px; font-size:0.78rem; font-weight:700; color:var(--pine);
+  }
+  .live-pill::before{
+    content:""; width:7px; height:7px; border-radius:50%; background:#22c55e;
+    box-shadow:0 0 0 3px rgba(34,197,94,0.2);
+  }
+
+  /* Live strip — floating rounded bar */
+  .cm-live-wrap{padding:8px 28px 0; max-width:1120px; margin:0 auto;}
+  .cm-live{
+    background:linear-gradient(135deg,#0c3420,#14532b 55%,#1a5c38);
+    color:#eef6f0; border-radius:22px; padding:18px 22px;
+    box-shadow:0 18px 40px -16px rgba(15,61,36,0.5);
+  }
+  .live-inner{
+    display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:16px 20px;
+  }
+  .live-meta{display:flex; flex-wrap:wrap; gap:8px 20px; align-items:center; font-size:0.88rem;}
+  .live-stat{display:inline-flex; align-items:center; gap:8px;}
+  .live-stat svg{width:16px; height:16px; opacity:0.9; flex-shrink:0;}
+  .live-stat b{font-weight:800; color:#fff; font-size:1.05rem;}
+  .live-stat .ok{color:#86efac; font-weight:700;}
+  .live-divider{width:1px; height:22px; background:rgba(255,255,255,0.18);}
+  .live-zones{display:flex; flex-wrap:wrap; gap:8px; align-items:center;}
+  .live-zones-label{
+    font-size:0.68rem; text-transform:uppercase; letter-spacing:0.08em;
+    opacity:0.7; font-weight:700; margin-right:2px;
+  }
+  .zone-chip{
+    display:inline-flex; align-items:center; text-decoration:none;
+    background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.16);
+    color:#fff; font-weight:600; font-size:0.8rem; padding:6px 12px; border-radius:999px;
+  }
+  .zone-chip:hover{background:rgba(255,255,255,0.18);}
+
+  /* Rest of page */
+  .cm-weekend{padding:48px 0 12px;}
+  .weekend-card{
+    background:var(--paper); border:1px solid var(--line); border-radius:var(--radius);
+    padding:28px 30px; box-shadow:0 14px 36px -24px rgba(15,30,20,0.18);
+    display:grid; grid-template-columns:1fr auto; gap:22px; align-items:center;
+  }
+  .weekend-card h2{font-family:var(--display); font-weight:600; font-size:1.4rem; margin:0 0 6px;}
+  .weekend-card p{margin:0; color:var(--muted); font-size:0.95rem; max-width:52ch;}
+  .weekend-card .early{margin-top:10px; font-size:0.86rem; font-weight:600; color:var(--pine);}
+
+  .cm-trust{padding:36px 0 48px;}
+  .trust-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px;}
+  .trust-card{
+    background:var(--paper); border:1px solid var(--line); border-radius:20px;
+    padding:22px 20px; box-shadow:0 10px 28px -20px rgba(15,30,20,0.14);
+  }
+  .trust-icon{
+    width:42px; height:42px; border-radius:12px; background:var(--pine-soft);
+    display:grid; place-items:center; margin-bottom:12px; color:var(--pine);
+  }
+  .trust-icon svg{width:18px; height:18px;}
+  .trust-card h3{font-family:var(--display); font-weight:600; font-size:1.1rem; margin:0 0 6px;}
+  .trust-card p{margin:0; color:var(--muted); font-size:0.9rem;}
+
+  .cm-email{padding:0 0 48px;}
+  .email-card{
+    background:var(--paper); border:1px solid var(--line); border-radius:var(--radius);
+    padding:26px 28px; display:flex; align-items:center; justify-content:space-between; gap:22px; flex-wrap:wrap;
+    box-shadow:0 12px 32px -22px rgba(15,30,20,0.16);
+  }
+  .email-copy h3{font-family:var(--display); font-weight:600; font-size:1.25rem; margin:0 0 4px;}
+  .email-copy p{margin:0; color:var(--muted); font-size:0.92rem;}
+  .email-form{display:flex; gap:10px; flex-wrap:wrap;}
+  .email-form input[type="email"]{
+    border:1.5px solid var(--line); border-radius:999px; padding:12px 16px; font-family:inherit;
+    font-size:0.92rem; min-width:220px; background:var(--cream);
+  }
+  .email-form input:focus{outline:none; border-color:var(--pine-mid);}
+
+  .cm-secondary{padding:0 0 64px;}
+  .secondary-row{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  .secondary-card{
+    border:1px solid var(--line); border-radius:18px; padding:20px 22px; background:transparent;
+    text-decoration:none; transition:background .15s ease, border-color .15s ease;
+  }
+  .secondary-card:hover{background:var(--paper); border-color:#c9d6cc;}
+  .secondary-card strong{display:block; font-family:var(--display); font-size:1.12rem; margin-bottom:4px;}
+  .secondary-card span{color:var(--muted); font-size:0.9rem;}
+
+  .cm-foot{border-top:1px solid var(--line); padding:40px 0 36px; background:rgba(255,255,255,0.35);}
+  .foot-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:28px;}
+  .foot-brand strong{display:block; font-family:var(--display); font-size:1.12rem; font-weight:600; margin-bottom:6px;}
+  .foot-brand p{margin:0; color:var(--muted); font-size:0.88rem; max-width:32ch;}
+  .foot-group h4{
+    margin:0 0 12px; font-size:0.68rem; text-transform:uppercase; letter-spacing:0.08em;
+    color:var(--pine-mid); font-weight:700;
+  }
+  .foot-group ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:9px;}
+  .foot-group a{text-decoration:none; font-weight:600; font-size:0.9rem; color:var(--muted);}
+  .foot-group a:hover{color:var(--pine);}
+  .foot-bottom{
+    max-width:1120px; margin:28px auto 0; padding:16px 28px 0; border-top:1px solid var(--line);
+    font-size:0.8rem; color:var(--muted);
+  }
+
+  @media (max-width:960px){
+    .hero-grid{grid-template-columns:1fr; gap:32px;}
+    .hero-visual{order:-1; max-width:360px; margin:0 auto;}
+    .cm-links{display:none;}
+    .cm-hamburger{display:flex;}
+    .trust-grid{grid-template-columns:1fr;}
+    .weekend-card{grid-template-columns:1fr;}
+    .secondary-row{grid-template-columns:1fr;}
+    .live-divider{display:none;}
+    .cm-live-wrap{padding:4px 20px 0;}
+    .cm-live{padding:14px 16px; border-radius:18px;}
+    .live-inner{gap:12px;}
+    .live-meta{gap:6px 14px; font-size:0.84rem;}
+  }
+  @media (min-width:961px){
+    .cm-mobile-panel{display:none!important;}
+  }
+  @media (max-width:700px){
+    .foot-grid{grid-template-columns:1fr 1fr; gap:24px 16px;}
+    .foot-brand{grid-column:1/-1;}
+    .cm-nav-row{gap:12px; padding:12px 16px;}
+    .wrap{padding-inline:16px;}
+    .cm-hero{padding:32px 0 20px;}
+    .micro-trust{gap:14px;}
+
+    /* Live bar — mobile refine */
+    .cm-live-wrap{padding:0 12px;}
+    .cm-live{
+      padding:12px 14px;
+      border-radius:16px;
+      box-shadow:0 12px 28px -14px rgba(15,61,36,0.45);
+    }
+    .live-inner{
+      flex-direction:column;
+      align-items:stretch;
+      gap:10px;
+    }
+    .live-meta{
+      gap:8px 12px;
+      font-size:0.8rem;
+      row-gap:6px;
+    }
+    .live-stat{gap:6px;}
+    .live-stat svg{width:14px; height:14px;}
+    .live-stat b{font-size:0.95rem;}
+    .live-zones{
+      gap:6px;
+      padding-top:2px;
+      border-top:1px solid rgba(255,255,255,0.12);
+      padding-top:10px;
+    }
+    .live-zones-label{
+      width:100%;
+      margin:0 0 2px;
+      font-size:0.64rem;
+    }
+    .zone-chip{
+      font-size:0.74rem;
+      padding:5px 10px;
+    }
+  }
+  @media (max-width:400px){
+    .cm-live-wrap{padding:0 10px;}
+    .cm-live{padding:11px 12px; border-radius:14px;}
+    .live-meta{font-size:0.76rem;}
+    .zone-chip{font-size:0.7rem; padding:4px 9px;}
+  }
+</style>
+<script src="js/seo-schema.js"></script>
 </head>
-<body class="landing">
-<header class="v-nav">
-  <a class="v-brand" href="index.html"><img src="assets/chica/chica-logo.webp" alt="Chica Map" width="44" height="44" onerror="this.onerror=null;this.src='chicarar.png'"/>Chicas</a>
-  <nav class="v-links" aria-label="Primary">
-    <a href="map.html">Map</a>
-    <a href="backyard.html">Backyard</a>
-    <a href="submit.html">List a sale</a>
-    <a href="sponsor.html">Sponsor</a>
-  </nav>
-  <div class="v-nav-actions">
-    <a class="v-btn v-btn-primary" href="map.html">Open map</a>
+<body>
+
+<header class="cm-nav">
+  <div class="cm-nav-row">
+    <a class="cm-brand" href="index.html">
+      <span class="cm-brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6-4.5-6-10a6 6 0 1 1 12 0c0 5.5-6 10-6 10z"/><circle cx="12" cy="11" r="2.2" fill="currentColor" stroke="none"/></svg>
+      </span>
+      Chicas Map
+    </a>
+
+    <nav class="cm-links" aria-label="Primary">
+      <a class="is-active" href="map.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6-4.5-6-10a6 6 0 1 1 12 0c0 5.5-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>
+        Map
+      </a>
+      <a href="submit.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 0 2.1 2.1 0 0 1 0 3L7 19l-4 1 1-4 12.5-12.5z"/></svg>
+        List a sale
+      </a>
+      <a href="backyard.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 10v10h14V10"/></svg>
+        Backyard
+      </a>
+    </nav>
+
+    <div class="cm-nav-actions">
+      <button type="button" class="btn btn-ghost btn-sm" data-chica-install hidden>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 10v10h14V10"/></svg>
+        Add to Home
+      </button>
+      <a class="btn btn-primary btn-sm" href="map.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6-4.5-6-10a6 6 0 1 1 12 0c0 5.5-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>
+        Open the map
+      </a>
+      <button type="button" class="cm-hamburger" id="mobileMenuBtn" aria-haspopup="true" aria-expanded="false" aria-controls="mobilePanel" aria-label="Open menu">☰</button>
+    </div>
   </div>
 </header>
+
+<div class="cm-mobile-panel" id="mobilePanel">
+  <div class="cm-mobile-backdrop" id="mobileBackdrop"></div>
+  <div class="cm-mobile-sheet" role="dialog" aria-modal="true" aria-label="Site menu">
+    <div class="cm-mobile-head">
+      <span class="cm-brand" style="font-size:1.05rem;">Chicas Map</span>
+      <button type="button" class="cm-mobile-close" id="mobileCloseBtn" aria-label="Close menu">×</button>
+    </div>
+    <a href="map.html">Map</a>
+    <a href="submit.html">List a sale</a>
+    <a href="backyard.html">Backyard</a>
+    <a href="sponsor.html">Sponsor</a>
+    <a class="btn btn-primary" href="map.html" style="margin-top:auto; text-align:center;">Open the map</a>
+  </div>
+</div>
+
 <main>
-  <section class="hero">
-    <h1>Garage sales San Antonio — verified & live</h1>
-    <p>Chica sniffs the listings so you can hunt the treasure. Clean map. No ad clutter. Local & veteran owned.</p>
-    <p><a class="v-btn v-btn-primary" href="map.html">Open the map</a> <a class="v-btn v-btn-ghost" href="submit.html">List a sale free</a></p>
+  <section class="cm-hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow"><span class="pulse" aria-hidden="true"></span> San Antonio · Live</span>
+        <h1>Every sale.<em>Verified first.</em></h1>
+        <p class="hero-lead">Chicas Garage Sale Map finds yard, garage, and estate sales before the weekend rush — with Near Me, multi-stop routes, and confidence you can act on.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="map.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6-4.5-6-10a6 6 0 1 1 12 0c0 5.5-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>
+            Open the map
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="submit.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 0 2.1 2.1 0 0 1 0 3L7 19l-4 1 1-4 12.5-12.5z"/></svg>
+            List your sale, free
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+          </a>
+        </div>
+
+        <div class="micro-trust">
+          <div class="micro-item">
+            <div class="micro-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+            </div>
+            <div>
+              <strong>Verified Sales</strong>
+              <span>We verify first.</span>
+            </div>
+          </div>
+          <div class="micro-item">
+            <div class="micro-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+            </div>
+            <div>
+              <strong>Smart Routes</strong>
+              <span>Save time. See more.</span>
+            </div>
+          </div>
+          <div class="micro-item">
+            <div class="micro-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <div>
+              <strong>Act with Confidence</strong>
+              <span>Real sales. Real results.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-card" id="heroCard">
+          <img id="heroLogo" src="assets/chica/chica-logo.png?v=5" alt="Chica, a chihuahua in a red cape, flying over a map of garage sale pins" width="480" height="480" />
+          <div class="hero-fallback" aria-hidden="true">
+            <svg viewBox="0 0 220 220" width="70%" role="img" aria-label="Route map illustration">
+              <circle cx="110" cy="110" r="96" fill="none" stroke="#cfe0d1" stroke-width="2"/>
+              <path d="M30 150 C 60 90, 110 170, 150 90 S 190 60, 195 40" fill="none" stroke="#1a5c38" stroke-width="2.5" stroke-dasharray="1 10" stroke-linecap="round"/>
+              <circle cx="30" cy="150" r="8" fill="#0f3d24"/>
+              <circle cx="150" cy="90" r="8" fill="#0f3d24"/>
+              <circle cx="195" cy="40" r="10" fill="#22c55e"/>
+            </svg>
+          </div>
+          <div class="hero-badge">
+            <div class="hero-badge-left">
+              <div class="hero-badge-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+              </div>
+              <div>
+                <strong>This weekend</strong>
+                <small id="weekendZones">Alamo Ranch, Stone Oak, Helotes</small>
+              </div>
+            </div>
+            <span class="live-pill">Live</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
-  <section class="features">
-    <h2>Why Chica Map</h2>
-    <ul>
-      <li>Verified garage, yard, and estate sales</li>
-      <li>Near Me + multi-stop routes</li>
-      <li>No banner ads — built for shoppers</li>
-      <li>San Antonio first · expanding Texas</li>
-    </ul>
+
+  <div class="cm-live-wrap">
+    <div class="cm-live" aria-live="polite">
+      <div class="live-inner">
+        <div class="live-meta">
+          <span class="live-stat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg>
+            <span><b id="liveCount">—</b> live sales</span>
+          </span>
+          <span class="live-divider" aria-hidden="true"></span>
+          <span class="live-stat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            <span>Updated <b id="liveRefresh">—</b></span>
+          </span>
+          <span class="live-divider" aria-hidden="true"></span>
+          <span class="live-stat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6-4.5-6-10a6 6 0 1 1 12 0c0 5.5-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>
+            <span>San Antonio & metro <span class="ok" id="liveStatus">Live</span></span>
+          </span>
+        </div>
+        <div class="live-zones">
+          <span class="live-zones-label">Hot zones</span>
+          <div id="zoneChips" style="display:flex;flex-wrap:wrap;gap:8px;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="cm-weekend">
+    <div class="wrap">
+      <div class="weekend-card">
+        <div>
+          <h2>This weekend on the map</h2>
+          <p id="weekendBlurb">Verified garage, yard, and estate stops across San Antonio and the surrounding communities — sorted for the hunt.</p>
+          <p class="early">Tip: best selection is usually before 9&nbsp;AM Saturday.</p>
+        </div>
+        <a class="btn btn-primary" href="map.html">See all on the map</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cm-trust">
+    <div class="wrap">
+      <div class="trust-grid">
+        <div class="trust-card">
+          <div class="trust-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+          </div>
+          <h3>Verified</h3>
+          <p>Duplicates, fakes, and dead addresses are filtered before they hit the map.</p>
+        </div>
+        <div class="trust-card">
+          <div class="trust-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg>
+          </div>
+          <h3>Near Me + routes</h3>
+          <p>Distance sort and multi-stop plans that open in Google, Apple, or Waze.</p>
+        </div>
+        <div class="trust-card">
+          <div class="trust-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+          </div>
+          <h3>Free to list</h3>
+          <p>Post your garage or estate sale in minutes. No fees. No spam to your buyers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cm-email">
+    <div class="wrap">
+      <div class="email-card">
+        <div class="email-copy">
+          <h3>Friday briefing</h3>
+          <p>Hot zones, new sales, and weekend routes. Free. No spam.</p>
+        </div>
+        <form class="email-form" id="emailForm">
+          <label for="emailInput" style="position:absolute;left:-9999px;">Email address</label>
+          <input type="email" id="emailInput" name="email" placeholder="you@email.com" required autocomplete="email" />
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;" aria-hidden="true" />
+          <button type="submit" class="btn btn-primary">Join the list</button>
+        </form>
+      </div>
+      <p id="emailStatus" role="status" style="min-height:1.2em;margin:10px 4px 0;font-size:0.85rem;color:var(--pine);font-weight:600;" hidden></p>
+    </div>
+  </section>
+
+  <section class="cm-secondary">
+    <div class="wrap secondary-row">
+      <a class="secondary-card" href="submit.html">
+        <strong>List a sale</strong>
+        <span>Free verified listing for San Antonio hunters.</span>
+      </a>
+      <a class="secondary-card" href="sponsor.html">
+        <strong>Sponsor the map</strong>
+        <span>Support local discovery across Texas.</span>
+      </a>
+    </div>
   </section>
 </main>
-<footer class="v-foot">
-  <div><strong>Chica Map</strong> · GSIN · San Antonio</div>
-  <div class="v-foot-links">
-    <a href="map.html">Map</a>
-    <a href="backyard.html">Backyard</a>
-    <a href="submit.html">List a sale</a>
-    <a href="sponsor.html">Sponsor</a>
+
+<footer class="cm-foot">
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <strong>Chicas Garage Sale Map</strong>
+      <p>Verified garage, yard, and estate sales for San Antonio — expanding across Texas.</p>
+    </div>
+    <div class="foot-group">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="map.html">Map</a></li>
+        <li><a href="backyard.html">Backyard</a></li>
+      </ul>
+    </div>
+    <div class="foot-group">
+      <h4>Community</h4>
+      <ul>
+        <li><a href="submit.html">List a sale</a></li>
+        <li><a href="sponsor.html">Sponsor</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="terms.html">Terms</a></li>
+      </ul>
+    </div>
   </div>
+  <div class="foot-bottom">Chica's Garage Sale Map — built for the hunt.</div>
 </footer>
+
+<script>
+  (function () {
+    var img = document.getElementById("heroLogo");
+    var card = document.getElementById("heroCard");
+    if (!img || !card) return;
+    img.addEventListener("error", function () { card.classList.add("is-fallback"); });
+  })();
+
+  (function () {
+    var openBtn = document.getElementById("mobileMenuBtn");
+    var closeBtn = document.getElementById("mobileCloseBtn");
+    var backdrop = document.getElementById("mobileBackdrop");
+    var panel = document.getElementById("mobilePanel");
+    if (!openBtn || !panel) return;
+    function open() {
+      panel.classList.add("open");
+      openBtn.setAttribute("aria-expanded", "true");
+      document.body.style.overflow = "hidden";
+    }
+    function close() {
+      panel.classList.remove("open");
+      openBtn.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
+    }
+    openBtn.addEventListener("click", open);
+    if (closeBtn) closeBtn.addEventListener("click", close);
+    if (backdrop) backdrop.addEventListener("click", close);
+    panel.querySelectorAll("a").forEach(function (a) { a.addEventListener("click", close); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
+  })();
+
+  function relativeTime(iso) {
+    if (!iso) return "—";
+    try {
+      var then = new Date(iso).getTime();
+      var mins = Math.max(0, Math.round((Date.now() - then) / 60000));
+      if (mins < 60) return mins + "m ago";
+      var hrs = Math.round(mins / 60);
+      if (hrs < 48) return hrs + "h ago";
+      return Math.round(hrs / 24) + "d ago";
+    } catch (e) { return "—"; }
+  }
+
+  function defaultZones() {
+    return ["Alamo Ranch", "Stone Oak", "Helotes", "Schertz", "Boerne"];
+  }
+
+  function renderZones(zones) {
+    var host = document.getElementById("zoneChips");
+    var badge = document.getElementById("weekendZones");
+    var list = (zones && zones.length) ? zones.slice(0, 6) : defaultZones();
+    if (badge) badge.textContent = list.slice(0, 3).join(", ");
+    if (!host) return;
+    host.innerHTML = "";
+    list.forEach(function (z) {
+      var a = document.createElement("a");
+      a.className = "zone-chip";
+      a.href = "map.html";
+      a.textContent = z;
+      host.appendChild(a);
+    });
+  }
+
+  function applyLiveData(data) {
+    if (!data) { renderZones(null); return; }
+    var public = data.public || data.sales || [];
+    var permits = data.permits || [];
+    var count = data.total_locations;
+    if (count == null) count = public.length + permits.length;
+    var countEl = document.getElementById("liveCount");
+    if (countEl) countEl.textContent = String(count);
+    var refreshEl = document.getElementById("liveRefresh");
+    if (refreshEl) refreshEl.textContent = relativeTime(data.last_refresh || data.date);
+    var statusEl = document.getElementById("liveStatus");
+    if (statusEl) statusEl.textContent = "Live";
+    var zones = data.hot_zones;
+    if (!zones || !zones.length) zones = defaultZones();
+    renderZones(zones);
+    var blurb = document.getElementById("weekendBlurb");
+    if (blurb && count) {
+      blurb.textContent = count + " verified stops across San Antonio and surrounding communities — filtered for the weekend hunt.";
+    }
+  }
+
+  fetch("data/cities/san-antonio.json")
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(applyLiveData)
+    .catch(function () { renderZones(null); });
+</script>
+<script src="js/chica-config.js"></script>
+<script src="js/chica-analytics.js"></script>
+<script src="js/chica-forms.js"></script>
 <script src="js/chica-pwa.js"></script>
 <script src="js/chica-social.js"></script>
+<script>
+  (function () {
+    if (window.ChicaForms) {
+      ChicaForms.bindEmailForm(document.getElementById("emailForm"), {
+        statusEl: document.getElementById("emailStatus"),
+        source: "home",
+      });
+    }
+  })();
+</script>
 </body>
 </html>
