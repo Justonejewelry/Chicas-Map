@@ -1,14 +1,6 @@
 /** Bridges private app detail drawer → permit tips + trust signals + mobile detail sheet
  *  without patching the pinned app.js.
- *  Fix: when detail opens, release/hide the rail "menu" (list + tools) so the detail
- *  sheet becomes the sole scrollable surface. Users can then freely scroll and tap
- *  Google / Apple / Waze without nested-scroll fights or buried buttons.
- *
- *  Also enforces map-first on load: detail stays closed until the user taps a pin/list row.
- *
- *  Enrichment (all posts):
- *  - QR code linking to the original source URL (when present)
- *  - Google Street View of the sale location (lat/lon or address)
+ *  Also: source QR, Street View, and social share bar on every detail.
  */
 (function () {
   function formatRelative(iso) {
@@ -85,15 +77,10 @@
   function streetViewUrl(s) {
     if (!s) return null;
     if (s.lat != null && s.lon != null) {
-      return (
-        "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=" +
-        encodeURIComponent(s.lat + "," + s.lon)
-      );
+      return "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=" + encodeURIComponent(s.lat + "," + s.lon);
     }
     if (s.address) {
-      return (
-        "https://www.google.com/maps?layer=c&q=" + encodeURIComponent(s.address)
-      );
+      return "https://www.google.com/maps?layer=c&q=" + encodeURIComponent(s.address);
     }
     return null;
   }
@@ -106,10 +93,7 @@
   }
 
   function qrImageUrl(data) {
-    return (
-      "https://api.qrserver.com/v1/create-qr-code/?size=140x140&margin=8&data=" +
-      encodeURIComponent(data)
-    );
+    return "https://api.qrserver.com/v1/create-qr-code/?size=140x140&margin=8&data=" + encodeURIComponent(data);
   }
 
   function enhanceDetailExtras() {
@@ -124,17 +108,11 @@
 
     var wrap = document.createElement("div");
     wrap.className = "d-extras";
-    wrap.setAttribute(
-      "style",
-      "margin-top:14px;padding-top:12px;border-top:1px solid rgba(0,0,0,.08);display:flex;flex-wrap:wrap;gap:14px;align-items:flex-start"
-    );
+    wrap.setAttribute("style", "margin-top:14px;padding-top:12px;border-top:1px solid rgba(0,0,0,.08);display:flex;flex-wrap:wrap;gap:14px;align-items:flex-start");
 
     if (src) {
       var qrBox = document.createElement("div");
-      qrBox.setAttribute(
-        "style",
-        "display:flex;flex-direction:column;align-items:center;gap:6px;min-width:120px"
-      );
+      qrBox.setAttribute("style", "display:flex;flex-direction:column;align-items:center;gap:6px;min-width:120px");
       var label = document.createElement("div");
       label.className = "d-meta";
       label.textContent = "Source QR";
@@ -146,19 +124,13 @@
       img.height = 120;
       img.loading = "lazy";
       img.decoding = "async";
-      img.setAttribute(
-        "style",
-        "width:120px;height:120px;border-radius:12px;background:#fff;border:1px solid rgba(0,0,0,.08);padding:6px"
-      );
+      img.setAttribute("style", "width:120px;height:120px;border-radius:12px;background:#fff;border:1px solid rgba(0,0,0,.08);padding:6px");
       var a = document.createElement("a");
       a.href = src;
       a.target = "_blank";
       a.rel = "noopener noreferrer";
       a.textContent = "Open source";
-      a.setAttribute(
-        "style",
-        "font-size:0.8rem;font-weight:700;color:#0f3d24;text-decoration:none"
-      );
+      a.setAttribute("style", "font-size:0.8rem;font-weight:700;color:#0f3d24;text-decoration:none");
       qrBox.appendChild(label);
       qrBox.appendChild(img);
       qrBox.appendChild(a);
@@ -171,54 +143,33 @@
       var svLabel = document.createElement("div");
       svLabel.className = "d-meta";
       svLabel.textContent = "Street view";
-      svLabel.setAttribute(
-        "style",
-        "font-size:0.72rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;opacity:.75;margin-bottom:6px"
-      );
+      svLabel.setAttribute("style", "font-size:0.72rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;opacity:.75;margin-bottom:6px");
       var svLink = document.createElement("a");
       svLink.href = sv;
       svLink.target = "_blank";
       svLink.rel = "noopener noreferrer";
-      svLink.setAttribute(
-        "style",
-        "display:flex;align-items:center;justify-content:center;gap:8px;min-height:88px;padding:14px 16px;border-radius:14px;background:linear-gradient(135deg,#e8f2eb,#f7f4ec);border:1.5px solid #cfe3d5;text-decoration:none;color:#0f3d24;font-weight:800;font-size:0.92rem"
-      );
-      svLink.innerHTML =
-        '<span style="font-size:1.35rem" aria-hidden="true">\uD83D\uDEE3</span><span>View on Google Street View</span>';
+      svLink.setAttribute("style", "display:flex;align-items:center;justify-content:center;gap:8px;min-height:88px;padding:14px 16px;border-radius:14px;background:linear-gradient(135deg,#e8f2eb,#f7f4ec);border:1.5px solid #cfe3d5;text-decoration:none;color:#0f3d24;font-weight:800;font-size:0.92rem");
+      svLink.innerHTML = '<span style="font-size:1.35rem" aria-hidden="true">\uD83D\uDEE3</span><span>View on Google Street View</span>';
       svBox.appendChild(svLabel);
       svBox.appendChild(svLink);
-
       if (s.lat != null && s.lon != null) {
         var embedWrap = document.createElement("div");
-        embedWrap.setAttribute(
-          "style",
-          "margin-top:8px;border-radius:12px;overflow:hidden;border:1px solid rgba(0,0,0,.08);aspect-ratio:16/10;max-height:160px;background:#e8ebe6"
-        );
+        embedWrap.setAttribute("style", "margin-top:8px;border-radius:12px;overflow:hidden;border:1px solid rgba(0,0,0,.08);aspect-ratio:16/10;max-height:160px;background:#e8ebe6");
         var iframe = document.createElement("iframe");
         iframe.title = "Google Street View of sale location";
         iframe.loading = "lazy";
         iframe.referrerPolicy = "no-referrer-when-downgrade";
-        iframe.setAttribute(
-          "style",
-          "width:100%;height:100%;min-height:140px;border:0"
-        );
-        iframe.src =
-          "https://maps.google.com/maps?q=&layer=c&cbll=" +
-          encodeURIComponent(s.lat + "," + s.lon) +
-          "&cbp=11,0,0,0,0&output=svembed";
+        iframe.setAttribute("style", "width:100%;height:100%;min-height:140px;border:0");
+        iframe.src = "https://maps.google.com/maps?q=&layer=c&cbll=" + encodeURIComponent(s.lat + "," + s.lon) + "&cbp=11,0,0,0,0&output=svembed";
         embedWrap.appendChild(iframe);
         svBox.appendChild(embedWrap);
       }
-
       wrap.appendChild(svBox);
     }
 
     var report = body.querySelector(".report-row");
-    if (report && report.parentNode === body) {
-      body.insertBefore(wrap, report);
-    } else {
-      body.appendChild(wrap);
-    }
+    if (report && report.parentNode === body) body.insertBefore(wrap, report);
+    else body.appendChild(wrap);
   }
 
   function setDetailMode(on) {
@@ -260,13 +211,8 @@
 
     setDetailMode(true);
 
-    var addr =
-      (body.querySelector(".d-addr") && body.querySelector(".d-addr").textContent.trim()) || "";
-    var meta = Array.prototype.map
-      .call(body.querySelectorAll(".d-meta"), function (n) {
-        return n.textContent || "";
-      })
-      .join(" ");
+    var addr = (body.querySelector(".d-addr") && body.querySelector(".d-addr").textContent.trim()) || "";
+    var meta = Array.prototype.map.call(body.querySelectorAll(".d-meta"), function (n) { return n.textContent || ""; }).join(" ");
     var blob = meta + " " + (body.textContent || "");
     var isPermit = /Type:\s*permit/i.test(blob) || /permit issued/i.test(blob);
     var prev = window.__YB_LAST_SALE || {};
@@ -284,9 +230,7 @@
       source: prev.source,
     };
     var srcA = body.querySelector('.d-meta a[href^="http"]');
-    if (srcA && srcA.href) {
-      sale.source_url = srcA.href;
-    }
+    if (srcA && srcA.href) sale.source_url = srcA.href;
     window.__YB_LAST_SALE = Object.assign({}, prev, sale);
     var tipBtn = document.getElementById("btnOpenTipForm");
     if (tipBtn) tipBtn.hidden = !isPermit;
@@ -297,6 +241,9 @@
     }
     enhanceTrustSignals();
     enhanceDetailExtras();
+    if (window.ChicaSocial && window.ChicaSocial.injectDetail) {
+      window.ChicaSocial.injectDetail(body);
+    }
   }
 
   function enhanceEmptyState() {
@@ -326,16 +273,10 @@
 
   function start() {
     forceMapFirst();
-
     var drawer = document.getElementById("detailDrawer");
-    observe(
-      drawer,
-      { attributes: true, attributeFilter: ["class"], childList: true, subtree: true },
-      syncFromDom
-    );
+    observe(drawer, { attributes: true, attributeFilter: ["class"], childList: true, subtree: true }, syncFromDom);
     observe(document.getElementById("detailBody"), { childList: true, subtree: true }, syncFromDom);
     observe(document.getElementById("saleList"), { childList: true }, enhanceEmptyState);
-
     var backdrop = document.getElementById("railBackdrop");
     if (backdrop) {
       backdrop.addEventListener("click", function () {
@@ -343,12 +284,10 @@
         forceMapFirst();
       });
     }
-
     document.getElementById("detailClose")?.addEventListener("click", function () {
       setDetailMode(false);
       forceMapFirst();
     });
-
     setTimeout(forceMapFirst, 300);
     setTimeout(forceMapFirst, 1200);
   }
