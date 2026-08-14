@@ -13,6 +13,8 @@ on:
         required: false
         default: "retired"
 
+permissions: {}
+
 jobs:
   retired:
     runs-on: ubuntu-latest

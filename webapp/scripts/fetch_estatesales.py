@@ -91,7 +91,9 @@ def try_api(cfg):
     out = []
     for url in urls:
         code, body = fetch(url, accept="application/json")
-        print(f"  probe {url} → HTTP {code}")
+        # Log host + status only (no full URL / response body — avoids clear-text PII)
+        host = urllib.parse.urlparse(url).netloc
+        print(f"  probe {host} → HTTP {code}")
         if code != 200: continue
         try: data = json.loads(body)
         except json.JSONDecodeError: continue
@@ -182,7 +184,9 @@ def main():
             print(f"unknown {slug}", file=sys.stderr); continue
         sales = discover(slug)
         if args.dry_run:
-            print(json.dumps(sales[:3], indent=2)[:800]); continue
+            # Counts only — do not dump addresses / company names to logs
+            print(f"  dry-run: {len(sales)} normalized sales (details omitted)")
+            continue
         added, live = merge(slug, sales, today)
         print(f"  merge added={added} public_live={live}")
     return 0

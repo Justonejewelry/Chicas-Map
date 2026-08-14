@@ -49,10 +49,14 @@
     var metas = body.querySelectorAll(".d-meta");
     metas.forEach(function (el) {
       var t = el.textContent || "";
-      if (/Confidence:\s*0\.\d+/.test(t) && t.indexOf("%") === -1) {
-        el.innerHTML = t.replace(/Confidence:\s*(0\.\d+)/, function (_, n) {
-          return "Confidence: <strong>" + Math.round(parseFloat(n) * 100) + "%</strong>";
-        });
+      var m = t.match(/Confidence:\s*(0\.\d+)/);
+      if (m && t.indexOf("%") === -1) {
+        // Rebuild with text nodes — never assign DOM text into innerHTML
+        el.textContent = "";
+        el.appendChild(document.createTextNode("Confidence: "));
+        var strong = document.createElement("strong");
+        strong.textContent = String(Math.round(parseFloat(m[1]) * 100)) + "%";
+        el.appendChild(strong);
       }
     });
     if (window.__YB_LAST_SALE && window.__YB_LAST_SALE.last_verified) {
@@ -62,10 +66,10 @@
       if (!hasVerified) {
         var line = document.createElement("div");
         line.className = "d-meta";
-        line.innerHTML =
-          "Last verified \u00b7 <strong>" +
-          formatRelative(window.__YB_LAST_SALE.last_verified) +
-          "</strong>";
+        line.appendChild(document.createTextNode("Last verified \u00b7 "));
+        var strong = document.createElement("strong");
+        strong.textContent = formatRelative(window.__YB_LAST_SALE.last_verified);
+        line.appendChild(strong);
         var src = Array.prototype.find.call(metas, function (el) {
           return /Source:/i.test(el.textContent || "");
         });
@@ -140,6 +144,7 @@
     var slot = document.getElementById("detailTipSlot");
     if (slot && window.YardBirdTips) {
       var tip = window.YardBirdTips.findTip(sale);
+      // tipHtml() returns trusted static markup from our own tip records
       slot.innerHTML = tip ? window.YardBirdTips.tipHtml(tip) : "";
     }
     enhanceTrustSignals();
@@ -151,8 +156,17 @@
     var empty = list.querySelector(".empty");
     if (empty && !empty.dataset.enhanced) {
       empty.dataset.enhanced = "1";
-      empty.innerHTML =
-        'No sales match this filter.<br/><span style="font-size:0.85em;color:#7a736b">Try <strong>City-wide</strong>, widen the radius, or clear filters.</span>';
+      empty.textContent = "";
+      empty.appendChild(document.createTextNode("No sales match this filter."));
+      empty.appendChild(document.createElement("br"));
+      var span = document.createElement("span");
+      span.style.cssText = "font-size:0.85em;color:#7a736b";
+      span.appendChild(document.createTextNode("Try "));
+      var strong = document.createElement("strong");
+      strong.textContent = "City-wide";
+      span.appendChild(strong);
+      span.appendChild(document.createTextNode(", widen the radius, or clear filters."));
+      empty.appendChild(span);
     }
   }
 

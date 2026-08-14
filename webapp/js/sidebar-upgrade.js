@@ -46,7 +46,13 @@
     if (route && route.textContent.indexOf("Routes") === -1) {
       var count = document.getElementById("routeCount");
       var n = count ? count.textContent : "0";
-      route.innerHTML = '🔗 Routes <span id="routeCount">' + n + "</span>";
+      // Build with DOM APIs — never re-interpret textContent as HTML
+      route.textContent = "";
+      route.appendChild(document.createTextNode("🔗 Routes "));
+      var span = document.createElement("span");
+      span.id = "routeCount";
+      span.textContent = n;
+      route.appendChild(span);
     }
   }
 

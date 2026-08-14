@@ -109,6 +109,35 @@ GSF_LISTING_RE = re.compile(
     re.I,
 )
 
+ALLOWED_URL_HOSTS = {
+    "estatesales.org",
+    "www.estatesales.org",
+    "email.sales.estatesales.org",
+    "garagesalefinder.com",
+    "www.garagesalefinder.com",
+}
+
+
+def _safe_url(url: str) -> str:
+    """Return URL only if host is in the allowlist; otherwise empty string.
+
+    Uses netloc (not substring) so e.g. evil.com/estatesales.org is rejected.
+    """
+    if not url or not isinstance(url, str):
+        return ""
+    try:
+        parsed = urlparse(url.strip())
+        if parsed.scheme not in ("http", "https"):
+            return ""
+        host = (parsed.hostname or "").lower()
+        if host in ALLOWED_URL_HOSTS or any(
+            host.endswith("." + h) for h in ("estatesales.org", "garagesalefinder.com")
+        ):
+            return url.strip()
+    except Exception:
+        pass
+    return ""
+
 
 @dataclass
 class EmailLead:
@@ -251,7 +280,7 @@ def parse_estatesales_digest(html: str, subject: str = "") -> list[EmailLead]:
         return leads
 
     text = _strip_html(html)
-    urls = list(dict.fromkeys(ESO_LISTING_RE.findall(html)))
+    urls = list(dict.fromkeys(_safe_url(u) for u in ESO_LISTING_RE.findall(html) if _safe_url(u)))
 
     # Block-oriented parse: title links + nearby city/zip + bidding text
     # HTML structure uses bold title anchors and city lines.
@@ -274,16 +303,11 @@ def parse_estatesales_digest(html: str, subject: str = "") -> list[EmailLead]:
             title = _clean(title_m.group(1)) if title_m else ""
             url = ""
         else:
-            url = title_m.group(1).strip()
+            url = _safe_url(title_m.group(1).strip())
             title = _clean(title_m.group(2))
 
         if not title and not url:
             continue
-
-        # Unwrap tracking redirects when possible
-        if "email.sales.estatesales.org" in url:
-            # Keep tracking URL; deep-follow later can resolve
-            pass
 
         city, zipc = "", ""
         city_m = re.search(
@@ -375,7 +399,13 @@ def parse_garagesalefinder_digest(html: str, text: str = "", subject: str = "") 
     if not body and not plain:
         return leads
 
-    urls = list(dict.fromkeys(GSF_LISTING_RE.findall(body) + GSF_LISTING_RE.findall(plain)))
+    urls = list(
+        dict.fromkeys(
+            _safe_url(u)
+            for u in (GSF_LISTING_RE.findall(body) + GSF_LISTING_RE.findall(plain))
+            if _safe_url(u)
+        )
+    )
 
     # Try street-level lines in plain text
     for m in re.finditer(
