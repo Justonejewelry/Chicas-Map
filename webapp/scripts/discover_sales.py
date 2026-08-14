@@ -26,8 +26,8 @@ from city_io import safe_load_city, safe_write_city
 
 CT = ZoneInfo("America/Chicago")
 UA = (
-    "Mozilla/5.0 (compatible; YardBirdBot/1.0; "
-    "+https://github.com/Justonejewelry/Project-YardBird)"
+    "Mozilla/5.0 (compatible; ChicasMapBot/1.0; "
+    "+https://github.com/Justonejewelry/Chicas-Map)"
 )
 
 # Approximate ZIP centroids (enough for map pins without external geocode API)

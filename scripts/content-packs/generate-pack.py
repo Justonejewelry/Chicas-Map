@@ -76,7 +76,7 @@ Hot zones right now:
 {chr(10).join('• ' + z for z in zones[:5]) if zones else '• Check the live map'}
 
 Open the verified map (free):
-https://justonejewelry.github.io/Project-YardBird/map.html
+https://justonejewelry.github.io/Chicas-Map/map.html
 
 Near Me · Routes · Verified first.
 #SanAntonioGarageSale #ChicaMap"""
@@ -178,8 +178,8 @@ def main() -> None:
     args = parser.parse_args()
 
     repo_root = Path.cwd()
-    if not (repo_root / "forecast").exists() and (repo_root / "Project-YardBird" / "forecast").exists():
-        repo_root = repo_root / "Project-YardBird"
+    if not (repo_root / "forecast").exists() and (repo_root / "Chicas-Map" / "forecast").exists():
+        repo_root = repo_root / "Chicas-Map"
 
     forecast_path = find_latest_forecast(repo_root)
     print(f"Using forecast: {forecast_path}")

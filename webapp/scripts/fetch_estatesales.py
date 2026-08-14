@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Lightweight EstateSales.net discovery for YardBird / GSIN.
+"""Lightweight EstateSales.net discovery for Chicas-Map / GSIN.
 SPA-heavy site; free HTTP often thin. Prefer fetch_estatesales_apify.py for production.
 Uses city_io middleware so PLACEHOLDER / corrupt JSON never crashes the job.
 Usage: python3 webapp/scripts/fetch_estatesales.py --city san-antonio
@@ -13,7 +13,7 @@ from zoneinfo import ZoneInfo
 from city_io import safe_load_city, safe_write_city
 
 CT = ZoneInfo("America/Chicago")
-UA = "Mozilla/5.0 (compatible; YardBirdBot/1.1; +https://github.com/Justonejewelry/Project-YardBird)"
+UA = "Mozilla/5.0 (compatible; ChicasMapBot/1.1; +https://github.com/Justonejewelry/Chicas-Map)"
 ROOT = Path(__file__).resolve().parents[1]
 CITY_DIR = ROOT / "data" / "cities"
 CITY_CFG = {
