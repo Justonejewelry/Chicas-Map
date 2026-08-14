@@ -10,46 +10,16 @@
   var SHARE_TITLE = "Chica Map — San Antonio garage sales (verified, no ads)";
   var SHARE_TEXT = "Find verified garage, yard, and estate sales in San Antonio. Local. Veteran owned. No ads.";
 
-  // Order matches the graphic: Snapchat, Nextdoor, Instagram, Facebook, TikTok, Reddit
   var LINKS = [
-    {
-      id: "snapchat",
-      label: "Share on Snapchat",
-      href: "https://www.snapchat.com/",
-      title: "Share on Snapchat",
-    },
-    {
-      id: "nextdoor",
-      label: "Share on Nextdoor",
-      href: "https://nextdoor.com/",
-      title: "Share on Nextdoor",
-    },
-    {
-      id: "instagram",
-      label: "Share on Instagram",
-      href: "https://www.instagram.com/",
-      title: "Share on Instagram",
-    },
-    {
-      id: "facebook",
-      label: "Follow on Facebook",
-      href: "https://www.facebook.com/61593215043603/",
-      title: "Follow Chica Map on Facebook",
-    },
-    {
-      id: "tiktok",
-      label: "Follow on TikTok",
-      href: "https://www.tiktok.com/@chicas_map",
-      title: "Follow @chicas_map on TikTok",
-    },
+    { id: "snapchat", label: "Share on Snapchat", href: "https://www.snapchat.com/", title: "Share on Snapchat" },
+    { id: "nextdoor", label: "Share on Nextdoor", href: "https://nextdoor.com/", title: "Share on Nextdoor" },
+    { id: "instagram", label: "Share on Instagram", href: "https://www.instagram.com/", title: "Share on Instagram" },
+    { id: "facebook", label: "Follow on Facebook", href: "https://www.facebook.com/61593215043603/", title: "Follow Chica Map on Facebook" },
+    { id: "tiktok", label: "Follow on TikTok", href: "https://www.tiktok.com/@chicas_map", title: "Follow @chicas_map on TikTok" },
     {
       id: "reddit",
       label: "Share on Reddit",
-      href:
-        "https://www.reddit.com/submit?url=" +
-        encodeURIComponent(MAP_URL) +
-        "&title=" +
-        encodeURIComponent(SHARE_TITLE),
+      href: "https://www.reddit.com/submit?url=" + encodeURIComponent(MAP_URL) + "&title=" + encodeURIComponent(SHARE_TITLE),
       title: "Share Chica Map on Reddit",
     },
   ];
@@ -73,8 +43,7 @@
     var pic = document.createElement("picture");
     var srcWebp = document.createElement("source");
     srcWebp.type = "image/webp";
-    srcWebp.srcset =
-      assetBase() + (size === "sm" ? "share-bar-sm.webp" : "share-bar.webp");
+    srcWebp.srcset = assetBase() + (size === "sm" ? "share-bar-sm.webp" : "share-bar.webp");
     var img = document.createElement("img");
     img.src = assetBase() + (size === "sm" ? "share-bar-sm.png" : "share-bar.png");
     img.alt = "Share on Snapchat, Nextdoor, Instagram, Reddit · Follow on Facebook and TikTok";
@@ -160,7 +129,17 @@
     injectMapOverlay: injectMapOverlay,
   };
 
+  function ensureCss() {
+    if (document.getElementById("chicaSocialCss")) return;
+    var link = document.createElement("link");
+    link.id = "chicaSocialCss";
+    link.rel = "stylesheet";
+    link.href = "css/chica-social.css";
+    document.head.appendChild(link);
+  }
+
   function start() {
+    ensureCss();
     injectHome();
     injectMapOverlay();
   }
