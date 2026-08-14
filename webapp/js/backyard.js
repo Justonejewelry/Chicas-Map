@@ -11,16 +11,34 @@
     var img = document.getElementById("chicaHero");
     if (!img) return;
     var pick = heroImages[Math.floor(Math.random() * heroImages.length)];
-    // Prefer WebP for doghouse when available
-    if (pick.indexOf("chica-doghouse.png") !== -1) {
-      pick = "assets/backyard/chica-doghouse.webp";
-    }
+    var webpSource = document.getElementById("chicaHeroWebp");
+
+    // Map PNG/JPG picks to WebP when we have one
+    var webpMap = {
+      "assets/backyard/chica-doghouse.png": "assets/backyard/chica-doghouse.webp"
+    };
+    var webp = webpMap[pick] || null;
+
     img.decoding = "async";
     img.loading = "eager";
+    img.fetchPriority = "high";
+
+    if (webpSource) {
+      if (webp) {
+        webpSource.srcset = webp;
+        webpSource.type = "image/webp";
+        webpSource.removeAttribute("disabled");
+      } else {
+        // No webp for this pick — clear source so browser uses img src
+        webpSource.removeAttribute("srcset");
+      }
+    }
+
     img.src = pick;
     img.onerror = function () {
       this.onerror = null;
       this.src = "assets/backyard/chica-doghouse.png";
+      if (webpSource) webpSource.srcset = "assets/backyard/chica-doghouse.webp";
     };
   }
 
@@ -102,10 +120,10 @@ It gets better when people participate. You can help by sharing it, by sending t
   // ---- Blog feed (future posts) ----
   function esc(s) {
     return String(s == null ? "" : s)
-      .replace(/&/g, "&")
-      .replace(/</g, "<")
-      .replace(/>/g, ">")
-      .replace(/"/g, """);
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
   }
 
   function formatDate(d) {
