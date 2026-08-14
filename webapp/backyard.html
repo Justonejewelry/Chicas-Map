@@ -31,7 +31,6 @@
 <meta name="twitter:image" content="https://raw.githubusercontent.com/Justonejewelry/Chicas-Map/main/webapp/assets/backyard/chica-garage-sale.jpg"/>
 <meta name="twitter:image:alt" content="Chica the Chihuahua at a garage sale — Chica Map"/>
 
-<!-- Extra discovery -->
 <meta name="keywords" content="garage sales, yard sales, estate sales, San Antonio, Chica Map, GSIN, treasure hunting"/>
 <link rel="canonical" href="https://justonejewelry.github.io/Chicas-Map/backyard.html"/>
 
@@ -44,43 +43,42 @@
 <script src="js/chica-config.js"></script>
 <script src="js/chica-analytics.js" defer></script>
 <style>
-  /* Action card grid matching the illustration set */
+  /* Illustrated action cards */
   .by-actions {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 12px;
     margin-top: 22px;
-    max-width: 520px;
+    max-width: 560px;
   }
+  .by-actions .by-action:nth-child(4) { grid-column: 1 / 2; }
+  .by-actions .by-action:nth-child(5) { grid-column: 2 / 3; }
   .by-action {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    display: block;
     text-decoration: none;
-    border-radius: 16px;
-    padding: 16px 12px 14px;
-    min-height: 118px;
+    border-radius: 18px;
+    overflow: hidden;
     border: 2px solid rgba(0,0,0,.06);
     box-shadow: 0 8px 20px rgba(0,0,0,.08);
     transition: transform .15s ease, box-shadow .15s ease;
-    font-family: inherit;
+    background: #fff;
+    line-height: 0;
   }
-  .by-action:hover { transform: translateY(-3px); box-shadow: 0 14px 28px rgba(0,0,0,.12); }
-  .by-action .icon { font-size: 1.85rem; line-height: 1; margin-bottom: 8px; }
-  .by-action .label {
-    font-size: 0.78rem;
-    font-weight: 800;
-    letter-spacing: 0.02em;
-    line-height: 1.25;
-    text-transform: uppercase;
+  .by-action:hover { transform: translateY(-3px); box-shadow: 0 14px 28px rgba(0,0,0,.14); }
+  .by-action img {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
   }
-  .by-action-bone   { background: #f3c5c8; color: #5c1f2a; }
-  .by-action-pack   { background: #c5d9c8; color: #1a3d28; }
-  .by-action-sponsor{ background: #f0d98a; color: #4a3a12; }
-  .by-action-note   { background: #d4c4e8; color: #3a2458; }
-  .by-action-archive{ background: #3d3d42; color: #f0ece4; }
+  .by-action .sr-only {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0);
+    white-space: nowrap; border: 0;
+  }
 
   /* Social follow buttons */
   .by-social {
@@ -129,7 +127,13 @@
   }
 
   @media (max-width: 520px) {
-    .by-actions { grid-template-columns: repeat(2, 1fr); }
+    .by-actions {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .by-actions .by-action:nth-child(4),
+    .by-actions .by-action:nth-child(5) {
+      grid-column: auto;
+    }
     .by-social { grid-template-columns: 1fr 1fr; }
   }
 </style>
@@ -150,25 +154,25 @@
       <p class="by-hero-intro">Join the Pack to receive her weekly update. Details below.</p>
 
       <div class="by-actions" aria-label="Backyard actions">
-        <a class="by-action by-action-bone" href="mailto:mr.jsciaraffa@gmail.com?subject=Comments%20%26%20Suggestions%20for%20Chica">
-          <span class="icon">🦴</span>
-          <span class="label">Throw Chica<br/>a Bone</span>
+        <a class="by-action by-action-bone" href="mailto:mr.jsciaraffa@gmail.com?subject=Comments%20%26%20Suggestions%20for%20Chica" title="Throw Chica a Bone — comments & suggestions">
+          <img src="assets/backyard/cta-bone.jpg" width="320" height="320" alt="Throw Chica a Bone" loading="lazy" decoding="async" />
+          <span class="sr-only">Throw Chica a Bone — Comments & suggestions</span>
         </a>
-        <a class="by-action by-action-pack" href="#join-pack">
-          <span class="icon">🐾</span>
-          <span class="label">Join the<br/>Pack</span>
+        <a class="by-action by-action-pack" href="#join-pack" title="Join the Pack — weekly email updates">
+          <img src="assets/backyard/cta-pack.jpg" width="320" height="320" alt="Join the Pack" loading="lazy" decoding="async" />
+          <span class="sr-only">Join the Pack — Weekly email updates</span>
         </a>
-        <a class="by-action by-action-sponsor" href="sponsor.html">
-          <span class="icon">🤝</span>
-          <span class="label">ISO<br/>Sponsors</span>
+        <a class="by-action by-action-sponsor" href="sponsor.html" title="ISO Sponsors">
+          <img src="assets/backyard/cta-sponsor.jpg" width="320" height="320" alt="ISO Sponsors" loading="lazy" decoding="async" />
+          <span class="sr-only">ISO Sponsors</span>
         </a>
-        <a class="by-action by-action-note" href="#daily">
-          <span class="icon">📝</span>
-          <span class="label">Today’s<br/>Note</span>
+        <a class="by-action by-action-note" href="#daily" title="Today's Note from Chica">
+          <img src="assets/backyard/cta-note.jpg" width="360" height="360" alt="Today's Note" loading="lazy" decoding="async" />
+          <span class="sr-only">Today's Note</span>
         </a>
-        <a class="by-action by-action-archive" href="#finds">
-          <span class="icon">📦</span>
-          <span class="label">Chica’s<br/>Archive</span>
+        <a class="by-action by-action-archive" href="#finds" title="Chica's Archive">
+          <img src="assets/backyard/cta-archive.jpg" width="360" height="360" alt="Archive" loading="lazy" decoding="async" />
+          <span class="sr-only">Chica's Archive</span>
         </a>
       </div>
 
@@ -186,11 +190,11 @@
     <div class="by-hero-visual">
       <picture>
         <source id="chicaHeroWebp" srcset="assets/backyard/chica-doghouse.webp" type="image/webp" />
-        <img id="chicaHero" 
-             src="assets/backyard/chica-doghouse.png" 
-             alt="Chica in her doghouse" 
-             width="900" height="900" 
-             decoding="async" 
+        <img id="chicaHero"
+             src="assets/backyard/chica-doghouse.png"
+             alt="Chica in her doghouse"
+             width="900" height="900"
+             decoding="async"
              fetchpriority="high"/>
       </picture>
     </div>
@@ -209,7 +213,7 @@
     <h2>🐾 Join the Pack</h2>
     <p>Get Chica’s weekly update — the good finds, the quiet trails, and whatever she’s been sniffing that week.</p>
     <form id="packForm" class="by-pack-form" style="margin-top:16px;display:flex;flex-wrap:wrap;gap:10px;align-items:center">
-      <input type="email" name="email" required placeholder="your@email.com" 
+      <input type="email" name="email" required placeholder="your@email.com"
              style="flex:1;min-width:200px;padding:12px 14px;border-radius:12px;border:1.5px solid #d8d2c8;font:inherit"/>
       <button type="submit" class="by-btn by-btn-primary" style="border:none;cursor:pointer">Join the Pack</button>
     </form>
