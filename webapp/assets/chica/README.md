@@ -14,7 +14,7 @@ Drop these four files in this folder (exact names):
 | `adventures.jpg` | Pink Safe harness, with her human |
 
 Upload via GitHub web UI:
-1. Open https://github.com/Justonejewelry/Project-YardBird/tree/main/webapp/assets/chica
+1. Open https://github.com/Justonejewelry/Chicas-Map/tree/main/webapp/assets/chica
 2. **Add file → Upload files**
 3. Drag the four photos and rename to match the table
 4. Commit

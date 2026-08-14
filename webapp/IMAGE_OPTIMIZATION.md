@@ -16,4 +16,4 @@ Download `optimized-images.zip` from the agent artifacts, unzip, and upload into
 
 HTML already uses `loading="lazy"`, `decoding="async"`, `fetchpriority="high"` on LCP, and WebP `<picture>` where supported.
 
-Upload path: https://github.com/Justonejewelry/Project-YardBird/upload/main/webapp
+Upload path: https://github.com/Justonejewelry/Chicas-Map/upload/main/webapp
