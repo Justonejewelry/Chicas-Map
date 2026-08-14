@@ -26,7 +26,9 @@
 <meta name="twitter:image:alt" content="Chica Map — verified garage, yard, and estate sales in San Antonio" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;600;700;800&display=swap" /></noscript>
+<link rel="preload" as="image" href="assets/chica-intro-poster.jpg" fetchpriority="high" />
 <link rel="icon" href="favicon.ico" />
 <link rel="manifest" href="manifest.webmanifest" />
 <style>
@@ -50,7 +52,8 @@ a{color:inherit}img{max-width:100%;display:block}:focus-visible{outline:3px soli
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--body);font-weight:700;font-size:.92rem;padding:12px 20px;border-radius:999px;border:1.5px solid transparent;cursor:pointer;text-decoration:none}
 .btn-primary{background:var(--pine);color:#fff;box-shadow:0 12px 28px -10px rgba(15,61,36,.45)}
 .btn-primary:hover{background:#0a2e1a}
-.btn-ghost{background:var(--paper);color:var(--pine);border-color:var(--line)}
+.btn-ghost{background:var(--paper);color:#0a2e1a;border-color:#c9c3b6}
+.btn-ghost:hover{background:var(--pine-soft);border-color:var(--pine-mid)}
 .btn-sm{padding:9px 16px;font-size:.84rem}
 .cm-hero{padding:48px 0 32px}
 .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
@@ -67,6 +70,8 @@ a{color:inherit}img{max-width:100%;display:block}:focus-visible{outline:3px soli
 .micro-icon{width:36px;height:36px;border-radius:10px;background:var(--pine-soft);color:var(--pine);display:grid;place-items:center;flex-shrink:0}
 .micro-icon svg{width:18px;height:18px}
 .hero-card{background:var(--paper);border:1.5px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:0 24px 60px -28px rgba(15,30,20,.28)}
+.hero-video-card{padding:0;background:#0f3d24;aspect-ratio:1;min-height:0}
+.hero-video{display:block;width:100%;height:100%;aspect-ratio:1;object-fit:cover;background:#0f3d24;vertical-align:top}
 .cm-live-wrap{padding:8px 24px 0;max-width:1120px;margin:0 auto}
 .cm-live{background:linear-gradient(135deg,#0f3d24,#1a5c38);color:#fff;border-radius:18px;padding:16px 20px}
 .live-inner{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;justify-content:space-between}
@@ -80,11 +85,11 @@ a{color:inherit}img{max-width:100%;display:block}:focus-visible{outline:3px soli
 .cm-trust{padding:40px 0}
 .trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .trust-card{background:var(--paper);border:1.5px solid var(--line);border-radius:18px;padding:20px}
-.trust-card h3{font-family:var(--display);font-size:1.08rem;margin:0 0 6px}
+.trust-card h2{font-family:var(--display);font-size:1.08rem;font-weight:600;margin:0 0 6px;letter-spacing:-.01em}
 .trust-card p{margin:0;color:var(--muted);font-size:.9rem}
 .cm-email{padding:0 0 40px}
 .email-card{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;background:var(--paper);border:1.5px solid var(--line);border-radius:18px;padding:20px 22px}
-.email-copy h3{font-family:var(--display);margin:0 0 4px;font-size:1.15rem}
+.email-copy h2{font-family:var(--display);margin:0 0 4px;font-size:1.15rem;font-weight:600}
 .email-copy p{margin:0;color:var(--muted);font-size:.9rem}
 .email-form{display:flex;flex-wrap:wrap;gap:10px}
 .email-form input[type=email]{padding:12px 14px;border-radius:12px;border:1.5px solid var(--line);font:inherit;min-width:200px}
@@ -92,8 +97,6 @@ a{color:inherit}img{max-width:100%;display:block}:focus-visible{outline:3px soli
 .foot-bottom{max-width:1120px;margin:12px auto 0;padding:14px 24px 0;border-top:1px solid var(--line);font-size:.8rem;color:var(--muted);text-align:center}
 #chicaSocialHomeHost .chica-social-bar,#chicaSocialHome .chica-social-bar{margin:0 auto}
 @media (max-width:900px){.hero-grid{grid-template-columns:1fr}.trust-grid{grid-template-columns:1fr}.hero-card{max-width:360px;margin:0 auto}}
-.hero-video-card{padding:0;background:#0f3d24}
-.hero-video{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover;background:#0f3d24}
 </style>
 </head>
 <body>
@@ -145,8 +148,10 @@ a{color:inherit}img{max-width:100%;display:block}:focus-visible{outline:3px soli
           muted
           autoplay
           controls
+          fetchpriority="high"
         >
           <source src="assets/chica-intro.mp4" type="video/mp4" />
+          <track kind="captions" src="assets/chica-intro-captions.vtt" srclang="en" label="English" default />
         </video>
       </div>
     </div>
@@ -170,9 +175,9 @@ a{color:inherit}img{max-width:100%;display:block}:focus-visible{outline:3px soli
 
   <section class="cm-trust">
     <div class="wrap trust-grid">
-      <div class="trust-card"><h3>Verified pins</h3><p>Addresses, hours, and status checked so you don’t waste the drive.</p></div>
-      <div class="trust-card"><h3>Near Me + routes</h3><p>Distance sort and multi-stop plans that open in your map app.</p></div>
-      <div class="trust-card"><h3>Local · no ad clutter</h3><p>Veteran-owned. Built for shoppers, not banner networks.</p></div>
+      <div class="trust-card"><h2>Verified pins</h2><p>Addresses, hours, and status checked so you don’t waste the drive.</p></div>
+      <div class="trust-card"><h2>Near Me + routes</h2><p>Distance sort and multi-stop plans that open in your map app.</p></div>
+      <div class="trust-card"><h2>Local · no ad clutter</h2><p>Veteran-owned. Built for shoppers, not banner networks.</p></div>
     </div>
   </section>
 
@@ -180,7 +185,7 @@ a{color:inherit}img{max-width:100%;display:block}:focus-visible{outline:3px soli
     <div class="wrap">
       <div class="email-card">
         <div class="email-copy">
-          <h3>Friday briefing</h3>
+          <h2>Friday briefing</h2>
           <p>Hot zones, new sales, and weekend routes. Free. No spam.</p>
         </div>
         <form class="email-form" id="emailForm">
@@ -230,13 +235,15 @@ fetch("data/cities/san-antonio.json").then(function(r){return r.ok?r.json():null
   document.addEventListener("touchstart",unlock,{once:true});
 })();
 </script>
-<script src="js/chica-config.js"></script>
-<script src="js/chica-analytics.js"></script>
-<script src="js/chica-forms.js"></script>
-<script src="js/chica-pwa.js"></script>
-<script src="js/chica-social.js"></script>
+<script src="js/chica-config.js" defer></script>
+<script src="js/chica-analytics.js" defer></script>
+<script src="js/chica-forms.js" defer></script>
+<script src="js/chica-pwa.js" defer></script>
+<script src="js/chica-social.js" defer></script>
 <script>
-(function(){if(window.ChicaForms){ChicaForms.bindEmailForm(document.getElementById("emailForm"),{statusEl:document.getElementById("emailStatus"),source:"home"})}})();
+document.addEventListener("DOMContentLoaded",function(){
+  if(window.ChicaForms){ChicaForms.bindEmailForm(document.getElementById("emailForm"),{statusEl:document.getElementById("emailStatus"),source:"home"})}
+});
 </script>
 </body>
 </html>
