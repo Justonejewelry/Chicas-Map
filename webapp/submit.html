@@ -3,9 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>List your garage sale free · Chica Map</title>
-  <meta name="description" content="Add your garage, yard, or estate sale to Chica's verified map. Free. Moderated before it goes live." />
+  <title>List Your Garage Sale Free in San Antonio | Chica Map</title>
+  <meta name="description" content="List your garage, yard, or estate sale on Chica’s verified San Antonio map — free. Moderated before it goes live so shoppers can trust the pin." />
   <meta name="theme-color" content="#17633a" />
+  <meta name="keywords" content="list garage sale San Antonio, free garage sale listing, post yard sale, estate sale listing Texas" />
+  <link rel="canonical" href="https://justonejewelry.github.io/Chicas-Map/submit.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Chica Map" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:url" content="https://justonejewelry.github.io/Chicas-Map/submit.html" />
+  <meta property="og:title" content="List Your Garage Sale Free in San Antonio | Chica Map" />
+  <meta property="og:description" content="Add your garage, yard, or estate sale to Chica’s verified map. Free. Moderated before it goes live." />
+  <meta property="og:image" content="https://raw.githubusercontent.com/Justonejewelry/Chicas-Map/main/webapp/assets/backyard/chica-garage-sale.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="List Your Garage Sale Free in San Antonio | Chica Map" />
+  <meta name="twitter:description" content="Free verified listing for San Antonio garage, yard, and estate sales." />
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/Justonejewelry/Chicas-Map/main/webapp/assets/backyard/chica-garage-sale.jpg" />
+
   <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
       c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -304,7 +322,6 @@
     var requiredFields = ["saleTitle", "saleAddress", "saleStart", "saleHours", "saleSummary", "saleName"];
     var checks = ["saleAttest", "saleAccurate", "saleTerms"];
 
-    // Success / cancel return from Square (if redirect is configured later)
     try {
       var params = new URLSearchParams(window.location.search);
       var boostFlag = params.get("boost");
@@ -414,10 +431,8 @@
           : "")
       );
 
-      // 1) Open review email
       window.location.href = "mailto:" + REVIEW + "?subject=" + subject + "&body=" + body;
 
-      // 2) If Boost checked, open Square Payment Link in a new tab shortly after
       if (wantBoost && BOOST_URL) {
         setTimeout(function () {
           window.open(BOOST_URL, "_blank", "noopener,noreferrer");
