@@ -1,7 +1,7 @@
 (function () {
   // ---- Hero image rotation (different on every visit) ----
   var heroImages = [
-    "assets/backyard/webapp:assets:backyard:chica-doghouse.png",
+    "assets/backyard/chica-doghouse.png",
     "assets/backyard/chica-at-computer.jpg",
     "assets/backyard/chica-cape-finds.jpg",
     "assets/backyard/chica-garage-sale.jpg"
@@ -11,11 +11,16 @@
     var img = document.getElementById("chicaHero");
     if (!img) return;
     var pick = heroImages[Math.floor(Math.random() * heroImages.length)];
+    // Prefer WebP for doghouse when available
+    if (pick.indexOf("chica-doghouse.png") !== -1) {
+      pick = "assets/backyard/chica-doghouse.webp";
+    }
+    img.decoding = "async";
+    img.loading = "eager";
     img.src = pick;
     img.onerror = function () {
-      // fallback to doghouse if any image fails
       this.onerror = null;
-      this.src = heroImages[0];
+      this.src = "assets/backyard/chica-doghouse.png";
     };
   }
 
