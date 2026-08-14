@@ -69,8 +69,10 @@
     width: 100%;
     height: auto;
     display: block;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
+    /* Keep natural aspect ratio so illustrated text is never cropped.
+       Bone/Pack/Sponsor cards are 2:3; Note/Archive are 1:1. */
+    object-fit: contain;
+    background: #fff;
   }
   .by-action .sr-only {
     position: absolute;
