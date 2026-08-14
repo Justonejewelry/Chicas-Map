@@ -301,7 +301,7 @@
           <button type="button" class="map-fab" id="fabNear" title="Near me" aria-label="Near me" aria-expanded="false">
             <img src="nearme.png" alt="" width="28" height="28" onerror="this.style.display='none';this.parentNode.textContent='📍'" />
           </button>
-          <button type="button" class="map-fab" id="fabSearch" title="Search sales" aria-label="Search sales">
+          <button type="button" class="map-fab" id="fabSearch" title="Search sales" aria-label="Search">
             <img src="search.png" alt="" width="28" height="28" onerror="this.style.display='none';this.parentNode.textContent='🔍'" />
           </button>
         </div>
@@ -389,7 +389,7 @@
   })();
   </script>
   <script src="js/app.js"></script>
-  <script src="js/chica-go-fix.js"></script>
+  <script src="js/chica-go-fix.js?v=closest2"></script>
   <script src="js/chica-social.js"></script>
   <script src="js/detail-bridge.js"></script>
   <script src="js/sidebar-upgrade.js"></script>
@@ -441,8 +441,10 @@
       e.stopPropagation();
       toggleRail();
     });
+    // dockNear: handled by chica-go-fix.js (requests location directly)
+    // Keep a no-op fallback so old behavior does not fight the patch
     document.getElementById('dockNear')?.addEventListener('click', function () {
-      document.getElementById('fabNear')?.click();
+      /* patch owns this */
     });
     document.getElementById('dockSearch')?.addEventListener('click', function (e) {
       e.stopPropagation();
