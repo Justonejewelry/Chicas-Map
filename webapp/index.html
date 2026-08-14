@@ -67,7 +67,6 @@ a{color:inherit}img{max-width:100%;display:block}:focus-visible{outline:3px soli
 .micro-icon{width:36px;height:36px;border-radius:10px;background:var(--pine-soft);color:var(--pine);display:grid;place-items:center;flex-shrink:0}
 .micro-icon svg{width:18px;height:18px}
 .hero-card{background:var(--paper);border:1.5px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:0 24px 60px -28px rgba(15,30,20,.28)}
-.hero-card img{width:100%;aspect-ratio:1;object-fit:cover}
 .cm-live-wrap{padding:8px 24px 0;max-width:1120px;margin:0 auto}
 .cm-live{background:linear-gradient(135deg,#0f3d24,#1a5c38);color:#fff;border-radius:18px;padding:16px 20px}
 .live-inner{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;justify-content:space-between}
@@ -89,18 +88,13 @@ a{color:inherit}img{max-width:100%;display:block}:focus-visible{outline:3px soli
 .email-copy p{margin:0;color:var(--muted);font-size:.9rem}
 .email-form{display:flex;flex-wrap:wrap;gap:10px}
 .email-form input[type=email]{padding:12px 14px;border-radius:12px;border:1.5px solid var(--line);font:inherit;min-width:200px}
-.cm-social{padding:8px 0 12px}
-.cm-social-inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px 20px;padding:18px 20px;background:var(--paper);border:1.5px solid var(--line);border-radius:18px}
-.cm-social-label{font-size:.78rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-.cm-social-links{display:flex;gap:10px;flex-wrap:wrap}
-.cm-social-btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;font-weight:800;font-size:.84rem;padding:10px 18px;border-radius:999px;color:#fff}
-.cm-social-fb{background:#1877f2}.cm-social-fb:hover{background:#0d65d9}
-.cm-social-tt{background:#111}.cm-social-tt:hover{background:#000}
 .cm-foot{padding:12px 0 28px}
-.foot-simple{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:baseline;font-size:.9rem;color:var(--muted)}
-.foot-simple strong{font-family:var(--display);font-size:1.05rem;color:var(--ink);font-weight:600}
-.foot-bottom{max-width:1120px;margin:16px auto 0;padding:14px 24px 0;border-top:1px solid var(--line);font-size:.8rem;color:var(--muted)}
 @media (max-width:900px){.hero-grid{grid-template-columns:1fr}.trust-grid{grid-template-columns:1fr}.hero-card{max-width:360px;margin:0 auto}}
+html, body, a, button, .btn, .zone-chip, .cm-brand, .cm-brand-drop a {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Cellipse cx='14' cy='18' rx='7' ry='6' fill='%230f3d24'/%3E%3Ccircle cx='6' cy='9' r='3.2' fill='%230f3d24'/%3E%3Ccircle cx='11.5' cy='6.5' r='3.2' fill='%230f3d24'/%3E%3Ccircle cx='17.5' cy='6.5' r='3.2' fill='%230f3d24'/%3E%3Ccircle cx='22.5' cy='9' r='3.2' fill='%230f3d24'/%3E%3C/svg%3E") 6 2, pointer;
+}
+.hero-video-card{padding:0;background:#0f3d24}
+.hero-video{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover;background:#0f3d24}
 </style>
 </head>
 <body>
@@ -121,7 +115,6 @@ a{color:inherit}img{max-width:100%;display:block}:focus-visible{outline:3px soli
         <a role="menuitem" href="terms.html">Terms</a>
       </div>
     </div>
-    <a class="btn btn-primary btn-sm" href="map.html">Open the map</a>
   </div>
 </header>
 
@@ -142,8 +135,21 @@ a{color:inherit}img{max-width:100%;display:block}:focus-visible{outline:3px soli
           <div class="micro-item"><div class="micro-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14"/><path d="M5 12h14"/></svg></div><div><strong>Free to list</strong><span>No fees. No spam.</span></div></div>
         </div>
       </div>
-      <div class="hero-card">
-        <img src="assets/backyard/chica-garage-sale.jpg" alt="Chica at a garage sale" width="600" height="600" decoding="async" onerror="this.src='chicarar.png'" />
+      <div class="hero-card hero-video-card">
+        <video
+          class="hero-video"
+          width="640"
+          height="640"
+          poster="assets/chica-intro-poster.jpg"
+          preload="metadata"
+          playsinline
+          muted
+          autoplay
+          loop
+          controls
+        >
+          <source src="assets/chica-intro.mp4" type="video/mp4" />
+        </video>
       </div>
     </div>
   </section>
@@ -190,23 +196,7 @@ a{color:inherit}img{max-width:100%;display:block}:focus-visible{outline:3px soli
   </section>
 </main>
 
-<section class="cm-social" aria-label="Follow Chica">
-  <div class="wrap cm-social-inner">
-    <span class="cm-social-label">Follow the Pack</span>
-    <div class="cm-social-links">
-      <a class="cm-social-btn cm-social-fb" href="https://www.facebook.com/61593215043603/" target="_blank" rel="noopener noreferrer">Facebook</a>
-      <a class="cm-social-btn cm-social-tt" href="https://www.tiktok.com/@chicas_map" target="_blank" rel="noopener noreferrer">TikTok</a>
-    </div>
-  </div>
-</section>
-
-<footer class="cm-foot">
-  <div class="wrap foot-simple">
-    <strong>Chicas Garage Sale Map</strong>
-    <span>Verified garage, yard & estate sales · San Antonio first</span>
-  </div>
-  <div class="foot-bottom">Chica's Garage Sale Map — built for the hunt.</div>
-</footer>
+<footer class="cm-foot" style="padding:12px 0 20px"></footer>
 
 <script>
 (function(){
@@ -226,6 +216,18 @@ function defaultZones(){return["Alamo Ranch","Stone Oak","Helotes","Schertz","Bo
 function renderZones(zones){var host=document.getElementById("zoneChips");var list=(zones&&zones.length)?zones.slice(0,6):defaultZones();if(!host)return;host.innerHTML="";list.forEach(function(z){var a=document.createElement("a");a.className="zone-chip";a.href="map.html";a.textContent=z;host.appendChild(a)})}
 function applyLiveData(data){if(!data){renderZones(null);return}var public=data.public||data.sales||[];var permits=data.permits||[];var count=data.total_locations;if(count==null)count=public.length+permits.length;var c=document.getElementById("liveCount");if(c)c.textContent=String(count);var r=document.getElementById("liveRefresh");if(r)r.textContent=relativeTime(data.last_refresh||data.date);var s=document.getElementById("liveStatus");if(s)s.textContent="Live";renderZones(data.hot_zones)}
 fetch("data/cities/san-antonio.json").then(function(r){return r.ok?r.json():null}).then(applyLiveData).catch(function(){renderZones(null)});
+</script>
+<script>
+(function(){
+  var v=document.querySelector(".hero-video");
+  if(!v)return;
+  var unlock=function(){try{v.muted=false;v.play()}catch(e){}
+    document.removeEventListener("click",unlock);
+    document.removeEventListener("touchstart",unlock);
+  };
+  document.addEventListener("click",unlock,{once:true});
+  document.addEventListener("touchstart",unlock,{once:true});
+})();
 </script>
 <script src="js/chica-config.js"></script>
 <script src="js/chica-analytics.js"></script>
