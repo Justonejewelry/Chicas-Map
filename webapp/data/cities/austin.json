@@ -215,30 +215,6 @@
       "external_id": "eso-2453764"
     },
     {
-      "address": "Golden Bear Dr., Austin, TX",
-      "dates": "2026-08-13 – 2026-08-13",
-      "date_from": "2026-08-13",
-      "date_to": "2026-08-13",
-      "end_date": "2026-08-13",
-      "hours": null,
-      "title": "AUG 13-14 | Lakeway Blue Moon Estate Sale",
-      "details": "QR Code Link to This Post Lakeway, you ready? This one’s got clean lines, quality pieces, and the kind of finds you’ll be talking about all weekend. Full details (address, photos, updates): https://bluemoonestatesales.com/george-town-round-rock/estate-sale/lakeway-luxury-estate-sale-vip-evening-preview-3-day-sale/",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/austin-aug-lakeway-blue-moon-estate-sale/isUQKf4TiUNcLuqyDT54hf",
-      "photos": 0,
-      "type": "estate",
-      "categories": [
-        "estate-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.3337,
-      "lon": -97.9824,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-moonestatesaleisuqkf4tiuncluqydt54hf"
-    },
-    {
       "address": "11300 Brixey Lane near Braker Lane/Dessaue, Austin, TX",
       "dates": "2026-08-12 – 2026-08-14",
       "date_from": "2026-08-12",
@@ -616,9 +592,9 @@
     "garagesalefinder.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 26,
+  "total_locations": 25,
   "status": "live",
-  "date": "2026-08-13",
-  "last_refresh": "2026-08-13T03:22:37-05:00",
+  "date": "2026-08-14",
+  "last_refresh": "2026-08-14T02:10:46-05:00",
   "permits": []
 }
