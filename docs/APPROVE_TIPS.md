@@ -6,7 +6,7 @@ You do **not** need Make, Zapier, or webhooks for day-to-day use.
 
 ## Path A — Easiest (recommended)
 
-When a review email arrives (`YardBird permit tip — review`):
+When a review email arrives (`Chicas-Map permit tip — review`):
 
 1. Open this chat (or any Grok chat with GitHub connected).
 2. Paste the tip JSON from the email.
@@ -18,7 +18,7 @@ I push it to `permit-tips.json`. You hard-refresh the map. Done.
 
 ## Path B — One label on GitHub (no chat needed)
 
-1. Open [New issue](https://github.com/Justonejewelry/Project-YardBird/issues/new).
+1. Open [New issue](https://github.com/Justonejewelry/Chicas-Map/issues/new).
 2. Title: `tip` + the address.
 3. Body: paste the tip JSON inside a fence:
 
@@ -41,7 +41,7 @@ GitHub Actions publishes it and closes the issue. Refresh the map.
 2. Once per browser session: paste a fine-grained GitHub token (Contents: Read and write on this repo only).
 3. Click **Approve & push to map**.
 
-Page: https://justonejewelry.github.io/Project-YardBird/admin/approve.html
+Page: https://justonejewelry.github.io/Chicas-Map/admin/approve.html
 
 ---
 

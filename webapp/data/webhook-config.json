@@ -3,8 +3,8 @@
   "inbound_url": "",
   "also_mailto": true,
   "events": {
-    "tip_submit": "https://api.github.com/repos/Justonejewelry/Project-YardBird/dispatches",
-    "tip_approve": "https://api.github.com/repos/Justonejewelry/Project-YardBird/dispatches"
+    "tip_submit": "https://api.github.com/repos/Justonejewelry/Chicas-Map/dispatches",
+    "tip_approve": "https://api.github.com/repos/Justonejewelry/Chicas-Map/dispatches"
   },
   "dispatch_docs": "POST with header Authorization: Bearer YOUR_PAT and body {\"event_type\":\"tip_approve\",\"client_payload\":{...tip}}"
 }

@@ -136,7 +136,7 @@
       const sniff = s._sniff != null ? ` · sniff ${s._sniff}/5` : "";
       return `${i + 1}. ${s.title || s.address || "Stop"}${sniff}\n   ${s.address || ""}`;
     });
-    const text = `🦴 Chica Route — ${cityName || "Texas"}\n${new Date().toLocaleDateString()}\n\n${lines.join("\n\n")}\n\nMapped by Cheeks\nhttps://justonejewelry.github.io/Project-YardBird/map.html`;
+    const text = `🦴 Chica Route — ${cityName || "Texas"}\n${new Date().toLocaleDateString()}\n\n${lines.join("\n\n")}\n\nMapped by Cheeks\nhttps://justonejewelry.github.io/Chicas-Map/map.html`;
     return text;
   }
 

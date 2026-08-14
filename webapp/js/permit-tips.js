@@ -6,7 +6,7 @@
   const TIPS_URL = "data/permit-tips.json";
   const WEBHOOK_CONFIG_URL = "data/webhook-config.json";
   const REVIEW_EMAIL = "mr.jsciaraffa@gmail.com";
-  const APPROVE_BASE = "https://justonejewelry.github.io/Project-YardBird/admin/approve.html";
+  const APPROVE_BASE = "https://justonejewelry.github.io/Chicas-Map/admin/approve.html";
   let tipsIndex = {};
   let webhookConfig = { inbound_url: "", also_mailto: true };
 
@@ -28,10 +28,10 @@
 
   function esc(s) {
     return String(s || "")
-      .replace(/&/g, "&")
-      .replace(/</g, "<")
-      .replace(/>/g, ">")
-      .replace(/"/g, """);
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
   }
 
   async function loadWebhookConfig() {
@@ -84,7 +84,7 @@
     return `<div class="seller-tip-card">
       <span class="permit-tip-badge">Seller tip · unverified</span>
       ${schedule}${summary}${contact}
-      <div style="margin-top:6px;font-size:0.68rem;color:#78716c">Not verified by YardBird or the City. Treat as a lead only.</div>
+      <div style="margin-top:6px;font-size:0.68rem;color:#78716c">Not verified by Chicas-Map or the City. Treat as a lead only.</div>
     </div>`;
   }
 
@@ -101,9 +101,9 @@
     const compact = JSON.stringify(payload);
     const approveUrl = APPROVE_BASE + "#tip=" + toBase64Url(compact);
     const pretty = JSON.stringify(payload, null, 2);
-    const subject = encodeURIComponent("YardBird permit tip — review");
+    const subject = encodeURIComponent("Chicas-Map permit tip — review");
     const body = encodeURIComponent(
-      "YardBird permit tip — REVIEW\n\n" +
+      "Chicas-Map permit tip — REVIEW\n\n" +
         "EASIEST APPROVE:\n" +
         "1) Copy the TIP JSON below\n" +
         "2) Open Grok (GitHub connected)\n" +
@@ -126,7 +126,7 @@
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
           event: "tip_submit",
-          source: "yardbird_map",
+          source: "chicas_map",
           tip: payload,
         }),
       });
@@ -181,7 +181,7 @@
 
       if (status) {
         status.innerHTML =
-          "Review email opened. Tips go live only after you approve (easiest: paste JSON here and say <b>approve this tip</b>)."
+          "Review email opened. Tips go live only after you approve (easiest: paste JSON here and say <b>approve this tip</b>).";
       }
     });
   }

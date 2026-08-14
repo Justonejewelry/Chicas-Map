@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>YardBird SA — Cluster Explorer</title>
+<title>Chicas-Map SA — Cluster Explorer</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <style>
   html, body { margin:0; height:100%; font-family: system-ui, -apple-system, sans-serif; background:#0f172a; color:#e2e8f0; }
@@ -55,7 +55,7 @@
 <body>
 <div id="map"></div>
 <div class="panel">
-  <h1>YardBird · Cluster Explorer</h1>
+  <h1>Chicas-Map · Cluster Explorer</h1>
   <div class="meta">Click any cluster to expand all associated sales</div>
   <div class="hint">Click a numbered cluster marker → member sales list + pins on map.</div>
   <div id="detail"></div>
@@ -65,7 +65,7 @@
 <script>
 // Full cluster+member dataset is in repo data/clusters_with_members.json
 // This published page loads a compact top-cluster set; regenerate locally for full 82.
-fetch('https://raw.githubusercontent.com/Justonejewelry/Project-YardBird/main/data/clusters_with_members.json')
+fetch('https://raw.githubusercontent.com/Justonejewelry/Chicas-Map/main/data/clusters_with_members.json')
   .then(r => r.ok ? r.json() : Promise.reject())
   .then(data => init(data.clusters || data))
   .catch(() => {
@@ -80,7 +80,7 @@ fetch('https://raw.githubusercontent.com/Justonejewelry/Project-YardBird/main/da
 function init(clusters) {
   const map = L.map('map').setView([29.45, -98.52], 11);
   L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; OSM &copy; CARTO · YardBird GSIN', maxZoom: 19
+    attribution: '&copy; OSM &copy; CARTO · Chicas-Map GSIN', maxZoom: 19
   }).addTo(map);
   const memberLayer = L.layerGroup().addTo(map);
   const detail = document.getElementById('detail');
