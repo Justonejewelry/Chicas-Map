@@ -19,6 +19,49 @@
 <link rel="stylesheet" href="css/backyard.css"/>
 <script src="js/chica-config.js"></script>
 <script src="js/chica-analytics.js"></script>
+<style>
+  /* Action card grid matching the illustration set */
+  .by-actions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+    margin-top: 22px;
+    max-width: 520px;
+  }
+  .by-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 16px;
+    padding: 16px 12px 14px;
+    min-height: 118px;
+    border: 2px solid rgba(0,0,0,.06);
+    box-shadow: 0 8px 20px rgba(0,0,0,.08);
+    transition: transform .15s ease, box-shadow .15s ease;
+    font-family: inherit;
+  }
+  .by-action:hover { transform: translateY(-3px); box-shadow: 0 14px 28px rgba(0,0,0,.12); }
+  .by-action .icon { font-size: 1.85rem; line-height: 1; margin-bottom: 8px; }
+  .by-action .label {
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    line-height: 1.25;
+    text-transform: uppercase;
+  }
+  .by-action-bone   { background: #f3c5c8; color: #5c1f2a; }
+  .by-action-pack   { background: #c5d9c8; color: #1a3d28; }
+  .by-action-sponsor{ background: #f0d98a; color: #4a3a12; }
+  .by-action-note   { background: #d4c4e8; color: #3a2458; }
+  .by-action-archive{ background: #3d3d42; color: #f0ece4; }
+
+  @media (max-width: 520px) {
+    .by-actions { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
 </head>
 <body class="by-body">
 <header class="v-nav">
@@ -34,9 +77,28 @@
       <h1>Welcome</h1>
       <p class="by-hero-lead">Here is where you can have a glimpse inside the mind of the GSIN (Garage Sale Information Network) ambassador and only employee.</p>
       <p class="by-hero-intro">Join the Pack to receive her weekly update. Details below.</p>
-      <div class="by-hero-cta">
-        <a class="by-btn by-btn-primary" href="map.html">🗺️ Go Treasure Hunting</a>
-        <a class="by-btn by-btn-ghost" href="#daily">🐾 Today's Note</a>
+
+      <div class="by-actions" aria-label="Backyard actions">
+        <a class="by-action by-action-bone" href="mailto:mr.jsciaraffa@gmail.com?subject=Comments%20%26%20Suggestions%20for%20Chica">
+          <span class="icon">🦴</span>
+          <span class="label">Throw Chica<br/>a Bone</span>
+        </a>
+        <a class="by-action by-action-pack" href="#join-pack">
+          <span class="icon">🐾</span>
+          <span class="label">Join the<br/>Pack</span>
+        </a>
+        <a class="by-action by-action-sponsor" href="sponsor.html">
+          <span class="icon">🤝</span>
+          <span class="label">ISO<br/>Sponsors</span>
+        </a>
+        <a class="by-action by-action-note" href="#daily">
+          <span class="icon">📝</span>
+          <span class="label">Today’s<br/>Note</span>
+        </a>
+        <a class="by-action by-action-archive" href="#finds">
+          <span class="icon">📦</span>
+          <span class="label">Chica’s<br/>Archive</span>
+        </a>
       </div>
     </div>
     <div class="by-hero-visual">
@@ -57,10 +119,23 @@
   </div>
 </section>
 
+<section class="by-shell" id="join-pack">
+  <div class="by-card by-prose">
+    <h2>🐾 Join the Pack</h2>
+    <p>Get Chica’s weekly update — the good finds, the quiet trails, and whatever she’s been sniffing that week.</p>
+    <form id="packForm" class="by-pack-form" style="margin-top:16px;display:flex;flex-wrap:wrap;gap:10px;align-items:center">
+      <input type="email" name="email" required placeholder="your@email.com" 
+             style="flex:1;min-width:200px;padding:12px 14px;border-radius:12px;border:1.5px solid #d8d2c8;font:inherit"/>
+      <button type="submit" class="by-btn by-btn-primary" style="border:none;cursor:pointer">Join the Pack</button>
+    </form>
+    <p id="packMsg" class="by-muted" style="margin-top:10px;font-size:0.9rem"></p>
+  </div>
+</section>
+
 <section class="by-shell" id="finds">
   <div class="by-head">
-    <h2>🦴 Things Chica Finds Interesting</h2>
-    <p>Stories and updates from the trail — never invented, only what actually happened.</p>
+    <h2>📦 Chica’s Archive</h2>
+    <p>Past notes and things Chica found interesting — never invented, only what actually happened.</p>
   </div>
   <div id="blogList" class="by-blog-grid" aria-live="polite">Loading…</div>
 </section>
@@ -87,5 +162,37 @@
 
 <script src="js/backyard.js"></script>
 <script src="js/chica-pwa.js"></script>
+<script>
+(function(){
+  var form = document.getElementById("packForm");
+  var msg = document.getElementById("packMsg");
+  if (!form) return;
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    var cfg = window.ChicaConfig || {};
+    var id = cfg.FORMSPREE_EMAIL_ID;
+    if (!id) {
+      msg.textContent = "Signup isn’t wired yet. Email mr.jsciaraffa@gmail.com instead.";
+      return;
+    }
+    var email = form.email.value.trim();
+    msg.textContent = "Sending…";
+    fetch("https://formspree.io/f/" + id, {
+      method: "POST",
+      headers: { "Accept": "application/json", "Content-Type": "application/json" },
+      body: JSON.stringify({ email: email, _subject: "Join the Pack – Chica Map" })
+    }).then(function(r){
+      if (r.ok) {
+        msg.textContent = "You’re in the Pack. Chica will keep you posted.";
+        form.reset();
+      } else {
+        msg.textContent = "Something went sideways. Try again or email directly.";
+      }
+    }).catch(function(){
+      msg.textContent = "Network issue. Try again in a moment.";
+    });
+  });
+})();
+</script>
 </body>
 </html>
