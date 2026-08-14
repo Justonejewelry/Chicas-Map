@@ -58,8 +58,55 @@
   .by-action-note   { background: #d4c4e8; color: #3a2458; }
   .by-action-archive{ background: #3d3d42; color: #f0ece4; }
 
+  /* Social follow buttons */
+  .by-social {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 16px;
+    max-width: 420px;
+  }
+  .by-social-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 16px;
+    padding: 18px 14px 16px;
+    min-height: 110px;
+    border: 2px solid rgba(0,0,0,.06);
+    box-shadow: 0 8px 20px rgba(0,0,0,.1);
+    transition: transform .15s ease, box-shadow .15s ease;
+    font-family: inherit;
+  }
+  .by-social-btn:hover { transform: translateY(-3px); box-shadow: 0 14px 28px rgba(0,0,0,.14); }
+  .by-social-btn .s-icon {
+    font-size: 2.4rem;
+    line-height: 1;
+    margin-bottom: 10px;
+    font-weight: 900;
+  }
+  .by-social-btn .s-label {
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+  .by-social-fb {
+    background: #3b82f6;
+    color: #fff;
+  }
+  .by-social-tt {
+    background: #111;
+    color: #fff;
+  }
+
   @media (max-width: 520px) {
     .by-actions { grid-template-columns: repeat(2, 1fr); }
+    .by-social { grid-template-columns: 1fr 1fr; }
   }
 </style>
 </head>
@@ -98,6 +145,17 @@
         <a class="by-action by-action-archive" href="#finds">
           <span class="icon">📦</span>
           <span class="label">Chica’s<br/>Archive</span>
+        </a>
+      </div>
+
+      <div class="by-social" aria-label="Follow Chica">
+        <a class="by-social-btn by-social-fb" href="https://www.facebook.com/61593215043603/" target="_blank" rel="noopener noreferrer">
+          <span class="s-icon">f</span>
+          <span class="s-label">Follow on<br/>Facebook</span>
+        </a>
+        <a class="by-social-btn by-social-tt" href="https://www.tiktok.com/@chicas_map" target="_blank" rel="noopener noreferrer">
+          <span class="s-icon">♪</span>
+          <span class="s-label">Follow on<br/>TikTok</span>
         </a>
       </div>
     </div>
