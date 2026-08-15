@@ -45,8 +45,8 @@
       "in_person": false,
       "external_id": "eso-2456237",
       "categories": [
-        "estate-sale",
-        "online-auction"
+        "online-auction",
+        "estate-sale"
       ]
     },
     {
@@ -70,8 +70,8 @@
       "in_person": false,
       "external_id": "eso-2456673",
       "categories": [
-        "estate-sale",
-        "online-auction"
+        "online-auction",
+        "estate-sale"
       ]
     },
     {
@@ -91,8 +91,8 @@
       "lon": -98.4936,
       "geocode": "approx",
       "categories": [
-        "estate-sale",
-        "garage-sale"
+        "garage-sale",
+        "estate-sale"
       ],
       "details": "Auction"
     },
@@ -261,14 +261,14 @@
       "type": "estate",
       "confidence": 0.9,
       "status": "verified",
-      "lat": 29.392586699461013,
-      "lon": -98.4716638366858,
+      "lat": 29.392272290549766,
+      "lon": -98.46783867339335,
       "geocode": "source",
       "in_person": true,
       "external_id": "eso-2456907",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "hours": "2026-08-21 9:00 am-3:00 pm; 2026-08-22 9:00 am-3:00 pm; 2026-08-23 9:00 am-3:00 pm",
       "details": "Caring Transitions of San Antonio Central. Calling all craftsmen, welders, woodworkers, mechanics, contractors, DIYers and tool hunters! Caring Transitions of San Antonio Central invites you to a unique estate sale featuring the garage and workshop of a longtime welder and skilled craftsman....",
@@ -492,8 +492,8 @@
       "in_person": true,
       "external_id": "eso-2456981",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "hours": "2026-08-15 10:00 am-5:00 am; 2026-08-15 10:00 am-5:00 am"
     },
@@ -845,8 +845,8 @@
       "in_person": false,
       "external_id": "eso-2457368",
       "categories": [
-        "estate-sale",
-        "online-auction"
+        "online-auction",
+        "estate-sale"
       ]
     },
     {
@@ -1137,7 +1137,7 @@
   "total_locations": 49,
   "status": "live",
   "date": "2026-08-15",
-  "last_refresh": "2026-08-15T01:21:57-05:00",
+  "last_refresh": "2026-08-15T02:32:08-05:00",
   "note": "Weekend accuracy recovery — 19 verified public listings from Craigslist, YardSaleSearch, GarageSaleFinder, EstateSales.org",
   "permit_total": 75,
   "permit_estate_count": 1
