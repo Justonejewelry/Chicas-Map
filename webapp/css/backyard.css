@@ -1,4 +1,4 @@
-/* Chica's Backyard — Layered Reveal + proper action-cards sprite */
+/* Chica's Backyard — Layered Reveal + correct responsive sprite from action-cards.jpg */
 :root {
   --by-green: #1a6b3c;
   --by-green-dark: #0f4a29;
@@ -10,10 +10,7 @@
   --by-shadow: 0 18px 40px rgba(20,40,30,.08);
   --by-radius: 18px;
   --by-font: "Inter", system-ui, -apple-system, sans-serif;
-
-  /* Sprite sheet is 900×900 */
   --sprite: url("../assets/backyard/action-cards.jpg");
-  --sprite-size: 900px 900px;
 }
 
 .by-body {
@@ -199,7 +196,8 @@
 .by-head p { margin: 0; color: var(--by-muted); font-size: 0.98rem; }
 
 /* ============================================================
-   ACTION CARDS — Sprite sheet from action-cards.jpg (900×900)
+   ACTION CARDS — Responsive sprite from action-cards.jpg (900×900)
+   Using percentage background-size so cards scale correctly
    ============================================================ */
 .by-actions {
   display: grid;
@@ -209,7 +207,6 @@
   margin: 0 auto;
 }
 
-/* Bottom two cards sit in the first two columns of the next row */
 .by-actions .by-card-note    { grid-column: 1 / 2; }
 .by-actions .by-card-archive { grid-column: 2 / 3; }
 
@@ -221,7 +218,7 @@
   border: 2px solid rgba(0,0,0,.05);
   box-shadow: 0 8px 22px rgba(0,0,0,.08);
   transition: transform .18s ease, box-shadow .18s ease;
-  background: #fff;
+  background: #f8f6f1;
   line-height: 0;
   position: relative;
 }
@@ -230,44 +227,45 @@
   box-shadow: 0 16px 32px rgba(0,0,0,.14);
 }
 
-/* The sprite element itself */
+/* Sprite container – aspect ratio via padding-bottom */
 .by-sprite {
   display: block;
   width: 100%;
   background-image: var(--sprite);
   background-repeat: no-repeat;
-  background-size: var(--sprite-size);
-  /* Maintain roughly the original card proportions */
+  /* Key: scale the entire 900px sheet relative to this card's width */
 }
 
-/* Top-row cards (taller ~2:3-ish) */
+/* Top row cards – source width ~270px out of 900 → ~333% */
 .by-card-bone .by-sprite,
 .by-card-pack .by-sprite,
 .by-card-sponsor .by-sprite {
-  padding-bottom: 144%; /* ~260/375 ≈ 1.44 → height relative to width */
+  padding-bottom: 146%; /* height/width of the card art */
+  background-size: 333.33% auto;
 }
 
-/* Bottom-row cards (closer to square) */
+/* Bottom row cards – source width ~390px out of 900 → ~231% */
 .by-card-note .by-sprite,
 .by-card-archive .by-sprite {
-  padding-bottom: 97%; /* ~375/365 ≈ 1.03 */
+  padding-bottom: 97%;
+  background-size: 230.77% auto;
 }
 
-/* Exact background positions from the 900×900 sheet */
+/* Precise positions (as percentage of the background image) */
 .by-card-bone .by-sprite {
-  background-position: -30px -60px;
+  background-position: 3.3% 6.7%;
 }
 .by-card-pack .by-sprite {
-  background-position: -310px -60px;
+  background-position: 34.4% 6.7%;
 }
 .by-card-sponsor .by-sprite {
-  background-position: -610px -60px;
+  background-position: 67.8% 6.7%;
 }
 .by-card-note .by-sprite {
-  background-position: -50px -475px;
+  background-position: 4.7% 52.8%;
 }
 .by-card-archive .by-sprite {
-  background-position: -470px -475px;
+  background-position: 52.2% 52.8%;
 }
 
 /* Screen-reader only */
@@ -279,7 +277,7 @@
   white-space: nowrap; border: 0;
 }
 
-/* Social (quiet) */
+/* Social */
 .by-social {
   display: flex;
   justify-content: center;
@@ -296,7 +294,7 @@
   font-weight: 700;
   font-size: 0.88rem;
   border: 1px solid transparent;
-  transition: transform .15s ease, box-shadow .15s ease;
+  transition: transform .15s ease;
   font-family: inherit;
 }
 .by-social-btn:hover { transform: translateY(-1px); }
@@ -344,9 +342,7 @@
   border-radius: 14px;
   padding: 16px 18px;
   box-shadow: 0 8px 20px rgba(20,40,30,.04);
-  transition: border-color .15s ease;
 }
-.by-blog-card:hover { border-color: #c5e6d4; }
 .by-blog-card h3 { margin: 0 0 4px; font-size: 1.05rem; }
 .by-blog-card .meta { font-size: 0.8rem; color: var(--by-muted); margin-bottom: 8px; }
 .by-blog-card p { margin: 0; color: #3d453f; font-size: 0.94rem; }
@@ -382,7 +378,6 @@
   .by-actions .by-card-archive {
     grid-column: auto;
   }
-  /* On small screens the three top cards become two + one; bottom two sit normally */
   .by-hero { padding: 32px 16px 28px; }
   .by-shell { padding: 28px 16px 8px; }
   .by-card { padding: 22px 18px; }
