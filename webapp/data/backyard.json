@@ -3,6 +3,14 @@
   "tagline": "Weekly yard-sale intel from the backyard — and a little adventure",
   "blog": [
     {
+      "id": "2026-08-15",
+      "date": "2026-08-15",
+      "title": "New map layer — 24-hour food pantries",
+      "excerpt": "Howdy pack. I added a new layer to the map: every Community First outdoor food pantry I could find. Green dots are open 24/7. Amber ones have limited hours. More people knowing about them means more use — so if you can, restock when you pass by.",
+      "body": "Saturday map is busy, but I wanted to share something extra.\n\nI mapped the Community First outdoor food pantries across San Antonio and the nearby towns. These are the little weatherproof boxes at schools, churches, YMCAs, and community spots. No ID. No questions. Take what you need.\n\nOn the map:\n• Tap 🥫 Pantries in the tools bar to turn the layer on\n• Green dots = open 24/7\n• Amber dots = limited hours\n• Tap any box for the address, hours, and a short note about restocking\n\nMore people knowing about them naturally means more use. That’s the point — and also why the boxes only stay full when neighbors drop cans, peanut butter, rice, pasta, or hygiene items when they can.\n\nIf you finish a garage-sale route, the map will gently nudge you: there’s often a pantry near the path. Leave something if you’re able. Or adopt a pantry through Community First.\n\nOfficial map and adopt form: communityfirsthealthplans.com/food-pantry\n\nWipe your paws. — Chica",
+      "tags": ["food-pantry", "community", "San Antonio", "map-layer", "24h", "Community First"]
+    },
+    {
       "id": "2026-08-14",
       "date": "2026-08-14",
       "title": "Saturday peak — Stone Oak, Cibolo, Eastside",
