@@ -297,8 +297,38 @@
             const statusLabel = { open_confirmed: "Open • recently confirmed", open: "Open now", closed: "Currently closed", down: "Reported down", unknown: "Status unknown" }[status] || "Status unknown";
             const offlineNote = !isOnline() ? '<div style="font-size:10px;color:#92400e;margin-bottom:6px">Offline mode — reports saved on this device</div>' : "";
             const ssidLine = p.ssid ? '<div style="font-size:12px;margin-bottom:4px"><b>SSID:</b> ' + p.ssid + "</div>" : "";
-            const safeName = (p.name || "").replace(/"/g, "&quot;");
-            const html = '<div style="font-family:system-ui,sans-serif;max-width:270px"><div style="font-weight:700;font-size:14px;color:#1e293b;margin-bottom:4px">📶 ' + (p.name || "Public WiFi") + "</div><div style="font-size:12px;color:#444;margin-bottom:4px">" + (p.address || "") + "</div>" + offlineNote + '<div style="font-size:12px;font-weight:600;margin-bottom:6px;color:' + statusColor(status) + '">' + statusLabel + "</div>" + ssidLine + '<div style="font-size:11px;color:#555;margin-bottom:8px">' + (p.hours || "") + '</div><div style="font-size:11px;color:#666;margin-bottom:8px">' + (p.provider || "") + " · " + (p.category || "") + '</div><div style="display:flex;gap:6px;flex-wrap:wrap"><button type="button" class="yb-wifi-ok" data-name="' + safeName + '" style="font-size:11px;padding:5px 8px;border-radius:6px;border:1px solid #22c55e;background:#dcfce7;color:#166534;font-weight:600;cursor:pointer">Still working</button><button type="button" class="yb-wifi-down" data-name="' + safeName + '" style="font-size:11px;padding:5px 8px;border-radius:6px;border:1px solid #ef4444;background:#fee2e2;color:#991b1b;font-weight:600;cursor:pointer">Not working</button></div></div>';
+            const safeName = (p.name || "").replace(/"/g, """);
+            const html =
+              '<div style="font-family:system-ui,sans-serif;max-width:270px">' +
+              '<div style="font-weight:700;font-size:14px;color:#1e293b;margin-bottom:4px">📶 ' +
+              (p.name || "Public WiFi") +
+              "</div>" +
+              '<div style="font-size:12px;color:#444;margin-bottom:4px">' +
+              (p.address || "") +
+              "</div>" +
+              offlineNote +
+              '<div style="font-size:12px;font-weight:600;margin-bottom:6px;color:' +
+              statusColor(status) +
+              '">' +
+              statusLabel +
+              "</div>" +
+              ssidLine +
+              '<div style="font-size:11px;color:#555;margin-bottom:8px">' +
+              (p.hours || "") +
+              "</div>" +
+              '<div style="font-size:11px;color:#666;margin-bottom:8px">' +
+              (p.provider || "") +
+              " · " +
+              (p.category || "") +
+              "</div>" +
+              '<div style="display:flex;gap:6px;flex-wrap:wrap">' +
+              '<button type="button" class="yb-wifi-ok" data-name="' +
+              safeName +
+              '" style="font-size:11px;padding:5px 8px;border-radius:6px;border:1px solid #22c55e;background:#dcfce7;color:#166534;font-weight:600;cursor:pointer">Still working</button>' +
+              '<button type="button" class="yb-wifi-down" data-name="' +
+              safeName +
+              '" style="font-size:11px;padding:5px 8px;border-radius:6px;border:1px solid #ef4444;background:#fee2e2;color:#991b1b;font-weight:600;cursor:pointer">Not working</button>' +
+              "</div></div>";
             if (window.__ybPinPopup) { try { window.__ybPinPopup.remove(); } catch (_) {} }
             window.__ybPinPopup = new maplibregl.Popup({ offset: 12, closeButton: true, maxWidth: "290px" }).setLngLat(coords).setHTML(html).addTo(map);
             setTimeout(() => {
