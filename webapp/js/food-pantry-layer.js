@@ -49,8 +49,13 @@
 
   async function loadData() {
     if (pantryData) return pantryData;
+    const url = "data/san-antonio-24h-food-pantries.geojson?t=" + Date.now();
     try {
-      const r = await fetch("data/san-antonio-24h-food-pantries.geojson?t=" + Date.now(), { cache: "no-store" });
+      if (window.ChicaLayerWorker && typeof window.ChicaLayerWorker.preparePantry === "function") {
+        pantryData = await window.ChicaLayerWorker.preparePantry({ url: url });
+        return pantryData;
+      }
+      const r = await fetch(url, { cache: "no-store" });
       if (!r.ok) return null;
       pantryData = await r.json();
       return pantryData;
@@ -188,30 +193,18 @@
               '<div style="font-size:12px;color:#444;margin-bottom:6px">' +
               (p.address || "") +
               "</div>" +
-              '<div style="font-size:12px;font-weight:600;margin-bottom:8px">' +
+              '<div style="font-size:12px;font-weight:600">' +
               (is24 ? "Open 24/7" : hours) +
-              "</div>" +
-              '<div style="font-size:11px;line-height:1.4;color:#333;background:#fff8d6;padding:8px;border-radius:8px;margin-bottom:8px">' +
-              BLURB +
               "</div></div>";
             if (window.__ybPinPopup) {
               try { window.__ybPinPopup.remove(); } catch (_) {}
             }
             window.__ybPinPopup = new maplibregl.Popup({
-              offset: 12,
-              closeButton: true,
-              maxWidth: "280px",
-            })
-              .setLngLat(coords)
-              .setHTML(html)
-              .addTo(map);
+              offset: 12, closeButton: true, maxWidth: "280px",
+            }).setLngLat(coords).setHTML(html).addTo(map);
           });
-          map.on("mouseenter", LAYER_ID, () => {
-            map.getCanvas().style.cursor = "pointer";
-          });
-          map.on("mouseleave", LAYER_ID, () => {
-            map.getCanvas().style.cursor = "";
-          });
+          map.on("mouseenter", LAYER_ID, () => { map.getCanvas().style.cursor = "pointer"; });
+          map.on("mouseleave", LAYER_ID, () => { map.getCanvas().style.cursor = ""; });
         } else {
           applyYellowPaint(map);
         }
@@ -222,12 +215,9 @@
         return false;
       }
     };
-
     if (map.isStyleLoaded && map.isStyleLoaded()) return add();
     map.once("load", add);
-    map.once("styledata", () => {
-      if (!layerBuilt) add();
-    });
+    map.once("styledata", () => { if (!layerBuilt) add(); });
     return add();
   }
 
@@ -238,19 +228,6 @@
       if (map.getLayer(LAYER_ID)) map.setLayoutProperty(LAYER_ID, "visibility", vis);
       if (map.getLayer(LAYER_LABEL)) map.setLayoutProperty(LAYER_LABEL, "visibility", vis);
     } catch (_) {}
-    updateLegend(on);
-  }
-
-  function updateLegend(show) {
-    const legend = document.querySelector(".map-legend");
-    if (!legend) return;
-    legend.querySelectorAll("[data-pantry-legend]").forEach((el) => el.remove());
-    if (!show) return;
-    const span24 = document.createElement("span");
-    span24.setAttribute("data-pantry-legend", "1");
-    span24.innerHTML =
-      '<i class="pin pantry-24" style="background:#FFD400;border-radius:50%;width:11px;height:11px;display:inline-block;margin-right:4px;vertical-align:middle;border:2px solid #5C4A00"></i> 24h Pantry';
-    legend.appendChild(span24);
   }
 
   async function toggle() {
@@ -311,7 +288,7 @@
     btn.type = "button";
     btn.className = "tool-btn";
     btn.id = TOGGLE_ID;
-    btn.title = "24h Food Pantries (Community First)";
+    btn.title = "24h Food Pantries";
     btn.innerHTML = "Pantries";
     btn.addEventListener("click", (e) => {
       e.preventDefault();
@@ -322,26 +299,9 @@
     return true;
   }
 
-  function showRestockNearMePrompt() {
-    if (restockPromptShown) return;
-    const stops = document.getElementById("routeStops");
-    const hadStops = stops && stops.children && stops.children.length > 0;
-    if (!hadStops && !(window.__YB_ROUTE_STOPS && window.__YB_ROUTE_STOPS.length)) return;
-    restockPromptShown = true;
-    toast("Finished the sales? Tap Pantries to see 24h food boxes nearby.", 7000);
-  }
-
-  function wireRouteRestockHook() {
-    ["btnClearRoute", "btnShareRoute", "btnShareRoute2"].forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) el.addEventListener("click", () => setTimeout(showRestockNearMePrompt, 400));
-    });
-  }
-
   function boot() {
     patchMapConstructor();
     injectToggle();
-    wireRouteRestockHook();
     let tries = 0;
     const iv = setInterval(() => {
       tries++;
@@ -372,5 +332,5 @@
     }
   });
 
-  window.ChicaFoodPantry = { toggle, loadData, findMap, showRestockNearMePrompt };
+  window.ChicaFoodPantry = { toggle, loadData, findMap };
 })();
