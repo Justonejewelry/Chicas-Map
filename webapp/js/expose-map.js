@@ -1,34 +1,68 @@
-/** Tiny helper: expose the MapLibre instance so overlay layers can attach. */
+/**
+ * Capture the MapLibre map instance as soon as the pinned core creates it.
+ * Must load AFTER maplibre-gl.js and BEFORE js/app.js.
+ */
 (function () {
-  function tryExpose() {
-    // MapLibre stores the instance on the container in some versions / after init
-    var el = document.getElementById("map");
-    if (!el) return false;
-    // Common private / internal refs
-    if (el._map) {
-      window.__YB_MAP = el._map;
-      window.map = el._map;
-      return true;
-    }
-    // Walk MapLibre's internal registry if present
-    if (window.maplibregl && window.maplibregl.Map) {
-      // Fallback: poll for the first map that owns our container
-      var maps = document.querySelectorAll(".maplibregl-canvas-container");
-      // We cannot reliably get the instance without the constructor holding it,
-      // so we rely on the food-pantry script's own retry + future pin update.
-    }
-    return false;
+  function capture(m) {
+    if (!m || !m.getSource) return;
+    window.__YB_MAP = m;
+    window.map = m;
+    try {
+      window.dispatchEvent(new CustomEvent("yb-map-ready", { detail: { map: m } }));
+    } catch (_) {}
   }
-  var tries = 0;
-  var iv = setInterval(function () {
-    tries++;
-    if (tryExpose() || tries > 60) clearInterval(iv);
-  }, 200);
-  // Also listen for map load events if the core ever dispatches one
-  window.addEventListener("yb-map-ready", function (e) {
-    if (e.detail && e.detail.map) {
-      window.__YB_MAP = e.detail.map;
-      window.map = e.detail.map;
+
+  // Monkey-patch Map constructor so the first map on #map is always exposed
+  function patch() {
+    if (!window.maplibregl || !window.maplibregl.Map) return false;
+    if (window.maplibregl.Map.__ybPatched) return true;
+    var Orig = window.maplibregl.Map;
+    function Wrapped(options) {
+      var m = new Orig(options);
+      try {
+        var container = options && options.container;
+        var isOurs =
+          container === "map" ||
+          (container && container.id === "map") ||
+          container === document.getElementById("map");
+        if (isOurs) capture(m);
+        // Also capture any map as fallback (single-map page)
+        if (!window.__YB_MAP) capture(m);
+      } catch (_) {
+        capture(m);
+      }
+      return m;
     }
-  });
+    Wrapped.prototype = Orig.prototype;
+    Object.keys(Orig).forEach(function (k) {
+      try {
+        Wrapped[k] = Orig[k];
+      } catch (_) {}
+    });
+    Wrapped.__ybPatched = true;
+    window.maplibregl.Map = Wrapped;
+    return true;
+  }
+
+  if (!patch()) {
+    // maplibre may still be loading
+    var tries = 0;
+    var iv = setInterval(function () {
+      tries++;
+      if (patch() || tries > 40) clearInterval(iv);
+    }, 50);
+  }
+
+  // Secondary: poll container internals
+  var poll = 0;
+  var piv = setInterval(function () {
+    poll++;
+    if (window.__YB_MAP && window.__YB_MAP.getSource) {
+      clearInterval(piv);
+      return;
+    }
+    var el = document.getElementById("map");
+    if (el && el._map) capture(el._map);
+    if (poll > 80) clearInterval(piv);
+  }, 200);
 })();
