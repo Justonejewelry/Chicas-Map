@@ -297,7 +297,7 @@
             const statusLabel = { open_confirmed: "Open • recently confirmed", open: "Open now", closed: "Currently closed", down: "Reported down", unknown: "Status unknown" }[status] || "Status unknown";
             const offlineNote = !isOnline() ? '<div style="font-size:10px;color:#92400e;margin-bottom:6px">Offline mode — reports saved on this device</div>' : "";
             const ssidLine = p.ssid ? '<div style="font-size:12px;margin-bottom:4px"><b>SSID:</b> ' + p.ssid + "</div>" : "";
-            const safeName = (p.name || "").replace(/"/g, """);
+            const safeName = String(p.name || "").split(String.fromCharCode(34)).join(""");
             const html =
               '<div style="font-family:system-ui,sans-serif;max-width:270px">' +
               '<div style="font-weight:700;font-size:14px;color:#1e293b;margin-bottom:4px">📶 ' +
