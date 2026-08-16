@@ -17,6 +17,13 @@
     BOOST_PAYMENT_URL: "https://square.link/u/xiJuZ66C",
     BOOST_PRICE_USD: 9,
     BOOST_MONTHS: 6,
+    /**
+     * Public WiFi realtime WebSocket (Cloudflare Worker).
+     * After `cd workers/wifi-realtime && npx wrangler deploy`, set to:
+     *   wss://chicas-wifi-realtime.<your-subdomain>.workers.dev/ws?city=san-antonio
+     * Leave empty to run offline-only (localStorage reports).
+     */
+    WIFI_WS_URL: "",
     formspreeUrl: function (id) {
       if (!id || !String(id).trim()) return null;
       return "https://formspree.io/f/" + String(id).trim();
