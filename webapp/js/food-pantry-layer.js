@@ -2,12 +2,19 @@
  * Chica Map — 24h Food Pantry Layer
  * Toggleable overlay of Community First outdoor pantries.
  * Data: data/san-antonio-24h-food-pantries.geojson
+ * Markers: bright yellow (easy to see on the basemap).
  */
 (function () {
   const SRC_ID = "yb-food-pantries";
   const LAYER_ID = "yb-food-pantries-layer";
   const LAYER_LABEL = "yb-food-pantries-label";
   const TOGGLE_ID = "btnFoodPantry";
+  // High-visibility yellows
+  const YELLOW_24 = "#FFD400";
+  const YELLOW_LTD = "#FFB000";
+  const YELLOW_STROKE = "#5C4A00";
+  const LABEL_COLOR = "#5C4A00";
+
   let pantryData = null;
   let enabled = false;
   let mapRef = null;
@@ -16,7 +23,6 @@
 
   const BLURB = `These free outdoor boxes are open day & night so nobody waits for “business hours.” More people knowing about them means more use — that’s the point. If you can, leave something when you pass by (canned goods, peanut butter, rice, pasta, hygiene, baby supplies). The network only works when the community restocks it.`;
 
-  /** Capture MapLibre map as soon as core creates it */
   function patchMapConstructor() {
     if (!window.maplibregl || !window.maplibregl.Map) return false;
     if (window.maplibregl.Map.__ybPantryPatched) return true;
@@ -114,6 +120,33 @@
     console.log("[food-pantry]", msg);
   }
 
+  function applyYellowPaint(map) {
+    if (!map.getLayer(LAYER_ID)) return;
+    map.setPaintProperty(LAYER_ID, "circle-color", [
+      "case",
+      ["any", ["==", ["get", "is_24h"], true], ["==", ["get", "is_24h"], "true"]],
+      YELLOW_24,
+      ["any", ["==", ["get", "is_24h"], false], ["==", ["get", "is_24h"], "false"]],
+      YELLOW_LTD,
+      YELLOW_24,
+    ]);
+    map.setPaintProperty(LAYER_ID, "circle-stroke-color", YELLOW_STROKE);
+    map.setPaintProperty(LAYER_ID, "circle-stroke-width", 2.5);
+    map.setPaintProperty(LAYER_ID, "circle-radius", [
+      "interpolate",
+      ["linear"],
+      ["zoom"],
+      9, 7,
+      14, 14,
+    ]);
+    map.setPaintProperty(LAYER_ID, "circle-opacity", 0.98);
+    if (map.getLayer(LAYER_LABEL)) {
+      map.setPaintProperty(LAYER_LABEL, "text-color", LABEL_COLOR);
+      map.setPaintProperty(LAYER_LABEL, "text-halo-color", "#fff8d6");
+      map.setPaintProperty(LAYER_LABEL, "text-halo-width", 1.8);
+    }
+  }
+
   function ensureLayer(map) {
     if (!map || !pantryData) return false;
     const add = () => {
@@ -129,18 +162,18 @@
             type: "circle",
             source: SRC_ID,
             paint: {
-              "circle-radius": ["interpolate", ["linear"], ["zoom"], 9, 5, 14, 11],
+              "circle-radius": ["interpolate", ["linear"], ["zoom"], 9, 7, 14, 14],
               "circle-color": [
                 "case",
                 ["any", ["==", ["get", "is_24h"], true], ["==", ["get", "is_24h"], "true"]],
-                "#2d8a4e",
+                YELLOW_24,
                 ["any", ["==", ["get", "is_24h"], false], ["==", ["get", "is_24h"], "false"]],
-                "#c47a12",
-                "#2d8a4e",
+                YELLOW_LTD,
+                YELLOW_24,
               ],
-              "circle-stroke-width": 2,
-              "circle-stroke-color": "#ffffff",
-              "circle-opacity": 0.92,
+              "circle-stroke-width": 2.5,
+              "circle-stroke-color": YELLOW_STROKE,
+              "circle-opacity": 0.98,
             },
           });
           map.addLayer({
@@ -151,19 +184,14 @@
             layout: {
               "text-field": ["get", "name"],
               "text-size": 11,
-              "text-offset": [0, 1.2],
+              "text-offset": [0, 1.25],
               "text-anchor": "top",
               "text-max-width": 12,
             },
             paint: {
-              "text-color": [
-                "case",
-                ["any", ["==", ["get", "is_24h"], true], ["==", ["get", "is_24h"], "true"]],
-                "#1a6b3c",
-                "#8a5508",
-              ],
-              "text-halo-color": "#fff",
-              "text-halo-width": 1.5,
+              "text-color": LABEL_COLOR,
+              "text-halo-color": "#fff8d6",
+              "text-halo-width": 1.8,
             },
           });
 
@@ -179,13 +207,13 @@
               String(hours).includes("24");
             const html = `
         <div style="font-family:system-ui,sans-serif;max-width:260px">
-          <div style="font-weight:700;font-size:14px;color:${is24 ? "#1a6b3c" : "#8a5508"};margin-bottom:4px">🥫 ${p.name || "Food Pantry"}</div>
+          <div style="font-weight:700;font-size:14px;color:#5C4A00;margin-bottom:4px">🥫 ${p.name || "Food Pantry"}</div>
           <div style="font-size:12px;color:#444;margin-bottom:6px">${p.address || ""}</div>
           <div style="font-size:12px;font-weight:600;margin-bottom:8px">${is24 ? "Open 24/7" : hours}</div>
-          <div style="font-size:11px;line-height:1.4;color:#333;background:#f4f7f5;padding:8px;border-radius:8px;margin-bottom:8px">${BLURB}</div>
+          <div style="font-size:11px;line-height:1.4;color:#333;background:#fff8d6;padding:8px;border-radius:8px;margin-bottom:8px">${BLURB}</div>
           <div style="display:flex;flex-direction:column;gap:6px">
-            <a href="https://communityfirsthealthplans.com/food-pantry/" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;color:#1a6b3c;text-decoration:none">Official map & Adopt a Pantry →</a>
-            <button type="button" id="yb-restock-share" style="font-size:12px;padding:6px 10px;border-radius:8px;border:1px solid #1a6b3c;background:#eaf5ee;color:#1a6b3c;font-weight:600;cursor:pointer">Share restock invite</button>
+            <a href="https://communityfirsthealthplans.com/food-pantry/" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;color:#5C4A00;text-decoration:none">Official map & Adopt a Pantry →</a>
+            <button type="button" id="yb-restock-share" style="font-size:12px;padding:6px 10px;border-radius:8px;border:1px solid #5C4A00;background:#fff3b0;color:#5C4A00;font-weight:600;cursor:pointer">Share restock invite</button>
           </div>
         </div>`;
             if (window.__ybPinPopup) {
@@ -223,6 +251,9 @@
           map.on("mouseleave", LAYER_ID, () => {
             map.getCanvas().style.cursor = "";
           });
+        } else {
+          // Layer already existed (e.g. previous session color) — force yellow
+          applyYellowPaint(map);
         }
         layerBuilt = true;
         return true;
@@ -234,11 +265,9 @@
 
     if (map.isStyleLoaded && map.isStyleLoaded()) return add();
     map.once("load", add);
-    // style may already be loading
     map.once("styledata", () => {
       if (!layerBuilt) add();
     });
-    // immediate attempt in case already loaded
     return add();
   }
 
@@ -260,11 +289,11 @@
     const span24 = document.createElement("span");
     span24.setAttribute("data-pantry-legend", "1");
     span24.innerHTML =
-      '<i class="pin pantry-24" style="background:#2d8a4e;border-radius:50%;width:10px;height:10px;display:inline-block;margin-right:4px;vertical-align:middle;border:1px solid #fff;box-shadow:0 0 0 1px #2d8a4e"></i> 24h Pantry';
+      '<i class="pin pantry-24" style="background:#FFD400;border-radius:50%;width:11px;height:11px;display:inline-block;margin-right:4px;vertical-align:middle;border:2px solid #5C4A00"></i> 24h Pantry';
     const spanLtd = document.createElement("span");
     spanLtd.setAttribute("data-pantry-legend", "1");
     spanLtd.innerHTML =
-      '<i class="pin pantry-ltd" style="background:#c47a12;border-radius:50%;width:10px;height:10px;display:inline-block;margin-right:4px;vertical-align:middle;border:1px solid #fff;box-shadow:0 0 0 1px #c47a12"></i> Limited hrs';
+      '<i class="pin pantry-ltd" style="background:#FFB000;border-radius:50%;width:11px;height:11px;display:inline-block;margin-right:4px;vertical-align:middle;border:2px solid #5C4A00"></i> Limited hrs';
     legend.appendChild(span24);
     legend.appendChild(spanLtd);
   }
@@ -301,8 +330,9 @@
         return;
       }
       ensureLayer(map);
+      applyYellowPaint(map);
       setVisible(map, true);
-      toast("🥫 Food pantries on — green = 24/7, amber = limited hours");
+      toast("🥫 Food pantries on — yellow dots");
     } else {
       setVisible(map, false);
       toast("Food pantries off");
@@ -359,7 +389,6 @@
     patchMapConstructor();
     injectToggle();
     wireRouteRestockHook();
-    // keep trying to inject if bars render late
     let tries = 0;
     const iv = setInterval(() => {
       tries++;
