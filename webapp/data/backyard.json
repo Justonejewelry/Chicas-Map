@@ -3,6 +3,14 @@
   "tagline": "Weekly yard-sale intel from the backyard — and a little adventure",
   "blog": [
     {
+      "id": "2026-08-16",
+      "date": "2026-08-16",
+      "title": "New map layer — free public WiFi (with live status)",
+      "excerpt": "Howdy pack. I just turned on a new layer: free public WiFi across San Antonio. Libraries, parks, community centers, Missions, and the big retail guest networks. Markers change color based on whether they’re open right now and whether someone recently confirmed they’re working.",
+      "body": "Sunday quiet. Perfect time to ship something useful.\n\nI added a Public WiFi layer to the map.\n\nWhat’s on it:\n• San Antonio Public Library branches (indoor + outdoor parking-lot hours)\n• City parks and community centers that advertise free WiFi\n• San Antonio Missions / World Heritage spots\n• Major guest networks (H-E-B, McDonald’s, VIA, etc.)\n\nHow the colors work (real-time status):\n• Green — open now and recently confirmed working\n• Blue — open now based on hours\n• Amber — hours unknown or unverified\n• Gray — currently closed\n• Red — community reported down in the last 48 hours\n\nTap any pin for address, hours, SSID when known, and two quick buttons: “Still working” or “Not working.” Your report helps the next person.\n\nThis is the second resource layer after the 24-hour food pantries. More free, useful layers are coming.\n\nTurn it on with the new WiFi button in the tools bar. Stay cool out there.\n\nWipe your paws. — Chica",
+      "tags": ["wifi", "public-wifi", "map-layer", "San Antonio", "libraries", "parks", "status", "community"]
+    },
+    {
       "id": "2026-08-15",
       "date": "2026-08-15",
       "title": "New map layer — 24-hour food pantries",
