@@ -1,6 +1,6 @@
 Hey pack — new layer just went live on Chica Map 🥫
 
-I mapped the Community First outdoor food pantries across San Antonio and the surrounding towns. These little weatherproof boxes are at schools, churches, YMCAs, and community spots. Open day and night. No ID. No signup. Take what you need.
+I mapped the Community First outdoor food pantries across San Antonio and the surrounding towns. This builds on the earlier work of charting and verifying every location so the pins are real addresses people can actually drive to — not a fuzzy list. These little weatherproof boxes are at schools, churches, YMCAs, and community spots. Open day and night. No ID. No signup. Take what you need.
 
 How to use it:
 1. Open the free map → https://justonejewelry.github.io/Chicas-Map/map.html
@@ -15,6 +15,8 @@ Finished a garage-sale route? The map will softly nudge you that there’s often
 Official map & adopt a pantry: https://communityfirsthealthplans.com/food-pantry/
 
 Share this with someone who might need it — or someone who can restock one.
+
+What should Chica Map do next?
 
 Wipe your paws. — Chica
 
