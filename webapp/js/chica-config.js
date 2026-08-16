@@ -4,25 +4,20 @@
  */
 (function (global) {
   global.ChicaConfig = {
+    /* Friday email list */
     FORMSPREE_EMAIL_ID: "myegykrq",
-    FORMSPREE_SALE_ID: "",
+    /* List-a-sale reviews — same Formspree form until a dedicated one is created.
+       Filter in Formspree by subject: "Chica Map — free sale listing" */
+    FORMSPREE_SALE_ID: "myegykrq",
     RECAPTCHA_SITE_KEY: "",
     RECAPTCHA_ACTION: "chica_friday_signup",
     REVIEW_EMAIL: "mr.jsciaraffa@gmail.com",
     CLARITY_PROJECT_ID: "xyurojj2kb",
     GA_MEASUREMENT_ID: "",
-    /** Optional direct donation link. Leave empty to use sponsor.html */
     DONATION_URL: "",
-    /** Square Payment Link — 6-month Boost pass ($9) */
     BOOST_PAYMENT_URL: "https://square.link/u/xiJuZ66C",
     BOOST_PRICE_USD: 9,
     BOOST_MONTHS: 6,
-    /**
-     * Public WiFi realtime WebSocket (Cloudflare Worker).
-     * After `cd workers/wifi-realtime && npx wrangler deploy`, set to:
-     *   wss://chicas-wifi-realtime.<your-subdomain>.workers.dev/ws?city=san-antonio
-     * Leave empty to run offline-only (localStorage reports).
-     */
     WIFI_WS_URL: "",
     formspreeUrl: function (id) {
       if (!id || !String(id).trim()) return null;
@@ -30,11 +25,6 @@
     },
   };
 
-  /*
-   * Brand normalization for the map shell. The map predates the current
-   * master logo, so keep the HTML fallback intact while upgrading the
-   * rendered mark to the official Chicas Garage Sale Map artwork.
-   */
   document.addEventListener("DOMContentLoaded", function () {
     if (!document.body || !document.body.classList.contains("grass-map")) return;
 
