@@ -389,12 +389,13 @@
   })();
   </script>
   <script src="js/app.js"></script>
-  <script src="js/chica-go-fix.js?v=closest2"></script>
+  <script src="js/chica-go-force.js?v=closest2"></script>
   <script src="js/chica-social.js"></script>
   <script src="js/detail-bridge.js"></script>
   <script src="js/sidebar-upgrade.js"></script>
   <script src="js/chica-pwa.js"></script>
   <script src="js/food-pantry-layer.js"></script>
+  <script src="js/public-wifi-layer.js"></script>
   <script>
   (function () {
     var wrap = document.getElementById('menuWrap');
@@ -442,8 +443,6 @@
       e.stopPropagation();
       toggleRail();
     });
-    // dockNear: handled by chica-go-force.js (requests location directly)
-    // Keep a no-op fallback so old behavior does not fight the patch
     document.getElementById('dockNear')?.addEventListener('click', function () {
       /* patch owns this */
     });
