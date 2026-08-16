@@ -7,7 +7,6 @@
   <meta name="description" content="Find verified garage sales, yard sales, and estate sales near you in San Antonio." />
   <meta name="theme-color" content="#1a6b3c" />
   <link rel="canonical" href="https://justonejewelry.github.io/Chicas-Map/map.html" />
-  <!-- Reserve viewport before async shell loads (CLS) -->
   <style>
     html,body{margin:0;height:100%;height:100dvh;background:#e8f2ec;overflow:hidden}
     #chica-boot{position:fixed;inset:0;display:grid;place-items:center;font:600 15px/1.4 system-ui,sans-serif;color:#145530}
@@ -19,7 +18,7 @@
     if (!res.ok) throw new Error("fetch failed " + res.status);
     var html = await res.text();
     html = html.replace("js/layers-rail.js?v=depth1", "js/layers-rail.js?v=depth3");
-    html = html.replace('src="js/public-wifi-layer.js"', 'src="js/public-wifi-layer.js?v=wifi4"');
+    html = html.replace('src="js/public-wifi-layer.js"', 'src="js/public-wifi-layer.js?v=wifi5"');
     html = html.replace('src="js/food-pantry-layer.js"', 'src="js/food-pantry-layer.js?v=pantry2"');
     if (html.indexOf("preferred-overlay") < 0) {
       html = html.replace(
@@ -29,14 +28,32 @@
     }
     if (html.indexOf("layer-timing-fix.js") < 0) {
       html = html.replace(
-        "js/layers-rail.js?v=depth3\"></script>",
-        "js/layers-rail.js?v=depth3\"></script>\n  <script src=\"js/layer-timing-fix.js?v=lt1\"></script>"
+        'js/layers-rail.js?v=depth3"></script>',
+        'js/layers-rail.js?v=depth3"></script>\n  <script src="js/layer-timing-fix.js?v=lt1"></script>'
       );
     }
     if (html.indexOf("cls-fix.css") < 0) {
       html = html.replace(
         "</head>",
         '<link rel="stylesheet" href="css/cls-fix.css?v=cls1" />\n</head>'
+      );
+    }
+    if (html.indexOf("chica-config.js") < 0) {
+      html = html.replace(
+        "</body>",
+        '<script src="js/chica-config.js?v=cfg1"></script>\n</body>'
+      );
+    }
+    if (html.indexOf("chica-analytics.js") < 0) {
+      html = html.replace(
+        "</body>",
+        '<script src="js/chica-analytics.js?v=an1"></script>\n</body>'
+      );
+    }
+    if (html.indexOf("web-vitals-monitor.js") < 0) {
+      html = html.replace(
+        "</body>",
+        '<script src="js/web-vitals-monitor.js?v=cwv1"></script>\n</body>'
       );
     }
     document.open();
