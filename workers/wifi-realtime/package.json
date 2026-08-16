@@ -1,0 +1,14 @@
+{
+  "name": "chicas-wifi-realtime",
+  "private": true,
+  "version": "1.0.0",
+  "description": "WebSocket fan-out for Chica Map public WiFi status reports",
+  "main": "src/index.js",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev"
+  },
+  "devDependencies": {
+    "wrangler": "^3.99.0"
+  }
+}
