@@ -3,32 +3,6 @@
   "city": "austin",
   "public": [
     {
-      "address": "224 Golden Bear Dr, Austin, TX 78738",
-      "dates": "2026-08-12 – 2026-08-15",
-      "date_from": "2026-08-12",
-      "date_to": "2026-08-15",
-      "end_date": "2026-08-15",
-      "title": "Lakeway Luxury Estate Sale Three Day Sale With A Special *Vip Evening Event*",
-      "details": "",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196291505",
-      "photos": 0,
-      "type": "estate",
-      "confidence": 0.9,
-      "status": "verified",
-      "lat": 30.33408,
-      "lon": -97.9810777,
-      "geocode": "source",
-      "hours": "2026-08-12 6:00 pm-8:30 pm; 2026-08-13 10:00 am-4:00 pm; 2026-08-14 10:00 am-4:00 pm; 2026-08-15 9:00 am-3:00 pm",
-      "company": "Blue Moon Estate Sale Company",
-      "in_person": true,
-      "external_id": "yss-224goldenbeardraustintx78738-2026-08-12",
-      "categories": [
-        "estate-sale",
-        "in-person"
-      ]
-    },
-    {
       "address": "200 Cottontail Ln, Georgetown, TX 78626",
       "dates": "2026-08-15 – 2026-08-16",
       "date_from": "2026-08-15",
@@ -109,86 +83,6 @@
       ]
     },
     {
-      "address": "350 Anchor Hill Rd, San Marcos, TX 78666",
-      "dates": "Sat Aug 15 – Sat Aug 15",
-      "date_from": "08/15/2026",
-      "date_to": "08/15/2026",
-      "end_date": "2026-08-15",
-      "title": "Huge Garage Sale!",
-      "details": "",
-      "source": "GarageSaleFinder",
-      "url": "https://garagesalefinder.com/s/N9w60/350-anchor-hill-rd-san-marcos-tx-78666",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.65,
-      "status": "verified",
-      "lat": 30.2672,
-      "lon": -97.7431,
-      "geocode": "city-center"
-    },
-    {
-      "address": "1940 TH Johnson, Taylor, TX 76574",
-      "dates": "Sat Aug 15 – Sat Aug 15",
-      "date_from": "08/15/2026",
-      "date_to": "08/15/2026",
-      "end_date": "2026-08-15",
-      "title": "Garage Sale",
-      "details": "",
-      "source": "GarageSaleFinder",
-      "url": "https://garagesalefinder.com/s/N9wzt/1940-th-johnson-taylor-tx-76574",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.65,
-      "status": "verified",
-      "lat": 30.2672,
-      "lon": -97.7431,
-      "geocode": "city-center"
-    },
-    {
-      "address": "308 Portsmouth Dr, Georgetown, TX 78633",
-      "dates": "2026-08-14 – 2026-08-15",
-      "date_from": "2026-08-14",
-      "date_to": "2026-08-15",
-      "end_date": "2026-08-15",
-      "title": "Chantal's Promotes Another Sweet Sun City Estate Sale Offering Pre-Sale On Large Items",
-      "details": "",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196341427",
-      "photos": 0,
-      "type": "estate",
-      "confidence": 0.9,
-      "status": "verified",
-      "lat": 30.7305338,
-      "lon": -97.7170798,
-      "geocode": "source",
-      "hours": "2026-08-14 9:00 am-4:00 pm; 2026-08-15 9:00 am-4:00 pm",
-      "company": "Chantal's Estate Sales",
-      "in_person": true,
-      "external_id": "yss-308portsmouthdrgeorgetowntx78633-2026-08-14",
-      "categories": [
-        "estate-sale",
-        "in-person"
-      ]
-    },
-    {
-      "address": "948 Divine Way, New Braunfels, TX 78130",
-      "dates": "Sat Aug 15 – Sat Aug 15",
-      "date_from": "08/15/2026",
-      "date_to": "08/15/2026",
-      "end_date": "2026-08-15",
-      "title": "Garage Sale - 8/15 @ 7AM",
-      "details": "",
-      "source": "GarageSaleFinder",
-      "url": "https://garagesalefinder.com/s/N9w8G/948-divine-way-new-braunfels-tx-78130",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.65,
-      "status": "verified",
-      "lat": 30.2672,
-      "lon": -97.7431,
-      "geocode": "city-center"
-    },
-    {
       "address": "hidden, Buda, TX 78610",
       "dates": "2026-08-21 – 2026-08-23",
       "date_from": "2026-08-21",
@@ -215,28 +109,6 @@
       "external_id": "eso-2453764"
     },
     {
-      "address": "Austin, TX",
-      "dates": "2026-08-11 – 2026-08-15",
-      "date_from": "2026-08-11",
-      "date_to": "2026-08-15",
-      "end_date": "2026-08-15",
-      "title": "Extraordinary Curated Collection | • Vintage Textiles • Art • Fabrics • Silver • Fine China •Books",
-      "details": "By Appointment",
-      "source": "EstateSales.net",
-      "url": "https://www.estatesales.net/TX/Austin/78746/5028987",
-      "photos": 0,
-      "type": "estate",
-      "categories": [
-        "estate-sale"
-      ],
-      "confidence": 0.65,
-      "status": "verified",
-      "lat": 30.2672,
-      "lon": -97.7431,
-      "geocode": "city-center",
-      "company": null
-    },
-    {
       "address": "1701 W 33rd St, Austin, TX 78703",
       "dates": "2026-08-14 – 2026-08-16",
       "date_from": "2026-08-14",
@@ -260,28 +132,6 @@
         "estate-sale",
         "in-person"
       ]
-    },
-    {
-      "address": "105 Red Oak Ct, Georgetown, TX 78628",
-      "dates": "2026-08-14 – 2026-08-15",
-      "date_from": "2026-08-14",
-      "date_to": "2026-08-15",
-      "end_date": "2026-08-15",
-      "title": "Multi Family Garage Sale, Even The Boys Are Involved!",
-      "details": "",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196345859",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.88,
-      "status": "verified",
-      "lat": 30.611776,
-      "lon": -97.707752,
-      "geocode": "source",
-      "external_id": "yss-105redoakctgeorgetowntx78628-2026-08-14",
-      "categories": [
-        "garage-sale"
-      ]
     }
   ],
   "hot_zones": [
@@ -299,9 +149,9 @@
     "garagesalefinder.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 13,
+  "total_locations": 6,
   "status": "live",
-  "date": "2026-08-15",
-  "last_refresh": "2026-08-15T02:32:08-05:00",
+  "date": "2026-08-16",
+  "last_refresh": "2026-08-16T04:55:50-05:00",
   "permits": []
 }

@@ -1,0 +1,113 @@
+{
+  "type": "FeatureCollection",
+  "properties": {
+    "target_date": "2026-08-20",
+    "generated_at": "2026-08-16T04:55:53-05:00",
+    "count": 2,
+    "project": "Chicas-Map"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.6490584,
+          29.7487321
+        ]
+      },
+      "properties": {
+        "sale_id": "2026-08-14_boerne-tx-78015",
+        "title": "Luxury Entertainment & Lifestyle in Boerne, TX- Bidding Ends 8/26 6:30PM CDT PU 8/28 10AM-2PM",
+        "sale_type": "estate",
+        "date_start": "2026-08-14",
+        "date_end": "2026-08-26",
+        "start_time": "",
+        "end_time": "",
+        "address": "Boerne, TX 78015",
+        "city": "San Antonio",
+        "state": "TX",
+        "zip": "",
+        "latitude": 29.7487321,
+        "longitude": -98.6490584,
+        "description": "Caring Transitions of Boerne, Fredericksburg, and Kerrville. Welcome Home to CTBids! We put together an excellent selection of items for you! Start exploring and discover the deals for yourself! Bidding on ALL items starts at $1! Step into a beautifully curated home in exclusive Stone Creek Ranch, where i...",
+        "highlights": [],
+        "source_urls": [
+          "https://estatesales.org/estate-sales/tx/boerne/78015/luxury-entertainment-lifestyle-in-boerne-2457368"
+        ],
+        "original_url": "https://estatesales.org/estate-sales/tx/boerne/78015/luxury-entertainment-lifestyle-in-boerne-2457368",
+        "source_names": [
+          "EstateSales.org"
+        ],
+        "photos": [
+          "https://estatesales.org/uploads/2024/02/04/m/7/5/2392475/4PGu6-1.jpeg",
+          "https://estatesales.org/2036244653/css/images/social/facebook.png",
+          "https://eso-cdn.tlcdn.workers.dev/s-2457368-83wfx6zdhmnau5p9-t.webp",
+          "https://eso-cdn.tlcdn.workers.dev/s-2457368-lj5hl50tzueh0luk-t.webp",
+          "https://eso-cdn.tlcdn.workers.dev/s-2457368-y5kugfyo2mp6vrp0-t.webp",
+          "https://eso-cdn.tlcdn.workers.dev/s-2457368-7t5nh1pbekcbdra6-t.webp"
+        ],
+        "confidence": 96,
+        "verified_at": "2026-08-16T04:55:50-05:00",
+        "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.7487321,-98.6490584",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.7487321,-98.6490584",
+        "status": "verified",
+        "geocode_method": "source",
+        "notes": "",
+        "community_source": "",
+        "community_link_or_notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.6105703,
+          29.5269768
+        ]
+      },
+      "properties": {
+        "sale_id": "2026-08-14_san-antonio-tx-78240",
+        "title": "Treasures at Terra View: Bidding ENDS 8/23 @ 7PM!",
+        "sale_type": "estate",
+        "date_start": "2026-08-14",
+        "date_end": "2026-08-23",
+        "start_time": "",
+        "end_time": "",
+        "address": "San Antonio, TX 78240",
+        "city": "San Antonio",
+        "state": "TX",
+        "zip": "",
+        "latitude": 29.5269768,
+        "longitude": -98.6105703,
+        "description": "Caring Transitions of San Antonio Northwest. Welcome Home to CTBids! We put together an excellent selection of items for you! Start exploring and discover the deals for yourself! Bidding on ALL items starts at $1! A beautifully eclectic collection where vintage charm meets treasures from n...",
+        "highlights": [],
+        "source_urls": [
+          "https://estatesales.org/estate-sales/tx/san-antonio/78240/treasures-at-terra-view-bidding-2457430"
+        ],
+        "original_url": "https://estatesales.org/estate-sales/tx/san-antonio/78240/treasures-at-terra-view-bidding-2457430",
+        "source_names": [
+          "EstateSales.org"
+        ],
+        "photos": [
+          "https://estatesales.org/uploads/2025/05/30/m/5/2/2632652/4qYyY-1.jpeg",
+          "https://estatesales.org/2036244653/css/images/social/facebook.png",
+          "https://eso-cdn.tlcdn.workers.dev/s-2457430-iwz89sj7vebsc60u-t.webp",
+          "https://eso-cdn.tlcdn.workers.dev/s-2457430-fi5g6i7w4pi36v4w-t.webp",
+          "https://eso-cdn.tlcdn.workers.dev/s-2457430-rp07wbxi0l12qrzl-t.webp",
+          "https://eso-cdn.tlcdn.workers.dev/s-2457430-7fii3o961qot3vh2-t.webp"
+        ],
+        "confidence": 96,
+        "verified_at": "2026-08-16T04:55:50-05:00",
+        "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5269768,-98.6105703",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.5269768,-98.6105703",
+        "status": "verified",
+        "geocode_method": "source",
+        "notes": "",
+        "community_source": "",
+        "community_link_or_notes": ""
+      }
+    }
+  ]
+}
