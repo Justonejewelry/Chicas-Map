@@ -9,7 +9,6 @@
   const LAYER_ID = "yb-food-pantries-layer";
   const LAYER_LABEL = "yb-food-pantries-label";
   const TOGGLE_ID = "btnFoodPantry";
-  // High-visibility yellows
   const YELLOW_24 = "#FFD400";
   const YELLOW_LTD = "#FFB000";
   const YELLOW_STROKE = "#5C4A00";
@@ -133,11 +132,7 @@
     map.setPaintProperty(LAYER_ID, "circle-stroke-color", YELLOW_STROKE);
     map.setPaintProperty(LAYER_ID, "circle-stroke-width", 2.5);
     map.setPaintProperty(LAYER_ID, "circle-radius", [
-      "interpolate",
-      ["linear"],
-      ["zoom"],
-      9, 7,
-      14, 14,
+      "interpolate", ["linear"], ["zoom"], 9, 7, 14, 14,
     ]);
     map.setPaintProperty(LAYER_ID, "circle-opacity", 0.98);
     if (map.getLayer(LAYER_LABEL)) {
@@ -205,17 +200,24 @@
               p.is_24h === true ||
               p.is_24h === "true" ||
               String(hours).includes("24");
-            const html = `
-        <div style="font-family:system-ui,sans-serif;max-width:260px">
-          <div style="font-weight:700;font-size:14px;color:#5C4A00;margin-bottom:4px">🥫 ${p.name || "Food Pantry"}</div>
-          <div style="font-size:12px;color:#444;margin-bottom:6px">${p.address || ""}</div>
-          <div style="font-size:12px;font-weight:600;margin-bottom:8px">${is24 ? "Open 24/7" : hours}</div>
-          <div style="font-size:11px;line-height:1.4;color:#333;background:#fff8d6;padding:8px;border-radius:8px;margin-bottom:8px">${BLURB}</div>
-          <div style="display:flex;flex-direction:column;gap:6px">
-            <a href="https://communityfirsthealthplans.com/food-pantry/" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;color:#5C4A00;text-decoration:none">Official map & Adopt a Pantry →</a>
-            <button type="button" id="yb-restock-share" style="font-size:12px;padding:6px 10px;border-radius:8px;border:1px solid #5C4A00;background:#fff3b0;color:#5C4A00;font-weight:600;cursor:pointer">Share restock invite</button>
-          </div>
-        </div>`;
+            const html =
+              '<div style="font-family:system-ui,sans-serif;max-width:260px">' +
+              '<div style="font-weight:700;font-size:14px;color:#5C4A00;margin-bottom:4px">🥫 ' +
+              (p.name || "Food Pantry") +
+              "</div>" +
+              '<div style="font-size:12px;color:#444;margin-bottom:6px">' +
+              (p.address || "") +
+              "</div>" +
+              '<div style="font-size:12px;font-weight:600;margin-bottom:8px">' +
+              (is24 ? "Open 24/7" : hours) +
+              "</div>" +
+              '<div style="font-size:11px;line-height:1.4;color:#333;background:#fff8d6;padding:8px;border-radius:8px;margin-bottom:8px">' +
+              BLURB +
+              "</div>" +
+              '<div style="display:flex;flex-direction:column;gap:6px">' +
+              '<a href="https://communityfirsthealthplans.com/food-pantry/" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;color:#5C4A00;text-decoration:none">Official map & Adopt a Pantry →</a>' +
+              '<button type="button" id="yb-restock-share" style="font-size:12px;padding:6px 10px;border-radius:8px;border:1px solid #5C4A00;background:#fff3b0;color:#5C4A00;font-weight:600;cursor:pointer">Share restock invite</button>' +
+              "</div></div>";
             if (window.__ybPinPopup) {
               try { window.__ybPinPopup.remove(); } catch (_) {}
             }
@@ -231,7 +233,12 @@
               const btn = document.getElementById("yb-restock-share");
               if (btn) {
                 btn.onclick = () => {
-                  const text = `🥫 Community Food Pantry restock\n\n${p.name}\n${p.address}\n\nThese outdoor boxes stay full only because neighbors restock them. If you can drop a few cans, peanut butter, or hygiene items next time you pass by — it helps the next person who needs it.\n\nOfficial map: https://communityfirsthealthplans.com/food-pantry/\n\nShared from Chica Map`;
+                  const text =
+                    "🥫 Community Food Pantry restock\n\n" +
+                    p.name +
+                    "\n" +
+                    p.address +
+                    "\n\nThese outdoor boxes stay full only because neighbors restock them. If you can drop a few cans, peanut butter, or hygiene items next time you pass by — it helps the next person who needs it.\n\nOfficial map: https://communityfirsthealthplans.com/food-pantry/\n\nShared from Chica Map";
                   if (navigator.share) {
                     navigator.share({ title: "Restock a food pantry", text }).catch(() => {});
                   } else if (navigator.clipboard) {
@@ -252,7 +259,6 @@
             map.getCanvas().style.cursor = "";
           });
         } else {
-          // Layer already existed (e.g. previous session color) — force yellow
           applyYellowPaint(map);
         }
         layerBuilt = true;
@@ -340,12 +346,14 @@
   }
 
   function injectToggle() {
+    // Prefer Layers panel button — never inject a second Pantries control
+    if (document.getElementById(TOGGLE_ID)) return true;
+    if (document.querySelector(".rail-layers")) return true;
     const bar =
       document.querySelector(".feat-bar") ||
       document.querySelector(".tools-bar") ||
       document.querySelector(".map-tools");
     if (!bar) return false;
-    if (document.getElementById(TOGGLE_ID)) return true;
     const btn = document.createElement("button");
     btn.type = "button";
     btn.className = "tool-btn";
