@@ -32,6 +32,7 @@ docs/
   craigslist-swarm.md
   facebook-swarm.md
   improvements-backlog.md
+  preventing-crashes.md     # Webapp outage prevention + deploy checklist
 ```
 
 ## Quick Start for Map
@@ -41,6 +42,12 @@ docs/
 3. Or load the GeoJSON into any modern map library
 
 Public map: https://justonejewelry.github.io/Chicas-Map/
+
+## Preventing Future Crashes
+
+Operational rules for the GitHub Pages webapp (loader/`</script>` traps, JS syntax gates, MapLibre timing, service worker, deploy checklist):
+
+→ **[docs/preventing-crashes.md](docs/preventing-crashes.md)**
 
 ## Swarm Overview
 
