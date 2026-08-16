@@ -19,8 +19,8 @@
     var html = await res.text();
 
     html = html.split("js/layers-rail.js?v=depth1").join("js/layers-rail.js?v=depth3");
-    html = html.split('src="js/public-wifi-layer.js"').join('src="js/public-wifi-layer.js?v=wifi5"');
-    html = html.split('src="js/food-pantry-layer.js"').join('src="js/food-pantry-layer.js?v=pantry2"');
+    html = html.split('src="js/public-wifi-layer.js"').join('src="js/public-wifi-layer.js?v=wifi6"');
+    html = html.split('src="js/food-pantry-layer.js"').join('src="js/food-pantry-layer.js?v=pantry3"');
 
     var close = "<" + "/script>";
 
@@ -33,7 +33,7 @@
     if (html.indexOf("layer-timing-fix.js") < 0) {
       html = html.split('js/layers-rail.js?v=depth3">' + close).join(
         'js/layers-rail.js?v=depth3">' + close + "\n  " +
-        '<script src="js/layer-timing-fix.js?v=lt1">' + close
+        '<script src="js/layer-timing-fix.js?v=lt2">' + close
       );
     }
     if (html.indexOf("cls-fix.css") < 0) {

@@ -1,26 +1,11 @@
 /**
  * Chica Map — Layer timing fix
- * Ensures WiFi / Pantries layers attach after map style is ready,
- * survive style switches, and respond to Layer button clicks.
+ * Waits for map style before WiFi/Pantries attach; survives style swaps.
+ * Does NOT install a second click handler (layers-rail already owns clicks).
  */
 (function () {
   var WIFI_LAYER = "yb-public-wifi-layer";
   var PANTRY_LAYER = "yb-food-pantries-layer";
-
-  function toast(msg, ms) {
-    var el = document.getElementById("toast");
-    if (!el) {
-      console.log("[layer-timing]", msg);
-      return;
-    }
-    el.textContent = msg;
-    el.classList.remove("hidden");
-    el.style.display = "block";
-    setTimeout(function () {
-      el.classList.add("hidden");
-      el.style.display = "";
-    }, ms || 3200);
-  }
 
   function findMap() {
     if (window.__YB_MAP && window.__YB_MAP.getSource) return window.__YB_MAP;
@@ -68,28 +53,41 @@
     setTimeout(run, 3000);
   }
 
+  function setLayerVis(map, layerId, on) {
+    try {
+      if (map.getLayer && map.getLayer(layerId)) {
+        map.setLayoutProperty(layerId, "visibility", on ? "visible" : "none");
+      }
+    } catch (_) {}
+  }
+
+  function restoreIfActive(map) {
+    if (!map) return;
+    var wifiBtn = document.getElementById("btnPublicWifi");
+    if (wifiBtn && wifiBtn.classList.contains("active")) {
+      setLayerVis(map, WIFI_LAYER, true);
+      setLayerVis(map, "yb-public-wifi-label", true);
+    } else {
+      setLayerVis(map, WIFI_LAYER, false);
+      setLayerVis(map, "yb-public-wifi-label", false);
+    }
+    var pantryBtn = document.getElementById("btnFoodPantry");
+    if (pantryBtn && pantryBtn.classList.contains("active")) {
+      setLayerVis(map, PANTRY_LAYER, true);
+      setLayerVis(map, "yb-food-pantries-label", true);
+    } else {
+      setLayerVis(map, PANTRY_LAYER, false);
+      setLayerVis(map, "yb-food-pantries-label", false);
+    }
+  }
+
   function bindStyleSurvive(map) {
     if (!map || map.__chicaLayerStyleBound) return;
     map.__chicaLayerStyleBound = true;
     map.on("styledata", function () {
       setTimeout(function () {
         try {
-          var wifiBtn = document.getElementById("btnPublicWifi");
-          if (wifiBtn && wifiBtn.classList.contains("active") && window.ChicaPublicWifi) {
-            if (map.getLayer && !map.getLayer(WIFI_LAYER) && typeof window.ChicaPublicWifi.toggle === "function") {
-              window.ChicaPublicWifi.toggle().then(function () {
-                return window.ChicaPublicWifi.toggle();
-              });
-            }
-          }
-          var pantryBtn = document.getElementById("btnFoodPantry");
-          if (pantryBtn && pantryBtn.classList.contains("active") && window.ChicaFoodPantry) {
-            if (map.getLayer && !map.getLayer(PANTRY_LAYER) && typeof window.ChicaFoodPantry.toggle === "function") {
-              window.ChicaFoodPantry.toggle().then(function () {
-                return window.ChicaFoodPantry.toggle();
-              });
-            }
-          }
+          restoreIfActive(map);
         } catch (err) {
           console.warn("[layer-timing] style survive", err);
         }
@@ -97,116 +95,30 @@
     });
   }
 
-  function waitForMap(ms) {
-    return new Promise(function (resolve) {
-      var existing = findMap();
-      if (existing) return resolve(existing);
-      var n = 0;
-      var iv = setInterval(function () {
-        n++;
-        var m = findMap();
-        if (m) {
-          clearInterval(iv);
-          resolve(m);
-        } else if (n > Math.ceil((ms || 8000) / 100)) {
-          clearInterval(iv);
-          resolve(null);
-        }
-      }, 100);
-      window.addEventListener(
-        "yb-map-ready",
-        function onReady(e) {
-          var m = (e && e.detail && e.detail.map) || findMap();
-          if (m) {
-            window.removeEventListener("yb-map-ready", onReady);
-            clearInterval(iv);
-            resolve(m);
-          }
-        },
-        { once: true }
-      );
-    });
-  }
-
-  function wrapToggle(apiName, btnId, label) {
+  function wrapToggle(apiName) {
     var api = window[apiName];
     if (!api || typeof api.toggle !== "function" || api.__chicaTimingWrapped) return;
     var orig = api.toggle.bind(api);
     api.toggle = async function () {
-      var btn = document.getElementById(btnId);
       var map = findMap();
-      if (!map) {
-        toast("Loading map…");
-        map = await waitForMap(8000);
-      }
-      if (!map) {
-        toast("Map still loading — try " + label + " again in a second");
-        return;
-      }
-      window.__YB_MAP = map;
-      window.map = map;
-      bindStyleSurvive(map);
-
-      await new Promise(function (resolve) {
-        whenStyleReady(map, function () {
-          resolve();
+      if (map) {
+        window.__YB_MAP = map;
+        window.map = map;
+        bindStyleSurvive(map);
+        await new Promise(function (resolve) {
+          whenStyleReady(map, function () {
+            resolve();
+          });
         });
-      });
-
-      try {
-        await orig();
-      } catch (err) {
-        console.warn("[layer-timing] " + label + " toggle", err);
-        toast(label + " failed — try again");
-        return;
       }
-
-      setTimeout(function () {
-        try {
-          if (!btn || !btn.classList.contains("active")) return;
-          var layerId = label === "WiFi" ? WIFI_LAYER : PANTRY_LAYER;
-          if (map.getLayer && !map.getLayer(layerId)) {
-            whenStyleReady(map, function () {
-              orig();
-            });
-          }
-        } catch (_) {}
-      }, 700);
+      return orig();
     };
     api.__chicaTimingWrapped = true;
   }
 
-  function rebindButtons() {
-    wrapToggle("ChicaPublicWifi", "btnPublicWifi", "WiFi");
-    wrapToggle("ChicaFoodPantry", "btnFoodPantry", "Pantries");
-
-    function bind(id, apiName, label) {
-      var btn = document.getElementById(id);
-      if (!btn) return;
-      if (btn.__chicaTimingClick) {
-        btn.removeEventListener("click", btn.__chicaTimingClick, true);
-      }
-      btn.__chicaTimingClick = function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        var api = window[apiName];
-        if (api && typeof api.toggle === "function") {
-          api.toggle();
-        } else {
-          toast(label + " module still loading…");
-          setTimeout(function () {
-            if (window[apiName] && window[apiName].toggle) window[apiName].toggle();
-          }, 500);
-        }
-      };
-      btn.addEventListener("click", btn.__chicaTimingClick, true);
-    }
-    bind("btnPublicWifi", "ChicaPublicWifi", "WiFi");
-    bind("btnFoodPantry", "ChicaFoodPantry", "Pantries");
-  }
-
   function boot() {
-    rebindButtons();
+    wrapToggle("ChicaPublicWifi");
+    wrapToggle("ChicaFoodPantry");
     var m = findMap();
     if (m) bindStyleSurvive(m);
     window.addEventListener("yb-map-ready", function (e) {
@@ -215,7 +127,8 @@
         window.__YB_MAP = map;
         bindStyleSurvive(map);
       }
-      rebindButtons();
+      wrapToggle("ChicaPublicWifi");
+      wrapToggle("ChicaFoodPantry");
     });
   }
 
@@ -227,12 +140,10 @@
   setTimeout(boot, 600);
   setTimeout(boot, 1500);
   setTimeout(boot, 3500);
-  setTimeout(boot, 6000);
 
   window.ChicaLayerTiming = {
     findMap: findMap,
     whenStyleReady: whenStyleReady,
-    rebindButtons: rebindButtons,
-    waitForMap: waitForMap,
+    restoreIfActive: restoreIfActive,
   };
 })();
