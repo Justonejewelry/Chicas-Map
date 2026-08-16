@@ -1,0 +1,37 @@
+{
+  "updated": "2026-08-16T06:25:00-05:00",
+  "note": "Chica preferred sellers \u2014 gold spinning star (boost=true)",
+  "preferred": [
+    {
+      "address": "1370 Sunset View, Fischer, TX 78623",
+      "dates": "2026-08-20 \u2013 2026-08-22",
+      "date_from": "2026-08-20",
+      "date_to": "2026-08-22",
+      "end_date": "2026-08-22",
+      "hours": "10:00 AM \u2013 5:00 PM",
+      "title": "Hidden Jewel Estate Sale \u2013 North of Canyon Lake",
+      "details": "Ultra IMMACULATELY clean home with furniture, antiques & collectibles plus lawn & garden, housewares, decor and lots MORE! Preferred seller \u2013 gold star. Video tour available.",
+      "source": "EstateSales.net",
+      "url": "https://www.estatesales.net/TX/Fischer/78623/5030250",
+      "photos": 1,
+      "type": "estate",
+      "confidence": 0.98,
+      "status": "verified",
+      "lat": 29.933,
+      "lon": -98.1942,
+      "geocode": "approx",
+      "external_id": "esn-5030250-fischer",
+      "categories": [
+        "estate-sale",
+        "preferred",
+        "antiques",
+        "furniture"
+      ],
+      "boost": true,
+      "boost_until": "2026-08-23",
+      "preferred": true,
+      "company": "Preferred Seller",
+      "note": "Chica preferred \u2013 gold spinning star"
+    }
+  ]
+}
