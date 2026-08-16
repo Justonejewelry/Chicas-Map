@@ -7,9 +7,10 @@ compatibility_date = "2024-11-01"
 name = "WIFI_ROOM"
 class_name = "WifiRoom"
 
+# Free plan requires SQLite-backed DO classes
 [[migrations]]
 tag = "v1"
-new_classes = ["WifiRoom"]
+new_sqlite_classes = ["WifiRoom"]
 
 [vars]
 # Allowed browser origins (comma-separated). Add your Pages URL.
