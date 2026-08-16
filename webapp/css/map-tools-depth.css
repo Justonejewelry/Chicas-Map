@@ -1,4 +1,4 @@
-/* Chica Map — toolbar depth, layers, hover lighting */
+/* Chica Map — toolbar depth, layers, tools roll-up */
 body.grass-map .panel.rail {
   background: linear-gradient(180deg, #faf8f4 0%, #f3f0ea 100%) !important;
   box-shadow: 4px 0 32px rgba(20, 17, 15, 0.06);
@@ -10,7 +10,7 @@ body.grass-map .rail-scroll {
 
 /* Layers section */
 .rail-layers {
-  margin: 4px 0 14px !important;
+  margin: 4px 0 12px !important;
   padding: 12px !important;
   background: #fff !important;
   border: 1px solid #ebe6dc !important;
@@ -65,7 +65,6 @@ body.grass-map .rail-scroll {
 }
 .layer-btn:active {
   transform: translateY(0) !important;
-  box-shadow: 0 2px 8px rgba(20,17,15,.08) !important;
 }
 .layer-btn.active {
   background: linear-gradient(180deg, #e8f5ee 0%, #d8efe2 100%) !important;
@@ -76,12 +75,73 @@ body.grass-map .rail-scroll {
     0 8px 20px -8px rgba(26,107,60,.28) !important;
 }
 
-/* Tool buttons — depth + hover light */
-.tools-bar,
-.feat-bar {
+/* —— Tools roll-up —— */
+.tools-rollup {
+  margin: 0 0 14px !important;
+  border: 1px solid #ebe6dc !important;
+  border-radius: 16px !important;
+  background: #fff !important;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.9) inset,
+    0 8px 24px -12px rgba(20,17,15,.12) !important;
+  overflow: hidden;
+}
+.tools-rollup-summary {
+  list-style: none !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 12px 14px !important;
+  cursor: pointer !important;
+  user-select: none;
+  font-weight: 800 !important;
+  font-size: 0.72rem !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  color: #1a6b3c !important;
+  background: linear-gradient(180deg, #f7fbf8 0%, #eef6f1 100%) !important;
+  transition: background .15s ease, box-shadow .15s ease !important;
+}
+.tools-rollup-summary::-webkit-details-marker { display: none; }
+.tools-rollup-summary::marker { content: ""; }
+.tools-rollup-summary:hover {
+  background: linear-gradient(180deg, #eef8f1 0%, #e4f3ea 100%) !important;
+  box-shadow: inset 0 -1px 0 rgba(26,107,60,.08);
+}
+.tools-rollup-title {
+  flex: 0 0 auto;
+}
+.tools-rollup-hint {
+  flex: 1;
+  font-size: 0.68rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.02em !important;
+  text-transform: none !important;
+  color: #8a847a !important;
+}
+.tools-rollup-chevron {
+  font-size: 0.85rem;
+  opacity: 0.7;
+  transition: transform .2s ease;
+}
+.tools-rollup[open] .tools-rollup-chevron {
+  transform: rotate(180deg);
+}
+.tools-rollup-body {
+  padding: 10px 12px 14px !important;
+  border-top: 1px solid #ebe6dc;
+  background: #faf8f4;
+}
+
+/* Tool buttons inside roll-up */
+.tools-rollup .tools-bar,
+.tools-rollup .feat-bar {
   display: grid !important;
   grid-template-columns: 1fr 1fr 1fr !important;
   gap: 8px !important;
+  margin: 0 0 8px !important;
+  padding: 0 !important;
+  border: none !important;
 }
 .tool-btn {
   display: flex !important;
@@ -118,16 +178,11 @@ body.grass-map .rail-scroll {
     0 12px 24px -10px rgba(26,107,60,.25),
     0 0 0 1px rgba(26,107,60,.08) !important;
 }
-.tool-btn:active {
-  transform: translateY(0) !important;
-}
+.tool-btn:active { transform: translateY(0) !important; }
 .tool-btn.active {
   background: linear-gradient(180deg, #e8f5ee 0%, #d4eddf 100%) !important;
   border-color: #1a6b3c !important;
   color: #145530 !important;
-  box-shadow:
-    0 1px 0 rgba(255,255,255,.55) inset,
-    0 8px 18px -8px rgba(26,107,60,.3) !important;
 }
 .tool-btn span {
   opacity: 0.55 !important;
@@ -135,8 +190,9 @@ body.grass-map .rail-scroll {
   font-size: 0.72rem !important;
 }
 #btnWishlist { grid-column: 1 / -1; }
+#btnExport { display: flex !important; }
 
-/* Near / primary actions */
+/* Near / primary */
 #btnNearMe {
   box-shadow: 0 8px 22px rgba(26,107,60,.28) !important;
   transition: transform .15s ease, box-shadow .18s ease !important;
@@ -154,7 +210,6 @@ body.grass-map .rail-scroll {
   box-shadow: 0 8px 20px rgba(26,107,60,.28) !important;
 }
 
-/* Scope + day */
 .scope-btn,
 .day-btn {
   transition: transform .12s ease, box-shadow .15s ease, background .15s ease !important;
@@ -164,11 +219,7 @@ body.grass-map .rail-scroll {
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(20,17,15,.08);
 }
-.scope-btn.active {
-  box-shadow: 0 3px 12px rgba(20,17,15,.1) !important;
-}
 
-/* CTA */
 .rail-cta {
   box-shadow: 0 10px 28px rgba(26,107,60,.28) !important;
   transition: transform .15s ease, box-shadow .18s ease !important;
@@ -178,12 +229,10 @@ body.grass-map .rail-scroll {
   box-shadow: 0 16px 36px rgba(26,107,60,.34) !important;
 }
 
-/* Inputs depth */
 .loc-input,
 .keyword-input,
 .radius-select {
   box-shadow: inset 0 1px 2px rgba(20,17,15,.04), 0 2px 6px rgba(20,17,15,.03) !important;
-  transition: border-color .15s ease, box-shadow .15s ease !important;
 }
 .loc-input:focus,
 .keyword-input:focus,
@@ -191,16 +240,9 @@ body.grass-map .rail-scroll {
   box-shadow: 0 0 0 3px rgba(26,107,60,.14), inset 0 1px 2px rgba(20,17,15,.04) !important;
 }
 
-/* Forecast card */
 details.panel-block {
   box-shadow: 0 4px 16px rgba(26,107,60,.08) !important;
-  transition: box-shadow .15s ease !important;
 }
-details.panel-block:hover {
-  box-shadow: 0 8px 24px rgba(26,107,60,.12) !important;
-}
-
-/* Sale cards lift */
 .sale-item {
   transition: transform .15s ease, border-color .15s ease, box-shadow .18s ease !important;
 }
