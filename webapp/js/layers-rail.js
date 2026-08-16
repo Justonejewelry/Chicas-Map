@@ -36,32 +36,34 @@
   }
 
   function wireLayerButtons() {
-    var pantry = document.getElementById("btnFoodPantry");
-    if (pantry && !pantry.__ybWired) {
-      pantry.__ybWired = true;
-      pantry.addEventListener("click", function (e) {
+    function bindToggle(id, getter, label) {
+      var btn = document.getElementById(id);
+      if (!btn) return;
+      // Always (re)bind a single stable handler so late-loaded modules work
+      if (btn.__ybLayerHandler) {
+        btn.removeEventListener("click", btn.__ybLayerHandler, true);
+      }
+      btn.__ybLayerHandler = function (e) {
         e.preventDefault();
         e.stopPropagation();
-        if (window.ChicaFoodPantry && typeof window.ChicaFoodPantry.toggle === "function") {
-          window.ChicaFoodPantry.toggle();
+        var api = getter();
+        if (api && typeof api.toggle === "function") {
+          try {
+            api.toggle();
+          } catch (err) {
+            console.warn("[layers-rail]", label, err);
+            btn.classList.toggle("active");
+          }
         } else {
-          pantry.classList.toggle("active");
+          btn.classList.toggle("active");
+          console.warn("[layers-rail] " + label + " module not ready yet");
         }
-      });
+      };
+      btn.addEventListener("click", btn.__ybLayerHandler, true);
+      btn.__ybWired = true;
     }
-    var wifi = document.getElementById("btnPublicWifi");
-    if (wifi && !wifi.__ybWired) {
-      wifi.__ybWired = true;
-      wifi.addEventListener("click", function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        if (window.ChicaPublicWifi && typeof window.ChicaPublicWifi.toggle === "function") {
-          window.ChicaPublicWifi.toggle();
-        } else {
-          wifi.classList.toggle("active");
-        }
-      });
-    }
+    bindToggle("btnFoodPantry", function () { return window.ChicaFoodPantry; }, "Pantries");
+    bindToggle("btnPublicWifi", function () { return window.ChicaPublicWifi; }, "WiFi");
     var perm = document.getElementById("btnLayerPermits");
     if (perm && !perm.__ybWired) {
       perm.__ybWired = true;
@@ -167,4 +169,5 @@
   setTimeout(enhance, 400);
   setTimeout(enhance, 1000);
   setTimeout(enhance, 2200);
+  setTimeout(enhance, 4000);
 })();
