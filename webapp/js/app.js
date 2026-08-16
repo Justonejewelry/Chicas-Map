@@ -3,9 +3,45 @@
  * Loads the last known-good full app.js from a pinned commit via jsDelivr,
  * then local chica-go-fix.js (included from map.html) enhances Go/Near Me.
  *
- * To update the core app: change the commit SHA below after verifying a new build.
+ * Also patches maplibregl.Map so window.__YB_MAP is set when the core creates the map.
  */
 (function () {
+  // Capture the map instance the pinned core creates (it keeps `map` as a local).
+  function patchMap() {
+    if (!window.maplibregl || !window.maplibregl.Map) return false;
+    if (window.maplibregl.Map.__ybBootPatched) return true;
+    var Orig = window.maplibregl.Map;
+    function Wrapped(options) {
+      var m = new Orig(options);
+      try {
+        window.__YB_MAP = m;
+        window.map = m;
+        window.dispatchEvent(
+          new CustomEvent("yb-map-ready", { detail: { map: m } })
+        );
+      } catch (e) {}
+      return m;
+    }
+    Wrapped.prototype = Orig.prototype;
+    try {
+      Object.keys(Orig).forEach(function (k) {
+        try {
+          Wrapped[k] = Orig[k];
+        } catch (e) {}
+      });
+    } catch (e) {}
+    Wrapped.__ybBootPatched = true;
+    window.maplibregl.Map = Wrapped;
+    return true;
+  }
+  if (!patchMap()) {
+    var tries = 0;
+    var iv = setInterval(function () {
+      tries++;
+      if (patchMap() || tries > 40) clearInterval(iv);
+    }, 25);
+  }
+
   var PINNED =
     "https://cdn.jsdelivr.net/gh/Justonejewelry/Chicas-Map@bede2cc27d72df9effd1952c2f6a7bf47516646b/webapp/js/app.js";
 
