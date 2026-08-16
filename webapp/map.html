@@ -7,6 +7,11 @@
   <meta name="description" content="Find verified garage sales, yard sales, and estate sales near you in San Antonio." />
   <meta name="theme-color" content="#1a6b3c" />
   <link rel="canonical" href="https://justonejewelry.github.io/Chicas-Map/map.html" />
+  <!-- Reserve viewport before async shell loads (CLS) -->
+  <style>
+    html,body{margin:0;height:100%;height:100dvh;background:#e8f2ec;overflow:hidden}
+    #chica-boot{position:fixed;inset:0;display:grid;place-items:center;font:600 15px/1.4 system-ui,sans-serif;color:#145530}
+  </style>
   <script>
   (async function () {
     var src = "https://cdn.jsdelivr.net/gh/Justonejewelry/Chicas-Map@5e21ee7d2857944983914be34dc19babe4d56e85/webapp/map.html";
@@ -14,7 +19,7 @@
     if (!res.ok) throw new Error("fetch failed " + res.status);
     var html = await res.text();
     html = html.replace("js/layers-rail.js?v=depth1", "js/layers-rail.js?v=depth3");
-    html = html.replace('src="js/public-wifi-layer.js"', 'src="js/public-wifi-layer.js?v=wifi3"');
+    html = html.replace('src="js/public-wifi-layer.js"', 'src="js/public-wifi-layer.js?v=wifi4"');
     html = html.replace('src="js/food-pantry-layer.js"', 'src="js/food-pantry-layer.js?v=pantry2"');
     if (html.indexOf("preferred-overlay") < 0) {
       html = html.replace(
@@ -28,6 +33,12 @@
         "js/layers-rail.js?v=depth3\"></script>\n  <script src=\"js/layer-timing-fix.js?v=lt1\"></script>"
       );
     }
+    if (html.indexOf("cls-fix.css") < 0) {
+      html = html.replace(
+        "</head>",
+        '<link rel="stylesheet" href="css/cls-fix.css?v=cls1" />\n</head>'
+      );
+    }
     document.open();
     document.write(html);
     document.close();
@@ -39,6 +50,6 @@
   </script>
 </head>
 <body>
-  <p style="font-family:system-ui;padding:2rem">Loading Chica Map…</p>
+  <div id="chica-boot">Loading Chica Map…</div>
 </body>
 </html>
