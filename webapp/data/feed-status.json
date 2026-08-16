@@ -1,0 +1,10 @@
+{
+  "city": "san-antonio",
+  "date": "2026-08-16",
+  "last_refresh": "2026-08-16T04:30:00-05:00",
+  "total_locations": 33,
+  "public_count": 33,
+  "note": "Sunday soft refresh — purged 16 expired pins; 33 public still active through 2026-08-16+",
+  "hot_zones": ["Northwest / Braun–Tezel", "Hunters Creek", "78249 Spring Time", "Potranco (next weekend)"],
+  "status": "live"
+}
