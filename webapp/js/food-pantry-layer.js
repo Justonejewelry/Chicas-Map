@@ -1,8 +1,6 @@
 /**
  * Chica Map — 24h Food Pantry Layer
  * Toggleable overlay of Community First outdoor pantries.
- * Data: data/san-antonio-24h-food-pantries.geojson
- * Markers: bright yellow (easy to see on the basemap).
  */
 (function () {
   const SRC_ID = "yb-food-pantries";
@@ -19,8 +17,10 @@
   let mapRef = null;
   let restockPromptShown = false;
   let layerBuilt = false;
+  let toggleLock = false;
 
-  const BLURB = `These free outdoor boxes are open day & night so nobody waits for “business hours.” More people knowing about them means more use — that’s the point. If you can, leave something when you pass by (canned goods, peanut butter, rice, pasta, hygiene, baby supplies). The network only works when the community restocks it.`;
+  const BLURB =
+    "These free outdoor boxes are open day and night. If you can, leave something when you pass by.";
 
   function patchMapConstructor() {
     if (!window.maplibregl || !window.maplibregl.Map) return false;
@@ -74,10 +74,7 @@
       if (existing) return resolve(existing);
       const onReady = (e) => {
         const m = (e && e.detail && e.detail.map) || findMap();
-        if (m) {
-          cleanup();
-          resolve(m);
-        }
+        if (m) { cleanup(); resolve(m); }
       };
       const cleanup = () => {
         window.removeEventListener("yb-map-ready", onReady);
@@ -89,18 +86,10 @@
       const iv = setInterval(() => {
         n++;
         const m = findMap();
-        if (m) {
-          cleanup();
-          resolve(m);
-        } else if (n > 40) {
-          cleanup();
-          resolve(null);
-        }
+        if (m) { cleanup(); resolve(m); }
+        else if (n > 40) { cleanup(); resolve(null); }
       }, 100);
-      const to = setTimeout(() => {
-        cleanup();
-        resolve(findMap());
-      }, ms || 4000);
+      const to = setTimeout(() => { cleanup(); resolve(findMap()); }, ms || 4000);
     });
   }
 
@@ -110,10 +99,7 @@
       el.textContent = msg;
       el.classList.remove("hidden");
       el.style.display = "block";
-      setTimeout(() => {
-        el.classList.add("hidden");
-        el.style.display = "";
-      }, ms || 3500);
+      setTimeout(() => { el.classList.add("hidden"); el.style.display = ""; }, ms || 3500);
       return;
     }
     console.log("[food-pantry]", msg);
@@ -131,9 +117,7 @@
     ]);
     map.setPaintProperty(LAYER_ID, "circle-stroke-color", YELLOW_STROKE);
     map.setPaintProperty(LAYER_ID, "circle-stroke-width", 2.5);
-    map.setPaintProperty(LAYER_ID, "circle-radius", [
-      "interpolate", ["linear"], ["zoom"], 9, 7, 14, 14,
-    ]);
+    map.setPaintProperty(LAYER_ID, "circle-radius", ["interpolate", ["linear"], ["zoom"], 9, 7, 14, 14]);
     map.setPaintProperty(LAYER_ID, "circle-opacity", 0.98);
     if (map.getLayer(LAYER_LABEL)) {
       map.setPaintProperty(LAYER_LABEL, "text-color", LABEL_COLOR);
@@ -189,20 +173,16 @@
               "text-halo-width": 1.8,
             },
           });
-
           map.on("click", LAYER_ID, (e) => {
             const f = e.features && e.features[0];
             if (!f) return;
             const p = f.properties || {};
             const coords = f.geometry.coordinates.slice();
             const hours = p.hours || "24/7";
-            const is24 =
-              p.is_24h === true ||
-              p.is_24h === "true" ||
-              String(hours).includes("24");
+            const is24 = p.is_24h === true || p.is_24h === "true" || String(hours).includes("24");
             const html =
               '<div style="font-family:system-ui,sans-serif;max-width:260px">' +
-              '<div style="font-weight:700;font-size:14px;color:#5C4A00;margin-bottom:4px">🥫 ' +
+              '<div style="font-weight:700;font-size:14px;color:#5C4A00;margin-bottom:4px">' +
               (p.name || "Food Pantry") +
               "</div>" +
               '<div style="font-size:12px;color:#444;margin-bottom:6px">' +
@@ -213,10 +193,6 @@
               "</div>" +
               '<div style="font-size:11px;line-height:1.4;color:#333;background:#fff8d6;padding:8px;border-radius:8px;margin-bottom:8px">' +
               BLURB +
-              "</div>" +
-              '<div style="display:flex;flex-direction:column;gap:6px">' +
-              '<a href="https://communityfirsthealthplans.com/food-pantry/" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;color:#5C4A00;text-decoration:none">Official map & Adopt a Pantry →</a>' +
-              '<button type="button" id="yb-restock-share" style="font-size:12px;padding:6px 10px;border-radius:8px;border:1px solid #5C4A00;background:#fff3b0;color:#5C4A00;font-weight:600;cursor:pointer">Share restock invite</button>' +
               "</div></div>";
             if (window.__ybPinPopup) {
               try { window.__ybPinPopup.remove(); } catch (_) {}
@@ -229,29 +205,7 @@
               .setLngLat(coords)
               .setHTML(html)
               .addTo(map);
-            setTimeout(() => {
-              const btn = document.getElementById("yb-restock-share");
-              if (btn) {
-                btn.onclick = () => {
-                  const text =
-                    "🥫 Community Food Pantry restock\n\n" +
-                    p.name +
-                    "\n" +
-                    p.address +
-                    "\n\nThese outdoor boxes stay full only because neighbors restock them. If you can drop a few cans, peanut butter, or hygiene items next time you pass by — it helps the next person who needs it.\n\nOfficial map: https://communityfirsthealthplans.com/food-pantry/\n\nShared from Chica Map";
-                  if (navigator.share) {
-                    navigator.share({ title: "Restock a food pantry", text }).catch(() => {});
-                  } else if (navigator.clipboard) {
-                    navigator.clipboard.writeText(text).then(() => {
-                      btn.textContent = "Copied!";
-                      setTimeout(() => (btn.textContent = "Share restock invite"), 1500);
-                    });
-                  }
-                };
-              }
-            }, 50);
           });
-
           map.on("mouseenter", LAYER_ID, () => {
             map.getCanvas().style.cursor = "pointer";
           });
@@ -296,57 +250,56 @@
     span24.setAttribute("data-pantry-legend", "1");
     span24.innerHTML =
       '<i class="pin pantry-24" style="background:#FFD400;border-radius:50%;width:11px;height:11px;display:inline-block;margin-right:4px;vertical-align:middle;border:2px solid #5C4A00"></i> 24h Pantry';
-    const spanLtd = document.createElement("span");
-    spanLtd.setAttribute("data-pantry-legend", "1");
-    spanLtd.innerHTML =
-      '<i class="pin pantry-ltd" style="background:#FFB000;border-radius:50%;width:11px;height:11px;display:inline-block;margin-right:4px;vertical-align:middle;border:2px solid #5C4A00"></i> Limited hrs';
     legend.appendChild(span24);
-    legend.appendChild(spanLtd);
   }
 
   async function toggle() {
+    if (toggleLock) return;
+    toggleLock = true;
     const btn = document.getElementById(TOGGLE_ID);
-    if (btn) btn.disabled = true;
-
-    let map = findMap() || mapRef;
-    if (!map) {
-      toast("Loading map…");
-      map = await waitForMap(5000);
-    }
-    if (!map) {
-      toast("Map still loading — try again in a second");
-      if (btn) btn.disabled = false;
-      return;
-    }
-    mapRef = map;
-    window.__YB_MAP = map;
-
-    enabled = !enabled;
-    if (btn) {
-      btn.classList.toggle("active", enabled);
-      btn.disabled = false;
-    }
-
-    if (enabled) {
-      const data = await loadData();
-      if (!data || !data.features || !data.features.length) {
-        toast("Couldn’t load pantry data");
-        enabled = false;
-        if (btn) btn.classList.remove("active");
+    try {
+      if (btn) btn.disabled = true;
+      let map = findMap() || mapRef;
+      if (!map) {
+        toast("Loading map...");
+        map = await waitForMap(5000);
+      }
+      if (!map) {
+        toast("Map still loading — try again in a second");
         return;
       }
-      ensureLayer(map);
-      applyYellowPaint(map);
-      setVisible(map, true);
-      toast("🥫 Food pantries on — yellow dots");
-    } else {
-      setVisible(map, false);
-      toast("Food pantries off");
+      mapRef = map;
+      window.__YB_MAP = map;
+      enabled = !enabled;
+      const wantOn = enabled;
+      if (btn) btn.classList.toggle("active", wantOn);
+      if (wantOn) {
+        const data = await loadData();
+        if (!enabled) {
+          setVisible(map, false);
+          return;
+        }
+        if (!data || !data.features || !data.features.length) {
+          toast("Could not load pantry data");
+          enabled = false;
+          if (btn) btn.classList.remove("active");
+          return;
+        }
+        ensureLayer(map);
+        applyYellowPaint(map);
+        setVisible(map, true);
+        toast("Food pantries on — yellow dots");
+      } else {
+        setVisible(map, false);
+        toast("Food pantries off");
+      }
+    } finally {
+      toggleLock = false;
+      if (btn) btn.disabled = false;
     }
   }
 
   function injectToggle() {
-    // Prefer Layers panel button — never inject a second Pantries control
     if (document.getElementById(TOGGLE_ID)) return true;
     if (document.querySelector(".rail-layers")) return true;
     const bar =
@@ -359,7 +312,7 @@
     btn.className = "tool-btn";
     btn.id = TOGGLE_ID;
     btn.title = "24h Food Pantries (Community First)";
-    btn.innerHTML = "🥫 Pantries";
+    btn.innerHTML = "Pantries";
     btn.addEventListener("click", (e) => {
       e.preventDefault();
       e.stopPropagation();
@@ -374,23 +327,15 @@
     const stops = document.getElementById("routeStops");
     const hadStops = stops && stops.children && stops.children.length > 0;
     if (!hadStops && !(window.__YB_ROUTE_STOPS && window.__YB_ROUTE_STOPS.length)) return;
-
     restockPromptShown = true;
-    toast(
-      "🥫 Finished the sales? There’s a 24h food pantry near many routes — drop a couple cans if you can. Tap 🥫 Pantries to see them.",
-      7000
-    );
-    if (!enabled) setTimeout(() => toggle(), 400);
+    toast("Finished the sales? Tap Pantries to see 24h food boxes nearby.", 7000);
   }
 
   function wireRouteRestockHook() {
-    ["btnClearRoute", "btnShareRoute", "btnShareRoute2", "btnOpenRoute", "btnOpenRouteApple", "btnOpenRouteWaze"].forEach(
-      (id) => {
-        document.getElementById(id)?.addEventListener("click", () => {
-          setTimeout(showRestockNearMePrompt, 400);
-        });
-      }
-    );
+    ["btnClearRoute", "btnShareRoute", "btnShareRoute2"].forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) el.addEventListener("click", () => setTimeout(showRestockNearMePrompt, 400));
+    });
   }
 
   function boot() {
