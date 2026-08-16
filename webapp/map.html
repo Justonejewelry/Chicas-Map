@@ -19,8 +19,8 @@
     var html = await res.text();
 
     html = html.split("js/layers-rail.js?v=depth1").join("js/layers-rail.js?v=depth3");
-    html = html.split('src="js/public-wifi-layer.js"').join('src="js/public-wifi-layer.js?v=wifi6"');
-    html = html.split('src="js/food-pantry-layer.js"').join('src="js/food-pantry-layer.js?v=pantry3"');
+    html = html.split('src="js/public-wifi-layer.js"').join('src="js/public-wifi-layer.js?v=wifi7"');
+    html = html.split('src="js/food-pantry-layer.js"').join('src="js/food-pantry-layer.js?v=pantry4"');
 
     var close = "<" + "/script>";
 
@@ -47,6 +47,11 @@
     }
     if (html.indexOf("web-vitals-monitor.js") < 0) {
       html = html.split("</body>").join('<script src="js/web-vitals-monitor.js?v=cwv1">' + close + "\n</body>");
+    }
+    if (html.indexOf("layer-worker-client.js") < 0) {
+      html = html.split('src="js/public-wifi-layer.js').join(
+        'src="js/layer-worker-client.js?v=lw1">' + close + "\n  <script src=\"js/public-wifi-layer.js"
+      );
     }
 
     document.open();
