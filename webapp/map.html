@@ -17,45 +17,38 @@
     var res = await fetch(src + "?t=" + Date.now());
     if (!res.ok) throw new Error("fetch failed " + res.status);
     var html = await res.text();
-    html = html.replace("js/layers-rail.js?v=depth1", "js/layers-rail.js?v=depth3");
-    html = html.replace('src="js/public-wifi-layer.js"', 'src="js/public-wifi-layer.js?v=wifi5"');
-    html = html.replace('src="js/food-pantry-layer.js"', 'src="js/food-pantry-layer.js?v=pantry2"');
+
+    html = html.split("js/layers-rail.js?v=depth1").join("js/layers-rail.js?v=depth3");
+    html = html.split('src="js/public-wifi-layer.js"').join('src="js/public-wifi-layer.js?v=wifi5"');
+    html = html.split('src="js/food-pantry-layer.js"').join('src="js/food-pantry-layer.js?v=pantry2"');
+
+    var close = "<" + "/script>";
+
     if (html.indexOf("preferred-overlay") < 0) {
-      html = html.replace(
-        '<script src="js/user-overlay.js"><\/script>',
-        '<script src="js/user-overlay.js"><\/script>\n  <script src="js/preferred-overlay.js?v=pref1"><\/script>'
+      html = html.split('<script src="js/user-overlay.js">' + close).join(
+        '<script src="js/user-overlay.js">' + close + "\n  " +
+        '<script src="js/preferred-overlay.js?v=pref1">' + close
       );
     }
     if (html.indexOf("layer-timing-fix.js") < 0) {
-      html = html.replace(
-        'js/layers-rail.js?v=depth3"></script>',
-        'js/layers-rail.js?v=depth3"></script>\n  <script src="js/layer-timing-fix.js?v=lt1"></script>'
+      html = html.split('js/layers-rail.js?v=depth3">' + close).join(
+        'js/layers-rail.js?v=depth3">' + close + "\n  " +
+        '<script src="js/layer-timing-fix.js?v=lt1">' + close
       );
     }
     if (html.indexOf("cls-fix.css") < 0) {
-      html = html.replace(
-        "</head>",
-        '<link rel="stylesheet" href="css/cls-fix.css?v=cls1" />\n</head>'
-      );
+      html = html.split("</head>").join('<link rel="stylesheet" href="css/cls-fix.css?v=cls1" />\n</head>');
     }
     if (html.indexOf("chica-config.js") < 0) {
-      html = html.replace(
-        "</body>",
-        '<script src="js/chica-config.js?v=cfg1"></script>\n</body>'
-      );
+      html = html.split("</body>").join('<script src="js/chica-config.js?v=cfg1">' + close + "\n</body>");
     }
     if (html.indexOf("chica-analytics.js") < 0) {
-      html = html.replace(
-        "</body>",
-        '<script src="js/chica-analytics.js?v=an1"></script>\n</body>'
-      );
+      html = html.split("</body>").join('<script src="js/chica-analytics.js?v=an1">' + close + "\n</body>");
     }
     if (html.indexOf("web-vitals-monitor.js") < 0) {
-      html = html.replace(
-        "</body>",
-        '<script src="js/web-vitals-monitor.js?v=cwv1"></script>\n</body>'
-      );
+      html = html.split("</body>").join('<script src="js/web-vitals-monitor.js?v=cwv1">' + close + "\n</body>");
     }
+
     document.open();
     document.write(html);
     document.close();
