@@ -2,11 +2,6 @@
  * Chica Map — 24h Food Pantry Layer
  * Toggleable overlay of Community First outdoor pantries.
  * Data: data/san-antonio-24h-food-pantries.geojson
- *
- * - Green = true 24/7
- * - Amber = limited hours
- * - Legend entries when layer is on
- * - Soft “restock near me” prompt after route is finished/cleared
  */
 (function () {
   const SRC_ID = "yb-food-pantries";
@@ -17,8 +12,35 @@
   let enabled = false;
   let mapRef = null;
   let restockPromptShown = false;
+  let layerBuilt = false;
 
   const BLURB = `These free outdoor boxes are open day & night so nobody waits for “business hours.” More people knowing about them means more use — that’s the point. If you can, leave something when you pass by (canned goods, peanut butter, rice, pasta, hygiene, baby supplies). The network only works when the community restocks it.`;
+
+  /** Capture MapLibre map as soon as core creates it */
+  function patchMapConstructor() {
+    if (!window.maplibregl || !window.maplibregl.Map) return false;
+    if (window.maplibregl.Map.__ybPantryPatched) return true;
+    const Orig = window.maplibregl.Map;
+    function Wrapped(options) {
+      const m = new Orig(options);
+      try {
+        window.__YB_MAP = m;
+        window.map = m;
+        mapRef = m;
+        window.dispatchEvent(new CustomEvent("yb-map-ready", { detail: { map: m } }));
+      } catch (_) {}
+      return m;
+    }
+    Wrapped.prototype = Orig.prototype;
+    try {
+      Object.keys(Orig).forEach((k) => {
+        try { Wrapped[k] = Orig[k]; } catch (_) {}
+      });
+    } catch (_) {}
+    Wrapped.__ybPantryPatched = true;
+    window.maplibregl.Map = Wrapped;
+    return true;
+  }
 
   async function loadData() {
     if (pantryData) return pantryData;
@@ -33,80 +55,129 @@
   }
 
   function findMap() {
+    if (mapRef && mapRef.getSource) return mapRef;
+    if (window.__YB_MAP && window.__YB_MAP.getSource) return window.__YB_MAP;
     if (window.map && window.map.getSource) return window.map;
-    if (window.__YB_MAP) return window.__YB_MAP;
-    if (window.maplibregl) {
-      const el = document.getElementById("map");
-      if (el && el._map) return el._map;
-    }
+    const el = document.getElementById("map");
+    if (el && el._map && el._map.getSource) return el._map;
     return null;
   }
 
-  function ensureLayer(map) {
-    if (!map || !pantryData) return;
-    if (map.getSource(SRC_ID)) {
-      map.getSource(SRC_ID).setData(pantryData);
+  function waitForMap(ms) {
+    return new Promise((resolve) => {
+      const existing = findMap();
+      if (existing) return resolve(existing);
+      const onReady = (e) => {
+        const m = (e && e.detail && e.detail.map) || findMap();
+        if (m) {
+          cleanup();
+          resolve(m);
+        }
+      };
+      const cleanup = () => {
+        window.removeEventListener("yb-map-ready", onReady);
+        clearInterval(iv);
+        clearTimeout(to);
+      };
+      window.addEventListener("yb-map-ready", onReady);
+      let n = 0;
+      const iv = setInterval(() => {
+        n++;
+        const m = findMap();
+        if (m) {
+          cleanup();
+          resolve(m);
+        } else if (n > 40) {
+          cleanup();
+          resolve(null);
+        }
+      }, 100);
+      const to = setTimeout(() => {
+        cleanup();
+        resolve(findMap());
+      }, ms || 4000);
+    });
+  }
+
+  function toast(msg, ms) {
+    const el = document.getElementById("toast");
+    if (el) {
+      el.textContent = msg;
+      el.classList.remove("hidden");
+      el.style.display = "block";
+      setTimeout(() => {
+        el.classList.add("hidden");
+        el.style.display = "";
+      }, ms || 3500);
       return;
     }
-    map.addSource(SRC_ID, {
-      type: "geojson",
-      data: pantryData,
-    });
+    console.log("[food-pantry]", msg);
+  }
 
-    // Color by is_24h: green for 24/7, amber for limited-hour sites
-    map.addLayer({
-      id: LAYER_ID,
-      type: "circle",
-      source: SRC_ID,
-      paint: {
-        "circle-radius": ["interpolate", ["linear"], ["zoom"], 9, 5, 14, 11],
-        "circle-color": [
-          "case",
-          ["==", ["get", "is_24h"], true],
-          "#2d8a4e",
-          ["==", ["get", "is_24h"], false],
-          "#c47a12",
-          "#2d8a4e"
-        ],
-        "circle-stroke-width": 2,
-        "circle-stroke-color": "#ffffff",
-        "circle-opacity": 0.92,
-      },
-    });
+  function ensureLayer(map) {
+    if (!map || !pantryData) return false;
+    const add = () => {
+      try {
+        if (!map.getSource(SRC_ID)) {
+          map.addSource(SRC_ID, { type: "geojson", data: pantryData });
+        } else {
+          map.getSource(SRC_ID).setData(pantryData);
+        }
+        if (!map.getLayer(LAYER_ID)) {
+          map.addLayer({
+            id: LAYER_ID,
+            type: "circle",
+            source: SRC_ID,
+            paint: {
+              "circle-radius": ["interpolate", ["linear"], ["zoom"], 9, 5, 14, 11],
+              "circle-color": [
+                "case",
+                ["any", ["==", ["get", "is_24h"], true], ["==", ["get", "is_24h"], "true"]],
+                "#2d8a4e",
+                ["any", ["==", ["get", "is_24h"], false], ["==", ["get", "is_24h"], "false"]],
+                "#c47a12",
+                "#2d8a4e",
+              ],
+              "circle-stroke-width": 2,
+              "circle-stroke-color": "#ffffff",
+              "circle-opacity": 0.92,
+            },
+          });
+          map.addLayer({
+            id: LAYER_LABEL,
+            type: "symbol",
+            source: SRC_ID,
+            minzoom: 13,
+            layout: {
+              "text-field": ["get", "name"],
+              "text-size": 11,
+              "text-offset": [0, 1.2],
+              "text-anchor": "top",
+              "text-max-width": 12,
+            },
+            paint: {
+              "text-color": [
+                "case",
+                ["any", ["==", ["get", "is_24h"], true], ["==", ["get", "is_24h"], "true"]],
+                "#1a6b3c",
+                "#8a5508",
+              ],
+              "text-halo-color": "#fff",
+              "text-halo-width": 1.5,
+            },
+          });
 
-    map.addLayer({
-      id: LAYER_LABEL,
-      type: "symbol",
-      source: SRC_ID,
-      minzoom: 13,
-      layout: {
-        "text-field": ["get", "name"],
-        "text-size": 11,
-        "text-offset": [0, 1.2],
-        "text-anchor": "top",
-        "text-max-width": 12,
-      },
-      paint: {
-        "text-color": [
-          "case",
-          ["==", ["get", "is_24h"], true],
-          "#1a6b3c",
-          "#8a5508"
-        ],
-        "text-halo-color": "#fff",
-        "text-halo-width": 1.5,
-      },
-    });
-
-    map.on("click", LAYER_ID, (e) => {
-      const f = e.features && e.features[0];
-      if (!f) return;
-      const p = f.properties || {};
-      const coords = f.geometry.coordinates.slice();
-      const hours = p.hours || "24/7";
-      // GeoJSON properties may arrive as strings after serialization
-      const is24 = p.is_24h === true || p.is_24h === "true" || String(hours).includes("24");
-      const html = `
+          map.on("click", LAYER_ID, (e) => {
+            const f = e.features && e.features[0];
+            if (!f) return;
+            const p = f.properties || {};
+            const coords = f.geometry.coordinates.slice();
+            const hours = p.hours || "24/7";
+            const is24 =
+              p.is_24h === true ||
+              p.is_24h === "true" ||
+              String(hours).includes("24");
+            const html = `
         <div style="font-family:system-ui,sans-serif;max-width:260px">
           <div style="font-weight:700;font-size:14px;color:${is24 ? "#1a6b3c" : "#8a5508"};margin-bottom:4px">🥫 ${p.name || "Food Pantry"}</div>
           <div style="font-size:12px;color:#444;margin-bottom:6px">${p.address || ""}</div>
@@ -117,82 +188,134 @@
             <button type="button" id="yb-restock-share" style="font-size:12px;padding:6px 10px;border-radius:8px;border:1px solid #1a6b3c;background:#eaf5ee;color:#1a6b3c;font-weight:600;cursor:pointer">Share restock invite</button>
           </div>
         </div>`;
-      if (window.__ybPinPopup) {
-        try { window.__ybPinPopup.remove(); } catch (_) {}
-      }
-      window.__ybPinPopup = new maplibregl.Popup({ offset: 12, closeButton: true, maxWidth: "280px" })
-        .setLngLat(coords)
-        .setHTML(html)
-        .addTo(map);
-      setTimeout(() => {
-        const btn = document.getElementById("yb-restock-share");
-        if (btn) {
-          btn.onclick = () => {
-            const text = `🥫 Community Food Pantry restock\n\n${p.name}\n${p.address}\n\nThese outdoor boxes stay full only because neighbors restock them. If you can drop a few cans, peanut butter, or hygiene items next time you pass by — it helps the next person who needs it.\n\nOfficial map: https://communityfirsthealthplans.com/food-pantry/\n\nShared from Chica Map`;
-            if (navigator.share) {
-              navigator.share({ title: "Restock a food pantry", text }).catch(() => {});
-            } else if (navigator.clipboard) {
-              navigator.clipboard.writeText(text).then(() => {
-                btn.textContent = "Copied!";
-                setTimeout(() => (btn.textContent = "Share restock invite"), 1500);
-              });
+            if (window.__ybPinPopup) {
+              try { window.__ybPinPopup.remove(); } catch (_) {}
             }
-          };
-        }
-      }, 50);
-    });
+            window.__ybPinPopup = new maplibregl.Popup({
+              offset: 12,
+              closeButton: true,
+              maxWidth: "280px",
+            })
+              .setLngLat(coords)
+              .setHTML(html)
+              .addTo(map);
+            setTimeout(() => {
+              const btn = document.getElementById("yb-restock-share");
+              if (btn) {
+                btn.onclick = () => {
+                  const text = `🥫 Community Food Pantry restock\n\n${p.name}\n${p.address}\n\nThese outdoor boxes stay full only because neighbors restock them. If you can drop a few cans, peanut butter, or hygiene items next time you pass by — it helps the next person who needs it.\n\nOfficial map: https://communityfirsthealthplans.com/food-pantry/\n\nShared from Chica Map`;
+                  if (navigator.share) {
+                    navigator.share({ title: "Restock a food pantry", text }).catch(() => {});
+                  } else if (navigator.clipboard) {
+                    navigator.clipboard.writeText(text).then(() => {
+                      btn.textContent = "Copied!";
+                      setTimeout(() => (btn.textContent = "Share restock invite"), 1500);
+                    });
+                  }
+                };
+              }
+            }, 50);
+          });
 
-    map.on("mouseenter", LAYER_ID, () => { map.getCanvas().style.cursor = "pointer"; });
-    map.on("mouseleave", LAYER_ID, () => { map.getCanvas().style.cursor = ""; });
+          map.on("mouseenter", LAYER_ID, () => {
+            map.getCanvas().style.cursor = "pointer";
+          });
+          map.on("mouseleave", LAYER_ID, () => {
+            map.getCanvas().style.cursor = "";
+          });
+        }
+        layerBuilt = true;
+        return true;
+      } catch (err) {
+        console.warn("[food-pantry] ensureLayer error", err);
+        return false;
+      }
+    };
+
+    if (map.isStyleLoaded && map.isStyleLoaded()) return add();
+    map.once("load", add);
+    // style may already be loading
+    map.once("styledata", () => {
+      if (!layerBuilt) add();
+    });
+    // immediate attempt in case already loaded
+    return add();
   }
 
   function setVisible(map, on) {
     if (!map) return;
     const vis = on ? "visible" : "none";
-    if (map.getLayer(LAYER_ID)) map.setLayoutProperty(LAYER_ID, "visibility", vis);
-    if (map.getLayer(LAYER_LABEL)) map.setLayoutProperty(LAYER_LABEL, "visibility", vis);
+    try {
+      if (map.getLayer(LAYER_ID)) map.setLayoutProperty(LAYER_ID, "visibility", vis);
+      if (map.getLayer(LAYER_LABEL)) map.setLayoutProperty(LAYER_LABEL, "visibility", vis);
+    } catch (_) {}
     updateLegend(on);
   }
 
   function updateLegend(show) {
     const legend = document.querySelector(".map-legend");
     if (!legend) return;
-    // Remove previous pantry legend entries
     legend.querySelectorAll("[data-pantry-legend]").forEach((el) => el.remove());
     if (!show) return;
     const span24 = document.createElement("span");
     span24.setAttribute("data-pantry-legend", "1");
-    span24.innerHTML = '<i class="pin pantry-24" style="background:#2d8a4e;border-radius:50%;width:10px;height:10px;display:inline-block;margin-right:4px;vertical-align:middle;border:1px solid #fff;box-shadow:0 0 0 1px #2d8a4e"></i> 24h Pantry';
+    span24.innerHTML =
+      '<i class="pin pantry-24" style="background:#2d8a4e;border-radius:50%;width:10px;height:10px;display:inline-block;margin-right:4px;vertical-align:middle;border:1px solid #fff;box-shadow:0 0 0 1px #2d8a4e"></i> 24h Pantry';
     const spanLtd = document.createElement("span");
     spanLtd.setAttribute("data-pantry-legend", "1");
-    spanLtd.innerHTML = '<i class="pin pantry-ltd" style="background:#c47a12;border-radius:50%;width:10px;height:10px;display:inline-block;margin-right:4px;vertical-align:middle;border:1px solid #fff;box-shadow:0 0 0 1px #c47a12"></i> Limited hrs';
+    spanLtd.innerHTML =
+      '<i class="pin pantry-ltd" style="background:#c47a12;border-radius:50%;width:10px;height:10px;display:inline-block;margin-right:4px;vertical-align:middle;border:1px solid #fff;box-shadow:0 0 0 1px #c47a12"></i> Limited hrs';
     legend.appendChild(span24);
     legend.appendChild(spanLtd);
   }
 
   async function toggle() {
-    const map = findMap() || mapRef;
+    const btn = document.getElementById(TOGGLE_ID);
+    if (btn) btn.disabled = true;
+
+    let map = findMap() || mapRef;
     if (!map) {
-      console.warn("[food-pantry] map not ready yet");
+      toast("Loading map…");
+      map = await waitForMap(5000);
+    }
+    if (!map) {
+      toast("Map still loading — try again in a second");
+      if (btn) btn.disabled = false;
       return;
     }
     mapRef = map;
+    window.__YB_MAP = map;
+
     enabled = !enabled;
-    const btn = document.getElementById(TOGGLE_ID);
-    if (btn) btn.classList.toggle("active", enabled);
+    if (btn) {
+      btn.classList.toggle("active", enabled);
+      btn.disabled = false;
+    }
 
     if (enabled) {
-      await loadData();
+      const data = await loadData();
+      if (!data || !data.features || !data.features.length) {
+        toast("Couldn’t load pantry data");
+        enabled = false;
+        if (btn) btn.classList.remove("active");
+        return;
+      }
       ensureLayer(map);
       setVisible(map, true);
+      toast("🥫 Food pantries on — green = 24/7, amber = limited hours");
     } else {
       setVisible(map, false);
+      toast("Food pantries off");
     }
   }
 
   function injectToggle() {
-    const bar = document.querySelector(".feat-bar") || document.querySelector(".tools-bar");
-    if (!bar || document.getElementById(TOGGLE_ID)) return;
+    const bar =
+      document.querySelector(".feat-bar") ||
+      document.querySelector(".tools-bar") ||
+      document.querySelector(".map-tools");
+    if (!bar) return false;
+    if (document.getElementById(TOGGLE_ID)) return true;
     const btn = document.createElement("button");
     btn.type = "button";
     btn.className = "tool-btn";
@@ -200,91 +323,55 @@
     btn.title = "24h Food Pantries (Community First)";
     btn.innerHTML = "🥫 Pantries";
     btn.addEventListener("click", (e) => {
+      e.preventDefault();
       e.stopPropagation();
       toggle();
     });
     bar.appendChild(btn);
+    return true;
   }
 
-  /** Soft prompt after user finishes/clears a route */
   function showRestockNearMePrompt() {
     if (restockPromptShown) return;
-    // Only nudge if they actually had a route going
     const stops = document.getElementById("routeStops");
     const hadStops = stops && stops.children && stops.children.length > 0;
-    // Also check localStorage / global if available
     if (!hadStops && !(window.__YB_ROUTE_STOPS && window.__YB_ROUTE_STOPS.length)) return;
 
     restockPromptShown = true;
-    const toast = document.getElementById("toast");
-    const msg =
-      "🥫 Finished the sales? There’s a 24h food pantry near many routes — drop a couple cans if you can. Tap 🥫 Pantries to see them.";
-
-    if (toast) {
-      toast.textContent = msg;
-      toast.classList.remove("hidden");
-      toast.style.display = "block";
-      setTimeout(() => {
-        toast.classList.add("hidden");
-        toast.style.display = "";
-      }, 7000);
-    } else {
-      // Fallback banner
-      let ban = document.getElementById("yb-restock-banner");
-      if (!ban) {
-        ban = document.createElement("div");
-        ban.id = "yb-restock-banner";
-        ban.style.cssText =
-          "position:fixed;bottom:72px;left:12px;right:12px;z-index:99998;background:#1a6b3c;color:#fff;padding:12px 14px;border-radius:12px;font:600 13px/1.4 system-ui,sans-serif;box-shadow:0 8px 24px rgba(0,0,0,.2)";
-        document.body.appendChild(ban);
-      }
-      ban.innerHTML =
-        msg +
-        ' <button type="button" id="yb-restock-dismiss" style="margin-left:8px;background:rgba(255,255,255,.2);border:none;color:#fff;padding:4px 8px;border-radius:6px;cursor:pointer">Got it</button>';
-      document.getElementById("yb-restock-dismiss")?.addEventListener("click", () => ban.remove());
-      setTimeout(() => ban.remove(), 9000);
-    }
-
-    // Auto-enable layer so they can actually see the dots
-    if (!enabled) {
-      setTimeout(() => toggle(), 400);
-    }
+    toast(
+      "🥫 Finished the sales? There’s a 24h food pantry near many routes — drop a couple cans if you can. Tap 🥫 Pantries to see them.",
+      7000
+    );
+    if (!enabled) setTimeout(() => toggle(), 400);
   }
 
   function wireRouteRestockHook() {
-    // Clear route button
-    document.getElementById("btnClearRoute")?.addEventListener("click", () => {
-      setTimeout(showRestockNearMePrompt, 300);
-    });
-    // Share route buttons (user is done planning)
-    document.getElementById("btnShareRoute")?.addEventListener("click", () => {
-      setTimeout(showRestockNearMePrompt, 800);
-    });
-    document.getElementById("btnShareRoute2")?.addEventListener("click", () => {
-      setTimeout(showRestockNearMePrompt, 800);
-    });
-    // Open in maps apps — they are leaving to drive the route
-    ["btnOpenRoute", "btnOpenRouteApple", "btnOpenRouteWaze"].forEach((id) => {
-      document.getElementById(id)?.addEventListener("click", () => {
-        setTimeout(showRestockNearMePrompt, 600);
-      });
-    });
+    ["btnClearRoute", "btnShareRoute", "btnShareRoute2", "btnOpenRoute", "btnOpenRouteApple", "btnOpenRouteWaze"].forEach(
+      (id) => {
+        document.getElementById(id)?.addEventListener("click", () => {
+          setTimeout(showRestockNearMePrompt, 400);
+        });
+      }
+    );
   }
 
   function boot() {
+    patchMapConstructor();
     injectToggle();
     wireRouteRestockHook();
+    // keep trying to inject if bars render late
     let tries = 0;
     const iv = setInterval(() => {
       tries++;
+      patchMapConstructor();
+      injectToggle();
       const m = findMap();
       if (m) {
         mapRef = m;
         window.__YB_MAP = m;
-        clearInterval(iv);
       }
-      if (tries > 40) clearInterval(iv);
-    }, 250);
+      if (tries > 50) clearInterval(iv);
+    }, 200);
   }
 
   if (document.readyState === "loading") {
@@ -292,9 +379,16 @@
   } else {
     boot();
   }
+  setTimeout(boot, 800);
+  setTimeout(boot, 2000);
+  setTimeout(boot, 4000);
 
-  setTimeout(boot, 1200);
-  setTimeout(boot, 3000);
+  window.addEventListener("yb-map-ready", (e) => {
+    if (e.detail && e.detail.map) {
+      mapRef = e.detail.map;
+      window.__YB_MAP = e.detail.map;
+    }
+  });
 
   window.ChicaFoodPantry = { toggle, loadData, findMap, showRestockNearMePrompt };
 })();
