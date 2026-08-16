@@ -297,7 +297,7 @@
             const statusLabel = { open_confirmed: "Open • recently confirmed", open: "Open now", closed: "Currently closed", down: "Reported down", unknown: "Status unknown" }[status] || "Status unknown";
             const offlineNote = !isOnline() ? '<div style="font-size:10px;color:#92400e;margin-bottom:6px">Offline mode — reports saved on this device</div>' : "";
             const ssidLine = p.ssid ? '<div style="font-size:12px;margin-bottom:4px"><b>SSID:</b> ' + p.ssid + "</div>" : "";
-            const safeName = String(p.name || "").split(String.fromCharCode(34)).join(""");
+            const safeName = String(p.name || "").split(String.fromCharCode(34)).join(String.fromCharCode(38) + "quot;");
             const html =
               '<div style="font-family:system-ui,sans-serif;max-width:270px">' +
               '<div style="font-weight:700;font-size:14px;color:#1e293b;margin-bottom:4px">📶 ' +
@@ -335,16 +335,16 @@
               document.querySelectorAll(".yb-wifi-ok").forEach((btn) => {
                 btn.onclick = () => {
                   publishReport(btn.getAttribute("data-name") || p.name, "ok");
-                  toast(isOnline() ? "Thanks — marked as working." : "Saved offline — will sync when you’re back online.");
-                  btn.textContent = "✓ Noted"; btn.disabled = true;
+                  toast(isOnline() ? "Thanks — marked as working." : "Saved offline — will sync when you are back online.");
+                  btn.textContent = "OK Noted"; btn.disabled = true;
                   if (mapRef) ensureLayer(mapRef);
                 };
               });
               document.querySelectorAll(".yb-wifi-down").forEach((btn) => {
                 btn.onclick = () => {
                   publishReport(btn.getAttribute("data-name") || p.name, "down");
-                  toast(isOnline() ? "Thanks — reported." : "Saved offline — will sync when you’re back online.");
-                  btn.textContent = "✓ Reported"; btn.disabled = true;
+                  toast(isOnline() ? "Thanks — reported." : "Saved offline — will sync when you are back online.");
+                  btn.textContent = "OK Reported"; btn.disabled = true;
                   if (mapRef) ensureLayer(mapRef);
                 };
               });
@@ -401,7 +401,7 @@
     const btn = document.getElementById(TOGGLE_ID);
     if (btn) btn.disabled = true;
     let map = findMap() || mapRef;
-    if (!map) { toast("Loading map…"); map = await waitForMap(5000); }
+    if (!map) { toast("Loading map..."); map = await waitForMap(5000); }
     if (!map) { toast("Map still loading — try again in a second"); if (btn) btn.disabled = false; return; }
     mapRef = map; window.__YB_MAP = map;
     enabled = !enabled;
@@ -409,11 +409,11 @@
     if (enabled) {
       const data = await loadData();
       if (!data || !data.features || !data.features.length) {
-        toast(isOnline() ? "Couldn’t load WiFi data for this city yet" : "Offline and no cached WiFi data — connect once to download the layer");
+        toast(isOnline() ? "Could not load WiFi data for this city yet" : "Offline and no cached WiFi data — connect once to download the layer");
         enabled = false; if (btn) btn.classList.remove("active"); return;
       }
       ensureLayer(map); setVisible(map, true); connectWs();
-      toast(isOnline() ? "📶 Public WiFi on — status colors active" : "📶 Public WiFi on (offline) — using cached data");
+      toast(isOnline() ? "Public WiFi on — status colors active" : "Public WiFi on (offline) — using cached data");
     } else {
       setVisible(map, false); disconnectWs(); toast("Public WiFi off");
     }
@@ -426,7 +426,7 @@
     const btn = document.createElement("button");
     btn.type = "button"; btn.className = "tool-btn"; btn.id = TOGGLE_ID;
     btn.title = "Free Public WiFi (libraries, parks, guest networks)";
-    btn.innerHTML = "📶 WiFi";
+    btn.innerHTML = "WiFi";
     btn.addEventListener("click", (e) => { e.preventDefault(); e.stopPropagation(); toggle(); });
     bar.appendChild(btn);
     return true;
