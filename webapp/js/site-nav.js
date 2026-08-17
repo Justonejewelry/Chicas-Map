@@ -34,7 +34,6 @@
             section("Explore", item("map.html", "🗺️", "Open the Map", "Live sales, routes & map tools") +
               item("index.html", "🏠", "Home", "Chica Map overview")) +
             section("Find & Share", item("submit.html", "📍", "List a Sale", "Add a garage, yard or estate sale") +
-              item("backyard.html", "🐾", "The Backyard", "Community, stories & extras") +
               item("sponsor.html", "🤝", "Sponsor Chica Map", "Partnerships & promotion")) +
             section("Stay Connected", item("https://www.facebook.com/61593215043603/", "f", "Follow on Facebook", "Updates and new finds", true)) +
             section("Help & Legal", item("disclaimer.html", "ⓘ", "Disclaimer", "Map accuracy & source notes") +
@@ -96,38 +95,10 @@
   function addHomeFeaturesLink() {
     var cta = document.querySelector(".hero-cta");
     if (!cta || cta.querySelector('a[href="features.html"]')) return;
-    /* features.html is not currently a published page, so do not create a dead link. */
   }
 
   function addDevelopmentNote() {
-    if (!/\/backyard\.html$/.test(location.pathname) || document.getElementById("chicaDevNoteCard")) return;
-    var actions = document.querySelector(".by-actions");
-    if (!actions) return;
-    var card = document.createElement("a");
-    card.id = "chicaDevNoteCard";
-    card.className = "by-card-link by-card-note";
-    card.href = "#development-notes";
-    card.innerHTML = '<div class="by-card-inner"><div class="by-card-icon"><span class="by-emoji-icon">🛠️</span></div><h3>Notes from the<br>Development Team</h3><p>What we are building</p></div>';
-    actions.appendChild(card);
-
-    var section = document.createElement("section");
-    section.id = "development-notes";
-    section.className = "by-shell";
-    section.innerHTML =
-      '<div class="by-card by-prose chica-dev-note-panel" style="border:1.5px solid #8bc8e8;background:linear-gradient(180deg,#fff,#f1faff)">' +
-        '<div style="display:flex;gap:14px;align-items:flex-start">' +
-          '<div style="font-size:2rem;line-height:1">🛠️</div>' +
-          '<div>' +
-            '<h2 style="margin:0 0 6px">Notes from the Development Team</h2>' +
-            '<p style="margin:0 0 10px;color:#7a736b"><strong>Emergency Plan & Activation</strong></p>' +
-            '<p style="margin:0 0 12px">The emergency public-information layer is designed to stay dormant during normal map use. When a real need arises, the team can activate the deployment flag and expose resilience hubs, emergency resources and official information links without rebuilding the everyday map.</p>' +
-            '<p style="margin:0 0 14px">We are also building a safe preview mode so the Pack can see the emergency presentation without changing its normal map preferences.</p>' +
-            '<a href="map.html?emergency-preview=1" style="display:inline-flex;align-items:center;gap:7px;background:#0ea5e9;color:#fff;padding:10px 14px;border-radius:999px;text-decoration:none;font-weight:800">🆘 Preview emergency map · 5 seconds</a>' +
-          '</div>' +
-        '</div>' +
-      '</div>';
-    var main = document.querySelector("main");
-    if (main) main.appendChild(section);
+    return;
   }
 
   function emergencyPreview() {
