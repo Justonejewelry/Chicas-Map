@@ -53,17 +53,7 @@
         'src="js/layer-worker-client.js?v=lw1">' + close + "\n  <script src=\"js/public-wifi-layer.js"
       );
     }
-    // Zone Aware — school zones + calm voice alerts
-    if (html.indexOf("zone-aware-layer.js") < 0) {
-      html = html.split('src="js/food-pantry-layer.js?v=pantry4">' + close).join(
-        'src="js/food-pantry-layer.js?v=pantry4">' + close + "\n  <script src=\"js/zone-aware-layer.js?v=zone1\">' + close
-      );
-      if (html.indexOf("zone-aware-layer.js") < 0) {
-        html = html.split("</body>").join(
-          '<script src="js/zone-aware-layer.js?v=zone1">' + close + "\n</body>"
-        );
-      }
-    }
+    // Zone Aware temporarily disabled until syntax is fixed
 
     document.open();
     document.write(html);
