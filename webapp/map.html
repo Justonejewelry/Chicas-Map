@@ -53,23 +53,25 @@
         'src="js/layer-worker-client.js?v=lw1">' + close + "\n  <script src=\"js/public-wifi-layer.js"
       );
     }
-    // Inject downtown parking layer
     if (html.indexOf("downtown-parking-layer") < 0) {
       html = html.split('src="js/food-pantry-layer.js').join(
         'src="js/downtown-parking-layer.js?v=park1">' + close + "\n  <script src=\"js/food-pantry-layer.js"
       );
     }
-    // Inject dormant emergency public-info layer (activate with CHICA_EMERGENCY_DEPLOY or ?emergency=1)
     if (html.indexOf("emergency-info-layer") < 0) {
       html = html.split('src="js/food-pantry-layer.js').join(
         'src="js/emergency-info-layer.js?v=em1">' + close + "\n  <script src=\"js/food-pantry-layer.js"
       );
     }
-    // Inject Zone Aware (school-zone soft awareness) — clean pattern matching parking/emergency
+    // Zone Aware: always load the current main-branch implementation so the
+    // pinned map shell cannot strand the geofence logic on an older snapshot.
+    var zoneScript = '<script src="https://raw.githubusercontent.com/Justonejewelry/Chicas-Map/main/webapp/js/zone-aware-layer.js?v=zone-final">' + close;
     if (html.indexOf("zone-aware-layer") < 0) {
       html = html.split('src="js/food-pantry-layer.js').join(
-        'src="js/zone-aware-layer.js?v=zone2">' + close + "\n  <script src=\"js/food-pantry-layer.js"
+        zoneScript + "\n  <script src=\"js/food-pantry-layer.js"
       );
+    } else {
+      html = html.replace(/<script[^>]+zone-aware-layer[^>]*><\/script>/i, zoneScript);
     }
 
     document.open();
