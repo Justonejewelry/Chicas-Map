@@ -1,0 +1,89 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-98.49114, 29.42776] },
+      "properties": {
+        "name": "St. Mary's Garage",
+        "address": "205 E Travis St, San Antonio, TX 78205",
+        "type": "garage",
+        "clearance": "8'2\"",
+        "hours": "Open 24/7",
+        "rates": "Weekday flat $10 (Mon 5am–Fri 5pm); Weeknight $5 (Mon–Thu after 5pm); Weekend $5 (Fri 5pm–Mon 5am); Event $15",
+        "notes": "Best central value for evenings & weekends. Credit cards only. EV charging available.",
+        "free_periods": "Included in Downtown Thursday free parking (Thu 5pm–2am through Aug 27 2026)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-98.49444, 29.42531] },
+      "properties": {
+        "name": "City Tower Garage",
+        "address": "60 N Flores St, San Antonio, TX 78205",
+        "type": "garage",
+        "clearance": "6'6\"",
+        "hours": "Open 24/7",
+        "rates": "Hourly $2–$10 max (Mon–Sat); Event $15",
+        "notes": "Entrances on Flores & Main. Credit cards only.",
+        "free_periods": "FREE Sundays 7am–midnight (City Tower Sundays). Also Downtown Thursday free (Thu 5pm–2am)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-98.49004, 29.42596] },
+      "properties": {
+        "name": "Houston Street Garage",
+        "address": "111 College St, San Antonio, TX 78205",
+        "type": "garage",
+        "clearance": "6'8\"",
+        "hours": "Open 24/7",
+        "rates": "Progressive hourly (starting ~$2/30min) Mon–Fri daytime; Flat $10 Fri noon–Sun night; Event $15",
+        "notes": "Near Majestic / Houston St. Credit cards only. EV charging.",
+        "free_periods": "Included in Downtown Thursday free parking (Thu 5pm–2am)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-98.4855, 29.4215] },
+      "properties": {
+        "name": "Convention Center Garage",
+        "address": "41 S Bowie St, San Antonio, TX 78205",
+        "type": "garage",
+        "clearance": "6'8\"",
+        "hours": "Open 24/7",
+        "rates": "Flat $10; Event $15",
+        "notes": "Best for Convention Center / eastern River Walk / Hemisfair. Credit cards only.",
+        "free_periods": "Included in Downtown Thursday free parking (Thu 5pm–2am)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-98.4935, 29.4270] },
+      "properties": {
+        "name": "Central Library Garage",
+        "address": "600 Soledad St, San Antonio, TX 78205",
+        "type": "garage",
+        "clearance": "6'6\"",
+        "hours": "Mon–Sat 5am–11pm; Closed Sundays",
+        "rates": "Flat $5 (library patron validation available)",
+        "notes": "Credit cards only. Good for daytime library visits.",
+        "free_periods": "Check Downtown Thursday eligibility."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-98.4900, 29.4245] },
+      "properties": {
+        "name": "Downtown Street Meters & Pay Stations",
+        "address": "Throughout downtown core",
+        "type": "meters",
+        "clearance": "N/A",
+        "hours": "Enforced Mon–Sat 8am–6pm",
+        "rates": "Approx $1.80–$3.00 per hour (progressive: ~30¢/10 min). Exact rate on meter/pay station.",
+        "notes": "Pay by coin, card, or SAPark app. Time limits usually 1–2 hours. Always check posted signs for temporary restrictions or event meters.",
+        "free_periods": "FREE after 6pm every day and all day Sunday. Also free during Downtown Thursday (Thu 5pm–2am) at city meters."
+      }
+    }
+  ]
+}
