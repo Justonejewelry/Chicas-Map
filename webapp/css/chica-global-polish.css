@@ -1,0 +1,160 @@
+/* Chica Map — unified visual polish */
+:root {
+  --chica-green: #1a6b3c;
+  --chica-green-dark: #145530;
+  --chica-green-soft: #e8f5ee;
+  --chica-ink: #14110f;
+  --chica-muted: #756e66;
+  --chica-line: #e5dfd6;
+  --chica-card: #ffffff;
+  --chica-shadow: 0 8px 24px rgba(20,17,15,.10);
+  --chica-shadow-hover: 0 12px 30px rgba(20,17,15,.16);
+  --chica-radius: 14px;
+}
+
+/* Consistent interactive controls across every page. */
+button,
+a[role="button"],
+.btn,
+.button,
+.cta,
+input[type="submit"],
+input[type="button"],
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:not(:disabled),
+a[role="button"],
+.btn,
+.button,
+.cta,
+input[type="submit"],
+input[type="button"] {
+  transition: transform .14s ease, box-shadow .14s ease, background-color .14s ease, border-color .14s ease, color .14s ease;
+}
+
+button:not(:disabled):hover,
+a[role="button"]:hover,
+.btn:hover,
+.button:hover,
+.cta:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--chica-shadow-hover);
+}
+
+button:not(:disabled):active,
+a[role="button"]:active,
+.btn:active,
+.button:active,
+.cta:active,
+input[type="submit"]:active,
+input[type="button"]:active {
+  transform: translateY(1px) scale(.985);
+  box-shadow: 0 4px 10px rgba(20,17,15,.12);
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid rgba(26,107,60,.34);
+  outline-offset: 3px;
+}
+
+button:disabled,
+input:disabled,
+select:disabled {
+  cursor: not-allowed;
+  opacity: .58;
+}
+
+/* Common card treatment. */
+.card,
+.panel,
+.feature-card,
+.info-card,
+.action-card,
+.sale-card,
+.notice,
+.modal,
+.drawer {
+  border-radius: var(--chica-radius);
+}
+
+.card,
+.panel,
+.feature-card,
+.info-card,
+.action-card,
+.sale-card {
+  box-shadow: var(--chica-shadow);
+}
+
+/* Make common primary actions feel like buttons even where legacy CSS only sets color. */
+.btn-primary,
+.primary,
+.primary-btn,
+.cta-primary,
+.hero-cta a:first-child {
+  box-shadow: 0 8px 18px rgba(26,107,60,.20);
+}
+
+/* Interactive map controls should have a clear hit target and depth. */
+.mapboxgl-ctrl button,
+.maplibregl-ctrl button,
+.tool-btn,
+.feat-btn,
+.map-tool,
+.filter-btn {
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(20,17,15,.12);
+  transition: transform .14s ease, box-shadow .14s ease, background-color .14s ease;
+}
+
+.mapboxgl-ctrl button:hover,
+.maplibregl-ctrl button:hover,
+.tool-btn:hover,
+.feat-btn:hover,
+.map-tool:hover,
+.filter-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(20,17,15,.17);
+}
+
+.mapboxgl-ctrl button:active,
+.maplibregl-ctrl button:active,
+.tool-btn:active,
+.feat-btn:active,
+.map-tool:active,
+.filter-btn:active {
+  transform: translateY(1px);
+}
+
+/* Keep links visibly interactive without changing the site's voice. */
+a:not(.chica-nav-item):not(.chica-nav-logo):not(.chica-nav-open) {
+  text-underline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+  }
+}
+
+@media (max-width: 680px) {
+  button,
+  a[role="button"],
+  .btn,
+  .button,
+  .cta,
+  input[type="submit"],
+  input[type="button"] {
+    min-height: 40px;
+  }
+}
