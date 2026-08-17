@@ -18,7 +18,7 @@
     if (!res.ok) throw new Error("fetch failed " + res.status);
     var html = await res.text();
 
-    html = html.split("js/layers-rail.js?v=depth1").join("js/layers-rail.js?v=depth4");
+    html = html.split("js/layers-rail.js?v=depth1").join("js/layers-rail.js?v=depth5");
     html = html.split('src="js/public-wifi-layer.js"').join('src="js/public-wifi-layer.js?v=wifi7"');
     html = html.split('src="js/food-pantry-layer.js"').join('src="js/food-pantry-layer.js?v=pantry4"');
 
@@ -31,8 +31,8 @@
       );
     }
     if (html.indexOf("layer-timing-force.js") < 0) {
-      html = html.split('js/layers-rail.js?v=depth4">' + close).join(
-        'js/layers-rail.js?v=depth4">' + close + "\n  " +
+      html = html.split('js/layers-rail.js?v=depth5">' + close).join(
+        'js/layers-rail.js?v=depth5">' + close + "\n  " +
         '<script src="js/layer-timing-force.js?v=lt2">' + close
       );
     }
@@ -53,7 +53,12 @@
         'src="js/layer-worker-client.js?v=lw1">' + close + "\n  <script src=\"js/public-wifi-layer.js"
       );
     }
-    // Zone Aware temporarily disabled until syntax is fixed
+    // Inject downtown parking layer
+    if (html.indexOf("downtown-parking-layer") < 0) {
+      html = html.split('src="js/food-pantry-layer.js').join(
+        'src="js/downtown-parking-layer.js?v=park1">' + close + "\n  <script src=\"js/food-pantry-layer.js"
+      );
+    }
 
     document.open();
     document.write(html);
