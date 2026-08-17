@@ -51,6 +51,31 @@
   max-width: 640px;
 }
 
+/* Home hero video CTA: centered in the lower quarter of the video */
+.hero-video-card {
+  position: relative;
+}
+.chica-video-map-cta {
+  position: absolute;
+  left: 50%;
+  bottom: 12%;
+  transform: translate(-50%, 10px);
+  z-index: 5;
+  margin: 0;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity .65s ease, transform .65s ease;
+  white-space: nowrap;
+  box-shadow: 0 10px 28px rgba(0,0,0,.28);
+}
+.chica-video-map-cta.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translate(-50%, 0);
+}
+
 /* Detail sheet — last block, fit width */
 .chica-social-detail {
   margin-top: 16px;
@@ -97,10 +122,18 @@
     right: 8px;
     bottom: 56px;
   }
+  .chica-video-map-cta {
+    bottom: 12%;
+  }
 }
 
 @media (max-width: 400px) {
   .chica-social-map-overlay {
     width: min(220px, 78vw);
+  }
+  .chica-video-map-cta {
+    bottom: 11%;
+    font-size: .9rem;
+    padding: 12px 20px;
   }
 }
