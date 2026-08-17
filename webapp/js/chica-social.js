@@ -3,6 +3,7 @@
  * - Detail sheet (full width)
  * - Home footer
  * - Map bottom-right overlay (compact)
+ * - Home video CTA placement
  */
 (function () {
   var MAP_URL = "https://justonejewelry.github.io/Chicas-Map/map.html";
@@ -72,11 +73,9 @@
         a.addEventListener("click", function (e) {
           if (navigator.share) {
             e.preventDefault();
-            navigator
-              .share({ title: SHARE_TITLE, text: SHARE_TEXT, url: MAP_URL })
-              .catch(function () {
-                window.open(item.href, "_blank", "noopener");
-              });
+            navigator.share({ title: SHARE_TITLE, text: SHARE_TEXT, url: MAP_URL }).catch(function () {
+              window.open(item.href, "_blank", "noopener");
+            });
           }
         });
       }
@@ -101,6 +100,32 @@
     } else {
       foot.appendChild(host);
     }
+  }
+
+  function injectHomeVideoCTA() {
+    var card = document.querySelector(".hero-video-card");
+    var button = document.querySelector(".hero-cta .btn-primary[href=\"map.html\"]");
+    if (!card || !button || document.getElementById("chicaVideoMapCta")) return;
+
+    button.id = "chicaVideoMapCta";
+    button.classList.add("chica-video-map-cta");
+    button.setAttribute("aria-label", "Open Chica Map");
+    card.appendChild(button);
+
+    var video = card.querySelector(".hero-video");
+    if (!video) return;
+
+    var shown = false;
+    var timer = null;
+    function showAfterOneSecond() {
+      if (shown || timer) return;
+      timer = window.setTimeout(function () {
+        shown = true;
+        button.classList.add("is-visible");
+      }, 1000);
+    }
+    video.addEventListener("play", showAfterOneSecond, { once: true });
+    video.addEventListener("playing", showAfterOneSecond, { once: true });
   }
 
   function injectMapOverlay() {
@@ -141,6 +166,7 @@
   function start() {
     ensureCss();
     injectHome();
+    injectHomeVideoCTA();
     injectMapOverlay();
   }
 
