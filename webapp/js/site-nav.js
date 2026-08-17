@@ -2,6 +2,19 @@
   "use strict";
 
   var NAV_ID = "chica-standard-nav";
+  var ICON = "favicon.svg";
+
+  function item(href, icon, label, note, external) {
+    var target = external ? ' target="_blank" rel="noopener noreferrer"' : "";
+    return '<a class="chica-nav-item" role="menuitem" href="' + href + '"' + target + '>' +
+      '<span class="chica-nav-item-icon" aria-hidden="true">' + icon + '</span>' +
+      '<span class="chica-nav-item-copy"><strong>' + label + '</strong>' + (note ? '<small>' + note + '</small>' : '') + '</span>' +
+      '</a>';
+  }
+
+  function section(label, content) {
+    return '<div class="chica-nav-section"><div class="chica-nav-section-label">' + label + '</div>' + content + '</div>';
+  }
 
   function build() {
     if (document.getElementById(NAV_ID)) return;
@@ -14,15 +27,20 @@
       '<div class="chica-site-nav-inner">' +
         '<div class="chica-nav-menu">' +
           '<button class="chica-nav-logo" id="chicaNavLogo" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="chicaNavDrop" title="Open Chica Map menu">' +
-            '<img src="favicon.png" alt="Chica Map" width="42" height="42">' +
+            '<img src="' + ICON + '" alt="Chica Map" width="42" height="42">' +
             '<span class="chica-nav-caret" aria-hidden="true">⌄</span>' +
           '</button>' +
           '<div class="chica-nav-drop" id="chicaNavDrop" role="menu" hidden>' +
-            '<a role="menuitem" href="map.html"><span>🗺️</span>Map</a>' +
-            '<a role="menuitem" href="submit.html"><span>📍</span>List a Sale</a>' +
-            '<a role="menuitem" href="backyard.html"><span>🐾</span>Backyard</a>' +
-            '<a role="menuitem" href="partnership.html"><span>🤝</span>Partnership</a>' +
-            '<a role="menuitem" href="https://www.facebook.com/61593215043603/" target="_blank" rel="noopener noreferrer"><span>f</span>Follow on Facebook</a>' +
+            section("Explore", item("map.html", "🗺️", "Open the Map", "Live sales, routes & map tools") +
+              item("index.html", "🏠", "Home", "Chica Map overview")) +
+            section("Find & Share", item("submit.html", "📍", "List a Sale", "Add a garage, yard or estate sale") +
+              item("backyard.html", "🐾", "The Backyard", "Community, stories & extras") +
+              item("sponsor.html", "🤝", "Sponsor Chica Map", "Partnerships & promotion")) +
+            section("Stay Connected", item("https://www.facebook.com/61593215043603/", "f", "Follow on Facebook", "Updates and new finds", true)) +
+            section("Help & Legal", item("disclaimer.html", "ⓘ", "Disclaimer", "Map accuracy & source notes") +
+              item("privacy.html", "🔒", "Privacy", "How information is handled") +
+              item("terms.html", "📄", "Terms", "Use of Chica Map")) +
+            '<div class="chica-nav-footer"><span>Chica Map</span><span>San Antonio · Texas</span></div>' +
           '</div>' +
         '</div>' +
         '<a class="chica-nav-title" href="index.html" aria-label="Chica Map home"><strong>Chica\'s Map</strong><span>Garage Sale Intelligence Network</span></a>' +
@@ -30,21 +48,25 @@
       '</div>';
 
     if (old) old.replaceWith(nav);
-    else document.body.insertBefore(nav, document.body.firstChild);
+    else if (document.body) document.body.insertBefore(nav, document.body.firstChild);
 
     var menu = nav.querySelector(".chica-nav-menu");
     var btn = nav.querySelector("#chicaNavLogo");
     var drop = nav.querySelector("#chicaNavDrop");
 
     function close() {
+      if (!drop || !btn || !menu) return;
       drop.hidden = true;
       btn.setAttribute("aria-expanded", "false");
       menu.classList.remove("open");
     }
     function open() {
+      if (!drop || !btn || !menu) return;
       drop.hidden = false;
       btn.setAttribute("aria-expanded", "true");
       menu.classList.add("open");
+      var first = drop.querySelector("a");
+      if (first) first.focus();
     }
 
     btn.addEventListener("click", function (e) {
@@ -53,18 +75,20 @@
     });
     drop.querySelectorAll("a").forEach(function (a) { a.addEventListener("click", close); });
     document.addEventListener("click", function (e) { if (!menu.contains(e.target)) close(); });
-    document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") { close(); btn.focus(); }
+    });
   }
 
   function standardizeFavicon() {
     document.querySelectorAll('link[rel~="icon"], link[rel="apple-touch-icon"]').forEach(function (link) {
-      link.href = "favicon.png";
+      link.href = ICON;
     });
     if (!document.querySelector('link[rel~="icon"]')) {
       var link = document.createElement("link");
       link.rel = "icon";
-      link.type = "image/png";
-      link.href = "favicon.png";
+      link.type = "image/svg+xml";
+      link.href = ICON;
       document.head.appendChild(link);
     }
   }
@@ -72,11 +96,7 @@
   function addHomeFeaturesLink() {
     var cta = document.querySelector(".hero-cta");
     if (!cta || cta.querySelector('a[href="features.html"]')) return;
-    var link = document.createElement("a");
-    link.className = "btn btn-ghost btn-lg features-home-link";
-    link.href = "features.html";
-    link.textContent = "Features";
-    cta.appendChild(link);
+    /* features.html is not currently a published page, so do not create a dead link. */
   }
 
   function addDevelopmentNote() {
@@ -116,7 +136,6 @@
     var previousDeploy = null;
     try { previousDeploy = localStorage.getItem("chica_emergency_deploy"); } catch (_) {}
     try { window.CHICA_EMERGENCY_DEPLOY = true; } catch (_) {}
-
     var tries = 0;
     var timer = setInterval(function () {
       tries++;
@@ -131,9 +150,7 @@
             history.replaceState({}, document.title, location.pathname + location.hash);
           } catch (_) {}
         }, 5000);
-      } else if (tries > 70) {
-        clearInterval(timer);
-      }
+      } else if (tries > 70) clearInterval(timer);
     }, 100);
   }
 
