@@ -59,6 +59,12 @@
         'src="js/downtown-parking-layer.js?v=park1">' + close + "\n  <script src=\"js/food-pantry-layer.js"
       );
     }
+    // Inject dormant emergency public-info layer (activate with CHICA_EMERGENCY_DEPLOY or ?emergency=1)
+    if (html.indexOf("emergency-info-layer") < 0) {
+      html = html.split('src="js/food-pantry-layer.js').join(
+        'src="js/emergency-info-layer.js?v=em1">' + close + "\n  <script src=\"js/food-pantry-layer.js"
+      );
+    }
 
     document.open();
     document.write(html);
