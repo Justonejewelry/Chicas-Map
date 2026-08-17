@@ -1,6 +1,6 @@
 /**
  * Chica Map — Layers panel + Tools roll-up
- * - One Pantries / WiFi / Zone control (no duplicates above forecast)
+ * - Sales / Pantries / WiFi / Zone / Permits / Parking
  * - Route, export, radar, DNA, first30, hunt in a collapsible Tools menu
  */
 (function () {
@@ -13,8 +13,7 @@
   }
 
   function removeDuplicateLayerButtons() {
-    // Keep the Layers-panel versions; strip extras from feat-bar / tools-bar
-    ["btnFoodPantry", "btnPublicWifi", "btnZoneAware"].forEach(function (id) {
+    ["btnFoodPantry", "btnPublicWifi", "btnZoneAware", "btnDowntownParking"].forEach(function (id) {
       var nodes = document.querySelectorAll("#" + id);
       if (nodes.length <= 1) return;
       var keep = null;
@@ -26,10 +25,9 @@
         if (n !== keep) n.remove();
       });
     });
-    // Legacy text-only pantry/wifi/zone tool buttons outside layers
     document.querySelectorAll(".feat-bar .tool-btn, .tools-bar .tool-btn").forEach(function (btn) {
       var t = (btn.textContent || "").toLowerCase();
-      if (t.indexOf("pantries") >= 0 || t.indexOf("wifi") >= 0 || t === "zone" || t.indexOf("zone aware") >= 0) {
+      if (t.indexOf("pantries") >= 0 || t.indexOf("wifi") >= 0 || t === "zone" || t.indexOf("zone aware") >= 0 || t.indexOf("parking") >= 0) {
         if (!btn.closest(".rail-layers")) btn.remove();
       }
     });
@@ -39,7 +37,6 @@
     function bindToggle(id, getter, label) {
       var btn = document.getElementById(id);
       if (!btn) return;
-      // Always (re)bind a single stable handler so late-loaded modules work
       if (btn.__ybLayerHandler) {
         btn.removeEventListener("click", btn.__ybLayerHandler, true);
       }
@@ -65,6 +62,7 @@
     bindToggle("btnFoodPantry", function () { return window.ChicaFoodPantry; }, "Pantries");
     bindToggle("btnPublicWifi", function () { return window.ChicaPublicWifi; }, "WiFi");
     bindToggle("btnZoneAware", function () { return window.ChicaZoneAware; }, "Zone Aware");
+    bindToggle("btnDowntownParking", function () { return window.ChicaDowntownParking; }, "Parking");
     var perm = document.getElementById("btnLayerPermits");
     if (perm && !perm.__ybWired) {
       perm.__ybWired = true;
@@ -93,6 +91,8 @@
       '<span class="layer-ico">🚸</span><span>Zone</span></button>' +
       '<button type="button" class="layer-btn" id="btnLayerPermits" data-layer="permits" title="Permit pins">' +
       '<span class="layer-ico">📋</span><span>Permits</span></button>' +
+      '<button type="button" class="layer-btn" id="btnDowntownParking" data-layer="parking" title="Downtown parking rates & hours">' +
+      '<span class="layer-ico">🅿️</span><span>Parking</span></button>' +
       "</div>";
     var label = section.querySelector(".rail-label");
     if (label && label.textContent.toLowerCase().indexOf("tools") >= 0) {
@@ -110,7 +110,6 @@
     var wish = document.getElementById("wishlistPanel");
     if (!toolsBar && !featBar) return;
 
-    // Show Export inside roll-up
     var exp = document.getElementById("btnExport");
     if (exp) exp.hidden = false;
 
@@ -128,7 +127,6 @@
     var body = document.createElement("div");
     body.className = "tools-rollup-body";
 
-    // Remove old static "Tools" label
     section.querySelectorAll(".rail-label").forEach(function (lab) {
       if (lab.textContent.toLowerCase().trim() === "tools") lab.remove();
     });
@@ -140,7 +138,6 @@
     details.appendChild(summary);
     details.appendChild(body);
 
-    // Place after Layers panel if present
     var layers = section.querySelector(".rail-layers");
     if (layers && layers.nextSibling) {
       section.insertBefore(details, layers.nextSibling);
