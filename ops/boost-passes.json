@@ -3,22 +3,7 @@
   "product": "boost_pass_6mo",
   "price_usd": 9,
   "duration_months": 6,
-  "updated": "2026-08-16",
+  "updated": "2026-08-17",
   "notes": "Ops registry — not map feed. Match sellers by contact_key (normalized email/phone). Stamp boost+boost_until on approved listings only while status=active and today<=boost_until. Repo is public: prefer contact_key over full free-text notes with extra PII.",
-  "passes": [
-    {
-      "contact_key": "",
-      "display_name": null,
-      "payment_id": "manual_msvs1ae3",
-      "paid_at": "2026-08-16",
-      "boost_until": "2027-02-16",
-      "status": "pending_contact",
-      "amount_cents": 900,
-      "currency": "USD",
-      "source": "manual",
-      "receipt_url": null,
-      "event_id": null,
-      "recorded_at": "2026-08-16T12:24:16.347Z"
-    }
-  ]
+  "passes": []
 }
