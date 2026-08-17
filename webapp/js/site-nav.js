@@ -3,6 +3,16 @@
 
   var NAV_ID = "chica-standard-nav";
   var ICON = "favicon.svg";
+  var GLOBAL_CSS = "css/chica-global-polish.css";
+
+  function ensureGlobalStyles() {
+    if (document.querySelector('link[data-chica-global-polish]')) return;
+    var link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = GLOBAL_CSS + "?v=20260817";
+    link.setAttribute("data-chica-global-polish", "true");
+    document.head.appendChild(link);
+  }
 
   function item(href, icon, label, note, external) {
     var target = external ? ' target="_blank" rel="noopener noreferrer"' : "";
@@ -32,7 +42,8 @@
           '</button>' +
           '<div class="chica-nav-drop" id="chicaNavDrop" role="menu" hidden>' +
             section("Explore", item("map.html", "🗺️", "Open the Map", "Live sales, routes & map tools") +
-              item("index.html", "🏠", "Home", "Chica Map overview")) +
+              item("index.html", "🏠", "Home", "Chica Map overview") +
+              item("backyard.html", "🌿", "The Backyard", "Community posts, updates & local stories")) +
             section("Find & Share", item("submit.html", "📍", "List a Sale", "Add a garage, yard or estate sale") +
               item("sponsor.html", "🤝", "Sponsor Chica Map", "Partnerships & promotion")) +
             section("Stay Connected", item("https://www.facebook.com/61593215043603/", "f", "Follow on Facebook", "Updates and new finds", true)) +
@@ -126,6 +137,7 @@
   }
 
   function init() {
+    ensureGlobalStyles();
     standardizeFavicon();
     build();
     addHomeFeaturesLink();
