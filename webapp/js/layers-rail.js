@@ -1,6 +1,6 @@
 /**
  * Chica Map — Layers panel + Tools roll-up
- * - One Pantries / WiFi control (no duplicates above forecast)
+ * - One Pantries / WiFi / Zone control (no duplicates above forecast)
  * - Route, export, radar, DNA, first30, hunt in a collapsible Tools menu
  */
 (function () {
@@ -14,7 +14,7 @@
 
   function removeDuplicateLayerButtons() {
     // Keep the Layers-panel versions; strip extras from feat-bar / tools-bar
-    ["btnFoodPantry", "btnPublicWifi"].forEach(function (id) {
+    ["btnFoodPantry", "btnPublicWifi", "btnZoneAware"].forEach(function (id) {
       var nodes = document.querySelectorAll("#" + id);
       if (nodes.length <= 1) return;
       var keep = null;
@@ -26,10 +26,10 @@
         if (n !== keep) n.remove();
       });
     });
-    // Legacy text-only pantry/wifi tool buttons outside layers
+    // Legacy text-only pantry/wifi/zone tool buttons outside layers
     document.querySelectorAll(".feat-bar .tool-btn, .tools-bar .tool-btn").forEach(function (btn) {
       var t = (btn.textContent || "").toLowerCase();
-      if (t.indexOf("pantries") >= 0 || t.indexOf("wifi") >= 0) {
+      if (t.indexOf("pantries") >= 0 || t.indexOf("wifi") >= 0 || t === "zone" || t.indexOf("zone aware") >= 0) {
         if (!btn.closest(".rail-layers")) btn.remove();
       }
     });
@@ -64,6 +64,7 @@
     }
     bindToggle("btnFoodPantry", function () { return window.ChicaFoodPantry; }, "Pantries");
     bindToggle("btnPublicWifi", function () { return window.ChicaPublicWifi; }, "WiFi");
+    bindToggle("btnZoneAware", function () { return window.ChicaZoneAware; }, "Zone Aware");
     var perm = document.getElementById("btnLayerPermits");
     if (perm && !perm.__ybWired) {
       perm.__ybWired = true;
@@ -88,6 +89,8 @@
       '<span class="layer-ico">🥫</span><span>Pantries</span></button>' +
       '<button type="button" class="layer-btn" id="btnPublicWifi" data-layer="wifi" title="Free public WiFi">' +
       '<span class="layer-ico">📶</span><span>WiFi</span></button>' +
+      '<button type="button" class="layer-btn" id="btnZoneAware" data-layer="zones" title="Zone Aware — school zones + soft voice">' +
+      '<span class="layer-ico">🚸</span><span>Zone</span></button>' +
       '<button type="button" class="layer-btn" id="btnLayerPermits" data-layer="permits" title="Permit pins">' +
       '<span class="layer-ico">📋</span><span>Permits</span></button>' +
       "</div>";

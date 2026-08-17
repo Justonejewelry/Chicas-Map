@@ -18,7 +18,7 @@
     if (!res.ok) throw new Error("fetch failed " + res.status);
     var html = await res.text();
 
-    html = html.split("js/layers-rail.js?v=depth1").join("js/layers-rail.js?v=depth3");
+    html = html.split("js/layers-rail.js?v=depth1").join("js/layers-rail.js?v=depth4");
     html = html.split('src="js/public-wifi-layer.js"').join('src="js/public-wifi-layer.js?v=wifi7"');
     html = html.split('src="js/food-pantry-layer.js"').join('src="js/food-pantry-layer.js?v=pantry4"');
 
@@ -30,14 +30,14 @@
         '<script src="js/preferred-overlay.js?v=pref1">' + close
       );
     }
-    if (html.indexOf("layer-timing-fix.js") < 0) {
-      html = html.split('js/layers-rail.js?v=depth3">' + close).join(
-        'js/layers-rail.js?v=depth3">' + close + "\n  " +
-        '<script src="js/layer-timing-fix.js?v=lt2">' + close
+    if (html.indexOf("layer-timing-force.js") < 0) {
+      html = html.split('js/layers-rail.js?v=depth4">' + close).join(
+        'js/layers-rail.js?v=depth4">' + close + "\n  " +
+        '<script src="js/layer-timing-force.js?v=lt2">' + close
       );
     }
-    if (html.indexOf("cls-fix.css") < 0) {
-      html = html.split("</head>").join('<link rel="stylesheet" href="css/cls-fix.css?v=cls1" />\n</head>');
+    if (html.indexOf("cls-force.css") < 0) {
+      html = html.split("</head>").join('<link rel="stylesheet" href="css/cls-force.css?v=cls1" />\n</head>');
     }
     if (html.indexOf("chica-config.js") < 0) {
       html = html.split("</body>").join('<script src="js/chica-config.js?v=cfg1">' + close + "\n</body>");
@@ -52,6 +52,17 @@
       html = html.split('src="js/public-wifi-layer.js').join(
         'src="js/layer-worker-client.js?v=lw1">' + close + "\n  <script src=\"js/public-wifi-layer.js"
       );
+    }
+    // Zone Aware — school zones + calm voice alerts
+    if (html.indexOf("zone-aware-layer.js") < 0) {
+      html = html.split('src="js/food-pantry-layer.js?v=pantry4">' + close).join(
+        'src="js/food-pantry-layer.js?v=pantry4">' + close + "\n  <script src=\"js/zone-aware-layer.js?v=zone1\">' + close
+      );
+      if (html.indexOf("zone-aware-layer.js") < 0) {
+        html = html.split("</body>").join(
+          '<script src="js/zone-aware-layer.js?v=zone1">' + close + "\n</body>"
+        );
+      }
     }
 
     document.open();
