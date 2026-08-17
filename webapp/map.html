@@ -65,6 +65,12 @@
         'src="js/emergency-info-layer.js?v=em1">' + close + "\n  <script src=\"js/food-pantry-layer.js"
       );
     }
+    // Inject Zone Aware (school-zone soft awareness) — clean pattern matching parking/emergency
+    if (html.indexOf("zone-aware-layer") < 0) {
+      html = html.split('src="js/food-pantry-layer.js').join(
+        'src="js/zone-aware-layer.js?v=zone2">' + close + "\n  <script src=\"js/food-pantry-layer.js"
+      );
+    }
 
     document.open();
     document.write(html);
