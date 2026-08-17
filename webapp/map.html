@@ -39,6 +39,9 @@
     if (html.indexOf("cls-force.css") < 0) {
       html = html.split("</head>").join('<link rel="stylesheet" href="css/cls-force.css?v=cls1" />\n</head>');
     }
+    if (html.indexOf("map-bottom-details.css") < 0) {
+      html = html.split("</head>").join('<link rel="stylesheet" href="css/map-bottom-details.css?v=bd1" />\n</head>');
+    }
     if (html.indexOf("chica-config.js") < 0) {
       html = html.split("</body>").join('<script src="js/chica-config.js?v=cfg1">' + close + "\n</body>");
     }
@@ -47,6 +50,9 @@
     }
     if (html.indexOf("web-vitals-monitor.js") < 0) {
       html = html.split("</body>").join('<script src="js/web-vitals-monitor.js?v=cwv1">' + close + "\n</body>");
+    }
+    if (html.indexOf("map-bottom-details.js") < 0) {
+      html = html.split("</body>").join('<script src="js/map-bottom-details.js?v=bd1">' + close + "\n</body>");
     }
     if (html.indexOf("layer-worker-client.js") < 0) {
       html = html.split('src="js/public-wifi-layer.js').join(
@@ -63,8 +69,7 @@
         'src="js/emergency-info-layer.js?v=em1">' + close + "\n  <script src=\"js/food-pantry-layer.js"
       );
     }
-    // Zone Aware: always load the current main-branch implementation so the
-    // pinned map shell cannot strand the geofence logic on an older snapshot.
+
     var zoneScript = '<script src="https://raw.githubusercontent.com/Justonejewelry/Chicas-Map/main/webapp/js/zone-aware-layer.js?v=zone-final">' + close;
     if (html.indexOf("zone-aware-layer") < 0) {
       html = html.split('src="js/food-pantry-layer.js').join(
