@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="noindex,nofollow" />
+  <meta name="theme-color" content="#c513b8" />
+  <link rel="icon" type="image/svg+xml" href="../chica-favicon.svg" />
   <title>Approve tip — Chicas-Map Admin</title>
   <style>
     :root { font-family: system-ui, sans-serif; color: #14110f; }
@@ -19,14 +21,14 @@
     .row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
     button {
       border: none; border-radius: 10px; padding: 12px 18px; font-weight: 800;
-      cursor: pointer; background: #1a6b3c; color: #fff;
+      cursor: pointer; background: #c513b8; color: #fff;
     }
     button.secondary { background: #e6e1d8; color: #14110f; }
     button:disabled { opacity: 0.5; cursor: not-allowed; }
     .msg { margin-top: 14px; padding: 12px; border-radius: 10px; font-size: 0.9rem; }
-    .msg.ok { background: #dcfce7; color: #14532d; }
+    .msg.ok { background: #f8def5; color: #7d0b72; }
     .msg.err { background: #fee2e2; color: #7f1d1d; }
-    .msg.info { background: #f0fdf4; color: #3f6212; }
+    .msg.info { background: #fdf0fb; color: #6e1b64; }
     .preview { background: #fff; border: 1px solid #e6e1d8; border-radius: 12px; padding: 12px; margin-top: 12px; }
     .preview b { display: block; margin-bottom: 4px; }
     .warn { font-size: 0.75rem; color: #92400e; background: #fffbeb; padding: 10px; border-radius: 8px; margin-top: 12px; }
@@ -75,7 +77,6 @@
       try { sessionStorage.setItem("yb_gh_token", tokenEl.value.trim()); } catch (_) {}
     });
 
-    // Prefill from email deep link: #tip=<base64url>
     function loadFromHash() {
       const h = location.hash || "";
       const m = h.match(/[#&]tip=([^&]+)/);
@@ -154,7 +155,6 @@
       show("Publishing…", "info");
 
       try {
-        // 1) Get current file
         const getUrl = "https://api.github.com/repos/" + OWNER + "/" + REPO + "/contents/" + PATH + "?ref=" + BRANCH;
         const getRes = await fetch(getUrl, {
           headers: {
@@ -182,7 +182,6 @@
         const body = JSON.stringify(current, null, 2) + "\n";
         const content = btoa(unescape(encodeURIComponent(body)));
 
-        // 2) Put updated file
         const putRes = await fetch("https://api.github.com/repos/" + OWNER + "/" + REPO + "/contents/" + PATH, {
           method: "PUT",
           headers: {
@@ -200,7 +199,7 @@
         });
         if (!putRes.ok) throw new Error("Write failed: " + putRes.status + " " + (await putRes.text()));
 
-        show("Published. Map will show this tip after a refresh (often &lt;1 min).", "ok");
+        show("Published. Map will show this tip after a refresh (often <1 min).", "ok");
         msg.innerHTML = 'Published. <a href="../map.html">Open map</a> and hard-refresh. Tip: ' + esc(tip.address);
         msg.className = "msg ok";
         msg.hidden = false;
