@@ -26,6 +26,17 @@
     return '<div class="chica-nav-section"><div class="chica-nav-section-label">' + label + '</div>' + content + '</div>';
   }
 
+  function markCurrent(nav) {
+    var current = location.pathname.split("/").pop() || "index.html";
+    nav.querySelectorAll(".chica-nav-item").forEach(function (a) {
+      var href = a.getAttribute("href") || "";
+      if (!/^https?:\/\//i.test(href) && href.split("#")[0] === current) {
+        a.setAttribute("aria-current", "page");
+        a.classList.add("current");
+      }
+    });
+  }
+
   function build() {
     if (document.getElementById(NAV_ID)) return;
 
@@ -60,6 +71,7 @@
     if (old) old.replaceWith(nav);
     else if (document.body) document.body.insertBefore(nav, document.body.firstChild);
 
+    markCurrent(nav);
     var menu = nav.querySelector(".chica-nav-menu");
     var btn = nav.querySelector("#chicaNavLogo");
     var drop = nav.querySelector("#chicaNavDrop");
@@ -108,9 +120,7 @@
     if (!cta || cta.querySelector('a[href="features.html"]')) return;
   }
 
-  function addDevelopmentNote() {
-    return;
-  }
+  function addDevelopmentNote() { return; }
 
   function emergencyPreview() {
     var params = new URLSearchParams(location.search || "");
