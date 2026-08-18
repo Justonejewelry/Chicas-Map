@@ -1,8 +1,15 @@
-/* Chica Map — unified site navigation */
+/* Chica Map — unified site navigation / brand system */
+:root {
+  --chica-ink: #0d0d0f;
+  --chica-magenta: #c513b8;
+  --chica-magenta-dark: #9e0e92;
+  --chica-pink: #fde8fa;
+  --chica-line: #e8dfe7;
+}
 #chica-standard-nav {
   position: sticky !important; top: 0 !important; z-index: 2147483000 !important; width: 100%;
   background: rgba(255,255,255,.97); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid #e6e1d8; box-shadow: 0 4px 18px rgba(20,17,15,.08);
+  border-bottom: 1px solid var(--chica-line); box-shadow: 0 4px 18px rgba(13,13,15,.10);
   font-family: Inter, system-ui, -apple-system, sans-serif;
 }
 .chica-site-nav-inner {
@@ -14,55 +21,56 @@
   appearance: none; border: 0; background: transparent; padding: 3px 5px; display: inline-flex;
   align-items: center; gap: 7px; cursor: pointer; border-radius: 12px;
 }
-.chica-nav-logo:hover { background: #f1f7f3; }
-.chica-nav-logo:focus-visible { outline: 3px solid #6bb58a; outline-offset: 3px; }
+.chica-nav-logo:hover { background: var(--chica-pink); }
+.chica-nav-logo:focus-visible { outline: 3px solid rgba(197,19,184,.45); outline-offset: 3px; }
 .chica-nav-logo img {
   width: 42px; height: 42px; object-fit: contain; border-radius: 50%; display: block;
-  box-shadow: 0 4px 12px rgba(26,107,60,.18);
+  box-shadow: 0 4px 12px rgba(197,19,184,.22);
 }
-.chica-nav-caret { color: #1a6b3c; font-size: 19px; line-height: 1; transform: translateY(-1px); transition: transform .15s ease; }
+.chica-nav-caret { color: var(--chica-magenta); font-size: 19px; line-height: 1; transform: translateY(-1px); transition: transform .15s ease; }
 .chica-nav-menu.open .chica-nav-caret { transform: rotate(180deg) translateY(1px); }
 .chica-nav-drop {
   position: absolute; top: calc(100% + 10px); left: 0; width: min(360px, calc(100vw - 24px));
   max-height: min(76vh, 620px); overflow: auto; padding: 10px;
-  background: rgba(255,255,255,.99); border: 1px solid #dcd6ca; border-radius: 18px;
-  box-shadow: 0 20px 50px rgba(20,17,15,.22); z-index: 2147483002;
+  background: rgba(255,255,255,.99); border: 1px solid var(--chica-line); border-radius: 18px;
+  box-shadow: 0 20px 50px rgba(13,13,15,.22); z-index: 2147483002;
 }
 .chica-nav-drop[hidden] { display: none !important; }
 .chica-nav-section { padding: 3px 0 8px; }
-.chica-nav-section + .chica-nav-section { border-top: 1px solid #eee9df; padding-top: 9px; }
+.chica-nav-section + .chica-nav-section { border-top: 1px solid #f0e7ef; padding-top: 9px; }
 .chica-nav-section-label {
-  padding: 6px 11px 5px; color: #7a736b; font-size: .66rem; font-weight: 900;
+  padding: 6px 11px 5px; color: #746c74; font-size: .66rem; font-weight: 900;
   letter-spacing: .11em; text-transform: uppercase;
 }
 .chica-nav-item {
   display: flex; align-items: center; gap: 11px; padding: 10px 11px; border-radius: 12px;
-  color: #14110f; text-decoration: none; font-size: .91rem; font-weight: 750;
-  transition: background .15s ease, transform .15s ease;
+  color: var(--chica-ink); text-decoration: none; font-size: .91rem; font-weight: 750;
+  transition: background .15s ease, transform .15s ease, color .15s ease;
 }
-.chica-nav-item:hover { background: #e8f5ee; color: #145530; transform: translateX(2px); }
-.chica-nav-item:focus-visible { outline: 3px solid #6bb58a; outline-offset: -2px; }
+.chica-nav-item:hover { background: var(--chica-pink); color: var(--chica-magenta-dark); transform: translateX(2px); }
+.chica-nav-item.current { background: #f7d7f3; color: var(--chica-magenta-dark); }
+.chica-nav-item:focus-visible { outline: 3px solid rgba(197,19,184,.45); outline-offset: -2px; }
 .chica-nav-item-icon {
   width: 31px; height: 31px; flex: 0 0 31px; display: grid; place-items: center;
-  border-radius: 9px; background: #f3f7f4; color: #145530; font-size: .98rem; font-weight: 900;
+  border-radius: 9px; background: #f8f1f7; color: var(--chica-magenta-dark); font-size: .98rem; font-weight: 900;
 }
 .chica-nav-item-copy { min-width: 0; display: flex; flex-direction: column; gap: 1px; }
 .chica-nav-item-copy strong { font-size: .9rem; line-height: 1.2; }
-.chica-nav-item-copy small { color: #7a736b; font-size: .71rem; font-weight: 600; line-height: 1.25; }
+.chica-nav-item-copy small { color: #7a7279; font-size: .71rem; font-weight: 600; line-height: 1.25; }
 .chica-nav-footer {
   display: flex; justify-content: space-between; gap: 12px; padding: 10px 11px 5px;
-  color: #9a938a; font-size: .64rem; font-weight: 800; letter-spacing: .04em;
+  color: #9b929a; font-size: .64rem; font-weight: 800; letter-spacing: .04em;
 }
-.chica-nav-title { justify-self: center; text-align: center; text-decoration: none !important; color: #14110f !important; line-height: 1.08; }
+.chica-nav-title { justify-self: center; text-align: center; text-decoration: none !important; color: var(--chica-ink) !important; line-height: 1.08; }
 .chica-nav-title strong { display: block; font-family: Fraunces, Georgia, serif; font-size: 1.18rem; letter-spacing: -.02em; }
-.chica-nav-title span { display: block; margin-top: 3px; color: #7a736b; font-size: .62rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.chica-nav-title span { display: block; margin-top: 3px; color: #756d75; font-size: .62rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
 .chica-nav-actions { justify-self: end; }
 .chica-nav-open {
   display: inline-flex; align-items: center; justify-content: center; padding: 9px 15px; border-radius: 999px;
-  background: #1a6b3c; color: #fff !important; text-decoration: none !important; font-weight: 800; font-size: .82rem;
-  box-shadow: 0 8px 18px rgba(26,107,60,.22);
+  background: var(--chica-ink); color: #fff !important; text-decoration: none !important; font-weight: 800; font-size: .82rem;
+  box-shadow: 0 8px 18px rgba(13,13,15,.20);
 }
-.chica-nav-open:hover { background: #145530; }
+.chica-nav-open:hover { background: var(--chica-magenta); }
 @media (max-width: 680px) {
   .chica-site-nav-inner { grid-template-columns: auto 1fr auto; min-height: 60px; padding: 8px 12px; gap: 8px; }
   .chica-nav-logo img { width: 38px; height: 38px; }
