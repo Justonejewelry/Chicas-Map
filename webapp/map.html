@@ -31,9 +31,11 @@
     if(html.indexOf("bexar-gis-paginator")<0)html=html.split('src="js/food-pantry-layer.js').join(pag+'\n  <script src="js/food-pantry-layer.js');
     var count='<script src="https://raw.githubusercontent.com/Justonejewelry/Chicas-Map/main/webapp/js/bexar-school-count.js?v=1">'+close;
     if(html.indexOf("bexar-school-count")<0)html=html.split('src="js/food-pantry-layer.js').join(count+'\n  <script src="js/food-pantry-layer.js');
-    var traffic='<script src="https://raw.githubusercontent.com/Justonejewelry/Chicas-Map/main/webapp/js/traffic-school-zone-layer.js?v=1">'+close;
+    var traffic='<script src="https://raw.githubusercontent.com/Justonejewelry/Chicas-Map/main/webapp/js/traffic-school-zone-layer.js?v=2">'+close;
     html=html.replace(/<script[^>]+zone-aware-layer[^>]*><\/script>/ig,traffic);
     if(html.indexOf("traffic-school-zone-layer")<0)html=html.split('src="js/food-pantry-layer.js').join(traffic+'\n  <script src="js/food-pantry-layer.js');
+    var approaches='<script src="https://raw.githubusercontent.com/Justonejewelry/Chicas-Map/main/webapp/js/traffic-school-road-approach.js?v=1">'+close;
+    if(html.indexOf("traffic-school-road-approach")<0)html=html.split('src="js/food-pantry-layer.js').join(approaches+'\n  <script src="js/food-pantry-layer.js');
     document.open();document.write(html);document.close();
   })().catch(function(e){document.body.innerHTML='<p style="font-family:system-ui;padding:2rem">Could not load map. Hard-refresh or open the <a href="https://github.com/Justonejewelry/Chicas-Map">repo</a>.</p>';console.error(e)});
   </script>
