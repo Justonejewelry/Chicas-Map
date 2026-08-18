@@ -2,16 +2,29 @@
   "use strict";
 
   var NAV_ID = "chica-standard-nav";
-  var ICON = "favicon.svg";
-  var GLOBAL_CSS = "css/chica-global-polish.css";
+  var script = document.currentScript || Array.from(document.scripts).find(function (s) {
+    return /(?:^|\/)site-nav\.js(?:\?|$)/.test(s.src || "");
+  });
+  var WEBAPP_ROOT = script && script.src ? new URL("../", script.src) : new URL("./", location.href);
+  var ICON = new URL("chica-favicon.svg", WEBAPP_ROOT).href;
+  var GLOBAL_CSS = new URL("css/chica-global-polish.css", WEBAPP_ROOT).href;
+  var NAV_CSS = new URL("css/site-nav.css", WEBAPP_ROOT).href;
 
-  function ensureGlobalStyles() {
-    if (document.querySelector('link[data-chica-global-polish]')) return;
-    var link = document.createElement("link");
-    link.rel = "stylesheet";
-    link.href = GLOBAL_CSS + "?v=20260817";
-    link.setAttribute("data-chica-global-polish", "true");
-    document.head.appendChild(link);
+  function ensureStyles() {
+    if (!document.querySelector('link[data-chica-global-polish]')) {
+      var global = document.createElement("link");
+      global.rel = "stylesheet";
+      global.href = GLOBAL_CSS + "?v=20260818";
+      global.setAttribute("data-chica-global-polish", "true");
+      document.head.appendChild(global);
+    }
+    if (!document.querySelector('link[data-chica-site-nav]')) {
+      var navCss = document.createElement("link");
+      navCss.rel = "stylesheet";
+      navCss.href = NAV_CSS + "?v=20260818";
+      navCss.setAttribute("data-chica-site-nav", "true");
+      document.head.appendChild(navCss);
+    }
   }
 
   function item(href, icon, label, note, external) {
@@ -105,6 +118,7 @@
   function standardizeFavicon() {
     document.querySelectorAll('link[rel~="icon"], link[rel="apple-touch-icon"]').forEach(function (link) {
       link.href = ICON;
+      if (link.rel.indexOf("icon") !== -1 && link.rel !== "apple-touch-icon") link.type = "image/svg+xml";
     });
     if (!document.querySelector('link[rel~="icon"]')) {
       var link = document.createElement("link");
@@ -147,7 +161,7 @@
   }
 
   function init() {
-    ensureGlobalStyles();
+    ensureStyles();
     standardizeFavicon();
     build();
     addHomeFeaturesLink();
