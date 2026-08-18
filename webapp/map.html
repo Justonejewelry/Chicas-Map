@@ -77,6 +77,13 @@
       );
     }
 
+    var schoolCount = '<script src="https://raw.githubusercontent.com/Justonejewelry/Chicas-Map/main/webapp/js/bexar-school-count.js?v=1">' + close;
+    if (html.indexOf("bexar-school-count") < 0) {
+      html = html.split('src="js/food-pantry-layer.js').join(
+        schoolCount + "\n  <script src=\"js/food-pantry-layer.js"
+      );
+    }
+
     var zoneScript = '<script src="https://raw.githubusercontent.com/Justonejewelry/Chicas-Map/main/webapp/js/zone-aware-layer.js?v=zone-final">' + close;
     if (html.indexOf("zone-aware-layer") < 0) {
       html = html.split('src="js/food-pantry-layer.js').join(
