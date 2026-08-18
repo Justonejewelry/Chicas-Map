@@ -7,103 +7,34 @@
   <meta name="description" content="Find verified garage sales, yard sales, and estate sales near you in San Antonio." />
   <meta name="theme-color" content="#1a6b3c" />
   <link rel="canonical" href="https://justonejewelry.github.io/Chicas-Map/map.html" />
-  <style>
-    html,body{margin:0;height:100%;height:100dvh;background:#e8f2ec;overflow:hidden}
-    #chica-boot{position:fixed;inset:0;display:grid;place-items:center;font:600 15px/1.4 system-ui,sans-serif;color:#145530}
-  </style>
+  <style>html,body{margin:0;height:100%;height:100dvh;background:#e8f2ec;overflow:hidden}#chica-boot{position:fixed;inset:0;display:grid;place-items:center;font:600 15px/1.4 system-ui,sans-serif;color:#145530}</style>
   <script>
   (async function () {
-    var src = "https://cdn.jsdelivr.net/gh/Justonejewelry/Chicas-Map@5e21ee7d2857944983914be34dc19babe4d56e85/webapp/map.html";
-    var res = await fetch(src + "?t=" + Date.now());
-    if (!res.ok) throw new Error("fetch failed " + res.status);
-    var html = await res.text();
-
-    html = html.split("js/layers-rail.js?v=depth1").join("js/layers-rail.js?v=depth5");
-    html = html.split('src="js/public-wifi-layer.js"').join('src="js/public-wifi-layer.js?v=wifi7"');
-    html = html.split('src="js/food-pantry-layer.js"').join('src="js/food-pantry-layer.js?v=pantry4"');
-
-    var close = "<" + "/script>";
-
-    if (html.indexOf("preferred-overlay") < 0) {
-      html = html.split('<script src="js/user-overlay.js">' + close).join(
-        '<script src="js/user-overlay.js">' + close + "\n  " +
-        '<script src="js/preferred-overlay.js?v=pref1">' + close
-      );
-    }
-    if (html.indexOf("layer-timing-force.js") < 0) {
-      html = html.split('js/layers-rail.js?v=depth5">' + close).join(
-        'js/layers-rail.js?v=depth5">' + close + "\n  " +
-        '<script src="js/layer-timing-force.js?v=lt2">' + close
-      );
-    }
-    if (html.indexOf("cls-force.css") < 0) {
-      html = html.split("</head>").join('<link rel="stylesheet" href="css/cls-force.css?v=cls1" />\n</head>');
-    }
-    if (html.indexOf("map-bottom-details.css") < 0) {
-      html = html.split("</head>").join('<link rel="stylesheet" href="css/map-bottom-details.css?v=bd1" />\n</head>');
-    }
-    if (html.indexOf("chica-config.js") < 0) {
-      html = html.split("</body>").join('<script src="js/chica-config.js?v=cfg1">' + close + "\n</body>");
-    }
-    if (html.indexOf("chica-analytics.js") < 0) {
-      html = html.split("</body>").join('<script src="js/chica-analytics.js?v=an1">' + close + "\n</body>");
-    }
-    if (html.indexOf("web-vitals-monitor.js") < 0) {
-      html = html.split("</body>").join('<script src="js/web-vitals-monitor.js?v=cwv1">' + close + "\n</body>");
-    }
-    if (html.indexOf("map-bottom-details.js") < 0) {
-      html = html.split("</body>").join('<script src="js/map-bottom-details.js?v=bd1">' + close + "\n</body>");
-    }
-    if (html.indexOf("layer-worker-client.js") < 0) {
-      html = html.split('src="js/public-wifi-layer.js').join(
-        'src="js/layer-worker-client.js?v=lw1">' + close + "\n  <script src=\"js/public-wifi-layer.js"
-      );
-    }
-    if (html.indexOf("downtown-parking-layer") < 0) {
-      html = html.split('src="js/food-pantry-layer.js').join(
-        'src="js/downtown-parking-layer.js?v=park1">' + close + "\n  <script src=\"js/food-pantry-layer.js"
-      );
-    }
-    if (html.indexOf("emergency-info-layer") < 0) {
-      html = html.split('src="js/food-pantry-layer.js').join(
-        'src="js/emergency-info-layer.js?v=em1">' + close + "\n  <script src=\"js/food-pantry-layer.js"
-      );
-    }
-
-    var bexarPaginator = '<script src="https://raw.githubusercontent.com/Justonejewelry/Chicas-Map/main/webapp/js/bexar-gis-paginator.js?v=1">' + close;
-    if (html.indexOf("bexar-gis-paginator") < 0) {
-      html = html.split('src="js/food-pantry-layer.js').join(
-        bexarPaginator + "\n  <script src=\"js/food-pantry-layer.js"
-      );
-    }
-
-    var schoolCount = '<script src="https://raw.githubusercontent.com/Justonejewelry/Chicas-Map/main/webapp/js/bexar-school-count.js?v=1">' + close;
-    if (html.indexOf("bexar-school-count") < 0) {
-      html = html.split('src="js/food-pantry-layer.js').join(
-        schoolCount + "\n  <script src=\"js/food-pantry-layer.js"
-      );
-    }
-
-    var zoneScript = '<script src="https://raw.githubusercontent.com/Justonejewelry/Chicas-Map/main/webapp/js/zone-aware-layer.js?v=zone-final">' + close;
-    if (html.indexOf("zone-aware-layer") < 0) {
-      html = html.split('src="js/food-pantry-layer.js').join(
-        zoneScript + "\n  <script src=\"js/food-pantry-layer.js"
-      );
-    } else {
-      html = html.replace(/<script[^>]+zone-aware-layer[^>]*><\/script>/i, zoneScript);
-    }
-
-    document.open();
-    document.write(html);
-    document.close();
-  })().catch(function (e) {
-    document.body.innerHTML =
-      '<p style="font-family:system-ui;padding:2rem">Could not load map. Hard-refresh or open the <a href="https://github.com/Justonejewelry/Chicas-Map">repo</a>.</p>';
-    console.error(e);
-  });
+    var src="https://cdn.jsdelivr.net/gh/Justonejewelry/Chicas-Map@5e21ee7d2857944983914be34dc19babe4d56e85/webapp/map.html";
+    var res=await fetch(src+"?t="+Date.now()); if(!res.ok)throw new Error("fetch failed "+res.status);
+    var html=await res.text(), close="<"+"/script>";
+    html=html.split("js/layers-rail.js?v=depth1").join("js/layers-rail.js?v=depth5");
+    html=html.split('src="js/public-wifi-layer.js"').join('src="js/public-wifi-layer.js?v=wifi7"');
+    html=html.split('src="js/food-pantry-layer.js"').join('src="js/food-pantry-layer.js?v=pantry4"');
+    if(html.indexOf("preferred-overlay")<0)html=html.split('<script src="js/user-overlay.js">'+close).join('<script src="js/user-overlay.js">'+close+'\n  <script src="js/preferred-overlay.js?v=pref1">'+close);
+    if(html.indexOf("layer-timing-force.js")<0)html=html.split('js/layers-rail.js?v=depth5">'+close).join('js/layers-rail.js?v=depth5">'+close+'\n  <script src="js/layer-timing-force.js?v=lt2">'+close);
+    if(html.indexOf("cls-force.css")<0)html=html.split("</head>").join('<link rel="stylesheet" href="css/cls-force.css?v=cls1" />\n</head>');
+    if(html.indexOf("map-bottom-details.css")<0)html=html.split("</head>").join('<link rel="stylesheet" href="css/map-bottom-details.css?v=bd1" />\n</head>');
+    if(html.indexOf("chica-config.js")<0)html=html.split("</body>").join('<script src="js/chica-config.js?v=cfg1">'+close+'\n</body>');
+    if(html.indexOf("chica-analytics.js")<0)html=html.split("</body>").join('<script src="js/chica-analytics.js?v=an1">'+close+'\n</body>');
+    if(html.indexOf("web-vitals-monitor.js")<0)html=html.split("</body>").join('<script src="js/web-vitals-monitor.js?v=cwv1">'+close+'\n</body>');
+    if(html.indexOf("map-bottom-details.js")<0)html=html.split("</body>").join('<script src="js/map-bottom-details.js?v=bd1">'+close+'\n</body>');
+    if(html.indexOf("layer-worker-client.js")<0)html=html.split('src="js/public-wifi-layer.js').join('src="js/layer-worker-client.js?v=lw1">'+close+'\n  <script src="js/public-wifi-layer.js');
+    if(html.indexOf("downtown-parking-layer")<0)html=html.split('src="js/food-pantry-layer.js').join('src="js/downtown-parking-layer.js?v=park1">'+close+'\n  <script src="js/food-pantry-layer.js');
+    if(html.indexOf("emergency-info-layer")<0)html=html.split('src="js/food-pantry-layer.js').join('src="js/emergency-info-layer.js?v=em1">'+close+'\n  <script src="js/food-pantry-layer.js');
+    var pag='<script src="https://raw.githubusercontent.com/Justonejewelry/Chicas-Map/main/webapp/js/bexar-gis-paginator.js?v=1">'+close;
+    if(html.indexOf("bexar-gis-paginator")<0)html=html.split('src="js/food-pantry-layer.js').join(pag+'\n  <script src="js/food-pantry-layer.js');
+    var count='<script src="https://raw.githubusercontent.com/Justonejewelry/Chicas-Map/main/webapp/js/bexar-school-count.js?v=1">'+close;
+    if(html.indexOf("bexar-school-count")<0)html=html.split('src="js/food-pantry-layer.js').join(count+'\n  <script src="js/food-pantry-layer.js');
+    var traffic='<script src="https://raw.githubusercontent.com/Justonejewelry/Chicas-Map/main/webapp/js/traffic-school-zone-layer.js?v=1">'+close;
+    html=html.replace(/<script[^>]+zone-aware-layer[^>]*><\/script>/ig,traffic);
+    if(html.indexOf("traffic-school-zone-layer")<0)html=html.split('src="js/food-pantry-layer.js').join(traffic+'\n  <script src="js/food-pantry-layer.js');
+    document.open();document.write(html);document.close();
+  })().catch(function(e){document.body.innerHTML='<p style="font-family:system-ui;padding:2rem">Could not load map. Hard-refresh or open the <a href="https://github.com/Justonejewelry/Chicas-Map">repo</a>.</p>';console.error(e)});
   </script>
-</head>
-<body>
-  <div id="chica-boot">Loading Chica Map…</div>
-</body>
-</html>
+</head><body><div id="chica-boot">Loading Chica Map…</div></body></html>
