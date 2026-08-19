@@ -1,5 +1,5 @@
 /* Chica Map service worker — offline packet + asset cache */
-const CACHE = "chica-v4";
+const CACHE = "chica-v5";
 const PRECACHE = [
   "./map.html",
   "./index.html",
@@ -10,11 +10,13 @@ const PRECACHE = [
   "./css/map-fabs.css",
   "./css/chica-sign.css",
   "./css/site-nav.css",
+  "./css/cls-force.css",
   "./js/app.js",
   "./js/features.js",
   "./js/detail-bridge.js",
   "./js/chica-pwa.js",
   "./js/site-nav.js",
+  "./js/layer-timing-force.js",
   "./data/cities/san-antonio.json",
   "./data/sponsors.json",
   "./chica-favicon.svg",

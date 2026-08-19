@@ -1,0 +1,62 @@
+/* Chica Map — CLS / layout stability force
+ * Reserve space for the map stage before tiles paint.
+ * Prevents the map from jumping when chrome (dock, legend, toasts) settles.
+ */
+
+html, body {
+  height: 100%;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+body.grass-map {
+  height: 100%;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+/* Map stage always claims the remaining viewport */
+body.grass-map .layout,
+body.grass-map .map-stage,
+body.grass-map .map-wrap,
+body.grass-map #map {
+  min-height: 0;
+}
+
+body.grass-map .map-stage {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+body.grass-map .map-wrap,
+body.grass-map #map {
+  position: absolute;
+  inset: 0;
+  height: 100% !important;
+  width: 100% !important;
+}
+
+/* Logos / icons with explicit dimensions to avoid image CLS */
+.logo-mark.img,
+.v-brand img,
+img[width][height] {
+  aspect-ratio: attr(width) / attr(height);
+}
+
+/* Toasts and install prompts must not push layout */
+#toast,
+.toast,
+.chica-install-prompt,
+.pwa-install {
+  position: fixed !important;
+  z-index: 10050;
+}
+
+/* Mobile: account for topbar + dock so map height is stable from first paint */
+@media (max-width: 900px) {
+  body.grass-map .layout {
+    height: calc(100dvh - 52px - 56px) !important;
+    height: calc(100vh - 52px - 56px) !important;
+  }
+}
