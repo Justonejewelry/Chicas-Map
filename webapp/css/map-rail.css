@@ -285,12 +285,22 @@ body.grass-map .rail-scroll {
     display: flex;
   }
 
+  /* Clear the mobile dock + safe-area. Dock is 56px tall. */
   body.grass-map .map-fabs {
-    bottom: 12px !important;
+    bottom: calc(56px + 14px + env(safe-area-inset-bottom, 0px)) !important;
+    left: 12px !important;
   }
+
   body.grass-map .map-legend {
-    bottom: 12px !important;
+    bottom: calc(56px + 14px + env(safe-area-inset-bottom, 0px)) !important;
     left: 72px !important;
+    max-width: calc(100vw - 96px);
+    gap: 8px !important;
+    padding: 6px 10px !important;
+    font-size: 0.7rem !important;
+    line-height: 1.25;
+    flex-wrap: wrap;
+    z-index: 30;
   }
 
   body.grass-map .topbar .ctrl:not(.keep-mobile) {
@@ -304,6 +314,16 @@ body.grass-map .rail-scroll {
   }
   .mobile-dock button {
     font-size: 0.62rem;
+  }
+  body.grass-map .map-legend {
+    left: 64px !important;
+    max-width: calc(100vw - 84px);
+    gap: 6px !important;
+    padding: 5px 8px !important;
+    font-size: 0.65rem !important;
+  }
+  body.grass-map .map-fabs {
+    left: 8px !important;
   }
 }
 
