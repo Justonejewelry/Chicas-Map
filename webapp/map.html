@@ -12,10 +12,10 @@
   (async function () {
     var t = Date.now();
     var parts = await Promise.all([
-      fetch("map-full-a.html?t=" + t, { cache: "no-store" }).then(function (r) { if (!r.ok) throw new Error("a " + r.status); return r.text(); }),
-      fetch("map-full-b.html?t=" + t, { cache: "no-store" }).then(function (r) { if (!r.ok) throw new Error("b " + r.status); return r.text(); })
+      fetch("map-b64-a.txt?t=" + t, { cache: "no-store" }).then(function (r) { if (!r.ok) throw new Error("a"); return r.text(); }),
+      fetch("map-b64-b.txt?t=" + t, { cache: "no-store" }).then(function (r) { if (!r.ok) throw new Error("b"); return r.text(); })
     ]);
-    var html = parts[0] + parts[1];
+    var html = decodeURIComponent(escape(atob(parts[0].trim() + parts[1].trim())));
     document.open();
     document.write(html);
     document.close();
