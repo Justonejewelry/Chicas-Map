@@ -3,86 +3,6 @@
   "city": "austin",
   "public": [
     {
-      "address": "200 Cottontail Ln, Georgetown, TX 78626",
-      "dates": "2026-08-15 – 2026-08-16",
-      "date_from": "2026-08-15",
-      "date_to": "2026-08-16",
-      "end_date": "2026-08-16",
-      "title": "Estate Sale",
-      "details": "",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196345057",
-      "photos": 0,
-      "type": "estate",
-      "confidence": 0.88,
-      "status": "verified",
-      "lat": 30.61128,
-      "lon": -97.671561,
-      "geocode": "source",
-      "external_id": "yss-200cottontaillngeorgetowntx78626-2026-08-15",
-      "categories": [
-        "estate-sale"
-      ]
-    },
-    {
-      "address": "Hutto, TX 78634",
-      "dates": "Fri Aug 14 – Sun Aug 16",
-      "date_from": "08/14/2026",
-      "date_to": "08/16/2026",
-      "end_date": "2026-08-16",
-      "title": "The “If You Only Hit One Sale This Year, This Should Be The One…” Estate Sale",
-      "details": "",
-      "source": "GarageSaleFinder",
-      "url": "https://garagesalefinder.com/s/N9kiL/hutto-tx-78634",
-      "photos": 0,
-      "type": "estate",
-      "confidence": 0.65,
-      "status": "verified",
-      "lat": 30.2672,
-      "lon": -97.7431,
-      "geocode": "city-center"
-    },
-    {
-      "address": "Johnson City, TX 78636",
-      "dates": "Sat Aug 15 – Sun Aug 16",
-      "date_from": "08/15/2026",
-      "date_to": "08/16/2026",
-      "end_date": "2026-08-16",
-      "title": "Johnson City Takes You Back in Time!",
-      "details": "",
-      "source": "GarageSaleFinder",
-      "url": "https://garagesalefinder.com/s/NIKkU/johnson-city-tx-78636",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.65,
-      "status": "verified",
-      "lat": 30.2672,
-      "lon": -97.7431,
-      "geocode": "city-center"
-    },
-    {
-      "address": "7709 Mullen Dr, Austin, TX 78757",
-      "dates": "2026-08-14 – 2026-08-16",
-      "date_from": "2026-08-14",
-      "date_to": "2026-08-16",
-      "end_date": "2026-08-16",
-      "title": "Crestview Moving Sale August 14-16",
-      "details": "",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196344409",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.88,
-      "status": "verified",
-      "lat": 30.351409,
-      "lon": -97.72732,
-      "geocode": "source",
-      "external_id": "yss-7709mullendraustintx78757-2026-08-14",
-      "categories": [
-        "garage-sale"
-      ]
-    },
-    {
       "address": "hidden, Buda, TX 78610",
       "dates": "2026-08-21 – 2026-08-23",
       "date_from": "2026-08-21",
@@ -107,31 +27,6 @@
       "company": "Creative Estate Sales",
       "in_person": true,
       "external_id": "eso-2453764"
-    },
-    {
-      "address": "1701 W 33rd St, Austin, TX 78703",
-      "dates": "2026-08-14 – 2026-08-16",
-      "date_from": "2026-08-14",
-      "date_to": "2026-08-16",
-      "end_date": "2026-08-16",
-      "title": "Estate/Moving Sale",
-      "details": "",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196345945",
-      "photos": 0,
-      "type": "estate",
-      "confidence": 0.9,
-      "status": "verified",
-      "lat": 30.3052012,
-      "lon": -97.7534088,
-      "geocode": "source",
-      "hours": "2026-08-14 9:00 am-6:00 pm; 2026-08-15 10:30 am-4:00 pm; 2026-08-16 9:30 am-1:00 pm",
-      "in_person": true,
-      "external_id": "yss-1701w33rdstaustintx78703-2026-08-14",
-      "categories": [
-        "estate-sale",
-        "in-person"
-      ]
     }
   ],
   "hot_zones": [
@@ -149,9 +44,9 @@
     "garagesalefinder.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 6,
+  "total_locations": 1,
   "status": "live",
-  "date": "2026-08-16",
-  "last_refresh": "2026-08-16T04:55:50-05:00",
+  "date": "2026-08-19",
+  "last_refresh": "2026-08-19T08:50:36-05:00",
   "permits": []
 }

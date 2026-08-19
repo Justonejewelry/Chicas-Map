@@ -1,8 +1,8 @@
 {
   "edition": "Houston Yard-Bird Discovery",
-  "date": "2026-08-16",
+  "date": "2026-08-19",
   "city": "houston",
-  "total_locations": 1,
+  "total_locations": 0,
   "status": "live",
   "sources": [
     "YardSaleSearch Houston",
@@ -37,19 +37,6 @@
   ],
   "permits": [],
   "permit_total": 0,
-  "public": [
-    {
-      "address": "7777 Blankenship Dr, Houston, TX 77055",
-      "dates": "through Aug 16",
-      "title": "Online estate auction 750+ lots",
-      "details": "Lewis & Maese online estate auction",
-      "source": "YardSaleSearch",
-      "photos": 200,
-      "type": "estate",
-      "confidence": 0.9,
-      "lat": 29.78,
-      "lon": -95.47
-    }
-  ],
-  "last_refresh": "2026-08-16T04:55:50-05:00"
+  "public": [],
+  "last_refresh": "2026-08-19T08:50:36-05:00"
 }

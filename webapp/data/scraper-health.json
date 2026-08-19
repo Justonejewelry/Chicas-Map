@@ -1,16 +1,14 @@
 {
-  "generated_at": "2026-08-12T22:34:26-05:00",
+  "generated_at": "2026-08-19T08:50:36-05:00",
   "overall": "critical",
   "primary_failures": [
-    "estatesales_org",
-    "yardsalesearch",
-    "craigslist"
+    "yardsalesearch"
   ],
   "sources": [
     {
       "source": "garagesalefinder",
-      "status": "zero",
-      "detail": "normalized/added = 0",
+      "status": "ok",
+      "detail": "merge added=6",
       "primary": false
     },
     {
@@ -21,8 +19,8 @@
     },
     {
       "source": "estatesales_org",
-      "status": "zero",
-      "detail": "normalized/added = 0",
+      "status": "ok",
+      "detail": "normalized=4",
       "primary": true
     },
     {
@@ -33,14 +31,14 @@
     },
     {
       "source": "craigslist",
-      "status": "zero",
-      "detail": "normalized/added = 0",
+      "status": "ok",
+      "detail": "merge added=8",
       "primary": true
     },
     {
       "source": "estatesales_net",
-      "status": "zero",
-      "detail": "normalized/added = 0",
+      "status": "ok",
+      "detail": "normalized=1",
       "primary": false
     },
     {
@@ -51,11 +49,11 @@
     }
   ],
   "json_source_counts": {
-    "yardsalesearch": 14,
-    "estatesales.org": 5,
     "estatesales.net": 2,
-    "craigslist": 23,
-    "garagesalefinder": 6,
+    "craigslist": 9,
+    "yardsalesearch": 5,
+    "estatesales.org": 4,
+    "garagesalefinder": 1,
     "aggregators": 2,
     "user submit (approved)": 1
   },
