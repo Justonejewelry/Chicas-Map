@@ -27,7 +27,7 @@
     if(html.indexOf("layer-timing-force.js")<0)html=html.split('js/layers-rail.js?v=depth9">'+close).join('js/layers-rail.js?v=depth9">'+close+'\n  <script src="js/layer-timing-force.js?v=lt2">'+close);
     if(html.indexOf("cls-force.css")<0)html=html.split("</head>").join('<link rel="stylesheet" href="css/cls-force.css?v=cls1" />\n</head>');
     if(html.indexOf("map-bottom-details.css")<0)html=html.split("</head>").join('<link rel="stylesheet" href="css/map-bottom-details.css?v=bd1" />\n</head>');
-    if(html.indexOf("chica-config.js")<0)html=html.split("</body>").join('<script src="js/chica-ux-pack.js?v=ux1">'+close+'\n<script src="js/chica-config.js?v=cfg1">'+close+'\n</body>');
+    if(html.indexOf("chica-config.js")<0)html=html.split("</body>").join('<script src="js/chica-ux-pack.js?v=ux1">'+close+'\n<script src="js/zone-honesty.js?v=zh1">'+close+'\n<script src="js/chica-config.js?v=cfg1">'+close+'\n</body>');
     if(html.indexOf("chica-analytics.js")<0)html=html.split("</body>").join('<script src="js/chica-analytics.js?v=an1">'+close+'\n</body>');
     if(html.indexOf("web-vitals-monitor.js")<0)html=html.split("</body>").join('<script src="js/web-vitals-monitor.js?v=cwv1">'+close+'\n</body>');
     if(html.indexOf("map-bottom-details.js")<0)html=html.split("</body>").join('<script src="js/map-bottom-details.js?v=bd1">'+close+'\n</body>');
@@ -48,6 +48,7 @@
     html=html.replace(/<a[^>]*id=["']dockHome["'][^>]*>[\s\S]*?<\/a>/gi,"");
     html=html.replace(/<a[^>]*class=["'][^"']*dock-home[^"']*["'][^>]*>[\s\S]*?<\/a>/gi,"");
     if(html.indexOf("chica-ux-pack")<0)html=html.split("</body>").join('<script src="js/chica-ux-pack.js?v=ux1">'+close+'\n</body>');
+    if(html.indexOf("zone-honesty")<0)html=html.split("</body>").join('<script src="js/zone-honesty.js?v=zh1">'+close+'\n</body>');
     document.open();document.write(html);document.close();
   })().catch(function(e){document.body.innerHTML='<p style="font-family:system-ui;padding:2rem">Could not load map. Hard-refresh or open the <a href="https://github.com/Justonejewelry/Chicas-Map">repo</a>.</p>';console.error(e)});
   </script>
