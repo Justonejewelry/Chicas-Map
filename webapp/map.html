@@ -33,9 +33,14 @@
     if(html.indexOf("bexar-gis-paginator")<0)html=html.split('src="js/food-pantry-layer.js').join(pag+'\n  <script src="js/food-pantry-layer.js');
     var count='<script src="https://raw.githubusercontent.com/Justonejewelry/Chicas-Map/main/webapp/js/bexar-school-count.js?v=1">'+close;
     if(html.indexOf("bexar-school-count")<0)html=html.split('src="js/food-pantry-layer.js').join(count+'\n  <script src="js/food-pantry-layer.js');
-    var traffic='<script src="https://raw.githubusercontent.com/Justonejewelry/Chicas-Map/main/webapp/js/traffic-school-zone-layer.js?v=2">'+close;
-    html=html.replace(/<script[^>]+zone-aware-layer[^>]*><\/script>/ig,traffic);
-    if(html.indexOf("traffic-school-zone-layer")<0)html=html.split('src="js/food-pantry-layer.js').join(traffic+'\n  <script src="js/food-pantry-layer.js');
+    // P1 2026-08-19: Keep full zone-aware-layer.js (exposes window.ChicaZoneAware for layers-rail).
+    // Do NOT replace it with the incomplete traffic-school-zone-layer.
+    // Ensure the full zone-aware script is present from main if missing in the pin.
+    if(html.indexOf("zone-aware-layer")<0 && html.indexOf("ChicaZoneAware")<0){
+      var zone='<script src="https://raw.githubusercontent.com/Justonejewelry/Chicas-Map/main/webapp/js/zone-aware-layer.js?v=zone3">'+close;
+      html=html.split('src="js/food-pantry-layer.js').join(zone+'\n  <script src="js/food-pantry-layer.js');
+    }
+    // Optional road-approach helper can still load alongside.
     var approaches='<script src="https://raw.githubusercontent.com/Justonejewelry/Chicas-Map/main/webapp/js/traffic-school-road-approach.js?v=1">'+close;
     if(html.indexOf("traffic-school-road-approach")<0)html=html.split('src="js/food-pantry-layer.js').join(approaches+'\n  <script src="js/food-pantry-layer.js');
     if(html.indexOf("js/site-nav.js")<0)html=html.split("</body>").join('<script src="js/site-nav.js?v=20260818">'+close+'\n</body>');
