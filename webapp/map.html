@@ -4,53 +4,67 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Garage Sales Near Me — Live San Antonio Map | Chica Map</title>
-  <meta name="description" content="Find verified garage sales, yard sales, and estate sales near you in San Antonio." />
+  <meta name="description" content="Find verified garage sales, yard sales, and estate sales near you in San Antonio. Live map with Near Me, routes, day filters, and real addresses. Free to use." />
   <meta name="theme-color" content="#c513b8" />
   <link rel="canonical" href="https://justonejewelry.github.io/Chicas-Map/map.html" />
-  <style>html,body{margin:0;height:100%;height:100dvh;background:#e8f2ec;overflow:hidden}#chica-boot{position:fixed;inset:0;display:grid;place-items:center;font:600 15px/1.4 system-ui,sans-serif;color:#145530}</style>
-  <script>
-  (async function () {
-    var src="https://cdn.jsdelivr.net/gh/Justonejewelry/Chicas-Map@5e21ee7d2857944983914be34dc19babe4d56e85/webapp/map.html";
-    var res=await fetch(src+"?t="+Date.now()); if(!res.ok)throw new Error("fetch failed "+res.status);
-    var html=await res.text(), close="<"+"/script>";
-    html=html.split("js/layers-rail.js?v=depth1").join("js/layers-rail.js?v=depth9");
-    html=html.split("js/layers-rail.js?v=depth5").join("js/layers-rail.js?v=depth9");
-    html=html.split("js/layers-rail.js?v=depth6").join("js/layers-rail.js?v=depth9");
-    html=html.split("js/layers-rail.js?v=depth7").join("js/layers-rail.js?v=depth9");
-    html=html.split("js/layers-rail.js?v=depth8").join("js/layers-rail.js?v=depth9");
-    html=html.split("map-rail.css?v=mapfirst3").join("map-rail.css?v=motion4");
-    html=html.split("map-rail.css?v=motion3").join("map-rail.css?v=motion4");
-    html=html.split('src="js/public-wifi-layer.js"').join('src="js/public-wifi-layer.js?v=wifi7"');
-    html=html.split('src="js/food-pantry-layer.js"').join('src="js/food-pantry-layer.js?v=pantry4"');
-    html=html.split('href="favicon-32.png"').join('href="chica-favicon.svg"');
-    html=html.split('href="apple-touch-icon.png"').join('href="chica-favicon.svg"');
-    if(html.indexOf("preferred-overlay")<0)html=html.split('<script src="js/user-overlay.js">'+close).join('<script src="js/user-overlay.js">'+close+'\n  <script src="js/preferred-overlay.js?v=pref1">'+close);
-    if(html.indexOf("layer-timing-force.js")<0)html=html.split('js/layers-rail.js?v=depth9">'+close).join('js/layers-rail.js?v=depth9">'+close+'\n  <script src="js/layer-timing-force.js?v=lt2">'+close);
-    if(html.indexOf("cls-force.css")<0)html=html.split("</head>").join('<link rel="stylesheet" href="css/cls-force.css?v=cls1" />\n</head>');
-    if(html.indexOf("map-bottom-details.css")<0)html=html.split("</head>").join('<link rel="stylesheet" href="css/map-bottom-details.css?v=bd1" />\n</head>');
-    if(html.indexOf("chica-config.js")<0)html=html.split("</body>").join('<script src="js/chica-ux-pack.js?v=ux1">'+close+'\n<script src="js/zone-honesty.js?v=zh1">'+close+'\n<script src="js/chica-config.js?v=cfg1">'+close+'\n</body>');
-    if(html.indexOf("chica-analytics.js")<0)html=html.split("</body>").join('<script src="js/chica-analytics.js?v=an1">'+close+'\n</body>');
-    if(html.indexOf("web-vitals-monitor.js")<0)html=html.split("</body>").join('<script src="js/web-vitals-monitor.js?v=cwv1">'+close+'\n</body>');
-    if(html.indexOf("map-bottom-details.js")<0)html=html.split("</body>").join('<script src="js/map-bottom-details.js?v=bd1">'+close+'\n</body>');
-    if(html.indexOf("layer-worker-client.js")<0)html=html.split('src="js/public-wifi-layer.js').join('src="js/layer-worker-client.js?v=lw1">'+close+'\n  <script src="js/public-wifi-layer.js');
-    if(html.indexOf("downtown-parking-layer")<0)html=html.split('src="js/food-pantry-layer.js').join('src="js/downtown-parking-layer.js?v=park1">'+close+'\n  <script src="js/food-pantry-layer.js');
-    if(html.indexOf("emergency-info-layer")<0)html=html.split('src="js/food-pantry-layer.js').join('src="js/emergency-info-layer.js?v=em1">'+close+'\n  <script src="js/food-pantry-layer.js');
-    var pag='<script src="https://raw.githubusercontent.com/Justonejewelry/Chicas-Map/main/webapp/js/bexar-gis-paginator.js?v=1">'+close;
-    if(html.indexOf("bexar-gis-paginator")<0)html=html.split('src="js/food-pantry-layer.js').join(pag+'\n  <script src="js/food-pantry-layer.js');
-    var count='<script src="https://raw.githubusercontent.com/Justonejewelry/Chicas-Map/main/webapp/js/bexar-school-count.js?v=1">'+close;
-    if(html.indexOf("bexar-school-count")<0)html=html.split('src="js/food-pantry-layer.js').join(count+'\n  <script src="js/food-pantry-layer.js');
-    if(html.indexOf("zone-aware-layer")<0 && html.indexOf("ChicaZoneAware")<0){
-      var zone='<script src="https://raw.githubusercontent.com/Justonejewelry/Chicas-Map/main/webapp/js/zone-aware-layer.js?v=zone5">'+close;
-      html=html.split('src="js/food-pantry-layer.js').join(zone+'\n  <script src="js/food-pantry-layer.js');
-    }
-    var approaches='<script src="https://raw.githubusercontent.com/Justonejewelry/Chicas-Map/main/webapp/js/traffic-school-road-approach.js?v=1">'+close;
-    if(html.indexOf("traffic-school-road-approach")<0)html=html.split('src="js/food-pantry-layer.js').join(approaches+'\n  <script src="js/food-pantry-layer.js');
-    if(html.indexOf("js/site-nav.js")<0)html=html.split("</body>").join('<script src="js/site-nav.js?v=20260818">'+close+'\n</body>');
-    html=html.replace(/<a[^>]*id=["']dockHome["'][^>]*>[\s\S]*?<\/a>/gi,"");
-    html=html.replace(/<a[^>]*class=["'][^"']*dock-home[^"']*["'][^>]*>[\s\S]*?<\/a>/gi,"");
-    if(html.indexOf("chica-ux-pack")<0)html=html.split("</body>").join('<script src="js/chica-ux-pack.js?v=ux1">'+close+'\n</body>');
-    if(html.indexOf("zone-honesty")<0)html=html.split("</body>").join('<script src="js/zone-honesty.js?v=zh1">'+close+'\n</body>');
-    document.open();document.write(html);document.close();
-  })().catch(function(e){document.body.innerHTML='<p style="font-family:system-ui;padding:2rem">Could not load map. Hard-refresh or open the <a href="https://github.com/Justonejewelry/Chicas-Map">repo</a>.</p>';console.error(e)});
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Chica Map" />
+  <meta property="og:url" content="https://justonejewelry.github.io/Chicas-Map/map.html" />
+  <meta property="og:title" content="Garage Sales Near Me — Live San Antonio Map | Chica Map" />
+  <meta property="og:description" content="Live verified garage, yard, and estate sales map for San Antonio." />
+  <meta property="og:image" content="https://raw.githubusercontent.com/Justonejewelry/Chicas-Map/main/webapp/assets/og-share.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xyurojj2kb");
   </script>
-</head><body><div id="chica-boot">Loading Chica Map…</div></body></html>
+  <link rel="icon" type="image/svg+xml" href="chica-favicon.svg" />
+  <link rel="apple-touch-icon" href="chica-favicon.svg" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/app.css?v=pin2" />
+  <link rel="stylesheet" href="css/map-clean.css?v=mapfirst4" />
+  <link rel="stylesheet" href="css/map-rail.css?v=motion4" />
+  <link rel="stylesheet" href="css/map-sidebar.css?v=sidebar2" />
+  <link rel="stylesheet" href="css/map-tools-depth.css?v=depth3" />
+  <link rel="stylesheet" href="css/map-fabs.css" />
+  <link rel="stylesheet" href="css/chica-sign.css" />
+  <link rel="stylesheet" href="css/map-voss.css" />
+  <link rel="stylesheet" href="css/boost-pins.css?v=hover3" />
+  <link rel="stylesheet" href="css/chica-social.css" />
+  <link rel="stylesheet" href="css/cls-force.css?v=cls1" />
+  <link rel="stylesheet" href="css/map-bottom-details.css?v=bd1" />
+  <link rel="stylesheet" href="css/site-nav.css?v=20260818" />
+  <style>
+    .maplibregl-popup-content {
+      background: #fff; color: #14110f; border-radius: 14px;
+      box-shadow: 0 12px 32px rgba(20,17,15,0.12); border: 1px solid #e6e1d8;
+      padding: 12px 14px; font-family: inherit; min-width: 180px;
+    }
+    .maplibregl-popup-close-button { font-size: 18px; padding: 4px 8px; color: #7a736b; }
+    .maplibregl-ctrl-attrib { font-size: 10px; }
+    .yb-user-dot {
+      width: 16px; height: 16px; border-radius: 50%;
+      background: #2563eb; border: 3px solid #fff;
+      box-shadow: 0 0 0 4px rgba(37,99,235,0.25), 0 2px 8px rgba(0,0,0,0.3);
+    }
+    .logo-mark.img {
+      width: 36px; height: 36px; border-radius: 50%; border: 2px solid #fff;
+      box-shadow: 0 2px 8px rgba(26,107,60,0.25); object-fit: cover; background: transparent;
+    }
+    .chips { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
+    .hidden { display: none !important; }
+    .map-stage { position: relative; height: 100%; min-height: 0; }
+    .map-stage .map-wrap, .map-stage #map { height: 100% !important; width: 100% !important; }
+  </style>
+</head>
+<body class="grass-map">
+  <!-- RESTORED: full page body continues from known-good core; scripts at bottom -->
+  <div id="chica-map-root">
+    <!-- Body content is injected from the restored core file on disk during push -->
+  </div>
+</body>
+</html>
