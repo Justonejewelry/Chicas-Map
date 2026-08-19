@@ -1,16 +1,13 @@
 /**
  * Chica Map — Layers panel + Tools roll-up
- * - Sales / Pantries / WiFi / Zone / Permits / Parking
- * - Route, export, radar, DNA, first30, hunt in a collapsible Tools menu
- * - Any layer turned ON closes the List/rail so the map shows results
- * - Smooth open/close transitions for rail + backdrop
+ * Smooth close + layer toasts via ChicaUx
  */
 (function () {
   if (!document.getElementById("map-rail-motion-css")) {
     var railCss = document.createElement("link");
     railCss.id = "map-rail-motion-css";
     railCss.rel = "stylesheet";
-    railCss.href = "css/map-rail.css?v=motion2";
+    railCss.href = "css/map-rail.css?v=motion3";
     document.head.appendChild(railCss);
   }
   if (!document.getElementById("map-tools-depth-css")) {
@@ -33,7 +30,7 @@
       clearTimeout(backdrop.__ybHideT);
       backdrop.__ybHideT = setTimeout(function () {
         if (!backdrop.classList.contains("open")) backdrop.hidden = true;
-      }, 320);
+      }, 280);
     }
     var dock = document.getElementById("dockList");
     if (dock) dock.classList.remove("active");
@@ -68,9 +65,7 @@
     var backdrop = document.getElementById("railBackdrop");
     if (backdrop && !backdrop.__ybMotionBound) {
       backdrop.__ybMotionBound = true;
-      backdrop.addEventListener("click", function () {
-        closeMapRail();
-      });
+      backdrop.addEventListener("click", function () { closeMapRail(); });
     }
   }
 
@@ -99,9 +94,7 @@
     function bindToggle(id, getter, label) {
       var btn = document.getElementById(id);
       if (!btn) return;
-      if (btn.__ybLayerHandler) {
-        btn.removeEventListener("click", btn.__ybLayerHandler, true);
-      }
+      if (btn.__ybLayerHandler) btn.removeEventListener("click", btn.__ybLayerHandler, true);
       btn.__ybLayerHandler = function (e) {
         e.preventDefault();
         e.stopPropagation();
@@ -117,21 +110,29 @@
               } catch (_) {
                 on = btn.classList.contains("active");
               }
-              if (on) setTimeout(closeMapRail, 80);
+              if (on) {
+                try {
+                  if (window.ChicaUx && window.ChicaUx.layerToast) window.ChicaUx.layerToast(label, true);
+                } catch (_) {}
+                setTimeout(closeMapRail, 80);
+              }
             }
-            if (result && typeof result.then === "function") {
-              result.then(maybeClose).catch(function () {});
-            } else {
-              setTimeout(maybeClose, 60);
-            }
+            if (result && typeof result.then === "function") result.then(maybeClose).catch(function () {});
+            else setTimeout(maybeClose, 60);
           } catch (err) {
             console.warn("[layers-rail]", label, err);
             btn.classList.toggle("active");
-            if (btn.classList.contains("active")) setTimeout(closeMapRail, 80);
+            if (btn.classList.contains("active")) {
+              try { if (window.ChicaUx) window.ChicaUx.layerToast(label, true); } catch (_) {}
+              setTimeout(closeMapRail, 80);
+            }
           }
         } else {
           btn.classList.toggle("active");
-          if (btn.classList.contains("active")) setTimeout(closeMapRail, 80);
+          if (btn.classList.contains("active")) {
+            try { if (window.ChicaUx) window.ChicaUx.layerToast(label, true); } catch (_) {}
+            setTimeout(closeMapRail, 80);
+          }
           console.warn("[layers-rail] " + label + " module not ready yet");
         }
       };
@@ -150,7 +151,10 @@
         perm.classList.toggle("active");
         var chip = document.querySelector('.chip[data-filter="permit"]');
         if (chip) chip.click();
-        if (perm.classList.contains("active")) setTimeout(closeMapRail, 80);
+        if (perm.classList.contains("active")) {
+          try { if (window.ChicaUx) window.ChicaUx.layerToast("Permits", true); } catch (_) {}
+          setTimeout(closeMapRail, 80);
+        }
       });
     }
 
@@ -158,6 +162,7 @@
     if (sales && !sales.__ybCloseWired) {
       sales.__ybCloseWired = true;
       sales.addEventListener("click", function () {
+        try { if (window.ChicaUx) window.ChicaUx.layerToast("Sales", true); } catch (_) {}
         setTimeout(closeMapRail, 80);
       });
     }
@@ -184,11 +189,8 @@
       '<span class="layer-ico">🅿️</span><span>Parking</span></button>' +
       "</div>";
     var label = section.querySelector(".rail-label");
-    if (label && label.textContent.toLowerCase().indexOf("tools") >= 0) {
-      section.insertBefore(layers, label);
-    } else {
-      section.insertBefore(layers, section.firstChild);
-    }
+    if (label && label.textContent.toLowerCase().indexOf("tools") >= 0) section.insertBefore(layers, label);
+    else section.insertBefore(layers, section.firstChild);
   }
 
   function buildToolsRollup(section) {
@@ -241,11 +243,8 @@
   window.closeRail = closeMapRail;
   window.openRail = openMapRail;
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", enhance);
-  } else {
-    enhance();
-  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", enhance);
+  else enhance();
   setTimeout(enhance, 400);
   setTimeout(enhance, 1000);
   setTimeout(enhance, 2200);
