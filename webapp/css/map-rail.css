@@ -18,7 +18,7 @@ body.grass-map .topbar {
 }
 
 body.grass-map .footer {
-  display: none !important; /* reclaim vertical space; sources live in meta */
+  display: none !important;
 }
 
 body.grass-map .layout {
@@ -133,4 +133,301 @@ body.grass-map .rail-scroll {
 .mobile-dock button:active {
   color: #1a6b3c;
   background: #e8f5ee;
+}
+
+/* Scope / near tools */
+.scope-toggle {
+  display: flex;
+  gap: 4px;
+  margin: 0 12px 8px;
+  background: #f1f5f9;
+  border-radius: 12px;
+  padding: 3px;
+}
+.scope-btn {
+  flex: 1;
+  border: none;
+  background: transparent;
+  border-radius: 10px;
+  padding: 8px 6px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: #64748b;
+  cursor: pointer;
+}
+.scope-btn.active {
+  background: #fff;
+  color: #145530;
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.08);
+}
+.rail-section {
+  padding: 8px 0;
+  border-bottom: 1px solid #e6e1d8;
+}
+.rail-label {
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #7a736b;
+  padding: 4px 12px 6px;
+}
+.rail-row {
+  display: flex;
+  gap: 6px;
+  padding: 0 12px;
+  align-items: center;
+}
+.near-radius-row .near-btn { flex: 1; }
+.loc-input {
+  flex: 1;
+  min-width: 0;
+  padding: 9px 10px;
+  border-radius: 10px;
+  border: 1px solid #e6e1d8;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+/* Sale list items (compact) */
+.sale-list {
+  list-style: none;
+  margin: 0;
+  padding: 6px 10px 20px;
+}
+.sale-item {
+  display: flex;
+  align-items: stretch;
+  gap: 4px;
+  background: #fff;
+  border: 1px solid #e6e1d8;
+  border-radius: 12px;
+  margin-bottom: 6px;
+  overflow: hidden;
+}
+.sale-main {
+  flex: 1;
+  text-align: left;
+  border: none;
+  background: transparent;
+  padding: 10px 12px;
+  cursor: pointer;
+  min-width: 0;
+}
+.sale-title {
+  display: block;
+  font-weight: 750;
+  font-size: 0.88rem;
+  color: #14110f;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.sale-meta {
+  display: block;
+  font-size: 0.75rem;
+  color: #7a736b;
+  margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.sale-meta .dist {
+  color: #1d4ed8;
+  font-weight: 700;
+  margin-right: 6px;
+}
+.sale-fav {
+  border: none;
+  background: #f8fafc;
+  padding: 0 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #94a3b8;
+}
+.sale-fav:hover { color: #f59e0b; }
+.sale-list .empty {
+  padding: 16px;
+  text-align: center;
+  color: #7a736b;
+  font-size: 0.85rem;
+  border: none;
+  background: transparent;
+}
+
+/* —— Mobile: full-bleed map —— */
+@media (max-width: 900px) {
+  body.grass-map .layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    height: calc(100dvh - 52px - 56px);
+    height: calc(100vh - 52px - 56px);
+  }
+
+  body.grass-map .map-stage {
+    grid-row: 1;
+    grid-column: 1;
+  }
+
+  body.grass-map .panel.rail {
+    position: fixed;
+    top: 52px;
+    left: 0;
+    bottom: 56px;
+    width: min(100%, 380px);
+    max-width: 100%;
+    transform: translateX(-105%);
+    transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.32s ease;
+    box-shadow: none;
+    border-right: none;
+    border-radius: 0 16px 16px 0;
+  }
+
+  body.grass-map .panel.rail.open {
+    transform: translateX(0);
+    box-shadow: 8px 0 32px rgba(20, 17, 15, 0.18);
+  }
+
+  .mobile-dock {
+    display: flex;
+  }
+
+  body.grass-map .map-fabs {
+    bottom: 12px !important;
+  }
+  body.grass-map .map-legend {
+    bottom: 12px !important;
+    left: 72px !important;
+  }
+
+  body.grass-map .topbar .ctrl:not(.keep-mobile) {
+    display: none;
+  }
+}
+
+@media (max-width: 380px) {
+  body.grass-map .topbar {
+    padding: 6px 8px !important;
+  }
+  .mobile-dock button {
+    font-size: 0.62rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.grass-map .panel.rail,
+  .rail-backdrop {
+    transition: none !important;
+  }
+}
+
+/* —— Motion polish: toast fade, layer press, menu drop —— */
+#toast {
+  transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+#toast.hidden {
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+}
+#menuWrap .menu-drop {
+  transform-origin: top right;
+  transition: opacity 0.2s ease, transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+}
+#menuWrap:not(.open) .menu-drop {
+  opacity: 0;
+  transform: translateY(-6px) scale(0.98);
+  pointer-events: none;
+}
+#menuWrap.open .menu-drop {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+.layer-btn.active {
+  animation: chicaLayerOn 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+@keyframes chicaLayerOn {
+  0% { transform: scale(0.96); }
+  55% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .layer-btn.active { animation: none; }
+  #toast, #menuWrap .menu-drop { transition: none !important; }
+}
+
+/* —— Sale detail sheet —— */
+body.grass-map .detail-drawer {
+  position: sticky;
+  bottom: 0;
+  z-index: 50;
+  margin-top: 8px;
+  max-height: min(55vh, 420px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  background: #fff;
+  border-top: 3px solid #c45c26;
+  border-radius: 16px 16px 0 0;
+  box-shadow: 0 -12px 40px rgba(20, 17, 15, 0.18);
+  padding: 14px 16px 18px;
+}
+body.grass-map .detail-drawer.hidden {
+  display: none !important;
+}
+body.grass-map .detail-drawer.open {
+  display: block;
+}
+body.grass-map .detail-close {
+  position: sticky;
+  top: 0;
+  float: right;
+  z-index: 2;
+  background: #f1f5f9;
+}
+.yb-pin-popup .maplibregl-popup-content {
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-size: 0.88rem;
+}
+.yb-pin-popup .popup-title {
+  font-weight: 800;
+  margin-bottom: 2px;
+  color: #14110f;
+}
+.yb-pin-popup .popup-meta {
+  color: #7a736b;
+  font-size: 0.8rem;
+}
+
+body.grass-map .panel.rail.detail-mode .rail-scroll > :not(#detailDrawer) {
+  display: none !important;
+}
+
+body.grass-map .panel.rail.detail-mode .detail-drawer {
+  position: relative;
+  bottom: auto;
+  max-height: none;
+  height: 100%;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+  border-top: none;
+  padding: 16px 16px calc(18px + env(safe-area-inset-bottom, 0));
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
+body.grass-map .panel.rail.detail-mode .detail-close {
+  position: sticky;
+  top: 0;
+  float: right;
+  z-index: 5;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 900px) {
+  body.grass-map .panel.rail.detail-mode .detail-drawer {
+    min-height: 100%;
+  }
 }
