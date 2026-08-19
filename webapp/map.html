@@ -10,23 +10,54 @@
   <style>html,body{margin:0;height:100%;height:100dvh;background:#e8f2ec;overflow:hidden}#chica-boot{position:fixed;inset:0;display:grid;place-items:center;font:600 15px/1.4 system-ui,sans-serif;color:#145530}</style>
   <script>
   (async function () {
-    var t = Date.now();
-    var urls = ["map-b64-0.txt", "map-b64-1.txt", "map-b64-2.txt", "map-b64-3.txt"];
-    var parts = await Promise.all(urls.map(function (u) {
-      return fetch(u + "?t=" + t, { cache: "no-store" }).then(function (r) {
-        if (!r.ok) throw new Error(u + " " + r.status);
-        return r.text();
-      });
-    }));
-    var html = decodeURIComponent(escape(atob(parts.map(function (p) { return p.trim(); }).join(""))));
-    document.open();
-    document.write(html);
-    document.close();
-  })().catch(function (e) {
-    document.body.innerHTML = '<p style="font-family:system-ui;padding:2rem">Could not load map. Hard-refresh or open the <a href="https://github.com/Justonejewelry/Chicas-Map">repo</a>.</p>';
-    console.error(e);
-  });
+    var src="https://cdn.jsdelivr.net/gh/Justonejewelry/Chicas-Map@5e21ee7d2857944983914be34dc19babe4d56e85/webapp/map.html";
+    var res=await fetch(src+"?t="+Date.now()); if(!res.ok)throw new Error("fetch failed "+res.status);
+    var html=await res.text(), close="<"+"/script>";
+    html=html.split("js/layers-rail.js?v=depth1").join("js/layers-rail.js?v=motion4");
+    html=html.split("js/layers-rail.js?v=depth5").join("js/layers-rail.js?v=motion4");
+    html=html.split("js/layers-rail.js?v=depth6").join("js/layers-rail.js?v=motion4");
+    html=html.split("js/layers-rail.js?v=depth7").join("js/layers-rail.js?v=motion4");
+    html=html.split("js/layers-rail.js?v=depth8").join("js/layers-rail.js?v=motion4");
+    html=html.split("js/layers-rail.js?v=depth9").join("js/layers-rail.js?v=motion4");
+    html=html.split("map-rail.css?v=mapfirst3").join("map-rail.css?v=motion4");
+    html=html.split("map-rail.css?v=motion3").join("map-rail.css?v=motion4");
+    html=html.split('src="js/public-wifi-layer.js"').join('src="js/public-wifi-layer.js?v=wifi7"');
+    html=html.split('src="js/food-pantry-layer.js"').join('src="js/food-pantry-layer.js?v=pantry4"');
+    html=html.split('href="favicon-32.png"').join('href="chica-favicon.svg"');
+    html=html.split('href="apple-touch-icon.png"').join('href="chica-favicon.svg"');
+    if(html.indexOf("preferred-overlay")<0)html=html.split('<script src="js/user-overlay.js">'+close).join('<script src="js/user-overlay.js">'+close+'\n  <script src="js/preferred-overlay.js?v=pref1">'+close);
+    if(html.indexOf("layer-timing-force.js")<0)html=html.split('js/layers-rail.js?v=motion4">'+close).join('js/layers-rail.js?v=motion4">'+close+'\n  <script src="js/layer-timing-force.js?v=lt2">'+close);
+    if(html.indexOf("cls-force.css")<0)html=html.split("</head>").join('<link rel="stylesheet" href="css/cls-force.css?v=cls1" />\n</head>');
+    if(html.indexOf("map-bottom-details.css")<0)html=html.split("</head>").join('<link rel="stylesheet" href="css/map-bottom-details.css?v=bd1" />\n</head>');
+    if(html.indexOf("chica-config.js")<0)html=html.split("</body>").join('<script src="js/chica-ux-pack.js?v=ux1">'+close+'\n<script src="js/zone-honesty.js?v=zh1">'+close+'\n<script src="js/chica-config.js?v=cfg1">'+close+'\n</body>');
+    if(html.indexOf("chica-analytics.js")<0)html=html.split("</body>").join('<script src="js/chica-analytics.js?v=an1">'+close+'\n</body>');
+    if(html.indexOf("web-vitals-monitor.js")<0)html=html.split("</body>").join('<script src="js/web-vitals-monitor.js?v=cwv1">'+close+'\n</body>');
+    if(html.indexOf("map-bottom-details.js")<0)html=html.split("</body>").join('<script src="js/map-bottom-details.js?v=bd1">'+close+'\n</body>');
+    if(html.indexOf("layer-worker-client.js")<0)html=html.split('src="js/public-wifi-layer.js').join('src="js/layer-worker-client.js?v=lw1">'+close+'\n  <script src="js/public-wifi-layer.js');
+    if(html.indexOf("downtown-parking-layer")<0)html=html.split('src="js/food-pantry-layer.js').join('src="js/downtown-parking-layer.js?v=park1">'+close+'\n  <script src="js/food-pantry-layer.js');
+    if(html.indexOf("emergency-info-layer")<0)html=html.split('src="js/food-pantry-layer.js').join('src="js/emergency-info-layer.js?v=em1">'+close+'\n  <script src="js/food-pantry-layer.js');
+    if(html.indexOf("zone-aware-layer")<0 && html.indexOf("ChicaZoneAware")<0){
+      var zone='<script src="js/zone-aware-layer.js?v=zone5">'+close;
+      html=html.split('src="js/food-pantry-layer.js').join(zone+'\n  <script src="js/food-pantry-layer.js');
+    }
+    if(html.indexOf("traffic-school-road-approach")<0){
+      var approaches='<script src="js/traffic-school-road-approach.js?v=1">'+close;
+      html=html.split('src="js/food-pantry-layer.js').join(approaches+'\n  <script src="js/food-pantry-layer.js');
+    }
+    if(html.indexOf("bexar-gis-paginator")<0){
+      var pag='<script src="js/bexar-gis-paginator.js?v=1">'+close;
+      html=html.split('src="js/food-pantry-layer.js').join(pag+'\n  <script src="js/food-pantry-layer.js');
+    }
+    if(html.indexOf("bexar-school-count")<0){
+      var count='<script src="js/bexar-school-count.js?v=1">'+close;
+      html=html.split('src="js/food-pantry-layer.js').join(count+'\n  <script src="js/food-pantry-layer.js');
+    }
+    if(html.indexOf("js/site-nav.js")<0)html=html.split("</body>").join('<script src="js/site-nav.js?v=20260818">'+close+'\n</body>');
+    html=html.replace(/<a[^>]*id=["']dockHome["'][^>]*>[\s\S]*?<\/a>/gi,"");
+    html=html.replace(/<a[^>]*class=["'][^"']*dock-home[^"']*["'][^>]*>[\s\S]*?<\/a>/gi,"");
+    if(html.indexOf("chica-ux-pack")<0)html=html.split("</body>").join('<script src="js/chica-ux-pack.js?v=ux1">'+close+'\n</body>');
+    if(html.indexOf("zone-honesty")<0)html=html.split("</body>").join('<script src="js/zone-honesty.js?v=zh1">'+close+'\n</body>');
+    document.open();document.write(html);document.close();
+  })().catch(function(e){document.body.innerHTML='<p style="font-family:system-ui;padding:2rem">Could not load map. Hard-refresh or open the <a href="https://github.com/Justonejewelry/Chicas-Map">repo</a>.</p>';console.error(e)});
   </script>
-</head>
-<body><div id="chica-boot">Loading Chica Map…</div></body>
-</html>
+</head><body><div id="chica-boot">Loading Chica Map…</div></body></html>
