@@ -1,10 +1,8 @@
 /**
  * Map rail + layout — map is the product.
- * Mobile: 100% map; rail = slide-over drawer.
- * Desktop: narrow rail, max map real-estate.
+ * Mobile drawer with smooth 280ms transitions.
  */
 
-/* —— Layout shell —— */
 body.grass-map {
   overflow: hidden;
   height: 100%;
@@ -51,7 +49,6 @@ body.grass-map #map {
   width: 100% !important;
 }
 
-/* —— Rail (desktop always visible; mobile drawer) —— */
 body.grass-map .panel.rail {
   display: flex;
   flex-direction: column;
@@ -91,7 +88,6 @@ body.grass-map .rail-scroll {
   pointer-events: auto;
 }
 
-/* —— Mobile dock —— */
 .mobile-dock {
   display: none;
   position: fixed;
@@ -135,7 +131,6 @@ body.grass-map .rail-scroll {
   background: #e8f5ee;
 }
 
-/* Scope / near tools */
 .scope-toggle {
   display: flex;
   gap: 4px;
@@ -189,7 +184,6 @@ body.grass-map .rail-scroll {
   font-weight: 600;
 }
 
-/* Sale list items (compact) */
 .sale-list {
   list-style: none;
   margin: 0;
@@ -255,7 +249,6 @@ body.grass-map .rail-scroll {
   background: transparent;
 }
 
-/* —— Mobile: full-bleed map —— */
 @media (max-width: 900px) {
   body.grass-map .layout {
     grid-template-columns: 1fr;
@@ -277,7 +270,7 @@ body.grass-map .rail-scroll {
     width: min(100%, 380px);
     max-width: 100%;
     transform: translateX(-105%);
-    transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.32s ease;
+    transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.28s ease;
     box-shadow: none;
     border-right: none;
     border-radius: 0 16px 16px 0;
@@ -321,7 +314,6 @@ body.grass-map .rail-scroll {
   }
 }
 
-/* —— Motion polish: toast fade, layer press, menu drop —— */
 #toast {
   transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -356,7 +348,6 @@ body.grass-map .rail-scroll {
   #toast, #menuWrap .menu-drop { transition: none !important; }
 }
 
-/* —— Sale detail sheet —— */
 body.grass-map .detail-drawer {
   position: sticky;
   bottom: 0;
