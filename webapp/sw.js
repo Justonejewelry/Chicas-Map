@@ -1,5 +1,5 @@
 /* Chica Map service worker — offline packet + asset cache */
-const CACHE = "chica-v5";
+const CACHE = "chica-v6";
 const PRECACHE = [
   "./map.html",
   "./index.html",
@@ -41,7 +41,6 @@ self.addEventListener("activate", (e) => {
 self.addEventListener("fetch", (e) => {
   const url = new URL(e.request.url);
   if (e.request.method !== "GET") return;
-  // Network-first for city JSON (fresh weekend data), cache fallback
   if (url.pathname.includes("/data/")) {
     e.respondWith(
       fetch(e.request)
@@ -54,7 +53,6 @@ self.addEventListener("fetch", (e) => {
     );
     return;
   }
-  // Network-first for HTML so map-first fixes land quickly
   if (url.pathname.endsWith(".html") || url.pathname.endsWith("/")) {
     e.respondWith(
       fetch(e.request)
@@ -67,7 +65,6 @@ self.addEventListener("fetch", (e) => {
     );
     return;
   }
-  // Cache-first for static assets
   e.respondWith(
     caches.match(e.request).then((hit) => hit || fetch(e.request).then((res) => {
       if (res.ok && url.origin === self.location.origin) {
