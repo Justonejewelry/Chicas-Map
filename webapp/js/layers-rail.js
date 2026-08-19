@@ -7,7 +7,7 @@
     var railCss = document.createElement("link");
     railCss.id = "map-rail-motion-css";
     railCss.rel = "stylesheet";
-    railCss.href = "css/map-rail.css?v=motion3";
+    railCss.href = "css/map-rail.css?v=motion4";
     document.head.appendChild(railCss);
   }
   if (!document.getElementById("map-tools-depth-css")) {
