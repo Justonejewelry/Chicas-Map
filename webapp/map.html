@@ -11,11 +11,14 @@
   <script>
   (async function () {
     var t = Date.now();
-    var parts = await Promise.all([
-      fetch("map-b64-a.txt?t=" + t, { cache: "no-store" }).then(function (r) { if (!r.ok) throw new Error("a"); return r.text(); }),
-      fetch("map-b64-b.txt?t=" + t, { cache: "no-store" }).then(function (r) { if (!r.ok) throw new Error("b"); return r.text(); })
-    ]);
-    var html = decodeURIComponent(escape(atob(parts[0].trim() + parts[1].trim())));
+    var urls = ["map-b64-0.txt", "map-b64-1.txt", "map-b64-2.txt", "map-b64-3.txt"];
+    var parts = await Promise.all(urls.map(function (u) {
+      return fetch(u + "?t=" + t, { cache: "no-store" }).then(function (r) {
+        if (!r.ok) throw new Error(u + " " + r.status);
+        return r.text();
+      });
+    }));
+    var html = decodeURIComponent(escape(atob(parts.map(function (p) { return p.trim(); }).join(""))));
     document.open();
     document.write(html);
     document.close();
