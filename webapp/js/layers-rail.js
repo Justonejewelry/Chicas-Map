@@ -3,24 +3,25 @@
  * - Sales / Pantries / WiFi / Zone / Permits / Parking
  * - Route, export, radar, DNA, first30, hunt in a collapsible Tools menu
  * - Any layer turned ON closes the List/rail so the map shows results
+ * - Smooth open/close transitions for rail + backdrop
  */
 (function () {
+  if (!document.getElementById("map-rail-motion-css")) {
+    var railCss = document.createElement("link");
+    railCss.id = "map-rail-motion-css";
+    railCss.rel = "stylesheet";
+    railCss.href = "css/map-rail.css?v=motion2";
+    document.head.appendChild(railCss);
+  }
   if (!document.getElementById("map-tools-depth-css")) {
     var link = document.createElement("link");
     link.id = "map-tools-depth-css";
     link.rel = "stylesheet";
-    link.href = "css/map-tools-depth.css?v=depth2";
+    link.href = "css/map-tools-depth.css?v=depth3";
     document.head.appendChild(link);
   }
 
-  /** Close the mobile List / side rail so the map is fully visible */
   function closeMapRail() {
-    try {
-      if (typeof window.closeRail === "function") {
-        window.closeRail();
-        return;
-      }
-    } catch (_) {}
     var rail = document.getElementById("sideRail");
     var backdrop = document.getElementById("railBackdrop");
     if (rail) {
@@ -29,12 +30,48 @@
     }
     if (backdrop) {
       backdrop.classList.remove("open");
-      backdrop.hidden = true;
+      clearTimeout(backdrop.__ybHideT);
+      backdrop.__ybHideT = setTimeout(function () {
+        if (!backdrop.classList.contains("open")) backdrop.hidden = true;
+      }, 320);
     }
+    var dock = document.getElementById("dockList");
+    if (dock) dock.classList.remove("active");
     var wrap = document.getElementById("menuWrap");
     var menuBtn = document.getElementById("menuBtn");
     if (wrap) wrap.classList.remove("open");
     if (menuBtn) menuBtn.setAttribute("aria-expanded", "false");
+    try {
+      if (typeof window.__YB_returnToMap === "function") window.__YB_returnToMap();
+      else window.dispatchEvent(new Event("resize"));
+    } catch (_) {}
+  }
+
+  function openMapRail() {
+    var rail = document.getElementById("sideRail");
+    var backdrop = document.getElementById("railBackdrop");
+    if (backdrop) {
+      clearTimeout(backdrop.__ybHideT);
+      backdrop.hidden = false;
+      void backdrop.offsetWidth;
+      backdrop.classList.add("open");
+    }
+    if (rail) rail.classList.add("open");
+    var dock = document.getElementById("dockList");
+    if (dock) dock.classList.add("active");
+  }
+
+  function patchNativeRailMotion() {
+    window.closeRail = closeMapRail;
+    window.openRail = openMapRail;
+    window.ChicaCloseRail = closeMapRail;
+    var backdrop = document.getElementById("railBackdrop");
+    if (backdrop && !backdrop.__ybMotionBound) {
+      backdrop.__ybMotionBound = true;
+      backdrop.addEventListener("click", function () {
+        closeMapRail();
+      });
+    }
   }
 
   function removeDuplicateLayerButtons() {
@@ -71,7 +108,6 @@
         var api = getter();
         if (api && typeof api.toggle === "function") {
           try {
-            var wasActive = btn.classList.contains("active");
             var result = api.toggle();
             function maybeClose() {
               var on = false;
@@ -81,7 +117,6 @@
               } catch (_) {
                 on = btn.classList.contains("active");
               }
-              // Close menu when layer is ON so map exposes results
               if (on) setTimeout(closeMapRail, 80);
             }
             if (result && typeof result.then === "function") {
@@ -119,7 +154,6 @@
       });
     }
 
-    // Sales layer: when pressed while other filters dominate, still close rail to show map
     var sales = document.getElementById("btnLayerSales");
     if (sales && !sales.__ybCloseWired) {
       sales.__ybCloseWired = true;
@@ -200,9 +234,12 @@
     buildToolsRollup(section);
     removeDuplicateLayerButtons();
     wireLayerButtons();
+    patchNativeRailMotion();
   }
 
   window.ChicaCloseRail = closeMapRail;
+  window.closeRail = closeMapRail;
+  window.openRail = openMapRail;
 
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", enhance);
@@ -213,4 +250,6 @@
   setTimeout(enhance, 1000);
   setTimeout(enhance, 2200);
   setTimeout(enhance, 4000);
+  setTimeout(patchNativeRailMotion, 600);
+  setTimeout(patchNativeRailMotion, 2000);
 })();
