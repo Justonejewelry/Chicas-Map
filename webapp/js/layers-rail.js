@@ -2,7 +2,7 @@
  * Chica Map — Layers panel + Tools roll-up
  * - Sales / Pantries / WiFi / Zone / Permits / Parking
  * - Route, export, radar, DNA, first30, hunt in a collapsible Tools menu
- * - Zone: after enable, close rail so map + school zones are visible
+ * - Any layer turned ON closes the List/rail so the map shows results
  */
 (function () {
   if (!document.getElementById("map-tools-depth-css")) {
@@ -59,7 +59,7 @@
   }
 
   function wireLayerButtons() {
-    function bindToggle(id, getter, label, opts) {
+    function bindToggle(id, getter, label) {
       var btn = document.getElementById(id);
       if (!btn) return;
       if (btn.__ybLayerHandler) {
@@ -71,10 +71,9 @@
         var api = getter();
         if (api && typeof api.toggle === "function") {
           try {
+            var wasActive = btn.classList.contains("active");
             var result = api.toggle();
-            var closeOnEnable = opts && opts.closeRailOnEnable;
             function maybeClose() {
-              if (!closeOnEnable) return;
               var on = false;
               try {
                 if (typeof api.isEnabled === "function") on = !!api.isEnabled();
@@ -82,19 +81,22 @@
               } catch (_) {
                 on = btn.classList.contains("active");
               }
+              // Close menu when layer is ON so map exposes results
               if (on) setTimeout(closeMapRail, 80);
             }
             if (result && typeof result.then === "function") {
               result.then(maybeClose).catch(function () {});
             } else {
-              setTimeout(maybeClose, 50);
+              setTimeout(maybeClose, 60);
             }
           } catch (err) {
             console.warn("[layers-rail]", label, err);
             btn.classList.toggle("active");
+            if (btn.classList.contains("active")) setTimeout(closeMapRail, 80);
           }
         } else {
           btn.classList.toggle("active");
+          if (btn.classList.contains("active")) setTimeout(closeMapRail, 80);
           console.warn("[layers-rail] " + label + " module not ready yet");
         }
       };
@@ -103,10 +105,9 @@
     }
     bindToggle("btnFoodPantry", function () { return window.ChicaFoodPantry; }, "Pantries");
     bindToggle("btnPublicWifi", function () { return window.ChicaPublicWifi; }, "WiFi");
-    bindToggle("btnZoneAware", function () { return window.ChicaZoneAware; }, "Zone Aware", {
-      closeRailOnEnable: true,
-    });
+    bindToggle("btnZoneAware", function () { return window.ChicaZoneAware; }, "Zone Aware");
     bindToggle("btnDowntownParking", function () { return window.ChicaDowntownParking; }, "Parking");
+
     var perm = document.getElementById("btnLayerPermits");
     if (perm && !perm.__ybWired) {
       perm.__ybWired = true;
@@ -114,6 +115,16 @@
         perm.classList.toggle("active");
         var chip = document.querySelector('.chip[data-filter="permit"]');
         if (chip) chip.click();
+        if (perm.classList.contains("active")) setTimeout(closeMapRail, 80);
+      });
+    }
+
+    // Sales layer: when pressed while other filters dominate, still close rail to show map
+    var sales = document.getElementById("btnLayerSales");
+    if (sales && !sales.__ybCloseWired) {
+      sales.__ybCloseWired = true;
+      sales.addEventListener("click", function () {
+        setTimeout(closeMapRail, 80);
       });
     }
   }
