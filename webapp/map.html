@@ -39,6 +39,9 @@
     var approaches='<script src="https://raw.githubusercontent.com/Justonejewelry/Chicas-Map/main/webapp/js/traffic-school-road-approach.js?v=1">'+close;
     if(html.indexOf("traffic-school-road-approach")<0)html=html.split('src="js/food-pantry-layer.js').join(approaches+'\n  <script src="js/food-pantry-layer.js');
     if(html.indexOf("js/site-nav.js")<0)html=html.split("</body>").join('<script src="js/site-nav.js?v=20260818">'+close+'\n</body>');
+    // P0 2026-08-19: Remove backyard/doghouse link from mobile dock. Keep in master menu only.
+    html=html.replace(/<a[^>]*id=["']dockHome["'][^>]*>[\s\S]*?<\/a>/gi,"");
+    html=html.replace(/<a[^>]*class=["'][^"']*dock-home[^"']*["'][^>]*>[\s\S]*?<\/a>/gi,"");
     document.open();document.write(html);document.close();
   })().catch(function(e){document.body.innerHTML='<p style="font-family:system-ui;padding:2rem">Could not load map. Hard-refresh or open the <a href="https://github.com/Justonejewelry/Chicas-Map">repo</a>.</p>';console.error(e)});
   </script>
