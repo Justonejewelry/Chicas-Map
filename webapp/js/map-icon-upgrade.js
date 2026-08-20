@@ -103,6 +103,7 @@
     if (map && !map.__chicaIconStyleBound) {
       map.__chicaIconStyleBound = true;
       map.on("styledata", function () { setTimeout(function () { upgrade().catch(function () {}); }, 50); });
+      map.on("idle", function () { upgrade().catch(function () {}); });
     }
   }
 
