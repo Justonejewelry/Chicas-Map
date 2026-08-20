@@ -41,10 +41,21 @@
     document.head.appendChild(script);
   }
 
+  function loadMapIcons() {
+    if (!document.body || !document.body.classList.contains("grass-map")) return;
+    if (document.getElementById("chicaMapIcons")) return;
+    var script = document.createElement("script");
+    script.id = "chicaMapIcons";
+    script.src = "js/map-icon-upgrade.js?v=icons1";
+    script.defer = true;
+    document.head.appendChild(script);
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     if (!document.body) return;
     loadProductPolish();
     loadMapDensity();
+    loadMapIcons();
 
     if (document.body.classList.contains("grass-map")) {
       var logo = document.querySelector(".topbar .brand .logo-mark.img");
