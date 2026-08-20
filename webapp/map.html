@@ -140,13 +140,13 @@
             <button type="button" class="day-btn active" data-day="sun">Sun</button>
           </div>
           <div class="near-status" id="nearStatus" hidden></div>
-          <div class="chips" aria-hidden="true">
-            <button class="chip active" data-filter="all">All</button>
-            <button class="chip" data-filter="garage">Garage</button>
-            <button class="chip" data-filter="estate">Estate</button>
-            <button class="chip" data-filter="permit">Permit</button>
-            <button class="chip" data-filter="fundraiser">Fundraiser</button>
-            <button class="chip" data-filter="photos">📷 Photos</button>
+          <div class="chips" role="group" aria-label="Sale type filters">
+            <button class="chip active" type="button" data-filter="all" aria-pressed="true">All</button>
+            <button class="chip" type="button" data-filter="garage" aria-pressed="false">Garage</button>
+            <button class="chip" type="button" data-filter="estate" aria-pressed="false">Estate</button>
+            <button class="chip" type="button" data-filter="permit" aria-pressed="false">Permit</button>
+            <button class="chip" type="button" data-filter="fundraiser" aria-pressed="false">Fundraiser</button>
+            <button class="chip" type="button" data-filter="photos" aria-pressed="false">📷 Photos</button>
           </div>
         </div>
 
