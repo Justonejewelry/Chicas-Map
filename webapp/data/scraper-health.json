@@ -1,14 +1,15 @@
 {
-  "generated_at": "2026-08-19T08:50:36-05:00",
+  "generated_at": "2026-08-20T08:49:27-05:00",
   "overall": "critical",
   "primary_failures": [
+    "estatesales_org",
     "yardsalesearch"
   ],
   "sources": [
     {
       "source": "garagesalefinder",
-      "status": "ok",
-      "detail": "merge added=6",
+      "status": "zero",
+      "detail": "normalized/added = 0",
       "primary": false
     },
     {
@@ -19,8 +20,8 @@
     },
     {
       "source": "estatesales_org",
-      "status": "ok",
-      "detail": "normalized=4",
+      "status": "zero",
+      "detail": "normalized/added = 0",
       "primary": true
     },
     {
@@ -32,13 +33,13 @@
     {
       "source": "craigslist",
       "status": "ok",
-      "detail": "merge added=8",
+      "detail": "merge added=2",
       "primary": true
     },
     {
       "source": "estatesales_net",
-      "status": "ok",
-      "detail": "normalized=1",
+      "status": "zero",
+      "detail": "normalized/added = 0",
       "primary": false
     },
     {
@@ -50,12 +51,12 @@
   ],
   "json_source_counts": {
     "estatesales.net": 2,
-    "craigslist": 9,
-    "yardsalesearch": 5,
-    "estatesales.org": 4,
-    "garagesalefinder": 1,
+    "craigslist": 14,
+    "yardsalesearch": 8,
+    "estatesales.org": 5,
+    "garagesalefinder": 2,
     "aggregators": 2,
     "user submit (approved)": 1
   },
-  "notes": "Primary free sources: estatesales_org, yardsalesearch, craigslist. Soft-fail workflow continues; this report only alerts."
+  "notes": "Primary free sources: estatesales_org, yardsalesearch, craigslist. Scoring: 0 primary problems=healthy, 1=degraded, 2+=critical. Soft-fail workflow continues; this report only alerts."
 }
