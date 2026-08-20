@@ -28,6 +28,7 @@ Secondary (warn-only):
   - GarageSaleFinder
   - SA permits
   - EstateSales.net lightweight
+  - gsalr.com (Treasure Listings multi-endpoint fallback)
   - Apify (optional)
 """
 from __future__ import annotations
@@ -50,6 +51,7 @@ LOGS = {
     "permits": "permits.log",
     "estatesales_org": "estatesales-org.log",
     "yardsalesearch": "yardsalesearch.log",
+    "gsalr": "gsalr.log",
     "craigslist": "craigslist.log",
     "estatesales_net": "estatesales.log",
     "estatesales_apify": "estatesales-apify.log",
@@ -57,7 +59,6 @@ LOGS = {
 
 PRIMARY = {"estatesales_org", "yardsalesearch", "craigslist"}
 
-# True zero only — do NOT include "merge added=0" (that is successful dedupe)
 ZERO_PATTERNS = [
     re.compile(r"normalized=0\b", re.I),
     re.compile(r"0 listings?\b", re.I),
@@ -72,7 +73,6 @@ FAIL_PATTERNS = [
     re.compile(r"ConnectionError|Timeout|URLError", re.I),
 ]
 
-# Positive extraction signals (checked before zero)
 OK_PATTERNS = [
     re.compile(r"normalized=([1-9]\d*)\b", re.I),
     re.compile(r"(?:parsed|enriched|static results)=([1-9]\d*)\b", re.I),
@@ -93,7 +93,6 @@ def analyze_log(key: str, text: str) -> dict:
     if not text.strip():
         return {"source": key, "status": status, "detail": detail, "primary": key in PRIMARY}
 
-    # Hard failures first (HTTP errors, tracebacks, blocks)
     for pat in FAIL_PATTERNS:
         m = pat.search(text)
         if m:
@@ -104,8 +103,6 @@ def analyze_log(key: str, text: str) -> dict:
                 "primary": key in PRIMARY,
             }
 
-    # Success signals BEFORE zero — normalized>0 means the scraper worked
-    # even if merge added=0 (dedupe of existing listings is not a failure)
     for pat in OK_PATTERNS:
         m = pat.search(text)
         if m:
@@ -116,7 +113,6 @@ def analyze_log(key: str, text: str) -> dict:
                 "primary": key in PRIMARY,
             }
 
-    # True zero only (no positive normalized/parsed count above)
     for pat in ZERO_PATTERNS:
         if pat.search(text):
             return {
@@ -126,7 +122,6 @@ def analyze_log(key: str, text: str) -> dict:
                 "primary": key in PRIMARY,
             }
 
-    # Ran but no clear signal
     return {
         "source": key,
         "status": "unknown",
@@ -136,7 +131,6 @@ def analyze_log(key: str, text: str) -> dict:
 
 
 def source_counts_from_json() -> dict[str, int]:
-    """Count live public listings by source field (case-insensitive)."""
     counts: dict[str, int] = {}
     for path in CITY_DIR.glob("*.json"):
         try:
@@ -165,10 +159,6 @@ def main() -> int:
         r for r in results if (not r["primary"]) and r["status"] in ("fail", "zero", "missing")
     ]
 
-    # Softened scoring (2026-08-20):
-    # 0 primary problems → healthy
-    # 1 primary problem  → degraded (still usable)
-    # 2+ primary problems → critical
     n_primary_problems = len(critical_fails)
     if n_primary_problems >= 2:
         overall = "critical"
@@ -185,6 +175,7 @@ def main() -> int:
         "json_source_counts": json_counts,
         "notes": (
             "Primary free sources: estatesales_org, yardsalesearch, craigslist. "
+            "Secondary: gsalr, garagesalefinder, permits, estatesales_net, apify. "
             "Scoring: 0 primary problems=healthy, 1=degraded, 2+=critical. "
             "merge added=0 is treated as ok (dedupe), not zero. "
             "Soft-fail workflow continues; this report only alerts."
@@ -194,7 +185,6 @@ def main() -> int:
     HEALTH_PATH.parent.mkdir(parents=True, exist_ok=True)
     HEALTH_PATH.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
 
-    # Human summary for Actions step summary / logs
     print("### Scraper health")
     print("")
     print(f"- Overall: **{overall.upper()}**")
