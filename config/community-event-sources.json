@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "purpose": "Daily discovery registry for Chica's Map community events.",
+  "sources": [
+    {"name":"City of San Antonio Events","url":"https://www.sa.gov/Directory/Departments/Parks-and-Recreation/Events","priority":10},
+    {"name":"Visit San Antonio Events","url":"https://www.visitsanantonio.com/events/","priority":9},
+    {"name":"San Antonio Public Library Events","url":"https://guides.mysapl.org/events","priority":9},
+    {"name":"Bexar County Events","url":"https://www.bexar.org/Calendar.aspx","priority":9},
+    {"name":"San Antonio Parks Events","url":"https://www.sanantonio.gov/ParksAndRec/Events","priority":9},
+    {"name":"Eventbrite San Antonio","url":"https://www.eventbrite.com/d/tx--san-antonio/events/","priority":8},
+    {"name":"Meetup San Antonio","url":"https://www.meetup.com/find/?location=us--tx--san-antonio","priority":7},
+    {"name":"San Antonio Report Events","url":"https://sanantonioreport.org/events/","priority":7},
+    {"name":"Do210 San Antonio","url":"https://do210.com/events","priority":7},
+    {"name":"KSAT Events","url":"https://www.ksat.com/events/","priority":6}
+  ]
+}
