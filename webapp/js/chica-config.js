@@ -22,33 +22,32 @@
     },
   };
 
-  function loadProductPolish() {
-    if (document.getElementById("chicaProductPolish")) return;
+  function loadScriptOnce(id, src) {
+    if (document.getElementById(id)) return;
     var script = document.createElement("script");
-    script.id = "chicaProductPolish";
-    script.src = "js/product-polish.js?v=20260820";
+    script.id = id;
+    script.src = src;
     script.defer = true;
     document.head.appendChild(script);
+  }
+
+  function loadProductPolish() {
+    loadScriptOnce("chicaProductPolish", "js/product-polish.js?v=20260820");
   }
 
   function loadMapDensity() {
     if (!document.body || !document.body.classList.contains("grass-map")) return;
-    if (document.getElementById("chicaMapDensity")) return;
-    var script = document.createElement("script");
-    script.id = "chicaMapDensity";
-    script.src = "js/map-density.js?v=20260820";
-    script.defer = true;
-    document.head.appendChild(script);
+    loadScriptOnce("chicaMapDensity", "js/map-density.js?v=20260820");
   }
 
   function loadMapIcons() {
     if (!document.body || !document.body.classList.contains("grass-map")) return;
-    if (document.getElementById("chicaMapIcons")) return;
-    var script = document.createElement("script");
-    script.id = "chicaMapIcons";
-    script.src = "js/map-icon-upgrade.js?v=icons1";
-    script.defer = true;
-    document.head.appendChild(script);
+    loadScriptOnce("chicaMapIcons", "js/map-icon-upgrade.js?v=icons1");
+  }
+
+  function loadCommunityEvents() {
+    if (!document.body || !document.body.classList.contains("grass-map")) return;
+    loadScriptOnce("chicaCommunityEvents", "js/community-events-layer.js?v=events1");
   }
 
   document.addEventListener("DOMContentLoaded", function () {
@@ -56,6 +55,7 @@
     loadProductPolish();
     loadMapDensity();
     loadMapIcons();
+    loadCommunityEvents();
 
     if (document.body.classList.contains("grass-map")) {
       var logo = document.querySelector(".topbar .brand .logo-mark.img");
