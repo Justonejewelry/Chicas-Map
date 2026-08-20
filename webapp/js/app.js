@@ -1,68 +1,50 @@
 /**
- * Chicas Map app bootstrap
- * Loads the last known-good full app.js from a pinned commit via jsDelivr,
- * then local chica-go-fix.js (included from map.html) enhances Go/Near Me.
+ * Chicas Map app bootstrap.
  *
- * Also patches maplibregl.Map so window.__YB_MAP is set when the core creates the map.
+ * Keeps the full map core in this repository so its behavior and markup ship
+ * together, while preserving the map instance bridge used by enhancement layers.
  */
 (function () {
-  // Capture the map instance the pinned core creates (it keeps `map` as a local).
   function patchMap() {
     if (!window.maplibregl || !window.maplibregl.Map) return false;
     if (window.maplibregl.Map.__ybBootPatched) return true;
-    var Orig = window.maplibregl.Map;
-    function Wrapped(options) {
-      var m = new Orig(options);
+    var OriginalMap = window.maplibregl.Map;
+    function WrappedMap(options) {
+      var map = new OriginalMap(options);
       try {
-        window.__YB_MAP = m;
-        window.map = m;
-        window.dispatchEvent(
-          new CustomEvent("yb-map-ready", { detail: { map: m } })
-        );
-      } catch (e) {}
-      return m;
+        window.__YB_MAP = map;
+        window.map = map;
+        window.dispatchEvent(new CustomEvent("yb-map-ready", { detail: { map: map } }));
+      } catch (_) {}
+      return map;
     }
-    Wrapped.prototype = Orig.prototype;
+    WrappedMap.prototype = OriginalMap.prototype;
     try {
-      Object.keys(Orig).forEach(function (k) {
-        try {
-          Wrapped[k] = Orig[k];
-        } catch (e) {}
+      Object.keys(OriginalMap).forEach(function (key) {
+        try { WrappedMap[key] = OriginalMap[key]; } catch (_) {}
       });
-    } catch (e) {}
-    Wrapped.__ybBootPatched = true;
-    window.maplibregl.Map = Wrapped;
+    } catch (_) {}
+    WrappedMap.__ybBootPatched = true;
+    window.maplibregl.Map = WrappedMap;
     return true;
   }
+
   if (!patchMap()) {
-    var tries = 0;
-    var iv = setInterval(function () {
-      tries++;
-      if (patchMap() || tries > 40) clearInterval(iv);
+    var attempts = 0;
+    var timer = setInterval(function () {
+      attempts++;
+      if (patchMap() || attempts > 40) clearInterval(timer);
     }, 25);
   }
 
-  var PINNED =
-    "https://cdn.jsdelivr.net/gh/Justonejewelry/Chicas-Map@bede2cc27d72df9effd1952c2f6a7bf47516646b/webapp/js/app.js";
-
-  var s = document.createElement("script");
-  s.src = PINNED;
-  s.async = false;
-  s.onerror = function () {
-    var s2 = document.createElement("script");
-    s2.src =
-      "https://raw.githubusercontent.com/Justonejewelry/Chicas-Map/bede2cc27d72df9effd1952c2f6a7bf47516646b/webapp/js/app.js";
-    s2.onerror = function () {
-      var el = document.createElement("div");
-      el.setAttribute(
-        "style",
-        "position:fixed;bottom:12px;left:12px;right:12px;z-index:99999;background:#7f1d1d;color:#fff;padding:12px 14px;border-radius:12px;font:600 14px/1.4 system-ui,sans-serif"
-      );
-      el.textContent =
-        "Map script failed to load. Hard-refresh, or check your connection.";
-      document.body.appendChild(el);
-    };
-    document.head.appendChild(s2);
+  var script = document.createElement("script");
+  script.src = "js/app-core.js?v=20260820";
+  script.async = false;
+  script.onerror = function () {
+    var message = document.createElement("div");
+    message.setAttribute("style", "position:fixed;bottom:12px;left:12px;right:12px;z-index:99999;background:#7f1d1d;color:#fff;padding:12px 14px;border-radius:12px;font:600 14px/1.4 system-ui,sans-serif");
+    message.textContent = "Map script failed to load. Hard-refresh, or check your connection.";
+    document.body.appendChild(message);
   };
-  document.head.appendChild(s);
+  document.head.appendChild(script);
 })();
