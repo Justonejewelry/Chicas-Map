@@ -22,8 +22,18 @@
     },
   };
 
+  function loadProductPolish() {
+    if (document.getElementById("chicaProductPolish")) return;
+    var script = document.createElement("script");
+    script.id = "chicaProductPolish";
+    script.src = "js/product-polish.js?v=20260820";
+    script.defer = true;
+    document.head.appendChild(script);
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     if (!document.body) return;
+    loadProductPolish();
 
     if (document.body.classList.contains("grass-map")) {
       var logo = document.querySelector(".topbar .brand .logo-mark.img");
@@ -41,7 +51,7 @@
         ".grass-map .topbar .brand .logo-mark.img{width:42px;height:42px;border:1px solid #e6e1d8;box-shadow:0 3px 12px rgba(20,17,15,.12);object-fit:contain;background:#fff;padding:1px}",
         ".grass-map .topbar .brand{gap:10px}",
         ".grass-map .topbar .brand h1{letter-spacing:-.035em}",
-        ".grass-map .topbar .brand h1 span{color:#1a6b3c}",
+        ".grass-map .topbar .brand h1 span{color:#c513b8}",
         "@media(max-width:700px){.grass-map .topbar .brand .logo-mark.img{width:38px;height:38px}.grass-map .topbar .brand h1{font-size:1rem}}"
       ].join("");
       document.head.appendChild(style);
