@@ -64,8 +64,8 @@
       "type": "estate",
       "confidence": 0.9,
       "status": "verified",
-      "lat": 29.39489,
-      "lon": -98.46862,
+      "lat": 29.39457,
+      "lon": -98.46919,
       "geocode": "source",
       "in_person": true,
       "external_id": "yss-sanantoniotx78210-2026-08-21",
@@ -95,8 +95,8 @@
       "geocode": "source",
       "external_id": "eso-2457368",
       "categories": [
-        "online-auction",
-        "estate-sale"
+        "estate-sale",
+        "online-auction"
       ],
       "details": "Caring Transitions of Boerne, Fredericksburg, and Kerrville. Welcome Home to CTBids! We put together an excellent selection of items for you! Start exploring and discover the deals for yourself! Bidding on ALL items starts at $1! Step into a beautifully curated home in exclusive Stone Creek Ranch, where i...",
       "company": "Caring Transitions of Boerne, Fredericksburg, and Kerrville",
@@ -123,8 +123,8 @@
       "in_person": false,
       "external_id": "eso-2457430",
       "categories": [
-        "online-auction",
-        "estate-sale"
+        "estate-sale",
+        "online-auction"
       ]
     },
     {
@@ -252,8 +252,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 29.481911786956523,
-      "lon": -98.54334724896765,
+      "lat": 29.48521757208049,
+      "lon": -98.54462687623422,
       "geocode": "source",
       "company": "Caring Transitions of San Antonio Central",
       "in_person": true,
@@ -578,8 +578,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 29.395084004527487,
-      "lon": -98.46703446116474,
+      "lat": 29.39201178030902,
+      "lon": -98.47173600957812,
       "geocode": "source",
       "company": "Caring Transitions of San Antonio Central",
       "in_person": true,
@@ -1454,7 +1454,7 @@
   "total_locations": 59,
   "status": "live",
   "date": "2026-08-20",
-  "last_refresh": "2026-08-20T01:30:03-05:00",
+  "last_refresh": "2026-08-20T02:42:10-05:00",
   "note": "HOTFIX: preferred merged + wifi/layer reliability",
   "permit_total": 118,
   "permit_estate_count": 5

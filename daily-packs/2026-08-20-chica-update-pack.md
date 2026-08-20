@@ -2,7 +2,7 @@
 
 ## 1. CHICA DAILY RUN
 - **Target date:** Thursday, August 20, 2026
-- **San Antonio local run time:** 2026-08-20T01:30:03-05:00
+- **San Antonio local run time:** 2026-08-20T02:42:11-05:00
 - **Geographic area:** San Antonio & surrounding communities
 - **Sources searched:** 7
 - **Candidates discovered:** 28
@@ -25,7 +25,7 @@
 - **Original listing:** https://www.estatesales.net/TX/Fischer/78623/5030250
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.933,-98.1942
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.933,-98.1942
-- **Verified at:** 2026-08-20T01:30:03-05:00
+- **Verified at:** 2026-08-20T02:42:11-05:00
 
 ### 2. Luxury Entertainment & Lifestyle in Boerne, TX- Bidding Ends 8/26 6:30PM CDT PU 8/28 10AM-2PM
 - **Type:** estate
@@ -37,7 +37,7 @@
 - **Original listing:** https://estatesales.org/estate-sales/tx/boerne/78015/luxury-entertainment-lifestyle-in-boerne-2457368
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.7487321,-98.6490584
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.7487321,-98.6490584
-- **Verified at:** 2026-08-20T01:30:03-05:00
+- **Verified at:** 2026-08-20T02:42:11-05:00
 
 ### 3. Treasures at Terra View: Bidding ENDS 8/23 @ 7PM!
 - **Type:** estate
@@ -49,7 +49,7 @@
 - **Original listing:** https://estatesales.org/estate-sales/tx/san-antonio/78240/treasures-at-terra-view-bidding-2457430
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.5269768,-98.6105703
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5269768,-98.6105703
-- **Verified at:** 2026-08-20T01:30:03-05:00
+- **Verified at:** 2026-08-20T02:42:11-05:00
 
 ### 4. Estate sale/moving sale -antiques too (Green spring Valley)
 - **Type:** estate
@@ -61,7 +61,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-estate-sale-moving-sale/iyLKr45DRf81Ty7rAjR8d2
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.580824,-98.427915
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.580824,-98.427915
-- **Verified at:** 2026-08-20T01:30:03-05:00
+- **Verified at:** 2026-08-20T02:42:11-05:00
 
 ### 5. Moving/Estate Sale (Northeast San Antonio)
 - **Type:** estate
@@ -73,7 +73,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-moving-estate-sale/gMWdVpFwC7qqBLZL82sHeZ
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.666488,-98.431292
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.666488,-98.431292
-- **Verified at:** 2026-08-20T01:30:03-05:00
+- **Verified at:** 2026-08-20T02:42:11-05:00
 
 ### 6. Unbelievable collection liquidation (Schertz)
 - **Type:** estate
@@ -85,7 +85,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/new-braunfels-unbelievable-collection/6mxMeJuTorrrK9csPPdpLv
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.6636,-98.1672
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.6636,-98.1672
-- **Verified at:** 2026-08-20T01:30:03-05:00
+- **Verified at:** 2026-08-20T02:42:11-05:00
 
 ### 7. Alamo Craft Co. Antiques & More (San Antonio)
 - **Type:** garage
@@ -97,7 +97,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-alamo-craft-co-antiques-more/mj6FcRd4ZDr7zwAwc4pwWa
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.556,-98.6094
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.556,-98.6094
-- **Verified at:** 2026-08-20T01:30:03-05:00
+- **Verified at:** 2026-08-20T02:42:11-05:00
 
 ### 8. Garage sale 08/22 (Luckey Ranch)
 - **Type:** garage
@@ -109,7 +109,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-garage-sale-08-22/7DopX2cKFEZnRxywwg3PPv
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.364186,-98.728681
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.364186,-98.728681
-- **Verified at:** 2026-08-20T01:30:03-05:00
+- **Verified at:** 2026-08-20T02:42:11-05:00
 
 ### 9. HUGE DOWNSIZING SALE — EVERYTHING PRICED TO SELL QUICK! (Adkins)
 - **Type:** garage
@@ -122,7 +122,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/adkins-huge-downsizing-sale-everything/t299pMZNw1Wk1uU4UkW6gZ
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.358,-98.247
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.358,-98.247
-- **Verified at:** 2026-08-20T01:30:03-05:00
+- **Verified at:** 2026-08-20T02:42:11-05:00
 
 ### 10. Collections of a Lifetime Online Auction by Caring Transitions - Ends 8/26!
 - **Type:** estate
@@ -135,7 +135,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9gGt/new-braunfels-tx-78133
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936
-- **Verified at:** 2026-08-20T01:30:03-05:00
+- **Verified at:** 2026-08-20T02:42:11-05:00
 
 ### 11. Yard Sale - Schertz TX
 - **Type:** garage
@@ -147,7 +147,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/schertz-yard-sale-schertz-tx/mMzk9zm3ASvAx5GM6aMKjL
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.579,-98.2778
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.579,-98.2778
-- **Verified at:** 2026-08-20T01:30:03-05:00
+- **Verified at:** 2026-08-20T02:42:11-05:00
 
 ## 3. CHICA PICKS
 
