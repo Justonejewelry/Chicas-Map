@@ -70,6 +70,13 @@ jobs:
           set -e
           python3 webapp/scripts/fetch_yardsalesearch.py --cities "$CITIES" | tee yardsalesearch.log || true
 
+      - name: gsalr.com free discovery
+        env:
+          CITIES: ${{ github.event.inputs.cities || 'san-antonio,austin' }}
+        run: |
+          set -e
+          python3 webapp/scripts/fetch_gsalr.py --cities "$CITIES" | tee gsalr.log || true
+
       - name: Craigslist free discovery
         env:
           CITIES: ${{ github.event.inputs.cities || 'san-antonio,austin' }}
