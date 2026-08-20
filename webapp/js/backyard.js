@@ -12,15 +12,16 @@
   async function text(file){const r=await fetch(file.download_url,{cache:"no-store"});if(!r.ok)throw Error("Pack "+r.status);return r.text()}
   async function init(){
     const titleEl=document.getElementById("dailyTitle"),postEl=document.getElementById("dailyPost"),list=document.getElementById("blogList");
-    if(!titleEl||!postEl||!list)return;
+    if(!titleEl&&!postEl&&!list)return;
     try{
       const all=await files(),usable=all.filter(x=>dateFromName(x.name)<=today),latest=usable[0]||all[0];
       if(latest){const md=await text(latest);titleEl.textContent=title(md);const body=strip(md).replace(/^A note from Chica\s*/i,"");postEl.innerHTML=esc(body).split(/\n{2,}/).slice(0,5).map(p=>`<p>${p.replace(/\n/g," ")}</p>`).join("")}
-      if(!all.length){list.innerHTML='<div class="by-card by-prose"><p>No archive entries yet.</p></div>';return}
+      if(!list)return;\n      if(!all.length){list.innerHTML='<div class="by-card by-prose"><p>No archive entries yet.</p></div>';return}
       const cards=[];for(const f of all.slice(0,9)){try{const md=await text(f),d=dateFromName(f);cards.push(`<article class="by-blog-card"><div class="date">${esc(d)}</div><h3>${esc(title(md))}</h3><p>${esc(excerpt(md))}</p><a href="${esc(f.html_url)}" target="_blank" rel="noopener noreferrer">Read the full note →</a></article>`)}catch(_){}}
       list.innerHTML=cards.join("")||'<div class="by-card by-prose"><p>The archive is temporarily unavailable.</p></div>';
-    }catch(e){titleEl.textContent="Chica is checking the yard…";postEl.textContent="The latest Backyard note could not be loaded right now. Try again in a moment.";list.innerHTML='<div class="by-card by-prose"><p>The archive is temporarily unavailable.</p></div>';console.warn("[backyard]",e.message)}
+    }catch(e){if(titleEl)titleEl.textContent="Chica is checking the yard…";if(postEl)postEl.textContent="The latest Backyard note could not be loaded right now. Try again in a moment.";if(list)list.innerHTML='<div class="by-card by-prose"><p>The archive is temporarily unavailable.</p></div>';console.warn("[backyard]",e.message)}
   }
+  function setupCarousel(){const carousel=document.querySelector('[data-action-carousel]');if(!carousel)return;const track=carousel.querySelector('.by-actions'),previous=document.querySelector('[data-carousel-prev]'),next=document.querySelector('[data-carousel-next]');if(!track||!previous||!next)return;const step=()=>Math.max(260,Math.round(track.clientWidth*.78));const update=()=>{const max=track.scrollWidth-track.clientWidth;previous.disabled=track.scrollLeft<=2;next.disabled=track.scrollLeft>=max-2;};previous.addEventListener('click',()=>track.scrollBy({left:-step(),behavior:'smooth'}));next.addEventListener('click',()=>track.scrollBy({left:step(),behavior:'smooth'}));track.addEventListener('scroll',update,{passive:true});window.addEventListener('resize',update);update()}
   function enhance(){document.querySelectorAll('.by-feature,.by-card-link,.by-blog-card').forEach((el,i)=>el.style.setProperty('--delay',Math.min(i*35,240)+'ms'));const hero=document.querySelector('.by-hero-visual img');if(hero)hero.addEventListener('error',function(){this.style.display='none';this.parentElement.classList.add('by-hero-missing')})}
-  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>{init();enhance()});else{init();enhance()}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>{init();enhance();setupCarousel()});else{init();enhance();setupCarousel()}
 })();
