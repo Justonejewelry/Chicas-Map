@@ -1,15 +1,32 @@
-/* Chica Map — unified visual polish */
+/* Chica Map — global product polish
+   Shared by the map, Backyard, legal pages, forms and supporting surfaces. */
 :root {
-  --chica-green: #1a6b3c;
-  --chica-green-dark: #145530;
-  --chica-green-soft: #e8f5ee;
-  --chica-ink: #14110f;
-  --chica-muted: #756e66;
-  --chica-line: #e5dfd6;
+  --chica-ink: #111114;
+  --chica-ink-soft: #252329;
+  --chica-magenta: #c513b8;
+  --chica-magenta-dark: #980b8e;
+  --chica-magenta-soft: #fde8fa;
+  --chica-pink-wash: #fff7fe;
+  --chica-muted: #716a72;
+  --chica-line: #e8dfe7;
   --chica-card: #ffffff;
-  --chica-shadow: 0 8px 24px rgba(20,17,15,.10);
-  --chica-shadow-hover: 0 12px 30px rgba(20,17,15,.16);
-  --chica-radius: 14px;
+  --chica-page: #fcfafc;
+  --chica-shadow: 0 10px 28px rgba(17,17,20,.09);
+  --chica-shadow-hover: 0 18px 40px rgba(17,17,20,.15);
+  --chica-radius: 16px;
+  --chica-radius-sm: 12px;
+}
+
+html { scroll-padding-top: 88px; }
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Shared page rhythm without imposing a layout on map canvases. */
+main > section:not(.hero):not(.map-shell):not(.map-wrap):not(.map-container) {
+  scroll-margin-top: 88px;
 }
 
 /* Consistent interactive controls across every page. */
@@ -31,7 +48,7 @@ a[role="button"],
 .cta,
 input[type="submit"],
 input[type="button"] {
-  transition: transform .14s ease, box-shadow .14s ease, background-color .14s ease, border-color .14s ease, color .14s ease;
+  transition: transform .16s ease, box-shadow .16s ease, background-color .16s ease, border-color .16s ease, color .16s ease, opacity .16s ease;
 }
 
 button:not(:disabled):hover,
@@ -52,8 +69,8 @@ a[role="button"]:active,
 .cta:active,
 input[type="submit"]:active,
 input[type="button"]:active {
-  transform: translateY(1px) scale(.985);
-  box-shadow: 0 4px 10px rgba(20,17,15,.12);
+  transform: translateY(1px) scale(.99);
+  box-shadow: 0 5px 14px rgba(17,17,20,.12);
 }
 
 button:focus-visible,
@@ -61,7 +78,7 @@ a:focus-visible,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
-  outline: 3px solid rgba(26,107,60,.34);
+  outline: 3px solid rgba(197,19,184,.34);
   outline-offset: 3px;
 }
 
@@ -72,7 +89,7 @@ select:disabled {
   opacity: .58;
 }
 
-/* Common card treatment. */
+/* Cards and panels: one elevation language across related pages. */
 .card,
 .panel,
 .feature-card,
@@ -81,7 +98,10 @@ select:disabled {
 .sale-card,
 .notice,
 .modal,
-.drawer {
+.drawer,
+.by-card,
+.email-card,
+.trust-card {
   border-radius: var(--chica-radius);
 }
 
@@ -90,29 +110,78 @@ select:disabled {
 .feature-card,
 .info-card,
 .action-card,
-.sale-card {
+.sale-card,
+.by-card,
+.email-card,
+.trust-card {
+  border-color: var(--chica-line);
   box-shadow: var(--chica-shadow);
 }
 
-/* Make common primary actions feel like buttons even where legacy CSS only sets color. */
+.card:hover,
+.panel:hover,
+.feature-card:hover,
+.info-card:hover,
+.action-card:hover,
+.sale-card:hover,
+.trust-card:hover {
+  box-shadow: var(--chica-shadow-hover);
+}
+
+/* Forms should feel intentional and remain usable on touch devices. */
+input:not([type="checkbox"]):not([type="radio"]),
+select,
+textarea {
+  border-radius: var(--chica-radius-sm);
+}
+
+input:not([type="checkbox"]):not([type="radio"]):focus,
+select:focus,
+textarea:focus {
+  border-color: var(--chica-magenta) !important;
+  box-shadow: 0 0 0 4px rgba(197,19,184,.12);
+}
+
+/* Make common primary actions visually belong to Chica's identity. */
 .btn-primary,
 .primary,
 .primary-btn,
 .cta-primary,
-.hero-cta a:first-child {
-  box-shadow: 0 8px 18px rgba(26,107,60,.20);
+.hero-cta a:first-child,
+.by-btn-primary {
+  box-shadow: 0 9px 22px rgba(197,19,184,.22);
 }
 
-/* Interactive map controls should have a clear hit target and depth. */
+/* Secondary actions get a quiet but visible boundary. */
+.btn-secondary,
+.btn-ghost,
+.secondary,
+.by-btn-ghost {
+  border-color: var(--chica-line);
+}
+
+/* Small labels and utility chips read as one product system. */
+.badge,
+.chip,
+.tag,
+.pill,
+.status-chip,
+.eyebrow {
+  border-radius: 999px;
+}
+
+/* Interactive map controls should have clear hit targets and depth. */
 .mapboxgl-ctrl button,
 .maplibregl-ctrl button,
 .tool-btn,
 .feat-btn,
 .map-tool,
 .filter-btn {
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(20,17,15,.12);
-  transition: transform .14s ease, box-shadow .14s ease, background-color .14s ease;
+  min-width: 40px;
+  min-height: 40px;
+  border-radius: 11px;
+  box-shadow: 0 5px 14px rgba(17,17,20,.12);
+  transition: transform .16s ease, box-shadow .16s ease, background-color .16s ease;
 }
 
 .mapboxgl-ctrl button:hover,
@@ -122,7 +191,7 @@ select:disabled {
 .map-tool:hover,
 .filter-btn:hover {
   transform: translateY(-1px);
-  box-shadow: 0 8px 18px rgba(20,17,15,.17);
+  box-shadow: 0 10px 22px rgba(17,17,20,.16);
 }
 
 .mapboxgl-ctrl button:active,
@@ -134,9 +203,15 @@ select:disabled {
   transform: translateY(1px);
 }
 
-/* Keep links visibly interactive without changing the site's voice. */
-a:not(.chica-nav-item):not(.chica-nav-logo):not(.chica-nav-open) {
+/* Keep links visibly interactive without restyling branded navigation. */
+a:not(.chica-nav-item):not(.chica-nav-logo):not(.chica-nav-open):not(.chica-nav-title) {
   text-underline-offset: 3px;
+}
+
+/* Better empty/loading states when pages populate content asynchronously. */
+[aria-live="polite"]:empty::before {
+  content: "Loading…";
+  color: var(--chica-muted);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -148,6 +223,8 @@ a:not(.chica-nav-item):not(.chica-nav-logo):not(.chica-nav-open) {
 }
 
 @media (max-width: 680px) {
+  html { scroll-padding-top: 74px; }
+
   button,
   a[role="button"],
   .btn,
@@ -155,6 +232,12 @@ a:not(.chica-nav-item):not(.chica-nav-logo):not(.chica-nav-open) {
   .cta,
   input[type="submit"],
   input[type="button"] {
-    min-height: 40px;
+    min-height: 42px;
+  }
+
+  input:not([type="checkbox"]):not([type="radio"]),
+  select,
+  textarea {
+    min-height: 42px;
   }
 }
