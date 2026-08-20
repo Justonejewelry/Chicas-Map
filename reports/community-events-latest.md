@@ -1,5 +1,214 @@
 # Chica’s Map — Daily Community Events Swarm
 
-The daily scout has been installed. Its first scheduled run will populate this report with newly discovered event URLs and source errors.
+Run: 2026-08-20T13:57:46.125231+00:00
 
-**Policy:** discoveries are never published automatically. Candidates are reviewed, normalized, geocoded, deduplicated, then approved before appearing on the public map.
+Candidates discovered: **305**
+Source errors: **4**
+
+## Review Queue
+- **Bexar County Events** — http://schema.org/Event — score 9
+- **Bexar County Events** — http://schema.org/Event — score 9
+- **Bexar County Events** — http://schema.org/Event — score 9
+- **Bexar County Events** — http://schema.org/Event — score 9
+- **Bexar County Events** — http://schema.org/Event — score 9
+- **Bexar County Events** — http://schema.org/Event — score 9
+- **Bexar County Events** — http://schema.org/Event — score 9
+- **Bexar County Events** — http://schema.org/Event — score 9
+- **Bexar County Events** — http://schema.org/Event — score 9
+- **Bexar County Events** — http://schema.org/Event — score 9
+- **Bexar County Events** — http://schema.org/Event — score 9
+- **Bexar County Events** — http://schema.org/Event — score 9
+- **Bexar County Events** — http://schema.org/Event — score 9
+- **Bexar County Events** — http://schema.org/Event — score 9
+- **Bexar County Events** — http://schema.org/Event — score 9
+- **Bexar County Events** — http://schema.org/Event — score 9
+- **Bexar County Events** — http://schema.org/Event — score 9
+- **Bexar County Events** — http://schema.org/Event — score 9
+- **Bexar County Events** — http://schema.org/Event — score 9
+- **Bexar County Events** — http://schema.org/Event — score 9
+- **Bexar County Events** — http://schema.org/Event — score 9
+- **Bexar County Events** — http://schema.org/Event — score 9
+- **Bexar County Events** — http://schema.org/Event — score 9
+- **Bexar County Events** — http://schema.org/Event — score 9
+- **Bexar County Events** — http://schema.org/Event — score 9
+- **Bexar County Events** — http://schema.org/Event — score 9
+- **Bexar County Events** — http://schema.org/Event — score 9
+- **Bexar County Events** — http://schema.org/Event — score 9
+- **Bexar County Events** — http://schema.org/Event — score 9
+- **Bexar County Events** — http://schema.org/Event — score 9
+- **Bexar County Events** — http://schema.org/Event — score 9
+- **Bexar County Events** — http://schema.org/Event — score 9
+- **Bexar County Events** — http://schema.org/Event — score 9
+- **Bexar County Events** — http://schema.org/Event — score 9
+- **Bexar County Events** — http://schema.org/Event — score 9
+- **Visit San Antonio Events** — https://schema.org/EventScheduled — score 9
+- **Visit San Antonio Events** — https://schema.org/EventScheduled — score 9
+- **Visit San Antonio Events** — https://schema.org/EventScheduled — score 9
+- **Visit San Antonio Events** — https://schema.org/EventScheduled — score 9
+- **Visit San Antonio Events** — https://schema.org/EventScheduled — score 9
+- **Bexar County Events** — https://www.facebook.com/pg/countyclerkbc/events/ — score 9
+- **Bexar County Events** — https://www.facebook.com/pg/countyclerkbc/events/ — score 9
+- **Visit San Antonio Events** — https://www.thesanantonioriverwalk.com/events/day-of-the-dead-san-antonio/ — score 9
+- **Visit San Antonio Events** — https://www.visitsanantonio.com/events/ — score 9
+- **Visit San Antonio Events** — https://www.visitsanantonio.com/events/ — score 9
+- **Visit San Antonio Events** — https://www.visitsanantonio.com/events/arts-culture-events/ — score 9
+- **Visit San Antonio Events** — https://www.visitsanantonio.com/events/arts-culture-events/ — score 9
+- **Visit San Antonio Events** — https://www.visitsanantonio.com/events/arts-culture-events/ — score 9
+- **Visit San Antonio Events** — https://www.visitsanantonio.com/events/arts-culture-events/day-of-the-dead/ — score 9
+- **Visit San Antonio Events** — https://www.visitsanantonio.com/events/arts-culture-events/day-of-the-dead/ — score 9
+- **Visit San Antonio Events** — https://www.visitsanantonio.com/events/arts-culture-events/day-of-the-dead/ — score 9
+- **Visit San Antonio Events** — https://www.visitsanantonio.com/events/culinary-events/ — score 9
+- **Visit San Antonio Events** — https://www.visitsanantonio.com/events/culinary-events/ — score 9
+- **Visit San Antonio Events** — https://www.visitsanantonio.com/events/culinary-events/ — score 9
+- **Visit San Antonio Events** — https://www.visitsanantonio.com/events/culinary-events/ — score 9
+- **Visit San Antonio Events** — https://www.visitsanantonio.com/events/family-fun/ — score 9
+- **Visit San Antonio Events** — https://www.visitsanantonio.com/events/family-fun/ — score 9
+- **Visit San Antonio Events** — https://www.visitsanantonio.com/events/family-fun/ — score 9
+- **Visit San Antonio Events** — https://www.visitsanantonio.com/events/family-fun/ — score 9
+- **Visit San Antonio Events** — https://www.visitsanantonio.com/events/live-performance-events/ — score 9
+- **Visit San Antonio Events** — https://www.visitsanantonio.com/events/live-performance-events/ — score 9
+- **Visit San Antonio Events** — https://www.visitsanantonio.com/events/live-performance-events/ — score 9
+- **Visit San Antonio Events** — https://www.visitsanantonio.com/events/trending-this-week/ — score 9
+- **Visit San Antonio Events** — https://www.visitsanantonio.com/submit-an-event/ — score 9
+- **San Antonio Report Events** — http://sanantonioreport.org/events/ — score 7
+- **Do210 San Antonio** — http://schema.org/Event — score 7
+- **Do210 San Antonio** — http://schema.org/Event — score 7
+- **Do210 San Antonio** — http://schema.org/Event — score 7
+- **Do210 San Antonio** — http://schema.org/Event — score 7
+- **Do210 San Antonio** — http://schema.org/Event — score 7
+- **Do210 San Antonio** — http://schema.org/Event — score 7
+- **Do210 San Antonio** — http://schema.org/Event — score 7
+- **Do210 San Antonio** — http://schema.org/Event — score 7
+- **Do210 San Antonio** — http://schema.org/Event — score 7
+- **Do210 San Antonio** — http://schema.org/Event — score 7
+- **Do210 San Antonio** — http://schema.org/Event — score 7
+- **Do210 San Antonio** — http://schema.org/Event — score 7
+- **Do210 San Antonio** — http://schema.org/Event — score 7
+- **Do210 San Antonio** — http://schema.org/Event — score 7
+- **Do210 San Antonio** — http://schema.org/Event — score 7
+- **Do210 San Antonio** — http://schema.org/Event — score 7
+- **Do210 San Antonio** — http://schema.org/Event — score 7
+- **Do210 San Antonio** — http://schema.org/Event — score 7
+- **Do210 San Antonio** — http://schema.org/Event — score 7
+- **Do210 San Antonio** — http://schema.org/Event — score 7
+- **Do210 San Antonio** — http://schema.org/Event — score 7
+- **Do210 San Antonio** — http://schema.org/Event — score 7
+- **Do210 San Antonio** — http://schema.org/Event — score 7
+- **Do210 San Antonio** — http://schema.org/Event — score 7
+- **Do210 San Antonio** — http://schema.org/Event — score 7
+- **San Antonio Report Events** — https://connect.facebook.net/en_US/fbevents.js — score 7
+- **San Antonio Report Events** — https://connect.facebook.net/en_US/fbevents.js — score 7
+- **Do210 San Antonio** — https://connect.facebook.net/en_US/fbevents.js — score 7
+- **Do210 San Antonio** — https://do210.com/events — score 7
+- **Do210 San Antonio** — https://do210.com/events/2024/12/13/dawes-oh-brother-tour-tickets — score 7
+- **Do210 San Antonio** — https://do210.com/events/2024/12/13/dawes-oh-brother-tour-tickets — score 7
+- **Do210 San Antonio** — https://do210.com/festivals-in-san-antonio — score 7
+- **Do210 San Antonio** — https://do210.com/festivals-in-san-antonio — score 7
+- **Do210 San Antonio** — https://do210.com/new-shows-concerts-san-antonio — score 7
+- **Do210 San Antonio** — https://do210.com/new-shows-concerts-san-antonio — score 7
+- **Do210 San Antonio** — https://do210.com/p/adding-events-on-do210 — score 7
+- **Do210 San Antonio** — https://do210.com/p/adding-events-on-do210 — score 7
+- **Do210 San Antonio** — https://gruenehall.com/event/gage-the-live-rounds-3/ — score 7
+- **Do210 San Antonio** — https://gruenehall.com/event/gage-the-live-rounds-3/ — score 7
+- **Do210 San Antonio** — https://gruenehall.com/event/heath-walker-band-2/ — score 7
+- **Do210 San Antonio** — https://gruenehall.com/event/heath-walker-band-2/ — score 7
+- **Do210 San Antonio** — https://makereadymarket.com/event/paseanos-pop-up/2026-08-20/ — score 7
+- **Do210 San Antonio** — https://makereadymarket.com/event/paseanos-pop-up/2026-08-20/ — score 7
+- **San Antonio Report Events** — https://sanantonioreport.org/events/ — score 7
+- **San Antonio Report Events** — https://sanantonioreport.org/events/ — score 7
+- **San Antonio Report Events** — https://sanantonioreport.org/events/ — score 7
+- **San Antonio Report Events** — https://sanantonioreport.org/wp-content/plugins/newspack-manager/includes/foundation/events/styles.css?ver=1787096984 — score 7
+- **San Antonio Report Events** — https://sanantonioreport.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fsanantonioreport.org%2Fevents%2F — score 7
+- **San Antonio Report Events** — https://sanantonioreport.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fsanantonioreport.org%2Fevents%2F&#038;format=xml — score 7
+- **Meetup San Antonio** — https://schema.org/EventScheduled — score 7
+- **Meetup San Antonio** — https://schema.org/EventScheduled — score 7
+- **Meetup San Antonio** — https://schema.org/EventScheduled — score 7
+- **Meetup San Antonio** — https://schema.org/EventScheduled — score 7
+- **Meetup San Antonio** — https://schema.org/EventScheduled — score 7
+- **Meetup San Antonio** — https://schema.org/EventScheduled — score 7
+- **Meetup San Antonio** — https://schema.org/EventScheduled — score 7
+- **Meetup San Antonio** — https://schema.org/EventScheduled — score 7
+- **Meetup San Antonio** — https://schema.org/EventScheduled — score 7
+- **Meetup San Antonio** — https://schema.org/EventScheduled — score 7
+- **Meetup San Antonio** — https://schema.org/EventScheduled — score 7
+- **Meetup San Antonio** — https://schema.org/EventScheduled — score 7
+- **Meetup San Antonio** — https://schema.org/OfflineEventAttendanceMode — score 7
+- **Meetup San Antonio** — https://schema.org/OfflineEventAttendanceMode — score 7
+- **Meetup San Antonio** — https://schema.org/OfflineEventAttendanceMode — score 7
+- **Meetup San Antonio** — https://schema.org/OfflineEventAttendanceMode — score 7
+- **Meetup San Antonio** — https://schema.org/OfflineEventAttendanceMode — score 7
+- **Meetup San Antonio** — https://schema.org/OfflineEventAttendanceMode — score 7
+- **Meetup San Antonio** — https://schema.org/OfflineEventAttendanceMode — score 7
+- **Meetup San Antonio** — https://schema.org/OfflineEventAttendanceMode — score 7
+- **Meetup San Antonio** — https://schema.org/OfflineEventAttendanceMode — score 7
+- **Meetup San Antonio** — https://schema.org/OfflineEventAttendanceMode — score 7
+- **Meetup San Antonio** — https://schema.org/OfflineEventAttendanceMode — score 7
+- **Meetup San Antonio** — https://schema.org/OnlineEventAttendanceMode — score 7
+- **Meetup San Antonio** — https://secure-content.meetupstatic.com/images/classic-events/ — score 7
+- **Meetup San Antonio** — https://secure-content.meetupstatic.com/images/classic-events/ — score 7
+- **Meetup San Antonio** — https://secure-content.meetupstatic.com/images/classic-events/ — score 7
+- **Meetup San Antonio** — https://secure-content.meetupstatic.com/images/classic-events/ — score 7
+- **Meetup San Antonio** — https://secure-content.meetupstatic.com/images/classic-events/ — score 7
+- **Meetup San Antonio** — https://secure-content.meetupstatic.com/images/classic-events/ — score 7
+- **Meetup San Antonio** — https://secure-content.meetupstatic.com/images/classic-events/ — score 7
+- **Meetup San Antonio** — https://secure-content.meetupstatic.com/images/classic-events/ — score 7
+- **Meetup San Antonio** — https://secure-content.meetupstatic.com/images/classic-events/ — score 7
+- **Meetup San Antonio** — https://secure-content.meetupstatic.com/images/classic-events/ — score 7
+- **Meetup San Antonio** — https://secure-content.meetupstatic.com/images/classic-events/ — score 7
+- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/1/a/c/9/highres_535566857.jpeg — score 7
+- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/1/a/c/9/highres_535566857.jpeg — score 7
+- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/2/2/4/4/highres_535568772.jpeg — score 7
+- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/2/2/4/4/highres_535568772.jpeg — score 7
+- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/2/2/4/4/highres_535568772.jpeg — score 7
+- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/2/a/b/8/highres_529810936.jpeg — score 7
+- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/3/0/0/9/highres_490992297.jpeg — score 7
+- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/3/0/0/9/highres_490992297.jpeg — score 7
+- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/3/a/9/6/highres_535634998.jpeg — score 7
+- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/3/a/9/6/highres_535634998.jpeg — score 7
+- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/6/0/c/highres_535201548.jpeg — score 7
+- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/6/0/c/highres_535201548.jpeg — score 7
+- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/6/0/c/highres_535201548.jpeg — score 7
+- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/6/5/a/5/highres_530726021.jpeg — score 7
+- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/6/5/a/5/highres_530726021.jpeg — score 7
+- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/7/4/e/a/highres_535589930.jpeg — score 7
+- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/7/5/b/8/highres_535590136.jpeg — score 7
+- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/7/5/b/8/highres_535590136.jpeg — score 7
+- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/7/5/b/8/highres_535590136.jpeg — score 7
+- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/7/9/b/highres_526381947.jpeg — score 7
+- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/a/0/a/a/highres_535541130.jpeg — score 7
+- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/a/0/a/a/highres_535541130.jpeg — score 7
+- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/a/6/9/6/highres_535482646.jpeg — score 7
+- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/b/b/1/f/highres_525407903.jpeg — score 7
+- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/c/4/1/6/highres_535550198.jpeg — score 7
+- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/c/4/1/6/highres_535550198.jpeg — score 7
+- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/c/4/1/6/highres_535550198.jpeg — score 7
+- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/c/a/8/6/highres_535311846.jpeg — score 7
+- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/c/a/8/6/highres_535311846.jpeg — score 7
+- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/c/a/8/6/highres_535311846.jpeg — score 7
+- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/e/0/8/6/highres_534897478.jpeg — score 7
+- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/e/0/8/6/highres_534897478.jpeg — score 7
+- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/e/0/8/6/highres_534897478.jpeg — score 7
+- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/e/5/4/0/highres_535678688.jpeg — score 7
+- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/e/5/4/0/highres_535678688.jpeg — score 7
+- **Do210 San Antonio** — https://thehotelemma.com/happenings/#!/event/019f583e-4949-741e-b887-388ee25911c6 — score 7
+- **Do210 San Antonio** — https://thehotelemma.com/happenings/#!/event/019f583e-4949-741e-b887-388ee25911c6 — score 7
+- **Do210 San Antonio** — https://ticketmaster.evyy.net/c/253185/264167/4272?SharedId=DoStuff&amp;u=https%3A%2F%2Fwww.ticketmaster.com%2Fbenson-boone-wanted-man-tour-san-antonio-texas-08-20-2026%2Fevent%2F3A00647719E4FD56 — score 7
+- **Do210 San Antonio** — https://ticketmaster.evyy.net/c/253185/264167/4272?SharedId=DoStuff&amp;u=https%3A%2F%2Fwww.ticketmaster.com%2Feslabon-armado-amor-nocturno-san-antonio-texas-08-20-2026%2Fevent%2F3A0064C987B751DB — score 7
+- **Do210 San Antonio** — https://ticketmaster.evyy.net/c/253185/264167/4272?SharedId=DoStuff&u=https%3A%2F%2Fwww.ticketmaster.com%2Fbenson-boone-wanted-man-tour-san-antonio-texas-08-20-2026%2Fevent%2F3A00647719E4FD56 — score 7
+- **Do210 San Antonio** — https://ticketmaster.evyy.net/c/253185/264167/4272?SharedId=DoStuff&u=https%3A%2F%2Fwww.ticketmaster.com%2Feslabon-armado-amor-nocturno-san-antonio-texas-08-20-2026%2Fevent%2F3A0064C987B751DB — score 7
+- **Do210 San Antonio** — https://tickets.retamapark.com/event-details/live-horse-racing--thursday-august-20-2026 — score 7
+- **Do210 San Antonio** — https://tickets.retamapark.com/event-details/live-horse-racing--thursday-august-20-2026 — score 7
+- **Do210 San Antonio** — https://us.atgtickets.com/events/lunch-break/majestic-theatre/ — score 7
+- **Do210 San Antonio** — https://us.atgtickets.com/events/lunch-break/majestic-theatre/ — score 7
+- **Do210 San Antonio** — https://wl.seetickets.us/event/la-noche-del-tigre/698035?afflky=PaperTiger — score 7
+- **Do210 San Antonio** — https://wl.seetickets.us/event/la-noche-del-tigre/698035?afflky=PaperTiger — score 7
+- **Do210 San Antonio** — https://wl.seetickets.us/event/sherane-concealer/696978?afflky=TwinProductions — score 7
+- **Do210 San Antonio** — https://wl.seetickets.us/event/sherane-concealer/696978?afflky=TwinProductions — score 7
+- **Do210 San Antonio** — https://wl.seetickets.us/event/the-joe-panther-band/696721?afflky=SamsBurgerJointSanAntonio — score 7
+- **Do210 San Antonio** — https://wl.seetickets.us/event/the-joe-panther-band/696721?afflky=SamsBurgerJointSanAntonio — score 7
+
+## Source Errors
+- City of San Antonio Events: HTTP Error 403: Forbidden
+- San Antonio Public Library Events: HTTP Error 404: Not Found
+- San Antonio Parks Events: HTTP Error 403: Forbidden
+- Eventbrite San Antonio: HTTP Error 405: Not Allowed
