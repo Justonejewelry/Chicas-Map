@@ -9,22 +9,33 @@
   var ICON = new URL("chica-favicon.svg", WEBAPP_ROOT).href;
   var GLOBAL_CSS = new URL("css/chica-global-polish.css", WEBAPP_ROOT).href;
   var NAV_CSS = new URL("css/site-nav.css", WEBAPP_ROOT).href;
+  var BUILD = "20260819";
 
   function ensureStyles() {
     if (!document.querySelector('link[data-chica-global-polish]')) {
       var global = document.createElement("link");
       global.rel = "stylesheet";
-      global.href = GLOBAL_CSS + "?v=20260818";
+      global.href = GLOBAL_CSS + "?v=" + BUILD;
       global.setAttribute("data-chica-global-polish", "true");
       document.head.appendChild(global);
     }
     if (!document.querySelector('link[data-chica-site-nav]')) {
       var navCss = document.createElement("link");
       navCss.rel = "stylesheet";
-      navCss.href = NAV_CSS + "?v=20260818";
+      navCss.href = NAV_CSS + "?v=" + BUILD;
       navCss.setAttribute("data-chica-site-nav", "true");
       document.head.appendChild(navCss);
     }
+  }
+
+  function setThemeColor() {
+    var meta = document.querySelector('meta[name="theme-color"]');
+    if (!meta) {
+      meta = document.createElement("meta");
+      meta.name = "theme-color";
+      document.head.appendChild(meta);
+    }
+    meta.content = "#c513b8";
   }
 
   function item(href, icon, label, note, external) {
@@ -39,11 +50,18 @@
     return '<div class="chica-nav-section"><div class="chica-nav-section-label">' + label + '</div>' + content + '</div>';
   }
 
+  function currentPath() {
+    var path = location.pathname.split("/").pop();
+    return path || "index.html";
+  }
+
   function markCurrent(nav) {
-    var current = location.pathname.split("/").pop() || "index.html";
+    var current = currentPath();
     nav.querySelectorAll(".chica-nav-item").forEach(function (a) {
+      if (a.target === "_blank") return;
       var href = a.getAttribute("href") || "";
-      if (!/^https?:\/\//i.test(href) && href.split("#")[0] === current) {
+      var target = href.split("#")[0].split("?")[0];
+      if (target === current || (current === "" && target === "index.html")) {
         a.setAttribute("aria-current", "page");
         a.classList.add("current");
       }
@@ -57,14 +75,15 @@
     var nav = document.createElement("header");
     nav.id = NAV_ID;
     nav.className = "chica-site-nav";
+    nav.setAttribute("role", "banner");
     nav.innerHTML =
       '<div class="chica-site-nav-inner">' +
         '<div class="chica-nav-menu">' +
-          '<button class="chica-nav-logo" id="chicaNavLogo" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="chicaNavDrop" title="Open Chica Map menu">' +
-            '<img src="' + ICON + '" alt="Chica Map" width="42" height="42">' +
+          '<button class="chica-nav-logo" id="chicaNavLogo" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="chicaNavDrop" aria-label="Open Chica Map menu" title="Open Chica Map menu">' +
+            '<img src="' + ICON + '" alt="" width="42" height="42">' +
             '<span class="chica-nav-caret" aria-hidden="true">⌄</span>' +
           '</button>' +
-          '<div class="chica-nav-drop" id="chicaNavDrop" role="menu" hidden>' +
+          '<div class="chica-nav-drop" id="chicaNavDrop" role="menu" aria-label="Chica Map menu" hidden>' +
             section("Explore", item("map.html", "🗺️", "Open the Map", "Live sales, routes & map tools") +
               item("index.html", "🏠", "Home", "Chica Map overview") +
               item("backyard.html", "🌿", "The Backyard", "Community posts, updates & local stories")) +
@@ -84,35 +103,58 @@
     if (old) old.replaceWith(nav);
     else if (document.body) document.body.insertBefore(nav, document.body.firstChild);
 
+    document.body.classList.add("chica-product");
     markCurrent(nav);
+
     var menu = nav.querySelector(".chica-nav-menu");
     var btn = nav.querySelector("#chicaNavLogo");
     var drop = nav.querySelector("#chicaNavDrop");
+    var links = Array.from(drop.querySelectorAll('a[role="menuitem"]'));
 
-    function close() {
+    function close(restoreFocus) {
       if (!drop || !btn || !menu) return;
       drop.hidden = true;
       btn.setAttribute("aria-expanded", "false");
       menu.classList.remove("open");
+      if (restoreFocus) btn.focus();
     }
+
     function open() {
       if (!drop || !btn || !menu) return;
       drop.hidden = false;
       btn.setAttribute("aria-expanded", "true");
       menu.classList.add("open");
-      var first = drop.querySelector("a");
-      if (first) first.focus();
     }
 
     btn.addEventListener("click", function (e) {
       e.stopPropagation();
-      drop.hidden ? open() : close();
+      drop.hidden ? open() : close(false);
     });
-    drop.querySelectorAll("a").forEach(function (a) { a.addEventListener("click", close); });
-    document.addEventListener("click", function (e) { if (!menu.contains(e.target)) close(); });
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape") { close(); btn.focus(); }
+
+    btn.addEventListener("keydown", function (e) {
+      if ((e.key === "ArrowDown" || e.key === "Enter" || e.key === " ") && drop.hidden) {
+        e.preventDefault();
+        open();
+        if (links[0]) links[0].focus();
+      }
     });
+
+    drop.addEventListener("keydown", function (e) {
+      var index = links.indexOf(document.activeElement);
+      if (e.key === "Escape") {
+        e.preventDefault();
+        close(true);
+      } else if (e.key === "ArrowDown" && index > -1) {
+        e.preventDefault();
+        links[(index + 1) % links.length].focus();
+      } else if (e.key === "ArrowUp" && index > -1) {
+        e.preventDefault();
+        links[(index - 1 + links.length) % links.length].focus();
+      }
+    });
+
+    links.forEach(function (a) { a.addEventListener("click", function () { close(false); }); });
+    document.addEventListener("pointerdown", function (e) { if (!menu.contains(e.target)) close(false); });
   }
 
   function standardizeFavicon() {
@@ -128,13 +170,6 @@
       document.head.appendChild(link);
     }
   }
-
-  function addHomeFeaturesLink() {
-    var cta = document.querySelector(".hero-cta");
-    if (!cta || cta.querySelector('a[href="features.html"]')) return;
-  }
-
-  function addDevelopmentNote() { return; }
 
   function emergencyPreview() {
     var params = new URLSearchParams(location.search || "");
@@ -162,10 +197,9 @@
 
   function init() {
     ensureStyles();
+    setThemeColor();
     standardizeFavicon();
     build();
-    addHomeFeaturesLink();
-    addDevelopmentNote();
     emergencyPreview();
   }
 
