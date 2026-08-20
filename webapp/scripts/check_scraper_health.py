@@ -6,13 +6,19 @@ source counts. Emits a clear health report to stdout (for GITHUB_STEP_SUMMARY)
 and writes webapp/data/scraper-health.json.
 
 Exit codes:
-  0  — all primary free sources healthy (or soft-warn only)
-  1  — one or more critical free sources failed / returned zero when expected
+  0  — healthy or degraded (soft-warn only / single primary zero)
+  1  — critical (majority of primary free sources failed / zero / missing)
 
-Primary free sources (critical):
+Primary free sources:
   - EstateSales.org
   - YardSaleSearch
   - Craigslist
+
+Scoring rule (updated 2026-08-20):
+  - 0 primary problems → healthy
+  - 1 primary problem  → degraded (still usable; other primaries cover)
+  - 2+ primary problems → critical
+  - Secondary failures alone → degraded
 
 Secondary (warn-only):
   - GarageSaleFinder
@@ -155,11 +161,17 @@ def main() -> int:
         r for r in results if (not r["primary"]) and r["status"] in ("fail", "zero", "missing")
     ]
 
-    overall = "healthy"
-    if critical_fails:
+    # Softened scoring (2026-08-20):
+    # 0 primary problems → healthy
+    # 1 primary problem  → degraded (still usable)
+    # 2+ primary problems → critical
+    n_primary_problems = len(critical_fails)
+    if n_primary_problems >= 2:
         overall = "critical"
-    elif warns:
+    elif n_primary_problems == 1 or warns:
         overall = "degraded"
+    else:
+        overall = "healthy"
 
     report = {
         "generated_at": now,
@@ -169,6 +181,7 @@ def main() -> int:
         "json_source_counts": json_counts,
         "notes": (
             "Primary free sources: estatesales_org, yardsalesearch, craigslist. "
+            "Scoring: 0 primary problems=healthy, 1=degraded, 2+=critical. "
             "Soft-fail workflow continues; this report only alerts."
         ),
     }
@@ -181,6 +194,7 @@ def main() -> int:
     print("")
     print(f"- Overall: **{overall.upper()}**")
     print(f"- Generated: {now}")
+    print(f"- Primary problems: {n_primary_problems}/3")
     print("")
     print("| Source | Status | Detail |")
     print("|--------|--------|--------|")
@@ -194,13 +208,23 @@ def main() -> int:
             print(f"- {src}: {n}")
         print("")
 
-    if critical_fails:
-        print("#### ⚠️ Critical free-source problems")
+    if overall == "critical":
+        print("#### ⚠️ Critical free-source problems (2+ primaries down)")
         for r in critical_fails:
             print(f"- **{r['source']}**: {r['status']} — {r['detail']}")
         print("")
         print("An issue will be opened (or updated) if none is already open with label `scraper-failure`.")
         return 1
+
+    if overall == "degraded":
+        print("#### 🟡 Degraded — single primary issue or secondary warnings")
+        for r in critical_fails:
+            print(f"- **{r['source']}**: {r['status']} — {r['detail']}")
+        for r in warns:
+            print(f"- {r['source']}: {r['status']} — {r['detail']}")
+        print("")
+        print("Map remains usable. Soft-fail continues.")
+        return 0
 
     print("All primary free sources look healthy (or soft-warn only).")
     return 0

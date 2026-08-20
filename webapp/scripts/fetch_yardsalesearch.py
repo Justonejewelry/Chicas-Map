@@ -6,6 +6,9 @@ from city list pages. No API key. No paid services.
 
 Uses city_io middleware so PLACEHOLDER / corrupt JSON never crashes the job.
 
+On non-200 or normalized=0, writes a short body snapshot under
+webapp/data/scraper-snapshots/ for forensics (bot walls, empty pages, etc.).
+
 Usage:
   python3 webapp/scripts/fetch_yardsalesearch.py --city san-antonio
   python3 webapp/scripts/fetch_yardsalesearch.py --cities san-antonio,austin --dry-run
@@ -33,6 +36,7 @@ UA = (
 )
 ROOT = Path(__file__).resolve().parents[1]
 CITY_DIR = ROOT / "data" / "cities"
+SNAPSHOT_DIR = ROOT / "data" / "scraper-snapshots"
 
 CITY_CFG = {
     "san-antonio": {
@@ -90,6 +94,23 @@ def fetch(url: str) -> tuple[int, str]:
         return e.code, body
     except Exception as e:
         return 0, str(e)
+
+
+def save_snapshot(slug: str, code: int, html: str, reason: str) -> None:
+    """Write first ~4 KB of response for forensics when zero or non-200."""
+    try:
+        SNAPSHOT_DIR.mkdir(parents=True, exist_ok=True)
+        ts = datetime.now(CT).strftime("%Y%m%dT%H%M%S")
+        path = SNAPSHOT_DIR / f"yss-{slug}-{ts}-{reason}.txt"
+        header = (
+            f"# YardSaleSearch snapshot\n"
+            f"# slug={slug} http={code} reason={reason} bytes={len(html)}\n"
+            f"# generated={datetime.now(CT).isoformat(timespec='seconds')}\n\n"
+        )
+        path.write_text(header + (html or "")[:4000], encoding="utf-8")
+        print(f"  snapshot → {path.name}", file=sys.stderr)
+    except Exception as e:
+        print(f"  snapshot failed: {e}", file=sys.stderr)
 
 
 def normalize_key(a: str) -> str:
@@ -301,9 +322,13 @@ def discover(slug: str) -> list[dict]:
     print(f"  page → HTTP {code} ({len(html)} bytes)")
     if code != 200:
         print(f"  WARN: non-200; skipping ({code})", file=sys.stderr)
+        save_snapshot(slug, code, html, f"http{code}")
         return []
     sales = parse_listings(html, cfg)
     print(f"  normalized={len(sales)}")
+    if len(sales) == 0:
+        # Forensics: capture what the runner actually saw (bot wall, empty, etc.)
+        save_snapshot(slug, code, html, "zero")
     return sales
 
 
