@@ -31,9 +31,20 @@
     document.head.appendChild(script);
   }
 
+  function loadMapDensity() {
+    if (!document.body || !document.body.classList.contains("grass-map")) return;
+    if (document.getElementById("chicaMapDensity")) return;
+    var script = document.createElement("script");
+    script.id = "chicaMapDensity";
+    script.src = "js/map-density.js?v=20260820";
+    script.defer = true;
+    document.head.appendChild(script);
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     if (!document.body) return;
     loadProductPolish();
+    loadMapDensity();
 
     if (document.body.classList.contains("grass-map")) {
       var logo = document.querySelector(".topbar .brand .logo-mark.img");
