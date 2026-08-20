@@ -49,19 +49,27 @@
 
   async function loadData() {
     if (pantryData) return pantryData;
-    const url = "data/san-antonio-24h-food-pantries.geojson?t=" + Date.now();
-    try {
-      if (window.ChicaLayerWorker && typeof window.ChicaLayerWorker.preparePantry === "function") {
-        pantryData = await window.ChicaLayerWorker.preparePantry({ url: url });
-        return pantryData;
-      }
-      const r = await fetch(url, { cache: "no-store" });
-      if (!r.ok) return null;
-      pantryData = await r.json();
-      return pantryData;
-    } catch (_) {
-      return null;
+    const sources = [
+      "data/san-antonio-24h-food-pantries.geojson?t=" + Date.now(),
+      "https://cdn.jsdelivr.net/gh/Justonejewelry/Chicas-Map@main/webapp/data/san-antonio-24h-food-pantries.geojson"
+    ];
+    for (const url of sources) {
+      try {
+        if (window.ChicaLayerWorker && typeof window.ChicaLayerWorker.preparePantry === "function") {
+          const prepared = await window.ChicaLayerWorker.preparePantry({ url: url });
+          if (prepared) {
+            pantryData = prepared;
+            return pantryData;
+          }
+        }
+        const response = await fetch(url, { cache: "no-store" });
+        if (response.ok) {
+          pantryData = await response.json();
+          return pantryData;
+        }
+      } catch (_) {}
     }
+    return null;
   }
 
   function findMap() {
