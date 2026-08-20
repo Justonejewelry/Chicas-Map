@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Technical Side — What My Human Had to Learn | Chica Map</title>
+<meta name="description" content="The fields of study behind Chica Map: GIS, geocoding, open data, MapLibre, data pipelines, PWA design, and more." />
+<meta name="theme-color" content="#0f3d24" />
+<link rel="canonical" href="https://justonejewelry.github.io/Chicas-Map/technical.html" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+<link rel="icon" href="favicon.ico" />
+<style>
+:root {
+  --ink: #14110f;
+  --cream: #f7f4ec;
+  --paper: #fff;
+  --pine: #0f3d24;
+  --pine-mid: #1a6b3c;
+  --pine-soft: #e8f2eb;
+  --line: #e4e0d4;
+  --muted: #6b736c;
+  --display: "Fraunces", Georgia, serif;
+  --body: "Inter", system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--body);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--pine-mid); }
+.wrap { max-width: 720px; margin: 0 auto; padding: 32px 24px 64px; }
+h1 {
+  font-family: var(--display);
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-weight: 600;
+  letter-spacing: -.02em;
+  margin: 0 0 8px;
+  line-height: 1.15;
+}
+.sub {
+  color: var(--muted);
+  font-size: 1.05rem;
+  margin: 0 0 32px;
+}
+h2 {
+  font-family: var(--display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 36px 0 10px;
+}
+p { margin: 0 0 16px; }
+ul { margin: 0 0 20px; padding-left: 1.25em; }
+li { margin-bottom: 6px; }
+.back {
+  display: inline-block;
+  margin-bottom: 28px;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--pine);
+}
+.back:hover { text-decoration: underline; }
+.field {
+  background: var(--paper);
+  border: 1.5px solid var(--line);
+  border-radius: 14px;
+  padding: 18px 20px;
+  margin-bottom: 14px;
+}
+.field h3 {
+  font-family: var(--display);
+  font-size: 1.05rem;
+  margin: 0 0 6px;
+}
+.field p { margin: 0; color: var(--muted); font-size: .95rem; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="index.html">← Back to Chica Map</a>
+
+    <h1>The technical side.<br>What my human had to learn.</h1>
+    <p class="sub">I’m the nose. He’s the one who had to learn all of this so the map would actually work.</p>
+
+    <p>Chica Map looks simple on the outside. Underneath it is a stack of real disciplines. None of them were optional if we wanted verified pins instead of wasted drives.</p>
+
+    <div class="field">
+      <h3>Geographic Information Systems (GIS)</h3>
+      <p>How locations are stored, projected, and queried. Bounding boxes, coordinate systems, and turning raw addresses into points that land correctly on a map of San Antonio and the surrounding counties.</p>
+    </div>
+
+    <div class="field">
+      <h3>Geocoding & Spatial Data</h3>
+      <p>Converting street addresses into latitude and longitude. Handling messy public data, missing zip codes, apartment numbers, and the difference between a good geocode and a bad one that sends you to the wrong side of town.</p>
+    </div>
+
+    <div class="field">
+      <h3>Open Data & Public Records</h3>
+      <p>Reading city permit systems, estate-sale listings, and other public sources. Knowing what is structured, what is scraped, what is permitted, and what has to be verified before it becomes a pin.</p>
+    </div>
+
+    <div class="field">
+      <h3>Cartography & Map Design</h3>
+      <p>Choosing base styles, pin colors, legend logic, and layer visibility so the map stays readable on a phone in bright Texas sun. Making “near me” feel immediate instead of cluttered.</p>
+    </div>
+
+    <div class="field">
+      <h3>Web Mapping (MapLibre / vector tiles)</h3>
+      <p>Client-side map rendering that stays fast. Loading tiles, adding and removing sources and layers at the right time, and keeping the map responsive while data updates.</p>
+    </div>
+
+    <div class="field">
+      <h3>Data Engineering & Pipelines</h3>
+      <p>Ingesting listings, scoring confidence, deduplicating, refreshing on a schedule, and publishing only what passes the gate. Keeping stale pins from ever reaching the live map.</p>
+    </div>
+
+    <div class="field">
+      <h3>Progressive Web Apps (PWA)</h3>
+      <p>Installable on a phone home screen, offline-friendly where it matters, service-worker caching that doesn’t trap users on a broken build, and mobile-first interaction design.</p>
+    </div>
+
+    <div class="field">
+      <h3>UX & Information Architecture</h3>
+      <p>Near Me radius, day filters, route building that opens in Google / Apple / Waze, detail drawers, and layers that stay out of the way until you need them. Designed for people who are already in the car.</p>
+    </div>
+
+    <div class="field">
+      <h3>Multi-agent / Swarm Coordination</h3>
+      <p>Specialized discovery paths for different sources (estate sales, public listings, municipal data). Scoring, verification gates, and city-specific configuration so the same core platform can expand city by city.</p>
+    </div>
+
+    <div class="field">
+      <h3>Local Knowledge & Domain Modeling</h3>
+      <p>Understanding San Antonio sale patterns, hot zones, weekend timing, and what “verified” actually means to someone who drives across town for a garage sale. The map only works if the model matches real behavior.</p>
+    </div>
+
+    <p style="margin-top:36px">That is the stack. GIS, geocoding, open data, cartography, MapLibre, data pipelines, PWA engineering, UX, swarm-style discovery, and deep local knowledge. My human had to learn enough of each to stop the wasted Saturdays.</p>
+
+    <p>I’m still the nose. He just finally gave me a map that works.</p>
+
+    <p style="margin-top:32px"><a href="map.html" style="font-weight:700">Open the map →</a></p>
+  </div>
+</body>
+</html>
