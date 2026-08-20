@@ -20,6 +20,10 @@ Scoring rule (updated 2026-08-20):
   - 2+ primary problems → critical
   - Secondary failures alone → degraded
 
+Zero detection (updated 2026-08-20):
+  - True zero = normalized=0 or explicit "no sales found" with no positive count
+  - "merge added=0" alone is NOT a failure (successful dedupe of existing listings)
+
 Secondary (warn-only):
   - GarageSaleFinder
   - SA permits
@@ -53,11 +57,9 @@ LOGS = {
 
 PRIMARY = {"estatesales_org", "yardsalesearch", "craigslist"}
 
-# Patterns that indicate the scraper ran but produced nothing useful
+# True zero only — do NOT include "merge added=0" (that is successful dedupe)
 ZERO_PATTERNS = [
     re.compile(r"normalized=0\b", re.I),
-    re.compile(r"added=0\b", re.I),
-    re.compile(r"merge added=0\b", re.I),
     re.compile(r"0 listings?\b", re.I),
     re.compile(r"no sales? found\b", re.I),
 ]
@@ -70,10 +72,11 @@ FAIL_PATTERNS = [
     re.compile(r"ConnectionError|Timeout|URLError", re.I),
 ]
 
+# Positive extraction signals (checked before zero)
 OK_PATTERNS = [
-    re.compile(r"normalized=([1-9]\d*)\b"),
-    re.compile(r"merge added=([1-9]\d*)\b"),
-    re.compile(r"HTTP 200\b"),
+    re.compile(r"normalized=([1-9]\d*)\b", re.I),
+    re.compile(r"(?:parsed|enriched|static results)=([1-9]\d*)\b", re.I),
+    re.compile(r"merge added=([1-9]\d*)\b", re.I),
 ]
 
 
@@ -90,7 +93,7 @@ def analyze_log(key: str, text: str) -> dict:
     if not text.strip():
         return {"source": key, "status": status, "detail": detail, "primary": key in PRIMARY}
 
-    # Failures first
+    # Hard failures first (HTTP errors, tracebacks, blocks)
     for pat in FAIL_PATTERNS:
         m = pat.search(text)
         if m:
@@ -101,17 +104,8 @@ def analyze_log(key: str, text: str) -> dict:
                 "primary": key in PRIMARY,
             }
 
-    # Explicit zero
-    for pat in ZERO_PATTERNS:
-        if pat.search(text):
-            return {
-                "source": key,
-                "status": "zero",
-                "detail": "normalized/added = 0",
-                "primary": key in PRIMARY,
-            }
-
-    # Success signals
+    # Success signals BEFORE zero — normalized>0 means the scraper worked
+    # even if merge added=0 (dedupe of existing listings is not a failure)
     for pat in OK_PATTERNS:
         m = pat.search(text)
         if m:
@@ -119,6 +113,16 @@ def analyze_log(key: str, text: str) -> dict:
                 "source": key,
                 "status": "ok",
                 "detail": m.group(0)[:80],
+                "primary": key in PRIMARY,
+            }
+
+    # True zero only (no positive normalized/parsed count above)
+    for pat in ZERO_PATTERNS:
+        if pat.search(text):
+            return {
+                "source": key,
+                "status": "zero",
+                "detail": "normalized/added = 0",
                 "primary": key in PRIMARY,
             }
 
@@ -182,6 +186,7 @@ def main() -> int:
         "notes": (
             "Primary free sources: estatesales_org, yardsalesearch, craigslist. "
             "Scoring: 0 primary problems=healthy, 1=degraded, 2+=critical. "
+            "merge added=0 is treated as ok (dedupe), not zero. "
             "Soft-fail workflow continues; this report only alerts."
         ),
     }
