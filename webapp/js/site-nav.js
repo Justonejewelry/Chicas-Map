@@ -86,7 +86,7 @@
           '<div class="chica-nav-drop" id="chicaNavDrop" role="menu" aria-label="Chica Map menu" hidden>' +
             section("Explore", item("map.html", "🗺️", "Open the Map", "Live sales, routes & map tools") +
               item("index.html", "🏠", "Home", "Chica Map overview") +
-              item("backyard.html", "🌿", "The Backyard", "Community posts, updates & local stories")) +
+              item("backyard.html", "🌿", "The Backyard", "Community posts, updates & local stories") +\n              item("archive.html", "📦", "Archive", "Past notes and finds from Chica")) +
             section("Find & Share", item("submit.html", "📍", "List a Sale", "Add a garage, yard or estate sale") +
               item("sponsor.html", "🤝", "Sponsor Chica Map", "Partnerships & promotion")) +
             section("Stay Connected", item("https://www.facebook.com/61593215043603/", "f", "Follow on Facebook", "Updates and new finds", true)) +
