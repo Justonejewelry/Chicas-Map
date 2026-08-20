@@ -252,8 +252,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 29.485972153467483,
-      "lon": -98.53958060419106,
+      "lat": 29.482513655443768,
+      "lon": -98.54386322770416,
       "geocode": "source",
       "company": "Caring Transitions of San Antonio Central",
       "in_person": true,
@@ -578,8 +578,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 29.395164852533238,
-      "lon": -98.46736439438673,
+      "lat": 29.3939162,
+      "lon": -98.4692512,
       "geocode": "source",
       "company": "Caring Transitions of San Antonio Central",
       "in_person": true,
@@ -707,6 +707,28 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "cl-lingsomemedicalmrhlmlgw5okcyv1cp4niyq"
+    },
+    {
+      "address": "306 Bailey Ave, San Antonio, TX 78210",
+      "dates": "2026-08-21 – 2026-08-23",
+      "date_from": "2026-08-21",
+      "date_to": "2026-08-23",
+      "end_date": "2026-08-23",
+      "title": "Craftsman’S Estate Sale — Packed Garage, Tools, Machinery & More!",
+      "details": "",
+      "source": "YardSaleSearch",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196345909",
+      "photos": 0,
+      "type": "estate",
+      "confidence": 0.88,
+      "status": "verified",
+      "lat": 29.3939162,
+      "lon": -98.4692512,
+      "geocode": "source",
+      "external_id": "yss-306baileyavesanantoniotx78210-2026-08-21",
+      "categories": [
+        "estate-sale"
+      ]
     }
   ],
   "permits": [
@@ -1498,13 +1520,14 @@
     "estatesales.net",
     "estatesales.org",
     "garagesalefinder.com",
+    "gsalr.com",
     "preferred",
     "yardsalesearch.com"
   ],
-  "total_locations": 61,
+  "total_locations": 62,
   "status": "live",
   "date": "2026-08-20",
-  "last_refresh": "2026-08-20T08:49:27-05:00",
+  "last_refresh": "2026-08-20T09:09:01-05:00",
   "note": "HOTFIX: preferred merged + wifi/layer reliability",
   "permit_total": 118,
   "permit_estate_count": 5

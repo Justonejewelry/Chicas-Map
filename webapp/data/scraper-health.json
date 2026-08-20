@@ -1,15 +1,12 @@
 {
-  "generated_at": "2026-08-20T08:49:27-05:00",
-  "overall": "critical",
-  "primary_failures": [
-    "estatesales_org",
-    "yardsalesearch"
-  ],
+  "generated_at": "2026-08-20T09:09:01-05:00",
+  "overall": "degraded",
+  "primary_failures": [],
   "sources": [
     {
       "source": "garagesalefinder",
-      "status": "zero",
-      "detail": "normalized/added = 0",
+      "status": "ok",
+      "detail": "merge added=1",
       "primary": false
     },
     {
@@ -20,26 +17,32 @@
     },
     {
       "source": "estatesales_org",
-      "status": "zero",
-      "detail": "normalized/added = 0",
+      "status": "ok",
+      "detail": "normalized=4",
       "primary": true
     },
     {
       "source": "yardsalesearch",
-      "status": "zero",
-      "detail": "normalized/added = 0",
+      "status": "ok",
+      "detail": "normalized=8",
       "primary": true
+    },
+    {
+      "source": "gsalr",
+      "status": "fail",
+      "detail": "HTTP 403",
+      "primary": false
     },
     {
       "source": "craigslist",
       "status": "ok",
-      "detail": "merge added=2",
+      "detail": "static results=13",
       "primary": true
     },
     {
       "source": "estatesales_net",
-      "status": "zero",
-      "detail": "normalized/added = 0",
+      "status": "ok",
+      "detail": "normalized=1",
       "primary": false
     },
     {
@@ -50,13 +53,13 @@
     }
   ],
   "json_source_counts": {
-    "estatesales.net": 2,
-    "craigslist": 14,
-    "yardsalesearch": 8,
-    "estatesales.org": 5,
-    "garagesalefinder": 2,
+    "estatesales.net": 3,
+    "craigslist": 29,
+    "yardsalesearch": 13,
+    "estatesales.org": 6,
+    "garagesalefinder": 5,
     "aggregators": 2,
     "user submit (approved)": 1
   },
-  "notes": "Primary free sources: estatesales_org, yardsalesearch, craigslist. Scoring: 0 primary problems=healthy, 1=degraded, 2+=critical. Soft-fail workflow continues; this report only alerts."
+  "notes": "Primary free sources: estatesales_org, yardsalesearch, craigslist. Secondary: gsalr, garagesalefinder, permits, estatesales_net, apify. Scoring: 0 primary problems=healthy, 1=degraded, 2+=critical. merge added=0 is treated as ok (dedupe), not zero. Soft-fail workflow continues; this report only alerts."
 }
