@@ -1,11 +1,12 @@
 # Chica’s Map — Daily Community Events Swarm
 
-Run: 2026-08-20T13:57:46.125231+00:00
+Run: 2026-08-21T13:56:54.374195+00:00
 
-Candidates discovered: **305**
+Candidates discovered: **297**
 Source errors: **4**
 
 ## Review Queue
+- **Bexar County Events** — http://schema.org/Event — score 9
 - **Bexar County Events** — http://schema.org/Event — score 9
 - **Bexar County Events** — http://schema.org/Event — score 9
 - **Bexar County Events** — http://schema.org/Event — score 9
@@ -108,16 +109,14 @@ Source errors: **4**
 - **Do210 San Antonio** — https://do210.com/new-shows-concerts-san-antonio — score 7
 - **Do210 San Antonio** — https://do210.com/p/adding-events-on-do210 — score 7
 - **Do210 San Antonio** — https://do210.com/p/adding-events-on-do210 — score 7
-- **Do210 San Antonio** — https://gruenehall.com/event/gage-the-live-rounds-3/ — score 7
-- **Do210 San Antonio** — https://gruenehall.com/event/gage-the-live-rounds-3/ — score 7
-- **Do210 San Antonio** — https://gruenehall.com/event/heath-walker-band-2/ — score 7
-- **Do210 San Antonio** — https://gruenehall.com/event/heath-walker-band-2/ — score 7
-- **Do210 San Antonio** — https://makereadymarket.com/event/paseanos-pop-up/2026-08-20/ — score 7
-- **Do210 San Antonio** — https://makereadymarket.com/event/paseanos-pop-up/2026-08-20/ — score 7
+- **Do210 San Antonio** — https://gruenehall.com/event/friday-afternoon-club-13/2026-08-21/ — score 7
+- **Do210 San Antonio** — https://gruenehall.com/event/friday-afternoon-club-13/2026-08-21/ — score 7
+- **Do210 San Antonio** — https://sabg.ticketapp.org/portal/product/689/events — score 7
+- **Do210 San Antonio** — https://sabg.ticketapp.org/portal/product/689/events — score 7
 - **San Antonio Report Events** — https://sanantonioreport.org/events/ — score 7
 - **San Antonio Report Events** — https://sanantonioreport.org/events/ — score 7
 - **San Antonio Report Events** — https://sanantonioreport.org/events/ — score 7
-- **San Antonio Report Events** — https://sanantonioreport.org/wp-content/plugins/newspack-manager/includes/foundation/events/styles.css?ver=1787096984 — score 7
+- **San Antonio Report Events** — https://sanantonioreport.org/wp-content/plugins/newspack-manager/includes/foundation/events/styles.css?ver=1787252810 — score 7
 - **San Antonio Report Events** — https://sanantonioreport.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fsanantonioreport.org%2Fevents%2F — score 7
 - **San Antonio Report Events** — https://sanantonioreport.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fsanantonioreport.org%2Fevents%2F&#038;format=xml — score 7
 - **Meetup San Antonio** — https://schema.org/EventScheduled — score 7
@@ -131,18 +130,16 @@ Source errors: **4**
 - **Meetup San Antonio** — https://schema.org/EventScheduled — score 7
 - **Meetup San Antonio** — https://schema.org/EventScheduled — score 7
 - **Meetup San Antonio** — https://schema.org/EventScheduled — score 7
-- **Meetup San Antonio** — https://schema.org/EventScheduled — score 7
 - **Meetup San Antonio** — https://schema.org/OfflineEventAttendanceMode — score 7
 - **Meetup San Antonio** — https://schema.org/OfflineEventAttendanceMode — score 7
 - **Meetup San Antonio** — https://schema.org/OfflineEventAttendanceMode — score 7
 - **Meetup San Antonio** — https://schema.org/OfflineEventAttendanceMode — score 7
 - **Meetup San Antonio** — https://schema.org/OfflineEventAttendanceMode — score 7
 - **Meetup San Antonio** — https://schema.org/OfflineEventAttendanceMode — score 7
-- **Meetup San Antonio** — https://schema.org/OfflineEventAttendanceMode — score 7
-- **Meetup San Antonio** — https://schema.org/OfflineEventAttendanceMode — score 7
-- **Meetup San Antonio** — https://schema.org/OfflineEventAttendanceMode — score 7
-- **Meetup San Antonio** — https://schema.org/OfflineEventAttendanceMode — score 7
-- **Meetup San Antonio** — https://schema.org/OfflineEventAttendanceMode — score 7
+- **Meetup San Antonio** — https://schema.org/OnlineEventAttendanceMode — score 7
+- **Meetup San Antonio** — https://schema.org/OnlineEventAttendanceMode — score 7
+- **Meetup San Antonio** — https://schema.org/OnlineEventAttendanceMode — score 7
+- **Meetup San Antonio** — https://schema.org/OnlineEventAttendanceMode — score 7
 - **Meetup San Antonio** — https://schema.org/OnlineEventAttendanceMode — score 7
 - **Meetup San Antonio** — https://secure-content.meetupstatic.com/images/classic-events/ — score 7
 - **Meetup San Antonio** — https://secure-content.meetupstatic.com/images/classic-events/ — score 7
@@ -154,58 +151,61 @@ Source errors: **4**
 - **Meetup San Antonio** — https://secure-content.meetupstatic.com/images/classic-events/ — score 7
 - **Meetup San Antonio** — https://secure-content.meetupstatic.com/images/classic-events/ — score 7
 - **Meetup San Antonio** — https://secure-content.meetupstatic.com/images/classic-events/ — score 7
-- **Meetup San Antonio** — https://secure-content.meetupstatic.com/images/classic-events/ — score 7
-- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/1/a/c/9/highres_535566857.jpeg — score 7
-- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/1/a/c/9/highres_535566857.jpeg — score 7
-- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/2/2/4/4/highres_535568772.jpeg — score 7
-- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/2/2/4/4/highres_535568772.jpeg — score 7
-- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/2/2/4/4/highres_535568772.jpeg — score 7
+- **Meetup San Antonio** — https://secure.meetupstatic.com/next/images/fallbacks/redesign/event-cover-2.webp?w=640 — score 7
+- **Meetup San Antonio** — https://secure.meetupstatic.com/next/images/fallbacks/redesign/event-cover-2.webp?w=640 — score 7
+- **Meetup San Antonio** — https://secure.meetupstatic.com/next/images/fallbacks/redesign/event-cover-2.webp?w=828 — score 7
+- **Meetup San Antonio** — https://secure.meetupstatic.com/next/images/fallbacks/redesign/event-cover-2.webp?w=828 — score 7
+- **Meetup San Antonio** — https://secure.meetupstatic.com/next/images/fallbacks/redesign/event-cover-2.webp?w=828 — score 7
+- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/2/a/2/5/highres_535450789.jpeg — score 7
+- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/2/a/2/5/highres_535450789.jpeg — score 7
 - **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/2/a/b/8/highres_529810936.jpeg — score 7
-- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/3/0/0/9/highres_490992297.jpeg — score 7
-- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/3/0/0/9/highres_490992297.jpeg — score 7
-- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/3/a/9/6/highres_535634998.jpeg — score 7
-- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/3/a/9/6/highres_535634998.jpeg — score 7
-- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/6/0/c/highres_535201548.jpeg — score 7
+- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/3/c/7/d/highres_534795485.jpeg — score 7
+- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/4/0/a/d/highres_535216557.jpeg — score 7
+- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/4/0/a/d/highres_535216557.jpeg — score 7
+- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/4/0/a/d/highres_535216557.jpeg — score 7
+- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/4/d/a/4/highres_531559876.jpeg — score 7
+- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/4/d/a/4/highres_531559876.jpeg — score 7
+- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/4/d/a/4/highres_531559876.jpeg — score 7
 - **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/6/0/c/highres_535201548.jpeg — score 7
 - **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/6/0/c/highres_535201548.jpeg — score 7
 - **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/6/5/a/5/highres_530726021.jpeg — score 7
 - **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/6/5/a/5/highres_530726021.jpeg — score 7
-- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/7/4/e/a/highres_535589930.jpeg — score 7
-- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/7/5/b/8/highres_535590136.jpeg — score 7
-- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/7/5/b/8/highres_535590136.jpeg — score 7
-- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/7/5/b/8/highres_535590136.jpeg — score 7
+- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/6/5/a/5/highres_530726021.jpeg — score 7
 - **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/7/9/b/highres_526381947.jpeg — score 7
-- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/a/0/a/a/highres_535541130.jpeg — score 7
-- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/a/0/a/a/highres_535541130.jpeg — score 7
-- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/a/6/9/6/highres_535482646.jpeg — score 7
-- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/b/b/1/f/highres_525407903.jpeg — score 7
-- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/c/4/1/6/highres_535550198.jpeg — score 7
-- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/c/4/1/6/highres_535550198.jpeg — score 7
-- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/c/4/1/6/highres_535550198.jpeg — score 7
+- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/7/d/a/7/highres_531512167.jpeg — score 7
+- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/b/e/b/1/highres_535188817.jpeg — score 7
+- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/c/4/1/3/highres_535550195.jpeg — score 7
+- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/c/4/1/3/highres_535550195.jpeg — score 7
+- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/c/4/1/3/highres_535550195.jpeg — score 7
 - **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/c/a/8/6/highres_535311846.jpeg — score 7
 - **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/c/a/8/6/highres_535311846.jpeg — score 7
 - **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/c/a/8/6/highres_535311846.jpeg — score 7
-- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/e/0/8/6/highres_534897478.jpeg — score 7
-- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/e/0/8/6/highres_534897478.jpeg — score 7
-- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/e/0/8/6/highres_534897478.jpeg — score 7
-- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/e/5/4/0/highres_535678688.jpeg — score 7
-- **Meetup San Antonio** — https://secure.meetupstatic.com/photos/event/e/5/4/0/highres_535678688.jpeg — score 7
-- **Do210 San Antonio** — https://thehotelemma.com/happenings/#!/event/019f583e-4949-741e-b887-388ee25911c6 — score 7
-- **Do210 San Antonio** — https://thehotelemma.com/happenings/#!/event/019f583e-4949-741e-b887-388ee25911c6 — score 7
-- **Do210 San Antonio** — https://ticketmaster.evyy.net/c/253185/264167/4272?SharedId=DoStuff&amp;u=https%3A%2F%2Fwww.ticketmaster.com%2Fbenson-boone-wanted-man-tour-san-antonio-texas-08-20-2026%2Fevent%2F3A00647719E4FD56 — score 7
-- **Do210 San Antonio** — https://ticketmaster.evyy.net/c/253185/264167/4272?SharedId=DoStuff&amp;u=https%3A%2F%2Fwww.ticketmaster.com%2Feslabon-armado-amor-nocturno-san-antonio-texas-08-20-2026%2Fevent%2F3A0064C987B751DB — score 7
-- **Do210 San Antonio** — https://ticketmaster.evyy.net/c/253185/264167/4272?SharedId=DoStuff&u=https%3A%2F%2Fwww.ticketmaster.com%2Fbenson-boone-wanted-man-tour-san-antonio-texas-08-20-2026%2Fevent%2F3A00647719E4FD56 — score 7
-- **Do210 San Antonio** — https://ticketmaster.evyy.net/c/253185/264167/4272?SharedId=DoStuff&u=https%3A%2F%2Fwww.ticketmaster.com%2Feslabon-armado-amor-nocturno-san-antonio-texas-08-20-2026%2Fevent%2F3A0064C987B751DB — score 7
-- **Do210 San Antonio** — https://tickets.retamapark.com/event-details/live-horse-racing--thursday-august-20-2026 — score 7
-- **Do210 San Antonio** — https://tickets.retamapark.com/event-details/live-horse-racing--thursday-august-20-2026 — score 7
+- **Do210 San Antonio** — https://tickets.retamapark.com/event-details/live-horse-racing--friday-august-21-2026 — score 7
+- **Do210 San Antonio** — https://tickets.retamapark.com/event-details/live-horse-racing--friday-august-21-2026 — score 7
+- **Do210 San Antonio** — https://us.atgtickets.com/events/dean-z/majestic-theatre/ — score 7
+- **Do210 San Antonio** — https://us.atgtickets.com/events/dean-z/majestic-theatre/ — score 7
 - **Do210 San Antonio** — https://us.atgtickets.com/events/lunch-break/majestic-theatre/ — score 7
 - **Do210 San Antonio** — https://us.atgtickets.com/events/lunch-break/majestic-theatre/ — score 7
-- **Do210 San Antonio** — https://wl.seetickets.us/event/la-noche-del-tigre/698035?afflky=PaperTiger — score 7
-- **Do210 San Antonio** — https://wl.seetickets.us/event/la-noche-del-tigre/698035?afflky=PaperTiger — score 7
-- **Do210 San Antonio** — https://wl.seetickets.us/event/sherane-concealer/696978?afflky=TwinProductions — score 7
-- **Do210 San Antonio** — https://wl.seetickets.us/event/sherane-concealer/696978?afflky=TwinProductions — score 7
-- **Do210 San Antonio** — https://wl.seetickets.us/event/the-joe-panther-band/696721?afflky=SamsBurgerJointSanAntonio — score 7
-- **Do210 San Antonio** — https://wl.seetickets.us/event/the-joe-panther-band/696721?afflky=SamsBurgerJointSanAntonio — score 7
+- **Do210 San Antonio** — https://wl.seetickets.us/event/emarosa-presents-high-horse-heaven-tour/688686?afflky=PaperTiger — score 7
+- **Do210 San Antonio** — https://wl.seetickets.us/event/emarosa-presents-high-horse-heaven-tour/688686?afflky=PaperTiger — score 7
+- **Do210 San Antonio** — https://wl.seetickets.us/event/jackson-marshall/694197?afflky=PaperTiger — score 7
+- **Do210 San Antonio** — https://wl.seetickets.us/event/jackson-marshall/694197?afflky=PaperTiger — score 7
+- **Do210 San Antonio** — https://wl.seetickets.us/event/john-baumann/696821?afflky=SamsBurgerJointSanAntonio — score 7
+- **Do210 San Antonio** — https://wl.seetickets.us/event/john-baumann/696821?afflky=SamsBurgerJointSanAntonio — score 7
+- **Meetup San Antonio** — https://www.eventbrite.com/e/indian-singles-speed-dating-matrimonial-matchmaking-event-tickets-1992328488140?aff=oddtdtcreator)\n30s — score 7
+- **Meetup San Antonio** — https://www.eventbrite.com/e/indian-singles-speed-dating-matrimonial-matchmaking-event-tickets-1992328488140?aff=oddtdtcreator)\n30s — score 7
+- **Meetup San Antonio** — https://www.eventbrite.com/e/indian-singles-speed-dating-matrimonial-matchmaking-event-tickets-1992328488140?aff=oddtdtcreator)\n40s — score 7
+- **Meetup San Antonio** — https://www.eventbrite.com/e/indian-singles-speed-dating-matrimonial-matchmaking-event-tickets-1992328488140?aff=oddtdtcreator)\n50s — score 7
+- **Meetup San Antonio** — https://www.eventbrite.com/e/indian-singles-speed-dating-matrimonial-matchmaking-event-tickets-1992328488140?aff=oddtdtcreator)\n\n**🔄 — score 7
+- **Meetup San Antonio** — https://www.eventbrite.com/e/indian-singles-speed-dating-matrimonial-matchmaking-event-tickets-1992328488140?aff=oddtdtcreator](https://www.eventbrite.com/e/indian-singles-speed-dating-matrimonial-matchmaking-event-tickets-1992328488140?aff=oddtdtcreator)\n\n**👥 — score 7
+- **Meetup San Antonio** — https://www.eventbrite.com/e/indian-singles-speed-dating-matrimonial-matchmaking-event-tickets-1992328488140?aff=oddtdtcreator](https://www.eventbrite.com/e/indian-singles-speed-dating-matrimonial-matchmaking-event-tickets-1992328488140?aff=oddtdtcreator)\n\n**👥 — score 7
+- **Do210 San Antonio** — https://www.eventbrite.com/static/widgets/eb_widgets.js — score 7
+- **San Antonio Report Events** — https://www.facebook.com/tr?id=291084294724606&ev=PageView&noscript=1&cd%5Bpage_title%5D=Events&cd%5Buser_role%5D=guest&cd%5Bevent_url%5D=https%3A%2F%2Fsanantonioreport.org%2Fevents&cd%5Bpost_type%5D=page&cd%5Bpost_id%5D=1322992 — score 7
+- **Meetup San Antonio** — https://www.meetup.com/ai-career-hub/events/315266308/ — score 7
+- **Meetup San Antonio** — https://www.meetup.com/ai-career-hub/events/315266308/ — score 7
+- **Meetup San Antonio** — https://www.meetup.com/good-vibe-tribe-20s-40s/events/316095451/ — score 7
+- **Meetup San Antonio** — https://www.meetup.com/good-vibe-tribe-20s-40s/events/316095451/ — score 7
+- **Meetup San Antonio** — https://www.meetup.com/good-vibe-tribe-20s-40s/events/316095451/?recId=d4db02a3-bc18-4baf-bd95-e3a5071caa95&amp;recSource=ml-popular-events-nearby-offline&amp;searchId=08aebc0b-dbf2-4110-a01f-ba8aa2eb66b9&amp;eventOrigin=find_page%24all — score 7
 
 ## Source Errors
 - City of San Antonio Events: HTTP Error 403: Forbidden
