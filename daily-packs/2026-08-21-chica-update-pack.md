@@ -2,7 +2,7 @@
 
 ## 1. CHICA DAILY RUN
 - **Target date:** Friday, August 21, 2026
-- **San Antonio local run time:** 2026-08-21T01:30:31-05:00
+- **San Antonio local run time:** 2026-08-21T02:43:14-05:00
 - **Geographic area:** San Antonio & surrounding communities
 - **Sources searched:** 7
 - **Candidates discovered:** 41
@@ -25,7 +25,7 @@
 - **Original listing:** https://www.estatesales.net/TX/Fischer/78623/5030250
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.933,-98.1942
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.933,-98.1942
-- **Verified at:** 2026-08-21T01:30:31-05:00
+- **Verified at:** 2026-08-21T02:43:14-05:00
 
 ### 2. Craftsman’S Estate Sale — Packed Garage, Tools, Machinery & More!
 - **Type:** estate
@@ -38,7 +38,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196345909
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.39444,-98.46855
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.39444,-98.46855
-- **Verified at:** 2026-08-21T01:30:31-05:00
+- **Verified at:** 2026-08-21T02:43:14-05:00
 
 ### 3. Luxury Entertainment & Lifestyle in Boerne, TX- Bidding Ends 8/26 6:30PM CDT PU 8/28 10AM-2PM
 - **Type:** estate
@@ -50,7 +50,7 @@
 - **Original listing:** https://estatesales.org/estate-sales/tx/boerne/78015/luxury-entertainment-lifestyle-in-boerne-2457368
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.7487321,-98.6490584
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.7487321,-98.6490584
-- **Verified at:** 2026-08-21T01:30:31-05:00
+- **Verified at:** 2026-08-21T02:43:14-05:00
 
 ### 4. Treasures at Terra View: Bidding ENDS 8/23 @ 7PM!
 - **Type:** estate
@@ -62,7 +62,7 @@
 - **Original listing:** https://estatesales.org/estate-sales/tx/san-antonio/78240/treasures-at-terra-view-bidding-2457430
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.5269768,-98.6105703
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5269768,-98.6105703
-- **Verified at:** 2026-08-21T01:30:31-05:00
+- **Verified at:** 2026-08-21T02:43:14-05:00
 
 ### 5. Estate sale/moving sale -antiques too (Green spring Valley)
 - **Type:** estate
@@ -74,7 +74,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-estate-sale-moving-sale/iyLKr45DRf81Ty7rAjR8d2
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.580824,-98.427915
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.580824,-98.427915
-- **Verified at:** 2026-08-21T01:30:31-05:00
+- **Verified at:** 2026-08-21T02:43:14-05:00
 
 ### 6. Moving/Estate Sale (Northeast San Antonio)
 - **Type:** estate
@@ -86,7 +86,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-moving-estate-sale/gMWdVpFwC7qqBLZL82sHeZ
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.666488,-98.431292
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.666488,-98.431292
-- **Verified at:** 2026-08-21T01:30:31-05:00
+- **Verified at:** 2026-08-21T02:43:14-05:00
 
 ### 7. Unbelievable collection liquidation (Schertz)
 - **Type:** estate
@@ -98,7 +98,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/new-braunfels-unbelievable-collection/6mxMeJuTorrrK9csPPdpLv
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.6636,-98.1672
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.6636,-98.1672
-- **Verified at:** 2026-08-21T01:30:31-05:00
+- **Verified at:** 2026-08-21T02:43:14-05:00
 
 ### 8. Alamo Craft Co. Antiques & More (San Antonio)
 - **Type:** garage
@@ -110,7 +110,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-alamo-craft-co-antiques-more/mj6FcRd4ZDr7zwAwc4pwWa
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.556,-98.6094
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.556,-98.6094
-- **Verified at:** 2026-08-21T01:30:31-05:00
+- **Verified at:** 2026-08-21T02:43:14-05:00
 
 ### 9. Garage sale 08/22 (Luckey Ranch)
 - **Type:** garage
@@ -122,7 +122,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-garage-sale-08-22/7DopX2cKFEZnRxywwg3PPv
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.364186,-98.728681
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.364186,-98.728681
-- **Verified at:** 2026-08-21T01:30:31-05:00
+- **Verified at:** 2026-08-21T02:43:14-05:00
 
 ### 10. HUGE DOWNSIZING SALE — EVERYTHING PRICED TO SELL QUICK! (Adkins)
 - **Type:** garage
@@ -135,7 +135,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/adkins-huge-downsizing-sale-everything/t299pMZNw1Wk1uU4UkW6gZ
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.358,-98.247
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.358,-98.247
-- **Verified at:** 2026-08-21T01:30:31-05:00
+- **Verified at:** 2026-08-21T02:43:14-05:00
 
 ### 11. Collections of a Lifetime Online Auction by Caring Transitions - Ends 8/26!
 - **Type:** estate
@@ -148,7 +148,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9gGt/new-braunfels-tx-78133
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936
-- **Verified at:** 2026-08-21T01:30:31-05:00
+- **Verified at:** 2026-08-21T02:43:14-05:00
 
 ### 12. Hot 🥵 Garage Sale
 - **Type:** garage
@@ -161,7 +161,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196354215
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.595408,-98.468282
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.595408,-98.468282
-- **Verified at:** 2026-08-21T01:30:31-05:00
+- **Verified at:** 2026-08-21T02:43:14-05:00
 
 ### 13. Craftsman’s Estate Sale — Packed Garage, Tools, Machinery & More!
 - **Type:** estate
@@ -174,7 +174,7 @@
 - **Original listing:** https://estatesales.org/estate-sales/tx/san-antonio/78210/craftsmans-estate-sale-packed-garage-2456907
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.3939162,-98.4692512
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.3939162,-98.4692512
-- **Verified at:** 2026-08-21T01:30:31-05:00
+- **Verified at:** 2026-08-21T02:43:14-05:00
 
 ### 14. Yard Sale - Schertz TX
 - **Type:** garage
@@ -186,7 +186,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/schertz-yard-sale-schertz-tx/mMzk9zm3ASvAx5GM6aMKjL
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.579,-98.2778
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.579,-98.2778
-- **Verified at:** 2026-08-21T01:30:31-05:00
+- **Verified at:** 2026-08-21T02:43:14-05:00
 
 ### 15. Moving sale Everything must go!
 - **Type:** garage
@@ -198,7 +198,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/canyon-lake-moving-sale-everything-must/48RkXyTGScER2PFwi7hn8Y
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.860823,-98.262734
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.860823,-98.262734
-- **Verified at:** 2026-08-21T01:30:31-05:00
+- **Verified at:** 2026-08-21T02:43:14-05:00
 
 ### 16. Craftsman’S Estate Sale — Packed Garage, Tools, Machinery & More!
 - **Type:** estate
@@ -211,7 +211,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196345909
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.3939162,-98.4692512
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.3939162,-98.4692512
-- **Verified at:** 2026-08-21T01:30:31-05:00
+- **Verified at:** 2026-08-21T02:43:14-05:00
 
 ### 17. Yard Sale
 - **Type:** garage
@@ -224,7 +224,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196355373
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.503582,-98.524746
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.503582,-98.524746
-- **Verified at:** 2026-08-21T01:30:31-05:00
+- **Verified at:** 2026-08-21T02:43:14-05:00
 
 ### 18. Household
 - **Type:** garage
@@ -237,7 +237,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196356027
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.454599,-98.587109
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.454599,-98.587109
-- **Verified at:** 2026-08-21T01:30:31-05:00
+- **Verified at:** 2026-08-21T02:43:14-05:00
 
 ### 19. Garage Sale!!!
 - **Type:** garage
@@ -250,7 +250,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196355499
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.522648,-98.635938
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.522648,-98.635938
-- **Verified at:** 2026-08-21T01:30:31-05:00
+- **Verified at:** 2026-08-21T02:43:14-05:00
 
 ### 20. 3 Family Yard Sale Lake Placid Fri/Sat 8-7
 - **Type:** garage
@@ -263,7 +263,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9giT/222-becker-ln-seguin-tx-78155
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936
-- **Verified at:** 2026-08-21T01:30:31-05:00
+- **Verified at:** 2026-08-21T02:43:14-05:00
 
 ### 21. Multi Generational Estate/Yard/Garage Sales (San Antonio)
 - **Type:** estate
@@ -275,7 +275,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-multi-generational-estate/pk4df6yixsQC8B1CmADwDR
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4821,-98.4554
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4821,-98.4554
-- **Verified at:** 2026-08-21T01:30:31-05:00
+- **Verified at:** 2026-08-21T02:43:14-05:00
 
 ### 22. Craft Fair Vendor Market Handmade Market (Seguin, TX)
 - **Type:** garage
@@ -287,7 +287,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/seguin-craft-fair-vendor-market/k1bY7s7RUgQPtTxZgRDwqo
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.580842,-97.988084
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.580842,-97.988084
-- **Verified at:** 2026-08-21T01:30:31-05:00
+- **Verified at:** 2026-08-21T02:43:14-05:00
 
 ### 23. Garage sale 171 Rosemont
 - **Type:** garage
@@ -299,7 +299,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-garage-sale-171-rosemont/sp7giiRA3XvEYbkoUSQjFR
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.470939,-98.542796
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.470939,-98.542796
-- **Verified at:** 2026-08-21T01:30:31-05:00
+- **Verified at:** 2026-08-21T02:43:14-05:00
 
 ## 3. CHICA PICKS
 

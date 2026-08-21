@@ -2,7 +2,7 @@
   "type": "FeatureCollection",
   "properties": {
     "target_date": "2026-08-21",
-    "generated_at": "2026-08-21T01:31:13-05:00",
+    "generated_at": "2026-08-21T02:43:56-05:00",
     "count": 23,
     "project": "Chicas-Map"
   },
@@ -41,7 +41,7 @@
         ],
         "photos": [],
         "confidence": 100,
-        "verified_at": "2026-08-21T01:30:31-05:00",
+        "verified_at": "2026-08-21T02:43:14-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.933,-98.1942",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.933,-98.1942",
         "status": "verified",
@@ -92,7 +92,7 @@
           "https://eso-cdn.tlcdn.workers.dev/s-2456907-v1e649zkhg87vx1c-t.webp"
         ],
         "confidence": 100,
-        "verified_at": "2026-08-21T01:30:31-05:00",
+        "verified_at": "2026-08-21T02:43:14-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.39444,-98.46855",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.39444,-98.46855",
         "status": "verified",
@@ -143,7 +143,7 @@
           "https://eso-cdn.tlcdn.workers.dev/s-2457368-7t5nh1pbekcbdra6-t.webp"
         ],
         "confidence": 96,
-        "verified_at": "2026-08-21T01:30:31-05:00",
+        "verified_at": "2026-08-21T02:43:14-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.7487321,-98.6490584",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.7487321,-98.6490584",
         "status": "verified",
@@ -194,7 +194,7 @@
           "https://eso-cdn.tlcdn.workers.dev/s-2457430-7fii3o961qot3vh2-t.webp"
         ],
         "confidence": 96,
-        "verified_at": "2026-08-21T01:30:31-05:00",
+        "verified_at": "2026-08-21T02:43:14-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5269768,-98.6105703",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.5269768,-98.6105703",
         "status": "verified",
@@ -245,7 +245,7 @@
           "https://images.craigslist.org/00P0P_2ad87O90FYn_0t20CI_50x50c.jpg"
         ],
         "confidence": 96,
-        "verified_at": "2026-08-21T01:30:31-05:00",
+        "verified_at": "2026-08-21T02:43:14-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.580824,-98.427915",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.580824,-98.427915",
         "status": "verified",
@@ -296,7 +296,7 @@
           "https://images.craigslist.org/00U0U_1D5xeQvrscq_0CI0t2_50x50c.jpg"
         ],
         "confidence": 96,
-        "verified_at": "2026-08-21T01:30:31-05:00",
+        "verified_at": "2026-08-21T02:43:14-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.666488,-98.431292",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.666488,-98.431292",
         "status": "verified",
@@ -347,7 +347,7 @@
           "https://images.craigslist.org/00q0q_4rTQI2Bx814_0t20CI_50x50c.jpg"
         ],
         "confidence": 96,
-        "verified_at": "2026-08-21T01:30:31-05:00",
+        "verified_at": "2026-08-21T02:43:14-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.6636,-98.1672",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.6636,-98.1672",
         "status": "verified",
@@ -393,7 +393,7 @@
           "https://images.craigslist.org/01515_1Xh2ogBe0sZ_0CI0pq_600x450.jpg"
         ],
         "confidence": 96,
-        "verified_at": "2026-08-21T01:30:31-05:00",
+        "verified_at": "2026-08-21T02:43:14-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.556,-98.6094",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.556,-98.6094",
         "status": "verified",
@@ -439,7 +439,7 @@
           "https://images.craigslist.org/00n0n_ckVK2LXdG25_0a60a6_600x450.jpg"
         ],
         "confidence": 96,
-        "verified_at": "2026-08-21T01:30:31-05:00",
+        "verified_at": "2026-08-21T02:43:14-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.364186,-98.728681",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.364186,-98.728681",
         "status": "verified",
@@ -483,7 +483,7 @@
         ],
         "photos": [],
         "confidence": 100,
-        "verified_at": "2026-08-21T01:30:31-05:00",
+        "verified_at": "2026-08-21T02:43:14-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.358,-98.247",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.358,-98.247",
         "status": "verified",
@@ -534,7 +534,7 @@
           "https://eso-cdn.tlcdn.workers.dev/s-2458311-g92uo5f236f9yx1o-t.webp"
         ],
         "confidence": 100,
-        "verified_at": "2026-08-21T01:30:31-05:00",
+        "verified_at": "2026-08-21T02:43:14-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936",
         "status": "verified",
@@ -584,7 +584,7 @@
           "https://d82cz7nyq77ak.cloudfront.net/images/social/Email.png"
         ],
         "confidence": 100,
-        "verified_at": "2026-08-21T01:30:31-05:00",
+        "verified_at": "2026-08-21T02:43:14-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.595408,-98.468282",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.595408,-98.468282",
         "status": "verified",
@@ -635,7 +635,7 @@
           "https://eso-cdn.tlcdn.workers.dev/s-2456907-2n1ukq9qbttohgx9-t.webp"
         ],
         "confidence": 100,
-        "verified_at": "2026-08-21T01:30:31-05:00",
+        "verified_at": "2026-08-21T02:43:14-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.3939162,-98.4692512",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.3939162,-98.4692512",
         "status": "verified",
@@ -679,7 +679,7 @@
         ],
         "photos": [],
         "confidence": 96,
-        "verified_at": "2026-08-21T01:30:31-05:00",
+        "verified_at": "2026-08-21T02:43:14-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.579,-98.2778",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.579,-98.2778",
         "status": "verified",
@@ -725,7 +725,7 @@
           "https://images.craigslist.org/00V0V_7FzdadO7vdn_0cM0gw_600x450.jpg"
         ],
         "confidence": 96,
-        "verified_at": "2026-08-21T01:30:31-05:00",
+        "verified_at": "2026-08-21T02:43:14-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.860823,-98.262734",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.860823,-98.262734",
         "status": "verified",
@@ -776,7 +776,7 @@
           "https://eso-cdn.tlcdn.workers.dev/s-2456907-v1e649zkhg87vx1c-t.webp"
         ],
         "confidence": 100,
-        "verified_at": "2026-08-21T01:30:31-05:00",
+        "verified_at": "2026-08-21T02:43:14-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.3939162,-98.4692512",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.3939162,-98.4692512",
         "status": "verified",
@@ -826,7 +826,7 @@
           "https://d82cz7nyq77ak.cloudfront.net/images/social/Email.png"
         ],
         "confidence": 100,
-        "verified_at": "2026-08-21T01:30:31-05:00",
+        "verified_at": "2026-08-21T02:43:14-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.503582,-98.524746",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.503582,-98.524746",
         "status": "verified",
@@ -876,7 +876,7 @@
           "https://d82cz7nyq77ak.cloudfront.net/images/social/Email.png"
         ],
         "confidence": 100,
-        "verified_at": "2026-08-21T01:30:31-05:00",
+        "verified_at": "2026-08-21T02:43:14-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.454599,-98.587109",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.454599,-98.587109",
         "status": "verified",
@@ -927,7 +927,7 @@
           "https://gsf.tlstatic.com/image/w300-c300:250/2026/08/20/s/5/5/21721055/QqgI-0.jpeg"
         ],
         "confidence": 100,
-        "verified_at": "2026-08-21T01:30:31-05:00",
+        "verified_at": "2026-08-21T02:43:14-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.522648,-98.635938",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.522648,-98.635938",
         "status": "verified",
@@ -978,7 +978,7 @@
           "https://gsf.tlstatic.com/images/social/Email.png"
         ],
         "confidence": 100,
-        "verified_at": "2026-08-21T01:30:31-05:00",
+        "verified_at": "2026-08-21T02:43:14-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936",
         "status": "verified",
@@ -1029,7 +1029,7 @@
           "https://images.craigslist.org/00q0q_gbYiw9KwPcD_0t20CI_50x50c.jpg"
         ],
         "confidence": 96,
-        "verified_at": "2026-08-21T01:30:31-05:00",
+        "verified_at": "2026-08-21T02:43:14-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4821,-98.4554",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.4821,-98.4554",
         "status": "verified",
@@ -1075,7 +1075,7 @@
           "https://images.craigslist.org/00Q0Q_cV2mIP7bcs8_0gV0ob_600x450.jpg"
         ],
         "confidence": 96,
-        "verified_at": "2026-08-21T01:30:31-05:00",
+        "verified_at": "2026-08-21T02:43:14-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.580842,-97.988084",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.580842,-97.988084",
         "status": "verified",
@@ -1126,7 +1126,7 @@
           "https://images.craigslist.org/00J0J_gpT4psItTEo_0t20CI_50x50c.jpg"
         ],
         "confidence": 96,
-        "verified_at": "2026-08-21T01:30:31-05:00",
+        "verified_at": "2026-08-21T02:43:14-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.470939,-98.542796",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.470939,-98.542796",
         "status": "verified",
