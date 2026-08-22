@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 2.1,
   "purpose": "Structured community events sources for Chica's Map. City-config driven. CORE PLATFORM + CITY CONFIG.",
   "city": "san-antonio",
   "timezone": "America/Chicago",
@@ -9,12 +9,12 @@
       "id": "sa-parks-rec",
       "name": "City of San Antonio Parks & Recreation",
       "type": "municipal",
-      "url": "https://www.sanantonio.gov/ParksAndRec/Events",
+      "url": "https://www.sanantonio.gov/ParksAndRec/News-Events/Events",
       "reliability": 95,
       "extraction": "structured-html",
       "priority": 1,
       "enabled": true,
-      "notes": "Primary municipal calendar. Highest trust."
+      "notes": "Official Parks events calendar."
     },
     {
       "id": "visit-sa",
@@ -44,7 +44,8 @@
       "reliability": 85,
       "extraction": "structured-html",
       "priority": 2,
-      "enabled": true
+      "enabled": false,
+      "notes": "Disabled: last run returned HTTP 404. Re-enable after URL is verified."
     },
     {
       "id": "do210",
@@ -54,7 +55,8 @@
       "reliability": 75,
       "extraction": "structured-html",
       "priority": 2,
-      "enabled": true
+      "enabled": false,
+      "notes": "Disabled: HTTP 403."
     },
     {
       "id": "eventbrite-sa",
@@ -64,8 +66,8 @@
       "reliability": 70,
       "extraction": "html",
       "priority": 3,
-      "enabled": true,
-      "notes": "Rate-limit sensitive."
+      "enabled": false,
+      "notes": "Disabled: HTTP 405 / listing scrape is not event-detail quality."
     },
     {
       "id": "meetup-sa",
@@ -75,7 +77,8 @@
       "reliability": 65,
       "extraction": "structured-html",
       "priority": 3,
-      "enabled": true
+      "enabled": false,
+      "notes": "Disabled until we fetch individual event pages. Listing page yields JPEGs and query-string junk."
     }
   ],
   "deferred": {

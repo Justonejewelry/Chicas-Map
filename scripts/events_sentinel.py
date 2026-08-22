@@ -2,18 +2,40 @@
 """
 Chica Map — Events Sentinel Quality Gate
 Nothing reaches the public community-events feed until it passes.
-Mirrors the philosophy of scripts/sentinel.py for sales.
 """
 
 from __future__ import annotations
 
 import re
-from datetime import datetime, timezone, date
+from datetime import datetime, date
 from typing import Any
 from zoneinfo import ZoneInfo
 
 CT = ZoneInfo("America/Chicago")
 MIN_CONFIDENCE = 70
+
+GENERIC_TITLES = {
+    "tba", "tbd", "event", "events", "community event", "meeting",
+    "events directory", "calendar", "upcoming events", "news events",
+    "news & events", "directory", "home", "index",
+}
+
+GENERIC_TITLE_RE = re.compile(
+    r"^(events?|calendar|directory|upcoming|home|index)([\s\-_].*)?$",
+    re.I,
+)
+
+STUB_ADDRESS_RE = re.compile(
+    r"\(from\s+.+$|san antonio,?\s*tx\s*$",
+    re.I,
+)
+
+JUNK_URL_RE = re.compile(
+    r"\.(jpe?g|png|gif|webp|svg|css|js)(\?|$)|"
+    r"schema\.org|facebook\.net|fbevents|"
+    r"[?&](recid|recsource|searchid|eventorigin)=",
+    re.I,
+)
 
 
 class EventsSentinelResult:
@@ -49,8 +71,18 @@ def _parse_date(val: Any) -> date | None:
         return None
 
 
+def _usable_address(address: str) -> bool:
+    if not address or len(address) < 8:
+        return False
+    if STUB_ADDRESS_RE.search(address):
+        return False
+    # Require some street-like signal: digit or named venue + street token
+    has_digit = any(c.isdigit() for c in address)
+    streetish = bool(re.search(r"\b(st|street|ave|avenue|blvd|rd|road|dr|drive|ln|lane|pkwy|way|park|center|theatre|theater|hall|plaza)\b", address, re.I))
+    return has_digit or streetish
+
+
 def validate_event(raw: dict[str, Any], existing_ids: set[str] | None = None) -> EventsSentinelResult:
-    """Validate a single candidate event. Returns result with passed/errors/warnings."""
     result = EventsSentinelResult()
     existing_ids = existing_ids or set()
 
@@ -67,15 +99,20 @@ def validate_event(raw: dict[str, Any], existing_ids: set[str] | None = None) ->
 
     prefix = f"event_id={eid or title[:40] or 'unknown'}"
 
-    # Required identity
-    if not title or len(title) < 4:
+    if not title or len(title) < 6:
         result.fail(f"{prefix}: missing or too-short title")
+    elif title.lower() in GENERIC_TITLES or GENERIC_TITLE_RE.match(title):
+        result.fail(f"{prefix}: title too generic ({title!r})")
+    if re.fullmatch(r"\d+", title):
+        result.fail(f"{prefix}: title is a bare numeric id")
+    if title.lower().endswith((".jpeg", ".jpg", ".png", ".gif", ".webp")):
+        result.fail(f"{prefix}: title looks like a filename")
+
     if not eid:
         result.fail(f"{prefix}: missing id")
     elif eid in existing_ids:
         result.fail(f"{prefix}: duplicate id already in feed")
 
-    # Date must be present and future (or today)
     d = _parse_date(date_str)
     if not d:
         result.fail(f"{prefix}: missing or unparseable date")
@@ -84,26 +121,25 @@ def validate_event(raw: dict[str, Any], existing_ids: set[str] | None = None) ->
         if d < today:
             result.fail(f"{prefix}: date {d} is in the past")
 
-    # End date sanity
     ed = _parse_date(end_str)
     if ed and d and ed < d:
         result.fail(f"{prefix}: endDate before start date")
 
-    # Location: need either coordinates or a usable address
     has_coords = isinstance(lat, (int, float)) and isinstance(lng, (int, float)) and lat != 0 and lng != 0
-    has_address = bool(address) and len(address) > 5
+    has_address = _usable_address(address)
     if not has_coords and not has_address:
-        result.fail(f"{prefix}: no usable coordinates and no usable address")
+        result.fail(f"{prefix}: no usable coordinates and no street-level address")
 
-    # Source URL required for transparency
     if not url or not url.startswith("http"):
         result.fail(f"{prefix}: missing or invalid source URL")
+    elif JUNK_URL_RE.search(url):
+        result.fail(f"{prefix}: URL is media, tracking, or junk")
+    elif re.search(r"/events/?$", url.rstrip("/"), re.I) and title.lower() in GENERIC_TITLES:
+        result.fail(f"{prefix}: listing-page URL, not an event detail")
 
-    # Confidence gate
     if confidence < MIN_CONFIDENCE:
         result.fail(f"{prefix}: confidence {confidence} below threshold {MIN_CONFIDENCE}")
 
-    # Soft warnings
     if not has_coords:
         result.warn(f"{prefix}: no coordinates (will not render as map pin until geocoded)")
     if not raw.get("time") and not raw.get("startTime"):
@@ -111,18 +147,13 @@ def validate_event(raw: dict[str, Any], existing_ids: set[str] | None = None) ->
     if category in ("", "other", "unknown"):
         result.warn(f"{prefix}: category is generic/other")
 
-    # Very basic spam / emptiness filter
-    if title.lower() in ("tba", "tbd", "event", "community event", "meeting"):
-        result.fail(f"{prefix}: title too generic")
-
     return result
 
 
 def validate_events(events: list[dict[str, Any]]) -> EventsSentinelResult:
-    """Validate a list of events. Aggregates results."""
     result = EventsSentinelResult()
     seen: set[str] = set()
-    for i, raw in enumerate(events):
+    for raw in events:
         sub = validate_event(raw, existing_ids=seen)
         if not sub.passed:
             result.passed = False
@@ -132,7 +163,7 @@ def validate_events(events: list[dict[str, Any]]) -> EventsSentinelResult:
         if eid:
             seen.add(eid)
     if not events:
-        result.warn("Zero events — empty feed is allowed but unusual")
+        result.warn("Zero events — empty feed is allowed")
     return result
 
 

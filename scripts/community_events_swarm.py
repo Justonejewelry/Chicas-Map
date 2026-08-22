@@ -1,22 +1,10 @@
 #!/usr/bin/env python3
 """
-Chica's Map — Community Events Swarm v2
+Chica's Map — Community Events Swarm v2.1
 
-Evolves the original URL-harvest scout into a structured candidate pipeline:
-- Loads city-config sources (config/community-event-sources.json)
-- Fetches high-reliability sources
-- Extracts basic structured signals (title-ish, date-ish, location-ish, urls)
-- Scores candidates
-- Runs Events Sentinel
-- Only promotes records that pass the gate into webapp/data/community-events.json
-- Always writes a full diagnostic report to reports/community-events-latest.md
-
-Philosophy (unchanged):
-- Do not invent events.
-- Prefer municipal and high-trust public sources.
-- Keep human-visible review trail.
-- No Google Calendar.
-- HOA / OCR / heavy headless deferred.
+Conservative discovery + quality gate.
+Does not invent events. Does not promote listing pages, images, or city-only stubs.
+No Google Calendar. HOA / OCR / headless deferred.
 """
 
 from __future__ import annotations
@@ -24,20 +12,19 @@ from __future__ import annotations
 import hashlib
 import json
 import re
-from datetime import datetime, timezone
+from datetime import datetime
 from pathlib import Path
+from urllib.parse import urlparse, urlunparse
 from urllib.request import Request, urlopen
 from urllib.error import HTTPError, URLError
 from zoneinfo import ZoneInfo
 
-# Local Sentinel
 try:
-    from events_sentinel import validate_event, MIN_CONFIDENCE
+    from events_sentinel import validate_event, MIN_CONFIDENCE, JUNK_URL_RE
 except ImportError:
-    # Allow running from repo root or scripts/
     import sys
     sys.path.insert(0, str(Path(__file__).resolve().parent))
-    from events_sentinel import validate_event, MIN_CONFIDENCE
+    from events_sentinel import validate_event, MIN_CONFIDENCE, JUNK_URL_RE
 
 ROOT = Path(__file__).resolve().parents[1]
 FEED = ROOT / "webapp" / "data" / "community-events.json"
@@ -45,7 +32,11 @@ REPORT = ROOT / "reports" / "community-events-latest.md"
 SOURCES = ROOT / "config" / "community-event-sources.json"
 
 CT = ZoneInfo("America/Chicago")
-UA = "Chica's Map Community Events Scout/2.0 (+https://justonejewelry.github.io/Chicas-Map/)"
+UA = "Chica's Map Community Events Scout/2.1 (+https://justonejewelry.github.io/Chicas-Map/)"
+
+LISTING_PATHS = {
+    "/events", "/events/", "/calendar", "/calendar.aspx", "/find/",
+}
 
 
 def now_iso() -> str:
@@ -59,9 +50,32 @@ def fetch(url: str, timeout: int = 18) -> str:
 
 
 def clean(text: str) -> str:
-    text = re.sub(r"<[^>]+>", " ", text or "")
+    text = re.sub(r"<[^>]+", " ", text or "")
     text = re.sub(r"\s+", " ", text).strip()
     return text
+
+
+def strip_tracking(url: str) -> str:
+    try:
+        p = urlparse(url)
+        return urlunparse((p.scheme, p.netloc, p.path, "", "", ""))
+    except Exception:
+        return url.split("?", 1)[0]
+
+
+def is_junk_url(url: str) -> bool:
+    low = url.lower()
+    if JUNK_URL_RE.search(url):
+        return True
+    if any(x in low for x in ("meetupstatic.com", "secure-content.meetup", "facebook.com/pg/")):
+        return True
+    path = urlparse(url).path.lower().rstrip("/") or "/"
+    if path in {"/events", "/calendar", "/find"} or path.endswith("/events") or path.endswith("/calendar"):
+        return True
+    last = path.split("/")[-1]
+    if re.fullmatch(r"\d+", last) and "/events/" not in path:
+        return True
+    return False
 
 
 def make_id(title: str, date_str: str, source_id: str) -> str:
@@ -72,45 +86,42 @@ def make_id(title: str, date_str: str, source_id: str) -> str:
 
 
 def score_candidate(c: dict) -> int:
-    score = 40
-    if c.get("title") and len(c["title"]) > 8:
+    score = 35
+    title = c.get("title") or ""
+    if len(title) > 12:
         score += 12
     if c.get("date"):
         score += 15
-    if c.get("address") and len(c["address"]) > 8:
-        score += 12
-    if c.get("url") and c["url"].startswith("http"):
+    if c.get("address") and any(ch.isdigit() for ch in c["address"]):
+        score += 14
+    if c.get("url") and c["url"].startswith("http") and not is_junk_url(c["url"]):
         score += 10
     if c.get("time"):
         score += 5
     reliability = int(c.get("reliability") or 50)
     score += max(0, (reliability - 50) // 5)
+    if is_junk_url(c.get("url") or ""):
+        score -= 25
     return max(0, min(100, score))
 
 
 def extract_candidates_from_html(html: str, source: dict) -> list[dict]:
-    """
-    Conservative structured extraction.
-    Looks for common event patterns without inventing data.
-    This is intentionally imperfect on day one — better than pure URL dump,
-    still requires Sentinel + review culture.
-    """
     candidates = []
     source_id = source.get("id", "unknown")
     source_name = source.get("name", source_id)
     reliability = int(source.get("reliability") or 50)
 
-    # Collect absolute-ish URLs that look like event detail pages
     urls = re.findall(r'https?://[^\s"\'<>]+', html)
     event_urls = []
     for u in urls:
-        u = u.rstrip(".,);]'")
+        u = strip_tracking(u.rstrip(".,);]'"))
         low = u.lower()
-        if any(k in low for k in ("/event", "/events/", "calendar", "festival", "concert", "market", "workshop")):
-            if "schema.org" not in low and "facebook.net" not in low and "fbevents" not in low:
-                event_urls.append(u)
+        if not any(k in low for k in ("/event", "/events/", "calendar", "festival", "concert", "market", "workshop")):
+            continue
+        if is_junk_url(u):
+            continue
+        event_urls.append(u)
 
-    # Dedupe while preserving order
     seen_u = set()
     unique_urls = []
     for u in event_urls:
@@ -118,35 +129,17 @@ def extract_candidates_from_html(html: str, source: dict) -> list[dict]:
             seen_u.add(u)
             unique_urls.append(u)
 
-    # Very light title/date heuristics from surrounding text (page level)
-    # We do not claim these are accurate event records yet.
-    # Future iterations will add per-URL detail fetches for Tier-1 sources.
     page_text = clean(html)[:12000]
+    date_matches = re.findall(r"(20[2-3][0-9]-[0-1][0-9]-[0-3][0-9])", page_text)
 
-    # Look for ISO-ish or common date patterns near event language
-    date_matches = re.findall(
-        r"(20[2-3][0-9]-[0-1][0-9]-[0-3][0-9])|(?:(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\.?\s+(\d{1,2})(?:st|nd|rd|th)?,?\s+(20[2-3][0-9]))",
-        page_text,
-        flags=re.I,
-    )
-
-    # For this first production version we primarily promote URL + source + weak signals
-    # into the *review* path. Only candidates that later gain real title/date/address
-    # and pass Sentinel are written to the public feed.
     for u in unique_urls[:40]:
-        # Derive a provisional title from the last path segment
         path = u.rstrip("/").split("/")[-1]
         provisional_title = re.sub(r"[-_]+", " ", path).strip()
         provisional_title = re.sub(r"\.(html?|php|aspx)$", "", provisional_title, flags=re.I)
-        if len(provisional_title) < 5:
-            provisional_title = f"Event from {source_name}"
+        if len(provisional_title) < 6 or re.fullmatch(r"\d+", provisional_title):
+            continue
 
-        # Prefer any ISO date found on the page as a weak signal (not claimed as exact)
-        date_str = ""
-        for m in date_matches:
-            if m[0]:
-                date_str = m[0]
-                break
+        date_str = date_matches[0] if date_matches else ""
 
         cand = {
             "id": make_id(provisional_title, date_str or "unknown", source_id),
@@ -164,7 +157,7 @@ def extract_candidates_from_html(html: str, source: dict) -> list[dict]:
             "sourceId": source_id,
             "reliability": reliability,
             "discoveredAt": now_iso(),
-            "confidence": 0,  # filled after scoring
+            "confidence": 0,
         }
         cand["confidence"] = score_candidate(cand)
         candidates.append(cand)
@@ -191,9 +184,20 @@ def main() -> None:
     sources = [s for s in cfg.get("sources", []) if s.get("enabled", True)]
     sources.sort(key=lambda s: (-int(s.get("priority", 9)), -int(s.get("reliability", 0))))
 
-    existing = load_existing_feed()
-    existing_ids = {e.get("id") for e in existing if e.get("id")}
-    existing_urls = {e.get("url") or e.get("sourceUrl") for e in existing}
+    # Re-validate previous feed; drop anything that no longer passes Sentinel.
+    kept: list[dict] = []
+    purged: list[str] = []
+    existing_ids: set[str] = set()
+    existing_urls: set[str] = set()
+    for e in load_existing_feed():
+        gate = validate_event(e, existing_ids=existing_ids)
+        if gate.passed:
+            kept.append(e)
+            if e.get("id"):
+                existing_ids.add(e["id"])
+            existing_urls.add(e.get("url") or e.get("sourceUrl") or "")
+        else:
+            purged.append(f"{e.get('title', '?')} — {'; '.join(gate.errors)}")
 
     all_candidates: list[dict] = []
     promoted: list[dict] = []
@@ -212,15 +216,7 @@ def main() -> None:
                 if c.get("url") in existing_urls:
                     continue
                 all_candidates.append(c)
-
-                # Only attempt promotion for higher-confidence structured candidates
-                # that already have a real date. First version is conservative.
-                if c.get("confidence", 0) >= MIN_CONFIDENCE and c.get("date"):
-                    # Temporary address fallback for municipal sources so Sentinel can pass
-                    # location check while real geocoding is still pending.
-                    if not c.get("address") and source.get("type") == "municipal":
-                        c["address"] = f"San Antonio, TX (from {name})"
-
+                if c.get("confidence", 0) >= MIN_CONFIDENCE and c.get("date") and c.get("address"):
                     gate = validate_event(c, existing_ids=existing_ids)
                     if gate.passed:
                         promoted.append(c)
@@ -228,10 +224,6 @@ def main() -> None:
                         existing_urls.add(c.get("url"))
                     else:
                         rejected.append(f"{c.get('title', '?')} — {'; '.join(gate.errors)}")
-                else:
-                    # Still useful for the human review report
-                    pass
-
         except HTTPError as e:
             errors.append(f"{name}: HTTP {e.code} {e.reason}")
         except URLError as e:
@@ -239,30 +231,26 @@ def main() -> None:
         except Exception as e:
             errors.append(f"{name}: {type(e).__name__}: {e}")
 
-    # Merge promoted into feed (keep existing + new)
-    final_events = existing[:]  # preserve previously approved
-    for p in promoted:
-        final_events.append(p)
-
-    # Write public feed
+    final_events = kept + promoted
     feed_payload = {
         "updated": now_iso(),
         "city": cfg.get("city", "san-antonio"),
-        "version": 2,
+        "version": 2.1,
         "events": final_events,
     }
     FEED.parent.mkdir(parents=True, exist_ok=True)
     FEED.write_text(json.dumps(feed_payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
-    # Diagnostic report (always)
     all_candidates.sort(key=lambda x: (-x.get("confidence", 0), x.get("url", "")))
     lines = [
-        "# Chica’s Map — Community Events Swarm v2",
+        "# Chica’s Map — Community Events Swarm v2.1",
         "",
         f"Run: {now_iso()}",
         f"Sources scanned: **{len(sources)}**",
         f"Candidates discovered: **{len(all_candidates)}**",
-        f"Promoted to public feed: **{len(promoted)}**",
+        f"Promoted this run: **{len(promoted)}**",
+        f"Kept from prior feed: **{len(kept)}**",
+        f"Purged from prior feed: **{len(purged)}**",
         f"Source errors: **{len(errors)}**",
         f"Rejected by Sentinel: **{len(rejected)}**",
         "",
@@ -272,10 +260,15 @@ def main() -> None:
         for p in promoted:
             lines.append(f"- **{p.get('title')}** — {p.get('date')} — conf {p.get('confidence')} — {p.get('url')}")
     else:
-        lines.append("_None this run. Feed preserves previously approved events._")
+        lines.append("_None this run._")
 
-    lines += ["", "## Review Queue (structured candidates)"]
-    for c in all_candidates[:150]:
+    if purged:
+        lines += ["", "## Purged (failed re-validation)"]
+        for p in purged[:40]:
+            lines.append(f"- {p}")
+
+    lines += ["", "## Review Queue"]
+    for c in all_candidates[:120]:
         lines.append(
             f"- **{c.get('source')}** — conf {c.get('confidence')} — {c.get('title')} — {c.get('date') or 'no-date'} — {c.get('url')}"
         )
@@ -293,17 +286,13 @@ def main() -> None:
     lines += [
         "",
         "---",
-        "Notes: HOA / OCR / headless deferred. No Google Calendar. "
-        "Only candidates that already carry a usable date and pass Events Sentinel are promoted. "
-        "All other discoveries remain in this review queue for human or future enrichment passes.",
+        "Notes: v2.1 tightening. No city-only stub addresses. No listing pages, images, or tracking URLs. "
+        "No Google Calendar. HOA / OCR deferred. Public feed stays empty until real event records exist.",
     ]
-
     REPORT.parent.mkdir(parents=True, exist_ok=True)
     REPORT.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
-    print(f"Candidates: {len(all_candidates)} | Promoted: {len(promoted)} | Errors: {len(errors)}")
-    print(f"Feed written: {FEED}")
-    print(f"Report written: {REPORT}")
+    print(f"Candidates: {len(all_candidates)} | Promoted: {len(promoted)} | Kept: {len(kept)} | Purged: {len(purged)} | Errors: {len(errors)}")
 
 
 if __name__ == "__main__":
