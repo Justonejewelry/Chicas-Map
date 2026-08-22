@@ -1,4 +1,11 @@
-name: Chica's Map — Community Events Swarm
+name: Chica's Map — Community Events Swarm v2
+
+# Daily structured discovery for the "What's Happening" layer.
+# Sources: config/community-event-sources.json (city-config ready).
+# Script: scripts/community_events_swarm.py
+# Gate: scripts/events_sentinel.py (date, location, URL, confidence).
+# Store: webapp/data/community-events.json (no Google Calendar).
+# HOA / OCR / headless remain deferred. Frontend layer is unchanged.
 
 on:
   schedule:
@@ -15,16 +22,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Run community-events swarm
+      - name: Run community-events swarm v2
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           python3 scripts/community_events_swarm.py
 
-      - name: Commit approved feed and daily report
+      - name: Commit feed and daily report
         run: |
           git config user.name "Chica's Map Events Swarm"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add webapp/data/community-events.json reports/community-events-latest.md
-          git diff --cached --quiet || git commit -m "chore: refresh community events swarm"
+          git diff --cached --quiet || git commit -m "chore: refresh community events swarm v2"
           git push
