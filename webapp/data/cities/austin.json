@@ -534,30 +534,6 @@
       "external_id": "cl-shremovalaustinbboykfgieuisxszm6zzp8u"
     },
     {
-      "address": "1202 fm 685, Austin, TX",
-      "dates": "2026-08-21 – 2026-08-21",
-      "date_from": "2026-08-21",
-      "date_to": "2026-08-21",
-      "end_date": "2026-08-21",
-      "hours": null,
-      "title": "Up to 90% off retail! Huge sale! Don’t miss it!",
-      "details": "QR Code Link to This Post 🏃🏻‍♀️🏃🏻‍♂️💨 This sale begins Friday, August 21, 9am - 5pm! 💥👗🚀➡️ All clothes &amp; merchandise for only $7! 🌟👟👢➡️ All shoes, sneakers, boots, etc will be only $10, unless marked! 💙 You don’t want to miss this sale! 🏢 Store name: Lots4Less 📍 Address: 1202 FM 685, Pflugerville, TX 78660 🚪 Suite C-1 (behind the restaurants) ⏰ Store hours: ✅ Friday - 9:00 am - 5:00 pm ✅ Satur",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/pflugerville-up-to-90-off-retail-huge/c9SKg8ukfkUREPxsacKM1Q",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.4421,
-      "lon": -97.6299,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-0offretailhugec9skg8ukfkurepxsackm1q"
-    },
-    {
       "address": "Austin, TX",
       "dates": "2026-08-20 – 2026-08-22",
       "date_from": "2026-08-20",
@@ -596,9 +572,9 @@
     "gsalr.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 25,
+  "total_locations": 24,
   "status": "live",
-  "date": "2026-08-21",
-  "last_refresh": "2026-08-21T02:43:13-05:00",
+  "date": "2026-08-22",
+  "last_refresh": "2026-08-22T01:24:10-05:00",
   "permits": []
 }
