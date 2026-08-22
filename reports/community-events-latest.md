@@ -1,8 +1,9 @@
-# Chica’s Map — Community Events Swarm v2.1
+# Chica’s Map — Community Events Swarm v2.2
 
-Run: 2026-08-22T12:21:52-05:00
+Run: 2026-08-22T12:32:04-05:00
 Sources scanned: **3**
-Candidates discovered: **40**
+Candidates discovered: **59**
+Candidates with parsed dates: **12**
 Promoted this run: **0**
 Kept from prior feed: **0**
 Purged from prior feed: **0**
@@ -42,6 +43,9 @@ _None this run._
 - **City of San Antonio Parks & Recreation** — conf 54 — Sports — no-date — https://www.sanantonio.gov/ParksAndRec/News-Events/Events/Event-Details/PID/15385/evl/0/CategoryID/229/CategoryName/Sports
 - **City of San Antonio Parks & Recreation** — conf 54 — Tennis — no-date — https://www.sanantonio.gov/ParksAndRec/News-Events/Events/Event-Details/PID/15385/evl/0/CategoryID/230/CategoryName/Tennis
 - **City of San Antonio Parks & Recreation** — conf 54 — 1 8 2026 — no-date — https://www.sanantonio.gov/ParksAndRec/News-Events/Events/PID/15381/mcat/15108/acat/2/ArtDate/1-8-2026
+- **City of San Antonio Parks & Recreation** — conf 54 — 10 8 2026 — no-date — https://www.sanantonio.gov/ParksAndRec/News-Events/Events/PID/15381/mcat/15108/acat/2/ArtDate/10-8-2026
+- **City of San Antonio Parks & Recreation** — conf 54 — 11 8 2026 — no-date — https://www.sanantonio.gov/ParksAndRec/News-Events/Events/PID/15381/mcat/15108/acat/2/ArtDate/11-8-2026
+- **City of San Antonio Parks & Recreation** — conf 54 — 12 8 2026 — no-date — https://www.sanantonio.gov/ParksAndRec/News-Events/Events/PID/15381/mcat/15108/acat/2/ArtDate/12-8-2026
 - **City of San Antonio Parks & Recreation** — conf 54 — 2 8 2026 — no-date — https://www.sanantonio.gov/ParksAndRec/News-Events/Events/PID/15381/mcat/15108/acat/2/ArtDate/2-8-2026
 - **City of San Antonio Parks & Recreation** — conf 54 — 26 7 2026 — no-date — https://www.sanantonio.gov/ParksAndRec/News-Events/Events/PID/15381/mcat/15108/acat/2/ArtDate/26-7-2026
 - **City of San Antonio Parks & Recreation** — conf 54 — 27 7 2026 — no-date — https://www.sanantonio.gov/ParksAndRec/News-Events/Events/PID/15381/mcat/15108/acat/2/ArtDate/27-7-2026
@@ -52,7 +56,23 @@ _None this run._
 - **City of San Antonio Parks & Recreation** — conf 54 — 31 7 2026 — no-date — https://www.sanantonio.gov/ParksAndRec/News-Events/Events/PID/15381/mcat/15108/acat/2/ArtDate/31-7-2026
 - **City of San Antonio Parks & Recreation** — conf 54 — 4 8 2026 — no-date — https://www.sanantonio.gov/ParksAndRec/News-Events/Events/PID/15381/mcat/15108/acat/2/ArtDate/4-8-2026
 - **City of San Antonio Parks & Recreation** — conf 54 — 5 8 2026 — no-date — https://www.sanantonio.gov/ParksAndRec/News-Events/Events/PID/15381/mcat/15108/acat/2/ArtDate/5-8-2026
+- **City of San Antonio Parks & Recreation** — conf 54 — 6 8 2026 — no-date — https://www.sanantonio.gov/ParksAndRec/News-Events/Events/PID/15381/mcat/15108/acat/2/ArtDate/6-8-2026
+- **City of San Antonio Parks & Recreation** — conf 54 — 7 8 2026 — no-date — https://www.sanantonio.gov/ParksAndRec/News-Events/Events/PID/15381/mcat/15108/acat/2/ArtDate/7-8-2026
+- **City of San Antonio Parks & Recreation** — conf 54 — 8 8 2026 — no-date — https://www.sanantonio.gov/ParksAndRec/News-Events/Events/PID/15381/mcat/15108/acat/2/ArtDate/8-8-2026
+- **City of San Antonio Parks & Recreation** — conf 54 — 9 8 2026 — no-date — https://www.sanantonio.gov/ParksAndRec/News-Events/Events/PID/15381/mcat/15108/acat/2/ArtDate/9-8-2026
 - **Visit San Antonio Events** — conf 53 — Family Fun — no-date — https://www.visitsanantonio.com/events/family-fun/
+- **City of San Antonio Parks & Recreation** — conf 46 — > > > > > > > > > >Saturday — 2026-08-22 — https://www.sanantonio.gov/ParksAndRec/News-Events/Events
+- **City of San Antonio Parks & Recreation** — conf 46 — > > >&nbsp; >Learn More > > > > > — 2025-11-18 — https://www.sanantonio.gov/ParksAndRec/News-Events/Events
+- **City of San Antonio Parks & Recreation** — conf 46 — > > >&nbsp; >Learn More > > > > >11/18/2025 — 2025-11-18 — https://www.sanantonio.gov/ParksAndRec/News-Events/Events
+- **City of San Antonio Parks & Recreation** — conf 46 — > > >&nbsp; >Learn More > > > > > — 2026-01-01 — https://www.sanantonio.gov/ParksAndRec/News-Events/Events
+- **City of San Antonio Parks & Recreation** — conf 46 — > > >&nbsp; >Learn More > > > > > — 2026-02-17 — https://www.sanantonio.gov/ParksAndRec/News-Events/Events
+- **City of San Antonio Parks & Recreation** — conf 46 — > > >&nbsp; >Learn More > > > > >2/17/2026 — 2026-02-17 — https://www.sanantonio.gov/ParksAndRec/News-Events/Events
+- **City of San Antonio Parks & Recreation** — conf 46 — > > >&nbsp; >Learn More > > > > > — 2026-04-17 — https://www.sanantonio.gov/ParksAndRec/News-Events/Events
+- **City of San Antonio Parks & Recreation** — conf 46 — > > >&nbsp; >Learn More > > > > >4/17/2026 — 2026-04-17 — https://www.sanantonio.gov/ParksAndRec/News-Events/Events
+- **City of San Antonio Parks & Recreation** — conf 46 — > > >&nbsp; >Learn More > > > > > — 2026-05-02 — https://www.sanantonio.gov/ParksAndRec/News-Events/Events
+- **City of San Antonio Parks & Recreation** — conf 46 — > > >&nbsp; >Learn More > > > > >5/2/2026 — 2026-05-02 — https://www.sanantonio.gov/ParksAndRec/News-Events/Events
+- **City of San Antonio Parks & Recreation** — conf 46 — > > >&nbsp; >Learn More > > > > > — 2026-07-06 — https://www.sanantonio.gov/ParksAndRec/News-Events/Events
+- **City of San Antonio Parks & Recreation** — conf 46 — > > >&nbsp; >Learn More > > > > >7/6/2026 — 2026-07-06 — https://www.sanantonio.gov/ParksAndRec/News-Events/Events
 
 ---
-Notes: v2.1 tightening. No city-only stub addresses. No listing pages, images, or tracking URLs. No Google Calendar. HOA / OCR deferred. Public feed stays empty until real event records exist.
+Notes: v2.2 date parsing. Per-block dates (ISO, US numeric, month names, ranges, times). No global page-date stamp. No Google Calendar. Public feed stays empty until street-level records exist.
