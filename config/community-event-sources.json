@@ -1,16 +1,86 @@
 {
-  "version": 1,
-  "purpose": "Daily discovery registry for Chica's Map community events.",
+  "version": 2,
+  "purpose": "Structured community events sources for Chica's Map. City-config driven. CORE PLATFORM + CITY CONFIG.",
+  "city": "san-antonio",
+  "timezone": "America/Chicago",
+  "min_confidence": 70,
   "sources": [
-    {"name":"City of San Antonio Events","url":"https://www.sa.gov/Directory/Departments/Parks-and-Recreation/Events","priority":10},
-    {"name":"Visit San Antonio Events","url":"https://www.visitsanantonio.com/events/","priority":9},
-    {"name":"San Antonio Public Library Events","url":"https://guides.mysapl.org/events","priority":9},
-    {"name":"Bexar County Events","url":"https://www.bexar.org/Calendar.aspx","priority":9},
-    {"name":"San Antonio Parks Events","url":"https://www.sanantonio.gov/ParksAndRec/Events","priority":9},
-    {"name":"Eventbrite San Antonio","url":"https://www.eventbrite.com/d/tx--san-antonio/events/","priority":8},
-    {"name":"Meetup San Antonio","url":"https://www.meetup.com/find/?location=us--tx--san-antonio","priority":7},
-    {"name":"San Antonio Report Events","url":"https://sanantonioreport.org/events/","priority":7},
-    {"name":"Do210 San Antonio","url":"https://do210.com/events","priority":7},
-    {"name":"KSAT Events","url":"https://www.ksat.com/events/","priority":6}
-  ]
+    {
+      "id": "sa-parks-rec",
+      "name": "City of San Antonio Parks & Recreation",
+      "type": "municipal",
+      "url": "https://www.sanantonio.gov/ParksAndRec/Events",
+      "reliability": 95,
+      "extraction": "structured-html",
+      "priority": 1,
+      "enabled": true,
+      "notes": "Primary municipal calendar. Highest trust."
+    },
+    {
+      "id": "visit-sa",
+      "name": "Visit San Antonio Events",
+      "type": "municipal",
+      "url": "https://www.visitsanantonio.com/events/",
+      "reliability": 90,
+      "extraction": "structured-html",
+      "priority": 1,
+      "enabled": true
+    },
+    {
+      "id": "bexar-county",
+      "name": "Bexar County Calendar",
+      "type": "municipal",
+      "url": "https://www.bexar.org/Calendar.aspx",
+      "reliability": 88,
+      "extraction": "structured-html",
+      "priority": 1,
+      "enabled": true
+    },
+    {
+      "id": "sa-library",
+      "name": "San Antonio Public Library Events",
+      "type": "municipal",
+      "url": "https://guides.mysapl.org/events",
+      "reliability": 85,
+      "extraction": "structured-html",
+      "priority": 2,
+      "enabled": true
+    },
+    {
+      "id": "do210",
+      "name": "Do210 San Antonio",
+      "type": "aggregator",
+      "url": "https://do210.com/events",
+      "reliability": 75,
+      "extraction": "structured-html",
+      "priority": 2,
+      "enabled": true
+    },
+    {
+      "id": "eventbrite-sa",
+      "name": "Eventbrite San Antonio",
+      "type": "aggregator",
+      "url": "https://www.eventbrite.com/d/tx--san-antonio/events/",
+      "reliability": 70,
+      "extraction": "html",
+      "priority": 3,
+      "enabled": true,
+      "notes": "Rate-limit sensitive."
+    },
+    {
+      "id": "meetup-sa",
+      "name": "Meetup San Antonio",
+      "type": "aggregator",
+      "url": "https://www.meetup.com/find/?location=us--tx--san-antonio",
+      "reliability": 65,
+      "extraction": "structured-html",
+      "priority": 3,
+      "enabled": true
+    }
+  ],
+  "deferred": {
+    "school_districts": "P2 — add after municipal pipeline is proven clean",
+    "hoa": "P3/P4 — high fragility, ToS risk, low structured yield",
+    "ocr_flyers": "P4 — only after human review volume is manageable"
+  }
 }
