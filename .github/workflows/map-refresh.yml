@@ -2,7 +2,7 @@ name: Map feed refresh
 
 on:
   # Continuous 2-hour schedule REMOVED per Master Workflow.
-  # Discovery now runs via Chica Daily at 1 AM CT on Thu/Fri/Sat
+  # Discovery now runs via Chica Daily at 5 AM CT daily
   # (and can still be triggered manually here).
   workflow_dispatch:
     inputs:
@@ -91,14 +91,6 @@ jobs:
           set -e
           python3 webapp/scripts/fetch_estatesales.py --cities "$CITIES" | tee estatesales.log || true
 
-      - name: EstateSales.net via Apify (optional — skipped without token)
-        env:
-          CITIES: ${{ github.event.inputs.cities || 'san-antonio,austin' }}
-          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
-        run: |
-          set -e
-          python3 webapp/scripts/fetch_estatesales_apify.py --cities "$CITIES" | tee estatesales-apify.log || true
-
       - name: Purge expired listings
         run: |
           python3 webapp/scripts/purge_expired.py | tee purge.log
@@ -140,5 +132,6 @@ jobs:
             echo ""
             echo "- Trigger: ${{ github.event_name }}"
             echo "- Continuous 2h schedule: REMOVED"
+            echo "- Apify: REMOVED"
             echo "- Changes committed: ${{ steps.diff.outputs.dirty }}"
           } >> "$GITHUB_STEP_SUMMARY"
