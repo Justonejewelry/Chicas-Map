@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Lightweight EstateSales.net discovery for Chicas-Map / GSIN.
-SPA-heavy site; free HTTP often thin. Prefer fetch_estatesales_apify.py for production.
+SPA-heavy site; free HTTP often thin. Estate sales primarily come from EstateSales.org.
 Uses city_io middleware so PLACEHOLDER / corrupt JSON never crashes the job.
 Usage: python3 webapp/scripts/fetch_estatesales.py --city san-antonio
 """
@@ -91,7 +91,6 @@ def try_api(cfg):
     out = []
     for url in urls:
         code, body = fetch(url, accept="application/json")
-        # Log host + status only (no full URL / response body — avoids clear-text PII)
         host = urllib.parse.urlparse(url).netloc
         print(f"  probe {host} → HTTP {code}")
         if code != 200: continue
@@ -115,7 +114,6 @@ def parse_embedded(html):
     return found
 
 def merge(slug, sales, today):
-    # Middleware: never crashes on PLACEHOLDER / corrupt JSON
     data = safe_load_city(slug)
     by_key = {normalize_key(s.get("address") or s.get("title") or ""): s for s in (data.get("public") or [])}
     added = 0
@@ -167,7 +165,7 @@ def discover(slug):
         seen.add(k); out.append(s)
     print(f"  normalized={len(out)}")
     if not out:
-        print("  NOTE: SPA often returns 0; use fetch_estatesales_apify.py for reliable coverage.", file=sys.stderr)
+        print("  NOTE: SPA often returns 0. Primary estate coverage is fetch_estatesales_org.py.", file=sys.stderr)
     return out
 
 def main():
@@ -184,7 +182,6 @@ def main():
             print(f"unknown {slug}", file=sys.stderr); continue
         sales = discover(slug)
         if args.dry_run:
-            # Counts only — do not dump addresses / company names to logs
             print(f"  dry-run: {len(sales)} normalized sales (details omitted)")
             continue
         added, live = merge(slug, sales, today)
