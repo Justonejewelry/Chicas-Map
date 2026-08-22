@@ -11,6 +11,14 @@ from datetime import datetime, date
 from typing import Any
 from zoneinfo import ZoneInfo
 
+try:
+    from event_dates import parse_single_date, parse_date_range, today_ct
+except ImportError:
+    import sys
+    from pathlib import Path
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from event_dates import parse_single_date, parse_date_range, today_ct
+
 CT = ZoneInfo("America/Chicago")
 MIN_CONFIDENCE = 70
 
@@ -64,11 +72,8 @@ class EventsSentinelResult:
 def _parse_date(val: Any) -> date | None:
     if not val:
         return None
-    s = str(val).strip()[:10]
-    try:
-        return datetime.strptime(s, "%Y-%m-%d").date()
-    except Exception:
-        return None
+    start, _end = parse_date_range(str(val))
+    return start or parse_single_date(str(val))
 
 
 def _usable_address(address: str) -> bool:
@@ -76,9 +81,11 @@ def _usable_address(address: str) -> bool:
         return False
     if STUB_ADDRESS_RE.search(address):
         return False
-    # Require some street-like signal: digit or named venue + street token
     has_digit = any(c.isdigit() for c in address)
-    streetish = bool(re.search(r"\b(st|street|ave|avenue|blvd|rd|road|dr|drive|ln|lane|pkwy|way|park|center|theatre|theater|hall|plaza)\b", address, re.I))
+    streetish = bool(re.search(
+        r"\b(st|street|ave|avenue|blvd|rd|road|dr|drive|ln|lane|pkwy|way|park|center|theatre|theater|hall|plaza)\b",
+        address, re.I,
+    ))
     return has_digit or streetish
 
 
@@ -117,11 +124,10 @@ def validate_event(raw: dict[str, Any], existing_ids: set[str] | None = None) ->
     if not d:
         result.fail(f"{prefix}: missing or unparseable date")
     else:
-        today = datetime.now(CT).date()
-        if d < today:
+        if d < today_ct():
             result.fail(f"{prefix}: date {d} is in the past")
 
-    ed = _parse_date(end_str)
+    ed = _parse_date(end_str) if end_str else None
     if ed and d and ed < d:
         result.fail(f"{prefix}: endDate before start date")
 
