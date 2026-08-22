@@ -64,7 +64,6 @@ jobs:
         env:
           CITIES: ${{ github.event.inputs.cities || 'san-antonio,austin' }}
           PERMIT_DAYS: ${{ github.event.inputs.permit_days || '14' }}
-          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -euo pipefail
@@ -133,7 +132,7 @@ jobs:
             echo "- YardSaleSearch"
             echo "- gsalr.com"
             echo "- Craigslist"
-            echo "- EstateSales.net (+ optional Apify)"
+            echo "- EstateSales.net lightweight (free HTTP)"
             echo "- purge_expired + scraper health"
             echo "- chica_daily orchestrator (enrich / sentinel / packs / social)"
             echo "- community events swarm"

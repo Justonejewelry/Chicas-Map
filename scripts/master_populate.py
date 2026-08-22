@@ -95,7 +95,6 @@ def main() -> int:
         ("fetch_gsalr", [PY, "webapp/scripts/fetch_gsalr.py", "--cities", cities], False),
         ("fetch_craigslist", [PY, "webapp/scripts/fetch_craigslist.py", "--cities", cities], False),
         ("fetch_estatesales.net", [PY, "webapp/scripts/fetch_estatesales.py", "--cities", cities], False),
-        ("fetch_estatesales_apify (optional token)", [PY, "webapp/scripts/fetch_estatesales_apify.py", "--cities", cities], False),
         ("purge_expired", [PY, "webapp/scripts/purge_expired.py"], False),
         ("check_scraper_health", [PY, "webapp/scripts/check_scraper_health.py"], False),
     ]
