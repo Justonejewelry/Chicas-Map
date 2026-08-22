@@ -252,7 +252,7 @@ img, video { max-width: 100%; display: block; }
 .zone-chip:hover { background: rgba(255,255,255,.28); transform: translateY(-1px); }
 .cm-trust { padding: 36px 0 16px; }
 .trust-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
+  display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px;
 }
 .trust-card {
   background: var(--paper); border: 1.5px solid var(--line);
@@ -265,8 +265,8 @@ img, video { max-width: 100%; display: block; }
   box-shadow: 0 16px 36px -14px rgba(20,17,15,.2);
 }
 .trust-card h2 {
-  font-family: var(--display); font-size: 1.1rem; font-weight: 600;
-  margin: 0 0 6px; letter-spacing: -.01em;
+  font-family: var(--display); font-size: 1.05rem; font-weight: 600;
+  margin: 0 0 6px; letter-spacing: .04em; text-transform: uppercase;
 }
 .trust-card p { margin: 0; color: var(--muted); font-size: .9rem; }
 .cm-email { padding: 12px 0 40px; }
@@ -294,8 +294,24 @@ img, video { max-width: 100%; display: block; }
   padding: 14px 24px 0; border-top: 1px solid var(--line);
   font-size: .8rem; color: var(--muted); text-align: center;
 }
+.six-words {
+  list-style: none; margin: 18px auto 22px; padding: 0;
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;
+  max-width: 42rem;
+}
+.six-word {
+  display: inline-flex; align-items: center; justify-content: center;
+  font-family: var(--body); font-weight: 800; font-size: .78rem;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: var(--pine); background: rgba(255,255,255,.82);
+  border: 1.5px solid #cfe3d5; border-radius: 999px;
+  padding: 8px 14px; text-decoration: none;
+  box-shadow: 0 4px 12px rgba(15,61,36,.08);
+  transition: transform .15s ease, background .15s ease, box-shadow .15s ease;
+}
+.six-word:hover { transform: translateY(-2px); background: #fff; box-shadow: 0 8px 18px rgba(15,61,36,.12); }
 @media (max-width: 800px) {
-  .trust-grid { grid-template-columns: 1fr; }
+  .trust-grid { grid-template-columns: repeat(2, 1fr); }
   .hero-stage { min-height: min(70vh, 640px); }
   .hero-video-card { max-height: 36vh; border-radius: 16px; }
   .hero-inner { padding: 28px 18px 24px; }
@@ -343,6 +359,14 @@ img, video { max-width: 100%; display: block; }
       <h1>I watched too many wasted Saturdays.</h1>
       <p class="lead">My person is a veteran. Stubborn. Hates empty driveways and dead pins. So we built a better way. We pull public listings, estate sales, and city permits. We geocode them, score them, and drop only the verified ones on a live MapLibre map. Near Me uses your location. Routes open straight into Google, Apple, or Waze. Layers for pantries, public WiFi, and school zones sit on top when you need them. No ad clutter. No stale pins. Data refreshes continuously. I’m the nose. He’s the hands that wired the swarms, the city configs, and the publish gates. Open the map. Let’s go find something good.</p>
       <p class="further"><a href="technical.html">Further information: The technical side — What my human had to learn</a></p>
+      <ul class="six-words" aria-label="Top features">
+        <li><a class="six-word" href="map.html">Verified</a></li>
+        <li><a class="six-word" href="map.html">Nearby</a></li>
+        <li><a class="six-word" href="map.html">Routes</a></li>
+        <li><a class="six-word" href="map.html">Forecast</a></li>
+        <li><a class="six-word" href="map.html">Layers</a></li>
+        <li><a class="six-word" href="submit.html">List</a></li>
+      </ul>
       <div class="hero-cta">
         <a class="btn btn-primary btn-lg" href="map.html">Open the map</a>
         <a class="btn btn-ghost btn-lg" href="submit.html">List your sale free</a>
@@ -369,16 +393,28 @@ img, video { max-width: 100%; display: block; }
   <section class="cm-trust">
     <div class="wrap trust-grid">
       <div class="trust-card">
-        <h2>Verified pins</h2>
-        <p>Addresses, hours, and status checked so you don’t waste the drive.</p>
+        <h2>Verified</h2>
+        <p>Pins checked before they hit the map.</p>
       </div>
       <div class="trust-card">
-        <h2>Near Me + routes</h2>
-        <p>Distance sort and multi-stop plans that open in your map app.</p>
+        <h2>Nearby</h2>
+        <p>Sales sorted by distance to you.</p>
       </div>
       <div class="trust-card">
-        <h2>Layers that matter</h2>
-        <p>Sales, pantries, and public WiFi — toggle what you need, when you need it.</p>
+        <h2>Routes</h2>
+        <p>Multi-stop plans. One tap out.</p>
+      </div>
+      <div class="trust-card">
+        <h2>Forecast</h2>
+        <p>Weekend heat before Saturday.</p>
+      </div>
+      <div class="trust-card">
+        <h2>Layers</h2>
+        <p>Sales, pantries, WiFi when needed.</p>
+      </div>
+      <div class="trust-card">
+        <h2>List</h2>
+        <p>Put your sale on the map free.</p>
       </div>
     </div>
   </section>
@@ -446,10 +482,10 @@ function renderZones(zones){
 }
 function applyLiveData(data){
   if (!data){ renderZones(null); return; }
-  var public = data.public || data.sales || [];
+  var publicSales = data.public || data.sales || [];
   var permits = data.permits || [];
   var count = data.total_locations;
-  if (count == null) count = public.length + permits.length;
+  if (count == null) count = publicSales.length + permits.length;
   var c = document.getElementById("liveCount"); if (c) c.textContent = String(count);
   var r = document.getElementById("liveRefresh"); if (r) r.textContent = relativeTime(data.last_refresh || data.date);
   var s = document.getElementById("liveStatus"); if (s) s.textContent = "Live";
