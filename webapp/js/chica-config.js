@@ -50,12 +50,29 @@
     loadScriptOnce("chicaCommunityEvents", "js/community-events-layer.js?v=events1");
   }
 
+  function openFreshCityWide() {
+    if (!document.body || !document.body.classList.contains("grass-map")) return;
+    var city = document.getElementById("scopeCity");
+    var near = document.getElementById("scopeNear");
+    if (!city) return;
+    if (near) near.classList.remove("active");
+    city.classList.add("active");
+    try { city.click(); } catch (_) {}
+    var title = document.getElementById("listTitle");
+    if (title && /nearby/i.test(title.textContent || "")) title.textContent = "Live sales";
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     if (!document.body) return;
     loadProductPolish();
     loadMapDensity();
     loadMapIcons();
     loadCommunityEvents();
+    loadScriptOnce("chicaOpenFresh", "js/chica-open-fresh.js?v=fresh1");
+    openFreshCityWide();
+    [300, 800, 1600, 2800].forEach(function (ms) {
+      setTimeout(openFreshCityWide, ms);
+    });
 
     if (document.body.classList.contains("grass-map")) {
       var logo = document.querySelector(".topbar .brand .logo-mark.img");
@@ -118,5 +135,10 @@
       style.textContent = ".trust-card{display:flex;flex-direction:column;align-items:center}.trust-card p{margin:0 0 14px}.trust-card .trust-action{margin-top:auto}";
       document.head.appendChild(style);
     }
+  });
+
+  window.addEventListener("yb-map-ready", function () {
+    setTimeout(openFreshCityWide, 60);
+    setTimeout(openFreshCityWide, 400);
   });
 })(window);
