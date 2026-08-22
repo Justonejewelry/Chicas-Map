@@ -14,22 +14,11 @@ Primary free sources:
   - YardSaleSearch
   - Craigslist
 
-Scoring rule (updated 2026-08-20):
-  - 0 primary problems → healthy
-  - 1 primary problem  → degraded (still usable; other primaries cover)
-  - 2+ primary problems → critical
-  - Secondary failures alone → degraded
-
-Zero detection (updated 2026-08-20):
-  - True zero = normalized=0 or explicit "no sales found" with no positive count
-  - "merge added=0" alone is NOT a failure (successful dedupe of existing listings)
-
 Secondary (warn-only):
   - GarageSaleFinder
   - SA permits
   - EstateSales.net lightweight
-  - gsalr.com (Treasure Listings multi-endpoint fallback)
-  - Apify (optional)
+  - gsalr.com
 """
 from __future__ import annotations
 
@@ -45,7 +34,6 @@ ROOT = Path(__file__).resolve().parents[1]
 CITY_DIR = ROOT / "data" / "cities"
 HEALTH_PATH = ROOT / "data" / "scraper-health.json"
 
-# Log files produced by map-refresh.yml (cwd is repo root in Actions)
 LOGS = {
     "garagesalefinder": "discover.log",
     "permits": "permits.log",
@@ -54,7 +42,6 @@ LOGS = {
     "gsalr": "gsalr.log",
     "craigslist": "craigslist.log",
     "estatesales_net": "estatesales.log",
-    "estatesales_apify": "estatesales-apify.log",
 }
 
 PRIMARY = {"estatesales_org", "yardsalesearch", "craigslist"}
@@ -175,10 +162,11 @@ def main() -> int:
         "json_source_counts": json_counts,
         "notes": (
             "Primary free sources: estatesales_org, yardsalesearch, craigslist. "
-            "Secondary: gsalr, garagesalefinder, permits, estatesales_net, apify. "
+            "Secondary: gsalr, garagesalefinder, permits, estatesales_net. "
             "Scoring: 0 primary problems=healthy, 1=degraded, 2+=critical. "
             "merge added=0 is treated as ok (dedupe), not zero. "
-            "Soft-fail workflow continues; this report only alerts."
+            "Soft-fail workflow continues; this report only alerts. "
+            "Apify removed 2026-08-22."
         ),
     }
 
