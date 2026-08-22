@@ -1,10 +1,10 @@
 {
   "city": "san-antonio",
   "date": "2026-08-22",
-  "last_refresh": "2026-08-22T02:33:05-05:00",
-  "total_locations": 50,
-  "public_count": 50,
-  "note": "Live map currently serving the 02:33 CT Saturday pack (50 public pins). Midday Sentinel pass completed: 33 cleaned in-person pins + Rita Ave / Jack Bean adds; city JSON swap next. Hot zones: Potranco Run, Shavano/78230, Schertz/Universal City, Bailey tools.",
+  "last_refresh": "2026-08-22T10:57:45-05:00",
+  "total_locations": 33,
+  "public_count": 33,
+  "note": "Cleaned 33-pin Saturday live swap 2026-08-22 10:57 CDT. Merged Potranco/Moonlit/Craftsman. Dropped stores, auctions, warehouse, flea, single-item. Added Rita Ave + Jack Bean.",
   "hot_zones": [
     "Potranco Run / Raceland",
     "Shavano / 78230",
