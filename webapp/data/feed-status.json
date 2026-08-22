@@ -1,10 +1,16 @@
 {
   "city": "san-antonio",
-  "date": "2026-08-16",
-  "last_refresh": "2026-08-16T04:30:00-05:00",
+  "date": "2026-08-22",
+  "last_refresh": "2026-08-22T10:52:22-05:00",
   "total_locations": 33,
   "public_count": 33,
-  "note": "Sunday soft refresh — purged 16 expired pins; 33 public still active through 2026-08-16+",
-  "hot_zones": ["Northwest / Braun–Tezel", "Hunters Creek", "78249 Spring Time", "Potranco (next weekend)"],
+  "note": "Midday Saturday refresh 2026-08-22 10:52 CDT. Merged Potranco Run / Moonlit Grove / Craftsman duplicates. Dropped stores, online auctions, future warehouse, and flea-market pins. Added Rita Ave + Jack Bean morning finds.",
+  "hot_zones": [
+    "Potranco Run / Raceland",
+    "Shavano / 78230",
+    "Schertz / Universal City",
+    "South Central tools (Bailey)",
+    "Northwest / 78240"
+  ],
   "status": "live"
 }
