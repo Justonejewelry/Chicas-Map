@@ -7,7 +7,7 @@ Nothing reaches the public community-events feed until it passes.
 from __future__ import annotations
 
 import re
-from datetime import datetime, date
+from datetime import date
 from typing import Any
 from zoneinfo import ZoneInfo
 
@@ -76,6 +76,16 @@ def _parse_date(val: Any) -> date | None:
     return start or parse_single_date(str(val))
 
 
+def _parse_range_fields(date_str: Any, end_str: Any) -> tuple[date | None, date | None]:
+    blob = " ".join(str(x) for x in (date_str, end_str) if x)
+    start, end = parse_date_range(blob) if blob else (None, None)
+    if not start:
+        start = parse_single_date(str(date_str or ""))
+    if not end and end_str:
+        end = parse_single_date(str(end_str))
+    return start, end
+
+
 def _usable_address(address: str) -> bool:
     if not address or len(address) < 8:
         return False
@@ -120,16 +130,19 @@ def validate_event(raw: dict[str, Any], existing_ids: set[str] | None = None) ->
     elif eid in existing_ids:
         result.fail(f"{prefix}: duplicate id already in feed")
 
-    d = _parse_date(date_str)
+    today = today_ct()
+    d, ed = _parse_range_fields(date_str, end_str)
     if not d:
         result.fail(f"{prefix}: missing or unparseable date")
     else:
-        if d < today_ct():
+        if ed and ed < d:
+            result.fail(f"{prefix}: endDate before start date")
+        elif ed and ed < today:
+            result.fail(f"{prefix}: series ended {ed}")
+        elif not ed and d < today:
             result.fail(f"{prefix}: date {d} is in the past")
-
-    ed = _parse_date(end_str) if end_str else None
-    if ed and d and ed < d:
-        result.fail(f"{prefix}: endDate before start date")
+        elif d < today and ed and ed >= today:
+            result.warn(f"{prefix}: ongoing series {d} → {ed}")
 
     has_coords = isinstance(lat, (int, float)) and isinstance(lng, (int, float)) and lat != 0 and lng != 0
     has_address = _usable_address(address)
