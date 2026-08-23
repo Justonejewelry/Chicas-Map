@@ -1,6 +1,6 @@
 # Chica’s Map — Community Events Swarm v2.2
 
-Run: 2026-08-22T12:32:04-05:00
+Run: 2026-08-23T05:15:25-05:00
 Sources scanned: **3**
 Candidates discovered: **59**
 Candidates with parsed dates: **12**
@@ -61,7 +61,7 @@ _None this run._
 - **City of San Antonio Parks & Recreation** — conf 54 — 8 8 2026 — no-date — https://www.sanantonio.gov/ParksAndRec/News-Events/Events/PID/15381/mcat/15108/acat/2/ArtDate/8-8-2026
 - **City of San Antonio Parks & Recreation** — conf 54 — 9 8 2026 — no-date — https://www.sanantonio.gov/ParksAndRec/News-Events/Events/PID/15381/mcat/15108/acat/2/ArtDate/9-8-2026
 - **Visit San Antonio Events** — conf 53 — Family Fun — no-date — https://www.visitsanantonio.com/events/family-fun/
-- **City of San Antonio Parks & Recreation** — conf 46 — > > > > > > > > > >Saturday — 2026-08-22 — https://www.sanantonio.gov/ParksAndRec/News-Events/Events
+- **City of San Antonio Parks & Recreation** — conf 46 — > > > > > > > > > >Sunday — 2026-08-23 — https://www.sanantonio.gov/ParksAndRec/News-Events/Events
 - **City of San Antonio Parks & Recreation** — conf 46 — > > >&nbsp; >Learn More > > > > > — 2025-11-18 — https://www.sanantonio.gov/ParksAndRec/News-Events/Events
 - **City of San Antonio Parks & Recreation** — conf 46 — > > >&nbsp; >Learn More > > > > >11/18/2025 — 2025-11-18 — https://www.sanantonio.gov/ParksAndRec/News-Events/Events
 - **City of San Antonio Parks & Recreation** — conf 46 — > > >&nbsp; >Learn More > > > > > — 2026-01-01 — https://www.sanantonio.gov/ParksAndRec/News-Events/Events

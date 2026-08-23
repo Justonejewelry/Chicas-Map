@@ -1,65 +1,63 @@
 {
-  "generated_at": "2026-08-22T11:58:10-05:00",
-  "overall": "degraded",
-  "primary_failures": [],
+  "generated_at": "2026-08-23T05:14:23-05:00",
+  "overall": "critical",
+  "primary_failures": [
+    "estatesales_org",
+    "yardsalesearch",
+    "craigslist"
+  ],
   "sources": [
     {
       "source": "garagesalefinder",
-      "status": "ok",
-      "detail": "merge added=10",
+      "status": "missing",
+      "detail": "no log file",
       "primary": false
     },
     {
       "source": "permits",
-      "status": "unknown",
-      "detail": "log present but no clear success/fail pattern",
+      "status": "missing",
+      "detail": "no log file",
       "primary": false
     },
     {
       "source": "estatesales_org",
-      "status": "ok",
-      "detail": "normalized=4",
+      "status": "missing",
+      "detail": "no log file",
       "primary": true
     },
     {
       "source": "yardsalesearch",
-      "status": "ok",
-      "detail": "normalized=14",
+      "status": "missing",
+      "detail": "no log file",
       "primary": true
     },
     {
       "source": "gsalr",
-      "status": "fail",
-      "detail": "HTTP 403",
+      "status": "missing",
+      "detail": "no log file",
       "primary": false
     },
     {
       "source": "craigslist",
-      "status": "ok",
-      "detail": "static results=33",
+      "status": "missing",
+      "detail": "no log file",
       "primary": true
     },
     {
       "source": "estatesales_net",
-      "status": "ok",
-      "detail": "normalized=1",
-      "primary": false
-    },
-    {
-      "source": "estatesales_apify",
       "status": "missing",
       "detail": "no log file",
       "primary": false
     }
   ],
   "json_source_counts": {
-    "estatesales.net": 3,
-    "yardsalesearch": 24,
-    "craigslist": 52,
-    "garagesalefinder": 20,
-    "estatesales.org": 8,
+    "yardsalesearch": 11,
+    "craigslist": 54,
+    "garagesalefinder": 10,
+    "estatesales.org": 12,
+    "estatesales.net": 2,
     "aggregators": 2,
     "user submit (approved)": 1
   },
-  "notes": "Primary free sources: estatesales_org, yardsalesearch, craigslist. Secondary: gsalr, garagesalefinder, permits, estatesales_net, apify. Scoring: 0 primary problems=healthy, 1=degraded, 2+=critical. merge added=0 is treated as ok (dedupe), not zero. Soft-fail workflow continues; this report only alerts."
+  "notes": "Primary free sources: estatesales_org, yardsalesearch, craigslist. Secondary: gsalr, garagesalefinder, permits, estatesales_net. Scoring: 0 primary problems=healthy, 1=degraded, 2+=critical. merge added=0 is treated as ok (dedupe), not zero. Soft-fail workflow continues; this report only alerts. Apify removed 2026-08-22."
 }
