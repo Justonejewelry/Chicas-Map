@@ -1,6 +1,25 @@
 {
-  "updated": "2026-08-23T09:11:38-05:00",
+  "updated": "2026-08-23T09:24:24-05:00",
   "city": "san-antonio",
   "version": 2.3,
-  "events": []
+  "events": [
+    {
+      "id": "2026-08-04_center-agc-the-basics-of-con_982629f8da58",
+      "title": "Center AGC The Basics of Construction 2026-08-04T18:00:00 Deadline for applications",
+      "date": "2026-08-04",
+      "endDate": "2027-07-24",
+      "time": "6:00 PM–8:00 PM",
+      "address": "July 24, 2026 Bexar County Small Business Opportunity",
+      "lat": null,
+      "lng": null,
+      "category": "other",
+      "description": "",
+      "url": "https://www.bexar.org/Calendar.aspx",
+      "source": "Bexar County Calendar",
+      "sourceId": "bexar-county",
+      "reliability": 88,
+      "discoveredAt": "2026-08-23T09:24:24-05:00",
+      "confidence": 98
+    }
+  ]
 }
