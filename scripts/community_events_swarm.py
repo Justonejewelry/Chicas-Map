@@ -1,20 +1,18 @@
 #!/usr/bin/env python3
 """
-Chica's Map — Community Events Swarm v2.2
-
-Conservative discovery + date parsing + quality gate.
-Does not invent events. Does not attach one page-level date to every URL.
-No Google Calendar. HOA / OCR / headless deferred.
+Chica's Map — Community Events Swarm v2.3
+Join listing-card title + date + venue. No invented events. No Google Calendar.
 """
 
 from __future__ import annotations
 
 import hashlib
+import html as htmlmod
 import json
 import re
 from datetime import datetime
 from pathlib import Path
-from urllib.parse import urlparse, urlunparse
+from urllib.parse import urljoin, urlparse, urlunparse
 from urllib.request import Request, urlopen
 from urllib.error import HTTPError, URLError
 from zoneinfo import ZoneInfo
@@ -22,8 +20,10 @@ from zoneinfo import ZoneInfo
 try:
     from events_sentinel import validate_event, MIN_CONFIDENCE, JUNK_URL_RE
     from event_dates import (
+        extract_address,
         extract_dated_blocks,
         normalize_event_dates,
+        parse_dashed_date,
         parse_single_date,
         parse_time_label,
         to_iso,
@@ -33,8 +33,10 @@ except ImportError:
     sys.path.insert(0, str(Path(__file__).resolve().parent))
     from events_sentinel import validate_event, MIN_CONFIDENCE, JUNK_URL_RE
     from event_dates import (
+        extract_address,
         extract_dated_blocks,
         normalize_event_dates,
+        parse_dashed_date,
         parse_single_date,
         parse_time_label,
         to_iso,
@@ -46,7 +48,13 @@ REPORT = ROOT / "reports" / "community-events-latest.md"
 SOURCES = ROOT / "config" / "community-event-sources.json"
 
 CT = ZoneInfo("America/Chicago")
-UA = "Chica's Map Community Events Scout/2.2 (+https://justonejewelry.github.io/Chicas-Map/)"
+UA = "Chica's Map Community Events Scout/2.3 (+https://justonejewelry.github.io/Chicas-Map/)"
+
+HREF_RE = re.compile(
+    r"""<a[^>]+href=[\"']([^\"']+)[\"'][^>]*>(.*?)</a>""",
+    re.I | re.S,
+)
+CATEGORY_PATH_RE = re.compile(r"CategoryID|CategoryName|authorid|mcat/|PID/15381", re.I)
 
 
 def now_iso() -> str:
@@ -60,7 +68,11 @@ def fetch(url: str, timeout: int = 18) -> str:
 
 
 def clean(text: str) -> str:
-    text = re.sub(r"<[^>]+", " ", text or "")
+    text = htmlmod.unescape(text or "")
+    text = re.sub(r"(?is)<script[^>]*>.*?</script>", " ", text)
+    text = re.sub(r"(?is)<style[^>]*>.*?</style>", " ", text)
+    text = re.sub(r"<[^>]+>", " ", text)
+    text = re.sub(r"&nbsp;|&#160;", " ", text, flags=re.I)
     text = re.sub(r"\s+", " ", text).strip()
     return text
 
@@ -79,6 +91,8 @@ def is_junk_url(url: str) -> bool:
         return True
     if any(x in low for x in ("meetupstatic.com", "secure-content.meetup", "facebook.com/pg/")):
         return True
+    if CATEGORY_PATH_RE.search(url) and "articleid" not in low:
+        return True
     path = urlparse(url).path.lower().rstrip("/") or "/"
     if path in {"/events", "/calendar", "/find"} or path.endswith("/events") or path.endswith("/calendar"):
         return True
@@ -86,6 +100,17 @@ def is_junk_url(url: str) -> bool:
     if re.fullmatch(r"\d+", last) and "/events/" not in path:
         return True
     return False
+
+
+def slug_title(url: str) -> str:
+    path = urlparse(url).path.rstrip("/").split("/")[-1]
+    if path.lower().startswith("artdate") or re.fullmatch(r"\d{1,2}-\d{1,2}-20\d{2}", path):
+        return ""
+    title = re.sub(r"[-_]+", " ", path).strip()
+    title = re.sub(r"\.(html?|php|aspx)$", "", title, flags=re.I)
+    if len(title) < 6 or re.fullmatch(r"\d+", title):
+        return ""
+    return title.title() if title.islower() else title
 
 
 def make_id(title: str, date_str: str, source_id: str) -> str:
@@ -104,13 +129,14 @@ def score_candidate(c: dict) -> int:
         score += 15
     if c.get("address") and any(ch.isdigit() for ch in c["address"]):
         score += 14
-    if c.get("url") and c["url"].startswith("http") and not is_junk_url(c["url"]):
+    url = c.get("url") or ""
+    if url.startswith("http") and not is_junk_url(url):
         score += 10
     if c.get("time"):
         score += 5
     reliability = int(c.get("reliability") or 50)
     score += max(0, (reliability - 50) // 5)
-    if is_junk_url(c.get("url") or ""):
+    if is_junk_url(url):
         score -= 25
     return max(0, min(100, score))
 
@@ -118,7 +144,6 @@ def score_candidate(c: dict) -> int:
 def candidate(source: dict, title: str, date_str: str, end_date: str = "", time: str = "", address: str = "", url: str = "") -> dict:
     date_str, end_date = normalize_event_dates(date_str, end_date)
     source_id = source.get("id", "unknown")
-    source_name = source.get("name", source_id)
     title = re.sub(r"\s+", " ", title).strip()
     rec = {
         "id": make_id(title, date_str or "unknown", source_id),
@@ -126,13 +151,13 @@ def candidate(source: dict, title: str, date_str: str, end_date: str = "", time:
         "date": date_str,
         "endDate": end_date,
         "time": time or "",
-        "address": address,
+        "address": address or "",
         "lat": None,
         "lng": None,
         "category": "other",
         "description": "",
         "url": url or source.get("url") or "",
-        "source": source_name,
+        "source": source.get("name", source_id),
         "sourceId": source_id,
         "reliability": int(source.get("reliability") or 50),
         "discoveredAt": now_iso(),
@@ -142,65 +167,91 @@ def candidate(source: dict, title: str, date_str: str, end_date: str = "", time:
     return rec
 
 
-def extract_from_blocks(html: str, source: dict) -> list[dict]:
-    """Pull title+date pairs from cleaned listing text."""
+def extract_cards_from_html(raw_html: str, source: dict) -> list[dict]:
+    """Join anchor title/url with nearby date + venue in the same card window."""
+    base = source.get("url") or ""
     out = []
-    for block in extract_dated_blocks(clean(html)[:20000]):
+    for m in HREF_RE.finditer(raw_html):
+        href = htmlmod.unescape(m.group(1).strip())
+        if href.startswith("/"):
+            href = urljoin(base, href)
+        href = strip_tracking(href)
+        if not href.startswith("http") or is_junk_url(href):
+            continue
+        low = href.lower()
+        if not any(k in low for k in ("event-details", "articleid", "artdate", "/events/")):
+            continue
+        window = raw_html[max(0, m.start() - 120): min(len(raw_html), m.end() + 500)]
+        text = clean(window)
+        anchor = clean(m.group(2))
+        title = anchor if len(anchor) >= 6 else slug_title(href)
+        if not title:
+            continue
+        if title.lower() in {"learn more", "read more", "details", "more"}:
+            title = slug_title(href) or title
+        start = parse_single_date(href) or parse_dashed_date(href, prefer="dmy") or parse_single_date(text)
+        _s, end = normalize_event_dates(text)
+        if start and not _s:
+            date_str = to_iso(start)
+            end_date = ""
+        else:
+            date_str, end_date = _s, end
+            if not date_str and start:
+                date_str = to_iso(start)
+        addr = extract_address(text)
+        rec = candidate(source, title=title, date_str=date_str, end_date=end_date, time=parse_time_label(text), address=addr, url=href)
+        out.append(rec)
+    return out
+
+
+def extract_from_blocks(html: str, source: dict) -> list[dict]:
+    out = []
+    for block in extract_dated_blocks(clean(html)[:25000]):
         out.append(candidate(
             source,
             title=block["title"],
             date_str=block["date"],
             end_date=block.get("endDate") or "",
             time=block.get("time") or "",
+            address=block.get("address") or "",
             url=source.get("url") or "",
         ))
     return out
 
 
-def extract_from_urls(html: str, source: dict) -> list[dict]:
-    """URL harvest — date comes from the slug or nearby path only, never a global page date."""
-    candidates = []
-    urls = re.findall(r'https?://[^\s"\'<>]+', html)
-    seen = set()
-    for u in urls:
-        u = strip_tracking(u.rstrip(".,);]'"))
-        if u in seen or is_junk_url(u):
+def merge_by_title(records: list[dict]) -> list[dict]:
+    """Fold same-title records so a dated/addressed block fills a detail URL."""
+    by_key: dict[str, dict] = {}
+    order: list[str] = []
+    for rec in records:
+        key = re.sub(r"[^a-z0-9]+", "", (rec.get("title") or "").lower())[:40]
+        if not key:
             continue
-        low = u.lower()
-        if not any(k in low for k in ("/event", "/events/", "festival", "concert", "workshop")):
+        if key not in by_key:
+            by_key[key] = rec
+            order.append(key)
             continue
-        seen.add(u)
-        path = u.rstrip("/").split("/")[-1]
-        title = re.sub(r"[-_]+", " ", path).strip()
-        title = re.sub(r"\.(html?|php|aspx)$", "", title, flags=re.I)
-        if len(title) < 6 or re.fullmatch(r"\d+", title):
-            continue
-        decoded_date = parse_single_date(title) or parse_single_date(u)
-        rec = candidate(
-            source,
-            title=title.title() if title.islower() else title,
-            date_str=to_iso(decoded_date),
-            url=u,
-        )
-        candidates.append(rec)
-        if len(candidates) >= 40:
-            break
-    return candidates
+        base = by_key[key]
+        if (not base.get("date")) and rec.get("date"):
+            base["date"] = rec["date"]
+            base["endDate"] = rec.get("endDate") or base.get("endDate") or ""
+        if (not base.get("address")) and rec.get("address"):
+            base["address"] = rec["address"]
+        if (not base.get("time")) and rec.get("time"):
+            base["time"] = rec["time"]
+        # Prefer a detail URL over the listing page
+        bu, ru = base.get("url") or "", rec.get("url") or ""
+        if "articleid" in ru.lower() and "articleid" not in bu.lower():
+            base["url"] = ru
+        base["confidence"] = score_candidate(base)
+        base["id"] = make_id(base["title"], base.get("date") or "unknown", base.get("sourceId") or "")
+    return [by_key[k] for k in order]
 
 
 def extract_candidates_from_html(html: str, source: dict) -> list[dict]:
+    cards = extract_cards_from_html(html, source)
     blocks = extract_from_blocks(html, source)
-    urls = extract_from_urls(html, source)
-    # Prefer dated blocks; keep URL finds that have their own date or a strong title
-    merged = []
-    seen_keys = set()
-    for rec in blocks + urls:
-        key = (rec.get("title", "").lower()[:48], rec.get("date"), rec.get("url"))
-        if key in seen_keys:
-            continue
-        seen_keys.add(key)
-        merged.append(rec)
-    return merged
+    return merge_by_title(cards + blocks)
 
 
 def load_existing_feed() -> list[dict]:
@@ -227,7 +278,6 @@ def main() -> None:
     existing_ids: set[str] = set()
     existing_urls: set[str] = set()
     for e in load_existing_feed():
-        # Normalize leftover free-text dates before re-validation
         e["date"], e["endDate"] = normalize_event_dates(e.get("date") or "", e.get("endDate") or "")
         if e.get("time"):
             e["time"] = parse_time_label(str(e["time"])) or e["time"]
@@ -236,7 +286,7 @@ def main() -> None:
             kept.append(e)
             if e.get("id"):
                 existing_ids.add(e["id"])
-            existing_urls.add(e.get("url") or e.get("sourceUrl") or "")
+            existing_urls.add(e.get("url") or "")
         else:
             purged.append(f"{e.get('title', '?')} — {'; '.join(gate.errors)}")
 
@@ -245,6 +295,7 @@ def main() -> None:
     errors: list[str] = []
     rejected: list[str] = []
     dated = 0
+    addressed = 0
 
     for source in sources:
         url = source.get("url")
@@ -260,6 +311,8 @@ def main() -> None:
                 all_candidates.append(c)
                 if c.get("date"):
                     dated += 1
+                if c.get("address"):
+                    addressed += 1
                 if c.get("confidence", 0) >= MIN_CONFIDENCE and c.get("date") and c.get("address"):
                     gate = validate_event(c, existing_ids=existing_ids)
                     if gate.passed:
@@ -275,24 +328,24 @@ def main() -> None:
         except Exception as e:
             errors.append(f"{name}: {type(e).__name__}: {e}")
 
-    final_events = kept + promoted
     feed_payload = {
         "updated": now_iso(),
         "city": cfg.get("city", "san-antonio"),
-        "version": 2.2,
-        "events": final_events,
+        "version": 2.3,
+        "events": kept + promoted,
     }
     FEED.parent.mkdir(parents=True, exist_ok=True)
     FEED.write_text(json.dumps(feed_payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
     all_candidates.sort(key=lambda x: (-x.get("confidence", 0), x.get("url", "")))
     lines = [
-        "# Chica’s Map — Community Events Swarm v2.2",
+        "# Chica’s Map — Community Events Swarm v2.3",
         "",
         f"Run: {now_iso()}",
         f"Sources scanned: **{len(sources)}**",
         f"Candidates discovered: **{len(all_candidates)}**",
-        f"Candidates with parsed dates: **{dated}**",
+        f"With parsed dates: **{dated}**",
+        f"With street/venue address: **{addressed}**",
         f"Promoted this run: **{len(promoted)}**",
         f"Kept from prior feed: **{len(kept)}**",
         f"Purged from prior feed: **{len(purged)}**",
@@ -303,43 +356,38 @@ def main() -> None:
     ]
     if promoted:
         for p in promoted:
-            lines.append(f"- **{p.get('title')}** — {p.get('date')} — conf {p.get('confidence')} — {p.get('url')}")
+            lines.append(
+                f"- **{p.get('title')}** — {p.get('date')} — {p.get('address') or 'no-address'} — conf {p.get('confidence')} — {p.get('url')}"
+            )
     else:
         lines.append("_None this run._")
 
     if purged:
         lines += ["", "## Purged (failed re-validation)"]
-        for p in purged[:40]:
-            lines.append(f"- {p}")
+        lines += [f"- {p}" for p in purged[:40]]
 
     lines += ["", "## Review Queue"]
     for c in all_candidates[:120]:
         lines.append(
-            f"- **{c.get('source')}** — conf {c.get('confidence')} — {c.get('title')} — {c.get('date') or 'no-date'} — {c.get('url')}"
+            f"- **{c.get('source')}** — conf {c.get('confidence')} — {c.get('title')} — "
+            f"{c.get('date') or 'no-date'} — {c.get('address') or 'no-address'} — {c.get('url')}"
         )
 
     if rejected:
-        lines += ["", "## Rejected by Sentinel"]
-        for r in rejected[:50]:
-            lines.append(f"- {r}")
-
+        lines += ["", "## Rejected by Sentinel"] + [f"- {r}" for r in rejected[:50]]
     if errors:
-        lines += ["", "## Source Errors"]
-        for e in errors:
-            lines.append(f"- {e}")
-
+        lines += ["", "## Source Errors"] + [f"- {e}" for e in errors]
     lines += [
         "",
         "---",
-        "Notes: v2.2 date parsing. Per-block dates (ISO, US numeric, month names, ranges, times). "
-        "No global page-date stamp. No Google Calendar. Public feed stays empty until street-level records exist.",
+        "Notes: v2.3 joins Parks card title + date + venue. HTML tags fully stripped. "
+        "ArtDate slugs parsed as day-month-year when unambiguous. No Google Calendar.",
     ]
     REPORT.parent.mkdir(parents=True, exist_ok=True)
     REPORT.write_text("\n".join(lines) + "\n", encoding="utf-8")
-
     print(
-        f"Candidates: {len(all_candidates)} | Dated: {dated} | Promoted: {len(promoted)} | "
-        f"Kept: {len(kept)} | Purged: {len(purged)} | Errors: {len(errors)}"
+        f"Candidates: {len(all_candidates)} | Dated: {dated} | Addressed: {addressed} | "
+        f"Promoted: {len(promoted)} | Kept: {len(kept)} | Purged: {len(purged)} | Errors: {len(errors)}"
     )
 
 

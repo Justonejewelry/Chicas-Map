@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Parse event dates, ranges, and times from messy municipal/aggregator text."""
+"""Parse event dates, ranges, times, and venues from messy municipal text."""
 
 from __future__ import annotations
 
@@ -27,6 +27,7 @@ MONTHS = {
 
 ISO_RE = re.compile(r"\b(20[2-3]\d)-([01]\d)-([0-3]\d)\b")
 US_NUM_RE = re.compile(r"\b([01]?\d)/([0-3]?\d)/(20[2-3]\d|\d{2})\b")
+DASHED_RE = re.compile(r"\b([0-3]?\d)-([01]?\d)-(20[2-3]\d)\b")  # often D-M-Y in Parks ArtDate
 MONTH_DAY_YEAR_RE = re.compile(
     r"\b(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|"
     r"Jul(?:y)?|Aug(?:ust)?|Sep(?:t(?:ember)?)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)"
@@ -50,6 +51,13 @@ TIME_RANGE_RE = re.compile(
     r"([0-1]?\d|2[0-3])(?::([0-5]\d))?\s*(a\.?m\.?|p\.?m\.?)\b",
     re.I,
 )
+STREET_RE = re.compile(
+    r"\b(\d{2,5}\s+[A-Z0-9][A-Za-z0-9.'\- ]{1,40}\s(?:St|Street|Ave|Avenue|Blvd|Boulevard|Rd|Road|Dr|Drive|Ln|Lane|Pkwy|Way|Hwy|Highway|Loop|Plaza)\.?\b(?:\s+(?:#|Ste|Suite|Bldg)?\s*[A-Za-z0-9\-]*)?)",
+    re.I,
+)
+VENUE_COMMA_RE = re.compile(
+    r"\b([A-Z][A-Za-z0-9 .'&\-]{4,55},\s*\d{2,5}\s+[A-Za-z0-9.'\- ]{3,40})"
+)
 
 
 def today_ct() -> date:
@@ -70,8 +78,22 @@ def _year_from_token(tok: str) -> int:
     return y
 
 
+def parse_dashed_date(text: str, prefer: str = "dmy") -> Optional[date]:
+    """Parse 26-7-2026 / 1-8-2026. Parks ArtDate slugs are day-month-year."""
+    m = DASHED_RE.search(text or "")
+    if not m:
+        return None
+    a, b, y = int(m.group(1)), int(m.group(2)), int(m.group(3))
+    if a > 12 and b <= 12:
+        return _safe_date(y, b, a)
+    if b > 12 and a <= 12:
+        return _safe_date(y, a, b)
+    if prefer == "dmy":
+        return _safe_date(y, b, a)
+    return _safe_date(y, a, b)
+
+
 def parse_single_date(text: str, default_year: int | None = None) -> Optional[date]:
-    """Parse the first date found in text. Returns None if nothing valid."""
     if not text:
         return None
     s = str(text).strip()
@@ -90,6 +112,10 @@ def parse_single_date(text: str, default_year: int | None = None) -> Optional[da
     if m:
         return _safe_date(_year_from_token(m.group(3)), int(m.group(1)), int(m.group(2)))
 
+    dashed = parse_dashed_date(s, prefer="dmy" if "artdate" in s.lower() or "artmid" in s.lower() else "mdy")
+    if dashed:
+        return dashed
+
     m = MONTH_DAY_RE.search(s)
     if m:
         month = MONTHS[m.group(1).lower().rstrip(".")]
@@ -101,12 +127,10 @@ def parse_single_date(text: str, default_year: int | None = None) -> Optional[da
 
 
 def parse_date_range(text: str) -> tuple[Optional[date], Optional[date]]:
-    """Parse start/end from strings like '4/17/2026 - 10/2/2026' or 'Aug 22–23, 2026'."""
     if not text:
         return None, None
     s = re.sub(r"\s+", " ", str(text))
 
-    # Full dates on both sides
     parts = RANGE_SEP_RE.split(s, maxsplit=1)
     if len(parts) == 2:
         start = parse_single_date(parts[0])
@@ -116,7 +140,6 @@ def parse_date_range(text: str) -> tuple[Optional[date], Optional[date]]:
         if start:
             return start, end
 
-    # Month day–day, year  e.g. August 22-23, 2026
     m = re.search(
         r"(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|"
         r"Jul(?:y)?|Aug(?:ust)?|Sep(?:t(?:ember)?)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)"
@@ -127,16 +150,12 @@ def parse_date_range(text: str) -> tuple[Optional[date], Optional[date]]:
     if m:
         month = MONTHS[m.group(1).lower().rstrip(".")]
         year = int(m.group(4))
-        start = _safe_date(year, month, int(m.group(2)))
-        end = _safe_date(year, month, int(m.group(3)))
-        return start, end
+        return _safe_date(year, month, int(m.group(2))), _safe_date(year, month, int(m.group(3)))
 
-    one = parse_single_date(s)
-    return one, None
+    return parse_single_date(s), None
 
 
 def parse_time_label(text: str) -> str:
-    """Return a compact time string if present, else empty."""
     if not text:
         return ""
     m = TIME_RANGE_RE.search(text)
@@ -153,12 +172,24 @@ def parse_time_label(text: str) -> str:
     return ""
 
 
+def extract_address(text: str) -> str:
+    if not text:
+        return ""
+    s = re.sub(r"\s+", " ", text)
+    m = STREET_RE.search(s)
+    if m:
+        return re.sub(r"\s+", " ", m.group(1)).strip(" ,")
+    m = VENUE_COMMA_RE.search(s)
+    if m:
+        return re.sub(r"\s+", " ", m.group(1)).strip(" ,")
+    return ""
+
+
 def to_iso(d: Optional[date]) -> str:
     return d.isoformat() if d else ""
 
 
 def normalize_event_dates(raw_date: str, raw_end: str = "") -> tuple[str, str]:
-    """Normalize free-text date fields to YYYY-MM-DD."""
     blob = " ".join(x for x in (raw_date, raw_end) if x)
     start, end = parse_date_range(blob)
     if not start and raw_date:
@@ -169,32 +200,27 @@ def normalize_event_dates(raw_date: str, raw_end: str = "") -> tuple[str, str]:
 
 
 def extract_dated_blocks(text: str) -> list[dict]:
-    """
-    Find title-ish snippets that sit next to a parseable date.
-    Used on cleaned listing-page text (Parks / Visit SA style).
-    """
     if not text:
         return []
     s = re.sub(r"\s+", " ", text)
+    s = re.sub(r"(&nbsp;|>{1,}|Learn More)+", " ", s, flags=re.I)
     hits: list[dict] = []
     seen = set()
-
-    patterns = [ISO_RE, MONTH_DAY_YEAR_RE, US_NUM_RE]
+    patterns = [ISO_RE, MONTH_DAY_YEAR_RE, US_NUM_RE, DASHED_RE]
     for pat in patterns:
         for m in pat.finditer(s):
-            window_start = max(0, m.start() - 160)
-            window_end = min(len(s), m.end() + 120)
+            window_start = max(0, m.start() - 180)
+            window_end = min(len(s), m.end() + 140)
             window = s[window_start:window_end]
             start, end = parse_date_range(window)
             if not start:
                 start = parse_single_date(m.group(0))
             if not start:
                 continue
-            before = s[window_start:m.start()].strip(" -–—|,;:")
-            # Last 4–12 words before the date as a provisional title
-            words = [w for w in re.split(r"\s+", before) if w]
+            before = s[window_start:m.start()]
+            before = re.sub(r"(Learn More|Upcoming Events|News & Events|Explore SA)", " ", before, flags=re.I)
+            words = [w for w in re.split(r"\s+", before) if w and not re.fullmatch(r"[>&;]+", w)]
             title = " ".join(words[-10:]).strip(" -–—|,;:")
-            title = re.sub(r"^(Learn More|Upcoming Events|News & Events)\s+", "", title, flags=re.I)
             if len(title) < 8:
                 continue
             key = (title.lower()[:48], start.isoformat())
@@ -206,6 +232,7 @@ def extract_dated_blocks(text: str) -> list[dict]:
                 "date": start.isoformat(),
                 "endDate": to_iso(end),
                 "time": parse_time_label(window),
+                "address": extract_address(window),
                 "snippet": window[:240],
             })
     return hits
