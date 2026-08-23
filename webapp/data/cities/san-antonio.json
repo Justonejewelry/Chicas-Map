@@ -19,10 +19,10 @@
       "lat": 29.3939162,
       "lon": -98.4692512,
       "categories": [
-        "preferred",
         "in-person",
-        "tools",
-        "estate-sale"
+        "preferred",
+        "estate-sale",
+        "tools"
       ],
       "preferred": true,
       "boost": true,
@@ -73,8 +73,8 @@
       "lon": -98.584406,
       "categories": [
         "kids",
-        "clothing",
-        "garage-sale"
+        "garage-sale",
+        "clothing"
       ],
       "preferred": false,
       "boost": false,
@@ -663,13 +663,13 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 29.482441790549768,
-      "lon": -98.54393546472728,
+      "lat": 29.48294484480776,
+      "lon": -98.5436361970601,
       "geocode": "source",
       "company": "Caring Transitions of San Antonio Central",
       "in_person": true,
@@ -3260,7 +3260,7 @@
   "total_locations": 132,
   "status": "live",
   "date": "2026-08-23",
-  "last_refresh": "2026-08-23T05:14:22-05:00",
+  "last_refresh": "2026-08-23T06:23:54-05:00",
   "note": "Cleaned 33-pin Saturday live swap 2026-08-22 10:57 CDT. Merged Potranco/Moonlit/Craftsman. Dropped stores, auctions, warehouse, flea, single-item. Added Rita Ave + Jack Bean.",
   "permit_total": 84,
   "permit_estate_count": 4

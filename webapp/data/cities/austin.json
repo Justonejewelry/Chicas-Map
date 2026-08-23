@@ -16,8 +16,8 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
@@ -140,8 +140,8 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
@@ -419,13 +419,13 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.65119514347826,
-      "lon": -97.77671835942688,
+      "lat": 30.650808869673014,
+      "lon": -97.77233267181157,
       "geocode": "source",
       "company": "Golden Soul Estate Sales",
       "in_person": true,
@@ -760,8 +760,8 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
@@ -985,6 +985,6 @@
   "total_locations": 41,
   "status": "live",
   "date": "2026-08-23",
-  "last_refresh": "2026-08-23T05:14:22-05:00",
+  "last_refresh": "2026-08-23T06:23:54-05:00",
   "permits": []
 }
