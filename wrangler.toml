@@ -1,0 +1,6 @@
+# Cloudflare Pages (optional). GitHub Pages stays the origin until DNS is pointed.
+# Dashboard: CNAME www -> justonejewelry.github.io (proxied, SSL Full Strict)
+# Then set GitHub repo variable CUSTOM_DOMAIN to that host.
+name = "chicas-map"
+compatibility_date = "2026-08-24"
+pages_build_output_dir = "webapp"

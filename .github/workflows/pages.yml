@@ -2,9 +2,10 @@ name: Deploy Chicas Map webapp to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches: [main, previews]
     paths:
       - "webapp/**"
+      - "scripts/stamp-pages.mjs"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
 
@@ -12,6 +13,7 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  actions: read
 
 concurrency:
   group: pages
@@ -24,8 +26,17 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout main site
         uses: actions/checkout@v5
+        with:
+          ref: main
+
+      - name: Checkout PR previews
+        uses: actions/checkout@v5
+        continue-on-error: true
+        with:
+          ref: previews
+          path: preview-src
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -38,8 +49,24 @@ jobs:
           if [ ! -f _site/data/feed.json ] && [ -f webapp/data/cities/san-antonio.json ]; then
             cp webapp/data/cities/san-antonio.json _site/data/feed.json
           fi
+          if [ -d preview-src/pr ]; then
+            mkdir -p _site/preview
+            for dir in preview-src/pr/*; do
+              [ -d "$dir" ] || continue
+              n=$(basename "$dir")
+              rm -rf "_site/preview/$n"
+              cp -R "$dir" "_site/preview/$n"
+              echo "preview $n"
+            done
+          fi
+          if [ -n "${{ vars.CUSTOM_DOMAIN }}" ]; then
+            echo "${{ vars.CUSTOM_DOMAIN }}" > _site/CNAME
+            echo "custom domain ${{ vars.CUSTOM_DOMAIN }}"
+          fi
+          node scripts/stamp-pages.mjs _site
           ls -la _site
-          ls -la _site/data || true
+          ls -la _site/es || true
+          ls -la _site/.well-known || true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

@@ -1,0 +1,23 @@
+name: Cloudflare Pages (optional)
+
+# Only runs when you dispatch it. Add secrets CLOUDFLARE_API_TOKEN and
+# CLOUDFLARE_ACCOUNT_ID, then point a proxied CNAME at this project.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+      - name: Publish webapp
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy webapp --project-name=chicas-map
