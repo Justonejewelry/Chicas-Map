@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="520" height="520" viewBox="0 0 520 520" role="img" aria-label="Chicas Garage Sale Map logo">
-  <!-- Wrapper SVG that embeds the existing PNG logo as a safe fallback while a vector master is recovered. -->
-  <rect width="100%" height="100%" fill="white" />
-  <image href="chica/chica-logo.png" width="520" height="520" preserveAspectRatio="xMidYMid meet" />
-</svg>
