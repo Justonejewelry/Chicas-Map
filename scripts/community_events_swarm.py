@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Chica's Map — Community Events Swarm v2.3
-Join listing-card title + date + venue. No invented events. No Google Calendar.
+Chica's Map — Community Events Swarm v2.4
+HTML cards for Parks/VisitSA. CivicEngage ICS for Bexar. No Google Calendar.
 """
 
 from __future__ import annotations
@@ -28,6 +28,7 @@ try:
         parse_time_label,
         to_iso,
     )
+    from ics_events import parse_vevents
 except ImportError:
     import sys
     sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -41,6 +42,7 @@ except ImportError:
         parse_time_label,
         to_iso,
     )
+    from ics_events import parse_vevents
 
 ROOT = Path(__file__).resolve().parents[1]
 FEED = ROOT / "webapp" / "data" / "community-events.json"
@@ -48,7 +50,7 @@ REPORT = ROOT / "reports" / "community-events-latest.md"
 SOURCES = ROOT / "config" / "community-event-sources.json"
 
 CT = ZoneInfo("America/Chicago")
-UA = "Chica's Map Community Events Scout/2.3 (+https://justonejewelry.github.io/Chicas-Map/)"
+UA = "Chica's Map Community Events Scout/2.4 (+https://justonejewelry.github.io/Chicas-Map/)"
 
 HREF_RE = re.compile(
     r"""<a[^>]+href=[\"']([^\"']+)[\"'][^>]*>(.*?)</a>""",
@@ -62,7 +64,13 @@ def now_iso() -> str:
 
 
 def fetch(url: str, timeout: int = 18) -> str:
-    req = Request(url, headers={"User-Agent": UA, "Accept": "text/html,application/xhtml+xml"})
+    req = Request(
+        url,
+        headers={
+            "User-Agent": UA,
+            "Accept": "text/calendar, text/html, application/xhtml+xml, text/plain, */*",
+        },
+    )
     with urlopen(req, timeout=timeout) as r:
         return r.read().decode("utf-8", "ignore")
 
@@ -71,7 +79,7 @@ def clean(text: str) -> str:
     text = htmlmod.unescape(text or "")
     text = re.sub(r"(?is)<script[^>]*>.*?</script>", " ", text)
     text = re.sub(r"(?is)<style[^>]*>.*?</style>", " ", text)
-    text = re.sub(r"<[^>]+>", " ", text)
+    text = re.sub(r"<[^>]+", " ", text)
     text = re.sub(r"&nbsp;|&#160;", " ", text, flags=re.I)
     text = re.sub(r"\s+", " ", text).strip()
     return text
@@ -80,9 +88,10 @@ def clean(text: str) -> str:
 def strip_tracking(url: str) -> str:
     try:
         p = urlparse(url)
-        return urlunparse((p.scheme, p.netloc, p.path, "", "", ""))
+        query = p.query if re.search(r"(?i)\bEID=", p.query) else ""
+        return urlunparse((p.scheme, p.netloc, p.path, "", query, ""))
     except Exception:
-        return url.split("?", 1)[0]
+        return url.split("#", 1)[0]
 
 
 def is_junk_url(url: str) -> bool:
@@ -90,6 +99,10 @@ def is_junk_url(url: str) -> bool:
     if JUNK_URL_RE.search(url):
         return True
     if any(x in low for x in ("meetupstatic.com", "secure-content.meetup", "facebook.com/pg/")):
+        return True
+    if "icalendar.aspx" in low:
+        return True
+    if "calendar.aspx" in low and "eid=" not in low:
         return True
     if CATEGORY_PATH_RE.search(url) and "articleid" not in low:
         return True
@@ -168,7 +181,6 @@ def candidate(source: dict, title: str, date_str: str, end_date: str = "", time:
 
 
 def extract_cards_from_html(raw_html: str, source: dict) -> list[dict]:
-    """Join anchor title/url with nearby date + venue in the same card window."""
     base = source.get("url") or ""
     out = []
     for m in HREF_RE.finditer(raw_html):
@@ -181,7 +193,7 @@ def extract_cards_from_html(raw_html: str, source: dict) -> list[dict]:
         low = href.lower()
         if not any(k in low for k in ("event-details", "articleid", "artdate", "/events/")):
             continue
-        window = raw_html[max(0, m.start() - 120): min(len(raw_html), m.end() + 500)]
+        window = raw_html[max(0, m.start() - 120): min(len(raw_html), m.end() + 800)]
         text = clean(window)
         anchor = clean(m.group(2))
         title = anchor if len(anchor) >= 6 else slug_title(href)
@@ -220,7 +232,6 @@ def extract_from_blocks(html: str, source: dict) -> list[dict]:
 
 
 def merge_by_title(records: list[dict]) -> list[dict]:
-    """Fold same-title records so a dated/addressed block fills a detail URL."""
     by_key: dict[str, dict] = {}
     order: list[str] = []
     for rec in records:
@@ -239,9 +250,10 @@ def merge_by_title(records: list[dict]) -> list[dict]:
             base["address"] = rec["address"]
         if (not base.get("time")) and rec.get("time"):
             base["time"] = rec["time"]
-        # Prefer a detail URL over the listing page
         bu, ru = base.get("url") or "", rec.get("url") or ""
         if "articleid" in ru.lower() and "articleid" not in bu.lower():
+            base["url"] = ru
+        if "eid=" in ru.lower() and "eid=" not in bu.lower():
             base["url"] = ru
         base["confidence"] = score_candidate(base)
         base["id"] = make_id(base["title"], base.get("date") or "unknown", base.get("sourceId") or "")
@@ -252,6 +264,24 @@ def extract_candidates_from_html(html: str, source: dict) -> list[dict]:
     cards = extract_cards_from_html(html, source)
     blocks = extract_from_blocks(html, source)
     return merge_by_title(cards + blocks)
+
+
+def extract_from_source(raw: str, source: dict) -> list[dict]:
+    if (source.get("extraction") or "") == "ics":
+        parsed = parse_vevents(raw, source_url=source.get("url") or "")
+        return [
+            candidate(
+                source,
+                title=p["title"],
+                date_str=p["date"],
+                end_date=p.get("endDate") or "",
+                time=p.get("time") or "",
+                address=p.get("address") or "",
+                url=p.get("url") or "",
+            )
+            for p in parsed
+        ]
+    return extract_candidates_from_html(raw, source)
 
 
 def load_existing_feed() -> list[dict]:
@@ -303,8 +333,8 @@ def main() -> None:
         if not url:
             continue
         try:
-            html = fetch(url)
-            cands = extract_candidates_from_html(html, source)
+            raw = fetch(url)
+            cands = extract_from_source(raw, source)
             for c in cands:
                 if c.get("url") in existing_urls:
                     continue
@@ -331,7 +361,7 @@ def main() -> None:
     feed_payload = {
         "updated": now_iso(),
         "city": cfg.get("city", "san-antonio"),
-        "version": 2.3,
+        "version": 2.4,
         "events": kept + promoted,
     }
     FEED.parent.mkdir(parents=True, exist_ok=True)
@@ -339,7 +369,7 @@ def main() -> None:
 
     all_candidates.sort(key=lambda x: (-x.get("confidence", 0), x.get("url", "")))
     lines = [
-        "# Chica’s Map — Community Events Swarm v2.3",
+        "# Chica's Map — Community Events Swarm v2.4",
         "",
         f"Run: {now_iso()}",
         f"Sources scanned: **{len(sources)}**",
@@ -380,8 +410,7 @@ def main() -> None:
     lines += [
         "",
         "---",
-        "Notes: v2.3 joins Parks card title + date + venue. HTML tags fully stripped. "
-        "ArtDate slugs parsed as day-month-year when unambiguous. No Google Calendar.",
+        "Notes: v2.4 Bexar uses CivicEngage ICS (CID 14 + 79). Parks still HTML cards. No Google Calendar.",
     ]
     REPORT.parent.mkdir(parents=True, exist_ok=True)
     REPORT.write_text("\n".join(lines) + "\n", encoding="utf-8")
