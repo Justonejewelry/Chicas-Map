@@ -1,31 +1,23 @@
 # Chica’s Map — Community Events Swarm v2.3
 
-Run: 2026-08-23T09:24:24-05:00
+Run: 2026-08-24T05:29:50-05:00
 Sources scanned: **3**
-Candidates discovered: **42**
-With parsed dates: **26**
-With street/venue address: **9**
-Promoted this run: **1**
-Kept from prior feed: **0**
+Candidates discovered: **34**
+With parsed dates: **18**
+With street/venue address: **8**
+Promoted this run: **0**
+Kept from prior feed: **1**
 Purged from prior feed: **0**
 Source errors: **0**
 Rejected by Sentinel: **3**
 
 ## Promoted (passed Events Sentinel)
-- **Center AGC The Basics of Construction 2026-08-04T18:00:00 Deadline for applications** — 2026-08-04 — July 24, 2026 Bexar County Small Business Opportunity — conf 98 — https://www.bexar.org/Calendar.aspx
+_None this run._
 
 ## Review Queue
-- **Bexar County Calendar** — conf 98 — Center AGC The Basics of Construction 2026-08-04T18:00:00 Deadline for applications — 2026-08-04 — July 24, 2026 Bexar County Small Business Opportunity — https://www.bexar.org/Calendar.aspx
 - **City of San Antonio Parks & Recreation** — conf 95 — Free Family Swim — 2025-11-18 — 1430 W Cesar Chavez Blvd — https://www.sanantonio.gov/ParksAndRec/News-Events/Events/Event-Details/ArtMID/15385/ArticleID/28994/Free-Family-Swim
 - **City of San Antonio Parks & Recreation** — conf 95 — McFarlin Tennis Center New Hours Free Tuesdays — 2026-01-01 — 1503 San Pedro Ave — https://www.sanantonio.gov/ParksAndRec/News-Events/Events/Event-Details/ArtMID/15385/ArticleID/29161/McFarlin-Tennis-Center-New-Hours-Free-Tuesdays
 - **City of San Antonio Parks & Recreation** — conf 95 — Kindness in Nature Club — 2026-02-17 — Kindness in Nature Club Medina River Natural Area, 15890 TX-16 — https://www.sanantonio.gov/ParksAndRec/News-Events/Events/Event-Details/ArtMID/15385/ArticleID/29213/Kindness-in-Nature-Club
-- **Bexar County Calendar** — conf 84 — Items When: 8:00 AM - 5:00 PM Location: More Details — 2026-08-03 — no-address — https://www.bexar.org/Calendar.aspx
-- **Bexar County Calendar** — conf 84 — System When: 8:00 AM - 5:00 PM Location: More Details — 2026-08-03 — no-address — https://www.bexar.org/Calendar.aspx
-- **Bexar County Calendar** — conf 84 — Services When: 8:00 AM - 5:00 PM Location: More Details — 2026-08-03 — no-address — https://www.bexar.org/Calendar.aspx
-- **Bexar County Calendar** — conf 84 — Court When: All Day Location: Double Height Courtroom More Details — 2026-08-03 — no-address — https://www.bexar.org/Calendar.aspx
-- **Bexar County Calendar** — conf 84 — 2 Constable's Office of Constable Leticia R. Vazquez More Details — 2026-08-04 — no-address — https://www.bexar.org/Calendar.aspx
-- **Bexar County Calendar** — conf 84 — Business When: 6:00 PM - 8:00 PM Location: More Details — 2026-08-04 — no-address — https://www.bexar.org/Calendar.aspx
-- **Bexar County Calendar** — conf 84 — PM Location: Bexar County Small Business Opportunity Center More Details — 2026-08-04 — no-address — https://www.bexar.org/Calendar.aspx
 - **City of San Antonio Parks & Recreation** — conf 81 — 2026 Star Parties — 2026-05-02 — no-address — https://www.sanantonio.gov/ParksAndRec/News-Events/Events/Event-Details/ArtMID/15385/ArticleID/29231/2026-Star-Parties
 - **City of San Antonio Parks & Recreation** — conf 81 — 2026 Bat Walk — 2026-04-17 — no-address — https://www.sanantonio.gov/ParksAndRec/News-Events/Events/Event-Details/ArtMID/15385/ArticleID/29236/2026-Bat-Walk
 - **City of San Antonio Parks & Recreation** — conf 81 — 2026 Summer Dance Music Classes — 2026-07-06 — no-address — https://www.sanantonio.gov/ParksAndRec/News-Events/Events/Event-Details/ArtMID/15385/ArticleID/29313/2026-Summer-Dance-Music-Classes
@@ -50,7 +42,7 @@ Rejected by Sentinel: **3**
 - **City of San Antonio Parks & Recreation** — conf 54 — Explore SA — no-date — no-address — https://www.sanantonio.gov/ParksAndRec/News-Events/Events/Event-Details/ArtMID/15385/ArticleID/10385/Explore-SA
 - **Visit San Antonio Events** — conf 53 — Family Fun — no-date — no-address — https://www.visitsanantonio.com/events/family-fun/
 - **Visit San Antonio Events** — conf 53 — this weekend — no-date — no-address — https://www.visitsanantonio.com/events/trending-this-week/
-- **City of San Antonio Parks & Recreation** — conf 46 — Antonio Contact Us | Privacy and Disclaimer SanAntonio.Gov --- Sunday — 2026-08-23 — no-address — https://www.sanantonio.gov/ParksAndRec/News-Events/Events
+- **City of San Antonio Parks & Recreation** — conf 46 — Antonio Contact Us | Privacy and Disclaimer SanAntonio.Gov --- Monday — 2026-08-24 — no-address — https://www.sanantonio.gov/ParksAndRec/News-Events/Events
 - **City of San Antonio Parks & Recreation** — conf 46 — 2026 Bat Walk Various Natural Area Parks, See Details — 2026-04-17 — no-address — https://www.sanantonio.gov/ParksAndRec/News-Events/Events
 - **City of San Antonio Parks & Recreation** — conf 46 — Bat Walk Various Natural Area Parks, See Details 4/17/2026 — 2026-04-17 — no-address — https://www.sanantonio.gov/ParksAndRec/News-Events/Events
 - **City of San Antonio Parks & Recreation** — conf 46 — 2026 Star Parties Multiple Natural Area Parks, See Details — 2026-05-02 — no-address — https://www.sanantonio.gov/ParksAndRec/News-Events/Events
