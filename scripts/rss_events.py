@@ -25,6 +25,7 @@ def _clean(val: str) -> str:
     val = htmlmod.unescape(val or "")
     val = re.sub(r"<!\[CDATA\[(.*?)\]\]>", r"\1", val, flags=re.S)
     val = re.sub(r"(?is)<[^>]+", " ", val)
+    val = re.sub(r"(?is)<[^>]+>", " ", val)
     return re.sub(r"\s+", " ", val).strip()
 def _rfc822_date(val: str) -> str:
     if not val:
