@@ -1,5 +1,5 @@
 {
-  "version": 2.1,
+  "version": 2.4,
   "purpose": "Structured community events sources for Chica's Map. City-config driven. CORE PLATFORM + CITY CONFIG.",
   "city": "san-antonio",
   "timezone": "America/Chicago",
@@ -27,6 +27,28 @@
       "enabled": true
     },
     {
+      "id": "bexar-events-ics",
+      "name": "Bexar County Events",
+      "type": "municipal",
+      "url": "https://www.bexar.org/common/modules/iCalendar/iCalendar.aspx?catID=14&feed=calendar",
+      "reliability": 92,
+      "extraction": "ics",
+      "priority": 1,
+      "enabled": true,
+      "notes": "CivicEngage ICS. CID 14 public events. Structured SUMMARY/DTSTART/LOCATION/EID."
+    },
+    {
+      "id": "bexar-clerk-records-ics",
+      "name": "Bexar County Clerk — Records on the Run",
+      "type": "municipal",
+      "url": "https://www.bexar.org/common/modules/iCalendar/iCalendar.aspx?catID=79&feed=calendar",
+      "reliability": 93,
+      "extraction": "ics",
+      "priority": 1,
+      "enabled": true,
+      "notes": "CivicEngage ICS. CID 79 mobile clerk events with street addresses."
+    },
+    {
       "id": "bexar-county",
       "name": "Bexar County Calendar",
       "type": "municipal",
@@ -34,7 +56,8 @@
       "reliability": 88,
       "extraction": "structured-html",
       "priority": 1,
-      "enabled": true
+      "enabled": false,
+      "notes": "Disabled: all-calendars HTML dump produced junk titles and fake addresses. Use ICS CID sources."
     },
     {
       "id": "sa-library",
@@ -84,6 +107,7 @@
   "deferred": {
     "school_districts": "P2 — add after municipal pipeline is proven clean",
     "hoa": "P3/P4 — high fragility, ToS risk, low structured yield",
-    "ocr_flyers": "P4 — only after human review volume is manageable"
+    "ocr_flyers": "P4 — only after human review volume is manageable",
+    "bexar_ics_more": "Veterans 25/34, Public Health 95, Animal Care 92, Behavioral Health 26 — after CID 14+79 stay clean"
   }
 }
