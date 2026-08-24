@@ -34,12 +34,12 @@ python scripts/content-packs/generate-pack.py --date 2026-08-09
 
 ## GitHub Action
 
-`.github/workflows/generate-daily-pack.yml`
+`.github/workflows/chica-daily.yml` (Chica Daily Master Workflow)
 
-- Runs automatically **Thursday 6pm CDT** and **Friday 6pm CDT**
+- Runs automatically **5:00 AM America/Chicago**
 - Can also be triggered manually from the Actions tab
-- Writes the pack into `packs/`
-- Opens a GitHub Issue so you get notified
+- Writes packs, feeds, and city data
+- Discovery and social are owned by Chica Daily
 
 ## Pack format (required sections)
 
