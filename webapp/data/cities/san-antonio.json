@@ -98,8 +98,8 @@
       "in_person": false,
       "external_id": "eso-2457368",
       "categories": [
-        "online-auction",
-        "estate-sale"
+        "estate-sale",
+        "online-auction"
       ]
     },
     {
@@ -152,13 +152,13 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "in-person",
-        "estate-sale"
+        "estate-sale",
+        "in-person"
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 29.48242382432627,
-      "lon": -98.540003706755,
+      "lat": 29.481965685627024,
+      "lon": -98.5435020425886,
       "geocode": "source",
       "company": "Caring Transitions of San Antonio Central",
       "in_person": true,
@@ -377,8 +377,8 @@
       "in_person": false,
       "external_id": "eso-2458919",
       "categories": [
-        "online-auction",
-        "estate-sale"
+        "estate-sale",
+        "online-auction"
       ]
     },
     {
@@ -402,8 +402,8 @@
       "in_person": false,
       "external_id": "eso-2458946",
       "categories": [
-        "online-auction",
-        "estate-sale"
+        "estate-sale",
+        "online-auction"
       ]
     },
     {
@@ -517,8 +517,8 @@
       "type": "estate",
       "confidence": 0.85,
       "status": "verified",
-      "lat": 29.48471,
-      "lon": -98.5415,
+      "lat": 29.48422,
+      "lon": -98.54203,
       "geocode": "source",
       "external_id": "yss-sanantoniotx78201-2026-08-27",
       "categories": [
@@ -641,13 +641,13 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "in-person",
-        "estate-sale"
+        "estate-sale",
+        "in-person"
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 29.633266146137263,
-      "lon": -98.31211988876039,
+      "lat": 29.636401252137983,
+      "lon": -98.30961883166623,
       "geocode": "source",
       "company": "Denny Harrison Estate Sales & Auctions",
       "in_person": true,
@@ -2776,7 +2776,7 @@
   "total_locations": 112,
   "status": "live",
   "date": "2026-08-25",
-  "last_refresh": "2026-08-25T05:22:17-05:00",
+  "last_refresh": "2026-08-25T06:30:30-05:00",
   "note": "Cleaned 33-pin Saturday live swap 2026-08-22 10:57 CDT. Merged Potranco/Moonlit/Craftsman. Dropped stores, auctions, warehouse, flea, single-item. Added Rita Ave + Jack Bean.",
   "permit_total": 81,
   "permit_estate_count": 4

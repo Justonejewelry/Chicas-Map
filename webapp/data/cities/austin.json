@@ -34,8 +34,8 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "in-person",
-        "estate-sale"
+        "estate-sale",
+        "in-person"
       ],
       "confidence": 0.9,
       "status": "verified",
@@ -91,8 +91,8 @@
       "in_person": false,
       "external_id": "eso-2458599",
       "categories": [
-        "online-auction",
-        "estate-sale"
+        "estate-sale",
+        "online-auction"
       ]
     },
     {
@@ -116,8 +116,8 @@
       "in_person": false,
       "external_id": "eso-2458509",
       "categories": [
-        "online-auction",
-        "estate-sale"
+        "estate-sale",
+        "online-auction"
       ]
     },
     {
@@ -152,13 +152,13 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "in-person",
-        "estate-sale"
+        "estate-sale",
+        "in-person"
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.65046751142652,
-      "lon": -97.77313671454104,
+      "lat": 30.65436618192598,
+      "lon": -97.77302185129398,
       "geocode": "source",
       "company": "Golden Soul Estate Sales",
       "in_person": true,
@@ -166,13 +166,13 @@
     },
     {
       "address": "507 WILLOW WOOD DR, Austin, TX",
-      "dates": "2026-08-25 – 2026-08-27",
-      "date_from": "2026-08-25",
-      "date_to": "2026-08-27",
-      "end_date": "2026-08-27",
+      "dates": "2026-09-05 – 2026-09-05",
+      "date_from": "2026-09-05",
+      "date_to": "2026-09-05",
+      "end_date": "2026-09-05",
       "hours": null,
       "title": "GARAGE SALE - MOVING SALE",
-      "details": "QR Code Link to This Post CALL FIVE ONE TWO -NINE TWO ONE- SIX ONE NINE TWO KEEP CHECKING LIST = ITEMS WILL BE REMOVED FROM LIST WHEN THEY ARE SOLD THE FOLLOWING ITEMS ARE FOR SALE SATURDAY 29ND PLEASE CALL IF YOU SEE ANY ITEMS YOU ARE INTESTED IN show contact info SOME ITEMS ARE IN STORAGE AND WILL NOT BE DISPLAYED UNLESS THERE IS AN INTEREST! PLEASE CALL 1. WOODEN DESK $50 2. WICKER END TABLE $1",
+      "details": "QR Code Link to This Post PRE-SALE NOW - MAKE AN OFFER - COME PICK IT UP show contact info KEEP CHECKING LIST = ITEMS WILL BE REMOVED FROM LIST WHEN THEY ARE SOLD THE FOLLOWING ITEMS ARE FOR SALE SEPTEMBER 5. PLEASE CALL IF YOU SEE ANY ITEMS YOU ARE INTESTED IN show contact info SOME ITEMS ARE IN STORAGE AND WILL NOT BE DISPLAYED UNLESS THERE IS AN INTEREST! PLEASE CALL 1. WOODEN DESK $50 2. WICKE",
       "source": "Craigslist",
       "url": "https://www.craigslist.org/view/d/pflugerville-garage-sale-moving-sale/teTbtSVuiJzANftXBQPjbX",
       "photos": 0,
@@ -310,8 +310,8 @@
       "in_person": false,
       "external_id": "eso-2458898",
       "categories": [
-        "online-auction",
-        "estate-sale"
+        "estate-sale",
+        "online-auction"
       ]
     },
     {
@@ -346,8 +346,8 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "in-person",
-        "estate-sale"
+        "estate-sale",
+        "in-person"
       ],
       "confidence": 0.9,
       "status": "verified",
@@ -687,8 +687,8 @@
       "type": "garage",
       "confidence": 0.85,
       "status": "verified",
-      "lat": 30.33054,
-      "lon": -97.64559,
+      "lat": 30.33063,
+      "lon": -97.64636,
       "geocode": "source",
       "external_id": "yss-austintx78754-2026-08-28",
       "categories": [
@@ -714,8 +714,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.32929692393101,
-      "lon": -97.64521507119913,
+      "lat": 30.331857110779733,
+      "lon": -97.64474672860864,
       "geocode": "source",
       "company": "Haven Estate Sales, Inc.",
       "in_person": true,
@@ -886,6 +886,6 @@
   "total_locations": 37,
   "status": "live",
   "date": "2026-08-25",
-  "last_refresh": "2026-08-25T05:22:17-05:00",
+  "last_refresh": "2026-08-25T06:30:30-05:00",
   "permits": []
 }
