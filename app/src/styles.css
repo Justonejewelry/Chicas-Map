@@ -1,0 +1,96 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+@theme {
+  --color-bg: #f4f0ea;
+  --color-paper: #fffdf8;
+  --color-ink: #1a1614;
+  --color-muted: #6b645c;
+  --color-pine: #c513af;
+  --color-pine-mid: #9a0e88;
+  --color-pine-deep: #7a0b6c;
+  --color-pine-soft: #f6e3f2;
+  --color-line: #e4dcd2;
+  --color-cream: #fffdf8;
+  --color-live: #1f8a4c;
+  --color-night: #0e0e10;
+  --color-night-panel: #161418;
+  --font-sans: "Inter", "Segoe UI", system-ui, sans-serif;
+  --font-display: "Syne", "Segoe UI", system-ui, sans-serif;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+html,
+body,
+#app {
+  min-height: 100%;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+}
+
+.leaflet-container {
+  background: #1a1a18;
+  font-family: var(--font-sans);
+}
+
+.leaflet-control-attribution {
+  background: rgb(0 0 0 / 0.45) !important;
+  color: #d4d4d4 !important;
+  font-size: 10px !important;
+}
+
+.leaflet-control-zoom a {
+  background: #161418 !important;
+  color: #f4f4f4 !important;
+  border: 1px solid rgb(255 255 255 / 0.12) !important;
+}
+
+.chica-pin {
+  background: none !important;
+  border: none !important;
+}
+
+.chica-pin-inner {
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  border: 2px solid #fffdf8;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.45);
+}
+
+.chica-you {
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  background: #38bdf8;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 6px rgb(56 189 248 / 0.28);
+}
