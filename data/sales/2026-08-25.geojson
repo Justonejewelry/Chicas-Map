@@ -1,0 +1,898 @@
+{
+  "type": "FeatureCollection",
+  "properties": {
+    "target_date": "2026-08-25",
+    "generated_at": "2026-08-25T05:22:44-05:00",
+    "count": 18,
+    "project": "Chicas-Map"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.427915,
+          29.580824
+        ]
+      },
+      "properties": {
+        "sale_id": "2026-08-25_3537-green-spring-drive-san-antonio-tx",
+        "title": "Estate sale/moving sale -antiques too (Green spring Valley)",
+        "sale_type": "estate",
+        "date_start": "2026-08-25",
+        "date_end": "2026-08-27",
+        "start_time": "7:00 am-3:00 PM",
+        "end_time": "",
+        "address": "3537 Green Spring Drive, San Antonio, TX",
+        "city": "San Antonio",
+        "state": "TX",
+        "zip": "",
+        "latitude": 29.580824,
+        "longitude": -98.427915,
+        "description": "QR Code Link to This Post Selling only at dates 29,30th of August at estate sale from 7 am-3pm. Sorry too busy to reply to emails. Seeking to sale furniture in home. CASH ONLY. I have a TV, two area rugs, two couches ( one vintage) , three vintage armchairs , massage table, hutch, dresser, coffee table All must go! As well as some home apppliances, mirrors, sports equipment, e-bike (just needs minor work), lamps….Only adults, children will not be allowed in home. My house is not being put up for",
+        "highlights": [],
+        "source_urls": [
+          "https://www.craigslist.org/view/d/san-antonio-estate-sale-moving-sale/iyLKr45DRf81Ty7rAjR8d2"
+        ],
+        "original_url": "https://www.craigslist.org/view/d/san-antonio-estate-sale-moving-sale/iyLKr45DRf81Ty7rAjR8d2",
+        "source_names": [
+          "Craigslist"
+        ],
+        "photos": [
+          "https://images.craigslist.org/00O0O_h7ljnddzsjW_0t20CI_600x450.jpg",
+          "https://images.craigslist.org/00O0O_h7ljnddzsjW_0t20CI_50x50c.jpg",
+          "https://images.craigslist.org/00f0f_dA6WXF92xSH_0t20CI_50x50c.jpg",
+          "https://images.craigslist.org/00P0P_2ad87O90FYn_0t20CI_50x50c.jpg",
+          "https://images.craigslist.org/00D0D_1zT6L5DT2Rh_0t20CI_50x50c.jpg",
+          "https://images.craigslist.org/00n0n_kYRbKdLmZ3f_0t20CI_50x50c.jpg"
+        ],
+        "confidence": 100,
+        "verified_at": "2026-08-25T05:22:17-05:00",
+        "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.580824,-98.427915",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.580824,-98.427915",
+        "status": "verified",
+        "geocode_method": "source",
+        "notes": "",
+        "community_source": "",
+        "community_link_or_notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.431292,
+          29.666488
+        ]
+      },
+      "properties": {
+        "sale_id": "2026-08-23_3310-rizzoli-ave-san-antonio-tx",
+        "title": "Moving/Estate Sale (Northeast San Antonio)",
+        "sale_type": "estate",
+        "date_start": "2026-08-23",
+        "date_end": "2026-08-25",
+        "start_time": "",
+        "end_time": "",
+        "address": "3310 Rizzoli Ave, San Antonio, TX",
+        "city": "San Antonio",
+        "state": "TX",
+        "zip": "",
+        "latitude": 29.666488,
+        "longitude": -98.431292,
+        "description": "QR Code Link to This Post Join us this Saturday from 8am-2pm and Sunday 8am-12pm for our moving/estate sale at 3310 Rizzoli Ave, San Antonio, TX 78261. No reasonable offers will be refused. Items uncles furniture, refrigerator, couches, end tables, chairs, etc.",
+        "highlights": [],
+        "source_urls": [
+          "https://www.craigslist.org/view/d/san-antonio-moving-estate-sale/gMWdVpFwC7qqBLZL82sHeZ"
+        ],
+        "original_url": "https://www.craigslist.org/view/d/san-antonio-moving-estate-sale/gMWdVpFwC7qqBLZL82sHeZ",
+        "source_names": [
+          "Craigslist"
+        ],
+        "photos": [
+          "https://images.craigslist.org/00A0A_2rjD1q8sLc1_0t20CI_600x450.jpg",
+          "https://images.craigslist.org/00A0A_2rjD1q8sLc1_0t20CI_50x50c.jpg",
+          "https://images.craigslist.org/00707_kOwlKKZ19RH_0t20CI_50x50c.jpg",
+          "https://images.craigslist.org/00Z0Z_ltRgSkjMS6E_0t20CI_50x50c.jpg",
+          "https://images.craigslist.org/00L0L_gXqPzjP3DeE_0CI0t2_50x50c.jpg",
+          "https://images.craigslist.org/00U0U_1D5xeQvrscq_0CI0t2_50x50c.jpg"
+        ],
+        "confidence": 96,
+        "verified_at": "2026-08-25T05:22:17-05:00",
+        "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.666488,-98.431292",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.666488,-98.431292",
+        "status": "verified",
+        "geocode_method": "source",
+        "notes": "",
+        "community_source": "",
+        "community_link_or_notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.6490584,
+          29.7487321
+        ]
+      },
+      "properties": {
+        "sale_id": "2026-08-14_boerne-tx-78015",
+        "title": "Luxury Entertainment & Lifestyle in Boerne, TX- Bidding Ends 8/26 6:30PM CDT PU 8/28 10AM-2PM",
+        "sale_type": "estate",
+        "date_start": "2026-08-14",
+        "date_end": "2026-08-26",
+        "start_time": "",
+        "end_time": "",
+        "address": "Boerne, TX 78015",
+        "city": "San Antonio",
+        "state": "TX",
+        "zip": "",
+        "latitude": 29.7487321,
+        "longitude": -98.6490584,
+        "description": "Caring Transitions of Boerne, Fredericksburg, and Kerrville. Welcome Home to CTBids! We put together an excellent selection of items for you! Start exploring and discover the deals for yourself! Bidding on ALL items starts at $1! Step into a beautifully curated home in exclusive Stone Creek Ranch, where i...",
+        "highlights": [],
+        "source_urls": [
+          "https://estatesales.org/estate-sales/tx/boerne/78015/luxury-entertainment-lifestyle-in-boerne-2457368"
+        ],
+        "original_url": "https://estatesales.org/estate-sales/tx/boerne/78015/luxury-entertainment-lifestyle-in-boerne-2457368",
+        "source_names": [
+          "EstateSales.org"
+        ],
+        "photos": [
+          "https://estatesales.org/uploads/2024/02/04/m/7/5/2392475/4PGu6-1.jpeg",
+          "https://estatesales.org/2036244653/css/images/social/facebook.png",
+          "https://eso-cdn.tlcdn.workers.dev/s-2457368-83wfx6zdhmnau5p9-t.webp",
+          "https://eso-cdn.tlcdn.workers.dev/s-2457368-lj5hl50tzueh0luk-t.webp",
+          "https://eso-cdn.tlcdn.workers.dev/s-2457368-y5kugfyo2mp6vrp0-t.webp",
+          "https://eso-cdn.tlcdn.workers.dev/s-2457368-7t5nh1pbekcbdra6-t.webp"
+        ],
+        "confidence": 96,
+        "verified_at": "2026-08-25T05:22:17-05:00",
+        "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.7487321,-98.6490584",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.7487321,-98.6490584",
+        "status": "verified",
+        "geocode_method": "source",
+        "notes": "",
+        "community_source": "",
+        "community_link_or_notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.4936,
+          29.4241
+        ]
+      },
+      "properties": {
+        "sale_id": "2026-08-22_new-braunfels-tx-78130",
+        "title": "Art, Flatware & Everything In Between Online Auction by Caring Transitions - Ends 8/27!",
+        "sale_type": "estate",
+        "date_start": "2026-08-22",
+        "date_end": "2026-08-27",
+        "start_time": "11:32 am - 11:59 pm",
+        "end_time": "",
+        "address": "New Braunfels, TX 78130",
+        "city": "San Antonio",
+        "state": "TX",
+        "zip": "",
+        "latitude": 29.4241,
+        "longitude": -98.4936,
+        "description": "Dates and Times: Saturday, August 22, 2026 11:32 am - 11:59 pm",
+        "highlights": [],
+        "source_urls": [
+          "https://garagesalefinder.com/s/N9xVm/new-braunfels-tx-78130"
+        ],
+        "original_url": "https://garagesalefinder.com/s/N9xVm/new-braunfels-tx-78130",
+        "source_names": [
+          "GarageSaleFinder"
+        ],
+        "photos": [
+          "https://eso-cdn.tlcdn.workers.dev/s-2458879-dhxg1qc9utvmharp-t.webp",
+          "https://eso-cdn.tlcdn.workers.dev/s-2458879-ud361e3pimwh87jy-t.webp",
+          "https://eso-cdn.tlcdn.workers.dev/s-2458879-r01bdemkmugt3f53-t.webp",
+          "https://eso-cdn.tlcdn.workers.dev/s-2458879-35r8jzujtez1bslp-t.webp",
+          "https://eso-cdn.tlcdn.workers.dev/s-2458879-rr2el8nphts6it5w-t.webp",
+          "https://eso-cdn.tlcdn.workers.dev/s-2458879-1unrzmeotc6v3wmv-t.webp"
+        ],
+        "confidence": 100,
+        "verified_at": "2026-08-25T05:22:17-05:00",
+        "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936",
+        "status": "verified",
+        "geocode_method": "city-center",
+        "notes": "",
+        "community_source": "",
+        "community_link_or_notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.4936,
+          29.4241
+        ]
+      },
+      "properties": {
+        "sale_id": "2026-08-19_new-braunfels-tx-78133",
+        "title": "Collections of a Lifetime Online Auction by Caring Transitions - Ends 8/26!",
+        "sale_type": "estate",
+        "date_start": "2026-08-19",
+        "date_end": "2026-08-26",
+        "start_time": "11:48 am - 11:59 pm",
+        "end_time": "",
+        "address": "New Braunfels, TX 78133",
+        "city": "San Antonio",
+        "state": "TX",
+        "zip": "",
+        "latitude": 29.4241,
+        "longitude": -98.4936,
+        "description": "Dates and Times: Wednesday, August 19, 2026 11:48 am - 11:59 pm",
+        "highlights": [],
+        "source_urls": [
+          "https://garagesalefinder.com/s/N9gGt/new-braunfels-tx-78133"
+        ],
+        "original_url": "https://garagesalefinder.com/s/N9gGt/new-braunfels-tx-78133",
+        "source_names": [
+          "GarageSaleFinder"
+        ],
+        "photos": [
+          "https://eso-cdn.tlcdn.workers.dev/s-2458311-qrta6w673hwlc92t-t.webp",
+          "https://eso-cdn.tlcdn.workers.dev/s-2458311-8kzf5mhq9o9s8ipl-t.webp",
+          "https://eso-cdn.tlcdn.workers.dev/s-2458311-rbo369adertacltp-t.webp",
+          "https://eso-cdn.tlcdn.workers.dev/s-2458311-p5kqbrlti7tlpci5-t.webp",
+          "https://eso-cdn.tlcdn.workers.dev/s-2458311-awx8vijbpnobnz1j-t.webp",
+          "https://eso-cdn.tlcdn.workers.dev/s-2458311-g92uo5f236f9yx1o-t.webp"
+        ],
+        "confidence": 100,
+        "verified_at": "2026-08-25T05:22:17-05:00",
+        "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936",
+        "status": "verified",
+        "geocode_method": "city-center",
+        "notes": "",
+        "community_source": "",
+        "community_link_or_notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.519519,
+          29.611918
+        ]
+      },
+      "properties": {
+        "sale_id": "2026-08-23_1711-sandringham-san-antonio-tx",
+        "title": "Estate sale!!! 1711 Sandringham San Antonio, TX  78258",
+        "sale_type": "estate",
+        "date_start": "2026-08-23",
+        "date_end": "2026-08-25",
+        "start_time": "",
+        "end_time": "",
+        "address": "1711 Sandringham, San Antonio, TX",
+        "city": "San Antonio",
+        "state": "TX",
+        "zip": "",
+        "latitude": 29.611918,
+        "longitude": -98.519519,
+        "description": "QR Code Link to This Post Everything goes! Furniture, leather chairs, beds, comics, tools, collectibles and more!",
+        "highlights": [],
+        "source_urls": [
+          "https://www.craigslist.org/view/d/san-antonio-estate-sale-1711/jFVb4fbMTnFq1LsxzMPFph"
+        ],
+        "original_url": "https://www.craigslist.org/view/d/san-antonio-estate-sale-1711/jFVb4fbMTnFq1LsxzMPFph",
+        "source_names": [
+          "Craigslist"
+        ],
+        "photos": [
+          "https://images.craigslist.org/00t0t_1qOcfyo5Qi7_0CI0lM_600x450.jpg",
+          "https://images.craigslist.org/00t0t_1qOcfyo5Qi7_0CI0lM_50x50c.jpg",
+          "https://images.craigslist.org/00F0F_6Hh8COy5E1q_0gl0t2_50x50c.jpg",
+          "https://images.craigslist.org/00x0x_5U7h9SmR7Mh_0CI0lM_50x50c.jpg",
+          "https://images.craigslist.org/00j0j_ekSi75QK5cC_0CI0lM_50x50c.jpg",
+          "https://images.craigslist.org/00X0X_9MRJFbIYhzo_0CI0lM_50x50c.jpg"
+        ],
+        "confidence": 96,
+        "verified_at": "2026-08-25T05:22:17-05:00",
+        "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.611918,-98.519519",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.611918,-98.519519",
+        "status": "verified",
+        "geocode_method": "source",
+        "notes": "",
+        "community_source": "",
+        "community_link_or_notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.4554,
+          29.4821
+        ]
+      },
+      "properties": {
+        "sale_id": "2026-08-23_315-byrnes-dr-near-north-vandiver-san-antonio-tx",
+        "title": "Multi Generational Estate/Yard/Garage Sales",
+        "sale_type": "estate",
+        "date_start": "2026-08-23",
+        "date_end": "2026-08-25",
+        "start_time": "",
+        "end_time": "",
+        "address": "315 Byrnes Dr near North Vandiver, San Antonio, TX",
+        "city": "San Antonio",
+        "state": "TX",
+        "zip": "",
+        "latitude": 29.4821,
+        "longitude": -98.4554,
+        "description": "QR Code Link to This Post Saturday August 22nd &amp; Sunday August 23rd at 9am we are hosting a huge 4 generational estate/yard/garage sale at 315 Byrnes Dr . We have alot of items for sale new, old , vintage, antique, and unique pieces. There is more than can be put out due to space I will have a \"short list \" posted shortly of a few of the items with prices which are all negotiable and the more ",
+        "highlights": [],
+        "source_urls": [
+          "https://www.craigslist.org/view/d/san-antonio-multi-generational-estate/pk4df6yixsQC8B1CmADwDR"
+        ],
+        "original_url": "https://www.craigslist.org/view/d/san-antonio-multi-generational-estate/pk4df6yixsQC8B1CmADwDR",
+        "source_names": [
+          "Craigslist"
+        ],
+        "photos": [],
+        "confidence": 92,
+        "verified_at": "2026-08-25T05:22:17-05:00",
+        "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4821,-98.4554",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.4821,-98.4554",
+        "status": "verified",
+        "geocode_method": "source",
+        "notes": "",
+        "community_source": "",
+        "community_link_or_notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.1672,
+          29.6636
+        ]
+      },
+      "properties": {
+        "sale_id": "2026-08-23_us-35n-near-cibilo-valley-exit-san-antonio-tx",
+        "title": "Unbelievable collection liquidation (Schertz)",
+        "sale_type": "estate",
+        "date_start": "2026-08-23",
+        "date_end": "2026-08-25",
+        "start_time": "",
+        "end_time": "",
+        "address": "US 35n near Cibilo Valley exit, San Antonio, TX",
+        "city": "San Antonio",
+        "state": "TX",
+        "zip": "",
+        "latitude": 29.6636,
+        "longitude": -98.1672,
+        "description": "QR Code Link to This Post Attention Resellers!!! Huge sell off liquidation of decades of collecting!!! Starting Saturday-Sunday 22nd and 23rd Booths 383 and 306 at Busseys flea market Front aisle right of the parking lot. See pics. More and more new inventory every weekend until December.",
+        "highlights": [],
+        "source_urls": [
+          "https://www.craigslist.org/view/d/new-braunfels-unbelievable-collection/6mxMeJuTorrrK9csPPdpLv"
+        ],
+        "original_url": "https://www.craigslist.org/view/d/new-braunfels-unbelievable-collection/6mxMeJuTorrrK9csPPdpLv",
+        "source_names": [
+          "Craigslist"
+        ],
+        "photos": [
+          "https://images.craigslist.org/00d0d_aB3U1uqnde5_0t20CI_600x450.jpg",
+          "https://images.craigslist.org/00d0d_aB3U1uqnde5_0t20CI_50x50c.jpg",
+          "https://images.craigslist.org/00J0J_ifHhBWwTJbp_0t20CI_50x50c.jpg",
+          "https://images.craigslist.org/00c0c_3xG8m02OOSm_0t20CI_50x50c.jpg",
+          "https://images.craigslist.org/00j0j_6Ih1vy3d1X_0t20CI_50x50c.jpg",
+          "https://images.craigslist.org/00q0q_4rTQI2Bx814_0t20CI_50x50c.jpg"
+        ],
+        "confidence": 96,
+        "verified_at": "2026-08-25T05:22:17-05:00",
+        "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.6636,-98.1672",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.6636,-98.1672",
+        "status": "verified",
+        "geocode_method": "source",
+        "notes": "",
+        "community_source": "",
+        "community_link_or_notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.988777,
+          29.537576
+        ]
+      },
+      "properties": {
+        "sale_id": "2026-08-25_15316-fm-725-near-indian-trail-san-antonio-tx",
+        "title": "AUCTION 08/25/26 @ 7pm Tools-Generators-Chainsaws-Coins-Collectibles (15316 FM 725 Seguin, TX)",
+        "sale_type": "estate",
+        "date_start": "2026-08-25",
+        "date_end": "2026-08-27",
+        "start_time": "",
+        "end_time": "",
+        "address": "15316 FM 725 near Indian Trail, San Antonio, TX",
+        "city": "San Antonio",
+        "state": "TX",
+        "zip": "",
+        "latitude": 29.537576,
+        "longitude": -97.988777,
+        "description": "QR Code Link to This Post Tri-County Auctions and Liquidations Presents An \"On-Line Only\" Auction AUCTION - \"Tuesday Night\" 08/25/26 at 7pm CONTENTS: We Have Tools, Antique & Vintage Collectibles, Trailer Towing Equipment, Appliances, Electronics & Much More *A N T I Q U E & V I N T A G E C O L L E C T I B L E S* - Silver Jewelry, Squash Blossoms, Watches, Several U.S. Coins, Jordan-Jabbar-McQuire Sports Collectible Cards, Hummel Figurines, Antique Crescent Cast iron Toy Stove/Salesman Sample, C",
+        "highlights": [],
+        "source_urls": [
+          "https://www.craigslist.org/view/d/seguin-auction-pm-tools-generators/fYfnMcGpiNMz9wy4k16AGp"
+        ],
+        "original_url": "https://www.craigslist.org/view/d/seguin-auction-pm-tools-generators/fYfnMcGpiNMz9wy4k16AGp",
+        "source_names": [
+          "Craigslist"
+        ],
+        "photos": [
+          "https://images.craigslist.org/00T0T_2tEfbrnXGaH_09i0co_600x450.jpg",
+          "https://images.craigslist.org/00T0T_2tEfbrnXGaH_09i0co_50x50c.jpg",
+          "https://images.craigslist.org/00o0o_2ByDkyl4TIM_09i0co_50x50c.jpg",
+          "https://images.craigslist.org/00Y0Y_7jBrfquKbR2_09i0co_50x50c.jpg",
+          "https://images.craigslist.org/00B0B_hWALDPx5JKn_09i0co_50x50c.jpg",
+          "https://images.craigslist.org/00R0R_aZbQvr9VYIF_09i0co_50x50c.jpg"
+        ],
+        "confidence": 96,
+        "verified_at": "2026-08-25T05:22:17-05:00",
+        "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.537576,-97.988777",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.537576,-97.988777",
+        "status": "verified",
+        "geocode_method": "source",
+        "notes": "",
+        "community_source": "",
+        "community_link_or_notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.6094,
+          29.556
+        ]
+      },
+      "properties": {
+        "sale_id": "2026-08-25_6151-nw-loop-410-san-antonio-tx",
+        "title": "Alamo Craft Co. Antiques & More (San Antonio)",
+        "sale_type": "garage",
+        "date_start": "2026-08-25",
+        "date_end": "2026-08-27",
+        "start_time": "",
+        "end_time": "",
+        "address": "6151 NW Loop 410, San Antonio, TX",
+        "city": "San Antonio",
+        "state": "TX",
+        "zip": "",
+        "latitude": 29.556,
+        "longitude": -98.6094,
+        "description": "QR Code Link to This Post OPEN TUES - SAT 10AM-6PM 6151 NW Loop 410, #302 SATX 78238 A hidden gem in San Antonio! Here you'll find unique antiques, vintage items, collectibles, hand-crafted items &amp; so much more. Come by &amp; see all the fun stuff! Ask for your frequent buyer card &amp; get punches with every purchase.",
+        "highlights": [],
+        "source_urls": [
+          "https://www.craigslist.org/view/d/san-antonio-alamo-craft-co-antiques-more/mj6FcRd4ZDr7zwAwc4pwWa"
+        ],
+        "original_url": "https://www.craigslist.org/view/d/san-antonio-alamo-craft-co-antiques-more/mj6FcRd4ZDr7zwAwc4pwWa",
+        "source_names": [
+          "Craigslist"
+        ],
+        "photos": [
+          "https://images.craigslist.org/01515_1Xh2ogBe0sZ_0CI0pq_600x450.jpg"
+        ],
+        "confidence": 96,
+        "verified_at": "2026-08-25T05:22:17-05:00",
+        "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.556,-98.6094",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.556,-98.6094",
+        "status": "verified",
+        "geocode_method": "source",
+        "notes": "",
+        "community_source": "",
+        "community_link_or_notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.988084,
+          29.580842
+        ]
+      },
+      "properties": {
+        "sale_id": "2026-08-25_1331-ch-matthies-jr-san-antonio-tx",
+        "title": "Craft Fair Vendor Market Handmade Market (Seguin, TX)",
+        "sale_type": "garage",
+        "date_start": "2026-08-25",
+        "date_end": "2026-08-27",
+        "start_time": "",
+        "end_time": "",
+        "address": "1331 CH Matthies JR, San Antonio, TX",
+        "city": "San Antonio",
+        "state": "TX",
+        "zip": "",
+        "latitude": 29.580842,
+        "longitude": -97.988084,
+        "description": "QR Code Link to This Post Come support local at our craft Fair with homemade crafts, honey, jewelry, hats, clothes, handbags and so much more. You will find things here you do not see at every craft fair, local artists, help local businesses. Over 20 Vendors Seguin Elks Lodge 1331 CH Matthies JR, Seguin, TX (Off of 46, behind RBFCU & Cosmic Carwash) August 29th 10am to 3pm this is all indoor and air-conditioned so you don't need to worry about melting in the August Heat.",
+        "highlights": [],
+        "source_urls": [
+          "https://www.craigslist.org/view/d/seguin-craft-fair-vendor-market/k1bY7s7RUgQPtTxZgRDwqo"
+        ],
+        "original_url": "https://www.craigslist.org/view/d/seguin-craft-fair-vendor-market/k1bY7s7RUgQPtTxZgRDwqo",
+        "source_names": [
+          "Craigslist"
+        ],
+        "photos": [
+          "https://images.craigslist.org/00Q0Q_cV2mIP7bcs8_0gV0ob_600x450.jpg"
+        ],
+        "confidence": 96,
+        "verified_at": "2026-08-25T05:22:17-05:00",
+        "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.580842,-97.988084",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.580842,-97.988084",
+        "status": "verified",
+        "geocode_method": "source",
+        "notes": "",
+        "community_source": "",
+        "community_link_or_notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.3446,
+          29.4492
+        ]
+      },
+      "properties": {
+        "sale_id": "2026-08-23_4335-ullman-dr-78219-near-e-houston-san-antonio-",
+        "title": "Front Yard and Backyard Garage Sell (San Antonio Texas)",
+        "sale_type": "garage",
+        "date_start": "2026-08-23",
+        "date_end": "2026-08-25",
+        "start_time": "",
+        "end_time": "",
+        "address": "4335 Ullman dr 78219 near E. Houston, San Antonio, TX",
+        "city": "San Antonio",
+        "state": "TX",
+        "zip": "",
+        "latitude": 29.4492,
+        "longitude": -98.3446,
+        "description": "QR Code Link to This Post Each item has different prices$$$$ Women and men closing shoes tennis shoes house hold items refrigerators bug and small all different Tools. Electric tools, hand tools, skilled trades tools. Work carts. Lawn equipment. Building material doors",
+        "highlights": [],
+        "source_urls": [
+          "https://www.craigslist.org/view/d/san-antonio-front-yard-and-backyard/ic9MiALG7W92gjgjiSPeDZ"
+        ],
+        "original_url": "https://www.craigslist.org/view/d/san-antonio-front-yard-and-backyard/ic9MiALG7W92gjgjiSPeDZ",
+        "source_names": [
+          "Craigslist"
+        ],
+        "photos": [
+          "https://images.craigslist.org/00C0C_5lI2giPiKnT_0t20CI_600x450.jpg",
+          "https://images.craigslist.org/00C0C_5lI2giPiKnT_0t20CI_50x50c.jpg",
+          "https://images.craigslist.org/00s0s_67hZHzfDOOF_0t20CI_50x50c.jpg",
+          "https://images.craigslist.org/00X0X_ibyU6U8bRqL_0t20CI_50x50c.jpg",
+          "https://images.craigslist.org/00h0h_IuUzY3OtxD_0CI0t2_50x50c.jpg",
+          "https://images.craigslist.org/00606_1uHIvk7ejnE_0CI0t2_50x50c.jpg"
+        ],
+        "confidence": 96,
+        "verified_at": "2026-08-25T05:22:17-05:00",
+        "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4492,-98.3446",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.4492,-98.3446",
+        "status": "verified",
+        "geocode_method": "source",
+        "notes": "",
+        "community_source": "",
+        "community_link_or_notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.247,
+          29.358
+        ]
+      },
+      "properties": {
+        "sale_id": "2026-08-23_748-fuller-ln-san-antonio-tx",
+        "title": "HUGE DOWNSIZING SALE — EVERYTHING PRICED TO SELL QUICK!",
+        "sale_type": "garage",
+        "date_start": "2026-08-23",
+        "date_end": "2026-08-25",
+        "start_time": "",
+        "end_time": "",
+        "address": "748 Fuller Ln, San Antonio, TX",
+        "city": "San Antonio",
+        "state": "TX",
+        "zip": "",
+        "latitude": 29.358,
+        "longitude": -98.247,
+        "description": "QR Code Link to This Post 🏡💥 HUGE DOWNSIZING SALE — EVERYTHING PRICED TO SELL QUICK! 💥🏡 We’re downsizing, which means LOTS of stuff needs to go! We have a huge variety of items, and everything is priced to sell. Come early for the best selection! 📍 748 Fuller Ln, Adkins, TX 78101 📅 Friday, 8/21 | 8:00 AM – 2:00 PM 📅 Saturday, 8/22 | 8:00 AM – 4:00 PM 📅 Sunday, 8/23 | 8:00 AM – 2:00 PM 🛍️ ITEMS INC",
+        "highlights": [],
+        "source_urls": [
+          "https://www.craigslist.org/view/d/adkins-huge-downsizing-sale-everything/t299pMZNw1Wk1uU4UkW6gZ"
+        ],
+        "original_url": "https://www.craigslist.org/view/d/adkins-huge-downsizing-sale-everything/t299pMZNw1Wk1uU4UkW6gZ",
+        "source_names": [
+          "Craigslist"
+        ],
+        "photos": [],
+        "confidence": 92,
+        "verified_at": "2026-08-25T05:22:17-05:00",
+        "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.358,-98.247",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.358,-98.247",
+        "status": "verified",
+        "geocode_method": "source",
+        "notes": "",
+        "community_source": "",
+        "community_link_or_notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.4485846,
+          29.4135826
+        ]
+      },
+      "properties": {
+        "sale_id": "2026-08-22_san-antonio-tx-78203",
+        "title": "Chicago Style Meets San Antonio - Bidding ends 8/30",
+        "sale_type": "estate",
+        "date_start": "2026-08-22",
+        "date_end": "2026-08-30",
+        "start_time": "",
+        "end_time": "",
+        "address": "San Antonio, TX 78203",
+        "city": "San Antonio",
+        "state": "TX",
+        "zip": "",
+        "latitude": 29.4135826,
+        "longitude": -98.4485846,
+        "description": "Caring Transitions of San Antonio Central. Welcome Home to CTBids! We put together an excellent selection of items for you! Start exploring and discover the deals for yourself! Bidding on ALL items starts at $1! From Chicago to San Antonio, this beautifully furnished condo was our client'...",
+        "highlights": [],
+        "source_urls": [
+          "https://estatesales.org/estate-sales/tx/san-antonio/78203/chicago-style-meets-san-antonio-2458919"
+        ],
+        "original_url": "https://estatesales.org/estate-sales/tx/san-antonio/78203/chicago-style-meets-san-antonio-2458919",
+        "source_names": [
+          "EstateSales.org"
+        ],
+        "photos": [
+          "https://estatesales.org/2036244653/css/images/nophoto_company_400x400.png",
+          "https://estatesales.org/2036244653/css/images/social/facebook.png",
+          "https://eso-cdn.tlcdn.workers.dev/s-2458919-uvcwnf5u9fc9qraw-t.webp",
+          "https://eso-cdn.tlcdn.workers.dev/s-2458919-2hdjkxbu2kvlym4g-t.webp",
+          "https://eso-cdn.tlcdn.workers.dev/s-2458919-5rym510y74orcbit-t.webp",
+          "https://eso-cdn.tlcdn.workers.dev/s-2458919-naci7k81w9mxddt6-t.webp"
+        ],
+        "confidence": 96,
+        "verified_at": "2026-08-25T05:22:17-05:00",
+        "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4135826,-98.4485846",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.4135826,-98.4485846",
+        "status": "verified",
+        "geocode_method": "source",
+        "notes": "",
+        "community_source": "",
+        "community_link_or_notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.7319703,
+          29.7946641
+        ]
+      },
+      "properties": {
+        "sale_id": "2026-08-22_boerne-tx-78006",
+        "title": "Design Warehouse Liquidation in Boerne, TX. Bidding ends 8/31",
+        "sale_type": "estate",
+        "date_start": "2026-08-22",
+        "date_end": "2026-08-31",
+        "start_time": "",
+        "end_time": "",
+        "address": "Boerne, TX 78006",
+        "city": "San Antonio",
+        "state": "TX",
+        "zip": "",
+        "latitude": 29.7946641,
+        "longitude": -98.7319703,
+        "description": "Caring Transitions of Boerne, Fredericksburg, and Kerrville. Welcome Home to CTBids! We put together an excellent selection of items for you! Start exploring and discover the deals for yourself! Bidding on ALL items starts at $1! Explore a unique Boerne interior design firm warehouse liquidation sale offe...",
+        "highlights": [],
+        "source_urls": [
+          "https://estatesales.org/estate-sales/tx/boerne/78006/design-warehouse-liquidation-in-boerne-2458946"
+        ],
+        "original_url": "https://estatesales.org/estate-sales/tx/boerne/78006/design-warehouse-liquidation-in-boerne-2458946",
+        "source_names": [
+          "EstateSales.org"
+        ],
+        "photos": [
+          "https://estatesales.org/uploads/2024/02/04/m/7/5/2392475/4PGu6-1.jpeg",
+          "https://estatesales.org/2036244653/css/images/social/facebook.png",
+          "https://eso-cdn.tlcdn.workers.dev/s-2458946-1zgzxqhxr2ceprrb-t.webp",
+          "https://eso-cdn.tlcdn.workers.dev/s-2458946-6p0pvt8z4u9kaiak-t.webp",
+          "https://eso-cdn.tlcdn.workers.dev/s-2458946-68s3mzh4syoq1xyt-t.webp",
+          "https://eso-cdn.tlcdn.workers.dev/s-2458946-u5whbmawbcui3yio-t.webp"
+        ],
+        "confidence": 96,
+        "verified_at": "2026-08-25T05:22:17-05:00",
+        "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.7946641,-98.7319703",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.7946641,-98.7319703",
+        "status": "verified",
+        "geocode_method": "source",
+        "notes": "",
+        "community_source": "",
+        "community_link_or_notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.053009,
+          29.65243
+        ]
+      },
+      "properties": {
+        "sale_id": "2026-08-25_144-ellen-st-near-center-st-san-antonio-tx",
+        "title": "Miller Bobcat and more. (New Braunfels)",
+        "sale_type": "garage",
+        "date_start": "2026-08-25",
+        "date_end": "2026-08-27",
+        "start_time": "",
+        "end_time": "",
+        "address": "144 Ellen St. near Center St., San Antonio, TX",
+        "city": "San Antonio",
+        "state": "TX",
+        "zip": "",
+        "latitude": 29.65243,
+        "longitude": -98.053009,
+        "description": "QR Code Link to This Post Must sale! 15' by 30' agriculture cover (tarp) for $80. Brand new and still in the unopened bag. 4 shock absorbing turnbuckles plus turnbuckles, used to tie down a motorcycle on a trailer. $80 8. US & Metric marked socket organizers for $30. Hang on a pegboard or lay in a drawer. Fitted for 1/4\" , 3/8\", 1/2\" drives. Calibrated from 1 1/4\" to 3/16\". Designed to fit standard and deep sockets. $30 A fully equipped oxy- acetylene cutting system for $800. Includes hand truck",
+        "highlights": [],
+        "source_urls": [
+          "https://www.craigslist.org/view/d/mc-queeney-miller-bobcat-and-more/4iEjvPgge84jUhgN8uveWV"
+        ],
+        "original_url": "https://www.craigslist.org/view/d/mc-queeney-miller-bobcat-and-more/4iEjvPgge84jUhgN8uveWV",
+        "source_names": [
+          "Craigslist"
+        ],
+        "photos": [
+          "https://images.craigslist.org/00L0L_8dtjTklYatA_0CI0t2_600x450.jpg",
+          "https://images.craigslist.org/00L0L_8dtjTklYatA_0CI0t2_50x50c.jpg",
+          "https://images.craigslist.org/00D0D_2ccqJOpcs4D_0t20CI_50x50c.jpg",
+          "https://images.craigslist.org/00p0p_a2HvuIcZOsr_0CI0t2_50x50c.jpg",
+          "https://images.craigslist.org/00k0k_AfYyJ28Lfj_0t20CI_50x50c.jpg",
+          "https://images.craigslist.org/00j0j_cQU5I8pAwHc_0t20CI_50x50c.jpg"
+        ],
+        "confidence": 96,
+        "verified_at": "2026-08-25T05:22:17-05:00",
+        "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.65243,-98.053009",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.65243,-98.053009",
+        "status": "verified",
+        "geocode_method": "source",
+        "notes": "",
+        "community_source": "",
+        "community_link_or_notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.2778,
+          29.579
+        ]
+      },
+      "properties": {
+        "sale_id": "2026-08-23_3533-irish-creek-rd-san-antonio-tx",
+        "title": "Yard Sale - Schertz TX",
+        "sale_type": "garage",
+        "date_start": "2026-08-23",
+        "date_end": "2026-08-25",
+        "start_time": "",
+        "end_time": "",
+        "address": "3533 Irish Creek Rd, San Antonio, TX",
+        "city": "San Antonio",
+        "state": "TX",
+        "zip": "",
+        "latitude": 29.579,
+        "longitude": -98.2778,
+        "description": "QR Code Link to This Post 3533 Irish Creek Road, Schertz,TX Household and kitchen items, stuffed animals, furniture, women’s clothes and shoes, jewelry, purses, CDs, vinyl, and many other items.",
+        "highlights": [],
+        "source_urls": [
+          "https://www.craigslist.org/view/d/schertz-yard-sale-schertz-tx/mMzk9zm3ASvAx5GM6aMKjL"
+        ],
+        "original_url": "https://www.craigslist.org/view/d/schertz-yard-sale-schertz-tx/mMzk9zm3ASvAx5GM6aMKjL",
+        "source_names": [
+          "Craigslist"
+        ],
+        "photos": [],
+        "confidence": 96,
+        "verified_at": "2026-08-25T05:22:17-05:00",
+        "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.579,-98.2778",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.579,-98.2778",
+        "status": "verified",
+        "geocode_method": "source",
+        "notes": "",
+        "community_source": "",
+        "community_link_or_notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.5103,
+          29.3535
+        ]
+      },
+      "properties": {
+        "sale_id": "2026-08-25_431-sharmain-pl-san-antonio-tx",
+        "title": "Parrot garage sale (San Antonio)",
+        "sale_type": "garage",
+        "date_start": "2026-08-25",
+        "date_end": "2026-08-27",
+        "start_time": "",
+        "end_time": "",
+        "address": "431 sharmain pl, San Antonio, TX",
+        "city": "San Antonio",
+        "state": "TX",
+        "zip": "",
+        "latitude": 29.3535,
+        "longitude": -98.5103,
+        "description": "QR Code Link to This Post First to ask about the Mexicans get a half price on the second Mexican they buy, if they buy both it would be 600 full price is 800 show contact info",
+        "highlights": [],
+        "source_urls": [
+          "https://www.craigslist.org/view/d/san-antonio-parrot-garage-sale/6ikkLo1TFjenJKfT9Xhdtw"
+        ],
+        "original_url": "https://www.craigslist.org/view/d/san-antonio-parrot-garage-sale/6ikkLo1TFjenJKfT9Xhdtw",
+        "source_names": [
+          "Craigslist"
+        ],
+        "photos": [
+          "https://images.craigslist.org/00P0P_61Ay6VwXjwa_0CI0t2_600x450.jpg",
+          "https://images.craigslist.org/00P0P_61Ay6VwXjwa_0CI0t2_50x50c.jpg",
+          "https://images.craigslist.org/00g0g_70J5kLYd8Vv_0t20CI_50x50c.jpg",
+          "https://images.craigslist.org/00B0B_ltZS7LXbcyz_0t20CI_50x50c.jpg",
+          "https://images.craigslist.org/01717_hSeGH36Kqea_0CI0t2_50x50c.jpg",
+          "https://images.craigslist.org/00m0m_9cdqEvqE58j_0t20CI_50x50c.jpg"
+        ],
+        "confidence": 96,
+        "verified_at": "2026-08-25T05:22:17-05:00",
+        "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.3535,-98.5103",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.3535,-98.5103",
+        "status": "verified",
+        "geocode_method": "source",
+        "notes": "",
+        "community_source": "",
+        "community_link_or_notes": ""
+      }
+    }
+  ]
+}
