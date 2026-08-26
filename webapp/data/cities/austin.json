@@ -128,13 +128,13 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "in-person",
-        "estate-sale"
+        "estate-sale",
+        "in-person"
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.653961941897233,
-      "lon": -97.77349174639562,
+      "lat": 30.650692089220268,
+      "lon": -97.77636332757231,
       "geocode": "source",
       "company": "Golden Soul Estate Sales",
       "in_person": true,
@@ -491,8 +491,8 @@
       "type": "garage",
       "confidence": 0.85,
       "status": "verified",
-      "lat": 30.3303,
-      "lon": -97.64615,
+      "lat": 30.33097,
+      "lon": -97.6464,
       "geocode": "source",
       "external_id": "yss-austintx78754-2026-08-28",
       "categories": [
@@ -513,13 +513,13 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "in-person",
-        "estate-sale"
+        "estate-sale",
+        "in-person"
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.33235118192598,
-      "lon": -97.6439141195589,
+      "lat": 30.328596241214516,
+      "lon": -97.64752556131218,
       "geocode": "source",
       "company": "Haven Estate Sales, Inc.",
       "in_person": true,
@@ -778,6 +778,6 @@
   "total_locations": 33,
   "status": "live",
   "date": "2026-08-26",
-  "last_refresh": "2026-08-26T05:25:29-05:00",
+  "last_refresh": "2026-08-26T06:32:41-05:00",
   "permits": []
 }
