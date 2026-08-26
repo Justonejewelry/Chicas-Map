@@ -44,9 +44,29 @@ export const HOT_ZONES: { name: string; lat: number; lon: number; zoom: number }
 ];
 
 const SUBMIT_KEY = "chicas-map-submissions";
+const MAX_LOCAL_SUBMISSIONS = 50;
+
+function isFiniteCoord(n: unknown): n is number {
+  return typeof n === "number" && Number.isFinite(n) && Math.abs(n) <= 180;
+}
+
+function isValidSale(s: unknown): s is Sale {
+  if (!s || typeof s !== "object") return false;
+  const o = s as Record<string, unknown>;
+  return (
+    typeof o.id === "string" &&
+    o.id.length > 0 &&
+    o.id.length < 128 &&
+    typeof o.title === "string" &&
+    typeof o.address === "string" &&
+    isFiniteCoord(o.lat) &&
+    isFiniteCoord(o.lon) &&
+    typeof o.type === "string"
+  );
+}
 
 export function allSales(feed: CityFeed): Sale[] {
-  return [...feed.public, ...feed.permits];
+  return [...(feed.public ?? []), ...(feed.permits ?? [])].filter(isValidSale);
 }
 
 export function kindLabel(kind: string): string {
@@ -79,32 +99,55 @@ export function haversineMi(
   return 2 * R * Math.asin(Math.min(1, Math.sqrt(h)));
 }
 
+/** Safe external navigation links. Rejects non-finite coordinates. */
 export function mapsLinks(sale: Sale) {
-  const q = encodeURIComponent(`${sale.lat},${sale.lon}`);
-  const addr = encodeURIComponent(sale.address || `${sale.lat},${sale.lon}`);
+  const lat = Number(sale.lat);
+  const lon = Number(sale.lon);
+  if (!Number.isFinite(lat) || !Number.isFinite(lon)) {
+    return { google: "#", apple: "#", waze: "#" };
+  }
+  const q = encodeURIComponent(`${lat},${lon}`);
+  const addr = encodeURIComponent(
+    String(sale.address || `${lat},${lon}`).slice(0, 200),
+  );
   return {
     google: `https://www.google.com/maps/dir/?api=1&destination=${q}`,
-    apple: `https://maps.apple.com/?daddr=${addr}&ll=${sale.lat},${sale.lon}`,
-    waze: `https://waze.com/ul?ll=${sale.lat},${sale.lon}&navigate=yes`,
+    apple: `https://maps.apple.com/?daddr=${addr}&ll=${lat},${lon}`,
+    waze: `https://waze.com/ul?ll=${lat},${lon}&navigate=yes`,
   };
 }
 
+/** Load local tip submissions with runtime shape validation. */
 export function loadSubmissions(): Sale[] {
   if (typeof window === "undefined") return [];
   try {
     const raw = localStorage.getItem(SUBMIT_KEY);
     if (!raw) return [];
-    const parsed = JSON.parse(raw) as Sale[];
-    return Array.isArray(parsed) ? parsed : [];
+    const parsed = JSON.parse(raw);
+    if (!Array.isArray(parsed)) return [];
+    return parsed.filter(isValidSale).slice(0, MAX_LOCAL_SUBMISSIONS);
   } catch {
     return [];
   }
 }
 
-export function saveSubmission(sale: Sale) {
-  const next = [sale, ...loadSubmissions().filter((s) => s.id !== sale.id)];
-  localStorage.setItem(SUBMIT_KEY, JSON.stringify(next));
+/** Persist a tip submission (capped, validated, quota-safe). */
+export function saveSubmission(sale: Sale): void {
+  if (!isValidSale(sale)) return;
+  const next = [sale, ...loadSubmissions().filter((s) => s.id !== sale.id)].slice(
+    0,
+    MAX_LOCAL_SUBMISSIONS,
+  );
+  try {
+    localStorage.setItem(SUBMIT_KEY, JSON.stringify(next));
+  } catch {
+    // private mode / quota — silent fail
+  }
 }
+
+/** @deprecated aliases kept for any older imports */
+export const loadLocalSubmissions = loadSubmissions;
+export const saveLocalSubmission = saveSubmission;
 
 export function relativeRefresh(iso: string): string {
   const t = Date.parse(iso);
@@ -117,7 +160,16 @@ export function relativeRefresh(iso: string): string {
 }
 
 export async function fetchFeed(): Promise<CityFeed> {
-  const res = await fetch("/data/san-antonio.json");
+  const res = await fetch("/data/san-antonio.json", {
+    headers: { Accept: "application/json" },
+    cache: "no-cache",
+  });
   if (!res.ok) throw new Error("Could not load live sales");
-  return (await res.json()) as CityFeed;
+  const data = (await res.json()) as CityFeed;
+  if (!data || typeof data !== "object") {
+    throw new Error("Invalid feed shape");
+  }
+  data.public = Array.isArray(data.public) ? data.public.filter(isValidSale) : [];
+  data.permits = Array.isArray(data.permits) ? data.permits.filter(isValidSale) : [];
+  return data;
 }
