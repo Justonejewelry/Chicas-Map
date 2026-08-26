@@ -1,0 +1,57 @@
+/* Chicas Map — Full screen overlay. Leaflet tiles, no Google Maps API. */
+#chica-fs-btn {
+  position: absolute;
+  top: max(0.75rem, env(safe-area-inset-top));
+  right: 0.75rem;
+  z-index: 40;
+  height: 44px;
+  padding: 0 16px;
+  border: none;
+  border-radius: 999px;
+  background: #c513af;
+  color: #fffdf8;
+  font: 600 14px/1 Inter, "Segoe UI", system-ui, sans-serif;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.28);
+}
+#chica-fs-btn:hover {
+  filter: brightness(1.05);
+}
+
+.chica-map-fs-host:fullscreen,
+.chica-map-fs-host:-webkit-full-screen,
+.chica-map:fullscreen,
+.chica-map:-webkit-full-screen {
+  position: fixed !important;
+  inset: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  min-height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  background: #0e0e10;
+}
+
+.chica-map-fs-css {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 9999 !important;
+  width: 100vw !important;
+  height: 100dvh !important;
+  min-height: 100dvh !important;
+  border-radius: 0 !important;
+  background: #0e0e10;
+}
+
+.chica-map-fs-host:fullscreen .leaflet-container,
+.chica-map-fs-host:-webkit-full-screen .leaflet-container,
+.chica-map-fs-css .leaflet-container,
+.chica-map:fullscreen .leaflet-container,
+.chica-map:-webkit-full-screen .leaflet-container {
+  position: absolute !important;
+  inset: 0 !important;
+  width: auto !important;
+  height: auto !important;
+}
