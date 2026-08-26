@@ -1,6 +1,6 @@
 {
   "name": "chica-mission-control",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "description": "Local-first operations center for Chicas Map — Garage Sale Intelligence Network",
   "main": "electron/main.cjs",
