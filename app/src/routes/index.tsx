@@ -135,7 +135,7 @@ function Home() {
             <Feature
               icon={RouteIcon}
               title="Build your route"
-              body="Use Near Me, distance sorting, and one-tap Google, Apple, or Waze directions."
+              body="Use Near Me, distance sorting, and one-tap Apple Maps or Waze. No Google Maps, no API key."
             />
             <Feature
               icon={Layers}

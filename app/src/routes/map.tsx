@@ -38,7 +38,7 @@ function MapPage() {
   const focus = useMemo(() => {
     if (sale) {
       const hit = sales.find((s) => s.id === sale);
-      if (hit) return { lat: hit.lat, lon: hit.lon, zoom: 16 };
+      if (hit) return { lat: hit.lat, lon: hit.lon, zoom: 19 };
     }
     const z = zoneFromName(zone);
     if (z) return { lat: z.lat, lon: z.lon, zoom: z.zoom };

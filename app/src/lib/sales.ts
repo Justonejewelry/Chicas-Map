@@ -80,11 +80,9 @@ export function haversineMi(
 }
 
 export function mapsLinks(sale: Sale) {
-  const q = encodeURIComponent(`${sale.lat},${sale.lon}`);
   const addr = encodeURIComponent(sale.address || `${sale.lat},${sale.lon}`);
   return {
-    google: `https://www.google.com/maps/dir/?api=1&destination=${q}`,
-    apple: `https://maps.apple.com/?daddr=${addr}&ll=${sale.lat},${sale.lon}`,
+    apple: `https://maps.apple.com/?daddr=${addr}&ll=${sale.lat},${sale.lon}&t=k&z=19`,
     waze: `https://waze.com/ul?ll=${sale.lat},${sale.lon}&navigate=yes`,
   };
 }

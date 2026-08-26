@@ -3,6 +3,7 @@ import { Link } from "@tanstack/react-router";
 import {
   ArrowLeft,
   ChevronUp,
+  Expand,
   LocateFixed,
   Navigation,
   Satellite,
@@ -45,10 +46,9 @@ export function SaleMap({ sales, focus, fullscreen }: Props) {
   const [satellite, setSatellite] = useState(true);
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [you, setYou] = useState<{ lat: number; lon: number } | null>(null);
-  const [sheetOpen, setSheetOpen] = useState(true);
+  const [sheetOpen, setSheetOpen] = useState(false);
+  const [hud, setHud] = useState(false);
   const [filter, setFilter] = useState<"all" | "public" | "permit">("all");
-  const selectedIdRef = useRef<string | null>(null);
-  selectedIdRef.current = selectedId;
 
   const filtered = useMemo(() => {
     if (filter === "permit") return sales.filter((s) => s.type === "permit");
@@ -61,9 +61,7 @@ export function SaleMap({ sales, focus, fullscreen }: Props) {
   const nearby = useMemo(() => {
     const origin = you ?? (selected ? { lat: selected.lat, lon: selected.lon } : null);
     const list = origin
-      ? [...filtered].sort(
-          (a, b) => haversineMi(origin, a) - haversineMi(origin, b),
-        )
+      ? [...filtered].sort((a, b) => haversineMi(origin, a) - haversineMi(origin, b))
       : filtered;
     return list.slice(0, 40);
   }, [filtered, you, selected]);
@@ -80,7 +78,7 @@ export function SaleMap({ sales, focus, fullscreen }: Props) {
         zoomControl: false,
         attributionControl: true,
         maxZoom: 19,
-      }).setView(focus ? [focus.lat, focus.lon] : SA_CENTER, focus?.zoom ?? 12);
+      }).setView(focus ? [focus.lat, focus.lon] : SA_CENTER, focus?.zoom ?? 16);
 
       const base = L.tileLayer(ESRI_SAT, {
         attribution: "Tiles © Esri",
@@ -109,7 +107,7 @@ export function SaleMap({ sales, focus, fullscreen }: Props) {
   useEffect(() => {
     const map = mapRef.current;
     if (!map || !focus) return;
-    map.flyTo([focus.lat, focus.lon], focus.zoom ?? 13, { duration: 0.8 });
+    map.flyTo([focus.lat, focus.lon], focus.zoom ?? 19, { duration: 0.8 });
   }, [focus]);
 
   useEffect(() => {
@@ -148,17 +146,21 @@ export function SaleMap({ sales, focus, fullscreen }: Props) {
       for (const sale of filtered) {
         const active = sale.id === selectedId;
         const color = markerColor(sale.type, sale.boost);
+        const size = active ? 22 : 16;
         const icon = L.divIcon({
           className: "chica-pin",
-          html: `<div class="chica-pin-inner" style="background:${color};width:${active ? 22 : 16}px;height:${active ? 22 : 16}px;outline:${active ? "3px solid #fff" : "none"}"></div>`,
-          iconSize: [active ? 22 : 16, active ? 22 : 16],
-          iconAnchor: [active ? 11 : 8, active ? 11 : 8],
+          html: `<div class="chica-pin-inner" style="background:${color};width:${size}px;height:${size}px;outline:${active ? "3px solid #fff" : "none"}"></div>`,
+          iconSize: [size, size],
+          iconAnchor: [size / 2, size / 2],
         });
         L.marker([sale.lat, sale.lon], { icon, title: sale.title })
-          .on("click", () => {
+          .on("click", (event) => {
+            L.DomEvent.stopPropagation(event.originalEvent);
             setSelectedId(sale.id);
-            setSheetOpen(true);
-            map.panTo([sale.lat, sale.lon]);
+            setSheetOpen(false);
+            setHud(false);
+            setSatellite(true);
+            map.flyTo([sale.lat, sale.lon], 19, { duration: 0.45 });
           })
           .addTo(group);
       }
@@ -183,124 +185,156 @@ export function SaleMap({ sales, focus, fullscreen }: Props) {
       (pos) => {
         const next = { lat: pos.coords.latitude, lon: pos.coords.longitude };
         setYou(next);
-        mapRef.current?.flyTo([next.lat, next.lon], 14, { duration: 0.7 });
+        mapRef.current?.flyTo([next.lat, next.lon], 16, { duration: 0.7 });
       },
       () => undefined,
       { enableHighAccuracy: true, timeout: 8000 },
     );
   }
 
+  function viewAerial(sale: Sale) {
+    setSelectedId(sale.id);
+    setSatellite(true);
+    setSheetOpen(false);
+    setHud(false);
+    mapRef.current?.flyTo([sale.lat, sale.lon], 19, { duration: 0.55 });
+  }
+
+  const cinema = !hud && !sheetOpen;
+
   return (
     <div
       className={cn(
         "relative isolate overflow-hidden bg-night",
-        fullscreen ? "h-dvh w-full" : "h-[52dvh] min-h-[22rem] w-full lg:h-[38rem]",
+        fullscreen || true ? "h-dvh w-full" : "h-[52dvh] min-h-[22rem] w-full lg:h-[38rem]",
       )}
     >
       <div ref={hostRef} className="absolute inset-0 z-0" />
 
-      <div
-        className="pointer-events-none absolute inset-x-0 top-0 z-20 p-3"
-        style={{ paddingTop: "max(0.75rem, env(safe-area-inset-top))" }}
-      >
-        <div className="pointer-events-auto flex flex-wrap items-center gap-1.5">
-          {fullscreen ? (
-            <Link
-              to="/"
-              className="inline-flex h-10 items-center gap-1.5 rounded-full bg-night-panel/85 px-3 text-sm font-semibold text-cream ring-1 ring-white/15 backdrop-blur-md"
-            >
-              <ArrowLeft className="size-4" />
-              Home
-            </Link>
-          ) : null}
-          {(
-            [
-              ["all", "All"],
-              ["public", "Posted"],
-              ["permit", "Permits"],
-            ] as const
-          ).map(([id, label]) => (
-            <button
-              key={id}
-              type="button"
-              onClick={() => setFilter(id)}
-              className={cn(
-                "h-10 rounded-full px-3.5 text-sm font-semibold ring-1 backdrop-blur-md",
-                filter === id
-                  ? "bg-pine text-cream ring-pine"
-                  : "bg-night-panel/80 text-cream ring-white/15",
-              )}
-            >
-              {label}
-            </button>
-          ))}
-          <span className="ml-auto flex gap-1.5">
-            <button
-              type="button"
-              onClick={() => setSatellite((v) => !v)}
-              className="inline-flex h-10 items-center gap-1.5 rounded-full bg-night-panel/80 px-3 text-sm font-semibold text-cream ring-1 ring-white/15 backdrop-blur-md"
-              aria-pressed={satellite}
-            >
-              {satellite ? <Satellite className="size-4" /> : <MapIcon className="size-4" />}
-              <span className="hidden sm:inline">{satellite ? "Satellite" : "Street"}</span>
-            </button>
-            <button
-              type="button"
-              onClick={nearMe}
-              className="inline-flex size-10 items-center justify-center rounded-full bg-night-panel/80 text-cream ring-1 ring-white/15 backdrop-blur-md"
-              aria-label="Near me"
-            >
-              <LocateFixed className="size-4" />
-            </button>
-          </span>
+      {hud ? (
+        <div
+          className="pointer-events-none absolute inset-x-0 top-0 z-20 p-3"
+          style={{ paddingTop: "max(0.75rem, env(safe-area-inset-top))" }}
+        >
+          <div className="pointer-events-auto flex flex-wrap items-center gap-1.5">
+            {fullscreen ? (
+              <Link
+                to="/"
+                className="inline-flex h-10 items-center gap-1.5 rounded-full bg-night-panel/85 px-3 text-sm font-semibold text-cream ring-1 ring-white/15 backdrop-blur-md"
+              >
+                <ArrowLeft className="size-4" />
+                Home
+              </Link>
+            ) : null}
+            {(
+              [
+                ["all", "All"],
+                ["public", "Posted"],
+                ["permit", "Permits"],
+              ] as const
+            ).map(([id, label]) => (
+              <button
+                key={id}
+                type="button"
+                onClick={() => setFilter(id)}
+                className={cn(
+                  "h-10 rounded-full px-3.5 text-sm font-semibold ring-1 backdrop-blur-md",
+                  filter === id
+                    ? "bg-pine text-cream ring-pine"
+                    : "bg-night-panel/80 text-cream ring-white/15",
+                )}
+              >
+                {label}
+              </button>
+            ))}
+            <span className="ml-auto flex gap-1.5">
+              <button
+                type="button"
+                onClick={() => setSatellite((v) => !v)}
+                className="inline-flex h-10 items-center gap-1.5 rounded-full bg-night-panel/80 px-3 text-sm font-semibold text-cream ring-1 ring-white/15 backdrop-blur-md"
+                aria-pressed={satellite}
+              >
+                {satellite ? <Satellite className="size-4" /> : <MapIcon className="size-4" />}
+                <span className="hidden sm:inline">{satellite ? "Satellite" : "Street"}</span>
+              </button>
+              <button
+                type="button"
+                onClick={nearMe}
+                className="inline-flex size-10 items-center justify-center rounded-full bg-night-panel/80 text-cream ring-1 ring-white/15 backdrop-blur-md"
+                aria-label="Near me"
+              >
+                <LocateFixed className="size-4" />
+              </button>
+            </span>
+          </div>
         </div>
-      </div>
-
-      <div
-        className={cn(
-          "absolute inset-x-0 bottom-0 z-20 flex flex-col",
-          "lg:inset-y-20 lg:left-3 lg:right-auto lg:w-[22.5rem]",
-        )}
-        style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
-      >
+      ) : (
         <button
           type="button"
-          className="mx-auto mb-1 flex h-8 w-24 items-center justify-center rounded-full bg-night-panel/80 text-cream lg:hidden"
-          onClick={() => setSheetOpen((v) => !v)}
-          aria-expanded={sheetOpen}
+          onClick={() => {
+            setHud(true);
+            setSheetOpen(true);
+          }}
+          className="absolute z-20 inline-flex size-11 items-center justify-center rounded-full bg-pine text-cream"
+          style={{
+            top: "max(0.75rem, env(safe-area-inset-top))",
+            right: "0.75rem",
+          }}
+          aria-label="Show listings"
         >
-          <ChevronUp className={cn("size-5 transition-transform", sheetOpen ? "rotate-180" : "")} />
+          <ChevronUp className="size-4 rotate-180" />
         </button>
+      )}
+
+      {selected && !sheetOpen ? (
         <div
-          className={cn(
-            "overflow-hidden rounded-t-2xl bg-night-panel/95 text-cream shadow-[0_-8px_40px_rgb(0_0_0_/_0.35)] ring-1 ring-white/10 backdrop-blur-md lg:rounded-2xl",
-            sheetOpen ? "max-h-[42dvh] lg:max-h-none" : "max-h-16 lg:max-h-none",
-          )}
+          className="absolute inset-x-3 z-20 max-w-md rounded-2xl bg-night-panel/95 text-cream shadow-[0_8px_40px_rgb(0_0_0_/_0.4)] ring-1 ring-white/10 backdrop-blur-md lg:left-3 lg:right-auto"
+          style={{ bottom: "max(1rem, env(safe-area-inset-bottom))" }}
         >
-          {selected ? (
-            <SelectedCard
-              sale={selected}
-              you={you}
-              onClose={() => setSelectedId(null)}
-            />
-          ) : (
-            <div className="px-4 py-3">
-              <p className="text-xs font-bold tracking-[0.14em] text-cream/55 uppercase">
-                {filtered.length} pins
-              </p>
-              <p className="font-display text-lg font-semibold">Live San Antonio sales</p>
-            </div>
-          )}
-          {sheetOpen ? (
+          <SelectedCard
+            sale={selected}
+            you={you}
+            onClose={() => setSelectedId(null)}
+            onAerial={() => viewAerial(selected)}
+          />
+        </div>
+      ) : null}
+
+      {sheetOpen ? (
+        <div
+          className="absolute inset-x-0 bottom-0 z-20 flex flex-col lg:inset-y-20 lg:left-3 lg:right-auto lg:w-[22.5rem]"
+          style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
+        >
+          <button
+            type="button"
+            className="mx-auto mb-1 flex h-8 w-24 items-center justify-center rounded-full bg-night-panel/80 text-cream lg:hidden"
+            onClick={() => setSheetOpen(false)}
+            aria-expanded={sheetOpen}
+          >
+            <ChevronUp className="size-5 rotate-180" />
+          </button>
+          <div className="overflow-hidden rounded-t-2xl bg-night-panel/95 text-cream shadow-[0_-8px_40px_rgb(0_0_0_/_0.35)] ring-1 ring-white/10 backdrop-blur-md lg:rounded-2xl">
+            {selected ? (
+              <SelectedCard
+                sale={selected}
+                you={you}
+                onClose={() => setSelectedId(null)}
+                onAerial={() => viewAerial(selected)}
+              />
+            ) : (
+              <div className="px-4 py-3">
+                <p className="text-xs font-bold tracking-[0.14em] text-cream/55 uppercase">
+                  {filtered.length} pins
+                </p>
+                <p className="font-display text-lg font-semibold">Live San Antonio sales</p>
+              </div>
+            )}
             <ul className="max-h-[28dvh] overflow-auto border-t border-white/10 lg:max-h-[28rem]">
               {nearby.map((sale) => (
                 <li key={sale.id}>
                   <button
                     type="button"
-                    onClick={() => {
-                      setSelectedId(sale.id);
-                      mapRef.current?.panTo([sale.lat, sale.lon]);
-                    }}
+                    onClick={() => viewAerial(sale)}
                     className={cn(
                       "flex w-full items-start gap-3 px-4 py-3 text-left",
                       selectedId === sale.id ? "bg-white/10" : "hover:bg-white/5",
@@ -322,9 +356,9 @@ export function SaleMap({ sales, focus, fullscreen }: Props) {
                 </li>
               ))}
             </ul>
-          ) : null}
+          </div>
         </div>
-      </div>
+      ) : null}
     </div>
   );
 }
@@ -333,10 +367,12 @@ function SelectedCard({
   sale,
   you,
   onClose,
+  onAerial,
 }: {
   sale: Sale;
   you: { lat: number; lon: number } | null;
   onClose: () => void;
+  onAerial: () => void;
 }) {
   const links = mapsLinks(sale);
   return (
@@ -366,21 +402,20 @@ function SelectedCard({
         </p>
       ) : null}
       <div className="mt-3 flex flex-wrap gap-2">
-        <a
-          href={links.google}
-          target="_blank"
-          rel="noreferrer"
+        <button
+          type="button"
+          onClick={onAerial}
           className="inline-flex h-10 items-center gap-1.5 rounded-full bg-pine px-3.5 text-sm font-semibold text-cream"
         >
-          <Navigation className="size-3.5" /> Google
-        </a>
+          <Expand className="size-3.5" /> Aerial
+        </button>
         <a
           href={links.apple}
           target="_blank"
           rel="noreferrer"
-          className="inline-flex h-10 items-center rounded-full bg-white/10 px-3.5 text-sm font-semibold ring-1 ring-white/15"
+          className="inline-flex h-10 items-center gap-1.5 rounded-full bg-white/10 px-3.5 text-sm font-semibold ring-1 ring-white/15"
         >
-          Apple
+          <Navigation className="size-3.5" /> Apple
         </a>
         <a
           href={links.waze}

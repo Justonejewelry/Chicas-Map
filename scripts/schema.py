@@ -88,19 +88,21 @@ def make_sale_id(date_start: str, address: str, title: str = "") -> str:
 
 
 def google_maps_url(lat: float, lon: float, address: str = "") -> str:
+    """Apple Maps satellite pin. Name kept for schema compatibility. No Google."""
+    from urllib.parse import quote_plus
     if lat and lon:
-        return f"https://www.google.com/maps/search/?api=1&query={lat},{lon}"
+        q = quote_plus(address) if address else f"{lat},{lon}"
+        return f"https://maps.apple.com/?ll={lat},{lon}&q={q}&t=k&z=19"
     if address:
-        from urllib.parse import quote_plus
-        return f"https://www.google.com/maps/search/?api=1&query={quote_plus(address)}"
+        return f"https://maps.apple.com/?q={quote_plus(address)}&t=k"
     return ""
 
 
 def street_view_url(lat: float, lon: float) -> str:
     if not lat or not lon:
         return ""
-    # Public link that opens Street View at the coordinates (no API key required)
-    return f"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint={lat},{lon}"
+    # In-app / Apple satellite. Never Google Maps (iframe shows "API key required").
+    return f"https://maps.apple.com/?ll={lat},{lon}&t=k&z=19"
 
 
 def now_ct_iso() -> str:
