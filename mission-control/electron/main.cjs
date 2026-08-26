@@ -1,48 +1,30 @@
-const { app, BrowserWindow, ipcMain } = require('electron');
+const { app, BrowserWindow, ipcMain, dialog } = require('electron');
 const { execFile } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
 const repoRoot = path.resolve(__dirname, '..', '..');
-
-function run(command, args = []) {
-  return new Promise((resolve) => {
-    execFile(command, args, { cwd: repoRoot, timeout: 20000 }, (error, stdout, stderr) => {
-      resolve({ ok: !error, stdout: String(stdout || ''), stderr: String(stderr || ''), code: error?.code || 0 });
-    });
-  });
-}
-function countFiles(relative, exts = null) {
-  const root = path.join(repoRoot, relative); let count = 0;
-  function walk(dir) { if (!fs.existsSync(dir)) return; for (const entry of fs.readdirSync(dir,{withFileTypes:true})) { if (entry.name.startsWith('.')) continue; const full=path.join(dir,entry.name); if (entry.isDirectory()) walk(full); else if (!exts || exts.some(ext=>entry.name.toLowerCase().endsWith(ext))) count++; } }
-  walk(root); return count;
-}
-async function repoStatus() {
-  const [branch,status,lastCommit,remote,aheadBehind]=await Promise.all([run('git',['branch','--show-current']),run('git',['status','--short']),run('git',['log','-1','--pretty=format:%h|%s|%ci']),run('git',['remote','get-url','origin']),run('git',['rev-list','--left-right','--count','@{upstream}...HEAD'])]);
-  const [behind='0',ahead='0']=aheadBehind.stdout.trim().split(/\s+/);
-  return {branch:branch.stdout.trim()||'unknown',changes:status.stdout.trim()?status.stdout.trim().split('\n'):[],lastCommit:lastCommit.stdout.trim(),remote:remote.stdout.trim(),clean:status.ok&&!status.stdout.trim(),ahead:Number(ahead)||0,behind:Number(behind)||0};
-}
-async function diagnostics() {
-  const checks=[]; const add=(name,level,detail)=>checks.push({name,level,detail});
-  for(const dir of ['maps','data','forecast','city-configs','reports','app','mission-control']) add(`Directory: ${dir}`,fs.existsSync(path.join(repoRoot,dir))?'PASS':'FAIL',fs.existsSync(path.join(repoRoot,dir))?'Present':'Missing');
-  const git=await repoStatus(); add('Git repository',git.branch!=='unknown'?'PASS':'FAIL',`Branch: ${git.branch}`); add('Working tree',git.clean?'PASS':'WARN',git.clean?'Clean':`${git.changes.length} uncommitted change(s)`);
-  const appSrc=fs.existsSync(path.join(repoRoot,'app','src')); add('Public map source',appSrc?'PASS':'FAIL',appSrc?'app/src available':'app/src missing');
-  const kml=countFiles('maps',['.kml']), geojson=countFiles('maps',['.geojson','.json']); add('Map layers',(kml+geojson)>0?'PASS':'WARN',`${kml} KML, ${geojson} GeoJSON/JSON candidate file(s)`);
-  const forecast=countFiles('forecast',['.json','.csv']); add('Forecast data',forecast>0?'PASS':'WARN',`${forecast} forecast data file(s)`);
-  const fail=checks.filter(x=>x.level==='FAIL').length,warn=checks.filter(x=>x.level==='WARN').length;
-  return {score:Math.max(0,100-fail*35-warn*10),fail,warn,checks,generatedAt:new Date().toISOString()};
-}
-async function projectHealth(){const [repo,git,diagnostic]=await Promise.all([run('git',['rev-parse','--is-inside-work-tree']),repoStatus(),diagnostics()]);return {online:repo.ok,git,diagnostic,counts:{mapFiles:countFiles('maps'),dataFiles:countFiles('data'),reportFiles:countFiles('reports'),kmlFiles:countFiles('maps',['.kml']),geojsonFiles:countFiles('maps',['.geojson','.json'])}};}
-function createWindow(){
-  const win=new BrowserWindow({width:1500,height:950,minWidth:1100,minHeight:700,title:'Chica Mission Control',webPreferences:{preload:path.join(__dirname,'preload.cjs'),contextIsolation:true,nodeIntegration:false}});
-  win.webContents.setWindowOpenHandler(()=>({action:'deny'}));
-  win.webContents.on('render-process-gone',(_e,details)=>console.error('Renderer process gone:',details));
-  win.webContents.on('console-message',(_e,level,message,line,sourceId)=>console.log('RENDERER:',level,message,sourceId,line));
-  win.loadURL(process.env.VITE_DEV_SERVER_URL||'http://127.0.0.1:5173');
-}
+let mainWindow;
+function run(command,args=[],cwd=repoRoot){return new Promise(resolve=>execFile(command,args,{cwd,timeout:30000},(error,stdout,stderr)=>resolve({ok:!error,stdout:String(stdout||''),stderr:String(stderr||''),code:error?.code||0})))}
+function esc(s){return String(s||'').replace(/\\/g,'\\\\').replace(/"/g,'\\"').replace(/\r?\n/g,' ')}
+function userFile(name){return path.join(app.getPath('userData'),name)}
+function readJson(name,fallback){try{return JSON.parse(fs.readFileSync(userFile(name),'utf8'))}catch{return fallback}}
+function writeJson(name,value){fs.mkdirSync(app.getPath('userData'),{recursive:true});fs.writeFileSync(userFile(name),JSON.stringify(value,null,2))}
+function countFiles(relative,exts=null){const root=path.join(repoRoot,relative);let count=0;function walk(dir){if(!fs.existsSync(dir))return;for(const entry of fs.readdirSync(dir,{withFileTypes:true})){if(entry.name.startsWith('.'))continue;const full=path.join(dir,entry.name);if(entry.isDirectory())walk(full);else if(!exts||exts.some(ext=>entry.name.toLowerCase().endsWith(ext)))count++}}walk(root);return count}
+async function repoStatus(){const [branch,status,lastCommit,remote,aheadBehind]=await Promise.all([run('git',['branch','--show-current']),run('git',['status','--short']),run('git',['log','-1','--pretty=format:%h|%s|%ci']),run('git',['remote','get-url','origin']),run('git',['rev-list','--left-right','--count','@{upstream}...HEAD'])]);const [behind='0',ahead='0']=aheadBehind.stdout.trim().split(/\s+/);return{branch:branch.stdout.trim()||'unknown',changes:status.stdout.trim()?status.stdout.trim().split('\n'):[],lastCommit:lastCommit.stdout.trim(),remote:remote.stdout.trim(),clean:status.ok&&!status.stdout.trim(),ahead:Number(ahead)||0,behind:Number(behind)||0}}
+async function diagnostics(){const checks=[];const add=(name,level,detail)=>checks.push({name,level,detail});for(const dir of ['maps','data','forecast','city-configs','reports','app','mission-control'])add(`Directory: ${dir}`,fs.existsSync(path.join(repoRoot,dir))?'PASS':'FAIL',fs.existsSync(path.join(repoRoot,dir))?'Present':'Missing');const git=await repoStatus();add('Git repository',git.branch!=='unknown'?'PASS':'FAIL',`Branch: ${git.branch}`);add('Working tree',git.clean?'PASS':'WARN',git.clean?'Clean':`${git.changes.length} uncommitted change(s)`);const appIndex=path.join(repoRoot,'app','src');add('Public map source',fs.existsSync(appIndex)?'PASS':'FAIL',fs.existsSync(appIndex)?'app/src available':'app/src missing');const kml=countFiles('maps',['.kml']);const geojson=countFiles('maps',['.geojson','.json']);add('Map layers',(kml+geojson)>0?'PASS':'WARN',`${kml} KML, ${geojson} GeoJSON/JSON candidate file(s)`);const forecast=countFiles('forecast',['.json','.csv']);add('Forecast data',forecast>0?'PASS':'WARN',`${forecast} forecast data file(s)`);const fail=checks.filter(x=>x.level==='FAIL').length,warn=checks.filter(x=>x.level==='WARN').length;return{score:Math.max(0,100-fail*35-warn*10),fail,warn,checks,generatedAt:new Date().toISOString()}}
+async function projectHealth(){const [repo,git,diagnostic]=await Promise.all([run('git',['rev-parse','--is-inside-work-tree']),repoStatus(),diagnostics()]);return{online:repo.ok,git,diagnostic,counts:{mapFiles:countFiles('maps'),dataFiles:countFiles('data'),reportFiles:countFiles('reports'),kmlFiles:countFiles('maps',['.kml']),geojsonFiles:countFiles('maps',['.geojson','.json'])}}}
+function contacts(){return readJson('contacts.json',[])}
+function saveContacts(items){writeJson('contacts.json',items)}
+async function appleScript(script){return run('osascript',['-e',script],app.getPath('home'))}
+async function sendMail({to,subject,body}){const script=`tell application "Mail"\nset theMessage to make new outgoing message with properties {subject:"${esc(subject)}", content:"${esc(body)}", visible:true}\ntell theMessage\nmake new to recipient at end of to recipients with properties {address:"${esc(to)}"}\nsend\nend tell\nend tell`;const r=await appleScript(script);return{ok:r.ok,error:r.stderr.trim()||null}}
+async function inbox(limit=25){const script=`tell application "Mail"\nset out to ""\nset inboxes to every mailbox whose name is "INBOX"\nset n to 0\nrepeat with boxRef in inboxes\nrepeat with m in messages of boxRef\nif n < ${Math.max(1,Math.min(Number(limit)||25,100))} then\nset out to out & (id of m as text) & "|" & (sender of m as text) & "|" & (subject of m as text) & "|" & (date received of m as text) & "|" & (read status of m as text) & linefeed\nset n to n + 1\nend if\nend repeat\nend repeat\nreturn out\nend tell`;const r=await appleScript(script);if(!r.ok)throw new Error(r.stderr||'Mail.app could not be read');return r.stdout.trim().split('\n').filter(Boolean).map(line=>{const [id,from,subject,date,read]=line.split('|');return{id,from,subject,date,read:read==='true'}})}
+function extractLeads(messages){const patterns=[{type:'email',re:/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/ig},{type:'phone',re:/\b(?:\+1[ .-]?)?\(?\d{3}\)?[ .-]\d{3}[ .-]\d{4}\b/g},{type:'date',re:/\b(?:mon|tues|wednes|thurs|fri|satur|sun)day\b|\b(?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\s+\d{1,2}\b/ig}];const leads=[];for(const m of messages){const text=`${m.from} ${m.subject}`;for(const p of patterns){for(const value of text.match(p.re)||[])leads.push({type:p.type,value,from:m.from,subject:m.subject,date:m.date})}}return leads}
+function createWindow(){mainWindow=new BrowserWindow({width:1500,height:950,minWidth:1100,minHeight:700,title:'Chica Mission Control',webPreferences:{preload:path.join(__dirname,'preload.cjs'),contextIsolation:true,nodeIntegration:false}});mainWindow.loadURL(process.env.VITE_DEV_SERVER_URL||'http://127.0.0.1:5173')}
 app.whenReady().then(()=>{
-  ipcMain.handle('mission:health',projectHealth); ipcMain.handle('mission:git',repoStatus); ipcMain.handle('mission:diagnostics',diagnostics); ipcMain.handle('mission:ping',()=>({ok:true,time:new Date().toISOString()}));
-  ipcMain.handle('mission:command',async(_event,command)=>{const text=String(command||'').toLowerCase(); if(text.includes('diagnostic')||text.includes('broken')||text.includes('why')||text.includes('health')||text.includes('check')) return {type:'diagnostics',data:await diagnostics()}; if(text.includes('git')||text.includes('changed')||text.includes('commit')) return {type:'git',data:await repoStatus()}; if(text.includes('map')||text.includes('layer')) return {type:'map',data:{mapFiles:countFiles('maps'),kmlFiles:countFiles('maps',['.kml']),geojsonFiles:countFiles('maps',['.geojson','.json'])}}; return {type:'message',data:'Mission logged. Available automated missions: diagnostics, Git status, and map-layer audit.'};});
-  createWindow();
-});
-app.on('window-all-closed',()=>{if(process.platform!=='darwin')app.quit();}); app.on('activate',()=>{if(BrowserWindow.getAllWindows().length===0)createWindow();});
+ ipcMain.handle('mission:health',projectHealth);ipcMain.handle('mission:git',repoStatus);ipcMain.handle('mission:diagnostics',diagnostics);
+ ipcMain.handle('contacts:list',()=>contacts());ipcMain.handle('contacts:add',(_e,contact)=>{const list=contacts();const item={id:Date.now().toString(),name:String(contact?.name||'').trim(),email:String(contact?.email||'').trim(),createdAt:new Date().toISOString()};if(!item.email)throw new Error('Email address is required');list.push(item);saveContacts(list);return list});
+ ipcMain.handle('email:send',(_e,payload)=>sendMail(payload));ipcMain.handle('email:inbox',async(_e,limit)=>inbox(limit));ipcMain.handle('email:scan-data',async(_e,limit)=>{const messages=await inbox(limit);return{messages,leads:extractLeads(messages),scannedAt:new Date().toISOString()}});
+ ipcMain.handle('branding:choose-logo',async()=>{const pick=await dialog.showOpenDialog(mainWindow,{title:'Choose the Chica logo',properties:['openFile'],filters:[{name:'Images',extensions:['png','jpg','jpeg','webp']} ]});if(pick.canceled||!pick.filePaths[0])return null;const dest=userFile('chica-logo'+path.extname(pick.filePaths[0]));fs.copyFileSync(pick.filePaths[0],dest);return `file://${dest}`});
+ ipcMain.handle('mission:command',async(_e,command)=>{const text=String(command||'').toLowerCase();if(text.includes('diagnostic')||text.includes('broken')||text.includes('why')||text.includes('health')||text.includes('check'))return{type:'diagnostics',data:await diagnostics()};if(text.includes('email')||text.includes('inbox'))return{type:'email',data:await inbox(25)};if(text.includes('git')||text.includes('changed')||text.includes('commit'))return{type:'git',data:await repoStatus()};if(text.includes('map')||text.includes('layer'))return{type:'map',data:{mapFiles:countFiles('maps'),kmlFiles:countFiles('maps',['.kml']),geojsonFiles:countFiles('maps',['.geojson','.json'])}};return{type:'message',data:'Mission logged. Available automated missions: diagnostics, email scan, Git status, and map-layer audit.'}});createWindow()});
+app.on('window-all-closed',()=>{if(process.platform!=='darwin')app.quit()});app.on('activate',()=>{if(BrowserWindow.getAllWindows().length===0)createWindow()});
