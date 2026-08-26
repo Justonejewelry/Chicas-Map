@@ -1,74 +1,50 @@
 # Chica Mission Control
 
-Local-first desktop **and browser** operations center for the Chicas Map (GSIN) project.
+Operations center for Chicas Map (GSIN).
 
-## Purpose
+## Quick start (easiest)
 
-One operational view of:
-
-- Repository health and Sentinel diagnostics
-- Map / data file intelligence
-- Git status
-- Swarm agent roles
-- Command queue
-- macOS Mail scan + contacts (Electron on macOS)
-
-## What is new in v0.2
-
-- Modern UI — sidebar navigation, glass panels, live metrics strip, pulse status
-- Tabbed workflow — Overview, Diagnostics, Email and Leads, Swarm, Git, Command
-- Browser mock mode — `npm run dev` works without Electron (demo data)
-- Fixed Electron startup — `VITE_DEV_SERVER_URL` + production `dist/` load
-- Apple Silicon + Intel DMG targets
-- Cleaner, maintainable React source (no single-line minified blob)
-
-## Run (browser — fastest)
+From the **repo root**:
 
 ```bash
-cd mission-control
-npm install
-npm run dev
+./start-mission-control
 ```
 
-Open http://127.0.0.1:5173 — mock APIs so you can explore the UI without Mail/Git bridges.
-
-## Run (Electron desktop)
+Or from this folder:
 
 ```bash
-cd mission-control
-npm install
-npm run dev:electron
+./run
 ```
 
-Requires Node 18+. Mail features need **macOS** and permission to control Mail.app.
+That installs dependencies if needed and opens the app in your browser at **http://127.0.0.1:5173**.
 
-## Production build
+### Desktop app (Mail, live Git, GitHub Actions)
 
 ```bash
-npm run build          # web assets to dist/
-npm run build:mac      # DMG (x64 + arm64)
-npm start              # launch Electron against dist/
+./start-mission-control desktop
+# or
+./run-desktop
 ```
 
-## Structure
+Requires Node 18+ and (for Mail) macOS.
 
-```
-mission-control/
-  electron/main.cjs    # main process, git, diagnostics, Mail, PDF
-  electron/preload.cjs # secure renderer bridge
-  src/main.jsx         # React dashboard
-  src/styles.css       # design system
-  index.html
-  vite.config.js
-  package.json
-```
+## npm equivalents
 
-Mission Control stays separate from the public map in `app/` / `webapp/`.
+| Command | What it does |
+|---------|----------------|
+| `npm start` | Browser UI (auto-installs if needed) |
+| `npm run start:desktop` | Electron + Vite |
+| `npm run build` | Production web build |
+| `npm run build:mac` | Mac DMG |
 
-## Keyboard
+## First-time notes
 
-| Shortcut | Action |
-|----------|--------|
-| Cmd/Ctrl + Enter | Run mission |
-| Cmd/Ctrl + Shift + D | Full diagnostics |
-| Esc | Clear command output |
+1. Install [Node.js 18+](https://nodejs.org) if you do not have it.
+2. Browser mode works immediately (mock data when not in Electron).
+3. Desktop mode needs Electron (downloaded on first `start:desktop`).
+4. GitHub Actions tab: paste a classic PAT with `repo` + `workflow` scopes.
+5. Email scan (21-day body extraction): desktop on macOS + Mail permission.
+
+## Tabs
+
+Overview · Diagnostics · Email & Leads · **Layers** · **Actions** · Swarm · Git · Command

@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# From the Chicas-Map repo root:
+#   ./start-mission-control          browser
+#   ./start-mission-control desktop  Electron
+set -e
+ROOT="$(cd "$(dirname "$0")" && pwd)"
+cd "$ROOT/mission-control"
+MODE="${1:-}"
+if [ "$MODE" = "desktop" ] || [ "$MODE" = "-d" ] || [ "$MODE" = "--desktop" ]; then
+  exec ./run-desktop
+fi
+exec ./run

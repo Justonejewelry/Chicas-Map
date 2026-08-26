@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Easiest way to start Mission Control (browser).
+set -e
+cd "$(dirname "$0")"
+if ! command -v node >/dev/null 2>&1; then
+  echo "Node.js 18+ is required. Install from https://nodejs.org"
+  exit 1
+fi
+if [ ! -d node_modules/vite ] || [ ! -d node_modules/react ]; then
+  echo "Installing dependencies (one-time)…"
+  npm install
+fi
+echo ""
+echo "  Chica Mission Control"
+echo "  → http://127.0.0.1:5173"
+echo ""
+exec npm start
