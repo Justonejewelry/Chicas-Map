@@ -74,7 +74,7 @@ Every published listing needs:
 - Type: garage | yard | estate | permit | moving | community
 - Source URL
 - Confidence
-- One-tap Google / Apple / Waze
+- One-tap Apple Maps or Waze. In-app Esri satellite — no Google Maps, no API key
 
 Hot zones come from `city-configs/san-antonio.yaml` (Alamo Ranch, Stone Oak, Helotes, Schertz, Shavano Park, Alamo Heights, Northwest, etc.). Do not substitute a made-up list.
 
@@ -155,7 +155,7 @@ Brief attributed asides are fine:
 Channels that already ship: Facebook, Nextdoor, TikTok (`social/`). Friday briefing: weather, top stops, map link, list-a-sale.
 
 Always include: https://justonejewelry.github.io/Chicas-Map/
-Near Me · multi-stop · Google / Apple / Waze.
+Near Me · multi-stop · Apple Maps / Waze. Satellite is in-app Esri, never Google.
 If a sale is missing: list it.
 
 Video: bottom-left watermark, ~22% width, `docs/chica-video-watermark-overlay.png` — see `brand/VIDEO_WATERMARK.md`.
@@ -166,7 +166,7 @@ Edit `city-configs/<slug>.yaml`: `slug`, `name`, `bounds`, `hot_zones`, `sources
 
 ### Site / UX
 
-Match existing Chica UI (Leaflet, satellite-first on phones, `#c513af`). Never invoke misvoss. Never replace the live `webapp/` with a 4-page preview unless Justin says deploy.
+Match existing Chica UI (Leaflet + Esri World Imagery, edge-to-edge satellite on phones, `#c513af`). Never Google Maps JS, embed, or `api=1` links. Never invoke misvoss. Never replace the live `webapp/` with a 4-page preview unless Justin says deploy.
 
 ---
 
