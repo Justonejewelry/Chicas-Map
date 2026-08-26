@@ -1,6 +1,6 @@
 {
   "name": "chica-mission-control",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "description": "Local-first Mac operations center for Chicas Map",
   "main": "electron/main.cjs",
@@ -10,16 +10,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@vitejs/plugin-react": "latest",
-    "vite": "latest",
-    "react": "latest",
-    "react-dom": "latest"
+    "@vitejs/plugin-react": "4.3.4",
+    "vite": "5.4.14",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
   },
   "devDependencies": {
-    "concurrently": "latest",
-    "electron": "latest",
-    "electron-builder": "latest",
-    "wait-on": "latest"
+    "concurrently": "8.2.2",
+    "electron": "31.7.7",
+    "electron-builder": "24.13.3",
+    "wait-on": "7.2.0"
   },
   "build": {
     "appId": "com.chicasmap.missioncontrol",
