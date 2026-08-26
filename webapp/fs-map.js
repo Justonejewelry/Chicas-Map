@@ -1,11 +1,12 @@
-/* Chicas Map — viewport Full screen. Button is on document.body so React
-   cannot steal it. Immersive mode uses html.chica-fs-on (React never
-   overwrites that). iOS has no native Fullscreen API — CSS is the real path. */
+/* Chicas Map — viewport Full screen.
+   Button is on document.body (React cannot steal it).
+   Immersive mode uses html.chica-fs-on (React never overwrites that).
+   iOS has no native Fullscreen API — CSS is the real path. */
 (function () {
   var BTN_ID = "chica-fs-btn";
   var STYLE_ID = "chica-fs-inline-style";
   var HTML_ON = "chica-fs-on";
-  var AUTO = "chicaFsAuto";
+  var ready = false;
 
   function cssText() {
     return [
@@ -32,14 +33,6 @@
       "}",
       "html." + HTML_ON + " .leaflet-container{z-index:0}",
     ].join("");
-  }
-
-  function ensureStyle() {
-    if (document.getElementById(STYLE_ID)) return;
-    var s = document.createElement("style");
-    s.id = STYLE_ID;
-    s.textContent = cssText();
-    document.head.appendChild(s);
   }
 
   function onMapPath() {
@@ -75,7 +68,9 @@
   }
 
   function enterCss() {
-    document.documentElement.classList.add(HTML_ON);
+    if (!document.documentElement.classList.contains(HTML_ON)) {
+      document.documentElement.classList.add(HTML_ON);
+    }
     document.body.style.overflow = "hidden";
     resize();
   }
@@ -95,8 +90,18 @@
   function label(btn) {
     if (!btn) return;
     var on = isOn();
-    btn.textContent = on ? "Exit" : "Full screen";
-    btn.setAttribute("aria-pressed", on ? "true" : "false");
+    var next = on ? "Exit" : "Full screen";
+    if (btn.textContent !== next) btn.textContent = next;
+    var pressed = on ? "true" : "false";
+    if (btn.getAttribute("aria-pressed") !== pressed) btn.setAttribute("aria-pressed", pressed);
+  }
+
+  function ensureStyle() {
+    if (document.getElementById(STYLE_ID)) return;
+    var s = document.createElement("style");
+    s.id = STYLE_ID;
+    s.textContent = cssText();
+    (document.head || document.documentElement).appendChild(s);
   }
 
   function ensureBtn() {
@@ -115,23 +120,19 @@
         ev.stopPropagation();
         if (isOn()) {
           exitAll();
-          label(btn);
-          return;
-        }
-        enterCss();
-        var host = hostEl() || document.documentElement;
-        var req = host.requestFullscreen || host.webkitRequestFullscreen;
-        if (req) {
-          Promise.resolve(req.call(host, { navigationUI: "hide" })).catch(function () {});
+        } else {
+          enterCss();
+          var host = hostEl() || document.documentElement;
+          var req = host.requestFullscreen || host.webkitRequestFullscreen;
+          if (req) {
+            Promise.resolve(req.call(host, { navigationUI: "hide" })).catch(function () {});
+          }
         }
         label(btn);
       },
       true,
     );
     document.addEventListener("fullscreenchange", function () {
-      if (!fsEl() && document.documentElement.classList.contains(HTML_ON) === false) {
-        /* native exit only */
-      }
       label(btn);
     });
     document.addEventListener("webkitfullscreenchange", function () {
@@ -146,36 +147,41 @@
     return btn;
   }
 
+  function teardown() {
+    var leftover = document.getElementById(BTN_ID);
+    if (leftover) leftover.remove();
+    document.documentElement.classList.remove(HTML_ON);
+    document.body.style.overflow = "";
+    ready = false;
+  }
+
   function mount() {
     ensureStyle();
     if (!onMapPath()) {
-      var leftover = document.getElementById(BTN_ID);
-      if (leftover) leftover.remove();
-      document.documentElement.classList.remove(HTML_ON);
-      return;
+      teardown();
+      return false;
     }
-    if (!mapEl()) return;
+    if (!mapEl()) return false;
     var btn = ensureBtn();
-    if (!document.documentElement.dataset[AUTO]) {
-      document.documentElement.dataset[AUTO] = "1";
-      enterCss();
-    }
+    enterCss();
     label(btn);
+    ready = true;
+    return true;
   }
 
-  var mo = new MutationObserver(function () {
-    mount();
-  });
-  mo.observe(document.documentElement, { childList: true, subtree: true });
-  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", mount);
-  else mount();
+  function boot() {
+    if (mount()) return;
+    var n = 0;
+    var tick = setInterval(function () {
+      n += 1;
+      if (mount() || n > 60) clearInterval(tick);
+    }, 200);
+  }
+
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
+  else boot();
   window.addEventListener("popstate", function () {
-    setTimeout(mount, 40);
+    ready = false;
+    setTimeout(boot, 40);
   });
-  var n = 0;
-  var tick = setInterval(function () {
-    n += 1;
-    mount();
-    if (mapEl() || n > 48) clearInterval(tick);
-  }, 250);
 })();
