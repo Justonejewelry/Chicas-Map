@@ -4,10 +4,10 @@
   "public": [
     {
       "address": "3537 Green Spring Drive, San Antonio, TX",
-      "dates": "2026-08-25 – 2026-08-27",
-      "date_from": "2026-08-25",
-      "date_to": "2026-08-27",
-      "end_date": "2026-08-27",
+      "dates": "2026-08-26 – 2026-08-28",
+      "date_from": "2026-08-26",
+      "date_to": "2026-08-28",
+      "end_date": "2026-08-28",
       "hours": "",
       "title": "Estate sale/moving sale -antiques too",
       "details": "QR Code Link to This Post Selling only at dates 29,30th of August at estate sale from 7 am-3pm. Sorry too busy to reply to emails. Seeking to sale furniture in home. CASH ONLY. I have a TV, two area rugs, two couches ( one vintage) , three vintage armchairs , massage table, hutch, dresser, coffee table All must go! As well as some home apppliances, mirrors, sports equipment, e-bike (just needs min",
@@ -28,36 +28,11 @@
       "external_id": "cl-salemovingsaleiylkr45drf81ty7rajr8d2"
     },
     {
-      "address": "3310 Rizzoli Ave, San Antonio, TX",
-      "dates": "2026-08-23 – 2026-08-25",
-      "date_from": "2026-08-23",
-      "date_to": "2026-08-25",
-      "end_date": "2026-08-25",
-      "hours": "8:00 AM – 2:00 PM",
-      "title": "Moving/Estate Sale",
-      "details": "QR Code Link to This Post Join us this Saturday from 8am-2pm and Sunday 8am-12pm for our moving/estate sale at 3310 Rizzoli Ave, San Antonio, TX 78261. No reasonable offers will be refused. Items uncles furniture, refrigerator, couches, end tables, chairs, etc.",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/san-antonio-moving-estate-sale/gMWdVpFwC7qqBLZL82sHeZ",
-      "type": "estate",
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 29.666488,
-      "lon": -98.431292,
-      "categories": [
-        "estate-sale",
-        "moving-sale"
-      ],
-      "preferred": false,
-      "boost": false,
-      "geocode": "source",
-      "external_id": "cl-ovingestatesalegmwdvpfwc7qqblzl82shez"
-    },
-    {
       "address": "Hunters Circle, San Antonio, TX",
-      "dates": "2026-08-25 – 2026-08-27",
-      "date_from": "2026-08-25",
-      "date_to": "2026-08-27",
-      "end_date": "2026-08-27",
+      "dates": "2026-08-26 – 2026-08-28",
+      "date_from": "2026-08-26",
+      "date_to": "2026-08-28",
+      "end_date": "2026-08-28",
       "hours": "",
       "title": "Moving Sale - Hunters Creek Subdivision",
       "details": "QR Code Link to This Post Moving Sale - Lots of Unique Items Furniture - Antiques and Modern Mens and Womens Clothing Kids Toys Collectibles - Trading Cards and Signed Jerseys Yard Equipment",
@@ -98,8 +73,8 @@
       "in_person": false,
       "external_id": "eso-2457368",
       "categories": [
-        "estate-sale",
-        "online-auction"
+        "online-auction",
+        "estate-sale"
       ]
     },
     {
@@ -152,89 +127,17 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 29.481965685627024,
-      "lon": -98.5435020425886,
+      "lat": 29.4840857,
+      "lon": -98.5421089,
       "geocode": "source",
       "company": "Caring Transitions of San Antonio Central",
       "in_person": true,
       "external_id": "eso-2457373"
-    },
-    {
-      "address": "1711 Sandringham, San Antonio, TX",
-      "dates": "2026-08-23 – 2026-08-25",
-      "date_from": "2026-08-23",
-      "date_to": "2026-08-25",
-      "end_date": "2026-08-25",
-      "hours": null,
-      "title": "Estate sale!!! 1711 Sandringham San Antonio, TX  78258",
-      "details": "QR Code Link to This Post Everything goes! Furniture, leather chairs, beds, comics, tools, collectibles and more!",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/san-antonio-estate-sale-1711/jFVb4fbMTnFq1LsxzMPFph",
-      "photos": 0,
-      "type": "estate",
-      "categories": [
-        "estate-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 29.611918,
-      "lon": -98.519519,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-estatesale1711jfvb4fbmtnfq1lsxzmpfph"
-    },
-    {
-      "address": "315 Byrnes Dr near North Vandiver, San Antonio, TX",
-      "dates": "2026-08-23 – 2026-08-25",
-      "date_from": "2026-08-23",
-      "date_to": "2026-08-25",
-      "end_date": "2026-08-25",
-      "hours": null,
-      "title": "Multi Generational Estate/Yard/Garage Sales",
-      "details": "QR Code Link to This Post Saturday August 22nd &amp; Sunday August 23rd at 9am we are hosting a huge 4 generational estate/yard/garage sale at 315 Byrnes Dr . We have alot of items for sale new, old , vintage, antique, and unique pieces. There is more than can be put out due to space I will have a \"short list \" posted shortly of a few of the items with prices which are all negotiable and the more ",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/san-antonio-multi-generational-estate/pk4df6yixsQC8B1CmADwDR",
-      "photos": 0,
-      "type": "estate",
-      "categories": [
-        "estate-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 29.4821,
-      "lon": -98.4554,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-nerationalestatepk4df6yixsqc8b1cmadwdr"
-    },
-    {
-      "address": "US 35n near Cibilo Valley exit, San Antonio, TX",
-      "dates": "2026-08-23 – 2026-08-25",
-      "date_from": "2026-08-23",
-      "date_to": "2026-08-25",
-      "end_date": "2026-08-25",
-      "hours": null,
-      "title": "Unbelievable collection liquidation",
-      "details": "QR Code Link to This Post Attention Resellers!!! Huge sell off liquidation of decades of collecting!!! Starting Saturday-Sunday 22nd and 23rd Booths 383 and 306 at Busseys flea market Front aisle right of the parking lot. See pics. More and more new inventory every weekend until December.",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/new-braunfels-unbelievable-collection/6mxMeJuTorrrK9csPPdpLv",
-      "photos": 0,
-      "type": "estate",
-      "categories": [
-        "estate-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 29.6636,
-      "lon": -98.1672,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-evablecollection6mxmejutorrrk9csppdplv"
     },
     {
       "address": "15316 FM 725 near Indian Trail, San Antonio, TX",
@@ -262,10 +165,10 @@
     },
     {
       "address": "6151 NW Loop 410, San Antonio, TX",
-      "dates": "2026-08-25 – 2026-08-27",
-      "date_from": "2026-08-25",
-      "date_to": "2026-08-27",
-      "end_date": "2026-08-27",
+      "dates": "2026-08-26 – 2026-08-28",
+      "date_from": "2026-08-26",
+      "date_to": "2026-08-28",
+      "end_date": "2026-08-28",
       "hours": null,
       "title": "Alamo Craft Co. Antiques & More",
       "details": "QR Code Link to This Post OPEN TUES - SAT 10AM-6PM 6151 NW Loop 410, #302 SATX 78238 A hidden gem in San Antonio! Here you'll find unique antiques, vintage items, collectibles, hand-crafted items &amp; so much more. Come by &amp; see all the fun stuff! Ask for your frequent buyer card &amp; get punches with every purchase.",
@@ -286,10 +189,10 @@
     },
     {
       "address": "1331 CH Matthies JR, San Antonio, TX",
-      "dates": "2026-08-25 – 2026-08-27",
-      "date_from": "2026-08-25",
-      "date_to": "2026-08-27",
-      "end_date": "2026-08-27",
+      "dates": "2026-08-26 – 2026-08-28",
+      "date_from": "2026-08-26",
+      "date_to": "2026-08-28",
+      "end_date": "2026-08-28",
       "hours": null,
       "title": "Craft Fair Vendor Market Handmade Market",
       "details": "QR Code Link to This Post Come support local at our craft Fair with homemade crafts, honey, jewelry, hats, clothes, handbags and so much more. You will find things here you do not see at every craft fair, local artists, help local businesses. Over 20 Vendors Seguin Elks Lodge 1331 CH Matthies JR, Seguin, TX (Off of 46, behind RBFCU &amp; Cosmic Carwash) August 29th 10am to 3pm this is all indoor a",
@@ -307,54 +210,6 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "cl-airvendormarketk1by7s7rugqpttxzgrdwqo"
-    },
-    {
-      "address": "4335 Ullman dr 78219 near E. Houston, San Antonio, TX",
-      "dates": "2026-08-23 – 2026-08-25",
-      "date_from": "2026-08-23",
-      "date_to": "2026-08-25",
-      "end_date": "2026-08-25",
-      "hours": null,
-      "title": "Front Yard and Backyard Garage Sell",
-      "details": "QR Code Link to This Post Each item has different prices$$$$ Women and men closing shoes tennis shoes house hold items refrigerators bug and small all different Tools. Electric tools, hand tools, skilled trades tools. Work carts. Lawn equipment. Building material doors",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/san-antonio-front-yard-and-backyard/ic9MiALG7W92gjgjiSPeDZ",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 29.4492,
-      "lon": -98.3446,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-yardandbackyardic9mialg7w92gjgjispedz"
-    },
-    {
-      "address": "748 Fuller Ln, San Antonio, TX",
-      "dates": "2026-08-23 – 2026-08-25",
-      "date_from": "2026-08-23",
-      "date_to": "2026-08-25",
-      "end_date": "2026-08-25",
-      "hours": null,
-      "title": "HUGE DOWNSIZING SALE — EVERYTHING PRICED TO SELL QUICK!",
-      "details": "QR Code Link to This Post 🏡💥 HUGE DOWNSIZING SALE — EVERYTHING PRICED TO SELL QUICK! 💥🏡 We’re downsizing, which means LOTS of stuff needs to go! We have a huge variety of items, and everything is priced to sell. Come early for the best selection! 📍 748 Fuller Ln, Adkins, TX 78101 📅 Friday, 8/21 | 8:00 AM – 2:00 PM 📅 Saturday, 8/22 | 8:00 AM – 4:00 PM 📅 Sunday, 8/23 | 8:00 AM – 2:00 PM 🛍️ ITEMS INC",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/adkins-huge-downsizing-sale-everything/t299pMZNw1Wk1uU4UkW6gZ",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 29.358,
-      "lon": -98.247,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-gsaleeverythingt299pmznw1wk1uu4ukw6gz"
     },
     {
       "address": "San Antonio, TX 78203",
@@ -377,8 +232,8 @@
       "in_person": false,
       "external_id": "eso-2458919",
       "categories": [
-        "estate-sale",
-        "online-auction"
+        "online-auction",
+        "estate-sale"
       ]
     },
     {
@@ -402,16 +257,16 @@
       "in_person": false,
       "external_id": "eso-2458946",
       "categories": [
-        "estate-sale",
-        "online-auction"
+        "online-auction",
+        "estate-sale"
       ]
     },
     {
       "address": "144 Ellen St. near Center St., San Antonio, TX",
-      "dates": "2026-08-25 – 2026-08-27",
-      "date_from": "2026-08-25",
-      "date_to": "2026-08-27",
-      "end_date": "2026-08-27",
+      "dates": "2026-08-26 – 2026-08-28",
+      "date_from": "2026-08-26",
+      "date_to": "2026-08-28",
+      "end_date": "2026-08-28",
       "hours": null,
       "title": "Miller Bobcat and more.",
       "details": "QR Code Link to This Post Must sale! 15' by 30' agriculture cover (tarp) for $80. Brand new and still in the unopened bag. 4 shock absorbing turnbuckles plus turnbuckles, used to tie down a motorcycle on a trailer. $80 8. US &amp; Metric marked socket organizers for $30. Hang on a pegboard or lay in a drawer. Fitted for 1/4\" , 3/8\", 1/2\" drives. Calibrated from 1 1/4\" to 3/16\". Designed to fit sta",
@@ -431,35 +286,11 @@
       "external_id": "cl-rbobcatandmore4iejvpgge84juhgn8uvewv"
     },
     {
-      "address": "Firefly near Lida Rose, San Antonio, TX",
-      "dates": "2026-08-23 – 2026-08-25",
-      "date_from": "2026-08-23",
-      "date_to": "2026-08-25",
-      "end_date": "2026-08-25",
-      "hours": null,
-      "title": "SUMMER CLEAN OUT- Garage Sale",
-      "details": "QR Code Link to This Post NO EARLY BIRDS PLEASE Everything priced to SELL- come make offers. Small electronics Bike rack Weight bench Weights Treadmill Metal detector Tent ‘04 Tahoe LT 3rd row seats Basketball defend men Toys Stuffies Men’s/ women’s/ boy and girl teen clothes Men’s Nike shoes- mostly sizes 12/12.5 Some women’s shoes Tools Artwork Lots of odds and ends",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/san-antonio-summer-clean-out-garage-sale/tsq9oUpa6ZmC4PTdczss78",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 29.545317,
-      "lon": -98.506508,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-noutgaragesaletsq9oupa6zmc4ptdczss78"
-    },
-    {
       "address": "Babcock and Prue Road, San Antonio, TX",
-      "dates": "2026-08-25 – 2026-08-27",
-      "date_from": "2026-08-25",
-      "date_to": "2026-08-27",
-      "end_date": "2026-08-27",
+      "dates": "2026-08-26 – 2026-08-28",
+      "date_from": "2026-08-26",
+      "date_to": "2026-08-28",
+      "end_date": "2026-08-28",
       "hours": null,
       "title": "Selling Some Medical Equipment",
       "details": "QR Code Link to This Post Hello!!!! I'm moving and I have some medical Equipment I need gone ASAP I got 2 shower chairs still brand new I assembled them and thought they would work but the person I got them for didn't work out so now I need to sell them ASAP cause as I said in the beginning I'm moving I also have quite a few wheelchairs that I got for sale as well please if interested please conta",
@@ -478,30 +309,6 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "cl-lingsomemedicalmrhlmlgw5okcyv1cp4niyq"
-    },
-    {
-      "address": "3533 Irish Creek Rd, San Antonio, TX",
-      "dates": "2026-08-23 – 2026-08-25",
-      "date_from": "2026-08-23",
-      "date_to": "2026-08-25",
-      "end_date": "2026-08-25",
-      "hours": null,
-      "title": "Yard Sale - Schertz TX",
-      "details": "QR Code Link to This Post 3533 Irish Creek Road, Schertz,TX Household and kitchen items, stuffed animals, furniture, women’s clothes and shoes, jewelry, purses, CDs, vinyl, and many other items.",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/schertz-yard-sale-schertz-tx/mMzk9zm3ASvAx5GM6aMKjL",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 29.579,
-      "lon": -98.2778,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-dsaleschertztxmmzk9zm3asvax5gm6amkjl"
     },
     {
       "address": "San Antonio, TX 78201",
@@ -641,13 +448,13 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 29.636401252137983,
-      "lon": -98.30961883166623,
+      "lat": 29.632933771002516,
+      "lon": -98.30835796817249,
       "geocode": "source",
       "company": "Denny Harrison Estate Sales & Auctions",
       "in_person": true,
@@ -655,10 +462,10 @@
     },
     {
       "address": "431 sharmain pl, San Antonio, TX",
-      "dates": "2026-08-25 – 2026-08-27",
-      "date_from": "2026-08-25",
-      "date_to": "2026-08-27",
-      "end_date": "2026-08-27",
+      "dates": "2026-08-26 – 2026-08-28",
+      "date_from": "2026-08-26",
+      "date_to": "2026-08-28",
+      "end_date": "2026-08-28",
       "hours": null,
       "title": "Parrot garage sale",
       "details": "QR Code Link to This Post First to ask about the Mexicans get a half price on the second Mexican they buy, if they buy both it would be 600 full price is 800 show contact info",
@@ -703,14 +510,14 @@
     },
     {
       "address": "San Antonio, TX",
-      "dates": "2026-08-24 – 2026-08-28",
-      "date_from": "2026-08-24",
-      "date_to": "2026-08-28",
-      "end_date": "2026-08-28",
-      "title": "Art, Flatware & Everything In Between Online Auction by Caring Transitions - Ends 8/27!",
-      "details": "Online Only Auction",
+      "dates": "2026-08-26 – 2026-08-26",
+      "date_from": "2026-08-26",
+      "date_to": "2026-08-26",
+      "end_date": "2026-08-26",
+      "title": "Burnet Road Storage",
+      "details": "Auction",
       "source": "EstateSales.net",
-      "url": "https://www.estatesales.net/TX/New Braunfels/78130/5050107",
+      "url": "https://www.estatesales.net/TX/Austin/78757/5037732",
       "photos": 0,
       "type": "estate",
       "categories": [
@@ -722,6 +529,142 @@
       "lon": -98.4936,
       "geocode": "city-center",
       "company": null
+    },
+    {
+      "address": "314 Spencer Ln, San Antonio, TX 78201",
+      "dates": "2026-08-27 – 2026-08-30",
+      "date_from": "2026-08-27",
+      "date_to": "2026-08-30",
+      "end_date": "2026-08-30",
+      "title": "Massive 4-Day Warehouse Estate Sale",
+      "details": "",
+      "source": "YardSaleSearch",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196350877",
+      "photos": 0,
+      "type": "estate",
+      "confidence": 0.88,
+      "status": "verified",
+      "lat": 29.4840857,
+      "lon": -98.5421089,
+      "geocode": "source",
+      "external_id": "yss-314spencerlnsanantoniotx78201-2026-08-27",
+      "categories": [
+        "estate-sale"
+      ]
+    },
+    {
+      "address": "San Antonio, TX 78228",
+      "dates": "2026-08-28 – 2026-08-30",
+      "date_from": "2026-08-28",
+      "date_to": "2026-08-30",
+      "end_date": "2026-08-30",
+      "title": "A Lifetime Of Treasures In Nw Sunshine Estates",
+      "details": "",
+      "source": "YardSaleSearch",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196361705",
+      "photos": 0,
+      "type": "estate",
+      "confidence": 0.85,
+      "status": "verified",
+      "lat": 29.47782,
+      "lon": -98.55267,
+      "geocode": "source",
+      "external_id": "yss-sanantoniotx78228-2026-08-28",
+      "categories": [
+        "estate-sale"
+      ]
+    },
+    {
+      "address": "2485 TX-46, Seguin, TX 78155",
+      "dates": "Thu Aug 27 – Sat Aug 29",
+      "date_from": "08/27/2026",
+      "date_to": "08/29/2026",
+      "end_date": "2026-08-29",
+      "title": "GUNSMITHING SHOP CLOSING ( ESTATE SALE LIQUIDATION )",
+      "details": "",
+      "source": "GarageSaleFinder",
+      "url": "https://garagesalefinder.com/s/N9gl2/2485-tx46-seguin-tx-78155",
+      "photos": 0,
+      "type": "estate",
+      "confidence": 0.65,
+      "status": "verified",
+      "lat": 29.4241,
+      "lon": -98.4936,
+      "geocode": "city-center"
+    },
+    {
+      "address": "hidden, San Antonio, TX 78228",
+      "dates": "2026-08-28 – 2026-08-30",
+      "date_from": "2026-08-28",
+      "date_to": "2026-08-30",
+      "end_date": "2026-08-30",
+      "hours": "2026-08-28 9:00 am-7:00 pm; 2026-08-29 9:00 am-7:00 pm; 2026-08-30 9:00 am-4:00 pm",
+      "title": "A Lifetime of Treasures in NW Sunshine Estates",
+      "details": "Mom & Dad's lifetime of treasures. The old-fashioned way - everything cherished and well taken care of. A wonderful, eclectic variety! Vintage cookware, serving ware, crystal & glass , copper & brass, porcelain & china, collectible and decorative ite...",
+      "source": "EstateSales.org",
+      "url": "https://estatesales.org/estate-sales/tx/san-antonio/78228/a-lifetime-of-treasures-in-2459269",
+      "photos": 0,
+      "type": "estate",
+      "categories": [
+        "estate-sale",
+        "in-person"
+      ],
+      "confidence": 0.9,
+      "status": "verified",
+      "lat": 29.478433665432988,
+      "lon": -98.55177909378116,
+      "geocode": "source",
+      "company": null,
+      "in_person": true,
+      "external_id": "eso-2459269"
+    },
+    {
+      "address": "5006 Pine Lake Drive near Woodlake Parkway, San Antonio, TX",
+      "dates": "2026-08-26 – 2026-08-28",
+      "date_from": "2026-08-26",
+      "date_to": "2026-08-28",
+      "end_date": "2026-08-28",
+      "hours": null,
+      "title": "Big Yard Sale #9 1/2",
+      "details": "QR Code Link to This Post Tools, Ladders, Garden Gear, Antique Clocks, Antique Dulcimer, Antique and Unique Furnishings, Motorcycle Gear, Costumes for Adults &amp; Dogs, Terra Cotta pots, Brand New Building Materials, Roller Skates, Unicycle, Decor Items, Kitchen Gear, Fine China sets, Collectibles and more! **WILL UPDATE PHOTOS AS WE PULL STUFF OUT FOR THE SALE** Please no early birds! 10am to 3p",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/san-antonio-big-yard-sale-1/aWvs3P7pSFay4vunqyFvbB",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 29.4688,
+      "lon": -98.3486,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-obigyardsale1awvs3p7psfay4vunqyfvbb"
+    },
+    {
+      "address": "111 Country Club Ln, San Antonio, TX",
+      "dates": "2026-08-26 – 2026-08-28",
+      "date_from": "2026-08-26",
+      "date_to": "2026-08-28",
+      "end_date": "2026-08-28",
+      "hours": null,
+      "title": "Yard Sale w/ Vintage, Kids Items & MORE",
+      "details": "QR Code Link to This Post We’re having a garage sale this Saturday! 🛍️ There will be a little bit of everything: furniture, vintage finds, kids’ toys, puzzles, kitchen items, sports equipment, home decor and more! If you’re in the area, come by and say hi, browse around, and hopefully find a few treasures. 😊 📍 111 Country Club Ln, San Antonio, TX 78232 📅 Saturday, August 29th ⏰ 8 AM - 2 PM Here ar",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/san-antonio-yard-sale-vintage-kids/hCMUnAYCEH5hJBseHcHtrV",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 29.6021,
+      "lon": -98.506036,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-salevintagekidshcmunayceh5hjbsehchtrv"
     }
   ],
   "permits": [
@@ -2649,106 +2592,6 @@
       "geocode": "city-open-data",
       "hours": "9 a.m. – 6 p.m. (city rule)",
       "is_estate": false
-    },
-    {
-      "address": "8439 STAR CREEK DR, San Antonio, TX 78251",
-      "dates": "Permit issued Tue Aug 11 · typical use within 2 weeks",
-      "date_from": "2026-08-11",
-      "date_to": "2026-08-27",
-      "end_date": "2026-08-27",
-      "title": "City-permitted estate sale",
-      "details": "Official City of San Antonio permit flagged as estate / professional liquidation. Legal hours 9 a.m.–6 p.m. Exact sale day not published — verify on-site.",
-      "source": "Open Data SA (Estate / Garage Sale permit)",
-      "permit_number": "BLDG-GS-PMT-13820076",
-      "primary_contact": "San Antonio Estate Sales LLC",
-      "photos": 0,
-      "type": "estate",
-      "categories": [
-        "estate-sale",
-        "permit"
-      ],
-      "confidence": 0.92,
-      "status": "verified",
-      "lat": 29.465002,
-      "lon": -98.659155,
-      "geocode": "city-open-data",
-      "hours": "9 a.m. – 6 p.m. (city rule)",
-      "is_estate": true
-    },
-    {
-      "address": "1211 CHILTON, San Antonio, TX 78251",
-      "dates": "Permit issued Tue Aug 11 · typical use within 2 weeks",
-      "date_from": "2026-08-11",
-      "date_to": "2026-08-27",
-      "end_date": "2026-08-27",
-      "title": "City-permitted estate sale",
-      "details": "Official City of San Antonio permit flagged as estate / professional liquidation. Legal hours 9 a.m.–6 p.m. Exact sale day not published — verify on-site.",
-      "source": "Open Data SA (Estate / Garage Sale permit)",
-      "permit_number": "BLDG-GS-PMT-13820078",
-      "primary_contact": "Complete Estate Sale Services",
-      "photos": 0,
-      "type": "estate",
-      "categories": [
-        "estate-sale",
-        "permit"
-      ],
-      "confidence": 0.92,
-      "status": "verified",
-      "lat": 29.448602,
-      "lon": -98.658341,
-      "geocode": "city-open-data",
-      "hours": "9 a.m. – 6 p.m. (city rule)",
-      "is_estate": true
-    },
-    {
-      "address": "3814 PIPERS FIELD, San Antonio, TX 78251",
-      "dates": "Permit issued Tue Aug 11 · typical use within 2 weeks",
-      "date_from": "2026-08-11",
-      "date_to": "2026-08-27",
-      "end_date": "2026-08-27",
-      "title": "City-permitted garage / yard sale",
-      "details": "Official City of San Antonio garage-sale permit. Legal sale hours 9 a.m.–6 p.m. Exact sale day not published in open data — verify on-site or with seller.",
-      "source": "Open Data SA (Garage Sale permit)",
-      "permit_number": "BLDG-GS-PMT-13820077",
-      "primary_contact": "DeAnna K Keesee",
-      "photos": 0,
-      "type": "permit",
-      "categories": [
-        "garage-sale",
-        "permit"
-      ],
-      "confidence": 0.9,
-      "status": "verified",
-      "lat": 29.471154,
-      "lon": -98.643544,
-      "geocode": "city-open-data",
-      "hours": "9 a.m. – 6 p.m. (city rule)",
-      "is_estate": false
-    },
-    {
-      "address": "9635 FIVE FORKS, San Antonio, TX 78245",
-      "dates": "Permit issued Tue Aug 11 · typical use within 2 weeks",
-      "date_from": "2026-08-11",
-      "date_to": "2026-08-27",
-      "end_date": "2026-08-27",
-      "title": "City-permitted garage / yard sale",
-      "details": "Official City of San Antonio garage-sale permit. Legal sale hours 9 a.m.–6 p.m. Exact sale day not published in open data — verify on-site or with seller.",
-      "source": "Open Data SA (Garage Sale permit)",
-      "permit_number": "BLDG-GS-PMT-13820079",
-      "primary_contact": "Megan Marie Escatel",
-      "photos": 0,
-      "type": "permit",
-      "categories": [
-        "garage-sale",
-        "permit"
-      ],
-      "confidence": 0.9,
-      "status": "verified",
-      "lat": 29.414561,
-      "lon": -98.67383,
-      "geocode": "city-open-data",
-      "hours": "9 a.m. – 6 p.m. (city rule)",
-      "is_estate": false
     }
   ],
   "hot_zones": [
@@ -2773,11 +2616,11 @@
     "gsalr.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 112,
+  "total_locations": 106,
   "status": "live",
-  "date": "2026-08-25",
-  "last_refresh": "2026-08-25T06:30:30-05:00",
+  "date": "2026-08-26",
+  "last_refresh": "2026-08-26T05:25:29-05:00",
   "note": "Cleaned 33-pin Saturday live swap 2026-08-22 10:57 CDT. Merged Potranco/Moonlit/Craftsman. Dropped stores, auctions, warehouse, flea, single-item. Added Rita Ave + Jack Bean.",
-  "permit_total": 81,
-  "permit_estate_count": 4
+  "permit_total": 77,
+  "permit_estate_count": 2
 }

@@ -34,8 +34,8 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
@@ -45,30 +45,6 @@
       "company": "Blue Moon Estate Sale Company",
       "in_person": true,
       "external_id": "yss-2708springwoodlngeorgetowntx78628-2026-08-28"
-    },
-    {
-      "address": "4312 Vaughan St., Austin, TX",
-      "dates": "2026-08-23 – 2026-08-25",
-      "date_from": "2026-08-23",
-      "date_to": "2026-08-25",
-      "end_date": "2026-08-25",
-      "hours": null,
-      "title": "FANCY MODERN ESTATE SALE!",
-      "details": "QR Code Link to This Post Step inside this beautiful Austin, Texas estate and discover a modern home packed with household treasures! Whether you’re furnishing a new space, upgrading your home, or simply love the thrill of finding a great deal, this is a sale you’ll want to explore. Throughout the home you’ll find a great selection of modern furniture, home décor, kitchenware, small appliances, ev",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/austin-fancy-modern-estate-sale/7RgX56DchQ2SqdBHvpApUM",
-      "photos": 0,
-      "type": "estate",
-      "categories": [
-        "estate-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.3085,
-      "lon": -97.6849,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-odernestatesale7rgx56dchq2sqdbhvpapum"
     },
     {
       "address": "Pflugerville, TX 78660",
@@ -91,8 +67,8 @@
       "in_person": false,
       "external_id": "eso-2458599",
       "categories": [
-        "estate-sale",
-        "online-auction"
+        "online-auction",
+        "estate-sale"
       ]
     },
     {
@@ -116,8 +92,8 @@
       "in_person": false,
       "external_id": "eso-2458509",
       "categories": [
-        "estate-sale",
-        "online-auction"
+        "online-auction",
+        "estate-sale"
       ]
     },
     {
@@ -152,13 +128,13 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.65436618192598,
-      "lon": -97.77302185129398,
+      "lat": 30.653961941897233,
+      "lon": -97.77349174639562,
       "geocode": "source",
       "company": "Golden Soul Estate Sales",
       "in_person": true,
@@ -190,31 +166,6 @@
       "external_id": "cl-salemovingsaletetbtsvuijzanftxbqpjbx"
     },
     {
-      "address": "1510 W St Johns Ave near Arroyo secco, Austin, TX",
-      "dates": "2026-08-23 – 2026-08-25",
-      "date_from": "2026-08-23",
-      "date_to": "2026-08-25",
-      "end_date": "2026-08-25",
-      "hours": null,
-      "title": "Huge Moving Sale",
-      "details": "QR Code Link to This Post Huge super cool fun eclectic moving sale. Everything’s ( almost ) negotiable. Come get some cool stuff. Gifts? Kitchenwares… tons, outdoor fun, art- ish, interesting, things that make ya say hmmmm!",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/austin-huge-moving-sale/faBi8ZKWdVZD1C47XghwzH",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale",
-        "moving-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.343433,
-      "lon": -97.72738,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-hugemovingsalefabi8zkwdvzd1c47xghwzh"
-    },
-    {
       "address": "10212 Amwell Cove, Austin, TX",
       "dates": "2026-08-25 – 2026-08-27",
       "date_from": "2026-08-25",
@@ -240,56 +191,6 @@
       "external_id": "cl-ofurnituretoolsnzjr4vjswqlxdbrvca6gev"
     },
     {
-      "address": "2810 Moreno Street, Austin, TX",
-      "dates": "2026-08-23 – 2026-08-25",
-      "date_from": "2026-08-23",
-      "date_to": "2026-08-25",
-      "end_date": "2026-08-25",
-      "hours": null,
-      "title": "Moving Sale Sat/Sun — Yeezy 350, Nike, Bonobos, Pop Mart, Cuisinart",
-      "details": "QR Code Link to This Post Two days, and it gets cheaper the longer you wait. Saturday &amp; Sunday, 7am–1pm 2810 Moreno 78723, in Mueller Almost everything is $4 each on Saturday. Sunday, it all drops to $2 — half off — until it's gone. A few higher-value pieces are tagged individually. Some of what's here: Adidas Yeezy Boost 350 (a few pairs), Bonobos and other men's button-downs, Nike backpacks ",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/austin-moving-sale-sat-sun-yeezy-350/vKGLENyWQkH61zcaQpyYbY",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale",
-        "moving-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.293638,
-      "lon": -97.697618,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-satsunyeezy350vkglenywqkh61zcaqpyyby"
-    },
-    {
-      "address": "Vanderbilt Ln. near Columbia Dr., Austin, TX",
-      "dates": "2026-08-23 – 2026-08-25",
-      "date_from": "2026-08-23",
-      "date_to": "2026-08-25",
-      "end_date": "2026-08-25",
-      "hours": null,
-      "title": "🌞 SUMMER YARD SALE (moving purge!!) THIS WKND - Fri./Sat. & Sun. 8/21-8/23: 8",
-      "details": "QR Code Link to This Post 2111 Vanderbilt Ln.📍 Come shop and get a steal on some goodies! 8am-7pm all wknd! 💛 Tons of treasures for sale from multiple households! 🪧 —🎪🌞 See *post photo* for description of some specific items you will find and sale *address— I do these markets often (NEW LOCATION in Windsor Park neighborhood 78723) and am always sourcing/collecting new unique finds from clothing to",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/austin-summer-yard-sale-moving-purge/tMky5sy929JB25iNi1AaVj",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale",
-        "moving-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.3204,
-      "lon": -97.6824,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-salemovingpurgetmky5sy929jb25ini1aavj"
-    },
-    {
       "address": "Round Rock, TX 78664",
       "dates": "2026-08-22 – 2026-08-27",
       "date_from": "2026-08-22",
@@ -310,8 +211,8 @@
       "in_person": false,
       "external_id": "eso-2458898",
       "categories": [
-        "estate-sale",
-        "online-auction"
+        "online-auction",
+        "estate-sale"
       ]
     },
     {
@@ -346,8 +247,8 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
@@ -359,84 +260,11 @@
       "external_id": "yss-104shadytrailspasscedarparktx78613-2026-08-28"
     },
     {
-      "address": "2206 Chasewych Dr B near Menchacca and Stassney, Austin, TX",
-      "dates": "2026-08-23 – 2026-08-25",
-      "date_from": "2026-08-23",
-      "date_to": "2026-08-25",
-      "end_date": "2026-08-25",
-      "hours": null,
-      "title": "Moving Sale",
-      "details": "QR Code Link to This Post Furniture, Shelves, Washer and Dryer, microwave, Lamps, Desk. Venmo and Cash accepted. Must be able to move items at the time of purchase. Message to arrange time to come. Items are indoors.",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/austin-moving-sale/ktkrRbj2T5WBstNEhy8qdt",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale",
-        "moving-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.218221,
-      "lon": -97.800758,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-ustinmovingsalektkrrbj2t5wbstnehy8qdt"
-    },
-    {
-      "address": "1733 Timberwood Drive near Parker Lane and Timberwood Drive, Austin, TX",
-      "dates": "2026-08-23 – 2026-08-25",
-      "date_from": "2026-08-23",
-      "date_to": "2026-08-25",
-      "end_date": "2026-08-25",
-      "hours": null,
-      "title": "$1 Bargain Day",
-      "details": "QR Code Link to This Post All items except for purple amethyst and jewelry box and scarfs and green flower picture vase and candle holder is on sale for a $1 and there will be free items too.",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/austin-bargain-day/2z75GWEZiv5iFamkUgma51",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.231,
-      "lon": -97.714,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-ustinbargainday2z75gweziv5ifamkugma51"
-    },
-    {
-      "address": "8701 Cross Park near Cameron Rd., Austin, TX",
-      "dates": "2026-08-23 – 2026-08-25",
-      "date_from": "2026-08-23",
-      "date_to": "2026-08-25",
-      "end_date": "2026-08-25",
-      "hours": null,
-      "title": "Community Sale/Fundraiser: Variety of goods, low/negotiable prices!",
-      "details": "QR Code Link to This Post ***NEXT WEEKEND*** JWSD (Joyce Willett School of Dance) is hosting a two-day \"garage\" sale &amp; scholarship fundraiser to support our young dancers. There will be a wide variety of high quality goods for sale, both from the studio itself and donated by our wonderful community of dance families. Get an amazing deal while supporting some very talented &amp; dedicated kiddo",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/austin-community-sale-fundraiser/jxUbtPbh2jC7xDrfaWiDwF",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.343362,
-      "lon": -97.676783,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-ysalefundraiserjxubtpbh2jc7xdrfawidwf"
-    },
-    {
       "address": "708 Middleton Street near Alcoa Avenue, Austin, TX",
-      "dates": "2026-08-25 – 2026-08-27",
-      "date_from": "2026-08-25",
-      "date_to": "2026-08-27",
-      "end_date": "2026-08-27",
+      "dates": "2026-08-26 – 2026-08-28",
+      "date_from": "2026-08-26",
+      "date_to": "2026-08-28",
+      "end_date": "2026-08-28",
       "hours": null,
       "title": "GARAGE SALE:  708 MIDDLETON STREET",
       "details": "QR Code Link to This Post ITEMS FOR SALE: VARIOUS HOUSEHOLD ITEMS AND FURNISHINGS, INCLUDING: appliances, furniture, vintage collectibles, home decor, bedding, rugs, curtains, vacuum cleaners, luggage, vases, lamps, cookware, electronics, infant, children and adult clothes, scrubs, shoes and purses, car seats, toys, books, backpacks, Brother sewing machine, pet items, DVDs, games, sports gear, bic",
@@ -456,35 +284,11 @@
       "external_id": "cl-ale708middletonvggzumvvbxd5bzi6jzckjd"
     },
     {
-      "address": "E Janis Dr near Northwest, Austin, TX",
-      "dates": "2026-08-23 – 2026-08-25",
-      "date_from": "2026-08-23",
-      "date_to": "2026-08-25",
-      "end_date": "2026-08-25",
-      "hours": null,
-      "title": "Garage Sale",
-      "details": "QR Code Link to This Post Garage Sale!! Everything must go! Furniture, clothes, electronics, Pokémon Cards, sports cards, kitchen wares, China Cabinet, marble buffet hutch, camping equipment, First come, first serve. Cash preferred. Will open up at 830am until sold out.",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/georgetown-garage-sale/btB9WLGSrijVTGSLgPzEVc",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.659227,
-      "lon": -97.679887,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-etowngaragesalebtb9wlgsrijvtgslgpzevc"
-    },
-    {
       "address": "1112 Smith Dr near wood, Austin, TX",
-      "dates": "2026-08-25 – 2026-08-27",
-      "date_from": "2026-08-25",
-      "date_to": "2026-08-27",
-      "end_date": "2026-08-27",
+      "dates": "2026-08-26 – 2026-08-28",
+      "date_from": "2026-08-26",
+      "date_to": "2026-08-28",
+      "end_date": "2026-08-28",
       "hours": null,
       "title": "Selling OUT ALL 42'' Club Cadet xt-1 AND much to go with it",
       "details": "QR Code Link to This Post SELLING OUT ALL ( Stop And SEE Before You Say No way or Call ) Please call me first Selling ALL that goes with this 42'' c;ub cadet xt 1 1-full set of tires and rims a home made wagon with all new parts for the deck, new blades and good ones also, belts, Selling for 1,550.00 Cash only Price is FIRM, and with a spreader a blade stand to sharping them AND A NEW LIFT JACK Se",
@@ -505,10 +309,10 @@
     },
     {
       "address": "Borchert, Austin, TX",
-      "dates": "2026-08-25 – 2026-08-27",
-      "date_from": "2026-08-25",
-      "date_to": "2026-08-27",
-      "end_date": "2026-08-27",
+      "dates": "2026-08-26 – 2026-08-28",
+      "date_from": "2026-08-26",
+      "date_to": "2026-08-28",
+      "end_date": "2026-08-28",
       "hours": null,
       "title": "Tiller",
       "details": "QR Code Link to This Post I am selling a tiller runs ready to work Reduce price at $180 you can contact me at show contact info no email just text are call",
@@ -627,10 +431,10 @@
     },
     {
       "address": "1610 Sunnyvale St, Austin, TX",
-      "dates": "2026-08-25 – 2026-08-27",
-      "date_from": "2026-08-25",
-      "date_to": "2026-08-27",
-      "end_date": "2026-08-27",
+      "dates": "2026-08-26 – 2026-08-28",
+      "date_from": "2026-08-26",
+      "date_to": "2026-08-28",
+      "end_date": "2026-08-28",
       "hours": null,
       "title": "Antique & Vintage Estate Sale",
       "details": "QR Code Link to This Post Vinyls, Antiques, Vintage Goods, Households items, Furniture, Appliances, Tools and Much More!",
@@ -651,10 +455,10 @@
     },
     {
       "address": "13275 N FM 487, Austin, TX",
-      "dates": "2026-08-25 – 2026-08-27",
-      "date_from": "2026-08-25",
-      "date_to": "2026-08-27",
-      "end_date": "2026-08-27",
+      "dates": "2026-08-26 – 2026-08-28",
+      "date_from": "2026-08-26",
+      "date_to": "2026-08-28",
+      "end_date": "2026-08-28",
       "hours": null,
       "title": "Estate sale",
       "details": "QR Code Link to This Post Estate sell everyweeknd until everything is sold. We have tools, clothes, grills,almost everything you will need please come and see us",
@@ -687,8 +491,8 @@
       "type": "garage",
       "confidence": 0.85,
       "status": "verified",
-      "lat": 30.33063,
-      "lon": -97.64636,
+      "lat": 30.3303,
+      "lon": -97.64615,
       "geocode": "source",
       "external_id": "yss-austintx78754-2026-08-28",
       "categories": [
@@ -709,13 +513,13 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.331857110779733,
-      "lon": -97.64474672860864,
+      "lat": 30.33235118192598,
+      "lon": -97.6439141195589,
       "geocode": "source",
       "company": "Haven Estate Sales, Inc.",
       "in_person": true,
@@ -723,10 +527,10 @@
     },
     {
       "address": "12600 Avery Ranch Blvd, Austin, TX",
-      "dates": "2026-08-25 – 2026-08-27",
-      "date_from": "2026-08-25",
-      "date_to": "2026-08-27",
-      "end_date": "2026-08-27",
+      "dates": "2026-08-26 – 2026-08-28",
+      "date_from": "2026-08-26",
+      "date_to": "2026-08-28",
+      "end_date": "2026-08-28",
       "hours": null,
       "title": "Moving sale ,leather sofa , dinning table ,chest of drawers many items",
       "details": "QR Code Link to This Post Moving sales overseas , all items must go . The dining table extends to 6 people with 6 chairs two of them are armchairs , a nice thick glass metal stand coffee table ,leather sofa , and many items. please text us if you are interested Item prices are low and negotiable please text us at 512 -seven 70- 2467. thank you.",
@@ -748,10 +552,10 @@
     },
     {
       "address": "Meuller, Austin, TX",
-      "dates": "2026-08-25 – 2026-08-27",
-      "date_from": "2026-08-25",
-      "date_to": "2026-08-27",
-      "end_date": "2026-08-27",
+      "dates": "2026-08-26 – 2026-08-28",
+      "date_from": "2026-08-26",
+      "date_to": "2026-08-28",
+      "end_date": "2026-08-28",
       "hours": null,
       "title": "Moving sale - Playmate cooler",
       "details": "QR Code Link to This Post Playmate cooler. Great for outdoor activities and car rides.$30 Make a a reasonable offer!! Probably will accept, Email me. By appointment.",
@@ -773,10 +577,10 @@
     },
     {
       "address": "1309 Leander dr suite 1103, Austin, TX",
-      "dates": "2026-08-25 – 2026-08-27",
-      "date_from": "2026-08-25",
-      "date_to": "2026-08-27",
-      "end_date": "2026-08-27",
+      "dates": "2026-08-26 – 2026-08-28",
+      "date_from": "2026-08-26",
+      "date_to": "2026-08-28",
+      "end_date": "2026-08-28",
       "hours": null,
       "title": "GARAGE SALE📣",
       "details": "QR Code Link to This Post GARAGE SALE📣 Moving and everything must go! TVs Furniture- dresser/side table Crib Mattress Bedding sets Large mirrors Home decor Large solid dining table Kitchenware 1309 Leander dr suite 1103 Leander TX",
@@ -798,10 +602,10 @@
     },
     {
       "address": "194B Alum Creek Rd near N/A, Austin, TX",
-      "dates": "2026-08-25 – 2026-08-27",
-      "date_from": "2026-08-25",
-      "date_to": "2026-08-27",
-      "end_date": "2026-08-27",
+      "dates": "2026-08-26 – 2026-08-28",
+      "date_from": "2026-08-26",
+      "date_to": "2026-08-28",
+      "end_date": "2026-08-28",
       "hours": null,
       "title": "Garage sale",
       "details": "QR Code Link to This Post Fertilizer, wheel barrow, clothes dryers, exercise equipment, dishes, pots and pans, kitchen appliances, men’s clothes and more.",
@@ -822,10 +626,10 @@
     },
     {
       "address": "Deen Avenue near Georgian, Austin, TX",
-      "dates": "2026-08-25 – 2026-08-27",
-      "date_from": "2026-08-25",
-      "date_to": "2026-08-27",
-      "end_date": "2026-08-27",
+      "dates": "2026-08-26 – 2026-08-28",
+      "date_from": "2026-08-26",
+      "date_to": "2026-08-28",
+      "end_date": "2026-08-28",
       "hours": null,
       "title": "Palomar G/T bike; battery operated mower-$15 up",
       "details": "QR Code Link to This Post Hi! This is Dr. Mary, selling items listed herewith more to come: GT Palomar men’s mountain bicycle w/ helmet, $150, rides great, new tires, maintained, Nice little fireplace heater that can do flickering flames, heat or both, and steam-type radiator heater that both work well-$25 each, white occasional chair free to good home, Angell e-bike,very fun from 1990’s. I had it",
@@ -846,14 +650,14 @@
     },
     {
       "address": "Austin, TX",
-      "dates": "2026-08-24 – 2026-08-28",
-      "date_from": "2026-08-24",
-      "date_to": "2026-08-28",
-      "end_date": "2026-08-28",
-      "title": "Art, Flatware & Everything In Between Online Auction by Caring Transitions - Ends 8/27!",
-      "details": "Online Only Auction",
+      "dates": "2026-08-26 – 2026-08-26",
+      "date_from": "2026-08-26",
+      "date_to": "2026-08-26",
+      "end_date": "2026-08-26",
+      "title": "Burnet Road Storage",
+      "details": "Auction",
       "source": "EstateSales.net",
-      "url": "https://www.estatesales.net/TX/New Braunfels/78130/5050107",
+      "url": "https://www.estatesales.net/TX/Austin/78757/5037732",
       "photos": 0,
       "type": "estate",
       "categories": [
@@ -865,6 +669,94 @@
       "lon": -97.7431,
       "geocode": "city-center",
       "company": null
+    },
+    {
+      "address": "9004 Sedgemoor Trl, Austin, TX 78748",
+      "dates": "2026-08-29 – 2026-08-30",
+      "date_from": "2026-08-29",
+      "date_to": "2026-08-30",
+      "end_date": "2026-08-30",
+      "title": "Two Neighbors. One Big Garage Sale. Lots Of Great Finds!",
+      "details": "",
+      "source": "YardSaleSearch",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196361549",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.88,
+      "status": "verified",
+      "lat": 30.18323,
+      "lon": -97.821262,
+      "geocode": "source",
+      "external_id": "yss-9004sedgemoortrlaustintx78748-2026-08-29",
+      "categories": [
+        "garage-sale"
+      ]
+    },
+    {
+      "address": "2485 TX-46, Seguin, TX 78155",
+      "dates": "Thu Aug 27 – Sat Aug 29",
+      "date_from": "08/27/2026",
+      "date_to": "08/29/2026",
+      "end_date": "2026-08-29",
+      "title": "GUNSMITHING SHOP CLOSING ( ESTATE SALE LIQUIDATION )",
+      "details": "",
+      "source": "GarageSaleFinder",
+      "url": "https://garagesalefinder.com/s/N9gl2/2485-tx46-seguin-tx-78155",
+      "photos": 0,
+      "type": "estate",
+      "confidence": 0.65,
+      "status": "verified",
+      "lat": 30.2672,
+      "lon": -97.7431,
+      "geocode": "city-center"
+    },
+    {
+      "address": "4332 Teravista Club Dr., #55, Austin, TX",
+      "dates": "2026-08-26 – 2026-08-28",
+      "date_from": "2026-08-26",
+      "date_to": "2026-08-28",
+      "end_date": "2026-08-28",
+      "hours": null,
+      "title": "Estate Sale",
+      "details": "QR Code Link to This Post Estate Sale - Designer female clothes, purses, shoes, china, dishware, cookware, beautiful wood dining room table, furniture, beds, linens and more.",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/round-rock-estate-sale/3iKxeBmJjhNWe3GK8XrfS6",
+      "photos": 0,
+      "type": "estate",
+      "categories": [
+        "estate-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 30.573159,
+      "lon": -97.670723,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-rockestatesale3ikxebmjjhnwe3gk8xrfs6"
+    },
+    {
+      "address": "Manchaca, Austin, TX",
+      "dates": "2026-08-26 – 2026-08-28",
+      "date_from": "2026-08-26",
+      "date_to": "2026-08-28",
+      "end_date": "2026-08-28",
+      "hours": null,
+      "title": "Huge multi family Garage Sale",
+      "details": "QR Code Link to This Post We have what your looking for!",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/austin-huge-multi-family-garage-sale/usuxtMHvxngmbjbgrA7c2K",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 30.164671,
+      "lon": -97.835677,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-amilygaragesaleusuxtmhvxngmbjbgra7c2k"
     }
   ],
   "hot_zones": [
@@ -883,9 +775,9 @@
     "gsalr.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 37,
+  "total_locations": 33,
   "status": "live",
-  "date": "2026-08-25",
-  "last_refresh": "2026-08-25T06:30:30-05:00",
+  "date": "2026-08-26",
+  "last_refresh": "2026-08-26T05:25:29-05:00",
   "permits": []
 }
