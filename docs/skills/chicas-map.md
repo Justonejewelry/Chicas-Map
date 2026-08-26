@@ -41,7 +41,7 @@ Read the latest `social/YYYY-MM-DD-*.md` before writing any new post. Match that
 | `social/` | Facebook / Nextdoor / TikTok packs already shipping |
 | `daily-packs/` | Chica update packs |
 | `brand/VIDEO_WATERMARK.md` | Required on every video |
-| `.github/workflows/chica-daily.yml` | Master pipeline (1 AM CT Thu/Fri/Sat) |
+| `.github/workflows/chica-daily.yml` | Master pipeline (~5 AM CT daily) |
 | `.github/workflows/pages.yml` | Deploys `webapp/` |
 | `scripts/chica_daily.py` | Local orchestrator |
 | `scripts/schema.py` | Canonical `Sale` — confidence **≥ 70** to publish |
