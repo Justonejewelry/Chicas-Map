@@ -158,7 +158,7 @@ Always include: https://justonejewelry.github.io/Chicas-Map/
 Near Me · multi-stop · Google / Apple / Waze.
 If a sale is missing: list it.
 
-Video: bottom-left watermark, ~22% width, `brand/chica-video-watermark-overlay.png` — see `brand/VIDEO_WATERMARK.md`.
+Video: bottom-left watermark, ~22% width, `docs/chica-video-watermark-overlay.png` — see `brand/VIDEO_WATERMARK.md`.
 
 ### City expansion
 
