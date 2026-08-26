@@ -1,0 +1,24 @@
+# Used when Cloudflare sits in front (Pages or proxied). GitHub Pages ignores this file.
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
+  Permissions-Policy: geolocation=(self), camera=(), microphone=()
+  X-DNS-Prefetch-Control: on
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; img-src 'self' data: blob: https://*.arcgisonline.com https://server.arcgisonline.com https://*.cartocdn.com https://*.basemaps.cartocdn.com https://*.openstreetmap.org https://tile.openstreetmap.org; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https://*.workers.dev wss://*.workers.dev https://nominatim.openstreetmap.org https://*.arcgisonline.com; worker-src 'self' blob:; manifest-src 'self'
+  Cross-Origin-Opener-Policy: same-origin-allow-popups
+
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/data/*
+  Cache-Control: public, max-age=300, stale-while-revalidate=600
+
+/showcase/*
+  Cache-Control: public, max-age=86400
+
+/images/*
+  Cache-Control: public, max-age=86400
+
+/.well-known/*
+  Cache-Control: public, max-age=3600

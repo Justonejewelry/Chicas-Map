@@ -1,0 +1,41 @@
+{
+  "updated": "2026-08-06",
+  "public": [
+    {
+      "title": "Mission del Lago — Moving sale",
+      "address": "12103 Darian Way, San Antonio, TX 78221",
+      "lat": 29.3056051,
+      "lon": -98.4772119,
+      "type": "garage",
+      "dates": "Fri Aug 8 – Sat Aug 9",
+      "start_date": "2026-08-08",
+      "end_date": "2026-08-09",
+      "hours": "8am–3pm",
+      "source": "User submit (approved)",
+      "confidence": 0.85,
+      "details": "Lots of everything! Clothes, kitchen items, supplies — moving soon. Furniture, tools, clothes, electronics, toys, antiques, collectibles. Weekend Fri–Sat only.",
+      "photos": 0,
+      "status": "verified",
+      "geocode": "street",
+      "categories": [
+        "furniture",
+        "tools",
+        "clothes",
+        "electronics",
+        "toys",
+        "antiques",
+        "collectibles",
+        "other"
+      ],
+      "submitted_at": "2026-08-05T16:55:13.633Z",
+      "approved_at": "2026-08-06T02:30:00Z",
+      "submitter_name": "Gloria Ortiz",
+      "public_contact": false
+    }
+  ],
+  "permits": [],
+  "total_locations": 1,
+  "date": "2026-08-06",
+  "last_refresh": "2026-08-06T10:07:57-05:00",
+  "status": "live"
+}

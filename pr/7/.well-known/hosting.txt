@@ -1,0 +1,21 @@
+Chica's Map — custom domain + Cloudflare
+
+GitHub Pages origin
+  https://justonejewelry.github.io/Chicas-Map/preview/7/
+
+Custom domain (step 1)
+  1. Buy or use a host, e.g. www.chicasmap.com
+  2. DNS CNAME: www -> justonejewelry.github.io
+  3. Apex (optional): A records 185.199.108.153 185.199.109.153 185.199.110.153 185.199.111.153
+  4. Repo Settings → Pages → Custom domain, or set Actions variable CUSTOM_DOMAIN=www.chicasmap.com
+  5. Enforce HTTPS in the Pages settings
+
+Cloudflare in front (step 3)
+  1. Add the same zone in Cloudflare, nameservers at the registrar
+  2. CNAME www -> justonejewelry.github.io, proxy ON (orange cloud)
+  3. SSL/TLS mode: Full (strict)
+  4. Cache Rule: /assets/* Cache Everything, Edge TTL 1 month
+  5. Configuration Rule: copy headers from /_headers (nosniff, referrer, frame, permissions)
+  6. Optional: Actions workflow "Cloudflare Pages" with CLOUDFLARE_API_TOKEN + CLOUDFLARE_ACCOUNT_ID
+
+Until DNS is pointed, github.io stays the live host. Spanish SEO lives at /es/.
