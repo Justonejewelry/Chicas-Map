@@ -1,29 +1,77 @@
 <!DOCTYPE html>
-<html lang="en" class="antialiased">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>The map · Chicas Map</title>
+  <title>Chicas Map — Maintenance</title>
   <meta name="theme-color" content="#121212" />
   <link rel="icon" type="image/svg+xml" href="/Chicas-Map/favicon.svg" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600&display=swap" />
   <style>
-    body { margin: 0; background: #121212; color: #f5f5f0; font-family: Inter, system-ui, sans-serif; }
-    .wrap { max-width: 640px; margin: 0 auto; padding: 3rem 1.25rem; text-align: center; }
-    h1 { font-family: Syne, sans-serif; font-weight: 800; font-size: 2.25rem; line-height: 1.1; margin: 0 0 1rem; }
-    p { color: #a3a39a; font-size: 1.05rem; line-height: 1.5; margin: 0 0 1.5rem; }
-    .btn { display: inline-flex; align-items: center; justify-content: center; height: 3rem; padding: 0 1.5rem; border-radius: 9999px; background: #c513af; color: white; font-weight: 600; text-decoration: none; font-size: 0.95rem; margin: 0.25rem; }
-    .btn.secondary { background: transparent; border: 1px solid #444; }
-    .note { margin-top: 2.5rem; font-size: 0.85rem; color: #6b6b63; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      min-height: 100dvh;
+      background: #121212;
+      color: #f5f5f0;
+      font-family: Inter, system-ui, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+    .card {
+      max-width: 420px;
+      text-align: center;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #c513af;
+      margin-bottom: 1.25rem;
+    }
+    h1 {
+      font-family: Syne, sans-serif;
+      font-weight: 800;
+      font-size: 1.85rem;
+      line-height: 1.15;
+      margin-bottom: 0.85rem;
+    }
+    p {
+      color: #a3a39a;
+      font-size: 1rem;
+      line-height: 1.55;
+      margin-bottom: 1.75rem;
+    }
+    .links a {
+      display: inline-block;
+      margin: 0 0.4rem;
+      color: #c513af;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+    .links a:hover { text-decoration: underline; }
+    .foot {
+      margin-top: 2.5rem;
+      font-size: 0.8rem;
+      color: #6b6b63;
+    }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <h1>Map temporarily offline</h1>
-    <p>The interactive map is being restored after an asset recovery.<br>Homepage is back up. Full map will return shortly.</p>
-    <a class="btn" href="/Chicas-Map/">Back to homepage</a>
-    <a class="btn secondary" href="https://www.facebook.com/groups/chicasmap" target="_blank" rel="noopener">Facebook pack</a>
-    <p class="note">Sorry for the interruption — the pins will be back.</p>
+  <div class="card">
+    <div class="badge">Chicas Map</div>
+    <h1>Quick maintenance</h1>
+    <p>The map is temporarily offline while we finish recovering a few files.<br>Everything will be back shortly.</p>
+    <div class="links">
+      <a href="https://www.facebook.com/groups/chicasmap" target="_blank" rel="noopener">Facebook pack</a>
+      ·
+      <a href="/Chicas-Map/">Refresh</a>
+    </div>
+    <p class="foot">Sorry for the interruption — the pins are coming back.</p>
   </div>
 </body>
 </html>
