@@ -1,6 +1,6 @@
 {
   "name": "chica-mission-control",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "private": true,
   "description": "Local-first operations center for Chicas Map — Garage Sale Intelligence Network",
   "main": "electron/main.cjs",
@@ -10,9 +10,9 @@
     "dev": "vite --open",
     "dev:electron": "node scripts/launch.mjs --desktop",
     "build": "vite build",
-    "build:mac": "vite build && electron-builder --mac --x64 --arm64",
+    "build:mac": "vite build && electron-builder --mac",
     "preview": "vite preview",
-    "postinstall": "node -e \"console.log('\\n  Chica Mission Control ready.\\n  Run:  npm start\\n  Desktop: npm run start:desktop\\n')\""
+    "postinstall": "node -e \"console.log('\\n  Ready. Run:  npm start\\n  Desktop: npm run start:desktop\\n')\""
   },
   "dependencies": {
     "react": "18.3.1",
@@ -20,13 +20,10 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "4.3.4",
-    "vite": "5.4.14"
-  },
-  "optionalDependencies": {
     "concurrently": "8.2.2",
-    "cross-env": "7.0.3",
     "electron": "31.7.7",
     "electron-builder": "24.13.3",
+    "vite": "5.4.14",
     "wait-on": "7.2.0"
   },
   "engines": {
@@ -39,9 +36,14 @@
       "output": "release"
     },
     "mac": {
-      "target": ["dmg"],
-      "arch": ["x64", "arm64"],
-      "category": "public.app-category.developer-tools"
+      "target": [
+        {
+          "target": "dmg",
+          "arch": ["universal"]
+        }
+      ],
+      "category": "public.app-category.developer-tools",
+      "identity": null
     },
     "files": [
       "dist/**/*",
