@@ -6,19 +6,24 @@ Facebook: https://www.facebook.com/Justone.Jewelry.Justin/
 From: San Antonio, Texas, US
 
 /* THANKS */
-Chica — the hunt, the cape, the why
-Neighbors who share a driveway instead of a rumor
+Chica — small dog, big ears, bigger neighborhood mission
+The San Antonio pack — neighbors who share useful information and look out for one another
 Created with Grok — https://grok.com/?referrer=website
-GitHub — the house
-Leaflet + OpenStreetMap — the streets
-WCAG 2.2 AA — we try to keep the door wide
-Sale Intel — GPS-gated notes at the pin (200 m)
+GitHub — the house where we build
+Leaflet + OpenStreetMap — the streets we share
+WCAG 2.2 AA — we try to keep the door wide for everybody
+Sale Intel — location-aware notes at the pin (200 m)
 
-Grok is a tool we used to build this map. That credit is not an
-endorsement, approval, or sponsorship by xAI.
+This map is built around a simple idea: a strong community shares what it knows. Pass along a useful pin, verify information when you can, give credit, respect people's time, and help your neighbors avoid a wasted trip.
+
+The Chica pack follows the Army values: Loyalty, Duty, Respect, Selfless Service, Honor, Integrity, and Personal Courage. Not because a neighborhood is a barracks — because good communities work better when people can count on each other.
+
+Thank you for every minute you spend with Chica's Map. Your attention, tips, corrections, shares, and suggestions help make it better. Have a smarter idea? Bring it to the pack. Chica listens.
+
+Grok is a tool we used to build this map. That credit is not an endorsement, approval, or sponsorship by xAI.
 
 /* SITE */
 Standards: HTML5, CSS, JS
 Language: en, es
 Software: TanStack Start, Vite, GitHub Pages
-Last update: 2026-08-26
+Last update: 2026-08-27
