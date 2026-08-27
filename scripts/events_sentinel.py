@@ -15,7 +15,7 @@ except ImportError:
     from event_dates import parse_single_date, parse_date_range, today_ct
 CT = ZoneInfo("America/Chicago")
 MIN_CONFIDENCE = 70
-MAX_HORIZON_DAYS = 180
+MAX_HORIZON_DAYS = 90
 GENERIC_TITLES = {
     "tba", "tbd", "event", "events", "community event", "meeting",
     "events directory", "calendar", "upcoming events", "news events",
@@ -113,6 +113,8 @@ def validate_event(raw: dict[str, Any], existing_ids: set[str] | None = None) ->
         result.fail(f"{prefix}: missing or too-short title")
     elif title.lower() in GENERIC_TITLES or GENERIC_TITLE_RE.match(title):
         result.fail(f"{prefix}: title too generic ({title!r})")
+    elif re.match(r"^cancelled\b", title, re.I):
+        result.fail(f"{prefix}: cancelled event")
     elif CLOSED_OFFICE_RE.search(title):
         result.fail(f"{prefix}: closed-office / holiday-closure title")
     elif FRAGMENT_TITLE_RE.search(title) or (title[:1].islower() and not title[:1].isdigit()):

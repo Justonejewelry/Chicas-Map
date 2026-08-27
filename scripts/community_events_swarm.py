@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Chica's Map Community Events Swarm v2.6. ICS + RSS + follow-calendar. No Google Calendar."""
+"""Chica's Map Community Events Swarm v2.7. 90-day horizon. ICS + RSS + follow-calendar. No Google Calendar."""
 from __future__ import annotations
 import hashlib, html as htmlmod, json, re
 from datetime import datetime
@@ -25,7 +25,8 @@ FEED = ROOT / "webapp" / "data" / "community-events.json"
 REPORT = ROOT / "reports" / "community-events-latest.md"
 SOURCES = ROOT / "config" / "community-event-sources.json"
 CT = ZoneInfo("America/Chicago")
-UA = "Chica's Map Community Events Scout/2.6 (+https://justonejewelry.github.io/Chicas-Map/)"
+UA = "Chica's Map Community Events Scout/2.7 (+https://justonejewelry.github.io/Chicas-Map/)"
+BROWSER_UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
 HREF_RE = re.compile(r"""<a[^>]+href=["']([^"']+)["'][^>]*>(.*?)</a>""", re.I | re.S)
 CATEGORY_PATH_RE = re.compile(r"CategoryID|CategoryName|authorid|mcat/|PID/15381", re.I)
 CAL_PATH_RE = re.compile(r"/(calendar|events|event|events-calendar|community-calendar|announcements-calendars)(/|$|\?)", re.I)
@@ -35,10 +36,25 @@ DETAIL_URL_BONUS = ("articleid", "eid=", "/event/", "events-calendar/")
 LISTING_PATHS = {"/", "/events", "/calendar", "/find", "/community-calendar", "/calendars"}
 def now_iso() -> str:
     return datetime.now(CT).isoformat(timespec="seconds")
-def fetch(url: str, timeout: int = 16) -> str:
-    req = Request(url, headers={"User-Agent": UA, "Accept": "text/calendar, application/rss+xml, application/atom+xml, text/html, */*"})
-    with urlopen(req, timeout=timeout) as r:
-        return r.read().decode("utf-8", "ignore")
+def fetch(url: str, timeout: int = 16, ua: str | None = None) -> str:
+    def _once(user_agent: str) -> str:
+        req = Request(
+            url,
+            headers={
+                "User-Agent": user_agent,
+                "Accept": "text/calendar, application/rss+xml, application/atom+xml, text/html, */*",
+                "Accept-Language": "en-US,en;q=0.9",
+            },
+        )
+        with urlopen(req, timeout=timeout) as r:
+            return r.read().decode("utf-8", "ignore")
+    agent = ua or UA
+    try:
+        return _once(agent)
+    except HTTPError as e:
+        if e.code in (403, 401, 429) and agent != BROWSER_UA:
+            return _once(BROWSER_UA)
+        raise
 def clean(text: str) -> str:
     text = htmlmod.unescape(text or "")
     text = re.sub(r"(?is)<script[^>]*>.*?</script>", " ", text)
@@ -306,11 +322,11 @@ def main() -> None:
             errors.append(f"{name}: {e.reason}")
         except Exception as e:
             errors.append(f"{name}: {type(e).__name__}: {e}")
-    feed_payload = {"updated": now_iso(), "city": cfg.get("city", "san-antonio"), "version": 2.6, "events": kept + promoted}
+    feed_payload = {"updated": now_iso(), "city": cfg.get("city", "san-antonio"), "version": 2.7, "horizonDays": int(cfg.get("horizon_days") or 90), "events": kept + promoted}
     FEED.parent.mkdir(parents=True, exist_ok=True)
     FEED.write_text(json.dumps(feed_payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     all_candidates.sort(key=lambda x: (-x.get("confidence", 0), x.get("url", "")))
-    lines = ["# Chica's Map -- Community Events Swarm v2.6", "", f"Run: {now_iso()}", f"Sources scanned: **{len(sources)}**", f"Candidates discovered: **{len(all_candidates)}**", f"With parsed dates: **{dated}**", f"With street/venue address: **{addressed}**", f"Promoted this run: **{len(promoted)}**", f"Kept from prior feed: **{len(kept)}**", f"Purged from prior feed: **{len(purged)}**", f"Source errors: **{len(errors)}**", f"Rejected by Sentinel: **{len(rejected)}**", "", "## Promoted (passed Events Sentinel)"]
+    lines = ["# Chica's Map -- Community Events Swarm v2.7", "", f"Run: {now_iso()}", f"Sources scanned: **{len(sources)}**", f"Candidates discovered: **{len(all_candidates)}**", f"With parsed dates: **{dated}**", f"With street/venue address: **{addressed}**", f"Promoted this run: **{len(promoted)}**", f"Kept from prior feed: **{len(kept)}**", f"Purged from prior feed: **{len(purged)}**", f"Source errors: **{len(errors)}**", f"Rejected by Sentinel: **{len(rejected)}**", "", "## Promoted (passed Events Sentinel)"]
     if promoted:
         for p in promoted:
             lines.append(f"- **{p.get('title')}** -- {p.get('date')} -- {p.get('address') or 'no-address'} -- conf {p.get('confidence')} -- {p.get('url')}")
@@ -325,7 +341,7 @@ def main() -> None:
         lines += ["", "## Rejected by Sentinel"] + [f"- {r}" for r in rejected[:50]]
     if errors:
         lines += ["", "## Source Errors"] + [f"- {e}" for e in errors]
-    lines += ["", "---", "Notes: v2.6 caps events at 180 days, drops office-closed holidays, city-only stubs, listing URLs, and HTML fragments. CivicEngage ICS, Tribe ICS, RSS. No Google Calendar."]
+    lines += ["", "---", "Notes: v2.7 caps events at 90 days. Backbone is official/public + schools + libraries, then neighborhoods. CivicEngage ICS, Trumba ICS, Tribe ICS, Thrillshare ICS, RSS. 403 retries with a browser UA. No Google Calendar."]
     REPORT.parent.mkdir(parents=True, exist_ok=True)
     REPORT.write_text("\n".join(lines) + "\n", encoding="utf-8")
     print(f"Candidates: {len(all_candidates)} | Dated: {dated} | Addressed: {addressed} | Promoted: {len(promoted)} | Kept: {len(kept)} | Purged: {len(purged)} | Errors: {len(errors)}")

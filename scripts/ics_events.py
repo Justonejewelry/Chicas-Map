@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Parse CivicEngage / Tribe / HOA-sites / RFC 5545 VEVENT blocks."""
+"""Parse CivicEngage / Tribe / HOA-sites / Trumba / RFC 5545 VEVENT blocks."""
 from __future__ import annotations
 
 import html as htmlmod
@@ -19,15 +19,32 @@ EID_RE = re.compile(r"https?://\S+calendar\.aspx\?EID=\d+", re.I)
 EID_ID_RE = re.compile(r"calendar\.aspx\?EID=(\d+)", re.I)
 VEVENT_RE = re.compile(r"BEGIN:VEVENT\s*(.*?)\s*END:VEVENT", re.I | re.S)
 PROP_RE = re.compile(r"^([A-Z0-9-]+)(;[^:]*)?:(.*)$", re.I | re.M)
+TRUMBA_NAME_RE = re.compile(r'NAME="([^"]+)"', re.I)
 SKIP_TITLE_RE = re.compile(
     r"offices?\s+closed|city\s+hall\s+closed|"
     r"submittal deadline|"
     r"bulky\s+(item|pick)|brush collection|bulk\s*&\s*brush|"
     r"\bmunicipal court\b|"
     r"^arc meeting\s*$|"
-    r"mosquito fogging",
+    r"mosquito fogging|"
+    r"^cancelled\b|\bcancelled\s*-|"
+    r"\brenovations?\b|"
+    r"library closed|"
+    r"no school|"
+    r"student holiday|"
+    r"staff(?:\s|&| and)+\s*student holiday|"
+    r"staff holiday|"
+    r"teacher (?:work|prep|planning) day|"
+    r"staff development|"
+    r"progress reports|"
+    r"report cards|"
+    r"last day of school|"
+    r"first day of (?:school|classes)|"
+    r"district holiday|"
+    r"instructional calendar",
     re.I,
 )
+CLOSURE_TYPE_RE = re.compile(r"\bclosure\b", re.I)
 STREET_NUM_RE = re.compile(r"\b\d{1,6}\s+[A-Za-z]")
 
 
@@ -43,16 +60,22 @@ def _unescape(val: str) -> str:
     return re.sub(r"\s+", " ", val).strip()
 
 
-def _props(block: str) -> dict[str, str]:
+def _props(block: str) -> tuple[dict[str, str], dict[str, str]]:
     out: dict[str, str] = {}
+    custom: dict[str, str] = {}
     for m in PROP_RE.finditer(block):
         name = m.group(1).upper()
-        params = (m.group(2) or "").upper()
+        params = m.group(2) or ""
         val = m.group(3).strip()
+        if name == "X-TRUMBA-CUSTOMFIELD":
+            nm = TRUMBA_NAME_RE.search(params)
+            if nm and nm.group(1).lower() not in custom:
+                custom[nm.group(1).lower()] = val
+            continue
         if name not in out:
             out[name] = val
             out[f"_{name}_PARAMS"] = params
-    return out
+    return out, custom
 
 
 def _parse_ics_dt(raw: str) -> tuple[str, str]:
@@ -105,6 +128,14 @@ def _host(source_url: str) -> str:
 
 
 def event_detail_url(props: dict[str, str], source_url: str) -> str:
+    link = _unescape(props.get("X-TRUMBA-LINK") or "")
+    if link.startswith("http"):
+        if "mysapl.org" in link.lower():
+            link = re.sub(r"^http://(?:www\.)?mysapl\.org", "https://www.mysapl.org", link, flags=re.I)
+            link = link.replace("/EventsNews/EventsCalendar.aspx", "/Events-News/Events-Calendar")
+        elif link.startswith("http://"):
+            link = "https://" + link[len("http://"):]
+        return link
     blob = " ".join(props.get(k, "") for k in ("DESCRIPTION", "URL", "UID"))
     m = EID_RE.search(blob)
     if m:
@@ -114,7 +145,7 @@ def event_detail_url(props: dict[str, str], source_url: str) -> str:
     if eid and host:
         return f"https://{host}/Calendar.aspx?EID={eid.group(1)}"
     url_field = _unescape(props.get("URL") or "")
-    if url_field.startswith("http") and "icalendar" not in url_field.lower():
+    if url_field.startswith("http") and "icalendar" not in url_field.lower() and "generate_ical" not in url_field.lower():
         return url_field
     if url_field.startswith("/") and host:
         return f"https://{host}{url_field}"
@@ -124,8 +155,10 @@ def event_detail_url(props: dict[str, str], source_url: str) -> str:
     desc = _unescape(props.get("DESCRIPTION") or "")
     http = re.search(r"https?://\S+", desc)
     if http:
-        return http.group(0).rstrip(".),'")
-    if uid and host:
+        found = http.group(0).rstrip(".),'")
+        if "icalendar" not in found.lower() and "generate_ical" not in found.lower():
+            return found
+    if uid and host and "trumba.com" not in uid:
         return f"https://{host}/calendar/?uid={uid}"
     return source_url
 
@@ -151,9 +184,12 @@ def parse_vevents(ics_text: str, source_url: str = "") -> list[dict]:
     events: list[dict] = []
     seen = set()
     for m in VEVENT_RE.finditer(unfolded):
-        p = _props(m.group(1))
+        p, custom = _props(m.group(1))
         title = _unescape(p.get("SUMMARY") or "")
         if len(title) < 6 or SKIP_TITLE_RE.search(title):
+            continue
+        event_type = _unescape(custom.get("event type") or custom.get("event type(s)") or "")
+        if CLOSURE_TYPE_RE.search(event_type):
             continue
         start, start_time = _parse_ics_dt(p.get("DTSTART") or "")
         end, end_time = _parse_ics_dt(p.get("DTEND") or "")
@@ -161,12 +197,18 @@ def parse_vevents(ics_text: str, source_url: str = "") -> list[dict]:
             time = f"{start_time}-{end_time}"
         else:
             time = start_time or parse_time_label(_unescape(p.get("DESCRIPTION") or ""))
+        desc = p.get("DESCRIPTION") or ""
+        address = (
+            ics_address(custom.get("address") or "")
+            or ics_address(p.get("LOCATION") or "")
+            or ics_address(desc)
+        )
         rec = {
             "title": title,
             "date": start,
             "endDate": end if end and end != start else "",
             "time": time,
-            "address": ics_address(p.get("LOCATION") or ""),
+            "address": address,
             "url": event_detail_url(p, source_url),
         }
         key = (title.lower()[:60], rec["date"], rec["url"])

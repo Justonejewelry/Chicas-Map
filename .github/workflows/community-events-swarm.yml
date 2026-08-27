@@ -1,7 +1,13 @@
 name: Chica's Map — Community Events Swarm v2
 
 # Daily structured discovery for the "What's Happening" layer.
-# Primary schedule now lives in Chica Daily (5 AM CT) via scripts/master_populate.py.
+# v2.7 contract:
+#   - 90-day horizon
+#   - File-based store: webapp/data/community-events.json
+#   - Events Sentinel quality gate (future-or-ongoing, street address, no junk titles)
+#   - Backbone: official/public + schools + libraries, then neighborhoods
+#   - No Google Calendar
+# Primary schedule lives in Chica Daily (5 AM CT) via scripts/master_populate.py.
 # This workflow is manual-only so we do not double-write the events feed.
 
 on:
@@ -17,7 +23,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Run community-events swarm v2
+      - name: Run community-events swarm v2.7
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -28,5 +34,5 @@ jobs:
           git config user.name "Chica's Map Events Swarm"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add webapp/data/community-events.json reports/community-events-latest.md
-          git diff --cached --quiet || git commit -m "chore: refresh community events swarm v2"
+          git diff --cached --quiet || git commit -m "chore: refresh community events swarm v2.7"
           git push
