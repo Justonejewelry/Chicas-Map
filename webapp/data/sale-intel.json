@@ -1,8 +1,9 @@
 {
   "title": "Chicas Sale Intel",
   "radius_m": 200,
-  "url": "",
+  "url": "https://garden-slate-lark-reef.grok.me",
   "map": "https://justonejewelry.github.io/Chicas-Map/map",
-  "status": "awaiting_publish",
-  "note": "GPS-gated driveway notes. Sharing unlocks within 200 meters. Stamp url after Sale Intel is published (grok.me or custom host). Never point this at a Vercel system domain."
+  "status": "live",
+  "published": "2026-08-26",
+  "note": "GPS-gated driveway notes. Sharing unlocks within 200 meters."
 }
