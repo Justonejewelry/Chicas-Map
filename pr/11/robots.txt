@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://justonejewelry.github.io/Chicas-Map/preview/11/sitemap.xml
