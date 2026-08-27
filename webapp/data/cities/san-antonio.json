@@ -410,8 +410,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 29.63243071674452,
-      "lon": -98.3095568219862,
+      "lat": 29.632987669673014,
+      "lon": -98.30899873486602,
       "geocode": "source",
       "company": "Denny Harrison Estate Sales & Auctions",
       "in_person": true,
@@ -501,8 +501,8 @@
       "type": "estate",
       "confidence": 0.85,
       "status": "verified",
-      "lat": 29.47786,
-      "lon": -98.55204,
+      "lat": 29.47768,
+      "lon": -98.55219,
       "geocode": "source",
       "external_id": "yss-sanantoniotx78228-2026-08-28",
       "categories": [
@@ -546,8 +546,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 29.47544228922027,
-      "lon": -98.55417306850569,
+      "lat": 29.47533449187927,
+      "lon": -98.55445167763311,
       "geocode": "source",
       "company": null,
       "in_person": true,
@@ -824,6 +824,30 @@
       "lon": -98.4936,
       "geocode": "city-center",
       "company": null
+    },
+    {
+      "address": "10326 Briar Rose near MUSTANG RANCH, San Antonio, TX",
+      "dates": "2026-08-27 – 2026-08-29",
+      "date_from": "2026-08-27",
+      "date_to": "2026-08-29",
+      "end_date": "2026-08-29",
+      "hours": null,
+      "title": "Mulit families Yard sale",
+      "details": "QR Code Link to This Post HELLO HOSTING another yard sale. More golf equipment and clothes and house hold items . And whatever the other families and neighbors bring. Come join us were starting early 8am to 130. I remember you who came late. COME ON BY ANS COME ON ALL",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/san-antonio-mulit-families-yard-sale/2cJLqPS33d9v5ku1284qUm",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 29.5386,
+      "lon": -98.6946,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-amiliesyardsale2cjlqps33d9v5ku1284qum"
     }
   ],
   "permits": [
@@ -2650,10 +2674,10 @@
     "gsalr.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 108,
+  "total_locations": 109,
   "status": "live",
   "date": "2026-08-27",
-  "last_refresh": "2026-08-27T15:04:02-05:00",
+  "last_refresh": "2026-08-27T15:56:18-05:00",
   "note": "Cleaned 33-pin Saturday live swap 2026-08-22 10:57 CDT. Merged Potranco/Moonlit/Craftsman. Dropped stores, auctions, warehouse, flea, single-item. Added Rita Ave + Jack Bean.",
   "permit_total": 72,
   "permit_estate_count": 1

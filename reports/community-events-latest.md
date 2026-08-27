@@ -1,24 +1,23 @@
 # Chica's Map -- Community Events Swarm v2.7
 
-Run: 2026-08-27T15:05:14-05:00
+Run: 2026-08-27T15:57:45-05:00
 Sources scanned: **48**
 Candidates discovered: **933**
-With parsed dates: **774**
+With parsed dates: **773**
 With street/venue address: **502**
 Promoted this run: **1**
-Kept from prior feed: **298**
+Kept from prior feed: **299**
 Purged from prior feed: **0**
 Source errors: **1**
 Rejected by Sentinel: **298**
 
 ## Promoted (passed Events Sentinel)
-- **Toddler Story Time** -- 2026-09-01 -- 8765 State Hwy 151 -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D207236803
+- **Zoning Board of Adjustment & Appeals** -- 2026-09-16 -- 447 N. Main St -- conf 98 -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22447
 
 ## Review Queue
 - **San Antonio Public Library Events** -- conf 100 -- SAPL Silent Book Club -- 2026-09-01 -- 6111 Rosedale Ct. San Antonio, TX 78201 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D194096542
 - **San Antonio Public Library Events** -- conf 100 -- Family Story Time -- 2026-08-27 -- 4134 Harry Wurzbach San Antonio, TX 78209 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D205386292
 - **San Antonio Public Library Events** -- conf 100 -- Agarita Humble Hall -- 2026-08-29 -- 2200 W. Commerce San Antonio, TX 78207 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206225307
-- **San Antonio Public Library Events** -- conf 100 -- Toddler Story Time -- 2026-09-01 -- 8765 State Hwy 151 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D207236803
 - **Bexar County Clerk — Records on the Run** -- conf 99 -- Bexar County Clerk's Mobile Satellite Office will be at Bexar County Precinct 2 Constable's Office of Constable Leticia R. Vazquez -- 2026-09-03 -- 7723 Guilbeau Rd -- https://www.bexar.org/calendar.aspx?EID=7284
 - **Bexar County Clerk — Records on the Run** -- conf 99 -- Bexar County Clerk's Mobile Satellite Office will be at Bexar County Precinct 2 Constable's Office of Constable Leticia R. Vazquez -- 2026-10-01 -- 7723 Guilbeau Rd -- https://www.bexar.org/calendar.aspx?EID=7285
 - **Bexar County Clerk — Records on the Run** -- conf 99 -- Bexar County Clerk's Mobile Satellite Office will be at Bexar County Precinct 2 Constable's Office of Constable Leticia R. Vazquez -- 2026-11-05 -- 7723 Guilbeau Rd -- https://www.bexar.org/calendar.aspx?EID=7286
@@ -175,6 +174,7 @@ Rejected by Sentinel: **298**
 - **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2028-08-10 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22419
 - **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2028-09-14 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22420
 - **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2028-10-12 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22421
+- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2028-11-09 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22422
 
 ## Rejected by Sentinel
 - Family Story Time -- event_id=2026-08-27_family-story-time_57a48f9e4487: duplicate id already in feed

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-27T15:05:14-05:00",
+  "updated": "2026-08-27T15:57:45-05:00",
   "city": "san-antonio",
   "version": 2.7,
   "horizonDays": 90,
@@ -5373,7 +5373,7 @@
       "title": "Toddler Story Time",
       "date": "2026-09-01",
       "endDate": "",
-      "time": "11:00 AM-11:45 AM",
+      "time": "11:00 AM–11:45 AM",
       "address": "8765 State Hwy 151",
       "lat": null,
       "lng": null,
@@ -5385,6 +5385,24 @@
       "reliability": 96,
       "discoveredAt": "2026-08-27T15:04:37-05:00",
       "confidence": 100
+    },
+    {
+      "id": "2026-09-16_zoning-board-of-adjustment-a_65c0bcf4d1bf",
+      "title": "Zoning Board of Adjustment & Appeals",
+      "date": "2026-09-16",
+      "endDate": "",
+      "time": "5:30 PM-11:59 PM",
+      "address": "447 N. Main St",
+      "lat": null,
+      "lng": null,
+      "category": "other",
+      "description": "",
+      "url": "https://www.ci.boerne.tx.us/calendar.aspx?EID=22447",
+      "source": "Boerne Calendar",
+      "sourceId": "boerne-ics",
+      "reliability": 86,
+      "discoveredAt": "2026-08-27T15:57:18-05:00",
+      "confidence": 98
     }
   ]
 }
