@@ -1,5 +1,5 @@
 (function(){
-  var IMG="/Chicas-Map/images/chica-hero.jpg.jpg?v=bb4";
+  var IMG="/Chicas-Map/images/chica-hero.jpg?v=bb5";
   function s(){
     document.querySelectorAll("img").forEach(function(img){
       var x=(img.getAttribute("src")||"")+(img.currentSrc||"");
