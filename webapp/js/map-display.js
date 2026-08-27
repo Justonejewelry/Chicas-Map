@@ -1,7 +1,5 @@
 /* Chicas Map — live display boot.
-   1) Kill leftover CARTO tiles if a stale bundle reappears.
-   2) Force the map canvas to the visual viewport on /map/.
-   3) After Leaflet exists, fly to the hunter when they are inside the city box.
+   Swap watermarked CARTO rasters to Esri, fill the phone viewport, fly to the hunter.
 */
 (function () {
   var SA = { lat: 29.4241, lon: -98.4936 };
@@ -25,6 +23,31 @@
     return lat >= BOX.minLat && lat <= BOX.maxLat && lon >= BOX.minLon && lon <= BOX.maxLon;
   }
 
+  function esriUrl(z, x, y) {
+    var tmpl = themeIsLight() ? ESRI_STREET : ESRI_DARK;
+    return tmpl.replace("{z}", z).replace("{y}", y).replace("{x}", x);
+  }
+
+  function rewriteCartoSrc(src) {
+    if (!src || src.indexOf("cartocdn.com") === -1) return src;
+    var m = String(src).match(/\/(\d+)\/(\d+)\/(\d+)/);
+    if (!m) return src;
+    return esriUrl(m[1], m[2], m[3]);
+  }
+
+  function rewriteTileImages() {
+    var imgs = document.querySelectorAll(".leaflet-tile-pane img, img.leaflet-tile");
+    for (var i = 0; i < imgs.length; i++) {
+      var img = imgs[i];
+      var src = img.getAttribute("src") || img.src || "";
+      var next = rewriteCartoSrc(src);
+      if (next && next !== src) {
+        img.src = next;
+        try { img.setAttribute("src", next); } catch (e) {}
+      }
+    }
+  }
+
   function findMap() {
     var nodes = document.querySelectorAll(".leaflet-container");
     for (var i = 0; i < nodes.length; i++) {
@@ -35,20 +58,12 @@
           if (v && typeof v.flyTo === "function" && typeof v.invalidateSize === "function") return v;
         } catch (e) {}
       }
-      var p = el.parentElement;
-      if (p) {
-        for (var k2 in p) {
-          try {
-            var v2 = p[k2];
-            if (v2 && typeof v2.flyTo === "function" && typeof v2.invalidateSize === "function") return v2;
-          } catch (e2) {}
-        }
-      }
     }
     return null;
   }
 
   function swapCartoTiles() {
+    rewriteTileImages();
     var map = findMap();
     if (!map || !map.eachLayer) return;
     map.eachLayer(function (layer) {
@@ -66,27 +81,23 @@
   function forceViewport() {
     if (!onMapPath()) return;
     document.documentElement.classList.add("chica-fs-on");
+    document.documentElement.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
+    document.body.style.height = "100dvh";
     var mapEl = document.querySelector(".leaflet-container") || document.querySelector(".chica-map");
     if (!mapEl) return;
-    var chain = [];
     var n = mapEl;
-    while (n && n !== document.body && n !== document.documentElement) {
-      chain.push(n);
+    while (n && n !== document.body) {
+      n.style.setProperty("max-width", "none", "important");
+      n.style.setProperty("width", "100%", "important");
+      n.style.setProperty("max-height", "none", "important");
       n = n.parentElement;
     }
-    chain.forEach(function (el) {
-      el.style.setProperty("max-width", "none", "important");
-      el.style.setProperty("width", "100%", "important");
-      el.style.setProperty("height", "100%", "important");
-      el.style.setProperty("max-height", "none", "important");
-      el.style.setProperty("margin", "0", "important");
-      el.style.setProperty("border-radius", "0", "important");
-    });
     mapEl.style.setProperty("position", "fixed", "important");
-    mapEl.style.setProperty("inset", "0", "important");
+    mapEl.style.setProperty("inset", "0px", "important");
     mapEl.style.setProperty("width", "100vw", "important");
     mapEl.style.setProperty("height", "100dvh", "important");
-    mapEl.style.setProperty("z-index", "1", "important");
+    mapEl.style.setProperty("z-index", "40", "important");
     var map = findMap();
     if (map) {
       try { map.invalidateSize(); } catch (e) {}
@@ -125,8 +136,8 @@
   var id = setInterval(function () {
     n += 1;
     tick();
-    if (n > 40) clearInterval(id);
-  }, 250);
+    if (n > 80) clearInterval(id);
+  }, 200);
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", tick);
   else tick();
   window.addEventListener("resize", forceViewport);
