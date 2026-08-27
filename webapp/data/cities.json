@@ -2,7 +2,7 @@
   "default_city": "texas",
   "overview_center": [31.0, -99.5],
   "overview_zoom": 6,
-  "map_engine": "leaflet-carto",
+  "map_engine": "leaflet-esri",
   "cities": [
     {"slug": "san-antonio", "name": "San Antonio", "center": [29.4241, -98.4936], "zoom": 11},
     {"slug": "austin", "name": "Austin", "center": [30.2672, -97.7431], "zoom": 11},
