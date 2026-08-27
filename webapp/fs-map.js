@@ -1,4 +1,4 @@
-/* Chicas Map — header dock: fullscreen + Sale Intel brain pill.
+/* Chicas Map — header dock: thick fullscreen mark + white Intel brain.
    Buttons live on document.body (React cannot steal them).
    Immersive mode uses html.chica-fs-on (React never overwrites that).
    iOS has no native Fullscreen API — CSS is the real path. */
@@ -9,8 +9,8 @@
   var STYLE_ID = "chica-fs-inline-style";
   var HTML_ON = "chica-fs-on";
   var INTEL_HREF = "/Chicas-Map/intel/";
-  var INTEL_ICON = "/Chicas-Map/images/intel-brain.svg?v=1";
-  var FS_GLYPH = "\u26F6";
+  var INTEL_ICON = "/Chicas-Map/images/intel-brain.svg?v=2";
+  var SVG_NS = "http://www.w3.org/2000/svg";
   var ready = false;
 
   function intelMark() {
@@ -18,17 +18,37 @@
     img.className = "chica-intel-mark";
     img.src = INTEL_ICON;
     img.alt = "";
-    img.width = 28;
-    img.height = 28;
+    img.width = 32;
+    img.height = 32;
     return img;
   }
 
   function fillIntel(a) {
     while (a.firstChild) a.removeChild(a.firstChild);
     a.appendChild(intelMark());
-    var labelEl = document.createElement("span");
-    labelEl.textContent = "Intel";
-    a.appendChild(labelEl);
+  }
+
+  function fsMark(compress) {
+    var svg = document.createElementNS(SVG_NS, "svg");
+    svg.setAttribute("class", "chica-fs-mark");
+    svg.setAttribute("viewBox", "0 0 24 24");
+    svg.setAttribute("width", "26");
+    svg.setAttribute("height", "26");
+    svg.setAttribute("aria-hidden", "true");
+    var path = document.createElementNS(SVG_NS, "path");
+    path.setAttribute("fill", "none");
+    path.setAttribute("stroke", "#ffffff");
+    path.setAttribute("stroke-width", "3.25");
+    path.setAttribute("stroke-linecap", "square");
+    path.setAttribute("stroke-linejoin", "miter");
+    path.setAttribute(
+      "d",
+      compress
+        ? "M9.5 4v5.5H4M20 9.5h-5.5V4M14.5 20v-5.5H20M4 14.5h5.5V20"
+        : "M4 9.5V4h5.5M14.5 4H20v5.5M20 14.5V20h-5.5M9.5 20H4v-5.5",
+    );
+    svg.appendChild(path);
+    return svg;
   }
 
   function cssText() {
@@ -38,28 +58,19 @@
       "z-index:2147483647!important;display:flex!important;align-items:center;gap:8px;height:48px;pointer-events:none;",
       "}",
       "#" + CHROME_ID + ">*{pointer-events:auto}",
-      "#" + BTN_ID + "{",
+      "#" + BTN_ID + ",#" + INTEL_ID + "{",
       "position:relative!important;top:auto!important;right:auto!important;left:auto!important;bottom:auto!important;",
       "z-index:1!important;width:48px;min-width:48px;height:48px;padding:0;",
-      "border:2px solid #fffdf8;border-radius:16px;background:#1a1a1e;color:#fffdf8;",
-      "font:700 22px/1 \"Segoe UI Symbol\",\"Noto Sans Symbols 2\",\"Apple Symbols\",system-ui,sans-serif;",
+      "border:2px solid #fffdf8;border-radius:16px;color:#fff;",
       "cursor:pointer;display:flex!important;align-items:center;justify-content:center;",
-      "visibility:visible!important;opacity:1!important;pointer-events:auto!important;",
-      "box-shadow:0 8px 22px rgb(0 0 0 / .38),0 0 0 3px rgb(197 19 175 / .28);",
+      "visibility:visible!important;opacity:1!important;pointer-events:auto!important;text-decoration:none;",
       "}",
+      "#" + BTN_ID + "{background:#1a1a1e;box-shadow:0 8px 22px rgb(0 0 0 / .38),0 0 0 3px rgb(197 19 175 / .28)}",
       "#" + BTN_ID + "[aria-pressed=\"true\"]{background:#c513af;box-shadow:0 10px 28px rgb(197 19 175 / .55),0 0 0 3px rgb(197 19 175 / .28)}",
-      "#" + BTN_ID + ":hover{filter:brightness(1.08)}",
-      "#" + INTEL_ID + "{",
-      "position:relative!important;top:auto!important;right:auto!important;left:auto!important;bottom:auto!important;",
-      "z-index:1!important;height:48px;min-width:118px;padding:0 16px 0 10px;",
-      "border:2px solid #fffdf8;border-radius:999px;background:#c513af;color:#fffdf8;",
-      "font:800 14px/1 Inter,system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;",
-      "text-decoration:none;display:flex!important;align-items:center;justify-content:center;gap:8px;",
-      "visibility:visible!important;opacity:1!important;pointer-events:auto!important;",
-      "box-shadow:0 10px 28px rgb(197 19 175 / .55),0 0 0 3px rgb(197 19 175 / .28);",
-      "}",
-      "#" + INTEL_ID + " .chica-intel-mark{width:28px;height:28px;flex:0 0 28px;color:#fffdf8;display:block;object-fit:contain}",
-      "#" + INTEL_ID + ":hover{filter:brightness(1.06)}",
+      "#" + INTEL_ID + "{background:#c513af;box-shadow:0 10px 28px rgb(197 19 175 / .55),0 0 0 3px rgb(197 19 175 / .28)}",
+      "#" + BTN_ID + ":hover,#" + INTEL_ID + ":hover{filter:brightness(1.08)}",
+      "#" + BTN_ID + " .chica-fs-mark{width:26px;height:26px;display:block}",
+      "#" + INTEL_ID + " .chica-intel-mark{width:32px;height:32px;flex:0 0 32px;display:block;object-fit:contain}",
       "html." + HTML_ON + ",html." + HTML_ON + " body{overflow:hidden!important;height:100dvh!important;overscroll-behavior:none}",
       "html." + HTML_ON + " :has(> .chica-map),html." + HTML_ON + " :has(> .leaflet-container){",
       "position:fixed!important;inset:0!important;z-index:99990!important;",
@@ -134,8 +145,13 @@
 
   function label(btn) {
     if (!btn) return;
-    if (btn.textContent !== FS_GLYPH) btn.textContent = FS_GLYPH;
     var on = isOn();
+    var flag = on ? "1" : "0";
+    if (btn.getAttribute("data-fs") !== flag || !btn.querySelector(".chica-fs-mark")) {
+      while (btn.firstChild) btn.removeChild(btn.firstChild);
+      btn.appendChild(fsMark(on));
+      btn.setAttribute("data-fs", flag);
+    }
     var pressed = on ? "true" : "false";
     if (btn.getAttribute("aria-pressed") !== pressed) btn.setAttribute("aria-pressed", pressed);
     btn.setAttribute("aria-label", on ? "Exit full screen map" : "Full screen map");
@@ -188,7 +204,7 @@
       chrome.appendChild(a);
     }
     a.classList.add("on-map");
-    if (!a.querySelector(".chica-intel-mark")) fillIntel(a);
+    if (!a.querySelector(".chica-intel-mark") || a.textContent.trim()) fillIntel(a);
     return a;
   }
 
@@ -202,7 +218,6 @@
     btn = document.createElement("button");
     btn.id = BTN_ID;
     btn.type = "button";
-    btn.textContent = FS_GLYPH;
     btn.setAttribute("aria-label", "Full screen map");
     chrome.insertBefore(btn, chrome.firstChild);
     btn.addEventListener(
