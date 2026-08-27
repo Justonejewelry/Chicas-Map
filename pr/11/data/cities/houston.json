@@ -1,0 +1,42 @@
+{
+  "edition": "Houston Yard-Bird Discovery",
+  "date": "2026-08-26",
+  "city": "houston",
+  "total_locations": 0,
+  "status": "live",
+  "sources": [
+    "YardSaleSearch Houston",
+    "GarageSaleFinder Houston",
+    "estatesales.net Houston"
+  ],
+  "hot_zones": [
+    {
+      "name": "Heights / Near North",
+      "badge": "ACTIVE",
+      "lat": 29.8,
+      "lon": -95.4
+    },
+    {
+      "name": "SW / Sugar Land arc",
+      "badge": "ACTIVE",
+      "lat": 29.65,
+      "lon": -95.55
+    },
+    {
+      "name": "Clear Lake / SE",
+      "badge": "ACTIVE",
+      "lat": 29.56,
+      "lon": -95.1
+    },
+    {
+      "name": "NW / Cypress",
+      "badge": "ACTIVE",
+      "lat": 29.95,
+      "lon": -95.6
+    }
+  ],
+  "permits": [],
+  "permit_total": 0,
+  "public": [],
+  "last_refresh": "2026-08-26T06:32:41-05:00"
+}

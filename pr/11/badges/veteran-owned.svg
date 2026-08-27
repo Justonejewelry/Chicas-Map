@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88 31" role="img" aria-label="Veteran owned">
+  <rect width="88" height="31" rx="2" fill="#0b1f3a"/>
+  <rect x="0.5" y="0.5" width="87" height="30" rx="1.5" fill="none" stroke="#c5a35a"/>
+  <polygon points="16,6.2 17.7,11.4 23.2,11.5 18.8,14.7 20.4,20 16,16.9 11.6,20 13.2,14.7 8.8,11.5 14.3,11.4" fill="#c5a35a"/>
+  <text x="52" y="13.5" text-anchor="middle" fill="#c5a35a" font-family="Inter, Segoe UI, sans-serif" font-size="6.2" font-weight="800" letter-spacing="1.4">VETERAN</text>
+  <text x="52" y="23" text-anchor="middle" fill="#f4f4f4" font-family="Inter, Segoe UI, sans-serif" font-size="6.2" font-weight="800" letter-spacing="1.6">OWNED</text>
+</svg>
