@@ -8,6 +8,7 @@
   var INTEL_ICON = "/Chicas-Map/images/intel-brain.svg?v=2";
   var SAT_STORE = "chicas-map-layer-sat";
   var intelRadius = 200;
+  var openedKey = false;
 
   function readSat() {
     try {
@@ -160,7 +161,8 @@
       "html.chica-intel-on .leaflet-marker-icon .chica-intel-badge," +
       "html.chica-intel-on .chica-sym .chica-intel-badge{display:block}" +
       "#chica-intel-btn[aria-pressed=\"true\"]{filter:brightness(1.08)}" +
-      "#chica-intel-btn[aria-pressed=\"false\"]{opacity:.55}";
+      "#chica-intel-btn[aria-pressed=\"false\"]{opacity:.55}" +
+      ".leaflet-control-attribution{font-size:10px}";
     (document.head || document.documentElement).appendChild(s);
   }
 
@@ -303,8 +305,36 @@
     for (var i = 0; i < nodes.length; i++) {
       var t = (nodes[i].textContent || "").replace(/\s+/g, " ").trim();
       if (/^(SALES|LAYERS|VENTAS|CAPAS)$/i.test(t)) nodes[i].style.display = "none";
-      if (/Arrow keys|Tap a row|Tap a layer|walk the pins|turn it on or off/i.test(t)) {
+      if (
+        /Arrow keys|Tap a row|Tap a layer|walk the pins|turn it on or off|laid the pins|start near you|build a loop|take it kind/i.test(
+          t,
+        )
+      ) {
         nodes[i].style.display = "none";
+      }
+    }
+  }
+
+  function openKey(p) {
+    if (!p || openedKey) return;
+    if (p.querySelector("[data-chica-layer]")) {
+      openedKey = true;
+    }
+    var btn = p.querySelector("button");
+    if (!btn) return;
+    var expanded = btn.getAttribute("aria-expanded");
+    if (expanded === "false") {
+      btn.click();
+      openedKey = true;
+    }
+  }
+
+  function scrubCredit() {
+    var nodes = document.querySelectorAll(".leaflet-control-attribution");
+    for (var i = 0; i < nodes.length; i++) {
+      var t = nodes[i].textContent || "";
+      if (/CARTO|carto/i.test(t)) {
+        nodes[i].innerHTML = '<a href="https://leafletjs.com" target="_blank" rel="noreferrer">Leaflet</a> \u00a9 Esri';
       }
     }
   }
@@ -348,6 +378,8 @@
     var p = panel();
     if (!p) return;
     hideHeadings(p);
+    openKey(p);
+    scrubCredit();
     var items = p.querySelectorAll("li");
     for (var i = 0; i < items.length; i++) {
       var t = (items[i].textContent || "").toLowerCase();
