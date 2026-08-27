@@ -1,5 +1,5 @@
 /* Chicas Map — live display boot.
-   Swap watermarked CARTO rasters to Esri, fill the phone viewport, fly to the hunter.
+   Replace CARTO (API KEY REQUIRED) with Esri. Zoom to the hunter 1s after the map is up.
 */
 (function () {
   var SA = { lat: 29.4241, lon: -98.4936 };
@@ -8,7 +8,13 @@
     "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}";
   var ESRI_STREET =
     "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}";
+  var ESRI_SAT =
+    "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}";
+  var ESRI_LABELS =
+    "https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Reference_Overlay/MapServer/tile/{z}/{y}/{x}";
   var didLocate = false;
+  var mapSeenAt = 0;
+  var watching = false;
 
   function onMapPath() {
     var p = location.pathname || "";
@@ -19,31 +25,51 @@
     return document.documentElement.getAttribute("data-theme") === "light";
   }
 
+  function satOn() {
+    return document.documentElement.classList.contains("chica-sat-on");
+  }
+
   function insideBox(lat, lon) {
     return lat >= BOX.minLat && lat <= BOX.maxLat && lon >= BOX.minLon && lon <= BOX.maxLon;
   }
 
+  function dirtyUrl(src) {
+    if (!src) return false;
+    var s = String(src);
+    return (
+      /carto(cdn)?\.com/i.test(s) ||
+      /basemap-apikey/i.test(s) ||
+      /api[_\s-]?key[_\s-]?required/i.test(s)
+    );
+  }
+
+  function esriBase() {
+    if (satOn()) return ESRI_SAT;
+    return themeIsLight() ? ESRI_STREET : ESRI_DARK;
+  }
+
   function esriUrl(z, x, y) {
-    var tmpl = themeIsLight() ? ESRI_STREET : ESRI_DARK;
-    return tmpl.replace("{z}", z).replace("{y}", y).replace("{x}", x);
+    return esriBase().replace("{z}", z).replace("{y}", y).replace("{x}", x);
   }
 
   function rewriteCartoSrc(src) {
-    if (!src || src.indexOf("cartocdn.com") === -1) return src;
-    var m = String(src).match(/\/(\d+)\/(\d+)\/(\d+)/);
-    if (!m) return src;
+    if (!dirtyUrl(src)) return src;
+    var m = String(src).match(/\/(\d{1,2})\/(\d+)\/(\d+)/);
+    if (!m) return esriBase();
     return esriUrl(m[1], m[2], m[3]);
   }
 
   function rewriteTileImages() {
-    var imgs = document.querySelectorAll(".leaflet-tile-pane img, img.leaflet-tile");
+    var imgs = document.querySelectorAll(".leaflet-tile-pane img, img.leaflet-tile, .leaflet-tile-container img");
     for (var i = 0; i < imgs.length; i++) {
       var img = imgs[i];
       var src = img.getAttribute("src") || img.src || "";
       var next = rewriteCartoSrc(src);
       if (next && next !== src) {
         img.src = next;
-        try { img.setAttribute("src", next); } catch (e) {}
+        try {
+          img.setAttribute("src", next);
+        } catch (e) {}
       }
     }
   }
@@ -66,16 +92,28 @@
     rewriteTileImages();
     var map = findMap();
     if (!map || !map.eachLayer) return;
+    var want = esriBase();
     map.eachLayer(function (layer) {
       if (!layer || !layer.setUrl || !layer._url) return;
       var url = String(layer._url);
-      if (url.indexOf("cartocdn.com") === -1 && url.indexOf("carto.com") === -1) return;
-      var next = themeIsLight() ? ESRI_STREET : ESRI_DARK;
-      try {
-        layer.setUrl(next);
-        if (layer.options) layer.options.attribution = "Tiles \u00a9 Esri";
-      } catch (e) {}
+      if (!dirtyUrl(url) && url.indexOf("arcgisonline.com") === -1) return;
+      if (dirtyUrl(url) || (satOn() && url.indexOf("World_Imagery") === -1) || (!satOn() && url.indexOf("World_Imagery") !== -1)) {
+        try {
+          layer.setUrl(want);
+          if (layer.options) layer.options.attribution = "Tiles \u00a9 Esri";
+        } catch (e) {}
+      }
     });
+  }
+
+  function watchTiles() {
+    if (watching || !window.MutationObserver) return;
+    var pane = document.querySelector(".leaflet-tile-pane");
+    if (!pane) return;
+    watching = true;
+    new MutationObserver(function () {
+      rewriteTileImages();
+    }).observe(pane, { childList: true, subtree: true, attributes: true, attributeFilter: ["src"] });
   }
 
   function forceViewport() {
@@ -100,7 +138,9 @@
     mapEl.style.setProperty("z-index", "40", "important");
     var map = findMap();
     if (map) {
-      try { map.invalidateSize(); } catch (e) {}
+      try {
+        map.invalidateSize();
+      } catch (e) {}
     }
   }
 
@@ -108,6 +148,8 @@
     if (didLocate || !navigator.geolocation) return;
     var map = findMap();
     if (!map) return;
+    if (!mapSeenAt) mapSeenAt = Date.now();
+    if (Date.now() - mapSeenAt < 1000) return;
     didLocate = true;
     navigator.geolocation.getCurrentPosition(
       function (pos) {
@@ -117,17 +159,19 @@
           map.setView([SA.lat, SA.lon], 12, { animate: true });
           return;
         }
-        map.flyTo([lat, lon], 14, { duration: 0.7 });
+        map.flyTo([lat, lon], 15, { duration: 0.8 });
       },
       function () {
         map.setView([SA.lat, SA.lon], 12, { animate: true });
       },
-      { enableHighAccuracy: false, timeout: 7000, maximumAge: 60000 }
+      { enableHighAccuracy: true, timeout: 8000, maximumAge: 30000 }
     );
   }
 
   function tick() {
+    if (!onMapPath()) return;
     swapCartoTiles();
+    watchTiles();
     forceViewport();
     locateIfPossible();
   }
@@ -141,4 +185,8 @@
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", tick);
   else tick();
   window.addEventListener("resize", forceViewport);
+  window.addEventListener("chica-sat", function () {
+    watching = false;
+    swapCartoTiles();
+  });
 })();

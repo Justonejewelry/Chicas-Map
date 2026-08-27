@@ -1,26 +1,25 @@
 /* Chicas Map — KEY is one layer list. Symbol sits next to every name.
-   Intel is a layer, not a separate hunt. */
+   Intel is a layer, not a separate hunt. Intel never defaults on.
+*/
 (function () {
   if (!/\/map\/?$/.test(location.pathname || "") && (location.pathname || "").indexOf("/map/") === -1) return;
 
-  var MAGENTA = "#c513af";
-  var INTEL_STORE = "chicas-map-layer-intel";
   var INTEL_CFG = "/Chicas-Map/data/sale-intel.json";
   var INTEL_ICON = "/Chicas-Map/images/intel-brain.svg?v=2";
+  var SAT_STORE = "chicas-map-layer-sat";
   var intelRadius = 200;
-  var intelHinted = false;
 
-  function readIntelPref() {
+  function readSat() {
     try {
-      return localStorage.getItem(INTEL_STORE) === "1";
+      return localStorage.getItem(SAT_STORE) === "1";
     } catch (e) {
       return false;
     }
   }
 
-  function writeIntelPref(on) {
+  function writeSat(on) {
     try {
-      localStorage.setItem(INTEL_STORE, on ? "1" : "0");
+      localStorage.setItem(SAT_STORE, on ? "1" : "0");
     } catch (e) {}
   }
 
@@ -28,7 +27,8 @@
     garage: true,
     estate: true,
     permit: true,
-    intel: readIntelPref(),
+    intel: false,
+    satellite: readSat(),
     parking: false,
     pantry: false,
     schools: false,
@@ -40,6 +40,7 @@
     { id: "estate", kind: "sale", re: /estate/, label: "Estate sale" },
     { id: "permit", kind: "sale", re: /permit/, label: "City permit" },
     { id: "intel", kind: "intel", re: /intel|inteligencia/, label: "Intel" },
+    { id: "satellite", kind: "basemap", re: /satellite|sat[e\u00e9]lite/, label: "Satellite" },
     { id: "parking", kind: "overlay", re: /parking|estacionamiento/, label: "Parking" },
     { id: "pantry", kind: "overlay", re: /pantr|despensa/, label: "Pantries" },
     { id: "schools", kind: "overlay", re: /school|escolar/, label: "School zones" },
@@ -69,6 +70,13 @@
         '<img class="chica-key-sym" src="' +
         INTEL_ICON +
         '" width="14" height="14" alt="" aria-hidden="true" />'
+      );
+    }
+    if (id === "satellite") {
+      return svg(
+        '<circle cx="8" cy="8" r="6" fill="#0b3d62" stroke="#121212" stroke-width="1.2"/>' +
+          '<circle cx="6.2" cy="7" r="1.6" fill="#7dd3fc"/>' +
+          '<path d="M3.4 11.2 C5.2 9.4 10.6 9.6 12.6 11.4" fill="#22c55e"/>'
       );
     }
     if (id === "parking") {
@@ -151,9 +159,6 @@
       ".chica-intel-badge img{width:12px;height:12px;display:block;margin:1px auto}" +
       "html.chica-intel-on .leaflet-marker-icon .chica-intel-badge," +
       "html.chica-intel-on .chica-sym .chica-intel-badge{display:block}" +
-      "#chica-intel-hint{position:fixed;left:50%;bottom:max(18px,env(safe-area-inset-bottom));transform:translateX(-50%);" +
-      "z-index:2147483000;background:#121212;color:#fffdf8;border:2px solid #c513af;border-radius:999px;" +
-      "padding:8px 14px;font:600 12px/1.2 Inter,system-ui,sans-serif;pointer-events:none}" +
       "#chica-intel-btn[aria-pressed=\"true\"]{filter:brightness(1.08)}" +
       "#chica-intel-btn[aria-pressed=\"false\"]{opacity:.55}";
     (document.head || document.documentElement).appendChild(s);
@@ -172,20 +177,6 @@
       if (getComputedStyle(host).position === "static") host.style.position = "relative";
       host.appendChild(mark);
     }
-  }
-
-  function showHint() {
-    if (intelHinted || !state.intel) return;
-    intelHinted = true;
-    var old = document.getElementById("chica-intel-hint");
-    if (old) old.remove();
-    var el = document.createElement("div");
-    el.id = "chica-intel-hint";
-    el.textContent = "Intel layer on · notes unlock at " + intelRadius + " m";
-    document.body.appendChild(el);
-    setTimeout(function () {
-      if (el.parentNode) el.parentNode.removeChild(el);
-    }, 2800);
   }
 
   function syncIntelChrome() {
@@ -211,7 +202,6 @@
   function applyIntel() {
     ensureIntelStyle();
     document.documentElement.classList.toggle("chica-intel-on", state.intel);
-    writeIntelPref(state.intel);
     if (state.intel) stampBadges();
     else {
       var badges = document.querySelectorAll(".chica-intel-badge");
@@ -220,12 +210,21 @@
     syncIntelChrome();
     var row = document.querySelector('[data-chica-layer="intel"]');
     if (row) styleRow(row, state.intel);
-    if (state.intel) showHint();
   }
 
   function setIntel(on) {
     state.intel = !!on;
     applyIntel();
+  }
+
+  function applySat() {
+    document.documentElement.classList.toggle("chica-sat-on", state.satellite);
+    writeSat(state.satellite);
+    try {
+      window.dispatchEvent(new Event("chica-sat"));
+    } catch (e) {}
+    var row = document.querySelector('[data-chica-layer="satellite"]');
+    if (row) styleRow(row, state.satellite);
   }
 
   function clickOverlay(id) {
@@ -290,6 +289,7 @@
       styleRow(row, state[spec.id]);
       if (spec.kind === "sale") applyPins();
       else if (spec.kind === "intel") applyIntel();
+      else if (spec.kind === "basemap") applySat();
       else clickOverlay(spec.id);
     }
     row.addEventListener("click", tog, true);
@@ -302,7 +302,8 @@
     var nodes = p.querySelectorAll("p,h2,h3,h4,span,div,strong");
     for (var i = 0; i < nodes.length; i++) {
       var t = (nodes[i].textContent || "").replace(/\s+/g, " ").trim();
-      if (/^(SALES|LAYERS|VENTAS|CAPAS)$/i.test(t)) {
+      if (/^(SALES|LAYERS|VENTAS|CAPAS)$/i.test(t)) nodes[i].style.display = "none";
+      if (/Arrow keys|Tap a row|Tap a layer|walk the pins|turn it on or off/i.test(t)) {
         nodes[i].style.display = "none";
       }
     }
@@ -318,7 +319,7 @@
       wrap.style.cssText = "list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column;gap:6px";
       body.appendChild(wrap);
     }
-    var extras = ["intel", "parking", "pantry", "schools", "wifi"];
+    var extras = ["intel", "satellite", "parking", "pantry", "schools", "wifi"];
     for (var i = 0; i < extras.length; i++) {
       var id = extras[i];
       if (p.querySelector('[data-chica-layer="' + id + '"]')) continue;
@@ -333,7 +334,7 @@
   }
 
   function hideDup() {
-    var labels = /^(All|Garage|Estate|Permit|Intel|Parking|Pantries|School zones|Wi-Fi)$/i;
+    var labels = /^(All|Garage|Estate|Permit|Intel|Satellite|Parking|Pantries|School zones|Wi-Fi)$/i;
     var btns = document.querySelectorAll("button[aria-pressed]");
     for (var i = 0; i < btns.length; i++) {
       var t = (btns[i].textContent || "").replace(/\s+/g, " ").trim();
@@ -346,10 +347,6 @@
   function wire() {
     var p = panel();
     if (!p) return;
-    var hint = p.querySelector("p");
-    if (hint && (/Arrow keys|Tap a row/.test(hint.textContent || ""))) {
-      hint.textContent = "Tap a layer to turn it on or off.";
-    }
     hideHeadings(p);
     var items = p.querySelectorAll("li");
     for (var i = 0; i < items.length; i++) {
@@ -365,6 +362,7 @@
     hideDup();
     applyPins();
     applyIntel();
+    applySat();
   }
 
   function loadIntelCfg() {
