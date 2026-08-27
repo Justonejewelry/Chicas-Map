@@ -1,12 +1,34 @@
-/* Chicas Map — KEY is one layer list. Symbol sits next to every name. */
+/* Chicas Map — KEY is one layer list. Symbol sits next to every name.
+   Intel is a layer, not a separate hunt. */
 (function () {
   if (!/\/map\/?$/.test(location.pathname || "") && (location.pathname || "").indexOf("/map/") === -1) return;
 
   var MAGENTA = "#c513af";
+  var INTEL_STORE = "chicas-map-layer-intel";
+  var INTEL_CFG = "/Chicas-Map/data/sale-intel.json";
+  var INTEL_ICON = "/Chicas-Map/images/intel-brain.svg?v=2";
+  var intelRadius = 200;
+  var intelHinted = false;
+
+  function readIntelPref() {
+    try {
+      return localStorage.getItem(INTEL_STORE) === "1";
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function writeIntelPref(on) {
+    try {
+      localStorage.setItem(INTEL_STORE, on ? "1" : "0");
+    } catch (e) {}
+  }
+
   var state = {
     garage: true,
     estate: true,
     permit: true,
+    intel: readIntelPref(),
     parking: false,
     pantry: false,
     schools: false,
@@ -17,13 +39,14 @@
     { id: "garage", kind: "sale", re: /garage/, label: "Garage sale" },
     { id: "estate", kind: "sale", re: /estate/, label: "Estate sale" },
     { id: "permit", kind: "sale", re: /permit/, label: "City permit" },
+    { id: "intel", kind: "intel", re: /intel|inteligencia/, label: "Intel" },
     { id: "parking", kind: "overlay", re: /parking|estacionamiento/, label: "Parking" },
     { id: "pantry", kind: "overlay", re: /pantr|despensa/, label: "Pantries" },
     { id: "schools", kind: "overlay", re: /school|escolar/, label: "School zones" },
     { id: "wifi", kind: "overlay", re: /wi-?fi/, label: "Wi-Fi" },
   ];
 
-  function svg(inner, color) {
+  function svg(inner) {
     return (
       '<svg class="chica-key-sym" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false">' +
       inner +
@@ -40,6 +63,13 @@
     }
     if (id === "permit") {
       return svg('<polygon points="8,2.2 14.2,13.6 1.8,13.6" fill="#8a8a8a" stroke="#121212" stroke-width="1.4"/>');
+    }
+    if (id === "intel") {
+      return (
+        '<img class="chica-key-sym" src="' +
+        INTEL_ICON +
+        '" width="14" height="14" alt="" aria-hidden="true" />'
+      );
     }
     if (id === "parking") {
       return svg(
@@ -111,6 +141,93 @@
     }
   }
 
+  function ensureIntelStyle() {
+    if (document.getElementById("chica-intel-layer-style")) return;
+    var s = document.createElement("style");
+    s.id = "chica-intel-layer-style";
+    s.textContent =
+      ".chica-intel-badge{position:absolute;right:-5px;top:-6px;width:14px;height:14px;border-radius:999px;" +
+      "background:#c513af;box-shadow:0 0 0 2px #fffdf8;display:none;z-index:3;pointer-events:none}" +
+      ".chica-intel-badge img{width:12px;height:12px;display:block;margin:1px auto}" +
+      "html.chica-intel-on .leaflet-marker-icon .chica-intel-badge," +
+      "html.chica-intel-on .chica-sym .chica-intel-badge{display:block}" +
+      "#chica-intel-hint{position:fixed;left:50%;bottom:max(18px,env(safe-area-inset-bottom));transform:translateX(-50%);" +
+      "z-index:2147483000;background:#121212;color:#fffdf8;border:2px solid #c513af;border-radius:999px;" +
+      "padding:8px 14px;font:600 12px/1.2 Inter,system-ui,sans-serif;pointer-events:none}" +
+      "#chica-intel-btn[aria-pressed=\"true\"]{filter:brightness(1.08)}" +
+      "#chica-intel-btn[aria-pressed=\"false\"]{opacity:.55}";
+    (document.head || document.documentElement).appendChild(s);
+  }
+
+  function stampBadges() {
+    if (!state.intel) return;
+    var pins = document.querySelectorAll(".leaflet-marker-icon, .chica-sym");
+    for (var i = 0; i < pins.length; i++) {
+      var host = pins[i];
+      if (host.querySelector(".chica-intel-badge")) continue;
+      if ((host.getAttribute("title") || "") === "You") continue;
+      var mark = document.createElement("span");
+      mark.className = "chica-intel-badge";
+      mark.innerHTML = '<img src="' + INTEL_ICON + '" alt="" width="12" height="12" />';
+      if (getComputedStyle(host).position === "static") host.style.position = "relative";
+      host.appendChild(mark);
+    }
+  }
+
+  function showHint() {
+    if (intelHinted || !state.intel) return;
+    intelHinted = true;
+    var old = document.getElementById("chica-intel-hint");
+    if (old) old.remove();
+    var el = document.createElement("div");
+    el.id = "chica-intel-hint";
+    el.textContent = "Intel layer on · notes unlock at " + intelRadius + " m";
+    document.body.appendChild(el);
+    setTimeout(function () {
+      if (el.parentNode) el.parentNode.removeChild(el);
+    }, 2800);
+  }
+
+  function syncIntelChrome() {
+    var btn = document.getElementById("chica-intel-btn");
+    if (!btn) return;
+    btn.setAttribute("aria-pressed", state.intel ? "true" : "false");
+    btn.setAttribute("aria-label", state.intel ? "Hide Intel layer" : "Show Intel layer");
+    btn.title = state.intel ? "Intel layer on" : "Intel layer off";
+    if (!btn.getAttribute("data-chica-intel-layer")) {
+      btn.setAttribute("data-chica-intel-layer", "1");
+      btn.addEventListener(
+        "click",
+        function (ev) {
+          ev.preventDefault();
+          ev.stopPropagation();
+          setIntel(!state.intel);
+        },
+        true,
+      );
+    }
+  }
+
+  function applyIntel() {
+    ensureIntelStyle();
+    document.documentElement.classList.toggle("chica-intel-on", state.intel);
+    writeIntelPref(state.intel);
+    if (state.intel) stampBadges();
+    else {
+      var badges = document.querySelectorAll(".chica-intel-badge");
+      for (var i = 0; i < badges.length; i++) badges[i].style.display = "none";
+    }
+    syncIntelChrome();
+    var row = document.querySelector('[data-chica-layer="intel"]');
+    if (row) styleRow(row, state.intel);
+    if (state.intel) showHint();
+  }
+
+  function setIntel(on) {
+    state.intel = !!on;
+    applyIntel();
+  }
+
   function clickOverlay(id) {
     var map = {
       parking: /^(Parking|Estacionamiento)/i,
@@ -152,7 +269,7 @@
     }
     var mark = row.querySelector(".chica-key-sym");
     if (mark) {
-      mark.style.cssText = "flex:0 0 14px;display:block";
+      mark.style.cssText = "flex:0 0 14px;display:block;width:14px;height:14px;object-fit:contain";
     }
   }
 
@@ -172,6 +289,7 @@
       state[spec.id] = !state[spec.id];
       styleRow(row, state[spec.id]);
       if (spec.kind === "sale") applyPins();
+      else if (spec.kind === "intel") applyIntel();
       else clickOverlay(spec.id);
     }
     row.addEventListener("click", tog, true);
@@ -200,7 +318,7 @@
       wrap.style.cssText = "list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column;gap:6px";
       body.appendChild(wrap);
     }
-    var extras = ["parking", "pantry", "schools", "wifi"];
+    var extras = ["intel", "parking", "pantry", "schools", "wifi"];
     for (var i = 0; i < extras.length; i++) {
       var id = extras[i];
       if (p.querySelector('[data-chica-layer="' + id + '"]')) continue;
@@ -215,11 +333,12 @@
   }
 
   function hideDup() {
-    var labels = /^(All|Garage|Estate|Permit|Parking|Pantries|School zones|Wi-Fi)$/i;
+    var labels = /^(All|Garage|Estate|Permit|Intel|Parking|Pantries|School zones|Wi-Fi)$/i;
     var btns = document.querySelectorAll("button[aria-pressed]");
     for (var i = 0; i < btns.length; i++) {
       var t = (btns[i].textContent || "").replace(/\s+/g, " ").trim();
       if (!labels.test(t) || btns[i].closest("aside")) continue;
+      if (btns[i].id === "chica-intel-btn" || btns[i].id === "chica-fs-btn") continue;
       btns[i].classList.add("chica-dup-chip");
     }
   }
@@ -245,9 +364,24 @@
     ensureOverlays(p);
     hideDup();
     applyPins();
+    applyIntel();
+  }
+
+  function loadIntelCfg() {
+    fetch(INTEL_CFG, { cache: "no-store" })
+      .then(function (r) {
+        return r.ok ? r.json() : null;
+      })
+      .then(function (cfg) {
+        if (!cfg) return;
+        var n = Number(cfg.radius_m);
+        if (n > 0) intelRadius = n;
+      })
+      .catch(function () {});
   }
 
   function boot() {
+    loadIntelCfg();
     wire();
     setInterval(wire, 900);
   }
