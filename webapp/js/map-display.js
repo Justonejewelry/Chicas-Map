@@ -1,5 +1,5 @@
 /* Chicas Map — live display boot.
-   Replace CARTO (API KEY REQUIRED) with Esri. Zoom to the hunter 1s after the map is up.
+   Replace CARTO with Esri. One size pass. Ease to the hunter after 1s.
 */
 (function () {
   var SA = { lat: 29.4241, lon: -98.4936 };
@@ -10,11 +10,13 @@
     "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}";
   var ESRI_SAT =
     "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}";
-  var ESRI_LABELS =
-    "https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Reference_Overlay/MapServer/tile/{z}/{y}/{x}";
   var didLocate = false;
+  var askedGeo = false;
+  var pendingFix = null;
   var mapSeenAt = 0;
   var watching = false;
+  var sized = false;
+  var viewported = false;
 
   function onMapPath() {
     var p = location.pathname || "";
@@ -36,11 +38,7 @@
   function dirtyUrl(src) {
     if (!src) return false;
     var s = String(src);
-    return (
-      /carto(cdn)?\.com/i.test(s) ||
-      /basemap-apikey/i.test(s) ||
-      /api[_\s-]?key[_\s-]?required/i.test(s)
-    );
+    return /carto(cdn)?\.com/i.test(s) || /basemap-apikey/i.test(s) || /api[_\s-]?key[_\s-]?required/i.test(s);
   }
 
   function esriBase() {
@@ -119,53 +117,75 @@
   function forceViewport() {
     if (!onMapPath()) return;
     document.documentElement.classList.add("chica-fs-on");
-    document.documentElement.style.overflow = "hidden";
-    document.body.style.overflow = "hidden";
-    document.body.style.height = "100dvh";
+    if (!viewported) {
+      document.documentElement.style.overflow = "hidden";
+      document.body.style.overflow = "hidden";
+      document.body.style.height = "100dvh";
+      viewported = true;
+    }
     var mapEl = document.querySelector(".leaflet-container") || document.querySelector(".chica-map");
     if (!mapEl) return;
-    var n = mapEl;
-    while (n && n !== document.body) {
-      n.style.setProperty("max-width", "none", "important");
-      n.style.setProperty("width", "100%", "important");
-      n.style.setProperty("max-height", "none", "important");
-      n = n.parentElement;
+    if (!mapEl.getAttribute("data-chica-fs")) {
+      var n = mapEl;
+      while (n && n !== document.body) {
+        n.style.setProperty("max-width", "none", "important");
+        n.style.setProperty("width", "100%", "important");
+        n.style.setProperty("max-height", "none", "important");
+        n = n.parentElement;
+      }
+      mapEl.style.setProperty("position", "fixed", "important");
+      mapEl.style.setProperty("inset", "0px", "important");
+      mapEl.style.setProperty("width", "100vw", "important");
+      mapEl.style.setProperty("height", "100dvh", "important");
+      mapEl.style.setProperty("z-index", "40", "important");
+      mapEl.setAttribute("data-chica-fs", "1");
     }
-    mapEl.style.setProperty("position", "fixed", "important");
-    mapEl.style.setProperty("inset", "0px", "important");
-    mapEl.style.setProperty("width", "100vw", "important");
-    mapEl.style.setProperty("height", "100dvh", "important");
-    mapEl.style.setProperty("z-index", "40", "important");
+    if (sized) return;
     var map = findMap();
-    if (map) {
-      try {
-        map.invalidateSize();
-      } catch (e) {}
+    if (!map) return;
+    sized = true;
+    try {
+      map.invalidateSize({ animate: false, pan: false });
+    } catch (e) {}
+  }
+
+  function easeTo(map, lat, lon, zoom) {
+    try {
+      map.flyTo([lat, lon], zoom, { duration: 1.25, easeLinearity: 0.18, noMoveStart: false });
+    } catch (e) {
+      map.setView([lat, lon], zoom, { animate: true });
     }
   }
 
-  function locateIfPossible() {
-    if (didLocate || !navigator.geolocation) return;
-    var map = findMap();
-    if (!map) return;
-    if (!mapSeenAt) mapSeenAt = Date.now();
-    if (Date.now() - mapSeenAt < 1000) return;
-    didLocate = true;
+  function askGeo() {
+    if (askedGeo || !navigator.geolocation) return;
+    askedGeo = true;
     navigator.geolocation.getCurrentPosition(
       function (pos) {
-        var lat = pos.coords.latitude;
-        var lon = pos.coords.longitude;
-        if (!insideBox(lat, lon)) {
-          map.setView([SA.lat, SA.lon], 12, { animate: true });
-          return;
-        }
-        map.flyTo([lat, lon], 15, { duration: 0.8 });
+        pendingFix = { lat: pos.coords.latitude, lon: pos.coords.longitude };
       },
       function () {
-        map.setView([SA.lat, SA.lon], 12, { animate: true });
+        pendingFix = { lat: SA.lat, lon: SA.lon, fallback: true };
       },
       { enableHighAccuracy: true, timeout: 8000, maximumAge: 30000 }
     );
+  }
+
+  function locateIfPossible() {
+    if (didLocate) return;
+    var map = findMap();
+    if (!map) return;
+    if (!mapSeenAt) mapSeenAt = Date.now();
+    askGeo();
+    if (Date.now() - mapSeenAt < 1000) return;
+    if (!pendingFix && Date.now() - mapSeenAt < 4000) return;
+    didLocate = true;
+    var fix = pendingFix || { lat: SA.lat, lon: SA.lon, fallback: true };
+    if (fix.fallback || !insideBox(fix.lat, fix.lon)) {
+      easeTo(map, SA.lat, SA.lon, 12);
+      return;
+    }
+    easeTo(map, fix.lat, fix.lon, 15);
   }
 
   function tick() {
@@ -180,11 +200,14 @@
   var id = setInterval(function () {
     n += 1;
     tick();
-    if (n > 80) clearInterval(id);
-  }, 200);
+    if (n > 40) clearInterval(id);
+  }, 250);
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", tick);
   else tick();
-  window.addEventListener("resize", forceViewport);
+  window.addEventListener("resize", function () {
+    sized = false;
+    forceViewport();
+  });
   window.addEventListener("chica-sat", function () {
     watching = false;
     swapCartoTiles();

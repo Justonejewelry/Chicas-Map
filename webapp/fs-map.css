@@ -1,4 +1,4 @@
-/* Chicas Map — header dock: thick fullscreen mark + white Intel brain. */
+/* Chicas Map — header dock + motion. */
 #chica-map-chrome {
   position: fixed !important;
   top: max(10px, env(safe-area-inset-top)) !important;
@@ -16,6 +16,7 @@
 
 #chica-map-chrome > * {
   pointer-events: auto;
+  transition: transform 180ms ease, filter 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
 }
 
 #chica-fs-btn,
@@ -61,6 +62,11 @@
 #chica-fs-btn:hover,
 #chica-intel-btn:hover {
   filter: brightness(1.08);
+}
+
+#chica-fs-btn:active,
+#chica-intel-btn:active {
+  transform: scale(0.96);
 }
 
 #chica-fs-btn .chica-fs-mark {
@@ -115,6 +121,93 @@ html.chica-fs-on .leaflet-container {
   height: 100% !important;
   min-height: 100% !important;
   border-radius: 0 !important;
+}
+
+.leaflet-container {
+  background: #121212;
+}
+
+.leaflet-fade-anim .leaflet-tile {
+  will-change: opacity;
+}
+
+.leaflet-fade-anim .leaflet-tile-loaded {
+  transition: opacity 280ms ease;
+}
+
+.leaflet-zoom-anim .leaflet-zoom-animated {
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  transition-duration: 280ms;
+}
+
+aside[aria-label="Key"],
+aside[aria-label="key"] {
+  transition: box-shadow 220ms ease, transform 220ms ease, opacity 220ms ease;
+}
+
+aside[aria-label="Key"] li[role="button"],
+aside[aria-label="key"] li[role="button"] {
+  user-select: none;
+  transition: opacity 180ms ease, transform 160ms ease;
+}
+
+aside[aria-label="Key"] li[role="button"]:active,
+aside[aria-label="key"] li[role="button"]:active {
+  transform: scale(0.98);
+}
+
+#chica-pin-claim {
+  position: fixed;
+  z-index: 2147483645;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 11px 14px;
+  border-radius: 14px;
+  background: #1a1714;
+  color: #f3eee4;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.4);
+  font: 600 14px / 1.3 Inter, system-ui, sans-serif;
+  border: 1px solid #3a342e;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 320ms ease, transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+#chica-pin-claim.is-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#chica-pin-claim .chica-claim-pay,
+#chica-pin-claim .chica-claim-more {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform 160ms ease, filter 160ms ease, background-color 160ms ease;
+}
+
+#chica-pin-claim .chica-claim-pay {
+  background: #c513af;
+  color: #fff;
+  font-weight: 800;
+}
+
+#chica-pin-claim .chica-claim-more {
+  padding: 10px 12px;
+  background: transparent;
+  color: #f3eee4;
+  border: 1px solid #5a534c;
+}
+
+#chica-pin-claim .chica-claim-pay:active,
+#chica-pin-claim .chica-claim-more:active {
+  transform: scale(0.97);
 }
 
 #chica-claimed-layer {
@@ -174,7 +267,18 @@ button.chica-dup-chip {
   overflow: hidden !important;
   clip: rect(0 0 0 0) !important;
 }
-aside[aria-label="Key"] li[role="button"],
-aside[aria-label="key"] li[role="button"] {
-  user-select: none;
+
+@media (prefers-reduced-motion: reduce) {
+  .leaflet-fade-anim .leaflet-tile-loaded,
+  .leaflet-zoom-anim .leaflet-zoom-animated,
+  #chica-map-chrome > *,
+  #chica-pin-claim,
+  aside[aria-label="Key"] li[role="button"],
+  aside[aria-label="key"] li[role="button"] {
+    transition: none !important;
+  }
+  #chica-pin-claim {
+    opacity: 1;
+    transform: none;
+  }
 }

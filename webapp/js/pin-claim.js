@@ -54,6 +54,7 @@
     }
     var t = copy();
     var bar = document.getElementById(BAR_ID);
+    var fresh = !bar;
     if (!bar) {
       bar = document.createElement("div");
       bar.id = BAR_ID;
@@ -61,9 +62,9 @@
       bar.setAttribute("aria-label", t.line);
       document.body.appendChild(bar);
     }
-    bar.style.cssText =
-      "position:fixed;z-index:2147483645;display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:11px 14px;border-radius:14px;background:#1a1714;color:#f3eee4;box-shadow:0 10px 28px rgba(0,0,0,.4);font:600 14px/1.3 Inter,system-ui,sans-serif;border:1px solid #3a342e";
     place(bar);
+    if (bar.getAttribute("data-chica-copy") === t.line) return;
+    bar.setAttribute("data-chica-copy", t.line);
     bar.innerHTML =
       "<span style=\"flex:1;min-width:140px\">" +
       t.line +
@@ -71,14 +72,15 @@
       '<span style="display:flex;gap:8px;flex-wrap:wrap">' +
       '<a href="' +
       pay +
-      '" target="_blank" rel="noreferrer" style="display:inline-flex;align-items:center;padding:10px 14px;border-radius:10px;background:#c513af;color:#fff;text-decoration:none;white-space:nowrap;font-weight:800">' +
+      '" target="_blank" rel="noreferrer" class="chica-claim-pay">' +
       t.pay +
       "</a>" +
       '<a href="' +
       claim +
-      '" style="display:inline-flex;align-items:center;padding:10px 12px;border-radius:10px;background:transparent;color:#f3eee4;text-decoration:none;white-space:nowrap;border:1px solid #5a534c">' +
+      '" class="chica-claim-more">' +
       t.more +
       "</a></span>";
+    if (fresh) bar.classList.add("is-in");
   }
 
   function boot() {
