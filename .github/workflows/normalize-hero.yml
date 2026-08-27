@@ -1,0 +1,24 @@
+name: normalize-hero
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  rename:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Move selfie to canonical path
+        run: |
+          set -e
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -f webapp/images/chica-hero.jpg.jpg ]; then
+            rm -f webapp/images/chica-hero.jpg
+            git add -A webapp/images/chica-hero.jpg || true
+            git mv webapp/images/chica-hero.jpg.jpg webapp/images/chica-hero.jpg
+            git commit -m "Rename hero selfie to chica-hero.jpg"
+            git push
+          else
+            echo "No double-extension file; nothing to do"
+          fi
