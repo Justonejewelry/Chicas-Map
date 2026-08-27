@@ -43,6 +43,11 @@ export const Route = createRootRoute({
           <Outlet />
         </AuthProvider>
         <Scripts />
+        <script
+          data-goatcounter="https://chicasmap.goatcounter.com/count"
+          async
+          src="https://gc.zgo.at/count.js"
+        />
       </body>
     </html>
   ),

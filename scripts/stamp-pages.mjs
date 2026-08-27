@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Stamp GitHub Pages output: Spanish SEO shells, hreflang, sitemap, locale boot.
+ * Stamp GitHub Pages output: Spanish SEO shells, hreflang, sitemap, locale boot, GoatCounter.
  */
 import { mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
@@ -63,6 +63,8 @@ const PAGES = [
 
 const ES_BOOT = `<script>(function(){try{var b="/Chicas-Map";var p=location.pathname;var es=b+"/es";if(p===es||p.indexOf(es+"/")===0){localStorage.setItem("chicas-map-locale","es");document.documentElement.lang="es";var rest=p.slice(es.length)||"/";history.replaceState(null,"",b+(rest.charAt(0)==="/"?rest:"/"+rest)+location.search+location.hash);}}catch(e){}})();</script>`;
 
+const GOATCOUNTER = `<script data-goatcounter="https://chicasmap.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>`;
+
 function walk(dir, acc = []) {
   for (const name of readdirSync(dir)) {
     if (name === "preview" || name === "assets" || name === "node_modules") continue;
@@ -104,6 +106,11 @@ for (const file of htmlFiles) {
   }
   if (!html.includes('href="/Chicas-Map/humans.txt"')) {
     html = html.replace("<head>", `<head><link rel="author" href="/Chicas-Map/humans.txt"/>`);
+  }
+  if (!html.includes("data-goatcounter")) {
+    html = html.includes("</body>")
+      ? html.replace("</body>", `${GOATCOUNTER}</body>`)
+      : html + GOATCOUNTER;
   }
   writeFileSync(file, html);
 }
