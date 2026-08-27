@@ -20,9 +20,15 @@ EID_ID_RE = re.compile(r"calendar\.aspx\?EID=(\d+)", re.I)
 VEVENT_RE = re.compile(r"BEGIN:VEVENT\s*(.*?)\s*END:VEVENT", re.I | re.S)
 PROP_RE = re.compile(r"^([A-Z0-9-]+)(;[^:]*)?:(.*)$", re.I | re.M)
 SKIP_TITLE_RE = re.compile(
-    r"^(city\s+)?offices?\s+closed$|submittal deadline|bulky pick.?up|arc meeting\s*$",
+    r"offices?\s+closed|city\s+hall\s+closed|"
+    r"submittal deadline|"
+    r"bulky\s+(item|pick)|brush collection|bulk\s*&\s*brush|"
+    r"\bmunicipal court\b|"
+    r"^arc meeting\s*$|"
+    r"mosquito fogging",
     re.I,
 )
+STREET_NUM_RE = re.compile(r"\b\d{1,6}\s+[A-Za-z]")
 
 
 def unfold_ics(text: str) -> str:
@@ -76,14 +82,17 @@ def ics_address(location: str) -> str:
     loc = _unescape(location)
     if not loc:
         return ""
-    if " - " in loc:
-        tail = loc.rsplit(" - ", 1)[-1].strip(" ,")
-        if re.search(r"\d{2,5}", tail):
-            return tail
     extracted = extract_address(loc)
     if extracted:
         return extracted
-    if re.search(r"\d{2,5}", loc):
+    if " - " in loc:
+        tail = loc.rsplit(" - ", 1)[-1].strip(" ,")
+        extracted = extract_address(tail)
+        if extracted:
+            return extracted
+        if STREET_NUM_RE.search(tail):
+            return tail
+    if STREET_NUM_RE.search(loc):
         return loc
     return ""
 

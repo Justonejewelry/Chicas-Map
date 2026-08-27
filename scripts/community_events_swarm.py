@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Chica's Map Community Events Swarm v2.5. ICS + RSS + follow-calendar. No Google Calendar."""
+"""Chica's Map Community Events Swarm v2.6. ICS + RSS + follow-calendar. No Google Calendar."""
 from __future__ import annotations
 import hashlib, html as htmlmod, json, re
 from datetime import datetime
@@ -25,13 +25,14 @@ FEED = ROOT / "webapp" / "data" / "community-events.json"
 REPORT = ROOT / "reports" / "community-events-latest.md"
 SOURCES = ROOT / "config" / "community-event-sources.json"
 CT = ZoneInfo("America/Chicago")
-UA = "Chica's Map Community Events Scout/2.5 (+https://justonejewelry.github.io/Chicas-Map/)"
-HREF_RE = re.compile(r"""<a[^>]+href=[\"']([^\"']+)[\"'][^>]*>(.*?)</a>""", re.I | re.S)
+UA = "Chica's Map Community Events Scout/2.6 (+https://justonejewelry.github.io/Chicas-Map/)"
+HREF_RE = re.compile(r"""<a[^>]+href=["']([^"']+)["'][^>]*>(.*?)</a>""", re.I | re.S)
 CATEGORY_PATH_RE = re.compile(r"CategoryID|CategoryName|authorid|mcat/|PID/15381", re.I)
 CAL_PATH_RE = re.compile(r"/(calendar|events|event|events-calendar|community-calendar|announcements-calendars)(/|$|\?)", re.I)
 ICS_HINT_RE = re.compile(r"ical=1|format=ical|ical\.php|icalendar\.aspx|calendar/feed", re.I)
 EVENT_HREF_HINTS = ("event-details", "articleid", "artdate", "/events/", "/event/", "events-calendar/", "community-calendar/event", "eid=")
 DETAIL_URL_BONUS = ("articleid", "eid=", "/event/", "events-calendar/")
+LISTING_PATHS = {"/", "/events", "/calendar", "/find", "/community-calendar", "/calendars"}
 def now_iso() -> str:
     return datetime.now(CT).isoformat(timespec="seconds")
 def fetch(url: str, timeout: int = 16) -> str:
@@ -70,7 +71,9 @@ def is_junk_url(url: str) -> bool:
     if CATEGORY_PATH_RE.search(url) and "articleid" not in low:
         return True
     path = urlparse(url).path.lower().rstrip("/") or "/"
-    if path in {"/events", "/calendar", "/find"} or path.endswith("/events") or path.endswith("/calendar"):
+    if path in LISTING_PATHS:
+        return True
+    if path.endswith(("/events", "/calendar", "/community-calendar", "/calendars")):
         return True
     last = path.split("/")[-1]
     if re.fullmatch(r"\d+", last) and "/events/" not in path and "/event/" not in path:
@@ -303,11 +306,11 @@ def main() -> None:
             errors.append(f"{name}: {e.reason}")
         except Exception as e:
             errors.append(f"{name}: {type(e).__name__}: {e}")
-    feed_payload = {"updated": now_iso(), "city": cfg.get("city", "san-antonio"), "version": 2.5, "events": kept + promoted}
+    feed_payload = {"updated": now_iso(), "city": cfg.get("city", "san-antonio"), "version": 2.6, "events": kept + promoted}
     FEED.parent.mkdir(parents=True, exist_ok=True)
     FEED.write_text(json.dumps(feed_payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     all_candidates.sort(key=lambda x: (-x.get("confidence", 0), x.get("url", "")))
-    lines = ["# Chica's Map -- Community Events Swarm v2.5", "", f"Run: {now_iso()}", f"Sources scanned: **{len(sources)}**", f"Candidates discovered: **{len(all_candidates)}**", f"With parsed dates: **{dated}**", f"With street/venue address: **{addressed}**", f"Promoted this run: **{len(promoted)}**", f"Kept from prior feed: **{len(kept)}**", f"Purged from prior feed: **{len(purged)}**", f"Source errors: **{len(errors)}**", f"Rejected by Sentinel: **{len(rejected)}**", "", "## Promoted (passed Events Sentinel)"]
+    lines = ["# Chica's Map -- Community Events Swarm v2.6", "", f"Run: {now_iso()}", f"Sources scanned: **{len(sources)}**", f"Candidates discovered: **{len(all_candidates)}**", f"With parsed dates: **{dated}**", f"With street/venue address: **{addressed}**", f"Promoted this run: **{len(promoted)}**", f"Kept from prior feed: **{len(kept)}**", f"Purged from prior feed: **{len(purged)}**", f"Source errors: **{len(errors)}**", f"Rejected by Sentinel: **{len(rejected)}**", "", "## Promoted (passed Events Sentinel)"]
     if promoted:
         for p in promoted:
             lines.append(f"- **{p.get('title')}** -- {p.get('date')} -- {p.get('address') or 'no-address'} -- conf {p.get('confidence')} -- {p.get('url')}")
@@ -322,7 +325,7 @@ def main() -> None:
         lines += ["", "## Rejected by Sentinel"] + [f"- {r}" for r in rejected[:50]]
     if errors:
         lines += ["", "## Source Errors"] + [f"- {e}" for e in errors]
-    lines += ["", "---", "Notes: v2.5 follows HOA/news calendar links. CivicEngage ICS, Tribe ICS, RSS. Login-walled HOAs skipped. No Google Calendar."]
+    lines += ["", "---", "Notes: v2.6 caps events at 180 days, drops office-closed holidays, city-only stubs, listing URLs, and HTML fragments. CivicEngage ICS, Tribe ICS, RSS. No Google Calendar."]
     REPORT.parent.mkdir(parents=True, exist_ok=True)
     REPORT.write_text("\n".join(lines) + "\n", encoding="utf-8")
     print(f"Candidates: {len(all_candidates)} | Dated: {dated} | Addressed: {addressed} | Promoted: {len(promoted)} | Kept: {len(kept)} | Purged: {len(purged)} | Errors: {len(errors)}")
