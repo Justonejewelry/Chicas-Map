@@ -1,211 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="antialiased">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>Chicas Sale Intel · notes from the driveway</title>
+    <title>Sale Intel · Chicas Map</title>
     <meta
       name="description"
-      content="Notes from people who are actually at the sale. Sharing unlocks within 200 meters. GPS, not rumors."
+      content="GPS-gated driveway notes for San Antonio garage sales. Sharing unlocks within 200 meters. Rumors stay on the porch."
     />
-    <meta name="theme-color" content="#0e0e0e" />
-    <link rel="icon" type="image/svg+xml" href="/Chicas-Map/favicon.svg" />
-    <link rel="apple-touch-icon" href="/Chicas-Map/apple-touch-icon.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <meta name="theme-color" content="#121212" />
+    <link rel="stylesheet" href="/Chicas-Map/assets/styles-D8YtPAwk.css" data-precedence="default" />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
     />
-    <style>
-      :root {
-        --bg: #0e0e0e;
-        --ink: #fefefe;
-        --muted: #c8c8c8;
-        --line: #3a3a3a;
-        --paper: #171717;
-        --pine: #c513af;
-        --cream: #fffdf8;
-        --ring: #ff7adf;
-      }
-      html[data-theme="light"] {
-        --bg: #f6f1ea;
-        --ink: #121212;
-        --muted: #4a4a4a;
-        --line: #d9d0c6;
-        --paper: #fffdf8;
-        --pine: #c513af;
-        --cream: #fffdf8;
-        --ring: #9a0d86;
-      }
-      * { box-sizing: border-box; }
-      html, body { margin: 0; background: var(--bg); color: var(--ink); }
-      body {
-        min-height: 100dvh;
-        font-family: Inter, "Segoe UI", system-ui, sans-serif;
-        -webkit-font-smoothing: antialiased;
-      }
-      h1, h2 { font-family: Syne, Inter, sans-serif; text-wrap: balance; }
-      a { color: inherit; }
-      .skip {
-        position: absolute;
-        left: 12px;
-        top: 12px;
-        z-index: 20;
-        transform: translateY(-200%);
-        border-radius: 999px;
-        background: var(--pine);
-        color: #fff;
-        padding: 12px 18px;
-        font-weight: 700;
-        text-decoration: none;
-      }
-      .skip:focus { transform: none; }
-      header {
-        position: sticky;
-        top: 0;
-        z-index: 10;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 12px;
-        padding: max(10px, env(safe-area-inset-top)) 16px 10px;
-        border-bottom: 1px solid var(--line);
-        background: color-mix(in oklab, var(--bg) 92%, transparent);
-        backdrop-filter: blur(10px);
-      }
-      .brand {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        min-width: 0;
-        text-decoration: none;
-        font-family: Syne, Inter, sans-serif;
-        font-weight: 800;
-        font-size: 1.05rem;
-      }
-      .brand img {
-        width: 36px;
-        height: 36px;
-        border-radius: 999px;
-        object-fit: cover;
-        background: var(--paper);
-      }
-      nav { display: flex; flex-wrap: wrap; gap: 6px; }
-      nav a {
-        display: inline-flex;
-        align-items: center;
-        min-height: 44px;
-        padding: 0 14px;
-        border-radius: 999px;
-        text-decoration: none;
-        font-size: 0.875rem;
-        font-weight: 600;
-      }
-      nav a:hover { background: var(--paper); }
-      nav a[aria-current="page"] {
-        background: var(--pine);
-        color: #fff;
-      }
-      main {
-        max-width: 720px;
-        margin: 0 auto;
-        padding: 32px 20px 80px;
-      }
-      .eyebrow {
-        margin: 0;
-        font-size: 0.72rem;
-        font-weight: 800;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-        color: var(--muted);
-      }
-      h1 {
-        margin: 10px 0 0;
-        font-size: clamp(2rem, 6vw, 3.2rem);
-        line-height: 1.05;
-        letter-spacing: -0.03em;
-      }
-      h1 em { font-style: italic; font-weight: 700; color: var(--pine); }
-      html[data-theme="light"] h1 em { color: #9a0d86; }
-      .lede {
-        margin: 16px 0 0;
-        max-width: 42rem;
-        font-size: 1.05rem;
-        line-height: 1.55;
-        color: var(--muted);
-        text-wrap: pretty;
-      }
-      .ctas {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        margin-top: 24px;
-      }
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 48px;
-        padding: 0 20px;
-        border-radius: 999px;
-        font-weight: 700;
-        font-size: 0.95rem;
-        text-decoration: none;
-      }
-      .btn.primary {
-        background: var(--pine);
-        color: #fff;
-        box-shadow: 0 10px 28px rgb(197 19 175 / 0.4);
-      }
-      .btn.ghost {
-        background: var(--paper);
-        color: var(--ink);
-        box-shadow: inset 0 0 0 1px var(--line);
-      }
-      .btn:focus-visible {
-        outline: 2px solid var(--ring);
-        outline-offset: 3px;
-      }
-      .beats {
-        list-style: none;
-        margin: 36px 0 0;
-        padding: 0;
-        display: grid;
-        gap: 12px;
-      }
-      .beats li {
-        background: var(--paper);
-        border: 1px solid var(--line);
-        border-radius: 16px;
-        padding: 16px 18px;
-      }
-      .beats strong {
-        display: block;
-        font-family: Syne, Inter, sans-serif;
-        font-size: 1.05rem;
-        margin-bottom: 4px;
-      }
-      .beats span { color: var(--muted); font-size: 0.95rem; line-height: 1.45; }
-      .status {
-        margin: 28px 0 0;
-        padding: 14px 16px;
-        border-radius: 12px;
-        background: var(--paper);
-        border: 1px solid var(--line);
-        color: var(--muted);
-        font-size: 0.9rem;
-        line-height: 1.5;
-      }
-      footer {
-        max-width: 720px;
-        margin: 0 auto;
-        padding: 0 20px 40px;
-        color: var(--muted);
-        font-size: 0.85rem;
-      }
-      footer a { font-weight: 600; }
-    </style>
+    <link rel="icon" type="image/svg+xml" href="/Chicas-Map/favicon.svg" />
+    <link rel="apple-touch-icon" href="/Chicas-Map/__grok/icon-180.png" />
+    <link rel="manifest" href="/Chicas-Map/__grok/manifest.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
     <script>
       (function () {
         try {
@@ -213,66 +26,235 @@
           if (t === "light" || t === "dark") {
             document.documentElement.setAttribute("data-theme", t);
             document.documentElement.style.colorScheme = t;
-          } else {
-            document.documentElement.style.colorScheme = "dark";
           }
         } catch (e) {}
       })();
     </script>
-  </head>
-  <body>
-    <a class="skip" href="#main">Skip to content</a>
-    <header>
-      <a class="brand" href="/Chicas-Map/">
-        <img src="/Chicas-Map/images/chica-logo.png" width="36" height="36" alt="" />
-        Chicas Map
-      </a>
-      <nav aria-label="Primary">
-        <a href="/Chicas-Map/">Home</a>
-        <a href="/Chicas-Map/map">Map</a>
-        <a href="/Chicas-Map/intel/" aria-current="page">Intel</a>
-        <a href="/Chicas-Map/submit">List a sale</a>
-      </nav>
-    </header>
-    <main id="main">
-      <p class="eyebrow">GPS-gated · 200 m</p>
-      <h1>Chicas <em>Sale Intel</em></h1>
-      <p class="lede">
-        Notes from people who are actually at the sale. Parking, cash, what’s left —
-        sharing unlocks within 200 meters. Rumors stay on the porch.
-      </p>
-      <div class="ctas">
-        <a id="open-intel" class="btn primary" href="/Chicas-Map/map">Open the map</a>
-        <a class="btn ghost" href="/Chicas-Map/map">Hunt on the map</a>
-      </div>
-      <ul class="beats">
-        <li>
-          <strong>Stand at the sale</strong>
-          <span>Live GPS has to put you within 200 meters. No remote drive-by comments.</span>
-        </li>
-        <li>
-          <strong>Leave a driveway note</strong>
-          <span>Stock, parking, prices, cash-only. A sidewalk handle — not a login.</span>
-        </li>
-        <li>
-          <strong>The pack reads it first</strong>
-          <span>Intel sits next to the verified pin. Map finds the sale. Intel tells you if it’s worth the loop.</span>
-        </li>
-      </ul>
-      <p id="intel-status" class="status">
-        Sale Intel is the GPS-gated notes layer for Chicas Map. Open it when the live
-        app URL is stamped; until then the hunt still lives on the map.
-      </p>
-    </main>
-    <footer>
-      <p>
-        Chicas Map · veteran-built ·
-        <a href="/Chicas-Map/">public map</a> ·
-        <a href="/Chicas-Map/legal">legal</a>
-      </p>
-    </footer>
     <script>
       (function () {
+        try {
+          var k = "chicas-map-locale";
+          var t = localStorage.getItem(k);
+          if (t !== "es" && t !== "en") {
+            var langs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || "en"];
+            t = "en";
+            for (var i = 0; i < langs.length; i++) {
+              var b = String(langs[i] || "").toLowerCase().split("-")[0];
+              if (b === "es") {
+                t = "es";
+                break;
+              }
+              if (b === "en") {
+                t = "en";
+                break;
+              }
+            }
+          }
+          document.documentElement.lang = t;
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body class="bg-bg text-ink min-h-dvh font-sans">
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-[200] focus:rounded-full focus:bg-pine focus:px-5 focus:py-3 focus:text-sm focus:font-semibold focus:text-cream"
+      >Skip to content</a
+    >
+
+    <header class="sticky top-0 z-50 border-b border-line bg-bg/92 backdrop-blur-md">
+      <div class="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5">
+        <a href="/Chicas-Map/" class="flex items-center gap-2.5 rounded-lg py-1 pr-2">
+          <img src="/Chicas-Map/images/chica-logo.png" alt="" width="36" height="36" class="size-9 shrink-0 rounded-full bg-bg object-cover" />
+          <span class="font-display text-lg font-bold tracking-tight text-ink">Chicas Map</span>
+        </a>
+        <nav class="hidden items-center gap-1 lg:flex" aria-label="Primary">
+          <a href="/Chicas-Map/" class="rounded-full px-3 py-2 text-sm font-semibold text-muted hover:bg-paper hover:text-ink">Home</a>
+          <a href="/Chicas-Map/map" class="rounded-full px-3 py-2 text-sm font-semibold text-muted hover:bg-paper hover:text-ink">Map</a>
+          <a href="/Chicas-Map/facebook" class="rounded-full px-3 py-2 text-sm font-semibold text-muted hover:bg-paper hover:text-ink">Facebook</a>
+          <a href="/Chicas-Map/sponsors" class="rounded-full px-3 py-2 text-sm font-semibold text-muted hover:bg-paper hover:text-ink">Sponsors</a>
+        </nav>
+        <div class="flex items-center gap-2">
+          <div class="hidden items-center rounded-full bg-paper p-0.5 ring-1 ring-line sm:flex" role="group" aria-label="Language">
+            <button type="button" data-lang="en" class="lang-btn rounded-full px-2.5 py-1 text-xs font-bold">EN</button>
+            <button type="button" data-lang="es" class="lang-btn rounded-full px-2.5 py-1 text-xs font-bold">ES</button>
+          </div>
+          <button
+            type="button"
+            id="theme-toggle"
+            class="inline-flex size-11 items-center justify-center rounded-full bg-paper text-ink ring-1 ring-line hover:ring-pine"
+            aria-label="Toggle theme"
+          >
+            <span aria-hidden="true">☼</span>
+          </button>
+          <a
+            href="/Chicas-Map/sponsors"
+            class="hidden h-11 min-h-11 items-center rounded-full bg-paper px-4 text-sm font-semibold text-ink ring-1 ring-line hover:bg-pine-soft hover:ring-pine sm:inline-flex"
+            >Sponsor</a
+          >
+          <a
+            href="/Chicas-Map/submit"
+            class="hidden h-11 min-h-11 items-center rounded-full bg-paper px-4 text-sm font-semibold text-ink ring-1 ring-line hover:bg-pine-soft hover:ring-pine md:inline-flex"
+            >Add a sale</a
+          >
+          <a
+            href="/Chicas-Map/intel/"
+            aria-current="page"
+            class="inline-flex h-11 min-h-11 items-center gap-2 rounded-full bg-pine px-4 text-sm font-semibold text-cream shadow-[var(--shadow-cta)]"
+          >
+            <img src="/Chicas-Map/images/intel-brain.svg" alt="" width="16" height="15" class="size-4" />
+            Intel
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" class="mx-auto max-w-6xl px-5 py-8 sm:py-10">
+      <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+        <div class="flex items-start gap-4">
+          <img
+            src="/Chicas-Map/images/chica-logo.png"
+            alt=""
+            class="size-16 rounded-full bg-bg object-cover sm:size-20"
+          />
+          <div>
+            <p class="inline-flex items-center rounded-full bg-pine-soft px-3 py-1 text-[0.65rem] font-bold tracking-[0.16em] text-pine-mid uppercase">
+              GPS-gated · 200 m
+            </p>
+            <h1 class="mt-3 font-display text-4xl font-extrabold tracking-tight sm:text-5xl">
+              Chicas Sale Intel
+            </h1>
+            <p id="lede" class="mt-2 max-w-lg text-muted">
+              Notes from people who are actually at the sale. Parking, cash, what’s left — sharing unlocks within 200 meters. Rumors stay on the porch.
+            </p>
+          </div>
+        </div>
+        <div class="flex flex-wrap items-center gap-3">
+          <a
+            id="open-intel"
+            href="/Chicas-Map/map"
+            class="inline-flex h-14 min-h-14 items-center justify-center rounded-full bg-pine px-7 text-base font-semibold text-cream shadow-[var(--shadow-cta)] hover:bg-pine-mid"
+            >Open Sale Intel</a
+          >
+          <a
+            href="/Chicas-Map/map"
+            class="inline-flex h-14 min-h-14 items-center justify-center rounded-full bg-paper px-7 text-base font-semibold text-ink ring-1 ring-line hover:bg-pine-soft hover:ring-pine"
+            >Open the map</a
+          >
+        </div>
+      </div>
+
+      <ul class="mt-8 grid gap-3 lg:grid-cols-3">
+        <li class="rounded-xl bg-paper p-5 ring-1 ring-line">
+          <p class="text-xs font-bold tracking-[0.12em] text-pine-mid uppercase">01</p>
+          <h2 class="mt-2 font-display text-lg font-bold tracking-tight">Stand at the sale</h2>
+          <p class="mt-2 text-sm text-muted">Live GPS has to put you within 200 meters. No remote drive-by comments.</p>
+        </li>
+        <li class="rounded-xl bg-paper p-5 ring-1 ring-line">
+          <p class="text-xs font-bold tracking-[0.12em] text-pine-mid uppercase">02</p>
+          <h2 class="mt-2 font-display text-lg font-bold tracking-tight">Leave a driveway note</h2>
+          <p class="mt-2 text-sm text-muted">Stock, parking, prices, cash-only. A sidewalk handle — not a login.</p>
+        </li>
+        <li class="rounded-xl bg-paper p-5 ring-1 ring-line">
+          <p class="text-xs font-bold tracking-[0.12em] text-pine-mid uppercase">03</p>
+          <h2 class="mt-2 font-display text-lg font-bold tracking-tight">The pack reads it first</h2>
+          <p class="mt-2 text-sm text-muted">Intel sits next to the verified pin. Map finds the sale. Intel tells you if it’s worth the loop.</p>
+        </li>
+      </ul>
+
+      <section class="mt-10 grid gap-6 overflow-hidden rounded-xl bg-paper ring-1 ring-line lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
+        <img
+          src="/Chicas-Map/images/chica-hero.jpg"
+          alt="Justin and Chica in the bluebonnets"
+          class="h-full min-h-56 w-full object-cover object-[center_35%]"
+        />
+        <div class="flex flex-col justify-center p-6 sm:p-8">
+          <p class="text-xs font-bold tracking-[0.12em] text-pine-mid uppercase">Pack rule</p>
+          <h2 class="mt-2 font-display text-2xl font-bold tracking-tight sm:text-3xl">Couch rumors don’t count.</h2>
+          <p id="intel-status" class="mt-3 max-w-xl text-muted">
+            Notes unlock within 200 meters. Leave a handle, stand at the pin, tell the pack what’s on the driveway.
+          </p>
+          <div class="mt-5 flex flex-wrap gap-3">
+            <a href="/Chicas-Map/submit" class="inline-flex h-12 min-h-12 items-center rounded-full bg-paper px-5 text-sm font-semibold text-ink ring-1 ring-line hover:bg-pine-soft hover:ring-pine">List a sale</a>
+            <a href="/Chicas-Map/backstory" class="inline-flex h-12 min-h-12 items-center rounded-full bg-pine px-5 text-sm font-semibold text-cream">Why I’m here</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-line bg-bg">
+      <div class="mx-auto grid max-w-6xl gap-8 px-5 py-10 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="flex items-start gap-3 sm:col-span-2 lg:col-span-1">
+          <img src="/Chicas-Map/images/chica-logo.png" alt="" width="40" height="40" class="size-10 rounded-full bg-bg object-cover" />
+          <div>
+            <p class="font-display text-lg font-bold tracking-tight">Chicas Map</p>
+            <p class="text-sm text-muted">San Antonio garage-sale intel. Veteran-built. Public map is free.</p>
+            <a href="/Chicas-Map/sponsors" class="mt-2 inline-flex text-sm font-semibold text-pine-mid">Keep the cape on</a>
+          </div>
+        </div>
+        <nav aria-label="Hunt">
+          <p class="text-xs font-bold tracking-[0.12em] text-pine-mid uppercase">Hunt</p>
+          <ul class="mt-3 space-y-2 text-sm font-semibold text-muted">
+            <li><a href="/Chicas-Map/map" class="inline-flex min-h-11 items-center hover:text-pine-mid">Map</a></li>
+            <li><a href="/Chicas-Map/submit" class="inline-flex min-h-11 items-center hover:text-pine-mid">Add a sale</a></li>
+            <li><a href="/Chicas-Map/facebook" class="inline-flex min-h-11 items-center hover:text-pine-mid">Facebook</a></li>
+            <li><a href="/Chicas-Map/media" class="inline-flex min-h-11 items-center hover:text-pine-mid">Media</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Pack">
+          <p class="text-xs font-bold tracking-[0.12em] text-pine-mid uppercase">Pack</p>
+          <ul class="mt-3 space-y-2 text-sm font-semibold text-muted">
+            <li><a href="/Chicas-Map/backstory" class="inline-flex min-h-11 items-center hover:text-pine-mid">Backstory</a></li>
+            <li><a href="/Chicas-Map/bulletin" class="inline-flex min-h-11 items-center hover:text-pine-mid">Bulletin</a></li>
+            <li><a href="/Chicas-Map/sponsors" class="inline-flex min-h-11 items-center hover:text-pine-mid">Sponsors</a></li>
+            <li><a href="/Chicas-Map/intel/" class="inline-flex min-h-11 items-center hover:text-pine-mid">Intel</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Legal">
+          <p class="text-xs font-bold tracking-[0.12em] text-pine-mid uppercase">Print</p>
+          <ul class="mt-3 space-y-2 text-sm font-semibold text-muted">
+            <li><a href="/Chicas-Map/legal" class="inline-flex min-h-11 items-center hover:text-pine-mid">Legal</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="/Chicas-Map/js/chica-config.js"></script>
+    <script src="/Chicas-Map/js/pin-claim.js?v=3"></script>
+    <script>
+      (function () {
+        function lang() {
+          return (document.documentElement.lang || "en").toLowerCase().indexOf("es") === 0 ? "es" : "en";
+        }
+        function paintLang() {
+          var on = lang();
+          document.querySelectorAll(".lang-btn").forEach(function (b) {
+            var active = b.getAttribute("data-lang") === on;
+            b.classList.toggle("bg-pine", active);
+            b.classList.toggle("text-cream", active);
+            b.classList.toggle("text-muted", !active);
+          });
+        }
+        document.querySelectorAll(".lang-btn").forEach(function (b) {
+          b.addEventListener("click", function () {
+            var next = b.getAttribute("data-lang") || "en";
+            localStorage.setItem("chicas-map-locale", next);
+            document.documentElement.lang = next;
+            paintLang();
+          });
+        });
+        paintLang();
+
+        var themeBtn = document.getElementById("theme-toggle");
+        themeBtn.addEventListener("click", function () {
+          var cur = document.documentElement.getAttribute("data-theme");
+          if (!cur) cur = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+          var next = cur === "dark" ? "light" : "dark";
+          document.documentElement.setAttribute("data-theme", next);
+          document.documentElement.style.colorScheme = next;
+          localStorage.setItem("chicas-map-theme", next);
+        });
+
         var btn = document.getElementById("open-intel");
         var status = document.getElementById("intel-status");
         fetch("/Chicas-Map/data/sale-intel.json", { cache: "no-store" })
@@ -285,17 +267,12 @@
             var radius = Number(cfg.radius_m) || 200;
             if (/^https:\/\/[a-z0-9.-]+/i.test(url) && url.indexOf("vercel.app") === -1) {
               btn.href = url;
-              btn.textContent = "Open Sale Intel";
               btn.rel = "noopener";
+              btn.target = "_blank";
               status.textContent =
                 "Notes unlock within " +
                 radius +
-                " meters. Leave a handle, stand at the pin, tell the pack what’s on the driveway.";
-            } else {
-              btn.href = "/Chicas-Map/map";
-              btn.textContent = "Open the map";
-              status.textContent =
-                "Sale Intel publishes from the Grok app. Until the live URL is stamped in sale-intel.json, hunt on the map — then come back to drop driveway notes.";
+                " meters. Leave a handle, stand at the pin, tell the pack what\u2019s on the driveway.";
             }
           })
           .catch(function () {});
