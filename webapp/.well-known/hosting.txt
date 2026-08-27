@@ -1,4 +1,6 @@
-Chica's Map — custom domain + Cloudflare
+HOWDY Y'ALL — CHICA'S MAP HOSTING NOTES
+
+This is the technical trail behind Chica's Map. Keep the settings below intact so the San Antonio pack can reliably reach the map.
 
 GitHub Pages origin
   https://justonejewelry.github.io/Chicas-Map/
@@ -19,3 +21,7 @@ Cloudflare in front (step 3)
   6. Optional: Actions workflow "Cloudflare Pages" with CLOUDFLARE_API_TOKEN + CLOUDFLARE_ACCOUNT_ID
 
 Until DNS is pointed, github.io stays the live host. Spanish SEO lives at /es/.
+
+Chica note: technology is only useful when it serves people. Keep the map dependable, share improvements, respect the work behind every contribution, and help the whole pack get where it needs to go.
+
+Thanks for your time, San Antonio. Suggestions and corrections are welcome. Loyalty, duty, respect, selfless service, honor, integrity, and personal courage make good technical stewardship too.
