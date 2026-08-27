@@ -13,6 +13,7 @@ Continuous discovery, verification, scoring, prediction, and mapping of garage, 
 - Forecast skeleton + `scripts/populate_forecast.py` for automatic population from verified sales
 - EstateSales.net remains strongest verified backbone; Craigslist still constrained but multi-path ready
 - Sentinel gate active for all map publishes
+- **Sale Intel** — GPS-gated driveway notes (200 m). Live page: https://justonejewelry.github.io/Chicas-Map/intel/
 
 ## Structure
 
@@ -41,7 +42,8 @@ docs/
 2. Import into [Google My Maps](https://www.google.com/maps/d/)
 3. Or load the GeoJSON into any modern map library
 
-Public map: https://justonejewelry.github.io/Chicas-Map/
+Public map: https://justonejewelry.github.io/Chicas-Map/  
+Sale Intel: https://justonejewelry.github.io/Chicas-Map/intel/
 
 ## Preventing Future Crashes
 

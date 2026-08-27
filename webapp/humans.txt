@@ -12,6 +12,7 @@ Created with Grok — https://grok.com/?referrer=website
 GitHub — the house
 Leaflet + OpenStreetMap — the streets
 WCAG 2.2 AA — we try to keep the door wide
+Sale Intel — GPS-gated notes at the pin (200 m)
 
 Grok is a tool we used to build this map. That credit is not an
 endorsement, approval, or sponsorship by xAI.
@@ -20,4 +21,4 @@ endorsement, approval, or sponsorship by xAI.
 Standards: HTML5, CSS, JS
 Language: en, es
 Software: TanStack Start, Vite, GitHub Pages
-Last update: 2026-08-24
+Last update: 2026-08-26

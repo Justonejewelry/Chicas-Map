@@ -1,11 +1,13 @@
-/* Chicas Map — viewport Full screen.
-   Button is on document.body (React cannot steal it).
+/* Chicas Map — viewport Full screen + Sale Intel pill.
+   Buttons are on document.body (React cannot steal them).
    Immersive mode uses html.chica-fs-on (React never overwrites that).
    iOS has no native Fullscreen API — CSS is the real path. */
 (function () {
   var BTN_ID = "chica-fs-btn";
+  var INTEL_ID = "chica-intel-btn";
   var STYLE_ID = "chica-fs-inline-style";
   var HTML_ON = "chica-fs-on";
+  var INTEL_HREF = "/Chicas-Map/intel/";
   var ready = false;
 
   function cssText() {
@@ -20,6 +22,17 @@
       "box-shadow:0 10px 28px rgb(197 19 175 / .55),0 0 0 4px rgb(197 19 175 / .28);",
       "}",
       "#" + BTN_ID + ":hover{filter:brightness(1.06)}",
+      "#" + INTEL_ID + "{",
+      "position:fixed!important;z-index:2147483646!important;height:48px;min-width:112px;padding:0 18px;",
+      "border:2px solid #fffdf8;border-radius:999px;background:#c513af;color:#fffdf8;",
+      "font:800 14px/1 Inter,system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;",
+      "text-decoration:none;display:flex!important;align-items:center;justify-content:center;",
+      "visibility:visible!important;opacity:1!important;pointer-events:auto!important;",
+      "box-shadow:0 10px 28px rgb(197 19 175 / .55),0 0 0 4px rgb(197 19 175 / .28);",
+      "}",
+      "#" + INTEL_ID + ".on-map{top:calc(max(12px,env(safe-area-inset-top)) + 60px)!important;right:12px!important;left:auto!important;bottom:auto!important;}",
+      "#" + INTEL_ID + ":not(.on-map){left:12px!important;bottom:max(16px,env(safe-area-inset-bottom))!important;right:auto!important;top:auto!important;}",
+      "#" + INTEL_ID + ":hover{filter:brightness(1.06)}",
       "html." + HTML_ON + ",html." + HTML_ON + " body{overflow:hidden!important;height:100dvh!important;overscroll-behavior:none}",
       "html." + HTML_ON + " :has(> .chica-map),html." + HTML_ON + " :has(> .leaflet-container){",
       "position:fixed!important;inset:0!important;z-index:99990!important;",
@@ -38,6 +51,11 @@
   function onMapPath() {
     var p = location.pathname || "";
     return /\/map\/?$/.test(p) || p.indexOf("/map/") !== -1;
+  }
+
+  function onIntelPath() {
+    var p = location.pathname || "";
+    return /\/intel\/?$/.test(p) || p.indexOf("/intel/") !== -1;
   }
 
   function mapEl() {
@@ -104,6 +122,25 @@
     (document.head || document.documentElement).appendChild(s);
   }
 
+  function ensureIntel() {
+    if (onIntelPath()) {
+      var leftover = document.getElementById(INTEL_ID);
+      if (leftover) leftover.remove();
+      return;
+    }
+    var a = document.getElementById(INTEL_ID);
+    if (!a) {
+      a = document.createElement("a");
+      a.id = INTEL_ID;
+      a.href = INTEL_HREF;
+      a.textContent = "Intel";
+      a.setAttribute("aria-label", "Chicas Sale Intel");
+      document.body.appendChild(a);
+    }
+    if (onMapPath()) a.classList.add("on-map");
+    else a.classList.remove("on-map");
+  }
+
   function ensureBtn() {
     var btn = document.getElementById(BTN_ID);
     if (btn) return btn;
@@ -147,7 +184,7 @@
     return btn;
   }
 
-  function teardown() {
+  function teardownFs() {
     var leftover = document.getElementById(BTN_ID);
     if (leftover) leftover.remove();
     document.documentElement.classList.remove(HTML_ON);
@@ -157,9 +194,10 @@
 
   function mount() {
     ensureStyle();
+    ensureIntel();
     if (!onMapPath()) {
-      teardown();
-      return false;
+      teardownFs();
+      return Boolean(mapEl()) || true;
     }
     if (!mapEl()) return false;
     var btn = ensureBtn();

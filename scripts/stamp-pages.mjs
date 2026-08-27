@@ -20,6 +20,11 @@ const PAGES = [
     desc: "Pines verificados para este fin en San Antonio. Cerca de mí, capas, y arma tu ruta.",
   },
   {
+    path: "intel",
+    title: "Sale Intel · Chicas Map",
+    desc: "Notas de quien está en la venta. Se desbloquean a 200 metros. GPS, no rumores.",
+  },
+  {
     path: "sponsors",
     title: "Patrocinio · Chicas Map",
     desc: "Ayuda a Chica a dejar la capa puesta. Los pines no se pagan.",

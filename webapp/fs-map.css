@@ -1,4 +1,4 @@
-/* Chicas Map — Full screen overlay. Kept as backup; fs-map.js also inlines these rules. */
+/* Chicas Map — Full screen overlay + Sale Intel pill. Backup for fs-map.js inline rules. */
 #chica-fs-btn {
   position: fixed !important;
   top: max(12px, env(safe-area-inset-top)) !important;
@@ -23,6 +23,43 @@
   opacity: 1 !important;
   pointer-events: auto !important;
   box-shadow: 0 10px 28px rgb(197 19 175 / 0.55), 0 0 0 4px rgb(197 19 175 / 0.28);
+}
+
+#chica-intel-btn {
+  position: fixed !important;
+  z-index: 2147483646 !important;
+  height: 48px;
+  min-width: 112px;
+  padding: 0 18px;
+  border: 2px solid #fffdf8;
+  border-radius: 999px;
+  background: #c513af;
+  color: #fffdf8;
+  font: 800 14px/1 Inter, "Segoe UI", system-ui, sans-serif;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  box-shadow: 0 10px 28px rgb(197 19 175 / 0.55), 0 0 0 4px rgb(197 19 175 / 0.28);
+}
+
+#chica-intel-btn.on-map {
+  top: calc(max(12px, env(safe-area-inset-top)) + 60px) !important;
+  right: 12px !important;
+  left: auto !important;
+  bottom: auto !important;
+}
+
+#chica-intel-btn:not(.on-map) {
+  left: 12px !important;
+  bottom: max(16px, env(safe-area-inset-bottom)) !important;
+  right: auto !important;
+  top: auto !important;
 }
 
 html.chica-fs-on,
