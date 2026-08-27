@@ -166,3 +166,15 @@ html.chica-fs-on .leaflet-container {
   background: linear-gradient(180deg, #e8b4e0 0%, #c513af 100%);
   color: #fffdf8;
 }
+
+button.chica-dup-chip {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+}
+aside[aria-label="Key"] li[role="button"],
+aside[aria-label="key"] li[role="button"] {
+  user-select: none;
+}
