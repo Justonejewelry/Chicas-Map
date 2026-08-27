@@ -1,9 +1,11 @@
 ========================================================================
-YARDBIRD SUNDAY DISCOVERY — San Antonio — 2026-08-01
+CHICA'S SUNDAY COMMUNITY MAP — San Antonio — 2026-08-01
 Generated: 2026-08-01T12:06:03+00:00
 Total unique locations: 197
 Sources: yardsalesearch.com, garagesalefinder.com, estatesales.net, craigslist gms (index), City of SA garage sale permits
 ========================================================================
+
+Howdy y'all. Chica here. This is the neighborhood intel for the pack — built to help San Antonians share useful information, support local sellers, and spend less time driving around guessing.
 
 Full file retained in repo delivery package. See maps/san-antonio/2026-08-01-sunday-COMPLETE.kml for map pins.
 
@@ -20,6 +22,12 @@ Key public addresses:
 - 4626 Wetz Rd, San Antonio, TX 78217 (Estate)
 - 805 Canterbury Hill, San Antonio, TX 78209 (Terrell Hills estate)
 
-Hot zone: South Side CLUSTER-HOT (30 from permits).
+Strongest community cluster: South Side (30 permit-backed locations).
+
+Pack practice: share the map, pass along good information, respect sellers and neighbors, and flag anything that needs correction. A useful tip from one person can save another person a wasted trip.
+
+Army values fit right here too: loyalty to the community, duty to do our part, respect for one another, selfless service, honor, integrity, and personal courage to speak up when something is wrong.
+
+Thanks for your time, San Antonio. Chica is listening. Suggestions are welcome — the pack gets better when everybody contributes.
 
 Import: maps/san-antonio/2026-08-01-sunday-COMPLETE.kml
