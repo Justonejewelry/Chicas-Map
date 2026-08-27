@@ -5,6 +5,7 @@ compatibility_date = "2024-11-01"
 # Non-secret defaults (override in dashboard if needed)
 [vars]
 BOOST_AMOUNT_CENTS = "900"
+CLAIM_AMOUNT_CENTS = "500"
 BOOST_CURRENCY = "USD"
 GITHUB_REPO = "Justonejewelry/Chicas-Map"
 NOTIFY_EMAIL_TO = "mr.jsciaraffa@gmail.com"

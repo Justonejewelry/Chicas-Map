@@ -10,10 +10,10 @@ GitHub Pages cannot receive webhooks. Verification runs on a small **Cloudflare 
 
 1. Square POSTs `payment.created` / `payment.updated` to your worker.
 2. Worker verifies `x-square-hmacsha256-signature` (HMAC-SHA256 over **notification URL + raw body**).
-3. On **COMPLETED** payment of about **$9.00 USD**, worker:
+3. On **COMPLETED** payment of about **$9.00 USD** (Boost) or **$5.00 USD** (weekend pin claim), worker:
    - Dedupes by `event_id`
    - Emails review inbox (Formspree or mailto-compatible POST)
-   - Fires GitHub `repository_dispatch` → `boost_paid`
+   - Fires GitHub `repository_dispatch` → `boost_paid` ($9) or `pin_claimed` ($5)
 4. Workflow **Boost pass registry** writes [`ops/boost-passes.json`](../ops/boost-passes.json) with `paid_at` + `boost_until` (+6 months).
 5. You activate the gold pin **only after** listing approval **and** an active registry row (see `docs/BOOST_PASSES.md`).
 
@@ -37,7 +37,8 @@ GitHub Pages cannot receive webhooks. Verification runs on a small **Cloudflare 
 |--------------|----------|---------|
 | `SQUARE_SIGNATURE_KEY` | Yes | Webhook subscription signature key |
 | `SQUARE_NOTIFICATION_URL` | Yes | Exact notification URL Square calls |
-| `BOOST_AMOUNT_CENTS` | No | Default `900` ($9.00) |
+| `BOOST_AMOUNT_CENTS` | No | Default `900` ($9.00 Boost) |
+| `CLAIM_AMOUNT_CENTS` | No | Default `500` ($5.00 weekend pin claim) |
 | `BOOST_CURRENCY` | No | Default `USD` |
 | `NOTIFY_FORMSPREE_ID` | Recommended | e.g. existing Formspree id for email alerts |
 | `NOTIFY_EMAIL_TO` | Optional | Shown in alert body |
@@ -59,6 +60,7 @@ Set vars in `wrangler.toml` or dashboard:
 ```toml
 [vars]
 BOOST_AMOUNT_CENTS = "900"
+CLAIM_AMOUNT_CENTS = "500"
 BOOST_CURRENCY = "USD"
 GITHUB_REPO = "Justonejewelry/Chicas-Map"
 NOTIFY_EMAIL_TO = "mr.jsciaraffa@gmail.com"
@@ -100,3 +102,5 @@ See `workers/square-boost-webhook/src/index.js`.
 - Registry: `ops/boost-passes.json`
 - Lookup helper: `scripts/boost_lookup.py`
 - Tip webhooks (separate): `docs/WEBHOOKS.md`
+
+Weekend $5 pin claim: **`docs/PIN_CLAIMS.md`**.

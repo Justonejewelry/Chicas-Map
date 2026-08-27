@@ -1,0 +1,255 @@
+name: Pin claim registry
+
+# Upserts ops/pin-claims.json for the $5 weekend pin claim.
+#
+# Triggers:
+#   repository_dispatch event_type: pin_claimed  (from Square webhook worker)
+#   workflow_dispatch: manual add / set_status / expire_stale
+
+on:
+  repository_dispatch:
+    types: [pin_claimed]
+  workflow_dispatch:
+    inputs:
+      action:
+        description: "add | set_status | expire_stale"
+        required: true
+        type: choice
+        options: [add, set_status, expire_stale]
+      sale_id:
+        description: "Listing external_id / sale_id"
+        required: false
+        type: string
+      contact_key:
+        description: "Email or phone"
+        required: false
+        type: string
+      payment_id:
+        description: "Square payment id"
+        required: false
+        type: string
+      claimed_until:
+        description: "YYYY-MM-DD (default this Sunday)"
+        required: false
+        type: string
+      status:
+        description: "For set_status: active | live | packed | ending | sold_out | expired | refunded | pending_sale"
+        required: false
+        type: string
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  registry:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Update pin-claims.json
+        id: upsert
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const path = 'ops/pin-claims.json';
+
+            function sundayFrom(iso) {
+              const d = new Date(iso);
+              if (Number.isNaN(d.getTime())) {
+                const t = new Date();
+                const day = t.getUTCDay();
+                const add = (7 - day) % 7;
+                t.setUTCDate(t.getUTCDate() + add);
+                return t.toISOString().slice(0, 10);
+              }
+              const day = d.getUTCDay();
+              const add = (7 - day) % 7;
+              d.setUTCDate(d.getUTCDate() + add);
+              return d.toISOString().slice(0, 10);
+            }
+
+            function load() {
+              const empty = {
+                schema_version: 1,
+                product: 'pin_claim_weekend',
+                price_usd: 5,
+                updated: new Date().toISOString().slice(0, 10),
+                notes: 'Ops registry for $5 weekend pin claims.',
+                claims: [],
+              };
+              if (!fs.existsSync(path)) return empty;
+              try {
+                const data = JSON.parse(fs.readFileSync(path, 'utf8'));
+                if (!Array.isArray(data.claims)) data.claims = [];
+                return data;
+              } catch (e) {
+                core.warning('Could not parse registry: ' + e.message);
+                return empty;
+              }
+            }
+
+            function save(data) {
+              data.updated = new Date().toISOString().slice(0, 10);
+              fs.writeFileSync(path, JSON.stringify(data, null, 2) + '\n');
+            }
+
+            const data = load();
+            let action = 'add';
+            let payload = {};
+
+            if (context.eventName === 'repository_dispatch') {
+              action = 'add';
+              payload = context.payload.client_payload || {};
+            } else {
+              action = process.env.WF_ACTION || 'add';
+              payload = {
+                sale_id: process.env.WF_SALE || '',
+                contact_key: process.env.WF_CONTACT || '',
+                payment_id: process.env.WF_PAYMENT || '',
+                claimed_until: process.env.WF_UNTIL || '',
+                status: process.env.WF_STATUS || '',
+              };
+            }
+
+            if (action === 'expire_stale') {
+              const today = new Date().toISOString().slice(0, 10);
+              let n = 0;
+              for (const p of data.claims) {
+                if ((p.status === 'active' || p.status === 'live') && p.claimed_until && p.claimed_until < today) {
+                  p.status = 'expired';
+                  p.expired_at = new Date().toISOString();
+                  n++;
+                }
+              }
+              save(data);
+              core.setOutput('summary', 'expired ' + n + ' claims');
+              return;
+            }
+
+            if (action === 'set_status') {
+              const pid = String(payload.payment_id || '').trim();
+              const st = String(payload.status || '').trim().toLowerCase();
+              if (!pid || !st) {
+                core.setFailed('set_status requires payment_id and status');
+                return;
+              }
+              const row = data.claims.find((p) => p.payment_id === pid);
+              if (!row) {
+                core.setFailed('No claim with payment_id ' + pid);
+                return;
+              }
+              row.status = st === 'packed' || st === 'ending' || st === 'sold_out' || st === 'live' ? 'active' : st;
+              row.live_status = st;
+              row.status_updated_at = new Date().toISOString();
+              save(data);
+              core.setOutput('summary', 'status ' + st + ' for ' + pid);
+              return;
+            }
+
+            const paymentId =
+              String(payload.payment_id || payload.id || '').trim() ||
+              ('manual_' + Date.now().toString(36));
+            const paidAtRaw =
+              payload.paid_at || payload.created_at || payload.verified_at || new Date().toISOString();
+            const paidAtDate = String(paidAtRaw).slice(0, 10);
+            const claimedUntil =
+              String(payload.claimed_until || payload.boost_until || '').slice(0, 10) ||
+              sundayFrom(paidAtRaw);
+
+            const saleId = String(
+              payload.sale_id || payload.external_id || payload.note || ''
+            ).trim();
+            const contactKey = String(
+              payload.contact_key || payload.buyer_email || payload.email || ''
+            )
+              .trim()
+              .toLowerCase();
+
+            let status = 'active';
+            if (!saleId) status = 'pending_sale';
+
+            const amount =
+              payload.amount_cents != null
+                ? Number(payload.amount_cents)
+                : 500;
+
+            const existingIdx = data.claims.findIndex((p) => p.payment_id === paymentId);
+            const row = {
+              sale_id: saleId || (existingIdx >= 0 ? data.claims[existingIdx].sale_id : ''),
+              contact_key: contactKey || (existingIdx >= 0 ? data.claims[existingIdx].contact_key : ''),
+              payment_id: paymentId,
+              paid_at: paidAtDate,
+              claimed_until: claimedUntil,
+              status:
+                saleId || (existingIdx >= 0 && data.claims[existingIdx].sale_id)
+                  ? 'active'
+                  : status,
+              live_status: 'live',
+              amount_cents: amount,
+              currency: payload.currency || 'USD',
+              source: payload.source || (String(paymentId).startsWith('manual_') ? 'manual' : 'square'),
+              receipt_url: payload.receipt_url || null,
+              event_id: payload.event_id || null,
+              recorded_at: new Date().toISOString(),
+            };
+
+            if (existingIdx >= 0) {
+              const prev = data.claims[existingIdx];
+              if (!row.sale_id && prev.sale_id) row.sale_id = prev.sale_id;
+              data.claims[existingIdx] = { ...prev, ...row };
+            } else {
+              data.claims.unshift(row);
+            }
+
+            save(data);
+            core.setOutput(
+              'summary',
+              row.payment_id + ' until ' + row.claimed_until + ' status=' + row.status
+            );
+
+            if (row.status === 'pending_sale') {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: '[pin-claim] needs sale_id — ' + row.payment_id,
+                body: [
+                  '## $5 pin claim without a listing id',
+                  '',
+                  'Payment is in `ops/pin-claims.json` but **sale_id** is empty.',
+                  'Match it from the claim form, then Actions → **Pin claim registry** → `add` with the same `payment_id` + `sale_id`.',
+                  '',
+                  '```json',
+                  JSON.stringify(row, null, 2),
+                  '```',
+                ].join('\n'),
+                labels: ['pin-claim-pending'],
+              });
+            }
+        env:
+          WF_ACTION: ${{ inputs.action }}
+          WF_SALE: ${{ inputs.sale_id }}
+          WF_CONTACT: ${{ inputs.contact_key }}
+          WF_PAYMENT: ${{ inputs.payment_id }}
+          WF_UNTIL: ${{ inputs.claimed_until }}
+          WF_STATUS: ${{ inputs.status }}
+
+      - name: Stamp public feed
+        run: python scripts/stamp_pin_claims.py
+
+      - name: Commit registry + stamps
+        run: |
+          git config user.name "Chicas-Map Pin Claim Bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add ops/pin-claims.json webapp/data/pin-claims.json webapp/data/cities/san-antonio.json
+          if git diff --staged --quiet; then
+            echo "No claim changes"
+            exit 0
+          fi
+          git commit -m "pin-claim: update registry (${{ steps.upsert.outputs.summary }})"
+          git push

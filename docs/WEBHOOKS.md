@@ -9,6 +9,7 @@ Automate permit-tip intake and approval without hand-editing JSON.
 | `tip_submit`  | Writes `webapp/data/permit-tips-pending.json` + opens a GitHub issue labeled `tip-pending` |
 | `tip_approve` | Publishes tip to `webapp/data/permit-tips.json` (map reads this) |
 | `boost_paid`  | Fired by Square webhook worker when a verified ~$9 Boost payment completes (see `docs/SQUARE_WEBHOOKS.md`) |
+| `pin_claimed` | Fired by Square webhook worker when a verified ~$5 weekend pin claim completes (see `docs/PIN_CLAIMS.md`) |
 
 **Endpoint**
 ```http
@@ -41,7 +42,7 @@ Token needs: **Contents: write**, **Issues: write** (for submit).
 
 ## Square Boost payments
 
-Payment Link: configured in `webapp/js/chica-config.js` (`BOOST_PAYMENT_URL`).
+Payment Links: `webapp/js/chica-config.js` → `BOOST_PAYMENT_URL` ($9) and `PIN_CLAIM_PAYMENT_URL` ($5).
 
 Webhook verification + Boost alerts: **`docs/SQUARE_WEBHOOKS.md`** and `workers/square-boost-webhook/`.
 

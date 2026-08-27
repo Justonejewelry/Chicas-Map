@@ -82,3 +82,8 @@ Optionally run workflow action `expire_stale` to flip old rows to `status: expir
 - Payment Link: `webapp/js/chica-config.js` → `BOOST_PAYMENT_URL`
 - Webhook worker: `workers/square-boost-webhook/`
 - Square setup: `docs/SQUARE_WEBHOOKS.md`
+
+## Related product
+
+Weekend **$5 pin claim** (one listing, sale dates only) is documented in [`docs/PIN_CLAIMS.md`](PIN_CLAIMS.md). Do not mix the two prices in Square or the registry.
+

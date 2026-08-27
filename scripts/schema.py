@@ -59,6 +59,11 @@ class Sale:
     # Community forums integration (optional)
     community_source: str = ""          # nextdoor | facebook | reddit | community_tip | ...
     community_link_or_notes: str = ""   # public link or short tip text
+    # Paid highlight (optional). $5 weekend claim stamps claimed + boost for sale dates.
+    boost: bool = False
+    boost_until: str = ""
+    claimed: bool = False
+    claimed_until: str = ""
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)

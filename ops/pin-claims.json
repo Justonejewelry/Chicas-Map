@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "product": "pin_claim_weekend",
+  "price_usd": 5,
+  "updated": "2026-08-27",
+  "notes": "Ops registry — not map feed. Match by sale_id / external_id. Stamp boost+boost_until+claimed on the public listing while status=active and today<=claimed_until. Repo is public: keep contact_key minimal.",
+  "claims": []
+}
