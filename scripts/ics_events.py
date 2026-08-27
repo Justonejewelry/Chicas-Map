@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 """Parse CivicEngage / Tribe / HOA-sites / RFC 5545 VEVENT blocks."""
 from __future__ import annotations
+
 import html as htmlmod
 import re
 from datetime import date, datetime
 from urllib.parse import urlparse
+
 try:
     from event_dates import extract_address, parse_time_label
 except ImportError:
@@ -12,19 +14,29 @@ except ImportError:
     from pathlib import Path
     sys.path.insert(0, str(Path(__file__).resolve().parent))
     from event_dates import extract_address, parse_time_label
-EID_RE = re.compile(r"https?://[^\s<>'"]+calendar\.aspx\?EID=\d+", re.I)
+
+EID_RE = re.compile(r"https?://\S+calendar\.aspx\?EID=\d+", re.I)
 EID_ID_RE = re.compile(r"calendar\.aspx\?EID=(\d+)", re.I)
 VEVENT_RE = re.compile(r"BEGIN:VEVENT\s*(.*?)\s*END:VEVENT", re.I | re.S)
 PROP_RE = re.compile(r"^([A-Z0-9-]+)(;[^:]*)?:(.*)$", re.I | re.M)
-SKIP_TITLE_RE = re.compile(r"^(city\s+)?offices?\s+closed$|submittal deadline|bulky pick.?up|arc meeting\s*$", re.I)
+SKIP_TITLE_RE = re.compile(
+    r"^(city\s+)?offices?\s+closed$|submittal deadline|bulky pick.?up|arc meeting\s*$",
+    re.I,
+)
+
+
 def unfold_ics(text: str) -> str:
     text = (text or "").replace("\r\n", "\n").replace("\r", "\n")
     return re.sub(r"\n[ \t]", "", text)
+
+
 def _unescape(val: str) -> str:
     val = (val or "").replace("\\n", " ").replace("\\,", ",").replace("\\;", ";").replace("\\\\", "\\")
     val = htmlmod.unescape(val)
     val = re.sub(r"(?is)<[^>]+>", " ", val)
     return re.sub(r"\s+", " ", val).strip()
+
+
 def _props(block: str) -> dict[str, str]:
     out: dict[str, str] = {}
     for m in PROP_RE.finditer(block):
@@ -35,6 +47,8 @@ def _props(block: str) -> dict[str, str]:
             out[name] = val
             out[f"_{name}_PARAMS"] = params
     return out
+
+
 def _parse_ics_dt(raw: str) -> tuple[str, str]:
     if not raw:
         return "", ""
@@ -56,6 +70,8 @@ def _parse_ics_dt(raw: str) -> tuple[str, str]:
         except ValueError:
             return "", ""
     return "", ""
+
+
 def ics_address(location: str) -> str:
     loc = _unescape(location)
     if not loc:
@@ -70,11 +86,15 @@ def ics_address(location: str) -> str:
     if re.search(r"\d{2,5}", loc):
         return loc
     return ""
+
+
 def _host(source_url: str) -> str:
     try:
         return urlparse(source_url).netloc
     except Exception:
         return ""
+
+
 def event_detail_url(props: dict[str, str], source_url: str) -> str:
     blob = " ".join(props.get(k, "") for k in ("DESCRIPTION", "URL", "UID"))
     m = EID_RE.search(blob)
@@ -93,12 +113,14 @@ def event_detail_url(props: dict[str, str], source_url: str) -> str:
     if re.fullmatch(r"\d+", uid) and host:
         return f"https://{host}/Calendar.aspx?EID={uid}"
     desc = _unescape(props.get("DESCRIPTION") or "")
-    http = re.search(r"https?://[^\s<>]+", desc)
+    http = re.search(r"https?://\S+", desc)
     if http:
         return http.group(0).rstrip(".),'")
     if uid and host:
         return f"https://{host}/calendar/?uid={uid}"
     return source_url
+
+
 def expand_ics_urls(url: str, months: int = 3) -> list[str]:
     if not url:
         return []
@@ -113,6 +135,8 @@ def expand_ics_urls(url: str, months: int = 3) -> list[str]:
             out.append(f"{url}{sep}month={m}&year={y}")
         return out
     return [url]
+
+
 def parse_vevents(ics_text: str, source_url: str = "") -> list[dict]:
     unfolded = unfold_ics(ics_text)
     events: list[dict] = []
@@ -125,7 +149,7 @@ def parse_vevents(ics_text: str, source_url: str = "") -> list[dict]:
         start, start_time = _parse_ics_dt(p.get("DTSTART") or "")
         end, end_time = _parse_ics_dt(p.get("DTEND") or "")
         if start_time and end_time and start_time != end_time:
-            time = f"{start_time}–{end_time}"
+            time = f"{start_time}-{end_time}"
         else:
             time = start_time or parse_time_label(_unescape(p.get("DESCRIPTION") or ""))
         rec = {
