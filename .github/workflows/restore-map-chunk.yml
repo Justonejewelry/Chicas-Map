@@ -1,0 +1,27 @@
+name: Restore map chunk
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - name: Restore original map-DzoyHDt0.js
+        run: |
+          set -euo pipefail
+          git checkout f3365c745f0a04ef5922ca91b2956684bda3f81e -- webapp/assets/map-DzoyHDt0.js
+          wc -c webapp/assets/map-DzoyHDt0.js
+          head -c 80 webapp/assets/map-DzoyHDt0.js; echo
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add webapp/assets/map-DzoyHDt0.js
+          git diff --cached --stat
+          git commit -m "Restore original map-DzoyHDt0.js so the map loads on iPhone."
+          git push
