@@ -20,14 +20,14 @@
   function copy() {
     if (es()) {
       return {
-        line: "Destaca tu venta este fin — $5",
-        pay: "Pagar $5",
+        line: "List it. Sell it. Done. Pin $5 este fin.",
+        pay: "Pinar · $5",
         more: "Cómo funciona",
       };
     }
     return {
-      line: "Claim a pin this weekend — $5",
-      pay: "Pay $5",
+      line: "Hey pack. List it. Sell it. Done. — $5 pin.",
+      pay: "Pin it · $5",
       more: "How it works",
     };
   }
