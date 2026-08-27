@@ -12,6 +12,7 @@
  *
  * Vars:
  *   BOOST_AMOUNT_CENTS=900
+ *   CLAIM_AMOUNT_CENTS=500
  *   BOOST_CURRENCY=USD
  *   GITHUB_REPO=Justonejewelry/Chicas-Map
  *   NOTIFY_EMAIL_TO=...
@@ -63,23 +64,34 @@ function extractPayment(event) {
   return obj.payment || obj;
 }
 
-function isBoostPayment(payment, amountCents, currency) {
-  if (!payment) return false;
+function moneyMatches(cents, target) {
+  const t = Number(target);
+  if (!Number.isFinite(t)) return false;
+  return Math.abs(cents - t) <= 50;
+}
+
+function classifyPayment(payment, env) {
+  if (!payment) return null;
   const status = String(payment.status || "").toUpperCase();
-  if (status !== "COMPLETED") return false;
+  if (status !== "COMPLETED") return null;
+  const currency = env.BOOST_CURRENCY || "USD";
   const cur = String(
     (payment.amount_money && payment.amount_money.currency) ||
       (payment.total_money && payment.total_money.currency) ||
       ""
   ).toUpperCase();
-  if (currency && cur && cur !== currency.toUpperCase()) return false;
+  if (currency && cur && cur !== currency.toUpperCase()) return null;
   const cents =
     centsFromMoney(payment.amount_money) ??
     centsFromMoney(payment.total_money);
-  if (cents == null) return false;
-  // Allow exact match or within $0.50 in case of rounding / tax config
-  const target = Number(amountCents) || 900;
-  return Math.abs(cents - target) <= 50;
+  if (cents == null) return null;
+  if (moneyMatches(cents, env.CLAIM_AMOUNT_CENTS || 500)) return "pin_claim";
+  if (moneyMatches(cents, env.BOOST_AMOUNT_CENTS || 900)) return "boost_pass";
+  return null;
+}
+
+function isBoostPayment(payment, amountCents, currency) {
+  return classifyPayment(payment, { BOOST_AMOUNT_CENTS: amountCents, BOOST_CURRENCY: currency }) === "boost_pass";
 }
 
 function paymentSummary(event, payment) {
@@ -109,6 +121,13 @@ function paymentSummary(event, payment) {
   };
 }
 
+function claimSummary(event, payment) {
+  const base = paymentSummary(event, payment);
+  base.product = "pin_claim_weekend";
+  delete base.boost_months;
+  return base;
+}
+
 async function notifyFormspree(formId, toEmail, summary) {
   if (!formId) return { ok: false, reason: "no_formspree" };
   const res = await fetch("https://formspree.io/f/" + formId, {
@@ -118,11 +137,12 @@ async function notifyFormspree(formId, toEmail, summary) {
       Accept: "application/json",
     },
     body: JSON.stringify({
-      _subject: "Chica Map — BOOST PAID ($9 Square)",
+      _subject: summary.product === "pin_claim_weekend" ? "Chica Map — PIN CLAIM PAID ($5 Square)" : "Chica Map — BOOST PAID ($9 Square)",
       to: toEmail || undefined,
       message:
-        "Square webhook verified a completed Boost payment.\n\n" +
-        "Activate gold pin only after listing approval.\n\n" +
+        (summary.product === "pin_claim_weekend"
+          ? "Square webhook verified a completed $5 pin claim.\n\nStamp the gold pin on that listing.\n\n"
+          : "Square webhook verified a completed Boost payment.\n\nActivate gold pin only after listing approval.\n\n") +
         JSON.stringify(summary, null, 2),
       payment_id: summary.payment_id,
       amount_cents: summary.amount_cents,
@@ -135,6 +155,10 @@ async function notifyFormspree(formId, toEmail, summary) {
 }
 
 async function notifyGitHub(token, repo, summary) {
+  return notifyGitHubKind(token, repo, summary, "boost_paid");
+}
+
+async function notifyGitHubKind(token, repo, summary, eventType) {
   if (!token || !repo) return { ok: false, reason: "no_github" };
   const res = await fetch("https://api.github.com/repos/" + repo + "/dispatches", {
     method: "POST",
@@ -145,7 +169,7 @@ async function notifyGitHub(token, repo, summary) {
       "X-GitHub-Api-Version": "2022-11-28",
     },
     body: JSON.stringify({
-      event_type: "boost_paid",
+      event_type: eventType || "boost_paid",
       client_payload: summary,
     }),
   });
@@ -221,14 +245,14 @@ export default {
     }
 
     const payment = extractPayment(event);
-    const amountCents = env.BOOST_AMOUNT_CENTS || "900";
-    const currency = env.BOOST_CURRENCY || "USD";
+    const kind = classifyPayment(payment, env);
 
-    if (!isBoostPayment(payment, amountCents, currency)) {
+    if (!kind) {
       return new Response(
         JSON.stringify({
           ok: true,
           boost: false,
+          pin_claim: false,
           status: payment && payment.status,
           amount: payment && (payment.amount_money || payment.total_money),
         }),
@@ -236,7 +260,10 @@ export default {
       );
     }
 
-    const summary = paymentSummary(event, payment);
+    const summary = kind === "pin_claim" ? claimSummary(event, payment) : paymentSummary(event, payment);
+    if (kind === "pin_claim") {
+      summary.product = "pin_claim_weekend";
+    }
 
     const results = {
       formspree: await notifyFormspree(
@@ -244,11 +271,17 @@ export default {
         env.NOTIFY_EMAIL_TO,
         summary
       ),
-      github: await notifyGitHub(env.GITHUB_TOKEN, env.GITHUB_REPO, summary),
+      github: await notifyGitHubKind(env.GITHUB_TOKEN, env.GITHUB_REPO, summary, kind === "pin_claim" ? "pin_claimed" : "boost_paid"),
     };
 
     return new Response(
-      JSON.stringify({ ok: true, boost: true, payment_id: summary.payment_id, notify: results }),
+      JSON.stringify({
+        ok: true,
+        boost: kind === "boost_pass",
+        pin_claim: kind === "pin_claim",
+        payment_id: summary.payment_id,
+        notify: results,
+      }),
       { status: 200, headers: { "Content-Type": "application/json" } }
     );
   },

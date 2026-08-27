@@ -27,12 +27,17 @@ const PAGES = [
   {
     path: "sponsors",
     title: "Patrocinio · Chicas Map",
-    desc: "Ayuda a Chica a dejar la capa puesta. Los pines no se pagan.",
+    desc: "Ayuda a Chica a dejar la capa puesta.",
   },
   {
     path: "submit",
     title: "Agregar venta · Chicas Map",
     desc: "Comparte una venta de garage. Chica la revisa antes de pincharla.",
+  },
+  {
+    path: "claim",
+    title: "Reclamar pin · Chicas Map",
+    desc: "Resalta tu venta este fin por $5. Pin dorado, nota del sábado, fotos extra.",
   },
   {
     path: "facebook",

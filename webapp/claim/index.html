@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Claim this pin — $5 · Chicas Map</title>
+    <meta
+      name="description"
+      content="Highlight your sale on Chicas Map for $5 this weekend. Gold pin, Saturday note, extra photos."
+    />
+    <link rel="icon" type="image/svg+xml" href="/Chicas-Map/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #121212;
+        --ink: #fffdf8;
+        --muted: #b9b3a8;
+        --gold: #eab308;
+        --magenta: #c513af;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        min-height: 100dvh;
+        background: var(--bg);
+        color: var(--ink);
+        font: 400 16px/1.5 Inter, system-ui, sans-serif;
+      }
+      header,
+      main,
+      footer {
+        max-width: 640px;
+        margin: 0 auto;
+        padding: 20px 16px;
+      }
+      a {
+        color: var(--gold);
+      }
+      h1 {
+        font-family: Syne, sans-serif;
+        font-size: 2rem;
+        line-height: 1.1;
+        margin: 8px 0 12px;
+      }
+      .price {
+        font-family: Syne, sans-serif;
+        font-size: 2.4rem;
+        color: var(--gold);
+      }
+      .price span {
+        font: 600 14px/1 Inter, sans-serif;
+        color: var(--muted);
+        margin-left: 8px;
+      }
+      ul {
+        padding-left: 1.1rem;
+      }
+      li {
+        margin: 8px 0;
+      }
+      label {
+        display: block;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        margin: 14px 0 6px;
+        color: var(--muted);
+      }
+      input,
+      textarea {
+        width: 100%;
+        border: 1px solid #333;
+        background: #1b1b1b;
+        color: var(--ink);
+        border-radius: 10px;
+        padding: 12px 14px;
+        font: 500 16px Inter, system-ui, sans-serif;
+      }
+      button,
+      .pay {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-top: 18px;
+        padding: 14px 16px;
+        border: 0;
+        border-radius: 999px;
+        background: var(--gold);
+        color: #121212;
+        font: 800 14px/1 Inter, system-ui, sans-serif;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .note {
+        color: var(--muted);
+        font-size: 14px;
+      }
+      nav a {
+        color: var(--ink);
+        text-decoration: none;
+        font-weight: 800;
+      }
+    </style>
+    <script src="/Chicas-Map/js/chica-config.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav><a href="/Chicas-Map/">Chicas Map</a> · claim</nav>
+      <p class="note" style="margin: 18px 0 0; letter-spacing: 0.14em; text-transform: uppercase; font-size: 11px; font-weight: 800; color: var(--gold)">
+        Weekend boost
+      </p>
+      <h1>Claim this pin — $5 this weekend</h1>
+      <p class="note">
+        Listing stays free. Claim is extra reach for the sale dates. Gold star on the map, then it drops when the sale ends.
+      </p>
+      <p class="price">$5 <span>sale dates only</span></p>
+    </header>
+    <main>
+      <ul>
+        <li>Highlighted gold pin on the live map</li>
+        <li>Saturday note slot</li>
+        <li>Extra photos + what’s-here tags</li>
+        <li>Still-going / packed / sold-out note</li>
+        <li>Share caption for the local groups</li>
+      </ul>
+      <form id="claim-form">
+        <label for="sale">Sale id or address</label>
+        <input id="sale" name="sale" required placeholder="Address or pin id" />
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required autocomplete="email" />
+        <label for="hours">Hours / what’s here</label>
+        <textarea id="hours" name="hours" rows="3" placeholder="Sat 8–2. Tools, kids clothes."></textarea>
+        <button type="submit">Continue to $5</button>
+      </form>
+      <p class="note" id="pay-note" style="margin-top: 14px">
+        After you pay, we stamp the gold pin on that listing. $9 / 6-month Boost is a different product.
+      </p>
+    </main>
+    <footer class="note">
+      <a href="/Chicas-Map/map">Back to the map</a>
+      ·
+      <a href="/Chicas-Map/submit">List a sale free</a>
+    </footer>
+    <script>
+      (function () {
+        var cfg = window.CHICA_CONFIG || {};
+        var q = new URLSearchParams(location.search);
+        var sale = q.get("sale") || "";
+        if (sale) document.getElementById("sale").value = sale;
+        document.getElementById("claim-form").addEventListener("submit", function (e) {
+          e.preventDefault();
+          var id = document.getElementById("sale").value.trim();
+          var email = document.getElementById("email").value.trim();
+          var hours = document.getElementById("hours").value.trim();
+          var pay = cfg.PIN_CLAIM_PAYMENT_URL;
+          var subject = encodeURIComponent("Chicas Map — $5 pin claim");
+          var body = encodeURIComponent(
+            "sale: " + id + "\nemail: " + email + "\nhours: " + hours + "\nproduct: pin_claim_weekend\namount: $5"
+          );
+          var mail =
+            "mailto:" +
+            (cfg.REVIEW_EMAIL || "mr.jsciaraffa@gmail.com") +
+            "?subject=" +
+            subject +
+            "&body=" +
+            body;
+          if (pay) {
+            window.open(pay, "_blank", "noopener");
+          }
+          location.href = mail;
+        });
+      })();
+    </script>
+  </body>
+</html>

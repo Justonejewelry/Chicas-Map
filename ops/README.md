@@ -35,3 +35,10 @@ Actions → **Boost pass registry** → Run workflow → action `add` → fill c
 ### Security note
 
 This repo is public. Store the minimum needed to match a seller. Do not put full card data, SSNs, or long private notes here.
+
+## `pin-claims.json`
+
+Registry of **$5 weekend pin claims** (one listing, sale dates only). See `docs/PIN_CLAIMS.md`.
+
+Public, PII-free copy: `webapp/data/pin-claims.json`. The stamp script copies active rows onto `boost` / `boost_until` / `claimed` on the matching San Antonio listing so the live gold-star map lights up.
+
