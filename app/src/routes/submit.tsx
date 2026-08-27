@@ -5,6 +5,9 @@ import { saveSubmission, type Sale, type SaleKind } from "@/lib/sales";
 
 export const Route = createFileRoute("/submit")({ component: SubmitPage });
 
+const PAY = "https://square.link/u/qjunxHoo";
+const CLAIM = "https://justonejewelry.github.io/Chicas-Map/claim/";
+
 function SubmitPage() {
   const navigate = useNavigate();
   const [error, setError] = useState("");
@@ -72,6 +75,18 @@ function SubmitPage() {
           Drop your garage, yard, or estate sale on the map. It stays on this device so you can
           share the pin with the pack.
         </p>
+        <aside className="mt-4 rounded-2xl bg-paper p-4 ring-1 ring-line">
+          <p className="font-display text-base font-semibold">Want the weekend highlight?</p>
+          <p className="mt-1 text-sm text-muted">Claimed pin is $5. Listing stays free.</p>
+          <div className="mt-3 flex flex-wrap gap-2">
+            <a href={PAY} target="_blank" rel="noreferrer" className="inline-flex h-10 items-center rounded-full bg-pine px-4 text-sm font-semibold text-cream">
+              Pay $5
+            </a>
+            <a href={CLAIM} className="inline-flex h-10 items-center rounded-full px-4 text-sm font-semibold ring-1 ring-line">
+              How it works
+            </a>
+          </div>
+        </aside>
         <form onSubmit={onSubmit} className="mt-6 flex flex-col gap-4">
           <Field label="Title" name="title" placeholder="Tools, vintage, and a riding mower" required />
           <Field label="Address" name="address" placeholder="1234 Oak St, San Antonio" required />
