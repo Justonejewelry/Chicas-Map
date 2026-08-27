@@ -1,0 +1,24 @@
+/* TEAM */
+Owner: Justin — veteran-owned, San Antonio
+Site: Chica's Map
+X: @justinraineys
+Facebook: https://www.facebook.com/Justone.Jewelry.Justin/
+From: San Antonio, Texas, US
+
+/* THANKS */
+Chica — the hunt, the cape, the why
+Neighbors who share a driveway instead of a rumor
+Created with Grok — https://grok.com/?referrer=website
+GitHub — the house
+Leaflet + OpenStreetMap — the streets
+WCAG 2.2 AA — we try to keep the door wide
+Sale Intel — GPS-gated notes at the pin (200 m)
+
+Grok is a tool we used to build this map. That credit is not an
+endorsement, approval, or sponsorship by xAI.
+
+/* SITE */
+Standards: HTML5, CSS, JS
+Language: en, es
+Software: TanStack Start, Vite, GitHub Pages
+Last update: 2026-08-26

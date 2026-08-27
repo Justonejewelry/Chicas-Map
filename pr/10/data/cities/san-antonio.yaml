@@ -1,0 +1,60 @@
+# Project YardBird — City Franchise Kit
+# Copy this file → <slug>.yaml and change geography + sources only.
+# Never fork agent logic per city.
+
+slug: san-antonio
+name: San Antonio
+state: TX
+timezone: America/Chicago
+
+bounds:
+  center: [-98.4936, 29.4241]
+  north: 29.75
+  south: 29.20
+  east: -98.25
+  west: -98.80
+  zoom_default: 11
+
+hot_zones:
+  - name: Fair Oaks / Boerne
+    badge: CLUSTER-HOT
+    center: [29.74, -98.64]
+  - name: South Side
+    badge: CLUSTER-HOT
+    center: [29.30, -98.48]
+  - name: Northwest Side
+    badge: ACTIVE
+    center: [29.55, -98.62]
+  - name: Northeast Side
+    badge: ACTIVE
+    center: [29.54, -98.40]
+  - name: Alamo Ranch
+    badge: ACTIVE
+    center: [29.48, -98.70]
+
+sources:
+  craigslist:
+    domain: sanantonio.craigslist.org
+    rss_garage: https://sanantonio.craigslist.org/search/gms?format=rss
+  estatesales_net: https://www.estatesales.net/TX/San-Antonio
+  estatesales_org: https://www.estatesales.org
+  yardsalesearch: https://www.yardsalesearch.com/garage-sales-san-antonio-tx.html
+  garagesalefinder: https://www.garagesalefinder.com/garage-sales/san-antonio/tx/
+  city_permits: https://www.sa.gov/Directory/Departments/DSD/CES/Permits-Licenses/Garage-Sales
+
+synonyms:
+  - garage sale
+  - yard sale
+  - estate sale
+  - moving sale
+  - community sale
+
+value_notes:
+  - estates with 50+ photos score higher on Sniff
+  - Fair Oaks / Boerne historically strong for antiques
+  - South Side volume cluster weekends
+
+map_defaults:
+  style: liberty
+  show_dna_heat: true
+  cameo_enabled: true

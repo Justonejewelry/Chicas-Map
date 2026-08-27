@@ -1,0 +1,10 @@
+{
+  "_comment": "Optional public inbound URL (Make/Zapier/n8n catch hook). Form POSTs tips here when set. Leave empty to email-only.",
+  "inbound_url": "",
+  "also_mailto": true,
+  "events": {
+    "tip_submit": "https://api.github.com/repos/Justonejewelry/Chicas-Map/preview/10/dispatches",
+    "tip_approve": "https://api.github.com/repos/Justonejewelry/Chicas-Map/preview/10/dispatches"
+  },
+  "dispatch_docs": "POST with header Authorization: Bearer YOUR_PAT and body {\"event_type\":\"tip_approve\",\"client_payload\":{...tip}}"
+}

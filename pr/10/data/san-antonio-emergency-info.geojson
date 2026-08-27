@@ -1,0 +1,163 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "name": "San Antonio Emergency Public Info (Dormant Layer)",
+    "description": "Resilience hubs and official emergency resources. NOT on the day-to-day map. Tucked for function testing and rapid deployment during wet/flood/severe weather events. When activated, surface immediately and push Ready South Texas app link.",
+    "status": "dormant",
+    "activation": "Set window.CHICA_EMERGENCY_DEPLOY = true or URL ?emergency=1 to enable toggle and layer. On real need: flip flag, push live, promote Ready South Texas.",
+    "sources": [
+      "City of San Antonio Office of Emergency Management (saoemprepare.com)",
+      "Bexar County Office of Emergency Management",
+      "Ready South Texas app",
+      "City resilience hub announcements (2025-2026)"
+    ],
+    "updated": "2026-08-17",
+    "note": "Locations are primary resilience hubs repeatedly activated by the City for severe weather. Actual activation is event-driven and announced via official channels. Always verify current status with 311 / SAOEM / Ready South Texas."
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-98.39307, 29.41496] },
+      "properties": {
+        "name": "Copernicus Community Center",
+        "address": "5003 Lord Rd, San Antonio, TX 78220",
+        "type": "resilience_hub",
+        "category": "emergency_info",
+        "hours_note": "Activated as needed for severe weather (overnight resilience hub)",
+        "phone": "210-207-5387",
+        "notes": "City resilience hub. Shelter, charging, Wi-Fi, basic supplies when activated. Pets often accommodated.",
+        "official_url": "https://www.saoemprepare.com/",
+        "ready_south_texas": "https://www.readysouthtexasapp.com/",
+        "icon": "emergency-hub"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-98.53942, 29.38114] },
+      "properties": {
+        "name": "Normoyle Community Center / Senior Center",
+        "address": "700 Culberson Ave, San Antonio, TX 78225",
+        "type": "resilience_hub",
+        "category": "emergency_info",
+        "hours_note": "Activated as needed for severe weather (overnight resilience hub)",
+        "phone": "210-207-5652",
+        "notes": "City resilience hub. Frequently listed for cold/heat events. Pets often accommodated.",
+        "official_url": "https://www.saoemprepare.com/",
+        "ready_south_texas": "https://www.readysouthtexasapp.com/",
+        "icon": "emergency-hub"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-98.4365, 29.3827] },
+      "properties": {
+        "name": "Southside Lions Senior Center",
+        "address": "3303 Pecan Valley Dr, San Antonio, TX 78210",
+        "type": "resilience_hub",
+        "category": "emergency_info",
+        "hours_note": "Activated as needed for severe weather (overnight resilience hub)",
+        "phone": "210-207-1760",
+        "notes": "City resilience hub. Shelter, charging, resources when activated.",
+        "official_url": "https://www.saoemprepare.com/",
+        "ready_south_texas": "https://www.readysouthtexasapp.com/",
+        "icon": "emergency-hub"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-98.55, 29.45] },
+      "properties": {
+        "name": "Gilbert Garza Community Center",
+        "address": "1450 Mira Vista, San Antonio, TX 78228",
+        "type": "resilience_hub",
+        "category": "emergency_info",
+        "hours_note": "Activated as needed for severe weather (overnight resilience hub)",
+        "notes": "City resilience hub (also called Garza Community Center). Verify current status via official channels.",
+        "official_url": "https://www.saoemprepare.com/",
+        "ready_south_texas": "https://www.readysouthtexasapp.com/",
+        "icon": "emergency-hub"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-98.58, 29.36] },
+      "properties": {
+        "name": "Miller's Pond Community Center",
+        "address": "6175 Old Pearsall Rd, San Antonio, TX 78242",
+        "type": "resilience_hub",
+        "category": "emergency_info",
+        "hours_note": "Activated as needed for severe weather (overnight resilience hub)",
+        "phone": "210-207-5386",
+        "notes": "City resilience hub. Confirm activation status with 311 or SAOEM.",
+        "official_url": "https://www.saoemprepare.com/",
+        "ready_south_texas": "https://www.readysouthtexasapp.com/",
+        "icon": "emergency-hub"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-98.45, 29.52] },
+      "properties": {
+        "name": "Northeast Senior Center",
+        "address": "4135 Thousand Oaks, San Antonio, TX 78217",
+        "type": "resilience_hub",
+        "category": "emergency_info",
+        "hours_note": "Activated as needed for severe weather (overnight resilience hub)",
+        "phone": "210-207-4590",
+        "notes": "City resilience hub. Verify live status.",
+        "official_url": "https://www.saoemprepare.com/",
+        "ready_south_texas": "https://www.readysouthtexasapp.com/",
+        "icon": "emergency-hub"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-98.4936, 29.4241] },
+      "properties": {
+        "name": "San Antonio Office of Emergency Management",
+        "address": "Official resource (citywide)",
+        "type": "official_resource",
+        "category": "emergency_info",
+        "hours_note": "Always available online / via 311",
+        "phone": "210-206-8580 / 311",
+        "notes": "Primary local authority for evacuation guidance, alerts, and plans. Sign up for alerts. Not a physical shelter pin.",
+        "official_url": "https://www.saoemprepare.com/",
+        "ready_south_texas": "https://www.readysouthtexasapp.com/",
+        "icon": "official"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-98.4936, 29.4246] },
+      "properties": {
+        "name": "Ready South Texas App",
+        "address": "Mobile app — evacuation maps, shelters, alerts",
+        "type": "official_resource",
+        "category": "emergency_info",
+        "hours_note": "Download free — works offline for maps after first load",
+        "notes": "Official Bexar/SA preparedness app. Evacuation route maps, shelter locations, push alerts, personal plan builder. Primary link to push when this layer is deployed.",
+        "official_url": "https://www.readysouthtexasapp.com/",
+        "ready_south_texas": "https://www.readysouthtexasapp.com/",
+        "app_store": "https://apps.apple.com/us/app/ready-south-texas/id1090438177",
+        "play_store": "https://play.google.com/store/apps/details?id=com.quickseries.BexarTX",
+        "icon": "app"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-98.4936, 29.4251] },
+      "properties": {
+        "name": "Bexar County Office of Emergency Management",
+        "address": "Official resource (countywide)",
+        "type": "official_resource",
+        "category": "emergency_info",
+        "hours_note": "Alerts via REAN + social",
+        "phone": "210-335-2011",
+        "notes": "County-level emergency management. Sign up for Regional Emergency Alert Network (REAN).",
+        "official_url": "https://www.bexar.org/oem",
+        "ready_south_texas": "https://www.readysouthtexasapp.com/",
+        "icon": "official"
+      }
+    }
+  ]
+}

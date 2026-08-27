@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Chicas Sale Intel · notes from the driveway</title>
+    <meta
+      name="description"
+      content="Notes from people who are actually at the sale. Sharing unlocks within 200 meters. GPS, not rumors."
+    />
+    <meta name="theme-color" content="#0e0e0e" />
+    <link rel="icon" type="image/svg+xml" href="/Chicas-Map/preview/10/favicon.svg" />
+    <link rel="apple-touch-icon" href="/Chicas-Map/preview/10/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+    />
+    <style>
+      :root {
+        --bg: #0e0e0e;
+        --ink: #fefefe;
+        --muted: #c8c8c8;
+        --line: #3a3a3a;
+        --paper: #171717;
+        --pine: #c513af;
+        --cream: #fffdf8;
+        --ring: #ff7adf;
+      }
+      html[data-theme="light"] {
+        --bg: #f6f1ea;
+        --ink: #121212;
+        --muted: #4a4a4a;
+        --line: #d9d0c6;
+        --paper: #fffdf8;
+        --pine: #c513af;
+        --cream: #fffdf8;
+        --ring: #9a0d86;
+      }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; background: var(--bg); color: var(--ink); }
+      body {
+        min-height: 100dvh;
+        font-family: Inter, "Segoe UI", system-ui, sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      h1, h2 { font-family: Syne, Inter, sans-serif; text-wrap: balance; }
+      a { color: inherit; }
+      .skip {
+        position: absolute;
+        left: 12px;
+        top: 12px;
+        z-index: 20;
+        transform: translateY(-200%);
+        border-radius: 999px;
+        background: var(--pine);
+        color: #fff;
+        padding: 12px 18px;
+        font-weight: 700;
+        text-decoration: none;
+      }
+      .skip:focus { transform: none; }
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: max(10px, env(safe-area-inset-top)) 16px 10px;
+        border-bottom: 1px solid var(--line);
+        background: color-mix(in oklab, var(--bg) 92%, transparent);
+        backdrop-filter: blur(10px);
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        min-width: 0;
+        text-decoration: none;
+        font-family: Syne, Inter, sans-serif;
+        font-weight: 800;
+        font-size: 1.05rem;
+      }
+      .brand img {
+        width: 36px;
+        height: 36px;
+        border-radius: 999px;
+        object-fit: cover;
+        background: var(--paper);
+      }
+      nav { display: flex; flex-wrap: wrap; gap: 6px; }
+      nav a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+        padding: 0 14px;
+        border-radius: 999px;
+        text-decoration: none;
+        font-size: 0.875rem;
+        font-weight: 600;
+      }
+      nav a:hover { background: var(--paper); }
+      nav a[aria-current="page"] {
+        background: var(--pine);
+        color: #fff;
+      }
+      main {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 32px 20px 80px;
+      }
+      .eyebrow {
+        margin: 0;
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      h1 {
+        margin: 10px 0 0;
+        font-size: clamp(2rem, 6vw, 3.2rem);
+        line-height: 1.05;
+        letter-spacing: -0.03em;
+      }
+      h1 em { font-style: italic; font-weight: 700; color: var(--pine); }
+      html[data-theme="light"] h1 em { color: #9a0d86; }
+      .lede {
+        margin: 16px 0 0;
+        max-width: 42rem;
+        font-size: 1.05rem;
+        line-height: 1.55;
+        color: var(--muted);
+        text-wrap: pretty;
+      }
+      .ctas {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 24px;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 0 20px;
+        border-radius: 999px;
+        font-weight: 700;
+        font-size: 0.95rem;
+        text-decoration: none;
+      }
+      .btn.primary {
+        background: var(--pine);
+        color: #fff;
+        box-shadow: 0 10px 28px rgb(197 19 175 / 0.4);
+      }
+      .btn.ghost {
+        background: var(--paper);
+        color: var(--ink);
+        box-shadow: inset 0 0 0 1px var(--line);
+      }
+      .btn:focus-visible {
+        outline: 2px solid var(--ring);
+        outline-offset: 3px;
+      }
+      .beats {
+        list-style: none;
+        margin: 36px 0 0;
+        padding: 0;
+        display: grid;
+        gap: 12px;
+      }
+      .beats li {
+        background: var(--paper);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 16px 18px;
+      }
+      .beats strong {
+        display: block;
+        font-family: Syne, Inter, sans-serif;
+        font-size: 1.05rem;
+        margin-bottom: 4px;
+      }
+      .beats span { color: var(--muted); font-size: 0.95rem; line-height: 1.45; }
+      .status {
+        margin: 28px 0 0;
+        padding: 14px 16px;
+        border-radius: 12px;
+        background: var(--paper);
+        border: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+      footer {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 0 20px 40px;
+        color: var(--muted);
+        font-size: 0.85rem;
+      }
+      footer a { font-weight: 600; }
+    </style>
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("chicas-map-theme");
+          if (t === "light" || t === "dark") {
+            document.documentElement.setAttribute("data-theme", t);
+            document.documentElement.style.colorScheme = t;
+          } else {
+            document.documentElement.style.colorScheme = "dark";
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header>
+      <a class="brand" href="/Chicas-Map/preview/10/">
+        <img src="/Chicas-Map/preview/10/images/chica-logo.png" width="36" height="36" alt="" />
+        Chicas Map
+      </a>
+      <nav aria-label="Primary">
+        <a href="/Chicas-Map/preview/10/">Home</a>
+        <a href="/Chicas-Map/preview/10/map">Map</a>
+        <a href="/Chicas-Map/preview/10/intel/" aria-current="page">Intel</a>
+        <a href="/Chicas-Map/preview/10/submit">List a sale</a>
+      </nav>
+    </header>
+    <main id="main">
+      <p class="eyebrow">GPS-gated · 200 m</p>
+      <h1>Chicas <em>Sale Intel</em></h1>
+      <p class="lede">
+        Notes from people who are actually at the sale. Parking, cash, what’s left —
+        sharing unlocks within 200 meters. Rumors stay on the porch.
+      </p>
+      <div class="ctas">
+        <a id="open-intel" class="btn primary" href="/Chicas-Map/preview/10/map">Open the map</a>
+        <a class="btn ghost" href="/Chicas-Map/preview/10/map">Hunt on the map</a>
+      </div>
+      <ul class="beats">
+        <li>
+          <strong>Stand at the sale</strong>
+          <span>Live GPS has to put you within 200 meters. No remote drive-by comments.</span>
+        </li>
+        <li>
+          <strong>Leave a driveway note</strong>
+          <span>Stock, parking, prices, cash-only. A sidewalk handle — not a login.</span>
+        </li>
+        <li>
+          <strong>The pack reads it first</strong>
+          <span>Intel sits next to the verified pin. Map finds the sale. Intel tells you if it’s worth the loop.</span>
+        </li>
+      </ul>
+      <p id="intel-status" class="status">
+        Sale Intel is the GPS-gated notes layer for Chicas Map. Open it when the live
+        app URL is stamped; until then the hunt still lives on the map.
+      </p>
+    </main>
+    <footer>
+      <p>
+        Chicas Map · veteran-built ·
+        <a href="/Chicas-Map/preview/10/">public map</a> ·
+        <a href="/Chicas-Map/preview/10/legal">legal</a>
+      </p>
+    </footer>
+    <script>
+      (function () {
+        var btn = document.getElementById("open-intel");
+        var status = document.getElementById("intel-status");
+        fetch("/Chicas-Map/preview/10/data/sale-intel.json", { cache: "no-store" })
+          .then(function (r) {
+            return r.ok ? r.json() : null;
+          })
+          .then(function (cfg) {
+            if (!cfg) return;
+            var url = String(cfg.url || "").trim();
+            var radius = Number(cfg.radius_m) || 200;
+            if (/^https:\/\/[a-z0-9.-]+/i.test(url) && url.indexOf("vercel.app") === -1) {
+              btn.href = url;
+              btn.textContent = "Open Sale Intel";
+              btn.rel = "noopener";
+              status.textContent =
+                "Notes unlock within " +
+                radius +
+                " meters. Leave a handle, stand at the pin, tell the pack what’s on the driveway.";
+            } else {
+              btn.href = "/Chicas-Map/preview/10/map";
+              btn.textContent = "Open the map";
+              status.textContent =
+                "Sale Intel publishes from the Grok app. Until the live URL is stamped in sale-intel.json, hunt on the map — then come back to drop driveway notes.";
+            }
+          })
+          .catch(function () {});
+      })();
+    </script>
+  </body>
+</html>

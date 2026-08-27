@@ -1,0 +1,21 @@
+{
+  "city": "san-antonio",
+  "date": "2026-08-23",
+  "last_refresh": "2026-08-23T09:24:00-05:00",
+  "edition": "Sunday Live — San Antonio",
+  "pack": "daily-packs/2026-08-23-chica-update-pack.md",
+  "total_locations": 132,
+  "public_count": 48,
+  "permit_total": 84,
+  "verified_from_pack": 40,
+  "sentinel": "PASS",
+  "note": "Sunday update pack applied. 40 Sentinel-pass public sales from daily pack merged into live city feed. Permits retained from Open Data SA. Hot zones: Potranco Run, Schertz/UC, South Central tools (Bailey), Northwest 78240.",
+  "hot_zones": [
+    "Potranco Run / Raceland",
+    "Shavano / 78230",
+    "Schertz / Universal City",
+    "South Central tools (Bailey)",
+    "Northwest / 78240"
+  ],
+  "status": "live"
+}
