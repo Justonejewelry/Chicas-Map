@@ -1,4 +1,4 @@
-/* Chicas Map — header dock: fullscreen + Intel brain pill. */
+/* Chicas Map — header dock: thick fullscreen mark + white Intel brain. */
 #chica-map-chrome {
   position: fixed !important;
   top: max(10px, env(safe-area-inset-top)) !important;
@@ -18,7 +18,8 @@
   pointer-events: auto;
 }
 
-#chica-fs-btn {
+#chica-fs-btn,
+#chica-intel-btn {
   position: relative !important;
   top: auto !important;
   right: auto !important;
@@ -31,11 +32,7 @@
   padding: 0;
   border: 2px solid #fffdf8;
   border-radius: 16px;
-  background: #1a1a1e;
-  color: #fffdf8;
-  font: 700 22px/1 "Segoe UI Symbol", "Noto Sans Symbols 2", "Apple Symbols", system-ui, sans-serif;
-  letter-spacing: 0;
-  text-transform: none;
+  color: #fff;
   cursor: pointer;
   display: flex !important;
   align-items: center;
@@ -43,6 +40,11 @@
   visibility: visible !important;
   opacity: 1 !important;
   pointer-events: auto !important;
+  text-decoration: none;
+}
+
+#chica-fs-btn {
+  background: #1a1a1e;
   box-shadow: 0 8px 22px rgb(0 0 0 / 0.38), 0 0 0 3px rgb(197 19 175 / 0.28);
 }
 
@@ -51,49 +53,28 @@
   box-shadow: 0 10px 28px rgb(197 19 175 / 0.55), 0 0 0 3px rgb(197 19 175 / 0.28);
 }
 
-#chica-fs-btn:hover {
-  filter: brightness(1.08);
-}
-
 #chica-intel-btn {
-  position: relative !important;
-  top: auto !important;
-  right: auto !important;
-  left: auto !important;
-  bottom: auto !important;
-  z-index: 1 !important;
-  height: 48px;
-  min-width: 118px;
-  padding: 0 16px 0 10px;
-  border: 2px solid #fffdf8;
-  border-radius: 999px;
   background: #c513af;
-  color: #fffdf8;
-  font: 800 14px/1 Inter, "Segoe UI", system-ui, sans-serif;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  text-decoration: none;
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  visibility: visible !important;
-  opacity: 1 !important;
-  pointer-events: auto !important;
   box-shadow: 0 10px 28px rgb(197 19 175 / 0.55), 0 0 0 3px rgb(197 19 175 / 0.28);
 }
 
-#chica-intel-btn .chica-intel-mark {
-  width: 28px;
-  height: 28px;
-  flex: 0 0 28px;
-  color: #fffdf8;
-  display: block;
-  object-fit: contain;
+#chica-fs-btn:hover,
+#chica-intel-btn:hover {
+  filter: brightness(1.08);
 }
 
-#chica-intel-btn:hover {
-  filter: brightness(1.06);
+#chica-fs-btn .chica-fs-mark {
+  width: 26px;
+  height: 26px;
+  display: block;
+}
+
+#chica-intel-btn .chica-intel-mark {
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  display: block;
+  object-fit: contain;
 }
 
 #chica-intel-btn.on-map,
