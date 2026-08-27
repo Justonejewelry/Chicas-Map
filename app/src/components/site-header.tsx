@@ -4,6 +4,7 @@ import { useState } from "react";
 import { cn } from "@/lib/cn";
 
 const INTEL_HREF = "https://justonejewelry.github.io/Chicas-Map/intel/";
+const CLAIM_HREF = "https://justonejewelry.github.io/Chicas-Map/claim/";
 
 const LINKS = [
   { to: "/", label: "Home" },
@@ -69,6 +70,12 @@ export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
           >
             Intel
           </a>
+          <a
+            href={CLAIM_HREF}
+            className="rounded-full bg-pine px-3 py-1.5 text-sm font-semibold text-cream"
+          >
+            $5 pin
+          </a>
         </nav>
         <div className="flex items-center gap-2">
           <Link
@@ -106,6 +113,9 @@ export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
           <a href={INTEL_HREF} className="rounded-lg px-3 py-2.5 text-sm font-medium" onClick={() => setOpen(false)}>
             Intel
           </a>
+          <a href={CLAIM_HREF} className="rounded-lg px-3 py-2.5 text-sm font-medium" onClick={() => setOpen(false)}>
+            Claim a $5 pin
+          </a>
         </nav>
       ) : null}
     </header>
@@ -118,6 +128,10 @@ export function SiteFooter() {
       <div className="mx-auto flex max-w-6xl flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
         <p>Chicas Map · San Antonio garage sale intelligence. Veteran-built.</p>
         <p>
+          <a href={CLAIM_HREF} className="font-semibold text-pine-mid">
+            $5 claimed pin
+          </a>
+          {" · "}
           <a href={INTEL_HREF} className="font-semibold text-pine-mid">
             Sale Intel
           </a>
