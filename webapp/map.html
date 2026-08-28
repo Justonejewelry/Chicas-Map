@@ -14,8 +14,6 @@
     html, body { margin: 0; width: 100%; height: 100%; background: #121212; color: #f3eee4; font-family: Inter, system-ui, sans-serif; overflow: hidden; }
     #chica-live-map { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 1; background: #121212; }
     .leaflet-container { width: 100% !important; height: 100% !important; background: #121212; }
-    .leaflet-pane, .leaflet-map-pane, .leaflet-tile-pane, .leaflet-overlay-pane { width: 100%; height: 100%; }
-    .leaflet-container img.leaflet-tile { max-width: none !important; }
     .chica-pin, .chica-overlay-pin { background: transparent !important; border: 0 !important; }
     #chica-home-chip {
       position: fixed; top: max(10px, env(safe-area-inset-top)); right: 10px;
@@ -26,12 +24,7 @@
     }
     #chica-home-chip img { width: 28px; height: 28px; border-radius: 8px; object-fit: cover; }
     .leaflet-control-zoom { margin-bottom: 92px !important; }
-    .chica-skip {
-      position: absolute; left: 8px; top: 8px; z-index: 2147483647;
-      background: #fffdf8; color: #121212; padding: 8px 12px; border-radius: 8px;
-      font: 800 13px/1 Inter, system-ui, sans-serif; text-decoration: none;
-      transform: translateY(-120%);
-    }
+    .chica-skip { position: absolute; left: 8px; top: 8px; z-index: 2147483647; background: #fffdf8; color: #121212; padding: 8px 12px; border-radius: 8px; font: 800 13px/1 Inter, system-ui, sans-serif; text-decoration: none; transform: translateY(-120%); }
     .chica-skip:focus { transform: none; }
     :focus-visible { outline: 3px solid #fffdf8; outline-offset: 2px; }
   </style>
@@ -39,11 +32,11 @@
 <body>
   <a class="chica-skip" href="#chica-force-key">Skip to map key</a>
   <div id="chica-live-map" class="chica-map" role="application" aria-label="San Antonio garage sale map"></div>
-  <a id="chica-home-chip" href="/Chicas-Map/"><img src="/Chicas-Map/images/chica-logo.png" alt="Chica">Home</a>
+  <a id="chica-home-chip" href="/Chicas-Map/">Home</a>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="/Chicas-Map/js/chica-config.js?v=3"></script>
   <script src="/Chicas-Map/js/chica-core.js?v=4"></script>
-  <script src="/Chicas-Map/js/chica-live-map.js?v=8"></script>
+  <script src="/Chicas-Map/js/chica-live-map.js?v=9"></script>
   <script src="/Chicas-Map/js/key-clicks.js?v=11"></script>
   <script src="/Chicas-Map/js/click-fix.js?v=4"></script>
   <script src="/Chicas-Map/js/force-key.js?v=9"></script>
