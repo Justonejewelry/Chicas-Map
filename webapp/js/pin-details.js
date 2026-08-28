@@ -1,10 +1,11 @@
-/* Sale-pin details: title, address, directions, nearby intel. No extra layer. */
+/* Own the sale card. If another script opens it without Nearby, rewrite it. */
 (function () {
   var p = location.pathname || "";
   if (!(/\/map\/?$/.test(p) || p.indexOf("/map/") !== -1 || /map\.html$/.test(p))) return;
   var BASE = "/Chicas-Map";
-  var NEAR_M = 2400;
+  var NEAR_M = 8000;
   var amenity = { parking: [], pantry: [], schools: [], wifi: [] };
+  var last = null;
   var SRC = {
     parking: BASE + "/data/san-antonio-downtown-parking.geojson",
     pantry: BASE + "/data/san-antonio-24h-food-pantries.geojson",
@@ -33,8 +34,11 @@
     var best = null;
     for (var i = 0; i < feats.length; i++) {
       var g = feats[i] && feats[i].geometry;
-      if (!g || g.type !== "Point" || !g.coordinates) continue;
-      var blat = g.coordinates[1], blon = g.coordinates[0];
+      if (!g || !g.coordinates) continue;
+      var coords = g.type === "Point" ? g.coordinates : (g.coordinates[0] || []);
+      if (!coords || coords.length < 2) continue;
+      var blat = Number(coords[1]), blon = Number(coords[0]);
+      if (!isFinite(blat) || !isFinite(blon)) continue;
       var d = distM(lat, lon, blat, blon);
       if (d > NEAR_M) continue;
       if (!best || d < best.d) best = { d: d, feat: feats[i], lat: blat, lon: blon };
@@ -54,31 +58,26 @@
     );
   }
   function row(label, hit) {
-    if (!hit) return "<li><strong>" + esc(label) + "</strong> None within 1.5 mi</li>";
+    if (!hit) return "<li><strong>" + esc(label) + "</strong> None within 5 mi</li>";
     var props = hit.feat.properties || {};
     var name = props.name || props.title || label;
     return "<li><strong>" + esc(label) + "</strong> " + esc(name) + " \u00b7 " + fmtM(hit.d) + dirs(hit.lat, hit.lon) + "</li>";
   }
-
   function css() {
     if (document.getElementById("chica-pin-details-css")) return;
     var s = document.createElement("style");
     s.id = "chica-pin-details-css";
     s.textContent =
-      "#chica-intel-card{display:none;position:fixed!important;left:12px!important;top:62px!important;right:auto!important;z-index:2147483646!important;width:min(320px,calc(100vw - 24px))!important;max-height:min(72dvh,520px)!important;overflow:auto!important;background:#fffdf8!important;color:#1a1714!important;border:2px solid #c513af!important;border-radius:14px!important;box-shadow:0 16px 40px rgba(18,18,18,.45)!important;padding:14px 14px 16px!important;font:500 13px/1.35 Inter,system-ui,sans-serif!important}" +
-      "#chica-intel-card .x{position:absolute;top:6px;right:6px;border:0;background:transparent;font:800 22px/1 Inter,system-ui,sans-serif;min-width:36px;min-height:36px;cursor:pointer}" +
-      "#chica-intel-card .chica-opt h3{margin:0 28px 4px 0;font:800 15px/1.2 Inter,system-ui,sans-serif}" +
-      "#chica-intel-card .meta{margin:0;color:#5c5348;font-size:12px}" +
-      "#chica-intel-card .near-label{margin:12px 0 0;font:800 11px/1 Inter,system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#7a0f6c}" +
+      "#chica-intel-card{display:none;position:fixed!important;left:12px!important;top:58px!important;z-index:2147483646!important;width:min(340px,calc(100vw - 24px))!important;max-height:min(74dvh,560px)!important;overflow:auto!important;background:#fffdf8!important;color:#1a1714!important;border:2px solid #c513af!important;border-radius:14px!important;box-shadow:0 16px 40px rgba(18,18,18,.45)!important;padding:14px!important;font:500 13px/1.35 Inter,system-ui,sans-serif!important}" +
+      "#chica-intel-card .x{position:absolute;top:4px;right:4px;border:0;background:transparent;font:800 22px/1 Inter,system-ui,sans-serif;min-width:36px;min-height:36px}" +
+      "#chica-intel-card .near-label{margin:12px 0 0;padding:6px 8px;background:#c513af;color:#fffdf8;border-radius:8px;font:800 12px/1 Inter,system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase}" +
       "#chica-intel-card ul{margin:6px 0 0;padding:0;list-style:none}" +
       "#chica-intel-card li{margin:8px 0 0;padding-top:8px;border-top:1px solid #ece6dc}" +
-      "#chica-intel-card .chica-dirs{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 0}" +
-      "#chica-intel-card .chica-dirs a{border:1px solid #c513af;border-radius:999px;padding:4px 10px;font-size:12px;color:#7a0f6c;text-decoration:none;font-weight:800}" +
-      ".leaflet-marker-icon.chica-pin,.leaflet-marker-icon.chica-type-garage,.leaflet-marker-icon.chica-type-estate,.leaflet-marker-icon.chica-type-permit{pointer-events:auto!important;cursor:pointer!important}";
+      "#chica-intel-card .chica-dirs{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 0}" +
+      "#chica-intel-card .chica-dirs a{border:1px solid #c513af;border-radius:999px;padding:4px 10px;font-size:12px;color:#7a0f6c;text-decoration:none;font-weight:800}";
     (document.head || document.documentElement).appendChild(s);
   }
-
-  function card() {
+  function cardEl() {
     var el = document.getElementById("chica-intel-card");
     if (!el) {
       el = document.createElement("div");
@@ -89,14 +88,17 @@
     }
     return el;
   }
-
+  function loaded() {
+    return amenity.parking.length + amenity.pantry.length + amenity.schools.length + amenity.wifi.length;
+  }
   function render(sale) {
+    if (!sale || !isFinite(Number(sale.lat)) || !isFinite(Number(sale.lon))) return;
+    last = sale;
     css();
-    var el = card();
+    var el = cardEl();
     var lat = Number(sale.lat), lon = Number(sale.lon);
     var when = sale.dates || sale.hours || "";
-    var loaded = amenity.parking.length + amenity.pantry.length + amenity.schools.length + amenity.wifi.length;
-    var nearby = loaded
+    var nearby = loaded()
       ? row("Parking", nearest("parking", lat, lon)) +
         row("Pantry", nearest("pantry", lat, lon)) +
         row("Wi-Fi", nearest("wifi", lat, lon)) +
@@ -108,51 +110,69 @@
       "<h3>" + esc(sale.title || "Sale") + "</h3>" +
       '<p class="meta">' + esc(sale.address || "") + (when ? "<br>" + esc(when) : "") + "</p>" +
       dirs(lat, lon) +
-      '<p class="near-label">Nearby</p>' +
+      '<p class="near-label">Nearby intel</p>' +
       "<ul>" + nearby + "</ul></div>";
     var x = el.querySelector(".x");
     if (x) x.onclick = function (ev) { ev.preventDefault(); ev.stopPropagation(); el.style.display = "none"; };
     el.style.display = "block";
-    if (!loaded) setTimeout(function () { render(sale); }, 400);
+    if (!loaded()) setTimeout(function () { if (last === sale) render(sale); }, 350);
   }
-
-  function prefetch() {
-    Object.keys(SRC).forEach(function (id) {
-      fetch(SRC[id] + "?v=14", { cache: "no-store" })
-        .then(function (r) { return r.ok ? r.json() : null; })
-        .then(function (data) { amenity[id] = data && data.features ? data.features : []; })
-        .catch(function () { amenity[id] = amenity[id] || []; });
+  function parseLatLon(el) {
+    var a = el.querySelector('a[href*="destination="]');
+    if (!a) a = el.querySelector('a[href*="daddr="]');
+    if (!a) return null;
+    var href = a.getAttribute("href") || "";
+    var m = href.match(/(-?\d+\.\d+)[, ]+(-?\d+\.\d+)/);
+    if (!m) return null;
+    return { lat: Number(m[1]), lon: Number(m[2]) };
+  }
+  function enrich() {
+    var el = document.getElementById("chica-intel-card");
+    if (!el || el.style.display === "none") return;
+    if (el.querySelector(".near-label")) return;
+    var ll = parseLatLon(el) || last;
+    var titleEl = el.querySelector("h3");
+    var meta = el.querySelector(".meta");
+    render({
+      title: titleEl ? titleEl.textContent : (last && last.title) || "Sale",
+      address: meta ? meta.textContent : "",
+      lat: ll && ll.lat,
+      lon: ll && ll.lon
     });
   }
-
-  function saleFromMarker(ly) {
+  function saleFromLayer(ly) {
     if (!ly || !ly.getLatLng) return null;
+    if (ly._icon && (ly._icon.classList.contains("chica-overlay-pin") || ly._icon.querySelector(".chica-overlay-mark"))) return null;
     var ll = ly.getLatLng();
-    var opt = ly.options || {};
+    var item = ly.__chicaSale || {};
     return {
-      title: opt.title || "Sale",
-      address: "",
-      dates: "",
-      hours: "",
+      title: item.title || (ly.options && ly.options.title) || "Sale",
+      address: item.address || "",
+      dates: item.dates || "",
+      hours: item.hours || "",
       lat: ll.lat,
       lon: ll.lng
     };
   }
-
-  function findSaleFromEvent(ev) {
-    var t = ev.target;
-    if (!t || !t.closest) return null;
-    if (t.closest("#chica-force-key") || t.closest("#chica-hunt-bar") || t.closest("#chica-listit-btn") || t.closest("#chica-intel-card")) return null;
-    var icon = t.closest(".leaflet-marker-icon");
-    if (!icon || icon.classList.contains("chica-overlay-pin") || icon.querySelector(".chica-overlay-mark")) return null;
+  function hook() {
     var map = window.__chicaLeaflet;
-    if (!map || !map.eachLayer) return null;
-    var found = null;
+    if (!map || !map.eachLayer) return;
     map.eachLayer(function (ly) {
-      if (found) return;
-      if (ly._icon === icon || (ly._icon && ly._icon.contains && ly._icon.contains(t))) found = saleFromMarker(ly);
+      if (!ly.getLatLng || ly.__chicaDetailsHook) return;
+      ly.__chicaDetailsHook = true;
+      ly.on("click", function () {
+        var sale = saleFromLayer(ly);
+        if (sale) render(sale);
+      });
     });
-    return found;
+  }
+  function prefetch() {
+    Object.keys(SRC).forEach(function (id) {
+      fetch(SRC[id] + "?v=15", { cache: "no-store" })
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (data) { amenity[id] = data && data.features ? data.features : []; })
+        .catch(function () { amenity[id] = amenity[id] || []; });
+    });
   }
 
   window.__chicaOpenIntel = function (lat, lon, title) {
@@ -161,11 +181,22 @@
   };
 
   document.addEventListener("click", function (ev) {
-    var sale = findSaleFromEvent(ev);
-    if (!sale) return;
-    render(sale);
+    var t = ev.target;
+    if (!t || !t.closest) return;
+    if (t.closest("#chica-force-key,#chica-hunt-bar,#chica-listit-btn,#chica-home-chip")) return;
+    var icon = t.closest(".leaflet-marker-icon");
+    if (!icon || icon.classList.contains("chica-overlay-pin") || icon.querySelector(".chica-overlay-mark")) return;
+    var map = window.__chicaLeaflet;
+    if (!map || !map.eachLayer) return;
+    map.eachLayer(function (ly) {
+      if (ly._icon === icon || (ly._icon && ly._icon.contains && ly._icon.contains(t))) {
+        var sale = saleFromLayer(ly);
+        if (sale) render(sale);
+      }
+    });
   }, true);
 
   prefetch();
   css();
+  setInterval(function () { hook(); enrich(); }, 300);
 })();
