@@ -10,7 +10,7 @@
   var SAT_STORE = "chicas-map-layer-sat";
   var KEY_STORE = "chicas-map-key-open-v2";
   var LAYER_STORE = "chicas-map-key-layers";
-  var overlayCache = {}, overlayGroups = {}, wired = {}, intelWired = false, NEAR_M = 1600;
+  var overlayCache = {}, overlayGroups = {}, intelWired = false, panelWired = false, NEAR_M = 1600;
   function readSat() { try { return localStorage.getItem(SAT_STORE) === "1"; } catch (e) { return false; } }
   function writeSat(on) { try { localStorage.setItem(SAT_STORE, on ? "1" : "0"); } catch (e) {} }
   function emergencyOn() {
@@ -37,6 +37,8 @@
     { id: "listit", kind: "cta", label: "Pin it \u00b7 $5", href: BASE + "/claim", hint: "List it. Sell it. Done." }
   ];
   if (emergencyOn()) LAYERS.push({ id: "emergency", kind: "overlay", label: "Emergency hubs", src: BASE + "/data/san-antonio-emergency-info.geojson" });
+  var specById = {};
+  for (var si = 0; si < LAYERS.length; si++) specById[LAYERS[si].id] = LAYERS[si];
   function esc(s) { return String(s == null ? "" : s); }
   function svg(inner) { return '<svg class="chica-key-sym" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">' + inner + "</svg>"; }
   function symbolHtml(id) {
@@ -67,8 +69,40 @@
     if (document.getElementById("chica-key-style")) return;
     var s = document.createElement("style");
     s.id = "chica-key-style";
-    s.textContent = "#chica-key{display:block!important;visibility:visible!important;opacity:1!important;position:fixed!important;left:12px!important;bottom:calc(16px + env(safe-area-inset-bottom,0px))!important;z-index:2147483646!important;width:min(228px,calc(100vw - 24px));max-height:min(58dvh,440px);overflow:auto;background:#1a1714f2;color:#f3eee4;border:1px solid #3a342e;border-radius:16px;font:500 12px/1.25 Inter,system-ui,sans-serif;padding:8px 10px 10px}#chica-key[data-collapsed=true]{max-height:44px;overflow:hidden}#chica-key ul{list-style:none;margin:0;padding:0}#chica-key li{display:flex;align-items:center;gap:8px;padding:5px 4px;border-radius:8px;cursor:pointer;min-height:32px}.chica-intel-badge{position:absolute;right:-5px;top:-6px;width:14px;height:14px;border-radius:999px;background:#c513af;display:none}html.chica-intel-on .chica-intel-badge{display:block}.chica-overlay-pin{border:0;background:transparent}.chica-opt{font:500 12px/1.35 Inter,system-ui,sans-serif;color:#1a1714;min-width:200px}.chica-opt h3{margin:0 0 4px;font:800 13px/1.2 Inter,system-ui,sans-serif}.chica-opt .meta{color:#5c5348;font-size:11px}.chica-opt .acts{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}.chica-opt a.chip{border:1px solid #c513af;border-radius:999px;padding:3px 8px;font-size:11px;color:#7a0f6c;text-decoration:none;font-weight:700}.chica-opt .near{list-style:none;margin:6px 0 0;padding:0}.chica-opt .near li{margin:6px 0 0;padding-top:6px;border-top:1px solid #ece6dc}.chica-opt .tag{font-size:10px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:#7a0f6c}button.chica-dup-chip,.chica-dup-chip,#chica-pin-claim,#chica-intel-btn{display:none!important}aside[aria-label=Key]:not(#chica-key),aside[aria-label=key]:not(#chica-key),[data-chica-legend]{display:none!important}.leaflet-control-layers{display:none!important}#chica-fs-btn,#chica-listit-btn,#chica-map-chrome{display:flex!important;visibility:visible!important;opacity:1!important;pointer-events:auto!important}.leaflet-container,.chica-map{visibility:visible!important}";
+    s.textContent = "#chica-key{display:block!important;visibility:visible!important;opacity:1!important;position:fixed!important;left:12px!important;bottom:calc(16px + env(safe-area-inset-bottom,0px))!important;z-index:2147483646!important;width:min(228px,calc(100vw - 24px));max-height:min(58dvh,440px);overflow:auto;background:#1a1714f2;color:#f3eee4;border:1px solid #3a342e;border-radius:16px;font:500 12px/1.25 Inter,system-ui,sans-serif;padding:8px 10px 10px;pointer-events:auto!important}#chica-key[data-collapsed=true]{max-height:44px;overflow:hidden}#chica-key ul{list-style:none;margin:0;padding:0}#chica-key li{display:flex;align-items:center;gap:8px;padding:5px 4px;border-radius:8px;cursor:pointer;min-height:32px}.chica-intel-badge{position:absolute;right:-5px;top:-6px;width:14px;height:14px;border-radius:999px;background:#c513af;display:none}html.chica-intel-on .chica-intel-badge{display:block}.chica-overlay-pin{border:0;background:transparent}.chica-opt{font:500 12px/1.35 Inter,system-ui,sans-serif;color:#1a1714;min-width:200px}.chica-opt h3{margin:0 0 4px;font:800 13px/1.2 Inter,system-ui,sans-serif}.chica-opt .meta{color:#5c5348;font-size:11px}.chica-opt .acts{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}.chica-opt a.chip{border:1px solid #c513af;border-radius:999px;padding:3px 8px;font-size:11px;color:#7a0f6c;text-decoration:none;font-weight:700}.chica-opt .near{list-style:none;margin:6px 0 0;padding:0}.chica-opt .near li{margin:6px 0 0;padding-top:6px;border-top:1px solid #ece6dc}.chica-opt .tag{font-size:10px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:#7a0f6c}button.chica-dup-chip,.chica-dup-chip,#chica-pin-claim,#chica-intel-btn{display:none!important}aside[aria-label=Key]:not(#chica-key),aside[aria-label=key]:not(#chica-key),[data-chica-legend]{display:none!important}.leaflet-control-layers{display:none!important}#chica-fs-btn,#chica-listit-btn,#chica-map-chrome{display:flex!important;visibility:visible!important;opacity:1!important;pointer-events:auto!important}.leaflet-container,.chica-map{visibility:visible!important}";
     (document.head || document.documentElement).appendChild(s);
+  }
+  function toggleSpec(spec) {
+    if (!spec) return;
+    if (spec.kind === "cta") { location.href = spec.href || (BASE + "/claim"); return; }
+    state[spec.id] = !state[spec.id];
+    saveLayerState();
+    var row = document.querySelector('#chica-key [data-chica-layer="' + spec.id + '"]');
+    if (row && spec.kind !== "cta") styleRow(row, state[spec.id]);
+    if (spec.kind === "sale") applyPins();
+    else if (spec.kind === "intel") applyIntel();
+    else if (spec.kind === "basemap") applySat();
+    else if (spec.kind === "claimed") applyClaimed();
+    else setOverlay(spec.id, state[spec.id], spec);
+  }
+  function bindPanel(p) {
+    if (panelWired || !p) return;
+    panelWired = true;
+    p.addEventListener("click", function (ev) {
+      var t = ev.target; if (!t || !t.closest) return;
+      if (t.closest(".chica-key-toggle")) return;
+      var row = t.closest("[data-chica-layer]");
+      if (!row || !p.contains(row)) return;
+      ev.preventDefault(); ev.stopPropagation();
+      toggleSpec(specById[row.getAttribute("data-chica-layer")]);
+    }, true);
+    p.addEventListener("keydown", function (ev) {
+      if (ev.key !== "Enter" && ev.key !== " ") return;
+      var row = ev.target && ev.target.closest && ev.target.closest("[data-chica-layer]");
+      if (!row) return;
+      ev.preventDefault();
+      toggleSpec(specById[row.getAttribute("data-chica-layer")]);
+    }, true);
   }
   function ensurePanel() {
     var p = document.getElementById("chica-key");
@@ -90,6 +124,7 @@
       });
     }
     if (p.parentNode !== document.body) document.body.appendChild(p);
+    bindPanel(p);
     return p;
   }
   function pinKind(el) {
@@ -263,30 +298,13 @@
     row.style.cursor = "pointer";
     row.style.display = "flex";
   }
-  function wireRow(row, spec) {
-    if (wired[spec.id]) { if (spec.kind !== "cta") styleRow(row, state[spec.id]); return; }
-    wired[spec.id] = true;
+  function paintRow(row, spec) {
     row.setAttribute("data-chica-layer", spec.id);
     row.setAttribute("role", spec.kind === "cta" ? "link" : "switch");
     row.tabIndex = 0;
     row.innerHTML = symbolHtml(spec.id) + '<span class="chica-key-name">' + spec.label + (spec.hint ? '<span style="display:block;font-size:10px;color:#c4b8a8">' + spec.hint + "</span>" : "") + "</span>";
-    if (spec.kind === "cta") {
-      row.style.opacity = "1";
-      row.addEventListener("click", function (ev) { ev.preventDefault(); location.href = spec.href || (BASE + "/claim"); }, true);
-      return;
-    }
-    styleRow(row, state[spec.id]);
-    function tog(ev) {
-      ev.preventDefault(); ev.stopPropagation();
-      state[spec.id] = !state[spec.id]; styleRow(row, state[spec.id]); saveLayerState();
-      if (spec.kind === "sale") applyPins();
-      else if (spec.kind === "intel") applyIntel();
-      else if (spec.kind === "basemap") applySat();
-      else if (spec.kind === "claimed") applyClaimed();
-      else setOverlay(spec.id, state[spec.id], spec);
-    }
-    row.addEventListener("click", tog, true);
-    row.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") tog(e); });
+    if (spec.kind === "cta") row.style.opacity = "1";
+    else styleRow(row, state[spec.id]);
   }
   function ensureOverlays(p) {
     var wrap = p.querySelector("[data-chica-overlays]");
@@ -294,7 +312,7 @@
     for (var i = 0; i < LAYERS.length; i++) {
       var spec = LAYERS[i], row = wrap.querySelector('[data-chica-layer="' + spec.id + '"]');
       if (!row) { row = document.createElement("li"); wrap.appendChild(row); }
-      wireRow(row, spec);
+      paintRow(row, spec);
     }
   }
   function hideDup() {
