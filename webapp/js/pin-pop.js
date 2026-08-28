@@ -14,16 +14,11 @@
   var wired = false;
 
   function findMap() {
-    if (window.__chicaLeaflet && window.__chicaLeaflet.openPopup) return window.__chicaLeaflet;
-    var nodes = document.querySelectorAll(".leaflet-container");
-    for (var i = 0; i < nodes.length; i++) {
-      for (var k in nodes[i]) {
-        try {
-          var v = nodes[i][k];
-          if (v && v.flyTo && v.openPopup) { window.__chicaLeaflet = v; return v; }
-        } catch (e) {}
-      }
+    if (typeof window.__chicaFindMap === "function") {
+      var live = window.__chicaFindMap();
+      if (live) return live;
     }
+    if (window.__chicaLeaflet && window.__chicaLeaflet.openPopup) return window.__chicaLeaflet;
     return null;
   }
 
