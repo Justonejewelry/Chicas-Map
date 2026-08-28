@@ -1,5 +1,4 @@
-/* Chicas Map — header dock: fullscreen + Chica $5 pin.
-   Buttons live on document.body (React cannot steal them). */
+/* Chicas Map — header dock: fullscreen only. Corner CTA is map-cta.js. */
 (function () {
   var CHROME_ID = "chica-map-chrome";
   var BTN_ID = "chica-fs-btn";
@@ -7,10 +6,8 @@
   var INTEL_ID = "chica-intel-btn";
   var STYLE_ID = "chica-fs-inline-style";
   var HTML_ON = "chica-fs-on";
-  var CLAIM_HREF = "/Chicas-Map/claim";
   var SVG_NS = "http://www.w3.org/2000/svg";
   var ready = false;
-  var LABEL_HTML = "<span>Pin it</span><span>$5</span>";
 
   function fsMark(compress) {
     var svg = document.createElementNS(SVG_NS, "svg");
@@ -39,7 +36,7 @@
     return [
       "#" + CHROME_ID + "{",
       "position:fixed!important;top:max(10px,env(safe-area-inset-top))!important;right:12px!important;left:auto!important;bottom:auto!important;",
-      "z-index:2147483647!important;display:flex!important;align-items:flex-start;gap:8px;height:auto;pointer-events:none;",
+      "z-index:2147483646!important;display:flex!important;align-items:flex-start;gap:8px;height:auto;pointer-events:none;",
       "}",
       "#" + CHROME_ID + ">*{pointer-events:auto}",
       "#" + BTN_ID + "{",
@@ -50,21 +47,8 @@
       "visibility:visible!important;opacity:1!important;pointer-events:auto!important;text-decoration:none;",
       "background:#1a1a1e;box-shadow:0 8px 22px rgb(0 0 0 / .38),0 0 0 3px rgb(197 19 175 / .28)}",
       "#" + BTN_ID + "[aria-pressed=\"true\"]{background:#c513af;box-shadow:0 10px 28px rgb(197 19 175 / .55),0 0 0 3px rgb(197 19 175 / .28)}",
-      "#" + BTN_ID + ":hover,#" + LIST_ID + ":hover{filter:brightness(1.08)}",
+      "#" + BTN_ID + ":hover{filter:brightness(1.08)}",
       "#" + BTN_ID + " .chica-fs-mark{width:26px;height:26px;display:block}",
-      "#" + LIST_ID + "{",
-      "position:relative!important;display:block!important;",
-      "width:88px;min-width:88px;height:88px;padding:0;box-sizing:border-box;",
-      "border:2px solid #fffdf8;border-radius:16px;background:#c513af;color:#fffdf8;",
-      "text-decoration:none;overflow:hidden;",
-      "box-shadow:0 10px 28px rgb(197 19 175 / .55),0 0 0 3px rgb(197 19 175 / .28);",
-      "visibility:visible!important;opacity:1!important;pointer-events:auto!important",
-      "}",
-      "#" + LIST_ID + " span{position:absolute;left:6px;right:6px;bottom:6px;z-index:2;font:800 10px/1.1 Inter,system-ui,sans-serif;text-align:center;text-shadow:0 1px 2px #000}",
-      "#" + LIST_ID + " img.chica-peek{",
-      "position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 70%;",
-      "pointer-events:none;border-radius:14px;display:block!important",
-      "}",
       "#" + INTEL_ID + "{display:none!important;visibility:hidden!important;pointer-events:none!important}",
       "html." + HTML_ON + ",html." + HTML_ON + " body{overflow:hidden!important;height:100dvh!important;overscroll-behavior:none}",
       "html." + HTML_ON + " :has(> .chica-map),html." + HTML_ON + " :has(> .leaflet-container){",
@@ -169,41 +153,11 @@
     if (a) a.remove();
   }
 
-  function peekSrc() {
-    return window.__CHICA_PEEK_URI || "";
-  }
-
-  function paintGif(a) {
-    var src = peekSrc();
-    if (!a || !src) return;
-    var img = a.querySelector("img.chica-peek");
-    if (!img) {
-      img = document.createElement("img");
-      img.className = "chica-peek";
-      img.alt = "Chica";
-      a.appendChild(img);
-    }
-    if (img.getAttribute("src") !== src) img.setAttribute("src", src);
-    img.style.display = "block";
-  }
-
-  function ensureListIt() {
-    var chrome = ensureChrome();
+  function detachListIt() {
     var a = document.getElementById(LIST_ID);
-    if (!a) {
-      a = document.createElement("a");
-      a.id = LIST_ID;
-      a.href = CLAIM_HREF;
-      a.setAttribute("aria-label", "Pin it · $5");
-      a.title = "Pin it · $5";
-      a.innerHTML = LABEL_HTML;
-      chrome.appendChild(a);
-    } else if (a.parentNode !== chrome) {
-      chrome.appendChild(a);
+    if (a && a.parentNode && a.parentNode.id === CHROME_ID) {
+      document.documentElement.appendChild(a);
     }
-    if (a.getAttribute("href") !== CLAIM_HREF) a.setAttribute("href", CLAIM_HREF);
-    paintGif(a);
-    return a;
   }
 
   function ensureBtn() {
@@ -251,8 +205,6 @@
   function teardownFs() {
     var leftover = document.getElementById(BTN_ID);
     if (leftover) leftover.remove();
-    var list = document.getElementById(LIST_ID);
-    if (list) list.remove();
     killIntelIcon();
     var chrome = document.getElementById(CHROME_ID);
     if (chrome && !chrome.children.length) chrome.remove();
@@ -264,13 +216,13 @@
   function mount() {
     ensureStyle();
     killIntelIcon();
+    detachListIt();
     if (!onMapPath()) {
       teardownFs();
       return Boolean(mapEl()) || true;
     }
     if (!mapEl()) return false;
     var btn = ensureBtn();
-    ensureListIt();
     enterCss();
     label(btn);
     ready = true;
