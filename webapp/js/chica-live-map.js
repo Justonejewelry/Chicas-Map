@@ -122,20 +122,24 @@
     map._chicaLive = true;
     w.__chicaLeaflet = map;
     el.__chicaMap = map;
-    try { map.invalidateSize({ animate: false }); } catch (e) {}
-
+    function size() {
+      try { map.invalidateSize({ animate: false }); } catch (e) {}
+    }
+    size();
+    w.addEventListener("resize", size);
     w.addEventListener("chica-sat", showBase);
 
     fetch(BASE + "/data/cities/san-antonio.json", { cache: "no-store" })
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (data) {
         addPins(map, L, salesFrom(data));
-        try { map.invalidateSize({ animate: false }); } catch (e) {}
+        size();
       })
       .catch(function () {});
 
-    setTimeout(function () { try { map.invalidateSize({ animate: false }); } catch (e) {} }, 300);
-    setTimeout(function () { try { map.invalidateSize({ animate: false }); } catch (e) {} }, 1200);
+    setTimeout(size, 200);
+    setTimeout(size, 800);
+    setTimeout(size, 2000);
     return true;
   }
 
