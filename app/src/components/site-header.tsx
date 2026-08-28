@@ -3,7 +3,6 @@ import { MapPinned, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/cn";
 
-const INTEL_HREF = "https://justonejewelry.github.io/Chicas-Map/intel/";
 const CLAIM_HREF = "https://justonejewelry.github.io/Chicas-Map/claim/";
 
 const LINKS = [
@@ -60,17 +59,6 @@ export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
             </Link>
           ))}
           <a
-            href={INTEL_HREF}
-            className={cn(
-              "rounded-full px-3 py-1.5 text-sm font-medium transition-colors",
-              overlay
-                ? "text-cream/75 hover:bg-white/10 hover:text-cream"
-                : "text-muted hover:bg-pine-soft hover:text-ink",
-            )}
-          >
-            Intel
-          </a>
-          <a
             href={CLAIM_HREF}
             className="rounded-full bg-pine px-3 py-1.5 text-sm font-semibold text-cream"
           >
@@ -110,9 +98,6 @@ export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
               {l.label}
             </Link>
           ))}
-          <a href={INTEL_HREF} className="rounded-lg px-3 py-2.5 text-sm font-medium" onClick={() => setOpen(false)}>
-            Intel
-          </a>
           <a href={CLAIM_HREF} className="rounded-lg px-3 py-2.5 text-sm font-medium" onClick={() => setOpen(false)}>
             Claim a $5 pin
           </a>
@@ -130,10 +115,6 @@ export function SiteFooter() {
         <p>
           <a href={CLAIM_HREF} className="font-semibold text-pine-mid">
             $5 claimed pin
-          </a>
-          {" · "}
-          <a href={INTEL_HREF} className="font-semibold text-pine-mid">
-            Sale Intel
           </a>
           {" · "}
           Listings from public posts and city permits. Verify on site.
