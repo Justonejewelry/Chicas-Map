@@ -1,4 +1,4 @@
-/* Chicas Map KEY + intel options popup */
+/* Chicas Map KEY + intel options popup (combined) */
 (function () {
   function onMapPath() {
     var p = location.pathname || "";
@@ -37,7 +37,7 @@
     { id: "listit", kind: "cta", label: "Pin it \u00b7 $5", href: BASE + "/claim", hint: "List it. Sell it. Done." }
   ];
   if (emergencyOn()) LAYERS.push({ id: "emergency", kind: "overlay", label: "Emergency hubs", src: BASE + "/data/san-antonio-emergency-info.geojson" });
-  function esc(s) { return String(s == null ? "" : s).replace(/&/g, "&").replace(/</g, "<").replace(/\"/g, """); }
+  function esc(s) { return String(s == null ? "" : s).replace(/&/g, "&").replace(/</g, "<").replace(/"/g, """); }
   function svg(inner) { return '<svg class="chica-key-sym" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">' + inner + "</svg>"; }
   function symbolHtml(id) {
     if (id === "garage") return svg('<circle cx="8" cy="8" r="5.2" fill="#c513af" stroke="#121212" stroke-width="1.4"/>');
@@ -67,7 +67,7 @@
     if (document.getElementById("chica-key-style")) return;
     var s = document.createElement("style");
     s.id = "chica-key-style";
-    s.textContent = "#chica-key{display:block!important;visibility:visible!important;opacity:1!important;position:fixed!important;left:12px!important;bottom:calc(16px + env(safe-area-inset-bottom,0px))!important;z-index:2147483646!important;width:min(228px,calc(100vw - 24px));max-height:min(58dvh,440px);overflow:auto;background:#1a1714f2;color:#f3eee4;border:1px solid #3a342e;border-radius:16px;font:500 12px/1.25 Inter,system-ui,sans-serif;padding:8px 10px 10px}#chica-key[data-collapsed=true]{max-height:44px;overflow:hidden}#chica-key ul{list-style:none;margin:0;padding:0}#chica-key li{display:flex;align-items:center;gap:8px;padding:5px 4px;border-radius:8px;cursor:pointer;min-height:32px}.chica-intel-badge{position:absolute;right:-5px;top:-6px;width:14px;height:14px;border-radius:999px;background:#c513af;display:none}html.chica-intel-on .chica-intel-badge{display:block}.chica-overlay-pin{border:0;background:transparent}.chica-opt{font:500 12px/1.35 Inter,system-ui,sans-serif;color:#1a1714;min-width:200px}.chica-opt h3{margin:0 0 4px;font:800 13px/1.2 Inter,system-ui,sans-serif}.chica-opt .meta{color:#5c5348;font-size:11px}.chica-opt .acts{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}.chica-opt a.chip{border:1px solid #c513af;border-radius:999px;padding:3px 8px;font-size:11px;color:#7a0f6c;text-decoration:none;font-weight:700}.chica-opt .near{list-style:none;margin:6px 0 0;padding:0}.chica-opt .near li{margin:6px 0 0;padding-top:6px;border-top:1px solid #ece6dc}.chica-opt .tag{font-size:10px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:#7a0f6c}button.chica-dup-chip,.chica-dup-chip,#chica-pin-claim{display:none!important}aside[aria-label=Key]:not(#chica-key),aside[aria-label=key]:not(#chica-key),[data-chica-legend]{display:none!important}";
+    s.textContent = "#chica-key{display:block!important;visibility:visible!important;opacity:1!important;position:fixed!important;left:12px!important;bottom:calc(16px + env(safe-area-inset-bottom,0px))!important;z-index:2147483646!important;width:min(228px,calc(100vw - 24px));max-height:min(58dvh,440px);overflow:auto;background:#1a1714f2;color:#f3eee4;border:1px solid #3a342e;border-radius:16px;font:500 12px/1.25 Inter,system-ui,sans-serif;padding:8px 10px 10px}#chica-key[data-collapsed=true]{max-height:44px;overflow:hidden}#chica-key ul{list-style:none;margin:0;padding:0}#chica-key li{display:flex;align-items:center;gap:8px;padding:5px 4px;border-radius:8px;cursor:pointer;min-height:32px}.chica-intel-badge{position:absolute;right:-5px;top:-6px;width:14px;height:14px;border-radius:999px;background:#c513af;display:none}html.chica-intel-on .chica-intel-badge{display:block}.chica-overlay-pin{border:0;background:transparent}.chica-opt{font:500 12px/1.35 Inter,system-ui,sans-serif;color:#1a1714;min-width:200px}.chica-opt h3{margin:0 0 4px;font:800 13px/1.2 Inter,system-ui,sans-serif}.chica-opt .meta{color:#5c5348;font-size:11px}.chica-opt .acts{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}.chica-opt a.chip{border:1px solid #c513af;border-radius:999px;padding:3px 8px;font-size:11px;color:#7a0f6c;text-decoration:none;font-weight:700}.chica-opt .near{list-style:none;margin:6px 0 0;padding:0}.chica-opt .near li{margin:6px 0 0;padding-top:6px;border-top:1px solid #ece6dc}.chica-opt .tag{font-size:10px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:#7a0f6c}button.chica-dup-chip,.chica-dup-chip,#chica-pin-claim{display:none!important}aside[aria-label=Key]:not(#chica-key),aside[aria-label=key]:not(#chica-key),[data-chica-legend]{display:none!important}.leaflet-top.leaflet-left,.leaflet-control-layers,#chica-intel-btn{display:none!important}html.chica-pack-off #chica-claimed-layer{display:none!important}";
     (document.head || document.documentElement).appendChild(s);
   }
   function ensurePanel() {
@@ -147,6 +147,7 @@
   function applyClaimed() {
     var layer = document.getElementById("chica-claimed-layer");
     if (layer) layer.style.display = state.claimed ? "" : "none";
+    document.documentElement.classList.toggle("chica-pack-off", !state.claimed);
     var row = document.querySelector('#chica-key [data-chica-layer="claimed"]');
     if (row) styleRow(row, state.claimed);
   }
@@ -301,6 +302,7 @@
   function hideDup() {
     var labels = /^(All|Posted|Permits|Permit|Garage|Estate|Yard|Weekend|Sat|Sun|All days|Intel|Satellite|Street|Parking|Pantries|School zones|Wi-?Fi|Claimed \$?5|Chicas Pack|Home|How it works|Pin it)$/i;
     var bar = document.getElementById("chica-pin-claim"); if (bar) bar.remove();
+    var a = document.getElementById("chica-intel-btn"); if (a) a.remove();
     var nodes = document.querySelectorAll("button, a, [role=button], [role=tab]");
     for (var i = 0; i < nodes.length; i++) {
       var el = nodes[i];
