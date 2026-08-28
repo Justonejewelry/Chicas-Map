@@ -27,7 +27,11 @@
 
   function esc(s) {
     return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
-      return ({ "&": "&", "<": "<", ">": ">", '"': """, "'": "&#39;" })[c];
+      if (c === "&") return "&" + "amp;";
+      if (c === "<") return "&" + "lt;";
+      if (c === ">") return "&" + "gt;";
+      if (c === '"') return "&" + "quot;";
+      return "&#39;";
     });
   }
 
@@ -106,14 +110,8 @@
       intelHtml(sale);
     var x = el.querySelector(".x");
     if (x) x.onclick = function (ev) { ev.preventDefault(); ev.stopPropagation(); el.style.display = "none"; };
-    var left = 16, top = 72;
-    if (anchor && anchor.getBoundingClientRect) {
-      var r = anchor.getBoundingClientRect();
-      left = Math.min(window.innerWidth - 300, Math.max(8, r.right + 8));
-      top = Math.min(window.innerHeight - 240, Math.max(58, r.top - 8));
-    }
-    el.style.left = left + "px";
-    el.style.top = top + "px";
+    el.style.left = "12px";
+    el.style.top = "62px";
     el.style.display = "block";
   }
 
@@ -290,27 +288,24 @@
     });
     var esriStreet = L.tileLayer(ESRI_STREET, { attribution: "Tiles \u00a9 Esri", updateWhenIdle: false });
     var esriSat = L.tileLayer(ESRI_SAT, { attribution: "Tiles \u00a9 Esri", updateWhenIdle: false });
-    function currentBase(satOn) {
-      if (satOn) return mtFails >= 3 ? esriSat : sat;
-      return mtFails >= 3 ? esriStreet : street;
-    }
     function showBase() {
       var satOn = document.documentElement.classList.contains("chica-sat-on");
       [street, sat, esriStreet, esriSat].forEach(function (ly) {
         if (map.hasLayer(ly)) map.removeLayer(ly);
       });
-      currentBase(satOn).addTo(map);
+      (satOn ? esriSat : esriStreet).addTo(map);
+      if (mtFails < 8) (satOn ? sat : street).addTo(map);
     }
-    street.on("tileerror", function () { mtFails += 1; if (mtFails === 3) showBase(); });
-    sat.on("tileerror", function () { mtFails += 1; if (mtFails === 3) showBase(); });
+    street.on("tileerror", function () { mtFails += 1; if (mtFails === 1 || mtFails === 8) showBase(); });
+    sat.on("tileerror", function () { mtFails += 1; if (mtFails === 1 || mtFails === 8) showBase(); });
     showBase();
     map._chicaLive = true;
     w.__chicaLeaflet = map;
     el.__chicaMap = map;
     function size() {
       try {
-        el.style.width = "100%";
-        el.style.height = "100%";
+        el.style.width = window.innerWidth + "px";
+        el.style.height = window.innerHeight + "px";
         map.invalidateSize({ animate: false, pan: false });
       } catch (e) {}
     }
