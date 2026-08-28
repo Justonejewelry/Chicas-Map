@@ -1,4 +1,4 @@
-/* Standalone Leaflet boot + Intel popups bound on each sale marker. */
+/* Standalone Leaflet boot + sale details on pin click. */
 (function (w) {
   var BASE = "/Chicas-Map";
   var SA = [29.4241, -98.4936];
@@ -102,7 +102,7 @@
       el = document.createElement("div");
       el.id = "chica-intel-card";
       el.setAttribute("role", "dialog");
-      el.setAttribute("aria-label", "Sale intel");
+      el.setAttribute("aria-label", "Sale details");
       document.body.appendChild(el);
     }
     el.innerHTML =
@@ -210,23 +210,11 @@
         var mk = L.marker([item.lat, item.lon], {
           icon: iconFor(item.type, L),
           title: item.title,
-          alt: item.title + " \u2014 tap for intel",
+          alt: item.title + " \u2014 tap for details",
           keyboard: true,
           riseOnHover: true
         });
-        mk.bindPopup(function () { return intelHtml(item); }, {
-          maxWidth: 280,
-          minWidth: 200,
-          autoPan: true,
-          autoPanPadding: [60, 80],
-          className: "chica-intel-pop",
-          closeButton: true
-        });
         mk.on("click", function () {
-          if (document.documentElement.classList.contains("chica-intel-off")) {
-            hideCard();
-            return;
-          }
           showCard(item, mk._icon);
         });
         mk.addTo(map);
@@ -241,9 +229,6 @@
     var s = document.createElement("style");
     s.id = "chica-live-intel-css";
     s.textContent =
-      ".leaflet-popup-pane{z-index:1200!important}" +
-      ".chica-intel-pop .leaflet-popup-content-wrapper{background:#fffdf8;color:#1a1714;border-radius:14px;box-shadow:0 12px 32px rgba(18,18,18,.35)}" +
-      ".chica-intel-pop .leaflet-popup-tip{background:#fffdf8}" +
       ".chica-opt{font:500 13px/1.35 Inter,system-ui,sans-serif;color:#1a1714}" +
       ".chica-opt h3{margin:0 0 4px;font:800 15px/1.2 Inter,system-ui,sans-serif}" +
       ".chica-opt .meta{margin:0;color:#5c5348;font-size:12px}" +
