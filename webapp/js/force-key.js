@@ -7,7 +7,6 @@
     garage: '<svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="8" cy="8" r="5.2" fill="#c513af" stroke="#f3eee4" stroke-width="1.3"/></svg>',
     estate: '<svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><polygon points="8,1.8 14.4,8 8,14.2 1.6,8" fill="#f4f4f4" stroke="#121212" stroke-width="1.3"/></svg>',
     permit: '<svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><polygon points="8,2.2 14.2,13.6 1.8,13.6" fill="#8a8a8a" stroke="#f3eee4" stroke-width="1.3"/></svg>',
-    intel: '<svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="8" cy="8" r="6" fill="none" stroke="#c513af" stroke-width="1.4"/><circle cx="8" cy="8" r="2.1" fill="#c513af"/></svg>',
     satellite: '<svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><rect x="3" y="6.2" width="10" height="3.6" rx="1" fill="#7dd3fc"/><circle cx="8" cy="8" r="1.4" fill="#121212"/><path d="M3 5 L1.5 3.5 M13 5 L14.5 3.5 M3 11 L1.5 12.5 M13 11 L14.5 12.5" stroke="#7dd3fc" stroke-width="1.2"/></svg>',
     parking: '<svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="8" cy="8" r="6.2" fill="#38bdf8"/><text x="8" y="11.2" text-anchor="middle" font-size="8" font-weight="800" font-family="Inter,system-ui,sans-serif" fill="#121212">P</text></svg>',
     pantry: '<svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="8" cy="8" r="6.2" fill="#f5d000"/><path d="M4.5 7.2h7v1.4c0 2-1.6 3.6-3.5 3.6S4.5 10.6 4.5 8.6z" fill="#121212"/></svg>',
@@ -19,7 +18,6 @@
     ["garage", "Garage"],
     ["estate", "Estate"],
     ["permit", "Permit"],
-    ["intel", "Intel"],
     ["satellite", "Satellite"],
     ["parking", "Parking"],
     ["pantry", "Pantries"],
@@ -51,8 +49,6 @@
       "#chica-force-key li:focus,#chica-force-key li:focus-visible,#chica-force-key button.tog:focus-visible,#chica-home-chip:focus-visible,#chica-hunt-bar input:focus-visible,#chica-hunt-bar button:focus-visible,#chica-listit-btn:focus-visible,.leaflet-control-zoom a:focus-visible{outline:3px solid #fffdf8;outline-offset:2px}" +
       "#chica-force-key .sym{width:16px;height:16px;flex:0 0 16px;display:inline-flex;align-items:center;justify-content:center}" +
       "#chica-force-key .sym svg{display:block}" +
-      ".chica-intel-badge{position:absolute;right:-4px;top:-5px;width:12px;height:12px;border-radius:99px;background:#c513af;border:1px solid #fffdf8;display:none}" +
-      "html.chica-intel-on .chica-intel-badge{display:block}" +
       "#chica-key,aside[aria-label=Key]:not(#chica-force-key),aside[aria-label=key]:not(#chica-force-key),[data-chica-legend]{display:none!important;visibility:hidden!important;pointer-events:none!important}" +
       ".leaflet-control-layers{display:none!important}" +
       "#chica-hunt-bar,#chica-listit-btn,#chica-fs-btn,#chica-map-chrome{pointer-events:auto!important;z-index:2147483647!important}";
@@ -76,6 +72,8 @@
     var el = document.getElementById("chica-force-key");
     if (el) {
       if (el.parentNode !== document.documentElement) document.documentElement.appendChild(el);
+      var stale = el.querySelector('[data-chica-layer="intel"]');
+      if (stale) stale.remove();
       killDup();
       return el;
     }

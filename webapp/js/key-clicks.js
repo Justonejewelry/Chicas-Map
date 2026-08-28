@@ -114,15 +114,7 @@
       try { window.dispatchEvent(new Event("chica-sat")); } catch (e) {}
       return;
     }
-    if (id === "intel") {
-      document.documentElement.classList.toggle("chica-intel-off");
-      var on = !document.documentElement.classList.contains("chica-intel-off");
-      document.documentElement.classList.toggle("chica-intel-on", on);
-      dimRow("intel", on);
-      try { window.dispatchEvent(new Event("chica-intel")); } catch (e) {}
-      if (typeof window.__chicaStampIntel === "function") window.__chicaStampIntel();
-      return;
-    }
+    if (id === "intel") return;
     if (id === "listit") { location.href = BASE + "/claim/"; return; }
     if (id === "claimed") {
       var on = !document.documentElement.classList.contains("chica-claimed-on");
@@ -137,6 +129,6 @@
 
   window.__chicaToggleLayer = toggle;
 
-  ["garage", "estate", "permit", "intel"].forEach(function (id) { dimRow(id, true); });
+  ["garage", "estate", "permit"].forEach(function (id) { dimRow(id, true); });
   ["satellite", "parking", "pantry", "schools", "wifi", "claimed"].forEach(function (id) { dimRow(id, false); });
 })();
