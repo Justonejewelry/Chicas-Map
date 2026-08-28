@@ -66,8 +66,8 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
@@ -147,8 +147,8 @@
       "in_person": false,
       "external_id": "eso-2458946",
       "categories": [
-        "estate-sale",
-        "online-auction"
+        "online-auction",
+        "estate-sale"
       ]
     },
     {
@@ -302,13 +302,13 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 29.635718535644987,
-      "lon": -98.30841997785251,
+      "lat": 29.635817349874237,
+      "lon": -98.30948447735952,
       "geocode": "source",
       "company": "Denny Harrison Estate Sales & Auctions",
       "in_person": true,
@@ -420,8 +420,8 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
@@ -777,8 +777,8 @@
       "in_person": false,
       "external_id": "eso-2458919",
       "categories": [
-        "estate-sale",
-        "online-auction"
+        "online-auction",
+        "estate-sale"
       ]
     },
     {
@@ -2530,7 +2530,7 @@
   "total_locations": 103,
   "status": "live",
   "date": "2026-08-28",
-  "last_refresh": "2026-08-28T16:02:41-05:00",
+  "last_refresh": "2026-08-28T16:20:38-05:00",
   "note": "Cleaned 33-pin Saturday live swap 2026-08-22 10:57 CDT. Merged Potranco/Moonlit/Craftsman. Dropped stores, auctions, warehouse, flea, single-item. Added Rita Ave + Jack Bean.",
   "permit_total": 61,
   "permit_estate_count": 1

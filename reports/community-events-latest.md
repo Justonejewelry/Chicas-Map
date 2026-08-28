@@ -1,18 +1,18 @@
 # Chica's Map -- Community Events Swarm v2.7
 
-Run: 2026-08-28T16:04:13-05:00
+Run: 2026-08-28T16:22:04-05:00
 Sources scanned: **48**
-Candidates discovered: **958**
-With parsed dates: **798**
-With street/venue address: **500**
-Promoted this run: **1**
-Kept from prior feed: **300**
+Candidates discovered: **957**
+With parsed dates: **797**
+With street/venue address: **499**
+Promoted this run: **0**
+Kept from prior feed: **301**
 Purged from prior feed: **0**
 Source errors: **1**
 Rejected by Sentinel: **300**
 
 ## Promoted (passed Events Sentinel)
-- **TITAN Volleyball vs Harlandale** -- 2026-09-01 -- 4495 Verano Pkwy #100 -- conf 98 -- https://www.swisd.net/apps/events/2026/9/1/51665718/
+_None this run._
 
 ## Review Queue
 - **San Antonio Public Library Events** -- conf 100 -- SAPL Silent Book Club -- 2026-09-01 -- 6111 Rosedale Ct. San Antonio, TX 78201 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D194096542
