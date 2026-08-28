@@ -1,4 +1,4 @@
-/* Shared map handle. React never publishes the Leaflet instance. */
+/* Shared map handle + tiny event pings. React never publishes the Leaflet instance. */
 (function (w) {
   var BASE = "/Chicas-Map";
   function onMapPath() {
@@ -47,15 +47,22 @@
       extra.style.setProperty("pointer-events", "none", "important");
     }
   }
-  if (w.L && w.L.Map && w.L.Map.addInitHook) {
+  function track(name) {
     try {
-      w.L.Map.addInitHook(function () { w.__chicaLeaflet = this; });
+      if (w.goatcounter && typeof w.goatcounter.count === "function") {
+        w.goatcounter.count({ path: location.pathname + "?evt=" + encodeURIComponent(name), title: name, event: true });
+      }
     } catch (e) {}
+  }
+  if (w.L && w.L.Map && w.L.Map.addInitHook) {
+    try { w.L.Map.addInitHook(function () { w.__chicaLeaflet = this; }); } catch (e) {}
   }
   w.__chicaFindMap = findMap;
   w.__chicaOnMap = onMapPath;
   w.__chicaBase = BASE;
+  w.__chicaTrack = track;
   if (onMapPath()) {
+    track("map_open");
     var n = 0;
     var id = setInterval(function () {
       findMap();

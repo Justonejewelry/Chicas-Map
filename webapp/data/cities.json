@@ -1,13 +1,13 @@
 {
-  "default_city": "texas",
-  "overview_center": [31.0, -99.5],
-  "overview_zoom": 6,
+  "default_city": "san-antonio",
+  "overview_center": [29.4241, -98.4936],
+  "overview_zoom": 11,
   "map_engine": "leaflet-esri",
   "cities": [
-    {"slug": "san-antonio", "name": "San Antonio", "center": [29.4241, -98.4936], "zoom": 11},
-    {"slug": "austin", "name": "Austin", "center": [30.2672, -97.7431], "zoom": 11},
-    {"slug": "houston", "name": "Houston", "center": [29.7604, -95.3698], "zoom": 10},
-    {"slug": "dallas", "name": "Dallas", "center": [32.7767, -96.797], "zoom": 10},
-    {"slug": "lubbock", "name": "Lubbock", "center": [33.5779, -101.8552], "zoom": 12}
+    {"slug": "san-antonio", "name": "San Antonio", "center": [29.4241, -98.4936], "zoom": 11, "status": "live"},
+    {"slug": "austin", "name": "Austin", "center": [30.2672, -97.7431], "zoom": 11, "status": "live"},
+    {"slug": "houston", "name": "Houston", "center": [29.7604, -95.3698], "zoom": 10, "status": "preview"},
+    {"slug": "dallas", "name": "Dallas", "center": [32.7767, -96.797], "zoom": 10, "status": "preview"},
+    {"slug": "lubbock", "name": "Lubbock", "center": [33.5779, -101.8552], "zoom": 12, "status": "preview"}
   ]
 }
