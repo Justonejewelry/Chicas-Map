@@ -78,6 +78,7 @@
       ev.stopPropagation();
       var id = row.getAttribute("data-chica-layer");
       if (typeof window.__chicaToggleLayer === "function") window.__chicaToggleLayer(id);
+      try { if (window.__chicaTrack) window.__chicaTrack("key_" + id); } catch (e) {}
     }, true);
     killDup();
     return el;

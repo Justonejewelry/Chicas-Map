@@ -39,16 +39,11 @@
     return /Garage sale/i.test(t) && /Satellite/i.test(t);
   }
   function findMap() {
-    if (window.__chicaLeaflet && window.__chicaLeaflet.addLayer) return window.__chicaLeaflet;
-    var nodes = document.querySelectorAll(".leaflet-container");
-    for (var i = 0; i < nodes.length; i++) {
-      for (var k in nodes[i]) {
-        try {
-          var v = nodes[i][k];
-          if (v && v.addLayer && v.flyTo) { window.__chicaLeaflet = v; return v; }
-        } catch (e) {}
-      }
+    if (typeof window.__chicaFindMap === "function") {
+      var live = window.__chicaFindMap();
+      if (live) return live;
     }
+    if (window.__chicaLeaflet && window.__chicaLeaflet.addLayer) return window.__chicaLeaflet;
     return null;
   }
   function dimRow(id, on) {
@@ -124,11 +119,14 @@
       }
     }
   }
-  window.__chicaToggleLayer = function (id) { fallbackToggle(id); };
+  if (typeof window.__chicaToggleLayer !== "function") {
+    window.__chicaToggleLayer = function (id) { fallbackToggle(id); };
+  }
   document.addEventListener("click", function (ev) {
     var t = ev.target;
     if (!t || !t.closest) return;
-    var host = t.closest("#chica-force-key, #chica-key, aside");
+    if (t.closest("#chica-force-key")) return;
+    var host = t.closest("#chica-key, aside");
     if (!looksLikeKey(host)) return;
     if (t.closest(".tog, .chica-key-toggle")) return;
     var row = t.closest("[data-chica-layer], li, button, [role='switch'], label");
