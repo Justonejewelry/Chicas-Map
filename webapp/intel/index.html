@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>Sale Intel · Chicas Map</title>
+    <title>Sale Intel \u00b7 Chicas Map</title>
     <meta
       name="description"
-      content="GPS-gated driveway notes for San Antonio garage sales. Sharing unlocks within 200 meters. Rumors stay on the porch."
+      content="GPS-gated driveway notes for San Antonio garage sales. Sharing unlocks within 200 feet. Rumors stay on the porch."
     />
     <meta name="theme-color" content="#121212" />
     <link rel="stylesheet" href="/Chicas-Map/assets/styles-D8YtPAwk.css" data-precedence="default" />
@@ -40,14 +40,8 @@
             t = "en";
             for (var i = 0; i < langs.length; i++) {
               var b = String(langs[i] || "").toLowerCase().split("-")[0];
-              if (b === "es") {
-                t = "es";
-                break;
-              }
-              if (b === "en") {
-                t = "en";
-                break;
-              }
+              if (b === "es") { t = "es"; break; }
+              if (b === "en") { t = "en"; break; }
             }
           }
           document.documentElement.lang = t;
@@ -85,7 +79,7 @@
             class="inline-flex size-11 items-center justify-center rounded-full bg-paper text-ink ring-1 ring-line hover:ring-pine"
             aria-label="Toggle theme"
           >
-            <span aria-hidden="true">☼</span>
+            <span aria-hidden="true">\u2600</span>
           </button>
           <a
             href="/Chicas-Map/sponsors"
@@ -119,13 +113,13 @@
           />
           <div>
             <p class="inline-flex items-center rounded-full bg-pine-soft px-3 py-1 text-[0.65rem] font-bold tracking-[0.16em] text-pine-mid uppercase">
-              GPS-gated · 200 m
+              GPS-gated \u00b7 200 ft
             </p>
             <h1 class="mt-3 font-display text-4xl font-extrabold tracking-tight sm:text-5xl">
               Chicas Sale Intel
             </h1>
             <p id="lede" class="mt-2 max-w-lg text-muted">
-              Notes from people who are actually at the sale. Parking, cash, what’s left — sharing unlocks within 200 meters. Rumors stay on the porch.
+              Notes from people who are actually at the sale. Parking, cash, what\u2019s left \u2014 sharing unlocks within 200 feet. Rumors stay on the porch.
             </p>
           </div>
         </div>
@@ -148,17 +142,17 @@
         <li class="rounded-xl bg-paper p-5 ring-1 ring-line">
           <p class="text-xs font-bold tracking-[0.12em] text-pine-mid uppercase">01</p>
           <h2 class="mt-2 font-display text-lg font-bold tracking-tight">Stand at the sale</h2>
-          <p class="mt-2 text-sm text-muted">Live GPS has to put you within 200 meters. No remote drive-by comments.</p>
+          <p class="mt-2 text-sm text-muted">Live GPS has to put you within 200 feet. No remote drive-by comments.</p>
         </li>
         <li class="rounded-xl bg-paper p-5 ring-1 ring-line">
           <p class="text-xs font-bold tracking-[0.12em] text-pine-mid uppercase">02</p>
           <h2 class="mt-2 font-display text-lg font-bold tracking-tight">Leave a driveway note</h2>
-          <p class="mt-2 text-sm text-muted">Stock, parking, prices, cash-only. A sidewalk handle — not a login.</p>
+          <p class="mt-2 text-sm text-muted">Stock, parking, prices, cash-only. A sidewalk handle \u2014 not a login.</p>
         </li>
         <li class="rounded-xl bg-paper p-5 ring-1 ring-line">
           <p class="text-xs font-bold tracking-[0.12em] text-pine-mid uppercase">03</p>
           <h2 class="mt-2 font-display text-lg font-bold tracking-tight">The pack reads it first</h2>
-          <p class="mt-2 text-sm text-muted">Intel sits next to the verified pin. Map finds the sale. Intel tells you if it’s worth the loop.</p>
+          <p class="mt-2 text-sm text-muted">Intel sits next to the verified pin. Map finds the sale. Intel tells you if it\u2019s worth the loop.</p>
         </li>
       </ul>
 
@@ -170,13 +164,13 @@
         />
         <div class="flex flex-col justify-center p-6 sm:p-8">
           <p class="text-xs font-bold tracking-[0.12em] text-pine-mid uppercase">Pack rule</p>
-          <h2 class="mt-2 font-display text-2xl font-bold tracking-tight sm:text-3xl">Couch rumors don’t count.</h2>
+          <h2 class="mt-2 font-display text-2xl font-bold tracking-tight sm:text-3xl">Couch rumors don\u2019t count.</h2>
           <p id="intel-status" class="mt-3 max-w-xl text-muted">
-            Notes unlock within 200 meters. Leave a handle, stand at the pin, tell the pack what’s on the driveway.
+            Notes unlock within 200 feet. Leave a handle, stand at the pin, tell the pack what\u2019s on the driveway.
           </p>
           <div class="mt-5 flex flex-wrap gap-3">
             <a href="/Chicas-Map/submit" class="inline-flex h-12 min-h-12 items-center rounded-full bg-paper px-5 text-sm font-semibold text-ink ring-1 ring-line hover:bg-pine-soft hover:ring-pine">List a sale</a>
-            <a href="/Chicas-Map/backstory" class="inline-flex h-12 min-h-12 items-center rounded-full bg-pine px-5 text-sm font-semibold text-cream">Why I’m here</a>
+            <a href="/Chicas-Map/backstory" class="inline-flex h-12 min-h-12 items-center rounded-full bg-pine px-5 text-sm font-semibold text-cream">Why I\u2019m here</a>
           </div>
         </div>
       </section>
@@ -254,28 +248,6 @@
           document.documentElement.style.colorScheme = next;
           localStorage.setItem("chicas-map-theme", next);
         });
-
-        var btn = document.getElementById("open-intel");
-        var status = document.getElementById("intel-status");
-        fetch("/Chicas-Map/data/sale-intel.json", { cache: "no-store" })
-          .then(function (r) {
-            return r.ok ? r.json() : null;
-          })
-          .then(function (cfg) {
-            if (!cfg) return;
-            var url = String(cfg.url || "").trim();
-            var radius = Number(cfg.radius_m) || 200;
-            if (/^https:\/\/[a-z0-9.-]+/i.test(url) && url.indexOf("vercel.app") === -1) {
-              btn.href = url;
-              btn.rel = "noopener";
-              btn.target = "_blank";
-              status.textContent =
-                "Notes unlock within " +
-                radius +
-                " meters. Leave a handle, stand at the pin, tell the pack what\u2019s on the driveway.";
-            }
-          })
-          .catch(function () {});
       })();
     </script>
   </body>
