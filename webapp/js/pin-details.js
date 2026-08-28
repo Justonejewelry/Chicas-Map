@@ -99,7 +99,7 @@
     if (!here) return { ok: false, copy: "Stand at the sale. Pack intel unlocks within 200 ft. We need your GPS." };
     var d = distM(here.lat, here.lon, Number(sale.lat), Number(sale.lon));
     if (d <= RADIUS_M) return { ok: true, copy: "You are " + fmtFt(d) + " from this pin. Tell the pack what is on the driveway." };
-    return { ok: false, copy: "Too far — " + fmtFt(d) + " out. Intel unlocks inside 200 ft. No couch rumors." };
+    return { ok: false, copy: "Too far \u2014 " + fmtFt(d) + " out. Intel unlocks inside 200 ft. No couch rumors." };
   }
   function render(sale) {
     if (!sale || !isFinite(Number(sale.lat))) return;
@@ -188,6 +188,10 @@
     render({ lat: lat, lon: lon, title: title || "Sale" });
     askGps(false);
     return true;
+  };
+  window.__chicaHideIntel = function () {
+    var el = document.getElementById("chica-intel-card");
+    if (el) el.style.display = "none";
   };
   document.addEventListener("click", function (ev) {
     var t = ev.target;
