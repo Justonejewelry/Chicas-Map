@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="referrer" content="origin" />
-  <title>The map · Chicas Map</title>
+  <title>The map \u00b7 Chicas Map</title>
   <meta name="description" content="San Antonio garage, yard, and estate sales. Near Me, layers, and one-tap directions." />
   <meta name="theme-color" content="#121212" />
   <link rel="icon" type="image/svg+xml" href="/Chicas-Map/favicon.svg" />
@@ -19,27 +19,36 @@
     .chica-pin, .chica-overlay-pin { background: transparent !important; border: 0 !important; }
     #chica-home-chip {
       position: fixed; top: max(10px, env(safe-area-inset-top)); right: 10px;
-      z-index: 2147483646; height: 42px; padding: 0 10px 0 6px; border-radius: 12px;
+      z-index: 2147483646; height: 44px; padding: 0 10px 0 6px; border-radius: 12px;
       background: #1a1714f5; color: #f3eee4; text-decoration: none;
-      font: 800 12px/42px Inter, system-ui, sans-serif; border: 1px solid #3a342e;
+      font: 800 12px/44px Inter, system-ui, sans-serif; border: 1px solid #3a342e;
       pointer-events: auto; display: flex; align-items: center; gap: 6px;
     }
     #chica-home-chip img { width: 28px; height: 28px; border-radius: 8px; object-fit: cover; }
     .leaflet-control-zoom { margin-bottom: 92px !important; }
+    .chica-skip {
+      position: absolute; left: 8px; top: 8px; z-index: 2147483647;
+      background: #fffdf8; color: #121212; padding: 8px 12px; border-radius: 8px;
+      font: 800 13px/1 Inter, system-ui, sans-serif; text-decoration: none;
+      transform: translateY(-120%);
+    }
+    .chica-skip:focus { transform: none; }
+    :focus-visible { outline: 3px solid #fffdf8; outline-offset: 2px; }
   </style>
 </head>
 <body>
-  <div id="chica-live-map" class="chica-map"></div>
-  <a id="chica-home-chip" href="/Chicas-Map/"><img src="/Chicas-Map/images/chica-logo.png" alt="">Home</a>
+  <a class="chica-skip" href="#chica-force-key">Skip to map key</a>
+  <div id="chica-live-map" class="chica-map" role="application" aria-label="San Antonio garage sale map"></div>
+  <a id="chica-home-chip" href="/Chicas-Map/"><img src="/Chicas-Map/images/chica-logo.png" alt="Chica">Home</a>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="/Chicas-Map/js/chica-config.js?v=3"></script>
   <script src="/Chicas-Map/js/chica-core.js?v=4"></script>
-  <script src="/Chicas-Map/js/chica-live-map.js?v=4"></script>
-  <script src="/Chicas-Map/js/key-clicks.js?v=9"></script>
+  <script src="/Chicas-Map/js/chica-live-map.js?v=5"></script>
+  <script src="/Chicas-Map/js/key-clicks.js?v=10"></script>
   <script src="/Chicas-Map/js/click-fix.js?v=4"></script>
-  <script src="/Chicas-Map/js/force-key.js?v=7"></script>
-  <script src="/Chicas-Map/js/hunt-bar.js?v=4"></script>
-  <script src="/Chicas-Map/js/map-cta.js?v=9"></script>
+  <script src="/Chicas-Map/js/force-key.js?v=8"></script>
+  <script src="/Chicas-Map/js/hunt-bar.js?v=5"></script>
+  <script src="/Chicas-Map/js/map-cta.js?v=10"></script>
   <script src="/Chicas-Map/js/pin-pop.js?v=6"></script>
   <script src="/Chicas-Map/js/claimed-pins.js?v=4"></script>
 </body>
