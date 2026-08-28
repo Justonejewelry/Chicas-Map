@@ -31,7 +31,7 @@
       el.className = "chica-map";
       (document.body || document.documentElement).appendChild(el);
     }
-    el.style.cssText = "position:fixed;inset:0;width:" + w.innerWidth + "px;height:" + w.innerHeight + "px;z-index:1;background:#121212";
+    el.style.cssText = "position:fixed;inset:0;width:100vw;height:100dvh;z-index:1;background:#121212";
     return el;
   }
 
@@ -138,9 +138,6 @@
     w.__chicaLeaflet = map;
     el.__chicaMap = map;
     function size() {
-      var box = host();
-      box.style.width = w.innerWidth + "px";
-      box.style.height = w.innerHeight + "px";
       try { map.invalidateSize({ animate: false, pan: false }); } catch (e) {}
     }
     size();
