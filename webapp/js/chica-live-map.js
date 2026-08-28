@@ -85,9 +85,7 @@
         });
         mk.__chicaSale = item;
         mk.on("click", function () {
-          if (typeof w.__chicaOpenIntel === "function") {
-            w.__chicaOpenIntel(item.lat, item.lon, item.title);
-          }
+          if (typeof w.__chicaOpenIntel === "function") w.__chicaOpenIntel(item);
         });
         mk.addTo(map);
       })(sale);

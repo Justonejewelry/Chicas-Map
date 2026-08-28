@@ -9,6 +9,7 @@
   var last = null;
   var here = null;
   var watching = false;
+  var gpsErr = "";
 
   function esc(s) {
     return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
@@ -97,7 +98,10 @@
     return el;
   }
   function gateState(sale) {
-    if (!here) return { ok: false, copy: "Stand at the sale. Pack intel unlocks within 200 ft. We need your GPS." };
+    if (!here) {
+      if (gpsErr) return { ok: false, copy: gpsErr };
+      return { ok: false, copy: "Stand at the sale. Pack intel unlocks within 200 ft. Tap Use my location." };
+    }
     var d = distM(here.lat, here.lon, Number(sale.lat), Number(sale.lon));
     if (d <= RADIUS_M) return { ok: true, copy: "You are " + fmtFt(d) + " from this pin. Tell the pack what is on the driveway." };
     return { ok: false, copy: "Too far \u2014 " + fmtFt(d) + " out. Intel unlocks inside 200 ft. No couch rumors." };
@@ -133,7 +137,7 @@
     var x = el.querySelector(".x");
     if (x) x.onclick = function (ev) { ev.preventDefault(); ev.stopPropagation(); el.style.display = "none"; };
     var gps = el.querySelector("#chica-intel-gps");
-    if (gps) gps.onclick = function (ev) { ev.preventDefault(); askGps(true); };
+    if (gps) gps.onclick = function (ev) { ev.preventDefault(); askGps(true); startWatch(); };
     var f = el.querySelector("#chica-intel-form");
     if (f) f.onsubmit = function (ev) {
       ev.preventDefault();
@@ -147,15 +151,23 @@
   }
   function askGps(force) {
     if (!navigator.geolocation) {
+      gpsErr = "This browser has no GPS. Intel stays locked.";
       if (last) render(last);
       return;
     }
     navigator.geolocation.getCurrentPosition(
       function (pos) {
+        gpsErr = "";
         here = { lat: pos.coords.latitude, lon: pos.coords.longitude };
         if (last) render(last);
       },
-      function () { if (last) render(last); },
+      function (err) {
+        var code = err && err.code;
+        if (code === 1) gpsErr = "Location is blocked. On iPhone tap aA in the address bar, set Location to Allow, then tap the button again.";
+        else if (code === 3) gpsErr = "GPS timed out. Move outside or tap Use my location again.";
+        else gpsErr = "GPS missed. Tap Use my location again.";
+        if (last) render(last);
+      },
       { enableHighAccuracy: true, timeout: 8000, maximumAge: force ? 0 : 20000 }
     );
   }
@@ -190,6 +202,7 @@
     watching = true;
     navigator.geolocation.watchPosition(
       function (pos) {
+        gpsErr = "";
         here = { lat: pos.coords.latitude, lon: pos.coords.longitude };
         if (last) render(last);
       },
@@ -197,8 +210,12 @@
       { enableHighAccuracy: true, maximumAge: 5000, timeout: 10000 }
     );
   }
-  window.__chicaOpenIntel = function (lat, lon, title) {
-    render({ lat: lat, lon: lon, title: title || "Sale" });
+  function asSale(a, b, c) {
+    if (a && typeof a === "object" && isFinite(Number(a.lat))) return a;
+    return { lat: a, lon: b, title: c || "Sale", address: "", dates: "", hours: "" };
+  }
+  window.__chicaOpenIntel = function (a, b, c) {
+    render(asSale(a, b, c));
     askGps(false);
     startWatch();
     return true;
