@@ -31,20 +31,26 @@
       el.className = "chica-map";
       (document.body || document.documentElement).appendChild(el);
     }
-    el.style.cssText = "position:fixed;inset:0;width:100vw;height:100dvh;z-index:1;background:#121212";
+    el.style.cssText = "position:fixed;inset:0;width:" + w.innerWidth + "px;height:" + w.innerHeight + "px;z-index:1;background:#121212";
     return el;
   }
 
   function iconFor(type, L) {
+    var kind = type === "estate" || type === "permit" ? type : "garage";
     var html;
-    if (type === "estate") {
+    if (kind === "estate") {
       html = '<svg class="chica-sym" viewBox="0 0 16 16" width="16" height="16"><polygon points="8,1.8 14.4,8 8,14.2 1.6,8" fill="#f4f4f4" stroke="#121212" stroke-width="1.4"/></svg>';
-    } else if (type === "permit") {
+    } else if (kind === "permit") {
       html = '<svg class="chica-sym" viewBox="0 0 16 16" width="16" height="16"><polygon points="8,2.2 14.2,13.6 1.8,13.6" fill="#8a8a8a" stroke="#121212" stroke-width="1.4"/></svg>';
     } else {
       html = '<svg class="chica-sym" viewBox="0 0 16 16" width="16" height="16"><circle cx="8" cy="8" r="5.2" fill="#c513af" stroke="#121212" stroke-width="1.4"/></svg>';
     }
-    return L.divIcon({ className: "chica-pin", html: html, iconSize: [18, 18], iconAnchor: [9, 9] });
+    return L.divIcon({
+      className: "chica-pin chica-type-" + kind,
+      html: html,
+      iconSize: [18, 18],
+      iconAnchor: [9, 9]
+    });
   }
 
   function salesFrom(data) {
@@ -72,10 +78,12 @@
       var lat = Number(s.lat), lon = Number(s.lon);
       if (!isFinite(lat) || !isFinite(lon)) continue;
       var title = s.title || s.address || "Sale";
+      var kind = s.type || s.kind || "garage";
       L.marker([lat, lon], {
-        icon: iconFor(s.type || s.kind || "garage", L),
+        icon: iconFor(kind, L),
         title: title,
-        keyboard: false
+        keyboard: false,
+        chicaType: kind
       }).addTo(map);
       n += 1;
     }
@@ -85,20 +93,27 @@
   function boot() {
     var L = w.L;
     if (!L || !L.map) return false;
-    if (w.__chicaLeaflet && w.__chicaLeaflet._chicaLive) return true;
+    if (w.__chicaLeaflet && w.__chicaLeaflet._chicaLive) {
+      try { w.__chicaLeaflet.invalidateSize({ animate: false }); } catch (e) {}
+      return true;
+    }
     var el = host();
     var map = L.map(el, { zoomControl: false, maxZoom: 19, attributionControl: true }).setView(SA, 12);
     L.control.zoom({ position: "bottomright" }).addTo(map);
     var street = L.tileLayer(streetUrl(), {
       attribution: "\u00a9 MapTiler \u00a9 OpenStreetMap contributors",
-      referrerPolicy: "origin"
+      referrerPolicy: "origin",
+      updateWhenIdle: false,
+      keepBuffer: 4
     });
     var sat = L.tileLayer(satUrl(), {
       attribution: "\u00a9 MapTiler \u00a9 OpenStreetMap contributors",
-      referrerPolicy: "origin"
+      referrerPolicy: "origin",
+      updateWhenIdle: false,
+      keepBuffer: 4
     });
-    var esriStreet = L.tileLayer(ESRI_STREET, { attribution: "Tiles \u00a9 Esri" });
-    var esriSat = L.tileLayer(ESRI_SAT, { attribution: "Tiles \u00a9 Esri" });
+    var esriStreet = L.tileLayer(ESRI_STREET, { attribution: "Tiles \u00a9 Esri", updateWhenIdle: false });
+    var esriSat = L.tileLayer(ESRI_SAT, { attribution: "Tiles \u00a9 Esri", updateWhenIdle: false });
     function currentBase(satOn) {
       if (satOn) return mtFails >= 3 ? esriSat : sat;
       return mtFails >= 3 ? esriStreet : street;
@@ -123,11 +138,17 @@
     w.__chicaLeaflet = map;
     el.__chicaMap = map;
     function size() {
-      try { map.invalidateSize({ animate: false }); } catch (e) {}
+      var box = host();
+      box.style.width = w.innerWidth + "px";
+      box.style.height = w.innerHeight + "px";
+      try { map.invalidateSize({ animate: false, pan: false }); } catch (e) {}
     }
     size();
     w.addEventListener("resize", size);
+    w.addEventListener("orientationchange", size);
     w.addEventListener("chica-sat", showBase);
+    map.whenReady(size);
+    map.on("load", size);
 
     fetch(BASE + "/data/cities/san-antonio.json", { cache: "no-store" })
       .then(function (r) { return r.ok ? r.json() : null; })
@@ -137,9 +158,12 @@
       })
       .catch(function () {});
 
-    setTimeout(size, 200);
-    setTimeout(size, 800);
-    setTimeout(size, 2000);
+    var k = 0;
+    var sid = setInterval(function () {
+      size();
+      k += 1;
+      if (k > 20) clearInterval(sid);
+    }, 150);
     return true;
   }
 
