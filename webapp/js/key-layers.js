@@ -14,7 +14,7 @@
   var INTEL_CFG = BASE + "/data/sale-intel.json";
   var INTEL_ICON = BASE + "/images/intel-brain.svg?v=2";
   var SAT_STORE = "chicas-map-layer-sat";
-  var KEY_STORE = "chicas-map-key-open";
+  var KEY_STORE = "chicas-map-key-open-v2";
   var LAYER_STORE = "chicas-map-key-layers";
   var overlayCache = {};
   var overlayGroups = {};
@@ -76,7 +76,7 @@
     { id: "schools", kind: "overlay", label: "School zones", src: BASE + "/data/zone-aware-schools.geojson" },
     { id: "wifi", kind: "overlay", label: "Wi-Fi", src: BASE + "/data/san-antonio-public-wifi.geojson" },
     { id: "claimed", kind: "claimed", label: "Claimed $5" },
-    { id: "listit", kind: "cta", label: "List it. Sell it. Done.", href: BASE + "/claim", hint: "Click For Details" }
+    { id: "listit", kind: "cta", label: "Pin it \u00b7 $5", href: BASE + "/claim", hint: "List it. Sell it. Done." }
   ];
   if (emergencyOn()) {
     LAYERS.push({ id: "emergency", kind: "overlay", label: "Emergency hubs", src: BASE + "/data/san-antonio-emergency-info.geojson" });
@@ -132,8 +132,8 @@
       "#chica-key .chica-key-title{margin:0;font:800 11px/1 Inter,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#f3eee4}" +
       "#chica-key .chica-key-toggle{border:0;background:transparent;color:#f3eee4;font:700 16px/1 Inter,system-ui,sans-serif;cursor:pointer;padding:2px 4px}" +
       "#chica-key ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:4px}" +
-      "#chica-key li[role=button]{display:flex;align-items:center;gap:8px;padding:5px 4px;border-radius:8px;cursor:pointer}" +
-      "#chica-key li[role=button]:hover{background:rgba(255,255,255,.06)}" +
+      "#chica-key li[role=button],#chica-key li[role=switch],#chica-key li[role=link]{display:flex;align-items:center;gap:8px;padding:5px 4px;border-radius:8px;cursor:pointer}" +
+      "#chica-key li[role=button]:hover,#chica-key li[role=switch]:hover,#chica-key li[role=link]:hover{background:rgba(255,255,255,.06)}" +
       "#chica-key .chica-key-sym{flex:0 0 14px;width:14px;height:14px;object-fit:contain;display:block}" +
       "#chica-key .chica-key-name{font-size:12px;font-weight:500;line-height:1.2}" +
       "#chica-key .chica-key-cta{border-top:1px solid #3a342e;margin-top:4px;padding-top:8px}" +
@@ -143,6 +143,8 @@
       "html.chica-intel-on .leaflet-marker-icon .chica-intel-badge,html.chica-intel-on .chica-sym .chica-intel-badge{display:block}" +
       ".leaflet-control-attribution{font-size:10px}" +
       ".chica-overlay-pin{border:0;background:transparent}" +
+      "button.chica-dup-chip,.chica-dup-chip{display:none!important;visibility:hidden!important;pointer-events:none!important;width:0!important;height:0!important;overflow:hidden!important;position:absolute!important;left:-9999px!important}" +
+      "#chica-key li[role=switch]{min-height:32px}" +
       "@media (max-width:480px){#chica-key{left:8px!important;width:min(200px,calc(100vw - 88px))}}";
     (document.head || document.documentElement).appendChild(s);
   }
@@ -153,7 +155,12 @@
       p.id = "chica-key";
       p.setAttribute("aria-label", "Key");
       var open = true;
-      try { open = localStorage.getItem(KEY_STORE) !== "0"; } catch (e) {}
+      try {
+        var stored = localStorage.getItem(KEY_STORE);
+        if (stored === "0") open = false;
+        else open = true;
+        if (stored === null) localStorage.setItem(KEY_STORE, "1");
+      } catch (e) { open = true; }
       p.setAttribute("data-collapsed", open ? "false" : "true");
       p.innerHTML =
         '<div class="chica-key-head"><p class="chica-key-title">Key</p>' +
@@ -307,6 +314,9 @@
   }
   function styleRow(row, on) {
     row.setAttribute("aria-pressed", on ? "true" : "false");
+    row.setAttribute("aria-checked", on ? "true" : "false");
+    var name = (row.querySelector(".chica-key-name") && row.querySelector(".chica-key-name").textContent) || row.getAttribute("data-chica-layer") || "layer";
+    row.setAttribute("aria-label", name.replace(/\s+/g, " ").trim() + (on ? ", shown" : ", hidden"));
     row.style.opacity = on ? "1" : "0.38";
     row.style.cursor = "pointer";
     row.style.display = "flex";
@@ -322,7 +332,7 @@
     wired[spec.id] = true;
     row.setAttribute("data-chica-layer", spec.id);
     row.setAttribute("data-chica-sym", spec.id);
-    row.setAttribute("role", "button");
+    row.setAttribute("role", spec.kind === "cta" ? "link" : "switch");
     row.tabIndex = 0;
     if (spec.kind === "cta") {
       row.className = "chica-key-cta";
@@ -376,13 +386,16 @@
     }
   }
   function hideDup() {
-    var labels = /^(All|Garage|Estate|Permit|Intel|Satellite|Parking|Pantries|School zones|Wi-Fi|Claimed \$5)$/i;
-    var btns = document.querySelectorAll("button[aria-pressed]");
-    for (var i = 0; i < btns.length; i++) {
-      var t = (btns[i].textContent || "").replace(/\s+/g, " ").trim();
-      if (!labels.test(t) || btns[i].closest("#chica-key")) continue;
-      if (btns[i].id === "chica-intel-btn" || btns[i].id === "chica-fs-btn") continue;
-      btns[i].classList.add("chica-dup-chip");
+    var labels = /^(All|Posted|Permits|Permit|Garage|Estate|Intel|Satellite|Street|Parking|Pantries|School zones|Wi-?Fi|Claimed \$5|Home)$/i;
+    var nodes = document.querySelectorAll("button, a");
+    for (var i = 0; i < nodes.length; i++) {
+      var el = nodes[i];
+      if (el.closest("#chica-key") || el.closest("#chica-map-chrome") || el.closest("#chica-pin-claim")) continue;
+      if (el.id === "chica-intel-btn" || el.id === "chica-fs-btn") continue;
+      if (el.closest(".leaflet-control-zoom") || el.closest(".leaflet-control-attribution")) continue;
+      var t = (el.textContent || "").replace(/\s+/g, " ").trim();
+      var lab = (el.getAttribute("aria-label") || "").replace(/\s+/g, " ").trim();
+      if (labels.test(t) || labels.test(lab)) el.classList.add("chica-dup-chip");
     }
   }
   function scrubCredit() {
