@@ -1,7 +1,6 @@
 /* Chicas Map — live display boot.
-   MapTiler streets-v2 + hybrid when a key is present.
-   Esri World_Street_Map / World_Imagery fallback.
-   Exposes window.__chicaLeaflet so the KEY can toggle layers.
+   MapTiler streets-v2 + hybrid when a key is present and not blocked.
+   Esri fallback on 403 / missing key.
 */
 (function () {
   var SA = { lat: 29.4241, lon: -98.4936 };
@@ -14,6 +13,8 @@
   var MT_SAT = "https://api.maptiler.com/maps/hybrid/256/{z}/{x}/{y}.jpg?key=";
   var ATTR_MT = "\u00a9 MapTiler \u00a9 OpenStreetMap contributors";
   var ATTR_ESRI = "Tiles \u00a9 Esri";
+  var mtFails = 0;
+  var mtBlocked = false;
   var didLocate = false;
   var askedGeo = false;
   var pendingFix = null;
@@ -25,6 +26,15 @@
   function onMapPath() {
     var p = location.pathname || "";
     return /\/map\/?$/.test(p) || p.indexOf("/map/") !== -1;
+  }
+
+  function ensureReferrer() {
+    if (document.querySelector('meta[name="referrer"][data-chica="1"]')) return;
+    var m = document.createElement("meta");
+    m.setAttribute("name", "referrer");
+    m.setAttribute("content", "origin");
+    m.setAttribute("data-chica", "1");
+    (document.head || document.documentElement).appendChild(m);
   }
 
   function satOn() {
@@ -45,16 +55,18 @@
   }
 
   function useMt() {
-    return mtKey().length > 8;
+    return !mtBlocked && mtKey().length > 8;
   }
 
   function insideBox(lat, lon) {
     return lat >= BOX.minLat && lat <= BOX.maxLat && lon >= BOX.minLon && lon <= BOX.maxLon;
   }
 
+  function esriTpl() { return satOn() ? ESRI_SAT : ESRI_STREET; }
+
   function wantUrl() {
     if (useMt()) return (satOn() ? MT_SAT : MT_STREET) + encodeURIComponent(mtKey());
-    return satOn() ? ESRI_SAT : ESRI_STREET;
+    return esriTpl();
   }
 
   function wantHostHint() {
@@ -110,10 +122,28 @@
     return fillUrl(want, t.z, t.x, t.y);
   }
 
+  function armTile(img) {
+    if (img.getAttribute("data-chica-tile") === "1") return;
+    img.setAttribute("data-chica-tile", "1");
+    try { img.referrerPolicy = "origin"; img.setAttribute("referrerpolicy", "origin"); } catch (e) {}
+    img.addEventListener("error", function () {
+      var src = img.getAttribute("src") || img.src || "";
+      if (/maptiler\.com/i.test(src)) {
+        mtFails += 1;
+        if (mtFails >= 3) mtBlocked = true;
+        var t = parseTile(src);
+        var next = t ? fillUrl(esriTpl(), t.z, t.x, t.y) : esriTpl();
+        img.src = next;
+        try { img.setAttribute("src", next); } catch (e) {}
+      }
+    });
+  }
+
   function rewriteTileImages() {
     var imgs = document.querySelectorAll(".leaflet-tile-pane img, img.leaflet-tile, .leaflet-tile-container img");
     for (var i = 0; i < imgs.length; i++) {
       var img = imgs[i];
+      armTile(img);
       var src = img.getAttribute("src") || img.src || "";
       var next = rewriteSrc(src);
       if (next && next !== src) {
@@ -234,6 +264,7 @@
 
   function tick() {
     if (!onMapPath()) return;
+    ensureReferrer();
     findMap();
     swapTiles();
     watchTiles();
