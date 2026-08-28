@@ -1,5 +1,6 @@
 /* Chicas Map — live display boot.
-   Esri only. CARTO tiles get rewritten. Street = World_Street_Map (z19).
+   MapTiler streets-v2 + hybrid when a key is present.
+   Esri World_Street_Map / World_Imagery fallback.
    Exposes window.__chicaLeaflet so the KEY can toggle layers.
 */
 (function () {
@@ -9,6 +10,10 @@
     "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}";
   var ESRI_SAT =
     "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}";
+  var MT_STREET = "https://api.maptiler.com/maps/streets-v2/256/{z}/{x}/{y}.png?key=";
+  var MT_SAT = "https://api.maptiler.com/maps/hybrid/256/{z}/{x}/{y}.jpg?key=";
+  var ATTR_MT = "\u00a9 MapTiler \u00a9 OpenStreetMap contributors";
+  var ATTR_ESRI = "Tiles \u00a9 Esri";
   var didLocate = false;
   var askedGeo = false;
   var pendingFix = null;
@@ -26,49 +31,83 @@
     return document.documentElement.classList.contains("chica-sat-on");
   }
 
+  function mtKey() {
+    try {
+      var q = new URLSearchParams(location.search).get("mtk");
+      if (q) return q.trim();
+    } catch (e) {}
+    try {
+      var ls = localStorage.getItem("chica-maptiler-key");
+      if (ls) return ls.trim();
+    } catch (e) {}
+    var cfg = (window.CHICA_CONFIG && window.CHICA_CONFIG.MAPTILER_KEY) || "";
+    return String(cfg).trim();
+  }
+
+  function useMt() {
+    return mtKey().length > 8;
+  }
+
   function insideBox(lat, lon) {
     return lat >= BOX.minLat && lat <= BOX.maxLat && lon >= BOX.minLon && lon <= BOX.maxLon;
+  }
+
+  function wantUrl() {
+    if (useMt()) return (satOn() ? MT_SAT : MT_STREET) + encodeURIComponent(mtKey());
+    return satOn() ? ESRI_SAT : ESRI_STREET;
+  }
+
+  function wantHostHint() {
+    if (useMt()) return satOn() ? "/maps/hybrid/" : "/maps/streets-v2/";
+    return satOn() ? "World_Imagery" : "World_Street_Map";
   }
 
   function dirtyUrl(src) {
     if (!src) return false;
     var s = String(src);
+    if (useMt()) {
+      return (
+        /carto(cdn)?\.com/i.test(s) ||
+        /arcgisonline\.com/i.test(s) ||
+        /basemap-apikey/i.test(s) ||
+        /World_Dark_Gray/i.test(s) ||
+        (/maptiler\.com/i.test(s) && s.indexOf(wantHostHint()) === -1)
+      );
+    }
     return (
       /carto(cdn)?\.com/i.test(s) ||
       /basemap-apikey/i.test(s) ||
       /api[_\s-]?key[_\s-]?required/i.test(s) ||
-      /World_Dark_Gray/i.test(s)
+      /World_Dark_Gray/i.test(s) ||
+      /maptiler\.com/i.test(s)
     );
-  }
-
-  function esriBase() {
-    return satOn() ? ESRI_SAT : ESRI_STREET;
   }
 
   function parseTile(src) {
     var s = String(src || "");
     var esri = s.match(/\/tile\/(\d{1,2})\/(\d+)\/(\d+)/i);
     if (esri) return { z: esri[1], y: esri[2], x: esri[3] };
-    var carto = s.match(/\/(\d{1,2})\/(\d+)\/(\d+)(@\d+x)?\.(png|jpg|jpeg|webp)/i);
-    if (carto) return { z: carto[1], x: carto[2], y: carto[3] };
+    var xyz = s.match(/\/(\d{1,2})\/(\d+)\/(\d+)(@\d+x)?\.(png|jpg|jpeg|webp)/i);
+    if (xyz) return { z: xyz[1], x: xyz[2], y: xyz[3] };
     var bare = s.match(/\/(\d{1,2})\/(\d+)\/(\d+)(?:\/)?(?:\?|$)/);
     if (bare) return { z: bare[1], x: bare[2], y: bare[3] };
     return null;
   }
 
-  function esriUrl(z, x, y) {
-    return esriBase().replace("{z}", z).replace("{y}", y).replace("{x}", x);
+  function fillUrl(tpl, z, x, y) {
+    return tpl.replace("{z}", z).replace("{x}", x).replace("{y}", y);
   }
 
-  function rewriteCartoSrc(src) {
+  function rewriteSrc(src) {
     var s = String(src || "");
     if (!s) return s;
-    var wantHost = satOn() ? "World_Imagery" : "World_Street_Map";
-    if (s.indexOf(wantHost) !== -1 && s.indexOf("arcgisonline.com") !== -1) return s;
-    if (!dirtyUrl(s) && s.indexOf("arcgisonline.com") === -1) return s;
+    var want = wantUrl();
+    var hint = wantHostHint();
+    if (s.indexOf(hint) !== -1) return s;
+    if (!dirtyUrl(s) && (useMt() ? s.indexOf("maptiler.com") !== -1 : s.indexOf("arcgisonline.com") !== -1)) return s;
     var t = parseTile(s);
-    if (!t) return esriBase();
-    return esriUrl(t.z, t.x, t.y);
+    if (!t) return want;
+    return fillUrl(want, t.z, t.x, t.y);
   }
 
   function rewriteTileImages() {
@@ -76,7 +115,7 @@
     for (var i = 0; i < imgs.length; i++) {
       var img = imgs[i];
       var src = img.getAttribute("src") || img.src || "";
-      var next = rewriteCartoSrc(src);
+      var next = rewriteSrc(src);
       if (next && next !== src) {
         img.src = next;
         try { img.setAttribute("src", next); } catch (e) {}
@@ -102,21 +141,20 @@
     return null;
   }
 
-  function swapCartoTiles() {
+  function swapTiles() {
     rewriteTileImages();
     var map = findMap();
     if (!map || !map.eachLayer) return;
-    var want = esriBase();
+    var want = wantUrl();
+    var hint = wantHostHint();
     map.eachLayer(function (layer) {
       if (!layer || !layer.setUrl || !layer._url) return;
       var url = String(layer._url);
-      var isEsri = url.indexOf("arcgisonline.com") !== -1;
-      var isWanted = url.indexOf(satOn() ? "World_Imagery" : "World_Street_Map") !== -1;
-      if (isEsri && isWanted) return;
-      if (dirtyUrl(url) || isEsri || /carto/i.test(url)) {
+      if (url.indexOf(hint) !== -1) return;
+      if (dirtyUrl(url) || /arcgisonline|carto|maptiler/i.test(url)) {
         try {
           layer.setUrl(want);
-          if (layer.options) layer.options.attribution = "Tiles \u00a9 Esri";
+          if (layer.options) layer.options.attribution = useMt() ? ATTR_MT : ATTR_ESRI;
         } catch (e) {}
       }
     });
@@ -197,7 +235,7 @@
   function tick() {
     if (!onMapPath()) return;
     findMap();
-    swapCartoTiles();
+    swapTiles();
     watchTiles();
     forceViewport();
     locateIfPossible();
@@ -208,5 +246,5 @@
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", tick);
   else tick();
   window.addEventListener("resize", function () { sized = false; forceViewport(); });
-  window.addEventListener("chica-sat", function () { watching = false; swapCartoTiles(); });
+  window.addEventListener("chica-sat", function () { watching = false; swapTiles(); });
 })();
