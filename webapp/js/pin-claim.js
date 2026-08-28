@@ -13,6 +13,10 @@
   function onMap() {
     return /\/map\/?$/.test(path()) || path().indexOf("/map/") !== -1;
   }
+  function onHome() {
+    var p = (path() || "/").replace(/\/+$/, "") || "/";
+    return p === "/" || p === "/Chicas-Map" || /\/index\.html$/.test(path());
+  }
   function es() {
     return (document.documentElement.lang || "").toLowerCase().indexOf("es") === 0;
   }
@@ -47,7 +51,7 @@
   }
 
   function mount() {
-    if (onClaim() || onMap()) {
+    if (onClaim() || onMap() || onHome()) {
       var leftover = document.getElementById(BAR_ID);
       if (leftover) leftover.remove();
       return;
