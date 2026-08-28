@@ -27,6 +27,35 @@
     var t = el.innerText || "";
     return /Garage sale/i.test(t) && /Satellite/i.test(t);
   }
+  function fallbackToggle(id) {
+    if (id === "satellite") {
+      document.documentElement.classList.toggle("chica-sat-on");
+      try { localStorage.setItem("chicas-map-layer-sat", document.documentElement.classList.contains("chica-sat-on") ? "1" : "0"); } catch (e) {}
+      try { window.dispatchEvent(new Event("chica-sat")); } catch (e) {}
+      return;
+    }
+    if (id === "intel") {
+      document.documentElement.classList.toggle("chica-intel-on");
+      return;
+    }
+    if (id === "listit") {
+      location.href = "/Chicas-Map/claim";
+      return;
+    }
+    if (id === "garage" || id === "estate" || id === "permit") {
+      document.documentElement.classList.toggle("chica-hide-" + id);
+      var pins = document.querySelectorAll(".leaflet-marker-icon, .chica-sym, .chica-pin");
+      for (var i = 0; i < pins.length; i++) {
+        var html = pins[i].innerHTML || "";
+        var hide = false;
+        if (id === "estate" && html.indexOf("polygon points=") !== -1) hide = document.documentElement.classList.contains("chica-hide-estate");
+        if (id === "permit" && html.indexOf("polygon points=") !== -1 && html.indexOf("2.4") !== -1) hide = document.documentElement.classList.contains("chica-hide-permit");
+        if (id === "garage" && html.indexOf("circle cx") !== -1) hide = document.documentElement.classList.contains("chica-hide-garage");
+        if (hide) pins[i].style.display = "none";
+        else if (pins[i].style.display === "none" && !document.documentElement.classList.contains("chica-hide-" + id)) pins[i].style.display = "";
+      }
+    }
+  }
   function hijack() {
     var nodes = document.querySelectorAll("aside, #chica-key, [aria-label='Key'], [aria-label='key']");
     var host = null;
@@ -61,7 +90,7 @@
     ev.stopPropagation();
     if (ev.stopImmediatePropagation) ev.stopImmediatePropagation();
     if (typeof window.__chicaToggleLayer === "function") window.__chicaToggleLayer(id);
-    else if (id === "listit") location.href = "/Chicas-Map/claim";
+    else fallbackToggle(id);
   }, true);
   hijack();
   setInterval(hijack, 800);
