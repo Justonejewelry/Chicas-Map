@@ -40,7 +40,7 @@
     var s = document.createElement("style");
     s.id = "chica-force-key-css";
     s.textContent =
-      "#chica-force-key{display:block!important;visibility:visible!important;opacity:1!important;position:fixed!important;left:10px!important;bottom:calc(12px + env(safe-area-inset-bottom,0px))!important;z-index:2147483647!important;width:min(228px,calc(100vw - 140px));max-height:min(52dvh,420px);overflow:auto;background:#1a1714f5;color:#f3eee4;border:1px solid #3a342e;border-radius:16px;font:500 12px/1.25 Inter,system-ui,sans-serif;padding:8px 10px 10px;pointer-events:auto!important}" +
+      "#chica-force-key{display:block!important;visibility:visible!important;opacity:1!important;position:fixed!important;left:10px!important;bottom:calc(12px + env(safe-area-inset-bottom,0px))!important;z-index:2147483647!important;width:min(228px,calc(100vw - 140px));max-height:min(52dvh,420px);overflow:auto;background:rgba(26,23,20,.5);color:#f3eee4;border:1px solid rgba(58,52,46,.45);border-radius:16px;font:500 12px/1.25 Inter,system-ui,sans-serif;padding:8px 10px 10px;pointer-events:auto!important}" +
       "#chica-force-key[data-collapsed=true]{width:auto!important;max-height:44px!important;overflow:hidden!important;padding:8px 10px!important}" +
       "#chica-force-key[data-collapsed=true] ul{display:none!important}" +
       "#chica-force-key .hd{display:flex;justify-content:space-between;align-items:center;margin:0;gap:16px}" +
