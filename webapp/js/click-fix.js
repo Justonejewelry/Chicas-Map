@@ -1,4 +1,4 @@
-/* Fullscreen overlay was eating every tap. Open holes for HUD. */
+/* HUD clicks only. Do not disable pointer-events on the map parent. */
 (function () {
   var p = location.pathname || "";
   if (!(/\/map\/?$/.test(p) || p.indexOf("/map/") !== -1)) return;
@@ -8,23 +8,15 @@
     css.id = "chica-click-fix";
     css.textContent =
       "#chica-force-key,#chica-hunt-bar,#chica-map-chrome,#chica-listit-btn,#chica-fs-btn," +
-      "#chica-key,aside[aria-label=Key],aside[aria-label=key]{" +
-      "pointer-events:auto!important;z-index:2147483647!important;position:fixed!important}" +
-      "#chica-key,aside[aria-label=Key],aside[aria-label=key]{" +
-      "left:10px!important;bottom:calc(12px + env(safe-area-inset-bottom,0px))!important}" +
-      "html.chica-fs-on .leaflet-container{pointer-events:auto!important}" +
-      "html.chica-fs-on :has(> .leaflet-container){pointer-events:none!important}" +
-      "html.chica-fs-on :has(> .leaflet-container) .leaflet-container," +
-      "html.chica-fs-on :has(> .leaflet-container) .leaflet-pane," +
-      "html.chica-fs-on :has(> .leaflet-container) .leaflet-control-container{" +
-      "pointer-events:auto!important}";
+      "#chica-intel-card,#chica-home-chip{" +
+      "pointer-events:auto!important;z-index:2147483647!important}" +
+      ".leaflet-container,.leaflet-pane,.leaflet-overlay-pane,.leaflet-marker-pane," +
+      ".leaflet-marker-icon,.chica-pin{pointer-events:auto!important}" +
+      "html,body,#chica-live-map,.leaflet-container{" +
+      "width:100vw!important;height:100dvh!important;max-width:100vw!important}";
     (document.head || document.documentElement).appendChild(css);
   }
   function findMap() {
-    if (typeof window.__chicaFindMap === "function") {
-      var live = window.__chicaFindMap();
-      if (live) return live;
-    }
     if (window.__chicaLeaflet && window.__chicaLeaflet.flyTo) return window.__chicaLeaflet;
     return null;
   }
@@ -42,7 +34,7 @@
   window.addEventListener("click", function (ev) {
     var t = ev.target;
     if (!t || !t.closest) return;
-    if (t.closest("#chica-listit-btn") || t.closest("#chica-force-key [data-chica-layer=listit]") || t.closest("#chica-key [data-chica-layer=listit]")) {
+    if (t.closest("#chica-listit-btn") || t.closest("[data-chica-layer=listit]")) {
       ev.preventDefault();
       goClaim();
       return;
