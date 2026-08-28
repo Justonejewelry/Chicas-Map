@@ -1,0 +1,22 @@
+{
+  "name": "Chicas Map",
+  "short_name": "Chicas Map",
+  "description": "San Antonio garage, yard, and estate sale map. Veteran-built. Free to hunt.",
+  "start_url": "/Chicas-Map/map/",
+  "scope": "/Chicas-Map/",
+  "display": "standalone",
+  "background_color": "#121212",
+  "theme_color": "#c513af",
+  "icons": [
+    {
+      "src": "/Chicas-Map/__grok/icon-180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/Chicas-Map/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

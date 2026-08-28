@@ -1,208 +1,30 @@
 {
-  "edition": "Sunday Yard-Bird Discovery",
-  "date": "2026-08-01",
-  "generated_at": "2026-08-01T12:06:03+00:00",
-  "refreshed_at": "2026-08-28T06:45:46+00:00",
-  "total_locations": 197,
+  "edition": "Friday Live — San Antonio",
+  "date": "2026-08-28",
+  "generated_at": "2026-08-28T01:45:46-05:00",
+  "refreshed_at": "2026-08-28T01:45:46-05:00",
+  "total_locations": 92,
+  "public_count": 32,
+  "permit_total": 60,
+  "status": "live",
+  "canonical_feed": "data/cities/san-antonio.json",
+  "source_file": "webapp/data/cities/san-antonio.json",
   "sources": [
-    "yardsalesearch.com",
-    "garagesalefinder.com",
-    "estatesales.net",
-    "craigslist gms (index)",
-    "City of SA Open Data permits"
+    "Craigslist San Antonio",
+    "EstateSales.net",
+    "EstateSales.org",
+    "GarageSaleFinder",
+    "YardSaleSearch",
+    "data.sanantonio.gov"
   ],
-  "public": [
-    {
-      "address": "9554 Cantura Crst, San Antonio, TX 78250",
-      "dates": "Sat Aug 1 \u2013 Sun Aug 2",
-      "hours": "7am\u20134pm",
-      "title": "Garage sale Saturday & Sunday",
-      "details": "Household, clothes, kids toys, books, bounce house, furniture",
-      "source": "YardSaleSearch / GarageSaleFinder",
-      "photos": 11,
-      "type": "garage",
-      "confidence": 0.85,
-      "lat": 29.5085,
-      "lon": -98.668
-    },
-    {
-      "address": "122 Ravenhill Dr, San Antonio, TX 78214",
-      "dates": "Fri Jul 31 \u2013 Sat Aug 1",
-      "title": "Multi Family Yard Sale",
-      "details": "Clothes, furniture, trinkets, vintage, modern",
-      "source": "GarageSaleFinder",
-      "photos": 10,
-      "type": "garage",
-      "confidence": 0.82,
-      "lat": 29.355,
-      "lon": -98.488
-    },
-    {
-      "address": "2635 Spring Cyn, San Antonio, TX 78232",
-      "dates": "Sat Aug 1",
-      "hours": "9am\u20131pm",
-      "title": "One day garage sale",
-      "details": "Dryer, bookshelves, housewares, tools, antique bedroom",
-      "source": "GarageSaleFinder",
-      "type": "garage",
-      "confidence": 0.86,
-      "lat": 29.582,
-      "lon": -98.475,
-      "photos": 0
-    },
-    {
-      "address": "19000 Ronald Reagan, San Antonio, TX 78258",
-      "dates": "Sat Aug 1",
-      "title": "Annual Reagan Band/Guard Fundraising Garage Sale",
-      "details": "School cafeteria. Cash or credit.",
-      "source": "YardSaleSearch",
-      "photos": 1,
-      "type": "fundraiser",
-      "confidence": 0.9,
-      "lat": 29.61,
-      "lon": -98.48
-    },
-    {
-      "address": "4410 Nuggett Peak, San Antonio, TX 78259",
-      "dates": "Aug 1\u20132",
-      "title": "Estate Sale \u2014 From Trash To Treasure",
-      "details": "Professional estate sale",
-      "source": "estatesales.net",
-      "photos": 187,
-      "type": "estate",
-      "confidence": 0.92,
-      "lat": 29.62,
-      "lon": -98.45
-    },
-    {
-      "address": "11788 Southton Rd, San Antonio, TX 78223",
-      "dates": "Aug 1",
-      "title": "Estate Sale \u2014 Top Hat Estate Sales",
-      "details": "Professional estate sale",
-      "source": "estatesales.net",
-      "photos": 324,
-      "type": "estate",
-      "confidence": 0.92,
-      "lat": 29.28,
-      "lon": -98.42
-    },
-    {
-      "address": "4626 Wetz Rd, San Antonio, TX 78217",
-      "dates": "Aug 1\u20132",
-      "title": "Estate Sale \u2014 Southern Charm",
-      "details": "Professional estate sale",
-      "source": "estatesales.net",
-      "photos": 81,
-      "type": "estate",
-      "confidence": 0.92,
-      "lat": 29.54,
-      "lon": -98.41
-    },
-    {
-      "address": "126 Lone Star Blvd, San Antonio, TX 78204",
-      "dates": "Aug 1\u20132",
-      "title": "Estate Sale \u2014 A Better Estate Sale Co.",
-      "details": "Professional estate sale",
-      "source": "estatesales.net",
-      "photos": 219,
-      "type": "estate",
-      "confidence": 0.92,
-      "lat": 29.39,
-      "lon": -98.505
-    },
-    {
-      "address": "805 Canterbury Hill, San Antonio, TX 78209",
-      "dates": "Jul 30 \u2013 Aug 1",
-      "hours": "9am\u20134pm",
-      "title": "Estate Sale \u2014 Terrell Hills",
-      "details": "Professional estate sale",
-      "source": "professionalestatesales.com",
-      "type": "estate",
-      "confidence": 0.9,
-      "lat": 29.475,
-      "lon": -98.455,
-      "photos": 0
-    },
-    {
-      "address": "7914 Pinebrook Dr, San Antonio, TX 78230",
-      "dates": "Sat Aug 1",
-      "title": "Multifamily garage sale",
-      "details": "Household, teacher supplies, elementary books",
-      "source": "YardSaleSearch",
-      "photos": 2,
-      "type": "garage",
-      "confidence": 0.84,
-      "lat": 29.548,
-      "lon": -98.558
-    },
-    {
-      "address": "12014 Water Vly, San Antonio, TX 78249",
-      "dates": "Fri Jul 31 \u2013 Sat Aug 1",
-      "hours": "8:00 AM\u20132:00 PM",
-      "title": "HUGE Multi-Family Yard Sale",
-      "details": "Toys, tools, household, small appliances",
-      "source": "GarageSaleFinder",
-      "type": "garage",
-      "confidence": 0.85,
-      "lat": 29.565,
-      "lon": -98.62,
-      "photos": 0
-    },
-    {
-      "address": "5630 Gin Rd, Marion, TX 78124",
-      "dates": "Fri Jul 31 \u2013 Sun Aug 2",
-      "hours": "Fri 8\u20135, Sat 8\u20134, Sun 8\u20134",
-      "title": "Yard Sale",
-      "details": "Clothes, new shoes, light fixtures, mirrors",
-      "source": "YardSaleSearch",
-      "photos": 16,
-      "type": "garage",
-      "confidence": 0.88,
-      "lat": 29.52,
-      "lon": -98.15
-    }
-  ],
-  "permits": [
-    {
-      "address": "12719 Lorena Ochoa, San Antonio, TX",
-      "title": "Garage sale permit \u2014 CLUSTER-HOT",
-      "type": "permit",
-      "confidence": 0.9,
-      "lat": 29.29335,
-      "lon": -98.473718,
-      "source": "City of SA Open Data permits",
-      "dates": "permit-active",
-      "details": "South Side cluster",
-      "photos": 0
-    }
-  ],
-  "permit_total": 1,
+  "public": [],
+  "permits": [],
   "hot_zones": [
-    {
-      "name": "South Side",
-      "badge": "CLUSTER-HOT",
-      "size": 30,
-      "lat": 29.2975,
-      "lon": -98.481
-    },
-    {
-      "name": "Northwest Side",
-      "badge": "ACTIVE",
-      "lat": 29.55,
-      "lon": -98.62
-    },
-    {
-      "name": "Northeast Side",
-      "badge": "ACTIVE",
-      "lat": 29.54,
-      "lon": -98.4
-    },
-    {
-      "name": "Alamo Ranch",
-      "badge": "ACTIVE",
-      "lat": 29.48,
-      "lon": -98.7
-    }
+    { "name": "Potranco Run / Raceland" },
+    { "name": "Shavano / 78230" },
+    { "name": "Schertz / Universal City" },
+    { "name": "South Central tools (Bailey)" },
+    { "name": "Northwest / 78240" }
   ],
-  "source_file": "data/sunday_discovery_2026-08-01.json"
+  "note": "Do not read listings from this file. Live pins are webapp/data/cities/san-antonio.json. This used to hold the 2026-08-01 Sunday discovery and was serving expired sales."
 }
