@@ -1,6 +1,6 @@
 /* Chicas Map — live display boot.
    Esri only. CARTO tiles get rewritten. Street = World_Street_Map (z19).
-   Dark Gray Canvas is not the hunter basemap.
+   Exposes window.__chicaLeaflet so the KEY can toggle layers.
 */
 (function () {
   var SA = { lat: 29.4241, lon: -98.4936 };
@@ -79,21 +79,23 @@
       var next = rewriteCartoSrc(src);
       if (next && next !== src) {
         img.src = next;
-        try {
-          img.setAttribute("src", next);
-        } catch (e) {}
+        try { img.setAttribute("src", next); } catch (e) {}
       }
     }
   }
 
   function findMap() {
+    if (window.__chicaLeaflet && typeof window.__chicaLeaflet.flyTo === "function") return window.__chicaLeaflet;
     var nodes = document.querySelectorAll(".leaflet-container");
     for (var i = 0; i < nodes.length; i++) {
       var el = nodes[i];
       for (var k in el) {
         try {
           var v = el[k];
-          if (v && typeof v.flyTo === "function" && typeof v.invalidateSize === "function") return v;
+          if (v && typeof v.flyTo === "function" && typeof v.invalidateSize === "function") {
+            window.__chicaLeaflet = v;
+            return v;
+          }
         } catch (e) {}
       }
     }
@@ -125,9 +127,9 @@
     var pane = document.querySelector(".leaflet-tile-pane");
     if (!pane) return;
     watching = true;
-    new MutationObserver(function () {
-      rewriteTileImages();
-    }).observe(pane, { childList: true, subtree: true, attributes: true, attributeFilter: ["src"] });
+    new MutationObserver(function () { rewriteTileImages(); }).observe(pane, {
+      childList: true, subtree: true, attributes: true, attributeFilter: ["src"]
+    });
   }
 
   function forceViewport() {
@@ -160,29 +162,20 @@
     var map = findMap();
     if (!map) return;
     sized = true;
-    try {
-      map.invalidateSize({ animate: false, pan: false });
-    } catch (e) {}
+    try { map.invalidateSize({ animate: false, pan: false }); } catch (e) {}
   }
 
   function easeTo(map, lat, lon, zoom) {
-    try {
-      map.flyTo([lat, lon], zoom, { duration: 1.25, easeLinearity: 0.18, noMoveStart: false });
-    } catch (e) {
-      map.setView([lat, lon], zoom, { animate: true });
-    }
+    try { map.flyTo([lat, lon], zoom, { duration: 1.25, easeLinearity: 0.18, noMoveStart: false }); }
+    catch (e) { map.setView([lat, lon], zoom, { animate: true }); }
   }
 
   function askGeo() {
     if (askedGeo || !navigator.geolocation) return;
     askedGeo = true;
     navigator.geolocation.getCurrentPosition(
-      function (pos) {
-        pendingFix = { lat: pos.coords.latitude, lon: pos.coords.longitude };
-      },
-      function () {
-        pendingFix = { lat: SA.lat, lon: SA.lon, fallback: true };
-      },
+      function (pos) { pendingFix = { lat: pos.coords.latitude, lon: pos.coords.longitude }; },
+      function () { pendingFix = { lat: SA.lat, lon: SA.lon, fallback: true }; },
       { enableHighAccuracy: true, timeout: 8000, maximumAge: 30000 }
     );
   }
@@ -197,15 +190,13 @@
     if (!pendingFix && Date.now() - mapSeenAt < 4000) return;
     didLocate = true;
     var fix = pendingFix || { lat: SA.lat, lon: SA.lon, fallback: true };
-    if (fix.fallback || !insideBox(fix.lat, fix.lon)) {
-      easeTo(map, SA.lat, SA.lon, 12);
-      return;
-    }
+    if (fix.fallback || !insideBox(fix.lat, fix.lon)) { easeTo(map, SA.lat, SA.lon, 12); return; }
     easeTo(map, fix.lat, fix.lon, 15);
   }
 
   function tick() {
     if (!onMapPath()) return;
+    findMap();
     swapCartoTiles();
     watchTiles();
     forceViewport();
@@ -213,19 +204,9 @@
   }
 
   var n = 0;
-  var id = setInterval(function () {
-    n += 1;
-    tick();
-    if (n > 40) clearInterval(id);
-  }, 250);
+  var id = setInterval(function () { n += 1; tick(); if (n > 40) clearInterval(id); }, 250);
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", tick);
   else tick();
-  window.addEventListener("resize", function () {
-    sized = false;
-    forceViewport();
-  });
-  window.addEventListener("chica-sat", function () {
-    watching = false;
-    swapCartoTiles();
-  });
+  window.addEventListener("resize", function () { sized = false; forceViewport(); });
+  window.addEventListener("chica-sat", function () { watching = false; swapCartoTiles(); });
 })();
