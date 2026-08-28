@@ -4,20 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="referrer" content="origin" />
-  <meta http-equiv="Cache-Control" content="no-cache" />
   <title>The map \u00b7 Chicas Map</title>
   <link rel="icon" type="image/svg+xml" href="/Chicas-Map/favicon.svg" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" />
   <style>
-    html, body { margin: 0; width: 100vw; height: 100dvh; background: #121212; color: #f3eee4; font-family: Inter, system-ui, sans-serif; overflow: hidden; }
-    #chica-live-map, .leaflet-container { position: fixed; inset: 0; width: 100vw !important; height: 100dvh !important; z-index: 1; background: #121212; pointer-events: auto !important; }
-    .chica-pin, .chica-overlay-pin { background: transparent !important; border: 0 !important; pointer-events: auto !important; }
-    #chica-home-chip {
-      position: fixed; top: max(10px, env(safe-area-inset-top)); right: 10px;
-      z-index: 2147483647; height: 44px; padding: 0 12px; border-radius: 12px;
-      background: #1a1714f5; color: #f3eee4; text-decoration: none;
-      font: 800 13px/44px Inter, system-ui, sans-serif; border: 1px solid #3a342e;
-    }
+    html, body { margin: 0; width: 100vw; height: 100dvh; background: #121212; overflow: hidden; font-family: Inter, system-ui, sans-serif; }
+    #chica-live-map, .leaflet-container { position: fixed; inset: 0; width: 100vw !important; height: 100dvh !important; z-index: 1; background: #121212; }
+    #chica-home-chip { position: fixed; top: max(10px, env(safe-area-inset-top)); right: 10px; z-index: 2147483647; height: 44px; padding: 0 12px; border-radius: 12px; background: #1a1714f5; color: #f3eee4; text-decoration: none; font: 800 13px/44px Inter, system-ui, sans-serif; border: 1px solid #3a342e; }
     .leaflet-control-zoom { margin-bottom: 92px !important; }
   </style>
 </head>
@@ -34,7 +27,7 @@
   <script src="/Chicas-Map/js/click-fix.js?v=5"></script>
   <script src="/Chicas-Map/js/dom-fix.js?v=1"></script>
   <script src="/Chicas-Map/js/force-key.js?v=10"></script>
-  <script src="/Chicas-Map/js/pin-details.js?v=2"></script>
+  <script src="/Chicas-Map/js/pin-details.js?v=3"></script>
   <script src="/Chicas-Map/js/hunt-bar.js?v=5"></script>
   <script src="/Chicas-Map/js/map-cta.js?v=10"></script>
   <script src="/Chicas-Map/js/intel-fix.js?v=2"></script>
