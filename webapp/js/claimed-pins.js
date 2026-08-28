@@ -2,6 +2,7 @@
   var LAYER_ID = "chica-claimed-layer";
   var SRC = "/Chicas-Map/data/claimed-pins.json";
   var STORE = "chicas-map-claimed-pins";
+  var LOGO = "/Chicas-Map/favicon.svg";
   var pins = [];
   var hooked = false;
 
@@ -10,14 +11,16 @@
     return /\/map\/?$/.test(p) || p.indexOf("/map/") !== -1;
   }
 
+  function packOff() {
+    return document.documentElement.classList.contains("chica-pack-off");
+  }
+
   function loadLocal() {
     try {
       var raw = localStorage.getItem(STORE);
       var parsed = raw ? JSON.parse(raw) : [];
       return Array.isArray(parsed) ? parsed : [];
-    } catch (e) {
-      return [];
-    }
+    } catch (e) { return []; }
   }
 
   function merge(remote) {
@@ -87,11 +90,11 @@
     return { x: world.x + tr.x, y: world.y + tr.y, zoom: zoom };
   }
 
-  function pinHtml(pin) {
+  function pinHtml() {
     return (
-      '<div class="chica-claimed-pin" data-claimed="1">' +
-      '<span class="chica-claimed-head">$5</span>' +
-      '<span class="chica-claimed-tail"></span></div>'
+      '<div class="chica-claimed-pin chica-pack-pin" data-claimed="1">' +
+      '<img class="chica-pack-logo" src="' + LOGO + '" width="28" height="28" alt="" />' +
+      '</div>'
     );
   }
 
@@ -103,6 +106,7 @@
       layer.setAttribute("aria-hidden", "true");
     }
     if (box && layer.parentNode !== box) box.appendChild(layer);
+    layer.style.display = packOff() ? "none" : "";
     return layer;
   }
 
@@ -115,45 +119,32 @@
     var box = document.querySelector(".leaflet-container");
     if (!box || !pins.length) return;
     var layer = ensureLayer(box);
+    if (packOff()) {
+      layer.innerHTML = "";
+      layer.style.display = "none";
+      return;
+    }
+    layer.style.display = "";
     layer.innerHTML = "";
-    var placed = 0;
     pins.forEach(function (pin) {
       if (!pin || !Number.isFinite(Number(pin.lat)) || !Number.isFinite(Number(pin.lon))) return;
       var pt = toContainer(pin.lat, pin.lon, box);
       if (!Number.isFinite(pt.x) || !Number.isFinite(pt.y)) return;
-      if (pt.x < -80 || pt.y < -80 || pt.x > box.clientWidth + 80 || pt.y > box.clientHeight + 80) {
-        /* keep offscreen pins out of the way */
-      }
       var el = document.createElement("button");
       el.type = "button";
       el.className = "chica-claimed-wrap" + (pin.preview ? " is-preview" : "");
       el.style.left = pt.x + "px";
       el.style.top = pt.y + "px";
-      el.title = pin.title || "Claimed pin";
-      el.setAttribute("aria-label", pin.title || "Claimed $5 pin");
-      el.innerHTML = pinHtml(pin);
+      el.title = pin.title || "Chicas Pack";
+      el.setAttribute("aria-label", pin.title || "Chicas Pack pin");
+      el.innerHTML = pinHtml();
       el.addEventListener("click", function (ev) {
         ev.preventDefault();
         ev.stopPropagation();
-        window.alert(
-          (pin.preview ? "Preview — not a sale.\n" : "Claimed $5 pin\n") +
-            (pin.title || "") +
-            (pin.address ? "\n" + pin.address : ""),
-        );
+        window.alert((pin.preview ? "Pack pin preview — not a sale.\n" : "Chicas Pack\n") + (pin.title || "") + (pin.address ? "\n" + pin.address : ""));
       });
       layer.appendChild(el);
-      placed += 1;
     });
-    if (!placed && pins[0]) {
-      var fallback = document.createElement("button");
-      fallback.type = "button";
-      fallback.className = "chica-claimed-wrap is-preview";
-      fallback.style.left = box.clientWidth / 2 + "px";
-      fallback.style.top = box.clientHeight / 2 + "px";
-      fallback.title = pins[0].title || "Claimed pin";
-      fallback.innerHTML = pinHtml(pins[0]);
-      layer.appendChild(fallback);
-    }
   }
 
   function hook(box) {
@@ -163,9 +154,7 @@
     window.addEventListener("resize", draw);
     var pane = box.querySelector(".leaflet-map-pane");
     if (pane && window.MutationObserver) {
-      new MutationObserver(function () {
-        draw();
-      }).observe(pane, { attributes: true, attributeFilter: ["style", "class"], subtree: true });
+      new MutationObserver(function () { draw(); }).observe(pane, { attributes: true, attributeFilter: ["style", "class"], subtree: true });
     }
     setInterval(draw, 700);
   }
@@ -175,37 +164,21 @@
     var box = document.querySelector(".leaflet-container");
     if (!box) return false;
     hook(box);
-    if (pins.length) {
-      draw();
-      return true;
-    }
-    fetch(SRC + "?v=2")
-      .then(function (r) {
-        return r.ok ? r.json() : { pins: [] };
-      })
-      .catch(function () {
-        return { pins: [] };
-      })
-      .then(function (data) {
-        pins = merge(data.pins || []);
-        draw();
-      });
+    if (pins.length) { draw(); return true; }
+    fetch(SRC + "?v=3")
+      .then(function (r) { return r.ok ? r.json() : { pins: [] }; })
+      .catch(function () { return { pins: [] }; })
+      .then(function (data) { pins = merge(data.pins || []); draw(); });
     return true;
   }
 
   function wait() {
     if (boot()) return;
     var n = 0;
-    var t = setInterval(function () {
-      n += 1;
-      if (boot() || n > 80) clearInterval(t);
-    }, 200);
+    var t = setInterval(function () { n += 1; if (boot() || n > 80) clearInterval(t); }, 200);
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", wait);
   else wait();
-  window.addEventListener("popstate", function () {
-    hooked = false;
-    setTimeout(wait, 60);
-  });
+  window.addEventListener("popstate", function () { hooked = false; setTimeout(wait, 60); });
 })();
