@@ -8,6 +8,7 @@
   var STORE = "chicas-map-sale-intel-v1";
   var last = null;
   var here = null;
+  var watching = false;
 
   function esc(s) {
     return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
@@ -180,13 +181,26 @@
       ly.__chicaDetailsHook = true;
       ly.on("click", function () {
         var sale = saleFromLayer(ly);
-        if (sale) { render(sale); askGps(false); }
+        if (sale) { render(sale); askGps(false); startWatch(); }
       });
     });
+  }
+  function startWatch() {
+    if (watching || !navigator.geolocation || !navigator.geolocation.watchPosition) return;
+    watching = true;
+    navigator.geolocation.watchPosition(
+      function (pos) {
+        here = { lat: pos.coords.latitude, lon: pos.coords.longitude };
+        if (last) render(last);
+      },
+      function () {},
+      { enableHighAccuracy: true, maximumAge: 5000, timeout: 10000 }
+    );
   }
   window.__chicaOpenIntel = function (lat, lon, title) {
     render({ lat: lat, lon: lon, title: title || "Sale" });
     askGps(false);
+    startWatch();
     return true;
   };
   window.__chicaHideIntel = function () {
@@ -204,7 +218,7 @@
     map.eachLayer(function (ly) {
       if (ly._icon === icon || (ly._icon && ly._icon.contains && ly._icon.contains(t))) {
         var sale = saleFromLayer(ly);
-        if (sale) { render(sale); askGps(false); }
+        if (sale) { render(sale); askGps(false); startWatch(); }
       }
     });
   }, true);
