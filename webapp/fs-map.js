@@ -1,4 +1,4 @@
-/* Chicas Map — header dock: fullscreen + $5 List it square.
+/* Chicas Map — header dock: fullscreen + Chica $5 pin.
    Buttons live on document.body (React cannot steal them). */
 (function () {
   var CHROME_ID = "chica-map-chrome";
@@ -9,14 +9,8 @@
   var HTML_ON = "chica-fs-on";
   var CLAIM_HREF = "/Chicas-Map/claim";
   var SVG_NS = "http://www.w3.org/2000/svg";
-  var PEEK_MS = 2200;
-  var PEEK_EVERY = 18000;
-  var PEEK_CHANCE = 0.35;
   var ready = false;
-  var peekTimer = 0;
-  var peekOn = false;
-  var LABEL_HTML = "<span>List it.</span><span>Sell it.</span><span>Done.</span>";
-  var PEEK_URI = window.__CHICA_PEEK_URI || "";
+  var LABEL_HTML = "<span>Pin it</span><span>$5</span>";
 
   function fsMark(compress) {
     var svg = document.createElementNS(SVG_NS, "svg");
@@ -35,7 +29,7 @@
       "d",
       compress
         ? "M9.5 4v5.5H4M20 9.5h-5.5V4M14.5 20v-5.5H20M4 14.5h5.5V20"
-        : "M4 9.5V4h5.5M14.5 4H20v5.5M20 14.5V20h-5.5M9.5 20H4v-5.5",
+        : "M4 9.5V4h5.5M14.5 4H20v5.5M20 14.5V20h-5.5M9.5 20H4v-5.5"
     );
     svg.appendChild(path);
     return svg;
@@ -59,20 +53,18 @@
       "#" + BTN_ID + ":hover,#" + LIST_ID + ":hover{filter:brightness(1.08)}",
       "#" + BTN_ID + " .chica-fs-mark{width:26px;height:26px;display:block}",
       "#" + LIST_ID + "{",
-      "position:relative!important;display:flex!important;flex-direction:column;align-items:center;justify-content:center;",
-      "width:88px;min-width:88px;height:88px;padding:8px 6px;box-sizing:border-box;",
+      "position:relative!important;display:block!important;",
+      "width:88px;min-width:88px;height:88px;padding:0;box-sizing:border-box;",
       "border:2px solid #fffdf8;border-radius:16px;background:#c513af;color:#fffdf8;",
-      "text-decoration:none;text-align:center;line-height:1.15;",
-      "font:800 11px/1.15 Inter,system-ui,sans-serif;letter-spacing:.01em;",
+      "text-decoration:none;overflow:hidden;",
       "box-shadow:0 10px 28px rgb(197 19 175 / .55),0 0 0 3px rgb(197 19 175 / .28);",
-      "visibility:visible!important;opacity:1!important;pointer-events:auto!important;overflow:hidden",
+      "visibility:visible!important;opacity:1!important;pointer-events:auto!important",
       "}",
-      "#" + LIST_ID + " span{display:block}",
+      "#" + LIST_ID + " span{position:absolute;left:6px;right:6px;bottom:6px;z-index:2;font:800 10px/1.1 Inter,system-ui,sans-serif;text-align:center;text-shadow:0 1px 2px #000}",
       "#" + LIST_ID + " img.chica-peek{",
       "position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 70%;",
-      "pointer-events:none;border-radius:14px",
+      "pointer-events:none;border-radius:14px;display:block!important",
       "}",
-      "#" + LIST_ID + ".peeking span{visibility:hidden}",
       "#" + INTEL_ID + "{display:none!important;visibility:hidden!important;pointer-events:none!important}",
       "html." + HTML_ON + ",html." + HTML_ON + " body{overflow:hidden!important;height:100dvh!important;overscroll-behavior:none}",
       "html." + HTML_ON + " :has(> .chica-map),html." + HTML_ON + " :has(> .leaflet-container){",
@@ -178,42 +170,21 @@
   }
 
   function peekSrc() {
-    return PEEK_URI || window.__CHICA_PEEK_URI || "";
+    return window.__CHICA_PEEK_URI || "";
   }
 
-  function showPeek(a) {
+  function paintGif(a) {
     var src = peekSrc();
-    if (!a || peekOn || !src) return;
-    peekOn = true;
-    a.classList.add("peeking");
+    if (!a || !src) return;
     var img = a.querySelector("img.chica-peek");
     if (!img) {
       img = document.createElement("img");
       img.className = "chica-peek";
-      img.alt = "";
-      img.setAttribute("aria-hidden", "true");
+      img.alt = "Chica";
       a.appendChild(img);
     }
-    img.src = src;
+    if (img.getAttribute("src") !== src) img.setAttribute("src", src);
     img.style.display = "block";
-    setTimeout(function () { hidePeek(a); }, PEEK_MS);
-  }
-
-  function hidePeek(a) {
-    peekOn = false;
-    if (!a) a = document.getElementById(LIST_ID);
-    if (!a) return;
-    a.classList.remove("peeking");
-    var img = a.querySelector("img.chica-peek");
-    if (img) img.style.display = "none";
-  }
-
-  function armPeek(a) {
-    if (peekTimer) clearInterval(peekTimer);
-    peekTimer = setInterval(function () {
-      if (Math.random() < PEEK_CHANCE) showPeek(a);
-    }, PEEK_EVERY);
-    setTimeout(function () { showPeek(a); }, 2400);
   }
 
   function ensureListIt() {
@@ -223,7 +194,7 @@
       a = document.createElement("a");
       a.id = LIST_ID;
       a.href = CLAIM_HREF;
-      a.setAttribute("aria-label", "List it. Sell it. Done. $5 pin");
+      a.setAttribute("aria-label", "Pin it · $5");
       a.title = "Pin it · $5";
       a.innerHTML = LABEL_HTML;
       chrome.appendChild(a);
@@ -231,11 +202,7 @@
       chrome.appendChild(a);
     }
     if (a.getAttribute("href") !== CLAIM_HREF) a.setAttribute("href", CLAIM_HREF);
-    if (!a.querySelector("span")) a.innerHTML = LABEL_HTML;
-    if (!a.getAttribute("data-peek-armed")) {
-      a.setAttribute("data-peek-armed", "1");
-      armPeek(a);
-    }
+    paintGif(a);
     return a;
   }
 
@@ -268,7 +235,7 @@
         }
         label(btn);
       },
-      true,
+      true
     );
     document.addEventListener("fullscreenchange", function () { label(btn); });
     document.addEventListener("webkitfullscreenchange", function () { label(btn); });
@@ -282,7 +249,6 @@
   }
 
   function teardownFs() {
-    if (peekTimer) { clearInterval(peekTimer); peekTimer = 0; }
     var leftover = document.getElementById(BTN_ID);
     if (leftover) leftover.remove();
     var list = document.getElementById(LIST_ID);
