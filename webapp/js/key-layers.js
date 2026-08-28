@@ -75,7 +75,8 @@
     { id: "pantry", kind: "overlay", label: "Pantries", src: BASE + "/data/san-antonio-24h-food-pantries.geojson" },
     { id: "schools", kind: "overlay", label: "School zones", src: BASE + "/data/zone-aware-schools.geojson" },
     { id: "wifi", kind: "overlay", label: "Wi-Fi", src: BASE + "/data/san-antonio-public-wifi.geojson" },
-    { id: "claimed", kind: "claimed", label: "Claimed $5" }
+    { id: "claimed", kind: "claimed", label: "Claimed $5" },
+    { id: "listit", kind: "cta", label: "List it. Sell it. Done.", href: BASE + "/claim", hint: "Click For Details" }
   ];
   if (emergencyOn()) {
     LAYERS.push({ id: "emergency", kind: "overlay", label: "Emergency hubs", src: BASE + "/data/san-antonio-emergency-info.geojson" });
@@ -96,6 +97,7 @@
     if (id === "wifi") return svg('<path d="M3.2 7.2 A6.2 6.2 0 0 1 12.8 7.2" fill="none" stroke="#2dd4bf" stroke-width="1.5" stroke-linecap="round"/><path d="M5.2 9.4 A3.6 3.6 0 0 1 10.8 9.4" fill="none" stroke="#2dd4bf" stroke-width="1.5" stroke-linecap="round"/><circle cx="8" cy="12.1" r="1.15" fill="#2dd4bf"/>');
     if (id === "claimed") return svg('<circle cx="8" cy="7.2" r="5.2" fill="#f4c430" stroke="#c513af" stroke-width="1.4"/><text x="8" y="10" text-anchor="middle" font-size="6.4" font-weight="800" font-family="Inter,system-ui,sans-serif" fill="#1a1204">$</text>');
     if (id === "emergency") return svg('<circle cx="8" cy="8" r="6" fill="#7f1d1d" stroke="#121212" stroke-width="1.2"/><path d="M8 4.4 V9.2" stroke="#fecaca" stroke-width="1.6" stroke-linecap="round"/><circle cx="8" cy="11.4" r="0.9" fill="#fecaca"/>');
+    if (id === "listit") return svg('<circle cx="8" cy="7.2" r="5.2" fill="#c513af" stroke="#121212" stroke-width="1.4"/><text x="8" y="10" text-anchor="middle" font-size="6.2" font-weight="800" font-family="Inter,system-ui,sans-serif" fill="#fff">$</text>');
     return "";
   }
   function overlayColor(id) {
@@ -134,6 +136,8 @@
       "#chica-key li[role=button]:hover{background:rgba(255,255,255,.06)}" +
       "#chica-key .chica-key-sym{flex:0 0 14px;width:14px;height:14px;object-fit:contain;display:block}" +
       "#chica-key .chica-key-name{font-size:12px;font-weight:500;line-height:1.2}" +
+      "#chica-key .chica-key-cta{border-top:1px solid #3a342e;margin-top:4px;padding-top:8px}" +
+      "#chica-key .chica-key-hint{display:block;font-size:10px;font-weight:600;letter-spacing:.04em;color:#c4b8a8;margin-top:1px}" +
       ".chica-intel-badge{position:absolute;right:-5px;top:-6px;width:14px;height:14px;border-radius:999px;background:#c513af;box-shadow:0 0 0 2px #fffdf8;display:none;z-index:3;pointer-events:none}" +
       ".chica-intel-badge img{width:12px;height:12px;display:block;margin:1px auto}" +
       "html.chica-intel-on .leaflet-marker-icon .chica-intel-badge,html.chica-intel-on .chica-sym .chica-intel-badge{display:block}" +
@@ -312,7 +316,7 @@
   }
   function wireRow(row, spec) {
     if (wired[spec.id]) {
-      styleRow(row, state[spec.id]);
+      if (spec.kind !== "cta") styleRow(row, state[spec.id]);
       return;
     }
     wired[spec.id] = true;
@@ -320,6 +324,23 @@
     row.setAttribute("data-chica-sym", spec.id);
     row.setAttribute("role", "button");
     row.tabIndex = 0;
+    if (spec.kind === "cta") {
+      row.className = "chica-key-cta";
+      row.setAttribute("role", "link");
+      row.tabIndex = 0;
+      row.innerHTML = symbolHtml(spec.id) + '<span class="chica-key-name">' + spec.label.replace(/</g, "") + '<span class="chica-key-hint">' + String(spec.hint || "Click For Details").replace(/</g, "") + "</span></span>";
+      row.style.opacity = "1";
+      row.style.cursor = "pointer";
+      row.style.display = "flex";
+      function go(ev) {
+        ev.preventDefault();
+        ev.stopPropagation();
+        location.href = spec.href || (BASE + "/claim");
+      }
+      row.addEventListener("click", go, true);
+      row.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") go(e); });
+      return;
+    }
     row.innerHTML = symbolHtml(spec.id) + '<span class="chica-key-name">' + spec.label.replace(/</g, "") + "</span>";
     styleRow(row, state[spec.id]);
     function tog(ev) {
