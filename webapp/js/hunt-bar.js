@@ -5,16 +5,11 @@
   var SA = { lat: 29.4241, lon: -98.4936 };
 
   function findMap() {
-    if (window.__chicaLeaflet && window.__chicaLeaflet.flyTo) return window.__chicaLeaflet;
-    var nodes = document.querySelectorAll(".leaflet-container");
-    for (var i = 0; i < nodes.length; i++) {
-      for (var k in nodes[i]) {
-        try {
-          var v = nodes[i][k];
-          if (v && v.flyTo && v.invalidateSize) { window.__chicaLeaflet = v; return v; }
-        } catch (e) {}
-      }
+    if (typeof window.__chicaFindMap === "function") {
+      var live = window.__chicaFindMap();
+      if (live) return live;
     }
+    if (window.__chicaLeaflet && window.__chicaLeaflet.flyTo) return window.__chicaLeaflet;
     return null;
   }
 
@@ -128,6 +123,7 @@
     });
     bar.querySelector("#chica-near-btn").addEventListener("click", function (ev) {
       ev.preventDefault();
+      try { if (window.__chicaTrack) window.__chicaTrack("near_me"); } catch (e) {}
       nearMe();
     });
   }
