@@ -1,17 +1,21 @@
-/* Sale / intel pin tap → popup with nearby parking, pantry, wifi, schools + directions. */
+/* Intel: tap a sale pin -> nearest parking / pantry / wifi / school + directions. */
 (function () {
   var p = location.pathname || "";
-  if (!(/\/map\/?$/.test(p) || p.indexOf("/map/") !== -1)) return;
+  if (!(/\/map\/?$/.test(p) || p.indexOf("/map/") !== -1 || /map\.html$/.test(p))) return;
   var BASE = "/Chicas-Map";
-  var NEAR_M = 1600;
+  var NEAR_M = 2400;
   var cache = {};
+  var ready = {};
   var SRC = {
     parking: BASE + "/data/san-antonio-downtown-parking.geojson",
     pantry: BASE + "/data/san-antonio-24h-food-pantries.geojson",
     schools: BASE + "/data/zone-aware-schools.geojson",
     wifi: BASE + "/data/san-antonio-public-wifi.geojson"
   };
-  var wired = false;
+
+  function intelOn() {
+    return !document.documentElement.classList.contains("chica-intel-off");
+  }
 
   function findMap() {
     if (typeof window.__chicaFindMap === "function") {
@@ -26,18 +30,6 @@
     return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
       return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c];
     });
-  }
-
-  function pinTitle(el) {
-    var wrap = el.closest(".leaflet-marker-icon") || el;
-    var t = (wrap.getAttribute("title") || wrap.getAttribute("aria-label") || "").replace(/\s+/g, " ").trim();
-    if (t && t !== "You") return t;
-    var inner = wrap.querySelector("[title], [aria-label]");
-    if (inner) {
-      t = (inner.getAttribute("title") || inner.getAttribute("aria-label") || "").trim();
-      if (t && t !== "You") return t;
-    }
-    return "This stop";
   }
 
   function featLL(feat) {
@@ -73,10 +65,10 @@
 
   function dirs(lat, lon) {
     return (
-      '<div style="display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 4px">' +
-      '<a style="border:1px solid #c513af;border-radius:999px;padding:4px 10px;font-size:12px;color:#7a0f6c;text-decoration:none;font-weight:800" target="_blank" rel="noreferrer" href="https://www.google.com/maps/dir/?api=1&destination=' + lat + "," + lon + '">Google</a>' +
-      '<a style="border:1px solid #c513af;border-radius:999px;padding:4px 10px;font-size:12px;color:#7a0f6c;text-decoration:none;font-weight:800" target="_blank" rel="noreferrer" href="https://maps.apple.com/?daddr=' + lat + "," + lon + '">Apple</a>' +
-      '<a style="border:1px solid #c513af;border-radius:999px;padding:4px 10px;font-size:12px;color:#7a0f6c;text-decoration:none;font-weight:800" target="_blank" rel="noreferrer" href="https://waze.com/ul?ll=' + lat + "%2C" + lon + '&navigate=yes">Waze</a>' +
+      '<div class="chica-dirs">' +
+      '<a target="_blank" rel="noreferrer" href="https://www.google.com/maps/dir/?api=1&destination=' + lat + "," + lon + '">Google</a>' +
+      '<a target="_blank" rel="noreferrer" href="https://maps.apple.com/?daddr=' + lat + "," + lon + '">Apple</a>' +
+      '<a target="_blank" rel="noreferrer" href="https://waze.com/ul?ll=' + lat + "%2C" + lon + '&navigate=yes">Waze</a>' +
       "</div>"
     );
   }
@@ -85,14 +77,29 @@
     if (!hit) return "";
     var props = hit.feat.properties || {};
     var name = props.name || props.title || label;
-    var extra = props.ssid ? " · SSID " + props.ssid : (props.rates || props.hourly || props.hours || "");
+    var extra = props.ssid ? " \u00b7 SSID " + props.ssid : (props.rates || props.hourly || props.hours || "");
     return (
-      '<li style="margin:8px 0 0;padding-top:8px;border-top:1px solid #ece6dc">' +
-      '<div style="font-size:10px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:#7a0f6c">' + esc(label) + "</div>" +
-      "<div>" + esc(name) + ' <span style="color:#5c5348;font-size:11px">' + fmtM(hit.d) + (extra ? " · " + esc(extra) : "") + "</span></div>" +
-      dirs(hit.ll[0], hit.ll[1]) +
-      "</li>"
+      '<li><span class="tag">' + esc(label) + "</span> " +
+      esc(name) + ' <span class="meta">' + fmtM(hit.d) + (extra ? " \u00b7 " + esc(extra) : "") + "</span>" +
+      dirs(hit.ll[0], hit.ll[1]) + "</li>"
     );
+  }
+
+  function popupCss() {
+    if (document.getElementById("chica-intel-pop-css")) return;
+    var s = document.createElement("style");
+    s.id = "chica-intel-pop-css";
+    s.textContent =
+      ".chica-intel-pop .leaflet-popup-content-wrapper{border-radius:14px;box-shadow:0 12px 28px rgba(18,18,18,.28)}" +
+      ".chica-opt{min-width:210px;max-width:260px;font:500 13px/1.35 Inter,system-ui,sans-serif;color:#1a1714}" +
+      ".chica-opt .tag{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#c513af}" +
+      ".chica-opt h3{margin:2px 0 0;font:800 14px/1.2 Inter,system-ui,sans-serif}" +
+      ".chica-opt .meta{color:#5c5348;font-size:11px}" +
+      ".chica-opt ul{list-style:none;margin:6px 0 0;padding:0}" +
+      ".chica-opt li{margin:8px 0 0;padding-top:8px;border-top:1px solid #ece6dc}" +
+      ".chica-dirs{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 0}" +
+      ".chica-dirs a{border:1px solid #c513af;border-radius:999px;padding:4px 10px;font-size:12px;color:#7a0f6c;text-decoration:none;font-weight:800}";
+    (document.head || document.documentElement).appendChild(s);
   }
 
   function html(title, lat, lon) {
@@ -101,63 +108,103 @@
       nearRow("Pantry", nearest("pantry", lat, lon)) +
       nearRow("Wi-Fi", nearest("wifi", lat, lon)) +
       nearRow("School zone", nearest("schools", lat, lon));
-    if (!items) items = '<li style="margin-top:8px;color:#5c5348">Nothing mapped within a mile of this pin yet.</li>';
+    if (!items) items = '<li class="meta">Nothing mapped within 1.5 miles. Turn Parking / Wi-Fi / Pantries on in the Key to see them on the map.</li>';
     return (
-      '<div class="chica-opt" style="min-width:210px;max-width:260px;font:500 13px/1.35 Inter,system-ui,sans-serif;color:#1a1714">' +
-      '<div style="font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#c513af">Intel</div>' +
-      "<strong>" + esc(title) + "</strong>" +
-      '<div style="color:#5c5348;font-size:11px;margin-top:2px">Options around this driveway</div>' +
+      '<div class="chica-opt"><span class="tag">Intel</span><h3>' + esc(title || "This stop") + "</h3>" +
+      '<div class="meta">Options around this driveway</div>' +
       dirs(lat, lon) +
-      '<ul style="list-style:none;margin:4px 0 0;padding:0">' + items + "</ul></div>"
+      "<ul>" + items + "</ul></div>"
     );
   }
 
-  function openPop(el) {
+  function openIntel(lat, lon, title) {
+    popupCss();
     var map = findMap(), L = window.L;
-    if (!map || !L || !L.popup) return;
-    var wrap = el.closest(".leaflet-marker-icon") || el;
-    if ((wrap.getAttribute("title") || "") === "You") return;
-    var rect = wrap.getBoundingClientRect();
-    var box = map.getContainer().getBoundingClientRect();
-    var ll;
-    try {
-      ll = map.containerPointToLatLng([
-        rect.left + rect.width / 2 - box.left,
-        rect.top + rect.height - box.top
-      ]);
-    } catch (e) { return; }
+    if (!map || !L || !L.popup) return false;
+    lat = Number(lat); lon = Number(lon);
+    if (!isFinite(lat) || !isFinite(lon)) return false;
     L.popup({ maxWidth: 280, autoPan: true, className: "chica-intel-pop" })
-      .setLatLng(ll)
-      .setContent(html(pinTitle(wrap), ll.lat, ll.lng))
+      .setLatLng([lat, lon])
+      .setContent(html(title, lat, lon))
       .openOn(map);
+    try { if (window.__chicaTrack) window.__chicaTrack("intel_pop"); } catch (e) {}
+    return true;
   }
 
   function prefetch() {
     Object.keys(SRC).forEach(function (id) {
-      if (cache[id]) return;
-      fetch(SRC[id] + "?v=8", { cache: "no-store" })
+      if (ready[id]) return;
+      ready[id] = true;
+      fetch(SRC[id] + "?v=11", { cache: "no-store" })
         .then(function (r) { return r.ok ? r.json() : null; })
         .then(function (data) { cache[id] = data && data.features ? data.features : []; })
         .catch(function () { cache[id] = []; });
     });
   }
 
-  function wire() {
-    if (wired) return;
-    wired = true;
-    prefetch();
-    document.addEventListener("click", function (ev) {
-      var t = ev.target;
-      if (!t || !t.closest) return;
-      if (t.closest(".leaflet-popup") || t.closest("#chica-force-key") || t.closest("#chica-key") || t.closest("#chica-hunt-bar") || t.closest("#chica-map-chrome") || t.closest("#chica-listit-btn")) return;
-      var pin = t.closest(".leaflet-marker-icon, .chica-sym, .chica-pin");
-      if (!pin) return;
-      if (pin.querySelector && pin.querySelector(".chica-overlay-mark")) return;
-      ev.preventDefault();
-      ev.stopPropagation();
-      openPop(pin);
-    }, true);
+  function stampBadges() {
+    var on = intelOn();
+    document.documentElement.classList.toggle("chica-intel-on", on);
+    var pins = document.querySelectorAll(".leaflet-marker-icon.chica-pin, .leaflet-marker-icon.chica-type-garage, .leaflet-marker-icon.chica-type-estate, .leaflet-marker-icon.chica-type-permit");
+    for (var i = 0; i < pins.length; i++) {
+      var host = pins[i];
+      if (host.querySelector(".chica-overlay-mark")) continue;
+      var badge = host.querySelector(".chica-intel-badge");
+      if (!badge) {
+        badge = document.createElement("span");
+        badge.className = "chica-intel-badge";
+        badge.setAttribute("aria-hidden", "true");
+        if (getComputedStyle(host).position === "static") host.style.position = "relative";
+        host.appendChild(badge);
+      }
+      badge.style.display = on ? "block" : "none";
+    }
   }
 
-  wire();
+  window.__chicaOpenIntel = function (lat, lon, title) {
+    prefetch();
+    return openIntel(lat, lon, title);
+  };
+  window.__chicaIntelOn = intelOn;
+  window.__chicaStampIntel = stampBadges;
+
+  prefetch();
+  document.documentElement.classList.add("chica-intel-on");
+
+  document.addEventListener("click", function (ev) {
+    if (!intelOn()) return;
+    var t = ev.target;
+    if (!t || !t.closest) return;
+    if (t.closest(".leaflet-popup") || t.closest("#chica-force-key") || t.closest("#chica-key") || t.closest("#chica-hunt-bar") || t.closest("#chica-listit-btn")) return;
+    var pin = t.closest(".leaflet-marker-icon, .chica-sym, .chica-pin");
+    if (!pin) return;
+    if (pin.querySelector && pin.querySelector(".chica-overlay-mark")) return;
+    var map = findMap();
+    if (!map || !map.containerPointToLatLng) return;
+    var wrap = pin.closest(".leaflet-marker-icon") || pin;
+    var rect = wrap.getBoundingClientRect();
+    var box = map.getContainer().getBoundingClientRect();
+    var ll;
+    try {
+      ll = map.containerPointToLatLng([
+        rect.left + rect.width / 2 - box.left,
+        rect.top + rect.height / 2 - box.top
+      ]);
+    } catch (e) { return; }
+    ev.preventDefault();
+    ev.stopPropagation();
+    openIntel(ll.lat, ll.lng, wrap.getAttribute("title") || wrap.getAttribute("alt") || "Sale");
+  }, true);
+
+  window.addEventListener("chica-intel", function () {
+    prefetch();
+    stampBadges();
+  });
+
+  var n = 0;
+  var id = setInterval(function () {
+    stampBadges();
+    n += 1;
+    if (n > 40) clearInterval(id);
+  }, 250);
 })();
