@@ -1,8 +1,7 @@
-/* Always-on KEY. Lives on <html>, not in React's body tree. */
+/* Always-on KEY. Lives on <html>, not in React's body tree. One panel only. */
 (function () {
   var p = location.pathname || "";
   if (!(/\/map\/?$/.test(p) || p.indexOf("/map/") !== -1 || /map\.html$/.test(p))) return;
-  var BASE = "/Chicas-Map";
   var STORE = "chicas-map-key-open-v3";
   var ROWS = [
     ["garage", "Garage sale"],
@@ -14,8 +13,7 @@
     ["pantry", "Pantries"],
     ["schools", "School zones"],
     ["wifi", "Wi-Fi"],
-    ["claimed", "Chicas Pack"],
-    ["listit", "Pin it \u00b7 $5"]
+    ["claimed", "Chicas Pack"]
   ];
   function wantOpen() {
     try {
@@ -30,7 +28,7 @@
     var s = document.createElement("style");
     s.id = "chica-force-key-css";
     s.textContent =
-      "#chica-force-key{display:block!important;visibility:visible!important;opacity:1!important;position:fixed!important;left:10px!important;bottom:calc(12px + env(safe-area-inset-bottom,0px))!important;z-index:2147483647!important;width:min(220px,calc(100vw - 20px));max-height:min(52dvh,400px);overflow:auto;background:#1a1714f5;color:#f3eee4;border:1px solid #3a342e;border-radius:16px;font:500 12px/1.25 Inter,system-ui,sans-serif;padding:8px 10px 10px;pointer-events:auto!important}" +
+      "#chica-force-key{display:block!important;visibility:visible!important;opacity:1!important;position:fixed!important;left:10px!important;bottom:calc(12px + env(safe-area-inset-bottom,0px))!important;z-index:2147483647!important;width:min(220px,calc(100vw - 140px));max-height:min(52dvh,400px);overflow:auto;background:#1a1714f5;color:#f3eee4;border:1px solid #3a342e;border-radius:16px;font:500 12px/1.25 Inter,system-ui,sans-serif;padding:8px 10px 10px;pointer-events:auto!important}" +
       "#chica-force-key[data-collapsed=true]{width:auto!important;max-height:44px!important;overflow:hidden!important;padding:8px 10px!important}" +
       "#chica-force-key[data-collapsed=true] ul{display:none!important}" +
       "#chica-force-key .hd{display:flex;justify-content:space-between;align-items:center;margin:0;gap:16px}" +
@@ -38,13 +36,19 @@
       "#chica-force-key button.tog{border:0;background:transparent;color:#f3eee4;font:700 18px/1 Inter,system-ui,sans-serif;min-width:28px}" +
       "#chica-force-key ul{list-style:none;margin:8px 0 0;padding:0}" +
       "#chica-force-key li{display:flex;align-items:center;gap:8px;padding:6px 4px;border-radius:8px;cursor:pointer;min-height:32px}" +
-      "aside[aria-label=Key],aside[aria-label=key],[data-chica-legend]{display:none!important}";
+      "#chica-key,aside[aria-label=Key]:not(#chica-force-key),aside[aria-label=key]:not(#chica-force-key),[data-chica-legend]{display:none!important}" +
+      ".leaflet-control-layers{display:none!important}";
     (document.head || document.documentElement).appendChild(s);
+  }
+  function killDup() {
+    var extra = document.getElementById("chica-key");
+    if (extra) extra.style.setProperty("display", "none", "important");
   }
   function mount() {
     var el = document.getElementById("chica-force-key");
     if (el) {
       if (el.parentNode !== document.documentElement) document.documentElement.appendChild(el);
+      killDup();
       return el;
     }
     el = document.createElement("aside");
@@ -73,8 +77,8 @@
       ev.stopPropagation();
       var id = row.getAttribute("data-chica-layer");
       if (typeof window.__chicaToggleLayer === "function") window.__chicaToggleLayer(id);
-      else if (id === "listit") location.href = BASE + "/claim";
     }, true);
+    killDup();
     return el;
   }
   function tick() { style(); mount(); }
