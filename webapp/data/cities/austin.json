@@ -42,13 +42,13 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "in-person",
-        "estate-sale"
+        "estate-sale",
+        "in-person"
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.65414160413223,
-      "lon": -97.77325157778812,
+      "lat": 30.653979908120732,
+      "lon": -97.77680189633385,
       "geocode": "source",
       "company": "Golden Soul Estate Sales",
       "in_person": true,
@@ -402,8 +402,8 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "in-person",
-        "estate-sale"
+        "estate-sale",
+        "in-person"
       ],
       "confidence": 0.9,
       "status": "verified",
@@ -888,10 +888,10 @@
       "date_from": "2026-08-28",
       "date_to": "2026-08-29",
       "end_date": "2026-08-29",
-      "title": "Living Estate Sale",
+      "title": "Bryan, TX Estate Sale -Lifetime of Treasures",
       "details": "Estate Sale",
       "source": "EstateSales.net",
-      "url": "https://www.estatesales.net/TX/Austin/78736/5056209",
+      "url": "https://www.estatesales.net/TX/Bryan/77802/5042961",
       "photos": 0,
       "type": "estate",
       "categories": [
@@ -1024,6 +1024,150 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "cl-budamovingsaleha76ibr4rckjezvz8ghmin"
+    },
+    {
+      "address": "1133 Vincent Pl, Pflugerville, TX 78660",
+      "dates": "2026-08-29 – 2026-08-29",
+      "date_from": "2026-08-29",
+      "date_to": "2026-08-29",
+      "end_date": "2026-08-29",
+      "title": "Garage Sale:    Saturday, August 29Th, 2026",
+      "details": "",
+      "source": "YardSaleSearch",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196365385",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.88,
+      "status": "verified",
+      "lat": 30.445374,
+      "lon": -97.655394,
+      "geocode": "source",
+      "external_id": "yss-1133vincentplpflugervilletx78660-2026-08-29",
+      "categories": [
+        "garage-sale"
+      ]
+    },
+    {
+      "address": "3902 Hawkshead Dr, Austin, TX",
+      "dates": "2026-08-28 – 2026-08-30",
+      "date_from": "2026-08-28",
+      "date_to": "2026-08-30",
+      "end_date": "2026-08-30",
+      "hours": null,
+      "title": "Moving Sale",
+      "details": "QR Code Link to This Post Moving Sale. Tools, hardware, clothing, luggage, housewares, sporting equipment, office supplie. Everything is negotiable. Start time 7am. No early birds.",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/austin-moving-sale/gpemBTjoxsSSikCeGoH25a",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale",
+        "moving-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 30.415304,
+      "lon": -97.722425,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-ustinmovingsalegpembtjoxsssikcegoh25a"
+    },
+    {
+      "address": "420 Tamara Dr, Austin, TX",
+      "dates": "2026-08-28 – 2026-08-28",
+      "date_from": "2026-08-28",
+      "date_to": "2026-08-28",
+      "end_date": "2026-08-28",
+      "hours": null,
+      "title": "Moving estate sale",
+      "details": "QR Code Link to This Post Join us here to hunt for treasures August 28-30th 9-3 daily Please visit www.estatesales.net under \"Terrific Finds on Tamara Drive\" for photos and more details Southern Eccentrics, LLC show contact info www.southerneccentrics.com Entry assumes all risk Cash/Cards/ApplePay BYO Bags All sales final! No refunds/exchanges",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/georgetown-moving-estate-sale/stoPHAebfxX33mN4gfuKZs",
+      "photos": 0,
+      "type": "estate",
+      "categories": [
+        "estate-sale",
+        "moving-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 30.610829,
+      "lon": -97.697093,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-ovingestatesalestophaebfxx33mn4gfukzs"
+    },
+    {
+      "address": "1511 Brandi Ln Unit C, Austin, TX",
+      "dates": "2026-08-28 – 2026-08-30",
+      "date_from": "2026-08-28",
+      "date_to": "2026-08-30",
+      "end_date": "2026-08-30",
+      "hours": null,
+      "title": "Big sale: comic books, graphic novels, manga and anime",
+      "details": "QR Code Link to This Post Big sale at our clearance outlet warehouse location - browse in our climate controlled space. 1000s of comic books, graphic novels, and manga/Anime. Sat 8/29 9am-11:30am Address: 1511 Brandi Ln Unit C, Round Rock, TX Pricing: $1 each - individual comic books $3 each - vintage comics (gold, silver, bronze, copper). $3 each - Graphic novels TPB/HC - Marvel, DC, Indies $3 ea",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/round-rock-big-sale-comic-books-graphic/uQGnsoEHuRpCWrTpV6zevJ",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 30.516881,
+      "lon": -97.698799,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-micbooksgraphicuqgnsoehurpcwrtpv6zevj"
+    },
+    {
+      "address": "2702 S Bagdad Rd near Osage, Austin, TX",
+      "dates": "2026-08-29 – 2026-08-29",
+      "date_from": "2026-08-29",
+      "date_to": "2026-08-29",
+      "end_date": "2026-08-29",
+      "hours": null,
+      "title": "Community yard sale",
+      "details": "QR Code Link to This Post Community yard sale multiple sales in one location come visit us at Crystal Falls Crossing this Saturday August 29 from 7 am until 2 pm",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/leander-community-yard-sale/dXnqovNDG1nEoPqBQkFtGC",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 30.536321,
+      "lon": -97.84763,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-mmunityyardsaledxnqovndg1neopqbqkftgc"
+    },
+    {
+      "address": "16902 Sleepy Hollow Drive near Lakeview, Austin, TX",
+      "dates": "2026-08-28 – 2026-08-30",
+      "date_from": "2026-08-28",
+      "date_to": "2026-08-30",
+      "end_date": "2026-08-30",
+      "hours": null,
+      "title": "Construction materials garage sale",
+      "details": "QR Code Link to This Post -Moen Linden brush nickel bathroom fixture complete -Speaker wall mounting plates complete -Under cabinet light fixture complete -AC Split zone line cover kit complete with xtra condensate line Schlage door knob, parts and sets Two plastic storage cabinets -Back Splash Tile white one case -Shower tile with grout -Fishing rod wall mount wood -Two digital video recorders -N",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/austin-construction-materials-garage/5Z8ah4A3vNNY71Cd8J5qDa",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 30.407784,
+      "lon": -97.952257,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-materialsgarage5z8ah4a3vnny71cd8j5qda"
     }
   ],
   "hot_zones": [
@@ -1042,9 +1186,9 @@
     "gsalr.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 44,
+  "total_locations": 50,
   "status": "live",
   "date": "2026-08-28",
-  "last_refresh": "2026-08-28T01:45:46-05:00",
+  "last_refresh": "2026-08-28T16:02:41-05:00",
   "permits": []
 }
