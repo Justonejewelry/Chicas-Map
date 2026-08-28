@@ -126,7 +126,7 @@
     var s = document.createElement("style");
     s.id = "chica-key-style";
     s.textContent =
-      "#chica-key{position:fixed!important;left:12px!important;bottom:calc(96px + env(safe-area-inset-bottom,0px))!important;top:auto!important;right:auto!important;z-index:2147483646!important;width:min(228px,calc(100vw - 24px));max-height:min(58dvh,440px);overflow:auto;background:#1a1714f2;color:#f3eee4;border:1px solid #3a342e;border-radius:16px;box-shadow:0 12px 32px rgba(0,0,0,.42);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);font:500 12px/1.25 Inter,system-ui,sans-serif;padding:8px 10px 10px;pointer-events:auto!important;display:block!important;visibility:visible!important;opacity:1!important}" +
+      "#chica-key{position:fixed!important;left:12px!important;bottom:calc(16px + env(safe-area-inset-bottom,0px))!important;top:auto!important;right:auto!important;z-index:2147483646!important;width:min(228px,calc(100vw - 24px));max-height:min(58dvh,440px);overflow:auto;background:#1a1714f2;color:#f3eee4;border:1px solid #3a342e;border-radius:16px;box-shadow:0 12px 32px rgba(0,0,0,.42);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);font:500 12px/1.25 Inter,system-ui,sans-serif;padding:8px 10px 10px;pointer-events:auto!important;display:block!important;visibility:visible!important;opacity:1!important}" +
       "#chica-key[data-collapsed=true]{max-height:44px;overflow:hidden}" +
       "#chica-key .chica-key-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:0 0 6px}" +
       "#chica-key .chica-key-title{margin:0;font:800 11px/1 Inter,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#f3eee4}" +
@@ -143,7 +143,8 @@
       "html.chica-intel-on .leaflet-marker-icon .chica-intel-badge,html.chica-intel-on .chica-sym .chica-intel-badge{display:block}" +
       ".leaflet-control-attribution{font-size:10px}" +
       ".chica-overlay-pin{border:0;background:transparent}" +
-      "button.chica-dup-chip,.chica-dup-chip{display:none!important;visibility:hidden!important;pointer-events:none!important;width:0!important;height:0!important;overflow:hidden!important;position:absolute!important;left:-9999px!important}" +
+      "button.chica-dup-chip,.chica-dup-chip,#chica-pin-claim{display:none!important;visibility:hidden!important;pointer-events:none!important}" +
+      ".chica-map-chip,button[data-filter],.map-filter-chip,[data-chica-filter]{display:none!important}" +
       "#chica-key li[role=switch]{min-height:32px}" +
       "@media (max-width:480px){#chica-key{left:8px!important;width:min(200px,calc(100vw - 88px))}}";
     (document.head || document.documentElement).appendChild(s);
@@ -386,11 +387,13 @@
     }
   }
   function hideDup() {
-    var labels = /^(All|Posted|Permits|Permit|Garage|Estate|Intel|Satellite|Street|Parking|Pantries|School zones|Wi-?Fi|Claimed \$5|Home)$/i;
-    var nodes = document.querySelectorAll("button, a");
+    var labels = /^(All|Posted|Permits|Permit|Garage|Estate|Yard|Weekend|Sat|Sun|All days|Intel|Satellite|Street|Parking|Pantries|School zones|Wi-?Fi|Claimed \$?5|Home|How it works|Pin it)$/i;
+    var bar = document.getElementById("chica-pin-claim");
+    if (bar) bar.remove();
+    var nodes = document.querySelectorAll("button, a, [role=button], [role=tab]");
     for (var i = 0; i < nodes.length; i++) {
       var el = nodes[i];
-      if (el.closest("#chica-key") || el.closest("#chica-map-chrome") || el.closest("#chica-pin-claim")) continue;
+      if (el.closest("#chica-key") || el.closest("#chica-map-chrome")) continue;
       if (el.id === "chica-intel-btn" || el.id === "chica-fs-btn") continue;
       if (el.closest(".leaflet-control-zoom") || el.closest(".leaflet-control-attribution")) continue;
       var t = (el.textContent || "").replace(/\s+/g, " ").trim();
