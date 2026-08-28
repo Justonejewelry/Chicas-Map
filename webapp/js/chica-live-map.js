@@ -77,18 +77,28 @@
     var n = 0;
     for (var i = 0; i < sales.length; i++) {
       var s = sales[i];
-      var lat = Number(s.lat), lon = Number(s.lon);
+      var lat = Number(s.lat != null ? s.lat : s.latitude), lon = Number(s.lon != null ? s.lon : s.lng != null ? s.lng : s.longitude);
       if (!isFinite(lat) || !isFinite(lon)) continue;
       var title = s.title || s.address || "Sale";
       var kind = s.type || s.kind || "garage";
       var label = title + " \u2014 " + (kind === "estate" ? "estate sale" : kind === "permit" ? "city permit" : "garage sale");
-      L.marker([lat, lon], {
-        icon: iconFor(kind, L),
-        title: title,
-        alt: label,
-        keyboard: false,
-        chicaType: kind
-      }).addTo(map);
+      (function (plat, plon, ptitle, pkind, plabel) {
+        var mk = L.marker([plat, plon], {
+          icon: iconFor(pkind, L),
+          title: ptitle,
+          alt: plabel,
+          keyboard: false,
+          chicaType: pkind
+        });
+        mk.on("click", function (ev) {
+          if (document.documentElement.classList.contains("chica-intel-off")) return;
+          if (typeof window.__chicaOpenIntel === "function") {
+            try { if (ev.originalEvent) { ev.originalEvent.preventDefault(); ev.originalEvent.stopPropagation(); } } catch (e) {}
+            window.__chicaOpenIntel(plat, plon, ptitle);
+          }
+        });
+        mk.addTo(map);
+      })(lat, lon, title, kind, label);
       n += 1;
     }
     return n;
