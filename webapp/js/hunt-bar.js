@@ -75,7 +75,7 @@
       return;
     }
     var btn = document.getElementById("chica-near-btn");
-    if (btn) btn.textContent = "…";
+    if (btn) btn.textContent = "\u2026";
     navigator.geolocation.getCurrentPosition(
       function (pos) {
         var lat = pos.coords.latitude, lon = pos.coords.longitude;
@@ -97,16 +97,17 @@
       s.id = "chica-hunt-css";
       s.textContent =
         "#chica-hunt-bar{position:fixed!important;top:max(10px,env(safe-area-inset-top))!important;left:10px!important;right:118px!important;z-index:2147483647!important;display:flex!important;gap:6px;align-items:center;pointer-events:auto!important}" +
-        "#chica-hunt-bar input{flex:1;min-width:0;height:42px;border:1px solid #3a342e;border-radius:12px;background:#1a1714f5;color:#f3eee4;padding:0 12px;font:600 14px/1 Inter,system-ui,sans-serif}" +
-        "#chica-hunt-bar button{height:42px;border:0;border-radius:12px;background:#c513af;color:#fff;font:800 12px/1 Inter,system-ui,sans-serif;padding:0 12px;white-space:nowrap;cursor:pointer}" +
+        "#chica-hunt-bar input{flex:1;min-width:0;height:44px;border:1px solid #3a342e;border-radius:12px;background:#1a1714f5;color:#f3eee4;padding:0 12px;font:600 14px/1 Inter,system-ui,sans-serif}" +
+        "#chica-hunt-bar button{height:44px;border:0;border-radius:12px;background:#c513af;color:#fff;font:800 12px/1 Inter,system-ui,sans-serif;padding:0 12px;white-space:nowrap;cursor:pointer}" +
         "#chica-force-key[data-collapsed=true]{max-height:44px!important;overflow:hidden!important;width:auto!important;min-width:88px}" +
         "#chica-force-key[data-collapsed=true] ul{display:none!important}" +
-        "@media (max-width:720px){#chica-hunt-bar{right:118px}}";
+        "@media (max-width:720px){#chica-hunt-bar{right:118px}}" +
+        ".chica-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}";
       (document.head || document.documentElement).appendChild(s);
     }
     var bar = document.createElement("div");
     bar.id = "chica-hunt-bar";
-    bar.innerHTML = '<input id="chica-hunt-q" type="search" placeholder="Search sales, streets, zip" enterkeyhint="search" /><button type="button" id="chica-near-btn">Near me</button>';
+    bar.innerHTML = '<label class="chica-sr" for="chica-hunt-q">Search sales, streets, or zip</label><input id="chica-hunt-q" type="search" placeholder="Search sales, streets, zip" enterkeyhint="search" autocomplete="off" aria-label="Search sales, streets, or zip" /><button type="button" id="chica-near-btn" aria-label="Find sales near me">Near me</button>';
     document.documentElement.appendChild(bar);
     var q = bar.querySelector("#chica-hunt-q");
     var t = null;

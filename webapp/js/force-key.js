@@ -40,14 +40,15 @@
     var s = document.createElement("style");
     s.id = "chica-force-key-css";
     s.textContent =
-      "#chica-force-key{display:block!important;visibility:visible!important;opacity:1!important;position:fixed!important;left:10px!important;bottom:calc(12px + env(safe-area-inset-bottom,0px))!important;z-index:2147483647!important;width:min(228px,calc(100vw - 140px));max-height:min(52dvh,420px);overflow:auto;background:rgba(26,23,20,.5);color:#f3eee4;border:1px solid rgba(58,52,46,.45);border-radius:16px;font:500 12px/1.25 Inter,system-ui,sans-serif;padding:8px 10px 10px;pointer-events:auto!important}" +
+      "#chica-force-key{display:block!important;visibility:visible!important;opacity:1!important;position:fixed!important;left:10px!important;bottom:calc(12px + env(safe-area-inset-bottom,0px))!important;z-index:2147483647!important;width:min(228px,calc(100vw - 140px));max-height:min(52dvh,420px);overflow:auto;background:rgba(26,23,20,.5);color:#f3eee4;border:1px solid rgba(243,238,228,.55);border-radius:16px;font:600 13px/1.3 Inter,system-ui,sans-serif;padding:8px 10px 10px;pointer-events:auto!important;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);text-shadow:0 1px 2px rgba(0,0,0,.85)}" +
       "#chica-force-key[data-collapsed=true]{width:auto!important;max-height:44px!important;overflow:hidden!important;padding:8px 10px!important}" +
       "#chica-force-key[data-collapsed=true] ul{display:none!important}" +
       "#chica-force-key .hd{display:flex;justify-content:space-between;align-items:center;margin:0;gap:16px}" +
-      "#chica-force-key .hd b{font:800 11px/1 Inter,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase}" +
-      "#chica-force-key button.tog{border:0;background:transparent;color:#f3eee4;font:700 18px/1 Inter,system-ui,sans-serif;min-width:28px}" +
+      "#chica-force-key .hd b{font:800 12px/1 Inter,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase}" +
+      "#chica-force-key button.tog{border:0;background:transparent;color:#f3eee4;font:700 18px/1 Inter,system-ui,sans-serif;min-width:44px;min-height:44px}" +
       "#chica-force-key ul{list-style:none;margin:8px 0 0;padding:0}" +
-      "#chica-force-key li{display:flex;align-items:center;gap:8px;padding:6px 4px;border-radius:8px;cursor:pointer;min-height:32px}" +
+      "#chica-force-key li{display:flex;align-items:center;gap:8px;padding:8px 6px;border-radius:8px;cursor:pointer;min-height:44px}" +
+      "#chica-force-key li:focus,#chica-force-key li:focus-visible,#chica-force-key button.tog:focus-visible,#chica-home-chip:focus-visible,#chica-hunt-bar input:focus-visible,#chica-hunt-bar button:focus-visible,#chica-listit-btn:focus-visible,.leaflet-control-zoom a:focus-visible{outline:3px solid #fffdf8;outline-offset:2px}" +
       "#chica-force-key .sym{width:18px;height:18px;flex:0 0 18px;display:inline-flex;align-items:center;justify-content:center}" +
       "#chica-force-key .sym svg{display:block}" +
       "#chica-key,aside[aria-label=Key]:not(#chica-force-key),aside[aria-label=key]:not(#chica-force-key),[data-chica-legend]{display:none!important;visibility:hidden!important;pointer-events:none!important}" +
@@ -59,6 +60,16 @@
     var extra = document.getElementById("chica-key");
     if (extra) extra.style.setProperty("display", "none", "important");
   }
+  function setOpen(el, open) {
+    el.setAttribute("data-collapsed", open ? "false" : "true");
+    var tog = el.querySelector(".tog");
+    if (tog) {
+      tog.textContent = open ? "\u2013" : "+";
+      tog.setAttribute("aria-expanded", open ? "true" : "false");
+      tog.setAttribute("aria-label", open ? "Collapse map key" : "Expand map key");
+    }
+    try { localStorage.setItem(STORE, open ? "1" : "0"); } catch (e) {}
+  }
   function mount() {
     var el = document.getElementById("chica-force-key");
     if (el) {
@@ -68,23 +79,20 @@
     }
     el = document.createElement("aside");
     el.id = "chica-force-key";
-    el.setAttribute("aria-label", "Map key");
+    el.setAttribute("aria-label", "Map layers");
     var open = wantOpen();
-    el.setAttribute("data-collapsed", open ? "false" : "true");
     var lis = "";
     for (var i = 0; i < ROWS.length; i++) {
       var id = ROWS[i][0];
-      lis += '<li data-chica-layer="' + id + '" role="switch"><span class="sym">' + (ICO[id] || "") + "</span>" + ROWS[i][1] + "</li>";
+      lis += '<li data-chica-layer="' + id + '" role="switch" tabindex="0" aria-checked="false"><span class="sym" aria-hidden="true">' + (ICO[id] || "") + "</span>" + ROWS[i][1] + "</li>";
     }
-    el.innerHTML = '<div class="hd"><b>Key</b><button type="button" class="tog" aria-label="Toggle key">' + (open ? "\u2013" : "+") + "</button></div><ul>" + lis + "</ul>";
+    el.innerHTML = '<div class="hd"><b id="chica-key-title">Key</b><button type="button" class="tog" aria-controls="chica-key-list">+</button></div><ul id="chica-key-list" role="list">' + lis + "</ul>";
     document.documentElement.appendChild(el);
+    setOpen(el, open);
     el.querySelector(".tog").addEventListener("click", function (ev) {
       ev.preventDefault();
       ev.stopPropagation();
-      var next = el.getAttribute("data-collapsed") !== "true";
-      el.setAttribute("data-collapsed", next ? "true" : "false");
-      ev.currentTarget.textContent = next ? "+" : "\u2013";
-      try { localStorage.setItem(STORE, next ? "0" : "1"); } catch (e) {}
+      setOpen(el, el.getAttribute("data-collapsed") === "true");
     });
     el.addEventListener("click", function (ev) {
       var row = ev.target && ev.target.closest && ev.target.closest("[data-chica-layer]");
@@ -95,6 +103,14 @@
       if (typeof window.__chicaToggleLayer === "function") window.__chicaToggleLayer(id);
       try { if (window.__chicaTrack) window.__chicaTrack("key_" + id); } catch (e) {}
     }, true);
+    el.addEventListener("keydown", function (ev) {
+      if (ev.key !== "Enter" && ev.key !== " ") return;
+      var row = ev.target && ev.target.closest && ev.target.closest("[data-chica-layer]");
+      if (!row) return;
+      ev.preventDefault();
+      var id = row.getAttribute("data-chica-layer");
+      if (typeof window.__chicaToggleLayer === "function") window.__chicaToggleLayer(id);
+    });
     killDup();
     return el;
   }

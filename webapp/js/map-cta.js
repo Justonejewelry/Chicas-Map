@@ -20,7 +20,8 @@
       "animation:chica-pop 1.15s ease-in-out infinite,chica-ring 1.6s ease-out infinite!important;text-decoration:none!important;pointer-events:auto!important}" +
       "#chica-listit-btn img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 28%;pointer-events:none;background:transparent}" +
       "#chica-listit-btn .chica-cta-label{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:8px 4px 9px;background:linear-gradient(transparent,#7a0a6c 55%);" +
-      "font:900 13px/1 Inter,system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;text-align:center;color:#fff;text-shadow:0 1px 3px #000}";
+      "font:900 13px/1 Inter,system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;text-align:center;color:#fff;text-shadow:0 1px 3px #000}" +
+      "@media (prefers-reduced-motion:reduce){#chica-listit-btn{animation:none!important}}";
     (document.head || document.documentElement).appendChild(s);
   }
 
