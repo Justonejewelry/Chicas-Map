@@ -1,11 +1,10 @@
-/* Intel: tap a sale pin -> nearest parking / pantry / wifi / school + directions. */
+/* Intel card. Fixed on <html> so Leaflet panes cannot bury it. */
 (function () {
   var p = location.pathname || "";
   if (!(/\/map\/?$/.test(p) || p.indexOf("/map/") !== -1 || /map\.html$/.test(p))) return;
   var BASE = "/Chicas-Map";
   var NEAR_M = 2400;
   var cache = {};
-  var ready = {};
   var SRC = {
     parking: BASE + "/data/san-antonio-downtown-parking.geojson",
     pantry: BASE + "/data/san-antonio-24h-food-pantries.geojson",
@@ -22,8 +21,7 @@
       var live = window.__chicaFindMap();
       if (live) return live;
     }
-    if (window.__chicaLeaflet && window.__chicaLeaflet.openPopup) return window.__chicaLeaflet;
-    return null;
+    return window.__chicaLeaflet || null;
   }
 
   function esc(s) {
@@ -65,7 +63,7 @@
 
   function dirs(lat, lon) {
     return (
-      '<div class="chica-dirs">' +
+      '<div class="acts">' +
       '<a target="_blank" rel="noreferrer" href="https://www.google.com/maps/dir/?api=1&destination=' + lat + "," + lon + '">Google</a>' +
       '<a target="_blank" rel="noreferrer" href="https://maps.apple.com/?daddr=' + lat + "," + lon + '">Apple</a>' +
       '<a target="_blank" rel="noreferrer" href="https://waze.com/ul?ll=' + lat + "%2C" + lon + '&navigate=yes">Waze</a>' +
@@ -78,28 +76,57 @@
     var props = hit.feat.properties || {};
     var name = props.name || props.title || label;
     var extra = props.ssid ? " \u00b7 SSID " + props.ssid : (props.rates || props.hourly || props.hours || "");
-    return (
-      '<li><span class="tag">' + esc(label) + "</span> " +
-      esc(name) + ' <span class="meta">' + fmtM(hit.d) + (extra ? " \u00b7 " + esc(extra) : "") + "</span>" +
-      dirs(hit.ll[0], hit.ll[1]) + "</li>"
-    );
+    return "<li><b>" + esc(label) + "</b> " + esc(name) + " <i>" + fmtM(hit.d) + (extra ? " \u00b7 " + esc(extra) : "") + "</i>" + dirs(hit.ll[0], hit.ll[1]) + "</li>";
   }
 
-  function popupCss() {
-    if (document.getElementById("chica-intel-pop-css")) return;
+  function css() {
+    if (document.getElementById("chica-intel-card-css")) return;
     var s = document.createElement("style");
-    s.id = "chica-intel-pop-css";
+    s.id = "chica-intel-card-css";
     s.textContent =
-      ".chica-intel-pop .leaflet-popup-content-wrapper{border-radius:14px;box-shadow:0 12px 28px rgba(18,18,18,.28)}" +
-      ".chica-opt{min-width:210px;max-width:260px;font:500 13px/1.35 Inter,system-ui,sans-serif;color:#1a1714}" +
-      ".chica-opt .tag{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#c513af}" +
-      ".chica-opt h3{margin:2px 0 0;font:800 14px/1.2 Inter,system-ui,sans-serif}" +
-      ".chica-opt .meta{color:#5c5348;font-size:11px}" +
-      ".chica-opt ul{list-style:none;margin:6px 0 0;padding:0}" +
-      ".chica-opt li{margin:8px 0 0;padding-top:8px;border-top:1px solid #ece6dc}" +
-      ".chica-dirs{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 0}" +
-      ".chica-dirs a{border:1px solid #c513af;border-radius:999px;padding:4px 10px;font-size:12px;color:#7a0f6c;text-decoration:none;font-weight:800}";
+      "#chica-intel-card{position:fixed;z-index:2147483646;width:min(280px,calc(100vw - 24px));max-height:min(70dvh,480px);overflow:auto;background:#fffdf8;color:#1a1714;border:1px solid #c513af;border-radius:14px;box-shadow:0 16px 40px rgba(18,18,18,.35);padding:12px 12px 14px;font:500 13px/1.35 Inter,system-ui,sans-serif}" +
+      "#chica-intel-card .hd{display:flex;justify-content:space-between;align-items:center;gap:8px}" +
+      "#chica-intel-card .tag{font:800 10px/1 Inter,system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#c513af}" +
+      "#chica-intel-card button.x{border:0;background:transparent;font:800 18px/1 Inter,system-ui,sans-serif;color:#1a1714;min-width:32px;min-height:32px}" +
+      "#chica-intel-card h3{margin:4px 0 0;font:800 15px/1.2 Inter,system-ui,sans-serif}" +
+      "#chica-intel-card .sub{color:#5c5348;font-size:12px;margin:2px 0 6px}" +
+      "#chica-intel-card ul{list-style:none;margin:8px 0 0;padding:0}" +
+      "#chica-intel-card li{margin:8px 0 0;padding-top:8px;border-top:1px solid #ece6dc}" +
+      "#chica-intel-card i{font-style:normal;color:#5c5348;font-size:11px}" +
+      "#chica-intel-card .acts{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 0}" +
+      "#chica-intel-card .acts a{border:1px solid #c513af;border-radius:999px;padding:4px 10px;font-size:12px;color:#7a0f6c;text-decoration:none;font-weight:800}" +
+      ".chica-intel-badge{position:absolute;right:-4px;top:-5px;width:12px;height:12px;border-radius:99px;background:#c513af;border:1px solid #fffdf8}";
     (document.head || document.documentElement).appendChild(s);
+  }
+
+  function card() {
+    var el = document.getElementById("chica-intel-card");
+    if (el) return el;
+    el = document.createElement("div");
+    el.id = "chica-intel-card";
+    el.setAttribute("role", "dialog");
+    el.setAttribute("aria-label", "Sale intel");
+    el.hidden = true;
+    document.documentElement.appendChild(el);
+    return el;
+  }
+
+  function closeCard() {
+    var el = document.getElementById("chica-intel-card");
+    if (el) el.hidden = true;
+  }
+
+  function placeCard(anchor) {
+    var el = card();
+    var x = 16, y = 72;
+    if (anchor && anchor.getBoundingClientRect) {
+      var r = anchor.getBoundingClientRect();
+      x = Math.min(window.innerWidth - 296, Math.max(8, r.right + 8));
+      y = Math.min(window.innerHeight - 220, Math.max(56, r.top));
+    }
+    el.style.left = x + "px";
+    el.style.top = y + "px";
+    el.hidden = false;
   }
 
   function html(title, lat, lon) {
@@ -108,103 +135,107 @@
       nearRow("Pantry", nearest("pantry", lat, lon)) +
       nearRow("Wi-Fi", nearest("wifi", lat, lon)) +
       nearRow("School zone", nearest("schools", lat, lon));
-    if (!items) items = '<li class="meta">Nothing mapped within 1.5 miles. Turn Parking / Wi-Fi / Pantries on in the Key to see them on the map.</li>';
+    if (!items) items = "<li>Nothing mapped within 1.5 miles yet.</li>";
     return (
-      '<div class="chica-opt"><span class="tag">Intel</span><h3>' + esc(title || "This stop") + "</h3>" +
-      '<div class="meta">Options around this driveway</div>' +
+      '<div class="hd"><span class="tag">Intel</span><button type="button" class="x" aria-label="Close intel">\u00d7</button></div>' +
+      "<h3>" + esc(title || "This stop") + "</h3>" +
+      '<div class="sub">Options around this driveway</div>' +
       dirs(lat, lon) +
-      "<ul>" + items + "</ul></div>"
+      "<ul>" + items + "</ul>"
     );
   }
 
-  function openIntel(lat, lon, title) {
-    popupCss();
-    var map = findMap(), L = window.L;
-    if (!map || !L || !L.popup) return false;
+  function openIntel(lat, lon, title, anchor) {
+    if (!intelOn()) return false;
+    css();
     lat = Number(lat); lon = Number(lon);
     if (!isFinite(lat) || !isFinite(lon)) return false;
-    L.popup({ maxWidth: 280, autoPan: true, className: "chica-intel-pop" })
-      .setLatLng([lat, lon])
-      .setContent(html(title, lat, lon))
-      .openOn(map);
+    var el = card();
+    el.innerHTML = html(title, lat, lon);
+    var xbtn = el.querySelector("button.x");
+    if (xbtn) xbtn.onclick = function (ev) { ev.preventDefault(); ev.stopPropagation(); closeCard(); };
+    placeCard(anchor);
     try { if (window.__chicaTrack) window.__chicaTrack("intel_pop"); } catch (e) {}
     return true;
   }
 
   function prefetch() {
     Object.keys(SRC).forEach(function (id) {
-      if (ready[id]) return;
-      ready[id] = true;
-      fetch(SRC[id] + "?v=11", { cache: "no-store" })
+      if (cache[id]) return;
+      fetch(SRC[id] + "?v=12", { cache: "no-store" })
         .then(function (r) { return r.ok ? r.json() : null; })
         .then(function (data) { cache[id] = data && data.features ? data.features : []; })
         .catch(function () { cache[id] = []; });
     });
   }
 
-  function stampBadges() {
-    var on = intelOn();
-    document.documentElement.classList.toggle("chica-intel-on", on);
-    var pins = document.querySelectorAll(".leaflet-marker-icon.chica-pin, .leaflet-marker-icon.chica-type-garage, .leaflet-marker-icon.chica-type-estate, .leaflet-marker-icon.chica-type-permit");
-    for (var i = 0; i < pins.length; i++) {
-      var host = pins[i];
-      if (host.querySelector(".chica-overlay-mark")) continue;
-      var badge = host.querySelector(".chica-intel-badge");
-      if (!badge) {
-        badge = document.createElement("span");
-        badge.className = "chica-intel-badge";
-        badge.setAttribute("aria-hidden", "true");
-        if (getComputedStyle(host).position === "static") host.style.position = "relative";
-        host.appendChild(badge);
-      }
-      badge.style.display = on ? "block" : "none";
-    }
+  function hookMarkers() {
+    var map = findMap();
+    if (!map || !map.eachLayer) return;
+    map.eachLayer(function (ly) {
+      if (!ly || !ly.getLatLng || ly._chicaIntelHook) return;
+      var cls = (ly.options && ly.options.icon && ly.options.icon.options && ly.options.icon.options.className) || "";
+      if (cls.indexOf("chica-pin") === -1 && cls.indexOf("chica-type-") === -1) return;
+      ly._chicaIntelHook = true;
+      ly.on("click", function (ev) {
+        if (!intelOn()) return;
+        var ll = ly.getLatLng();
+        var title = (ly.options && ly.options.title) || "Sale";
+        try { if (ev.originalEvent) { ev.originalEvent.preventDefault(); ev.originalEvent.stopPropagation(); } } catch (e) {}
+        openIntel(ll.lat, ll.lng, title, ly._icon);
+      });
+    });
   }
 
-  window.__chicaOpenIntel = function (lat, lon, title) {
+  window.__chicaOpenIntel = function (lat, lon, title, anchor) {
     prefetch();
-    return openIntel(lat, lon, title);
+    return openIntel(lat, lon, title, anchor);
   };
-  window.__chicaIntelOn = intelOn;
-  window.__chicaStampIntel = stampBadges;
 
   prefetch();
+  css();
   document.documentElement.classList.add("chica-intel-on");
 
   document.addEventListener("click", function (ev) {
-    if (!intelOn()) return;
     var t = ev.target;
     if (!t || !t.closest) return;
-    if (t.closest(".leaflet-popup") || t.closest("#chica-force-key") || t.closest("#chica-key") || t.closest("#chica-hunt-bar") || t.closest("#chica-listit-btn")) return;
-    var pin = t.closest(".leaflet-marker-icon, .chica-sym, .chica-pin");
-    if (!pin) return;
+    if (t.closest("#chica-intel-card")) return;
+    if (t.closest("#chica-force-key") || t.closest("#chica-hunt-bar") || t.closest("#chica-listit-btn")) {
+      closeCard();
+      return;
+    }
+    var pin = t.closest(".leaflet-marker-icon");
+    if (!pin) {
+      closeCard();
+      return;
+    }
     if (pin.querySelector && pin.querySelector(".chica-overlay-mark")) return;
+    if (!intelOn()) return;
     var map = findMap();
-    if (!map || !map.containerPointToLatLng) return;
-    var wrap = pin.closest(".leaflet-marker-icon") || pin;
-    var rect = wrap.getBoundingClientRect();
-    var box = map.getContainer().getBoundingClientRect();
-    var ll;
-    try {
-      ll = map.containerPointToLatLng([
-        rect.left + rect.width / 2 - box.left,
-        rect.top + rect.height / 2 - box.top
-      ]);
-    } catch (e) { return; }
+    var title = pin.getAttribute("title") || "Sale";
+    var lat = null, lon = null;
+    if (map && map.containerPointToLatLng) {
+      var rect = pin.getBoundingClientRect();
+      var box = map.getContainer().getBoundingClientRect();
+      try {
+        var ll = map.containerPointToLatLng([
+          rect.left + rect.width / 2 - box.left,
+          rect.top + rect.height / 2 - box.top
+        ]);
+        lat = ll.lat; lon = ll.lng;
+      } catch (e) {}
+    }
+    if (lat == null) return;
     ev.preventDefault();
     ev.stopPropagation();
-    openIntel(ll.lat, ll.lng, wrap.getAttribute("title") || wrap.getAttribute("alt") || "Sale");
+    openIntel(lat, lon, title, pin);
   }, true);
 
-  window.addEventListener("chica-intel", function () {
-    prefetch();
-    stampBadges();
-  });
-
+  window.addEventListener("chica-intel", hookMarkers);
   var n = 0;
   var id = setInterval(function () {
-    stampBadges();
+    hookMarkers();
     n += 1;
-    if (n > 40) clearInterval(id);
-  }, 250);
+    if (n > 60) clearInterval(id);
+  }, 200);
 })();
