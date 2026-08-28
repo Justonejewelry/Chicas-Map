@@ -39,6 +39,14 @@
     }
     return null;
   }
+  function hideDupKey() {
+    var extra = document.getElementById("chica-key");
+    if (extra && document.getElementById("chica-force-key")) {
+      extra.style.setProperty("display", "none", "important");
+      extra.style.setProperty("visibility", "hidden", "important");
+      extra.style.setProperty("pointer-events", "none", "important");
+    }
+  }
   if (w.L && w.L.Map && w.L.Map.addInitHook) {
     try {
       w.L.Map.addInitHook(function () { w.__chicaLeaflet = this; });
@@ -51,8 +59,9 @@
     var n = 0;
     var id = setInterval(function () {
       findMap();
+      hideDupKey();
       n += 1;
-      if (n > 80 || w.__chicaLeaflet) clearInterval(id);
+      if (n > 80 && w.__chicaLeaflet) clearInterval(id);
     }, 250);
   }
 })(window);
