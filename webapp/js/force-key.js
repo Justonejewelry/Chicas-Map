@@ -36,8 +36,9 @@
       "#chica-force-key button.tog{border:0;background:transparent;color:#f3eee4;font:700 18px/1 Inter,system-ui,sans-serif;min-width:28px}" +
       "#chica-force-key ul{list-style:none;margin:8px 0 0;padding:0}" +
       "#chica-force-key li{display:flex;align-items:center;gap:8px;padding:6px 4px;border-radius:8px;cursor:pointer;min-height:32px}" +
-      "#chica-key,aside[aria-label=Key]:not(#chica-force-key),aside[aria-label=key]:not(#chica-force-key),[data-chica-legend]{display:none!important}" +
-      ".leaflet-control-layers{display:none!important}";
+      "#chica-key,aside[aria-label=Key]:not(#chica-force-key),aside[aria-label=key]:not(#chica-force-key),[data-chica-legend]{display:none!important;visibility:hidden!important;pointer-events:none!important}" +
+      ".leaflet-control-layers{display:none!important}" +
+      "#chica-hunt-bar,#chica-listit-btn,#chica-fs-btn,#chica-map-chrome{pointer-events:auto!important;z-index:2147483647!important}";
     (document.head || document.documentElement).appendChild(s);
   }
   function killDup() {

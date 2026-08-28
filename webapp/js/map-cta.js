@@ -2,8 +2,8 @@
 (function () {
   var p = location.pathname || "";
   if (!(/\/map\/?$/.test(p) || p.indexOf("/map/") !== -1)) return;
-  var FACE = "/Chicas-Map/images/chica-logo.png";
-  var HREF = "/Chicas-Map/claim";
+  var FACE = window.__CHICA_PEEK_URI || "/Chicas-Map/images/chica-logo.png";
+  var HREF = "/Chicas-Map/claim/";
 
   function css() {
     if (document.getElementById("chica-cta-pop")) return;
