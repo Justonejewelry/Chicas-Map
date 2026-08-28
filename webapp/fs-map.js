@@ -9,7 +9,14 @@
   var HTML_ON = "chica-fs-on";
   var CLAIM_HREF = "/Chicas-Map/claim";
   var SVG_NS = "http://www.w3.org/2000/svg";
+  var PEEK_MS = 2200;
+  var PEEK_EVERY = 18000;
+  var PEEK_CHANCE = 0.35;
   var ready = false;
+  var peekTimer = 0;
+  var peekOn = false;
+  var LABEL_HTML = "<span>List it.</span><span>Sell it.</span><span>Done.</span>";
+  var PEEK_URI = window.__CHICA_PEEK_URI || "";
 
   function fsMark(compress) {
     var svg = document.createElementNS(SVG_NS, "svg");
@@ -58,9 +65,14 @@
       "text-decoration:none;text-align:center;line-height:1.15;",
       "font:800 11px/1.15 Inter,system-ui,sans-serif;letter-spacing:.01em;",
       "box-shadow:0 10px 28px rgb(197 19 175 / .55),0 0 0 3px rgb(197 19 175 / .28);",
-      "visibility:visible!important;opacity:1!important;pointer-events:auto!important",
+      "visibility:visible!important;opacity:1!important;pointer-events:auto!important;overflow:hidden",
       "}",
       "#" + LIST_ID + " span{display:block}",
+      "#" + LIST_ID + " img.chica-peek{",
+      "position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 70%;",
+      "pointer-events:none;border-radius:14px",
+      "}",
+      "#" + LIST_ID + ".peeking span{visibility:hidden}",
       "#" + INTEL_ID + "{display:none!important;visibility:hidden!important;pointer-events:none!important}",
       "html." + HTML_ON + ",html." + HTML_ON + " body{overflow:hidden!important;height:100dvh!important;overscroll-behavior:none}",
       "html." + HTML_ON + " :has(> .chica-map),html." + HTML_ON + " :has(> .leaflet-container){",
@@ -165,6 +177,45 @@
     if (a) a.remove();
   }
 
+  function peekSrc() {
+    return PEEK_URI || window.__CHICA_PEEK_URI || "";
+  }
+
+  function showPeek(a) {
+    var src = peekSrc();
+    if (!a || peekOn || !src) return;
+    peekOn = true;
+    a.classList.add("peeking");
+    var img = a.querySelector("img.chica-peek");
+    if (!img) {
+      img = document.createElement("img");
+      img.className = "chica-peek";
+      img.alt = "";
+      img.setAttribute("aria-hidden", "true");
+      a.appendChild(img);
+    }
+    img.src = src;
+    img.style.display = "block";
+    setTimeout(function () { hidePeek(a); }, PEEK_MS);
+  }
+
+  function hidePeek(a) {
+    peekOn = false;
+    if (!a) a = document.getElementById(LIST_ID);
+    if (!a) return;
+    a.classList.remove("peeking");
+    var img = a.querySelector("img.chica-peek");
+    if (img) img.style.display = "none";
+  }
+
+  function armPeek(a) {
+    if (peekTimer) clearInterval(peekTimer);
+    peekTimer = setInterval(function () {
+      if (Math.random() < PEEK_CHANCE) showPeek(a);
+    }, PEEK_EVERY);
+    setTimeout(function () { showPeek(a); }, 2400);
+  }
+
   function ensureListIt() {
     var chrome = ensureChrome();
     var a = document.getElementById(LIST_ID);
@@ -174,12 +225,17 @@
       a.href = CLAIM_HREF;
       a.setAttribute("aria-label", "List it. Sell it. Done. $5 pin");
       a.title = "Pin it · $5";
-      a.innerHTML = "<span>List it.</span><span>Sell it.</span><span>Done.</span>";
+      a.innerHTML = LABEL_HTML;
       chrome.appendChild(a);
     } else if (a.parentNode !== chrome) {
       chrome.appendChild(a);
     }
     if (a.getAttribute("href") !== CLAIM_HREF) a.setAttribute("href", CLAIM_HREF);
+    if (!a.querySelector("span")) a.innerHTML = LABEL_HTML;
+    if (!a.getAttribute("data-peek-armed")) {
+      a.setAttribute("data-peek-armed", "1");
+      armPeek(a);
+    }
     return a;
   }
 
@@ -226,6 +282,7 @@
   }
 
   function teardownFs() {
+    if (peekTimer) { clearInterval(peekTimer); peekTimer = 0; }
     var leftover = document.getElementById(BTN_ID);
     if (leftover) leftover.remove();
     var list = document.getElementById(LIST_ID);
