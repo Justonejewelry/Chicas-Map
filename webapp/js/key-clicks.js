@@ -1,4 +1,4 @@
-/* Document-level KEY clicks. React owns the panel; we steal the taps. */
+/* Document-level KEY clicks. React owns one panel; force-key owns the other. */
 (function () {
   function onMapPath() {
     var p = location.pathname || "";
@@ -34,7 +34,7 @@
   }
   function looksLikeKey(el) {
     if (!el) return false;
-    if (el.id === "chica-key") return true;
+    if (el.id === "chica-key" || el.id === "chica-force-key") return true;
     var t = el.innerText || "";
     return /Garage sale/i.test(t) && /Satellite/i.test(t);
   }
@@ -52,8 +52,8 @@
     return null;
   }
   function dimRow(id, on) {
-    var row = document.querySelector('#chica-key [data-chica-layer="' + id + '"]');
-    if (row) row.style.opacity = on ? "1" : "0.38";
+    var rows = document.querySelectorAll('[data-chica-layer="' + id + '"]');
+    for (var i = 0; i < rows.length; i++) rows[i].style.opacity = on ? "1" : "0.38";
   }
   function addOverlay(id, feats) {
     var map = findMap(), L = window.L;
@@ -117,38 +117,20 @@
         if (pins[i].querySelector && pins[i].querySelector(".chica-overlay-mark")) continue;
         var html = pins[i].innerHTML || "";
         var match = false;
-        if (id === "estate" && html.indexOf("polygon points=") !== -1 && html.indexOf("1.6") !== -1) match = true;
-        else if (id === "permit" && html.indexOf("polygon points=") !== -1 && html.indexOf("2.2") !== -1) match = true;
+        if (id === "estate" && html.indexOf("polygon points=") !== -1) match = true;
+        else if (id === "permit" && html.indexOf("polygon points=") !== -1) match = true;
         else if (id === "garage" && html.indexOf("circle cx") !== -1) match = true;
         if (match) pins[i].style.display = hide ? "none" : "";
       }
     }
   }
-  function hijack() {
-    var nodes = document.querySelectorAll("aside, #chica-key, [aria-label='Key'], [aria-label='key']");
-    var host = null;
-    for (var i = 0; i < nodes.length; i++) {
-      if (!looksLikeKey(nodes[i])) continue;
-      host = nodes[i];
-      try { host.id = "chica-key"; } catch (e) {}
-      host.style.setProperty("pointer-events", "auto", "important");
-      host.style.setProperty("z-index", "2147483646", "important");
-      break;
-    }
-    if (!host) return null;
-    var rows = host.querySelectorAll("li, button, [role='switch'], label");
-    for (var r = 0; r < rows.length; r++) {
-      var id = rows[r].getAttribute("data-chica-layer") || labelToId(rows[r].textContent);
-      if (id) rows[r].setAttribute("data-chica-layer", id);
-    }
-    return host;
-  }
+  window.__chicaToggleLayer = function (id) { fallbackToggle(id); };
   document.addEventListener("click", function (ev) {
     var t = ev.target;
     if (!t || !t.closest) return;
-    var host = t.closest("#chica-key, aside");
+    var host = t.closest("#chica-force-key, #chica-key, aside");
     if (!looksLikeKey(host)) return;
-    if (t.closest(".chica-key-toggle")) return;
+    if (t.closest(".tog, .chica-key-toggle")) return;
     var row = t.closest("[data-chica-layer], li, button, [role='switch'], label");
     var id = (row && row.getAttribute && row.getAttribute("data-chica-layer")) || "";
     if (!id && row) id = labelToId(row.textContent);
@@ -157,9 +139,6 @@
     ev.preventDefault();
     ev.stopPropagation();
     if (ev.stopImmediatePropagation) ev.stopImmediatePropagation();
-    if (typeof window.__chicaToggleLayer === "function") window.__chicaToggleLayer(id);
-    else fallbackToggle(id);
+    fallbackToggle(id);
   }, true);
-  hijack();
-  setInterval(hijack, 800);
 })();
