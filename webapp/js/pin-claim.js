@@ -47,7 +47,7 @@
   }
 
   function mount() {
-    if (onClaim()) {
+    if (onClaim() || onMap()) {
       var leftover = document.getElementById(BAR_ID);
       if (leftover) leftover.remove();
       return;
