@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>This weekend’s sales · Chicas Map</title>
+  <meta name="description" content="San Antonio garage, yard, and estate sales for this weekend. Open a pin on the map." />
+  <link rel="icon" type="image/svg+xml" href="/Chicas-Map/favicon.svg" />
+  <style>
+    :root { color-scheme: dark; }
+    body { margin: 0; font-family: Inter, system-ui, sans-serif; background: #121212; color: #f3eee4; }
+    main { max-width: 720px; margin: 0 auto; padding: 28px 18px 80px; }
+    a { color: #c513af; }
+    h1 { font-family: Syne, Inter, sans-serif; margin: 8px 0 6px; }
+    .meta { color: #c4b8a8; }
+    .row { display: block; padding: 14px 0; border-bottom: 1px solid #2a2622; text-decoration: none; color: inherit; }
+    .row:hover { color: #fff; }
+    .kind { font-size: 11px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: #c513af; }
+    .nav { display: flex; gap: 14px; margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="meta">Chicas Map · San Antonio</p>
+    <h1>This weekend’s sales</h1>
+    <p class="meta" id="status">Loading the live feed…</p>
+    <p class="nav"><a href="/Chicas-Map/map">Open the map</a> · <a href="/Chicas-Map/submit">List a sale</a> · <a href="/Chicas-Map/claim/">$5 pin</a></p>
+    <div id="list"></div>
+  </main>
+  <script>
+    (function () {
+      var box = document.getElementById("list");
+      var status = document.getElementById("status");
+      fetch("/Chicas-Map/data/cities/san-antonio.json", { cache: "no-store" })
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (data) {
+          var sales = [];
+          if (Array.isArray(data)) sales = data;
+          else if (data && Array.isArray(data.sales)) sales = data.sales;
+          else if (data && Array.isArray(data.features)) {
+            sales = data.features.map(function (f) {
+              var p = f.properties || {};
+              var c = (f.geometry && f.geometry.coordinates) || [];
+              return {
+                title: p.title || p.name || "Sale",
+                type: p.type || p.kind || "garage",
+                address: p.address || p.addr || "",
+                lat: c[1], lon: c[0]
+              };
+            });
+          } else if (data && Array.isArray(data.public)) {
+            sales = [].concat(data.public || [], data.permits || []);
+          }
+          status.textContent = sales.length
+            ? sales.length + " stops in the live San Antonio feed."
+            : "Feed loaded but this file is not a listing array. Use the map.";
+          box.innerHTML = sales.slice(0, 120).map(function (s) {
+            var title = s.title || s.name || "Sale";
+            var kind = s.type || s.kind || "sale";
+            var addr = s.address || s.addr || "";
+            var href = "/Chicas-Map/map";
+            if (s.lat && s.lon) href += "?lat=" + s.lat + "&lon=" + s.lon;
+            return '<a class="row" href="' + href + '"><div class="kind">' + kind + '</div><strong>' + title + '</strong><div class="meta">' + addr + '</div></a>';
+          }).join("");
+        })
+        .catch(function () {
+          status.textContent = "Could not load the feed. Open the map instead.";
+        });
+    })();
+  </script>
+</body>
+</html>
