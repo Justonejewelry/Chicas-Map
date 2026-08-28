@@ -67,7 +67,7 @@
     if (document.getElementById("chica-key-style")) return;
     var s = document.createElement("style");
     s.id = "chica-key-style";
-    s.textContent = "#chica-key{display:block!important;visibility:visible!important;opacity:1!important;position:fixed!important;left:12px!important;bottom:calc(16px + env(safe-area-inset-bottom,0px))!important;z-index:2147483646!important;width:min(228px,calc(100vw - 24px));max-height:min(58dvh,440px);overflow:auto;background:#1a1714f2;color:#f3eee4;border:1px solid #3a342e;border-radius:16px;font:500 12px/1.25 Inter,system-ui,sans-serif;padding:8px 10px 10px}#chica-key[data-collapsed=true]{max-height:44px;overflow:hidden}#chica-key ul{list-style:none;margin:0;padding:0}#chica-key li{display:flex;align-items:center;gap:8px;padding:5px 4px;border-radius:8px;cursor:pointer;min-height:32px}.chica-intel-badge{position:absolute;right:-5px;top:-6px;width:14px;height:14px;border-radius:999px;background:#c513af;display:none}html.chica-intel-on .chica-intel-badge{display:block}.chica-overlay-pin{border:0;background:transparent}.chica-opt{font:500 12px/1.35 Inter,system-ui,sans-serif;color:#1a1714;min-width:200px}.chica-opt h3{margin:0 0 4px;font:800 13px/1.2 Inter,system-ui,sans-serif}.chica-opt .meta{color:#5c5348;font-size:11px}.chica-opt .acts{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}.chica-opt a.chip{border:1px solid #c513af;border-radius:999px;padding:3px 8px;font-size:11px;color:#7a0f6c;text-decoration:none;font-weight:700}.chica-opt .near{list-style:none;margin:6px 0 0;padding:0}.chica-opt .near li{margin:6px 0 0;padding-top:6px;border-top:1px solid #ece6dc}.chica-opt .tag{font-size:10px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:#7a0f6c}button.chica-dup-chip,.chica-dup-chip,#chica-pin-claim{display:none!important}aside[aria-label=Key]:not(#chica-key),aside[aria-label=key]:not(#chica-key),[data-chica-legend]{display:none!important}.leaflet-top.leaflet-left,.leaflet-control-layers,#chica-intel-btn{display:none!important}";
+    s.textContent = "#chica-key{display:block!important;visibility:visible!important;opacity:1!important;position:fixed!important;left:12px!important;bottom:calc(16px + env(safe-area-inset-bottom,0px))!important;z-index:2147483646!important;width:min(228px,calc(100vw - 24px));max-height:min(58dvh,440px);overflow:auto;background:#1a1714f2;color:#f3eee4;border:1px solid #3a342e;border-radius:16px;font:500 12px/1.25 Inter,system-ui,sans-serif;padding:8px 10px 10px}#chica-key[data-collapsed=true]{max-height:44px;overflow:hidden}#chica-key ul{list-style:none;margin:0;padding:0}#chica-key li{display:flex;align-items:center;gap:8px;padding:5px 4px;border-radius:8px;cursor:pointer;min-height:32px}.chica-intel-badge{position:absolute;right:-5px;top:-6px;width:14px;height:14px;border-radius:999px;background:#c513af;display:none}html.chica-intel-on .chica-intel-badge{display:block}.chica-overlay-pin{border:0;background:transparent}.chica-opt{font:500 12px/1.35 Inter,system-ui,sans-serif;color:#1a1714;min-width:200px}.chica-opt h3{margin:0 0 4px;font:800 13px/1.2 Inter,system-ui,sans-serif}.chica-opt .meta{color:#5c5348;font-size:11px}.chica-opt .acts{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}.chica-opt a.chip{border:1px solid #c513af;border-radius:999px;padding:3px 8px;font-size:11px;color:#7a0f6c;text-decoration:none;font-weight:700}.chica-opt .near{list-style:none;margin:6px 0 0;padding:0}.chica-opt .near li{margin:6px 0 0;padding-top:6px;border-top:1px solid #ece6dc}.chica-opt .tag{font-size:10px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:#7a0f6c}button.chica-dup-chip,.chica-dup-chip,#chica-pin-claim,#chica-intel-btn{display:none!important}aside[aria-label=Key]:not(#chica-key),aside[aria-label=key]:not(#chica-key),[data-chica-legend]{display:none!important}.leaflet-control-layers{display:none!important}#chica-fs-btn,#chica-listit-btn,#chica-map-chrome{display:flex!important;visibility:visible!important;opacity:1!important;pointer-events:auto!important}.leaflet-container,.chica-map{visibility:visible!important}";
     (document.head || document.documentElement).appendChild(s);
   }
   function ensurePanel() {
@@ -300,15 +300,16 @@
   function hideDup() {
     var bar = document.getElementById("chica-pin-claim"); if (bar) bar.remove();
     var a = document.getElementById("chica-intel-btn"); if (a) a.remove();
-    var panels = document.querySelectorAll("aside, section, div");
-    for (var n = 0; n < panels.length; n++) {
-      var box = panels[n];
-      if (box.id === "chica-key" || (box.closest && box.closest("#chica-key"))) continue;
-      var txt = (box.textContent || "").replace(/\s+/g, " ");
-      if (/Garage sale/.test(txt) && /Estate sale/.test(txt) && /City permit/.test(txt) && txt.length < 420) {
-        box.style.setProperty("display", "none", "important");
-      }
+  }
+  function restoreMap() {
+    var map = document.querySelector(".leaflet-container") || document.querySelector(".chica-map");
+    if (!map) return;
+    var n = map;
+    while (n && n !== document.body) {
+      if (n.style && n.style.display === "none") n.style.removeProperty("display");
+      n = n.parentElement;
     }
+    document.documentElement.classList.add("chica-fs-on");
   }
   function restoreOverlays() {
     for (var i = 0; i < LAYERS.length; i++) { var spec = LAYERS[i]; if (spec.kind === "overlay" && state[spec.id]) setOverlay(spec.id, true, spec); }
@@ -317,7 +318,7 @@
     if (!onMapPath()) return;
     ensureStyle();
     var p = ensurePanel(); if (!p) return;
-    ensureOverlays(p); hideDup(); applyPins(); applyIntel(); applySat(); applyClaimed(); restoreOverlays(); wireIntelClicks();
+    ensureOverlays(p); hideDup(); restoreMap(); applyPins(); applyIntel(); applySat(); applyClaimed(); restoreOverlays(); wireIntelClicks();
   }
   function boot() { wire(); setInterval(wire, 900); }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot); else boot();
