@@ -1,4 +1,4 @@
-/* Chicas Map — header dock: thick fullscreen mark + white Intel brain.
+/* Chicas Map — header dock: fullscreen only. Intel lives on the KEY.
    Buttons live on document.body (React cannot steal them).
    Immersive mode uses html.chica-fs-on (React never overwrites that).
    iOS has no native Fullscreen API — CSS is the real path. */
@@ -8,25 +8,8 @@
   var INTEL_ID = "chica-intel-btn";
   var STYLE_ID = "chica-fs-inline-style";
   var HTML_ON = "chica-fs-on";
-  var INTEL_HREF = "/Chicas-Map/intel/";
-  var INTEL_ICON = "/Chicas-Map/images/intel-brain.svg?v=2";
   var SVG_NS = "http://www.w3.org/2000/svg";
   var ready = false;
-
-  function intelMark() {
-    var img = document.createElement("img");
-    img.className = "chica-intel-mark";
-    img.src = INTEL_ICON;
-    img.alt = "";
-    img.width = 32;
-    img.height = 32;
-    return img;
-  }
-
-  function fillIntel(a) {
-    while (a.firstChild) a.removeChild(a.firstChild);
-    a.appendChild(intelMark());
-  }
 
   function fsMark(compress) {
     var svg = document.createElementNS(SVG_NS, "svg");
@@ -58,19 +41,17 @@
       "z-index:2147483647!important;display:flex!important;align-items:center;gap:8px;height:48px;pointer-events:none;",
       "}",
       "#" + CHROME_ID + ">*{pointer-events:auto}",
-      "#" + BTN_ID + ",#" + INTEL_ID + "{",
+      "#" + BTN_ID + "{",
       "position:relative!important;top:auto!important;right:auto!important;left:auto!important;bottom:auto!important;",
       "z-index:1!important;width:48px;min-width:48px;height:48px;padding:0;",
       "border:2px solid #fffdf8;border-radius:16px;color:#fff;",
       "cursor:pointer;display:flex!important;align-items:center;justify-content:center;",
       "visibility:visible!important;opacity:1!important;pointer-events:auto!important;text-decoration:none;",
-      "}",
-      "#" + BTN_ID + "{background:#1a1a1e;box-shadow:0 8px 22px rgb(0 0 0 / .38),0 0 0 3px rgb(197 19 175 / .28)}",
+      "background:#1a1a1e;box-shadow:0 8px 22px rgb(0 0 0 / .38),0 0 0 3px rgb(197 19 175 / .28)}",
       "#" + BTN_ID + "[aria-pressed=\"true\"]{background:#c513af;box-shadow:0 10px 28px rgb(197 19 175 / .55),0 0 0 3px rgb(197 19 175 / .28)}",
-      "#" + INTEL_ID + "{background:#c513af;box-shadow:0 10px 28px rgb(197 19 175 / .55),0 0 0 3px rgb(197 19 175 / .28)}",
-      "#" + BTN_ID + ":hover,#" + INTEL_ID + ":hover{filter:brightness(1.08)}",
+      "#" + BTN_ID + ":hover{filter:brightness(1.08)}",
       "#" + BTN_ID + " .chica-fs-mark{width:26px;height:26px;display:block}",
-      "#" + INTEL_ID + " .chica-intel-mark{width:32px;height:32px;flex:0 0 32px;display:block;object-fit:contain}",
+      "#" + INTEL_ID + "{display:none!important;visibility:hidden!important;pointer-events:none!important}",
       "html." + HTML_ON + ",html." + HTML_ON + " body{overflow:hidden!important;height:100dvh!important;overscroll-behavior:none}",
       "html." + HTML_ON + " :has(> .chica-map),html." + HTML_ON + " :has(> .leaflet-container){",
       "position:fixed!important;inset:0!important;z-index:99990!important;",
@@ -89,11 +70,6 @@
   function onMapPath() {
     var p = location.pathname || "";
     return /\/map\/?$/.test(p) || p.indexOf("/map/") !== -1;
-  }
-
-  function onIntelPath() {
-    var p = location.pathname || "";
-    return /\/intel\/?$/.test(p) || p.indexOf("/intel/") !== -1;
   }
 
   function mapEl() {
@@ -180,32 +156,9 @@
     return chrome;
   }
 
-  function ensureIntel() {
-    if (onIntelPath()) {
-      var leftover = document.getElementById(INTEL_ID);
-      if (leftover) leftover.remove();
-      return null;
-    }
-    if (!onMapPath()) {
-      var off = document.getElementById(INTEL_ID);
-      if (off) off.remove();
-      return null;
-    }
-    var chrome = ensureChrome();
+  function killIntelIcon() {
     var a = document.getElementById(INTEL_ID);
-    if (!a) {
-      a = document.createElement("a");
-      a.id = INTEL_ID;
-      a.href = INTEL_HREF;
-      a.setAttribute("aria-label", "Chicas Sale Intel");
-      fillIntel(a);
-      chrome.appendChild(a);
-    } else if (a.parentNode !== chrome) {
-      chrome.appendChild(a);
-    }
-    a.classList.add("on-map");
-    if (!a.querySelector(".chica-intel-mark") || a.textContent.trim()) fillIntel(a);
-    return a;
+    if (a) a.remove();
   }
 
   function ensureBtn() {
@@ -257,8 +210,9 @@
   function teardownFs() {
     var leftover = document.getElementById(BTN_ID);
     if (leftover) leftover.remove();
+    killIntelIcon();
     var chrome = document.getElementById(CHROME_ID);
-    if (chrome && !document.getElementById(INTEL_ID)) chrome.remove();
+    if (chrome && !chrome.children.length) chrome.remove();
     document.documentElement.classList.remove(HTML_ON);
     document.body.style.overflow = "";
     ready = false;
@@ -266,11 +220,9 @@
 
   function mount() {
     ensureStyle();
-    ensureIntel();
+    killIntelIcon();
     if (!onMapPath()) {
       teardownFs();
-      var chrome = document.getElementById(CHROME_ID);
-      if (chrome && !chrome.children.length) chrome.remove();
       return Boolean(mapEl()) || true;
     }
     if (!mapEl()) return false;
