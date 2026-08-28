@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>Sale Intel · Chicas Map</title>
+    <title>Sale Intel \u00b7 Chicas Map</title>
     <meta
       name="description"
       content="GPS-gated driveway notes for San Antonio garage sales. Sharing unlocks within 200 feet. Rumors stay on the porch."
@@ -16,38 +16,6 @@
     />
     <link rel="icon" type="image/svg+xml" href="/Chicas-Map/favicon.svg" />
     <link rel="apple-touch-icon" href="/Chicas-Map/__grok/icon-180.png" />
-    <link rel="manifest" href="/Chicas-Map/__grok/manifest.webmanifest" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
-    <script>
-      (function () {
-        try {
-          var t = localStorage.getItem("chicas-map-theme");
-          if (t === "light" || t === "dark") {
-            document.documentElement.setAttribute("data-theme", t);
-            document.documentElement.style.colorScheme = t;
-          }
-        } catch (e) {}
-      })();
-    </script>
-    <script>
-      (function () {
-        try {
-          var k = "chicas-map-locale";
-          var t = localStorage.getItem(k);
-          if (t !== "es" && t !== "en") {
-            var langs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || "en"];
-            t = "en";
-            for (var i = 0; i < langs.length; i++) {
-              var b = String(langs[i] || "").toLowerCase().split("-")[0];
-              if (b === "es") { t = "es"; break; }
-              if (b === "en") { t = "en"; break; }
-            }
-          }
-          document.documentElement.lang = t;
-        } catch (e) {}
-      })();
-    </script>
   </head>
   <body class="bg-bg text-ink min-h-dvh font-sans">
     <a
@@ -65,71 +33,27 @@
         <nav class="hidden items-center gap-1 lg:flex" aria-label="Primary">
           <a href="/Chicas-Map/" class="rounded-full px-3 py-2 text-sm font-semibold text-muted hover:bg-paper hover:text-ink">Home</a>
           <a href="/Chicas-Map/map" class="rounded-full px-3 py-2 text-sm font-semibold text-muted hover:bg-paper hover:text-ink">Map</a>
-          <a href="/Chicas-Map/facebook" class="rounded-full px-3 py-2 text-sm font-semibold text-muted hover:bg-paper hover:text-ink">Facebook</a>
-          <a href="/Chicas-Map/sponsors" class="rounded-full px-3 py-2 text-sm font-semibold text-muted hover:bg-paper hover:text-ink">Sponsors</a>
         </nav>
-        <div class="flex items-center gap-2">
-          <div class="hidden items-center rounded-full bg-paper p-0.5 ring-1 ring-line sm:flex" role="group" aria-label="Language">
-            <button type="button" data-lang="en" class="lang-btn rounded-full px-2.5 py-1 text-xs font-bold">EN</button>
-            <button type="button" data-lang="es" class="lang-btn rounded-full px-2.5 py-1 text-xs font-bold">ES</button>
-          </div>
-          <button
-            type="button"
-            id="theme-toggle"
-            class="inline-flex size-11 items-center justify-center rounded-full bg-paper text-ink ring-1 ring-line hover:ring-pine"
-            aria-label="Toggle theme"
-          >
-            <span aria-hidden="true">Sun</span>
-          </button>
-          <a
-            href="/Chicas-Map/sponsors"
-            class="hidden h-11 min-h-11 items-center rounded-full bg-paper px-4 text-sm font-semibold text-ink ring-1 ring-line hover:bg-pine-soft hover:ring-pine sm:inline-flex"
-            >Sponsor</a
-          >
-          <a
-            href="/Chicas-Map/submit"
-            class="hidden h-11 min-h-11 items-center rounded-full bg-paper px-4 text-sm font-semibold text-ink ring-1 ring-line hover:bg-pine-soft hover:ring-pine md:inline-flex"
-            >Add a sale</a
-          >
-          <a
-            href="/Chicas-Map/intel/"
-            aria-current="page"
-            class="inline-flex h-11 min-h-11 items-center gap-2 rounded-full bg-pine px-4 text-sm font-semibold text-cream shadow-[var(--shadow-cta)]"
-          >
-            <img src="/Chicas-Map/images/intel-brain.svg" alt="" width="16" height="15" class="size-4" />
-            Intel
-          </a>
-        </div>
+        <a
+          href="/Chicas-Map/map"
+          class="inline-flex h-11 min-h-11 items-center rounded-full bg-pine px-4 text-sm font-semibold text-cream"
+        >Open the map</a>
       </div>
     </header>
 
     <main id="main" class="mx-auto max-w-6xl px-5 py-8 sm:py-10">
-      <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-        <div class="flex items-start gap-4">
-          <img
-            src="/Chicas-Map/images/chica-logo.png"
-            alt=""
-            class="size-16 rounded-full bg-bg object-cover sm:size-20"
-          />
-          <div>
-            <p class="inline-flex items-center rounded-full bg-pine-soft px-3 py-1 text-[0.65rem] font-bold tracking-[0.16em] text-pine-mid uppercase">
-              GPS-gated · 200 ft
-            </p>
-            <h1 class="mt-3 font-display text-4xl font-extrabold tracking-tight sm:text-5xl">
-              Chicas Sale Intel
-            </h1>
-            <p id="lede" class="mt-2 max-w-lg text-muted">
-              Notes from people who are actually at the sale. Parking, cash, what’s left — sharing unlocks within 200 feet. Rumors stay on the porch.
-            </p>
-          </div>
-        </div>
-        <div class="flex flex-wrap items-center gap-3">
-          <a
-            id="open-intel"
-            href="/Chicas-Map/map"
-            class="inline-flex h-14 min-h-14 items-center justify-center rounded-full bg-pine px-7 text-base font-semibold text-cream shadow-[var(--shadow-cta)] hover:bg-pine-mid"
-            >Open Sale Intel</a
-          >
+      <div class="flex items-start gap-4">
+        <img src="/Chicas-Map/images/chica-logo.png" alt="" class="size-16 rounded-full bg-bg object-cover sm:size-20" />
+        <div>
+          <p class="inline-flex items-center rounded-full bg-pine-soft px-3 py-1 text-[0.65rem] font-bold tracking-[0.16em] text-pine-mid uppercase">
+            GPS-gated \u00b7 200 ft
+          </p>
+          <h1 class="mt-3 font-display text-4xl font-extrabold tracking-tight sm:text-5xl">
+            Chicas Sale Intel
+          </h1>
+          <p class="mt-2 max-w-lg text-muted">
+            Notes from people who are actually at the sale. Parking, cash, what is left. Sharing unlocks within 200 feet. Rumors stay on the porch.
+          </p>
         </div>
       </div>
 
@@ -142,19 +66,19 @@
         <li class="rounded-xl bg-paper p-5 ring-1 ring-line">
           <p class="text-xs font-bold tracking-[0.12em] text-pine-mid uppercase">02</p>
           <h2 class="mt-2 font-display text-xl font-bold">Leave a driveway note</h2>
-          <p class="mt-2 text-sm text-muted">Stock, parking, prices, cash-only. A sidewalk handle — not a login.</p>
+          <p class="mt-2 text-sm text-muted">Stock, parking, prices, cash-only. A sidewalk handle \u2014 not a login.</p>
         </li>
         <li class="rounded-xl bg-paper p-5 ring-1 ring-line">
           <p class="text-xs font-bold tracking-[0.12em] text-pine-mid uppercase">03</p>
           <h2 class="mt-2 font-display text-xl font-bold">The pack reads it first</h2>
-          <p class="mt-2 text-sm text-muted">Intel sits next to the verified pin. Map finds the sale. Intel tells you if it’s worth the loop.</p>
+          <p class="mt-2 text-sm text-muted">Intel sits on the pin card. Map finds the sale. Intel tells you if it is worth the loop.</p>
         </li>
       </ul>
 
       <section class="mt-10 rounded-2xl bg-pine p-6 sm:p-8">
-        <p class="text-xs font-bold tracking-[0.16em] text-pine-mid uppercase">Pack rule</p>
-        <h2 class="mt-2 font-display text-2xl font-extrabold text-cream">Couch rumors don’t count.</h2>
-        <p class="mt-3 max-w-xl text-cream/80">Notes unlock within 200 feet. Leave a handle, stand at the pin, tell the pack what’s on the driveway.</p>
+        <p class="text-xs font-bold tracking-[0.16em] uppercase" style="color:#f3c6ec">Pack rule</p>
+        <h2 class="mt-2 font-display text-2xl font-extrabold text-cream">Couch rumors do not count.</h2>
+        <p class="mt-3 max-w-xl text-cream/80">Tap a pin. Tap Use my location. Inside 200 feet the note form opens.</p>
         <a href="/Chicas-Map/map" class="mt-5 inline-flex h-12 min-h-12 items-center justify-center rounded-full bg-cream px-6 text-sm font-bold text-pine hover:bg-pine-soft">Open the map</a>
       </section>
     </main>

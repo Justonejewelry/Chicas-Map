@@ -10,6 +10,7 @@
   var here = null;
   var watching = false;
   var gpsErr = "";
+  var lastGateOk = null;
 
   function esc(s) {
     return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
@@ -97,6 +98,11 @@
     }
     return el;
   }
+  function formBusy() {
+    var form = document.getElementById("chica-intel-form");
+    var ae = document.activeElement;
+    return !!(form && ae && form.contains(ae));
+  }
   function gateState(sale) {
     if (!here) {
       if (gpsErr) return { ok: false, copy: gpsErr };
@@ -114,6 +120,7 @@
     var lat = Number(sale.lat), lon = Number(sale.lon);
     var when = sale.dates || sale.hours || "";
     var gate = gateState(sale);
+    lastGateOk = gate.ok;
     var notes = gate.ok ? notesFor(sale) : [];
     var list = "";
     if (gate.ok && !notes.length) list = '<p class="gate">No driveway notes yet. You are close enough to leave the first one.</p>';
@@ -148,6 +155,13 @@
       render(sale);
     };
     el.style.display = "block";
+  }
+  function refreshGate(sale) {
+    if (!sale) return;
+    if (formBusy()) return;
+    var next = gateState(sale);
+    if (next.ok === lastGateOk && next.ok) return;
+    render(sale);
   }
   function askGps(force) {
     if (!navigator.geolocation) {
@@ -204,7 +218,7 @@
       function (pos) {
         gpsErr = "";
         here = { lat: pos.coords.latitude, lon: pos.coords.longitude };
-        if (last) render(last);
+        refreshGate(last);
       },
       function () {},
       { enableHighAccuracy: true, maximumAge: 5000, timeout: 10000 }

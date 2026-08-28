@@ -15,13 +15,14 @@
     wifi: BASE + "/data/san-antonio-public-wifi.geojson",
     emergency: BASE + "/data/san-antonio-emergency-info.geojson"
   };
-  var COLOR = { parking: "#38bdf8", pantry: "#f5d000", schools: "#f0a500", wifi: "#2dd4bf", emergency: "#ef4444" };
+  var COLOR = { parking: "#38bdf8", pantry: "#f5d000", schools: "#f0a500", wifi: "#2dd4bf", emergency: "#ef4444", claimed: "#c513af" };
   var GLYPH = {
     parking: '<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><circle cx="8" cy="8" r="6.2" fill="#38bdf8" stroke="#121212" stroke-width="1.2"/><text x="8" y="11.2" text-anchor="middle" font-size="8" font-weight="800" font-family="Inter,system-ui,sans-serif" fill="#121212">P</text></svg>',
     pantry: '<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><circle cx="8" cy="8" r="6.2" fill="#f5d000" stroke="#121212" stroke-width="1.2"/><path d="M4.5 7.2h7v1.4c0 2-1.6 3.6-3.5 3.6S4.5 10.6 4.5 8.6z" fill="#121212"/></svg>',
     schools: '<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><circle cx="8" cy="8" r="6.2" fill="#f0a500" stroke="#121212" stroke-width="1.2"/><path d="M3.8 8.2 L8 5.4 L12.2 8.2 V12 H3.8z" fill="#121212"/><rect x="7.2" y="9.2" width="1.6" height="2.8" fill="#f0a500"/></svg>',
     wifi: '<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><circle cx="8" cy="8" r="6.2" fill="#2dd4bf" stroke="#121212" stroke-width="1.2"/><path d="M5 8.2a4 4 0 0 1 6 0 M6.2 9.5a2.2 2.2 0 0 1 3.6 0" fill="none" stroke="#121212" stroke-width="1.3" stroke-linecap="round"/><circle cx="8" cy="11.2" r="0.9" fill="#121212"/></svg>',
-    emergency: '<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><circle cx="8" cy="8" r="6.2" fill="#ef4444" stroke="#121212" stroke-width="1.2"/><text x="8" y="11.2" text-anchor="middle" font-size="8" font-weight="800" font-family="Inter,system-ui,sans-serif" fill="#fff">!</text></svg>'
+    emergency: '<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><circle cx="8" cy="8" r="6.2" fill="#ef4444" stroke="#121212" stroke-width="1.2"/><text x="8" y="11.2" text-anchor="middle" font-size="8" font-weight="800" font-family="Inter,system-ui,sans-serif" fill="#fff">!</text></svg>',
+    claimed: '<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><circle cx="8" cy="8" r="6.2" fill="#c513af" stroke="#fffdf8" stroke-width="1.2"/><path d="M8 3.6 L9.2 6.6 H12.4 L9.8 8.5 L10.8 11.6 L8 9.8 L5.2 11.6 L6.2 8.5 L3.6 6.6 H6.8z" fill="#fff"/></svg>'
   };
 
   function findMap() {
@@ -80,6 +81,46 @@
     g.addTo(map);
   }
 
+  function addClaimed(pins) {
+    var map = findMap(), L = window.L;
+    if (!map || !L || !L.layerGroup) return;
+    if (groups.claimed) try { map.removeLayer(groups.claimed); } catch (e) {}
+    var g = L.layerGroup();
+    for (var i = 0; i < pins.length; i++) {
+      var pin = pins[i] || {};
+      var lat = Number(pin.lat), lon = Number(pin.lon);
+      if (!isFinite(lat) || !isFinite(lon)) continue;
+      var title = pin.title || "Claimed pin";
+      var mk = L.marker([lat, lon], {
+        icon: L.divIcon({
+          className: "chica-overlay-pin",
+          html: '<div class="chica-overlay-mark">' + GLYPH.claimed + "</div>",
+          iconSize: [18, 18],
+          iconAnchor: [9, 9]
+        }),
+        title: title,
+        alt: title,
+        keyboard: true
+      });
+      mk.on("click", function (item) {
+        return function () {
+          if (typeof window.__chicaOpenIntel === "function") {
+            window.__chicaOpenIntel({
+              title: item.title || "Claimed pin",
+              address: item.address || "",
+              dates: item.preview ? "Style sample \u2014 not a sale" : "Claimed $5 pin",
+              lat: Number(item.lat),
+              lon: Number(item.lon)
+            });
+          }
+        };
+      }(pin));
+      mk.addTo(g);
+    }
+    groups.claimed = g;
+    g.addTo(map);
+  }
+
   function toggleOverlay(id) {
     var map = findMap();
     var on = !document.documentElement.classList.contains("chica-ov-" + id);
@@ -94,6 +135,22 @@
       cache[id] = data && data.features ? data.features : [];
       if (document.documentElement.classList.contains("chica-ov-" + id)) addOverlay(id, cache[id]);
     }).catch(function () { cache[id] = []; });
+  }
+
+  function toggleClaimed() {
+    var map = findMap();
+    var on = !document.documentElement.classList.contains("chica-claimed-on");
+    document.documentElement.classList.toggle("chica-claimed-on", on);
+    dimRow("claimed", on);
+    if (!on) {
+      if (groups.claimed && map) try { map.removeLayer(groups.claimed); } catch (e) {}
+      return;
+    }
+    if (cache.claimed) { addClaimed(cache.claimed); return; }
+    fetch(BASE + "/data/claimed-pins.json?v=4", { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (data) {
+      cache.claimed = data && Array.isArray(data.pins) ? data.pins : [];
+      if (document.documentElement.classList.contains("chica-claimed-on")) addClaimed(cache.claimed);
+    }).catch(function () { cache.claimed = []; });
   }
 
   function toggleSaleType(id) {
@@ -116,13 +173,7 @@
     }
     if (id === "intel") return;
     if (id === "listit") { location.href = BASE + "/claim/"; return; }
-    if (id === "claimed") {
-      var on = !document.documentElement.classList.contains("chica-claimed-on");
-      document.documentElement.classList.toggle("chica-claimed-on", on);
-      dimRow("claimed", on);
-      try { window.dispatchEvent(new Event("chica-claimed")); } catch (e) {}
-      return;
-    }
+    if (id === "claimed") { toggleClaimed(); return; }
     if (SRC[id]) { toggleOverlay(id); return; }
     if (id === "garage" || id === "estate" || id === "permit") toggleSaleType(id);
   }
