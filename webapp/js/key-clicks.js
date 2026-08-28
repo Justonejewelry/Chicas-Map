@@ -116,7 +116,11 @@
     }
     if (id === "intel") {
       document.documentElement.classList.toggle("chica-intel-off");
-      dimRow("intel", !document.documentElement.classList.contains("chica-intel-off"));
+      var on = !document.documentElement.classList.contains("chica-intel-off");
+      document.documentElement.classList.toggle("chica-intel-on", on);
+      dimRow("intel", on);
+      try { window.dispatchEvent(new Event("chica-intel")); } catch (e) {}
+      if (typeof window.__chicaStampIntel === "function") window.__chicaStampIntel();
       return;
     }
     if (id === "listit") { location.href = BASE + "/claim/"; return; }
