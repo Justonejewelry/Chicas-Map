@@ -19,13 +19,14 @@ import {
   SA_CENTER,
 } from "@/lib/sales";
 import { cn } from "@/lib/cn";
-
-const ESRI_SAT =
-  "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}";
-const ESRI_LABELS =
-  "https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Reference_Overlay/MapServer/tile/{z}/{y}/{x}";
-const CARTO =
-  "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png";
+import {
+  ESRI_LABELS,
+  ESRI_LABEL_OPTS,
+  ESRI_SAT,
+  ESRI_SAT_OPTS,
+  ESRI_STREET,
+  ESRI_STREET_OPTS,
+} from "@/lib/esri-providers";
 
 type Props = {
   sales: Sale[];
@@ -82,11 +83,8 @@ export function SaleMap({ sales, focus, fullscreen }: Props) {
         maxZoom: 19,
       }).setView(focus ? [focus.lat, focus.lon] : SA_CENTER, focus?.zoom ?? 12);
 
-      const base = L.tileLayer(ESRI_SAT, {
-        attribution: "Tiles © Esri",
-        maxZoom: 19,
-      }).addTo(map);
-      const labels = L.tileLayer(ESRI_LABELS, { maxZoom: 19, opacity: 0.9 }).addTo(map);
+      const base = L.tileLayer(ESRI_SAT, { ...ESRI_SAT_OPTS }).addTo(map);
+      const labels = L.tileLayer(ESRI_LABELS, { ...ESRI_LABEL_OPTS }).addTo(map);
       L.control.zoom({ position: "bottomright" }).addTo(map);
 
       const group = L.layerGroup().addTo(map);
@@ -120,17 +118,11 @@ export function SaleMap({ sales, focus, fullscreen }: Props) {
       tilesRef.current?.base.remove();
       tilesRef.current?.labels?.remove();
       if (satellite) {
-        const base = L.tileLayer(ESRI_SAT, {
-          attribution: "Tiles © Esri",
-          maxZoom: 19,
-        }).addTo(map);
-        const labels = L.tileLayer(ESRI_LABELS, { maxZoom: 19, opacity: 0.9 }).addTo(map);
+        const base = L.tileLayer(ESRI_SAT, { ...ESRI_SAT_OPTS }).addTo(map);
+        const labels = L.tileLayer(ESRI_LABELS, { ...ESRI_LABEL_OPTS }).addTo(map);
         tilesRef.current = { base, labels };
       } else {
-        const base = L.tileLayer(CARTO, {
-          attribution: "© OpenStreetMap © CARTO",
-          maxZoom: 19,
-        }).addTo(map);
+        const base = L.tileLayer(ESRI_STREET, { ...ESRI_STREET_OPTS }).addTo(map);
         tilesRef.current = { base };
       }
     })();
@@ -314,8 +306,8 @@ export function SaleMap({ sales, focus, fullscreen }: Props) {
                       <span className="block truncate text-sm font-semibold">{sale.title}</span>
                       <span className="mt-0.5 block truncate text-xs text-cream/60">
                         {kindLabel(sale.type)}
-                        {you ? ` · ${haversineMi(you, sale).toFixed(1)} mi` : ""}
-                        {sale.dates ? ` · ${sale.dates}` : ""}
+                        {you ? ` \u00b7 ${haversineMi(you, sale).toFixed(1)} mi` : ""}
+                        {sale.dates ? ` \u00b7 ${sale.dates}` : ""}
                       </span>
                     </span>
                   </button>
@@ -345,14 +337,14 @@ function SelectedCard({
         <div className="min-w-0">
           <p className="text-xs font-bold tracking-[0.14em] text-pine uppercase">
             {kindLabel(sale.type)}
-            {sale.status === "verified" ? " · Verified" : ""}
+            {sale.status === "verified" ? " \u00b7 Verified" : ""}
           </p>
           <h2 className="font-display text-lg font-semibold leading-snug">{sale.title}</h2>
         </div>
         <button
           type="button"
-          onClick={onClose}
           className="inline-flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-white/10"
+          onClick={onClose}
           aria-label="Close listing"
         >
           <X className="size-4" />

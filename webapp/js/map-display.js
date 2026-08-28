@@ -1,11 +1,10 @@
 /* Chicas Map — live display boot.
-   Replace CARTO with Esri. One size pass. Ease to the hunter after 1s.
+   Esri only. CARTO tiles get rewritten. Street = World_Street_Map (z19).
+   Dark Gray Canvas is not the hunter basemap.
 */
 (function () {
   var SA = { lat: 29.4241, lon: -98.4936 };
   var BOX = { minLat: 29.05, maxLat: 29.85, minLon: -99.05, maxLon: -97.95 };
-  var ESRI_DARK =
-    "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}";
   var ESRI_STREET =
     "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}";
   var ESRI_SAT =
@@ -23,10 +22,6 @@
     return /\/map\/?$/.test(p) || p.indexOf("/map/") !== -1;
   }
 
-  function themeIsLight() {
-    return document.documentElement.getAttribute("data-theme") === "light";
-  }
-
   function satOn() {
     return document.documentElement.classList.contains("chica-sat-on");
   }
@@ -38,12 +33,27 @@
   function dirtyUrl(src) {
     if (!src) return false;
     var s = String(src);
-    return /carto(cdn)?\.com/i.test(s) || /basemap-apikey/i.test(s) || /api[_\s-]?key[_\s-]?required/i.test(s);
+    return (
+      /carto(cdn)?\.com/i.test(s) ||
+      /basemap-apikey/i.test(s) ||
+      /api[_\s-]?key[_\s-]?required/i.test(s) ||
+      /World_Dark_Gray/i.test(s)
+    );
   }
 
   function esriBase() {
-    if (satOn()) return ESRI_SAT;
-    return themeIsLight() ? ESRI_STREET : ESRI_DARK;
+    return satOn() ? ESRI_SAT : ESRI_STREET;
+  }
+
+  function parseTile(src) {
+    var s = String(src || "");
+    var esri = s.match(/\/tile\/(\d{1,2})\/(\d+)\/(\d+)/i);
+    if (esri) return { z: esri[1], y: esri[2], x: esri[3] };
+    var carto = s.match(/\/(\d{1,2})\/(\d+)\/(\d+)(@\d+x)?\.(png|jpg|jpeg|webp)/i);
+    if (carto) return { z: carto[1], x: carto[2], y: carto[3] };
+    var bare = s.match(/\/(\d{1,2})\/(\d+)\/(\d+)(?:\/)?(?:\?|$)/);
+    if (bare) return { z: bare[1], x: bare[2], y: bare[3] };
+    return null;
   }
 
   function esriUrl(z, x, y) {
@@ -51,10 +61,14 @@
   }
 
   function rewriteCartoSrc(src) {
-    if (!dirtyUrl(src)) return src;
-    var m = String(src).match(/\/(\d{1,2})\/(\d+)\/(\d+)/);
-    if (!m) return esriBase();
-    return esriUrl(m[1], m[2], m[3]);
+    var s = String(src || "");
+    if (!s) return s;
+    var wantHost = satOn() ? "World_Imagery" : "World_Street_Map";
+    if (s.indexOf(wantHost) !== -1 && s.indexOf("arcgisonline.com") !== -1) return s;
+    if (!dirtyUrl(s) && s.indexOf("arcgisonline.com") === -1) return s;
+    var t = parseTile(s);
+    if (!t) return esriBase();
+    return esriUrl(t.z, t.x, t.y);
   }
 
   function rewriteTileImages() {
@@ -94,8 +108,10 @@
     map.eachLayer(function (layer) {
       if (!layer || !layer.setUrl || !layer._url) return;
       var url = String(layer._url);
-      if (!dirtyUrl(url) && url.indexOf("arcgisonline.com") === -1) return;
-      if (dirtyUrl(url) || (satOn() && url.indexOf("World_Imagery") === -1) || (!satOn() && url.indexOf("World_Imagery") !== -1)) {
+      var isEsri = url.indexOf("arcgisonline.com") !== -1;
+      var isWanted = url.indexOf(satOn() ? "World_Imagery" : "World_Street_Map") !== -1;
+      if (isEsri && isWanted) return;
+      if (dirtyUrl(url) || isEsri || /carto/i.test(url)) {
         try {
           layer.setUrl(want);
           if (layer.options) layer.options.attribution = "Tiles \u00a9 Esri";
