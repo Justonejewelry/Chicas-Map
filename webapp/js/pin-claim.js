@@ -1,99 +1,102 @@
 (function () {
-  var cfg = window.CHICA_CONFIG || {};
-  var pay = cfg.PIN_CLAIM_PAYMENT_URL || "https://square.link/u/qjunxHoo";
-  var claim = "/Chicas-Map/claim/";
   var BAR_ID = "chica-pin-claim";
+  var CLAIM = "/Chicas-Map/claim/";
+  var PAY =
+    (window.CHICA_CONFIG && window.CHICA_CONFIG.PIN_CLAIM_PAYMENT_URL) ||
+    "https://square.link/u/qjunxHoo";
+  var last = "";
+  var queued = 0;
 
-  function path() {
-    return location.pathname || "";
-  }
-  function onClaim() {
-    return /\/claim\/?$/.test(path()) || path().indexOf("/claim/") !== -1;
-  }
-  function onMap() {
-    return /\/map\/?$/.test(path()) || path().indexOf("/map/") !== -1;
-  }
-  function onHome() {
-    var p = (path() || "/").replace(/\/+$/, "") || "/";
-    return p === "/" || p === "/Chicas-Map" || /\/index\.html$/.test(path());
-  }
-  function es() {
-    return (document.documentElement.lang || "").toLowerCase().indexOf("es") === 0;
+  function skipPath(p) {
+    if (!p) p = "/";
+    if (p.indexOf("/map") !== -1 || p.indexOf("/claim") !== -1) return true;
+    var bare = p.replace(/\/+$/, "") || "/";
+    return bare === "/" || bare === "/Chicas-Map" || p.indexOf("index.html") !== -1;
   }
 
-  function copy() {
-    if (es()) {
-      return {
-        line: "List it. Sell it. Done. Pin $5 este fin.",
-        pay: "Pinar · $5",
-        more: "Cómo funciona",
-      };
-    }
-    return {
-      line: "Hey pack. List it. Sell it. Done. — $5 pin.",
-      pay: "Pin it · $5",
-      more: "How it works",
-    };
+  function kill() {
+    var el = document.getElementById(BAR_ID);
+    if (el) el.remove();
+    last = "skip";
   }
 
-  function place(bar) {
-    if (onMap()) {
-      bar.style.left = "12px";
-      bar.style.right = "12px";
-      bar.style.bottom = "max(14px, env(safe-area-inset-bottom))";
-      bar.style.top = "auto";
-    } else {
-      bar.style.left = "12px";
-      bar.style.right = "12px";
-      bar.style.bottom = "max(76px, calc(env(safe-area-inset-bottom) + 64px))";
-      bar.style.top = "auto";
-    }
+  function el(tag, cls, text) {
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text) n.textContent = text;
+    return n;
   }
 
-  function mount() {
-    if (onClaim() || onMap() || onHome()) {
-      var leftover = document.getElementById(BAR_ID);
-      if (leftover) leftover.remove();
+  function paint() {
+    var p = location.pathname || "/";
+    if (skipPath(p)) {
+      if (last !== "skip") kill();
       return;
     }
-    var t = copy();
+    var es = (document.documentElement.lang || "").toLowerCase().indexOf("es") === 0;
+    var key = es ? "es" : "en";
+    if (last === key && document.getElementById(BAR_ID)) return;
+
+    var line = es
+      ? "List it. Sell it. Done. Pin $5 este fin."
+      : "Hey pack. List it. Sell it. Done. — $5 pin.";
+    var payLabel = es ? "Pinar · $5" : "Pin it · $5";
+    var moreLabel = es ? "Cómo funciona" : "How it works";
+
     var bar = document.getElementById(BAR_ID);
     var fresh = !bar;
     if (!bar) {
-      bar = document.createElement("div");
+      bar = el("div", "");
       bar.id = BAR_ID;
       bar.setAttribute("role", "region");
-      bar.setAttribute("aria-label", t.line);
       document.body.appendChild(bar);
+    } else {
+      while (bar.firstChild) bar.removeChild(bar.firstChild);
     }
-    place(bar);
-    if (bar.getAttribute("data-chica-copy") === t.line) return;
-    bar.setAttribute("data-chica-copy", t.line);
-    bar.innerHTML =
-      "<span style=\"flex:1;min-width:140px\">" +
-      t.line +
-      "</span>" +
-      '<span style="display:flex;gap:8px;flex-wrap:wrap">' +
-      '<a href="' +
-      pay +
-      '" target="_blank" rel="noreferrer" class="chica-claim-pay">' +
-      t.pay +
-      "</a>" +
-      '<a href="' +
-      claim +
-      '" class="chica-claim-more">' +
-      t.more +
-      "</a></span>";
+    bar.setAttribute("aria-label", line);
+    bar.style.cssText =
+      "left:12px;right:12px;bottom:max(76px,calc(env(safe-area-inset-bottom) + 64px));top:auto";
+
+    var copy = el("span", "chica-claim-line", line);
+    copy.style.cssText = "flex:1;min-width:140px";
+    var actions = el("span", "chica-claim-actions");
+    actions.style.cssText = "display:flex;gap:8px;flex-wrap:wrap";
+    var pay = el("a", "chica-claim-pay", payLabel);
+    pay.href = PAY;
+    pay.target = "_blank";
+    pay.rel = "noreferrer";
+    var more = el("a", "chica-claim-more", moreLabel);
+    more.href = CLAIM;
+    actions.appendChild(pay);
+    actions.appendChild(more);
+    bar.appendChild(copy);
+    bar.appendChild(actions);
     if (fresh) bar.classList.add("is-in");
+    last = key;
   }
 
-  function boot() {
-    mount();
+  function schedule() {
+    if (queued) return;
+    queued = 1;
+    var run = function () {
+      queued = 0;
+      paint();
+    };
+    if (skipPath(location.pathname || "/")) {
+      run();
+      return;
+    }
+    if (typeof requestIdleCallback === "function") {
+      requestIdleCallback(run, { timeout: 700 });
+    } else {
+      setTimeout(run, 0);
+    }
   }
 
-  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
-  else boot();
-  window.addEventListener("popstate", function () {
-    setTimeout(boot, 40);
-  });
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", schedule, { once: true });
+  } else {
+    schedule();
+  }
+  window.addEventListener("popstate", schedule, { passive: true });
 })();
