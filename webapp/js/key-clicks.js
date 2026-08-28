@@ -28,28 +28,23 @@
     return /Garage sale/i.test(t) && /Satellite/i.test(t);
   }
   function hijack() {
-    var p = document.getElementById("chica-key");
-    if (p && looksLikeKey(p)) return p;
-    var nodes = document.querySelectorAll("aside, [aria-label='Key'], [aria-label='key']");
+    var nodes = document.querySelectorAll("aside, #chica-key, [aria-label='Key'], [aria-label='key']");
+    var host = null;
     for (var i = 0; i < nodes.length; i++) {
       if (!looksLikeKey(nodes[i])) continue;
-      try { nodes[i].id = "chica-key"; } catch (e) {}
-      nodes[i].style.setProperty("pointer-events", "auto", "important");
-      nodes[i].style.setProperty("z-index", "2147483646", "important");
-      return nodes[i];
+      host = nodes[i];
+      try { host.id = "chica-key"; } catch (e) {}
+      host.style.setProperty("pointer-events", "auto", "important");
+      host.style.setProperty("z-index", "2147483646", "important");
+      break;
     }
-    return p || null;
-  }
-  function clickRow(row) {
-    if (!row) return false;
-    if (typeof row.click === "function") {
-      try { row.click(); return true; } catch (e) {}
+    if (!host) return null;
+    var rows = host.querySelectorAll("li, button, [role='switch'], label");
+    for (var r = 0; r < rows.length; r++) {
+      var id = rows[r].getAttribute("data-chica-layer") || labelToId(rows[r].textContent);
+      if (id) rows[r].setAttribute("data-chica-layer", id);
     }
-    try {
-      row.dispatchEvent(new MouseEvent("click", { bubbles: true, cancelable: true, view: window }));
-      return true;
-    } catch (e) {}
-    return false;
+    return host;
   }
   document.addEventListener("click", function (ev) {
     var t = ev.target;
@@ -65,16 +60,9 @@
     ev.preventDefault();
     ev.stopPropagation();
     if (ev.stopImmediatePropagation) ev.stopImmediatePropagation();
-    if (row && !row.getAttribute("data-chica-layer")) row.setAttribute("data-chica-layer", id);
-    var ours = document.querySelector('#chica-key [data-chica-layer="' + id + '"]');
-    if (ours && ours !== row) clickRow(ours);
-    else if (row) {
-      var marked = document.querySelector('[data-chica-layer="' + id + '"]');
-      if (marked && marked !== row) clickRow(marked);
-    }
-    if (id === "listit") location.href = "/Chicas-Map/claim";
+    if (typeof window.__chicaToggleLayer === "function") window.__chicaToggleLayer(id);
+    else if (id === "listit") location.href = "/Chicas-Map/claim";
   }, true);
-  function tick() { hijack(); }
-  tick();
-  setInterval(tick, 800);
+  hijack();
+  setInterval(hijack, 800);
 })();
