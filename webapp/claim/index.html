@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>List it. Sell it. Done. · Chica’s Map</title>
+  <title>Pin it · $5 · Chicas Map</title>
   <link rel="icon" type="image/svg+xml" href="/Chicas-Map/favicon.svg" />
   <style>
     :root { color-scheme: dark; }
@@ -14,10 +14,12 @@
       background: #121212;
       color: #f3eee4;
     }
-    main { max-width: 520px; margin: 0 auto; padding: 32px 20px 80px; }
-    a { color: inherit; }
-    .brand { letter-spacing: .18em; text-transform: uppercase; font-size: 12px; color: #c4b8a8; }
-    h1 { font-family: Syne, Inter, sans-serif; font-size: 32px; margin: 10px 0 8px; }
+    main { max-width: 520px; margin: 0 auto; padding: 28px 20px 80px; }
+    a { color: #c513af; }
+    .top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .brand { letter-spacing: .18em; text-transform: uppercase; font-size: 12px; color: #c4b8a8; text-decoration: none; }
+    .home { color: #f3eee4; text-decoration: none; font: 800 12px/1 Inter, system-ui, sans-serif; border: 1px solid #3a342e; border-radius: 999px; padding: 8px 12px; }
+    h1 { font-family: Syne, Inter, sans-serif; font-size: 32px; margin: 16px 0 8px; }
     p { color: #c4b8a8; line-height: 1.5; }
     .card {
       margin-top: 24px;
@@ -25,10 +27,27 @@
       border: 1px solid #2a2622;
       border-radius: 16px;
       background: #1a1714;
+      text-align: center;
+    }
+    .logo-wrap {
+      width: 168px;
+      height: 168px;
+      margin: 0 auto 16px;
+      border-radius: 28px;
+      overflow: hidden;
+      background: #c513af;
+      border: 4px solid #fffdf8;
+    }
+    .logo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 28%;
+      display: block;
     }
     .pay {
       display: inline-flex;
-      margin-top: 16px;
+      margin-top: 8px;
       padding: 14px 18px;
       border-radius: 12px;
       background: #c513af;
@@ -36,24 +55,29 @@
       font-weight: 700;
       text-decoration: none;
     }
-    img { width: 100%; border-radius: 12px; display: block; }
-    ol { padding-left: 18px; color: #c4b8a8; }
+    ol { padding-left: 18px; color: #c4b8a8; text-align: left; }
+    .links { margin-top: 16px; }
   </style>
 </head>
 <body>
   <main>
-    <p class="brand">Chica’s Map · San Antonio</p>
-    <h1>List it. Sell it. Done.</h1>
+    <div class="top">
+      <a class="brand" href="/Chicas-Map/">Chicas Map · San Antonio</a>
+      <a class="home" href="/Chicas-Map/">Home</a>
+    </div>
+    <h1>Pin it · $5</h1>
     <p>Hey pack. Putting your sale on the map is free. $5 lights the pin this weekend so hunters can find your driveway. Pay in Square, then tell me which sale to sniff out.</p>
     <div class="card">
-      <img src="/Chicas-Map/badges/claimed-pin.jpg" alt="Claimed pin on Chica’s Map" />
+      <div class="logo-wrap">
+        <img src="/Chicas-Map/images/chica-logo.png" alt="Chica, official Chicas Map logo" />
+      </div>
       <a class="pay" href="https://square.link/u/qjunxHoo">Pin it · $5</a>
       <ol>
-        <li>List it — drop the sale on the map. Free.</li>
-        <li>Sell it — $5 lights your pin so the pack can find you.</li>
-        <li>Done — keep the Square receipt and put your street in the note.</li>
+        <li>Drop the sale on the map. Free.</li>
+        <li>$5 lights your pin so the pack can find you.</li>
+        <li>Keep the Square receipt and put your street in the note.</li>
       </ol>
-      <p><a href="/Chicas-Map/submit">Add a sale</a> · <a href="/Chicas-Map/map">See the map</a></p>
+      <p class="links"><a href="/Chicas-Map/">Home</a> · <a href="/Chicas-Map/submit">Add a sale</a> · <a href="/Chicas-Map/map">See the map</a></p>
     </div>
   </main>
   <script src="/Chicas-Map/js/chica-config.js"></script>

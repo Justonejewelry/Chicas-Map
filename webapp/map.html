@@ -19,24 +19,25 @@
     .chica-pin, .chica-overlay-pin { background: transparent !important; border: 0 !important; }
     #chica-home-chip {
       position: fixed; top: max(10px, env(safe-area-inset-top)); right: 10px;
-      z-index: 2147483646; height: 42px; padding: 0 12px; border-radius: 12px;
+      z-index: 2147483646; height: 42px; padding: 0 10px 0 6px; border-radius: 12px;
       background: #1a1714f5; color: #f3eee4; text-decoration: none;
       font: 800 12px/42px Inter, system-ui, sans-serif; border: 1px solid #3a342e;
-      pointer-events: auto;
+      pointer-events: auto; display: flex; align-items: center; gap: 6px;
     }
+    #chica-home-chip img { width: 28px; height: 28px; border-radius: 8px; object-fit: cover; }
     .leaflet-control-zoom { margin-bottom: 92px !important; }
   </style>
 </head>
 <body>
   <div id="chica-live-map" class="chica-map"></div>
-  <a id="chica-home-chip" href="/Chicas-Map/">Home</a>
+  <a id="chica-home-chip" href="/Chicas-Map/"><img src="/Chicas-Map/images/chica-logo.png" alt="">Home</a>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="/Chicas-Map/js/chica-config.js?v=3"></script>
   <script src="/Chicas-Map/js/chica-core.js?v=4"></script>
   <script src="/Chicas-Map/js/chica-live-map.js?v=4"></script>
   <script src="/Chicas-Map/js/key-clicks.js?v=9"></script>
   <script src="/Chicas-Map/js/click-fix.js?v=4"></script>
-  <script src="/Chicas-Map/js/force-key.js?v=5"></script>
+  <script src="/Chicas-Map/js/force-key.js?v=6"></script>
   <script src="/Chicas-Map/js/hunt-bar.js?v=4"></script>
   <script src="/Chicas-Map/js/map-cta.js?v=9"></script>
   <script src="/Chicas-Map/js/pin-pop.js?v=6"></script>
