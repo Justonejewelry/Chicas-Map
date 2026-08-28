@@ -1,10 +1,8 @@
-/* Standalone Leaflet boot + sale details on pin click. */
+/* Standalone Leaflet boot. Pin card is owned by pin-details.js (GPS-gated pack notes, 200 ft). */
 (function (w) {
   var BASE = "/Chicas-Map";
   var SA = [29.4241, -98.4936];
   var mtFails = 0;
-  var amenity = { parking: [], pantry: [], schools: [], wifi: [] };
-  var NEAR_M = 2400;
 
   function onMapPath() {
     var p = location.pathname || "";
@@ -24,135 +22,6 @@
   }
   var ESRI_STREET = "https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}";
   var ESRI_SAT = "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}";
-
-  function esc(s) {
-    return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
-      if (c === "&") return "&" + "amp;";
-      if (c === "<") return "&" + "lt;";
-      if (c === ">") return "&" + "gt;";
-      if (c === '"') return "&" + "quot;";
-      return "&#39;";
-    });
-  }
-
-  function distM(aLat, aLon, bLat, bLon) {
-    var R = 6371000;
-    var dLat = (bLat - aLat) * Math.PI / 180;
-    var dLon = (bLon - aLon) * Math.PI / 180;
-    var h = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(aLat * Math.PI / 180) * Math.cos(bLat * Math.PI / 180) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
-    return 2 * R * Math.asin(Math.min(1, Math.sqrt(h)));
-  }
-
-  function nearest(id, lat, lon) {
-    var feats = amenity[id] || [];
-    var best = null;
-    for (var i = 0; i < feats.length; i++) {
-      var g = feats[i] && feats[i].geometry;
-      if (!g || g.type !== "Point" || !g.coordinates) continue;
-      var blat = g.coordinates[1], blon = g.coordinates[0];
-      var d = distM(lat, lon, blat, blon);
-      if (d > NEAR_M) continue;
-      if (!best || d < best.d) best = { d: d, feat: feats[i], lat: blat, lon: blon };
-    }
-    return best;
-  }
-
-  function fmtM(m) {
-    return m < 1000 ? Math.round(m) + " m" : (m / 1609.34).toFixed(1) + " mi";
-  }
-
-  function dirs(lat, lon) {
-    return (
-      '<p class="chica-dirs">' +
-      '<a target="_blank" rel="noreferrer" href="https://www.google.com/maps/dir/?api=1&destination=' + lat + "," + lon + '">Google</a> ' +
-      '<a target="_blank" rel="noreferrer" href="https://maps.apple.com/?daddr=' + lat + "," + lon + '">Apple</a> ' +
-      '<a target="_blank" rel="noreferrer" href="https://waze.com/ul?ll=' + lat + "%2C" + lon + '&navigate=yes">Waze</a>' +
-      "</p>"
-    );
-  }
-
-  function nearLine(label, hit) {
-    if (!hit) return "";
-    var props = hit.feat.properties || {};
-    var name = props.name || props.title || label;
-    return "<li><strong>" + esc(label) + "</strong> " + esc(name) + " \u00b7 " + fmtM(hit.d) + "</li>";
-  }
-
-  function intelHtml(sale) {
-    var lat = Number(sale.lat), lon = Number(sale.lon);
-    var items =
-      nearLine("Parking", nearest("parking", lat, lon)) +
-      nearLine("Pantry", nearest("pantry", lat, lon)) +
-      nearLine("Wi-Fi", nearest("wifi", lat, lon)) +
-      nearLine("School", nearest("schools", lat, lon));
-    if (!items) items = "<li>Nothing mapped within 1.5 miles.</li>";
-    var when = sale.dates || sale.hours || "";
-    return (
-      '<div class="chica-opt">' +
-      "<h3>" + esc(sale.title || "Sale") + "</h3>" +
-      '<p class="meta">' + esc(sale.address || "") + (when ? "<br>" + esc(when) : "") + "</p>" +
-      dirs(lat, lon) +
-      "<ul>" + items + "</ul></div>"
-    );
-  }
-
-  function showCard(sale, anchor) {
-    var el = document.getElementById("chica-intel-card");
-    if (!el) {
-      el = document.createElement("div");
-      el.id = "chica-intel-card";
-      el.setAttribute("role", "dialog");
-      el.setAttribute("aria-label", "Sale details");
-      document.body.appendChild(el);
-    }
-    el.innerHTML =
-      '<button type="button" class="x" aria-label="Close">\u00d7</button>' +
-      intelHtml(sale);
-    var x = el.querySelector(".x");
-    if (x) x.onclick = function (ev) { ev.preventDefault(); ev.stopPropagation(); el.style.display = "none"; };
-    el.style.left = "12px";
-    el.style.top = "62px";
-    el.style.display = "block";
-  }
-
-  function hideCard() {
-    var el = document.getElementById("chica-intel-card");
-    if (el) el.style.display = "none";
-  }
-
-  w.__chicaOpenIntel = function (lat, lon, title, anchor) {
-    showCard({ lat: lat, lon: lon, title: title || "Sale" }, anchor);
-    return true;
-  };
-
-  function prefetch() {
-    var SRC = {
-      parking: BASE + "/data/san-antonio-downtown-parking.geojson",
-      pantry: BASE + "/data/san-antonio-24h-food-pantries.geojson",
-      schools: BASE + "/data/zone-aware-schools.geojson",
-      wifi: BASE + "/data/san-antonio-public-wifi.geojson"
-    };
-    Object.keys(SRC).forEach(function (id) {
-      fetch(SRC[id] + "?v=13", { cache: "no-store" })
-        .then(function (r) { return r.ok ? r.json() : null; })
-        .then(function (data) { amenity[id] = data && data.features ? data.features : []; })
-        .catch(function () { amenity[id] = []; });
-    });
-  }
-
-  function host() {
-    var el = document.getElementById("chica-live-map");
-    if (!el) {
-      el = document.createElement("div");
-      el.id = "chica-live-map";
-      el.className = "chica-map";
-      (document.body || document.documentElement).appendChild(el);
-    }
-    el.setAttribute("role", "application");
-    el.setAttribute("aria-label", "San Antonio garage sale map");
-    el.style.cssText = "position:fixed;inset:0;width:100%;height:100%;z-index:1;background:#121212";
-    return el;
-  }
 
   function iconFor(type, L) {
     var kind = type === "estate" || type === "permit" ? type : "garage";
@@ -214,8 +83,11 @@
           keyboard: true,
           riseOnHover: true
         });
+        mk.__chicaSale = item;
         mk.on("click", function () {
-          showCard(item, mk._icon);
+          if (typeof w.__chicaOpenIntel === "function") {
+            w.__chicaOpenIntel(item.lat, item.lon, item.title);
+          }
         });
         mk.addTo(map);
       })(sale);
@@ -229,17 +101,20 @@
     var s = document.createElement("style");
     s.id = "chica-live-intel-css";
     s.textContent =
-      ".chica-opt{font:500 13px/1.35 Inter,system-ui,sans-serif;color:#1a1714}" +
-      ".chica-opt h3{margin:0 0 4px;font:800 15px/1.2 Inter,system-ui,sans-serif}" +
-      ".chica-opt .meta{margin:0;color:#5c5348;font-size:12px}" +
-      ".chica-opt ul{margin:8px 0 0;padding:0;list-style:none}" +
-      ".chica-opt li{margin:6px 0 0;padding-top:6px;border-top:1px solid #ece6dc}" +
-      ".chica-dirs{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 0}" +
-      ".chica-dirs a{border:1px solid #c513af;border-radius:999px;padding:4px 10px;font-size:12px;color:#7a0f6c;text-decoration:none;font-weight:800}" +
-      "#chica-intel-card{display:none;position:fixed;z-index:2147483646;width:min(280px,calc(100vw - 24px));max-height:min(70dvh,460px);overflow:auto;background:#fffdf8;color:#1a1714;border:2px solid #c513af;border-radius:14px;box-shadow:0 16px 40px rgba(18,18,18,.4);padding:14px 14px 16px;font:500 13px/1.35 Inter,system-ui,sans-serif}" +
-      "#chica-intel-card .x{position:absolute;top:6px;right:6px;border:0;background:transparent;font:800 20px/1 Inter,system-ui,sans-serif;min-width:32px;min-height:32px;cursor:pointer}" +
       ".leaflet-container{width:100%!important;height:100%!important}";
     (document.head || document.documentElement).appendChild(s);
+  }
+
+  function showBase() {
+    var map = w.__chicaLeaflet;
+    if (!map) return;
+    var satOn = document.documentElement.classList.contains("chica-sat-on");
+    var street = map._chicaStreet, sat = map._chicaSat, esriStreet = map._chicaEsriStreet, esriSat = map._chicaEsriSat;
+    [street, sat, esriStreet, esriSat].forEach(function (ly) {
+      if (ly && map.hasLayer(ly)) map.removeLayer(ly);
+    });
+    (satOn ? esriSat : esriStreet).addTo(map);
+    if (mtFails < 8 && (satOn ? sat : street)) (satOn ? sat : street).addTo(map);
   }
 
   function boot() {
@@ -250,8 +125,16 @@
       return true;
     }
     injectCss();
-    prefetch();
-    var el = host();
+    var el = document.getElementById("chica-live-map");
+    if (!el) {
+      el = document.createElement("div");
+      el.id = "chica-live-map";
+      el.className = "chica-map";
+      (document.body || document.documentElement).appendChild(el);
+    }
+    el.setAttribute("role", "application");
+    el.setAttribute("aria-label", "San Antonio garage sale map");
+    el.style.cssText = "position:fixed;inset:0;width:100%;height:100%;z-index:1;background:#121212";
     var map = L.map(el, {
       zoomControl: false,
       maxZoom: 19,
@@ -259,28 +142,11 @@
       keyboard: true
     }).setView(SA, 12);
     L.control.zoom({ position: "bottomright" }).addTo(map);
-    var street = L.tileLayer(streetUrl(), {
-      attribution: "\u00a9 MapTiler \u00a9 OpenStreetMap contributors",
-      referrerPolicy: "origin",
-      updateWhenIdle: false,
-      keepBuffer: 6
-    });
-    var sat = L.tileLayer(satUrl(), {
-      attribution: "\u00a9 MapTiler \u00a9 OpenStreetMap contributors",
-      referrerPolicy: "origin",
-      updateWhenIdle: false,
-      keepBuffer: 6
-    });
+    var street = L.tileLayer(streetUrl(), { attribution: "\u00a9 MapTiler \u00a9 OpenStreetMap contributors", referrerPolicy: "origin", updateWhenIdle: false, keepBuffer: 6 });
+    var sat = L.tileLayer(satUrl(), { attribution: "\u00a9 MapTiler \u00a9 OpenStreetMap contributors", referrerPolicy: "origin", updateWhenIdle: false, keepBuffer: 6 });
     var esriStreet = L.tileLayer(ESRI_STREET, { attribution: "Tiles \u00a9 Esri", updateWhenIdle: false });
     var esriSat = L.tileLayer(ESRI_SAT, { attribution: "Tiles \u00a9 Esri", updateWhenIdle: false });
-    function showBase() {
-      var satOn = document.documentElement.classList.contains("chica-sat-on");
-      [street, sat, esriStreet, esriSat].forEach(function (ly) {
-        if (map.hasLayer(ly)) map.removeLayer(ly);
-      });
-      (satOn ? esriSat : esriStreet).addTo(map);
-      if (mtFails < 8) (satOn ? sat : street).addTo(map);
-    }
+    map._chicaStreet = street; map._chicaSat = sat; map._chicaEsriStreet = esriStreet; map._chicaEsriSat = esriSat;
     street.on("tileerror", function () { mtFails += 1; if (mtFails === 1 || mtFails === 8) showBase(); });
     sat.on("tileerror", function () { mtFails += 1; if (mtFails === 1 || mtFails === 8) showBase(); });
     showBase();
@@ -303,23 +169,14 @@
     map.on("click", function (ev) {
       var tgt = ev.originalEvent && ev.originalEvent.target;
       if (tgt && tgt.closest && tgt.closest(".leaflet-marker-icon, .chica-pin, .leaflet-popup, #chica-intel-card")) return;
-      hideCard();
+      if (typeof w.__chicaHideIntel === "function") w.__chicaHideIntel();
     });
-
     fetch(BASE + "/data/cities/san-antonio.json", { cache: "no-store" })
       .then(function (r) { return r.ok ? r.json() : null; })
-      .then(function (data) {
-        addPins(map, L, salesFrom(data));
-        size();
-      })
+      .then(function (data) { addPins(map, L, salesFrom(data)); size(); })
       .catch(function () {});
-
     var k = 0;
-    var sid = setInterval(function () {
-      size();
-      k += 1;
-      if (k > 24) clearInterval(sid);
-    }, 150);
+    var sid = setInterval(function () { size(); k += 1; if (k > 24) clearInterval(sid); }, 150);
     return true;
   }
 
