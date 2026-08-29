@@ -23,7 +23,15 @@
   var ESRI_STREET = "https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}";
   var ESRI_SAT = "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}";
 
-  function iconFor(type, L) {
+  function isPack(s) {
+    if (!s) return false;
+    if (s.pack || s.preferred || s.boost) return true;
+    var cat = Array.isArray(s.categories) ? s.categories.join(" ") : String(s.categories || "");
+    var blob = (cat + " " + (s.source || "") + " " + (s.title || "") + " " + (s.external_id || "")).toLowerCase();
+    return /pack[\s-]?point/.test(blob) || blob.indexOf("pack-point") !== -1;
+  }
+
+  function iconFor(type, pack, L) {
     var kind = type === "estate" || type === "permit" ? type : "garage";
     var html;
     if (kind === "estate") {
@@ -33,11 +41,14 @@
     } else {
       html = '<svg class="chica-sym" viewBox="0 0 18 18" width="18" height="18" aria-hidden="true"><circle cx="9" cy="9" r="6" fill="#c513af" stroke="#fffdf8" stroke-width="1.8"/></svg>';
     }
+    if (pack) {
+      html = '<span class="chica-pack-ring" aria-hidden="true"></span>' + html;
+    }
     return L.divIcon({
-      className: "chica-pin chica-type-" + kind,
+      className: "chica-pin chica-type-" + kind + (pack ? " chica-pack-pin" : ""),
       html: html,
-      iconSize: [26, 26],
-      iconAnchor: [13, 13]
+      iconSize: pack ? [36, 36] : [26, 26],
+      iconAnchor: pack ? [18, 18] : [13, 13]
     });
   }
 
@@ -53,7 +64,7 @@
       out = data.features.map(function (f) {
         var p = f.properties || {};
         var c = (f.geometry && f.geometry.coordinates) || [];
-        return { title: p.title || p.name, type: p.type || p.kind, address: p.address, lat: c[1], lon: c[0], dates: p.dates, hours: p.hours };
+        return { title: p.title || p.name, type: p.type || p.kind, address: p.address, lat: c[1], lon: c[0], dates: p.dates, hours: p.hours, pack: p.pack, preferred: p.preferred, source: p.source, categories: p.categories };
       });
     }
     return out;
@@ -73,15 +84,18 @@
         hours: s.hours || "",
         type: s.type || s.kind || "garage",
         lat: lat,
-        lon: lon
+        lon: lon,
+        pack: isPack(s),
+        source: s.source || ""
       };
       (function (item) {
         var mk = L.marker([item.lat, item.lon], {
-          icon: iconFor(item.type, L),
-          title: item.title,
+          icon: iconFor(item.type, item.pack, L),
+          title: item.pack ? "Pack point \u00b7 " + item.title : item.title,
           alt: item.title + " \u2014 tap for details",
           keyboard: true,
-          riseOnHover: true
+          riseOnHover: true,
+          zIndexOffset: item.pack ? 600 : 0
         });
         mk.__chicaSale = item;
         mk.on("click", function () {
@@ -99,7 +113,12 @@
     var s = document.createElement("style");
     s.id = "chica-live-intel-css";
     s.textContent =
-      ".leaflet-container{width:100%!important;height:100%!important}";
+      ".leaflet-container{width:100%!important;height:100%!important}" +
+      ".leaflet-marker-icon.chica-pack-pin{overflow:visible!important;background:transparent!important;border:0!important}" +
+      ".chica-pack-pin .chica-sym{position:relative;z-index:2;filter:drop-shadow(0 0 6px #ff3ad1)}" +
+      ".chica-pack-ring{position:absolute;left:50%;top:50%;width:18px;height:18px;margin:-9px 0 0 -9px;border-radius:999px;border:3px solid #ff3ad1;box-shadow:0 0 10px #ff3ad1,0 0 22px #c513af;animation:chica-pack-pulse 1.35s ease-out infinite;pointer-events:none}" +
+      "@keyframes chica-pack-pulse{0%{transform:scale(.55);opacity:.95}70%{transform:scale(2.15);opacity:0}100%{transform:scale(2.15);opacity:0}}" +
+      "@media (prefers-reduced-motion:reduce){.chica-pack-ring{animation:none;box-shadow:0 0 14px #ff3ad1,0 0 28px #c513af;opacity:.85}}";
     (document.head || document.documentElement).appendChild(s);
   }
 
@@ -169,7 +188,7 @@
       if (tgt && tgt.closest && tgt.closest(".leaflet-marker-icon, .chica-pin, .leaflet-popup, #chica-intel-card")) return;
       if (typeof w.__chicaHideIntel === "function") w.__chicaHideIntel();
     });
-    fetch(BASE + "/data/cities/san-antonio.json?v=29", { cache: "no-store" })
+    fetch(BASE + "/data/cities/san-antonio.json?v=30", { cache: "no-store" })
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (data) { addPins(map, L, salesFrom(data)); size(); })
       .catch(function () {});
