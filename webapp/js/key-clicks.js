@@ -1,4 +1,7 @@
-/* KEY layer actions for the standalone map. force-key owns the panel; this owns the map. */
+/* KEY layer actions for the standalone map. force-key owns the panel; this owns the map.
+   Intel is driveway notes on the pin (pin-details.js), GPS-gated at 200 ft.
+   It is not a KEY overlay and must not list nearby parking / pantry / Wi-Fi / schools.
+*/
 (function () {
   function onMapPath() {
     var p = location.pathname || "";
