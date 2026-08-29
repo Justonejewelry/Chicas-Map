@@ -1,22 +1,13 @@
 {
   "city": "san-antonio",
-  "date": "2026-08-28",
-  "last_refresh": "2026-08-28T01:45:46-05:00",
-  "edition": "Friday Live — San Antonio",
-  "pack": "daily-packs/2026-08-28-chica-update-pack.md",
+  "date": "2026-08-29",
+  "last_refresh": "2026-08-29T15:36:00-05:00",
+  "edition": "Saturday Live — San Antonio",
   "canonical_feed": "data/cities/san-antonio.json",
-  "total_locations": 92,
-  "public_count": 32,
-  "permit_total": 60,
-  "verified_from_pack": 29,
-  "sentinel": "PASS",
-  "note": "Friday pack applied. 32 public + 60 permits in the city feed. Canonical listings are data/cities/san-antonio.json, not data/feed.json.",
-  "hot_zones": [
-    "Potranco Run / Raceland",
-    "Shavano / 78230",
-    "Schertz / Universal City",
-    "South Central tools (Bailey)",
-    "Northwest / 78240"
-  ],
+  "total_locations": 45,
+  "public_count": 45,
+  "permit_total": 0,
+  "sentinel": "RESTORED",
+  "note": "City feed was overwritten with only the Fairpoint pack point. Restored data/sales/2026-08-29.json (44) plus Fairpoint.",
   "status": "live"
 }
