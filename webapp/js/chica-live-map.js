@@ -2,7 +2,7 @@
 (function (w) {
   var BASE = "/Chicas-Map";
   var SA = [29.4241, -98.4936];
-  var mtFails = 0;
+  var mtDead = true;
 
   function onMapPath() {
     var p = location.pathname || "";
@@ -12,7 +12,7 @@
 
   function key() {
     var cfg = (w.CHICA_CONFIG && w.CHICA_CONFIG.MAPTILER_KEY) || "";
-    return String(cfg || "ecxzoKzcx8AsCvqSPx3n").trim();
+    return String(cfg || "").trim();
   }
   function streetUrl() {
     return "https://api.maptiler.com/maps/outdoor-v2/256/{z}/{x}/{y}.png?key=" + encodeURIComponent(key());
@@ -124,6 +124,15 @@
     (document.head || document.documentElement).appendChild(s);
   }
 
+  function killMapTiler(map) {
+    if (!map) return;
+    [map._chicaStreet, map._chicaSat].forEach(function (ly) {
+      if (ly && map.hasLayer(ly)) {
+        try { map.removeLayer(ly); } catch (e) {}
+      }
+    });
+  }
+
   function showBase() {
     var map = w.__chicaLeaflet;
     if (!map) return;
@@ -132,8 +141,22 @@
     [street, sat, esriStreet, esriSat].forEach(function (ly) {
       if (ly && map.hasLayer(ly)) map.removeLayer(ly);
     });
-    (satOn ? esriSat : esriStreet).addTo(map);
-    if (mtFails < 8 && (satOn ? sat : street)) (satOn ? sat : street).addTo(map);
+    var esri = satOn ? esriSat : esriStreet;
+    var mt = satOn ? sat : street;
+    esri.addTo(map);
+    if (!mtDead && mt && key().length > 8) {
+      mt.once("load", function () {
+        if (mtDead) return;
+        if (map.hasLayer(esri)) map.removeLayer(esri);
+      });
+      mt.on("tileerror", function () {
+        mtDead = true;
+        killMapTiler(map);
+        if (!map.hasLayer(esri)) esri.addTo(map);
+      });
+      mt.addTo(map);
+    }
+    try { map.invalidateSize({ animate: false, pan: false }); } catch (e) {}
   }
 
   function boot() {
@@ -163,11 +186,9 @@
     L.control.zoom({ position: "bottomright" }).addTo(map);
     var street = L.tileLayer(streetUrl(), { attribution: "\u00a9 MapTiler \u00a9 OpenStreetMap contributors", referrerPolicy: "origin", updateWhenIdle: false, keepBuffer: 6 });
     var sat = L.tileLayer(satUrl(), { attribution: "\u00a9 MapTiler \u00a9 OpenStreetMap contributors", referrerPolicy: "origin", updateWhenIdle: false, keepBuffer: 6 });
-    var esriStreet = L.tileLayer(ESRI_STREET, { attribution: "Tiles \u00a9 Esri", updateWhenIdle: false });
-    var esriSat = L.tileLayer(ESRI_SAT, { attribution: "Tiles \u00a9 Esri", updateWhenIdle: false });
+    var esriStreet = L.tileLayer(ESRI_STREET, { attribution: "Tiles \u00a9 Esri", updateWhenIdle: false, keepBuffer: 6 });
+    var esriSat = L.tileLayer(ESRI_SAT, { attribution: "Tiles \u00a9 Esri", updateWhenIdle: false, keepBuffer: 6 });
     map._chicaStreet = street; map._chicaSat = sat; map._chicaEsriStreet = esriStreet; map._chicaEsriSat = esriSat;
-    street.on("tileerror", function () { mtFails += 1; if (mtFails === 1 || mtFails === 8) showBase(); });
-    sat.on("tileerror", function () { mtFails += 1; if (mtFails === 1 || mtFails === 8) showBase(); });
     showBase();
     map._chicaLive = true;
     w.__chicaLeaflet = map;

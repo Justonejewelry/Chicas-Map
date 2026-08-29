@@ -1,4 +1,4 @@
-/* Leaflet tile errors: MapTiler 403s were covering Esri with dead tiles. */
+/* Never leave MapTiler error tiles (API KEY NEEDED) sitting on top of Esri. */
 (function () {
   var p = location.pathname || "";
   if (!(/\/map\/?$/.test(p) || p.indexOf("/map/") !== -1 || /map\.html$/.test(p))) return;
@@ -22,6 +22,7 @@
     });
     try { map.invalidateSize({ animate: false, pan: false }); } catch (e) {}
   }
+  stripBad();
   var n = 0;
   var id = setInterval(function () {
     stripBad();
