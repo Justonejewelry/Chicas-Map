@@ -30,10 +30,9 @@
     s.id = "chica-grounds-ad-css";
     s.textContent =
       "#grounds-ad-home{max-width:72rem;margin:2rem auto 0}" +
-      ".chica-grounds-banner{min-height:9.5rem;background:linear-gradient(115deg,#7a3b12 0%,#c513af 42%,#5a2a10 100%);}" +
+      ".chica-grounds-banner{min-height:9.5rem;background:linear-gradient(115deg,#7a3b12 0%,#c513af 42%,#5a2a10 100%)}" +
       ".chica-grounds-banner::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(18,18,18,.55),rgba(18,18,18,.12));pointer-events:none}" +
-      ".chica-grounds-photo{opacity:.88}" +
-      "a[data-grounds]\"img.absolute{opacity:.78!important}";
+      ".chica-grounds-photo{opacity:.88}";
     (document.head || document.documentElement).appendChild(s);
   }
 
