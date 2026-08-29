@@ -1,19 +1,20 @@
 (function () {
   var TEL = "tel:+12108433299";
   var FILE = "/Chicas-Map/images/grounds-and-around.png";
+  var CARD_CLASS = "mx-auto mt-6 overflow-hidden rounded-xl bg-paper ring-1 ring-line";
 
   function cardHTML(src) {
     return (
       '<a href="' + TEL + '" class="block">' +
-        '<div class="flex items-end justify-between gap-3 px-4 pt-3">' +
-          '<p class="text-[0.65rem] font-bold tracking-[0.16em] text-pine-mid uppercase">Pack leader</p>' +
-          '<p class="text-[0.65rem] font-bold tracking-[0.16em] text-muted uppercase">Tell him Chica sent you</p>' +
+        '<div class="flex items-end justify-between gap-2 px-3 pt-2">' +
+          '<p class="text-[0.58rem] font-bold tracking-[0.14em] text-pine-mid uppercase">Pack leader</p>' +
+          '<p class="text-[0.58rem] font-bold tracking-[0.12em] text-muted uppercase">Chica sent you</p>' +
         "</div>" +
-        '<img src="' + src + '" alt="Grounds and Around wooden fence. Call William at (210) 843-3299." width="1200" height="420" class="chica-grounds-photo mt-2 block h-36 w-full object-cover object-center sm:h-44">' +
-        '<div class="px-4 py-3">' +
-          '<p class="font-display text-xl font-bold tracking-tight">Grounds &amp; Around</p>' +
-          '<p class="mt-0.5 text-sm text-muted">Wooden fences built right. Get your bids. Then call William.</p>' +
-          '<p class="mt-1 text-sm font-semibold text-pine-mid">(210) 843-3299</p>' +
+        '<img src="' + src + '" alt="Grounds and Around wooden fence. Call William at (210) 843-3299." width="272" height="104" class="chica-grounds-photo mt-1 block">' +
+        '<div class="px-3 py-2">' +
+          '<p class="font-display text-base font-bold tracking-tight">Grounds &amp; Around</p>' +
+          '<p class="mt-0.5 text-xs text-muted">Wooden fences. Get bids. Call William.</p>' +
+          '<p class="mt-0.5 text-xs font-semibold text-pine-mid">(210) 843-3299</p>' +
         "</div>" +
       "</a>"
     );
@@ -24,9 +25,9 @@
     var s = document.createElement("style");
     s.id = "chica-grounds-ad-css";
     s.textContent =
-      "#grounds-ad-home{max-width:72rem;margin:2rem auto 0}" +
-      ".chica-grounds-photo{opacity:1!important;filter:none!important;display:block}" +
-      "img[src*='grounds-and-around']{opacity:1!important;filter:none!important}";
+      "#grounds-ad-home{max-width:17rem;width:17rem;margin:1.25rem auto 0}" +
+      ".chica-grounds-photo{display:block;width:100%;height:6.5rem;object-fit:cover;object-position:center;opacity:1!important;filter:none!important}" +
+      "img[src*='grounds-and-around']{max-height:6.5rem!important;width:100%;object-fit:cover;opacity:1!important;filter:none!important}";
     (document.head || document.documentElement).appendChild(s);
   }
 
@@ -57,17 +58,17 @@
     injectCss();
     var existing = document.getElementById("grounds-ad-home");
     if (existing) {
-      var img = existing.querySelector("img");
-      if (img && src && img.getAttribute("src") !== src) img.src = src;
-      var a = existing.querySelector("a");
-      if (a) a.setAttribute("href", TEL);
+      existing.className = CARD_CLASS;
+      existing.style.maxWidth = "17rem";
+      existing.style.width = "17rem";
+      existing.innerHTML = cardHTML(src);
       return true;
     }
     var target = findPackCard();
     if (!target || !target.parentNode) return false;
     var s = document.createElement("section");
     s.id = "grounds-ad-home";
-    s.className = "mx-auto mt-8 max-w-6xl overflow-hidden rounded-xl bg-paper ring-1 ring-line";
+    s.className = CARD_CLASS;
     s.setAttribute("aria-label", "Pack leader \u2014 Grounds and Around");
     s.innerHTML = cardHTML(src);
     target.parentNode.insertBefore(s, target);
@@ -92,7 +93,10 @@
           img.src = src;
           img.style.opacity = "1";
           img.style.filter = "none";
-          img.className = String(img.className || "").replace(/opacity-\d+/g, "");
+          img.style.maxHeight = "6.5rem";
+          img.style.width = "100%";
+          img.style.objectFit = "cover";
+          img.className = String(img.className || "").replace(/opacity-\d+/g, "").replace(/h-\d+/g, "");
         }
       }
     }
