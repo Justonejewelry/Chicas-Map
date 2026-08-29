@@ -1,4 +1,5 @@
-/* Never leave MapTiler error tiles (API KEY NEEDED) sitting on top of Esri. */
+/* Strip MapTiler only after the live map marks the key dead.
+   Healthy outdoor-v2 tiles must stay. */
 (function () {
   var p = location.pathname || "";
   if (!(/\/map\/?$/.test(p) || p.indexOf("/map/") !== -1 || /map\.html$/.test(p))) return;
@@ -9,6 +10,7 @@
     return null;
   }
   function stripBad() {
+    if (!window.__chicaMtDead) return;
     var map = findMap();
     if (!map || !map.eachLayer) return;
     map.eachLayer(function (ly) {
@@ -22,7 +24,6 @@
     });
     try { map.invalidateSize({ animate: false, pan: false }); } catch (e) {}
   }
-  stripBad();
   var n = 0;
   var id = setInterval(function () {
     stripBad();
