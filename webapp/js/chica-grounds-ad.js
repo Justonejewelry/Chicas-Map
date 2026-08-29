@@ -3,7 +3,7 @@
   var TEL = "tel:+12108433299";
   var FILE = PREFIX + "/images/grounds-and-around.jpg";
   var CHUNK_DIR = PREFIX + "/js/grounds-ad/";
-  var src = FILE + "?v=2";
+  var src = null;
 
   function cardHTML() {
     return (
@@ -51,9 +51,11 @@
   }
 
   function insertHome() {
-    if (document.getElementById("grounds-ad-home")) {
-      var img = document.querySelector("#grounds-ad-home img");
-      if (img && src && img.getAttribute("src") !== src) img.src = src;
+    if (!src) return false;
+    var existing = document.getElementById("grounds-ad-home");
+    if (existing) {
+      var img = existing.querySelector("img");
+      if (img && img.getAttribute("src") !== src) img.src = src;
       return true;
     }
     var target = findPackCard();
@@ -68,8 +70,7 @@
   }
 
   function fillLeaderCard(el) {
-    if (!el || el.getAttribute("data-grounds") === "1") return;
-    el.setAttribute("data-grounds", "1");
+    if (!el || !src) return;
     el.setAttribute("href", TEL);
     try { el.style.position = "relative"; } catch (e) {}
     var overlay = null;
@@ -81,14 +82,15 @@
     if (!overlay) {
       overlay = document.createElement("img");
       overlay.alt = "Grounds & Around";
-      overlay.className = "pointer-events-none absolute inset-0 h-full w-full object-cover opacity-35";
+      overlay.className = "pointer-events-none absolute inset-0 h-full w-full object-cover opacity-40";
       el.insertBefore(overlay, el.firstChild);
     }
-    overlay.src = src;
+    if (overlay.getAttribute("src") !== src) overlay.src = src;
+    el.setAttribute("data-grounds", "1");
     var ps = el.querySelectorAll("p");
     for (var j = 0; j < ps.length; j++) {
       var low = ((ps[j].textContent || "").trim()).toLowerCase();
-      if (low.indexOf("your shop here") !== -1 || low.indexOf("grounds") !== -1) {
+      if (low.indexOf("your shop here") !== -1 || low === "grounds & around" || low.indexOf("grounds") !== -1) {
         ps[j].textContent = "Grounds & Around";
       } else if (low.indexOf("featured local") !== -1 || low.indexOf("from $200") !== -1 || low.indexOf("call william") !== -1) {
         ps[j].textContent = "Call William \u00b7 tell him Chica sent you \u00b7 (210) 843-3299";
@@ -114,29 +116,33 @@
     var parts = [];
     var n = 1;
     function next() {
-      fetch(CHUNK_DIR + n + ".b64", { cache: "force-cache" })
+      fetch(CHUNK_DIR + n + ".b64?v=3", { cache: "no-store" })
         .then(function (r) {
           if (!r.ok) throw new Error("done");
           return r.text();
         })
         .then(function (t) {
-          parts.push(String(t || "").replace(/\s+/g, ""));
+          var clean = String(t || "").replace(/\s+/g, "");
+          if (!clean || clean.indexOf("<") === 0) throw new Error("done");
+          parts.push(clean);
           n += 1;
-          if (n > 8) throw new Error("done");
+          if (n > 12) throw new Error("done");
           next();
         })
         .catch(function () {
-          done(parts.length ? "data:image/jpeg;base64," + parts.join("") : FILE + "?v=2");
+          done(parts.length ? "data:image/jpeg;base64," + parts.join("") : FILE + "?v=3");
         });
     }
     next();
   }
 
   function resolveSrc(cb) {
-    var probe = new Image();
-    probe.onload = function () { cb(FILE + "?v=2"); };
-    probe.onerror = function () { loadChunks(cb); };
-    probe.src = FILE + "?v=2";
+    loadChunks(function (candidate) {
+      var probe = new Image();
+      probe.onload = function () { cb(candidate); };
+      probe.onerror = function () { cb(FILE + "?v=3"); };
+      probe.src = candidate;
+    });
   }
 
   function run() {
