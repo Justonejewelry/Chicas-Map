@@ -1,7 +1,22 @@
 {
-  "updated": "2026-08-04",
+  "updated": "2026-08-29",
   "note": "Partner pins — contact mr.jsciaraffa@gmail.com to claim a slot",
   "sponsors": [
+    {
+      "id": "grounds-and-around",
+      "name": "Grounds & Around",
+      "category": "home",
+      "pitch": "Wooden fences built right. Call William and tell him Chica sent you.",
+      "phone": "+1 (210) 843-3299",
+      "contact": "William",
+      "lat": 29.52,
+      "lon": -98.62,
+      "url": "tel:+12108433299",
+      "cities": ["san-antonio"],
+      "status": "live",
+      "tier": "pack-leader",
+      "creative": "/images/grounds-and-around.jpg"
+    },
     {
       "id": "uhaul-sa-west",
       "name": "U-Haul Moving & Storage (SA West)",
