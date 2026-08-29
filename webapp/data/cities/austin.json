@@ -16,8 +16,8 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
@@ -42,13 +42,13 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.653665499209488,
-      "lon": -97.77658261195307,
+      "lat": 30.653818212109236,
+      "lon": -97.7765408434996,
       "geocode": "source",
       "company": "Golden Soul Estate Sales",
       "in_person": true,
@@ -136,8 +136,8 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
@@ -354,8 +354,8 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
@@ -393,15 +393,15 @@
     },
     {
       "address": "Meuller, Austin, TX",
-      "dates": "2026-08-28 – 2026-08-30",
-      "date_from": "2026-08-28",
-      "date_to": "2026-08-30",
-      "end_date": "2026-08-30",
+      "dates": "2026-08-29 – 2026-08-31",
+      "date_from": "2026-08-29",
+      "date_to": "2026-08-31",
+      "end_date": "2026-08-31",
       "hours": null,
       "title": "Moving sale - Playmate cooler",
       "details": "QR Code Link to This Post Playmate cooler. Great for outdoor activities and car rides.$30 Make a a reasonable offer!! Probably will accept, Email me. By appointment.",
       "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/austin-moving-sale-playmate-cooler/aXaRcJzGPsLV1MHwWw6DGG",
+      "url": "https://www.craigslist.org/view/d/austin-moving-sale-playmate-cooler/qaSg2xCCVEaciNW99PxSTk",
       "photos": 0,
       "type": "garage",
       "categories": [
@@ -414,7 +414,7 @@
       "lon": -97.8225,
       "geocode": "source",
       "in_person": true,
-      "external_id": "cl-eplaymatecooleraxarcjzgpslv1mhwww6dgg"
+      "external_id": "cl-eplaymatecoolerqasg2xccveacinw99pxstk"
     },
     {
       "address": "1309 Leander dr suite 1103, Austin, TX",
@@ -829,8 +829,8 @@
       "in_person": false,
       "external_id": "eso-2459839",
       "categories": [
-        "estate-sale",
-        "online-auction"
+        "online-auction",
+        "estate-sale"
       ]
     },
     {
@@ -1276,6 +1276,6 @@
   "total_locations": 54,
   "status": "live",
   "date": "2026-08-29",
-  "last_refresh": "2026-08-29T09:48:52-05:00",
+  "last_refresh": "2026-08-29T10:32:42-05:00",
   "permits": []
 }

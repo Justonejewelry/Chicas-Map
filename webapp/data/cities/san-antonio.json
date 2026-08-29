@@ -66,8 +66,8 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
@@ -147,8 +147,8 @@
       "in_person": false,
       "external_id": "eso-2458946",
       "categories": [
-        "estate-sale",
-        "online-auction"
+        "online-auction",
+        "estate-sale"
       ]
     },
     {
@@ -302,13 +302,13 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 29.632340885627023,
-      "lon": -98.30932945315946,
+      "lat": 29.633140382572766,
+      "lon": -98.30861634183924,
       "geocode": "source",
       "company": "Denny Harrison Estate Sales & Auctions",
       "in_person": true,
@@ -396,8 +396,8 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
@@ -687,8 +687,8 @@
       "in_person": false,
       "external_id": "eso-2458919",
       "categories": [
-        "estate-sale",
-        "online-auction"
+        "online-auction",
+        "estate-sale"
       ]
     },
     {
@@ -999,14 +999,14 @@
     },
     {
       "address": "7919 Saddle Run, Schertz, TX 78154",
-      "dates": "2026-08-29 – 2026-08-30",
-      "date_from": "2026-08-29",
-      "date_to": "2026-08-30",
+      "dates": "Sat Aug 29 – Sun Aug 30",
+      "date_from": "08/29/2026",
+      "date_to": "08/30/2026",
       "end_date": "2026-08-30",
       "title": "Yard Sale",
       "details": "",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196366447",
+      "source": "GarageSaleFinder",
+      "url": "https://garagesalefinder.com/s/N9c9e/7919-saddle-run-schertz-tx-78154",
       "photos": 0,
       "type": "garage",
       "confidence": 0.88,
@@ -1138,6 +1138,54 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "cl-aleallcommunity7wctdhgwlugja3ivhijcuc"
+    },
+    {
+      "address": "203 Serna Park, San Antonio, TX 78218",
+      "dates": "2026-08-29 – 2026-08-29",
+      "date_from": "2026-08-29",
+      "date_to": "2026-08-29",
+      "end_date": "2026-08-29",
+      "title": "Estate Sales",
+      "details": "",
+      "source": "YardSaleSearch",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196367381",
+      "photos": 0,
+      "type": "estate",
+      "confidence": 0.9,
+      "status": "verified",
+      "lat": 29.50706,
+      "lon": -98.405318,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "yss-203sernaparksanantoniotx78218-2026-08-29",
+      "categories": [
+        "in-person",
+        "estate-sale"
+      ]
+    },
+    {
+      "address": "10203 Castello Canyon near Hamlin Creek, San Antonio, TX",
+      "dates": "2026-08-29 – 2026-08-31",
+      "date_from": "2026-08-29",
+      "date_to": "2026-08-31",
+      "end_date": "2026-08-31",
+      "hours": null,
+      "title": "Community Garage Sale Silver Canyon Subdivision",
+      "details": "QR Code Link to This Post Yard sale located at 10203 Castello Canyon in the Silver Canyon Subdivision Have lots of boys toddler clothing and shoes along with some toys. We are ready to sell!!",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/san-antonio-community-garage-sale/9eToKg27N6ahSMHexJwFQ4",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 29.5551,
+      "lon": -98.7442,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-unitygaragesale9etokg27n6ahsmhexjwfq4"
     }
   ],
   "permits": [
@@ -2189,10 +2237,10 @@
     "gsalr.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 90,
+  "total_locations": 92,
   "status": "live",
   "date": "2026-08-29",
-  "last_refresh": "2026-08-29T09:48:52-05:00",
+  "last_refresh": "2026-08-29T10:32:42-05:00",
   "note": "Cleaned 33-pin Saturday live swap 2026-08-22 10:57 CDT. Merged Potranco/Moonlit/Craftsman. Dropped stores, auctions, warehouse, flea, single-item. Added Rita Ave + Jack Bean.",
   "permit_total": 41,
   "permit_estate_count": 1
