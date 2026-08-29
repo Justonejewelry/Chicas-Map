@@ -1,8 +1,6 @@
 (function () {
   var TEL = "tel:+12108433299";
-  var PREFIX = "/Chicas-Map/js/grounds-ad/";
-  var PARTS = 4;
-  var EMBED = null;
+  var FILE = "/Chicas-Map/images/grounds-and-around.png";
 
   function cardHTML(src) {
     return (
@@ -11,7 +9,7 @@
           '<p class="text-[0.65rem] font-bold tracking-[0.16em] text-pine-mid uppercase">Pack leader</p>' +
           '<p class="text-[0.65rem] font-bold tracking-[0.16em] text-muted uppercase">Tell him Chica sent you</p>' +
         "</div>" +
-        '<img src="' + src + '" alt="Grounds and Around wooden fence. Call William at (210) 843-3299." width="720" height="252" class="chica-grounds-photo mt-2 block h-36 w-full object-cover object-center sm:h-40">' +
+        '<img src="' + src + '" alt="Grounds and Around wooden fence. Call William at (210) 843-3299." width="1200" height="420" class="chica-grounds-photo mt-2 block h-36 w-full object-cover object-center sm:h-44">' +
         '<div class="px-4 py-3">' +
           '<p class="font-display text-xl font-bold tracking-tight">Grounds &amp; Around</p>' +
           '<p class="mt-0.5 text-sm text-muted">Wooden fences built right. Get your bids. Then call William.</p>' +
@@ -71,7 +69,7 @@
     s.id = "grounds-ad-home";
     s.className = "mx-auto mt-8 max-w-6xl overflow-hidden rounded-xl bg-paper ring-1 ring-line";
     s.setAttribute("aria-label", "Pack leader \u2014 Grounds and Around");
-    s.innerHTML = cardHTML(src || "");
+    s.innerHTML = cardHTML(src);
     target.parentNode.insertBefore(s, target);
     return true;
   }
@@ -101,31 +99,16 @@
   }
 
   function run() {
-    paint(EMBED);
-    dressWall(EMBED);
+    paint(FILE);
+    dressWall(FILE);
   }
 
-  function loadParts() {
-    var acc = [];
-    var left = PARTS;
-    for (var i = 1; i <= PARTS; i++) {
-      (function (n) {
-        fetch(PREFIX + n + ".txt?v=6", { cache: "force-cache" })
-          .then(function (r) { return r.ok ? r.text() : Promise.reject(); })
-          .then(function (t) {
-            acc[n - 1] = String(t || "").replace(/\s+/g, "");
-            left--;
-            if (left === 0) {
-              EMBED = "data:image/jpeg;base64," + acc.join("");
-              run();
-            }
-          })
-          .catch(function () { left--; });
-      })(i);
-    }
-  }
-
-  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", function () { run(); loadParts(); });
-  else { run(); loadParts(); }
-  setInterval(run, 2000);
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", run);
+  else run();
+  var n = 0;
+  var t = setInterval(function () {
+    run();
+    n++;
+    if (n >= 6) clearInterval(t);
+  }, 800);
 })();
