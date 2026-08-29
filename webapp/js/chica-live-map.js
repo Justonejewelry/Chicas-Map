@@ -169,7 +169,7 @@
       if (tgt && tgt.closest && tgt.closest(".leaflet-marker-icon, .chica-pin, .leaflet-popup, #chica-intel-card")) return;
       if (typeof w.__chicaHideIntel === "function") w.__chicaHideIntel();
     });
-    fetch(BASE + "/data/cities/san-antonio.json", { cache: "no-store" })
+    fetch(BASE + "/data/cities/san-antonio.json?v=29", { cache: "no-store" })
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (data) { addPins(map, L, salesFrom(data)); size(); })
       .catch(function () {});
