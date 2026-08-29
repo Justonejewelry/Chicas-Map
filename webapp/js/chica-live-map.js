@@ -42,7 +42,7 @@
       html = '<svg class="chica-sym" viewBox="0 0 18 18" width="18" height="18" aria-hidden="true"><circle cx="9" cy="9" r="6" fill="#c513af" stroke="#fffdf8" stroke-width="1.8"/></svg>';
     }
     if (pack) {
-      html = '<span class="chica-pack-ring" aria-hidden="true"></span>' + html;
+      html = '<span class="chica-pack-halo" aria-hidden="true"></span><span class="chica-pack-ring" aria-hidden="true"></span>' + html;
     }
     return L.divIcon({
       className: "chica-pin chica-type-" + kind + (pack ? " chica-pack-pin" : ""),
@@ -115,10 +115,12 @@
     s.textContent =
       ".leaflet-container{width:100%!important;height:100%!important}" +
       ".leaflet-marker-icon.chica-pack-pin{overflow:visible!important;background:transparent!important;border:0!important}" +
-      ".chica-pack-pin .chica-sym{position:relative;z-index:2;filter:drop-shadow(0 0 6px #ff3ad1)}" +
-      ".chica-pack-ring{position:absolute;left:50%;top:50%;width:18px;height:18px;margin:-9px 0 0 -9px;border-radius:999px;border:3px solid #ff3ad1;box-shadow:0 0 10px #ff3ad1,0 0 22px #c513af;animation:chica-pack-pulse 1.35s ease-out infinite;pointer-events:none}" +
-      "@keyframes chica-pack-pulse{0%{transform:scale(.55);opacity:.95}70%{transform:scale(2.15);opacity:0}100%{transform:scale(2.15);opacity:0}}" +
-      "@media (prefers-reduced-motion:reduce){.chica-pack-ring{animation:none;box-shadow:0 0 14px #ff3ad1,0 0 28px #c513af;opacity:.85}}";
+      ".chica-pack-pin .chica-sym{position:relative;z-index:2}" +
+      ".chica-pack-halo,.chica-pack-ring{position:absolute;left:50%;top:50%;width:16px;height:16px;border-radius:50%;pointer-events:none;transform:translate3d(-50%,-50%,0);backface-visibility:hidden;contain:strict}" +
+      ".chica-pack-halo{background:#ff3ad1;opacity:.35}" +
+      ".chica-pack-ring{background:#ff3ad1;opacity:.9;will-change:transform,opacity;animation:chica-pack-pulse 1.4s ease-out infinite}" +
+      "@keyframes chica-pack-pulse{0%{transform:translate3d(-50%,-50%,0) scale(.7);opacity:.85}100%{transform:translate3d(-50%,-50%,0) scale(2.2);opacity:0}}" +
+      "@media (prefers-reduced-motion:reduce){.chica-pack-ring{animation:none;opacity:.4;transform:translate3d(-50%,-50%,0) scale(1.55)}}";
     (document.head || document.documentElement).appendChild(s);
   }
 
