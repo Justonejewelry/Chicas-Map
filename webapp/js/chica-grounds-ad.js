@@ -12,9 +12,9 @@
           '<p class="text-[0.65rem] font-bold tracking-[0.16em] text-pine-mid uppercase">Pack leader</p>' +
           '<p class="text-[0.65rem] font-bold tracking-[0.16em] text-muted uppercase">Tell him Chica sent you</p>' +
         "</div>" +
-        '<img src="' + src + '" alt="Grounds &amp; Around \u2014 wooden fences. Call William and tell him Chica sent you. (210) 843-3299" width="1500" height="1000" class="mt-3 w-full object-cover">' +
+        '<img src="' + src + '" alt="Grounds & Around \u2014 wooden fences. Call William and tell him Chica sent you. (210) 843-3299" width="900" height="600" class="mt-3 w-full object-cover">' +
         '<div class="px-5 py-4">' +
-          '<p class="font-display text-2xl font-bold tracking-tight">Grounds &amp; Around</p>' +
+          '<p class="font-display text-2xl font-bold tracking-tight">Grounds & Around</p>' +
           '<p class="mt-1 text-sm text-muted">Wooden fences built right. Get your bids. Then call William.</p>' +
           '<p class="mt-2 text-sm font-semibold text-pine-mid">(210) 843-3299</p>' +
         "</div>" +
@@ -56,6 +56,8 @@
     if (existing) {
       var img = existing.querySelector("img");
       if (img && img.getAttribute("src") !== src) img.src = src;
+      var a = existing.querySelector("a");
+      if (a) a.setAttribute("href", TEL);
       return true;
     }
     var target = findPackCard();
@@ -116,7 +118,7 @@
     var parts = [];
     var n = 1;
     function next() {
-      fetch(CHUNK_DIR + n + ".b64?v=3", { cache: "no-store" })
+      fetch(CHUNK_DIR + n + ".b64?v=4", { cache: "no-store" })
         .then(function (r) {
           if (!r.ok) throw new Error("done");
           return r.text();
@@ -130,7 +132,7 @@
           next();
         })
         .catch(function () {
-          done(parts.length ? "data:image/jpeg;base64," + parts.join("") : FILE + "?v=3");
+          done(parts.length ? "data:image/jpeg;base64," + parts.join("") : FILE + "?v=4");
         });
     }
     next();
@@ -140,7 +142,7 @@
     loadChunks(function (candidate) {
       var probe = new Image();
       probe.onload = function () { cb(candidate); };
-      probe.onerror = function () { cb(FILE + "?v=3"); };
+      probe.onerror = function () { cb(FILE + "?v=4"); };
       probe.src = candidate;
     });
   }
