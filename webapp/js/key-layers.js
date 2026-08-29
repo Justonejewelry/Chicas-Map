@@ -1,4 +1,7 @@
-/* Chicas Map combined KEY. Identity esc so this file always parses. */
+/* Chicas Map KEY.
+   Intel is NOT nearby parking / pantry / Wi-Fi / schools.
+   Intel is driveway notes on THAT pin, GPS-gated at 200 ft (pin-details.js).
+*/
 (function () {
   function onMapPath() {
     var p = location.pathname || "";
@@ -6,11 +9,10 @@
   }
   if (!onMapPath()) return;
   var BASE = "/Chicas-Map";
-  var INTEL_ICON = BASE + "/images/intel-brain.svg?v=2";
   var SAT_STORE = "chicas-map-layer-sat";
   var KEY_STORE = "chicas-map-key-open-v2";
   var LAYER_STORE = "chicas-map-key-layers";
-  var overlayCache = {}, overlayGroups = {}, intelWired = false, panelWired = false, NEAR_M = 1600;
+  var overlayCache = {}, overlayGroups = {}, panelWired = false;
   function readSat() { try { return localStorage.getItem(SAT_STORE) === "1"; } catch (e) { return false; } }
   function writeSat(on) { try { localStorage.setItem(SAT_STORE, on ? "1" : "0"); } catch (e) {} }
   function emergencyOn() {
@@ -19,15 +21,39 @@
   }
   function loadLayerState() { try { var r = localStorage.getItem(LAYER_STORE); return r ? JSON.parse(r) : {}; } catch (e) { return {}; } }
   function saveLayerState() {
-    try { localStorage.setItem(LAYER_STORE, JSON.stringify({ garage: state.garage, estate: state.estate, permit: state.permit, intel: state.intel, satellite: state.satellite, parking: state.parking, pantry: state.pantry, schools: state.schools, wifi: state.wifi, claimed: state.claimed, emergency: state.emergency })); } catch (e) {}
+    try {
+      localStorage.setItem(LAYER_STORE, JSON.stringify({
+        garage: state.garage,
+        estate: state.estate,
+        permit: state.permit,
+        satellite: state.satellite,
+        parking: state.parking,
+        pantry: state.pantry,
+        schools: state.schools,
+        wifi: state.wifi,
+        claimed: state.claimed,
+        emergency: state.emergency
+      }));
+    } catch (e) {}
   }
   var saved = loadLayerState();
-  var state = { garage: saved.garage !== false, estate: saved.estate !== false, permit: saved.permit !== false, intel: saved.intel === true, satellite: typeof saved.satellite === "boolean" ? saved.satellite : readSat(), parking: saved.parking === true, pantry: saved.pantry === true, schools: saved.schools === true, wifi: saved.wifi === true, claimed: saved.claimed !== false, events: false, emergency: saved.emergency === true && emergencyOn() };
+  var state = {
+    garage: saved.garage !== false,
+    estate: saved.estate !== false,
+    permit: saved.permit !== false,
+    satellite: typeof saved.satellite === "boolean" ? saved.satellite : readSat(),
+    parking: saved.parking === true,
+    pantry: saved.pantry === true,
+    schools: saved.schools === true,
+    wifi: saved.wifi === true,
+    claimed: saved.claimed !== false,
+    events: false,
+    emergency: saved.emergency === true && emergencyOn()
+  };
   var LAYERS = [
     { id: "garage", kind: "sale", label: "Garage sale" },
     { id: "estate", kind: "sale", label: "Estate sale" },
     { id: "permit", kind: "sale", label: "City permit" },
-    { id: "intel", kind: "intel", label: "Intel" },
     { id: "satellite", kind: "basemap", label: "Satellite" },
     { id: "parking", kind: "overlay", label: "Parking", src: BASE + "/data/san-antonio-downtown-parking.geojson" },
     { id: "pantry", kind: "overlay", label: "Pantries", src: BASE + "/data/san-antonio-24h-food-pantries.geojson" },
@@ -45,7 +71,6 @@
     if (id === "garage") return svg('<circle cx="8" cy="8" r="5.2" fill="#c513af" stroke="#121212" stroke-width="1.4"/>');
     if (id === "estate") return svg('<polygon points="8,1.8 14.4,8 8,14.2 1.6,8" fill="#f4f4f4" stroke="#121212" stroke-width="1.4"/>');
     if (id === "permit") return svg('<polygon points="8,2.2 14.2,13.6 1.8,13.6" fill="#8a8a8a" stroke="#121212" stroke-width="1.4"/>');
-    if (id === "intel") return '<img class="chica-key-sym" src="' + INTEL_ICON + '" width="14" height="14" alt="" />';
     if (id === "satellite") return svg('<circle cx="8" cy="8" r="6" fill="#0b3d62" stroke="#121212" stroke-width="1.2"/>');
     if (id === "parking") return svg('<rect x="2.2" y="2.2" width="11.6" height="11.6" rx="2" fill="#38bdf8" stroke="#0369a1" stroke-width="1.2"/>');
     if (id === "pantry") return svg('<ellipse cx="8" cy="5.2" rx="4.2" ry="1.5" fill="#f5d000" stroke="#5c4a00" stroke-width="1.1"/>');
@@ -69,21 +94,21 @@
     if (document.getElementById("chica-key-style")) return;
     var s = document.createElement("style");
     s.id = "chica-key-style";
-    s.textContent = "#chica-key{display:block!important;visibility:visible!important;opacity:1!important;position:fixed!important;left:12px!important;bottom:calc(16px + env(safe-area-inset-bottom,0px))!important;z-index:2147483646!important;width:min(228px,calc(100vw - 24px));max-height:min(58dvh,440px);overflow:auto;background:#1a1714f2;color:#f3eee4;border:1px solid #3a342e;border-radius:16px;font:500 12px/1.25 Inter,system-ui,sans-serif;padding:8px 10px 10px;pointer-events:auto!important}#chica-key[data-collapsed=true]{max-height:44px;overflow:hidden}#chica-key ul{list-style:none;margin:0;padding:0}#chica-key li{display:flex;align-items:center;gap:8px;padding:5px 4px;border-radius:8px;cursor:pointer;min-height:32px}.chica-intel-badge{position:absolute;right:-5px;top:-6px;width:14px;height:14px;border-radius:999px;background:#c513af;display:none}html.chica-intel-on .chica-intel-badge{display:block}.chica-overlay-pin{border:0;background:transparent}.chica-opt{font:500 12px/1.35 Inter,system-ui,sans-serif;color:#1a1714;min-width:200px}.chica-opt h3{margin:0 0 4px;font:800 13px/1.2 Inter,system-ui,sans-serif}.chica-opt .meta{color:#5c5348;font-size:11px}.chica-opt .acts{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}.chica-opt a.chip{border:1px solid #c513af;border-radius:999px;padding:3px 8px;font-size:11px;color:#7a0f6c;text-decoration:none;font-weight:700}.chica-opt .near{list-style:none;margin:6px 0 0;padding:0}.chica-opt .near li{margin:6px 0 0;padding-top:6px;border-top:1px solid #ece6dc}.chica-opt .tag{font-size:10px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:#7a0f6c}button.chica-dup-chip,.chica-dup-chip,#chica-pin-claim,#chica-intel-btn{display:none!important}aside[aria-label=Key]:not(#chica-key),aside[aria-label=key]:not(#chica-key),[data-chica-legend]{display:none!important}.leaflet-control-layers{display:none!important}#chica-fs-btn,#chica-listit-btn,#chica-map-chrome{display:flex!important;visibility:visible!important;opacity:1!important;pointer-events:auto!important}.leaflet-container,.chica-map{visibility:visible!important}";
+    s.textContent = "#chica-key{display:block!important;visibility:visible!important;opacity:1!important;position:fixed!important;left:12px!important;bottom:calc(16px + env(safe-area-inset-bottom,0px))!important;z-index:2147483646!important;width:min(228px,calc(100vw - 24px));max-height:min(58dvh,440px);overflow:auto;background:#1a1714f2;color:#f3eee4;border:1px solid #3a342e;border-radius:16px;font:500 12px/1.25 Inter,system-ui,sans-serif;padding:8px 10px 10px;pointer-events:auto!important}#chica-key[data-collapsed=true]{max-height:44px;overflow:hidden}#chica-key ul{list-style:none;margin:0;padding:0}#chica-key li{display:flex;align-items:center;gap:8px;padding:5px 4px;border-radius:8px;cursor:pointer;min-height:32px}.chica-overlay-pin{border:0;background:transparent}.chica-opt{font:500 12px/1.35 Inter,system-ui,sans-serif;color:#1a1714;min-width:200px}.chica-opt h3{margin:0 0 4px;font:800 13px/1.2 Inter,system-ui,sans-serif}.chica-opt .meta{color:#5c5348;font-size:11px}.chica-opt .acts{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}.chica-opt a.chip{border:1px solid #c513af;border-radius:999px;padding:3px 8px;font-size:11px;color:#7a0f6c;text-decoration:none;font-weight:700}.chica-opt .tag{font-size:10px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:#7a0f6c}button.chica-dup-chip,.chica-dup-chip,#chica-pin-claim,#chica-intel-btn{display:none!important}aside[aria-label=Key]:not(#chica-key),aside[aria-label=key]:not(#chica-key),[data-chica-legend]{display:none!important}.leaflet-control-layers{display:none!important}#chica-fs-btn,#chica-listit-btn,#chica-map-chrome{display:flex!important;visibility:visible!important;opacity:1!important;pointer-events:auto!important}.leaflet-container,.chica-map{visibility:visible!important}#chica-key [data-chica-layer=intel]{display:none!important}";
     (document.head || document.documentElement).appendChild(s);
   }
   function toggleSpec(spec) {
     if (!spec) return;
+    if (spec.id === "intel") return;
     if (spec.kind === "cta") { location.href = spec.href || (BASE + "/claim"); return; }
     state[spec.id] = !state[spec.id];
     saveLayerState();
     var row = document.querySelector('#chica-key [data-chica-layer="' + spec.id + '"]');
     if (row && spec.kind !== "cta") styleRow(row, state[spec.id]);
     if (spec.kind === "sale") applyPins();
-    else if (spec.kind === "intel") applyIntel();
     else if (spec.kind === "basemap") applySat();
     else if (spec.kind === "claimed") applyClaimed();
-    else setOverlay(spec.id, state[spec.id], spec);
+    else if (spec.kind === "overlay") setOverlay(spec.id, state[spec.id], spec);
   }
   function bindPanel(p) {
     if (panelWired || !p) return;
@@ -124,6 +149,8 @@
       });
     }
     if (p.parentNode !== document.body) document.body.appendChild(p);
+    var stale = p.querySelector('[data-chica-layer="intel"]');
+    if (stale) stale.remove();
     bindPanel(p);
     return p;
   }
@@ -151,25 +178,12 @@
       if (kind) wrap.style.display = on ? "" : "none";
     }
   }
-  function stampBadges() {
-    if (!state.intel) return;
-    var pins = document.querySelectorAll(".leaflet-marker-icon, .chica-sym");
-    for (var i = 0; i < pins.length; i++) {
-      var host = pins[i];
-      if (host.querySelector(".chica-intel-badge") || (host.getAttribute("title") || "") === "You" || (host.querySelector && host.querySelector(".chica-overlay-mark"))) continue;
-      var mark = document.createElement("span");
-      mark.className = "chica-intel-badge";
-      mark.innerHTML = '<img src="' + INTEL_ICON + '" alt="" width="12" height="12" />';
-      if (getComputedStyle(host).position === "static") host.style.position = "relative";
-      host.appendChild(mark);
-    }
-  }
-  function applyIntel() {
-    document.documentElement.classList.toggle("chica-intel-on", state.intel);
-    if (state.intel) { stampBadges(); prefetchOverlays(); }
-    else { var b = document.querySelectorAll(".chica-intel-badge"); for (var i = 0; i < b.length; i++) b[i].style.display = "none"; }
+  function stripIntelChrome() {
+    document.documentElement.classList.remove("chica-intel-on");
+    var b = document.querySelectorAll(".chica-intel-badge");
+    for (var i = 0; i < b.length; i++) b[i].remove();
     var row = document.querySelector('#chica-key [data-chica-layer="intel"]');
-    if (row) styleRow(row, state.intel);
+    if (row) row.remove();
   }
   function applySat() {
     document.documentElement.classList.toggle("chica-sat-on", state.satellite);
@@ -203,63 +217,6 @@
     var g = feat && feat.geometry;
     if (!g || !g.coordinates || g.type !== "Point") return null;
     return [g.coordinates[1], g.coordinates[0]];
-  }
-  function distM(aLat, aLon, bLat, bLon) {
-    var R = 6371000, dLat = (bLat - aLat) * Math.PI / 180, dLon = (bLon - aLon) * Math.PI / 180;
-    var h = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(aLat * Math.PI / 180) * Math.cos(bLat * Math.PI / 180) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
-    return 2 * R * Math.asin(Math.min(1, Math.sqrt(h)));
-  }
-  function nearest(id, lat, lon) {
-    var feats = overlayCache[id] || [], best = null;
-    for (var i = 0; i < feats.length; i++) {
-      var ll = featureLatLng(feats[i]); if (!ll) continue;
-      var d = distM(lat, lon, ll[0], ll[1]);
-      if (d > NEAR_M) continue;
-      if (!best || d < best.d) best = { d: d, feat: feats[i], ll: ll };
-    }
-    return best;
-  }
-  function fmtM(m) { return m < 1000 ? Math.round(m) + " m" : (m / 1609.34).toFixed(1) + " mi"; }
-  function nearRow(label, hit) {
-    if (!hit) return "";
-    var props = hit.feat.properties || {}, name = props.name || label;
-    var extra = props.ssid ? " \u00b7 SSID " + props.ssid : (props.rates || props.hourly || props.hours || "");
-    return '<li><span class="tag">' + esc(label) + "</span> " + esc(name) + ' <span class="meta">' + fmtM(hit.d) + (extra ? " \u00b7 " + esc(extra) : "") + "</span>" + dirLinks(hit.ll[0], hit.ll[1]) + "</li>";
-  }
-  function intelPopupHtml(title, lat, lon) {
-    var items = nearRow("Parking", nearest("parking", lat, lon)) + nearRow("Pantry", nearest("pantry", lat, lon)) + nearRow("Wi-Fi", nearest("wifi", lat, lon)) + nearRow("School zone", nearest("schools", lat, lon));
-    if (!items) items = '<li class="meta">Nothing within a mile. Turn Parking / Wi-Fi / Pantries on in the Key.</li>';
-    return '<div class="chica-opt"><span class="tag">Intel</span><h3>' + esc(title || "This pin") + '</h3><div class="meta">Options around this driveway</div>' + dirLinks(lat, lon) + '<ul class="near">' + items + '</ul><div class="acts"><a class="chip" href="' + BASE + '/intel/">Sale Intel</a><a class="chip" href="' + BASE + '/claim">Pin it \u00b7 $5</a></div></div>';
-  }
-  function openIntelPopup(el) {
-    var map = findMap(), L = window.L;
-    if (!map || !L || !L.popup) return;
-    var wrap = el.closest(".leaflet-marker-icon") || el, rect = wrap.getBoundingClientRect(), box = map.getContainer().getBoundingClientRect();
-    var ll;
-    try { ll = map.containerPointToLatLng([rect.left + rect.width / 2 - box.left, rect.top + rect.height - box.top]); } catch (e) { return; }
-    var title = (el.getAttribute("title") || el.getAttribute("aria-label") || "Sale pin").replace(/\s+/g, " ").trim();
-    L.popup({ maxWidth: 280, autoPan: true }).setLatLng(ll).setContent(intelPopupHtml(title, ll.lat, ll.lng)).openOn(map);
-  }
-  function wireIntelClicks() {
-    if (intelWired) return;
-    intelWired = true;
-    document.addEventListener("click", function (ev) {
-      if (!state.intel) return;
-      var t = ev.target; if (!t || !t.closest) return;
-      if (t.closest("#chica-key") || t.closest(".leaflet-popup") || t.closest("#chica-map-chrome")) return;
-      var pin = t.closest(".leaflet-marker-icon, .chica-sym, .chica-pin");
-      if (!pin || (pin.querySelector && pin.querySelector(".chica-overlay-mark")) || (pin.getAttribute("title") || "") === "You") return;
-      openIntelPopup(pin);
-    }, true);
-  }
-  function prefetchOverlays() {
-    for (var i = 0; i < LAYERS.length; i++) {
-      var spec = LAYERS[i];
-      if (spec.kind !== "overlay" || overlayCache[spec.id]) continue;
-      (function (id, src) {
-        fetch(src + "?v=6", { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (data) { overlayCache[id] = data && data.features ? data.features : []; }).catch(function () { overlayCache[id] = overlayCache[id] || []; });
-      })(spec.id, spec.src);
-    }
   }
   function buildGroup(id, feats) {
     var L = window.L; if (!L || !L.layerGroup) return null;
@@ -309,6 +266,8 @@
   function ensureOverlays(p) {
     var wrap = p.querySelector("[data-chica-overlays]");
     if (!wrap) { wrap = document.createElement("ul"); wrap.setAttribute("data-chica-overlays", "1"); p.appendChild(wrap); }
+    var stale = wrap.querySelector('[data-chica-layer="intel"]');
+    if (stale) stale.remove();
     for (var i = 0; i < LAYERS.length; i++) {
       var spec = LAYERS[i], row = wrap.querySelector('[data-chica-layer="' + spec.id + '"]');
       if (!row) { row = document.createElement("li"); wrap.appendChild(row); }
@@ -336,7 +295,7 @@
     if (!onMapPath()) return;
     ensureStyle();
     var p = ensurePanel(); if (!p) return;
-    ensureOverlays(p); hideDup(); restoreMap(); applyPins(); applyIntel(); applySat(); applyClaimed(); restoreOverlays(); wireIntelClicks();
+    ensureOverlays(p); hideDup(); restoreMap(); applyPins(); stripIntelChrome(); applySat(); applyClaimed(); restoreOverlays();
   }
   function boot() { wire(); setInterval(wire, 900); }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot); else boot();
