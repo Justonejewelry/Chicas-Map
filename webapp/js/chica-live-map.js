@@ -47,8 +47,8 @@
     return L.divIcon({
       className: "chica-pin chica-type-" + kind + (pack ? " chica-pack-pin" : ""),
       html: html,
-      iconSize: pack ? [36, 36] : [26, 26],
-      iconAnchor: pack ? [18, 18] : [13, 13]
+      iconSize: [26, 26],
+      iconAnchor: [13, 13]
     });
   }
 
@@ -114,9 +114,9 @@
     s.id = "chica-live-intel-css";
     s.textContent =
       ".leaflet-container{width:100%!important;height:100%!important}" +
-      ".leaflet-marker-icon.chica-pack-pin{overflow:visible!important;background:transparent!important;border:0!important}" +
-      ".chica-pack-pin .chica-sym{position:relative;z-index:2}" +
-      ".chica-pack-halo,.chica-pack-ring{position:absolute;left:50%;top:50%;width:16px;height:16px;border-radius:50%;pointer-events:none;transform:translate3d(-50%,-50%,0);backface-visibility:hidden;contain:strict}" +
+      ".leaflet-marker-icon.chica-pin,.leaflet-div-icon.chica-pin{width:26px!important;height:26px!important;margin-left:-13px!important;margin-top:-13px!important;padding:0!important;border:0!important;background:transparent!important;display:flex;align-items:center;justify-content:center;overflow:visible!important;box-sizing:border-box}" +
+      ".chica-pin .chica-sym{display:block;width:18px;height:18px;flex:0 0 18px;position:relative;z-index:2}" +
+      ".chica-pack-halo,.chica-pack-ring{position:absolute;left:13px;top:13px;width:16px;height:16px;margin:0;border-radius:50%;pointer-events:none;transform:translate3d(-50%,-50%,0);backface-visibility:hidden}" +
       ".chica-pack-halo{background:#ff3ad1;opacity:.35}" +
       ".chica-pack-ring{background:#ff3ad1;opacity:.9;will-change:transform,opacity;animation:chica-pack-pulse 1.4s ease-out infinite}" +
       "@keyframes chica-pack-pulse{0%{transform:translate3d(-50%,-50%,0) scale(.7);opacity:.85}100%{transform:translate3d(-50%,-50%,0) scale(2.2);opacity:0}}" +
