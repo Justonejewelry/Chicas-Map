@@ -4,7 +4,17 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="referrer" content="origin" />
-  <title>The map \u00b7 Chicas Map</title>
+  <title>Live garage sale map · Chicas Map San Antonio</title>
+  <meta name="description" content="Open the live San Antonio garage sale map. Verified pins, Near Me, KEY layers, and one-tap Google, Apple, or Waze routes." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://justonejewelry.github.io/Chicas-Map/map/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Chicas Map" />
+  <meta property="og:title" content="Live garage sale map · Chicas Map San Antonio" />
+  <meta property="og:description" content="Free San Antonio garage, yard, and estate sale map with Near Me and weekend routes." />
+  <meta property="og:url" content="https://justonejewelry.github.io/Chicas-Map/map/" />
+  <meta property="og:image" content="https://justonejewelry.github.io/Chicas-Map/og.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/svg+xml" href="/Chicas-Map/favicon.svg" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" />
   <style>
@@ -12,9 +22,21 @@
     #chica-live-map, .leaflet-container { position: fixed; inset: 0; width: 100vw !important; height: 100dvh !important; z-index: 1; background: #121212; }
     #chica-home-chip { position: fixed; top: max(10px, env(safe-area-inset-top)); right: 10px; z-index: 2147483647; height: 44px; padding: 0 12px; border-radius: 12px; background: #1a1714f5; color: #f3eee4; text-decoration: none; font: 800 13px/44px Inter, system-ui, sans-serif; border: 1px solid #3a342e; }
     .leaflet-control-zoom { margin-bottom: 92px !important; }
+    #chica-crawl { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
   </style>
 </head>
 <body>
+  <noscript>
+    <main id="chica-crawl">
+      <h1>Chicas Map — San Antonio garage sale map</h1>
+      <p>Free live map of garage sales, yard sales, and estate sales in San Antonio.</p>
+      <ul>
+        <li><a href="/Chicas-Map/">Home</a></li>
+        <li><a href="/Chicas-Map/list/">This weekend’s sales</a></li>
+        <li><a href="/Chicas-Map/submit/">List a sale free</a></li>
+      </ul>
+    </main>
+  </noscript>
   <div id="chica-live-map" class="chica-map" role="application" aria-label="San Antonio garage sale map"></div>
   <a id="chica-home-chip" href="/Chicas-Map/">Home</a>
   <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
