@@ -2,15 +2,15 @@
 
 ## 1. CHICA DAILY RUN
 - **Target date:** Sunday, August 30, 2026
-- **San Antonio local run time:** 2026-08-30T09:35:16-05:00
+- **San Antonio local run time:** 2026-08-30T10:13:43-05:00
 - **Geographic area:** San Antonio & surrounding communities
 - **Sources searched:** 7
-- **Candidates discovered:** 27
-- **Verified sales:** 22
+- **Candidates discovered:** 28
+- **Verified sales:** 23
 - **Rejected listings:** 5
 - **Duplicates merged:** 0
-- **Successfully geocoded:** 22
-- **Street View links generated:** 22
+- **Successfully geocoded:** 23
+- **Street View links generated:** 23
 - **Sentinel:** PASS
 
 ## 2. VERIFIED SALES
@@ -26,7 +26,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-estate-sale-moving-sale/iyLKr45DRf81Ty7rAjR8d2
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.580824,-98.427915
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.580824,-98.427915
-- **Verified at:** 2026-08-30T09:35:16-05:00
+- **Verified at:** 2026-08-30T10:13:43-05:00
 
 ### 2. Alamo Craft Co. Antiques & More (San Antonio)
 - **Type:** garage
@@ -38,7 +38,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-alamo-craft-co-antiques-more/mj6FcRd4ZDr7zwAwc4pwWa
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.556,-98.6094
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.556,-98.6094
-- **Verified at:** 2026-08-30T09:35:16-05:00
+- **Verified at:** 2026-08-30T10:13:43-05:00
 
 ### 3. Design Warehouse Liquidation in Boerne, TX. Bidding ends 8/31
 - **Type:** estate
@@ -50,7 +50,7 @@
 - **Original listing:** https://estatesales.org/estate-sales/tx/boerne/78006/design-warehouse-liquidation-in-boerne-2458946
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.7946641,-98.7319703
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.7946641,-98.7319703
-- **Verified at:** 2026-08-30T09:35:16-05:00
+- **Verified at:** 2026-08-30T10:13:43-05:00
 
 ### 4. Massive 4-Day Warehouse Estate Sale 30% Markdowns Start Today!
 - **Type:** estate
@@ -63,7 +63,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196350877
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4840857,-98.5421089
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4840857,-98.5421089
-- **Verified at:** 2026-08-30T09:35:16-05:00
+- **Verified at:** 2026-08-30T10:13:43-05:00
 
 ### 5. Moving Sale
 - **Type:** garage
@@ -76,7 +76,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196354021
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.564112,-98.543074
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.564112,-98.543074
-- **Verified at:** 2026-08-30T09:35:16-05:00
+- **Verified at:** 2026-08-30T10:13:43-05:00
 
 ### 6. Huge Sale Of Various Items
 - **Type:** garage
@@ -89,7 +89,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196359837
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.37000548,-98.76704444
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.37000548,-98.76704444
-- **Verified at:** 2026-08-30T09:35:16-05:00
+- **Verified at:** 2026-08-30T10:13:43-05:00
 
 ### 7. A Lifetime Of Treasures In Nw Sunshine Estates
 - **Type:** estate
@@ -102,7 +102,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196361705
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4770323,-98.5529864
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4770323,-98.5529864
-- **Verified at:** 2026-08-30T09:35:16-05:00
+- **Verified at:** 2026-08-30T10:13:43-05:00
 
 ### 8. Large Garage Sale
 - **Type:** garage
@@ -115,7 +115,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196363197
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.487174,-98.633885
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.487174,-98.633885
-- **Verified at:** 2026-08-30T09:35:16-05:00
+- **Verified at:** 2026-08-30T10:13:43-05:00
 
 ### 9. Chicago Style Meets San Antonio - Bidding ends 8/30
 - **Type:** estate
@@ -127,7 +127,7 @@
 - **Original listing:** https://estatesales.org/estate-sales/tx/san-antonio/78203/chicago-style-meets-san-antonio-2458919
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4135826,-98.4485846
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4135826,-98.4485846
-- **Verified at:** 2026-08-30T09:35:16-05:00
+- **Verified at:** 2026-08-30T10:13:43-05:00
 
 ### 10. Estate Sale - Art and collectibles (By Seaworld)
 - **Type:** estate
@@ -139,7 +139,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-estate-sale-art-and/sJWRPFbGKUHuWD4P9UFP67
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.435764,-98.681542
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.435764,-98.681542
-- **Verified at:** 2026-08-30T09:35:16-05:00
+- **Verified at:** 2026-08-30T10:13:43-05:00
 
 ### 11. Yard Sale / Estate Sale Items
 - **Type:** estate
@@ -152,7 +152,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196366065
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.475066,-98.570898
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.475066,-98.570898
-- **Verified at:** 2026-08-30T09:35:16-05:00
+- **Verified at:** 2026-08-30T10:13:43-05:00
 
 ### 12. Yard Sale
 - **Type:** garage
@@ -165,7 +165,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196366447
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.591413,-98.333002
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.591413,-98.333002
-- **Verified at:** 2026-08-30T09:35:16-05:00
+- **Verified at:** 2026-08-30T10:13:43-05:00
 
 ### 13. Garage Sale
 - **Type:** garage
@@ -178,7 +178,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196365953
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.467274,-98.494341
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.467274,-98.494341
-- **Verified at:** 2026-08-30T09:35:16-05:00
+- **Verified at:** 2026-08-30T10:13:43-05:00
 
 ### 14. ESTATE SALE 8322 Robin hill
 - **Type:** estate
@@ -190,7 +190,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-estate-sale-8322-robin-hill/2ZQTXqzsjvUciNRhaYpFiv
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.5407,-98.5521
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5407,-98.5521
-- **Verified at:** 2026-08-30T09:35:16-05:00
+- **Verified at:** 2026-08-30T10:13:43-05:00
 
 ### 15. Unbelievable collection liquidation (Schertz)
 - **Type:** estate
@@ -202,7 +202,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/new-braunfels-unbelievable-collection/6mxMeJuTorrrK9csPPdpLv
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.6636,-98.1672
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.6636,-98.1672
-- **Verified at:** 2026-08-30T09:35:16-05:00
+- **Verified at:** 2026-08-30T10:13:43-05:00
 
 ### 16. Big Yard Sale #9 1/2 RAIN DELAY!! (San Antonio)
 - **Type:** garage
@@ -214,7 +214,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-big-yard-sale-rain-delay/aWvs3P7pSFay4vunqyFvbB
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4688,-98.3486
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4688,-98.3486
-- **Verified at:** 2026-08-30T09:35:16-05:00
+- **Verified at:** 2026-08-30T10:13:43-05:00
 
 ### 17. Treasures and Trash Sale - St. Mark Women's Guild (San Antonio)
 - **Type:** garage
@@ -226,7 +226,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-treasures-and-trash-sale-st/viebHeDsddKHawHmT2JNZt
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.591295,-98.466528
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.591295,-98.466528
-- **Verified at:** 2026-08-30T09:35:16-05:00
+- **Verified at:** 2026-08-30T10:13:43-05:00
 
 ### 18. GARAGE SALE TODAY SATURDAY AND SUNDAY 8/29 & 8/30 8 AM- 4 PM (UNIVERSAL CITY)
 - **Type:** garage
@@ -238,7 +238,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/universal-city-garage-sale-today/tQhdeY81BRQdZUdey8dt6E
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.553501,-98.287613
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.553501,-98.287613
-- **Verified at:** 2026-08-30T09:35:16-05:00
+- **Verified at:** 2026-08-30T10:13:43-05:00
 
 ### 19. HUGE GARAGE SALE: TOOLS LOTS OF TOOLS
 - **Type:** garage
@@ -250,7 +250,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/spring-branch-huge-garage-sale-tools/4BkGCNx8nSqtnRenmg2zk6
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.9238,-98.3788
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.9238,-98.3788
-- **Verified at:** 2026-08-30T09:35:16-05:00
+- **Verified at:** 2026-08-30T10:13:43-05:00
 
 ### 20. LARGE YARD SALE SOMETHING FOR EVERYONE (Universal City)
 - **Type:** garage
@@ -262,7 +262,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/universal-city-large-yard-sale/hikXgRTSbKzorKjtv7TQZT
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.5407,-98.311136
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5407,-98.311136
-- **Verified at:** 2026-08-30T09:35:16-05:00
+- **Verified at:** 2026-08-30T10:13:43-05:00
 
 ### 21. Miller Bobcat and more. (New Braunfels)
 - **Type:** garage
@@ -274,7 +274,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/mc-queeney-miller-bobcat-and-more/4iEjvPgge84jUhgN8uveWV
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.65243,-98.053009
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.65243,-98.053009
-- **Verified at:** 2026-08-30T09:35:16-05:00
+- **Verified at:** 2026-08-30T10:13:43-05:00
 
 ### 22. Yard Sale Everything must go make offer (San Antonio)
 - **Type:** garage
@@ -286,7 +286,20 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-yard-sale-everything-must/8DwVLKuEGy8gYAQ4CKwiiA
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.31052,-98.558977
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.31052,-98.558977
-- **Verified at:** 2026-08-30T09:35:16-05:00
+- **Verified at:** 2026-08-30T10:13:43-05:00
+
+### 23. Absolute Last Minute Yard Sale
+- **Type:** garage
+- **Date:** 2026-08-30
+- **Time:** 12:30 PM - 3:30 PM – 
+- **Address:** 639 El Monte Blvd, San Antonio, TX 78212, San Antonio 
+- **Notes:** Find all the garage sales, yard sales, and estate sales on a map! Or place a free ad for your upcoming sale on yardsalesearch.com
+- **Confidence:** 100%
+- **Sources:** YardSaleSearch
+- **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196367969
+- **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.485431,-98.505983
+- **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.485431,-98.505983
+- **Verified at:** 2026-08-30T10:13:43-05:00
 
 ## 3. CHICA PICKS
 

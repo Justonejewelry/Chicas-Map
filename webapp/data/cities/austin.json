@@ -47,8 +47,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.65338702274524,
-      "lon": -97.77700029648787,
+      "lat": 30.65342295519224,
+      "lon": -97.77703162282798,
       "geocode": "source",
       "company": "Golden Soul Estate Sales",
       "in_person": true,
@@ -100,8 +100,8 @@
       "in_person": false,
       "external_id": "eso-2459681",
       "categories": [
-        "online-auction",
-        "estate-sale"
+        "estate-sale",
+        "online-auction"
       ]
     },
     {
@@ -326,9 +326,9 @@
       "end_date": "2026-09-01",
       "hours": null,
       "title": "GARAGE SALE📣",
-      "details": "QR Code Link to This Post GARAGE SALE📣 Moving and everything must go! TVs Furniture- dresser/side table Crib Mattress Bedding sets Large mirrors Home decor Large solid dining table Kitchenware 1309 Leander dr suite 1103 Leander TX",
+      "details": "QR Code Link to This Post Garage sale and everything must go! TVs Furniture Baby crib House decor Christmas decorations and more!",
       "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/leander-garage-sale/99uWASyzjeiLbSFpEXfmCA",
+      "url": "https://www.craigslist.org/view/d/leander-garage-sale/jWp5dpi1jppY4gqE9KvNzB",
       "photos": 0,
       "type": "garage",
       "categories": [
@@ -341,7 +341,7 @@
       "lon": -97.8575,
       "geocode": "source",
       "in_person": true,
-      "external_id": "cl-andergaragesale99uwasyzjeilbsfpexfmca"
+      "external_id": "cl-andergaragesalejwp5dpi1jppy4gqe9kvnzb"
     },
     {
       "address": "194B Alum Creek Rd near N/A, Austin, TX",
@@ -599,8 +599,8 @@
       "in_person": false,
       "external_id": "eso-2459839",
       "categories": [
-        "online-auction",
-        "estate-sale"
+        "estate-sale",
+        "online-auction"
       ]
     },
     {
@@ -920,6 +920,24 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "cl-rliberatorstairtswjyzepb5c36kyjqorczm"
+    },
+    {
+      "address": "1410 Werner Hill Dr, Austin, TX 78753",
+      "dates": "Sun Aug 30 – Sun Aug 30",
+      "date_from": "08/30/2026",
+      "date_to": "08/30/2026",
+      "end_date": "2026-08-30",
+      "title": "Moving",
+      "details": "",
+      "source": "GarageSaleFinder",
+      "url": "https://garagesalefinder.com/s/N9c7T/1410-werner-hill-dr-austin-tx-78753",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.85,
+      "status": "verified",
+      "lat": 30.38,
+      "lon": -97.67,
+      "geocode": "zip-centroid"
     }
   ],
   "hot_zones": [
@@ -938,9 +956,9 @@
     "gsalr.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 38,
+  "total_locations": 39,
   "status": "live",
   "date": "2026-08-30",
-  "last_refresh": "2026-08-30T09:35:16-05:00",
+  "last_refresh": "2026-08-30T10:13:42-05:00",
   "permits": []
 }
