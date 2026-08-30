@@ -1,5 +1,9 @@
 User-agent: *
 Allow: /
 Disallow: /admin/
-Disallow: /admin/approve.html
+Disallow: /preview/
+Disallow: /__grok/
+
+# Alias HTML files canonicalize to slash URLs. Keep them fetchable.
+
 Sitemap: https://justonejewelry.github.io/Chicas-Map/sitemap.xml
