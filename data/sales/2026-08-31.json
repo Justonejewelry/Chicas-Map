@@ -1,0 +1,12 @@
+{
+  "date": "2026-08-31",
+  "city": "san-antonio",
+  "generated_at": "2026-08-31T06:17:36-05:00",
+  "sentinel": "PASS",
+  "verified_count": 0,
+  "rejected_count": 24,
+  "duplicates_merged": 6,
+  "sources_checked": 9,
+  "sales": [],
+  "notes": "No in-person sale with a published street and hours cleared Sentinel for 2026-08-31. Pack is a snapshot only. Do not treat this file as a reason to leave Sunday pins on the live map."
+}
