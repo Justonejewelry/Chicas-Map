@@ -16,13 +16,13 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.651383788825008,
-      "lon": -97.77303229340734,
+      "lat": 30.650665139885017,
+      "lon": -97.77352307273573,
       "geocode": "source",
       "company": "Golden Soul Estate Sales",
       "in_person": true,
@@ -851,6 +851,6 @@
   "total_locations": 35,
   "status": "live",
   "date": "2026-08-31",
-  "last_refresh": "2026-08-31T12:18:58-05:00",
+  "last_refresh": "2026-08-31T12:56:57-05:00",
   "permits": []
 }

@@ -2,7 +2,7 @@
 
 ## 1. CHICA DAILY RUN
 - **Target date:** Monday, August 31, 2026
-- **San Antonio local run time:** 2026-08-31T12:18:58-05:00
+- **San Antonio local run time:** 2026-08-31T12:56:57-05:00
 - **Geographic area:** San Antonio & surrounding communities
 - **Sources searched:** 7
 - **Candidates discovered:** 19
@@ -25,7 +25,7 @@
 - **Original listing:** https://estatesales.org/estate-sales/tx/san-antonio/78230/charter-oaks-charms-bidding-ends-2460209
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.542044,-98.555621
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.542044,-98.555621
-- **Verified at:** 2026-08-31T12:18:58-05:00
+- **Verified at:** 2026-08-31T12:56:57-05:00
 
 ### 2. Fairway Finds & Home Treasures in Fair Oaks Ranch, TX. Bidding Ends 9/9.
 - **Type:** estate
@@ -37,7 +37,7 @@
 - **Original listing:** https://estatesales.org/estate-sales/tx/boerne/78015/fairway-finds-home-treasures-in-2460195
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.7310499,-98.6423846
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.7310499,-98.6423846
-- **Verified at:** 2026-08-31T12:18:58-05:00
+- **Verified at:** 2026-08-31T12:56:57-05:00
 
 ### 3. Design Warehouse Liquidation in Boerne, TX. Bidding ends 8/31
 - **Type:** estate
@@ -49,7 +49,7 @@
 - **Original listing:** https://estatesales.org/estate-sales/tx/boerne/78006/design-warehouse-liquidation-in-boerne-2458946
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.7946641,-98.7319703
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.7946641,-98.7319703
-- **Verified at:** 2026-08-31T12:18:58-05:00
+- **Verified at:** 2026-08-31T12:56:57-05:00
 
 ### 4. Estate Sale (San Antonio)
 - **Type:** estate
@@ -61,7 +61,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-estate-sale/nsPBbDJaSwgZGGZMPBMRgE
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.37421,-98.453593
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.37421,-98.453593
-- **Verified at:** 2026-08-31T12:18:58-05:00
+- **Verified at:** 2026-08-31T12:56:57-05:00
 
 ### 5. Estate Sale - Art and collectibles (By Seaworld)
 - **Type:** estate
@@ -73,7 +73,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-estate-sale-art-and/sJWRPFbGKUHuWD4P9UFP67
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.435764,-98.681542
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.435764,-98.681542
-- **Verified at:** 2026-08-31T12:18:58-05:00
+- **Verified at:** 2026-08-31T12:56:57-05:00
 
 ### 6. Unbelievable collection liquidation (Schertz)
 - **Type:** estate
@@ -85,7 +85,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/new-braunfels-unbelievable-collection/6mxMeJuTorrrK9csPPdpLv
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.6636,-98.1672
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.6636,-98.1672
-- **Verified at:** 2026-08-31T12:18:58-05:00
+- **Verified at:** 2026-08-31T12:56:57-05:00
 
 ### 7. Alamo Craft Co. Antiques & More (San Antonio)
 - **Type:** garage
@@ -97,7 +97,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-alamo-craft-co-antiques-more/mj6FcRd4ZDr7zwAwc4pwWa
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.556,-98.6094
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.556,-98.6094
-- **Verified at:** 2026-08-31T12:18:58-05:00
+- **Verified at:** 2026-08-31T12:56:57-05:00
 
 ### 8. Miller Bobcat and more. (New Braunfels)
 - **Type:** garage
@@ -109,7 +109,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/mc-queeney-miller-bobcat-and-more/4iEjvPgge84jUhgN8uveWV
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.65243,-98.053009
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.65243,-98.053009
-- **Verified at:** 2026-08-31T12:18:58-05:00
+- **Verified at:** 2026-08-31T12:56:57-05:00
 
 ## 3. CHICA PICKS
 
