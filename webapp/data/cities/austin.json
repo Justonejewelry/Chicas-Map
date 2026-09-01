@@ -16,13 +16,13 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "in-person",
-        "estate-sale"
+        "estate-sale",
+        "in-person"
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.654006857455983,
-      "lon": -97.7736692623229,
+      "lat": 30.65114124480776,
+      "lon": -97.7769898543745,
       "geocode": "source",
       "company": "Golden Soul Estate Sales",
       "in_person": true,
@@ -548,7 +548,7 @@
       "end_date": "2026-09-04",
       "hours": null,
       "title": "Giant Tool Sale and Garage Sale",
-      "details": "QR Code Link to This Post We will be having a giant tool sale on Sept 4,5, and 6th from 8am until 5pm everyday. All kinds of tools. Cornwell, Snap On, power tools, hand tools, Shop Vac, 8 Ton Ram Engine Hoist with sling, Weaver Wheel Bubble Balancer, 1\" Heavy Duty Air Impact, Pressure Washer, Snap On roll around 3 drawer box, MAC roll around 2 drawer box, specialty tools. I also have a bucket of \"",
+      "details": "QR Code Link to This Post We will be having a giant tool sale on Sept 4,5, and 6th from 8am until 5pm everyday. All kinds of tools. Cornwell, Snap On, power tools, hand tools, Shop Vac, 8 Ton Ram Engine Hoist with sling, Weaver Wheel Bubble Balancer, 1\" Heavy Duty Ingersoll Rand Air Impact, Pressure Washer, Snap On roll around 4 drawer Tool Cart with locking top, MAC roll around 1 drawer Tool Cart",
       "source": "Craigslist",
       "url": "https://www.craigslist.org/view/d/round-rock-giant-tool-sale-and-garage/syugLPinZ8br9RS5uQWRGz",
       "photos": 0,
@@ -794,6 +794,30 @@
       "lon": -97.7431,
       "geocode": "city-center",
       "company": null
+    },
+    {
+      "address": "224 Tascate St, Austin, TX",
+      "dates": "2026-09-01 – 2026-09-03",
+      "date_from": "2026-09-01",
+      "date_to": "2026-09-03",
+      "end_date": "2026-09-03",
+      "hours": null,
+      "title": "Garage sale Friday and Saturday 9/4-9/5",
+      "details": "QR Code Link to This Post Huge garage sale this weekend! Tools, tool boxes, appliances, concrete mixer, sewer machine, generator, household items and much more. 8am -? 224 Tascate st Georgetown",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/georgetown-garage-sale-friday-and/f2xYYEqhSnc73t15Fz5oe9",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 30.6411,
+      "lon": -97.7511,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-esalefridayandf2xyyeqhsnc73t15fz5oe9"
     }
   ],
   "hot_zones": [
@@ -812,9 +836,9 @@
     "gsalr.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 34,
+  "total_locations": 35,
   "status": "live",
   "date": "2026-09-01",
-  "last_refresh": "2026-09-01T09:24:47-05:00",
+  "last_refresh": "2026-09-01T10:25:27-05:00",
   "permits": []
 }
