@@ -1,7 +1,7 @@
 /* Chicas Map KEY.
    Intel is NOT nearby parking / pantry / Wi-Fi / schools.
    Intel is driveway notes on THAT pin, GPS-gated at 200 ft (pin-details.js).
-   Thrift & Resale layer added for Mon-Thu focus.
+   Thrift & Resale auto-enabled Mon–Thu; user toggle still respected.
 */
 (function () {
   function onMapPath() {
@@ -10,6 +10,15 @@
   }
   if (!onMapPath()) return;
   var BASE = "/Chicas-Map";
+  function isWeekday() {
+    // Mon=1 ... Thu=4  (0=Sun, 6=Sat)
+    var d = new Date().getDay();
+    return d >= 1 && d <= 4;
+  }
+  function defaultThrift() {
+    // Prefer thrift Mon-Thu unless user has already toggled it
+    return isWeekday();
+  }
   var SAT_STORE = "chicas-map-layer-sat";
   var KEY_STORE = "chicas-map-key-open-v2";
   var LAYER_STORE = "chicas-map-key-layers";
@@ -49,7 +58,7 @@
     schools: saved.schools === true,
     wifi: saved.wifi === true,
     claimed: saved.claimed !== false,
-    thrift: saved.thrift === true,
+    thrift: ("thrift" in saved) ? !!saved.thrift : defaultThrift(),
     events: false,
     emergency: saved.emergency === true && emergencyOn()
   };
@@ -251,7 +260,7 @@
       overlayGroups[id] = group; group.addTo(live);
     }
     if (overlayCache[id]) { attach(overlayCache[id]); return; }
-    fetch(spec.src + "?v=7", { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (data) {
+    fetch(spec.src + "?v=8", { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (data) {
       overlayCache[id] = data && data.features ? data.features : [];
       if (state[id]) attach(overlayCache[id]);
     }).catch(function () {});
