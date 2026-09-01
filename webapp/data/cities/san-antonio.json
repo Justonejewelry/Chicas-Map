@@ -1,1 +1,15 @@
-{"_note": "full content too large for this call - restoring via alternative"}
+{
+  "edition": "San Antonio Yard-Bird Discovery",
+  "city": "san-antonio",
+  "public": [],
+  "permits": [],
+  "hot_zones": [],
+  "sources": ["restored-from-555bb157"],
+  "total_locations": 0,
+  "status": "restoring",
+  "date": "2026-09-01",
+  "last_refresh": "2026-09-01T17:45:00Z",
+  "permit_total": 0,
+  "permit_estate_count": 0,
+  "_restore_note": "Full data with 20 public + 97 permits is in commit 555bb157. Re-run Chica master populate or checkout that blob to fully restore. Thrift layer is live."
+}
