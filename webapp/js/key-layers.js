@@ -1,7 +1,7 @@
 /* Chicas Map KEY.
    Intel is NOT nearby parking / pantry / Wi-Fi / schools.
    Intel is driveway notes on THAT pin, GPS-gated at 200 ft (pin-details.js).
-   Thrift & Resale auto-enabled Mon–Thu; user toggle still respected.
+   Resale Trail (thrift/resale/flea) auto-enabled Mon–Thu; user toggle still respected.
 */
 (function () {
   function onMapPath() {
@@ -16,7 +16,7 @@
     return d >= 1 && d <= 4;
   }
   function defaultThrift() {
-    // Prefer thrift Mon-Thu unless user has already toggled it
+    // Prefer Resale Trail Mon-Thu unless user has already toggled it
     return isWeekday();
   }
   var SAT_STORE = "chicas-map-layer-sat";
@@ -72,7 +72,7 @@
     { id: "schools", kind: "overlay", label: "School zones", src: BASE + "/data/zone-aware-schools.geojson" },
     { id: "wifi", kind: "overlay", label: "Wi-Fi", src: BASE + "/data/san-antonio-public-wifi.geojson" },
     { id: "claimed", kind: "claimed", label: "Chicas Pack" },
-    { id: "thrift", kind: "overlay", label: "Thrift & Resale", src: BASE + "/data/san-antonio-thrift.geojson" },
+    { id: "thrift", kind: "overlay", label: "Resale Trail", src: BASE + "/data/san-antonio-thrift.geojson" },
     { id: "listit", kind: "cta", label: "Pin it \u00b7 $5", href: BASE + "/claim", hint: "List it. Sell it. Done." }
   ];
   if (emergencyOn()) LAYERS.push({ id: "emergency", kind: "overlay", label: "Emergency hubs", src: BASE + "/data/san-antonio-emergency-info.geojson" });
@@ -89,12 +89,12 @@
     if (id === "pantry") return svg('<ellipse cx="8" cy="5.2" rx="4.2" ry="1.5" fill="#f5d000" stroke="#5c4a00" stroke-width="1.1"/>');
     if (id === "schools") return svg('<circle cx="8" cy="8" r="6.1" fill="none" stroke="#f0a500" stroke-width="1.6"/>');
     if (id === "wifi") return svg('<path d="M3.2 7.2 A6.2 6.2 0 0 1 12.8 7.2" fill="none" stroke="#2dd4bf" stroke-width="1.5"/><circle cx="8" cy="12.1" r="1.15" fill="#2dd4bf"/>');
-    if (id === "thrift") return svg('<rect x="3" y="4" width="10" height="8" rx="1.2" fill="#16a34a" stroke="#121212" stroke-width="1.3"/><path d="M5 4 V3.2 A3 1.2 0 0 1 11 3.2 V4" fill="none" stroke="#121212" stroke-width="1.2"/>');
+    if (id === "thrift") return svg('<circle cx="8" cy="8" r="5.2" fill="#C47A4A" stroke="#f3eee4" stroke-width="1.3"/><path d="M4.8 9.2 Q8 6.8 11.2 9.2" fill="none" stroke="#f3eee4" stroke-width="1.4" stroke-linecap="round"/><path d="M5.5 10.4 Q8 8.4 10.5 10.4" fill="none" stroke="#f3eee4" stroke-width="1.1" stroke-linecap="round" opacity="0.85"/>');
     if (id === "claimed" || id === "listit") return svg('<circle cx="8" cy="7.2" r="5.2" fill="#c513af" stroke="#121212" stroke-width="1.4"/>');
     if (id === "emergency") return svg('<circle cx="8" cy="8" r="6" fill="#7f1d1d" stroke="#121212" stroke-width="1.2"/>');
     return "";
   }
-  function overlayColor(id) { return ({ parking: "#38bdf8", pantry: "#f5d000", schools: "#f0a500", wifi: "#2dd4bf", thrift: "#16a34a", emergency: "#ef4444" })[id] || "#c513af"; }
+  function overlayColor(id) { return ({ parking: "#38bdf8", pantry: "#f5d000", schools: "#f0a500", wifi: "#2dd4bf", thrift: "#C47A4A", emergency: "#ef4444" })[id] || "#c513af"; }
   function findMap() {
     if (window.__chicaLeaflet && typeof window.__chicaLeaflet.flyTo === "function") return window.__chicaLeaflet;
     var nodes = document.querySelectorAll(".leaflet-container");
@@ -226,7 +226,7 @@
       if (props.phone) extra += "<div>" + esc(props.phone) + "</div>";
       if (props.website) extra += '<div><a href="' + esc(props.website) + '" target="_blank" rel="noreferrer">Website</a></div>';
     }
-    var kind = ({ parking: "Parking", pantry: "Pantry", wifi: "Wi-Fi", schools: "School zone", thrift: "Thrift / Resale", emergency: "Emergency" })[id] || "Spot";
+    var kind = ({ parking: "Parking", pantry: "Pantry", wifi: "Wi-Fi", schools: "School zone", thrift: "Resale Trail", emergency: "Emergency" })[id] || "Spot";
     return '<div class="chica-opt"><span class="tag">' + kind + "</span><h3>" + esc(name) + "</h3>" + (addr ? '<div class="meta">' + esc(addr) + "</div>" : "") + extra + (lat && lon ? dirLinks(lat, lon) : "") + "</div>";
   }
   function featureLatLng(feat) {
