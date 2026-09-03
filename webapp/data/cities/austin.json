@@ -16,13 +16,13 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "in-person",
-        "estate-sale"
+        "estate-sale",
+        "in-person"
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.65321634362199,
-      "lon": -97.77302185129398,
+      "lat": 30.65042259586777,
+      "lon": -97.77735532834244,
       "geocode": "source",
       "company": "Golden Soul Estate Sales",
       "in_person": true,
@@ -74,8 +74,8 @@
       "in_person": false,
       "external_id": "eso-2459681",
       "categories": [
-        "online-auction",
-        "estate-sale"
+        "estate-sale",
+        "online-auction"
       ]
     },
     {
@@ -197,8 +197,8 @@
       "in_person": false,
       "external_id": "eso-2459839",
       "categories": [
-        "online-auction",
-        "estate-sale"
+        "estate-sale",
+        "online-auction"
       ]
     },
     {
@@ -756,8 +756,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.120684652784764,
-      "lon": -97.87269025270015,
+      "lat": 30.12425993126123,
+      "lon": -97.87626290279091,
       "geocode": "source",
       "company": "Creative Estate Sales",
       "in_person": true,
@@ -855,6 +855,6 @@
   "total_locations": 36,
   "status": "live",
   "date": "2026-09-03",
-  "last_refresh": "2026-09-03T09:00:17-05:00",
+  "last_refresh": "2026-09-03T09:55:45-05:00",
   "permits": []
 }

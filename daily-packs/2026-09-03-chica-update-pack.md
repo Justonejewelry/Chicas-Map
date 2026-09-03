@@ -2,15 +2,15 @@
 
 ## 1. CHICA DAILY RUN
 - **Target date:** Thursday, September 3, 2026
-- **San Antonio local run time:** 2026-09-03T09:00:17-05:00
+- **San Antonio local run time:** 2026-09-03T09:55:45-05:00
 - **Geographic area:** San Antonio & surrounding communities
 - **Sources searched:** 7
-- **Candidates discovered:** 27
-- **Verified sales:** 11
+- **Candidates discovered:** 28
+- **Verified sales:** 12
 - **Rejected listings:** 16
 - **Duplicates merged:** 0
-- **Successfully geocoded:** 11
-- **Street View links generated:** 11
+- **Successfully geocoded:** 12
+- **Street View links generated:** 12
 - **Sentinel:** PASS
 
 ## 2. VERIFIED SALES
@@ -25,7 +25,7 @@
 - **Original listing:** https://estatesales.org/estate-sales/tx/san-antonio/78230/charter-oaks-charms-bidding-ends-2460209
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.542044,-98.555621
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.542044,-98.555621
-- **Verified at:** 2026-09-03T09:00:17-05:00
+- **Verified at:** 2026-09-03T09:55:45-05:00
 
 ### 2. Fairway Finds & Home Treasures in Fair Oaks Ranch, TX. Bidding Ends 9/9.
 - **Type:** estate
@@ -37,7 +37,7 @@
 - **Original listing:** https://estatesales.org/estate-sales/tx/boerne/78015/fairway-finds-home-treasures-in-2460195
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.7310499,-98.6423846
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.7310499,-98.6423846
-- **Verified at:** 2026-09-03T09:00:17-05:00
+- **Verified at:** 2026-09-03T09:55:45-05:00
 
 ### 3. Garage Sale
 - **Type:** garage
@@ -50,7 +50,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196255821
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.504071,-98.585061
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.504071,-98.585061
-- **Verified at:** 2026-09-03T09:00:17-05:00
+- **Verified at:** 2026-09-03T09:55:45-05:00
 
 ### 4. Estate Sale (San Antonio)
 - **Type:** estate
@@ -62,7 +62,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-estate-sale/nsPBbDJaSwgZGGZMPBMRgE
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.37421,-98.453593
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.37421,-98.453593
-- **Verified at:** 2026-09-03T09:00:17-05:00
+- **Verified at:** 2026-09-03T09:55:45-05:00
 
 ### 5. Estate Sale - Art and collectibles (By Seaworld)
 - **Type:** estate
@@ -74,7 +74,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-estate-sale-art-and/sJWRPFbGKUHuWD4P9UFP67
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.435764,-98.681542
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.435764,-98.681542
-- **Verified at:** 2026-09-03T09:00:17-05:00
+- **Verified at:** 2026-09-03T09:55:45-05:00
 
 ### 6. Unbelievable collection liquidation (Schertz)
 - **Type:** estate
@@ -86,7 +86,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/new-braunfels-unbelievable-collection/6mxMeJuTorrrK9csPPdpLv
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.6636,-98.1672
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.6636,-98.1672
-- **Verified at:** 2026-09-03T09:00:17-05:00
+- **Verified at:** 2026-09-03T09:55:45-05:00
 
 ### 7. Alamo Craft Co. Antiques & More (San Antonio)
 - **Type:** garage
@@ -98,7 +98,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-alamo-craft-co-antiques-more/mj6FcRd4ZDr7zwAwc4pwWa
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.556,-98.6094
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.556,-98.6094
-- **Verified at:** 2026-09-03T09:00:17-05:00
+- **Verified at:** 2026-09-03T09:55:45-05:00
 
 ### 8. Great quality stuff , antiques and more. (New Braunfels)
 - **Type:** garage
@@ -110,7 +110,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/mc-queeney-great-quality-stuff-antiques/4iEjvPgge84jUhgN8uveWV
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.65243,-98.053009
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.65243,-98.053009
-- **Verified at:** 2026-09-03T09:00:17-05:00
+- **Verified at:** 2026-09-03T09:55:45-05:00
 
 ### 9. 82 Oak Fields Dr, Floresville, TX 78114
 - **Type:** garage
@@ -123,7 +123,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9pbx/82-oak-fields-dr-floresville-tx-78114
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936
-- **Verified at:** 2026-09-03T09:00:17-05:00
+- **Verified at:** 2026-09-03T09:55:45-05:00
 
 ### 10. Garage Sale Labor Day Weekend (New Braunfels)
 - **Type:** garage
@@ -135,7 +135,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/new-braunfels-garage-sale-labor-day/3gCxRG4dCyQSNXTzVHU6Kn
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.7229,-98.0742
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.7229,-98.0742
-- **Verified at:** 2026-09-03T09:00:17-05:00
+- **Verified at:** 2026-09-03T09:55:45-05:00
 
 ### 11. HUGE SALE (Lytle Tx)
 - **Type:** garage
@@ -147,7 +147,19 @@
 - **Original listing:** https://www.craigslist.org/view/d/lytle-huge-sale/fZTWSaZSQ72eK45TkHH4z1
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.2366,-98.7945
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.2366,-98.7945
-- **Verified at:** 2026-09-03T09:00:17-05:00
+- **Verified at:** 2026-09-03T09:55:45-05:00
+
+### 12. HUGE GARAGE SALE - EVERYTHING MUST GO!
+- **Type:** garage
+- **Date:** 2026-09-03 → 2026-09-05
+- **Address:** 7542 Van Ness, San Antonio, TX, San Antonio 
+- **Notes:** QR Code Link to This Post 🚨 HUGE GARAGE SALE — EVERYTHING MUST GO! 🚨 Come shop Saturday, September 5th starting at 8AM at 7542 Van Ness, 78251! 🛍️ Polo, Lacoste, Zara, SHEIN, AE, D
+- **Confidence:** 96%
+- **Sources:** Craigslist
+- **Original listing:** https://www.craigslist.org/view/d/san-antonio-huge-garage-sale-everything/fLSTPVA75rUkcdq5Fo75c2
+- **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.456857,-98.639508
+- **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.456857,-98.639508
+- **Verified at:** 2026-09-03T09:55:45-05:00
 
 ## 3. CHICA PICKS
 
