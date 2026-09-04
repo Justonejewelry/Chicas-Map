@@ -1,0 +1,993 @@
+{
+  "type": "FeatureCollection",
+  "properties": {
+    "target_date": "2026-09-04",
+    "generated_at": "2026-09-04T08:54:09-05:00",
+    "count": 20,
+    "project": "Chicas-Map"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.432155,
+          29.53746
+        ]
+      },
+      "properties": {
+        "sale_id": "2026-09-04_10811-lazy-oaks-dr-san-antonio-tx-78217",
+        "title": "Huge Multi Family Garage Sale",
+        "sale_type": "garage",
+        "date_start": "2026-09-04",
+        "date_end": "2026-09-06",
+        "start_time": "8:00 AM - 7:00 PM",
+        "end_time": "",
+        "address": "10811 Lazy Oaks Dr, San Antonio, TX 78217",
+        "city": "San Antonio",
+        "state": "TX",
+        "zip": "",
+        "latitude": 29.53746,
+        "longitude": -98.432155,
+        "description": "Find all the garage sales, yard sales, and estate sales on a map! Or place a free ad for your upcoming sale on yardsalesearch.com",
+        "highlights": [],
+        "source_urls": [
+          "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196371853"
+        ],
+        "original_url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196371853",
+        "source_names": [
+          "YardSaleSearch"
+        ],
+        "photos": [
+          "https://d82cz7nyq77ak.cloudfront.net/images/social/Facebook.png",
+          "https://d82cz7nyq77ak.cloudfront.net/images/social/Pinterest.png",
+          "https://d82cz7nyq77ak.cloudfront.net/images/social/Reddit.png",
+          "https://d82cz7nyq77ak.cloudfront.net/images/social/Twitter.png",
+          "https://d82cz7nyq77ak.cloudfront.net/images/social/Email.png"
+        ],
+        "confidence": 100,
+        "verified_at": "2026-09-04T08:53:36-05:00",
+        "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.53746,-98.432155",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.53746,-98.432155",
+        "status": "verified",
+        "geocode_method": "source",
+        "notes": "",
+        "community_source": "",
+        "community_link_or_notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.555621,
+          29.542044
+        ]
+      },
+      "properties": {
+        "sale_id": "2026-08-29_san-antonio-tx-78230",
+        "title": "Charter Oaks Charms: Bidding ENDS 9/6/26 @ 7 PM!",
+        "sale_type": "estate",
+        "date_start": "2026-08-29",
+        "date_end": "2026-09-06",
+        "start_time": "",
+        "end_time": "",
+        "address": "San Antonio, TX 78230",
+        "city": "San Antonio",
+        "state": "TX",
+        "zip": "",
+        "latitude": 29.542044,
+        "longitude": -98.555621,
+        "description": "Caring Transitions of San Antonio Northwest. Welcome Home to CTBids! We put together an excellent selection of items for you! Start exploring and discover the deals for yourself! Bidding on ALL items starts at $1! This auction features selected items from the family household of a distingu...",
+        "highlights": [],
+        "source_urls": [
+          "https://estatesales.org/estate-sales/tx/san-antonio/78230/charter-oaks-charms-bidding-ends-2460209"
+        ],
+        "original_url": "https://estatesales.org/estate-sales/tx/san-antonio/78230/charter-oaks-charms-bidding-ends-2460209",
+        "source_names": [
+          "EstateSales.org"
+        ],
+        "photos": [
+          "https://estatesales.org/uploads/2025/05/30/m/5/2/2632652/4qYyY-1.jpeg",
+          "https://estatesales.org/2036244653/css/images/social/facebook.png",
+          "https://eso-cdn.tlcdn.workers.dev/s-2460209-uaadc4g3nap922br-t.webp",
+          "https://eso-cdn.tlcdn.workers.dev/s-2460209-8eorj5n8vca2j9nq-t.webp",
+          "https://eso-cdn.tlcdn.workers.dev/s-2460209-o3pun7ftxy7q3jx7-t.webp",
+          "https://eso-cdn.tlcdn.workers.dev/s-2460209-jr3hoc0757aggjvg-t.webp"
+        ],
+        "confidence": 96,
+        "verified_at": "2026-09-04T08:53:36-05:00",
+        "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.542044,-98.555621",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.542044,-98.555621",
+        "status": "verified",
+        "geocode_method": "source",
+        "notes": "",
+        "community_source": "",
+        "community_link_or_notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.6423846,
+          29.7310499
+        ]
+      },
+      "properties": {
+        "sale_id": "2026-08-28_boerne-tx-78015",
+        "title": "Fairway Finds & Home Treasures in Fair Oaks Ranch, TX. Bidding Ends 9/9.",
+        "sale_type": "estate",
+        "date_start": "2026-08-28",
+        "date_end": "2026-09-09",
+        "start_time": "",
+        "end_time": "",
+        "address": "Boerne, TX 78015",
+        "city": "San Antonio",
+        "state": "TX",
+        "zip": "",
+        "latitude": 29.7310499,
+        "longitude": -98.6423846,
+        "description": "Caring Transitions of Boerne, Fredericksburg, and Kerrville. Welcome Home to CTBids! We put together an excellent selection of items for you! Start exploring and discover the deals for yourself! Bidding on ALL items starts at $1! Set along a beautiful golf course, this welcoming estate sale offers the qua...",
+        "highlights": [],
+        "source_urls": [
+          "https://estatesales.org/estate-sales/tx/boerne/78015/fairway-finds-home-treasures-in-2460195"
+        ],
+        "original_url": "https://estatesales.org/estate-sales/tx/boerne/78015/fairway-finds-home-treasures-in-2460195",
+        "source_names": [
+          "EstateSales.org"
+        ],
+        "photos": [
+          "https://estatesales.org/uploads/2024/02/04/m/7/5/2392475/4PGu6-1.jpeg",
+          "https://estatesales.org/2036244653/css/images/social/facebook.png",
+          "https://eso-cdn.tlcdn.workers.dev/s-2460195-od17xp9nuj0xs7m4-t.webp",
+          "https://eso-cdn.tlcdn.workers.dev/s-2460195-pybki626fowiwm7b-t.webp",
+          "https://eso-cdn.tlcdn.workers.dev/s-2460195-wrxc3e285jj2f8x5-t.webp",
+          "https://eso-cdn.tlcdn.workers.dev/s-2460195-zzh77be7x62fjv9r-t.webp"
+        ],
+        "confidence": 96,
+        "verified_at": "2026-09-04T08:53:36-05:00",
+        "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.7310499,-98.6423846",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.7310499,-98.6423846",
+        "status": "verified",
+        "geocode_method": "source",
+        "notes": "",
+        "community_source": "",
+        "community_link_or_notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.4936,
+          29.4241
+        ]
+      },
+      "properties": {
+        "sale_id": "2026-09-04_510-wimberley-oaks-dr-wimberley-tx-78676",
+        "title": "Wimberley TX Estate Sale: Art to Admire, Décor to Love, Garage Finds to Grab",
+        "sale_type": "estate",
+        "date_start": "2026-09-04",
+        "date_end": "2026-09-06",
+        "start_time": "10:00 am - 4:00 pm",
+        "end_time": "",
+        "address": "510 Wimberley Oaks Dr, Wimberley, TX 78676",
+        "city": "San Antonio",
+        "state": "TX",
+        "zip": "",
+        "latitude": 29.4241,
+        "longitude": -98.4936,
+        "description": "Dates and Times: Friday, September 4, 2026 10:00 am - 4:00 pm",
+        "highlights": [],
+        "source_urls": [
+          "https://garagesalefinder.com/s/N9xeF/510-wimberley-oaks-dr-wimberley-tx-78676"
+        ],
+        "original_url": "https://garagesalefinder.com/s/N9xeF/510-wimberley-oaks-dr-wimberley-tx-78676",
+        "source_names": [
+          "GarageSaleFinder"
+        ],
+        "photos": [
+          "https://eso-cdn.tlcdn.workers.dev/s-2459227-1jldp8we5b3whh1d-t.webp",
+          "https://eso-cdn.tlcdn.workers.dev/s-2459227-tx5qzd8ovvxyol33-t.webp",
+          "https://gsf.tlstatic.com/images/social/Facebook.png",
+          "https://gsf.tlstatic.com/images/social/Pinterest.png",
+          "https://gsf.tlstatic.com/images/social/Reddit.png",
+          "https://gsf.tlstatic.com/images/social/Twitter.png"
+        ],
+        "confidence": 100,
+        "verified_at": "2026-09-04T08:53:36-05:00",
+        "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936",
+        "status": "verified",
+        "geocode_method": "city-center",
+        "notes": "",
+        "community_source": "",
+        "community_link_or_notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.584406,
+          29.449815
+        ]
+      },
+      "properties": {
+        "sale_id": "2026-09-04_4907-rita-ave-san-antonio-tx-78228",
+        "title": "Huge Yard Sale",
+        "sale_type": "garage",
+        "date_start": "2026-09-04",
+        "date_end": "2026-09-05",
+        "start_time": "8:00 AM - 4:00 PM",
+        "end_time": "",
+        "address": "4907 Rita Ave, San Antonio, TX 78228",
+        "city": "San Antonio",
+        "state": "TX",
+        "zip": "",
+        "latitude": 29.449815,
+        "longitude": -98.584406,
+        "description": "Find all the garage sales, yard sales, and estate sales on a map! Or place a free ad for your upcoming sale on yardsalesearch.com",
+        "highlights": [],
+        "source_urls": [
+          "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196372917"
+        ],
+        "original_url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196372917",
+        "source_names": [
+          "YardSaleSearch"
+        ],
+        "photos": [
+          "https://d82cz7nyq77ak.cloudfront.net/images/social/Facebook.png",
+          "https://d82cz7nyq77ak.cloudfront.net/images/social/Pinterest.png",
+          "https://d82cz7nyq77ak.cloudfront.net/images/social/Reddit.png",
+          "https://d82cz7nyq77ak.cloudfront.net/images/social/Twitter.png",
+          "https://d82cz7nyq77ak.cloudfront.net/images/social/Email.png"
+        ],
+        "confidence": 100,
+        "verified_at": "2026-09-04T08:53:36-05:00",
+        "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.449815,-98.584406",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.449815,-98.584406",
+        "status": "verified",
+        "geocode_method": "source",
+        "notes": "",
+        "community_source": "",
+        "community_link_or_notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.588213,
+          29.459088
+        ]
+      },
+      "properties": {
+        "sale_id": "2026-09-04_5122-witt-st-san-antonio-tx-78228",
+        "title": "Multi Family Everything Must Go",
+        "sale_type": "garage",
+        "date_start": "2026-09-04",
+        "date_end": "2026-09-05",
+        "start_time": "8:00 AM - 5:00 PM",
+        "end_time": "",
+        "address": "5122 Witt St, San Antonio, TX 78228",
+        "city": "San Antonio",
+        "state": "TX",
+        "zip": "",
+        "latitude": 29.459088,
+        "longitude": -98.588213,
+        "description": "Find all the garage sales, yard sales, and estate sales on a map! Or place a free ad for your upcoming sale on yardsalesearch.com",
+        "highlights": [],
+        "source_urls": [
+          "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196371673"
+        ],
+        "original_url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196371673",
+        "source_names": [
+          "YardSaleSearch"
+        ],
+        "photos": [
+          "https://d82cz7nyq77ak.cloudfront.net/images/social/Facebook.png",
+          "https://d82cz7nyq77ak.cloudfront.net/images/social/Pinterest.png",
+          "https://d82cz7nyq77ak.cloudfront.net/images/social/Reddit.png",
+          "https://d82cz7nyq77ak.cloudfront.net/images/social/Twitter.png",
+          "https://d82cz7nyq77ak.cloudfront.net/images/social/Email.png",
+          "https://gsf.tlstatic.com/image/w300-c300:250/2026/09/03/s/8/7/21737187/njMb-0.jpeg"
+        ],
+        "confidence": 100,
+        "verified_at": "2026-09-04T08:53:36-05:00",
+        "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.459088,-98.588213",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.459088,-98.588213",
+        "status": "verified",
+        "geocode_method": "source",
+        "notes": "",
+        "community_source": "",
+        "community_link_or_notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.622777,
+          29.509381
+        ]
+      },
+      "properties": {
+        "sale_id": "2026-09-04_7710-linkview-st-san-antonio-tx-78240",
+        "title": "Must See Garage Sale",
+        "sale_type": "garage",
+        "date_start": "2026-09-04",
+        "date_end": "2026-09-05",
+        "start_time": "8:00 AM - 3:00 PM",
+        "end_time": "",
+        "address": "7710 Linkview St, San Antonio, TX 78240",
+        "city": "San Antonio",
+        "state": "TX",
+        "zip": "",
+        "latitude": 29.509381,
+        "longitude": -98.622777,
+        "description": "Find all the garage sales, yard sales, and estate sales on a map! Or place a free ad for your upcoming sale on yardsalesearch.com",
+        "highlights": [],
+        "source_urls": [
+          "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196371023"
+        ],
+        "original_url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196371023",
+        "source_names": [
+          "YardSaleSearch"
+        ],
+        "photos": [
+          "https://d82cz7nyq77ak.cloudfront.net/images/social/Facebook.png",
+          "https://d82cz7nyq77ak.cloudfront.net/images/social/Pinterest.png",
+          "https://d82cz7nyq77ak.cloudfront.net/images/social/Reddit.png",
+          "https://d82cz7nyq77ak.cloudfront.net/images/social/Twitter.png",
+          "https://d82cz7nyq77ak.cloudfront.net/images/social/Email.png",
+          "https://d3sp8ubbhnru9d.cloudfront.net/image/w300-c300:250/2026/09/02/s/9/1/38906691/0FPH-0.jpeg"
+        ],
+        "confidence": 100,
+        "verified_at": "2026-09-04T08:53:36-05:00",
+        "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.509381,-98.622777",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.509381,-98.622777",
+        "status": "verified",
+        "geocode_method": "source",
+        "notes": "",
+        "community_source": "",
+        "community_link_or_notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.349543,
+          29.503269
+        ]
+      },
+      "properties": {
+        "sale_id": "2026-09-04_6863-avila-san-antonio-tx-78239",
+        "title": "Multi Family Yard Sales: Baby Items, Toys,  Antiques, Brand New Items And More",
+        "sale_type": "garage",
+        "date_start": "2026-09-04",
+        "date_end": "2026-09-05",
+        "start_time": "8:00 AM - 2:00 PM",
+        "end_time": "",
+        "address": "6863 Avila, San Antonio, TX 78239",
+        "city": "San Antonio",
+        "state": "TX",
+        "zip": "",
+        "latitude": 29.503269,
+        "longitude": -98.349543,
+        "description": "Find all the garage sales, yard sales, and estate sales on a map! Or place a free ad for your upcoming sale on yardsalesearch.com",
+        "highlights": [],
+        "source_urls": [
+          "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196371947"
+        ],
+        "original_url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196371947",
+        "source_names": [
+          "YardSaleSearch"
+        ],
+        "photos": [
+          "https://d82cz7nyq77ak.cloudfront.net/images/social/Facebook.png",
+          "https://d82cz7nyq77ak.cloudfront.net/images/social/Pinterest.png",
+          "https://d82cz7nyq77ak.cloudfront.net/images/social/Reddit.png",
+          "https://d82cz7nyq77ak.cloudfront.net/images/social/Twitter.png",
+          "https://d82cz7nyq77ak.cloudfront.net/images/social/Email.png",
+          "https://ps.tlstatic.com/image/w300-c300:250/2026/09/03/s/9/1/405191/HjpE-0.jpeg"
+        ],
+        "confidence": 100,
+        "verified_at": "2026-09-04T08:53:36-05:00",
+        "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.503269,-98.349543",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.503269,-98.349543",
+        "status": "verified",
+        "geocode_method": "source",
+        "notes": "",
+        "community_source": "",
+        "community_link_or_notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.4936,
+          29.4241
+        ]
+      },
+      "properties": {
+        "sale_id": "2026-09-03_82-oak-fields-dr-floresville-tx-78114",
+        "title": "82 Oak Fields Dr, Floresville, TX 78114",
+        "sale_type": "garage",
+        "date_start": "2026-09-03",
+        "date_end": "2026-09-05",
+        "start_time": "9:00 am - 2:00 pm",
+        "end_time": "",
+        "address": "82 Oak Fields Dr, Floresville, TX 78114",
+        "city": "San Antonio",
+        "state": "TX",
+        "zip": "",
+        "latitude": 29.4241,
+        "longitude": -98.4936,
+        "description": "Dates and Times: Thursday, September 3, 2026 9:00 am - 2:00 pm",
+        "highlights": [],
+        "source_urls": [
+          "https://garagesalefinder.com/s/N9pbx/82-oak-fields-dr-floresville-tx-78114"
+        ],
+        "original_url": "https://garagesalefinder.com/s/N9pbx/82-oak-fields-dr-floresville-tx-78114",
+        "source_names": [
+          "GarageSaleFinder"
+        ],
+        "photos": [
+          "https://gsalr.tlstatic.com/image/w150-h100/2026/09/02/s/6/1/38906361/7Wj81-0.jpeg",
+          "https://gsalr.tlstatic.com/image/w150-h100/2026/09/02/s/6/1/38906361/725zK-0.jpeg",
+          "https://gsalr.tlstatic.com/image/w150-h100/2026/09/02/s/6/1/38906361/osoa-0.jpeg",
+          "https://gsalr.tlstatic.com/image/w150-h100/2026/09/02/s/6/1/38906361/7r4AQ-0.jpeg",
+          "https://gsalr.tlstatic.com/image/w150-h100/2026/09/02/s/6/1/38906361/7YfRP-0.jpeg",
+          "https://gsalr.tlstatic.com/image/w150-h100/2026/09/02/s/6/1/38906361/7YYfk-0.jpeg"
+        ],
+        "confidence": 100,
+        "verified_at": "2026-09-04T08:53:36-05:00",
+        "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936",
+        "status": "verified",
+        "geocode_method": "city-center",
+        "notes": "",
+        "community_source": "",
+        "community_link_or_notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.453593,
+          29.37421
+        ]
+      },
+      "properties": {
+        "sale_id": "2026-09-04_704-monticello-ct-san-antonio-tx",
+        "title": "Estate Sale (San Antonio)",
+        "sale_type": "estate",
+        "date_start": "2026-09-04",
+        "date_end": "2026-09-06",
+        "start_time": "",
+        "end_time": "",
+        "address": "704 Monticello Ct., San Antonio, TX",
+        "city": "San Antonio",
+        "state": "TX",
+        "zip": "",
+        "latitude": 29.37421,
+        "longitude": -98.453593,
+        "description": "QR Code Link to This Post Bedroom &amp; dinette sets, indoor decor &amp; collectables, dishes, CDs &amp; DVDs, tools, lawnmowers, plumbing items",
+        "highlights": [],
+        "source_urls": [
+          "https://www.craigslist.org/view/d/san-antonio-estate-sale/nsPBbDJaSwgZGGZMPBMRgE"
+        ],
+        "original_url": "https://www.craigslist.org/view/d/san-antonio-estate-sale/nsPBbDJaSwgZGGZMPBMRgE",
+        "source_names": [
+          "Craigslist"
+        ],
+        "photos": [
+          "https://images.craigslist.org/01515_6CtelrS5agn_09Z0bB_600x450.jpg"
+        ],
+        "confidence": 96,
+        "verified_at": "2026-09-04T08:53:36-05:00",
+        "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.37421,-98.453593",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.37421,-98.453593",
+        "status": "verified",
+        "geocode_method": "source",
+        "notes": "",
+        "community_source": "",
+        "community_link_or_notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.681542,
+          29.435764
+        ]
+      },
+      "properties": {
+        "sale_id": "2026-09-04_619-cypresscliff-dr-san-antonio-tx",
+        "title": "Estate Sale - Art and collectibles (By Seaworld)",
+        "sale_type": "estate",
+        "date_start": "2026-09-04",
+        "date_end": "2026-09-06",
+        "start_time": "",
+        "end_time": "",
+        "address": "619 cypresscliff dr, San Antonio, TX",
+        "city": "San Antonio",
+        "state": "TX",
+        "zip": "",
+        "latitude": 29.435764,
+        "longitude": -98.681542,
+        "description": "QR Code Link to This Post Estate sale. Owner has collection of fine Artwork, furniture, appliances, collectibles, miter saw and drill press. Everything must go. Great prices Come inside home to check out!",
+        "highlights": [],
+        "source_urls": [
+          "https://www.craigslist.org/view/d/san-antonio-estate-sale-art-and/sJWRPFbGKUHuWD4P9UFP67"
+        ],
+        "original_url": "https://www.craigslist.org/view/d/san-antonio-estate-sale-art-and/sJWRPFbGKUHuWD4P9UFP67",
+        "source_names": [
+          "Craigslist"
+        ],
+        "photos": [
+          "https://images.craigslist.org/00s0s_eQcHJG2dAzg_0CI0lN_600x450.jpg",
+          "https://images.craigslist.org/00s0s_eQcHJG2dAzg_0CI0lN_50x50c.jpg",
+          "https://images.craigslist.org/00101_blEMPQEoZTr_0CI0lN_50x50c.jpg",
+          "https://images.craigslist.org/00Q0Q_e68U7htOcfd_0CI0lN_50x50c.jpg"
+        ],
+        "confidence": 96,
+        "verified_at": "2026-09-04T08:53:36-05:00",
+        "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.435764,-98.681542",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.435764,-98.681542",
+        "status": "verified",
+        "geocode_method": "source",
+        "notes": "",
+        "community_source": "",
+        "community_link_or_notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.1672,
+          29.6636
+        ]
+      },
+      "properties": {
+        "sale_id": "2026-09-04_us-35n-near-cibilo-valley-exit-san-antonio-tx",
+        "title": "Unbelievable collection liquidation (Schertz)",
+        "sale_type": "estate",
+        "date_start": "2026-09-04",
+        "date_end": "2026-09-06",
+        "start_time": "",
+        "end_time": "",
+        "address": "US 35n near Cibilo Valley exit, San Antonio, TX",
+        "city": "San Antonio",
+        "state": "TX",
+        "zip": "",
+        "latitude": 29.6636,
+        "longitude": -98.1672,
+        "description": "QR Code Link to This Post Attention Resellers!!! Huge sell off liquidation of decades of collecting!!! Starting Saturday-Sunday sept 12th and 13th Booths 383 and 306 at Busseys flea market Front aisle right of the parking lot. See pics. More and more new inventory every weekend until December.",
+        "highlights": [],
+        "source_urls": [
+          "https://www.craigslist.org/view/d/new-braunfels-unbelievable-collection/6mxMeJuTorrrK9csPPdpLv"
+        ],
+        "original_url": "https://www.craigslist.org/view/d/new-braunfels-unbelievable-collection/6mxMeJuTorrrK9csPPdpLv",
+        "source_names": [
+          "Craigslist"
+        ],
+        "photos": [
+          "https://images.craigslist.org/00d0d_aB3U1uqnde5_0t20CI_600x450.jpg",
+          "https://images.craigslist.org/00d0d_aB3U1uqnde5_0t20CI_50x50c.jpg",
+          "https://images.craigslist.org/00J0J_ifHhBWwTJbp_0t20CI_50x50c.jpg",
+          "https://images.craigslist.org/00c0c_3xG8m02OOSm_0t20CI_50x50c.jpg",
+          "https://images.craigslist.org/00j0j_6Ih1vy3d1X_0t20CI_50x50c.jpg",
+          "https://images.craigslist.org/00q0q_4rTQI2Bx814_0t20CI_50x50c.jpg"
+        ],
+        "confidence": 96,
+        "verified_at": "2026-09-04T08:53:36-05:00",
+        "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.6636,-98.1672",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.6636,-98.1672",
+        "status": "verified",
+        "geocode_method": "source",
+        "notes": "",
+        "community_source": "",
+        "community_link_or_notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.6094,
+          29.556
+        ]
+      },
+      "properties": {
+        "sale_id": "2026-09-04_6151-nw-loop-410-san-antonio-tx",
+        "title": "Alamo Craft Co. Antiques & More (San Antonio)",
+        "sale_type": "garage",
+        "date_start": "2026-09-04",
+        "date_end": "2026-09-06",
+        "start_time": "",
+        "end_time": "",
+        "address": "6151 NW Loop 410, San Antonio, TX",
+        "city": "San Antonio",
+        "state": "TX",
+        "zip": "",
+        "latitude": 29.556,
+        "longitude": -98.6094,
+        "description": "QR Code Link to This Post OPEN TUES - SAT 10AM-6PM 6151 NW Loop 410, #302 SATX 78238 A hidden gem in San Antonio! Here you'll find unique antiques, vintage items, collectibles, hand-crafted items &amp; so much more. Come by &amp; see all the fun stuff! Ask for your frequent buyer card &amp; get punches with every purchase.",
+        "highlights": [],
+        "source_urls": [
+          "https://www.craigslist.org/view/d/san-antonio-alamo-craft-co-antiques-more/mj6FcRd4ZDr7zwAwc4pwWa"
+        ],
+        "original_url": "https://www.craigslist.org/view/d/san-antonio-alamo-craft-co-antiques-more/mj6FcRd4ZDr7zwAwc4pwWa",
+        "source_names": [
+          "Craigslist"
+        ],
+        "photos": [
+          "https://images.craigslist.org/01515_1Xh2ogBe0sZ_0CI0pq_600x450.jpg"
+        ],
+        "confidence": 96,
+        "verified_at": "2026-09-04T08:53:36-05:00",
+        "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.556,-98.6094",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.556,-98.6094",
+        "status": "verified",
+        "geocode_method": "source",
+        "notes": "",
+        "community_source": "",
+        "community_link_or_notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.344862,
+          29.258911
+        ]
+      },
+      "properties": {
+        "sale_id": "2026-09-04_16411-old-corpus-christi-rd-san-antonio-tx",
+        "title": "BIG COUNTRY YARD SALE",
+        "sale_type": "garage",
+        "date_start": "2026-09-04",
+        "date_end": "2026-09-06",
+        "start_time": "",
+        "end_time": "",
+        "address": "16411 old corpus christi rd, San Antonio, TX",
+        "city": "San Antonio",
+        "state": "TX",
+        "zip": "",
+        "latitude": 29.258911,
+        "longitude": -98.344862,
+        "description": "QR Code Link to This Post Cheap Plants!!!!!! Fishing Gear Antiques Old tools Loads of hardware and parts Rustic iron Oddities and much more!",
+        "highlights": [],
+        "source_urls": [
+          "https://www.craigslist.org/view/d/san-antonio-big-country-yard-sale/5FkUUwhsRpkjdZNQuEZ5sD"
+        ],
+        "original_url": "https://www.craigslist.org/view/d/san-antonio-big-country-yard-sale/5FkUUwhsRpkjdZNQuEZ5sD",
+        "source_names": [
+          "Craigslist"
+        ],
+        "photos": [
+          "https://images.craigslist.org/00Z0Z_fZByXFdjrtn_0fu0kE_600x450.jpg",
+          "https://images.craigslist.org/00Z0Z_fZByXFdjrtn_0fu0kE_50x50c.jpg",
+          "https://images.craigslist.org/01313_b0YAG9pPGGP_0t20CI_50x50c.jpg",
+          "https://images.craigslist.org/00H0H_c8A04FREVWa_0t20CI_50x50c.jpg",
+          "https://images.craigslist.org/00E0E_lpjPLSm0hv6_0t20CI_50x50c.jpg",
+          "https://images.craigslist.org/00H0H_8dclM6d2fz8_0t20CI_50x50c.jpg"
+        ],
+        "confidence": 96,
+        "verified_at": "2026-09-04T08:53:36-05:00",
+        "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.258911,-98.344862",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.258911,-98.344862",
+        "status": "verified",
+        "geocode_method": "source",
+        "notes": "",
+        "community_source": "",
+        "community_link_or_notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.0742,
+          29.7229
+        ]
+      },
+      "properties": {
+        "sale_id": "2026-09-04_2236-stonecrest-path-san-antonio-tx",
+        "title": "Garage Sale Labor Day Weekend (New Braunfels)",
+        "sale_type": "garage",
+        "date_start": "2026-09-04",
+        "date_end": "2026-09-06",
+        "start_time": "",
+        "end_time": "",
+        "address": "2236 Stonecrest Path, San Antonio, TX",
+        "city": "San Antonio",
+        "state": "TX",
+        "zip": "",
+        "latitude": 29.7229,
+        "longitude": -98.0742,
+        "description": "QR Code Link to This Post 2236 Stonecrest Path Sat &amp; Sun from 8-1 We are moving so there is an assortment of stuff from: clothes kid stuff furniture home decor &amp; more",
+        "highlights": [],
+        "source_urls": [
+          "https://www.craigslist.org/view/d/new-braunfels-garage-sale-labor-day/3gCxRG4dCyQSNXTzVHU6Kn"
+        ],
+        "original_url": "https://www.craigslist.org/view/d/new-braunfels-garage-sale-labor-day/3gCxRG4dCyQSNXTzVHU6Kn",
+        "source_names": [
+          "Craigslist"
+        ],
+        "photos": [],
+        "confidence": 96,
+        "verified_at": "2026-09-04T08:53:36-05:00",
+        "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.7229,-98.0742",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.7229,-98.0742",
+        "status": "verified",
+        "geocode_method": "source",
+        "notes": "",
+        "community_source": "",
+        "community_link_or_notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.639508,
+          29.456857
+        ]
+      },
+      "properties": {
+        "sale_id": "2026-09-04_7542-van-ness-san-antonio-tx",
+        "title": "HUGE GARAGE SALE - EVERYTHING MUST GO!",
+        "sale_type": "garage",
+        "date_start": "2026-09-04",
+        "date_end": "2026-09-06",
+        "start_time": "",
+        "end_time": "",
+        "address": "7542 Van Ness, San Antonio, TX",
+        "city": "San Antonio",
+        "state": "TX",
+        "zip": "",
+        "latitude": 29.456857,
+        "longitude": -98.639508,
+        "description": "QR Code Link to This Post 🚨 HUGE GARAGE SALE — EVERYTHING MUST GO! 🚨 Come shop Saturday, September 5th starting at 8AM at 7542 Van Ness, 78251! 🛍️ Polo, Lacoste, Zara, SHEIN, AE, Dillards! New Balance and Nike shoes! We also have workout equipment, jewelry, men’s & women’s clothing and shoes, household items, dishes, décor, seasonal décor, event displays/stands, furniture & MORE! 💰 Everything priced to sell — a fraction of what we paid! 🔥 Come early for the best finds",
+        "highlights": [],
+        "source_urls": [
+          "https://www.craigslist.org/view/d/san-antonio-huge-garage-sale-everything/fLSTPVA75rUkcdq5Fo75c2"
+        ],
+        "original_url": "https://www.craigslist.org/view/d/san-antonio-huge-garage-sale-everything/fLSTPVA75rUkcdq5Fo75c2",
+        "source_names": [
+          "Craigslist"
+        ],
+        "photos": [
+          "https://images.craigslist.org/00q0q_kX5AZeLCCjo_0gw0oM_600x450.jpg"
+        ],
+        "confidence": 96,
+        "verified_at": "2026-09-04T08:53:36-05:00",
+        "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.456857,-98.639508",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.456857,-98.639508",
+        "status": "verified",
+        "geocode_method": "source",
+        "notes": "",
+        "community_source": "",
+        "community_link_or_notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.7945,
+          29.2366
+        ]
+      },
+      "properties": {
+        "sale_id": "2026-09-04_5717-fm-3175-san-antonio-tx",
+        "title": "HUGE SALE (Lytle Tx)",
+        "sale_type": "garage",
+        "date_start": "2026-09-04",
+        "date_end": "2026-09-06",
+        "start_time": "",
+        "end_time": "",
+        "address": "5717 FM 3175, San Antonio, TX",
+        "city": "San Antonio",
+        "state": "TX",
+        "zip": "",
+        "latitude": 29.2366,
+        "longitude": -98.7945,
+        "description": "QR Code Link to This Post Many things to see! Come one Come all Friday... Saturday... Sunday... Cash &amp; Credit accepted Kitchen Items Metal Art Patio furniture Toys Clothes Model A parts Bikes Tires",
+        "highlights": [],
+        "source_urls": [
+          "https://www.craigslist.org/view/d/lytle-huge-sale/fZTWSaZSQ72eK45TkHH4z1"
+        ],
+        "original_url": "https://www.craigslist.org/view/d/lytle-huge-sale/fZTWSaZSQ72eK45TkHH4z1",
+        "source_names": [
+          "Craigslist"
+        ],
+        "photos": [],
+        "confidence": 96,
+        "verified_at": "2026-09-04T08:53:36-05:00",
+        "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.2366,-98.7945",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.2366,-98.7945",
+        "status": "verified",
+        "geocode_method": "source",
+        "notes": "",
+        "community_source": "",
+        "community_link_or_notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.533841,
+          29.525867
+        ]
+      },
+      "properties": {
+        "sale_id": "2026-09-04_2518-old-gate-road-near-vance-jackson-san-antoni",
+        "title": "Halloween Decorations Yard Sale 9/5 9am to 12pm (Colonial Oaks)",
+        "sale_type": "garage",
+        "date_start": "2026-09-04",
+        "date_end": "2026-09-06",
+        "start_time": "",
+        "end_time": "",
+        "address": "2518 Old Gate Road near Vance Jackson, San Antonio, TX",
+        "city": "San Antonio",
+        "state": "TX",
+        "zip": "",
+        "latitude": 29.525867,
+        "longitude": -98.533841,
+        "description": "QR Code Link to This Post Lots of Halloween Decorations for sale. Too many to list. Various prices. 2518 Old Gate Road San Antonio, TX. 78230 Cash only",
+        "highlights": [],
+        "source_urls": [
+          "https://www.craigslist.org/view/d/san-antonio-halloween-decorations-yard/9WJ5JSiDjtF9NoJ2JHLZ2P"
+        ],
+        "original_url": "https://www.craigslist.org/view/d/san-antonio-halloween-decorations-yard/9WJ5JSiDjtF9NoJ2JHLZ2P",
+        "source_names": [
+          "Craigslist"
+        ],
+        "photos": [
+          "https://images.craigslist.org/00404_iGuVpCrZShI_0CI0t2_600x450.jpg",
+          "https://images.craigslist.org/00404_iGuVpCrZShI_0CI0t2_50x50c.jpg",
+          "https://images.craigslist.org/00K0K_lfEfAYzfscf_0CI0t2_50x50c.jpg",
+          "https://images.craigslist.org/00909_eM7f9r16Btg_0CI0t2_50x50c.jpg",
+          "https://images.craigslist.org/00909_3L0h7oRZdGg_0CI0t2_50x50c.jpg",
+          "https://images.craigslist.org/00x0x_lhYHmRekQw9_0t20CI_50x50c.jpg"
+        ],
+        "confidence": 96,
+        "verified_at": "2026-09-04T08:53:36-05:00",
+        "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.525867,-98.533841",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.525867,-98.533841",
+        "status": "verified",
+        "geocode_method": "source",
+        "notes": "",
+        "community_source": "",
+        "community_link_or_notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.349631,
+          29.503188
+        ]
+      },
+      "properties": {
+        "sale_id": "2026-09-04_6863-avila-san-antonio-tx",
+        "title": "Multi-Family Yard Sale (San Antonio)",
+        "sale_type": "garage",
+        "date_start": "2026-09-04",
+        "date_end": "2026-09-06",
+        "start_time": "",
+        "end_time": "",
+        "address": "6863 Avila, San Antonio, TX",
+        "city": "San Antonio",
+        "state": "TX",
+        "zip": "",
+        "latitude": 29.503188,
+        "longitude": -98.349631,
+        "description": "QR Code Link to This Post YARD SALE! Come shop a little bit of everything! Girl’s toys &amp; baby items Antique &amp; collectible toys Purses &amp; accessories Electronics …and more!",
+        "highlights": [],
+        "source_urls": [
+          "https://www.craigslist.org/view/d/san-antonio-multi-family-yard-sale/g4MToGeyDgt7XGFZ5cBR1d"
+        ],
+        "original_url": "https://www.craigslist.org/view/d/san-antonio-multi-family-yard-sale/g4MToGeyDgt7XGFZ5cBR1d",
+        "source_names": [
+          "Craigslist"
+        ],
+        "photos": [
+          "https://images.craigslist.org/00z0z_iKzgEAYJb3O_07K0ak_600x450.jpg",
+          "https://images.craigslist.org/00z0z_iKzgEAYJb3O_07K0ak_50x50c.jpg",
+          "https://images.craigslist.org/00202_3pPD1tqg4WV_07K0ak_50x50c.jpg",
+          "https://images.craigslist.org/00B0B_2krHnwasHmM_07K0ak_50x50c.jpg",
+          "https://images.craigslist.org/00X0X_cq2VDVhq7M3_07K0ak_50x50c.jpg",
+          "https://images.craigslist.org/00606_baWlyOCQXTM_07K0ak_50x50c.jpg"
+        ],
+        "confidence": 96,
+        "verified_at": "2026-09-04T08:53:36-05:00",
+        "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.503188,-98.349631",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.503188,-98.349631",
+        "status": "verified",
+        "geocode_method": "source",
+        "notes": "",
+        "community_source": "",
+        "community_link_or_notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.503869,
+          29.344667
+        ]
+      },
+      "properties": {
+        "sale_id": "2026-09-04_3500-pleasanton-rd-near-amber-street-san-antonio",
+        "title": "Multi-Family Yard Sale Sept. 4th and 5th, 2026 (San Antonio)",
+        "sale_type": "garage",
+        "date_start": "2026-09-04",
+        "date_end": "2026-09-06",
+        "start_time": "",
+        "end_time": "",
+        "address": "3500 Pleasanton Rd near Amber Street, San Antonio, TX",
+        "city": "San Antonio",
+        "state": "TX",
+        "zip": "",
+        "latitude": 29.344667,
+        "longitude": -98.503869,
+        "description": "QR Code Link to This Post We are having a big Yard Sale at the Lila Cockrell Apts. Friday and Saturday, Sept. 4th and 5th from 9am to 3pm. Come by and take advantage of a lot of good stuff for all ages at really low prices.",
+        "highlights": [],
+        "source_urls": [
+          "https://www.craigslist.org/view/d/san-antonio-multi-family-yard-sale-sept/xc662a6gmtrbnLiTCPzkc9"
+        ],
+        "original_url": "https://www.craigslist.org/view/d/san-antonio-multi-family-yard-sale-sept/xc662a6gmtrbnLiTCPzkc9",
+        "source_names": [
+          "Craigslist"
+        ],
+        "photos": [
+          "https://images.craigslist.org/00c0c_iJAIxZTB1Fg_0uY0hq_600x450.jpg"
+        ],
+        "confidence": 96,
+        "verified_at": "2026-09-04T08:53:36-05:00",
+        "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.344667,-98.503869",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.344667,-98.503869",
+        "status": "verified",
+        "geocode_method": "source",
+        "notes": "",
+        "community_source": "",
+        "community_link_or_notes": ""
+      }
+    }
+  ]
+}
