@@ -21,8 +21,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.653494820086237,
-      "lon": -97.77235355603831,
+      "lat": 30.651383788825008,
+      "lon": -97.77319936722127,
       "geocode": "source",
       "company": "Golden Soul Estate Sales",
       "in_person": true,
@@ -74,8 +74,8 @@
       "in_person": false,
       "external_id": "eso-2459681",
       "categories": [
-        "online-auction",
-        "estate-sale"
+        "estate-sale",
+        "online-auction"
       ]
     },
     {
@@ -417,8 +417,8 @@
       "in_person": true,
       "external_id": "yss-1204rutherforddrleandertx78641-2026-09-04",
       "categories": [
-        "in-person",
-        "estate-sale"
+        "estate-sale",
+        "in-person"
       ]
     },
     {
@@ -682,8 +682,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.12419704947898,
-      "lon": -97.87751956168913,
+      "lat": 30.12001091940352,
+      "lon": -97.87628367401237,
       "geocode": "source",
       "company": "Creative Estate Sales",
       "in_person": true,
@@ -937,6 +937,6 @@
   "total_locations": 40,
   "status": "live",
   "date": "2026-09-04",
-  "last_refresh": "2026-09-04T08:53:36-05:00",
+  "last_refresh": "2026-09-04T09:52:10-05:00",
   "permits": []
 }
