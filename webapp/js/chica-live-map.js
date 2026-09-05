@@ -4,6 +4,9 @@
   var SA = [29.4241, -98.4936];
   var mtDead = false;
   var probed = false;
+  var PIN = 40;
+  var HALF = PIN / 2;
+  var GLYPH = 28;
 
   function onMapPath() {
     var p = location.pathname || "";
@@ -36,11 +39,11 @@
     var kind = type === "estate" || type === "permit" ? type : "garage";
     var html;
     if (kind === "estate") {
-      html = '<svg class="chica-sym" viewBox="0 0 18 18" width="18" height="18" aria-hidden="true"><polygon points="9,1.6 16.4,9 9,16.4 1.6,9" fill="#f4f4f4" stroke="#121212" stroke-width="1.6"/></svg>';
+      html = '<svg class="chica-sym" viewBox="0 0 28 28" width="28" height="28" aria-hidden="true"><polygon points="14,2.2 25.4,14 14,25.8 2.6,14" fill="#f4f4f4" stroke="#121212" stroke-width="2.2"/></svg>';
     } else if (kind === "permit") {
-      html = '<svg class="chica-sym" viewBox="0 0 18 18" width="18" height="18" aria-hidden="true"><polygon points="9,2 16.2,15.6 1.8,15.6" fill="#8a8a8a" stroke="#121212" stroke-width="1.6"/></svg>';
+      html = '<svg class="chica-sym" viewBox="0 0 28 28" width="28" height="28" aria-hidden="true"><polygon points="14,2.4 25.6,24.8 2.4,24.8" fill="#8a8a8a" stroke="#121212" stroke-width="2.2"/></svg>';
     } else {
-      html = '<svg class="chica-sym" viewBox="0 0 18 18" width="18" height="18" aria-hidden="true"><circle cx="9" cy="9" r="6" fill="#c513af" stroke="#fffdf8" stroke-width="1.8"/></svg>';
+      html = '<svg class="chica-sym" viewBox="0 0 28 28" width="28" height="28" aria-hidden="true"><circle cx="14" cy="14" r="10" fill="#c513af" stroke="#fffdf8" stroke-width="2.4"/></svg>';
     }
     if (pack) {
       html = '<span class="chica-pack-halo" aria-hidden="true"></span><span class="chica-pack-ring" aria-hidden="true"></span>' + html;
@@ -48,8 +51,8 @@
     return L.divIcon({
       className: "chica-pin chica-type-" + kind + (pack ? " chica-pack-pin" : ""),
       html: html,
-      iconSize: [26, 26],
-      iconAnchor: [13, 13]
+      iconSize: [PIN, PIN],
+      iconAnchor: [HALF, HALF]
     });
   }
 
@@ -115,9 +118,9 @@
     s.id = "chica-live-intel-css";
     s.textContent =
       ".leaflet-container{width:100%!important;height:100%!important}" +
-      ".leaflet-marker-icon.chica-pin,.leaflet-div-icon.chica-pin{width:26px!important;height:26px!important;margin-left:-13px!important;margin-top:-13px!important;padding:0!important;border:0!important;background:transparent!important;display:flex;align-items:center;justify-content:center;overflow:visible!important;box-sizing:border-box}" +
-      ".chica-pin .chica-sym{display:block;width:18px;height:18px;flex:0 0 18px;position:relative;z-index:2}" +
-      ".chica-pack-halo,.chica-pack-ring{position:absolute;left:13px;top:13px;width:16px;height:16px;margin:0;border-radius:50%;pointer-events:none;transform:translate3d(-50%,-50%,0);backface-visibility:hidden}" +
+      ".leaflet-marker-icon.chica-pin,.leaflet-div-icon.chica-pin{width:40px!important;height:40px!important;margin-left:-20px!important;margin-top:-20px!important;padding:0!important;border:0!important;background:transparent!important;display:flex;align-items:center;justify-content:center;overflow:visible!important;box-sizing:border-box}" +
+      ".chica-pin .chica-sym{display:block;width:28px;height:28px;flex:0 0 28px;position:relative;z-index:2}" +
+      ".chica-pack-halo,.chica-pack-ring{position:absolute;left:20px;top:20px;width:24px;height:24px;margin:0;border-radius:50%;pointer-events:none;transform:translate3d(-50%,-50%,0);backface-visibility:hidden}" +
       ".chica-pack-halo{background:#ff3ad1;opacity:.35}" +
       ".chica-pack-ring{background:#ff3ad1;opacity:.9;will-change:transform,opacity;animation:chica-pack-pulse 1.4s ease-out infinite}" +
       "@keyframes chica-pack-pulse{0%{transform:translate3d(-50%,-50%,0) scale(.7);opacity:.85}100%{transform:translate3d(-50%,-50%,0) scale(2.2);opacity:0}}" +
@@ -247,7 +250,7 @@
       if (tgt && tgt.closest && tgt.closest(".leaflet-marker-icon, .chica-pin, .leaflet-popup, #chica-intel-card")) return;
       if (typeof w.__chicaHideIntel === "function") w.__chicaHideIntel();
     });
-    fetch(BASE + "/data/cities/san-antonio.json?v=30", { cache: "no-store" })
+    fetch(BASE + "/data/cities/san-antonio.json?v=31", { cache: "no-store" })
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (data) { addPins(map, L, salesFrom(data)); size(); })
       .catch(function () {});
