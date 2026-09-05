@@ -59,13 +59,19 @@
     var all = loadNotes();
     return Array.isArray(all[pinKey(sale)]) ? all[pinKey(sale)] : [];
   }
-  function dirs(lat, lon) {
+  function ll(lat, lon) {
+    return Number(lat).toFixed(6) + "," + Number(lon).toFixed(6);
+  }
+  function actions(lat, lon) {
+    var pair = ll(lat, lon);
+    var enc = encodeURIComponent(pair);
     return (
-      '<p class="chica-dirs">' +
-      '<a target="_blank" rel="noreferrer" href="https://www.google.com/maps/dir/?api=1&destination=' + lat + "," + lon + '">Google</a>' +
-      '<a target="_blank" rel="noreferrer" href="https://maps.apple.com/?daddr=' + lat + "," + lon + '">Apple</a>' +
-      '<a target="_blank" rel="noreferrer" href="https://waze.com/ul?ll=' + lat + "%2C" + lon + '&navigate=yes">Waze</a>' +
-      "</p>"
+      '<div class="chica-actions" role="group" aria-label="Directions and Street View">' +
+      '<a class="go-nav" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&destination=' + enc + '">Google Maps</a>' +
+      '<a class="go-nav" target="_blank" rel="noopener noreferrer" href="https://maps.apple.com/?daddr=' + enc + '&dirflg=d">Apple Maps</a>' +
+      '<a class="go-nav" target="_blank" rel="noopener noreferrer" href="https://waze.com/ul?ll=' + enc + '&navigate=yes">Waze</a>' +
+      '<a class="go-nav go-street" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=' + enc + '">Street View</a>' +
+      "</div>"
     );
   }
   function css() {
@@ -73,8 +79,10 @@
     var s = document.createElement("style");
     s.id = "chica-pin-details-css";
     s.textContent =
-      "#chica-intel-card{display:none;position:fixed!important;left:12px!important;top:58px!important;z-index:2147483647!important;width:min(340px,calc(100vw - 24px))!important;max-height:min(74dvh,560px)!important;overflow:auto!important;background:#fffdf8!important;color:#1a1714!important;border:2px solid #c513af!important;border-radius:14px!important;box-shadow:0 16px 40px rgba(18,18,18,.45)!important;padding:14px!important;font:500 13px/1.35 Inter,system-ui,sans-serif!important}" +
+      "#chica-intel-card{display:none;position:fixed!important;left:12px!important;top:64px!important;z-index:2147483647!important;width:min(360px,calc(100vw - 24px))!important;max-height:min(78dvh,620px)!important;overflow:auto!important;background:#fffdf8!important;color:#1a1714!important;border:2px solid #c513af!important;border-radius:14px!important;box-shadow:0 16px 40px rgba(18,18,18,.45)!important;padding:14px!important;font:500 13px/1.35 Inter,system-ui,sans-serif!important}" +
       "#chica-intel-card .x{position:absolute;top:4px;right:4px;border:0;background:transparent;font:800 22px/1 Inter,system-ui,sans-serif;min-width:36px;min-height:36px}" +
+      "#chica-intel-card h3{margin:0 32px 6px 0;font:800 16px/1.2 Inter,system-ui,sans-serif}" +
+      "#chica-intel-card .meta{margin:0;color:#5c5348;font-size:12px}" +
       "#chica-intel-card .near-label{margin:12px 0 0;padding:6px 8px;background:#c513af;color:#fffdf8;border-radius:8px;font:800 12px/1 Inter,system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase}" +
       "#chica-intel-card .gate{margin:8px 0 0;color:#5c5348}" +
       "#chica-intel-card .note{margin:8px 0 0;padding:8px 0 0;border-top:1px solid #ece6dc}" +
@@ -83,8 +91,9 @@
       "#chica-intel-card form{margin:10px 0 0;display:grid;gap:6px}" +
       "#chica-intel-card input,#chica-intel-card textarea{width:100%;box-sizing:border-box;border:1px solid #cfc6b8;border-radius:8px;padding:8px;font:500 13px/1.3 Inter,system-ui,sans-serif}" +
       "#chica-intel-card button.go{border:0;border-radius:10px;background:#c513af;color:#fff;font:800 13px/1 Inter,system-ui,sans-serif;padding:10px 12px;cursor:pointer}" +
-      "#chica-intel-card .chica-dirs{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 0}" +
-      "#chica-intel-card .chica-dirs a{border:1px solid #c513af;border-radius:999px;padding:4px 10px;font-size:12px;color:#7a0f6c;text-decoration:none;font-weight:800}";
+      "#chica-intel-card .chica-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0 0}" +
+      "#chica-intel-card .chica-actions a.go-nav{display:flex;align-items:center;justify-content:center;min-height:40px;border:2px solid #c513af;border-radius:10px;padding:8px 10px;font:800 13px/1 Inter,system-ui,sans-serif;color:#7a0f6c;text-decoration:none;background:#fff}" +
+      "#chica-intel-card .chica-actions a.go-street{background:#c513af;color:#fffdf8;border-color:#c513af}";
     (document.head || document.documentElement).appendChild(s);
   }
   function cardEl() {
@@ -136,7 +145,7 @@
       '<div class="chica-opt">' +
       "<h3>" + esc(sale.title || "Sale") + "</h3>" +
       '<p class="meta">' + esc(sale.address || "") + (when ? "<br>" + esc(when) : "") + "</p>" +
-      dirs(lat, lon) +
+      actions(lat, lon) +
       '<p class="near-label">Pack intel \u00b7 200 ft</p>' +
       form + list +
       '<p class="gate"><a href="' + BASE + '/intel/">Porch rules</a></p>' +
@@ -144,7 +153,7 @@
     var x = el.querySelector(".x");
     if (x) x.onclick = function (ev) { ev.preventDefault(); ev.stopPropagation(); el.style.display = "none"; };
     var gps = el.querySelector("#chica-intel-gps");
-    if (gps) gps.onclick = function (ev) { ev.preventDefault(); askGps(true); startWatch(); };
+    if (gps) gps.onclick = function (ev) { ev.preventDefault(); ev.stopPropagation(); askGps(true); startWatch(); };
     var f = el.querySelector("#chica-intel-form");
     if (f) f.onsubmit = function (ev) {
       ev.preventDefault();
@@ -188,15 +197,15 @@
   function saleFromLayer(ly) {
     if (!ly || !ly.getLatLng) return null;
     if (ly._icon && (ly._icon.classList.contains("chica-overlay-pin") || ly._icon.querySelector(".chica-overlay-mark"))) return null;
-    var ll = ly.getLatLng();
+    var llng = ly.getLatLng();
     var item = ly.__chicaSale || {};
     return {
       title: item.title || (ly.options && ly.options.title) || "Sale",
       address: item.address || "",
       dates: item.dates || "",
       hours: item.hours || "",
-      lat: ll.lat,
-      lon: ll.lng
+      lat: llng.lat,
+      lon: llng.lng
     };
   }
   function hook() {
@@ -205,7 +214,10 @@
     map.eachLayer(function (ly) {
       if (!ly.getLatLng || ly.__chicaDetailsHook) return;
       ly.__chicaDetailsHook = true;
-      ly.on("click", function () {
+      ly.on("click", function (ev) {
+        if (ev && ev.originalEvent) {
+          ev.originalEvent._chicaPin = true;
+        }
         var sale = saleFromLayer(ly);
         if (sale) { render(sale); askGps(false); startWatch(); }
       });
