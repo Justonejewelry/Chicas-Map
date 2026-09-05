@@ -4,6 +4,8 @@ name: Chica Daily (Master Workflow)
 # 5:00 AM America/Chicago every day.
 # CDT (UTC-5) → 10:00 UTC | CST (UTC-6) → 11:00 UTC
 # Both crons fire near 5 AM local year-round. Idempotent sources.
+# Do NOT put [skip ci] on the populate commit. That left GitHub Pages
+# serving an empty public[] while main already had pins.
 
 on:
   schedule:
@@ -109,7 +111,7 @@ jobs:
             webapp/data/scraper-health.json webapp/data/feed.json \
             || true
           DATE=$(ls data/sales/*.json 2>/dev/null | xargs -n1 basename 2>/dev/null | sed 's/.json//' | sort | tail -1 || date -u +%Y-%m-%d)
-          MSG="Chica master populate — ${DATE} [skip ci]"
+          MSG="Chica master populate — ${DATE}"
           git commit -m "$MSG" || exit 0
           git pull --rebase origin main || true
           git push origin HEAD:main
