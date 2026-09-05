@@ -2,7 +2,7 @@
 
 ## 1. CHICA DAILY RUN
 - **Target date:** Saturday, September 5, 2026
-- **San Antonio local run time:** 2026-09-05T08:07:25-05:00
+- **San Antonio local run time:** 2026-09-05T08:44:38-05:00
 - **Geographic area:** San Antonio & surrounding communities
 - **Sources searched:** 7
 - **Candidates discovered:** 40
@@ -26,7 +26,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196371853
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.53746,-98.432155
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.53746,-98.432155
-- **Verified at:** 2026-09-05T08:07:25-05:00
+- **Verified at:** 2026-09-05T08:44:38-05:00
 
 ### 2. Charter Oaks Charms: Bidding ENDS 9/6/26 @ 7 PM!
 - **Type:** estate
@@ -38,7 +38,7 @@
 - **Original listing:** https://estatesales.org/estate-sales/tx/san-antonio/78230/charter-oaks-charms-bidding-ends-2460209
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.542044,-98.555621
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.542044,-98.555621
-- **Verified at:** 2026-09-05T08:07:25-05:00
+- **Verified at:** 2026-09-05T08:44:38-05:00
 
 ### 3. Classy In Camino Real
 - **Type:** garage
@@ -51,7 +51,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196368477
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.5765493,-98.5094674
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5765493,-98.5094674
-- **Verified at:** 2026-09-05T08:07:25-05:00
+- **Verified at:** 2026-09-05T08:44:38-05:00
 
 ### 4. Correction: Saturday Only - Time To Clean Out Again!
 - **Type:** garage
@@ -64,7 +64,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196372515
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.412255,-98.703548
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.412255,-98.703548
-- **Verified at:** 2026-09-05T08:07:25-05:00
+- **Verified at:** 2026-09-05T08:44:38-05:00
 
 ### 5. Fairway Finds & Home Treasures in Fair Oaks Ranch, TX. Bidding Ends 9/9.
 - **Type:** estate
@@ -76,7 +76,7 @@
 - **Original listing:** https://estatesales.org/estate-sales/tx/boerne/78015/fairway-finds-home-treasures-in-2460195
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.7310499,-98.6423846
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.7310499,-98.6423846
-- **Verified at:** 2026-09-05T08:07:25-05:00
+- **Verified at:** 2026-09-05T08:44:38-05:00
 
 ### 6. Wimberley TX Estate Sale: Art to Admire, Décor to Love, Garage Finds to Grab
 - **Type:** estate
@@ -89,7 +89,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9xeF/510-wimberley-oaks-dr-wimberley-tx-78676
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936
-- **Verified at:** 2026-09-05T08:07:25-05:00
+- **Verified at:** 2026-09-05T08:44:38-05:00
 
 ### 7. Funky Finds - Bidding ends 9/13
 - **Type:** estate
@@ -102,7 +102,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9t6a/san-marcos-tx-78666
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936
-- **Verified at:** 2026-09-05T08:07:25-05:00
+- **Verified at:** 2026-09-05T08:44:38-05:00
 
 ### 8. 🌞 Family Yard Sale 🌞
 - **Type:** garage
@@ -115,7 +115,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196374239
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.37363839,-98.51954589
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.37363839,-98.51954589
-- **Verified at:** 2026-09-05T08:07:25-05:00
+- **Verified at:** 2026-09-05T08:44:38-05:00
 
 ### 9. Huge Yard Sale
 - **Type:** garage
@@ -128,7 +128,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196372917
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.449815,-98.584406
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.449815,-98.584406
-- **Verified at:** 2026-09-05T08:07:25-05:00
+- **Verified at:** 2026-09-05T08:44:38-05:00
 
 ### 10. Yard Sale!!
 - **Type:** garage
@@ -141,7 +141,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196372987
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.50494509,-98.53383131
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.50494509,-98.53383131
-- **Verified at:** 2026-09-05T08:07:25-05:00
+- **Verified at:** 2026-09-05T08:44:38-05:00
 
 ### 11. Multi Family Everything Must Go
 - **Type:** garage
@@ -154,7 +154,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196371673
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.459088,-98.588213
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.459088,-98.588213
-- **Verified at:** 2026-09-05T08:07:25-05:00
+- **Verified at:** 2026-09-05T08:44:38-05:00
 
 ### 12. Garage Sale
 - **Type:** garage
@@ -167,7 +167,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196374057
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.461262,-98.387673
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.461262,-98.387673
-- **Verified at:** 2026-09-05T08:07:25-05:00
+- **Verified at:** 2026-09-05T08:44:38-05:00
 
 ### 13. Must See Garage Sale
 - **Type:** garage
@@ -180,7 +180,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196371023
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.509381,-98.622777
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.509381,-98.622777
-- **Verified at:** 2026-09-05T08:07:25-05:00
+- **Verified at:** 2026-09-05T08:44:38-05:00
 
 ### 14. Multi Family Yard Sales: Baby Items, Toys,  Antiques, Brand New Items And More
 - **Type:** garage
@@ -193,7 +193,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196371947
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.503269,-98.349543
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.503269,-98.349543
-- **Verified at:** 2026-09-05T08:07:25-05:00
+- **Verified at:** 2026-09-05T08:44:38-05:00
 
 ### 15. Multi Family Garage Sale Labor Day Wknd Sat & Sun
 - **Type:** garage
@@ -206,7 +206,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196368897
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.566022,-98.611871
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.566022,-98.611871
-- **Verified at:** 2026-09-05T08:07:25-05:00
+- **Verified at:** 2026-09-05T08:44:38-05:00
 
 ### 16. Big Yard Sale
 - **Type:** garage
@@ -219,7 +219,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196373783
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.395764,-98.706008
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.395764,-98.706008
-- **Verified at:** 2026-09-05T08:07:25-05:00
+- **Verified at:** 2026-09-05T08:44:38-05:00
 
 ### 17. 82 Oak Fields Dr, Floresville, TX 78114
 - **Type:** garage
@@ -232,7 +232,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9pbx/82-oak-fields-dr-floresville-tx-78114
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936
-- **Verified at:** 2026-09-05T08:07:25-05:00
+- **Verified at:** 2026-09-05T08:44:38-05:00
 
 ### 18. Moving Sale - Pay What It’S Worth To You!
 - **Type:** garage
@@ -245,7 +245,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196372895
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.656087,-98.197584
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.656087,-98.197584
-- **Verified at:** 2026-09-05T08:07:25-05:00
+- **Verified at:** 2026-09-05T08:44:38-05:00
 
 ### 19. 4117 Hamilton Hollow Rd, San Marcos, TX 78666
 - **Type:** garage
@@ -258,7 +258,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9NHt/4117-hamilton-hollow-rd-san-marcos-tx-78666
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936
-- **Verified at:** 2026-09-05T08:07:25-05:00
+- **Verified at:** 2026-09-05T08:44:38-05:00
 
 ### 20. Large Yard Sale Labor Day weekend
 - **Type:** garage
@@ -271,7 +271,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9pPM/106-lazy-ln-san-marcos-tx-78666
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936
-- **Verified at:** 2026-09-05T08:07:25-05:00
+- **Verified at:** 2026-09-05T08:44:38-05:00
 
 ### 21. 1307 Sunflower Ln, San Marcos, TX 78666
 - **Type:** garage
@@ -284,7 +284,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9pzJ/1307-sunflower-ln-san-marcos-tx-78666
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936
-- **Verified at:** 2026-09-05T08:07:25-05:00
+- **Verified at:** 2026-09-05T08:44:38-05:00
 
 ### 22. Estate Sale (San Antonio)
 - **Type:** estate
@@ -296,7 +296,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-estate-sale/nsPBbDJaSwgZGGZMPBMRgE
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.37421,-98.453593
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.37421,-98.453593
-- **Verified at:** 2026-09-05T08:07:25-05:00
+- **Verified at:** 2026-09-05T08:44:38-05:00
 
 ### 23. Estate Sale - Art and collectibles (By Seaworld)
 - **Type:** estate
@@ -308,7 +308,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-estate-sale-art-and/sJWRPFbGKUHuWD4P9UFP67
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.435764,-98.681542
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.435764,-98.681542
-- **Verified at:** 2026-09-05T08:07:25-05:00
+- **Verified at:** 2026-09-05T08:44:38-05:00
 
 ### 24. Unbelievable collection liquidation (Schertz)
 - **Type:** estate
@@ -320,7 +320,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/new-braunfels-unbelievable-collection/6mxMeJuTorrrK9csPPdpLv
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.6636,-98.1672
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.6636,-98.1672
-- **Verified at:** 2026-09-05T08:07:25-05:00
+- **Verified at:** 2026-09-05T08:44:38-05:00
 
 ### 25. !!TOOLS/FISHING/HOME STUFF!! (SAN ANTONIO)
 - **Type:** garage
@@ -332,7 +332,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-tools-fishing-home-stuff/aYfEUNT4xLi9pRuMgyVRrg
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.390258,-98.530012
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.390258,-98.530012
-- **Verified at:** 2026-09-05T08:07:25-05:00
+- **Verified at:** 2026-09-05T08:44:38-05:00
 
 ### 26. Alamo Craft Co. Antiques & More (San Antonio)
 - **Type:** garage
@@ -344,7 +344,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-alamo-craft-co-antiques-more/mj6FcRd4ZDr7zwAwc4pwWa
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.556,-98.6094
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.556,-98.6094
-- **Verified at:** 2026-09-05T08:07:25-05:00
+- **Verified at:** 2026-09-05T08:44:38-05:00
 
 ### 27. BIG COUNTRY YARD SALE
 - **Type:** garage
@@ -356,7 +356,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-big-country-yard-sale/5FkUUwhsRpkjdZNQuEZ5sD
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.258911,-98.344862
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.258911,-98.344862
-- **Verified at:** 2026-09-05T08:07:25-05:00
+- **Verified at:** 2026-09-05T08:44:38-05:00
 
 ### 28. CRAFT Fair - Sept. 5 & 6 || 35+ Artisans (San Antonio)
 - **Type:** garage
@@ -369,7 +369,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-craft-fair-sept-artisans/agtQLSWhjwqKt3QShFYVGY
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.591295,-98.466528
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.591295,-98.466528
-- **Verified at:** 2026-09-05T08:07:25-05:00
+- **Verified at:** 2026-09-05T08:44:38-05:00
 
 ### 29. Curb alert free free free (Corner of edge crest and crestmont dr)
 - **Type:** garage
@@ -381,7 +381,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-curb-alert-free-free-free/gPgSXwpTxVa2H7j6t4CeDE
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.53903,-98.429186
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.53903,-98.429186
-- **Verified at:** 2026-09-05T08:07:25-05:00
+- **Verified at:** 2026-09-05T08:44:38-05:00
 
 ### 30. Garage Sale Labor Day Weekend (New Braunfels)
 - **Type:** garage
@@ -393,7 +393,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/new-braunfels-garage-sale-labor-day/3gCxRG4dCyQSNXTzVHU6Kn
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.7229,-98.0742
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.7229,-98.0742
-- **Verified at:** 2026-09-05T08:07:25-05:00
+- **Verified at:** 2026-09-05T08:44:38-05:00
 
 ### 31. HUGE GARAGE SALE - EVERYTHING MUST GO!
 - **Type:** garage
@@ -405,7 +405,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-huge-garage-sale-everything/fLSTPVA75rUkcdq5Fo75c2
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.456857,-98.639508
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.456857,-98.639508
-- **Verified at:** 2026-09-05T08:07:25-05:00
+- **Verified at:** 2026-09-05T08:44:38-05:00
 
 ### 32. HUGE SALE (Lytle Tx)
 - **Type:** garage
@@ -417,7 +417,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/lytle-huge-sale/fZTWSaZSQ72eK45TkHH4z1
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.2366,-98.7945
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.2366,-98.7945
-- **Verified at:** 2026-09-05T08:07:25-05:00
+- **Verified at:** 2026-09-05T08:44:38-05:00
 
 ### 33. Halloween Decorations Yard Sale 9/5 9am to 12pm (Colonial Oaks)
 - **Type:** garage
@@ -429,7 +429,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-halloween-decorations-yard/9WJ5JSiDjtF9NoJ2JHLZ2P
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.525867,-98.533841
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.525867,-98.533841
-- **Verified at:** 2026-09-05T08:07:25-05:00
+- **Verified at:** 2026-09-05T08:44:38-05:00
 
 ### 34. Huge Garage Sale
 - **Type:** garage
@@ -442,7 +442,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-huge-garage-sale/6gKKJizF84YGJkU4E6QXsV
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.7026,-98.4759
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.7026,-98.4759
-- **Verified at:** 2026-09-05T08:07:25-05:00
+- **Verified at:** 2026-09-05T08:44:38-05:00
 
 ## 3. CHICA PICKS
 
