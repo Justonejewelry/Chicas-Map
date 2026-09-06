@@ -250,10 +250,19 @@
       if (tgt && tgt.closest && tgt.closest(".leaflet-marker-icon, .chica-pin, .leaflet-popup, #chica-intel-card")) return;
       if (typeof w.__chicaHideIntel === "function") w.__chicaHideIntel();
     });
-    fetch(BASE + "/data/cities/san-antonio.json?v=31", { cache: "no-store" })
-      .then(function (r) { return r.ok ? r.json() : null; })
-      .then(function (data) { addPins(map, L, salesFrom(data)); size(); })
-      .catch(function () {});
+    var feedUrls = [
+      BASE + "/data/cities/san-antonio.json?v=32",
+      BASE + "/data/cities/san-antonio-permits-a.json?v=32",
+      BASE + "/data/cities/san-antonio-permits-b.json?v=32"
+    ];
+    Promise.all(feedUrls.map(function (u) {
+      return fetch(u, { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
+    })).then(function (bags) {
+      var sales = [];
+      for (var i = 0; i < bags.length; i++) sales = sales.concat(salesFrom(bags[i]));
+      addPins(map, L, sales);
+      size();
+    });
     var k = 0;
     var sid = setInterval(function () { size(); k += 1; if (k > 24) clearInterval(sid); }, 150);
     return true;
