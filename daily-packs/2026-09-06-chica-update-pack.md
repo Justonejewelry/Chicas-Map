@@ -2,7 +2,7 @@
 
 ## 1. CHICA DAILY RUN
 - **Target date:** Sunday, September 6, 2026
-- **San Antonio local run time:** 2026-09-06T08:18:12-05:00
+- **San Antonio local run time:** 2026-09-06T09:00:56-05:00
 - **Geographic area:** San Antonio & surrounding communities
 - **Sources searched:** 7
 - **Candidates discovered:** 23
@@ -26,7 +26,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196371853
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.53746,-98.432155
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.53746,-98.432155
-- **Verified at:** 2026-09-06T08:18:12-05:00
+- **Verified at:** 2026-09-06T09:00:56-05:00
 
 ### 2. Classy In Camino Real
 - **Type:** garage
@@ -39,7 +39,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196368477
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.5765493,-98.5094674
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5765493,-98.5094674
-- **Verified at:** 2026-09-06T08:18:12-05:00
+- **Verified at:** 2026-09-06T09:00:56-05:00
 
 ### 3. Multi Family Garage Sale Labor Day Wknd Sat & Sun
 - **Type:** garage
@@ -52,7 +52,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196368897
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.566022,-98.611871
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.566022,-98.611871
-- **Verified at:** 2026-09-06T08:18:12-05:00
+- **Verified at:** 2026-09-06T09:00:56-05:00
 
 ### 4. Wimberley TX Estate Sale: Art to Admire, Décor to Love, Garage Finds to Grab
 - **Type:** estate
@@ -65,7 +65,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9xeF/510-wimberley-oaks-dr-wimberley-tx-78676
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=30.001978,-98.181746
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=30.001978,-98.181746
-- **Verified at:** 2026-09-06T08:18:12-05:00
+- **Verified at:** 2026-09-06T09:00:56-05:00
 
 ### 5. !!TOOLS/FISHING/HOME STUFF!! (SAN ANTONIO)
 - **Type:** garage
@@ -77,7 +77,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-tools-fishing-home-stuff/aYfEUNT4xLi9pRuMgyVRrg
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.390258,-98.530012
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.390258,-98.530012
-- **Verified at:** 2026-09-06T08:18:12-05:00
+- **Verified at:** 2026-09-06T09:00:56-05:00
 
 ### 6. Garage Sale
 - **Type:** garage
@@ -90,7 +90,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196374057
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.461262,-98.387673
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.461262,-98.387673
-- **Verified at:** 2026-09-06T08:18:12-05:00
+- **Verified at:** 2026-09-06T09:00:56-05:00
 
 ### 7. Big Yard Sale
 - **Type:** garage
@@ -103,7 +103,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196373783
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.395764,-98.706008
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.395764,-98.706008
-- **Verified at:** 2026-09-06T08:18:12-05:00
+- **Verified at:** 2026-09-06T09:00:56-05:00
 
 ### 8. Garage Sale Labor Day Weekend (New Braunfels)
 - **Type:** moving
@@ -115,7 +115,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/new-braunfels-garage-sale-labor-day/3gCxRG4dCyQSNXTzVHU6Kn
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.7229,-98.0742
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.7229,-98.0742
-- **Verified at:** 2026-09-06T08:18:12-05:00
+- **Verified at:** 2026-09-06T09:00:56-05:00
 
 ### 9. Huge Sale (Lytle)
 - **Type:** garage
@@ -127,7 +127,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/lytle-huge-sale/fZTWSaZSQ72eK45TkHH4z1
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.2366,-98.7945
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.2366,-98.7945
-- **Verified at:** 2026-09-06T08:18:12-05:00
+- **Verified at:** 2026-09-06T09:00:56-05:00
 
 ### 10. CRAFT Fair - Sept. 5 & 6 || 35+ Artisans (San Antonio)
 - **Type:** community
@@ -140,7 +140,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-craft-fair-sept-artisans/agtQLSWhjwqKt3QShFYVGY
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.591295,-98.466528
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.591295,-98.466528
-- **Verified at:** 2026-09-06T08:18:12-05:00
+- **Verified at:** 2026-09-06T09:00:56-05:00
 
 ### 11. Charter Oaks Charms: Bidding ENDS 9/6/26 @ 7 PM!
 - **Type:** estate
@@ -152,7 +152,7 @@
 - **Original listing:** https://estatesales.org/estate-sales/tx/san-antonio/78230/charter-oaks-charms-bidding-ends-2460209
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.542044,-98.555621
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.542044,-98.555621
-- **Verified at:** 2026-09-06T08:18:12-05:00
+- **Verified at:** 2026-09-06T09:00:56-05:00
 
 ### 12. Fairway Finds & Home Treasures in Fair Oaks Ranch, TX. Bidding Ends 9/9.
 - **Type:** estate
@@ -164,7 +164,7 @@
 - **Original listing:** https://estatesales.org/estate-sales/tx/boerne/78015/fairway-finds-home-treasures-in-2460195
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.7310499,-98.6423846
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.7310499,-98.6423846
-- **Verified at:** 2026-09-06T08:18:12-05:00
+- **Verified at:** 2026-09-06T09:00:56-05:00
 
 ### 13. Wanderlust & Exceptional Quality in Boerne, TX. Bidding Ends 9/14.
 - **Type:** estate
@@ -176,7 +176,7 @@
 - **Original listing:** https://estatesales.org/estate-sales/tx/boerne/78006/wanderlust-exceptional-quality-in-boerne-2461245
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.7946641,-98.7319703
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.7946641,-98.7319703
-- **Verified at:** 2026-09-06T08:18:12-05:00
+- **Verified at:** 2026-09-06T09:00:56-05:00
 
 ### 14. Funky Finds - Bidding ends 9/13
 - **Type:** estate
@@ -189,7 +189,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9t6a/san-marcos-tx-78666
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936
-- **Verified at:** 2026-09-06T08:18:12-05:00
+- **Verified at:** 2026-09-06T09:00:56-05:00
 
 ### 15. Unbelievable collection liquidation (Schertz)
 - **Type:** estate
@@ -201,7 +201,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/new-braunfels-unbelievable-collection/6mxMeJuTorrrK9csPPdpLv
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.6636,-98.1672
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.6636,-98.1672
-- **Verified at:** 2026-09-06T08:18:12-05:00
+- **Verified at:** 2026-09-06T09:00:56-05:00
 
 ### 16. Alamo Craft Co. Antiques & More (San Antonio)
 - **Type:** garage
@@ -213,7 +213,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-alamo-craft-co-antiques-more/mj6FcRd4ZDr7zwAwc4pwWa
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.556,-98.6094
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.556,-98.6094
-- **Verified at:** 2026-09-06T08:18:12-05:00
+- **Verified at:** 2026-09-06T09:00:56-05:00
 
 ### 17. CRAFT Fair - Sept. 5 & 6 || 35+ Artisans (San Antonio)
 - **Type:** garage
@@ -226,7 +226,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-craft-fair-sept-artisans/agtQLSWhjwqKt3QShFYVGY
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.591295,-98.466528
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.591295,-98.466528
-- **Verified at:** 2026-09-06T08:18:12-05:00
+- **Verified at:** 2026-09-06T09:00:56-05:00
 
 ### 18. Garage Sale Labor Day Weekend (New Braunfels)
 - **Type:** garage
@@ -238,7 +238,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/new-braunfels-garage-sale-labor-day/3gCxRG4dCyQSNXTzVHU6Kn
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.7229,-98.0742
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.7229,-98.0742
-- **Verified at:** 2026-09-06T08:18:12-05:00
+- **Verified at:** 2026-09-06T09:00:56-05:00
 
 ### 19. HUGE SALE (Lytle Tx)
 - **Type:** garage
@@ -250,7 +250,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/lytle-huge-sale/fZTWSaZSQ72eK45TkHH4z1
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.2366,-98.7945
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.2366,-98.7945
-- **Verified at:** 2026-09-06T08:18:12-05:00
+- **Verified at:** 2026-09-06T09:00:56-05:00
 
 ## 3. CHICA PICKS
 
