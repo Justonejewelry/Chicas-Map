@@ -1,13 +1,13 @@
 {
   "city": "san-antonio",
-  "date": "2026-08-29",
-  "last_refresh": "2026-08-29T15:36:00-05:00",
-  "edition": "Saturday Live — San Antonio",
+  "date": "2026-09-06",
+  "last_refresh": "2026-09-06T07:29:00-05:00",
+  "edition": "Sunday Live — San Antonio",
   "canonical_feed": "data/cities/san-antonio.json",
-  "total_locations": 45,
-  "public_count": 45,
+  "total_locations": 10,
+  "public_count": 10,
   "permit_total": 0,
-  "sentinel": "RESTORED",
-  "note": "City feed was overwritten with only the Fairpoint pack point. Restored data/sales/2026-08-29.json (44) plus Fairpoint.",
+  "sentinel": "PASS",
+  "note": "Restored Sunday on-site pins from data/sales/2026-09-06.json. Online ZIP-only estate auctions kept in the daily pack, not the map.",
   "status": "live"
 }
