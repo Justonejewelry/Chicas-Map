@@ -1,0 +1,251 @@
+{
+  "target_date": "2026-09-07",
+  "generated_at": "2026-09-07T10:23:54-05:00",
+  "city": "san-antonio",
+  "area": "San Antonio & surrounding communities",
+  "count": 6,
+  "min_confidence": 70,
+  "sales": [
+    {
+      "sale_id": "2026-08-28_boerne-tx-78015",
+      "title": "Fairway Finds & Home Treasures in Fair Oaks Ranch, TX. Bidding Ends 9/9.",
+      "sale_type": "estate",
+      "date_start": "2026-08-28",
+      "date_end": "2026-09-09",
+      "start_time": "",
+      "end_time": "",
+      "address": "Boerne, TX 78015",
+      "city": "San Antonio",
+      "state": "TX",
+      "zip": "",
+      "latitude": 29.7310499,
+      "longitude": -98.6423846,
+      "description": "Caring Transitions of Boerne, Fredericksburg, and Kerrville. Welcome Home to CTBids! We put together an excellent selection of items for you! Start exploring and discover the deals for yourself! Bidding on ALL items starts at $1! Set along a beautiful golf course, this welcoming estate sale offers the qua...",
+      "highlights": [],
+      "source_urls": [
+        "https://estatesales.org/estate-sales/tx/boerne/78015/fairway-finds-home-treasures-in-2460195"
+      ],
+      "original_url": "https://estatesales.org/estate-sales/tx/boerne/78015/fairway-finds-home-treasures-in-2460195",
+      "source_names": [
+        "EstateSales.org"
+      ],
+      "photos": [
+        "https://estatesales.org/uploads/2024/02/04/m/7/5/2392475/4PGu6-1.jpeg",
+        "https://estatesales.org/2036244653/css/images/social/facebook.png",
+        "https://eso-cdn.tlcdn.workers.dev/s-2460195-od17xp9nuj0xs7m4-t.webp",
+        "https://eso-cdn.tlcdn.workers.dev/s-2460195-pybki626fowiwm7b-t.webp",
+        "https://eso-cdn.tlcdn.workers.dev/s-2460195-wrxc3e285jj2f8x5-t.webp",
+        "https://eso-cdn.tlcdn.workers.dev/s-2460195-zzh77be7x62fjv9r-t.webp"
+      ],
+      "confidence": 96,
+      "verified_at": "2026-09-07T10:23:54-05:00",
+      "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.7310499,-98.6423846",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.7310499,-98.6423846",
+      "status": "verified",
+      "geocode_method": "source",
+      "notes": "",
+      "community_source": "",
+      "community_link_or_notes": ""
+    },
+    {
+      "sale_id": "2026-09-05_boerne-tx-78006",
+      "title": "Wanderlust & Exceptional Quality in Boerne, TX. Bidding Ends 9/14.",
+      "sale_type": "estate",
+      "date_start": "2026-09-05",
+      "date_end": "2026-09-14",
+      "start_time": "",
+      "end_time": "",
+      "address": "Boerne, TX 78006",
+      "city": "San Antonio",
+      "state": "TX",
+      "zip": "",
+      "latitude": 29.7946641,
+      "longitude": -98.7319703,
+      "description": "Caring Transitions of Boerne, Fredericksburg, and Kerrville. Welcome Home to CTBids! We put together an excellent selection of items for you! Start exploring and discover the deals for yourself! Bidding on ALL items starts at $1! Explore a truly distinctive estate sale filled with quality, craftsmanship, ...",
+      "highlights": [],
+      "source_urls": [
+        "https://estatesales.org/estate-sales/tx/boerne/78006/wanderlust-exceptional-quality-in-boerne-2461245"
+      ],
+      "original_url": "https://estatesales.org/estate-sales/tx/boerne/78006/wanderlust-exceptional-quality-in-boerne-2461245",
+      "source_names": [
+        "EstateSales.org"
+      ],
+      "photos": [
+        "https://estatesales.org/uploads/2024/02/04/m/7/5/2392475/4PGu6-1.jpeg",
+        "https://estatesales.org/2036244653/css/images/social/facebook.png",
+        "https://eso-cdn.tlcdn.workers.dev/s-2461245-lg5or3nkgnaluv3j-t.webp",
+        "https://eso-cdn.tlcdn.workers.dev/s-2461245-9laz0qe0fs9vs43h-t.webp",
+        "https://eso-cdn.tlcdn.workers.dev/s-2461245-el55eiagsfz64fzr-t.webp",
+        "https://eso-cdn.tlcdn.workers.dev/s-2461245-oqodrzhl5dwaryy1-t.webp"
+      ],
+      "confidence": 96,
+      "verified_at": "2026-09-07T10:23:54-05:00",
+      "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.7946641,-98.7319703",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.7946641,-98.7319703",
+      "status": "verified",
+      "geocode_method": "source",
+      "notes": "",
+      "community_source": "",
+      "community_link_or_notes": ""
+    },
+    {
+      "sale_id": "2026-09-04_san-marcos-tx-78666",
+      "title": "Funky Finds - Bidding ends 9/13",
+      "sale_type": "estate",
+      "date_start": "2026-09-04",
+      "date_end": "2026-09-13",
+      "start_time": "8:00 am - 11:59 pm",
+      "end_time": "",
+      "address": "San Marcos, TX 78666",
+      "city": "San Antonio",
+      "state": "TX",
+      "zip": "",
+      "latitude": 29.4241,
+      "longitude": -98.4936,
+      "description": "Dates and Times: Friday, September 4, 2026 8:00 am - 11:59 pm",
+      "highlights": [],
+      "source_urls": [
+        "https://garagesalefinder.com/s/N9t6a/san-marcos-tx-78666"
+      ],
+      "original_url": "https://garagesalefinder.com/s/N9t6a/san-marcos-tx-78666",
+      "source_names": [
+        "GarageSaleFinder"
+      ],
+      "photos": [
+        "https://eso-cdn.tlcdn.workers.dev/s-2461105-bav9mp0z37cxh7s7-t.webp",
+        "https://eso-cdn.tlcdn.workers.dev/s-2461105-wgiw6eyty4n1euwd-t.webp",
+        "https://eso-cdn.tlcdn.workers.dev/s-2461105-2fk2qc32zhr8zhfq-t.webp",
+        "https://eso-cdn.tlcdn.workers.dev/s-2461105-7tnswcqvkdn6gn44-t.webp",
+        "https://eso-cdn.tlcdn.workers.dev/s-2461105-76z9eqsev6uu1oj1-t.webp",
+        "https://eso-cdn.tlcdn.workers.dev/s-2461105-4l8aick5aef68ebz-t.webp"
+      ],
+      "confidence": 100,
+      "verified_at": "2026-09-07T10:23:54-05:00",
+      "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936",
+      "status": "verified",
+      "geocode_method": "city-center",
+      "notes": "",
+      "community_source": "",
+      "community_link_or_notes": ""
+    },
+    {
+      "sale_id": "2026-09-07_us-35n-near-cibilo-valley-exit-san-antonio-tx",
+      "title": "Unbelievable collection liquidation (Schertz)",
+      "sale_type": "estate",
+      "date_start": "2026-09-07",
+      "date_end": "2026-09-09",
+      "start_time": "",
+      "end_time": "",
+      "address": "US 35n near Cibilo Valley exit, San Antonio, TX",
+      "city": "San Antonio",
+      "state": "TX",
+      "zip": "",
+      "latitude": 29.6636,
+      "longitude": -98.1672,
+      "description": "QR Code Link to This Post Attention Resellers!!! Huge sell off liquidation of decades of collecting!!! Starting Saturday-Sunday sept 12th and 13th Booths 383 and 306 at Busseys flea market Front aisle right of the parking lot. See pics. More and more new inventory every weekend until December.",
+      "highlights": [],
+      "source_urls": [
+        "https://www.craigslist.org/view/d/new-braunfels-unbelievable-collection/6mxMeJuTorrrK9csPPdpLv"
+      ],
+      "original_url": "https://www.craigslist.org/view/d/new-braunfels-unbelievable-collection/6mxMeJuTorrrK9csPPdpLv",
+      "source_names": [
+        "Craigslist"
+      ],
+      "photos": [
+        "https://images.craigslist.org/00d0d_aB3U1uqnde5_0t20CI_600x450.jpg",
+        "https://images.craigslist.org/00d0d_aB3U1uqnde5_0t20CI_50x50c.jpg",
+        "https://images.craigslist.org/00J0J_ifHhBWwTJbp_0t20CI_50x50c.jpg",
+        "https://images.craigslist.org/00c0c_3xG8m02OOSm_0t20CI_50x50c.jpg",
+        "https://images.craigslist.org/00j0j_6Ih1vy3d1X_0t20CI_50x50c.jpg",
+        "https://images.craigslist.org/00q0q_4rTQI2Bx814_0t20CI_50x50c.jpg"
+      ],
+      "confidence": 96,
+      "verified_at": "2026-09-07T10:23:54-05:00",
+      "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.6636,-98.1672",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.6636,-98.1672",
+      "status": "verified",
+      "geocode_method": "source",
+      "notes": "",
+      "community_source": "",
+      "community_link_or_notes": ""
+    },
+    {
+      "sale_id": "2026-09-07_6151-nw-loop-410-san-antonio-tx",
+      "title": "Alamo Craft Co. Antiques & More (San Antonio)",
+      "sale_type": "garage",
+      "date_start": "2026-09-07",
+      "date_end": "2026-09-09",
+      "start_time": "",
+      "end_time": "",
+      "address": "6151 NW Loop 410, San Antonio, TX",
+      "city": "San Antonio",
+      "state": "TX",
+      "zip": "",
+      "latitude": 29.556,
+      "longitude": -98.6094,
+      "description": "QR Code Link to This Post OPEN TUES - SAT 10AM-6PM 6151 NW Loop 410, #302 SATX 78238 A hidden gem in San Antonio! Here you'll find unique antiques, vintage items, collectibles, hand-crafted items &amp; so much more. Come by &amp; see all the fun stuff! Ask for your frequent buyer card &amp; get punches with every purchase.",
+      "highlights": [],
+      "source_urls": [
+        "https://www.craigslist.org/view/d/san-antonio-alamo-craft-co-antiques-more/mj6FcRd4ZDr7zwAwc4pwWa"
+      ],
+      "original_url": "https://www.craigslist.org/view/d/san-antonio-alamo-craft-co-antiques-more/mj6FcRd4ZDr7zwAwc4pwWa",
+      "source_names": [
+        "Craigslist"
+      ],
+      "photos": [
+        "https://images.craigslist.org/01515_1Xh2ogBe0sZ_0CI0pq_600x450.jpg"
+      ],
+      "confidence": 96,
+      "verified_at": "2026-09-07T10:23:54-05:00",
+      "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.556,-98.6094",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.556,-98.6094",
+      "status": "verified",
+      "geocode_method": "source",
+      "notes": "",
+      "community_source": "",
+      "community_link_or_notes": ""
+    },
+    {
+      "sale_id": "2026-09-07_362-shady-ridge-san-antonio-tx",
+      "title": "🚨🔥 .25¢ STORE CLOSING SALE! 🔥🚨 362 Shady Ridge (Canyon Lake)",
+      "sale_type": "garage",
+      "date_start": "2026-09-07",
+      "date_end": "2026-09-09",
+      "start_time": "",
+      "end_time": "",
+      "address": "362 Shady ridge, San Antonio, TX",
+      "city": "San Antonio",
+      "state": "TX",
+      "zip": "",
+      "latitude": 29.878375,
+      "longitude": -98.303258,
+      "description": "QR Code Link to This Post 362 Shady Ridge Canyon Lake tx 78133 🚨🔥 .25¢ STORE CLOSING SALE! 🔥🚨 After serving the community, the .25¢ Store is officially CLOSING! 😢 🎉 EVERYTHING IS BUY ONE, GET ONE FREE! 🎉 That means you can stock up for practically nothing! 👀 👕 Clothes 👖 Pants & jeans 👚 Shirts 🧥 Jackets & coats 👟 Shoes 🏠 Household items 🛍️ And MUCH MORE! 💥 Buy 1 item for 25¢ → Get another item FREE! 💥 Everything must go! 💥 Once it’s gone, it’s GONE! 📍 Canyon Lake, TX ⏰ Come by before the doors cl",
+      "highlights": [],
+      "source_urls": [
+        "https://www.craigslist.org/view/d/canyon-lake-25-store-closing-sale-362/sjhiEsrMEykBpHJwgQQmnr"
+      ],
+      "original_url": "https://www.craigslist.org/view/d/canyon-lake-25-store-closing-sale-362/sjhiEsrMEykBpHJwgQQmnr",
+      "source_names": [
+        "Craigslist"
+      ],
+      "photos": [
+        "https://images.craigslist.org/00404_6BP1um8G9lw_0CI0t2_600x450.jpg",
+        "https://images.craigslist.org/00404_6BP1um8G9lw_0CI0t2_50x50c.jpg",
+        "https://images.craigslist.org/00Q0Q_fHIa6l4QIf_0CI0t2_50x50c.jpg",
+        "https://images.craigslist.org/00E0E_8JCTZmOrDDK_0CI0t2_50x50c.jpg",
+        "https://images.craigslist.org/00A0A_hTWVyS9cLK8_0CI0t2_50x50c.jpg",
+        "https://images.craigslist.org/00V0V_lFqXKmOwX01_0CI0t2_50x50c.jpg"
+      ],
+      "confidence": 96,
+      "verified_at": "2026-09-07T10:23:54-05:00",
+      "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.878375,-98.303258",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.878375,-98.303258",
+      "status": "verified",
+      "geocode_method": "source",
+      "notes": "",
+      "community_source": "",
+      "community_link_or_notes": ""
+    }
+  ]
+}
