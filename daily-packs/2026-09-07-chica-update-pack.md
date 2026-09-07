@@ -2,7 +2,7 @@
 
 ## 1. CHICA DAILY RUN
 - **Target date:** Monday, September 7, 2026
-- **San Antonio local run time:** 2026-09-07T10:23:54-05:00
+- **San Antonio local run time:** 2026-09-07T11:19:27-05:00
 - **Geographic area:** San Antonio & surrounding communities
 - **Sources searched:** 7
 - **Candidates discovered:** 17
@@ -25,7 +25,7 @@
 - **Original listing:** https://estatesales.org/estate-sales/tx/boerne/78015/fairway-finds-home-treasures-in-2460195
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.7310499,-98.6423846
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.7310499,-98.6423846
-- **Verified at:** 2026-09-07T10:23:54-05:00
+- **Verified at:** 2026-09-07T11:19:27-05:00
 
 ### 2. Wanderlust & Exceptional Quality in Boerne, TX. Bidding Ends 9/14.
 - **Type:** estate
@@ -37,7 +37,7 @@
 - **Original listing:** https://estatesales.org/estate-sales/tx/boerne/78006/wanderlust-exceptional-quality-in-boerne-2461245
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.7946641,-98.7319703
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.7946641,-98.7319703
-- **Verified at:** 2026-09-07T10:23:54-05:00
+- **Verified at:** 2026-09-07T11:19:27-05:00
 
 ### 3. Funky Finds - Bidding ends 9/13
 - **Type:** estate
@@ -50,7 +50,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9t6a/san-marcos-tx-78666
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936
-- **Verified at:** 2026-09-07T10:23:54-05:00
+- **Verified at:** 2026-09-07T11:19:27-05:00
 
 ### 4. Unbelievable collection liquidation (Schertz)
 - **Type:** estate
@@ -62,7 +62,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/new-braunfels-unbelievable-collection/6mxMeJuTorrrK9csPPdpLv
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.6636,-98.1672
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.6636,-98.1672
-- **Verified at:** 2026-09-07T10:23:54-05:00
+- **Verified at:** 2026-09-07T11:19:27-05:00
 
 ### 5. Alamo Craft Co. Antiques & More (San Antonio)
 - **Type:** garage
@@ -74,7 +74,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-alamo-craft-co-antiques-more/mj6FcRd4ZDr7zwAwc4pwWa
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.556,-98.6094
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.556,-98.6094
-- **Verified at:** 2026-09-07T10:23:54-05:00
+- **Verified at:** 2026-09-07T11:19:27-05:00
 
 ### 6. 🚨🔥 .25¢ STORE CLOSING SALE! 🔥🚨 362 Shady Ridge (Canyon Lake)
 - **Type:** garage
@@ -86,7 +86,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/canyon-lake-25-store-closing-sale-362/sjhiEsrMEykBpHJwgQQmnr
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.878375,-98.303258
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.878375,-98.303258
-- **Verified at:** 2026-09-07T10:23:54-05:00
+- **Verified at:** 2026-09-07T11:19:27-05:00
 
 ## 3. CHICA PICKS
 

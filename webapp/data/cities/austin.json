@@ -16,13 +16,13 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "in-person",
-        "estate-sale"
+        "estate-sale",
+        "in-person"
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.650674122996765,
-      "lon": -97.77689587535417,
+      "lat": 30.654087705461734,
+      "lon": -97.7722909033581,
       "geocode": "source",
       "company": "Golden Soul Estate Sales",
       "in_person": true,
@@ -74,8 +74,8 @@
       "in_person": false,
       "external_id": "eso-2459681",
       "categories": [
-        "online-auction",
-        "estate-sale"
+        "estate-sale",
+        "online-auction"
       ]
     },
     {
@@ -304,13 +304,13 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "in-person",
-        "estate-sale"
+        "estate-sale",
+        "in-person"
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.123837725008983,
-      "lon": -97.87338608861899,
+      "lat": 30.12319992407474,
+      "lon": -97.87362495766575,
       "geocode": "source",
       "company": "Creative Estate Sales",
       "in_person": true,
@@ -678,8 +678,8 @@
       "type": "garage",
       "confidence": 0.7,
       "status": "verified",
-      "lat": 30.65298,
-      "lon": -97.77417,
+      "lat": 30.65259,
+      "lon": -97.7745,
       "geocode": "source",
       "external_id": "yss-georgetowntx78628-2026-09-12",
       "categories": [
@@ -700,8 +700,8 @@
       "type": "estate",
       "confidence": 0.85,
       "status": "verified",
-      "lat": 30.12308,
-      "lon": -97.87454,
+      "lat": 30.12219,
+      "lon": -97.87425,
       "geocode": "source",
       "external_id": "yss-budatx78610-2026-09-11",
       "categories": [
@@ -710,21 +710,25 @@
     },
     {
       "address": "17116 Borromeo Ave, Pflugerville, TX 78660",
-      "dates": "Mon Sep 7 – Fri Sep 11",
-      "date_from": "09/07/2026",
-      "date_to": "09/11/2026",
+      "dates": "2026-09-07 – 2026-09-11",
+      "date_from": "2026-09-07",
+      "date_to": "2026-09-11",
       "end_date": "2026-09-11",
-      "title": "Virtual garage sale on Facebook Marketplace September 7-11",
+      "title": "Virtual Garage Sale On Facebook Marketplace September 7-11",
       "details": "",
-      "source": "GarageSaleFinder",
-      "url": "https://garagesalefinder.com/s/N9lNe/17116-borromeo-ave-pflugerville-tx-78660",
+      "source": "YardSaleSearch",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196376273",
       "photos": 0,
       "type": "garage",
-      "confidence": 0.85,
+      "confidence": 0.88,
       "status": "verified",
-      "lat": 30.44,
-      "lon": -97.62,
-      "geocode": "zip-centroid"
+      "lat": 30.425482,
+      "lon": -97.563385,
+      "geocode": "source",
+      "external_id": "yss-17116borromeoavepflugervilletx78660-2026-09-07",
+      "categories": [
+        "garage-sale"
+      ]
     },
     {
       "address": "105 Cross Crk, Lakeway, TX 78734",
@@ -758,8 +762,8 @@
       "type": "garage",
       "confidence": 0.85,
       "status": "verified",
-      "lat": 30.49541,
-      "lon": -97.84422,
+      "lat": 30.49622,
+      "lon": -97.84501,
       "geocode": "source",
       "external_id": "yss-cedarparktx78613-2026-09-11",
       "categories": [
@@ -803,8 +807,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.496832631656485,
-      "lon": -97.84376736682034,
+      "lat": 30.49641940851599,
+      "lon": -97.84263101598762,
       "geocode": "source",
       "company": "Haven Estate Sales, Inc.",
       "in_person": true,
@@ -972,6 +976,6 @@
   "total_locations": 41,
   "status": "live",
   "date": "2026-09-07",
-  "last_refresh": "2026-09-07T10:23:53-05:00",
+  "last_refresh": "2026-09-07T11:19:27-05:00",
   "permits": []
 }
