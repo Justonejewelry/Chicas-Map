@@ -1,18 +1,26 @@
 # Chica's Map -- Community Events Swarm v2.7
 
-Run: 2026-09-07T11:20:14-05:00
+Run: 2026-09-08T09:01:06-05:00
 Sources scanned: **48**
-Candidates discovered: **892**
-With parsed dates: **735**
-With street/venue address: **487**
-Promoted this run: **0**
-Kept from prior feed: **302**
-Purged from prior feed: **0**
+Candidates discovered: **902**
+With parsed dates: **745**
+With street/venue address: **493**
+Promoted this run: **5**
+Kept from prior feed: **300**
+Purged from prior feed: **2**
 Source errors: **1**
-Rejected by Sentinel: **295**
+Rejected by Sentinel: **296**
 
 ## Promoted (passed Events Sentinel)
-_None this run._
+- **Baby storytime** -- 2026-09-12 -- 8700 Mystic Park San Antonio, TX 78254 -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D208004785
+- **2026 Softball Youth Clinic** -- 2026-09-12 -- 3610 N St. Mary's St -- conf 100 -- https://www.sanantonio.gov/ParksAndRec/News-Events/Events/Event-Details/ArtMID/15385/ArticleID/29353/2026-Softball-Youth-Clinic
+- **Dragon FB Home Game Vs Alamo Heights** -- 2026-09-11 -- 7535 Barlite Blvd -- conf 98 -- https://www.swisd.net/apps/events/2026/9/11/51838486/
+- **Planning and Zoning Commission Meeting** -- 2026-12-07 -- 447 N. Main Street Boerne -- conf 98 -- https://www.ci.boerne.tx.us/calendar.aspx?EID=21878
+- **Planning and Zoning Commission Meeting** -- 2026-09-14 -- 447 N. Main Street Boerne -- conf 98 -- https://www.ci.boerne.tx.us/calendar.aspx?EID=21875
+
+## Purged (failed re-validation)
+- Planning and Zoning Commission Meeting -- event_id=2026-09-07_planning-and-zoning-commissi_e1e1f5c1b6f1: date 2026-09-07 is in the past
+- Rainbo Art Exhibit -- event_id=2026-09-06_rainbo-art-exhibit_a62c02aba82f: series ended 2026-09-07
 
 ## Review Queue
 - **San Antonio Public Library Events** -- conf 100 -- Family Story Time -- 2026-09-10 -- 4134 Harry Wurzbach San Antonio, TX 78209 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D205386294
@@ -25,7 +33,9 @@ _None this run._
 - **San Antonio Public Library Events** -- conf 100 -- Preschool Story Time -- 2026-09-10 -- 13330 Kyle Seale Pkwy -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206613068
 - **San Antonio Public Library Events** -- conf 100 -- Family Story Time -- 2026-09-09 -- 4618 Thousand Oaks San Antonio, TX 78233 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206913049
 - **San Antonio Public Library Events** -- conf 100 -- Let's Build: Lego Time -- 2026-09-09 -- 8765 State Hwy 151 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D207236870
+- **San Antonio Public Library Events** -- conf 100 -- Baby storytime -- 2026-09-12 -- 8700 Mystic Park San Antonio, TX 78254 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D208004785
 - **City of San Antonio Parks & Recreation** -- conf 100 -- Tennis Clinics -- 2026-08-31 -- 1503 San Pedro Ave -- https://www.sanantonio.gov/ParksAndRec/News-Events/Events/Event-Details/ArtMID/15385/ArticleID/29348/Tennis-Clinics
+- **City of San Antonio Parks & Recreation** -- conf 100 -- 2026 Softball Youth Clinic -- 2026-09-12 -- 3610 N St. Mary's St -- https://www.sanantonio.gov/ParksAndRec/News-Events/Events/Event-Details/ArtMID/15385/ArticleID/29353/2026-Softball-Youth-Clinic
 - **Bexar County Clerk — Records on the Run** -- conf 99 -- Bexar County Clerk's Mobile Satellite Office will be at Bexar County Precinct 2 Constable's Office of Constable Leticia R. Vazquez -- 2026-10-01 -- 7723 Guilbeau Rd -- https://www.bexar.org/calendar.aspx?EID=7285
 - **Bexar County Clerk — Records on the Run** -- conf 99 -- Bexar County Clerk's Mobile Satellite Office will be at Bexar County Precinct 2 Constable's Office of Constable Leticia R. Vazquez -- 2026-11-05 -- 7723 Guilbeau Rd -- https://www.bexar.org/calendar.aspx?EID=7286
 - **Bexar County Clerk — Records on the Run** -- conf 99 -- Bexar County Clerk's Mobile Satellite Office will be at Bexar County Precinct 3 Justice of the Peace Office -- 2026-09-22 -- 320 Interpark Blvd -- https://www.bexar.org/calendar.aspx?EID=7333
@@ -76,6 +86,7 @@ _None this run._
 - **City of Schertz Calendar** -- conf 99 -- Schertz Economic Development Corporation Board -- 2026-12-17 -- 1400 Schertz Parkway Schertz TX 78154 -- https://www.schertz.com/calendar.aspx?EID=7614
 - **City of Schertz Calendar** -- conf 99 -- Schertz-Seguin Local Government Corporation -- 2026-11-19 -- 108 W. Mountain Street Seguin -- https://www.schertz.com/calendar.aspx?EID=7699
 - **City of Schertz Calendar** -- conf 99 -- Schertz-Seguin Local Government Corporation -- 2026-12-17 -- 108 W. Mountain Street Seguin -- https://www.schertz.com/calendar.aspx?EID=7700
+- **Boerne Calendar** -- conf 98 -- Planning and Zoning Commission Meeting -- 2026-09-14 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=21875
 - **Boerne Calendar** -- conf 98 -- Planning and Zoning Commission Meeting -- 2026-12-07 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=21878
 - **Boerne Calendar** -- conf 98 -- Planning and Zoning Commission Meeting -- 2027-01-04 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=21879
 - **Boerne Calendar** -- conf 98 -- Planning and Zoning Commission Meeting -- 2027-02-01 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=21880
@@ -172,9 +183,6 @@ _None this run._
 - **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2028-06-08 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22417
 - **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2028-07-13 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22418
 - **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2028-08-10 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22419
-- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2028-09-14 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22420
-- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2028-10-12 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22421
-- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2028-11-09 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22422
 
 ## Rejected by Sentinel
 - Baby Time! -- event_id=2026-09-08_baby-time_fe9b4d7018e7: duplicate id already in feed
