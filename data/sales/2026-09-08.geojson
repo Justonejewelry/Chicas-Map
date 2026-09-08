@@ -2,8 +2,8 @@
   "type": "FeatureCollection",
   "properties": {
     "target_date": "2026-09-08",
-    "generated_at": "2026-09-08T09:00:30-05:00",
-    "count": 8,
+    "generated_at": "2026-09-08T09:59:14-05:00",
+    "count": 9,
     "project": "Chicas-Map"
   },
   "features": [
@@ -48,7 +48,7 @@
           "https://eso-cdn.tlcdn.workers.dev/s-2460195-zzh77be7x62fjv9r-t.webp"
         ],
         "confidence": 96,
-        "verified_at": "2026-09-08T09:00:17-05:00",
+        "verified_at": "2026-09-08T09:58:58-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.7310499,-98.6423846",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.7310499,-98.6423846",
         "status": "verified",
@@ -99,7 +99,7 @@
           "https://eso-cdn.tlcdn.workers.dev/s-2461245-oqodrzhl5dwaryy1-t.webp"
         ],
         "confidence": 96,
-        "verified_at": "2026-09-08T09:00:17-05:00",
+        "verified_at": "2026-09-08T09:58:58-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.7946641,-98.7319703",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.7946641,-98.7319703",
         "status": "verified",
@@ -150,7 +150,7 @@
           "https://eso-cdn.tlcdn.workers.dev/s-2461105-4l8aick5aef68ebz-t.webp"
         ],
         "confidence": 100,
-        "verified_at": "2026-09-08T09:00:17-05:00",
+        "verified_at": "2026-09-08T09:58:58-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936",
         "status": "verified",
@@ -201,7 +201,7 @@
           "https://images.craigslist.org/00K0K_fXaUEOGyzgt_09F0cT_50x50c.jpg"
         ],
         "confidence": 96,
-        "verified_at": "2026-09-08T09:00:17-05:00",
+        "verified_at": "2026-09-08T09:58:58-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.6796,-98.9484",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.6796,-98.9484",
         "status": "verified",
@@ -252,7 +252,7 @@
           "https://images.craigslist.org/00q0q_4rTQI2Bx814_0t20CI_50x50c.jpg"
         ],
         "confidence": 96,
-        "verified_at": "2026-09-08T09:00:17-05:00",
+        "verified_at": "2026-09-08T09:58:58-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.6636,-98.1672",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.6636,-98.1672",
         "status": "verified",
@@ -298,7 +298,7 @@
           "https://images.craigslist.org/01515_1Xh2ogBe0sZ_0CI0pq_600x450.jpg"
         ],
         "confidence": 96,
-        "verified_at": "2026-09-08T09:00:17-05:00",
+        "verified_at": "2026-09-08T09:58:58-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.556,-98.6094",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.556,-98.6094",
         "status": "verified",
@@ -349,7 +349,7 @@
           "https://images.craigslist.org/00L0L_aaKySOrXL5s_0CI0t2_50x50c.jpg"
         ],
         "confidence": 100,
-        "verified_at": "2026-09-08T09:00:17-05:00",
+        "verified_at": "2026-09-08T09:58:58-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.532047,-98.374447",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.532047,-98.374447",
         "status": "verified",
@@ -393,9 +393,60 @@
         ],
         "photos": [],
         "confidence": 96,
-        "verified_at": "2026-09-08T09:00:17-05:00",
+        "verified_at": "2026-09-08T09:58:58-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.528639,-98.648461",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.528639,-98.648461",
+        "status": "verified",
+        "geocode_method": "source",
+        "notes": "",
+        "community_source": "",
+        "community_link_or_notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.0965658,
+          29.7436822
+        ]
+      },
+      "properties": {
+        "sale_id": "2026-09-08_1150-fm306-new-braunfels-tx-78130",
+        "title": "Gruene Self Storage Unit Auction",
+        "sale_type": "estate",
+        "date_start": "2026-09-08",
+        "date_end": "2026-09-09",
+        "start_time": "9:03 AM - 11:59 PM",
+        "end_time": "",
+        "address": "1150 FM306, New Braunfels, TX 78130",
+        "city": "San Antonio",
+        "state": "TX",
+        "zip": "",
+        "latitude": 29.7436822,
+        "longitude": -98.0965658,
+        "description": "Find all the garage sales, yard sales, and estate sales on a map! Or place a free ad for your upcoming sale on yardsalesearch.com",
+        "highlights": [],
+        "source_urls": [
+          "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196377115"
+        ],
+        "original_url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196377115",
+        "source_names": [
+          "YardSaleSearch"
+        ],
+        "photos": [
+          "https://d82cz7nyq77ak.cloudfront.net/images/social/Facebook.png",
+          "https://d82cz7nyq77ak.cloudfront.net/images/social/Pinterest.png",
+          "https://d82cz7nyq77ak.cloudfront.net/images/social/Reddit.png",
+          "https://d82cz7nyq77ak.cloudfront.net/images/social/Twitter.png",
+          "https://d82cz7nyq77ak.cloudfront.net/images/social/Email.png",
+          "https://eso-cdn.tlcdn.workers.dev/s-2461605-enag4smxn2vwhuwo-t.webp"
+        ],
+        "confidence": 100,
+        "verified_at": "2026-09-08T09:58:58-05:00",
+        "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.7436822,-98.0965658",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.7436822,-98.0965658",
         "status": "verified",
         "geocode_method": "source",
         "notes": "",

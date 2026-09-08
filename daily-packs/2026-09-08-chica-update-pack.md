@@ -2,15 +2,15 @@
 
 ## 1. CHICA DAILY RUN
 - **Target date:** Tuesday, September 8, 2026
-- **San Antonio local run time:** 2026-09-08T09:00:17-05:00
+- **San Antonio local run time:** 2026-09-08T09:58:58-05:00
 - **Geographic area:** San Antonio & surrounding communities
 - **Sources searched:** 7
-- **Candidates discovered:** 21
-- **Verified sales:** 8
+- **Candidates discovered:** 22
+- **Verified sales:** 9
 - **Rejected listings:** 13
 - **Duplicates merged:** 0
-- **Successfully geocoded:** 8
-- **Street View links generated:** 8
+- **Successfully geocoded:** 9
+- **Street View links generated:** 9
 - **Sentinel:** PASS
 
 ## 2. VERIFIED SALES
@@ -25,7 +25,7 @@
 - **Original listing:** https://estatesales.org/estate-sales/tx/boerne/78015/fairway-finds-home-treasures-in-2460195
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.7310499,-98.6423846
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.7310499,-98.6423846
-- **Verified at:** 2026-09-08T09:00:17-05:00
+- **Verified at:** 2026-09-08T09:58:58-05:00
 
 ### 2. Wanderlust & Exceptional Quality in Boerne, TX. Bidding Ends 9/14.
 - **Type:** estate
@@ -37,7 +37,7 @@
 - **Original listing:** https://estatesales.org/estate-sales/tx/boerne/78006/wanderlust-exceptional-quality-in-boerne-2461245
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.7946641,-98.7319703
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.7946641,-98.7319703
-- **Verified at:** 2026-09-08T09:00:17-05:00
+- **Verified at:** 2026-09-08T09:58:58-05:00
 
 ### 3. Funky Finds - Bidding ends 9/13
 - **Type:** estate
@@ -50,7 +50,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9t6a/san-marcos-tx-78666
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936
-- **Verified at:** 2026-09-08T09:00:17-05:00
+- **Verified at:** 2026-09-08T09:58:58-05:00
 
 ### 4. Planes, Trains, Automobiles and More Estate Sale (Pipe Creek)
 - **Type:** estate
@@ -62,7 +62,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/pipe-creek-planes-trains-automobiles/ametBcqRLXDtuVdZvDj5dN
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.6796,-98.9484
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.6796,-98.9484
-- **Verified at:** 2026-09-08T09:00:17-05:00
+- **Verified at:** 2026-09-08T09:58:58-05:00
 
 ### 5. Unbelievable collection liquidation (Schertz)
 - **Type:** estate
@@ -74,7 +74,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/new-braunfels-unbelievable-collection/6mxMeJuTorrrK9csPPdpLv
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.6636,-98.1672
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.6636,-98.1672
-- **Verified at:** 2026-09-08T09:00:17-05:00
+- **Verified at:** 2026-09-08T09:58:58-05:00
 
 ### 6. Alamo Craft Co. Antiques & More (San Antonio)
 - **Type:** garage
@@ -86,7 +86,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-alamo-craft-co-antiques-more/mj6FcRd4ZDr7zwAwc4pwWa
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.556,-98.6094
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.556,-98.6094
-- **Verified at:** 2026-09-08T09:00:17-05:00
+- **Verified at:** 2026-09-08T09:58:58-05:00
 
 ### 7. Multi-Family Garage Sale (Royal Ridge)
 - **Type:** garage
@@ -99,7 +99,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-multi-family-garage-sale/g1qREGFgEjpJkKnPFEdcUh
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.532047,-98.374447
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.532047,-98.374447
-- **Verified at:** 2026-09-08T09:00:17-05:00
+- **Verified at:** 2026-09-08T09:58:58-05:00
 
 ### 8. garage sale. Great Prices (San Antonio)
 - **Type:** garage
@@ -111,7 +111,20 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-garage-sale-great-prices/fx8E3DM2M5G9RFCjuXRsfY
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.528639,-98.648461
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.528639,-98.648461
-- **Verified at:** 2026-09-08T09:00:17-05:00
+- **Verified at:** 2026-09-08T09:58:58-05:00
+
+### 9. Gruene Self Storage Unit Auction
+- **Type:** estate
+- **Date:** 2026-09-08 → 2026-09-09
+- **Time:** 9:03 AM - 11:59 PM – 
+- **Address:** 1150 FM306, New Braunfels, TX 78130, San Antonio 
+- **Notes:** Find all the garage sales, yard sales, and estate sales on a map! Or place a free ad for your upcoming sale on yardsalesearch.com
+- **Confidence:** 100%
+- **Sources:** YardSaleSearch
+- **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196377115
+- **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.7436822,-98.0965658
+- **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.7436822,-98.0965658
+- **Verified at:** 2026-09-08T09:58:58-05:00
 
 ## 3. CHICA PICKS
 
