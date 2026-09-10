@@ -22,7 +22,7 @@
       "confidence": 0.9,
       "status": "verified",
       "lat": 30.654096688573482,
-      "lon": -97.7733246725817,
+      "lon": -97.77273991423299,
       "geocode": "source",
       "company": "Golden Soul Estate Sales",
       "in_person": true,
@@ -114,8 +114,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.12400840413223,
-      "lon": -97.87346917350483,
+      "lat": 30.1221489,
+      "lon": -97.8751101,
       "geocode": "source",
       "company": "Creative Estate Sales",
       "in_person": true,
@@ -267,8 +267,8 @@
       "type": "garage",
       "confidence": 0.7,
       "status": "verified",
-      "lat": 30.65282,
-      "lon": -97.77441,
+      "lat": 30.65272,
+      "lon": -97.77461,
       "geocode": "source",
       "external_id": "yss-georgetowntx78628-2026-09-12",
       "categories": [
@@ -396,8 +396,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.49358074520302,
-      "lon": -97.84761427927242,
+      "lat": 30.4954133,
+      "lon": -97.8452269,
       "geocode": "source",
       "company": "Haven Estate Sales, Inc.",
       "in_person": true,
@@ -513,8 +513,8 @@
       "type": "estate",
       "confidence": 0.85,
       "status": "verified",
-      "lat": 30.17491,
-      "lon": -97.84782,
+      "lat": 30.17503,
+      "lon": -97.8481,
       "geocode": "source",
       "external_id": "yss-austintx78748-2026-09-12",
       "categories": [
@@ -540,8 +540,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.17251419187927,
-      "lon": -97.85096438303121,
+      "lat": 30.175128277398493,
+      "lon": -97.84639230198353,
       "geocode": "source",
       "company": "Caring Transitions San Marcos/Kyle",
       "in_person": true,
@@ -642,8 +642,8 @@
       "in_person": true,
       "external_id": "yss-8009raintreeplaustintx78759-2026-09-11",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ]
     },
     {
@@ -744,13 +744,13 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.19342220837226,
-      "lon": -97.90775691197068,
+      "lat": 30.195757817427236,
+      "lon": -97.91209088763549,
       "geocode": "source",
       "company": "Golden Soul Estate Sales",
       "in_person": true,
@@ -924,6 +924,50 @@
       "lon": -97.7431,
       "geocode": "city-center",
       "company": null
+    },
+    {
+      "address": "12612 Red Bud Trail, Buda, TX 78610",
+      "dates": "2026-09-11 – 2026-09-13",
+      "date_from": "2026-09-11",
+      "date_to": "2026-09-13",
+      "end_date": "2026-09-13",
+      "title": "Everything But The Kitchen Sink Estate Sale",
+      "details": "",
+      "source": "YardSaleSearch",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196370935",
+      "photos": 0,
+      "type": "estate",
+      "confidence": 0.88,
+      "status": "verified",
+      "lat": 30.1221489,
+      "lon": -97.8751101,
+      "geocode": "source",
+      "external_id": "yss-12612redbudtrailbudatx78610-2026-09-11",
+      "categories": [
+        "estate-sale"
+      ]
+    },
+    {
+      "address": "1704 Nelson Ranch Loop, Cedar Park, TX 78613",
+      "dates": "2026-09-11 – 2026-09-13",
+      "date_from": "2026-09-11",
+      "date_to": "2026-09-13",
+      "end_date": "2026-09-13",
+      "title": "Cedar Park Treasure Hunt – Antiques, Collectibles, Furniture & More",
+      "details": "",
+      "source": "YardSaleSearch",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196375993",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.88,
+      "status": "verified",
+      "lat": 30.4954133,
+      "lon": -97.8452269,
+      "geocode": "source",
+      "external_id": "yss-1704nelsonranchloopcedarparktx78613-2026-09-11",
+      "categories": [
+        "garage-sale"
+      ]
     }
   ],
   "hot_zones": [
@@ -942,9 +986,9 @@
     "gsalr.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 40,
+  "total_locations": 42,
   "status": "live",
   "date": "2026-09-10",
-  "last_refresh": "2026-09-10T08:57:43-05:00",
+  "last_refresh": "2026-09-10T09:55:30-05:00",
   "permits": []
 }

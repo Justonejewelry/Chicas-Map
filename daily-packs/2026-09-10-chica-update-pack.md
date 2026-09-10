@@ -2,7 +2,7 @@
 
 ## 1. CHICA DAILY RUN
 - **Target date:** Thursday, September 10, 2026
-- **San Antonio local run time:** 2026-09-10T08:57:44-05:00
+- **San Antonio local run time:** 2026-09-10T09:55:30-05:00
 - **Geographic area:** San Antonio & surrounding communities
 - **Sources searched:** 7
 - **Candidates discovered:** 35
@@ -25,7 +25,7 @@
 - **Original listing:** https://estatesales.org/estate-sales/tx/boerne/78006/wanderlust-exceptional-quality-in-boerne-2461245
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.7946641,-98.7319703
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.7946641,-98.7319703
-- **Verified at:** 2026-09-10T08:57:44-05:00
+- **Verified at:** 2026-09-10T09:55:30-05:00
 
 ### 2. Curios & Coins Online Auction by Caring Transitions - Ends 9/17!
 - **Type:** estate
@@ -38,7 +38,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9lAZ/wimberley-tx-78676
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936
-- **Verified at:** 2026-09-10T08:57:44-05:00
+- **Verified at:** 2026-09-10T09:55:30-05:00
 
 ### 3. Funky Finds - Bidding ends 9/13
 - **Type:** estate
@@ -51,7 +51,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9t6a/san-marcos-tx-78666
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936
-- **Verified at:** 2026-09-10T08:57:44-05:00
+- **Verified at:** 2026-09-10T09:55:30-05:00
 
 ### 4. Citywide Garage Sale
 - **Type:** garage
@@ -64,7 +64,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196379329
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.516988,-98.370411
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.516988,-98.370411
-- **Verified at:** 2026-09-10T08:57:44-05:00
+- **Verified at:** 2026-09-10T09:55:30-05:00
 
 ### 5. Forest Waters Mcm Estate Sale
 - **Type:** estate
@@ -77,7 +77,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196359545
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.6344609,-98.3109107
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.6344609,-98.3109107
-- **Verified at:** 2026-09-10T08:57:44-05:00
+- **Verified at:** 2026-09-10T09:55:30-05:00
 
 ### 6. House full of good moving sale -Habla español (San Antonio, Misty Oaks)
 - **Type:** garage
@@ -89,7 +89,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-house-full-of-good-moving/75WDTG6Wdpf9vcWA1goUBB
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4832,-98.6453
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4832,-98.6453
-- **Verified at:** 2026-09-10T08:57:44-05:00
+- **Verified at:** 2026-09-10T09:55:30-05:00
 
 ### 7. Planes, Trains, Automobiles and More Estate Sale (Pipe Creek)
 - **Type:** estate
@@ -101,7 +101,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/pipe-creek-planes-trains-automobiles/ametBcqRLXDtuVdZvDj5dN
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.6796,-98.9484
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.6796,-98.9484
-- **Verified at:** 2026-09-10T08:57:44-05:00
+- **Verified at:** 2026-09-10T09:55:30-05:00
 
 ### 8. Unbelievable collection liquidation (Schertz)
 - **Type:** estate
@@ -113,7 +113,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/new-braunfels-unbelievable-collection/6mxMeJuTorrrK9csPPdpLv
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.6636,-98.1672
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.6636,-98.1672
-- **Verified at:** 2026-09-10T08:57:44-05:00
+- **Verified at:** 2026-09-10T09:55:30-05:00
 
 ### 9. Alamo Craft Co. Antiques & More (San Antonio)
 - **Type:** garage
@@ -125,7 +125,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-alamo-craft-co-antiques-more/mj6FcRd4ZDr7zwAwc4pwWa
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.556,-98.6094
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.556,-98.6094
-- **Verified at:** 2026-09-10T08:57:44-05:00
+- **Verified at:** 2026-09-10T09:55:30-05:00
 
 ### 10. Community Wide Sale!!! (Windcrest)
 - **Type:** garage
@@ -137,7 +137,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-community-wide-sale/vbsifmGoE61ZBmDLdahEGV
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.514998,-98.390459
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.514998,-98.390459
-- **Verified at:** 2026-09-10T08:57:44-05:00
+- **Verified at:** 2026-09-10T09:55:30-05:00
 
 ### 11. Furniture for sale (Green Spring Valley)
 - **Type:** garage
@@ -149,7 +149,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-furniture-for-sale/84LPLEmaFGUzdHuyK6dFdb
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.614661,-98.403254
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.614661,-98.403254
-- **Verified at:** 2026-09-10T08:57:44-05:00
+- **Verified at:** 2026-09-10T09:55:30-05:00
 
 ### 12. GARAGE SALE! (Leon Valley)
 - **Type:** garage
@@ -161,7 +161,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-garage-sale/deqPRxt7zSZHaQU93i1j5A
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.510505,-98.619547
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.510505,-98.619547
-- **Verified at:** 2026-09-10T08:57:44-05:00
+- **Verified at:** 2026-09-10T09:55:30-05:00
 
 ### 13. Garage Sale this weekend 09/11 - 09/12 (Gold Canyon)
 - **Type:** garage
@@ -173,7 +173,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-garage-sale-this-weekend/2c7NDqsVrRpfzyBcddW4U6
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.5863,-98.4769
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5863,-98.4769
-- **Verified at:** 2026-09-10T08:57:44-05:00
+- **Verified at:** 2026-09-10T09:55:30-05:00
 
 ### 14. Huge Garage Sale!! (Hondo)
 - **Type:** garage
@@ -185,7 +185,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/hondo-huge-garage-sale/anZGpjFWaZ8xJVFVyQhoU9
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.3403,-99.1407
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.3403,-99.1407
-- **Verified at:** 2026-09-10T08:57:44-05:00
+- **Verified at:** 2026-09-10T09:55:30-05:00
 
 ### 15. Multi-Family Garage Sale (Royal Ridge)
 - **Type:** garage
@@ -198,7 +198,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-multi-family-garage-sale/g1qREGFgEjpJkKnPFEdcUh
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.532047,-98.374447
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.532047,-98.374447
-- **Verified at:** 2026-09-10T08:57:44-05:00
+- **Verified at:** 2026-09-10T09:55:30-05:00
 
 ### 16. Windcrest community yard sale
 - **Type:** garage
@@ -210,7 +210,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-windcrest-community-yard/95hBp3CrRqydV3AqKUSzL4
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.52061,-98.377345
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.52061,-98.377345
-- **Verified at:** 2026-09-10T08:57:44-05:00
+- **Verified at:** 2026-09-10T09:55:30-05:00
 
 ### 17. Yard Sale *1446 W Lynwood* I-10 & Hildebrand
 - **Type:** garage
@@ -222,7 +222,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-yard-sale-1446-lynwood-10/mnGYfWxQaXmPsEGthKvPYZ
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.463047,-98.520799
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.463047,-98.520799
-- **Verified at:** 2026-09-10T08:57:44-05:00
+- **Verified at:** 2026-09-10T09:55:30-05:00
 
 ## 3. CHICA PICKS
 
