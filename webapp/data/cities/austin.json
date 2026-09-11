@@ -21,8 +21,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.653737364103485,
-      "lon": -97.77726134932212,
+      "lat": 30.65421346902623,
+      "lon": -97.77248930351212,
       "geocode": "source",
       "company": "Golden Soul Estate Sales",
       "in_person": true,
@@ -267,8 +267,8 @@
       "type": "garage",
       "confidence": 0.7,
       "status": "verified",
-      "lat": 30.65278,
-      "lon": -97.77433,
+      "lat": 30.6533,
+      "lon": -97.77399,
       "geocode": "source",
       "external_id": "yss-georgetowntx78628-2026-09-12",
       "categories": [
@@ -716,7 +716,7 @@
       "title": "Circle C Luxury",
       "details": "Golden Soul Estate Sales. Step into an immaculate, upscale home in the heart of South Austin's premier Circle C neighborhood for a spectacular multi-day shopping event. This exclusive sale features an extraordinary collection of high-end furnishings, beautiful decor, and time...",
       "source": "EstateSales.org",
-      "url": "https://estatesales.org/estate-sales/tx/austin/78739/circle-c-has-great-surprises-2462024",
+      "url": "https://estatesales.org/estate-sales/tx/austin/78739/circle-c-luxury-2462024",
       "photos": 0,
       "type": "estate",
       "categories": [
@@ -725,8 +725,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.19325152924901,
-      "lon": -97.90915999761756,
+      "lat": 30.195811716097737,
+      "lon": -97.91282880675348,
       "geocode": "source",
       "company": "Golden Soul Estate Sales",
       "in_person": true,
@@ -1134,6 +1134,30 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "cl-ofstuffopeningxj1kdaujxjlx3knvrmjqdk"
+    },
+    {
+      "address": "20525 Jackies Ranch Blvd., Austin, TX",
+      "dates": "2026-09-11 – 2026-09-13",
+      "date_from": "2026-09-11",
+      "date_to": "2026-09-13",
+      "end_date": "2026-09-13",
+      "hours": null,
+      "title": "Garage Sale",
+      "details": "QR Code Link to This Post Pflugerville Blackhawk Subdivision 20525 Jackies Ranch Blvd. 2 Family Sale",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/pflugerville-garage-sale/3v6kstydExWi27SLN5z6Jk",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 30.477889,
+      "lon": -97.560697,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-villegaragesale3v6kstydexwi27sln5z6jk"
     }
   ],
   "hot_zones": [
@@ -1152,9 +1176,9 @@
     "gsalr.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 50,
+  "total_locations": 51,
   "status": "live",
   "date": "2026-09-11",
-  "last_refresh": "2026-09-11T08:57:33-05:00",
+  "last_refresh": "2026-09-11T09:54:01-05:00",
   "permits": []
 }
