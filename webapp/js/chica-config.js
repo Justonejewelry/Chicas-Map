@@ -6,6 +6,6 @@ window.CHICA_CONFIG = Object.assign({}, window.CHICA_CONFIG, {
   PIN_CLAIM_AFTER_URL: "https://justonejewelry.github.io/Chicas-Map/submit",
   BOOST_FORM_URL: "https://justonejewelry.github.io/Chicas-Map/boost/",
   BOOST_DESK_URL: "https://justonejewelry.github.io/Chicas-Map/boost/desk.html",
-  BOOST_DESK_EMAIL: "",
+  BOOST_DESK_EMAIL: "mr.jsciaraffa@gmail.com",
   MAPTILER_KEY: "ecxzoKzcx8AsCvqSPx3n"
 });
