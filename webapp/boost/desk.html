@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>Boost desk · Chicas Map</title>
+  <link rel="icon" type="image/svg+xml" href="/Chicas-Map/favicon.svg" />
+  <style>
+    :root { color-scheme: dark; }
+    body { margin: 0; min-height: 100dvh; font: 500 16px/1.45 Inter, system-ui, sans-serif; background: #121212; color: #f3eee4; }
+    main { max-width: 640px; margin: 0 auto; padding: 24px 18px 80px; }
+    .brand { letter-spacing: .14em; text-transform: uppercase; font-size: 12px; color: #c4b8a8; }
+    a { color: #c513af; }
+    h1 { font: 800 28px/1.1 Syne, Inter, system-ui, sans-serif; }
+    input, textarea { width: 100%; box-sizing: border-box; margin-top: 8px; padding: 12px; border-radius: 10px; border: 1px solid #3a342e; background: #1a1714; color: #f3eee4; font: 500 16px Inter, system-ui, sans-serif; }
+    button, .btn { border: 0; border-radius: 10px; padding: 10px 14px; background: #c513af; color: #fff; font-weight: 800; cursor: pointer; text-decoration: none; display: inline-block; }
+    button.ghost { background: transparent; border: 1px solid #3a342e; }
+    button.bad { background: #5a2a2a; }
+    .card { margin-top: 14px; padding: 14px; border: 1px solid #2a2622; border-radius: 14px; background: #1a1714; }
+    .meta { color: #c4b8a8; font-size: 13px; }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+    .tag { display: inline-block; border-radius: 999px; padding: 3px 8px; font-size: 11px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; background: #2a2622; }
+    .tag.pending { background: #3a2a12; color: #ffd08a; }
+    .tag.approved { background: #16321c; color: #9be7a8; }
+    .tag.need { background: #3a2412; color: #ffc48a; }
+    .tag.reject { background: #3a1212; color: #ffb4b4; }
+    #gate, #desk { display: none; }
+    #gate.open, #desk.open { display: block; }
+    .copybox { margin-top: 8px; padding: 10px; border-radius: 10px; background: #121212; font-size: 14px; white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="brand">Chicas Map · owner desk</p>
+    <div id="gate">
+      <h1>Boost desk</h1>
+      <p class="meta">Approvals stay off the public map until Sentinel would pass them.</p>
+      <form id="unlock">
+        <input id="code" type="password" placeholder="Owner desk" autocomplete="off" />
+        <div class="row"><button type="submit">Open</button></div>
+      </form>
+    </div>
+    <div id="desk">
+      <h1>Free-light queue</h1>
+      <p class="meta">This phone only remembers forms submitted on this device. Paste a BOOST comment from Facebook to add one.</p>
+      <div class="card">
+        <label for="paste">Paste a Facebook BOOST comment</label>
+        <textarea id="paste" rows="3" placeholder="BOOST · 123 Oak St · Sat 8am–2pm"></textarea>
+        <div class="row">
+          <button type="button" id="add">Add to queue</button>
+          <a class="btn" href="/Chicas-Map/boost/">Open public form</a>
+        </div>
+      </div>
+      <div id="list"></div>
+    </div>
+  </main>
+  <script>
+    (function () {
+      var KEY = "chicas-boost-queue-v1";
+      var gate = document.getElementById("gate");
+      var desk = document.getElementById("desk");
+      function load() {
+        try { return JSON.parse(localStorage.getItem(KEY) || "[]"); } catch (e) { return []; }
+      }
+      function save(q) { localStorage.setItem(KEY, JSON.stringify(q)); }
+      function openDesk() {
+        sessionStorage.setItem("chica-desk", "1");
+        gate.className = "";
+        desk.className = "open";
+        render();
+      }
+      if (sessionStorage.getItem("chica-desk") === "1" || location.hash === "#open") openDesk();
+      else gate.className = "open";
+      document.getElementById("unlock").addEventListener("submit", function (ev) {
+        ev.preventDefault();
+        if ((document.getElementById("code").value || "").trim() === "sentinel") openDesk();
+      });
+      function thank(r) {
+        return "Got it, " + (r.name || r.fb || "pack") + ". Pin is lit for " + r.address + " · " + r.hours + ". Thank you for sharing the trail.";
+      }
+      function need() {
+        return "Address is in. Need hours (example: Sat 8am–2pm). Reply here and I light it.";
+      }
+      function nope() {
+        return "Cannot light that one yet. Need a real street and when you are open.";
+      }
+      function setStatus(id, status) {
+        var q = load().map(function (r) { if (r.id === id) r.status = status; return r; });
+        save(q);
+        render();
+      }
+      function copy(text) {
+        if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text);
+      }
+      function escapeHtml(s) {
+        return String(s || "").replace(/[&<>"']/g, function (c) {
+          return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#39;" })[c];
+        });
+      }
+      function render() {
+        var q = load();
+        var el = document.getElementById("list");
+        if (!q.length) { el.innerHTML = "<p class=\"meta\">Queue empty.</p>"; return; }
+        el.innerHTML = q.map(function (r) {
+          return "<article class=\"card\" data-id=\"" + r.id + "\">" +
+            "<span class=\"tag " + (r.status || "pending") + "\">" + (r.status || "pending") + "</span>" +
+            "<h2 style=\"margin:8px 0 4px;font-size:18px\">" + escapeHtml(r.address || r.packet || "No street") + "</h2>" +
+            "<p class=\"meta\">" + escapeHtml(r.hours || "hours missing") + " · " + escapeHtml(r.type || "") + "</p>" +
+            "<p class=\"meta\">" + escapeHtml(r.name || "") + " · FB: " + escapeHtml(r.fb || "") + " · " + escapeHtml(r.email || "") + "</p>" +
+            (r.notes ? "<p class=\"meta\">" + escapeHtml(r.notes) + "</p>" : "") +
+            "<div class=\"copybox\">" + escapeHtml(thank(r)) + "</div>" +
+            "<div class=\"row\">" +
+              "<button type=\"button\" data-act=\"approve\">Approve + copy thank-you</button>" +
+              "<button class=\"ghost\" type=\"button\" data-act=\"need\">Need hours</button>" +
+              "<button class=\"bad\" type=\"button\" data-act=\"reject\">Reject</button>" +
+            "</div></article>";
+        }).join("");
+      }
+      document.getElementById("add").addEventListener("click", function () {
+        var raw = (document.getElementById("paste").value || "").trim();
+        if (!raw) return;
+        var address = raw;
+        var hours = "";
+        var m = raw.replace(/^BOOST\s*·\s*/i, "").split("·");
+        if (m.length >= 2) { address = m[0].trim(); hours = m.slice(1).join("·").trim(); }
+        var q = load();
+        q.unshift({ id: "boost-" + Date.now(), status: hours ? "pending" : "need", created_at: new Date().toISOString(), name: "", fb: "", address: address, hours: hours, type: "garage", email: "", notes: "pasted from Facebook", packet: raw });
+        save(q);
+        document.getElementById("paste").value = "";
+        render();
+      });
+      document.getElementById("list").addEventListener("click", function (ev) {
+        var btn = ev.target.closest("button");
+        if (!btn) return;
+        var card = ev.target.closest("article");
+        var id = card && card.getAttribute("data-id");
+        var r = load().filter(function (x) { return x.id === id; })[0];
+        if (!r) return;
+        var act = btn.getAttribute("data-act");
+        if (act === "approve") { copy(thank(r)); setStatus(id, "approved"); }
+        if (act === "need") { copy(need()); setStatus(id, "need"); }
+        if (act === "reject") { copy(nope()); setStatus(id, "reject"); }
+      });
+    })();
+  </script>
+</body>
+</html>
