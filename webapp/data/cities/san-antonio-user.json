@@ -1,6 +1,46 @@
 {
-  "updated": "2026-08-29",
+  "updated": "2026-09-11",
   "public": [
+    {
+      "title": "Huge garage sale — tools, kids, furniture",
+      "address": "4521 Huebner Rd, San Antonio, TX 78240",
+      "lat": 29.5240001,
+      "lon": -98.5996953,
+      "type": "garage",
+      "dates": "Saturday & Sunday",
+      "start_date": "2026-09-12",
+      "end_date": "2026-09-13",
+      "date_from": "2026-09-12",
+      "date_to": "2026-09-13",
+      "hours": "8am – 2pm",
+      "source": "Sniff · Northwest / 78240 neighborhood",
+      "url": "",
+      "confidence": 0.95,
+      "details": "Kids clothes (sizes 4–10), bikes, Dewalt tools, dresser, kitchen stuff, patio chairs. Cash only; early birds welcome.",
+      "photos": 0,
+      "photo_urls": [],
+      "status": "verified",
+      "geocode": "nominatim",
+      "categories": [
+        "sniff",
+        "garage-sale",
+        "kids",
+        "clothes",
+        "tools",
+        "furniture",
+        "kitchen",
+        "outdoor",
+        "miscellaneous"
+      ],
+      "submitted_at": "2026-09-11T19:00:23.386Z",
+      "approved_at": "2026-09-11T19:00:23.386Z",
+      "submitter_name": "Justin",
+      "public_contact": false,
+      "preferred": true,
+      "boost": false,
+      "external_id": "sniff-4521-huebner-rd-san-antonio-tx-78240-2026-09-12",
+      "id": "sniff-4521-huebner-rd-san-antonio-tx-78240-2026-09-12"
+    },
     {
       "title": "Pack point garage sale — Fairpoint (New Territories)",
       "address": "9459 Fairpoint, San Antonio, TX 78250",
@@ -17,7 +57,10 @@
       "photos": 0,
       "status": "verified",
       "geocode": "census",
-      "categories": ["garage-sale", "pack-point"],
+      "categories": [
+        "garage-sale",
+        "pack-point"
+      ],
       "submitted_at": "2026-08-29T12:45:00-05:00",
       "approved_at": "2026-08-29T12:47:00-05:00",
       "submitter_name": "Justin",
@@ -28,8 +71,8 @@
     }
   ],
   "permits": [],
-  "total_locations": 1,
-  "date": "2026-08-29",
-  "last_refresh": "2026-08-29T12:47:00-05:00",
+  "total_locations": 2,
+  "date": "2026-09-11",
+  "last_refresh": "2026-09-11T19:00:23.612Z",
   "status": "live"
 }
