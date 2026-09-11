@@ -251,9 +251,10 @@
       if (typeof w.__chicaHideIntel === "function") w.__chicaHideIntel();
     });
     var feedUrls = [
-      BASE + "/data/cities/san-antonio.json?v=32",
-      BASE + "/data/cities/san-antonio-permits-a.json?v=32",
-      BASE + "/data/cities/san-antonio-permits-b.json?v=32"
+      BASE + "/data/cities/san-antonio.json?v=33",
+      BASE + "/data/cities/san-antonio-user.json?v=33",
+      BASE + "/data/cities/san-antonio-permits-a.json?v=33",
+      BASE + "/data/cities/san-antonio-permits-b.json?v=33"
     ];
     Promise.all(feedUrls.map(function (u) {
       return fetch(u, { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
