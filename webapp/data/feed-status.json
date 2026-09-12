@@ -1,13 +1,13 @@
 {
   "city": "san-antonio",
-  "date": "2026-09-06",
-  "last_refresh": "2026-09-06T07:29:00-05:00",
-  "edition": "Sunday Live — San Antonio",
+  "date": "2026-09-12",
+  "last_refresh": "2026-09-12T13:55:00-05:00",
+  "edition": "Saturday Live — San Antonio",
   "canonical_feed": "data/cities/san-antonio.json",
-  "total_locations": 10,
-  "public_count": 10,
-  "permit_total": 0,
+  "total_locations": 96,
+  "public_count": 38,
+  "permit_total": 58,
   "sentinel": "PASS",
-  "note": "Restored Sunday on-site pins from data/sales/2026-09-06.json. Online ZIP-only estate auctions kept in the daily pack, not the map.",
+  "note": "Aligned status to live city feed. Dropped zip-only / failed-geocode pins (conf 0.65, downtown dump coords). Map reads webapp/data/cities/san-antonio.json.",
   "status": "live"
 }
