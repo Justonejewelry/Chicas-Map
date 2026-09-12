@@ -16,8 +16,8 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
@@ -109,8 +109,8 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
@@ -391,8 +391,8 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
@@ -487,8 +487,8 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
@@ -570,8 +570,8 @@
       "in_person": true,
       "external_id": "yss-8009raintreeplaustintx78759-2026-09-11",
       "categories": [
-        "in-person",
-        "estate-sale"
+        "estate-sale",
+        "in-person"
       ]
     },
     {
@@ -672,13 +672,13 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.19235321807402,
-      "lon": -97.91265212189424,
+      "lat": 30.19342220837226,
+      "lon": -97.9078400577868,
       "geocode": "source",
       "company": "Golden Soul Estate Sales",
       "in_person": true,
@@ -927,8 +927,8 @@
       "in_person": true,
       "external_id": "eso-2462329",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ]
     },
     {
@@ -1239,13 +1239,13 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.142117199209487,
-      "lon": -97.77613550184445,
+      "lat": 30.14168600984549,
+      "lon": -97.77532527168212,
       "geocode": "source",
       "company": "Estate Sales America",
       "in_person": true,
@@ -1439,6 +1439,6 @@
   "total_locations": 63,
   "status": "live",
   "date": "2026-09-12",
-  "last_refresh": "2026-09-12T08:15:26-05:00",
+  "last_refresh": "2026-09-12T08:55:22-05:00",
   "permits": []
 }
