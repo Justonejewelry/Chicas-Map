@@ -1,25 +1,13 @@
 {
-  "edition": "Saturday Live — San Antonio",
-  "date": "2026-09-12",
-  "generated_at": "2026-09-12T13:55:00-05:00",
-  "refreshed_at": "2026-09-12T13:55:00-05:00",
+  "edition": "Sunday Live — San Antonio",
+  "date": "2026-09-13",
+  "generated_at": "2026-09-13T07:58:00-05:00",
+  "refreshed_at": "2026-09-13T07:58:00-05:00",
   "city": "san-antonio",
-  "total_locations": 96,
-  "public_count": 38,
-  "permit_total": 58,
-  "sources": [
-    "craigslist.org",
-    "data.sanantonio.gov",
-    "estatesales.net",
-    "estatesales.org",
-    "garagesalefinder.com",
-    "gsalr.com",
-    "yardsalesearch.com"
-  ],
-  "public": [],
-  "permits": [],
-  "hot_zones": [],
+  "total_locations": 92,
+  "public_count": 22,
+  "permit_total": 70,
   "canonical_feed": "data/cities/san-antonio.json",
-  "source_file": "webapp/data/cities/san-antonio.json",
-  "note": "Pins live on cities/san-antonio.json plus permit side-feeds. This file is the edition stamp, not the pin source."
+  "source_file": "data/sales/2026-09-12.json",
+  "note": "Pins live on cities/san-antonio.json. This file is the edition stamp."
 }

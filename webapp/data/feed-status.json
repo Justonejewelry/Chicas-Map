@@ -1,13 +1,13 @@
 {
   "city": "san-antonio",
-  "date": "2026-09-12",
-  "last_refresh": "2026-09-12T13:55:00-05:00",
-  "edition": "Saturday Live — San Antonio",
+  "date": "2026-09-13",
+  "last_refresh": "2026-09-13T07:58:00-05:00",
+  "edition": "Sunday Live — San Antonio",
   "canonical_feed": "data/cities/san-antonio.json",
-  "total_locations": 96,
-  "public_count": 38,
-  "permit_total": 58,
+  "total_locations": 92,
+  "public_count": 22,
+  "permit_total": 70,
   "sentinel": "PASS",
-  "note": "Aligned status to live city feed. Dropped zip-only / failed-geocode pins (conf 0.65, downtown dump coords). Map reads webapp/data/cities/san-antonio.json.",
+  "note": "Restored city feed after email-merge collapse to 1 pin. Sunday-active from data/sales/2026-09-12.json + Huebner sniff. Dropped ended-Sat and downtown-dump/online pins. No 2026-09-13 pack exists yet.",
   "status": "live"
 }
