@@ -386,8 +386,8 @@
       "in_person": true,
       "external_id": "yss-8009raintreeplaustintx78759-2026-09-11",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ]
     },
     {
@@ -427,8 +427,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.196305787243983,
-      "lon": -97.9089625263043,
+      "lat": 30.19638663524973,
+      "lon": -97.91171673146299,
       "geocode": "source",
       "company": "Golden Soul Estate Sales",
       "in_person": true,
@@ -612,8 +612,8 @@
       "in_person": true,
       "external_id": "yss-2610buckeyetrlcedarparktx78613-2026-09-12",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ]
     },
     {
@@ -811,8 +811,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.139565995472513,
-      "lon": -97.77628092777101,
+      "lat": 30.142332793891484,
+      "lon": -97.78023859048696,
       "geocode": "source",
       "company": "Estate Sales America",
       "in_person": true,
@@ -1312,6 +1312,6 @@
   "total_locations": 56,
   "status": "live",
   "date": "2026-09-13",
-  "last_refresh": "2026-09-13T08:59:15-05:00",
+  "last_refresh": "2026-09-13T09:50:45-05:00",
   "permits": []
 }
