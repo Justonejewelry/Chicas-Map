@@ -2,15 +2,15 @@
 
 ## 1. CHICA DAILY RUN
 - **Target date:** Monday, September 14, 2026
-- **San Antonio local run time:** 2026-09-14T11:03:59-05:00
+- **San Antonio local run time:** 2026-09-14T11:49:54-05:00
 - **Geographic area:** San Antonio & surrounding communities
 - **Sources searched:** 7
-- **Candidates discovered:** 14
-- **Verified sales:** 8
+- **Candidates discovered:** 15
+- **Verified sales:** 9
 - **Rejected listings:** 6
 - **Duplicates merged:** 0
-- **Successfully geocoded:** 8
-- **Street View links generated:** 8
+- **Successfully geocoded:** 9
+- **Street View links generated:** 9
 - **Sentinel:** PASS
 
 ## 2. VERIFIED SALES
@@ -25,7 +25,7 @@
 - **Original listing:** https://estatesales.org/estate-sales/tx/boerne/78006/collected-elegance-in-boerne-tx-2462675
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.7946641,-98.7319703
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.7946641,-98.7319703
-- **Verified at:** 2026-09-14T11:03:59-05:00
+- **Verified at:** 2026-09-14T11:49:54-05:00
 
 ### 2. Furniture & Fabulous Finds Online Auction - Ends 9/17! (Pick-up: Sat, 9/19 in TX, 78155)
 - **Type:** estate
@@ -38,7 +38,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9JJr/seguin-tx-78155
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936
-- **Verified at:** 2026-09-14T11:03:59-05:00
+- **Verified at:** 2026-09-14T11:49:54-05:00
 
 ### 3. Curios & Coins Online Auction by Caring Transitions - Ends 9/17!
 - **Type:** estate
@@ -51,7 +51,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9lAZ/wimberley-tx-78676
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936
-- **Verified at:** 2026-09-14T11:03:59-05:00
+- **Verified at:** 2026-09-14T11:49:54-05:00
 
 ### 4. HUGE Moving Sale – Vintage Electronics, Computers, TVs, Furniture & More
 - **Type:** garage
@@ -64,7 +64,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9XwT/179-valero-dr-san-marcos-tx-78666
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936
-- **Verified at:** 2026-09-14T11:03:59-05:00
+- **Verified at:** 2026-09-14T11:49:54-05:00
 
 ### 5. Alamo Craft Co. Antiques & More (San Antonio)
 - **Type:** garage
@@ -76,7 +76,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-alamo-craft-co-antiques-more/mj6FcRd4ZDr7zwAwc4pwWa
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.556,-98.6094
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.556,-98.6094
-- **Verified at:** 2026-09-14T11:03:59-05:00
+- **Verified at:** 2026-09-14T11:49:54-05:00
 
 ### 6. Furniture for Sale ( please read post!!) (Green Spring Valley)
 - **Type:** garage
@@ -88,7 +88,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-furniture-for-sale-please/84LPLEmaFGUzdHuyK6dFdb
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.614661,-98.403254
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.614661,-98.403254
-- **Verified at:** 2026-09-14T11:03:59-05:00
+- **Verified at:** 2026-09-14T11:49:54-05:00
 
 ### 7. Huge Garage Sale!! (Hondo)
 - **Type:** garage
@@ -100,7 +100,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/hondo-huge-garage-sale/anZGpjFWaZ8xJVFVyQhoU9
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.3403,-99.1407
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.3403,-99.1407
-- **Verified at:** 2026-09-14T11:03:59-05:00
+- **Verified at:** 2026-09-14T11:49:54-05:00
 
 ### 8. Yard Sale (Village in the Woods)
 - **Type:** garage
@@ -112,7 +112,19 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-yard-sale/sVFPdcJA9qWRduhvESq9Yj
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.512533,-98.659463
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.512533,-98.659463
-- **Verified at:** 2026-09-14T11:03:59-05:00
+- **Verified at:** 2026-09-14T11:49:54-05:00
+
+### 9. Moving out Garage SALE (San Antonio, Deerfield)
+- **Type:** garage
+- **Date:** 2026-09-14 → 2026-09-16
+- **Address:** 1530 Pheasant Ridge, San Antonio, TX, San Antonio 
+- **Notes:** QR Code Link to This Post We are moving and everything must go! We have several high-quality, clean, and fully functional major and minor appliances available at great prices. Perf
+- **Confidence:** 96%
+- **Sources:** Craigslist
+- **Original listing:** https://www.craigslist.org/view/d/san-antonio-moving-out-garage-sale/vocXvPcD2ygxcmpNn9MUU8
+- **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.5894,-98.5201
+- **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5894,-98.5201
+- **Verified at:** 2026-09-14T11:49:54-05:00
 
 ## 3. CHICA PICKS
 
