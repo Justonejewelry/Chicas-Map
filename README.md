@@ -37,6 +37,7 @@ San Antonio has always been a place where people help people. Chica's Map is bui
 - Forecast and clustering tools help organize dense areas and useful routes
 - Sentinel quality gates remain active for map publishing
 - **Sale Intel** provides location-aware notes at the pin when available
+- **Alamo Atlas** is live as the civic safety layer (Grok Build proof of concept)
 
 ## What We Map
 
@@ -49,6 +50,22 @@ The project can combine multiple useful layers, including:
 - Parking information
 - School-zone and traffic-aware information
 - Neighborhood clusters and other local intelligence
+- **Alamo Atlas** — SAPD offense reports and neighborhood crime stats from Open Data SA
+
+## Alamo Atlas
+
+Sister layer to the garage-sale map. Same city. Same pack. Different job: see what got written up by ZIP, search every published offense field by name, and keep the desk honest.
+
+Open it:
+
+https://justonejewelry.github.io/Chicas-Map/atlas/
+
+- Year-to-date ZIP ranking and NIBRS groups
+- Individual offense reports (report ID, date, name, group, ZIP, service area)
+- Search by offense name, ZIP, or report ID
+- Built with Grok Build as a civic proof of concept
+
+**Not 911. Not official SAPD.** Offense reports are not arrests or convictions. Locations are ZIP-level. Data is CC-BY from the City of San Antonio, provided as-is.
 
 ## Structure
 
@@ -64,6 +81,7 @@ social/                     # Community-ready posts and updates
 daily-packs/                # Chica updates and local intelligence packs
 reports/                    # Generated community reports
 webapp/                     # Published web application
+webapp/atlas/               # Alamo Atlas civic layer (GitHub Pages)
 ```
 
 ## Use the Map
@@ -75,6 +93,10 @@ https://justonejewelry.github.io/Chicas-Map/
 Open **Sale Intel**:
 
 https://justonejewelry.github.io/Chicas-Map/intel/
+
+Open **Alamo Atlas**:
+
+https://justonejewelry.github.io/Chicas-Map/atlas/
 
 For map data, download the latest KML or GeoJSON from `maps/san-antonio/` and load it into Google My Maps or another compatible mapping tool.
 
@@ -113,4 +135,4 @@ Every visit, share, correction, tip, and suggestion makes this map better. I don
 
 ## License / Notes
 
-Data is derived from public listings and public sources. Always verify important details with the original source before traveling. This project is actively maintained and improved through community input.
+Data is derived from public listings and public sources. Always verify important details with the original source before traveling. This project is actively maintained and improved through community input. SAPD offense data via Open Data SA is Creative Commons Attribution, as-is, with no warranty from the City.
