@@ -149,8 +149,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.19327847858426,
-      "lon": -97.91265212189424,
+      "lat": 30.192380167409272,
+      "lon": -97.91257936930515,
       "geocode": "source",
       "company": "Golden Soul Estate Sales",
       "in_person": true,
@@ -223,8 +223,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.13875751541502,
-      "lon": -97.7799581262,
+      "lat": 30.139305485231763,
+      "lon": -97.77990618836908,
       "geocode": "source",
       "company": "Estate Sales America",
       "in_person": true,
@@ -275,8 +275,8 @@
       "in_person": false,
       "external_id": "eso-2462537",
       "categories": [
-        "online-auction",
-        "estate-sale"
+        "estate-sale",
+        "online-auction"
       ]
     },
     {
@@ -534,8 +534,8 @@
       "type": "garage",
       "confidence": 0.85,
       "status": "verified",
-      "lat": 30.14139,
-      "lon": -97.77775,
+      "lat": 30.1409,
+      "lon": -97.7775,
       "geocode": "source",
       "external_id": "yss-austintx78747-2026-09-17",
       "categories": [
@@ -556,8 +556,8 @@
       "type": "garage",
       "confidence": 0.85,
       "status": "verified",
-      "lat": 30.19465,
-      "lon": -97.90928,
+      "lat": 30.19532,
+      "lon": -97.91008,
       "geocode": "source",
       "external_id": "yss-austintx78739-2026-09-19",
       "categories": [
@@ -789,6 +789,6 @@
   "total_locations": 33,
   "status": "live",
   "date": "2026-09-15",
-  "last_refresh": "2026-09-15T09:33:35-05:00",
+  "last_refresh": "2026-09-15T10:28:59-05:00",
   "permits": []
 }

@@ -1,9 +1,9 @@
 {
   "target_date": "2026-09-15",
-  "generated_at": "2026-09-15T09:33:35-05:00",
+  "generated_at": "2026-09-15T10:28:59-05:00",
   "city": "san-antonio",
   "area": "San Antonio & surrounding communities",
-  "count": 9,
+  "count": 10,
   "min_confidence": 70,
   "sales": [
     {
@@ -38,7 +38,7 @@
         "https://eso-cdn.tlcdn.workers.dev/s-2462675-l0kyujwqmy7htoii-t.webp"
       ],
       "confidence": 96,
-      "verified_at": "2026-09-15T09:33:35-05:00",
+      "verified_at": "2026-09-15T10:28:59-05:00",
       "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.7946641,-98.7319703",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.7946641,-98.7319703",
       "status": "verified",
@@ -79,7 +79,7 @@
         "https://eso-cdn.tlcdn.workers.dev/s-2462197-8txo6z34es5am2ji-t.webp"
       ],
       "confidence": 100,
-      "verified_at": "2026-09-15T09:33:35-05:00",
+      "verified_at": "2026-09-15T10:28:59-05:00",
       "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936",
       "status": "verified",
@@ -120,7 +120,7 @@
         "https://eso-cdn.tlcdn.workers.dev/s-2461966-641fga4lafmo1z21-t.jpg"
       ],
       "confidence": 100,
-      "verified_at": "2026-09-15T09:33:35-05:00",
+      "verified_at": "2026-09-15T10:28:59-05:00",
       "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936",
       "status": "verified",
@@ -154,7 +154,7 @@
       ],
       "photos": [],
       "confidence": 96,
-      "verified_at": "2026-09-15T09:33:35-05:00",
+      "verified_at": "2026-09-15T10:28:59-05:00",
       "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5894,-98.5201",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.5894,-98.5201",
       "status": "verified",
@@ -195,7 +195,7 @@
         "https://images.craigslist.org/00X0X_4QU32N60juK_0t20CI_50x50c.jpg"
       ],
       "confidence": 96,
-      "verified_at": "2026-09-15T09:33:35-05:00",
+      "verified_at": "2026-09-15T10:28:59-05:00",
       "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4832,-98.6453",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.4832,-98.6453",
       "status": "verified",
@@ -231,7 +231,7 @@
         "https://images.craigslist.org/01515_1Xh2ogBe0sZ_0CI0pq_600x450.jpg"
       ],
       "confidence": 96,
-      "verified_at": "2026-09-15T09:33:35-05:00",
+      "verified_at": "2026-09-15T10:28:59-05:00",
       "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.556,-98.6094",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.556,-98.6094",
       "status": "verified",
@@ -272,7 +272,7 @@
         "https://images.craigslist.org/00404_jGLAxJTb1o_0t20CI_50x50c.jpg"
       ],
       "confidence": 96,
-      "verified_at": "2026-09-15T09:33:35-05:00",
+      "verified_at": "2026-09-15T10:28:59-05:00",
       "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.614661,-98.403254",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.614661,-98.403254",
       "status": "verified",
@@ -313,7 +313,7 @@
         "https://images.craigslist.org/00z0z_jpP4DGcpomY_0t20CI_50x50c.jpg"
       ],
       "confidence": 96,
-      "verified_at": "2026-09-15T09:33:35-05:00",
+      "verified_at": "2026-09-15T10:28:59-05:00",
       "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.3403,-99.1407",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.3403,-99.1407",
       "status": "verified",
@@ -347,9 +347,43 @@
       ],
       "photos": [],
       "confidence": 96,
-      "verified_at": "2026-09-15T09:33:35-05:00",
+      "verified_at": "2026-09-15T10:28:59-05:00",
       "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.512533,-98.659463",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.512533,-98.659463",
+      "status": "verified",
+      "geocode_method": "source",
+      "notes": "",
+      "community_source": "",
+      "community_link_or_notes": ""
+    },
+    {
+      "sale_id": "2026-09-15_631-heathers-way-san-antonio-tx",
+      "title": "HUGE Moving Sale!! Everything must go! (Jordan's Creek)",
+      "sale_type": "garage",
+      "date_start": "2026-09-15",
+      "date_end": "2026-09-17",
+      "start_time": "",
+      "end_time": "",
+      "address": "631 Heathers Way, San Antonio, TX",
+      "city": "San Antonio",
+      "state": "TX",
+      "zip": "",
+      "latitude": 29.5613,
+      "longitude": -97.9628,
+      "description": "QR Code Link to This Post HUGE moving sale Saturday and Sunday 9/19-20! 7am-2pm at 631 Heathers Way, Seguin TX 78155. Accepting offers on all items, everything must go!!!! Lawn mower, TVs, CDs, DVDs, books, craft supplies, plus size women's clothes, men's clothes, shoes, holiday and home decor, small furniture, pet supplies, and more!!!!! Cash, Venmo, Cashapp, Zelle accepted.",
+      "highlights": [],
+      "source_urls": [
+        "https://www.craigslist.org/view/d/seguin-huge-moving-sale-everything-must/rA7bY1S6ZjusoHpAwcChAZ"
+      ],
+      "original_url": "https://www.craigslist.org/view/d/seguin-huge-moving-sale-everything-must/rA7bY1S6ZjusoHpAwcChAZ",
+      "source_names": [
+        "Craigslist"
+      ],
+      "photos": [],
+      "confidence": 96,
+      "verified_at": "2026-09-15T10:28:59-05:00",
+      "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5613,-97.9628",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.5613,-97.9628",
       "status": "verified",
       "geocode_method": "source",
       "notes": "",

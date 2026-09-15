@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-15T09:33:35-05:00",
+  "generated_at": "2026-09-15T10:28:59-05:00",
   "overall": "critical",
   "primary_failures": [
     "estatesales_org",
@@ -54,7 +54,7 @@
     "aggregators": 2,
     "sniff \u00b7 northwest / 78240 neighborhood": 1,
     "pack point \u00b7 owner submit": 1,
-    "craigslist": 28,
+    "craigslist": 29,
     "garagesalefinder": 9,
     "estatesales.org": 4,
     "yardsalesearch": 6,
