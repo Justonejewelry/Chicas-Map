@@ -33,6 +33,13 @@ const PAGES = [
     descEs: "Notas de quien esta en la venta. Se desbloquean a 200 pies. GPS, no rumores.",
   },
   {
+    path: "atlas",
+    title: "Alamo Atlas \u00b7 Chicas Map",
+    desc: "SAPD neighborhood offense reports for San Antonio. Search by name, ZIP ranking, public Open Data SA. Grok Build civic proof of concept.",
+    titleEs: "Alamo Atlas \u00b7 Chicas Map",
+    descEs: "Reportes de delitos por vecindario en San Antonio. Busca por nombre y ZIP. Datos publicos de la ciudad. Prueba civica de Grok Build.",
+  },
+  {
     path: "sponsors",
     title: "Sponsor Chicas Map \u00b7 San Antonio",
     desc: "Help keep Chica's cape on. The public garage sale map stays free for San Antonio neighbors.",
@@ -104,7 +111,7 @@ const ES_BOOT =
 const GOATCOUNTER =
   '<script data-goatcounter="https://chicasmap.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>';
 const NOSCRIPT_EN =
-  '<noscript><main id="chica-crawl"><h1>Chicas Map \u2014 San Antonio garage sales</h1><p>Free map of garage sales, yard sales, and estate sales in San Antonio. Near Me, routes, and weekend intel.</p><ul><li><a href="/Chicas-Map/map/">Open the live map</a></li><li><a href="/Chicas-Map/list/">This weekend\u2019s sales</a></li><li><a href="/Chicas-Map/submit/">List a sale free</a></li><li><a href="/Chicas-Map/intel/">Sale Intel (200 feet)</a></li><li><a href="/Chicas-Map/claim/">Pin it \u00b7 $5</a></li></ul></main></noscript>';
+  '<noscript><main id="chica-crawl"><h1>Chicas Map \u2014 San Antonio garage sales</h1><p>Free map of garage sales, yard sales, and estate sales in San Antonio. Near Me, routes, and weekend intel.</p><ul><li><a href="/Chicas-Map/map/">Open the live map</a></li><li><a href="/Chicas-Map/list/">This weekend\u2019s sales</a></li><li><a href="/Chicas-Map/submit/">List a sale free</a></li><li><a href="/Chicas-Map/intel/">Sale Intel (200 feet)</a></li><li><a href="/Chicas-Map/atlas/">Alamo Atlas</a></li><li><a href="/Chicas-Map/claim/">Pin it \u00b7 $5</a></li></ul></main></noscript>';
 const NOSCRIPT_ES =
   '<noscript><main id="chica-crawl"><h1>Chicas Map \u2014 Ventas de garage en San Antonio</h1><p>Mapa gratis de ventas de garage, yard sales y estate sales en San Antonio.</p><ul><li><a href="/Chicas-Map/map/">Abrir el mapa</a></li><li><a href="/Chicas-Map/list/">Ventas de este fin</a></li><li><a href="/Chicas-Map/submit/">Publicar una venta</a></li><li><a href="/Chicas-Map/intel/">Sale Intel (200 pies)</a></li></ul></main></noscript>';
 
