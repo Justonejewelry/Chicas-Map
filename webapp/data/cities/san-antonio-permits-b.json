@@ -191,54 +191,6 @@
       "source": "Open Data SA",
       "status": "verified",
       "hours": "9am-6pm"
-    },
-    {
-      "address": "451 VINCENT ST, San Antonio, TX 78211",
-      "title": "City permit",
-      "type": "permit",
-      "lat": 29.327495,
-      "lon": -98.563263,
-      "date_from": "2026-08-29",
-      "date_to": "2026-09-14",
-      "source": "Open Data SA",
-      "status": "verified",
-      "hours": "9am-6pm"
-    },
-    {
-      "address": "6427 FLINT ROCK DR, San Antonio, TX 78238",
-      "title": "City permit",
-      "type": "permit",
-      "lat": 29.467588,
-      "lon": -98.61364,
-      "date_from": "2026-08-29",
-      "date_to": "2026-09-14",
-      "source": "Open Data SA",
-      "status": "verified",
-      "hours": "9am-6pm"
-    },
-    {
-      "address": "333 BELDEN AVE, San Antonio, TX 78214",
-      "title": "City permit",
-      "type": "permit",
-      "lat": 29.369891,
-      "lon": -98.490167,
-      "date_from": "2026-08-29",
-      "date_to": "2026-09-14",
-      "source": "Open Data SA",
-      "status": "verified",
-      "hours": "9am-6pm"
-    },
-    {
-      "address": "1418 E HIGHLAND BLVD, San Antonio, TX 78210",
-      "title": "City permit",
-      "type": "permit",
-      "lat": 29.395959,
-      "lon": -98.453668,
-      "date_from": "2026-08-29",
-      "date_to": "2026-09-14",
-      "source": "Open Data SA",
-      "status": "verified",
-      "hours": "9am-6pm"
     }
   ],
   "public": [],
@@ -246,7 +198,7 @@
   "sources": [],
   "city": "san-antonio-permits-b",
   "status": "live",
-  "total_locations": 20,
-  "date": "2026-09-14",
-  "last_refresh": "2026-09-14T11:49:54-05:00"
+  "total_locations": 16,
+  "date": "2026-09-15",
+  "last_refresh": "2026-09-15T09:33:35-05:00"
 }
