@@ -79,11 +79,16 @@
       c.body +
       "</p>" +
       "</div>" +
+      '<div class="flex flex-wrap gap-3">' +
       '<a href="' +
       HREF +
       '" class="inline-flex h-12 min-h-12 items-center justify-center rounded-full bg-pine px-6 text-sm font-semibold text-cream">' +
       c.cta +
       "</a>" +
+      '<a href="/Chicas-Map/alamo-atlas-demo.mp4" class="inline-flex h-12 min-h-12 items-center justify-center rounded-full bg-paper px-6 text-sm font-semibold text-ink ring-1 ring-line">' +
+      (isEs() ? "Ver el video" : "Watch the video") +
+      "</a>" +
+      "</div>" +
       "</div>";
     var hero = main.children[0];
     if (hero && hero.nextSibling) main.insertBefore(section, hero.nextSibling);
