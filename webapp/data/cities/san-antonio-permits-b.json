@@ -167,30 +167,6 @@
       "source": "Open Data SA",
       "status": "verified",
       "hours": "9am-6pm"
-    },
-    {
-      "address": "18222 NEWCLIFF, San Antonio, TX 78259",
-      "title": "City permit",
-      "type": "permit",
-      "lat": 29.610665,
-      "lon": -98.427481,
-      "date_from": "2026-08-30",
-      "date_to": "2026-09-15",
-      "source": "Open Data SA",
-      "status": "verified",
-      "hours": "9am-6pm"
-    },
-    {
-      "address": "1115 DONALDSON AVE, San Antonio, TX 78228",
-      "title": "City permit",
-      "type": "permit",
-      "lat": 29.464881,
-      "lon": -98.547523,
-      "date_from": "2026-08-30",
-      "date_to": "2026-09-15",
-      "source": "Open Data SA",
-      "status": "verified",
-      "hours": "9am-6pm"
     }
   ],
   "public": [],
@@ -198,7 +174,7 @@
   "sources": [],
   "city": "san-antonio-permits-b",
   "status": "live",
-  "total_locations": 16,
-  "date": "2026-09-15",
-  "last_refresh": "2026-09-15T10:28:59-05:00"
+  "total_locations": 14,
+  "date": "2026-09-16",
+  "last_refresh": "2026-09-16T09:28:43-05:00"
 }
