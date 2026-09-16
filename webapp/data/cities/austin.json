@@ -149,8 +149,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.192236437621272,
-      "lon": -97.91154004660375,
+      "lat": 30.195398492957242,
+      "lon": -97.9122467860407,
       "geocode": "source",
       "company": "Golden Soul Estate Sales",
       "in_person": true,
@@ -315,8 +315,8 @@
       "type": "garage",
       "confidence": 0.85,
       "status": "verified",
-      "lat": 30.19462,
-      "lon": -97.9098,
+      "lat": 30.19509,
+      "lon": -97.90928,
       "geocode": "source",
       "external_id": "yss-austintx78739-2026-09-19",
       "categories": [
@@ -345,8 +345,8 @@
       "in_person": true,
       "external_id": "yss-112riverrdgeorgetowntx78628-2026-09-18",
       "categories": [
-        "in-person",
-        "estate-sale"
+        "estate-sale",
+        "in-person"
       ]
     },
     {
@@ -627,8 +627,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.288037747215235,
-      "lon": -97.81357317278415,
+      "lat": 30.285073320337766,
+      "lon": -97.81662124436819,
       "geocode": "source",
       "company": "Creative Estate Sales",
       "in_person": true,
@@ -774,6 +774,6 @@
   "total_locations": 33,
   "status": "live",
   "date": "2026-09-16",
-  "last_refresh": "2026-09-16T09:28:43-05:00",
+  "last_refresh": "2026-09-16T10:22:01-05:00",
   "permits": []
 }
