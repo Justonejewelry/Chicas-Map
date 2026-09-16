@@ -17,7 +17,8 @@ permissions:
 
 concurrency:
   group: pages
-  cancel-in-progress: true
+  # Rapid email-lead merges used to cancel the previous Pages job, which showed as a red X.
+  cancel-in-progress: false
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
