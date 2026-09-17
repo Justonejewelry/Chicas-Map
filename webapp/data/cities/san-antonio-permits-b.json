@@ -143,30 +143,6 @@
       "source": "Open Data SA",
       "status": "verified",
       "hours": "9am-6pm"
-    },
-    {
-      "address": "135 W HOLLYWOOD AVE, San Antonio, TX 78212",
-      "title": "City permit",
-      "type": "permit",
-      "lat": 29.464412,
-      "lon": -98.495339,
-      "date_from": "2026-08-31",
-      "date_to": "2026-09-16",
-      "source": "Open Data SA",
-      "status": "verified",
-      "hours": "9am-6pm"
-    },
-    {
-      "address": "3435 MANOWAY BAY, San Antonio, TX 78223",
-      "title": "City permit",
-      "type": "permit",
-      "lat": 29.343359,
-      "lon": -98.419387,
-      "date_from": "2026-08-31",
-      "date_to": "2026-09-16",
-      "source": "Open Data SA",
-      "status": "verified",
-      "hours": "9am-6pm"
     }
   ],
   "public": [],
@@ -174,7 +150,7 @@
   "sources": [],
   "city": "san-antonio-permits-b",
   "status": "live",
-  "total_locations": 14,
-  "date": "2026-09-16",
-  "last_refresh": "2026-09-16T10:22:01-05:00"
+  "total_locations": 12,
+  "date": "2026-09-17",
+  "last_refresh": "2026-09-17T09:32:49-05:00"
 }
