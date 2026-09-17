@@ -2,7 +2,7 @@
 
 ## 1. CHICA DAILY RUN
 - **Target date:** Thursday, September 17, 2026
-- **San Antonio local run time:** 2026-09-17T09:32:49-05:00
+- **San Antonio local run time:** 2026-09-17T10:28:29-05:00
 - **Geographic area:** San Antonio & surrounding communities
 - **Sources searched:** 7
 - **Candidates discovered:** 33
@@ -25,7 +25,7 @@
 - **Original listing:** https://estatesales.org/estate-sales/tx/boerne/78006/collected-elegance-in-boerne-tx-2462675
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.7946641,-98.7319703
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.7946641,-98.7319703
-- **Verified at:** 2026-09-17T09:32:49-05:00
+- **Verified at:** 2026-09-17T10:28:29-05:00
 
 ### 2. Furniture & Fabulous Finds Online Auction - Ends 9/17! (Pick-up: Sat, 9/19 in TX, 78155)
 - **Type:** estate
@@ -38,7 +38,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9JJr/seguin-tx-78155
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936
-- **Verified at:** 2026-09-17T09:32:49-05:00
+- **Verified at:** 2026-09-17T10:28:29-05:00
 
 ### 3. Curios & Coins Online Auction by Caring Transitions - Ends 9/17!
 - **Type:** estate
@@ -51,7 +51,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9lAZ/wimberley-tx-78676
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936
-- **Verified at:** 2026-09-17T09:32:49-05:00
+- **Verified at:** 2026-09-17T10:28:29-05:00
 
 ### 4. Yard Sale Thursday And Friday
 - **Type:** garage
@@ -64,7 +64,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196389315
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.503378,-98.672969
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.503378,-98.672969
-- **Verified at:** 2026-09-17T09:32:49-05:00
+- **Verified at:** 2026-09-17T10:28:29-05:00
 
 ### 5. HUGE Moving Sale!! Everything must go! (Jordan's Creek)
 - **Type:** garage
@@ -76,7 +76,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/seguin-huge-moving-sale-everything-must/rA7bY1S6ZjusoHpAwcChAZ
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.5613,-97.9628
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5613,-97.9628
-- **Verified at:** 2026-09-17T09:32:49-05:00
+- **Verified at:** 2026-09-17T10:28:29-05:00
 
 ### 6. Huge Antique & Tool Estate Sale
 - **Type:** estate
@@ -88,7 +88,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-huge-antique-tool-estate/ovCZwUdoGeWZkkxuSfUgZA
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.504388,-98.673011
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.504388,-98.673011
-- **Verified at:** 2026-09-17T09:32:49-05:00
+- **Verified at:** 2026-09-17T10:28:29-05:00
 
 ### 7. Incredible Estate Sale in Adkins (Adkins)
 - **Type:** estate
@@ -100,7 +100,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-incredible-estate-sale-in/9jh9nqkVoYRTVmrd8qCK5r
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.3805,-98.265
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.3805,-98.265
-- **Verified at:** 2026-09-17T09:32:49-05:00
+- **Verified at:** 2026-09-17T10:28:29-05:00
 
 ### 8. Moving out Garage SALE (San Antonio, Deerfield)
 - **Type:** garage
@@ -112,7 +112,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-moving-out-garage-sale/vocXvPcD2ygxcmpNn9MUU8
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.5894,-98.5201
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5894,-98.5201
-- **Verified at:** 2026-09-17T09:32:49-05:00
+- **Verified at:** 2026-09-17T10:28:29-05:00
 
 ### 9. Alamo Craft Co. Antiques & More (San Antonio)
 - **Type:** garage
@@ -124,7 +124,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-alamo-craft-co-antiques-more/mj6FcRd4ZDr7zwAwc4pwWa
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.556,-98.6094
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.556,-98.6094
-- **Verified at:** 2026-09-17T09:32:49-05:00
+- **Verified at:** 2026-09-17T10:28:29-05:00
 
 ### 10. Church Yard Sale (San Antonio)
 - **Type:** garage
@@ -136,7 +136,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-church-yard-sale/dbrgRWPoqU5FQhiEv5gbGF
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.411517,-98.555367
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.411517,-98.555367
-- **Verified at:** 2026-09-17T09:32:49-05:00
+- **Verified at:** 2026-09-17T10:28:29-05:00
 
 ### 11. Churchill High School Band Rummage Sale & Car Show (San Antonio, TX)
 - **Type:** garage
@@ -148,7 +148,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-churchill-high-school-band/k2hi75bBcbNnV1WsJYCa4r
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.550033,-98.511851
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.550033,-98.511851
-- **Verified at:** 2026-09-17T09:32:49-05:00
+- **Verified at:** 2026-09-17T10:28:29-05:00
 
 ### 12. Furniture for Sale ( please read post!!) (Green Spring Valley)
 - **Type:** garage
@@ -160,7 +160,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-furniture-for-sale-please/84LPLEmaFGUzdHuyK6dFdb
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.5855,-98.4071
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5855,-98.4071
-- **Verified at:** 2026-09-17T09:32:49-05:00
+- **Verified at:** 2026-09-17T10:28:29-05:00
 
 ### 13. Huge Garage Sale!! (Hondo)
 - **Type:** garage
@@ -172,7 +172,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/hondo-huge-garage-sale/anZGpjFWaZ8xJVFVyQhoU9
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.3403,-99.1407
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.3403,-99.1407
-- **Verified at:** 2026-09-17T09:32:49-05:00
+- **Verified at:** 2026-09-17T10:28:29-05:00
 
 ### 14. O L S Yard Sale (san antonio)
 - **Type:** garage
@@ -184,7 +184,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-l-yard-sale/tMpWfrBCdFka9yRyyuiBEV
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.452958,-98.484342
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.452958,-98.484342
-- **Verified at:** 2026-09-17T09:32:49-05:00
+- **Verified at:** 2026-09-17T10:28:29-05:00
 
 ### 15. Yard Sale (Village in the Woods)
 - **Type:** garage
@@ -196,7 +196,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-yard-sale/sVFPdcJA9qWRduhvESq9Yj
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.512533,-98.659463
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.512533,-98.659463
-- **Verified at:** 2026-09-17T09:32:49-05:00
+- **Verified at:** 2026-09-17T10:28:29-05:00
 
 ## 3. CHICA PICKS
 
