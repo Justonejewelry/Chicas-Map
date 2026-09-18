@@ -59,90 +59,6 @@
       "source": "Open Data SA",
       "status": "verified",
       "hours": "9am-6pm"
-    },
-    {
-      "address": "1516 VANDERBILT, San Antonio, TX 78210",
-      "title": "City permit",
-      "type": "permit",
-      "lat": 29.389336,
-      "lon": -98.44756,
-      "date_from": "2026-09-01",
-      "date_to": "2026-09-17",
-      "source": "Open Data SA",
-      "status": "verified",
-      "hours": "9am-6pm"
-    },
-    {
-      "address": "925 LEE HALL, San Antonio, TX 78201",
-      "title": "City permit",
-      "type": "permit",
-      "lat": 29.476263,
-      "lon": -98.508951,
-      "date_from": "2026-09-01",
-      "date_to": "2026-09-17",
-      "source": "Open Data SA",
-      "status": "verified",
-      "hours": "9am-6pm"
-    },
-    {
-      "address": "13127 BURGUNDY POINT, San Antonio, TX 78217",
-      "title": "City permit",
-      "type": "permit",
-      "lat": 29.56191,
-      "lon": -98.399643,
-      "date_from": "2026-09-01",
-      "date_to": "2026-09-17",
-      "source": "Open Data SA",
-      "status": "verified",
-      "hours": "9am-6pm"
-    },
-    {
-      "address": "1915 W OLMOS DR, San Antonio, TX 78201",
-      "title": "City permit",
-      "type": "permit",
-      "lat": 29.473979,
-      "lon": -98.527131,
-      "date_from": "2026-09-01",
-      "date_to": "2026-09-17",
-      "source": "Open Data SA",
-      "status": "verified",
-      "hours": "9am-6pm"
-    },
-    {
-      "address": "1616 SANTA FE TRAIL DR, San Antonio, TX 78232",
-      "title": "City permit",
-      "type": "permit",
-      "lat": 29.563566,
-      "lon": -98.468789,
-      "date_from": "2026-09-01",
-      "date_to": "2026-09-17",
-      "source": "Open Data SA",
-      "status": "verified",
-      "hours": "9am-6pm"
-    },
-    {
-      "address": "347 PATTON BLVD, San Antonio, TX 78207",
-      "title": "City permit",
-      "type": "permit",
-      "lat": 29.406712,
-      "lon": -98.545591,
-      "date_from": "2026-09-01",
-      "date_to": "2026-09-17",
-      "source": "Open Data SA",
-      "status": "verified",
-      "hours": "9am-6pm"
-    },
-    {
-      "address": "7926 MCGOWEN FIELD, San Antonio, TX 78227",
-      "title": "City permit",
-      "type": "permit",
-      "lat": 29.378158,
-      "lon": -98.647797,
-      "date_from": "2026-09-01",
-      "date_to": "2026-09-17",
-      "source": "Open Data SA",
-      "status": "verified",
-      "hours": "9am-6pm"
     }
   ],
   "public": [],
@@ -150,7 +66,7 @@
   "sources": [],
   "city": "san-antonio-permits-b",
   "status": "live",
-  "total_locations": 12,
-  "date": "2026-09-17",
-  "last_refresh": "2026-09-17T10:28:28-05:00"
+  "total_locations": 5,
+  "date": "2026-09-18",
+  "last_refresh": "2026-09-18T08:59:25-05:00"
 }

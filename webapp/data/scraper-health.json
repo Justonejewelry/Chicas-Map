@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-17T10:28:28-05:00",
+  "generated_at": "2026-09-18T08:59:25-05:00",
   "overall": "critical",
   "primary_failures": [
     "estatesales_org",
@@ -54,10 +54,10 @@
     "aggregators": 2,
     "sniff \u00b7 northwest / 78240 neighborhood": 1,
     "pack point \u00b7 owner submit": 1,
-    "craigslist": 35,
-    "garagesalefinder": 12,
-    "estatesales.org": 8,
-    "yardsalesearch": 21,
+    "craigslist": 42,
+    "garagesalefinder": 17,
+    "estatesales.org": 7,
+    "yardsalesearch": 30,
     "estatesales.net": 2
   },
   "notes": "Primary free sources: estatesales_org, yardsalesearch, craigslist. Secondary: gsalr, garagesalefinder, permits, estatesales_net. Scoring: 0 primary problems=healthy, 1=degraded, 2+=critical. merge added=0 is treated as ok (dedupe), not zero. Soft-fail workflow continues; this report only alerts. Apify removed 2026-08-22."
