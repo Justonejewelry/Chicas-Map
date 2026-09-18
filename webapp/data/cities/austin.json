@@ -113,8 +113,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.193116782572766,
-      "lon": -97.91176869759806,
+      "lat": 30.195721884980237,
+      "lon": -97.90919117729861,
       "geocode": "source",
       "company": "Golden Soul Estate Sales",
       "in_person": true,
@@ -230,8 +230,8 @@
       "type": "garage",
       "confidence": 0.85,
       "status": "verified",
-      "lat": 30.19539,
-      "lon": -97.90986,
+      "lat": 30.19503,
+      "lon": -97.90941,
       "geocode": "source",
       "external_id": "yss-austintx78739-2026-09-19",
       "categories": [
@@ -542,8 +542,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.28840605479698,
-      "lon": -97.81634036405158,
+      "lat": 30.287831135644986,
+      "lon": -97.81296980025215,
       "geocode": "source",
       "company": "Creative Estate Sales",
       "in_person": true,
@@ -712,8 +712,8 @@
       "in_person": false,
       "external_id": "eso-2463348",
       "categories": [
-        "online-auction",
-        "estate-sale"
+        "estate-sale",
+        "online-auction"
       ]
     },
     {
@@ -1305,6 +1305,6 @@
   "total_locations": 57,
   "status": "live",
   "date": "2026-09-18",
-  "last_refresh": "2026-09-18T08:59:25-05:00",
+  "last_refresh": "2026-09-18T09:49:33-05:00",
   "permits": []
 }
