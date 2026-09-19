@@ -1,13 +1,15 @@
 {
   "city": "san-antonio",
   "date": "2026-09-19",
-  "last_refresh": "2026-09-19T06:45:00-05:00",
+  "last_refresh": "2026-09-19T09:04:00-05:00",
   "edition": "Saturday Live — San Antonio",
   "canonical_feed": "data/cities/san-antonio.json",
-  "total_locations": 33,
-  "public_count": 33,
+  "delta_feed": "data/cities/san-antonio-user.json",
+  "city_feed_public": 47,
+  "user_feed_public": 20,
+  "total_locations": 67,
   "permit_total": "unchanged",
   "sentinel": "PASS",
-  "note": "Saturday pack pins loaded into public[]. Permits files not rewritten.",
+  "note": "City harvest left intact. Pack-only pins (18) + 2 existing preferred pins written to san-antonio-user.json. Map loads both.",
   "status": "live"
 }
