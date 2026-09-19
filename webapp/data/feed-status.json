@@ -1,13 +1,13 @@
 {
   "city": "san-antonio",
-  "date": "2026-09-13",
-  "last_refresh": "2026-09-13T08:01:00-05:00",
-  "edition": "Sunday Live — San Antonio",
+  "date": "2026-09-19",
+  "last_refresh": "2026-09-19T06:45:00-05:00",
+  "edition": "Saturday Live — San Antonio",
   "canonical_feed": "data/cities/san-antonio.json",
-  "total_locations": 86,
-  "public_count": 16,
-  "permit_total": 70,
+  "total_locations": 33,
+  "public_count": 33,
+  "permit_total": "unchanged",
   "sentinel": "PASS",
-  "note": "Restored city feed after email-merge collapse to 1 pin. Sunday-active from data/sales/2026-09-12.json + Huebner sniff. Dropped ended-Sat, downtown-dump/online, flea/storefront, zip-only. No 2026-09-13 pack in repo.",
+  "note": "Saturday pack pins loaded into public[]. Permits files not rewritten.",
   "status": "live"
 }
