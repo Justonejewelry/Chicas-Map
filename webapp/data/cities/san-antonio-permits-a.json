@@ -407,18 +407,6 @@
       "source": "Open Data SA",
       "status": "verified",
       "hours": "9am-6pm"
-    },
-    {
-      "address": "240 FURR DR, San Antonio, TX 78201",
-      "title": "City estate permit",
-      "type": "estate",
-      "lat": 29.463672,
-      "lon": -98.529033,
-      "date_from": "2026-09-02",
-      "date_to": "2026-09-18",
-      "source": "Open Data SA",
-      "status": "verified",
-      "hours": "9am-6pm"
     }
   ],
   "public": [],
@@ -426,7 +414,7 @@
   "sources": [],
   "city": "san-antonio-permits-a",
   "status": "live",
-  "total_locations": 35,
-  "date": "2026-09-18",
-  "last_refresh": "2026-09-18T09:49:33-05:00"
+  "total_locations": 34,
+  "date": "2026-09-19",
+  "last_refresh": "2026-09-19T08:35:26-05:00"
 }

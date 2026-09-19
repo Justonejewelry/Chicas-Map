@@ -1,72 +1,11 @@
 {
-  "permits": [
-    {
-      "address": "1707 WHITEHAVEN, San Antonio, TX 78232",
-      "title": "City permit",
-      "type": "permit",
-      "lat": 29.562063,
-      "lon": -98.467423,
-      "date_from": "2026-09-02",
-      "date_to": "2026-09-18",
-      "source": "Open Data SA",
-      "status": "verified",
-      "hours": "9am-6pm"
-    },
-    {
-      "address": "16826 WINDING OAK DR, San Antonio, TX 78247",
-      "title": "City permit",
-      "type": "permit",
-      "lat": 29.591506,
-      "lon": -98.408984,
-      "date_from": "2026-09-02",
-      "date_to": "2026-09-18",
-      "source": "Open Data SA",
-      "status": "verified",
-      "hours": "9am-6pm"
-    },
-    {
-      "address": "15823 TAMPKE, San Antonio, TX 78247",
-      "title": "City permit",
-      "type": "permit",
-      "lat": 29.592489,
-      "lon": -98.394899,
-      "date_from": "2026-09-02",
-      "date_to": "2026-09-18",
-      "source": "Open Data SA",
-      "status": "verified",
-      "hours": "9am-6pm"
-    },
-    {
-      "address": "5752 ASCHAM, San Antonio, TX 78228",
-      "title": "City permit",
-      "type": "permit",
-      "lat": 29.446168,
-      "lon": -98.600967,
-      "date_from": "2026-09-02",
-      "date_to": "2026-09-18",
-      "source": "Open Data SA",
-      "status": "verified",
-      "hours": "9am-6pm"
-    },
-    {
-      "address": "2415 TOWNCLIFF, San Antonio, TX 78238",
-      "title": "City permit",
-      "type": "permit",
-      "lat": 29.460578,
-      "lon": -98.607098,
-      "date_from": "2026-09-02",
-      "date_to": "2026-09-18",
-      "source": "Open Data SA",
-      "status": "verified",
-      "hours": "9am-6pm"
-    }
-  ],
+  "permits": [],
   "public": [],
   "hot_zones": [],
   "sources": [],
   "city": "san-antonio-permits-b",
   "status": "live",
-  "total_locations": 5,
-  "date": "2026-09-18",
-  "last_refresh": "2026-09-18T09:49:33-05:00"
+  "total_locations": 0,
+  "date": "2026-09-19",
+  "last_refresh": "2026-09-19T08:35:26-05:00"
 }
