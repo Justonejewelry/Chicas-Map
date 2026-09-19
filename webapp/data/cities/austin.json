@@ -469,8 +469,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.28443551940352,
-      "lon": -97.81316745677125,
+      "lat": 30.288289274344233,
+      "lon": -97.81330269544222,
       "geocode": "source",
       "company": "Creative Estate Sales",
       "in_person": true,
@@ -1611,6 +1611,48 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "cl-unitygaragesalecagqkux8wb2ehcjrgaxoy9"
+    },
+    {
+      "address": "9206 Collinfield Dr, Austin, TX 78758",
+      "dates": "Sat Sep 19 – Sat Sep 19",
+      "date_from": "09/19/2026",
+      "date_to": "09/19/2026",
+      "end_date": "2026-09-19",
+      "title": "SATURDAY FUN YARD SALE!",
+      "details": "",
+      "source": "GarageSaleFinder",
+      "url": "https://garagesalefinder.com/s/N9Sac/9206-collinfield-dr-austin-tx-78758",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.85,
+      "status": "verified",
+      "lat": 30.38,
+      "lon": -97.71,
+      "geocode": "zip-centroid"
+    },
+    {
+      "address": "mirasol, Austin, TX",
+      "dates": "2026-09-19 – 2026-09-21",
+      "date_from": "2026-09-19",
+      "date_to": "2026-09-21",
+      "end_date": "2026-09-21",
+      "hours": null,
+      "title": "Estate sale: by appointment only, prices and description in post",
+      "details": "QR Code Link to This Post Estate sale: by appointment only: All furniture is new, extremely high quality, recently purchased for staging our home. 1. Ashley Grey L-Shaped Couch, with 9 pillows. Overall Dimensions (Inches): 111''W x 111''D x 36'' H. Paid 3200.00 6 weeks ago, asking 1900. 2. Flexsteel Amazing Zecliner Umber Model 2+ Power Lift/Recliner/Sleep Chair, Paid over 3000.00 6 weeks ago. Ask",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/round-rock-estate-sale-by-appointment/nxHf8rimBh74wkdRziGhzp",
+      "photos": 0,
+      "type": "estate",
+      "categories": [
+        "estate-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 30.5083,
+      "lon": -97.6789,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-lebyappointmentnxhf8rimbh74wkdrzighzp"
     }
   ],
   "hot_zones": [
@@ -1629,9 +1671,9 @@
     "gsalr.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 73,
+  "total_locations": 75,
   "status": "live",
   "date": "2026-09-19",
-  "last_refresh": "2026-09-19T08:35:26-05:00",
+  "last_refresh": "2026-09-19T09:13:21-05:00",
   "permits": []
 }
