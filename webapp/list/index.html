@@ -31,41 +31,49 @@
     (function () {
       var box = document.getElementById("list");
       var status = document.getElementById("status");
-      fetch("/Chicas-Map/data/cities/san-antonio.json", { cache: "no-store" })
-        .then(function (r) { return r.ok ? r.json() : null; })
-        .then(function (data) {
-          var sales = [];
-          if (Array.isArray(data)) sales = data;
-          else if (data && Array.isArray(data.sales)) sales = data.sales;
-          else if (data && Array.isArray(data.features)) {
-            sales = data.features.map(function (f) {
-              var p = f.properties || {};
-              var c = (f.geometry && f.geometry.coordinates) || [];
-              return {
-                title: p.title || p.name || "Sale",
-                type: p.type || p.kind || "garage",
-                address: p.address || p.addr || "",
-                lat: c[1], lon: c[0]
-              };
-            });
-          } else if (data && Array.isArray(data.public)) {
-            sales = [].concat(data.public || [], data.permits || []);
-          }
-          status.textContent = sales.length
-            ? sales.length + " stops in the live San Antonio feed."
-            : "Feed loaded but this file is not a listing array. Use the map.";
-          box.innerHTML = sales.slice(0, 120).map(function (s) {
-            var title = s.title || s.name || "Sale";
-            var kind = s.type || s.kind || "sale";
-            var addr = s.address || s.addr || "";
-            var href = "/Chicas-Map/map";
-            if (s.lat && s.lon) href += "?lat=" + s.lat + "&lon=" + s.lon;
-            return '<a class="row" href="' + href + '"><div class="kind">' + kind + '</div><strong>' + title + '</strong><div class="meta">' + addr + '</div></a>';
-          }).join("");
-        })
-        .catch(function () {
-          status.textContent = "Could not load the feed. Open the map instead.";
-        });
+      var urls = [
+        "/Chicas-Map/data/cities/san-antonio.json",
+        "/Chicas-Map/data/cities/san-antonio-email.json"
+      ];
+      function bag(data) {
+        var sales = [];
+        if (Array.isArray(data)) sales = data;
+        else if (data && Array.isArray(data.sales)) sales = data.sales;
+        else if (data && Array.isArray(data.features)) {
+          sales = data.features.map(function (f) {
+            var p = f.properties || {};
+            var c = (f.geometry && f.geometry.coordinates) || [];
+            return {
+              title: p.title || p.name || "Sale",
+              type: p.type || p.kind || "garage",
+              address: p.address || p.addr || "",
+              lat: c[1], lon: c[0]
+            };
+          });
+        } else if (data && Array.isArray(data.public)) {
+          sales = [].concat(data.public || [], data.permits || []);
+        }
+        return sales;
+      }
+      Promise.all(urls.map(function (u) {
+        return fetch(u, { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
+      })).then(function (bags) {
+        var sales = [];
+        for (var i = 0; i < bags.length; i++) sales = sales.concat(bag(bags[i]));
+        status.textContent = sales.length
+          ? sales.length + " stops in the live San Antonio feed."
+          : "Feed loaded but this file is not a listing array. Use the map.";
+        box.innerHTML = sales.slice(0, 120).map(function (s) {
+          var title = s.title || s.name || "Sale";
+          var kind = s.type || s.kind || "sale";
+          var addr = s.address || s.addr || "";
+          var href = "/Chicas-Map/map";
+          if (s.lat && s.lon) href += "?lat=" + s.lat + "&lon=" + s.lon;
+          return '<a class="row" href="' + href + '"><div class="kind">' + kind + '</div><strong>' + title + '</strong><div class="meta">' + addr + '</div></a>';
+        }).join("");
+      }).catch(function () {
+        status.textContent = "Could not load the feed. Open the map instead.";
+      });
     })();
   </script>
 </body>
