@@ -169,8 +169,8 @@
       "in_person": true,
       "external_id": "yss-112riverrdgeorgetowntx78628-2026-09-18",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ]
     },
     {
@@ -281,8 +281,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.288100628997483,
-      "lon": -97.81334430734097,
+      "lat": 30.28557637459576,
+      "lon": -97.8171101841786,
       "geocode": "source",
       "company": "Creative Estate Sales",
       "in_person": true,
@@ -381,8 +381,8 @@
       "in_person": false,
       "external_id": "eso-2463348",
       "categories": [
-        "estate-sale",
-        "online-auction"
+        "online-auction",
+        "estate-sale"
       ]
     },
     {
@@ -1013,6 +1013,30 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "cl-all42clubcadet1j67q7mytgymdh3czp5ezh"
+    },
+    {
+      "address": "Northwood Drive, Austin, TX",
+      "dates": "2026-09-20 – 2026-09-22",
+      "date_from": "2026-09-20",
+      "date_to": "2026-09-22",
+      "end_date": "2026-09-22",
+      "hours": null,
+      "title": "307 Northwood Drive GTX",
+      "details": "QR Code Link to This Post 307 Northwood Drive 78628 Clothes Men’s shirts, slacks, jackets, ball caps, trucker hats, Women’s dresses, casual, cocktail, pants, shorts, skirts, sweaters, jackets, blazers, scarves Sunglasses, readers, perfume, scarfs, Water shoes, boat shoes, running shoes Free people, j crew, coldwater creek, under armor, Nike, restoration hardware Longhorn stuff, Houston astros, Kit",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/georgetown-307-northwood-drive-gtx/oHn3CwCxubHUGgRaVFEuCZ",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 30.661637,
+      "lon": -97.685691,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-rthwooddrivegtxohn3cwcxubhuggravfeucz"
     }
   ],
   "hot_zones": [
@@ -1031,9 +1055,9 @@
     "gsalr.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 43,
+  "total_locations": 44,
   "status": "live",
   "date": "2026-09-20",
-  "last_refresh": "2026-09-20T08:49:46-05:00",
+  "last_refresh": "2026-09-20T09:36:16-05:00",
   "permits": []
 }
