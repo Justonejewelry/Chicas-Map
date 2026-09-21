@@ -44,6 +44,11 @@ export const Route = createRootRoute({
         </AuthProvider>
         <Scripts />
         <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){window.goatcounter=window.goatcounter||{};window.goatcounter.path=function(p){var path=(p||location.pathname||"/").replace(/^\\/Chicas-Map/, "")||"/";if(path.indexOf("/admin")===0||path.indexOf("/__grok")===0)return;return path;};})();`,
+          }}
+        />
+        <script
           data-goatcounter="https://chicasmap.goatcounter.com/count"
           async
           src="https://gc.zgo.at/count.js"
