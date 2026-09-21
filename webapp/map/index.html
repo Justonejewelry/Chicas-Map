@@ -23,6 +23,28 @@
     #chica-home-chip { position: fixed; top: max(10px, env(safe-area-inset-top)); right: 10px; z-index: 2147483647; height: 44px; padding: 0 12px; border-radius: 12px; background: #1a1714f5; color: #f3eee4; text-decoration: none; font: 800 13px/44px Inter, system-ui, sans-serif; border: 1px solid #3a342e; }
     .leaflet-control-zoom { margin-bottom: 92px !important; }
     #chica-crawl { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+    #chica-map-boot {
+      position: fixed; inset: 0; z-index: 2147483000;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 14px; background: #121212; color: #f3eee4; pointer-events: none;
+      transition: opacity .28s ease;
+    }
+    #chica-map-boot.is-done { opacity: 0; }
+    #chica-map-boot .dot {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: #c513af; box-shadow: 0 0 0 8px #c513af33;
+      animation: chica-boot-pulse 1.1s ease-out infinite;
+    }
+    #chica-map-boot .copy { font: 800 15px/1.2 Inter, system-ui, sans-serif; letter-spacing: .02em; }
+    #chica-map-boot .sub { font: 500 12px/1.3 Inter, system-ui, sans-serif; color: #b8b0a4; }
+    @keyframes chica-boot-pulse {
+      0% { transform: scale(.85); box-shadow: 0 0 0 4px #c513af55; }
+      100% { transform: scale(1); box-shadow: 0 0 0 16px #c513af00; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      #chica-map-boot .dot { animation: none; }
+      #chica-map-boot { transition: none; }
+    }
   </style>
 </head>
 <body>
@@ -38,12 +60,29 @@
     </main>
   </noscript>
   <div id="chica-live-map" class="chica-map" role="application" aria-label="San Antonio garage sale map"></div>
+  <div id="chica-map-boot" role="status" aria-live="polite">
+    <span class="dot" aria-hidden="true"></span>
+    <div class="copy" id="chica-map-boot-copy">Hunting sales…</div>
+    <div class="sub" id="chica-map-boot-sub">San Antonio map</div>
+  </div>
   <a id="chica-home-chip" href="/Chicas-Map/">Home</a>
+  <script>
+    (function () {
+      try {
+        if (localStorage.getItem("chicas-map-locale") === "es") {
+          var c = document.getElementById("chica-map-boot-copy");
+          var s = document.getElementById("chica-map-boot-sub");
+          if (c) c.textContent = "Cazando ventas…";
+          if (s) s.textContent = "Mapa de San Antonio";
+        }
+      } catch (e) {}
+    })();
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="/Chicas-Map/js/leaflet-boot.js?v=1"></script>
   <script src="/Chicas-Map/js/chica-config.js?v=3"></script>
   <script src="/Chicas-Map/js/chica-core.js?v=4"></script>
-  <script src="/Chicas-Map/js/chica-live-map.js?v=18"></script>
+  <script src="/Chicas-Map/js/chica-live-map.js?v=19"></script>
   <script src="/Chicas-Map/js/tile-guard.js?v=3"></script>
   <script src="/Chicas-Map/js/key-clicks.js?v=14"></script>
   <script src="/Chicas-Map/js/click-fix.js?v=5"></script>
