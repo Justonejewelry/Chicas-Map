@@ -7,12 +7,28 @@
   var PIN = 40;
   var HALF = PIN / 2;
   var GLYPH = 28;
+  var bootHidden = false;
 
   function onMapPath() {
     var p = location.pathname || "";
     return /\/map\/?$/.test(p) || p.indexOf("/map/") !== -1 || /map\.html$/.test(p);
   }
   if (!onMapPath()) return;
+
+  function hideBoot() {
+    if (bootHidden) return;
+    var el = document.getElementById("chica-map-boot");
+    if (!el) {
+      bootHidden = true;
+      return;
+    }
+    bootHidden = true;
+    el.classList.add("is-done");
+    el.setAttribute("aria-hidden", "true");
+    setTimeout(function () {
+      if (el && el.parentNode) el.parentNode.removeChild(el);
+    }, 320);
+  }
 
   function key() {
     var cfg = (w.CHICA_CONFIG && w.CHICA_CONFIG.MAPTILER_KEY) || "";
@@ -225,7 +241,7 @@
     map._chicaStreet = street; map._chicaSat = sat; map._chicaEsriStreet = esriStreet; map._chicaEsriSat = esriSat;
     street.on("tileerror", markDead);
     sat.on("tileerror", markDead);
-    map.on("tileload", function () { armTiles(el); });
+    map.on("tileload", function () { armTiles(el); hideBoot(); });
     showBase();
     probeMapTiler();
     map._chicaLive = true;
@@ -264,7 +280,11 @@
       for (var i = 0; i < bags.length; i++) sales = sales.concat(salesFrom(bags[i]));
       addPins(map, L, sales);
       size();
+      hideBoot();
+    }).catch(function () {
+      hideBoot();
     });
+    setTimeout(hideBoot, 6000);
     var k = 0;
     var sid = setInterval(function () { size(); k += 1; if (k > 24) clearInterval(sid); }, 150);
     return true;
