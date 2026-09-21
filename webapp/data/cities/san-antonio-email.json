@@ -1,27 +1,15 @@
 {
   "city": "san-antonio-email",
-  "last_refresh": "2026-09-20T16:12:00-05:00",
+  "last_refresh": "2026-09-21T11:05:51-05:00",
   "status": "live",
-  "total_locations": 15,
-  "public": [
-    {"title":"Multi Family Yard Sale","address":"4423 Black Walnut Woods St, San Antonio, TX 78249","lat":29.579075,"lon":-98.573403,"type":"garage","dates":"2026-09-18 – 2026-09-19","source":"Email:GarageSaleFinder","confidence":0.75,"status":"verified","external_id":"email-gsf-4423blackwalnutwoodsstsanantoniotx78249-2026-09-18","date_from":"2026-09-18","date_to":"2026-09-19","end_date":"2026-09-19","categories":["garage-sale"]},
-    {"title":"Multi Family Yard Sale","address":"9418 Greens Pt, San Antonio, TX 78250","lat":29.518301,"lon":-98.680189,"type":"garage","dates":"2026-09-18 – 2026-09-19","source":"Email:GarageSaleFinder","confidence":0.75,"status":"verified","external_id":"email-gsf-9418greensptsanantoniotx78250-2026-09-18","date_from":"2026-09-18","date_to":"2026-09-19","end_date":"2026-09-19","categories":["garage-sale"]},
-    {"title":"3 Family's Garage Sale","address":"7511 Pipers Way, San Antonio, TX 78251","lat":29.469929,"lon":-98.638983,"type":"garage","dates":"2026-09-19","source":"Email:GarageSaleFinder","confidence":0.75,"status":"verified","external_id":"email-gsf-7511piperswaysanantoniotx78251-2026-09-19","date_from":"2026-09-19","date_to":"2026-09-19","end_date":"2026-09-19","categories":["garage-sale"]},
-    {"title":"Yard Sale","address":"27035 Vaughns Vw, San Antonio, TX 78260","lat":29.701589,"lon":-98.497856,"type":"garage","dates":"2026-09-19","source":"Email:GarageSaleFinder","confidence":0.75,"status":"verified","external_id":"email-gsf-27035vaughnsvwsanantoniotx78260-2026-09-19","date_from":"2026-09-19","date_to":"2026-09-19","end_date":"2026-09-19","categories":["garage-sale"]},
-    {"title":"Real Rummage Sale","address":"31335 Panther Dr, Bulverde, TX 78163","lat":29.759720,"lon":-98.449569,"type":"garage","dates":"2026-09-19","source":"Email:GarageSaleFinder","confidence":0.75,"status":"verified","external_id":"email-gsf-31335pantherdrbulverdetx78163-2026-09-19","date_from":"2026-09-19","date_to":"2026-09-19","end_date":"2026-09-19","categories":["garage-sale"]},
-    {"title":"Yard Sale Thursday and Friday","address":"9558 Cantura Crst, San Antonio, TX 78250","lat":29.503501,"lon":-98.672721,"type":"garage","dates":"2026-09-17 – 2026-09-18","source":"Email:GarageSaleFinder","confidence":0.75,"status":"verified","external_id":"email-gsf-9558canturacrstsanantoniotx78250-2026-09-17","date_from":"2026-09-17","date_to":"2026-09-18","end_date":"2026-09-18","categories":["garage-sale"]},
-    {"title":"Neighborhood Yard Sale","address":"29568 Copper Xing, Bulverde, TX 78163","lat":29.734588,"lon":-98.433431,"type":"garage","dates":"2026-09-19","source":"Email:GarageSaleFinder","confidence":0.75,"status":"verified","external_id":"email-gsf-29568copperxingbulverdetx78163-2026-09-19","date_from":"2026-09-19","date_to":"2026-09-19","end_date":"2026-09-19","categories":["garage-sale"]},
-    {"title":"Yard Sale | Rhine Valley Community","address":"Sarrebourg St, Schertz, TX 78154","lat":29.526682,"lon":-98.234682,"type":"garage","dates":"2026-09-19","source":"Email:GarageSaleFinder","confidence":0.75,"status":"verified","external_id":"email-gsf-sarrebourgstschertztx78154-2026-09-19","date_from":"2026-09-19","date_to":"2026-09-19","end_date":"2026-09-19","categories":["garage-sale"],"note":"Street-level only — listing had no house number"},
-    {"title":"Yard Sale","address":"134 Pin Oak Trl, New Braunfels, TX 78132","lat":29.812017,"lon":-98.126927,"type":"garage","dates":"2026-09-18 – 2026-09-19","source":"Email:GarageSaleFinder","confidence":0.75,"status":"verified","external_id":"email-gsf-134pinoaktrlnewbraunfelstx78132-2026-09-18","date_from":"2026-09-18","date_to":"2026-09-19","end_date":"2026-09-19","categories":["garage-sale"]},
-    {"title":"Valley Ranch Community Garage Sale","address":"9659 Western Wishes, San Antonio, TX 78254","lat":29.535211,"lon":-98.765042,"type":"garage","dates":"2026-09-19","source":"Email:GarageSaleFinder","confidence":0.75,"status":"verified","external_id":"email-gsf-9659westernwishessanantoniotx78254-2026-09-19","date_from":"2026-09-19","date_to":"2026-09-19","end_date":"2026-09-19","categories":["garage-sale"]},
-    {"title":"Churchill High School Band Rummage Sale","address":"12049 Blanco Rd, San Antonio, TX 78216","lat":29.549680,"lon":-98.513858,"type":"garage","dates":"2026-09-19","source":"Email:GarageSaleFinder","confidence":0.75,"status":"verified","external_id":"email-gsf-12049blancordsanantoniotx78216-2026-09-19","date_from":"2026-09-19","date_to":"2026-09-19","end_date":"2026-09-19","categories":["garage-sale"]},
-    {"title":"Moving Sale with many high quality items","address":"3119 Manila Dr, San Antonio, TX 78217","lat":29.535467,"lon":-98.440619,"type":"garage","dates":"2026-09-19","source":"Email:GarageSaleFinder","confidence":0.75,"status":"verified","external_id":"email-gsf-3119maniladrsanantoniotx78217-2026-09-19","date_from":"2026-09-19","date_to":"2026-09-19","end_date":"2026-09-19","categories":["garage-sale"]},
-    {"title":"Bracken Methodist Church Rummage Sale","address":"20377 Farm To Market Rd 2252, San Antonio, TX 78266","lat":29.630211,"lon":-98.274910,"type":"garage","dates":"2026-09-19","source":"Email:GarageSaleFinder","confidence":0.75,"status":"verified","external_id":"email-gsf-20377farmtomarketrd2252sanantoniotx78266-2026-09-19","date_from":"2026-09-19","date_to":"2026-09-19","end_date":"2026-09-19","categories":["garage-sale"]},
-    {"title":"41st Annual Oak Hills Presbyterian Church Garage Sale","address":"6739 Callaghan Rd, San Antonio, TX 78229","lat":29.495033,"lon":-98.568700,"type":"garage","dates":"2026-09-19","source":"Email:GarageSaleFinder","confidence":0.75,"status":"verified","external_id":"email-gsf-6739callaghanrdsanantoniotx78229-2026-09-19","date_from":"2026-09-19","date_to":"2026-09-19","end_date":"2026-09-19","categories":["garage-sale"]},
-    {"title":"Huge Garage Sale","address":"3622 Copper Willow, Bulverde, TX 78163","lat":29.733145,"lon":-98.425445,"type":"garage","dates":"2026-09-19","source":"Email:GarageSaleFinder","confidence":0.75,"status":"verified","external_id":"email-gsf-3622copperwillowbulverdetx78163-2026-09-19","date_from":"2026-09-19","date_to":"2026-09-19","end_date":"2026-09-19","categories":["garage-sale"]}
-  ],
+  "total_locations": 0,
+  "public": [],
   "permits": [],
   "hot_zones": [],
-  "sources": ["Email:GarageSaleFinder", "Email:EstateSales.org"],
-  "note": "Incremental email-lead shard. Coords from OSM Nominatim house match or Census TIGER when OSM missed. Sarrebourg St is street-centroid (no house number in listing)."
+  "sources": [
+    "Email:GarageSaleFinder",
+    "Email:EstateSales.org"
+  ],
+  "note": "Incremental email-lead shard. Coords from OSM Nominatim house match or Census TIGER when OSM missed. Sarrebourg St is street-centroid (no house number in listing).",
+  "date": "2026-09-21"
 }
