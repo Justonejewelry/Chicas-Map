@@ -1,125 +1,30 @@
 # Chica's Map -- Community Events Swarm v2.7
 
-Run: 2026-09-22T09:17:36-05:00
+Run: 2026-09-22T10:28:13-05:00
 Sources scanned: **48**
-Candidates discovered: **807**
-With parsed dates: **649**
-With street/venue address: **437**
-Promoted this run: **33**
-Kept from prior feed: **252**
-Purged from prior feed: **39**
+Candidates discovered: **787**
+With parsed dates: **629**
+With street/venue address: **417**
+Promoted this run: **2**
+Kept from prior feed: **285**
+Purged from prior feed: **0**
 Source errors: **3**
-Rejected by Sentinel: **194**
+Rejected by Sentinel: **205**
 
 ## Promoted (passed Events Sentinel)
-- **Tween Time** -- 2026-09-24 -- 3222 Culebra San Antonio, TX 78228 -- conf 88 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D207833453
-- **Tabletop Thursday** -- 2026-09-24 -- 5110 Walzem Road San -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206283570
-- **Craft Supply Swap Drop Off** -- 2026-09-25 -- 2515 E. Evans San Antonio, TX 78259 -- conf 95 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206437876
-- **Rainbo Art Exhibit** -- 2026-09-25 -- 2515 E. Evans San Antonio, TX 78259 -- conf 95 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D207015587
-- **City of San Antonio Head Start Program – Application Assistance** -- 2026-09-25 -- 600 Soledad San Antonio, TX 78205 -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D207247533
-- **ESL Study Club** -- 2026-09-25 -- 600 Soledad San Antonio, TX 78205 -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D205724532
-- **SA Food Bank Food Application Assistance** -- 2026-09-25 -- 600 Soledad San Antonio, TX 78205 -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D208396904
-- **Line Dancing** -- 2026-09-25 -- 13330 Kyle Seale Pkwy -- conf 88 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D197040847
-- **Practical Spanish (Fall 2026)** -- 2026-09-25 -- 3222 Culebra San Antonio, TX 78228 -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D205649169
-- **Click and Learn the Computer** -- 2026-09-25 -- 6111 Rosedale Ct. San Antonio, TX 78201 -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D207070009
-- **Baby Story Time at Parman** -- 2026-09-25 -- 20735 Wilderness Oak San Antonio, TX 78258 -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206287046
-- **Sewing Class** -- 2026-09-25 -- 200 N. Park San Antonio, TX 78204 -- conf 88 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D204208676
-- **Basic Hand Sewing Class** -- 2026-09-25 -- 6307 Sun Valley San Antonio, TX 78227 -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D207310575
-- **Family Story Time** -- 2026-09-25 -- 1023 Ada St -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206505464
-- **Hora de Cuentos en Español/Spanish Story Time** -- 2026-09-25 -- 2515 E. Evans San Antonio, TX 78259 -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D205680397
-- **Toddler Story Time at Parman** -- 2026-09-25 -- 20735 Wilderness Oak San Antonio, TX 78258 -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206287072
-- **Medicina Alternativa** -- 2026-09-25 -- 200 N. Park San Antonio, TX 78204 -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D204208691
-- **Sin Vergüenza** -- 2026-09-25 -- 600 Soledad San Antonio, TX 78205 -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D205606522
-- **Want to Play Mah Jongg?** -- 2026-09-25 -- 8700 Mystic Park San Antonio, TX 78254 -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D207230693
-- **Teen Time** -- 2026-09-25 -- 233 Bushnell San Antonio, TX 78212 -- conf 88 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D205999964
-- **Learn English (Beginners ESL, Level II)** -- 2026-09-25 -- 3222 Culebra San Antonio, TX 78228 -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D205849086
-- **Let's Create!: Arts & Crafts Fridays** -- 2026-09-25 -- 4618 Thousand Oaks San Antonio, TX 78233 -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206912975
-- **In Memory Of Dolly Parton: Make A Guitar Ornament** -- 2026-09-25 -- 600 Soledad San Antonio, TX 78205 -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D207473438
-- **Teen Fall: Open Play @ Teen Library** -- 2026-09-25 -- 600 Soledad San Antonio, TX 78205 -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206806581
-- **Club De Lectura** -- 2026-09-25 -- 13330 Kyle Seale Pkwy -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D197056768
-- **LEGO Time** -- 2026-09-25 -- 3222 Culebra San Antonio, TX 78228 -- conf 88 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206439813
-- **A Percy Jackson Tween Quest: Camp Half-Blood** -- 2026-09-25 -- 8700 Mystic Park San Antonio, TX 78254 -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D209124073
-- **Teen Time on Discord** -- 2026-09-25 -- Branch Location: Online Address: This is a virtual event. Event Type(s): Whatev Staff Contact Name: Rosalie Barrera Staff Contact Number/Email: rosalie.barrera2@sanantonio.gov Audience: Teens Link: https://guides.mysapl.org/210teenlibrary Hang out with other teens and chat about whatever on the 210teenlibrary Discord Server! ***For teens (ages 13 to 18) only. For more information on how to join the 210teenlibrary Discord Server, visit: guides.mysapl.org… -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206442102
-- **Craft Supply Swap Drop Off** -- 2026-09-26 -- 2515 E. Evans San Antonio, TX 78259 -- conf 95 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206437877
-- **Rainbo Art Exhibit** -- 2026-09-26 -- 2515 E. Evans San Antonio, TX 78259 -- conf 95 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D207015588
-- **Guerra Adult Book Club** -- 2026-09-26 -- 7978 Military Drive West -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206711718
-- **French Conversation Club** -- 2026-09-26 -- 11503 Vance Jackson Rd -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D194800525
-- **Veteran Benefits Workshop Pct 2.** -- 2026-11-05 -- 7723 Guilbeau Rd -- conf 99 -- https://www.bexar.org/calendar.aspx?EID=7981
-
-## Purged (failed re-validation)
-- City Council Meeting -- event_id=2026-09-21_city-council-meeting_285654b474fd: date 2026-09-21 is in the past
-- Craft Supply Swap Drop Off -- event_id=2026-09-20_craft-supply-swap-drop-off_6792171abff6: series ended 2026-09-21
-- Rainbo Art Exhibit -- event_id=2026-09-20_rainbo-art-exhibit_67b94acf1c62: series ended 2026-09-21
-- Sin Vergüenza -- event_id=2026-09-21_sin-verg-enza_87b055fc2fad: date 2026-09-21 is in the past
-- Spanish Story Time: Cuentos y Canciones at Parman -- event_id=2026-09-21_spanish-story-time-cuentos-y_d5511dd8691f: date 2026-09-21 is in the past
-- Baby Story Time at Landa -- event_id=2026-09-21_baby-story-time-at-landa_b5fc9e055268: date 2026-09-21 is in the past
-- Sit and Stitch -- event_id=2026-09-21_sit-and-stitch_8548854942d3: date 2026-09-21 is in the past
-- Tai Chi -- event_id=2026-09-21_tai-chi_769a081adc6d: date 2026-09-21 is in the past
-- Bingocize! -- event_id=2026-09-21_bingocize_56a1b7dea41e: date 2026-09-21 is in the past
-- Parman Crafting Connections -- event_id=2026-09-21_parman-crafting-connections_9c1e45ae4f2b: date 2026-09-21 is in the past
-- Let's Build -- event_id=2026-09-21_let-s-build_31b17ef566b8: date 2026-09-21 is in the past
-- Let's Build: Legos and More -- event_id=2026-09-21_let-s-build-legos-and-more_75ae93e4f84f: date 2026-09-21 is in the past
-- Teen Fall: Open Play @ Teen Library -- event_id=2026-09-21_teen-fall-open-play-teen-lib_5bfa46998995: date 2026-09-21 is in the past
-- Let's Build: LEGO Time -- event_id=2026-09-21_let-s-build-lego-time_3f296bb1c19d: date 2026-09-21 is in the past
-- Let's Build: Lego Club -- event_id=2026-09-21_let-s-build-lego-club_43be8519849d: date 2026-09-21 is in the past
-- Tween Time at Landa -- event_id=2026-09-21_tween-time-at-landa_5628a84bea2f: date 2026-09-21 is in the past
-- Let's Build: LEGOs & More -- event_id=2026-09-21_let-s-build-legos-more_0e16c893b443: date 2026-09-21 is in the past
-- Tween Time: Bracelets -- event_id=2026-09-21_tween-time-bracelets_3eb0bfc0d36d: date 2026-09-21 is in the past
-- Teen Club @ Collins Garden -- event_id=2026-09-21_teen-club-collins-garden_86cad28c6d8d: date 2026-09-21 is in the past
-- Igo Teen Time -- event_id=2026-09-21_igo-teen-time_2857fca70401: date 2026-09-21 is in the past
-- Monday Movie Night: Nacho Libre!!!! -- event_id=2026-09-21_monday-movie-night-nacho-lib_6354f59b7f03: date 2026-09-21 is in the past
-- Teen Music Monday on Discord -- event_id=2026-09-21_teen-music-monday-on-discord_f4d42eb1f358: date 2026-09-21 is in the past
-- Teen Time @ Bazan -- event_id=2026-09-21_teen-time-bazan_637e75ee893b: date 2026-09-21 is in the past
-- Yoga Basics -- event_id=2026-09-21_yoga-basics_e9d598f017a7: date 2026-09-21 is in the past
-- Teen Time @ Johnston -- event_id=2026-09-21_teen-time-johnston_ff4675c24c86: date 2026-09-21 is in the past
-- Papercraft -- event_id=2026-09-21_papercraft_127f9a509d6b: date 2026-09-21 is in the past
-- Movie Monday: Practical Magic -- event_id=2026-09-21_movie-monday-practical-magic_092f555b50ab: date 2026-09-21 is in the past
-- Teen Time @ Westfall Library -- event_id=2026-09-21_teen-time-westfall-library_a12ac295105a: date 2026-09-21 is in the past
-- Dreaded Threads -- event_id=2026-09-21_dreaded-threads_cf6dfe4e9018: date 2026-09-21 is in the past
-- Crochet for Adults -- event_id=2026-09-21_crochet-for-adults_bf938c98601b: date 2026-09-21 is in the past
-- Spanish/English Conversation Hour -- event_id=2026-09-21_spanish-english-conversation_68ea7fd945eb: date 2026-09-21 is in the past
-- Hooks & Needles -- event_id=2026-09-21_hooks-needles_f4ffe7dfcb19: date 2026-09-21 is in the past
-- Monday Mayhem Book Club -- event_id=2026-09-21_monday-mayhem-book-club_abf65804d1ed: date 2026-09-21 is in the past
-- Sleepy Time Stories -- event_id=2026-09-21_sleepy-time-stories_31be730851b4: date 2026-09-21 is in the past
-- Teen Time @ Thousand Oaks -- event_id=2026-09-21_teen-time-thousand-oaks_decd1df64c1a: date 2026-09-21 is in the past
-- Chess at Westfall -- event_id=2026-09-21_chess-at-westfall_54c075060907: date 2026-09-21 is in the past
-- Beyond the Plot Book Club -- event_id=2026-09-21_beyond-the-plot-book-club_2a099e35216c: date 2026-09-21 is in the past
-- Pet Loss Support Group -- event_id=2026-09-21_pet-loss-support-group_f2539c5ba801: date 2026-09-21 is in the past
-- Get Craftin': Message Bling Keychains -- event_id=2026-09-21_get-craftin-message-bling-ke_3601f199c5bb: date 2026-09-21 is in the past
+- **Veteran Benefits Workshop Pct 4.** -- 2026-10-07 -- 8794 East Loop 1604 -- conf 99 -- https://www.bexar.org/calendar.aspx?EID=7982
+- **Municipal Development District Board of Directors Meeting** -- 2026-10-13 -- 7286 Dietz Elkhorn Rd Fair -- conf 99 -- https://www.fairoaksranch.gov/calendar.aspx?EID=1508
 
 ## Review Queue
-- **San Antonio Public Library Events** -- conf 100 -- French Conversation Club -- 2026-09-26 -- 11503 Vance Jackson Rd -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D194800525
-- **San Antonio Public Library Events** -- conf 100 -- Club De Lectura -- 2026-09-25 -- 13330 Kyle Seale Pkwy -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D197056768
 - **San Antonio Public Library Events** -- conf 100 -- SAPL Silent Book Club -- 2026-09-22 -- 515 Castroville Rd -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D197861461
-- **San Antonio Public Library Events** -- conf 100 -- Medicina Alternativa -- 2026-09-25 -- 200 N. Park San Antonio, TX 78204 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D204208691
 - **San Antonio Public Library Events** -- conf 100 -- Family Story Time -- 2026-09-24 -- 4134 Harry Wurzbach San Antonio, TX 78209 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D205386297
-- **San Antonio Public Library Events** -- conf 100 -- Sin Vergüenza -- 2026-09-25 -- 600 Soledad San Antonio, TX 78205 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D205606522
-- **San Antonio Public Library Events** -- conf 100 -- Practical Spanish (Fall 2026) -- 2026-09-25 -- 3222 Culebra San Antonio, TX 78228 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D205649169
-- **San Antonio Public Library Events** -- conf 100 -- Hora de Cuentos en Español/Spanish Story Time -- 2026-09-25 -- 2515 E. Evans San Antonio, TX 78259 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D205680397
-- **San Antonio Public Library Events** -- conf 100 -- ESL Study Club -- 2026-09-25 -- 600 Soledad San Antonio, TX 78205 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D205724532
-- **San Antonio Public Library Events** -- conf 100 -- Learn English (Beginners ESL, Level II) -- 2026-09-25 -- 3222 Culebra San Antonio, TX 78228 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D205849086
 - **San Antonio Public Library Events** -- conf 100 -- Toddler Story Time -- 2026-09-24 -- 9050 Wellwood San Antonio, TX 78250 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D205879629
-- **San Antonio Public Library Events** -- conf 100 -- Tabletop Thursday -- 2026-09-24 -- 5110 Walzem Road San -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206283570
 - **San Antonio Public Library Events** -- conf 100 -- Family Story Time at Parman -- 2026-09-23 -- 20735 Wilderness Oak San Antonio, TX 78258 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206287020
-- **San Antonio Public Library Events** -- conf 100 -- Baby Story Time at Parman -- 2026-09-25 -- 20735 Wilderness Oak San Antonio, TX 78258 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206287046
-- **San Antonio Public Library Events** -- conf 100 -- Toddler Story Time at Parman -- 2026-09-25 -- 20735 Wilderness Oak San Antonio, TX 78258 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206287072
 - **San Antonio Public Library Events** -- conf 100 -- Toddler Story Time! -- 2026-09-23 -- 6111 Rosedale Ct. San Antonio, TX 78201 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206288688
 - **San Antonio Public Library Events** -- conf 100 -- Family Story Time -- 2026-09-24 -- 2515 E. Evans San Antonio, TX 78259 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206373082
-- **San Antonio Public Library Events** -- conf 100 -- Teen Time on Discord -- 2026-09-25 -- Branch Location: Online Address: This is a virtual event. Event Type(s): Whatev Staff Contact Name: Rosalie Barrera Staff Contact Number/Email: rosalie.barrera2@sanantonio.gov Audience: Teens Link: https://guides.mysapl.org/210teenlibrary Hang out with other teens and chat about whatever on the 210teenlibrary Discord Server! ***For teens (ages 13 to 18) only. For more information on how to join the 210teenlibrary Discord Server, visit: guides.mysapl.org… -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206442102
 - **San Antonio Public Library Events** -- conf 100 -- Preschool Story Time -- 2026-09-23 -- 15060 Judson Rd -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206448252
 - **San Antonio Public Library Events** -- conf 100 -- Baby Story Time -- 2026-09-24 -- 15060 Judson Rd -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206449161
-- **San Antonio Public Library Events** -- conf 100 -- Family Story Time -- 2026-09-25 -- 1023 Ada St -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206505464
 - **San Antonio Public Library Events** -- conf 100 -- Preschool Story Time -- 2026-09-24 -- 13330 Kyle Seale Pkwy -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206613070
-- **San Antonio Public Library Events** -- conf 100 -- Guerra Adult Book Club -- 2026-09-26 -- 7978 Military Drive West -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206711718
-- **San Antonio Public Library Events** -- conf 100 -- Teen Fall: Open Play @ Teen Library -- 2026-09-25 -- 600 Soledad San Antonio, TX 78205 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206806581
-- **San Antonio Public Library Events** -- conf 100 -- Let's Create!: Arts & Crafts Fridays -- 2026-09-25 -- 4618 Thousand Oaks San Antonio, TX 78233 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206912975
-- **San Antonio Public Library Events** -- conf 100 -- Click and Learn the Computer -- 2026-09-25 -- 6111 Rosedale Ct. San Antonio, TX 78201 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D207070009
-- **San Antonio Public Library Events** -- conf 100 -- Want to Play Mah Jongg? -- 2026-09-25 -- 8700 Mystic Park San Antonio, TX 78254 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D207230693
-- **San Antonio Public Library Events** -- conf 100 -- City of San Antonio Head Start Program – Application Assistance -- 2026-09-25 -- 600 Soledad San Antonio, TX 78205 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D207247533
-- **San Antonio Public Library Events** -- conf 100 -- Basic Hand Sewing Class -- 2026-09-25 -- 6307 Sun Valley San Antonio, TX 78227 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D207310575
-- **San Antonio Public Library Events** -- conf 100 -- In Memory Of Dolly Parton: Make A Guitar Ornament -- 2026-09-25 -- 600 Soledad San Antonio, TX 78205 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D207473438
-- **San Antonio Public Library Events** -- conf 100 -- SA Food Bank Food Application Assistance -- 2026-09-25 -- 600 Soledad San Antonio, TX 78205 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D208396904
-- **San Antonio Public Library Events** -- conf 100 -- A Percy Jackson Tween Quest: Camp Half-Blood -- 2026-09-25 -- 8700 Mystic Park San Antonio, TX 78254 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D209124073
 - **San Antonio Public Library Events** -- conf 100 -- The Crafting Corner -- 2026-09-24 -- 1023 Ada St -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D209437792
 - **City of San Antonio Parks & Recreation** -- conf 100 -- Tennis Clinics -- 2026-08-31 -- 1503 San Pedro Ave -- https://www.sanantonio.gov/ParksAndRec/News-Events/Events/Event-Details/ArtMID/15385/ArticleID/29348/Tennis-Clinics
 - **Bexar County Clerk — Records on the Run** -- conf 99 -- Bexar County Clerk's Mobile Satellite Office will be at Bexar County Precinct 2 Constable's Office of Constable Leticia R. Vazquez -- 2026-10-01 -- 7723 Guilbeau Rd -- https://www.bexar.org/calendar.aspx?EID=7285
@@ -136,42 +41,54 @@ Rejected by Sentinel: **194**
 - **Bexar County Clerk — Records on the Run** -- conf 99 -- Bexar County Clerk's Mobile Satellite Office will be at Madonna Neighborhood Place -- 2026-11-03 -- 1906 Castroville Rd -- https://www.bexar.org/calendar.aspx?EID=7684
 - **Bexar County Clerk — Records on the Run** -- conf 99 -- Bexar County Clerk's Mobile Satellite Office will be at SBOC-Bexar County Small Business Opportunity Center -- 2026-10-15 -- 8200 Perrin Beitel Rd -- https://www.bexar.org/calendar.aspx?EID=7807
 - **Bexar County Clerk — Records on the Run** -- conf 99 -- Bexar County Clerk's Mobile Satellite Office will be at SBOC-Bexar County Small Business Opportunity Center -- 2026-11-12 -- 8200 Perrin Beitel Rd -- https://www.bexar.org/calendar.aspx?EID=7808
-- **Bexar County Veterans Events** -- conf 99 -- Veteran Benefits Workshop Pct 2. -- 2026-11-05 -- 7723 Guilbeau Rd -- https://www.bexar.org/calendar.aspx?EID=7981
-- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-02-04 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranchtx.org/calendar.aspx?EID=1558
-- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-09-02 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranchtx.org/calendar.aspx?EID=1559
-- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-03-04 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranchtx.org/calendar.aspx?EID=1560
-- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-10-07 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranchtx.org/calendar.aspx?EID=1561
-- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-08-05 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranchtx.org/calendar.aspx?EID=1562
-- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-11-04 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranchtx.org/calendar.aspx?EID=1563
-- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-12-02 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranchtx.org/calendar.aspx?EID=1564
-- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-06-03 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranchtx.org/calendar.aspx?EID=1565
-- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-07-01 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranchtx.org/calendar.aspx?EID=1567
-- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-04-01 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranchtx.org/calendar.aspx?EID=1568
-- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-05-06 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranchtx.org/calendar.aspx?EID=1569
-- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-01-07 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranchtx.org/calendar.aspx?EID=1570
-- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-01-21 -- 7286 Dietz Elkhorn Rd -- https://www.fairoaksranchtx.org/calendar.aspx?EID=1573
-- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-03-18 -- 7286 Dietz Elkhorn Rd -- https://www.fairoaksranchtx.org/calendar.aspx?EID=1574
-- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-05-20 -- 7286 Dietz Elkhorn Rd -- https://www.fairoaksranchtx.org/calendar.aspx?EID=1575
-- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-06-17 -- 7286 Dietz Elkhorn Rd -- https://www.fairoaksranchtx.org/calendar.aspx?EID=1576
-- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-07-15 -- 7286 Dietz Elkhorn Rd -- https://www.fairoaksranchtx.org/calendar.aspx?EID=1577
-- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-08-19 -- 7286 Dietz Elkhorn Rd -- https://www.fairoaksranchtx.org/calendar.aspx?EID=1578
-- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-09-16 -- 7286 Dietz Elkhorn Rd -- https://www.fairoaksranchtx.org/calendar.aspx?EID=1579
-- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-04-15 -- 7286 Dietz Elkhorn Rd -- https://www.fairoaksranchtx.org/calendar.aspx?EID=1580
-- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-11-18 -- 7286 Dietz Elkhorn Rd -- https://www.fairoaksranchtx.org/calendar.aspx?EID=1581
-- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-02-18 -- 7286 Dietz Elkhorn Rd -- https://www.fairoaksranchtx.org/calendar.aspx?EID=1582
-- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-10-21 -- 7286 Dietz Elkhorn Rd -- https://www.fairoaksranchtx.org/calendar.aspx?EID=1583
-- **Fair Oaks Ranch Calendar** -- conf 99 -- First City Council Meeting -- 2029-05-03 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranchtx.org/calendar.aspx?EID=1587
-- **Fair Oaks Ranch Calendar** -- conf 99 -- First City Council Meeting -- 2029-04-05 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranchtx.org/calendar.aspx?EID=1588
-- **Fair Oaks Ranch Calendar** -- conf 99 -- First City Council Meeting -- 2029-02-01 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranchtx.org/calendar.aspx?EID=1589
-- **Fair Oaks Ranch Calendar** -- conf 99 -- First City Council Meeting -- 2029-07-05 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranchtx.org/calendar.aspx?EID=1590
-- **Fair Oaks Ranch Calendar** -- conf 99 -- First City Council Meeting -- 2029-03-01 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranchtx.org/calendar.aspx?EID=1591
-- **Fair Oaks Ranch Calendar** -- conf 99 -- First City Council Meeting -- 2029-01-04 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranchtx.org/calendar.aspx?EID=1592
-- **Fair Oaks Ranch Calendar** -- conf 99 -- First City Council Meeting -- 2028-12-07 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranchtx.org/calendar.aspx?EID=1593
-- **Fair Oaks Ranch Calendar** -- conf 99 -- First City Council Meeting -- 2029-11-01 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranchtx.org/calendar.aspx?EID=1594
-- **Fair Oaks Ranch Calendar** -- conf 99 -- First City Council Meeting -- 2029-09-06 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranchtx.org/calendar.aspx?EID=1595
-- **Fair Oaks Ranch Calendar** -- conf 99 -- First City Council Meeting -- 2029-10-04 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranchtx.org/calendar.aspx?EID=1596
-- **Fair Oaks Ranch Calendar** -- conf 99 -- First City Council Meeting -- 2029-06-07 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranchtx.org/calendar.aspx?EID=1597
-- **Fair Oaks Ranch Calendar** -- conf 99 -- First City Council Meeting -- 2029-08-02 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranchtx.org/calendar.aspx?EID=1598
+- **Bexar County Veterans Events** -- conf 99 -- Veteran Benefits Workshop Pct 4. -- 2026-10-07 -- 8794 East Loop 1604 -- https://www.bexar.org/calendar.aspx?EID=7982
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2026-10-01 -- 7286 Dietz Elkhorn Rd -- https://www.fairoaksranch.gov/calendar.aspx?EID=1499
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2026-10-15 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1500
+- **Fair Oaks Ranch Calendar** -- conf 99 -- Municipal Development District Board of Directors Meeting -- 2026-10-13 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1508
+- **Fair Oaks Ranch Calendar** -- conf 99 -- Transportation Safety Advisory Committee Meeting -- 2026-11-04 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1511
+- **Fair Oaks Ranch Calendar** -- conf 99 -- Planning and Zoning Commission Meeting -- 2026-10-08 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1518
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2026-11-05 -- 7286 Dietz Elkhorn Rd -- https://www.fairoaksranch.gov/calendar.aspx?EID=1522
+- **Fair Oaks Ranch Calendar** -- conf 99 -- Special City Council Meeting -- 2026-09-22 -- 7286 Dietz Elkhorn Rd -- https://www.fairoaksranch.gov/calendar.aspx?EID=1526
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-02-04 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1558
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-09-02 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1559
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-03-04 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1560
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-10-07 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1561
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-08-05 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1562
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-11-04 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1563
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-12-02 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1564
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-06-03 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1565
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2026-12-03 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1566
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-07-01 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1567
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-04-01 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1568
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-05-06 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1569
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-01-07 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1570
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2026-12-17 -- 7286 Dietz Elkhorn Rd -- https://www.fairoaksranch.gov/calendar.aspx?EID=1571
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2026-11-19 -- 7286 Dietz Elkhorn Rd -- https://www.fairoaksranch.gov/calendar.aspx?EID=1572
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-01-21 -- 7286 Dietz Elkhorn Rd -- https://www.fairoaksranch.gov/calendar.aspx?EID=1573
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-03-18 -- 7286 Dietz Elkhorn Rd -- https://www.fairoaksranch.gov/calendar.aspx?EID=1574
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-05-20 -- 7286 Dietz Elkhorn Rd -- https://www.fairoaksranch.gov/calendar.aspx?EID=1575
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-06-17 -- 7286 Dietz Elkhorn Rd -- https://www.fairoaksranch.gov/calendar.aspx?EID=1576
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-07-15 -- 7286 Dietz Elkhorn Rd -- https://www.fairoaksranch.gov/calendar.aspx?EID=1577
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-08-19 -- 7286 Dietz Elkhorn Rd -- https://www.fairoaksranch.gov/calendar.aspx?EID=1578
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-09-16 -- 7286 Dietz Elkhorn Rd -- https://www.fairoaksranch.gov/calendar.aspx?EID=1579
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-04-15 -- 7286 Dietz Elkhorn Rd -- https://www.fairoaksranch.gov/calendar.aspx?EID=1580
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-11-18 -- 7286 Dietz Elkhorn Rd -- https://www.fairoaksranch.gov/calendar.aspx?EID=1581
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-02-18 -- 7286 Dietz Elkhorn Rd -- https://www.fairoaksranch.gov/calendar.aspx?EID=1582
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-10-21 -- 7286 Dietz Elkhorn Rd -- https://www.fairoaksranch.gov/calendar.aspx?EID=1583
+- **Fair Oaks Ranch Calendar** -- conf 99 -- Special MDD Board of Directors Meeting -- 2026-11-18 -- 7286 Dietz Elkhorn Rd -- https://www.fairoaksranch.gov/calendar.aspx?EID=1585
+- **Fair Oaks Ranch Calendar** -- conf 99 -- Special MDD Board of Directors Meeting -- 2026-12-09 -- 7286 Dietz Elkhorn Rd -- https://www.fairoaksranch.gov/calendar.aspx?EID=1586
+- **Fair Oaks Ranch Calendar** -- conf 99 -- First City Council Meeting -- 2029-05-03 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1587
+- **Fair Oaks Ranch Calendar** -- conf 99 -- First City Council Meeting -- 2029-04-05 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1588
+- **Fair Oaks Ranch Calendar** -- conf 99 -- First City Council Meeting -- 2029-02-01 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1589
+- **Fair Oaks Ranch Calendar** -- conf 99 -- First City Council Meeting -- 2029-07-05 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1590
+- **Fair Oaks Ranch Calendar** -- conf 99 -- First City Council Meeting -- 2029-03-01 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1591
+- **Fair Oaks Ranch Calendar** -- conf 99 -- First City Council Meeting -- 2029-01-04 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1592
+- **Fair Oaks Ranch Calendar** -- conf 99 -- First City Council Meeting -- 2028-12-07 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1593
+- **Fair Oaks Ranch Calendar** -- conf 99 -- First City Council Meeting -- 2029-11-01 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1594
+- **Fair Oaks Ranch Calendar** -- conf 99 -- First City Council Meeting -- 2029-09-06 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1595
+- **Fair Oaks Ranch Calendar** -- conf 99 -- First City Council Meeting -- 2029-10-04 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1596
+- **Fair Oaks Ranch Calendar** -- conf 99 -- First City Council Meeting -- 2029-06-07 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1597
+- **Fair Oaks Ranch Calendar** -- conf 99 -- First City Council Meeting -- 2029-08-02 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1598
 - **City of Schertz Calendar** -- conf 99 -- Schertz-Seguin Local Government Corporation -- 2026-11-19 -- 108 W. Mountain Street Seguin -- https://www.schertz.com/calendar.aspx?EID=7699
 - **Boerne Calendar** -- conf 98 -- Planning and Zoning Commission Meeting -- 2027-01-04 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=21879
 - **Boerne Calendar** -- conf 98 -- Planning and Zoning Commission Meeting -- 2027-02-01 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=21880
@@ -248,6 +165,17 @@ Rejected by Sentinel: **194**
 - **Boerne Calendar** -- conf 98 -- Library Advisory Board Meeting -- 2032-01-08 -- 451 N. Main St -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22313
 - **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2027-01-14 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22400
 - **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2027-02-11 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22401
+- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2027-03-11 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22402
+- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2027-04-08 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22403
+- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2027-05-13 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22404
+- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2027-06-10 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22405
+- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2027-07-08 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22406
+- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2027-08-12 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22407
+- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2027-09-09 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22408
+- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2027-10-14 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22409
+- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2027-11-11 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22410
+- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2027-12-09 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22411
+- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2028-01-13 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22412
 
 ## Rejected by Sentinel
 - Baby Time! -- event_id=2026-09-22_baby-time_847ca9a5845e: duplicate id already in feed
