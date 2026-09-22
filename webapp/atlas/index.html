@@ -1,195 +1,203 @@
 <!DOCTYPE html>
-<html lang="en" class="antialiased">
+<html lang="en" class="atlas-root">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>Alamo Atlas · Chicas Map</title>
+    <title>Alamo Atlas · Neighborhood desk</title>
     <meta
       name="description"
-      content="Alamo Atlas — live SAPD neighborhood offense reports for San Antonio. Public Open Data SA. Grok Build civic proof of concept on Chica's Map."
+      content="Alamo Atlas — San Antonio neighborhood desk. Open Data SA offenses, arrests, and calls-for-service counts by ZIP. Not 911."
     />
-    <meta name="theme-color" content="#121212" />
+    <meta name="theme-color" content="#0a0b0c" />
     <link rel="canonical" href="https://justonejewelry.github.io/Chicas-Map/atlas/" />
-    <link rel="stylesheet" href="/Chicas-Map/assets/styles-D8YtPAwk.css" data-precedence="default" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
-    />
     <link rel="icon" type="image/svg+xml" href="/Chicas-Map/favicon.svg" />
     <link rel="apple-touch-icon" href="/Chicas-Map/__grok/icon-180.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --ink: #0a0b0c;
+        --paper: #ececea;
+        --stone: #8c8f8a;
+        --copper: #c45c4a;
+        --line: #d4d3ce;
+        --alert: #8b2e24;
+        --cream: #f6f4ef;
+      }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; background: var(--ink); color: var(--paper); font-family: "Source Sans 3", system-ui, sans-serif; }
+      a { color: var(--copper); }
+      .wrap { max-width: 72rem; margin: 0 auto; padding: 0 1.25rem; }
+      header.top {
+        position: sticky; top: 0; z-index: 40;
+        background: rgba(10,11,12,.94);
+        border-bottom: 1px solid #222;
+      }
+      header.top .row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; height: 3.5rem; }
+      .brand { display: flex; align-items: center; gap: .7rem; color: var(--paper); text-decoration: none; }
+      .brand img { width: 2rem; height: 2rem; border-radius: 999px; object-fit: cover; }
+      .brand b { font-family: "Source Serif 4", Georgia, serif; font-size: 1.05rem; }
+      .lang { background: transparent; color: var(--stone); border: 1px solid #333; border-radius: 999px; height: 2.25rem; padding: 0 .9rem; font: inherit; }
+      .sticky-honest {
+        position: sticky; top: 3.5rem; z-index: 30;
+        background: #111;
+        color: var(--stone);
+        font-size: .78rem;
+        letter-spacing: .04em;
+        padding: .45rem 0;
+        border-bottom: 1px solid #222;
+      }
+      h1, h2, .display { font-family: "Source Serif 4", Georgia, serif; font-weight: 700; letter-spacing: -.02em; }
+      h1 { font-size: clamp(2rem, 5vw, 3.25rem); margin: .4rem 0 0; }
+      .lede { color: var(--stone); max-width: 36rem; }
+      .zip-first {
+        margin-top: 1.5rem;
+        background: var(--paper);
+        color: var(--ink);
+        border-radius: 4px;
+        padding: 1.25rem 1.25rem 1.1rem;
+        border-top: 3px solid var(--copper);
+      }
+      .zip-first label { display: block; font-size: .7rem; letter-spacing: .16em; text-transform: uppercase; color: var(--stone); }
+      .zip-row { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .55rem; }
+      .zip-row input {
+        flex: 1 1 10rem; height: 3rem; border: 1px solid var(--line); border-radius: 2px;
+        padding: 0 .9rem; font: inherit; font-size: 1.05rem;
+      }
+      .zip-row button, .chip, .ghost {
+        height: 3rem; border: 0; border-radius: 2px; padding: 0 1rem; font: inherit; font-weight: 700; cursor: pointer;
+      }
+      .go { background: var(--ink); color: var(--paper); }
+      .ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+      .chips { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .75rem; }
+      .chip { height: 2.1rem; background: #e4e2db; color: var(--ink); font-size: .82rem; font-weight: 600; }
+      .chip[aria-pressed="true"] { background: var(--copper); color: #fff; }
+      .counts { display: grid; grid-template-columns: repeat(3, 1fr); gap: .6rem; margin-top: 1rem; }
+      .count { background: var(--cream); padding: .75rem .8rem; border: 1px solid var(--line); }
+      .count b { display: block; font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 1.35rem; }
+      .count span { font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: var(--stone); }
+      .area { margin-top: .85rem; color: var(--stone); font-size: .85rem; }
+      .groups { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: .7rem; }
+      .gchip { font-size: .78rem; background: #e4e2db; padding: .25rem .5rem; }
+      main { padding: 1.25rem 0 4rem; }
+      .grid2 { display: grid; gap: 1.5rem; margin-top: 1.75rem; }
+      @media (min-width: 880px) { .grid2 { grid-template-columns: 1fr 1fr; } .counts { grid-template-columns: repeat(3, 1fr); } }
+      .panel { background: #111; border: 1px solid #222; padding: 1rem 1.1rem 1.15rem; }
+      .panel h2 { margin: 0; font-size: 1.25rem; }
+      ol.zips, ul.groups, .list { list-style: none; margin: .8rem 0 0; padding: 0; display: grid; gap: .4rem; }
+      .zips button {
+        display: grid; grid-template-columns: 4.2rem 1fr auto; gap: .6rem; align-items: center;
+        width: 100%; background: transparent; color: var(--paper); border: 0; padding: .2rem 0; font: inherit; cursor: pointer; text-align: left;
+      }
+      .bar { height: .4rem; background: #1c1d1c; overflow: hidden; }
+      .bar > i { display: block; height: 100%; background: var(--copper); }
+      .mono { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: .86rem; }
+      .muted { color: var(--stone); }
+      .row {
+        background: var(--paper); color: var(--ink); padding: .85rem 1rem; border-left: 3px solid var(--copper);
+      }
+      .row h3 { margin: 0; font-size: 1.05rem; }
+      .row .meta { display: flex; flex-wrap: wrap; gap: .55rem 1rem; margin-top: .35rem; font-size: .86rem; color: #4a4d48; }
+      .row .rid { color: var(--stone); font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: .75rem; }
+      .row details { margin-top: .45rem; color: #4a4d48; font-size: .82rem; }
+      .exits { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1rem; }
+      .exits a {
+        color: var(--paper); text-decoration: none; border: 1px solid #333; padding: .55rem .75rem; font-size: .82rem;
+      }
+      footer.desk { margin-top: 2rem; color: var(--stone); font-size: .85rem; }
+      .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
+    </style>
   </head>
-  <body class="bg-bg text-ink min-h-dvh font-sans">
-    <a
-      href="#main"
-      class="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-[200] focus:rounded-full focus:bg-pine focus:px-5 focus:py-3 focus:text-sm focus:font-semibold focus:text-cream"
-      >Skip to content</a
-    >
-
-    <header class="sticky top-0 z-50 border-b border-line bg-bg/92 backdrop-blur-md">
-      <div class="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5">
-        <a href="/Chicas-Map/" class="flex items-center gap-2.5 rounded-lg py-1 pr-2">
-          <img
-            src="/Chicas-Map/images/chica-logo.png"
-            alt=""
-            width="36"
-            height="36"
-            class="size-9 shrink-0 rounded-full bg-bg object-cover"
-          />
-          <span class="font-display text-lg font-bold tracking-tight text-ink">Chicas Map</span>
+  <body>
+    <a class="sr-only" href="#desk">Skip to desk</a>
+    <header class="top">
+      <div class="wrap row">
+        <a class="brand" href="/Chicas-Map/">
+          <img src="/Chicas-Map/images/chica-logo.png" alt="" width="32" height="32" />
+          <b>Alamo Atlas</b>
         </a>
-        <nav class="hidden items-center gap-1 lg:flex" aria-label="Primary">
-          <a href="/Chicas-Map/" class="rounded-full px-3 py-2 text-sm font-semibold text-muted hover:bg-paper hover:text-ink">Home</a>
-          <a href="/Chicas-Map/map" class="rounded-full px-3 py-2 text-sm font-semibold text-muted hover:bg-paper hover:text-ink">Map</a>
-          <a href="/Chicas-Map/atlas/" class="rounded-full bg-pine-soft px-3 py-2 text-sm font-semibold text-pine-deep">Atlas</a>
-        </nav>
-        <a
-          href="/Chicas-Map/map"
-          class="inline-flex h-11 min-h-11 items-center rounded-full bg-pine px-4 text-sm font-semibold text-cream"
-          >Open the map</a
-        >
+        <div style="display:flex;gap:.5rem;align-items:center">
+          <button type="button" class="lang" id="atlas-lang" aria-pressed="false">ES</button>
+          <a href="/Chicas-Map/map" style="color:var(--stone);text-decoration:none;font-size:.85rem">Chicas Map</a>
+        </div>
       </div>
     </header>
+    <div class="sticky-honest"><div class="wrap" id="atlas-honest">City data. ZIP only. Not 911. Reports are not arrests. Arrests are not convictions. Calls are not reports.</div></div>
 
-    <main id="main" class="mx-auto max-w-6xl px-5 py-8 sm:py-10">
-      <div class="flex items-start gap-4">
-        <img
-          src="/Chicas-Map/images/chica-logo.png"
-          alt=""
-          width="80"
-          height="80"
-          class="size-16 rounded-full bg-bg object-cover sm:size-20"
-        />
-        <div>
-          <p
-            class="inline-flex items-center rounded-full bg-pine-soft px-3 py-1 text-[0.65rem] font-bold tracking-[0.16em] text-pine-mid uppercase"
-          >
-            Civic layer · Grok Build POC
-          </p>
-          <h1 class="mt-3 font-display text-4xl font-extrabold tracking-tight sm:text-5xl">Alamo Atlas</h1>
-          <p class="mt-2 max-w-xl text-muted">
-            Chica's neighborhood desk for San Antonio public safety data. Offense reports from Open Data SA, searchable
-            by name, ranked by ZIP. Same pack. Different job.
-          </p>
+    <main id="desk" class="wrap">
+      <p class="muted" style="letter-spacing:.16em;text-transform:uppercase;font-size:.68rem;margin:1rem 0 0" data-i18n="kicker">Neighborhood desk · San Antonio</p>
+      <h1 data-i18n="title">What hit your ZIP</h1>
+      <p class="lede" data-i18n="lede">Public Open Data SA only. Offenses and arrests share a report ID. Calls for service stay a separate count. No street pins. No names.</p>
+
+      <section class="zip-first" id="zip-card" aria-label="Your ZIP">
+        <label for="atlas-zip" data-i18n="zip_label">Your ZIP</label>
+        <form id="atlas-zip-form" class="zip-row">
+          <input id="atlas-zip" name="zip" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" placeholder="78201" autocomplete="postal-code" />
+          <button class="go" type="submit" data-i18n="open_zip">Open ZIP</button>
+          <button class="ghost" type="button" id="atlas-geo" data-i18n="use_loc">Use my location</button>
+        </form>
+        <div class="chips" id="atlas-chips">
+          <button type="button" class="chip" data-chip="week" aria-pressed="false" data-i18n="chip_week">This week</button>
+          <button type="button" class="chip" data-chip="person" aria-pressed="false" data-i18n="chip_person">Against person</button>
+          <button type="button" class="chip" data-chip="property" aria-pressed="false" data-i18n="chip_property">Against property</button>
+          <button type="button" class="chip" data-chip="theft" aria-pressed="false">Theft</button>
+          <button type="button" class="chip" data-chip="assault" aria-pressed="false">Assault</button>
+          <button type="button" class="chip" data-chip="burglary" aria-pressed="false">Burglary</button>
         </div>
-      </div>
-
-      <dl class="mt-8 grid max-w-lg grid-cols-2 gap-3">
-        <div class="rounded-2xl bg-paper px-4 py-4 ring-1 ring-line">
-          <dt class="text-[11px] font-semibold tracking-wide text-muted uppercase">YTD reports</dt>
-          <dd id="atlas-total" class="mt-1 font-display text-2xl font-bold tabular-nums">—</dd>
+        <div class="counts">
+          <div class="count"><span data-i18n="offenses">Offenses YTD</span><b id="c-off">—</b></div>
+          <div class="count"><span data-i18n="arrests">Arrests YTD</span><b id="c-arr">—</b></div>
+          <div class="count"><span data-i18n="calls">CFS volume YTD</span><b id="c-cfs">—</b></div>
         </div>
-        <div class="rounded-2xl bg-paper px-4 py-4 ring-1 ring-line">
-          <dt class="text-[11px] font-semibold tracking-wide text-muted uppercase">Source</dt>
-          <dd class="mt-1 font-display text-lg font-bold">SAPD · Open Data SA</dd>
+        <p class="area" id="atlas-area" data-i18n="pick_zip">Pick a ZIP to load the desk. City file has no street address.</p>
+        <div class="groups" id="atlas-top-groups"></div>
+        <form id="atlas-search" class="zip-row" style="margin-top:1rem">
+          <label class="sr-only" for="atlas-q">Search offense or report ID</label>
+          <input id="atlas-q" name="q" type="search" placeholder="Offense name or report ID" />
+          <button class="go" type="submit" data-i18n="search">Search</button>
+        </form>
+        <p class="area" id="atlas-status">Loading Open Data SA…</p>
+        <div class="exits">
+          <a href="tel:911">911</a>
+          <a href="tel:2102077273">SAPD non-emergency</a>
+          <a href="https://data.sanantonio.gov/dataset/sapd-offenses" target="_blank" rel="noopener">Open Data SA</a>
+          <a href="https://centralmagistrate.bexar.org/" target="_blank" rel="noopener">Magistrate search</a>
+          <a href="https://portal-txbexar.tylertech.cloud/Portal/" target="_blank" rel="noopener">County case portal</a>
+          <a href="https://www.sa.gov/Directory/Departments/Court/Warrants" target="_blank" rel="noopener">City warrants</a>
         </div>
-      </dl>
-      <p id="atlas-status" class="mt-3 text-sm text-muted">Loading Open Data SA…</p>
+      </section>
 
-      <figure id="demo" class="mt-8 overflow-hidden rounded-2xl bg-night ring-1 ring-line">
-        <video
-          controls
-          playsinline
-          preload="metadata"
-          poster="/Chicas-Map/alamo-atlas-demo.jpg"
-          src="/Chicas-Map/alamo-atlas-demo.mp4"
-          class="aspect-video w-full bg-night"
-        >
-          Real screenshots of Alamo Atlas in action.
-        </video>
-        <figcaption class="px-4 py-3 text-sm text-muted">
-          33-second walkthrough from live screenshots — pins, reports, search, Spanish, and ZIP ranking.
-          <a href="/Chicas-Map/alamo-atlas-demo.mp4" class="font-semibold text-pine-mid">Direct video link</a>
-        </figcaption>
-      </figure>
-
-      <ul class="mt-8 grid gap-3 lg:grid-cols-3">
-        <li class="rounded-xl bg-paper p-5 ring-1 ring-line">
-          <p class="text-xs font-bold tracking-[0.12em] text-pine-mid uppercase">01</p>
-          <h2 class="mt-2 font-display text-xl font-bold">Search by name</h2>
-          <p class="mt-2 text-sm text-muted">
-            Every published field: report ID, date, offense name, NIBRS group, ZIP, service area.
-          </p>
-        </li>
-        <li class="rounded-xl bg-paper p-5 ring-1 ring-line">
-          <p class="text-xs font-bold tracking-[0.12em] text-pine-mid uppercase">02</p>
-          <h2 class="mt-2 font-display text-xl font-bold">Watch a ZIP</h2>
-          <p class="mt-2 text-sm text-muted">
-            Year-to-date totals by ZIP. Tap a code to filter the report list. Built for apartment desks and neighbors.
-          </p>
-        </li>
-        <li class="rounded-xl bg-paper p-5 ring-1 ring-line">
-          <p class="text-xs font-bold tracking-[0.12em] text-pine-mid uppercase">03</p>
-          <h2 class="mt-2 font-display text-xl font-bold">Stay honest</h2>
-          <p class="mt-2 text-sm text-muted">
-            Not 911. Not official SAPD. Reports are not arrests or convictions. Locations are ZIP-level.
-          </p>
-        </li>
-      </ul>
-
-      <div class="mt-10 grid gap-10 lg:grid-cols-2">
-        <section>
-          <h2 class="font-display text-2xl font-bold">Hottest ZIPs, year to date</h2>
-          <ol id="atlas-zips" class="mt-4 grid gap-2"></ol>
+      <div class="grid2">
+        <section class="panel">
+          <h2 data-i18n="hot_zips">Hottest ZIPs, YTD offenses</h2>
+          <ol class="zips" id="atlas-zips"></ol>
         </section>
-        <section>
-          <h2 class="font-display text-2xl font-bold">Offense groups</h2>
-          <ul id="atlas-groups" class="mt-4 grid gap-2"></ul>
+        <section class="panel">
+          <h2 data-i18n="areas">Service areas</h2>
+          <ul class="groups" id="atlas-areas"></ul>
+          <h2 style="margin-top:1.2rem" data-i18n="groups">Offense groups</h2>
+          <ul class="groups" id="atlas-groups"></ul>
         </section>
       </div>
 
-      <section class="mt-10">
-        <div class="flex flex-wrap items-end justify-between gap-4">
-          <div>
-            <h2 class="font-display text-2xl font-bold">Offense reports</h2>
-            <p id="atlas-reports-meta" class="mt-1 text-sm text-muted">Every published field from Open Data SA.</p>
-          </div>
-          <form id="atlas-search" class="flex w-full max-w-md gap-2 sm:w-auto">
-            <label class="sr-only" for="atlas-q">Search by offense name, ZIP, or report ID</label>
-            <input
-              id="atlas-q"
-              name="q"
-              type="search"
-              autocomplete="off"
-              placeholder="ZIP, street, offense name, report ID"
-              class="h-12 min-w-0 flex-1 rounded-full bg-paper px-4 text-sm ring-1 ring-line"
-            />
-            <button
-              type="submit"
-              class="inline-flex h-12 items-center rounded-full bg-pine px-5 text-sm font-semibold text-cream"
-            >
-              Search
-            </button>
-          </form>
-        </div>
-        <div id="atlas-reports" class="mt-5 grid gap-3"></div>
+      <section style="margin-top:1.75rem">
+        <h2 data-i18n="reports">Offense reports</h2>
+        <p class="muted" id="atlas-reports-meta">Published fields only.</p>
+        <div class="list" id="atlas-reports"></div>
       </section>
 
-      <section class="mt-10 rounded-2xl bg-pine p-6 sm:p-8">
-        <p class="text-xs font-bold tracking-[0.16em] uppercase" style="color:#f3c6ec">Proof of concept</p>
-        <h2 class="mt-2 font-display text-2xl font-extrabold text-cream">Built with Grok Build for the pack.</h2>
-        <p class="mt-3 max-w-xl text-cream/80">
-          Civic reference app: public city data, a living neighborhood desk, English or Spanish in the main Chica map.
-          Offered to the Grok / SpaceXAI team as a San Antonio proof of concept — not a toy.
-        </p>
-        <div class="mt-5 flex flex-wrap gap-3">
-          <a
-            href="/Chicas-Map/map"
-            class="inline-flex h-12 min-h-12 items-center justify-center rounded-full bg-cream px-6 text-sm font-bold text-pine hover:bg-pine-soft"
-            >Back to garage-sale map</a
-          >
-          <a
-            href="https://github.com/Justonejewelry/Chicas-Map"
-            class="inline-flex h-12 min-h-12 items-center justify-center rounded-full px-6 text-sm font-semibold text-cream ring-1 ring-cream/40"
-            >GitHub</a
-          >
-          <a
-            href="/Chicas-Map/alamo-atlas-demo.mp4"
-            class="inline-flex h-12 min-h-12 items-center justify-center rounded-full px-6 text-sm font-semibold text-cream ring-1 ring-cream/40"
-            >Watch the video</a
-          >
-        </div>
+      <section style="margin-top:1.5rem">
+        <h2 data-i18n="arrest_list">Arrest reports in this filter</h2>
+        <p class="muted" data-i18n="arrest_note">Joined to offenses only when Report ID matches. Not a conviction.</p>
+        <div class="list" id="atlas-arrests"></div>
       </section>
+
+      <footer class="desk">
+        Source: City of San Antonio Open Data SA, CC-BY, as-is. Alamo Atlas is not SAPD.
+        Same pack as Chicas Map. Different job.
+      </footer>
     </main>
-    <script src="/Chicas-Map/js/atlas-page.js?v=1" defer></script>
+    <script src="/Chicas-Map/js/atlas-page.js?v=2" defer></script>
   </body>
 </html>

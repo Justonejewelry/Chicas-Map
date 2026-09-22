@@ -1,248 +1,327 @@
-/* Alamo Atlas on Chica's Map — Open Data SA offense reports (browser, CORS *). */
+/* Alamo Atlas v2 — Offenses + Arrests + CFS counts. No name ingest. */
 (function () {
-  var RESOURCE = "f36bb931-8fb4-481c-83d9-a3589108bb20";
+  var OFF = "f36bb931-8fb4-481c-83d9-a3589108bb20";
+  var ARR = "5bf98f1b-25c2-488c-aba7-082d7f8d38aa";
+  var CFS = "9cb17985-ac16-49a6-ad69-6fe5ad8f2bf5";
   var CKAN = "https://data.sanantonio.gov/api/3/action/";
   var YTD = "2026-01-01";
+  var WEEK = daysAgo(7);
+  var state = { zip: "", week: false, against: "", q: "", lang: "en" };
 
-  function $(id) {
-    return document.getElementById(id);
+  var I18N = {
+    en: {
+      kicker: "Neighborhood desk · San Antonio",
+      title: "What hit your ZIP",
+      lede: "Public Open Data SA only. Offenses and arrests share a report ID. Calls for service stay a separate count. No street pins. No names.",
+      zip_label: "Your ZIP",
+      open_zip: "Open ZIP",
+      use_loc: "Use my location",
+      chip_week: "This week",
+      chip_person: "Against person",
+      chip_property: "Against property",
+      offenses: "Offenses YTD",
+      arrests: "Arrests YTD",
+      calls: "CFS volume YTD",
+      pick_zip: "Pick a ZIP to load the desk. City file has no street address.",
+      search: "Search",
+      hot_zips: "Hottest ZIPs, YTD offenses",
+      areas: "Service areas",
+      groups: "Offense groups",
+      reports: "Offense reports",
+      arrest_list: "Arrest reports in this filter",
+      arrest_note: "Joined to offenses only when Report ID matches. Not a conviction.",
+      honest: "City data. ZIP only. Not 911. Reports are not arrests. Arrests are not convictions. Calls are not reports."
+    },
+    es: {
+      kicker: "Mesa del vecindario · San Antonio",
+      title: "Qué llegó a tu ZIP",
+      lede: "Solo Open Data SA. Ofensas y arrestos comparten Report ID. Llamadas van aparte. Sin calle. Sin nombres.",
+      zip_label: "Tu ZIP",
+      open_zip: "Abrir ZIP",
+      use_loc: "Usar mi ubicación",
+      chip_week: "Esta semana",
+      chip_person: "Contra persona",
+      chip_property: "Contra propiedad",
+      offenses: "Ofensas YTD",
+      arrests: "Arrestos YTD",
+      calls: "Llamadas YTD",
+      pick_zip: "Elige un ZIP. El archivo de la ciudad no trae calle.",
+      search: "Buscar",
+      hot_zips: "ZIPs con más ofensas YTD",
+      areas: "Áreas de servicio",
+      groups: "Grupos",
+      reports: "Reportes de ofensa",
+      arrest_list: "Arrestos en este filtro",
+      arrest_note: "Se une a ofensas solo por Report ID. No es condena.",
+      honest: "Datos de la ciudad. Solo ZIP. No es 911. Un reporte no es arresto. Un arresto no es condena. Una llamada no es reporte."
+    }
+  };
+
+  function daysAgo(n) {
+    var d = new Date();
+    d.setDate(d.getDate() - n);
+    return d.toISOString().slice(0, 10);
   }
-
-  function fmt(n) {
-    n = Number(n) || 0;
-    return n.toLocaleString("en-US");
-  }
-
+  function $(id) { return document.getElementById(id); }
+  function fmt(n) { return (Number(n) || 0).toLocaleString("en-US"); }
   function field(r, keys) {
     for (var i = 0; i < keys.length; i++) {
       if (r[keys[i]] != null && String(r[keys[i]]).trim() !== "") return String(r[keys[i]]);
     }
     return "";
   }
+  function esc(s) { return String(s || "").replace(/[&<>"']/g, function (c) { return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]; }); }
+  function zip5(s) { return String(s || "").replace(/\D/g, "").slice(0, 5); }
+
+  function applyLang() {
+    var pack = I18N[state.lang] || I18N.en;
+    document.querySelectorAll("[data-i18n]").forEach(function (el) {
+      var k = el.getAttribute("data-i18n");
+      if (pack[k]) el.textContent = pack[k];
+    });
+    var hon = $("atlas-honest");
+    if (hon) hon.textContent = pack.honest;
+    var btn = $("atlas-lang");
+    if (btn) {
+      btn.textContent = state.lang === "en" ? "ES" : "EN";
+      btn.setAttribute("aria-pressed", state.lang === "es" ? "true" : "false");
+    }
+    document.documentElement.lang = state.lang;
+  }
 
   function sql(q) {
     return fetch(CKAN + "datastore_search_sql", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ sql: q }),
+      body: JSON.stringify({ sql: q })
     }).then(function (res) {
       if (!res.ok) throw new Error("Open Data SA " + res.status);
       return res.json();
     }).then(function (data) {
-      if (!data || !data.success) throw new Error((data && data.error && data.error.message) || "CKAN error");
+      if (!data || !data.success) throw new Error((data && data.error && (data.error.message || data.error.info)) || "CKAN error");
       return data.result.records || [];
     });
   }
 
-  function searchReports(q) {
-    var url = CKAN + "datastore_search?resource_id=" + RESOURCE + "&limit=40&sort=" + encodeURIComponent("DateTime desc");
+  function searchRes(resource, q, extra) {
+    var url = CKAN + "datastore_search?resource_id=" + resource + "&limit=25&sort=" + encodeURIComponent("DateTime desc");
     if (q) url += "&q=" + encodeURIComponent(q);
+    if (extra) url += extra;
     return fetch(url).then(function (res) {
       if (!res.ok) throw new Error("Open Data SA " + res.status);
       return res.json();
     }).then(function (data) {
       if (!data || !data.success) throw new Error("CKAN error");
-      return {
-        total: data.result.total || 0,
-        records: data.result.records || [],
-      };
+      return { total: data.result.total || 0, records: data.result.records || [] };
     });
   }
 
-  function zipSql() {
-    return (
-      'SELECT "Zip_Code" as zip, count(*) as n FROM "' +
-      RESOURCE +
-      '" WHERE "Report_Date" >= \'' +
-      YTD +
-      "' AND \"Zip_Code\" IS NOT NULL GROUP BY \"Zip_Code\" ORDER BY n DESC LIMIT 12"
-    );
+  function dateStart() { return state.week ? WEEK : YTD; }
+
+  function whereOff() {
+    var w = ' WHERE "Report_Date" >= \'' + dateStart() + "'";
+    if (state.zip) w += ' AND "Zip_Code" = \'' + state.zip + "'";
+    if (state.against === "PERSON") w += ' AND "NIBRS_Crime_Against" = \'PERSON\'';
+    if (state.against === "PROPERTY") w += ' AND "NIBRS_Crime_Against" = \'PROPERTY\'';
+    return w;
   }
 
-  function groupSql() {
-    return (
-      'SELECT "NIBRS_Group" as grp, count(*) as n FROM "' +
-      RESOURCE +
-      '" WHERE "Report_Date" >= \'' +
-      YTD +
-      "' GROUP BY \"NIBRS_Group\" ORDER BY n DESC LIMIT 8"
-    );
-  }
-
-  function totalSql() {
-    return 'SELECT count(*) as n FROM "' + RESOURCE + '" WHERE "Report_Date" >= \'' + YTD + "'";
-  }
-
-  function renderZips(rows) {
-    var el = $("atlas-zips");
-    if (!el) return;
-    if (!rows.length) {
-      el.innerHTML = '<p class="text-sm text-muted">No ZIP totals yet.</p>';
-      return;
-    }
-    var max = Number(rows[0].n) || 1;
-    el.innerHTML = rows
-      .map(function (r) {
-        var n = Number(r.n) || 0;
-        var pct = Math.max(6, Math.round((n / max) * 100));
-        var zip = String(r.zip || "").replace(/\D/g, "").slice(0, 5);
-        return (
-          '<li class="grid grid-cols-[4.5rem_1fr_auto] items-center gap-3">' +
-          '<button type="button" class="atlas-zip text-left font-display text-sm font-bold tabular-nums" data-zip="' +
-          zip +
-          '">' +
-          zip +
-          "</button>" +
-          '<span class="h-2 overflow-hidden rounded-full bg-pine-soft"><span class="block h-2 rounded-full bg-pine" style="width:' +
-          pct +
-          '%"></span></span>' +
-          '<span class="text-sm tabular-nums text-muted">' +
-          fmt(n) +
-          "</span>" +
-          "</li>"
-        );
-      })
-      .join("");
-  }
-
-  function renderGroups(rows) {
-    var el = $("atlas-groups");
-    if (!el) return;
-    el.innerHTML = rows
-      .map(function (r) {
-        return (
-          "<li class=\"flex items-baseline justify-between gap-3 rounded-xl bg-bg px-4 py-3 ring-1 ring-line\">" +
-          '<span class="text-sm font-semibold">' +
-          String(r.grp || "Ungrouped") +
-          "</span>" +
-          '<span class="text-sm tabular-nums text-muted">' +
-          fmt(r.n) +
-          "</span>" +
-          "</li>"
-        );
-      })
-      .join("");
-  }
-
-  function renderReports(pack, q) {
-    var el = $("atlas-reports");
-    var meta = $("atlas-reports-meta");
-    if (!el) return;
-    var recs = pack.records || [];
-    if (meta) {
-      meta.textContent = q
-        ? fmt(recs.length) + " matching · search uses published fields"
-        : fmt(pack.total) + " published rows · showing latest";
-    }
-    if (!recs.length) {
-      el.innerHTML = '<p class="text-sm text-muted">No matching reports in this window.</p>';
-      return;
-    }
-    el.innerHTML = recs
-      .map(function (r) {
-        var id = field(r, ["Report_ID", "report_id"]);
-        var name = field(r, ["NIBRS_Code_Name", "nibrs_code_name"]);
-        var group = field(r, ["NIBRS_Group", "nibrs_group"]);
-        var against = field(r, ["NIBRS_Crime_Against", "nibrs_crime_against"]);
-        var zip = field(r, ["Zip_Code", "zip_code"]);
-        var area = field(r, ["Service_Area", "service_area"]);
-        var date = field(r, ["Report_Date", "report_date"]);
-        var dt = field(r, ["DateTime", "datetime"]);
-        return (
-          '<article class="rounded-2xl bg-paper p-5 ring-1 ring-line">' +
-          '<p class="text-[0.65rem] font-bold tracking-[0.14em] text-pine-mid uppercase">' +
-          (group || "Offense") +
-          (against ? " · " + against : "") +
-          "</p>" +
-          '<h3 class="mt-1 font-display text-lg font-bold">' +
-          (name || "Unnamed offense") +
-          "</h3>" +
-          '<dl class="mt-3 grid grid-cols-2 gap-3 text-sm sm:grid-cols-3">' +
-          cell("Report ID", id) +
-          cell("Report date", date) +
-          cell("DateTime", dt) +
-          cell("ZIP", zip) +
-          cell("Service area", area) +
-          cell("Against", against) +
-          "</dl>" +
-          "</article>"
-        );
-      })
-      .join("");
-  }
-
-  function cell(label, value) {
-    return (
-      '<div class="min-w-0"><dt class="text-[10px] uppercase tracking-[0.14em] text-muted">' +
-      label +
-      '</dt><dd class="mt-0.5 break-words">' +
-      (value || "—") +
-      "</dd></div>"
-    );
-  }
-
-  function loadStats() {
-    return Promise.all([sql(totalSql()), sql(zipSql()), sql(groupSql())]).then(function (parts) {
-      var total = parts[0][0] && parts[0][0].n;
-      var totEl = $("atlas-total");
-      if (totEl) totEl.textContent = fmt(total);
-      renderZips(parts[1]);
-      renderGroups(parts[2]);
-    });
-  }
-
-  function loadReports(q) {
-    return searchReports(q).then(function (pack) {
-      renderReports(pack, q);
-    });
+  function countSql(resource, zipCol, dateCol) {
+    var w = ' WHERE "' + dateCol + '" >= \'' + dateStart() + "'";
+    if (state.zip) w += ' AND "' + zipCol + '" = \'' + state.zip + "'";
+    return 'SELECT count(*) as n FROM "' + resource + '"' + w;
   }
 
   function setStatus(msg, isErr) {
     var el = $("atlas-status");
     if (!el) return;
     el.textContent = msg || "";
-    el.className = "text-sm " + (isErr ? "text-red-600" : "text-muted");
+    el.style.color = isErr ? "#c45c4a" : "";
+  }
+
+  function renderBars(el, rows, key, nkey, btnClass) {
+    if (!el) return;
+    if (!rows.length) { el.innerHTML = '<li class="muted">No rows.</li>'; return; }
+    var max = Number(rows[0][nkey]) || 1;
+    el.innerHTML = rows.map(function (r) {
+      var n = Number(r[nkey]) || 0;
+      var pct = Math.max(6, Math.round((n / max) * 100));
+      var label = String(r[key] || "—");
+      var zip = zip5(label);
+      var inner = '<span class="mono">' + esc(label) + '</span><span class="bar"><i style="width:' + pct + '%"></i></span><span class="muted mono">' + fmt(n) + "</span>";
+      if (btnClass) {
+        return "<li><button type=\"button\" class=\"" + btnClass + '" data-zip="' + zip + '">' + inner + "</button></li>";
+      }
+      return "<li style=\"display:grid;grid-template-columns:1fr auto;gap:.6rem\"><span>" + esc(label) + '</span><span class="mono muted">' + fmt(n) + "</span></li>";
+    }).join("");
+  }
+
+  function renderGroupsMini(rows) {
+    var el = $("atlas-top-groups");
+    if (!el) return;
+    var top = rows.slice(0, 5);
+    var rest = rows.slice(5).reduce(function (s, r) { return s + (Number(r.n) || 0); }, 0);
+    el.innerHTML = top.map(function (r) {
+      return '<span class="gchip">' + esc(r.grp || "Other") + " · " + fmt(r.n) + "</span>";
+    }).join("") + (rest ? '<span class="gchip">Other · ' + fmt(rest) + "</span>" : "");
+  }
+
+  function renderOffenses(pack) {
+    var el = $("atlas-reports");
+    var meta = $("atlas-reports-meta");
+    if (meta) meta.textContent = fmt(pack.total) + " published offense rows in this search window · showing latest 25";
+    if (!el) return;
+    if (!pack.records.length) { el.innerHTML = '<p class="muted">No matching offense reports.</p>'; return; }
+    el.innerHTML = pack.records.map(function (r) {
+      var id = field(r, ["Report_ID"]);
+      var name = field(r, ["NIBRS_Code_Name"]);
+      var group = field(r, ["NIBRS_Group"]);
+      var against = field(r, ["NIBRS_Crime_Against"]);
+      var zip = field(r, ["Zip_Code"]);
+      var area = field(r, ["Service_Area"]);
+      var date = field(r, ["Report_Date"]);
+      var person = against === "PERSON";
+      return (
+        '<article class="row" style="border-left-color:' + (person ? "#8b2e24" : "#c45c4a") + '">' +
+        "<h3>" + esc(name || "Unnamed offense") + "</h3>" +
+        '<div class="meta"><span>' + esc(date) + "</span><span>" + esc(zip) + "</span><span>" + esc(area) + "</span><span>" + esc(group) + "</span></div>" +
+        '<div class="rid">' + esc(id) + " · not an arrest</div>" +
+        "<details><summary>Published fields</summary>Against " + esc(against || "—") + ". ZIP-level only. No street in the City file.</details>" +
+        "</article>"
+      );
+    }).join("");
+  }
+
+  function renderArrests(pack) {
+    var el = $("atlas-arrests");
+    if (!el) return;
+    if (!pack.records.length) { el.innerHTML = '<p class="muted">No matching arrest rows.</p>'; return; }
+    el.innerHTML = pack.records.map(function (r) {
+      return (
+        '<article class="row">' +
+        "<h3>" + esc(field(r, ["Offense"]) || "Arrest") + "</h3>" +
+        '<div class="meta"><span>' + esc(field(r, ["Report_Date"])) + "</span><span>" +
+        esc(field(r, ["Zip_Code"])) + "</span><span>" + esc(field(r, ["Service_Area"])) +
+        "</span><span>" + esc(field(r, ["Severity"])) + "</span></div>" +
+        '<div class="rid">' + esc(field(r, ["Report_ID"])) + " · person token " + esc(field(r, ["Person"])) + " · not a conviction</div>" +
+        "</article>"
+      );
+    }).join("");
+  }
+
+  function loadCitywide() {
+    return Promise.all([
+      sql('SELECT "Zip_Code" as zip, count(*) as n FROM "' + OFF + '" WHERE "Report_Date" >= \'' + YTD + "' AND \"Zip_Code\" IS NOT NULL GROUP BY \"Zip_Code\" ORDER BY n DESC LIMIT 12"),
+      sql('SELECT "Service_Area" as area, count(*) as n FROM "' + OFF + '" WHERE "Report_Date" >= \'' + YTD + "' GROUP BY \"Service_Area\" ORDER BY n DESC"),
+      sql('SELECT "NIBRS_Group" as grp, count(*) as n FROM "' + OFF + '" WHERE "Report_Date" >= \'' + YTD + "' GROUP BY \"NIBRS_Group\" ORDER BY n DESC LIMIT 8")
+    ]).then(function (parts) {
+      renderBars($("atlas-zips"), parts[0], "zip", "n", "atlas-zip-btn");
+      renderBars($("atlas-areas"), parts[1], "area", "n", "");
+      renderBars($("atlas-groups"), parts[2], "grp", "n", "");
+    });
+  }
+
+  function loadDesk() {
+    var q = state.q || state.zip || "";
+    setStatus("Loading Open Data SA…");
+    return Promise.all([
+      sql(countSql(OFF, "Zip_Code", "Report_Date")),
+      sql(countSql(ARR, "Zip_Code", "Report_Date")),
+      sql(countSql(CFS, "Postal_Code", "Response_Date")),
+      sql('SELECT "NIBRS_Group" as grp, count(*) as n FROM "' + OFF + '"' + whereOff() + ' GROUP BY "NIBRS_Group" ORDER BY n DESC LIMIT 8'),
+      searchRes(OFF, q),
+      searchRes(ARR, q)
+    ]).then(function (parts) {
+      $("c-off").textContent = fmt(parts[0][0] && parts[0][0].n);
+      $("c-arr").textContent = fmt(parts[1][0] && parts[1][0].n);
+      $("c-cfs").textContent = fmt(parts[2][0] && parts[2][0].n);
+      renderGroupsMini(parts[3]);
+      renderOffenses(parts[4]);
+      renderArrests(parts[5]);
+      var area = $("atlas-area");
+      if (area) {
+        area.textContent = state.zip
+          ? ("ZIP " + state.zip + (state.week ? " · this week" : " · year to date") + ". Offenses ≠ arrests ≠ calls.")
+          : I18N[state.lang].pick_zip;
+      }
+      setStatus("Open Data SA · CC-BY · as-is · not 911");
+    });
+  }
+
+  function setZip(z) {
+    state.zip = zip5(z);
+    var input = $("atlas-zip");
+    if (input) input.value = state.zip;
+    try { localStorage.setItem("atlas-zip", state.zip); } catch (e) {}
+    return loadDesk();
   }
 
   function boot() {
-    setStatus("Loading Open Data SA…");
-    Promise.all([loadStats(), loadReports("")])
-      .then(function () {
-        setStatus("Year to date from SAPD offenses via Open Data SA. CC-BY. As-is. Not 911.");
-      })
-      .catch(function (err) {
-        setStatus(String(err && err.message ? err.message : err), true);
-      });
+    applyLang();
+    try {
+      var saved = localStorage.getItem("atlas-zip");
+      if (saved) state.zip = zip5(saved);
+    } catch (e) {}
+    if (state.zip && $("atlas-zip")) $("atlas-zip").value = state.zip;
 
-    var form = $("atlas-search");
-    if (form) {
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
-        var input = $("atlas-q");
-        var q = input ? String(input.value || "").trim() : "";
-        setStatus("Searching…");
-        loadReports(q)
-          .then(function () {
-            setStatus(q ? "Name search: " + q : "Latest published reports.");
-          })
-          .catch(function (err) {
-            setStatus(String(err && err.message ? err.message : err), true);
-          });
-      });
-    }
+    Promise.all([loadCitywide(), loadDesk()]).catch(function (err) {
+      setStatus(String(err && err.message ? err.message : err), true);
+    });
+
+    $("atlas-zip-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      setZip($("atlas-zip").value).catch(function (err) { setStatus(String(err.message || err), true); });
+    });
+    $("atlas-search").addEventListener("submit", function (e) {
+      e.preventDefault();
+      state.q = String($("atlas-q").value || "").trim();
+      loadDesk().catch(function (err) { setStatus(String(err.message || err), true); });
+    });
+    $("atlas-lang").addEventListener("click", function () {
+      state.lang = state.lang === "en" ? "es" : "en";
+      applyLang();
+    });
+    $("atlas-geo").addEventListener("click", function () {
+      if (!navigator.geolocation) { setStatus("No geolocation on this device.", true); return; }
+      setStatus("Getting location…");
+      navigator.geolocation.getCurrentPosition(function (pos) {
+        var lat = pos.coords.latitude, lon = pos.coords.longitude;
+        fetch("https://api.zippopotam.us/us/" + encodeURIComponent(lat.toFixed(2)) )
+          .catch(function () { return null; });
+        fetch("https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=" + lat + "&lon=" + lon, {
+          headers: { Accept: "application/json" }
+        }).then(function (r) { return r.json(); }).then(function (j) {
+          var z = zip5(j && j.address && (j.address.postcode || ""));
+          if (!z) throw new Error("No ZIP from location");
+          return setZip(z);
+        }).catch(function (err) { setStatus("Could not resolve ZIP. Type it. " + (err.message || ""), true); });
+      }, function () { setStatus("Location blocked. Type the ZIP.", true); }, { timeout: 8000 });
+    });
 
     document.addEventListener("click", function (e) {
-      var t = e.target;
-      if (!t || !t.closest) return;
-      var btn = t.closest(".atlas-zip");
-      if (!btn) return;
-      var zip = btn.getAttribute("data-zip") || "";
-      var input = $("atlas-q");
-      if (input) input.value = zip;
-      setStatus("ZIP " + zip + "…");
-      loadReports(zip).catch(function (err) {
-        setStatus(String(err && err.message ? err.message : err), true);
-      });
+      var t = e.target && e.target.closest && e.target.closest(".atlas-zip-btn, .chip");
+      if (!t) return;
+      if (t.classList.contains("chip")) {
+        var chip = t.getAttribute("data-chip");
+        if (chip === "week") {
+          state.week = !state.week;
+          t.setAttribute("aria-pressed", state.week ? "true" : "false");
+        } else if (chip === "person" || chip === "property") {
+          var next = chip === "person" ? "PERSON" : "PROPERTY";
+          state.against = state.against === next ? "" : next;
+          document.querySelectorAll('[data-chip="person"],[data-chip="property"]').forEach(function (c) {
+            c.setAttribute("aria-pressed", (c.getAttribute("data-chip") === "person" && state.against === "PERSON") || (c.getAttribute("data-chip") === "property" && state.against === "PROPERTY") ? "true" : "false");
+          });
+        } else {
+          state.q = t.getAttribute("aria-pressed") === "true" ? "" : chip;
+          t.setAttribute("aria-pressed", state.q ? "true" : "false");
+          if ($("atlas-q")) $("atlas-q").value = state.q;
+        }
+        loadDesk().catch(function (err) { setStatus(String(err.message || err), true); });
+        return;
+      }
+      var z = t.getAttribute("data-zip");
+      if (z) setZip(z).catch(function (err) { setStatus(String(err.message || err), true); });
     });
   }
 
