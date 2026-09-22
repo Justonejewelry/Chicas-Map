@@ -1,15 +1,91 @@
 {
   "city": "san-antonio-email",
-  "last_refresh": "2026-09-21T11:50:50-05:00",
+  "last_refresh": "2026-09-22T05:30:00-05:00",
   "status": "live",
-  "total_locations": 0,
-  "public": [],
+  "total_locations": 3,
+  "public": [
+    {
+      "address": "13515 Redfish Reef, San Antonio, TX 78245",
+      "dates": "2026-09-26",
+      "date_from": "2026-09-26",
+      "date_to": "2026-09-26",
+      "end_date": "2026-09-26",
+      "hours": "Saturday only (approx 9am start)",
+      "title": "Multi-family yard sale",
+      "source": "Email:GarageSaleFinder",
+      "url": "",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale",
+        "yard-sale"
+      ],
+      "confidence": 0.75,
+      "status": "verified",
+      "lat": null,
+      "lon": null,
+      "geocode": null,
+      "in_person": true,
+      "external_id": "email-gsf-13515-redfish-reef-2026-09-26",
+      "details": "Neighborhood yard sale. Saturday only. Majority starts at 9am."
+    },
+    {
+      "address": "8075 E Loop 1604 S, Adkins, TX 78101",
+      "dates": "2026-09-24 – 2026-09-26",
+      "date_from": "2026-09-24",
+      "date_to": "2026-09-26",
+      "end_date": "2026-09-26",
+      "hours": "9am-3pm Daily",
+      "title": "1st of 3 Estate Sales",
+      "source": "Email:GarageSaleFinder",
+      "url": "",
+      "photos": 0,
+      "type": "estate",
+      "categories": [
+        "estate-sale"
+      ],
+      "confidence": 0.75,
+      "status": "verified",
+      "lat": null,
+      "lon": null,
+      "geocode": null,
+      "in_person": true,
+      "external_id": "email-gsf-8075-e-loop-1604-s-adkins-2026-09-24",
+      "details": "First of three estate sales. Thursday-Saturday 9am-3pm Daily."
+    },
+    {
+      "address": "New Braunfels, TX 78130",
+      "dates": "2026-09-21 – 2026-09-29",
+      "date_from": "2026-09-21",
+      "date_to": "2026-09-29",
+      "end_date": "2026-09-29",
+      "hours": "Online bidding ends ~Sep 29",
+      "title": "Hidden Treasures: Pewter, Gold, Sterling Online Auction by Caring Transitions - Ends 9/29!",
+      "source": "Email:GarageSaleFinder",
+      "url": "",
+      "photos": 250,
+      "type": "estate",
+      "categories": [
+        "estate-sale",
+        "online"
+      ],
+      "confidence": 0.75,
+      "status": "verified",
+      "lat": null,
+      "lon": null,
+      "geocode": null,
+      "company": "Caring Transitions of New Braunfels & Seguin",
+      "in_person": false,
+      "external_id": "email-gsf-hidden-treasures-new-braunfels-2026-09-21",
+      "details": "Online auction. Pewter, Gold, Sterling."
+    }
+  ],
   "permits": [],
   "hot_zones": [],
   "sources": [
     "Email:GarageSaleFinder",
     "Email:EstateSales.org"
   ],
-  "note": "Incremental email-lead shard. Coords from OSM Nominatim house match or Census TIGER when OSM missed. Sarrebourg St is street-centroid (no house number in listing).",
-  "date": "2026-09-21"
+  "note": "Incremental email-lead shard. Coords from OSM Nominatim house match or Census TIGER when OSM missed.",
+  "date": "2026-09-22"
 }
