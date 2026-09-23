@@ -37,7 +37,7 @@
       "title": "Community Garage Sales on October 24, 2026 - Vendors Wanted",
       "details": "QR Code Link to This Post Christ Lutheran Learning Center is hosting a fall COMMUNITY GARAGE SALE on Saturday, October 24, 2026. Reservations for parking spaces are now open on a first-come, first-serve basis. With over 12 vendors already signed up, you'll likely have great success selling if you decide to join us! WHEN: Saturday, October 24, 2026 WHERE: 510 Luther Drive, Georgetown, Texas (Christ",
       "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/georgetown-community-garage-sales-on/own8ZQNCxbGtnzLfBNwGuY",
+      "url": "https://www.craigslist.org/view/d/georgetown-community-garage-sales-on/cscUfy6Gupm82vTa9Y51Hd",
       "photos": 0,
       "type": "garage",
       "categories": [
@@ -49,7 +49,7 @@
       "lon": -97.69058,
       "geocode": "source",
       "in_person": true,
-      "external_id": "cl-ygaragesalesonown8zqncxbgtnzlfbnwguy"
+      "external_id": "cl-ygaragesalesoncscufy6gupm82vta9y51hd"
     },
     {
       "address": "Polk near Hill, Austin, TX",
@@ -119,8 +119,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.288127578332734,
-      "lon": -97.81237683069484,
+      "lat": 30.28757062540424,
+      "lon": -97.81676688601385,
       "geocode": "source",
       "company": "Creative Estate Sales",
       "in_person": true,
@@ -329,8 +329,8 @@
       "type": "estate",
       "confidence": 0.85,
       "status": "verified",
-      "lat": 30.28756,
-      "lon": -97.81439,
+      "lat": 30.28662,
+      "lon": -97.814,
       "geocode": "source",
       "external_id": "yss-austintx78746-2026-09-26",
       "categories": [
@@ -734,8 +734,8 @@
       "in_person": true,
       "external_id": "yss-9503ramblewooddraustintx78748-2026-09-26",
       "categories": [
-        "in-person",
-        "estate-sale"
+        "estate-sale",
+        "in-person"
       ]
     },
     {
@@ -752,8 +752,8 @@
       "type": "garage",
       "confidence": 0.85,
       "status": "verified",
-      "lat": 30.39287,
-      "lon": -97.75971,
+      "lat": 30.39261,
+      "lon": -97.75921,
       "geocode": "source",
       "external_id": "yss-austintx78759-2026-09-25",
       "categories": [
@@ -801,8 +801,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.38990373629177,
-      "lon": -97.75776650739357,
+      "lat": 30.39391020413223,
+      "lon": -97.76156768651067,
       "geocode": "source",
       "company": "Gone For Good",
       "in_person": true,
@@ -904,6 +904,24 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "cl-allinthenwacavhxqfl4vbsxyfrofmjrznp"
+    },
+    {
+      "address": "Blanco, TX 78606",
+      "dates": "Wed Sep 23 – Wed Sep 30",
+      "date_from": "09/23/2026",
+      "date_to": "09/30/2026",
+      "end_date": "2026-09-30",
+      "title": "Blanco Heritage & Handiwork Online Auction by Caring Transitions - Ends 9/30!",
+      "details": "",
+      "source": "GarageSaleFinder",
+      "url": "https://garagesalefinder.com/s/N9mK2/blanco-tx-78606",
+      "photos": 0,
+      "type": "estate",
+      "confidence": 0.65,
+      "status": "verified",
+      "lat": 30.2672,
+      "lon": -97.7431,
+      "geocode": "city-center"
     }
   ],
   "hot_zones": [
@@ -922,9 +940,9 @@
     "gsalr.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 39,
+  "total_locations": 40,
   "status": "live",
   "date": "2026-09-23",
-  "last_refresh": "2026-09-23T09:32:57-05:00",
+  "last_refresh": "2026-09-23T10:21:50-05:00",
   "permits": []
 }

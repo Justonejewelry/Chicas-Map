@@ -2,15 +2,15 @@
 
 ## 1. CHICA DAILY RUN
 - **Target date:** Wednesday, September 23, 2026
-- **San Antonio local run time:** 2026-09-23T09:32:57-05:00
+- **San Antonio local run time:** 2026-09-23T10:21:51-05:00
 - **Geographic area:** San Antonio & surrounding communities
 - **Sources searched:** 7
-- **Candidates discovered:** 28
-- **Verified sales:** 14
-- **Rejected listings:** 14
+- **Candidates discovered:** 30
+- **Verified sales:** 15
+- **Rejected listings:** 15
 - **Duplicates merged:** 0
-- **Successfully geocoded:** 14
-- **Street View links generated:** 14
+- **Successfully geocoded:** 15
+- **Street View links generated:** 15
 - **Sentinel:** PASS
 
 ## 2. VERIFIED SALES
@@ -25,7 +25,7 @@
 - **Original listing:** https://estatesales.org/estate-sales/tx/san-antonio/78249/hart-ranch-treasures-traditions-bidding-2463911
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.5676137,-98.6050736
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5676137,-98.6050736
-- **Verified at:** 2026-09-23T09:32:57-05:00
+- **Verified at:** 2026-09-23T10:21:51-05:00
 
 ### 2. Hidden Treasures: Pewter, Gold, Sterling Online Auction by Caring Transitions - Ends 9/29!
 - **Type:** estate
@@ -38,7 +38,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9mJr/new-braunfels-tx-78130
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936
-- **Verified at:** 2026-09-23T09:32:57-05:00
+- **Verified at:** 2026-09-23T10:21:51-05:00
 
 ### 3. Unbelievable collection liquidation (Schertz)
 - **Type:** estate
@@ -50,7 +50,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/new-braunfels-unbelievable-collection/6mxMeJuTorrrK9csPPdpLv
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.6636,-98.1672
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.6636,-98.1672
-- **Verified at:** 2026-09-23T09:32:57-05:00
+- **Verified at:** 2026-09-23T10:21:51-05:00
 
 ### 4. Alamo Craft Co. Antiques & More (San Antonio)
 - **Type:** garage
@@ -62,7 +62,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-alamo-craft-co-antiques-more/mj6FcRd4ZDr7zwAwc4pwWa
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.556,-98.6094
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.556,-98.6094
-- **Verified at:** 2026-09-23T09:32:57-05:00
+- **Verified at:** 2026-09-23T10:21:51-05:00
 
 ### 5. Craftsman Band Saw & Radial Saw (SAN ANTONIO)
 - **Type:** garage
@@ -74,7 +74,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-craftsman-band-saw-radial/rcBAbp78KXim4TvGrxRsG9
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4492,-98.3446
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4492,-98.3446
-- **Verified at:** 2026-09-23T09:32:57-05:00
+- **Verified at:** 2026-09-23T10:21:51-05:00
 
 ### 6. Furniture for Sale ( please read post, ty) (Green Spring Valley)
 - **Type:** garage
@@ -86,19 +86,19 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-furniture-for-sale-please/84LPLEmaFGUzdHuyK6dFdb
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.5855,-98.4071
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5855,-98.4071
-- **Verified at:** 2026-09-23T09:32:57-05:00
+- **Verified at:** 2026-09-23T10:21:51-05:00
 
 ### 7. Garage Sale (San Antonio)
 - **Type:** garage
 - **Date:** 2026-09-23 → 2026-09-25
 - **Address:** 11642 Wayward Daisy near American Lotus, San Antonio, TX, San Antonio 
-- **Notes:** QR Code Link to This Post Garage Sale 11642 Wayward Daisy Today from 9am until 12pm. Exercise equipment. Book case and storage cubes. Lularoe legging, tops, and dresses. Women’s cl
+- **Notes:** QR Code Link to This Post Garage Sale - Amhurst Subdivision Community Sale Exercise weights. Kirby Vacuum Cleaner Lularoe legging, tops, and dresses. Women’s clothing, Men’s clothi
 - **Confidence:** 96%
 - **Sources:** Craigslist
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-garage-sale/pxYNWRryiZ7XqvtUogrrih
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4186,-98.726
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4186,-98.726
-- **Verified at:** 2026-09-23T09:32:57-05:00
+- **Verified at:** 2026-09-23T10:21:51-05:00
 
 ### 8. Garage Sale (airport) (San Antonio)
 - **Type:** garage
@@ -110,7 +110,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-garage-sale-airport/mWq6wFt17W8ffp4hNwi94W
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.5334,-98.4975
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5334,-98.4975
-- **Verified at:** 2026-09-23T09:32:57-05:00
+- **Verified at:** 2026-09-23T10:21:51-05:00
 
 ### 9. Garage sale (San Antonio)
 - **Type:** garage
@@ -122,7 +122,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-garage-sale/mbuJz7fN3a5Hosk6RzmBbR
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.600465,-98.443991
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.600465,-98.443991
-- **Verified at:** 2026-09-23T09:32:57-05:00
+- **Verified at:** 2026-09-23T10:21:51-05:00
 
 ### 10. Multi Family Garage Sale
 - **Type:** garage
@@ -134,7 +134,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-multi-family-garage-sale/jToBGX3jMqpZ8SaZokwAc8
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.467858,-98.532439
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.467858,-98.532439
-- **Verified at:** 2026-09-23T09:32:57-05:00
+- **Verified at:** 2026-09-23T10:21:51-05:00
 
 ### 11. NOW OPEN! The Collective Boutiques (San Antonio)
 - **Type:** garage
@@ -146,7 +146,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-now-open-the-collective/a9UPVs8b9XgmEsUh6iVZ1m
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.5183,-98.503
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5183,-98.503
-- **Verified at:** 2026-09-23T09:32:57-05:00
+- **Verified at:** 2026-09-23T10:21:51-05:00
 
 ### 12. EPIC Estate Sale
 - **Type:** estate
@@ -159,7 +159,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/canyon-lake-epic-estate-sale/ofF5mGiBJ1TNUJZ4yA976w
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.903514,-98.229532
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.903514,-98.229532
-- **Verified at:** 2026-09-23T09:32:57-05:00
+- **Verified at:** 2026-09-23T10:21:51-05:00
 
 ### 13. Estate Sale
 - **Type:** estate
@@ -171,7 +171,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-estate-sale/wNXYDStkCmf9vnK2Aa8D7T
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.403957,-98.684349
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.403957,-98.684349
-- **Verified at:** 2026-09-23T09:32:57-05:00
+- **Verified at:** 2026-09-23T10:21:51-05:00
 
 ### 14. HUGE GARAGE SALE
 - **Type:** garage
@@ -183,7 +183,20 @@
 - **Original listing:** https://www.craigslist.org/view/d/wimberley-huge-garage-sale/ew9erGiotwcS6Wk8jNsYY1
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=30.0265,-98.1123
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=30.0265,-98.1123
-- **Verified at:** 2026-09-23T09:32:57-05:00
+- **Verified at:** 2026-09-23T10:21:51-05:00
+
+### 15. Blanco Heritage & Handiwork Online Auction by Caring Transitions - Ends 9/30!
+- **Type:** estate
+- **Date:** 2026-09-23 → 2026-09-30
+- **Time:** 10:45 am - 11:59 pm – 
+- **Address:** Blanco, TX 78606, San Antonio 
+- **Notes:** Dates and Times: Wednesday, September 23, 2026 10:45 am - 11:59 pm
+- **Confidence:** 100%
+- **Sources:** GarageSaleFinder
+- **Original listing:** https://garagesalefinder.com/s/N9mK2/blanco-tx-78606
+- **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936
+- **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936
+- **Verified at:** 2026-09-23T10:21:51-05:00
 
 ## 3. CHICA PICKS
 
@@ -208,7 +221,7 @@
 
 ## 5. REJECTED / EXCLUDED
 
-Total rejected or filtered: **14**
+Total rejected or filtered: **15**
 (Expired, duplicate, outside area, insufficient information, or confidence below threshold.)
 
 ## 6. DATA / MAP OUTPUT
