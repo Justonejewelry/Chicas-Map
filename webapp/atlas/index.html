@@ -9,6 +9,10 @@
       content="Alamo Atlas — San Antonio neighborhood desk. Open Data SA offenses, arrests, and calls-for-service counts by ZIP. Not 911."
     />
     <meta name="theme-color" content="#0a0b0c" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Atlas" />
+    <link rel="manifest" href="/Chicas-Map/atlas/manifest.webmanifest" />
     <link rel="canonical" href="https://justonejewelry.github.io/Chicas-Map/atlas/" />
     <link rel="icon" type="image/svg+xml" href="/Chicas-Map/favicon.svg" />
     <link rel="apple-touch-icon" href="/Chicas-Map/__grok/icon-180.png" />
@@ -103,7 +107,7 @@
       .row details { margin-top: .45rem; color: #4a4d48; font-size: .82rem; }
       .exits { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1rem; }
       .exits a {
-        color: var(--paper); text-decoration: none; border: 1px solid #333; padding: .55rem .75rem; font-size: .82rem;
+        color: var(--ink); text-decoration: none; border: 1px solid var(--line); padding: .55rem .75rem; font-size: .82rem; background: #e4e2db;
       }
       footer.desk { margin-top: 2rem; color: var(--stone); font-size: .85rem; }
       .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
