@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alamo Atlas · Apartment desk</title>
+  <meta name="theme-color" content="#0a0b0c" />
+  <link rel="canonical" href="https://justonejewelry.github.io/Chicas-Map/atlas/apartment.html" />
+  <style>
+    :root { --ink:#0a0b0c; --paper:#ececea; --stone:#8c8f8a; --copper:#c45c4a; --line:#d4d3ce; }
+    * { box-sizing: border-box; }
+    body { margin:0; background:var(--ink); color:var(--paper); font-family: Georgia, "Source Serif 4", serif; }
+    .wrap { max-width: 40rem; margin:0 auto; padding:1.25rem; }
+    a { color:var(--copper); }
+    h1 { font-size:1.85rem; margin:.3rem 0 .4rem; }
+    .muted { color:var(--stone); font-family: system-ui, sans-serif; font-size:.88rem; }
+    label { display:block; font-family:system-ui,sans-serif; font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; color:var(--stone); margin-top:.8rem; }
+    input, textarea { width:100%; border:1px solid #333; background:#111; color:var(--paper); padding:.65rem .7rem; font:inherit; }
+    textarea { min-height:4.2rem; }
+    .row { display:flex; gap:.5rem; flex-wrap:wrap; margin-top:.6rem; }
+    button, .btn {
+      border:0; background:var(--copper); color:#fff; font:inherit; font-family:system-ui,sans-serif; font-weight:700;
+      padding:.7rem 1rem; cursor:pointer; text-decoration:none; display:inline-block;
+    }
+    button.ghost { background:transparent; color:var(--paper); border:1px solid #333; }
+    table { width:100%; border-collapse:collapse; margin-top:1rem; font-family:system-ui,sans-serif; font-size:.9rem; }
+    th, td { text-align:left; padding:.45rem 0; border-bottom:1px solid #222; }
+    th { color:var(--stone); font-size:.68rem; letter-spacing:.12em; text-transform:uppercase; }
+    .honest { border-top:1px solid #222; margin-top:1.2rem; padding-top:.8rem; color:var(--stone); font-family:system-ui,sans-serif; font-size:.8rem; }
+    .price { font-family:system-ui,sans-serif; margin-top:1rem; }
+    @media print {
+      body { background:#fff; color:#111; }
+      .no-print { display:none !important; }
+      a { color:#111; text-decoration:none; }
+      input, textarea { border:0; background:transparent; color:#111; }
+      .honest { color:#333; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <p class="muted no-print"><a href="/Chicas-Map/atlas/">← Atlas desk</a></p>
+    <p class="muted">APARTMENT PACK · FRIDAY PACKET</p>
+    <h1>What hit the property ZIPs</h1>
+    <p class="muted">Public Open Data SA only. ZIP grain. Not 911. Not a tenant screen. Not a crime score.</p>
+
+    <label for="prop">Property / region name</label>
+    <input id="prop" placeholder="e.g. Westside 3-site region" />
+
+    <label for="zips">ZIPs (up to 10, comma or space)</label>
+    <textarea id="zips" placeholder="78207 78201 78228"></textarea>
+
+    <div class="row no-print">
+      <button type="button" id="load">Load packet</button>
+      <button type="button" class="ghost" id="print">Print / Save PDF</button>
+      <button type="button" class="ghost" id="week">This week only</button>
+    </div>
+    <p class="muted" id="status">Add ZIPs, then load.</p>
+
+    <p id="headline"></p>
+    <table>
+      <thead><tr><th>ZIP</th><th>Offenses</th><th>Arrests</th><th>CFS</th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+    <p class="muted" id="note"></p>
+
+    <div class="honest">
+      Offense reports are not arrests. Arrests are not convictions. Calls for service are not reports.
+      Locations are ZIP-level. City of San Antonio Open Data SA, CC-BY, as-is. Alamo Atlas is not SAPD.
+    </div>
+
+    <div class="price no-print">
+      <p>Watch desk for one property: <b>$29 / month</b>. Region (up to 10 ZIPs): <b>$99 / month</b>.</p>
+      <a class="btn" id="ask" href="mailto:justonejewelry@gmail.com?subject=Alamo%20Atlas%20apartment%20pack">Ask for Friday packets</a>
+    </div>
+  </div>
+  <script src="/Chicas-Map/js/atlas-apartment.js?v=1" defer></script>
+</body>
+</html>
