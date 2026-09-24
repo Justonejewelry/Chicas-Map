@@ -1,0 +1,7 @@
+<resources>
+    <style name="Theme.AlamoAtlas" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:statusBarColor">#0a0b0c</item>
+        <item name="android:navigationBarColor">#0a0b0c</item>
+        <item name="android:windowBackground">#0a0b0c</item>
+    </style>
+</resources>

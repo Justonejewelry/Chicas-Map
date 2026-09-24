@@ -1,0 +1,26 @@
+{
+  "name": "Alamo Atlas",
+  "short_name": "Atlas",
+  "description": "San Antonio neighborhood desk. Open Data SA offenses, arrests, and calls for service by ZIP. Not 911.",
+  "start_url": "/Chicas-Map/atlas/",
+  "scope": "/Chicas-Map/atlas/",
+  "id": "/Chicas-Map/atlas/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0a0b0c",
+  "theme_color": "#0a0b0c",
+  "icons": [
+    {
+      "src": "/Chicas-Map/__grok/icon-180.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/Chicas-Map/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
