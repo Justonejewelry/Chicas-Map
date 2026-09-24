@@ -4,10 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>Alamo Atlas · Neighborhood desk</title>
-    <meta
-      name="description"
-      content="Alamo Atlas — San Antonio neighborhood desk. Open Data SA offenses, arrests, and calls-for-service counts by ZIP. Not 911."
-    />
+    <meta name="description" content="Alamo Atlas — San Antonio neighborhood desk. Open Data SA. Not 911." />
     <meta name="theme-color" content="#0a0b0c" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -20,134 +17,101 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" />
     <style>
-      :root {
-        --ink: #0a0b0c;
-        --paper: #ececea;
-        --stone: #8c8f8a;
-        --copper: #c45c4a;
-        --line: #d4d3ce;
-        --alert: #8b2e24;
-        --cream: #f6f4ef;
-      }
+      :root { --ink:#0a0b0c; --paper:#ececea; --stone:#8c8f8a; --copper:#c45c4a; --line:#d4d3ce; --alert:#8b2e24; --cream:#f6f4ef; }
       * { box-sizing: border-box; }
-      html, body { margin: 0; background: var(--ink); color: var(--paper); font-family: "Source Sans 3", system-ui, sans-serif; }
-      a { color: var(--copper); }
-      .wrap { max-width: 72rem; margin: 0 auto; padding: 0 1.25rem; }
-      header.top {
-        position: sticky; top: 0; z-index: 40;
-        background: rgba(10,11,12,.94);
-        border-bottom: 1px solid #222;
+      html, body { margin:0; background:var(--ink); color:var(--paper); font-family:"Source Sans 3",system-ui,sans-serif; }
+      a { color:var(--copper); }
+      .wrap { max-width:72rem; margin:0 auto; padding:0 1.25rem; }
+      header.top { position:sticky; top:0; z-index:40; background:rgba(10,11,12,.94); border-bottom:1px solid #222; }
+      header.top .row { display:flex; align-items:center; justify-content:space-between; gap:1rem; min-height:3.5rem; padding:.35rem 0; }
+      .brand { display:flex; align-items:center; gap:.7rem; color:var(--paper); text-decoration:none; }
+      .brand img { width:2rem; height:2rem; border-radius:999px; object-fit:cover; }
+      .brand b { font-family:"Source Serif 4",Georgia,serif; font-size:1.05rem; }
+      .nav a, .lang {
+        color:var(--stone); text-decoration:none; font-size:.8rem;
+        border:1px solid #333; border-radius:999px; height:2.15rem; padding:0 .75rem;
+        display:inline-flex; align-items:center; background:transparent; font:inherit;
       }
-      header.top .row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; height: 3.5rem; }
-      .brand { display: flex; align-items: center; gap: .7rem; color: var(--paper); text-decoration: none; }
-      .brand img { width: 2rem; height: 2rem; border-radius: 999px; object-fit: cover; }
-      .brand b { font-family: "Source Serif 4", Georgia, serif; font-size: 1.05rem; }
-      .lang { background: transparent; color: var(--stone); border: 1px solid #333; border-radius: 999px; height: 2.25rem; padding: 0 .9rem; font: inherit; }
-      .sticky-honest {
-        position: sticky; top: 3.5rem; z-index: 30;
-        background: #111;
-        color: var(--stone);
-        font-size: .78rem;
-        letter-spacing: .04em;
-        padding: .45rem 0;
-        border-bottom: 1px solid #222;
-      }
-      h1, h2, .display { font-family: "Source Serif 4", Georgia, serif; font-weight: 700; letter-spacing: -.02em; }
-      h1 { font-size: clamp(2rem, 5vw, 3.25rem); margin: .4rem 0 0; }
-      .lede { color: var(--stone); max-width: 36rem; }
-      .zip-first {
-        margin-top: 1.5rem;
-        background: var(--paper);
-        color: var(--ink);
-        border-radius: 4px;
-        padding: 1.25rem 1.25rem 1.1rem;
-        border-top: 3px solid var(--copper);
-      }
-      .zip-first label { display: block; font-size: .7rem; letter-spacing: .16em; text-transform: uppercase; color: var(--stone); }
-      .zip-row { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .55rem; }
-      .zip-row input {
-        flex: 1 1 10rem; height: 3rem; border: 1px solid var(--line); border-radius: 2px;
-        padding: 0 .9rem; font: inherit; font-size: 1.05rem;
-      }
-      .zip-row button, .chip, .ghost {
-        height: 3rem; border: 0; border-radius: 2px; padding: 0 1rem; font: inherit; font-weight: 700; cursor: pointer;
-      }
-      .go { background: var(--ink); color: var(--paper); }
-      .ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
-      .chips { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .75rem; }
-      .chip { height: 2.1rem; background: #e4e2db; color: var(--ink); font-size: .82rem; font-weight: 600; }
-      .chip[aria-pressed="true"] { background: var(--copper); color: #fff; }
-      .counts { display: grid; grid-template-columns: repeat(3, 1fr); gap: .6rem; margin-top: 1rem; }
-      .count { background: var(--cream); padding: .75rem .8rem; border: 1px solid var(--line); }
-      .count b { display: block; font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 1.35rem; }
-      .count span { font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: var(--stone); }
-      .area { margin-top: .85rem; color: var(--stone); font-size: .85rem; }
-      .groups { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: .7rem; }
-      .gchip { font-size: .78rem; background: #e4e2db; padding: .25rem .5rem; }
-      main { padding: 1.25rem 0 4rem; }
-      .grid2 { display: grid; gap: 1.5rem; margin-top: 1.75rem; }
-      @media (min-width: 880px) { .grid2 { grid-template-columns: 1fr 1fr; } }
-      .panel { background: #111; border: 1px solid #222; padding: 1rem 1.1rem 1.15rem; }
-      .panel h2 { margin: 0; font-size: 1.25rem; }
-      ol.zips, ul.groups, .list { list-style: none; margin: .8rem 0 0; padding: 0; display: grid; gap: .4rem; }
-      .zips button {
-        display: grid; grid-template-columns: 4.2rem 1fr auto; gap: .6rem; align-items: center;
-        width: 100%; background: transparent; color: var(--paper); border: 0; padding: .2rem 0; font: inherit; cursor: pointer; text-align: left;
-      }
-      .bar { height: .4rem; background: #1c1d1c; overflow: hidden; }
-      .bar > i { display: block; height: 100%; background: var(--copper); }
-      .mono { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: .86rem; }
-      .muted { color: var(--stone); }
-      .row {
-        background: var(--paper); color: var(--ink); padding: .85rem 1rem; border-left: 3px solid var(--copper);
-      }
-      .row h3 { margin: 0; font-size: 1.05rem; }
-      .row .meta { display: flex; flex-wrap: wrap; gap: .55rem 1rem; margin-top: .35rem; font-size: .86rem; color: #4a4d48; }
-      .row .rid { color: var(--stone); font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: .75rem; }
-      .row details { margin-top: .45rem; color: #4a4d48; font-size: .82rem; }
-      .exits { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1rem; }
-      .exits a {
-        color: var(--ink); text-decoration: none; border: 1px solid var(--line); padding: .55rem .75rem; font-size: .82rem; background: #e4e2db;
-      }
-      footer.desk { margin-top: 2rem; color: var(--stone); font-size: .85rem; }
-      .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
+      .nav { display:flex; flex-wrap:wrap; gap:.35rem; align-items:center; }
+      .sticky-honest { position:sticky; top:3.5rem; z-index:30; background:#111; color:var(--stone); font-size:.78rem; letter-spacing:.04em; padding:.45rem 0; border-bottom:1px solid #222; }
+      h1,h2 { font-family:"Source Serif 4",Georgia,serif; font-weight:700; letter-spacing:-.02em; }
+      h1 { font-size:clamp(2rem,5vw,3.25rem); margin:.4rem 0 0; }
+      .lede { color:var(--stone); max-width:36rem; }
+      .zip-first { margin-top:1.5rem; background:var(--paper); color:var(--ink); border-radius:4px; padding:1.25rem; border-top:3px solid var(--copper); }
+      .zip-first label { display:block; font-size:.7rem; letter-spacing:.16em; text-transform:uppercase; color:var(--stone); }
+      .zip-row { display:flex; flex-wrap:wrap; gap:.5rem; margin-top:.55rem; }
+      .zip-row input { flex:1 1 10rem; height:3rem; border:1px solid var(--line); border-radius:2px; padding:0 .9rem; font:inherit; font-size:1.05rem; }
+      .zip-row button, .chip, .ghost { height:3rem; border:0; border-radius:2px; padding:0 1rem; font:inherit; font-weight:700; cursor:pointer; }
+      .go { background:var(--ink); color:var(--paper); }
+      .ghost { background:transparent; color:var(--ink); border:1px solid var(--line); }
+      .chips { display:flex; flex-wrap:wrap; gap:.4rem; margin-top:.75rem; }
+      .chip { height:2.1rem; background:#e4e2db; color:var(--ink); font-size:.82rem; font-weight:600; }
+      .chip[aria-pressed="true"] { background:var(--copper); color:#fff; }
+      .counts { display:grid; grid-template-columns:repeat(3,1fr); gap:.6rem; margin-top:1rem; }
+      .count { background:var(--cream); padding:.75rem .8rem; border:1px solid var(--line); }
+      .count b { display:block; font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:1.35rem; }
+      .count span { font-size:.68rem; letter-spacing:.12em; text-transform:uppercase; color:var(--stone); }
+      .area { margin-top:.85rem; color:var(--stone); font-size:.85rem; }
+      .groups { display:flex; flex-wrap:wrap; gap:.35rem; margin-top:.7rem; }
+      .gchip { font-size:.78rem; background:#e4e2db; padding:.25rem .5rem; }
+      main { padding:1.25rem 0 4rem; }
+      .grid2 { display:grid; gap:1.5rem; margin-top:1.75rem; }
+      @media (min-width:880px) { .grid2 { grid-template-columns:1fr 1fr; } }
+      .panel { background:#111; border:1px solid #222; padding:1rem 1.1rem 1.15rem; }
+      .panel h2 { margin:0; font-size:1.25rem; }
+      ol.zips, ul.groups, .list { list-style:none; margin:.8rem 0 0; padding:0; display:grid; gap:.4rem; }
+      .zips button { display:grid; grid-template-columns:4.2rem 1fr auto; gap:.6rem; align-items:center; width:100%; background:transparent; color:var(--paper); border:0; padding:.2rem 0; font:inherit; cursor:pointer; text-align:left; }
+      .bar { height:.4rem; background:#1c1d1c; overflow:hidden; }
+      .bar > i { display:block; height:100%; background:var(--copper); }
+      .mono { font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:.86rem; }
+      .muted { color:var(--stone); }
+      .row { background:var(--paper); color:var(--ink); padding:.85rem 1rem; border-left:3px solid var(--copper); }
+      .row h3 { margin:0; font-size:1.05rem; }
+      .row .meta { display:flex; flex-wrap:wrap; gap:.55rem 1rem; margin-top:.35rem; font-size:.86rem; color:#4a4d48; }
+      .row .rid { color:var(--stone); font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:.75rem; }
+      .row details { margin-top:.45rem; color:#4a4d48; font-size:.82rem; }
+      .exits { display:flex; flex-wrap:wrap; gap:.5rem; margin-top:1rem; }
+      .exits a { color:var(--ink); text-decoration:none; border:1px solid var(--line); padding:.55rem .75rem; font-size:.82rem; background:#e4e2db; }
+      footer.desk { margin-top:2rem; color:var(--stone); font-size:.85rem; }
+      .sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); }
     </style>
   </head>
   <body>
     <a class="sr-only" href="#desk">Skip to desk</a>
     <header class="top">
       <div class="wrap row">
-        <a class="brand" href="/Chicas-Map/">
+        <a class="brand" href="/Chicas-Map/atlas/">
           <img src="/Chicas-Map/images/chica-logo.png" alt="" width="32" height="32" />
           <b>Alamo Atlas</b>
         </a>
-        <div style="display:flex;gap:.5rem;align-items:center">
+        <nav class="nav" aria-label="App">
+          <button type="button" class="lang" id="atlas-install-btn" hidden>Install app</button>
+          <a href="/Chicas-Map/atlas/install.html">Get the app</a>
+          <a href="/Chicas-Map/atlas/apartment.html">Apartment</a>
+          <a href="/Chicas-Map/atlas/hoa.html">HOA</a>
           <button type="button" class="lang" id="atlas-lang" aria-pressed="false">ES</button>
-          <a href="/Chicas-Map/map" style="color:var(--stone);text-decoration:none;font-size:.85rem">Chicas Map</a>
-        </div>
+        </nav>
       </div>
     </header>
     <div class="sticky-honest"><div class="wrap" id="atlas-honest">City data. ZIP only. Not 911. Reports are not arrests. Arrests are not convictions. Calls are not reports.</div></div>
-
     <main id="desk" class="wrap">
       <p class="muted" style="letter-spacing:.16em;text-transform:uppercase;font-size:.68rem;margin:1rem 0 0" data-i18n="kicker">Neighborhood desk · San Antonio</p>
       <h1 data-i18n="title">What hit your ZIP</h1>
       <p class="lede" data-i18n="lede">Public Open Data SA only. Offenses and arrests share a report ID. Calls for service stay a separate count. No street pins. No names.</p>
-
-      <section class="zip-first" id="zip-card" aria-label="Your ZIP">
+      <section class="zip-first" id="zip-card">
         <label for="atlas-zip" data-i18n="zip_label">Your ZIP</label>
         <form id="atlas-zip-form" class="zip-row">
-          <input id="atlas-zip" name="zip" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" placeholder="78201" autocomplete="postal-code" />
+          <input id="atlas-zip" name="zip" inputmode="numeric" maxlength="5" placeholder="78201" autocomplete="postal-code" />
           <button class="go" type="submit" data-i18n="open_zip">Open ZIP</button>
           <button class="ghost" type="button" id="atlas-geo" data-i18n="use_loc">Use my location</button>
         </form>
         <div class="chips" id="atlas-chips">
-          <button type="button" class="chip" data-chip="week" aria-pressed="false" data-i18n="chip_week">This week</button>
-          <button type="button" class="chip" data-chip="person" aria-pressed="false" data-i18n="chip_person">Against person</button>
-          <button type="button" class="chip" data-chip="property" aria-pressed="false" data-i18n="chip_property">Against property</button>
-          <button type="button" class="chip" data-chip="theft" aria-pressed="false">Theft</button>
-          <button type="button" class="chip" data-chip="assault" aria-pressed="false">Assault</button>
-          <button type="button" class="chip" data-chip="burglary" aria-pressed="false">Burglary</button>
+          <button type="button" class="chip" data-chip="week" data-i18n="chip_week">This week</button>
+          <button type="button" class="chip" data-chip="person" data-i18n="chip_person">Against person</button>
+          <button type="button" class="chip" data-chip="property" data-i18n="chip_property">Against property</button>
+          <button type="button" class="chip" data-chip="theft">Theft</button>
+          <button type="button" class="chip" data-chip="assault">Assault</button>
+          <button type="button" class="chip" data-chip="burglary">Burglary</button>
         </div>
         <div class="counts">
           <div class="count"><span data-i18n="offenses">Offenses YTD</span><b id="c-off">—</b></div>
@@ -171,7 +135,6 @@
           <a href="https://www.sa.gov/Directory/Departments/Court/Warrants" target="_blank" rel="noopener">City warrants</a>
         </div>
       </section>
-
       <div class="grid2">
         <section class="panel">
           <h2 data-i18n="hot_zips">Hottest ZIPs, YTD offenses</h2>
@@ -184,24 +147,19 @@
           <ul class="groups" id="atlas-groups"></ul>
         </section>
       </div>
-
       <section style="margin-top:1.75rem">
         <h2 data-i18n="reports">Offense reports</h2>
         <p class="muted" id="atlas-reports-meta">Published fields only.</p>
         <div class="list" id="atlas-reports"></div>
       </section>
-
       <section style="margin-top:1.5rem">
         <h2 data-i18n="arrest_list">Arrest reports in this filter</h2>
         <p class="muted" data-i18n="arrest_note">Joined to offenses only when Report ID matches. Not a conviction.</p>
         <div class="list" id="atlas-arrests"></div>
       </section>
-
-      <footer class="desk">
-        Source: City of San Antonio Open Data SA, CC-BY, as-is. Alamo Atlas is not SAPD.
-        Same pack as Chicas Map. Different job.
-      </footer>
+      <footer class="desk">Source: City of San Antonio Open Data SA, CC-BY, as-is. Alamo Atlas is not SAPD.</footer>
     </main>
     <script src="/Chicas-Map/js/atlas-page.js?v=3" defer></script>
+    <script src="/Chicas-Map/js/atlas-install.js?v=1" defer></script>
   </body>
 </html>
