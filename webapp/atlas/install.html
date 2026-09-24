@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Install Alamo Atlas</title>
+  <meta name="theme-color" content="#0a0b0c" />
+  <link rel="manifest" href="/Chicas-Map/atlas/manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="/Chicas-Map/__grok/icon-180.png" />
+  <style>
+    body { margin:0; background:#0a0b0c; color:#ececea; font-family: Georgia, serif; }
+    .wrap { max-width: 28rem; margin:0 auto; padding:1.5rem 1.25rem 3rem; }
+    h1 { font-size:2rem; margin:.3rem 0; }
+    p, li { font-family: system-ui, sans-serif; color:#8c8f8a; line-height:1.45; }
+    a { color:#c45c4a; }
+    .btn {
+      display:inline-block; background:#c45c4a; color:#fff; text-decoration:none;
+      font-family:system-ui,sans-serif; font-weight:700; padding:.75rem 1.1rem; margin:.3rem .3rem 0 0;
+    }
+    button.btn { border:0; font:inherit; font-weight:700; cursor:pointer; }
+    ol { padding-left:1.2rem; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <p style="letter-spacing:.16em;font-size:.7rem;font-family:system-ui">THE APP</p>
+    <h1>Alamo Atlas on the home screen</h1>
+    <p>Same public desk. Own icon. No browser chrome. Not SAPD. Not 911.</p>
+    <p>
+      <button class="btn" id="atlas-install-btn" hidden>Install Atlas</button>
+      <a class="btn" href="/Chicas-Map/atlas/">Open the desk</a>
+    </p>
+    <h2>Android (Chrome)</h2>
+    <ol>
+      <li>Open the desk in Chrome.</li>
+      <li>Tap the install banner, or menu → <b>Add to Home screen</b> / <b>Install app</b>.</li>
+      <li>If you need an APK for sideload, open <code>android/alamo-atlas</code> in Android Studio and Run.</li>
+    </ol>
+    <h2>iPhone (Safari)</h2>
+    <ol>
+      <li>Open the desk in Safari (not Chrome, not in-app browsers).</li>
+      <li>Share → <b>Add to Home Screen</b> → Atlas.</li>
+    </ol>
+    <p>Industry packets after install:</p>
+    <p><a href="/Chicas-Map/atlas/apartment.html">Apartment pack</a> · <a href="/Chicas-Map/atlas/hoa.html">HOA pack</a></p>
+    <p>Play Store listing is later. Trust for a board packet is an icon that opens <i>this</i> desk, not a listing that claims live 911.</p>
+  </div>
+  <script src="/Chicas-Map/js/atlas-install.js?v=1" defer></script>
+</body>
+</html>
