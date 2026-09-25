@@ -15,6 +15,16 @@
   }
   if (!onMapPath()) return;
 
+  try {
+    if (localStorage.getItem("chicas-map-permit-on") === "1") {
+      document.documentElement.classList.remove("chica-hide-permit");
+    } else {
+      document.documentElement.classList.add("chica-hide-permit");
+    }
+  } catch (e) {
+    document.documentElement.classList.add("chica-hide-permit");
+  }
+
   function hideBoot() {
     if (bootHidden) return;
     var el = document.getElementById("chica-map-boot");
@@ -140,7 +150,8 @@
       ".chica-pack-halo{background:#ff3ad1;opacity:.35}" +
       ".chica-pack-ring{background:#ff3ad1;opacity:.9;will-change:transform,opacity;animation:chica-pack-pulse 1.4s ease-out infinite}" +
       "@keyframes chica-pack-pulse{0%{transform:translate3d(-50%,-50%,0) scale(.7);opacity:.85}100%{transform:translate3d(-50%,-50%,0) scale(2.2);opacity:0}}" +
-      "@media (prefers-reduced-motion:reduce){.chica-pack-ring{animation:none;opacity:.4;transform:translate3d(-50%,-50%,0) scale(1.55)}}";
+      "@media (prefers-reduced-motion:reduce){.chica-pack-ring{animation:none;opacity:.4;transform:translate3d(-50%,-50%,0) scale(1.55)}}" +
+      ".chica-hide-permit .leaflet-marker-icon.chica-type-permit{display:none!important}";
     (document.head || document.documentElement).appendChild(s);
   }
 
