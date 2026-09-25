@@ -8,6 +8,15 @@
     return /\/map\/?$/.test(p) || p.indexOf("/map/") !== -1 || /map\.html$/.test(p);
   }
   if (!onMapPath()) return;
+  try {
+    if (localStorage.getItem("chicas-map-permit-on") === "1") {
+      document.documentElement.classList.remove("chica-hide-permit");
+    } else {
+      document.documentElement.classList.add("chica-hide-permit");
+    }
+  } catch (e) {
+    document.documentElement.classList.add("chica-hide-permit");
+  }
   var BASE = "/Chicas-Map";
   var groups = {};
   var cache = {};
@@ -164,6 +173,9 @@
     dimRow(id, !hide);
     var pins = document.querySelectorAll(".leaflet-marker-icon.chica-type-" + id);
     for (var i = 0; i < pins.length; i++) pins[i].style.display = hide ? "none" : "";
+    if (id === "permit") {
+      try { localStorage.setItem("chicas-map-permit-on", hide ? "0" : "1"); } catch (e) {}
+    }
   }
 
   function toggle(id) {
@@ -185,6 +197,7 @@
 
   window.__chicaToggleLayer = toggle;
 
-  ["garage", "estate", "permit"].forEach(function (id) { dimRow(id, true); });
+  ["garage", "estate"].forEach(function (id) { dimRow(id, true); });
+  dimRow("permit", !document.documentElement.classList.contains("chica-hide-permit"));
   ["satellite", "parking", "pantry", "schools", "wifi", "claimed", "resale"].forEach(function (id) { dimRow(id, false); });
 })();
