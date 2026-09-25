@@ -114,8 +114,8 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
@@ -554,14 +554,14 @@
     },
     {
       "address": "Edenbourgh Ln, Austin, TX 78754",
-      "dates": "2026-09-26 – 2026-09-26",
-      "date_from": "2026-09-26",
-      "date_to": "2026-09-26",
+      "dates": "Sat Sep 26 – Sat Sep 26",
+      "date_from": "09/26/2026",
+      "date_to": "09/26/2026",
       "end_date": "2026-09-26",
-      "title": "Chimney Hill/ 290 East 1 Day Pop-Up Garage/ Driveway Sale",
+      "title": "Chimney Hill/ 290 East 1 day Pop-up Garage/ Driveway Sale",
       "details": "",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196397563",
+      "source": "GarageSaleFinder",
+      "url": "https://garagesalefinder.com/s/N9mDF/edenbourgh-ln-austin-tx-78754",
       "photos": 0,
       "type": "garage",
       "confidence": 0.88,
@@ -697,8 +697,8 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
@@ -892,14 +892,14 @@
     },
     {
       "address": "7301 Waterline Rd, Austin, TX 78731",
-      "dates": "Sat Sep 26 – Sat Sep 26",
-      "date_from": "09/26/2026",
-      "date_to": "09/26/2026",
+      "dates": "2026-09-26 – 2026-09-26",
+      "date_from": "2026-09-26",
+      "date_to": "2026-09-26",
       "end_date": "2026-09-26",
-      "title": "NWACA Neighborhood Garage Sales",
+      "title": "Nwaca Neighborhood Garage Sales",
       "details": "",
-      "source": "GarageSaleFinder",
-      "url": "https://garagesalefinder.com/s/N9mQC/7301-waterline-rd-austin-tx-78731",
+      "source": "YardSaleSearch",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196398027",
       "photos": 0,
       "type": "garage",
       "confidence": 0.88,
@@ -1462,6 +1462,48 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "cl-tywideyardsalefr14n9zzeqnrwc3vwjroyy"
+    },
+    {
+      "address": "16932 Tortoise St, Round Rock, TX 78664",
+      "dates": "Sat Sep 26 – Sat Sep 26",
+      "date_from": "09/26/2026",
+      "date_to": "09/26/2026",
+      "end_date": "2026-09-26",
+      "title": "Yard sale!!!!!",
+      "details": "",
+      "source": "GarageSaleFinder",
+      "url": "https://garagesalefinder.com/s/N9heK/16932-tortoise-st-round-rock-tx-78664",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.85,
+      "status": "verified",
+      "lat": 30.51,
+      "lon": -97.67,
+      "geocode": "zip-centroid"
+    },
+    {
+      "address": "Hidden until oct 1, Austin, TX",
+      "dates": "2026-10-02 – 2026-10-02",
+      "date_from": "2026-10-02",
+      "date_to": "2026-10-02",
+      "end_date": "2026-10-02",
+      "hours": null,
+      "title": "Wimberley Texas 3 day Estate Sale October 2-4",
+      "details": "QR Code Link to This Post Wimberley Estate Sale October 2-4th (address hidden until October 1st) This home has unique and vintage finds. Fantastic mix of antiques, primitives, and unusual collectibles. Rare Attic babies, vintage Ethan Allen furniture, Oklahoma Joe smoker, vintage rattan patio furniture, and so much more. October 2 10am-4 pm October 3rd 10am-4 pm October 4th 11am -3pm Sunday all it",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/wimberley-wimberley-texas-day-estate/sTGGGRfSvyeeWCgEESSxcU",
+      "photos": 0,
+      "type": "estate",
+      "categories": [
+        "estate-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 30.031727,
+      "lon": -98.108425,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-texasdayestatestgggrfsvyeewcgeessxcu"
     }
   ],
   "hot_zones": [
@@ -1480,9 +1522,9 @@
     "gsalr.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 65,
+  "total_locations": 67,
   "status": "live",
   "date": "2026-09-25",
-  "last_refresh": "2026-09-25T09:52:21-05:00",
+  "last_refresh": "2026-09-25T10:45:54-05:00",
   "permits": []
 }

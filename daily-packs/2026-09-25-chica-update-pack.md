@@ -2,7 +2,7 @@
 
 ## 1. CHICA DAILY RUN
 - **Target date:** Friday, September 25, 2026
-- **San Antonio local run time:** 2026-09-25T09:52:21-05:00
+- **San Antonio local run time:** 2026-09-25T10:45:54-05:00
 - **Geographic area:** San Antonio & surrounding communities
 - **Sources searched:** 7
 - **Candidates discovered:** 35
@@ -25,7 +25,7 @@
 - **Original listing:** https://estatesales.org/estate-sales/tx/san-antonio/78213/virginia-boundleaving-treasures-behind-bidding-2463901
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4981168,-98.5226706
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4981168,-98.5226706
-- **Verified at:** 2026-09-25T09:52:21-05:00
+- **Verified at:** 2026-09-25T10:45:54-05:00
 
 ### 2. Three Full Days Of Shopping
 - **Type:** garage
@@ -38,7 +38,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196390329
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.5282026,-98.5236225
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5282026,-98.5236225
-- **Verified at:** 2026-09-25T09:52:21-05:00
+- **Verified at:** 2026-09-25T10:45:54-05:00
 
 ### 3. Hart Ranch Treasures & Traditions: Bidding ENDS 9/27/26 @ 7 PM!
 - **Type:** estate
@@ -50,7 +50,7 @@
 - **Original listing:** https://estatesales.org/estate-sales/tx/san-antonio/78249/hart-ranch-treasures-traditions-bidding-2463911
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.5676137,-98.6050736
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5676137,-98.6050736
-- **Verified at:** 2026-09-25T09:52:21-05:00
+- **Verified at:** 2026-09-25T10:45:54-05:00
 
 ### 4. Hidden Treasures: Pewter, Gold, Sterling Online Auction by Caring Transitions - Ends 9/29!
 - **Type:** estate
@@ -63,7 +63,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9mJr/new-braunfels-tx-78130
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936
-- **Verified at:** 2026-09-25T09:52:21-05:00
+- **Verified at:** 2026-09-25T10:45:54-05:00
 
 ### 5. Blanco Heritage & Handiwork Online Auction by Caring Transitions - Ends 9/30!
 - **Type:** estate
@@ -76,7 +76,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9mK2/blanco-tx-78606
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936
-- **Verified at:** 2026-09-25T09:52:21-05:00
+- **Verified at:** 2026-09-25T10:45:54-05:00
 
 ### 6. Yard Sale
 - **Type:** garage
@@ -89,20 +89,18 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196401659
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.474611,-98.58611
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.474611,-98.58611
-- **Verified at:** 2026-09-25T09:52:21-05:00
+- **Verified at:** 2026-09-25T10:45:54-05:00
 
 ### 7. Yard Sale
 - **Type:** garage
 - **Date:** 2026-09-25
-- **Time:** 9:00 AM - 5:00 PM – 
 - **Address:** 3211 Sagehill, San Antonio, TX 78230, San Antonio 
-- **Notes:** Find all the garage sales, yard sales, and estate sales on a map! Or place a free ad for your upcoming sale on yardsalesearch.com
-- **Confidence:** 100%
+- **Confidence:** 88%
 - **Sources:** YardSaleSearch
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196402705
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.510026,-98.54646
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.510026,-98.54646
-- **Verified at:** 2026-09-25T09:52:21-05:00
+- **Verified at:** 2026-09-25T10:45:54-05:00
 
 ### 8. Everything $1 Each!
 - **Type:** garage
@@ -115,7 +113,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196402309
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.52997964,-98.6352314
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.52997964,-98.6352314
-- **Verified at:** 2026-09-25T09:52:21-05:00
+- **Verified at:** 2026-09-25T10:45:54-05:00
 
 ### 9. 8075 E Loop 1604 S, Adkins, TX 78101
 - **Type:** estate
@@ -128,7 +126,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9mXL/8075-e-loop-1604-s-adkins-tx-78101
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936
-- **Verified at:** 2026-09-25T09:52:21-05:00
+- **Verified at:** 2026-09-25T10:45:54-05:00
 
 ### 10. Schertz Estate Sale Online Auction - R3Y2NC
 - **Type:** estate
@@ -140,7 +138,7 @@
 - **Original listing:** https://estatesales.org/estate-sales/tx/schertz/78108/schertz-estate-sale-online-auction-2464775
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.6225433,-98.2234293
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.6225433,-98.2234293
-- **Verified at:** 2026-09-25T09:52:21-05:00
+- **Verified at:** 2026-09-25T10:45:54-05:00
 
 ### 11. 5030 Creekwood Pass, Spring Branch, TX 78070
 - **Type:** garage
@@ -153,7 +151,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9hbj/5030-creekwood-pass-spring-branch-tx-78070
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936
-- **Verified at:** 2026-09-25T09:52:21-05:00
+- **Verified at:** 2026-09-25T10:45:54-05:00
 
 ### 12. Garage Sale
 - **Type:** garage
@@ -166,7 +164,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196400525
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.807689,-98.720266
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.807689,-98.720266
-- **Verified at:** 2026-09-25T09:52:21-05:00
+- **Verified at:** 2026-09-25T10:45:54-05:00
 
 ### 13. Boutique & Patio Sale - Churchill Estates (San Antonio)
 - **Type:** estate
@@ -178,7 +176,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-boutique-patio-sale/r5XRfY2Mzq1L7SkdRyQAPh
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.57937,-98.531523
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.57937,-98.531523
-- **Verified at:** 2026-09-25T09:52:21-05:00
+- **Verified at:** 2026-09-25T10:45:54-05:00
 
 ### 14. EPIC Estate Sale
 - **Type:** estate
@@ -191,7 +189,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/fischer-epic-estate-sale/ofF5mGiBJ1TNUJZ4yA976w
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.93849,-98.266096
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.93849,-98.266096
-- **Verified at:** 2026-09-25T09:52:21-05:00
+- **Verified at:** 2026-09-25T10:45:54-05:00
 
 ### 15. MASSIVE MOVING SALE - High Quality Furniture, Appliances & Decor! (San Antonio / Braun Mesa)
 - **Type:** garage
@@ -203,7 +201,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-massive-moving-sale-high/9HuEatYfEUpN163kTddTPs
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.541176,-98.655939
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.541176,-98.655939
-- **Verified at:** 2026-09-25T09:52:21-05:00
+- **Verified at:** 2026-09-25T10:45:54-05:00
 
 ### 16. 3 Family garage sale (Apple Creek Subdivision San Antonio)
 - **Type:** garage
@@ -215,7 +213,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-family-garage-sale/iArqdb4KY8qyasBFnfnmFz
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.5189,-98.6006
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5189,-98.6006
-- **Verified at:** 2026-09-25T09:52:21-05:00
+- **Verified at:** 2026-09-25T10:45:54-05:00
 
 ### 17. Alamo Craft Co. Antiques & More (San Antonio)
 - **Type:** garage
@@ -227,7 +225,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-alamo-craft-co-antiques-more/mj6FcRd4ZDr7zwAwc4pwWa
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.556,-98.6094
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.556,-98.6094
-- **Verified at:** 2026-09-25T09:52:21-05:00
+- **Verified at:** 2026-09-25T10:45:54-05:00
 
 ### 18. Furniture for Sale ( please read post, ty) (Green Spring Valley)
 - **Type:** garage
@@ -239,7 +237,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-furniture-for-sale-please/84LPLEmaFGUzdHuyK6dFdb
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.5855,-98.4071
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5855,-98.4071
-- **Verified at:** 2026-09-25T09:52:21-05:00
+- **Verified at:** 2026-09-25T10:45:54-05:00
 
 ### 19. Garage Sale (San Antonio)
 - **Type:** garage
@@ -251,7 +249,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-garage-sale/pxYNWRryiZ7XqvtUogrrih
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4186,-98.726
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4186,-98.726
-- **Verified at:** 2026-09-25T09:52:21-05:00
+- **Verified at:** 2026-09-25T10:45:54-05:00
 
 ### 20. Garage Sale (airport) (San Antonio)
 - **Type:** garage
@@ -263,7 +261,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-garage-sale-airport/mWq6wFt17W8ffp4hNwi94W
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.5334,-98.4975
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5334,-98.4975
-- **Verified at:** 2026-09-25T09:52:21-05:00
+- **Verified at:** 2026-09-25T10:45:54-05:00
 
 ## 3. CHICA PICKS
 
@@ -273,7 +271,7 @@
 - 🔥 Chica Pick — Hidden Treasures: Pewter, Gold, Sterling Online Auction by Caring Transitions - Ends 9/29!
 - 🔥 Chica Pick — Blanco Heritage & Handiwork Online Auction by Caring Transitions - Ends 9/30!
 - 🔥 Chica Pick — Yard Sale
-- 🔥 Chica Pick — Yard Sale
+- 🐾 Pack Favorite — Yard Sale
 - 🔥 Chica Pick — Everything $1 Each!
 
 ## 4. SOURCES CHECKED
