@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-25T10:45:54-05:00",
+  "generated_at": "2026-09-26T08:58:44-05:00",
   "overall": "critical",
   "primary_failures": [
     "estatesales_org",
@@ -51,10 +51,10 @@
     }
   ],
   "json_source_counts": {
-    "craigslist": 43,
+    "craigslist": 45,
     "estatesales.org": 7,
-    "garagesalefinder": 23,
-    "yardsalesearch": 26,
+    "garagesalefinder": 31,
+    "yardsalesearch": 28,
     "estatesales.net": 2,
     "email:garagesalefinder": 3,
     "unknown": 1,
