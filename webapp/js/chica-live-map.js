@@ -55,27 +55,37 @@
 
   function isPack(s) {
     if (!s) return false;
-    if (s.pack || s.preferred || s.boost) return true;
+    if (s.pack || s.preferred || s.boost || s.gold_pulse) return true;
     var cat = Array.isArray(s.categories) ? s.categories.join(" ") : String(s.categories || "");
     var blob = (cat + " " + (s.source || "") + " " + (s.title || "") + " " + (s.external_id || "")).toLowerCase();
     return /pack[\s-]?point/.test(blob) || blob.indexOf("pack-point") !== -1;
   }
 
-  function iconFor(type, pack, L) {
+  function isGold(s) {
+    if (!s) return false;
+    if (s.gold_pulse || s.boost || s.preferred) return true;
+    var cat = Array.isArray(s.categories) ? s.categories.join(" ") : String(s.categories || "");
+    return /\bgold\b|preferred|boost/.test(cat.toLowerCase());
+  }
+
+  function iconFor(type, pack, gold, L) {
     var kind = type === "estate" || type === "permit" ? type : "garage";
     var html;
+    var fill = gold ? "#f4c430" : "#c513af";
     if (kind === "estate") {
-      html = '<svg class="chica-sym" viewBox="0 0 28 28" width="28" height="28" aria-hidden="true"><polygon points="14,2.2 25.4,14 14,25.8 2.6,14" fill="#f4f4f4" stroke="#121212" stroke-width="2.2"/></svg>';
+      html = '<svg class="chica-sym" viewBox="0 0 28 28" width="28" height="28" aria-hidden="true"><polygon points="14,2.2 25.4,14 14,25.8 2.6,14" fill="' + (gold ? "#f4c430" : "#f4f4f4") + '" stroke="#121212" stroke-width="2.2"/></svg>';
     } else if (kind === "permit") {
-      html = '<svg class="chica-sym" viewBox="0 0 28 28" width="28" height="28" aria-hidden="true"><polygon points="14,2.4 25.6,24.8 2.4,24.8" fill="#8a8a8a" stroke="#121212" stroke-width="2.2"/></svg>';
+      html = '<svg class="chica-sym" viewBox="0 0 28 28" width="28" height="28" aria-hidden="true"><polygon points="14,2.4 25.6,24.8 2.4,24.8" fill="' + (gold ? "#f4c430" : "#8a8a8a") + '" stroke="#121212" stroke-width="2.2"/></svg>';
     } else {
-      html = '<svg class="chica-sym" viewBox="0 0 28 28" width="28" height="28" aria-hidden="true"><circle cx="14" cy="14" r="10" fill="#c513af" stroke="#fffdf8" stroke-width="2.4"/></svg>';
+      html = '<svg class="chica-sym" viewBox="0 0 28 28" width="28" height="28" aria-hidden="true"><circle cx="14" cy="14" r="10" fill="' + fill + '" stroke="#fffdf8" stroke-width="2.4"/></svg>';
     }
-    if (pack) {
+    if (gold) {
+      html = '<span class="chica-gold-halo" aria-hidden="true"></span><span class="chica-gold-ring" aria-hidden="true"></span>' + html;
+    } else if (pack) {
       html = '<span class="chica-pack-halo" aria-hidden="true"></span><span class="chica-pack-ring" aria-hidden="true"></span>' + html;
     }
     return L.divIcon({
-      className: "chica-pin chica-type-" + kind + (pack ? " chica-pack-pin" : ""),
+      className: "chica-pin chica-type-" + kind + (pack ? " chica-pack-pin" : "") + (gold ? " chica-gold-pin" : ""),
       html: html,
       iconSize: [PIN, PIN],
       iconAnchor: [HALF, HALF]
@@ -107,25 +117,31 @@
       var lat = Number(s.lat != null ? s.lat : s.latitude);
       var lon = Number(s.lon != null ? s.lon : s.lng != null ? s.lng : s.longitude);
       if (!isFinite(lat) || !isFinite(lon)) continue;
+      var gold = isGold(s);
+      var pack = isPack(s);
       var sale = {
         title: s.title || s.address || "Sale",
         address: s.address || "",
         dates: s.dates || "",
         hours: s.hours || "",
+        details: s.details || s.description || "",
         type: s.type || s.kind || "garage",
         lat: lat,
         lon: lon,
-        pack: isPack(s),
+        pack: pack,
+        boost: !!(s.boost || gold),
+        preferred: !!s.preferred,
+        gold: gold,
         source: s.source || ""
       };
       (function (item) {
         var mk = L.marker([item.lat, item.lon], {
-          icon: iconFor(item.type, item.pack, L),
-          title: item.pack ? "Pack point \u00b7 " + item.title : item.title,
+          icon: iconFor(item.type, item.pack, item.gold, L),
+          title: item.gold ? "Gold pulse \u00b7 " + item.title : (item.pack ? "Pack point \u00b7 " + item.title : item.title),
           alt: item.title + " \u2014 tap for details",
           keyboard: true,
           riseOnHover: true,
-          zIndexOffset: item.pack ? 600 : 0
+          zIndexOffset: item.gold ? 800 : (item.pack ? 600 : 0)
         });
         mk.__chicaSale = item;
         mk.on("click", function () {
@@ -149,8 +165,12 @@
       ".chica-pack-halo,.chica-pack-ring{position:absolute;left:20px;top:20px;width:24px;height:24px;margin:0;border-radius:50%;pointer-events:none;transform:translate3d(-50%,-50%,0);backface-visibility:hidden}" +
       ".chica-pack-halo{background:#ff3ad1;opacity:.35}" +
       ".chica-pack-ring{background:#ff3ad1;opacity:.9;will-change:transform,opacity;animation:chica-pack-pulse 1.4s ease-out infinite}" +
+      ".chica-gold-halo,.chica-gold-ring{position:absolute;left:20px;top:20px;width:24px;height:24px;margin:0;border-radius:50%;pointer-events:none;transform:translate3d(-50%,-50%,0);backface-visibility:hidden}" +
+      ".chica-gold-halo{background:#f4c430;opacity:.42}" +
+      ".chica-gold-ring{background:#f4c430;opacity:.95;will-change:transform,opacity;animation:chica-gold-pulse 1.35s ease-out infinite}" +
       "@keyframes chica-pack-pulse{0%{transform:translate3d(-50%,-50%,0) scale(.7);opacity:.85}100%{transform:translate3d(-50%,-50%,0) scale(2.2);opacity:0}}" +
-      "@media (prefers-reduced-motion:reduce){.chica-pack-ring{animation:none;opacity:.4;transform:translate3d(-50%,-50%,0) scale(1.55)}}" +
+      "@keyframes chica-gold-pulse{0%{transform:translate3d(-50%,-50%,0) scale(.7);opacity:.9}100%{transform:translate3d(-50%,-50%,0) scale(2.35);opacity:0}}" +
+      "@media (prefers-reduced-motion:reduce){.chica-pack-ring,.chica-gold-ring{animation:none;opacity:.45;transform:translate3d(-50%,-50%,0) scale(1.55)}}" +
       ".chica-hide-permit .leaflet-marker-icon.chica-type-permit{display:none!important}";
     (document.head || document.documentElement).appendChild(s);
   }
@@ -278,11 +298,11 @@
       if (typeof w.__chicaHideIntel === "function") w.__chicaHideIntel();
     });
     var feedUrls = [
-      BASE + "/data/cities/san-antonio.json?v=35",
-      BASE + "/data/cities/san-antonio-email.json?v=35",
-      BASE + "/data/cities/san-antonio-user.json?v=35",
-      BASE + "/data/cities/san-antonio-permits-a.json?v=35",
-      BASE + "/data/cities/san-antonio-permits-b.json?v=35"
+      BASE + "/data/cities/san-antonio.json?v=36",
+      BASE + "/data/cities/san-antonio-email.json?v=36",
+      BASE + "/data/cities/san-antonio-user.json?v=36",
+      BASE + "/data/cities/san-antonio-permits-a.json?v=36",
+      BASE + "/data/cities/san-antonio-permits-b.json?v=36"
     ];
     Promise.all(feedUrls.map(function (u) {
       return fetch(u, { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
