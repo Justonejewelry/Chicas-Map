@@ -1,16 +1,14 @@
 name: Chica Daily (Master Workflow)
 
 # Unified populate: every map source + orchestrator + events + forecast.
-# 5:00 AM America/Chicago every day.
-# CDT (UTC-5) → 10:00 UTC | CST (UTC-6) → 11:00 UTC
-# Both crons fire near 5 AM local year-round. Idempotent sources.
+# One cron. GitHub cron is UTC-only; dual 10/11 UTC was burning two runs/day.
+# 11:00 UTC = 6 AM CDT / 5 AM CST. Close enough. Do not add a second cron.
 # Do NOT put [skip ci] on the populate commit. That left GitHub Pages
 # serving an empty public[] while main already had pins.
 
 on:
   schedule:
-    - cron: "0 10 * * *"   # ~5 AM CDT daily
-    - cron: "0 11 * * *"   # ~5 AM CST daily
+    - cron: "0 11 * * *"
   workflow_dispatch:
     inputs:
       target_date:
@@ -39,7 +37,7 @@ permissions:
   issues: write
 
 concurrency:
-  group: chica-daily
+  group: chica-feed
   cancel-in-progress: false
 
 jobs:
@@ -56,6 +54,18 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+          cache: pip
+          cache-dependency-path: |
+            requirements.txt
+            webapp/scripts/requirements.txt
+
+      - name: Install runtime deps
+        run: |
+          set -euo pipefail
+          python3 -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          if [ -f webapp/scripts/requirements.txt ]; then pip install -r webapp/scripts/requirements.txt; fi
+          pip install "requests>=2.31" "beautifulsoup4>=4.12" "lxml>=5.0" || true
 
       - name: Ensure directories
         run: |
@@ -67,6 +77,7 @@ jobs:
           CITIES: ${{ github.event.inputs.cities || 'san-antonio,austin' }}
           PERMIT_DAYS: ${{ github.event.inputs.permit_days || '14' }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PYTHONUNBUFFERED: "1"
         run: |
           set -euo pipefail
           ARGS=""
@@ -80,6 +91,15 @@ jobs:
             --cities "$CITIES" \
             --permit-days "$PERMIT_DAYS" \
             $ARGS | tee daily-run.log
+
+      - name: Upload run log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: chica-daily-log
+          path: daily-run.log
+          if-no-files-found: ignore
+          retention-days: 14
 
       - name: Detect changes
         id: diff
@@ -102,7 +122,7 @@ jobs:
       - name: Commit daily populate
         if: steps.diff.outputs.dirty == 'true' && github.event.inputs.dry_run != 'true'
         run: |
-          set -e
+          set -euo pipefail
           git config user.name "chicas-map-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add \
@@ -113,32 +133,21 @@ jobs:
           DATE=$(ls data/sales/*.json 2>/dev/null | xargs -n1 basename 2>/dev/null | sed 's/.json//' | sort | tail -1 || date -u +%Y-%m-%d)
           MSG="Chica master populate — ${DATE}"
           git commit -m "$MSG" || exit 0
-          git pull --rebase origin main || true
+          git pull --rebase origin main
           git push origin HEAD:main
 
       - name: Summary
+        if: always()
         run: |
           {
-            echo "### Chica Daily Master Populate (5 AM CT)"
+            echo "### Chica Daily Master Populate"
             echo ""
             echo "- Trigger: ${{ github.event_name }}"
             echo "- Cities: ${{ github.event.inputs.cities || 'san-antonio,austin' }}"
             echo "- Target input: ${{ github.event.inputs.target_date || 'auto (today CT)' }}"
             echo "- Dry run: ${{ github.event.inputs.dry_run || 'false' }}"
             echo "- Changes: ${{ steps.diff.outputs.dirty || 'n/a' }}"
-            echo ""
-            echo "#### Sources in master_populate.py"
-            echo "- GarageSaleFinder discover_sales"
-            echo "- City of SA permits"
-            echo "- EstateSales.org"
-            echo "- YardSaleSearch"
-            echo "- gsalr.com"
-            echo "- Craigslist"
-            echo "- EstateSales.net lightweight (free HTTP)"
-            echo "- purge_expired + scraper health"
-            echo "- chica_daily orchestrator (enrich / sentinel / packs / social)"
-            echo "- community events swarm"
-            echo "- populate_forecast + cluster intelligence (if present)"
+            echo "- Cron: 11:00 UTC (5 AM CST / 6 AM CDT) — single shot"
             echo ""
             echo "#### Run log"
             echo '```'

@@ -2,7 +2,7 @@ name: Map feed refresh
 
 on:
   # Continuous 2-hour schedule REMOVED per Master Workflow.
-  # Discovery now runs via Chica Daily at 5 AM CT daily
+  # Discovery now runs via Chica Daily at 11:00 UTC (~5–6 AM CT)
   # (and can still be triggered manually here).
   workflow_dispatch:
     inputs:
@@ -23,9 +23,10 @@ permissions:
   contents: write
   issues: write
 
+# Same lock as chica-daily so a manual refresh cannot race the 5 AM populate.
 concurrency:
-  group: map-refresh
-  cancel-in-progress: true
+  group: chica-feed
+  cancel-in-progress: false
 
 jobs:
   discover-purge-publish:
@@ -116,11 +117,11 @@ jobs:
       - name: Commit and push
         if: steps.diff.outputs.dirty == 'true'
         run: |
-          set -e
+          set -euo pipefail
           git config user.name "chicas-map-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add webapp/data/cities/*.json webapp/data/scraper-health.json || true
-          MSG="Map refresh $(date -u +%Y-%m-%dT%H:%MZ) — manual discovery [skip ci]"
+          MSG="Map refresh $(date -u +%Y-%m-%dT%H:%MZ) — manual discovery"
           git commit -m "$MSG" || exit 0
           git pull --rebase origin main
           git push origin HEAD:main
@@ -132,6 +133,6 @@ jobs:
             echo ""
             echo "- Trigger: ${{ github.event_name }}"
             echo "- Continuous 2h schedule: REMOVED"
-            echo "- Apify: REMOVED"
+            echo "- Lock: chica-feed (shared with Chica Daily)"
             echo "- Changes committed: ${{ steps.diff.outputs.dirty }}"
           } >> "$GITHUB_STEP_SUMMARY"

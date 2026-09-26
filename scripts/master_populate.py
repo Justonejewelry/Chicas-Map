@@ -5,8 +5,12 @@ Chica Map — unified daily populate (all source actions).
 Runs every discovery / ingest / hygiene / publish step that actually
 populates the map, then the daily orchestrator + community events layer.
 
-Designed for GitHub Actions at 5:00 AM America/Chicago.
+Designed for GitHub Actions at 11:00 UTC (~5–6 AM America/Chicago).
 Safe to run locally: python3 scripts/master_populate.py [--dry-run] [--cities slug,slug]
+
+Exit codes:
+  0  at least one discovery source ran and hygiene completed
+  2  every discovery source missing or failed (map would go stale silently)
 """
 from __future__ import annotations
 
@@ -77,33 +81,56 @@ def main() -> int:
     log("=== MASTER POPULATE ===")
     log(f"cities={cities} permit_days={days} dry_run={args.dry_run}")
 
-    (ROOT / "scripts").mkdir(parents=True, exist_ok=True)
-    (ROOT / "data" / "sales").mkdir(parents=True, exist_ok=True)
-    (ROOT / "daily-packs").mkdir(parents=True, exist_ok=True)
-    (ROOT / "social").mkdir(parents=True, exist_ok=True)
-    (ROOT / "forecast").mkdir(parents=True, exist_ok=True)
-    (ROOT / "reports").mkdir(parents=True, exist_ok=True)
-    (ROOT / "webapp" / "data" / "cities").mkdir(parents=True, exist_ok=True)
+    for p in (
+        ROOT / "scripts",
+        ROOT / "data" / "sales",
+        ROOT / "daily-packs",
+        ROOT / "social",
+        ROOT / "forecast",
+        ROOT / "reports",
+        ROOT / "webapp" / "data" / "cities",
+    ):
+        p.mkdir(parents=True, exist_ok=True)
 
     city_env = {"CITIES": cities}
 
-    steps: list[tuple[str, list[str], bool]] = [
-        ("discover_sales (GarageSaleFinder)", [PY, "webapp/scripts/discover_sales.py", "--cities", cities], False),
-        ("fetch_permits (Open Data SA)", [PY, "webapp/scripts/fetch_permits.py", "--days", days], False),
-        ("fetch_estatesales_org", [PY, "webapp/scripts/fetch_estatesales_org.py", "--cities", cities], False),
-        ("fetch_yardsalesearch", [PY, "webapp/scripts/fetch_yardsalesearch.py", "--cities", cities], False),
-        ("fetch_gsalr", [PY, "webapp/scripts/fetch_gsalr.py", "--cities", cities], False),
-        ("fetch_craigslist", [PY, "webapp/scripts/fetch_craigslist.py", "--cities", cities], False),
-        ("fetch_estatesales.net", [PY, "webapp/scripts/fetch_estatesales.py", "--cities", cities], False),
-        ("purge_expired", [PY, "webapp/scripts/purge_expired.py"], False),
+    discovery: list[tuple[str, list[str]]] = [
+        ("discover_sales (GarageSaleFinder)", [PY, "webapp/scripts/discover_sales.py", "--cities", cities]),
+        ("fetch_permits (Open Data SA)", [PY, "webapp/scripts/fetch_permits.py", "--days", days]),
+        ("fetch_estatesales_org", [PY, "webapp/scripts/fetch_estatesales_org.py", "--cities", cities]),
+        ("fetch_yardsalesearch", [PY, "webapp/scripts/fetch_yardsalesearch.py", "--cities", cities]),
+        ("fetch_gsalr", [PY, "webapp/scripts/fetch_gsalr.py", "--cities", cities]),
+        ("fetch_craigslist", [PY, "webapp/scripts/fetch_craigslist.py", "--cities", cities]),
+        ("fetch_estatesales.net", [PY, "webapp/scripts/fetch_estatesales.py", "--cities", cities]),
+    ]
+    hygiene: list[tuple[str, list[str], bool]] = [
+        ("purge_expired", [PY, "webapp/scripts/purge_expired.py"], True),
         ("check_scraper_health", [PY, "webapp/scripts/check_scraper_health.py"], False),
     ]
 
     failed: list[str] = []
-    for name, argv, required in steps:
+    discovery_ok = 0
+    discovery_ran = 0
+
+    for name, argv in discovery:
         script = Path(argv[1]) if len(argv) > 1 else None
         if script and not (ROOT / script).exists():
             log(f"SKIP {name} — missing {script}")
+            failed.append(f"{name}(missing)")
+            continue
+        discovery_ran += 1
+        code = run_step(name, argv, env=city_env, required=False)
+        if code == 0:
+            discovery_ok += 1
+        else:
+            failed.append(f"{name}({code})")
+
+    for name, argv, required in hygiene:
+        script = Path(argv[1]) if len(argv) > 1 else None
+        if script and not (ROOT / script).exists():
+            log(f"SKIP {name} — missing {script}")
+            if required:
+                failed.append(f"{name}(missing)")
             continue
         code = run_step(name, argv, env=city_env, required=required)
         if code != 0:
@@ -184,8 +211,13 @@ def main() -> int:
         log("SKIP apply_cluster_intelligence (needs data/permits_recent.json + neighborhood_clusters.json)")
 
     log("=== MASTER POPULATE COMPLETE ===")
+    log(f"discovery ok={discovery_ok}/{discovery_ran}")
     if failed:
         log("non-fatal failures: " + ", ".join(failed))
+
+    if discovery_ran > 0 and discovery_ok == 0:
+        log("HARD FAIL — every discovery source failed. Refusing a green check on a stale map.")
+        return 2
     return 0
 
 
