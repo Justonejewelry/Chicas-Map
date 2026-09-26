@@ -45,6 +45,7 @@
       "#chica-intel-card .x{position:absolute;top:4px;right:4px;border:0;background:transparent;font:800 22px/1 Inter,system-ui,sans-serif;min-width:36px;min-height:36px}" +
       "#chica-intel-card h3{margin:0 32px 6px 0;font:800 16px/1.2 Inter,system-ui,sans-serif}" +
       "#chica-intel-card .meta{margin:0;color:#5c5348;font-size:12px}" +
+      "#chica-intel-card .gold-tag{display:inline-block;margin:0 0 6px;padding:2px 8px;border-radius:999px;background:#f4c430;color:#1a1714;font:800 10px/1.4 Inter,system-ui,sans-serif;letter-spacing:.06em}" +
       "#chica-intel-card .chica-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0 0}" +
       "#chica-intel-card .chica-actions a.go-nav{display:flex;align-items:center;justify-content:center;min-height:40px;border:2px solid #c513af;border-radius:10px;padding:8px 10px;font:800 13px/1 Inter,system-ui,sans-serif;color:#7a0f6c;text-decoration:none;background:#fff}" +
       "#chica-intel-card .chica-actions a.go-street{background:#c513af;color:#fffdf8;border-color:#c513af}" +
@@ -67,12 +68,16 @@
     css();
     var el = cardEl();
     var lat = Number(sale.lat), lon = Number(sale.lon);
-    var when = sale.dates || sale.hours || "";
+    var when = [sale.dates, sale.hours].filter(Boolean).join(" \u00b7 ");
+    var gold = !!(sale.gold || sale.boost || sale.preferred);
+    var bits = esc(sale.address || "") + (when ? "<br>" + esc(when) : "");
+    if (sale.details) bits += "<br>" + esc(sale.details);
+    if (gold) bits = '<span class="gold-tag">GOLD PULSE</span><br>' + bits;
     el.innerHTML =
       '<button type="button" class="x" aria-label="Close">\u00d7</button>' +
       '<div class="chica-opt">' +
       "<h3>" + esc(sale.title || "Sale") + "</h3>" +
-      '<p class="meta">' + esc(sale.address || "") + (when ? "<br>" + esc(when) : "") + "</p>" +
+      '<p class="meta">' + bits + "</p>" +
       actions(lat, lon) +
       '<a class="claim" href="' + esc(claimHref(sale)) + '">Claim My Garage Sale</a>' +
       "</div>";
@@ -90,6 +95,10 @@
       address: item.address || "",
       dates: item.dates || "",
       hours: item.hours || "",
+      details: item.details || "",
+      boost: !!item.boost,
+      preferred: !!item.preferred,
+      gold: !!item.gold,
       lat: llng.lat,
       lon: llng.lng
     };
