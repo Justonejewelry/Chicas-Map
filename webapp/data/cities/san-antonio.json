@@ -1,1 +1,18 @@
-SEE_FILE
+{
+  "edition": "San Antonio Yard-Bird Discovery",
+  "city": "san-antonio",
+  "last_refresh": "2026-09-26T10:15:00-05:00",
+  "total_locations": 115,
+  "sources": [
+    "Email:EstateSales.org",
+    "Email:GarageSaleFinder",
+    "craigslist.org",
+    "data.sanantonio.gov",
+    "estatesales.net",
+    "estatesales.org",
+    "garagesalefinder.com",
+    "gsalr.com",
+    "yardsalesearch.com"
+  ],
+  "public": []
+}
