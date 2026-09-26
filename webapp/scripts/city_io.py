@@ -50,7 +50,7 @@ CITY_DIR = ROOT / "data" / "cities"
 
 
 def empty_skeleton(slug: str = "san-antonio") -> dict[str, Any]:
-    """Canonical empty city feed. Always safe to write."""
+    """Canonical empty city feed. safe_write_city will not use this to wipe SA."""
     name = slug.replace("-", " ").title()
     return {
         "edition": f"{name} Yard-Bird Discovery",
@@ -81,7 +81,7 @@ def safe_load_city(slug_or_path: str | Path = "san-antonio") -> dict[str, Any]:
     Never raises on:
       - missing file
       - empty file
-      - literal "PLACEHOLDER"
+      - literal \"PLACEHOLDER\"
       - invalid JSON
       - non-dict JSON
 
@@ -115,7 +115,6 @@ def safe_load_city(slug_or_path: str | Path = "san-antonio") -> dict[str, Any]:
         print(f"[city_io] {path.name} is not a JSON object → empty skeleton", file=sys.stderr)
         return empty_skeleton(slug)
 
-    # Guarantee required keys so callers never KeyError
     data.setdefault("public", [])
     data.setdefault("permits", [])
     data.setdefault("hot_zones", [])
@@ -134,7 +133,6 @@ def _acquire_lock(lock_path: Path):
     if fcntl is None:
         return None
     try:
-        # Sibling lock file keeps the real data file free of lock metadata
         fh = open(lock_path, "a+", encoding="utf-8")
         fcntl.flock(fh.fileno(), fcntl.LOCK_EX)
         return fh
@@ -146,15 +144,8 @@ def _acquire_lock(lock_path: Path):
 def safe_write_city(slug_or_path: str | Path, data: dict[str, Any]) -> Path:
     """Write a city feed with atomic + concurrent-safe semantics.
 
-    Strategy (Linux / GitHub Actions):
-      1. Unique temp file in the same directory (same FS → rename atomic)
-      2. Exclusive flock on a sibling .lock file (serializes concurrent writers)
-      3. Full write + fsync (data durable before name swap)
-      4. os.replace(tmp, final) — atomic on POSIX
-      5. Always clean up the temp file on any path
-
-    Never writes the string PLACEHOLDER. Never leaves a partial file
-    as the published name.
+    Never writes PLACEHOLDER. Never leaves a partial published file.
+    For san-antonio.json: refuse to replace a non-empty public[] with [].
     """
     path = _path_for(slug_or_path)
     slug = path.stem
@@ -162,8 +153,7 @@ def safe_write_city(slug_or_path: str | Path, data: dict[str, Any]) -> Path:
     if not isinstance(data, dict):
         raise TypeError("safe_write_city expects a dict")
 
-    # Normalize
-    data = dict(data)  # shallow copy
+    data = dict(data)
     data.setdefault("city", slug)
     data.setdefault("public", [])
     data.setdefault("permits", [])
@@ -175,6 +165,26 @@ def safe_write_city(slug_or_path: str | Path, data: dict[str, Any]) -> Path:
     if "date" not in data:
         data["date"] = datetime.now(CT).date().isoformat()
 
+    if slug == "san-antonio" and path.exists():
+        incoming = data.get("public") or []
+        if not incoming:
+            try:
+                existing = json.loads(path.read_text(encoding="utf-8"))
+                old = existing.get("public") or []
+            except Exception:
+                old = []
+                existing = {}
+            if old:
+                print(
+                    f"[city_io] LOCK san-antonio: refuse empty public overwrite "
+                    f"(keeping {len(old)} existing pins)",
+                    file=sys.stderr,
+                )
+                data["public"] = old
+                data["total_locations"] = len(old) + len(data.get("permits") or [])
+                data["status"] = "live"
+                data["edition"] = data.get("edition") or existing.get("edition") or "San Antonio Yard-Bird Discovery"
+
     path.parent.mkdir(parents=True, exist_ok=True)
     text = json.dumps(data, indent=2, ensure_ascii=False) + "\n"
     payload = text.encode("utf-8")
@@ -184,7 +194,6 @@ def safe_write_city(slug_or_path: str | Path, data: dict[str, Any]) -> Path:
     tmp_path: Path | None = None
 
     try:
-        # Unique name in same directory → same filesystem → atomic rename
         fd, tmp_name = tempfile.mkstemp(
             prefix=f".{path.stem}.",
             suffix=".json.tmp",
@@ -195,12 +204,10 @@ def safe_write_city(slug_or_path: str | Path, data: dict[str, Any]) -> Path:
             with os.fdopen(fd, "wb") as f:
                 f.write(payload)
                 f.flush()
-                os.fsync(f.fileno())  # durable before the name swap
-            # Atomic publish
+                os.fsync(f.fileno())
             os.replace(tmp_path, path)
-            tmp_path = None  # successfully moved; don't unlink later
+            tmp_path = None
         except Exception:
-            # Ensure the temp file does not linger on any write error
             if tmp_path is not None and tmp_path.exists():
                 try:
                     tmp_path.unlink()
@@ -214,7 +221,6 @@ def safe_write_city(slug_or_path: str | Path, data: dict[str, Any]) -> Path:
                 lock_fh.close()
             except OSError:
                 pass
-            # Best-effort cleanup of the lock file itself
             try:
                 if lock_path.exists() and lock_path.stat().st_size == 0:
                     lock_path.unlink(missing_ok=True)
@@ -225,11 +231,7 @@ def safe_write_city(slug_or_path: str | Path, data: dict[str, Any]) -> Path:
 
 
 def run_isolated(step_name: str, fn, *args, **kwargs):
-    """Execute a scraper step with error isolation (soft-fail middleware).
-
-    Returns (ok: bool, result_or_none).
-    Never re-raises; prints the error and continues the pipeline.
-    """
+    """Execute a scraper step with error isolation (soft-fail middleware)."""
     try:
         result = fn(*args, **kwargs)
         return True, result
