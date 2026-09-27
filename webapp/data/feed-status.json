@@ -1,15 +1,15 @@
 {
   "city": "san-antonio",
-  "date": "2026-09-19",
-  "last_refresh": "2026-09-19T09:04:00-05:00",
-  "edition": "Saturday Live — San Antonio",
+  "date": "2026-09-27",
+  "last_refresh": "2026-09-27T06:20:00-05:00",
+  "edition": "Sunday live — Chica at 1207 Fulton this afternoon",
   "canonical_feed": "data/cities/san-antonio.json",
   "delta_feed": "data/cities/san-antonio-user.json",
-  "city_feed_public": 47,
-  "user_feed_public": 20,
-  "total_locations": 67,
+  "city_feed_public": "unchanged",
+  "user_feed_public": 1,
+  "total_locations": "city harvest + 1 pack pin",
   "permit_total": "unchanged",
   "sentinel": "PASS",
-  "note": "City harvest left intact. Pack-only pins (18) + 2 existing preferred pins written to san-antonio-user.json. Map loads both.",
+  "note": "Gold pulse pack pin extended to Sunday afternoon. Chica on site at 1207 Fulton Ave.",
   "status": "live"
 }
