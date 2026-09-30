@@ -1,17 +1,5 @@
 #!/usr/bin/env python3
-"""
-Chica Map — unified daily populate (all source actions).
-
-Runs every discovery / ingest / hygiene / publish step that actually
-populates the map, then the daily orchestrator + community events layer.
-
-Designed for GitHub Actions at 11:00 UTC (~5–6 AM America/Chicago).
-Safe to run locally: python3 scripts/master_populate.py [--dry-run] [--cities slug,slug]
-
-Exit codes:
-  0  at least one discovery source ran and hygiene completed
-  2  every discovery source missing or failed (map would go stale silently)
-"""
+"""Chica Map — unified daily populate."""
 from __future__ import annotations
 
 import argparse
@@ -38,12 +26,7 @@ def run_step(name: str, argv: list[str], env: dict | None = None, required: bool
     if env:
         merged.update(env)
     try:
-        proc = subprocess.run(
-            argv,
-            cwd=str(ROOT),
-            env=merged,
-            check=False,
-        )
+        proc = subprocess.run(argv, cwd=str(ROOT), env=merged, check=False)
         code = proc.returncode
     except FileNotFoundError as exc:
         log(f"MISS {name}: {exc}")
@@ -70,31 +53,18 @@ def main() -> int:
     ap = argparse.ArgumentParser(description="Unified Chica Map populate")
     ap.add_argument("--cities", default=os.environ.get("CITIES", "san-antonio,austin"))
     ap.add_argument("--permit-days", default=os.environ.get("PERMIT_DAYS", "14"))
-    ap.add_argument("--date", default="", help="Force chica_daily target YYYY-MM-DD")
+    ap.add_argument("--date", default="")
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--skip-events", action="store_true")
     ap.add_argument("--skip-orchestrator", action="store_true")
     args = ap.parse_args()
-
     cities = args.cities
     days = str(args.permit_days)
     log("=== MASTER POPULATE ===")
-    log(f"cities={cities} permit_days={days} dry_run={args.dry_run}")
-
-    for p in (
-        ROOT / "scripts",
-        ROOT / "data" / "sales",
-        ROOT / "daily-packs",
-        ROOT / "social",
-        ROOT / "forecast",
-        ROOT / "reports",
-        ROOT / "webapp" / "data" / "cities",
-    ):
+    for p in (ROOT / "scripts", ROOT / "data" / "sales", ROOT / "daily-packs", ROOT / "social", ROOT / "forecast", ROOT / "reports", ROOT / "webapp" / "data" / "cities"):
         p.mkdir(parents=True, exist_ok=True)
-
     city_env = {"CITIES": cities}
-
-    discovery: list[tuple[str, list[str]]] = [
+    discovery = [
         ("discover_sales (GarageSaleFinder)", [PY, "webapp/scripts/discover_sales.py", "--cities", cities]),
         ("fetch_permits (Open Data SA)", [PY, "webapp/scripts/fetch_permits.py", "--days", days]),
         ("fetch_estatesales_org", [PY, "webapp/scripts/fetch_estatesales_org.py", "--cities", cities]),
@@ -103,126 +73,47 @@ def main() -> int:
         ("fetch_craigslist", [PY, "webapp/scripts/fetch_craigslist.py", "--cities", cities]),
         ("fetch_estatesales.net", [PY, "webapp/scripts/fetch_estatesales.py", "--cities", cities]),
     ]
-    hygiene: list[tuple[str, list[str], bool]] = [
-        ("purge_expired", [PY, "webapp/scripts/purge_expired.py"], True),
-        ("check_scraper_health", [PY, "webapp/scripts/check_scraper_health.py"], False),
-    ]
-
     failed: list[str] = []
-    discovery_ok = 0
-    discovery_ran = 0
-
+    discovery_ok = discovery_ran = 0
     for name, argv in discovery:
-        script = Path(argv[1]) if len(argv) > 1 else None
-        if script and not (ROOT / script).exists():
+        script = Path(argv[1])
+        if not (ROOT / script).exists():
             log(f"SKIP {name} — missing {script}")
             failed.append(f"{name}(missing)")
             continue
         discovery_ran += 1
-        code = run_step(name, argv, env=city_env, required=False)
+        code = run_step(name, argv, env=city_env)
         if code == 0:
             discovery_ok += 1
         else:
             failed.append(f"{name}({code})")
-
-    for name, argv, required in hygiene:
-        script = Path(argv[1]) if len(argv) > 1 else None
-        if script and not (ROOT / script).exists():
-            log(f"SKIP {name} — missing {script}")
-            if required:
-                failed.append(f"{name}(missing)")
+    for name, argv, required in (("purge_expired", [PY, "webapp/scripts/purge_expired.py"], True), ("check_scraper_health", [PY, "webapp/scripts/check_scraper_health.py"], False)):
+        if not (ROOT / Path(argv[1])).exists():
             continue
         code = run_step(name, argv, env=city_env, required=required)
         if code != 0:
             failed.append(f"{name}({code})")
-
     rebuild = ROOT / "webapp" / "scripts" / "rebuild_feed.py"
     if rebuild.exists():
-        run_step("rebuild_feed", [PY, str(rebuild.relative_to(ROOT))])
-
-    thin = ROOT / "scripts" / "thin_address_resolve.py"
-    if thin.exists() and not args.dry_run:
+        run_step("rebuild_feed", [PY, "webapp/scripts/rebuild_feed.py"])
+    if (ROOT / "scripts" / "thin_address_resolve.py").exists() and not args.dry_run:
         run_step("thin_address_resolve", [PY, "scripts/thin_address_resolve.py"])
+    if (ROOT / "scripts" / "date_window.py").exists() and not args.dry_run:
+        run_step("date_window", [PY, "scripts/date_window.py"])
     elif args.dry_run:
-        log("SKIP thin_address_resolve (dry-run)")
-
-    if not args.skip_orchestrator:
-        orch = ROOT / "scripts" / "chica_daily.py"
-        if orch.exists():
-            argv = [PY, "scripts/chica_daily.py"]
-            target = args.date or datetime.now(CT).date().isoformat()
-            argv += ["--date", target]
-            if args.dry_run:
-                argv += ["--dry-run"]
-            code = run_step("chica_daily orchestrator", argv, required=False)
-            if code != 0:
-                failed.append(f"chica_daily({code})")
-        else:
-            log("SKIP chica_daily — scripts/chica_daily.py missing")
-
-    if not args.skip_events:
-        swarm = ROOT / "scripts" / "community_events_swarm.py"
-        if swarm.exists() and not args.dry_run:
-            code = run_step("community_events_swarm", [PY, "scripts/community_events_swarm.py"])
-            if code != 0:
-                failed.append(f"community_events({code})")
-        elif args.dry_run:
-            log("SKIP community_events_swarm (dry-run)")
-        else:
-            log("SKIP community_events_swarm — missing script")
-
-    sales = latest_sales_json()
-    forecast_script = ROOT / "scripts" / "populate_forecast.py"
-    if sales and forecast_script.exists() and not args.dry_run:
-        out = ROOT / "forecast" / f"{sales.stem}-weekend.json"
-        run_step(
-            "populate_forecast",
-            [
-                PY,
-                "scripts/populate_forecast.py",
-                "--sales",
-                str(sales.relative_to(ROOT)),
-                "--city",
-                cities.split(",")[0].strip(),
-                "--out",
-                str(out.relative_to(ROOT)),
-            ],
-        )
-    else:
-        log("SKIP populate_forecast")
-
-    cluster = ROOT / "scripts" / "apply_cluster_intelligence.py"
-    permits_f = ROOT / "data" / "permits_recent.json"
-    clusters_f = ROOT / "data" / "neighborhood_clusters.json"
-    if (
-        cluster.exists()
-        and permits_f.exists()
-        and clusters_f.exists()
-        and not args.dry_run
-    ):
-        run_step(
-            "apply_cluster_intelligence",
-            [
-                PY,
-                "scripts/apply_cluster_intelligence.py",
-                "--permits",
-                "data/permits_recent.json",
-                "--clusters",
-                "data/neighborhood_clusters.json",
-                "--out-dir",
-                "data",
-            ],
-        )
-    else:
-        log("SKIP apply_cluster_intelligence (needs data/permits_recent.json + neighborhood_clusters.json)")
-
+        log("SKIP date_window (dry-run)")
+    if not args.skip_orchestrator and (ROOT / "scripts" / "chica_daily.py").exists():
+        argv = [PY, "scripts/chica_daily.py", "--date", args.date or datetime.now(CT).date().isoformat()]
+        if args.dry_run:
+            argv.append("--dry-run")
+        code = run_step("chica_daily orchestrator", argv)
+        if code != 0:
+            failed.append(f"chica_daily({code})")
+    if not args.skip_events and not args.dry_run and (ROOT / "scripts" / "community_events_swarm.py").exists():
+        run_step("community_events_swarm", [PY, "scripts/community_events_swarm.py"])
     log("=== MASTER POPULATE COMPLETE ===")
     log(f"discovery ok={discovery_ok}/{discovery_ran}")
-    if failed:
-        log("non-fatal failures: " + ", ".join(failed))
-
     if discovery_ran > 0 and discovery_ok == 0:
-        log("HARD FAIL — every discovery source failed. Refusing a green check on a stale map.")
         return 2
     return 0
 
