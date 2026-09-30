@@ -1,0 +1,27 @@
+{
+  "date": "2026-09-30",
+  "city": "san-antonio",
+  "persona": "Chica",
+  "pii_sanitized": true,
+  "map_url": "https://justonejewelry.github.io/Chicas-Map/",
+  "map_url_sa": "https://chicasmap.com/sa",
+  "confidence_floor": 0.7,
+  "posts": {
+    "facebook": {
+      "channel": "facebook",
+      "tone": "energetic local SA, emoji list, deep links",
+      "body": "Hey pack.\n\nWednesday sniff. The fat trail is Sat–Sun Oct 3–4.\n\n🔥 Tools + collectibles — 7927 Avellano, 78250 (Sat)\nhttps://chicasmap.com/sa?id=email-gsf-7927-avellano-san-antonio-tx-78250-20261003\n\n🕰️ 1970s Time Capsule estate — SA 78216, Sat–Sun\nhttps://chicasmap.com/sa?id=email-eso-1970s-time-capsule-san-antonio-tx-78216-20261003\n\n🏡 Terrell Heights — 25+ households off Larchmont, 78209 (Sat)\nhttps://chicasmap.com/sa?id=email-gsf-larchmont-dr-san-antonio-tx-78209-20261003\n\n📍 Castle Hills — 503 Antler Dr, Sat–Sun\nhttps://chicasmap.com/sa?id=email-gsf-503-antler-dr-san-antonio-tx-78213-20261003\n\n🎒 Tall Oaks rummage — 419 E Magnolia, Sat 9–1 on the listing\nhttps://chicasmap.com/sa?id=email-gsf-419-e-magnolia-ave-san-antonio-tx-78212-20261003\n\n📦 Storage downsizing — 14315 Indian Woods, 78249, Sat–Sun\nhttps://chicasmap.com/sa?id=email-gsf-14315-indian-woods-san-antonio-tx-78249-20261003\n\nFree map. Near Me. Multi-stop. Google / Apple / Waze.\nhttps://justonejewelry.github.io/Chicas-Map/\n\nMissing a sale? List it. Share this with the pack."
+    },
+    "nextdoor": {
+      "channel": "nextdoor",
+      "tone": "neighborly, neighborhood tags, no blast",
+      "body": "Neighbors — Chica’s weekend preview for Sat–Sun Oct 3–4.\n\nTerrell Heights (Larchmont / Greenwich, 78209) is the cluster: 25+ households plus the community garden map drop.\nCastle Hills: 503 Antler Dr both days.\nNorth Central rummage: 419 E Magnolia (Tall Oaks School) Saturday.\nFar NW: tools and collectibles at 7927 Avellano Saturday; storage clean-out at 14315 Indian Woods Sat–Sun.\nEstate lane: Caring Transitions North 1970s time capsule, 78216, Sat–Sun.\n\nMap with Near Me and routes:\nhttps://justonejewelry.github.io/Chicas-Map/\n\nIf your sale is not on there, list it so the pack can find you."
+    },
+    "tiktok": {
+      "channel": "tiktok",
+      "caption": "Hey pack. Wednesday sniff. Saturday is the hunt.\nAvellano tools. 1970s time capsule. Terrell Heights 25 houses. Castle Hills. Magnolia rummage.\nMap in bio. Near Me. Share it.",
+      "tags": ["#SanAntonioGarageSales", "#SanAntonioEstateSales", "#SATXThrifting", "#SanAntonio", "#GarageSale", "#EstateSale", "#ChicasMap"],
+      "body": "Hey pack. Wednesday sniff. Saturday is the hunt.\nAvellano tools. 1970s time capsule. Terrell Heights 25 houses. Castle Hills. Magnolia rummage.\nMap in bio. Near Me. Share it.\n\nhttps://justonejewelry.github.io/Chicas-Map/\n\n#SanAntonioGarageSales #SanAntonioEstateSales #SATXThrifting #SanAntonio #GarageSale #EstateSale #ChicasMap"
+    }
+  }
+}
