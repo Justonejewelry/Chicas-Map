@@ -140,6 +140,12 @@ def main() -> int:
     if rebuild.exists():
         run_step("rebuild_feed", [PY, str(rebuild.relative_to(ROOT))])
 
+    thin = ROOT / "scripts" / "thin_address_resolve.py"
+    if thin.exists() and not args.dry_run:
+        run_step("thin_address_resolve", [PY, "scripts/thin_address_resolve.py"])
+    elif args.dry_run:
+        log("SKIP thin_address_resolve (dry-run)")
+
     if not args.skip_orchestrator:
         orch = ROOT / "scripts" / "chica_daily.py"
         if orch.exists():
