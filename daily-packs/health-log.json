@@ -1,0 +1,12 @@
+[
+  {
+    "timestamp": "2026-09-30T11:45:00-05:00",
+    "target_date": "2026-09-30",
+    "actions_run_id": "36745181695",
+    "emails_scanned": 6,
+    "net_new_added": 0,
+    "geocoding_success_rate": "0.0%",
+    "status": "SUCCESS",
+    "notes": "Daily workflow failed at setup-python pip cache (missing requirements.txt). Email ingest 0 net-new after geo-fence + address/title-date dedupe. Community swarm not triggered. CITY_FILE untouched."
+  }
+]
