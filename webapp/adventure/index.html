@@ -32,8 +32,7 @@
       inset: 0;
       z-index: 400;
       background:
-        radial-gradient(ellipse at center, transparent 42%, rgba(62, 38, 16, .38) 100%),
-        url("assets/parchment.png") center/cover;
+        radial-gradient(ellipse at center, transparent 42%, rgba(62, 38, 16, .38) 100%);
       mix-blend-mode: multiply;
       opacity: .28;
     }
@@ -117,9 +116,7 @@
       overflow: auto;
     }
     body.edition-adventure .sheet {
-      background:
-        linear-gradient(180deg, rgba(243, 230, 200, .96), rgba(228, 208, 164, .96)),
-        url("assets/parchment.png") center/cover;
+      background: linear-gradient(180deg, rgba(243, 230, 200, .96), rgba(228, 208, 164, .96));
     }
     .kicker { font: 800 10px/1 Inter, system-ui, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--magenta); }
     .sheet h1 { margin: 4px 0 6px; font-size: 20px; line-height: 1.15; }
@@ -345,10 +342,10 @@
 </head>
 <body class="edition-adventure">
   <div id="intro" class="intro">
-    <video class="still" id="intro-video" autoplay muted playsinline poster="assets/chica.png">
+    <video class="still" id="intro-video" muted playsinline poster="assets/chica.png" hidden>
       <source src="assets/sniff-trail.mp4" type="video/mp4" />
     </video>
-    <img class="still" id="intro-still" alt="" src="assets/chica.png" hidden />
+    <img class="still" id="intro-still" alt="" src="assets/chica.png" />
     <div class="veil">
       <div class="kicker">Two editions · one city</div>
       <h2>The sales are the treasure.</h2>
@@ -435,6 +432,7 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="chica-hopper.js?v=20261001"></script>
   <script>
     (function () {
       var FEED = "https://justonejewelry.github.io/Chicas-Map/data/cities/san-antonio.json";
@@ -581,7 +579,8 @@
         if (!state.profile) saveProfile();
         if (!state.profile) return;
         var row = publicRow();
-        var body = "id: " + row.id + "\nname: " + row.name + "\ntrail: " + row.trail + "\nbones: " + row.bones + "\nsniffed: " + row.sniffed + "\n";
+        var hop = weekendTier();
+        var body = "id: " + row.id + "\nname: " + row.name + "\ntrail: " + row.trail + "\nbones: " + row.bones + "\nsniffed: " + row.sniffed + "\nhops: " + (hop ? hop.hops : 0) + "\ntier: " + (hop ? hop.tier.id : "pup") + "\n";
         document.getElementById("board-status").textContent = "Opening the pack post. Leave the lines as they are. Do not add a street.";
         var url = "https://github.com/Justonejewelry/Chicas-Map/issues/new?template=pack-score.yml&title=" + encodeURIComponent("pack-score " + row.name) + "&body=" + encodeURIComponent(body);
         window.open(url, "_blank", "noopener");
@@ -638,13 +637,30 @@
         return "garage";
       }
 
+      function weekendHops() {
+        if (!window.ChicaHopper) return [];
+        var key = ChicaHopper.weekendKey(new Date());
+        if (!key) return [];
+        return (state.hops || []).filter(function (h) { return h.weekendKey === key; });
+      }
+      function weekendTier() {
+        var hops = weekendHops();
+        var tier = window.ChicaHopper ? ChicaHopper.tier(hops.length) : { id: "pup", label: "Pup", rank: "pup" };
+        return { hops: hops.length, tier: tier };
+      }
+      function rankSkin(rankId) {
+        return { cape: "Cape", pack: "Pack", trail: "Trail", nose: "Nose", pup: "Pup" }[rankId] || "Pup";
+      }
       function updateHud() {
         var n = bones();
         var r = rank(n);
+        var hop = edition === "adventure" ? weekendTier() : null;
+        var label = hop && hop.hops ? hop.tier.label : r;
+        var skin = hop && hop.hops ? rankSkin(hop.tier.rank) : r;
         document.getElementById("hud-bones").textContent = String(n);
-        document.getElementById("hud-rank-label").textContent = r;
-        document.getElementById("hud-rank-img").src = RANK_IMG[r] || RANK_IMG.Pup;
-        document.getElementById("hud-rank-img").alt = r;
+        document.getElementById("hud-rank-label").textContent = label;
+        document.getElementById("hud-rank-img").src = RANK_IMG[skin] || RANK_IMG.Pup;
+        document.getElementById("hud-rank-img").alt = label;
       }
 
       function maybeLevelUp(prevRank) {
@@ -660,15 +676,22 @@
         }, 2200);
       }
 
-      function playChing(s) {
+      function playChing(s, hop) {
         var el = document.getElementById("ching");
         var vid = document.getElementById("ching-video");
         var still = document.getElementById("ching-still");
-        document.getElementById("ching-title").textContent = "+40 bones";
-        document.getElementById("ching-copy").textContent =
-          "Gold coin chinged from " + ((s && s.address) ? s.address.split(",")[0] : "this driveway") + ".";
+        var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        document.getElementById("ching-title").textContent = hop ? ("+" + hop.bones + " bones") : "+40 bones";
+        document.getElementById("ching-copy").textContent = hop
+          ? hop.tier.label + " · " + hop.multiplier + "x chain."
+          : "Gold coin chinged from " + ((s && s.address) ? s.address.split(",")[0] : "this driveway") + ".";
         el.hidden = false;
         el.classList.add("open");
+        if (reduce) {
+          vid.hidden = true;
+          still.hidden = false;
+          return;
+        }
         still.hidden = true;
         vid.hidden = false;
         try {
@@ -682,7 +705,6 @@
           vid.hidden = true;
           still.hidden = false;
         }
-        vid.onended = function () { /* keep open until Collect */ };
       }
 
       function closeChing() {
@@ -736,10 +758,10 @@
         if (trail) trail.remove();
         layer = L.layerGroup().addTo(map);
         var latlngs = sales.map(function (s) { return [s.lat, s.lon]; });
-        if (edition === "adventure" && latlngs.length > 1) {
-          var ordered = sales.slice().sort(function (a, b) { return a.lon - b.lon; });
-          trail = L.polyline(ordered.map(function (s) { return [s.lat, s.lon]; }), {
-            color: "#c513af", weight: 3, dashArray: "8 10", opacity: .85
+        var mine = edition === "adventure" ? weekendHops() : [];
+        if (mine.length > 1) {
+          trail = L.polyline(mine.map(function (h) { return [h.lat, h.lon]; }), {
+            color: "#c513af", weight: 3, opacity: .9
           }).addTo(map);
         }
         sales.forEach(function (s) {
@@ -791,9 +813,10 @@
           kicker.textContent = edition === "adventure" ? "Scent trail" : "This weekend";
           title.textContent = sales.length + " mirrored pins";
           meta.textContent = "Feed and adventure use the same coordinates. Rank " + rank(n) + ".";
-          status.textContent = n + " bones · " + (state.sniffed || []).length + " sniffed · coin chings on sniff";
+          var hop = weekendTier();
+          status.textContent = n + " bones · " + (state.sniffed || []).length + " sniffed · " + hop.hops + " hops this weekend";
           quest.textContent = edition === "adventure"
-            ? "Follow the magenta trail. Tap an X. Sniff only counts inside 200 feet — then the gold Chica coin chings out."
+            ? (hop.hops ? hop.tier.label + ". Your trail is the stops you sniffed, not every pin." : "Tap an X. Sniff only counts inside 200 feet. Your trail draws after the second hop.")
             : "Same driveways as adventure. Sale-type pins. No quest skin.";
           actions.innerHTML =
             '<button class="primary" type="button" id="near">Near me</button>' +
@@ -838,18 +861,37 @@
         navigator.geolocation.getCurrentPosition(function (pos) {
           var here = [pos.coords.latitude, pos.coords.longitude];
           var d = meters(here, [s.lat, s.lon]);
+          if (pos.coords.accuracy && pos.coords.accuracy > 65) {
+            status.textContent = "Fix is " + Math.round(pos.coords.accuracy) + " meters wide. Step outside and sniff again.";
+            return;
+          }
           if (d <= SNIFF_M) {
             var prev = lastRank;
             var sniffed = state.sniffed || (state.sniffed = []);
             var first = sniffed.indexOf(idOf(s)) === -1;
             if (first) sniffed.push(idOf(s));
+            var hop = null;
+            if (first && window.ChicaHopper) {
+              hop = ChicaHopper.scoreHop(state.hops || [], {
+                saleId: idOf(s),
+                at: new Date().toISOString(),
+                lat: s.lat,
+                lon: s.lon
+              });
+              if (hop) {
+                state.hops = state.hops || [];
+                state.hops.push(hop);
+              }
+            }
             save();
-            status.textContent = "Sniffed. " + feet(d) + " feet. Cache marked.";
+            status.textContent = hop
+              ? "Sniffed. " + feet(d) + " feet. " + hop.tier.label + " · " + hop.multiplier + "x."
+              : "Sniffed. " + feet(d) + " feet. Cache marked.";
             draw();
             renderSheet(s);
             updateHud();
             if (first) {
-              playChing(s);
+              playChing(s, hop);
               maybeLevelUp(prev);
             }
           } else {

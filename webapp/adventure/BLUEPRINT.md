@@ -56,3 +56,13 @@ This is an honor board until a server can check the 200 ft sniff.
 - HUD: rank badge + bones counter in topbar
 - Honor board: rank icons + bones icon per row
 - Mirror rule unchanged — art only, same lat/lon
+
+## Hop mechanic (2026-10-01)
+
+Sale Hopper is not a second app. Scoring lives in `chica-hopper.js`. Rules in `HOPPER.md`.
+
+- A hop is a first sniff of a sale id inside 200 feet, accuracy within 65 meters.
+- Weekend window: Friday 16:00 CT through Sunday 20:00 CT. Key is that Saturday.
+- Trail polyline is the player's own hops, not every pin.
+- Public post adds hops and tier only. No address, no GPS.
+- Intro no longer autoplays `sniff-trail.mp4`. Parchment PNG is off the map path.
