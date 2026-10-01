@@ -6,6 +6,14 @@
   "map_url": "https://justonejewelry.github.io/Chicas-Map/",
   "map_url_sa": "https://chicasmap.com/sa",
   "confidence_floor": 0.7,
+  "run": {
+    "actions_run_id": "36847439210",
+    "actions_status": "in_progress",
+    "emails_scanned": 0,
+    "gmail": "401 reauth required",
+    "net_new": 0,
+    "community_swarm": "not_triggered"
+  },
   "posts": {
     "facebook": {
       "channel": "facebook",

@@ -18,5 +18,15 @@
     "geocoding_success_rate": "92.3%",
     "status": "SUCCESS",
     "notes": "chica-daily.yml 36846622305 completed success. Community swarm not triggered. 13 GSF street pins added after dedupe against workflow feed. 4 email rows already on feed (Braun Mesa, Hunters Spring, Paloma Wood, Redhorse Pass). Held: 78216 estate address hidden until 2026-10-02; San Marcos Haynes (out of fence, downtown geocode); barndominium no-street at 0.65. Formspree 0. schema/city.schema.json absent."
+  },
+  {
+    "timestamp": "2026-10-01T05:12:30-05:00",
+    "target_date": "2026-10-01",
+    "actions_run_id": "36847439210",
+    "emails_scanned": 0,
+    "net_new_added": 0,
+    "geocoding_success_rate": "100.0%",
+    "status": "FAILED",
+    "notes": "Gmail 401 reauth. No inbox parse, no OCR, no city-file write. chica-daily.yml 36847439210 in_progress after 3x5s polls. community-events-swarm.yml not triggered. Live public[] 26/26 geocoded. schema/city.schema.json absent."
   }
 ]

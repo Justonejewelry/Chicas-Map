@@ -85,3 +85,12 @@ Watermark: bottom-left, ~22% width, `brand/chica-video-watermark-overlay.png`.
 
 Already on the live feed from the master populate, not added again: 8811 Braun Mesa, 13202 Hunters Spring, Paloma Wood, Redhorse Pass.
 Pulled off public: 1005 Haynes St, San Marcos (out of fence, geocode was downtown SA). 3-day barndominium with no street at confidence 0.65.
+
+## Clowie append — 2026-10-01T05:12-05:00
+
+- Trigger: `chica-daily.yml` on `main`, input `cities=san-antonio` (workflow has no `city` input). Run `36847439210` queued 10:10 UTC, still `in_progress` after 3 polls at 5s. Not `ACTIONS_TRIGGER_MISSING`.
+- `community-events-swarm.yml` not triggered.
+- Gmail search `newer_than:2d` returned 401. Reconnect required. Emails scanned this pass: 0. OCR not run. Net-new this pass: 0. City file not written. Staging holds unchanged.
+- Live feed at read: 26 public pins, all with lat/lon (100%). 13 Craigslist, 13 Email:GarageSaleFinder. Confidence floor held at 0.70. Email rows at 0.75.
+- Do not post from `daily-packs/2026-10-01-chica-update-pack.md`. That generator still lists 1005 Haynes St, San Marcos, and Bandera PR 1501 / Lytle FM 3175 as SA picks. Those are outside the Greater SA fence.
+- Schema check skipped: `schema/city.schema.json` is not in the repo.
