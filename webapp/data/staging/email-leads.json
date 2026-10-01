@@ -1,0 +1,27 @@
+{
+  "target_date": "2026-10-01",
+  "city": "san-antonio",
+  "reason": "Address intentionally hidden until 2026-10-02. Zip centroid only. Not published.",
+  "held": [
+    {
+      "title": "1970s Time Capsule!",
+      "company": "Caring Transitions of San Antonio North",
+      "address": null,
+      "zip": "78216",
+      "city": "San Antonio",
+      "state": "TX",
+      "dates_iso": ["2026-10-03", "2026-10-04"],
+      "hours": "9:00 am - 3:00 pm",
+      "source": "Email:EstateSales.org",
+      "also_seen": ["Email:GarageSaleFinder"],
+      "confidence": 0.75,
+      "lat": 29.539686,
+      "lon": -98.4967585,
+      "geocode_accuracy": "zip_centroid",
+      "external_id": "email-eso-1970s-time-capsule-san-antonio-tx-78216-20261003",
+      "hold": "address_hidden_until_2026-10-02",
+      "keywords": ["vintage", "estate", "jewelry", "mid-century"],
+      "notes": "ESO daily 2026-10-01 and 2026-09-30 plus GSF. Street not in email. Public listing page hides address until Oct 2. Do not pin centroid."
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-01",
+  "city": "san-antonio",
+  "persona": "Chica",
+  "pii_sanitized": true,
+  "map_url": "https://justonejewelry.github.io/Chicas-Map/",
+  "map_url_sa": "https://chicasmap.com/sa",
+  "confidence_floor": 0.7,
+  "posts": {
+    "facebook": {
+      "channel": "facebook",
+      "tone": "energetic local SA, emoji list, deep links",
+      "body": "Hey pack.\n\nThursday sniff. Weekend trail is Fri\u2013Sun Oct 2\u20134.\n\n\ud83d\udd25 Tools + collectibles \u2014 7927 Avellano, 78250 (Sat)\nhttps://chicasmap.com/sa?id=email-gsf-7927-avellano-san-antonio-tx-78250-20261003\n\n\ud83c\udfe1 Terrell Heights \u2014 25+ households. Map drop at Greenwich and Larchmont, 78209 (Sat)\nhttps://chicasmap.com/sa?id=email-gsf-larchmont-dr-san-antonio-tx-78209-20261003\n\n\ud83d\udccd Castle Hills \u2014 503 Antler Dr, Sat\u2013Sun\nhttps://chicasmap.com/sa?id=email-gsf-503-antler-dr-san-antonio-tx-78213-20261003\n\n\ud83d\udecb\ufe0f Moving sale \u2014 8811 Braun Mesa, furniture and appliances, Sat\u2013Sun\nhttps://chicasmap.com/sa?id=email-gsf-8811-braun-mesa-san-antonio-tx-78254-20261003\n\n\ud83c\udf92 Tall Oaks rummage \u2014 419 E Magnolia, Sat 9\u20131\nhttps://chicasmap.com/sa?id=email-gsf-419-e-magnolia-ave-san-antonio-tx-78212-20261003\n\n\ud83d\udce6 Storage downsizing \u2014 14315 Indian Woods, Sat\u2013Sun 8\u20134\nhttps://chicasmap.com/sa?id=email-gsf-14315-indian-woods-san-antonio-tx-78249-20261003\n\nThe 1970s time capsule in 78216 is real, Sat\u2013Sun. Street is still hidden. Not pinned until Friday.\n\nFree map. Near Me. Multi-stop. Google / Apple / Waze.\nhttps://justonejewelry.github.io/Chicas-Map/\n\nMissing a sale? List it. Share this with the pack."
+    },
+    "nextdoor": {
+      "channel": "nextdoor",
+      "tone": "neighborly, neighborhood tags, no blast",
+      "body": "Neighbors \u2014 weekend preview for Fri\u2013Sun Oct 2\u20134.\n\nTerrell Heights (Larchmont / Greenwich, 78209): 25+ households Saturday, maps at the community garden sale.\nCastle Hills: 503 Antler Dr both days.\nNorth Central rummage: 419 E Magnolia (Tall Oaks School) Saturday 9\u20131.\nFar NW: tools at 7927 Avellano Saturday; moving sale at 8811 Braun Mesa Sat\u2013Sun.\n78247 cluster Saturday: Redland Ranch on Redhorse Pass, plus Lomita Creek Friday\u2013Saturday.\nEstate note only: Caring Transitions North time capsule, 78216, Sat\u2013Sun. Address is not public yet, so it is not on the map.\n\nMap with Near Me and routes:\nhttps://justonejewelry.github.io/Chicas-Map/\n\nIf your sale is not on there, list it so the pack can find you."
+    },
+    "tiktok": {
+      "channel": "tiktok",
+      "caption": "Hey pack. Thursday sniff. Saturday is the hunt.\nAvellano tools. Terrell Heights 25 houses. Castle Hills. Braun Mesa moving sale. Magnolia rummage.\nMap in bio. Near Me. Share it.",
+      "tags": ["#SanAntonioGarageSales", "#SanAntonioEstateSales", "#SATXThrifting", "#SanAntonio", "#GarageSale", "#EstateSale", "#ChicasMap"],
+      "body": "Hey pack. Thursday sniff. Saturday is the hunt.\nAvellano tools. Terrell Heights 25 houses. Castle Hills. Braun Mesa moving sale. Magnolia rummage.\nMap in bio. Near Me. Share it.\n\nhttps://justonejewelry.github.io/Chicas-Map/\n\n#SanAntonioGarageSales #SanAntonioEstateSales #SATXThrifting #SanAntonio #GarageSale #EstateSale #ChicasMap"
+    }
+  }
+}
