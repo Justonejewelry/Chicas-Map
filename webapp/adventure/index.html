@@ -32,13 +32,13 @@
       z-index: 400;
       background:
         radial-gradient(ellipse at center, transparent 42%, rgba(62, 38, 16, .38) 100%),
-        url("assets/parchment-map.jpg") center/cover;
+        url("assets/parchment.png") center/cover;
       mix-blend-mode: multiply;
       opacity: .28;
     }
     .topbar {
       position: fixed;
-      z-index: 1000;
+      z-index: 2100;
       top: max(10px, env(safe-area-inset-top));
       left: 10px;
       right: 10px;
@@ -96,7 +96,7 @@
     body.edition-adventure .sheet {
       background:
         linear-gradient(180deg, rgba(243, 230, 200, .96), rgba(228, 208, 164, .96)),
-        url("assets/parchment-map.jpg") center/cover;
+        url("assets/parchment.png") center/cover;
     }
     .kicker { font: 800 10px/1 Inter, system-ui, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--magenta); }
     .sheet h1 { margin: 4px 0 6px; font-size: 20px; line-height: 1.15; }
@@ -116,14 +116,10 @@
     .quiet { background: transparent; color: #5c5146; border: 1px solid #cbb89a; }
     .bones { font: 800 12px/1 Inter, system-ui, sans-serif; background: #241c16; color: var(--paper); border-radius: 999px; padding: 8px 10px; }
     .xmark {
-      width: 36px; height: 36px; margin-left: -18px; margin-top: -18px;
-      border-radius: 50%;
-      background: radial-gradient(circle at 40% 35%, #f7e7c2, #c9a36a 70%);
-      border: 2px solid #6b3a22;
-      color: #7a1d16;
-      font: 900 20px/32px Georgia, serif;
-      text-align: center;
-      box-shadow: 0 2px 0 #3d2414;
+      width: 42px; height: 42px; margin-left: -21px; margin-top: -21px;
+      object-fit: contain;
+      filter: drop-shadow(0 1px 0 #3d2414);
+      background: transparent;
     }
     .xmark.cold { filter: grayscale(.4); opacity: .8; }
     .xmark.sniffed { box-shadow: 0 0 0 4px #c513af66; }
@@ -139,13 +135,17 @@
       display: flex; flex-direction: column; justify-content: flex-end;
       color: var(--cream);
     }
+    .intro.is-done, [hidden] { display: none !important; }
     .intro video, .intro .still {
-      position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+      position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;
+      pointer-events: none;
     }
     .intro .veil {
       position: relative;
+      z-index: 2;
       padding: 22px 16px max(18px, env(safe-area-inset-bottom));
       background: linear-gradient(transparent, rgba(12,9,7,.92) 28%);
+      pointer-events: auto;
     }
     .intro h2 { margin: 0 0 6px; font-size: 28px; line-height: 1.05; }
     .intro p { margin: 0 0 12px; font: 600 14px/1.4 Inter, system-ui, sans-serif; color: #f0e2cc; max-width: 36em; }
@@ -205,10 +205,10 @@
 </head>
 <body class="edition-adventure">
   <div id="intro" class="intro">
-    <video class="still" id="intro-video" autoplay muted playsinline poster="assets/chica-treasure.jpg">
+    <video class="still" id="intro-video" autoplay muted playsinline poster="assets/chica.png">
       <source src="assets/sniff-trail.mp4" type="video/mp4" />
     </video>
-    <img class="still" id="intro-still" alt="" src="assets/chica-treasure.jpg" hidden />
+    <img class="still" id="intro-still" alt="" src="assets/chica.png" hidden />
     <div class="veil">
       <div class="kicker">Two editions · one city</div>
       <h2>The sales are the treasure.</h2>
@@ -222,7 +222,7 @@
   <div id="map" role="application" aria-label="San Antonio garage sale map, standard and adventure editions"></div>
   <div class="topbar">
     <div class="brand">
-      <img src="assets/chica-treasure.jpg" alt="Chica on the treasure map" />
+      <img src="assets/chica.png" alt="Chica on the treasure map" />
       <div>
         <b>Chicas Map</b>
         <span id="edition-label">Adventure edition</span>
@@ -448,7 +448,7 @@
         if (edition === "standard") return L.divIcon({ className: "", html: '<div class="pin" aria-hidden="true"></div>', iconSize: [18, 18] });
         return L.divIcon({
           className: "",
-          html: '<div class="xmark' + (cold(s) ? " cold" : "") + (sniffed ? " sniffed" : "") + '" aria-hidden="true">X</div>',
+          html: '<img class="xmark' + (cold(s) ? " cold" : "") + (sniffed ? " sniffed" : "") + '" src="assets/x-mark.png" alt="" />',
           iconSize: [36, 36]
         });
       }
@@ -586,14 +586,18 @@
       }
 
       function enter(which) {
-        document.getElementById("intro").hidden = true;
+        var intro = document.getElementById("intro");
+        intro.classList.add("is-done");
+        intro.hidden = true;
         setEdition(which);
+        var status = document.getElementById("status");
+        if (status) status.textContent = which === "adventure" ? "Adventure. Same pins, X marks." : "Standard. Same pins, driveway cards.";
       }
 
       document.getElementById("enter-adventure").onclick = function () { enter("adventure"); };
       document.getElementById("enter-standard").onclick = function () { enter("standard"); };
-      document.getElementById("btn-standard").onclick = function () { setEdition("standard"); };
-      document.getElementById("btn-adventure").onclick = function () { setEdition("adventure"); };
+      document.getElementById("btn-standard").onclick = function () { enter("standard"); };
+      document.getElementById("btn-adventure").onclick = function () { enter("adventure"); };
       document.getElementById("save-profile").onclick = saveProfile;
       document.getElementById("post-score").onclick = postScore;
       document.getElementById("close-board").onclick = closeBoard;
