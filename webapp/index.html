@@ -1,1 +1,212 @@
-<!DOCTYPE html><html lang="en" class="antialiased"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/><script src="/Chicas-Map/js/map-hard-nav.js?v=1"></script><link rel="stylesheet" href="/Chicas-Map/assets/styles-D8YtPAwk.css" data-precedence="default"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" data-precedence="default"/><title>Chicas Map · San Antonio garage sales</title><meta name="description" content="Find verified garage sales, yard sales, and estate sales in San Antonio. Live map with Near Me, routes, and weekend intel. Free to use."/><meta name="theme-color" content="#121212"/><link rel="modulepreload" href="/Chicas-Map/assets/index-BTvXtKNQ.js"/><link rel="modulepreload" href="/Chicas-Map/assets/rolldown-runtime-CbXtAM7H.js"/><link rel="modulepreload" href="/Chicas-Map/assets/routes-DUF_nf1-.js"/><link rel="modulepreload" href="/Chicas-Map/assets/site-nav-CTnR7kgH.js"/><link rel="modulepreload" href="/Chicas-Map/assets/sponsor-callout-B8RfkubJ.js"/><link rel="modulepreload" href="/Chicas-Map/assets/badge-DGC6fuji.js"/><link rel="modulepreload" href="/Chicas-Map/assets/email-form-CJY3TLxx.js"/><link rel="modulepreload" href="/Chicas-Map/assets/facebook-CIMmuiEb.js"/><link rel="modulepreload" href="/Chicas-Map/assets/sales-qXlevlAJ.js"/><link rel="icon" type="image/svg+xml" href="/Chicas-Map/favicon.svg"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/><link rel="manifest" href="/Chicas-Map/__grok/manifest.webmanifest"/><link rel="apple-touch-icon" href="/Chicas-Map/__grok/icon-180.png"/><script>(function(){try{var t=localStorage.getItem("chicas-map-theme");if(t==="light"||t==="dark"){document.documentElement.setAttribute("data-theme",t);document.documentElement.style.colorScheme=t;}}catch(e){}})();</script><script>(function(){try{var k="chicas-map-locale";var t=localStorage.getItem(k);if(t!=="es"&&t!=="en"){var langs=(navigator.languages&&navigator.languages.length)?navigator.languages:[navigator.language||"en"];t="en";for(var i=0;i<langs.length;i++){var b=String(langs[i]||"").toLowerCase().split("-")[0];if(b==="es"){t="es";break;}if(b==="en"){t="en";break;}}}document.documentElement.lang=t;}catch(e){}})();</script><link rel="stylesheet" href="/Chicas-Map/css/finish.css?v=20261001" /></head><body class="bg-bg text-ink min-h-dvh font-sans"><!--$--><!--$--><!--/$--><!--/$--><script class="$tsr" id="$tsr-stream-barrier">(self.$R=self.$R||{})["tsr"]=[];self.$_TSR={h(){this.hydrated=!0,this.c()},e(){this.streamEnded=!0,this.c()},c(){this.hydrated&&this.streamEnded&&(delete self.$_TSR,delete self.$R.tsr)},p(e){this.initialized?e():this.buffer.push(e)},buffer:[]};$_TSR.router=($R=>$R[0]={manifest:$R[1]={routes:$R[2]={__root__:$R[3]={preloads:$R[4]=["/Chicas-Map/assets/index-BTvXtKNQ.js","/Chicas-Map/assets/rolldown-runtime-CbXtAM7H.js"],scripts:$R[5]=[$R[6]={attrs:$R[7]={type:"module",async:!0,src:"/Chicas-Map/assets/index-BTvXtKNQ.js"}}]}}},matches:$R[8]=[$R[9]={i:"__root__",u:1787602124536,s:"success",ssr:!0}]})($R["tsr"]);$_TSR.e();document.currentScript.remove()</script><script type="module" async="" src="/Chicas-Map/assets/index-BTvXtKNQ.js"></script><script src="/Chicas-Map/js/chica-copy.js?v=1" defer></script><script src="/Chicas-Map/js/chica-hero-swap.js?v=7" defer></script><script src="/Chicas-Map/js/nav-intel.js?v=3" defer></script><script src="/Chicas-Map/js/chica-grounds-ad.js?v=9" defer></script><script src="/Chicas-Map/js/home-atlas.js?v=2" defer></script><script src="/Chicas-Map/js/headset-maps.js?v=1" defer></script><script src="/Chicas-Map/js/finish.js?v=20261001" defer></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f4efe8">
+<title>Chica's Map · San Antonio garage sales</title>
+<meta name="description" content="San Antonio garage, yard, and estate sales. Cape pins only. No routes drawn on the map.">
+<style>
+  :root {
+    --magenta: #c513af;
+    --magenta-ink: #8d0c7c;
+    --ink: #1c1418;
+    --muted: #6e6168;
+    --paper: #f4efe8;
+    --card: #fffdfb;
+    --line: #e4d9cf;
+    --map: #e7efe4;
+    --shadow: 0 16px 40px rgba(40, 18, 32, .14);
+    --safe-t: env(safe-area-inset-top, 0px);
+    --safe-b: env(safe-area-inset-bottom, 0px);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; }
+  body { font-family: "Avenir Next", "Segoe UI", sans-serif; color: var(--ink); background: #e9e2da; }
+  button, input { font: inherit; color: inherit; }
+  button { cursor: pointer; border: 0; background: none; }
+  a { color: inherit; }
+  .app { height: 100dvh; display: grid; grid-template-rows: auto 1fr auto; max-width: 1280px; margin: 0 auto; background: var(--paper); position: relative; overflow: hidden; }
+  @media (min-width: 900px) {
+    body { padding: 18px; }
+    .app { height: calc(100dvh - 36px); border-radius: 22px; box-shadow: var(--shadow); border: 1px solid #ddd3c9; }
+  }
+  header.top { display: flex; align-items: center; gap: 10px; padding: calc(10px + var(--safe-t)) 14px 10px; background: rgba(244,239,232,.94); backdrop-filter: blur(14px); z-index: 5; }
+  .mark { width: 38px; height: 38px; border-radius: 50%; background: #fff; border: 1px solid var(--line); display: grid; place-items: center; flex: none; }
+  .brand { line-height: 1.05; }
+  .brand b { display: block; font-size: 15px; letter-spacing: -.03em; }
+  .brand span { display: block; color: var(--muted); font-size: 11px; letter-spacing: .04em; text-transform: uppercase; }
+  .search { flex: 1; min-width: 0; border: 1px solid var(--line); background: #fff; border-radius: 999px; padding: 9px 12px; }
+  .search:focus { outline: 2px solid var(--magenta); border-color: transparent; }
+  .chip { border: 1px solid var(--line); background: #fff; border-radius: 999px; padding: 8px 12px; font-size: 13px; white-space: nowrap; }
+  .chip.on { background: var(--ink); color: #fff; border-color: var(--ink); }
+  .hide-sm { display: none; }
+  @media (min-width: 760px) { .hide-sm { display: inline-flex; } .desktop-actions { display: flex; } }
+  .desktop-actions { display: none; gap: 8px; }
+  .stage { position: relative; min-height: 0; }
+  .map { position: absolute; inset: 0; background: var(--map); overflow: hidden; }
+  .map.hopper::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(197,19,175,.1), transparent 42%); pointer-events: none; }
+  .streets { position: absolute; inset: -10%; background:
+    linear-gradient(90deg, transparent 46px, rgba(255,255,255,.72) 46px, rgba(255,255,255,.72) 54px, transparent 54px) 0 0 / 92px 92px,
+    linear-gradient(transparent 46px, rgba(255,255,255,.72) 46px, rgba(255,255,255,.72) 54px, transparent 54px) 0 0 / 92px 92px; }
+  .river { position: absolute; left: -8%; top: 18%; width: 70%; height: 46%; border: 14px solid #9ec4c8; border-left: 0; border-bottom: 0; border-radius: 0 80% 0 0; opacity: .85; transform: rotate(8deg); }
+  .pin { position: absolute; transform: translate(-50%, -100%); width: 36px; height: 42px; z-index: 2; filter: drop-shadow(0 4px 6px rgba(40,20,30,.18)); }
+  .pin.on { z-index: 4; transform: translate(-50%, -100%) scale(1.12); }
+  .pin svg { width: 36px; height: 42px; display: block; }
+  .float-note { position: absolute; left: 14px; bottom: 14px; background: rgba(255,253,251,.94); border: 1px solid var(--line); border-radius: 14px; padding: 10px 12px; font-size: 13px; max-width: 260px; box-shadow: var(--shadow); }
+  .float-note b { display: block; }
+  .float-note span { color: var(--muted); }
+  .wm { position: absolute; right: 12px; bottom: 12px; z-index: 3; width: 42px; height: 42px; border-radius: 50%; background: #fff; display: grid; place-items: center; box-shadow: 0 4px 14px rgba(0,0,0,.12); pointer-events: none; }
+  nav.dock { display: grid; grid-template-columns: repeat(5, 1fr); background: rgba(255,253,251,.96); border-top: 1px solid var(--line); padding: 6px 6px calc(6px + var(--safe-b)); z-index: 6; }
+  nav.dock button, nav.dock a { padding: 8px 2px; border-radius: 12px; color: var(--muted); font-size: 11px; text-align: center; text-decoration: none; }
+  nav.dock button.on { color: var(--magenta-ink); background: #f8e8f6; }
+  @media (min-width: 900px) { nav.dock { display: none; } .app { grid-template-rows: auto 1fr; } }
+  .sheet { position: absolute; left: 0; right: 0; bottom: 0; background: var(--card); border-radius: 22px 22px 0 0; box-shadow: 0 -12px 40px rgba(40,18,32,.16); z-index: 8; max-height: min(78dvh, 640px); overflow: auto; padding: 8px 16px calc(18px + var(--safe-b)); }
+  @media (min-width: 900px) { .sheet { left: auto; top: 74px; right: 16px; bottom: 16px; width: min(400px, 38vw); border-radius: 18px; max-height: none; border: 1px solid var(--line); } }
+  .grab { width: 42px; height: 4px; border-radius: 4px; background: #ddd4cb; margin: 6px auto 12px; }
+  @media (min-width: 900px) { .grab { display: none; } }
+  .kicker { color: var(--magenta-ink); font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+  h2 { margin: 4px 0 6px; font-size: 24px; letter-spacing: -.03em; line-height: 1.1; }
+  .meta, .fine { color: var(--muted); }
+  .fine { font-size: 12px; }
+  .row { display: flex; gap: 8px; flex-wrap: wrap; margin: 10px 0; }
+  .pill { border: 1px solid var(--line); border-radius: 999px; padding: 7px 10px; background: #fff; font-size: 13px; }
+  .pill.on { background: #1c1418; color: #fff; border-color: #1c1418; }
+  .go { display: flex; gap: 8px; margin-top: 12px; }
+  .go a, .primary, .ghost { display: inline-flex; align-items: center; justify-content: center; border-radius: 12px; padding: 12px 14px; text-decoration: none; font-weight: 700; }
+  .primary { background: var(--magenta); color: #fff; flex: 1; }
+  .ghost { background: #f3ece6; flex: 1; }
+  .list { display: grid; gap: 8px; }
+  .sale { text-align: left; width: 100%; border: 1px solid var(--line); border-radius: 14px; padding: 12px; background: #fff; }
+  .sale b { display: block; }
+  .sale span { color: var(--muted); font-size: 13px; }
+  .hidden { display: none !important; }
+  .toast { position: absolute; left: 50%; bottom: 84px; transform: translateX(-50%); background: var(--ink); color: #fff; border-radius: 999px; padding: 10px 14px; font-size: 13px; z-index: 9; }
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="top">
+    <div class="mark" aria-hidden="true"><svg viewBox="0 0 64 64" width="28" height="28"><path fill="#111" d="M40 16c2 4 2 8-1 11 4 1 8 4 9 8 2 6-2 12-8 13l2 3c1 2-1 4-3 3l-4-2c-2 3-6 5-10 5-8 0-13-7-11-14 1-4 4-7 8-8-1-3 0-7 2-10 2-2 5-3 8-2 1-3 4-6 8-7z"/><path fill="#c513af" d="M14 30c8 2 16-2 22-8 2 3 1 6-2 8-6 3-14 2-20 0z"/></svg></div>
+    <div class="brand"><b>Chica's Map</b><span id="modeLabel">San Antonio · sales</span></div>
+    <input class="search" id="q" placeholder="Street or neighborhood" aria-label="Search sales">
+    <button class="chip hide-sm" id="hopperBtn" type="button">Hopper</button>
+    <div class="desktop-actions">
+      <button class="chip" id="deskFilter" type="button">Filters</button>
+      <a class="chip" href="submit.html">List a sale</a>
+      <a class="chip" href="map/">Full map</a>
+    </div>
+  </header>
+  <div class="stage">
+    <div class="map" id="map">
+      <div class="streets"></div>
+      <div class="river"></div>
+      <div id="pins"></div>
+      <div class="float-note" id="countNote"><b>Loading the live feed</b><span>Cape pins only. No route lines.</span></div>
+      <div class="wm" aria-hidden="true"><svg viewBox="0 0 64 64" width="32" height="32"><path fill="#111" d="M40 16c2 4 2 8-1 11 4 1 8 4 9 8 2 6-2 12-8 13l2 3c1 2-1 4-3 3l-4-2c-2 3-6 5-10 5-8 0-13-7-11-14 1-4 4-7 8-8-1-3 0-7 2-10 2-2 5-3 8-2 1-3 4-6 8-7z"/><path fill="#c513af" d="M14 30c8 2 16-2 22-8 2 3 1 6-2 8-6 3-14 2-20 0z"/></svg></div>
+    </div>
+    <aside class="sheet hidden" id="sheet"></aside>
+    <div class="toast hidden" id="toast"></div>
+  </div>
+  <nav class="dock" aria-label="Primary">
+    <button class="on" data-tab="map" type="button">Map</button>
+    <button data-tab="near" type="button">Near</button>
+    <button data-tab="filters" type="button">Filters</button>
+    <a href="submit.html">List</a>
+    <button data-tab="more" type="button">More</button>
+  </nav>
+</div>
+<script>
+const BOUNDS = { n: 29.72, s: 29.25, w: -98.82, e: -98.28 };
+const state = { kind: "posted", hopper: false, selected: null, q: "", sales: [], feedDate: "" };
+function pinSvg() {
+  return '<svg viewBox="0 0 46 54"><path d="M23 52c8-10 18-18 18-29A18 18 0 1 0 5 23c0 11 10 19 18 29z" fill="#fff"/><circle cx="23" cy="22" r="14" fill="#111"/><path fill="#c513af" d="M8 22c6 1 11-2 15-6 1 2 1 4-1 6-4 2-9 1-14 0z"/></svg>';
+}
+function kindOf(s) {
+  if (s.is_estate || s.type === "estate") return "estate";
+  if (s.type === "permit" || s.permit_number) return "permit";
+  if (s.type === "yard") return "yard";
+  return s.type || "garage";
+}
+function norm(s, i) {
+  const lat = Number(s.lat), lon = Number(s.lon);
+  if (!Number.isFinite(lat) || !Number.isFinite(lon)) return null;
+  return { id: s.external_id || s.permit_number || "p" + i, title: s.title || "Sale", address: s.address || "", hours: s.hours || "", dates: s.dates || "", kind: kindOf(s), trust: s.permit_number ? "Permit" : "Posted", url: s.url || "", lat, lon, source: s.source || "" };
+}
+function filtered() {
+  const q = state.q.trim().toLowerCase();
+  return state.sales.filter(s => {
+    if (state.kind === "posted" && s.trust !== "Posted") return false;
+    if (state.kind !== "all" && state.kind !== "posted" && s.kind !== state.kind) return false;
+    if (q && !(s.title + " " + s.address).toLowerCase().includes(q)) return false;
+    return true;
+  });
+}
+function pos(s) {
+  const x = (s.lon - BOUNDS.w) / (BOUNDS.e - BOUNDS.w) * 100;
+  const y = (BOUNDS.n - s.lat) / (BOUNDS.n - BOUNDS.s) * 100;
+  return { x: Math.min(96, Math.max(4, x)), y: Math.min(94, Math.max(8, y)) };
+}
+function draw() {
+  const rows = filtered().slice(0, 80);
+  document.getElementById("pins").innerHTML = rows.map(s => {
+    const p = pos(s);
+    return `<button class="pin ${state.selected === s.id ? "on" : ""}" style="left:${p.x}%;top:${p.y}%" data-id="${s.id}" aria-label="${s.title}">${pinSvg()}</button>`;
+  }).join("");
+  const note = document.getElementById("countNote");
+  note.innerHTML = `<b>${filtered().length} pins</b><span>${state.feedDate || "Live feed"} · cape mark only · no route lines</span>`;
+  document.getElementById("modeLabel").textContent = state.hopper ? "San Antonio · hopper" : "San Antonio · sales";
+  document.getElementById("hopperBtn").classList.toggle("on", state.hopper);
+  document.getElementById("map").classList.toggle("hopper", state.hopper);
+  document.querySelectorAll(".pin").forEach(btn => btn.onclick = () => openSale(btn.dataset.id));
+}
+function sheet(html) {
+  const el = document.getElementById("sheet");
+  el.classList.remove("hidden");
+  el.innerHTML = `<div class="grab"></div>${html}`;
+}
+function closeSheet() { document.getElementById("sheet").classList.add("hidden"); state.selected = null; draw(); }
+function openSale(id) {
+  const s = state.sales.find(x => x.id === id);
+  if (!s) return;
+  state.selected = id;
+  draw();
+  const q = encodeURIComponent(s.address || s.title);
+  sheet(`<div class="kicker">${s.trust} · ${s.kind}</div><h2>${s.title}</h2><p class="meta">${s.address}</p><p>${s.dates}${s.hours ? " · " + s.hours : ""}</p><div class="go"><a class="primary" href="https://maps.google.com/?q=${q}" target="_blank" rel="noopener">Google</a><a class="ghost" href="https://maps.apple.com/?q=${q}" target="_blank" rel="noopener">Apple</a><a class="ghost" href="https://waze.com/ul?q=${q}" target="_blank" rel="noopener">Waze</a></div><p class="fine">Pack notes stay on the full map and unlock at 200 ft. This shell does not collect them.</p><a class="ghost" style="width:100%;margin-top:8px" href="map/">Open full map</a><button class="ghost" style="width:100%;margin-top:8px" id="close">Close</button>`);
+  document.getElementById("close").onclick = closeSheet;
+}
+function openFilters() {
+  const kinds = ["posted", "all", "garage", "yard", "estate", "permit"];
+  sheet(`<div class="kicker">Filters</div><h2>What are you hunting?</h2><div class="row">${kinds.map(k => `<button class="pill ${state.kind === k ? "on" : ""}" data-k="${k}">${k[0].toUpperCase() + k.slice(1)}</button>`).join("")}</div><button class="primary" id="apply">Show pins</button>`);
+  document.querySelectorAll("[data-k]").forEach(b => b.onclick = () => { state.kind = b.dataset.k; openFilters(); });
+  document.getElementById("apply").onclick = () => { closeSheet(); toast(filtered().length + " pins"); };
+}
+function openMore() {
+  sheet(`<div class="kicker">More</div><h2>Same site. Clear doors.</h2><div class="list"><a class="sale" href="map/"><b>Full map</b><span>Leaflet, Near Me, and the 200 ft note.</span></a><a class="sale" href="adventure/"><b>Sale Hopper</b><span>Same pins. Hunt framing. Not a second city.</span></a><a class="sale" href="atlas/"><b>Alamo Atlas</b><span>Sister product. Not a layer on this map.</span></a><a class="sale" href="submit.html"><b>List a sale</b><span>Free. Reviewed before it goes live.</span></a></div>`);
+}
+function toast(msg) {
+  const t = document.getElementById("toast");
+  t.textContent = msg; t.classList.remove("hidden");
+  setTimeout(() => t.classList.add("hidden"), 1600);
+}
+document.getElementById("q").oninput = e => { state.q = e.target.value; draw(); };
+document.getElementById("hopperBtn").onclick = () => { state.hopper = !state.hopper; draw(); toast(state.hopper ? "Hopper on. No trail lines." : "Sales map"); };
+document.getElementById("deskFilter").onclick = openFilters;
+document.querySelectorAll("nav.dock button").forEach(b => b.onclick = () => {
+  document.querySelectorAll("nav.dock button").forEach(x => x.classList.remove("on"));
+  b.classList.add("on");
+  if (b.dataset.tab === "map") closeSheet();
+  if (b.dataset.tab === "near") { state.q = ""; document.getElementById("q").value = ""; state.kind = "posted"; draw(); toast("Posted pins"); }
+  if (b.dataset.tab === "filters") openFilters();
+  if (b.dataset.tab === "more") openMore();
+});
+fetch("data/cities/san-antonio.json").then(r => r.json()).then(data => {
+  const pub = (data.public || []).map(norm).filter(Boolean);
+  const permits = (data.permits || []).map(norm).filter(Boolean);
+  state.sales = pub.concat(permits);
+  state.feedDate = data.date || data.last_refresh || "";
+  draw();
+}).catch(() => { document.getElementById("countNote").innerHTML = "<b>Feed did not load</b><span><a href='map/'>Open the full map</a></span>"; });
+</script>
+</body>
+</html>
