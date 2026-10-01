@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="referrer" content="origin" />
   <title>Adventure edition · Chicas Map</title>
-  <meta name="description" content="Same San Antonio garage sale pins. Standard edition or Adventure edition. One map, two dimensions." />
+  <meta name="description" content="Same San Antonio garage sale pins. Standard edition or Adventure edition. One map, two dimensions. Gold coin ching on sniff." />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" />
   <style>
     :root {
@@ -18,6 +18,7 @@
       --line: #3a342e;
       --good: #2f6b45;
       --cold: #8a5a2b;
+      --gold: #e8b923;
     }
     * { box-sizing: border-box; }
     html, body { margin: 0; height: 100%; background: var(--night); color: var(--cream); font-family: Georgia, "Iowan Old Style", Palatino, serif; }
@@ -60,6 +61,28 @@
     .brand img { width: 36px; height: 36px; border-radius: 10px; object-fit: cover; border: 1px solid #c513af88; background: #c513af; }
     .brand b { display: block; font: 800 13px/1.1 Inter, system-ui, sans-serif; letter-spacing: .01em; }
     .brand span { display: block; font: 600 10px/1.2 Inter, system-ui, sans-serif; color: #cbbba4; }
+    .hud-rank {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(20, 17, 14, .9);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 4px 10px 4px 4px;
+      font: 800 11px/1 Inter, system-ui, sans-serif;
+      color: #f0e2cc;
+    }
+    .hud-rank img { width: 28px; height: 28px; object-fit: contain; }
+    .hud-rank .bones-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: #241c16;
+      border-radius: 999px;
+      padding: 4px 8px;
+      color: var(--gold);
+    }
+    .hud-rank .bones-pill img { width: 16px; height: 16px; }
     .editions {
       margin-left: auto;
       display: flex;
@@ -101,7 +124,7 @@
     .kicker { font: 800 10px/1 Inter, system-ui, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--magenta); }
     .sheet h1 { margin: 4px 0 6px; font-size: 20px; line-height: 1.15; }
     .meta { font: 600 12px/1.35 Inter, system-ui, sans-serif; color: #5c5146; }
-    .row { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+    .row { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; align-items: center; }
     .row a, .row button, .ghost {
       appearance: none;
       border: 0;
@@ -114,15 +137,49 @@
     .primary { background: var(--magenta); color: white; }
     .ghost { background: #241c16; color: var(--cream); }
     .quiet { background: transparent; color: #5c5146; border: 1px solid #cbb89a; }
-    .bones { font: 800 12px/1 Inter, system-ui, sans-serif; background: #241c16; color: var(--paper); border-radius: 999px; padding: 8px 10px; }
+    .bones {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font: 800 12px/1 Inter, system-ui, sans-serif;
+      background: #241c16;
+      color: var(--paper);
+      border-radius: 999px;
+      padding: 8px 10px;
+    }
+    .bones img { width: 18px; height: 18px; object-fit: contain; }
+    .rank-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font: 800 12px/1 Inter, system-ui, sans-serif;
+      background: #fff8e8;
+      border: 1px solid #e0c88a;
+      color: var(--ink);
+      border-radius: 999px;
+      padding: 6px 10px 6px 6px;
+    }
+    .rank-chip img { width: 22px; height: 22px; object-fit: contain; }
     .xmark {
       width: 42px; height: 42px; margin-left: -21px; margin-top: -21px;
       object-fit: contain;
       filter: drop-shadow(0 1px 0 #3d2414);
       background: transparent;
     }
-    .xmark.cold { filter: grayscale(.4); opacity: .8; }
-    .xmark.sniffed { box-shadow: 0 0 0 4px #c513af66; }
+    .xmark.cold { filter: grayscale(.45) opacity(.85); }
+    .xmark.sniffed { filter: drop-shadow(0 0 6px #c513af) drop-shadow(0 1px 0 #3d2414); }
+    .type-pin {
+      width: 36px; height: 36px; margin-left: -18px; margin-top: -18px;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,.35));
+      border-radius: 50%;
+      background: transparent;
+    }
+    .std-pin {
+      width: 28px; height: 28px; margin-left: -14px; margin-top: -14px;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,.4));
+    }
     .pin {
       width: 18px; height: 18px; margin-left: -9px; margin-top: -9px;
       border-radius: 50% 50% 50% 0; transform: rotate(-45deg);
@@ -188,18 +245,101 @@
     .board ol { margin: 10px 0; padding: 0; list-style: none; }
     .board li {
       display: grid;
-      grid-template-columns: 28px 1fr auto;
+      grid-template-columns: 28px 28px 1fr auto;
       gap: 8px;
       align-items: center;
       padding: 8px 0;
       border-top: 1px dashed #c4ae86;
       font: 700 13px/1.2 Inter, system-ui, sans-serif;
     }
+    .board li img.rank { width: 28px; height: 28px; object-fit: contain; }
     .board li.me { color: var(--magenta); }
     .board .sub { font: 600 11px/1.3 Inter, system-ui, sans-serif; color: #5c5146; }
+    .board .bones-cell {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      color: #8a5a2b;
+    }
+    .board .bones-cell img { width: 14px; height: 14px; }
     .leaflet-control-zoom { margin-top: 72px !important; }
+
+    /* Coin ching overlay */
+    .ching {
+      position: fixed;
+      inset: 0;
+      z-index: 3000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(12, 9, 7, .72);
+      padding: 16px;
+    }
+    .ching.open { display: flex; }
+    .ching-card {
+      position: relative;
+      width: min(92vw, 420px);
+      background: linear-gradient(180deg, #1a140f, #0e0b08);
+      border: 2px solid #e8b923;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 0 0 4px #c513af44, 0 20px 60px rgba(0,0,0,.5);
+    }
+    .ching-card video, .ching-card img.still {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      background: #1b1712;
+    }
+    .ching-meta {
+      padding: 12px 14px 14px;
+      text-align: center;
+      color: var(--cream);
+    }
+    .ching-meta .kicker { color: var(--gold); }
+    .ching-meta h2 {
+      margin: 4px 0 6px;
+      font-size: 22px;
+      line-height: 1.1;
+      color: #fff;
+    }
+    .ching-meta p {
+      margin: 0 0 10px;
+      font: 600 13px/1.35 Inter, system-ui, sans-serif;
+      color: #e7dccb;
+    }
+    .ching-coin {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      border: 2px solid #e8b923;
+      box-shadow: 0 0 16px #e8b92388;
+      object-fit: cover;
+      background: #e8b923;
+    }
+    .levelup-toast {
+      position: fixed;
+      z-index: 3100;
+      left: 50%;
+      top: 18%;
+      transform: translateX(-50%) scale(.9);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .25s ease, transform .25s ease;
+    }
+    .levelup-toast.show {
+      opacity: 1;
+      transform: translateX(-50%) scale(1);
+    }
+    .levelup-toast img { width: min(70vw, 240px); height: auto; filter: drop-shadow(0 8px 20px rgba(0,0,0,.5)); }
+
     @media (prefers-reduced-motion: reduce) {
       .intro video { display: none; }
+      .ching-card video { display: none; }
     }
   </style>
 </head>
@@ -212,14 +352,16 @@
     <div class="veil">
       <div class="kicker">Two editions · one city</div>
       <h2>The sales are the treasure.</h2>
-      <p>Standard is the driveway map. Adventure is the same pins, sniffed as a trail. Nothing moves. Chica only marks what the feed already published.</p>
+      <p>Standard is the driveway map. Adventure is the same pins, sniffed as a trail. Sniff inside 200 feet and a gold Chica coin chings out. Nothing moves. Chica only marks what the feed already published.</p>
       <div class="row">
         <button class="primary" id="enter-adventure" type="button">Enter adventure</button>
         <button class="ghost" id="enter-standard" type="button">Standard edition</button>
       </div>
     </div>
   </div>
+
   <div id="map" role="application" aria-label="San Antonio garage sale map, standard and adventure editions"></div>
+
   <div class="topbar">
     <div class="brand">
       <img src="assets/chica.png" alt="Chica on the treasure map" />
@@ -228,11 +370,17 @@
         <span id="edition-label">Adventure edition</span>
       </div>
     </div>
+    <div class="hud-rank" id="hud-rank" title="Rank and bones">
+      <img id="hud-rank-img" src="assets/rank-pup.png" alt="" />
+      <span id="hud-rank-label">Pup</span>
+      <span class="bones-pill"><img src="assets/icon-bones.png" alt="" /><span id="hud-bones">0</span></span>
+    </div>
     <div class="editions" role="group" aria-label="Edition">
       <button type="button" id="btn-standard" aria-pressed="false">Standard</button>
       <button type="button" id="btn-adventure" aria-pressed="true">Adventure</button>
     </div>
   </div>
+
   <section class="sheet" id="sheet" aria-live="polite">
     <div class="kicker" id="kicker">Scent trail</div>
     <h1 id="title">Loading the same pins…</h1>
@@ -241,6 +389,7 @@
     <div class="quest" id="quest"></div>
     <div class="row" id="actions"></div>
   </section>
+
   <div id="board" class="board" hidden>
     <article>
       <div class="kicker">Honor board</div>
@@ -261,6 +410,30 @@
       <p class="sub" id="board-status"></p>
     </article>
   </div>
+
+  <!-- Gold coin ching reward overlay -->
+  <div id="ching" class="ching" role="dialog" aria-modal="true" aria-labelledby="ching-title" hidden>
+    <div class="ching-card">
+      <img class="ching-coin" src="assets/chica-gold-coin.jpg" alt="Gold Chica coin" />
+      <video id="ching-video" playsinline muted poster="assets/coin-ching-still.jpg">
+        <source src="assets/coin-ching-from-house.mp4" type="video/mp4" />
+      </video>
+      <img class="still" id="ching-still" src="assets/coin-ching-still.jpg" alt="" hidden />
+      <div class="ching-meta">
+        <div class="kicker">Sniff complete</div>
+        <h2 id="ching-title">+40 bones</h2>
+        <p id="ching-copy">Gold coin chinged from this driveway.</p>
+        <div class="row" style="justify-content:center">
+          <button class="primary" type="button" id="ching-close">Collect</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="levelup" class="levelup-toast" aria-hidden="true">
+    <img src="assets/icon-levelup.png" alt="Level up" />
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
     (function () {
@@ -269,12 +442,27 @@
       var SNIFF_M = 60.96;
       var KEY = "chicas-adventure-v1";
       var BOARD_URL = "board.json";
+      var TYPE_PIN = {
+        garage: "assets/pin-garage.png",
+        yard: "assets/pin-yard.png",
+        estate: "assets/pin-estate.png",
+        permit: "assets/pin-permit.png",
+        moving: "assets/pin-moving.png",
+        community: "assets/pin-community.png"
+      };
+      var RANK_IMG = {
+        Pup: "assets/rank-pup.png",
+        Nose: "assets/rank-nose.png",
+        Trail: "assets/rank-trail.png",
+        Pack: "assets/rank-pack.png",
+        Cape: "assets/rank-cape.png"
+      };
       var FALLBACK = [
         {"address":"7135 Teton Ridge, San Antonio, TX","dates":"2026-09-26 – 2026-09-30","hours":"","title":"Moving/Downsizing Sale","source":"Craigslist","type":"garage","lat":29.579778,"lon":-98.350915,"date_end":"2026-09-30"},
-        {"address":"22314 Roan Forest, San Antonio, TX","dates":"2026-09-26 – 2026-09-30","hours":"","title":"Evans Ranch Community Garage Sales","source":"Craigslist","type":"garage","lat":29.64668,"lon":-98.43986,"date_end":"2026-09-30"},
-        {"address":"6151 NW Loop 410, San Antonio, TX","dates":"Tue-Sat","hours":"10AM-6PM","title":"Alamo Craft Co. Antiques & More","source":"Craigslist","type":"garage","lat":29.556,"lon":-98.6094,"date_end":null},
-        {"address":"209 Rainbow Dr, San Antonio, TX 78209","dates":"2026-09-26 – 2026-09-30","hours":"","title":"Yard and rummage sale","source":"Email:GarageSaleFinder","type":"garage","lat":29.4932308,"lon":-98.4399052,"date_end":"2026-09-30"},
-        {"address":"17 Old San Antonio Rd, Boerne, TX 78006","dates":"2026-09-30","hours":"","title":"$3 Clothing and Shoes","source":"Email:GarageSaleFinder","type":"garage","lat":29.778212547191,"lon":-98.71765462071,"date_end":"2026-09-30"}
+        {"address":"22314 Roan Forest, San Antonio, TX","dates":"2026-09-26 – 2026-09-30","hours":"","title":"Evans Ranch Community Garage Sales","source":"Craigslist","type":"community","lat":29.64668,"lon":-98.43986,"date_end":"2026-09-30"},
+        {"address":"6151 NW Loop 410, San Antonio, TX","dates":"Tue-Sat","hours":"10AM-6PM","title":"Alamo Craft Co. Antiques & More","source":"Craigslist","type":"estate","lat":29.556,"lon":-98.6094,"date_end":null},
+        {"address":"209 Rainbow Dr, San Antonio, TX 78209","dates":"2026-09-26 – 2026-09-30","hours":"","title":"Yard and rummage sale","source":"Email:GarageSaleFinder","type":"yard","lat":29.4932308,"lon":-98.4399052,"date_end":"2026-09-30"},
+        {"address":"17 Old San Antonio Rd, Boerne, TX 78006","dates":"2026-09-30","hours":"","title":"$3 Clothing and Shoes","source":"Email:GarageSaleFinder","type":"moving","lat":29.778212547191,"lon":-98.71765462071,"date_end":"2026-09-30"}
       ];
 
       var state = load();
@@ -283,6 +471,7 @@
       var map, layer, trail, you;
       var selected = null;
       var board = { pack: [] };
+      var lastRank = rank(bones());
 
       function code() {
         var alphabet = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
@@ -329,11 +518,17 @@
         var list = document.getElementById("board-list");
         var rows = mergedPack();
         var me = state.profile && state.profile.id;
-        list.innerHTML = rows.length ? "" : "<li><span></span><span>No noses posted yet.</span><span></span></li>";
+        list.innerHTML = rows.length ? "" : "<li><span></span><span></span><span>No noses posted yet.</span><span></span></li>";
         rows.forEach(function (row, i) {
           var li = document.createElement("li");
           if (row.id === me) li.className = "me";
-          li.innerHTML = "<span>" + (i + 1) + "</span><span>" + row.name + "<div class='sub'>" + (row.trail || "Trail") + (row.pending ? " · pending" : "") + "</div></span><span>" + row.bones + "</span>";
+          var r = rank(row.bones || 0);
+          var img = RANK_IMG[r] || RANK_IMG.Pup;
+          li.innerHTML =
+            "<span>" + (i + 1) + "</span>" +
+            "<img class='rank' src='" + img + "' alt='" + r + "' />" +
+            "<span>" + row.name + "<div class='sub'>" + (row.trail || "Trail") + " · " + r + (row.pending ? " · pending" : "") + "</div></span>" +
+            "<span class='bones-cell'><img src='assets/icon-bones.png' alt='' />" + row.bones + "</span>";
           list.appendChild(li);
         });
         var profile = state.profile;
@@ -380,6 +575,7 @@
         document.getElementById("board-status").textContent = "Profile saved. Recovery code " + profile.code + ". It stays on this phone.";
         renderBoard();
         renderSheet(selected);
+        updateHud();
       }
       function postScore() {
         if (!state.profile) saveProfile();
@@ -431,6 +627,74 @@
         var street = (s.address || "").split(",")[0];
         return "Cache at " + street;
       }
+      function typeKey(s) {
+        var t = String(s.type || "garage").toLowerCase();
+        if (TYPE_PIN[t]) return t;
+        if (t.indexOf("yard") !== -1) return "yard";
+        if (t.indexOf("estate") !== -1) return "estate";
+        if (t.indexOf("permit") !== -1) return "permit";
+        if (t.indexOf("mov") !== -1) return "moving";
+        if (t.indexOf("comm") !== -1) return "community";
+        return "garage";
+      }
+
+      function updateHud() {
+        var n = bones();
+        var r = rank(n);
+        document.getElementById("hud-bones").textContent = String(n);
+        document.getElementById("hud-rank-label").textContent = r;
+        document.getElementById("hud-rank-img").src = RANK_IMG[r] || RANK_IMG.Pup;
+        document.getElementById("hud-rank-img").alt = r;
+      }
+
+      function maybeLevelUp(prevRank) {
+        var next = rank(bones());
+        if (prevRank === next) return;
+        lastRank = next;
+        var toast = document.getElementById("levelup");
+        toast.classList.add("show");
+        toast.setAttribute("aria-hidden", "false");
+        setTimeout(function () {
+          toast.classList.remove("show");
+          toast.setAttribute("aria-hidden", "true");
+        }, 2200);
+      }
+
+      function playChing(s) {
+        var el = document.getElementById("ching");
+        var vid = document.getElementById("ching-video");
+        var still = document.getElementById("ching-still");
+        document.getElementById("ching-title").textContent = "+40 bones";
+        document.getElementById("ching-copy").textContent =
+          "Gold coin chinged from " + ((s && s.address) ? s.address.split(",")[0] : "this driveway") + ".";
+        el.hidden = false;
+        el.classList.add("open");
+        still.hidden = true;
+        vid.hidden = false;
+        try {
+          vid.currentTime = 0;
+          var p = vid.play();
+          if (p && p.catch) p.catch(function () {
+            vid.hidden = true;
+            still.hidden = false;
+          });
+        } catch (e) {
+          vid.hidden = true;
+          still.hidden = false;
+        }
+        vid.onended = function () { /* keep open until Collect */ };
+      }
+
+      function closeChing() {
+        var el = document.getElementById("ching");
+        var vid = document.getElementById("ching-video");
+        try { vid.pause(); } catch (e) {}
+        el.classList.remove("open");
+        el.hidden = true;
+        updateHud();
+        renderSheet(selected);
+        draw();
+      }
 
       function setEdition(next) {
         edition = next === "standard" ? "standard" : "adventure";
@@ -441,15 +705,28 @@
         save();
         draw();
         renderSheet(selected);
+        updateHud();
       }
 
       function iconFor(s) {
         var sniffed = (state.sniffed || []).indexOf(idOf(s)) !== -1;
-        if (edition === "standard") return L.divIcon({ className: "", html: '<div class="pin" aria-hidden="true"></div>', iconSize: [18, 18] });
+        var isCold = cold(s);
+        if (edition === "standard") {
+          var typeSrc = TYPE_PIN[typeKey(s)] || "assets/pin-garage.png";
+          return L.divIcon({
+            className: "",
+            html: '<img class="type-pin" src="' + typeSrc + '" alt="" />',
+            iconSize: [36, 36],
+            iconAnchor: [18, 18]
+          });
+        }
+        var src = sniffed ? "assets/x-sniffed.png" : (isCold ? "assets/x-cold.png" : "assets/x-live.png");
+        var cls = "xmark" + (isCold && !sniffed ? " cold" : "") + (sniffed ? " sniffed" : "");
         return L.divIcon({
           className: "",
-          html: '<img class="xmark' + (cold(s) ? " cold" : "") + (sniffed ? " sniffed" : "") + '" src="assets/x-mark.png" alt="" />',
-          iconSize: [36, 36]
+          html: '<img class="' + cls + '" src="' + src + '" alt="" />',
+          iconSize: [42, 42],
+          iconAnchor: [21, 21]
         });
       }
 
@@ -475,8 +752,11 @@
       function openSale(s) {
         selected = s;
         var opened = state.opened || (state.opened = []);
+        var prev = lastRank;
         if (opened.indexOf(idOf(s)) === -1) opened.push(idOf(s));
         save();
+        maybeLevelUp(prev);
+        updateHud();
         draw();
         renderSheet(s);
         map.flyTo([s.lat, s.lon], Math.max(map.getZoom(), 14), { duration: 0.7 });
@@ -491,6 +771,14 @@
         ].join("");
       }
 
+      function bonesChip() {
+        return '<span class="bones"><img src="assets/icon-bones.png" alt="" />' + bones() + "</span>";
+      }
+      function rankChip() {
+        var r = rank(bones());
+        return '<span class="rank-chip"><img src="' + (RANK_IMG[r] || RANK_IMG.Pup) + '" alt="" />' + r + "</span>";
+      }
+
       function renderSheet(s) {
         var kicker = document.getElementById("kicker");
         var title = document.getElementById("title");
@@ -503,33 +791,41 @@
           kicker.textContent = edition === "adventure" ? "Scent trail" : "This weekend";
           title.textContent = sales.length + " mirrored pins";
           meta.textContent = "Feed and adventure use the same coordinates. Rank " + rank(n) + ".";
-          status.textContent = n + " bones · " + (state.sniffed || []).length + " sniffed";
+          status.textContent = n + " bones · " + (state.sniffed || []).length + " sniffed · coin chings on sniff";
           quest.textContent = edition === "adventure"
-            ? "Follow the magenta trail. Tap an X. Sniff only counts inside 200 feet of that driveway."
-            : "Same driveways as adventure. No quest skin.";
-          actions.innerHTML = '<button class="primary" type="button" id="near">Near me</button><button class="ghost" type="button" id="open-board">Pack</button><span class="bones">' + n + " bones</span>";
+            ? "Follow the magenta trail. Tap an X. Sniff only counts inside 200 feet — then the gold Chica coin chings out."
+            : "Same driveways as adventure. Sale-type pins. No quest skin.";
+          actions.innerHTML =
+            '<button class="primary" type="button" id="near">Near me</button>' +
+            '<button class="ghost" type="button" id="open-board">Pack</button>' +
+            rankChip() + bonesChip();
           document.getElementById("near").onclick = nearMe;
           document.getElementById("open-board").onclick = openBoard;
+          updateHud();
           return;
         }
         var isCold = cold(s);
         kicker.textContent = edition === "adventure" ? (isCold ? "Cold trail" : "Live cache") : (isCold ? "Ended" : "Sale");
         title.textContent = edition === "adventure" ? questName(s) : (s.title || s.address);
-        meta.textContent = (s.title || "Sale") + " · " + (s.address || "") + (s.hours ? " · " + s.hours : "") + (s.dates ? " · " + s.dates : "");
+        meta.textContent = (s.title || "Sale") + " · " + (s.address || "") + (s.hours ? " · " + s.hours : "") + (s.dates ? " · " + s.dates : "") + " · " + typeKey(s);
         status.textContent = isCold
           ? "Date window closed. Pin stays so the editions still mirror. Not a live sale."
           : "Same pin in both editions.";
         var sniffed = (state.sniffed || []).indexOf(idOf(s)) !== -1;
         quest.textContent = edition === "adventure"
-          ? (sniffed ? "Nose already on this driveway." : "Stand within 200 feet, then sniff. The X does not move.")
+          ? (sniffed ? "Nose already on this driveway. Coin already collected." : "Stand within 200 feet, then sniff. Gold coin chings out. The pin does not move.")
           : "Open in adventure to run this driveway as a cache.";
         actions.innerHTML = navLinks(s)
-          + (edition === "adventure" ? '<button class="primary" type="button" id="sniff">Sniff · 200 ft</button>' : '')
+          + (edition === "adventure" && !sniffed ? '<button class="primary" type="button" id="sniff"><img src="assets/icon-sniff.png" alt="" style="width:16px;height:16px;vertical-align:-3px;margin-right:4px" />Sniff · 200 ft</button>' : "")
+          + (edition === "adventure" && sniffed ? '<button class="ghost" type="button" id="replay-ching">Replay coin</button>' : "")
           + '<button class="quiet" type="button" id="clear">Trail</button>'
-          + '<span class="bones">' + n + ' bones</span>';
+          + rankChip() + bonesChip();
         var sniff = document.getElementById("sniff");
         if (sniff) sniff.onclick = function () { sniffSale(s); };
+        var replay = document.getElementById("replay-ching");
+        if (replay) replay.onclick = function () { playChing(s); };
         document.getElementById("clear").onclick = function () { selected = null; renderSheet(null); };
+        updateHud();
       }
 
       function sniffSale(s) {
@@ -543,12 +839,19 @@
           var here = [pos.coords.latitude, pos.coords.longitude];
           var d = meters(here, [s.lat, s.lon]);
           if (d <= SNIFF_M) {
+            var prev = lastRank;
             var sniffed = state.sniffed || (state.sniffed = []);
-            if (sniffed.indexOf(idOf(s)) === -1) sniffed.push(idOf(s));
+            var first = sniffed.indexOf(idOf(s)) === -1;
+            if (first) sniffed.push(idOf(s));
             save();
             status.textContent = "Sniffed. " + feet(d) + " feet. Cache marked.";
             draw();
             renderSheet(s);
+            updateHud();
+            if (first) {
+              playChing(s);
+              maybeLevelUp(prev);
+            }
           } else {
             status.textContent = feet(d) + " feet out. Sniff unlocks at 200 feet. Pin did not move.";
           }
@@ -583,6 +886,7 @@
           map.fitBounds(sales.map(function (s) { return [s.lat, s.lon]; }), { padding: [40, 80] });
         }
         renderSheet(null);
+        updateHud();
       }
 
       function enter(which) {
@@ -591,7 +895,9 @@
         intro.hidden = true;
         setEdition(which);
         var status = document.getElementById("status");
-        if (status) status.textContent = which === "adventure" ? "Adventure. Same pins, X marks." : "Standard. Same pins, driveway cards.";
+        if (status) status.textContent = which === "adventure"
+          ? "Adventure. Live / cold / sniffed X marks. Sniff for gold coin."
+          : "Standard. Sale-type pins. Same driveways.";
       }
 
       document.getElementById("enter-adventure").onclick = function () { enter("adventure"); };
@@ -601,7 +907,13 @@
       document.getElementById("save-profile").onclick = saveProfile;
       document.getElementById("post-score").onclick = postScore;
       document.getElementById("close-board").onclick = closeBoard;
+      document.getElementById("ching-close").onclick = closeChing;
+      document.getElementById("ching").addEventListener("click", function (e) {
+        if (e.target.id === "ching") closeChing();
+      });
       loadBoard();
+      lastRank = rank(bones());
+      updateHud();
 
       var video = document.getElementById("intro-video");
       video.addEventListener("error", function () {

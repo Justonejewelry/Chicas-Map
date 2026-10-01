@@ -46,3 +46,13 @@ Profile is a pack name plus a recovery code that stays on the phone.
 Shared board is `board.json`: name, trail, bones, sniffed. No driveway, no GPS.
 A score joins the shared file when a `pack-score` issue is opened. The action rejects addresses.
 This is an honor board until a server can check the 200 ft sniff.
+
+## Asset pack (wired 2026-10-01)
+
+- Adventure markers: `x-live.png` · `x-cold.png` · `x-sniffed.png`
+- Standard type pins: `pin-garage` … `pin-community`
+- Ranks: `rank-pup` … `rank-cape` (Pup/Nose/Trail/Pack/Cape)
+- Sniff reward: gold coin overlay plays `coin-ching-from-house.mp4` once on first sniff; `chica-gold-coin.jpg` badge
+- HUD: rank badge + bones counter in topbar
+- Honor board: rank icons + bones icon per row
+- Mirror rule unchanged — art only, same lat/lon
