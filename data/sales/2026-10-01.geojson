@@ -2,7 +2,7 @@
   "type": "FeatureCollection",
   "properties": {
     "target_date": "2026-10-01",
-    "generated_at": "2026-10-01T05:03:35-05:00",
+    "generated_at": "2026-10-01T05:11:17-05:00",
     "count": 10,
     "project": "Chicas-Map"
   },
@@ -43,62 +43,11 @@
           "https://images.craigslist.org/01515_1Xh2ogBe0sZ_0CI0pq_600x450.jpg"
         ],
         "confidence": 96,
-        "verified_at": "2026-10-01T05:03:20-05:00",
+        "verified_at": "2026-10-01T05:11:00-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.556,-98.6094",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.556,-98.6094",
         "status": "verified",
         "geocode_method": "source",
-        "notes": "",
-        "community_source": "",
-        "community_link_or_notes": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -98.4936,
-          29.4241
-        ]
-      },
-      "properties": {
-        "sale_id": "2026-09-29_1005-haynes-st-san-marcos-tx-78666",
-        "title": "1005 Haynes St, San Marcos, TX 78666",
-        "sale_type": "garage",
-        "date_start": "2026-09-29",
-        "date_end": "2026-10-05",
-        "start_time": "9:30 am - 7:00 pm",
-        "end_time": "",
-        "address": "1005 Haynes St, San Marcos, TX 78666",
-        "city": "San Antonio",
-        "state": "TX",
-        "zip": "",
-        "latitude": 29.4241,
-        "longitude": -98.4936,
-        "description": "Dates and Times: Tuesday, September 29, 2026 9:30 am - 7:00 pm",
-        "highlights": [],
-        "source_urls": [
-          "https://garagesalefinder.com/s/N96wn/1005-haynes-st-san-marcos-tx-78666"
-        ],
-        "original_url": "https://garagesalefinder.com/s/N96wn/1005-haynes-st-san-marcos-tx-78666",
-        "source_names": [
-          "GarageSaleFinder"
-        ],
-        "photos": [
-          "https://gsf.tlstatic.com/image/w150-h100/2026/09/29/s/7/5/21772775/XQUmb-0.jpeg",
-          "https://gsf.tlstatic.com/image/w150-h100/2026/09/29/s/7/5/21772775/Xi5uo-0.jpeg",
-          "https://gsf.tlstatic.com/image/w150-h100/2026/09/29/s/7/5/21772775/XXUTH-0.jpeg",
-          "https://gsf.tlstatic.com/image/w150-h100/2026/09/29/s/7/5/21772775/ojWb-0.jpeg",
-          "https://gsf.tlstatic.com/image/w150-h100/2026/09/29/s/7/5/21772775/X18hh-0.jpeg",
-          "https://gsf.tlstatic.com/image/w150-h100/2026/09/29/s/7/5/21772775/XU6Ub-0.jpeg"
-        ],
-        "confidence": 100,
-        "verified_at": "2026-10-01T05:03:20-05:00",
-        "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936",
-        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936",
-        "status": "verified",
-        "geocode_method": "city-center",
         "notes": "",
         "community_source": "",
         "community_link_or_notes": ""
@@ -145,7 +94,7 @@
           "https://images.craigslist.org/00w0w_5f3PeivCTV9_0CI0t2_50x50c.jpg"
         ],
         "confidence": 96,
-        "verified_at": "2026-10-01T05:03:20-05:00",
+        "verified_at": "2026-10-01T05:11:00-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.3309,-98.5054",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.3309,-98.5054",
         "status": "verified",
@@ -189,7 +138,7 @@
         ],
         "photos": [],
         "confidence": 96,
-        "verified_at": "2026-10-01T05:03:20-05:00",
+        "verified_at": "2026-10-01T05:11:00-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.541176,-98.655939",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.541176,-98.655939",
         "status": "verified",
@@ -240,7 +189,7 @@
           "https://images.craigslist.org/00W0W_afLIaI35G7c_0CI0hT_50x50c.jpg"
         ],
         "confidence": 96,
-        "verified_at": "2026-10-01T05:03:20-05:00",
+        "verified_at": "2026-10-01T05:11:00-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.619598,-98.994468",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.619598,-98.994468",
         "status": "verified",
@@ -284,7 +233,7 @@
         ],
         "photos": [],
         "confidence": 96,
-        "verified_at": "2026-10-01T05:03:20-05:00",
+        "verified_at": "2026-10-01T05:11:00-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5863,-98.4769",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.5863,-98.4769",
         "status": "verified",
@@ -335,7 +284,7 @@
           "https://images.craigslist.org/00404_jGLAxJTb1o_0t20CI_50x50c.jpg"
         ],
         "confidence": 96,
-        "verified_at": "2026-10-01T05:03:20-05:00",
+        "verified_at": "2026-10-01T05:11:00-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5855,-98.4071",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.5855,-98.4071",
         "status": "verified",
@@ -379,7 +328,7 @@
         ],
         "photos": [],
         "confidence": 96,
-        "verified_at": "2026-10-01T05:03:20-05:00",
+        "verified_at": "2026-10-01T05:11:00-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.565949,-98.54499",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.565949,-98.54499",
         "status": "verified",
@@ -423,7 +372,7 @@
         ],
         "photos": [],
         "confidence": 96,
-        "verified_at": "2026-10-01T05:03:20-05:00",
+        "verified_at": "2026-10-01T05:11:00-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.2366,-98.7945",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.2366,-98.7945",
         "status": "verified",
@@ -469,11 +418,62 @@
           "https://images.craigslist.org/00303_fJujeiiUakX_0CI0eX_600x450.jpg"
         ],
         "confidence": 96,
-        "verified_at": "2026-10-01T05:03:20-05:00",
+        "verified_at": "2026-10-01T05:11:00-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5183,-98.503",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.5183,-98.503",
         "status": "verified",
         "geocode_method": "source",
+        "notes": "",
+        "community_source": "",
+        "community_link_or_notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.4936,
+          29.4241
+        ]
+      },
+      "properties": {
+        "sale_id": "2026-09-29_1005-haynes-st-san-marcos-tx-78666",
+        "title": "1005 Haynes St, San Marcos, TX 78666",
+        "sale_type": "garage",
+        "date_start": "2026-09-29",
+        "date_end": "2026-10-05",
+        "start_time": "9:30 am - 7:00 pm",
+        "end_time": "",
+        "address": "1005 Haynes St, San Marcos, TX 78666",
+        "city": "San Antonio",
+        "state": "TX",
+        "zip": "",
+        "latitude": 29.4241,
+        "longitude": -98.4936,
+        "description": "Dates and Times: Tuesday, September 29, 2026 9:30 am - 7:00 pm",
+        "highlights": [],
+        "source_urls": [
+          "https://garagesalefinder.com/s/N96wn/1005-haynes-st-san-marcos-tx-78666"
+        ],
+        "original_url": "https://garagesalefinder.com/s/N96wn/1005-haynes-st-san-marcos-tx-78666",
+        "source_names": [
+          "GarageSaleFinder"
+        ],
+        "photos": [
+          "https://gsf.tlstatic.com/image/w150-h100/2026/09/29/s/7/5/21772775/XQUmb-0.jpeg",
+          "https://gsf.tlstatic.com/image/w150-h100/2026/09/29/s/7/5/21772775/Xi5uo-0.jpeg",
+          "https://gsf.tlstatic.com/image/w150-h100/2026/09/29/s/7/5/21772775/XXUTH-0.jpeg",
+          "https://gsf.tlstatic.com/image/w150-h100/2026/09/29/s/7/5/21772775/ojWb-0.jpeg",
+          "https://gsf.tlstatic.com/image/w150-h100/2026/09/29/s/7/5/21772775/X18hh-0.jpeg",
+          "https://gsf.tlstatic.com/image/w150-h100/2026/09/29/s/7/5/21772775/XU6Ub-0.jpeg"
+        ],
+        "confidence": 100,
+        "verified_at": "2026-10-01T05:11:00-05:00",
+        "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936",
+        "status": "verified",
+        "geocode_method": "city-center",
         "notes": "",
         "community_source": "",
         "community_link_or_notes": ""
