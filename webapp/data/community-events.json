@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-01T05:11:54-05:00",
+  "updated": "2026-10-01T12:19:30-05:00",
   "city": "san-antonio",
   "version": 2.7,
   "horizonDays": 90,
@@ -5565,6 +5565,24 @@
       "reliability": 88,
       "discoveredAt": "2026-10-01T05:04:05-05:00",
       "confidence": 98
+    },
+    {
+      "id": "2026-10-05_mission-s-seed-library-seed_30c72e2f8366",
+      "title": "Mission's Seed Library, Seed Cleaning Program",
+      "date": "2026-10-05",
+      "endDate": "",
+      "time": "6:00 PM-8:00 PM",
+      "address": "3134 Roosevelt Ave",
+      "lat": null,
+      "lng": null,
+      "category": "other",
+      "description": "",
+      "url": "https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D210228919",
+      "source": "San Antonio Public Library Events",
+      "sourceId": "sapl-trumba-ics",
+      "reliability": 96,
+      "discoveredAt": "2026-10-01T12:18:50-05:00",
+      "confidence": 100
     }
   ]
 }

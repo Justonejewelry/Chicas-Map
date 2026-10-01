@@ -2,7 +2,7 @@
 
 ## 1. CHICA DAILY RUN
 - **Target date:** Thursday, October 1, 2026
-- **San Antonio local run time:** 2026-10-01T05:11:00-05:00
+- **San Antonio local run time:** 2026-10-01T12:18:34-05:00
 - **Geographic area:** San Antonio & surrounding communities
 - **Sources searched:** 7
 - **Candidates discovered:** 15
@@ -25,7 +25,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-alamo-craft-co-antiques-more/mj6FcRd4ZDr7zwAwc4pwWa
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.556,-98.6094
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.556,-98.6094
-- **Verified at:** 2026-10-01T05:11:00-05:00
+- **Verified at:** 2026-10-01T12:18:34-05:00
 
 ### 2. Estate sale: Tools, Car, Clothes, Furniture and More!
 - **Type:** estate
@@ -37,7 +37,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-estate-sale-tools-car/6C3pS3CtYGCgtHP3jGH7Md
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.3309,-98.5054
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.3309,-98.5054
-- **Verified at:** 2026-10-01T05:11:00-05:00
+- **Verified at:** 2026-10-01T12:18:34-05:00
 
 ### 3. MASSIVE MOVING SALE - High Quality Furniture, Appliances & Decor! (San Antonio / Braun Mesa)
 - **Type:** garage
@@ -49,7 +49,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-massive-moving-sale-high/9HuEatYfEUpN163kTddTPs
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.541176,-98.655939
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.541176,-98.655939
-- **Verified at:** 2026-10-01T05:11:00-05:00
+- **Verified at:** 2026-10-01T12:18:34-05:00
 
 ### 4. 1025 private road 1501 Bandera HUGE community sale (Holiday Village)
 - **Type:** garage
@@ -61,7 +61,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/mico-1025-private-road-1501-bandera/mp8MJTEYrNEjeKP8pd2uPV
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.619598,-98.994468
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.619598,-98.994468
-- **Verified at:** 2026-10-01T05:11:00-05:00
+- **Verified at:** 2026-10-01T12:18:34-05:00
 
 ### 5. Community Garage Sale this weekend 10/03/26 - Saturday Only (Gold Canyon)
 - **Type:** garage
@@ -73,7 +73,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-community-garage-sale-this/2c7NDqsVrRpfzyBcddW4U6
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.5863,-98.4769
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5863,-98.4769
-- **Verified at:** 2026-10-01T05:11:00-05:00
+- **Verified at:** 2026-10-01T12:18:34-05:00
 
 ### 6. Furniture for Sale ( please read post, ty) (Green Spring Valley)
 - **Type:** garage
@@ -85,7 +85,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-furniture-for-sale-please/84LPLEmaFGUzdHuyK6dFdb
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.5855,-98.4071
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5855,-98.4071
-- **Verified at:** 2026-10-01T05:11:00-05:00
+- **Verified at:** 2026-10-01T12:18:34-05:00
 
 ### 7. Garage Sale October Friday 2nd and Saturday 3rd 8am - 2pm (San Antonio Texas)
 - **Type:** garage
@@ -97,7 +97,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-garage-sale-october-friday/4RaWZaYKWps29nSKi69CfW
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.565949,-98.54499
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.565949,-98.54499
-- **Verified at:** 2026-10-01T05:11:00-05:00
+- **Verified at:** 2026-10-01T12:18:34-05:00
 
 ### 8. HUGE SALE (Lytle Tx)
 - **Type:** garage
@@ -109,7 +109,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/lytle-huge-sale/fZTWSaZSQ72eK45TkHH4z1
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.2366,-98.7945
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.2366,-98.7945
-- **Verified at:** 2026-10-01T05:11:00-05:00
+- **Verified at:** 2026-10-01T12:18:34-05:00
 
 ### 9. NOW OPEN! The Collective Boutiques (San Antonio)
 - **Type:** garage
@@ -121,7 +121,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-now-open-the-collective/a9UPVs8b9XgmEsUh6iVZ1m
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.5183,-98.503
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5183,-98.503
-- **Verified at:** 2026-10-01T05:11:00-05:00
+- **Verified at:** 2026-10-01T12:18:34-05:00
 
 ### 10. 1005 Haynes St, San Marcos, TX 78666
 - **Type:** garage
@@ -134,7 +134,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N96wn/1005-haynes-st-san-marcos-tx-78666
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936
-- **Verified at:** 2026-10-01T05:11:00-05:00
+- **Verified at:** 2026-10-01T12:18:34-05:00
 
 ## 3. CHICA PICKS
 

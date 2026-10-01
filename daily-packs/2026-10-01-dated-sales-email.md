@@ -57,7 +57,9 @@ Map only shows pins whose listed dates include today.
 ## ONLINE / UNPLOTTABLE
 
 - Distinguished Hill Country Ranch Estate in Boerne, TX. Bidding Ends 10/7. — Boerne, TX 78006
+- Vintage Christmas Collectibles Germany Italy Online Auction by Caring Transitions - Ends 10/11! — New Braunfels, TX 78132
 - Waterfront Showcase Online Auction by Caring Transitions - Ends 10/7! — New Braunfels, TX 78133
+- Hawaii Bound- Everything must GO!! | Bidding ends Oct. 13 — San Marcos, TX 78666
 - Schertz Estate Sale Online Auction - R3Y2NC — Schertz, TX 78108
 
 — Chica
