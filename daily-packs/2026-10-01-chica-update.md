@@ -4,12 +4,12 @@
 
 - Target date: 2026-10-01 (Thursday, America/Chicago)
 - City: san-antonio
-- Actions: `chica-daily.yml` dispatch queued. Run `36846622305` still `in_progress` after 3 polls. Community swarm not triggered.
+- Actions: `chica-daily.yml` dispatch queued. Run `36846622305` completed success. Polled in_progress, then completed. Community swarm not triggered.
 - Inbox (newer_than:2d): 5 mailer threads. Formspree: 0.
-- Net-new on `webapp/data/cities/san-antonio.json`: 17
+- Net-new on `webapp/data/cities/san-antonio.json`: 13 after workflow dedupe
 - Held, not pinned: 1 (1970s Time Capsule, 78216, address hidden until 2026-10-02)
 - Rejected: Georgetown (out of fence), Buda Summer Pointe, Blanco online (ended 9/30), Boerne Hill Country online auction, Schertz BidRush online, New Braunfels online, Sealy auction, Houston PMB / ships, national auctions, Rainbow Dr and Boerne $3 (already on feed, ended 9/30)
-- Geocoding: 15/17 published rooftop (Census). 2 street/intersection (Whitson, Redhorse Pass). Held sale zip centroid only.
+- Geocoding: 12/13 new pins rooftop. Whitson is street. 4 email rows already on the workflow feed (Braun Mesa, Hunters Spring, Paloma Wood, Redhorse Pass). Held: 78216 estate, San Marcos Haynes, no-street barndominium at 0.65.
 - Schema: `schema/city.schema.json` is not in the repo. `public[]` root keys preserved.
 - Confidence floor: 0.75 email. No Formspree rows.
 
@@ -79,3 +79,9 @@ Watermark: bottom-left, ~22% width, `brand/chica-video-watermark-overlay.png`.
 - Whitson and Redhorse tagged street, not rooftop.
 - Online auctions and out-of-fence cities stayed off the map.
 - Community events swarm not run.
+
+
+## Post-workflow dedupe
+
+Already on the live feed from the master populate, not added again: 8811 Braun Mesa, 13202 Hunters Spring, Paloma Wood, Redhorse Pass.
+Pulled off public: 1005 Haynes St, San Marcos (out of fence, geocode was downtown SA). 3-day barndominium with no street at confidence 0.65.
