@@ -259,6 +259,59 @@
       color: #8a5a2b;
     }
     .board .bones-cell img { width: 14px; height: 14px; }
+
+    .mini {
+      position: relative;
+      margin-left: auto;
+      z-index: 4000;
+    }
+    .mini summary {
+      list-style: none;
+      height: 44px;
+      padding: 0 14px;
+      border-radius: 14px;
+      background: #c513af;
+      color: #fff;
+      font: 800 13px/44px Inter, system-ui, sans-serif;
+      border: 1px solid #8d0c7c;
+      cursor: pointer;
+    }
+    .mini summary::-webkit-details-marker { display: none; }
+    .mini[open] summary { background: #8d0c7c; }
+    .mini nav {
+      position: absolute;
+      right: 0;
+      top: 48px;
+      min-width: 196px;
+      background: #1a1714f5;
+      border: 1px solid #3a342e;
+      border-radius: 14px;
+      padding: 6px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      box-shadow: 0 12px 32px rgba(0,0,0,.45);
+    }
+    .mini a, .mini button {
+      display: block;
+      width: 100%;
+      text-align: left;
+      text-decoration: none;
+      border: 0;
+      border-radius: 10px;
+      background: transparent;
+      color: #f3eee4;
+      font: 700 14px/1 Inter, system-ui, sans-serif;
+      padding: 12px;
+      min-height: 44px;
+      cursor: pointer;
+    }
+    .mini a:first-child, .mini button.play {
+      background: #c513af;
+      color: #fff;
+    }
+    .intro .still { object-position: center 42%; }
+
     .leaflet-control-zoom { margin-top: 72px !important; }
 
     /* Coin ching overlay */
@@ -343,16 +396,16 @@
 </head>
 <body class="edition-adventure">
   <div id="intro" class="intro">
-    <video class="still" id="intro-video" muted playsinline poster="assets/chica.png" hidden>
+    <video class="still" id="intro-video" muted playsinline poster="assets/chica-hero.jpg?v=20261001c" hidden>
       <source src="assets/sniff-trail.mp4" type="video/mp4" />
     </video>
-    <img class="still" id="intro-still" alt="" src="assets/chica.png" />
+    <img class="still" id="intro-still" alt="Chica the Chihuahua in a magenta cape at a garage sale" src="assets/chica-hero.jpg?v=20261001c" />
     <div class="veil">
       <div class="kicker">Two editions · one city</div>
       <h2>The sales are the treasure.</h2>
       <p>Standard is the driveway map. Adventure is the same pins, sniffed as a trail. Sniff inside 200 feet and a gold Chica coin chings out. Nothing moves. Chica only marks what the feed already published.</p>
       <div class="row">
-        <button class="primary" id="enter-adventure" type="button">Enter adventure</button>
+        <button class="primary" id="enter-adventure" type="button">Play the game</button>
         <button class="ghost" id="enter-standard" type="button">Standard edition</button>
       </div>
     </div>
@@ -362,7 +415,7 @@
 
   <div class="topbar">
     <div class="brand">
-      <img src="assets/chica.png" alt="Chica on the treasure map" />
+      <img src="assets/chica-badge.jpg?v=20261001c" alt="Chica" />
       <div>
         <b>Chicas Map</b>
         <span id="edition-label">Adventure edition</span>
@@ -373,6 +426,17 @@
       <span id="hud-rank-label">Pup</span>
       <span class="bones-pill"><img src="assets/icon-bones.png" alt="" /><span id="hud-bones">0</span></span>
     </div>
+
+    <details class="mini" id="chica-mini">
+      <summary>Menu</summary>
+      <nav aria-label="Chicas Map">
+        <button class="play" type="button" id="mini-play">Play the game</button>
+        <a href="/Chicas-Map/map/">Standard map</a>
+        <a href="/Chicas-Map/">Home</a>
+        <button type="button" id="mini-board">Honor board</button>
+      </nav>
+    </details>
+
     <div class="editions" role="group" aria-label="Edition">
       <button type="button" id="btn-standard" aria-pressed="false">Standard</button>
       <button type="button" id="btn-adventure" aria-pressed="true">Adventure</button>
@@ -944,6 +1008,17 @@
       }
 
       document.getElementById("enter-adventure").onclick = function () { enter("adventure"); };
+      document.getElementById("mini-play").onclick = function () {
+        var mini = document.getElementById("chica-mini");
+        if (mini) mini.open = false;
+        enter("adventure");
+      };
+      document.getElementById("mini-board").onclick = function () {
+        var mini = document.getElementById("chica-mini");
+        if (mini) mini.open = false;
+        openBoard();
+      };
+
       document.getElementById("enter-standard").onclick = function () { enter("standard"); };
       document.getElementById("btn-standard").onclick = function () { enter("standard"); };
       document.getElementById("btn-adventure").onclick = function () { enter("adventure"); };

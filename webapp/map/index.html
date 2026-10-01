@@ -20,8 +20,12 @@
   <style>
     html, body { margin: 0; width: 100vw; height: 100dvh; background: #121212; overflow: hidden; font-family: Inter, system-ui, sans-serif; }
     #chica-live-map, .leaflet-container { position: fixed; inset: 0; width: 100vw !important; height: 100dvh !important; z-index: 1; background: #121212; }
-    #chica-home-chip { position: fixed; top: max(10px, env(safe-area-inset-top)); right: 10px; z-index: 2147483647; height: 44px; padding: 0 12px; border-radius: 12px; background: #1a1714f5; color: #f3eee4; text-decoration: none; font: 800 13px/44px Inter, system-ui, sans-serif; border: 1px solid #3a342e; }
-    #chica-adventure-chip { position: fixed; top: calc(max(10px, env(safe-area-inset-top)) + 52px); right: 10px; z-index: 2147483647; height: 44px; padding: 0 12px; border-radius: 12px; background: #c513af; color: #fff; text-decoration: none; font: 800 13px/44px Inter, system-ui, sans-serif; border: 1px solid #8d0c7c; }
+    #chica-mini { position: fixed; top: max(10px, env(safe-area-inset-top)); right: 10px; z-index: 2147483647; }
+    #chica-mini summary { list-style: none; height: 44px; padding: 0 14px; border-radius: 12px; background: #c513af; color: #fff; font: 800 13px/44px Inter, system-ui, sans-serif; border: 1px solid #8d0c7c; cursor: pointer; }
+    #chica-mini summary::-webkit-details-marker { display: none; }
+    #chica-mini nav { position: absolute; right: 0; top: 48px; min-width: 188px; background: #1a1714f5; border: 1px solid #3a342e; border-radius: 12px; padding: 6px; display: flex; flex-direction: column; gap: 4px; }
+    #chica-mini a { display: block; min-height: 44px; padding: 12px; border-radius: 10px; color: #f3eee4; text-decoration: none; font: 700 14px/20px Inter, system-ui, sans-serif; }
+    #chica-mini a.play { background: #c513af; color: #fff; }
     .leaflet-control-zoom { margin-bottom: 92px !important; }
     #chica-crawl { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
     #chica-map-boot {
@@ -67,8 +71,14 @@
     <div class="copy" id="chica-map-boot-copy">Hunting sales…</div>
     <div class="sub" id="chica-map-boot-sub">San Antonio map</div>
   </div>
-  <a id="chica-home-chip" href="/Chicas-Map/">Home</a>
-  <a id="chica-adventure-chip" href="/Chicas-Map/adventure/">Adventure</a>
+  <details id="chica-mini">
+    <summary>Menu</summary>
+    <nav aria-label="Chicas Map">
+      <a class="play" href="/Chicas-Map/adventure/">Play the game</a>
+      <a href="/Chicas-Map/">Home</a>
+      <a href="/Chicas-Map/list/">This weekend</a>
+    </nav>
+  </details>
   <script>
     (function () {
       try {
