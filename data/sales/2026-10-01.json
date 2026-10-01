@@ -1,0 +1,382 @@
+{
+  "target_date": "2026-10-01",
+  "generated_at": "2026-10-01T05:03:20-05:00",
+  "city": "san-antonio",
+  "area": "San Antonio & surrounding communities",
+  "count": 10,
+  "min_confidence": 70,
+  "sales": [
+    {
+      "sale_id": "2026-10-01_6151-nw-loop-410-san-antonio-tx",
+      "title": "Alamo Craft Co. Antiques & More (San Antonio)",
+      "sale_type": "garage",
+      "date_start": "2026-10-01",
+      "date_end": "2026-10-03",
+      "start_time": "",
+      "end_time": "",
+      "address": "6151 NW Loop 410, San Antonio, TX",
+      "city": "San Antonio",
+      "state": "TX",
+      "zip": "",
+      "latitude": 29.556,
+      "longitude": -98.6094,
+      "description": "QR Code Link to This Post OPEN TUES - SAT 10AM-6PM 6151 NW Loop 410, #302 SATX 78238 A hidden gem in San Antonio! Here you'll find unique antiques, vintage items, collectibles, hand-crafted items &amp; so much more. Come by &amp; see all the fun stuff! Ask for your frequent buyer card &amp; get punches with every purchase.",
+      "highlights": [],
+      "source_urls": [
+        "https://www.craigslist.org/view/d/san-antonio-alamo-craft-co-antiques-more/mj6FcRd4ZDr7zwAwc4pwWa"
+      ],
+      "original_url": "https://www.craigslist.org/view/d/san-antonio-alamo-craft-co-antiques-more/mj6FcRd4ZDr7zwAwc4pwWa",
+      "source_names": [
+        "Craigslist"
+      ],
+      "photos": [
+        "https://images.craigslist.org/01515_1Xh2ogBe0sZ_0CI0pq_600x450.jpg"
+      ],
+      "confidence": 96,
+      "verified_at": "2026-10-01T05:03:20-05:00",
+      "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.556,-98.6094",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.556,-98.6094",
+      "status": "verified",
+      "geocode_method": "source",
+      "notes": "",
+      "community_source": "",
+      "community_link_or_notes": ""
+    },
+    {
+      "sale_id": "2026-09-29_1005-haynes-st-san-marcos-tx-78666",
+      "title": "1005 Haynes St, San Marcos, TX 78666",
+      "sale_type": "garage",
+      "date_start": "2026-09-29",
+      "date_end": "2026-10-05",
+      "start_time": "9:30 am - 7:00 pm",
+      "end_time": "",
+      "address": "1005 Haynes St, San Marcos, TX 78666",
+      "city": "San Antonio",
+      "state": "TX",
+      "zip": "",
+      "latitude": 29.4241,
+      "longitude": -98.4936,
+      "description": "Dates and Times: Tuesday, September 29, 2026 9:30 am - 7:00 pm",
+      "highlights": [],
+      "source_urls": [
+        "https://garagesalefinder.com/s/N96wn/1005-haynes-st-san-marcos-tx-78666"
+      ],
+      "original_url": "https://garagesalefinder.com/s/N96wn/1005-haynes-st-san-marcos-tx-78666",
+      "source_names": [
+        "GarageSaleFinder"
+      ],
+      "photos": [
+        "https://gsf.tlstatic.com/image/w150-h100/2026/09/29/s/7/5/21772775/XQUmb-0.jpeg",
+        "https://gsf.tlstatic.com/image/w150-h100/2026/09/29/s/7/5/21772775/Xi5uo-0.jpeg",
+        "https://gsf.tlstatic.com/image/w150-h100/2026/09/29/s/7/5/21772775/XXUTH-0.jpeg",
+        "https://gsf.tlstatic.com/image/w150-h100/2026/09/29/s/7/5/21772775/ojWb-0.jpeg",
+        "https://gsf.tlstatic.com/image/w150-h100/2026/09/29/s/7/5/21772775/X18hh-0.jpeg",
+        "https://gsf.tlstatic.com/image/w150-h100/2026/09/29/s/7/5/21772775/XU6Ub-0.jpeg"
+      ],
+      "confidence": 100,
+      "verified_at": "2026-10-01T05:03:20-05:00",
+      "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936",
+      "status": "verified",
+      "geocode_method": "city-center",
+      "notes": "",
+      "community_source": "",
+      "community_link_or_notes": ""
+    },
+    {
+      "sale_id": "2026-10-01_11319-par-one-san-antonio-tx",
+      "title": "Estate sale: Tools, Car, Clothes, Furniture and More!",
+      "sale_type": "estate",
+      "date_start": "2026-10-01",
+      "date_end": "2026-10-03",
+      "start_time": "",
+      "end_time": "",
+      "address": "11319 Par One, San Antonio, TX",
+      "city": "San Antonio",
+      "state": "TX",
+      "zip": "",
+      "latitude": 29.3309,
+      "longitude": -98.5054,
+      "description": "QR Code Link to This Post 🔥 SAN ANTONIO BACHELOR PAD ESTATE SALE! 🔥 This isn’t your grandma’s estate sale! We’re opening the doors to a young bachelor’s home packed with modern finds, everyday essentials, electronics, furniture, décor, and plenty of unexpected treasures. If you’re setting up an apartment, furnishing a new home, looking for a man cave upgrade, or just love hunting for a great deal, this is a sale you’ll want to check out! 🏠 Expect to find: • Furniture & home furnishings • Electro",
+      "highlights": [],
+      "source_urls": [
+        "https://www.craigslist.org/view/d/san-antonio-estate-sale-tools-car/6C3pS3CtYGCgtHP3jGH7Md"
+      ],
+      "original_url": "https://www.craigslist.org/view/d/san-antonio-estate-sale-tools-car/6C3pS3CtYGCgtHP3jGH7Md",
+      "source_names": [
+        "Craigslist"
+      ],
+      "photos": [
+        "https://images.craigslist.org/00P0P_gV0tYi4Xkx_0t20CI_600x450.jpg",
+        "https://images.craigslist.org/00P0P_gV0tYi4Xkx_0t20CI_50x50c.jpg",
+        "https://images.craigslist.org/00x0x_38LOMbl7K7Z_0t20CI_50x50c.jpg",
+        "https://images.craigslist.org/00j0j_ap6Pqutf04M_0t20CI_50x50c.jpg",
+        "https://images.craigslist.org/00A0A_dR6UyxlzLAQ_0t20CI_50x50c.jpg",
+        "https://images.craigslist.org/00w0w_5f3PeivCTV9_0CI0t2_50x50c.jpg"
+      ],
+      "confidence": 96,
+      "verified_at": "2026-10-01T05:03:20-05:00",
+      "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.3309,-98.5054",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.3309,-98.5054",
+      "status": "verified",
+      "geocode_method": "source",
+      "notes": "",
+      "community_source": "",
+      "community_link_or_notes": ""
+    },
+    {
+      "sale_id": "2026-10-01_8811-braun-mesa-san-antonio-tx",
+      "title": "MASSIVE MOVING SALE - High Quality Furniture, Appliances & Decor! (San Antonio / Braun Mesa)",
+      "sale_type": "garage",
+      "date_start": "2026-10-01",
+      "date_end": "2026-10-03",
+      "start_time": "",
+      "end_time": "",
+      "address": "8811 Braun Mesa, San Antonio, TX",
+      "city": "San Antonio",
+      "state": "TX",
+      "zip": "",
+      "latitude": 29.541176,
+      "longitude": -98.655939,
+      "description": "QR Code Link to This Post 🎉 MASSIVE MOVING SALE – EVERYTHING MUST GO! 🎉 We are moving and selling high-quality, extremely well-maintained furniture, top-tier appliances, home decor, and household essentials! 🛋️ FEATURED ITEMS INCLUDE: • Appliances: Samsung Washer & Dryer Set, Stainless Steel Refrigerator, Microwave • Living Room: L-Shaped Reclining Sectional Sofa, TV Console, Accent Chairs, Floor Lamps, Wall Art • Dining Room: Solid Wooden Dining Table with Chairs, Sideboards & Dressers • Bedroo",
+      "highlights": [],
+      "source_urls": [
+        "https://www.craigslist.org/view/d/san-antonio-massive-moving-sale-high/9HuEatYfEUpN163kTddTPs"
+      ],
+      "original_url": "https://www.craigslist.org/view/d/san-antonio-massive-moving-sale-high/9HuEatYfEUpN163kTddTPs",
+      "source_names": [
+        "Craigslist"
+      ],
+      "photos": [],
+      "confidence": 96,
+      "verified_at": "2026-10-01T05:03:20-05:00",
+      "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.541176,-98.655939",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.541176,-98.655939",
+      "status": "verified",
+      "geocode_method": "source",
+      "notes": "",
+      "community_source": "",
+      "community_link_or_notes": ""
+    },
+    {
+      "sale_id": "2026-10-01_1025-private-road-1501-near-private-road-1515-sa",
+      "title": "1025 private road 1501 Bandera HUGE community sale (Holiday Village)",
+      "sale_type": "garage",
+      "date_start": "2026-10-01",
+      "date_end": "2026-10-03",
+      "start_time": "",
+      "end_time": "",
+      "address": "1025 Private Road 1501 near Private road 1515, San Antonio, TX",
+      "city": "San Antonio",
+      "state": "TX",
+      "zip": "",
+      "latitude": 29.619598,
+      "longitude": -98.994468,
+      "description": "QR Code Link to This Post Stop by 1025 PR 1501 while you check out Holiday Village Community Sale Tools, New Pottery Wheel, Silver, Exercise eqpt, Metal Detectors, Crystal, Clothing, Dishware, Area Rugs, Furniture, Toys, Collectible Dolls, Lots of Miscellanious All has to go.. So DON'T BE AFRAID TO MAKE AN OFFER",
+      "highlights": [],
+      "source_urls": [
+        "https://www.craigslist.org/view/d/mico-1025-private-road-1501-bandera/mp8MJTEYrNEjeKP8pd2uPV"
+      ],
+      "original_url": "https://www.craigslist.org/view/d/mico-1025-private-road-1501-bandera/mp8MJTEYrNEjeKP8pd2uPV",
+      "source_names": [
+        "Craigslist"
+      ],
+      "photos": [
+        "https://images.craigslist.org/00A0A_4MBBz8r0baW_0CI0hT_600x450.jpg",
+        "https://images.craigslist.org/00A0A_4MBBz8r0baW_0CI0hT_50x50c.jpg",
+        "https://images.craigslist.org/00u0u_8GBgx1Wodck_0CI0hT_50x50c.jpg",
+        "https://images.craigslist.org/00C0C_l9VhGIzUmOA_0CI0hT_50x50c.jpg",
+        "https://images.craigslist.org/00H0H_btk3xFarn7m_0CI0hT_50x50c.jpg",
+        "https://images.craigslist.org/00W0W_afLIaI35G7c_0CI0hT_50x50c.jpg"
+      ],
+      "confidence": 96,
+      "verified_at": "2026-10-01T05:03:20-05:00",
+      "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.619598,-98.994468",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.619598,-98.994468",
+      "status": "verified",
+      "geocode_method": "source",
+      "notes": "",
+      "community_source": "",
+      "community_link_or_notes": ""
+    },
+    {
+      "sale_id": "2026-10-01_17611-diamond-canyon-san-antonio-tx",
+      "title": "Community Garage Sale this weekend 10/03/26 - Saturday Only (Gold Canyon)",
+      "sale_type": "garage",
+      "date_start": "2026-10-01",
+      "date_end": "2026-10-03",
+      "start_time": "",
+      "end_time": "",
+      "address": "17611 Diamond Canyon, San Antonio, TX",
+      "city": "San Antonio",
+      "state": "TX",
+      "zip": "",
+      "latitude": 29.5863,
+      "longitude": -98.4769,
+      "description": "QR Code Link to This Post Gold Canyon Community Garage sale this Saturday Only. Many items available: washer, Housewares, women’s, men’s, kids clothes and shoes, chandeliers , and much more.",
+      "highlights": [],
+      "source_urls": [
+        "https://www.craigslist.org/view/d/san-antonio-community-garage-sale-this/2c7NDqsVrRpfzyBcddW4U6"
+      ],
+      "original_url": "https://www.craigslist.org/view/d/san-antonio-community-garage-sale-this/2c7NDqsVrRpfzyBcddW4U6",
+      "source_names": [
+        "Craigslist"
+      ],
+      "photos": [],
+      "confidence": 96,
+      "verified_at": "2026-10-01T05:03:20-05:00",
+      "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5863,-98.4769",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.5863,-98.4769",
+      "status": "verified",
+      "geocode_method": "source",
+      "notes": "",
+      "community_source": "",
+      "community_link_or_notes": ""
+    },
+    {
+      "sale_id": "2026-10-01_3527-green-spring-san-antonio-tx",
+      "title": "Furniture for Sale ( please read post, ty) (Green Spring Valley)",
+      "sale_type": "garage",
+      "date_start": "2026-10-01",
+      "date_end": "2026-10-03",
+      "start_time": "",
+      "end_time": "",
+      "address": "3527 Green Spring, San Antonio, TX",
+      "city": "San Antonio",
+      "state": "TX",
+      "zip": "",
+      "latitude": 29.5855,
+      "longitude": -98.4071,
+      "description": "QR Code Link to This Post Dresser ($60)Rugs ($60) three chairs ($70 a piece) a set of side tables set ( $60) , mirrored coffee table ($75) , one marble coffee table ($200) , two vintage lamps pre WW2 ( set $70) and a Flat screen RCA TV with mount controls and manual ( $160) and queen bed ($225 - very clean, pretty iron and so comfy). Please let me know if you would like to come see it and possibly pick up on October 10th between12-4. Let me know on the 9th of October if still interested because ",
+      "highlights": [],
+      "source_urls": [
+        "https://www.craigslist.org/view/d/san-antonio-furniture-for-sale-please/84LPLEmaFGUzdHuyK6dFdb"
+      ],
+      "original_url": "https://www.craigslist.org/view/d/san-antonio-furniture-for-sale-please/84LPLEmaFGUzdHuyK6dFdb",
+      "source_names": [
+        "Craigslist"
+      ],
+      "photos": [
+        "https://images.craigslist.org/00Q0Q_hYc7ZomrAJa_0t20CI_600x450.jpg",
+        "https://images.craigslist.org/00Q0Q_hYc7ZomrAJa_0t20CI_50x50c.jpg",
+        "https://images.craigslist.org/00I0I_afhxbL7aFiz_0t20CI_50x50c.jpg",
+        "https://images.craigslist.org/00i0i_9bVQyKNjNZD_0CI0t2_50x50c.jpg",
+        "https://images.craigslist.org/00U0U_aG1hrrUytuz_0t20CI_50x50c.jpg",
+        "https://images.craigslist.org/00404_jGLAxJTb1o_0t20CI_50x50c.jpg"
+      ],
+      "confidence": 96,
+      "verified_at": "2026-10-01T05:03:20-05:00",
+      "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5855,-98.4071",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.5855,-98.4071",
+      "status": "verified",
+      "geocode_method": "source",
+      "notes": "",
+      "community_source": "",
+      "community_link_or_notes": ""
+    },
+    {
+      "sale_id": "2026-10-01_13202-hunters-spring-st-near-hunters-glade-san-a",
+      "title": "Garage Sale October Friday 2nd and Saturday 3rd 8am - 2pm (San Antonio Texas)",
+      "sale_type": "garage",
+      "date_start": "2026-10-01",
+      "date_end": "2026-10-03",
+      "start_time": "",
+      "end_time": "",
+      "address": "13202 Hunters Spring St near Hunters Glade, San Antonio, TX",
+      "city": "San Antonio",
+      "state": "TX",
+      "zip": "",
+      "latitude": 29.565949,
+      "longitude": -98.54499,
+      "description": "QR Code Link to This Post My kids don't want my stuff garage sale! I have several items in the following categories: women's and men's good quality clothing housewares some jewelry women's and men's shoes some electronics file cabinet 60/40 white porcelain sink toys decorative pillows pair of lamps and more",
+      "highlights": [],
+      "source_urls": [
+        "https://www.craigslist.org/view/d/san-antonio-garage-sale-october-friday/4RaWZaYKWps29nSKi69CfW"
+      ],
+      "original_url": "https://www.craigslist.org/view/d/san-antonio-garage-sale-october-friday/4RaWZaYKWps29nSKi69CfW",
+      "source_names": [
+        "Craigslist"
+      ],
+      "photos": [],
+      "confidence": 96,
+      "verified_at": "2026-10-01T05:03:20-05:00",
+      "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.565949,-98.54499",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.565949,-98.54499",
+      "status": "verified",
+      "geocode_method": "source",
+      "notes": "",
+      "community_source": "",
+      "community_link_or_notes": ""
+    },
+    {
+      "sale_id": "2026-10-01_5717-fm-3175-san-antonio-tx",
+      "title": "HUGE SALE (Lytle Tx)",
+      "sale_type": "garage",
+      "date_start": "2026-10-01",
+      "date_end": "2026-10-03",
+      "start_time": "",
+      "end_time": "",
+      "address": "5717 FM 3175, San Antonio, TX",
+      "city": "San Antonio",
+      "state": "TX",
+      "zip": "",
+      "latitude": 29.2366,
+      "longitude": -98.7945,
+      "description": "QR Code Link to This Post Many things to see! Come one Come all Friday... Saturday... Sunday... Cash &amp; Credit accepted Kitchen Items Metal Art Patio furniture Toys Clothes Model A parts Bikes Tires",
+      "highlights": [],
+      "source_urls": [
+        "https://www.craigslist.org/view/d/lytle-huge-sale/fZTWSaZSQ72eK45TkHH4z1"
+      ],
+      "original_url": "https://www.craigslist.org/view/d/lytle-huge-sale/fZTWSaZSQ72eK45TkHH4z1",
+      "source_names": [
+        "Craigslist"
+      ],
+      "photos": [],
+      "confidence": 96,
+      "verified_at": "2026-10-01T05:03:20-05:00",
+      "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.2366,-98.7945",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.2366,-98.7945",
+      "status": "verified",
+      "geocode_method": "source",
+      "notes": "",
+      "community_source": "",
+      "community_link_or_notes": ""
+    },
+    {
+      "sale_id": "2026-10-01_nw-loop-410-near-blanco-rd-san-antonio-tx",
+      "title": "NOW OPEN! The Collective Boutiques (San Antonio)",
+      "sale_type": "garage",
+      "date_start": "2026-10-01",
+      "date_end": "2026-10-03",
+      "start_time": "",
+      "end_time": "",
+      "address": "NW Loop 410 near Blanco Rd., San Antonio, TX",
+      "city": "San Antonio",
+      "state": "TX",
+      "zip": "",
+      "latitude": 29.5183,
+      "longitude": -98.503,
+      "description": "QR Code Link to This Post Open Everyday. Mon- Sun 10am-8pm 522 NW Loop 410, SATX 78216 Newly opened indoor vendor market in San Antonio featuring unique apparel, home goods, gifts, vintage items, antiques &amp; so much more! Deli &amp; tea room located inside. Clean restrooms. Come stop by &amp; look &amp; shop!",
+      "highlights": [],
+      "source_urls": [
+        "https://www.craigslist.org/view/d/san-antonio-now-open-the-collective/a9UPVs8b9XgmEsUh6iVZ1m"
+      ],
+      "original_url": "https://www.craigslist.org/view/d/san-antonio-now-open-the-collective/a9UPVs8b9XgmEsUh6iVZ1m",
+      "source_names": [
+        "Craigslist"
+      ],
+      "photos": [
+        "https://images.craigslist.org/00303_fJujeiiUakX_0CI0eX_600x450.jpg"
+      ],
+      "confidence": 96,
+      "verified_at": "2026-10-01T05:03:20-05:00",
+      "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5183,-98.503",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.5183,-98.503",
+      "status": "verified",
+      "geocode_method": "source",
+      "notes": "",
+      "community_source": "",
+      "community_link_or_notes": ""
+    }
+  ]
+}
