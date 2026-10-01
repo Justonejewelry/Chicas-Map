@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="referrer" content="origin" />
+  <title>Adventure edition · Chicas Map</title>
+  <meta name="description" content="Same San Antonio garage sale pins. Standard edition or Adventure edition. One map, two dimensions." />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    :root {
+      --magenta: #c513af;
+      --ink: #241c16;
+      --paper: #f3e6c8;
+      --paper-deep: #e4d0a4;
+      --night: #14110e;
+      --cream: #f7f1e6;
+      --line: #3a342e;
+      --good: #2f6b45;
+      --cold: #8a5a2b;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; height: 100%; background: var(--night); color: var(--cream); font-family: Georgia, "Iowan Old Style", Palatino, serif; }
+    button, input { font-family: Inter, system-ui, sans-serif; }
+    #map { position: fixed; inset: 0; background: #1b1712; }
+    body.edition-adventure #map { filter: sepia(.55) contrast(1.05) saturate(.85) brightness(.96); }
+    body.edition-adventure::before {
+      content: "";
+      pointer-events: none;
+      position: fixed;
+      inset: 0;
+      z-index: 400;
+      background:
+        radial-gradient(ellipse at center, transparent 42%, rgba(62, 38, 16, .38) 100%),
+        url("assets/parchment-map.jpg") center/cover;
+      mix-blend-mode: multiply;
+      opacity: .28;
+    }
+    .topbar {
+      position: fixed;
+      z-index: 1000;
+      top: max(10px, env(safe-area-inset-top));
+      left: 10px;
+      right: 10px;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-width: 0;
+      background: rgba(20, 17, 14, .88);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 6px 10px 6px 6px;
+      backdrop-filter: blur(8px);
+    }
+    .brand img { width: 36px; height: 36px; border-radius: 10px; object-fit: cover; border: 1px solid #c513af88; background: #c513af; }
+    .brand b { display: block; font: 800 13px/1.1 Inter, system-ui, sans-serif; letter-spacing: .01em; }
+    .brand span { display: block; font: 600 10px/1.2 Inter, system-ui, sans-serif; color: #cbbba4; }
+    .editions {
+      margin-left: auto;
+      display: flex;
+      background: rgba(20, 17, 14, .9);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 3px;
+      gap: 2px;
+    }
+    .editions button {
+      border: 0;
+      background: transparent;
+      color: #e7dccb;
+      font: 800 11px/1 Inter, system-ui, sans-serif;
+      padding: 10px 10px;
+      border-radius: 11px;
+      cursor: pointer;
+    }
+    .editions button[aria-pressed="true"] { background: var(--magenta); color: white; }
+    .sheet {
+      position: fixed;
+      z-index: 1000;
+      left: 10px;
+      right: 10px;
+      bottom: max(10px, env(safe-area-inset-bottom));
+      background: rgba(247, 241, 230, .96);
+      color: var(--ink);
+      border-radius: 18px;
+      padding: 12px 12px 10px;
+      box-shadow: 0 10px 40px rgba(0,0,0,.35);
+      max-height: 46dvh;
+      overflow: auto;
+    }
+    body.edition-adventure .sheet {
+      background:
+        linear-gradient(180deg, rgba(243, 230, 200, .96), rgba(228, 208, 164, .96)),
+        url("assets/parchment-map.jpg") center/cover;
+    }
+    .kicker { font: 800 10px/1 Inter, system-ui, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--magenta); }
+    .sheet h1 { margin: 4px 0 6px; font-size: 20px; line-height: 1.15; }
+    .meta { font: 600 12px/1.35 Inter, system-ui, sans-serif; color: #5c5146; }
+    .row { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+    .row a, .row button, .ghost {
+      appearance: none;
+      border: 0;
+      border-radius: 12px;
+      padding: 10px 12px;
+      font: 800 12px/1 Inter, system-ui, sans-serif;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .primary { background: var(--magenta); color: white; }
+    .ghost { background: #241c16; color: var(--cream); }
+    .quiet { background: transparent; color: #5c5146; border: 1px solid #cbb89a; }
+    .bones { font: 800 12px/1 Inter, system-ui, sans-serif; background: #241c16; color: var(--paper); border-radius: 999px; padding: 8px 10px; }
+    .xmark {
+      width: 36px; height: 36px; margin-left: -18px; margin-top: -18px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 40% 35%, #f7e7c2, #c9a36a 70%);
+      border: 2px solid #6b3a22;
+      color: #7a1d16;
+      font: 900 20px/32px Georgia, serif;
+      text-align: center;
+      box-shadow: 0 2px 0 #3d2414;
+    }
+    .xmark.cold { filter: grayscale(.4); opacity: .8; }
+    .xmark.sniffed { box-shadow: 0 0 0 4px #c513af66; }
+    .pin {
+      width: 18px; height: 18px; margin-left: -9px; margin-top: -9px;
+      border-radius: 50% 50% 50% 0; transform: rotate(-45deg);
+      background: var(--magenta); border: 2px solid white;
+      box-shadow: 0 2px 6px rgba(0,0,0,.35);
+    }
+    .intro {
+      position: fixed; inset: 0; z-index: 2000;
+      background: #120e0b;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      color: var(--cream);
+    }
+    .intro video, .intro .still {
+      position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+    }
+    .intro .veil {
+      position: relative;
+      padding: 22px 16px max(18px, env(safe-area-inset-bottom));
+      background: linear-gradient(transparent, rgba(12,9,7,.92) 28%);
+    }
+    .intro h2 { margin: 0 0 6px; font-size: 28px; line-height: 1.05; }
+    .intro p { margin: 0 0 12px; font: 600 14px/1.4 Inter, system-ui, sans-serif; color: #f0e2cc; max-width: 36em; }
+    .quest {
+      margin-top: 8px;
+      border-top: 1px dashed #c4ae86;
+      padding-top: 8px;
+      font: 600 12px/1.4 Inter, system-ui, sans-serif;
+    }
+    .status { min-height: 1.2em; font: 700 12px/1.3 Inter, system-ui, sans-serif; }
+    .leaflet-control-zoom { margin-top: 72px !important; }
+    @media (prefers-reduced-motion: reduce) {
+      .intro video { display: none; }
+    }
+  </style>
+</head>
+<body class="edition-adventure">
+  <div id="intro" class="intro">
+    <video class="still" id="intro-video" autoplay muted playsinline poster="assets/chica-treasure.jpg">
+      <source src="assets/sniff-trail.mp4" type="video/mp4" />
+    </video>
+    <img class="still" id="intro-still" alt="" src="assets/chica-treasure.jpg" hidden />
+    <div class="veil">
+      <div class="kicker">Two editions · one city</div>
+      <h2>The sales are the treasure.</h2>
+      <p>Standard is the driveway map. Adventure is the same pins, sniffed as a trail. Nothing moves. Chica only marks what the feed already published.</p>
+      <div class="row">
+        <button class="primary" id="enter-adventure" type="button">Enter adventure</button>
+        <button class="ghost" id="enter-standard" type="button">Standard edition</button>
+      </div>
+    </div>
+  </div>
+  <div id="map" role="application" aria-label="San Antonio garage sale map, standard and adventure editions"></div>
+  <div class="topbar">
+    <div class="brand">
+      <img src="assets/chica-treasure.jpg" alt="Chica on the treasure map" />
+      <div>
+        <b>Chicas Map</b>
+        <span id="edition-label">Adventure edition</span>
+      </div>
+    </div>
+    <div class="editions" role="group" aria-label="Edition">
+      <button type="button" id="btn-standard" aria-pressed="false">Standard</button>
+      <button type="button" id="btn-adventure" aria-pressed="true">Adventure</button>
+    </div>
+  </div>
+  <section class="sheet" id="sheet" aria-live="polite">
+    <div class="kicker" id="kicker">Scent trail</div>
+    <h1 id="title">Loading the same pins…</h1>
+    <div class="meta" id="meta"></div>
+    <div class="status" id="status"></div>
+    <div class="quest" id="quest"></div>
+    <div class="row" id="actions"></div>
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    (function () {
+      var FEED = "https://justonejewelry.github.io/Chicas-Map/data/cities/san-antonio.json";
+      var SA = [29.4241, -98.4936];
+      var SNIFF_M = 60.96;
+      var KEY = "chicas-adventure-v1";
+      var FALLBACK = [
+        {"address":"7135 Teton Ridge, San Antonio, TX","dates":"2026-09-26 – 2026-09-30","hours":"","title":"Moving/Downsizing Sale","source":"Craigslist","type":"garage","lat":29.579778,"lon":-98.350915,"date_end":"2026-09-30"},
+        {"address":"22314 Roan Forest, San Antonio, TX","dates":"2026-09-26 – 2026-09-30","hours":"","title":"Evans Ranch Community Garage Sales","source":"Craigslist","type":"garage","lat":29.64668,"lon":-98.43986,"date_end":"2026-09-30"},
+        {"address":"6151 NW Loop 410, San Antonio, TX","dates":"Tue-Sat","hours":"10AM-6PM","title":"Alamo Craft Co. Antiques & More","source":"Craigslist","type":"garage","lat":29.556,"lon":-98.6094,"date_end":null},
+        {"address":"209 Rainbow Dr, San Antonio, TX 78209","dates":"2026-09-26 – 2026-09-30","hours":"","title":"Yard and rummage sale","source":"Email:GarageSaleFinder","type":"garage","lat":29.4932308,"lon":-98.4399052,"date_end":"2026-09-30"},
+        {"address":"17 Old San Antonio Rd, Boerne, TX 78006","dates":"2026-09-30","hours":"","title":"$3 Clothing and Shoes","source":"Email:GarageSaleFinder","type":"garage","lat":29.778212547191,"lon":-98.71765462071,"date_end":"2026-09-30"}
+      ];
+
+      var state = load();
+      var edition = state.edition || "adventure";
+      var sales = [];
+      var map, layer, trail, you;
+      var selected = null;
+
+      function load() {
+        try { return JSON.parse(localStorage.getItem(KEY) || "{}"); }
+        catch (e) { return {}; }
+      }
+      function save() {
+        state.edition = edition;
+        localStorage.setItem(KEY, JSON.stringify(state));
+      }
+      function idOf(s) {
+        return [s.address, s.lat, s.lon].join("|");
+      }
+      function todayISO() {
+        var d = new Date();
+        return d.getFullYear() + "-" + String(d.getMonth()+1).padStart(2,"0") + "-" + String(d.getDate()).padStart(2,"0");
+      }
+      function cold(s) {
+        return !!(s.date_end && s.date_end < todayISO());
+      }
+      function meters(a, b) {
+        var R = 6371000, p = Math.PI / 180;
+        var dLat = (b[0] - a[0]) * p, dLon = (b[1] - a[1]) * p;
+        var x = Math.sin(dLat/2) ** 2 + Math.cos(a[0]*p) * Math.cos(b[0]*p) * Math.sin(dLon/2) ** 2;
+        return 2 * R * Math.asin(Math.min(1, Math.sqrt(x)));
+      }
+      function feet(m) { return Math.round(m * 3.28084); }
+      function bones() {
+        return (state.opened || []).length * 10 + (state.sniffed || []).length * 40;
+      }
+      function rank(n) {
+        if (n >= 350) return "Cape";
+        if (n >= 200) return "Pack";
+        if (n >= 100) return "Trail";
+        if (n >= 40) return "Nose";
+        return "Pup";
+      }
+      function questName(s) {
+        var street = (s.address || "").split(",")[0];
+        return "Cache at " + street;
+      }
+
+      function setEdition(next) {
+        edition = next === "standard" ? "standard" : "adventure";
+        document.body.className = "edition-" + edition;
+        document.getElementById("btn-standard").setAttribute("aria-pressed", edition === "standard" ? "true" : "false");
+        document.getElementById("btn-adventure").setAttribute("aria-pressed", edition === "adventure" ? "true" : "false");
+        document.getElementById("edition-label").textContent = edition === "adventure" ? "Adventure edition" : "Standard edition";
+        save();
+        draw();
+        renderSheet(selected);
+      }
+
+      function iconFor(s) {
+        var sniffed = (state.sniffed || []).indexOf(idOf(s)) !== -1;
+        if (edition === "standard") return L.divIcon({ className: "", html: '<div class="pin" aria-hidden="true"></div>', iconSize: [18, 18] });
+        return L.divIcon({
+          className: "",
+          html: '<div class="xmark' + (cold(s) ? " cold" : "") + (sniffed ? " sniffed" : "") + '" aria-hidden="true">X</div>',
+          iconSize: [36, 36]
+        });
+      }
+
+      function draw() {
+        if (!map) return;
+        if (layer) layer.remove();
+        if (trail) trail.remove();
+        layer = L.layerGroup().addTo(map);
+        var latlngs = sales.map(function (s) { return [s.lat, s.lon]; });
+        if (edition === "adventure" && latlngs.length > 1) {
+          var ordered = sales.slice().sort(function (a, b) { return a.lon - b.lon; });
+          trail = L.polyline(ordered.map(function (s) { return [s.lat, s.lon]; }), {
+            color: "#c513af", weight: 3, dashArray: "8 10", opacity: .85
+          }).addTo(map);
+        }
+        sales.forEach(function (s) {
+          var marker = L.marker([s.lat, s.lon], { icon: iconFor(s), title: s.title || s.address });
+          marker.on("click", function () { openSale(s); });
+          marker.addTo(layer);
+        });
+      }
+
+      function openSale(s) {
+        selected = s;
+        var opened = state.opened || (state.opened = []);
+        if (opened.indexOf(idOf(s)) === -1) opened.push(idOf(s));
+        save();
+        draw();
+        renderSheet(s);
+        map.flyTo([s.lat, s.lon], Math.max(map.getZoom(), 14), { duration: 0.7 });
+      }
+
+      function navLinks(s) {
+        var q = encodeURIComponent(s.address || (s.lat + "," + s.lon));
+        return [
+          '<a class="ghost" href="https://www.google.com/maps/dir/?api=1&destination=' + q + '" target="_blank" rel="noopener">Google</a>',
+          '<a class="ghost" href="https://maps.apple.com/?daddr=' + q + '" target="_blank" rel="noopener">Apple</a>',
+          '<a class="ghost" href="https://waze.com/ul?q=' + q + '&navigate=yes" target="_blank" rel="noopener">Waze</a>'
+        ].join("");
+      }
+
+      function renderSheet(s) {
+        var kicker = document.getElementById("kicker");
+        var title = document.getElementById("title");
+        var meta = document.getElementById("meta");
+        var status = document.getElementById("status");
+        var quest = document.getElementById("quest");
+        var actions = document.getElementById("actions");
+        var n = bones();
+        if (!s) {
+          kicker.textContent = edition === "adventure" ? "Scent trail" : "This weekend";
+          title.textContent = sales.length + " mirrored pins";
+          meta.textContent = "Feed and adventure use the same coordinates. Rank " + rank(n) + ".";
+          status.textContent = n + " bones · " + (state.sniffed || []).length + " sniffed";
+          quest.textContent = edition === "adventure"
+            ? "Follow the magenta trail. Tap an X. Sniff only counts inside 200 feet of that driveway."
+            : "Same driveways as adventure. No quest skin.";
+          actions.innerHTML = '<button class="primary" type="button" id="near">Near me</button><span class="bones">' + n + ' bones</span>';
+          document.getElementById("near").onclick = nearMe;
+          return;
+        }
+        var isCold = cold(s);
+        kicker.textContent = edition === "adventure" ? (isCold ? "Cold trail" : "Live cache") : (isCold ? "Ended" : "Sale");
+        title.textContent = edition === "adventure" ? questName(s) : (s.title || s.address);
+        meta.textContent = (s.title || "Sale") + " · " + (s.address || "") + (s.hours ? " · " + s.hours : "") + (s.dates ? " · " + s.dates : "");
+        status.textContent = isCold
+          ? "Date window closed. Pin stays so the editions still mirror. Not a live sale."
+          : "Same pin in both editions.";
+        var sniffed = (state.sniffed || []).indexOf(idOf(s)) !== -1;
+        quest.textContent = edition === "adventure"
+          ? (sniffed ? "Nose already on this driveway." : "Stand within 200 feet, then sniff. The X does not move.")
+          : "Open in adventure to run this driveway as a cache.";
+        actions.innerHTML = navLinks(s)
+          + (edition === "adventure" ? '<button class="primary" type="button" id="sniff">Sniff · 200 ft</button>' : '')
+          + '<button class="quiet" type="button" id="clear">Trail</button>'
+          + '<span class="bones">' + n + ' bones</span>';
+        var sniff = document.getElementById("sniff");
+        if (sniff) sniff.onclick = function () { sniffSale(s); };
+        document.getElementById("clear").onclick = function () { selected = null; renderSheet(null); };
+      }
+
+      function sniffSale(s) {
+        var status = document.getElementById("status");
+        if (!navigator.geolocation) {
+          status.textContent = "This browser has no location. The pin is still here.";
+          return;
+        }
+        status.textContent = "Nose down…";
+        navigator.geolocation.getCurrentPosition(function (pos) {
+          var here = [pos.coords.latitude, pos.coords.longitude];
+          var d = meters(here, [s.lat, s.lon]);
+          if (d <= SNIFF_M) {
+            var sniffed = state.sniffed || (state.sniffed = []);
+            if (sniffed.indexOf(idOf(s)) === -1) sniffed.push(idOf(s));
+            save();
+            status.textContent = "Sniffed. " + feet(d) + " feet. Cache marked.";
+            draw();
+            renderSheet(s);
+          } else {
+            status.textContent = feet(d) + " feet out. Sniff unlocks at 200 feet. Pin did not move.";
+          }
+        }, function () {
+          status.textContent = "Location blocked. You can still navigate.";
+        }, { enableHighAccuracy: true, timeout: 8000, maximumAge: 15000 });
+      }
+
+      function nearMe() {
+        if (!navigator.geolocation) { map.flyTo(SA, 12); return; }
+        navigator.geolocation.getCurrentPosition(function (pos) {
+          var ll = [pos.coords.latitude, pos.coords.longitude];
+          if (you) you.remove();
+          you = L.circleMarker(ll, { radius: 7, color: "#c513af", fillColor: "#fff", fillOpacity: 1, weight: 3 }).addTo(map);
+          var nearest = sales.slice().sort(function (a, b) {
+            return meters(ll, [a.lat, a.lon]) - meters(ll, [b.lat, b.lon]);
+          })[0];
+          map.flyTo(ll, 13);
+          if (nearest) openSale(nearest);
+        }, function () { map.flyTo(SA, 12); }, { enableHighAccuracy: true, timeout: 8000 });
+      }
+
+      function bootMap() {
+        map = L.map("map", { zoomControl: true, attributionControl: true }).setView(SA, 10);
+        L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
+          attribution: "&copy; OSM &copy; CARTO",
+          subdomains: "abcd",
+          maxZoom: 19
+        }).addTo(map);
+        draw();
+        if (sales.length) {
+          map.fitBounds(sales.map(function (s) { return [s.lat, s.lon]; }), { padding: [40, 80] });
+        }
+        renderSheet(null);
+      }
+
+      function enter(which) {
+        document.getElementById("intro").hidden = true;
+        setEdition(which);
+      }
+
+      document.getElementById("enter-adventure").onclick = function () { enter("adventure"); };
+      document.getElementById("enter-standard").onclick = function () { enter("standard"); };
+      document.getElementById("btn-standard").onclick = function () { setEdition("standard"); };
+      document.getElementById("btn-adventure").onclick = function () { setEdition("adventure"); };
+
+      var video = document.getElementById("intro-video");
+      video.addEventListener("error", function () {
+        video.hidden = true;
+        var still = document.getElementById("intro-still");
+        still.hidden = false;
+        still.onerror = function () { still.hidden = true; };
+      });
+
+      fetch(FEED, { cache: "no-store" })
+        .then(function (r) { if (!r.ok) throw new Error("feed"); return r.json(); })
+        .then(function (data) {
+          sales = (data && data.public) || FALLBACK;
+          if (!sales.length) sales = FALLBACK;
+          bootMap();
+        })
+        .catch(function () {
+          sales = FALLBACK;
+          bootMap();
+          document.getElementById("status").textContent = "Live feed blocked. Showing the last published public pins.";
+        });
+    })();
+  </script>
+</body>
+</html>

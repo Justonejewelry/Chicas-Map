@@ -21,6 +21,7 @@
     html, body { margin: 0; width: 100vw; height: 100dvh; background: #121212; overflow: hidden; font-family: Inter, system-ui, sans-serif; }
     #chica-live-map, .leaflet-container { position: fixed; inset: 0; width: 100vw !important; height: 100dvh !important; z-index: 1; background: #121212; }
     #chica-home-chip { position: fixed; top: max(10px, env(safe-area-inset-top)); right: 10px; z-index: 2147483647; height: 44px; padding: 0 12px; border-radius: 12px; background: #1a1714f5; color: #f3eee4; text-decoration: none; font: 800 13px/44px Inter, system-ui, sans-serif; border: 1px solid #3a342e; }
+    #chica-adventure-chip { position: fixed; top: calc(max(10px, env(safe-area-inset-top)) + 52px); right: 10px; z-index: 2147483647; height: 44px; padding: 0 12px; border-radius: 12px; background: #c513af; color: #fff; text-decoration: none; font: 800 13px/44px Inter, system-ui, sans-serif; border: 1px solid #8d0c7c; }
     .leaflet-control-zoom { margin-bottom: 92px !important; }
     #chica-crawl { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
     #chica-map-boot {
@@ -66,6 +67,7 @@
     <div class="sub" id="chica-map-boot-sub">San Antonio map</div>
   </div>
   <a id="chica-home-chip" href="/Chicas-Map/">Home</a>
+  <a id="chica-adventure-chip" href="/Chicas-Map/adventure/">Adventure</a>
   <script>
     (function () {
       try {
