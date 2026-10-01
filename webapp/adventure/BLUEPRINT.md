@@ -40,9 +40,9 @@ A garage sale and its adventure cache are the same object.
 
 Art source for this build: project parchment map, Chica-on-the-map still, sniff-trail video.
 
-## Not in this cut
+## Pack board
 
-- Shared leaderboard
-- Paid adventure pass
-- Pins that are not in the public feed
-- A rewrite of `webapp/map/`
+Profile is a pack name plus a recovery code that stays on the phone.
+Shared board is `board.json`: name, trail, bones, sniffed. No driveway, no GPS.
+A score joins the shared file when a `pack-score` issue is opened. The action rejects addresses.
+This is an honor board until a server can check the 200 ft sniff.

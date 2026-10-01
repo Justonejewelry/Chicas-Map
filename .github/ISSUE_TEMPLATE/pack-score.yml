@@ -1,0 +1,12 @@
+name: Pack score
+description: Post a name and bone count to the adventure board. No addresses.
+title: "pack-score"
+labels: []
+body:
+  - type: textarea
+    id: score
+    attributes:
+      label: Score
+      description: Keep the lines the map wrote. Do not add a street.
+    validations:
+      required: true

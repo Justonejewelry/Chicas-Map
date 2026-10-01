@@ -1,0 +1,47 @@
+name: Pack board
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  post:
+    if: startsWith(github.event.issue.title, 'pack-score')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Merge score
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: python3 scripts/pack_board.py
+      - name: Publish board
+        run: |
+          git config user.name "chicas-pack"
+          git config user.email "41898282+Justonejewelry@users.noreply.github.com"
+          git add webapp/adventure/board.json
+          if git diff --cached --quiet; then
+            echo "no board change"
+          else
+            git commit -m "pack: post adventure score"
+            git push
+          fi
+      - name: Close score issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              state: "closed"
+            });
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: "Posted to the adventure pack board. Name and bones only."
+            });

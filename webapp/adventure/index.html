@@ -156,6 +156,47 @@
       font: 600 12px/1.4 Inter, system-ui, sans-serif;
     }
     .status { min-height: 1.2em; font: 700 12px/1.3 Inter, system-ui, sans-serif; }
+    .board {
+      display: none;
+      position: fixed;
+      z-index: 1600;
+      inset: 0;
+      background: rgba(18, 14, 11, .72);
+      padding: max(12px, env(safe-area-inset-top)) 12px max(12px, env(safe-area-inset-bottom));
+    }
+    .board.open { display: block; }
+    .board article {
+      max-width: 440px;
+      margin: 8vh auto 0;
+      background: var(--paper);
+      color: var(--ink);
+      border-radius: 18px;
+      padding: 14px;
+      max-height: 80dvh;
+      overflow: auto;
+    }
+    .board h2 { margin: 4px 0 8px; font-size: 24px; }
+    .board label { display: block; font: 700 11px/1.2 Inter, system-ui, sans-serif; margin-top: 8px; }
+    .board input {
+      width: 100%;
+      height: 42px;
+      border-radius: 10px;
+      border: 1px solid #cbb89a;
+      padding: 0 10px;
+      font: 600 14px/1 Inter, system-ui, sans-serif;
+    }
+    .board ol { margin: 10px 0; padding: 0; list-style: none; }
+    .board li {
+      display: grid;
+      grid-template-columns: 28px 1fr auto;
+      gap: 8px;
+      align-items: center;
+      padding: 8px 0;
+      border-top: 1px dashed #c4ae86;
+      font: 700 13px/1.2 Inter, system-ui, sans-serif;
+    }
+    .board li.me { color: var(--magenta); }
+    .board .sub { font: 600 11px/1.3 Inter, system-ui, sans-serif; color: #5c5146; }
     .leaflet-control-zoom { margin-top: 72px !important; }
     @media (prefers-reduced-motion: reduce) {
       .intro video { display: none; }
@@ -200,6 +241,26 @@
     <div class="quest" id="quest"></div>
     <div class="row" id="actions"></div>
   </section>
+  <div id="board" class="board" hidden>
+    <article>
+      <div class="kicker">Honor board</div>
+      <h2 id="board-title">Pack</h2>
+      <p class="sub" id="board-note">Name and bones only. No driveway. No GPS.</p>
+      <ol id="board-list"></ol>
+      <label for="pack-name">Pack name</label>
+      <input id="pack-name" maxlength="20" autocomplete="nickname" placeholder="Name the nose" />
+      <label for="pack-trail">Trail name</label>
+      <input id="pack-trail" maxlength="24" placeholder="Ridge, Oak, Cape" />
+      <label for="pack-code">Recovery code</label>
+      <input id="pack-code" maxlength="12" autocomplete="off" placeholder="Only if this phone is new" />
+      <div class="row">
+        <button class="primary" type="button" id="save-profile">Save profile</button>
+        <button class="ghost" type="button" id="post-score">Post score</button>
+        <button class="quiet" type="button" id="close-board">Close</button>
+      </div>
+      <p class="sub" id="board-status"></p>
+    </article>
+  </div>
   <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
     (function () {
@@ -207,6 +268,7 @@
       var SA = [29.4241, -98.4936];
       var SNIFF_M = 60.96;
       var KEY = "chicas-adventure-v1";
+      var BOARD_URL = "board.json";
       var FALLBACK = [
         {"address":"7135 Teton Ridge, San Antonio, TX","dates":"2026-09-26 – 2026-09-30","hours":"","title":"Moving/Downsizing Sale","source":"Craigslist","type":"garage","lat":29.579778,"lon":-98.350915,"date_end":"2026-09-30"},
         {"address":"22314 Roan Forest, San Antonio, TX","dates":"2026-09-26 – 2026-09-30","hours":"","title":"Evans Ranch Community Garage Sales","source":"Craigslist","type":"garage","lat":29.64668,"lon":-98.43986,"date_end":"2026-09-30"},
@@ -220,6 +282,115 @@
       var sales = [];
       var map, layer, trail, you;
       var selected = null;
+      var board = { pack: [] };
+
+      function code() {
+        var alphabet = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+        var out = "";
+        for (var i = 0; i < 8; i++) out += alphabet[Math.floor(Math.random() * alphabet.length)];
+        return out;
+      }
+      function cleanName(value, limit) {
+        return String(value || "").replace(/[^A-Za-z0-9 .'-]/g, "").trim().slice(0, limit);
+      }
+      function publicRow() {
+        var profile = state.profile;
+        if (!profile) return null;
+        return {
+          id: profile.id,
+          name: profile.name,
+          trail: profile.trail || "Trail",
+          bones: bones(),
+          sniffed: (state.sniffed || []).length,
+          pending: true
+        };
+      }
+      function mergedPack() {
+        var rows = (board.pack || []).slice();
+        var mine = publicRow();
+        if (!mine) return rows;
+        var found = false;
+        rows = rows.map(function (row) {
+          if (row.id !== mine.id) return row;
+          found = true;
+          return mine.bones >= row.bones ? mine : row;
+        });
+        if (!found) rows.push(mine);
+        rows.sort(function (a, b) { return b.bones - a.bones || a.name.localeCompare(b.name); });
+        return rows;
+      }
+      function loadBoard() {
+        fetch(BOARD_URL, { cache: "no-store" })
+          .then(function (r) { if (!r.ok) throw new Error("board"); return r.json(); })
+          .then(function (data) { board = data || { pack: [] }; renderBoard(); })
+          .catch(function () { renderBoard(); });
+      }
+      function renderBoard() {
+        var list = document.getElementById("board-list");
+        var rows = mergedPack();
+        var me = state.profile && state.profile.id;
+        list.innerHTML = rows.length ? "" : "<li><span></span><span>No noses posted yet.</span><span></span></li>";
+        rows.forEach(function (row, i) {
+          var li = document.createElement("li");
+          if (row.id === me) li.className = "me";
+          li.innerHTML = "<span>" + (i + 1) + "</span><span>" + row.name + "<div class='sub'>" + (row.trail || "Trail") + (row.pending ? " · pending" : "") + "</div></span><span>" + row.bones + "</span>";
+          list.appendChild(li);
+        });
+        var profile = state.profile;
+        document.getElementById("board-title").textContent = profile ? profile.name : "Create a profile";
+        document.getElementById("pack-name").value = profile ? profile.name : "";
+        document.getElementById("pack-trail").value = profile ? (profile.trail || "") : "";
+      }
+      function openBoard() {
+        var el = document.getElementById("board");
+        el.hidden = false;
+        el.classList.add("open");
+        renderBoard();
+      }
+      function closeBoard() {
+        var el = document.getElementById("board");
+        el.classList.remove("open");
+        el.hidden = true;
+      }
+      function saveProfile() {
+        var name = cleanName(document.getElementById("pack-name").value, 20);
+        var trail = cleanName(document.getElementById("pack-trail").value, 24) || "Trail";
+        var typed = cleanName(document.getElementById("pack-code").value, 12).toUpperCase();
+        if (name.length < 2) {
+          document.getElementById("board-status").textContent = "Pack name needs 2 letters.";
+          return;
+        }
+        if (/\d{3,}/.test(name)) {
+          document.getElementById("board-status").textContent = "No street numbers in a pack name.";
+          return;
+        }
+        var profile = state.profile || {};
+        if (typed && profile.code && typed !== profile.code) {
+          document.getElementById("board-status").textContent = "Recovery code does not match this phone.";
+          return;
+        }
+        if (!profile.id) {
+          profile.id = code();
+          profile.code = typed || code();
+        }
+        profile.name = name;
+        profile.trail = trail;
+        state.profile = profile;
+        save();
+        document.getElementById("board-status").textContent = "Profile saved. Recovery code " + profile.code + ". It stays on this phone.";
+        renderBoard();
+        renderSheet(selected);
+      }
+      function postScore() {
+        if (!state.profile) saveProfile();
+        if (!state.profile) return;
+        var row = publicRow();
+        var body = "id: " + row.id + "\nname: " + row.name + "\ntrail: " + row.trail + "\nbones: " + row.bones + "\nsniffed: " + row.sniffed + "\n";
+        document.getElementById("board-status").textContent = "Opening the pack post. Leave the lines as they are. Do not add a street.";
+        var url = "https://github.com/Justonejewelry/Chicas-Map/issues/new?template=pack-score.yml&title=" + encodeURIComponent("pack-score " + row.name) + "&body=" + encodeURIComponent(body);
+        window.open(url, "_blank", "noopener");
+        renderBoard();
+      }
 
       function load() {
         try { return JSON.parse(localStorage.getItem(KEY) || "{}"); }
@@ -336,8 +507,9 @@
           quest.textContent = edition === "adventure"
             ? "Follow the magenta trail. Tap an X. Sniff only counts inside 200 feet of that driveway."
             : "Same driveways as adventure. No quest skin.";
-          actions.innerHTML = '<button class="primary" type="button" id="near">Near me</button><span class="bones">' + n + ' bones</span>';
+          actions.innerHTML = '<button class="primary" type="button" id="near">Near me</button><button class="ghost" type="button" id="open-board">Pack</button><span class="bones">' + n + " bones</span>";
           document.getElementById("near").onclick = nearMe;
+          document.getElementById("open-board").onclick = openBoard;
           return;
         }
         var isCold = cold(s);
@@ -422,6 +594,10 @@
       document.getElementById("enter-standard").onclick = function () { enter("standard"); };
       document.getElementById("btn-standard").onclick = function () { setEdition("standard"); };
       document.getElementById("btn-adventure").onclick = function () { setEdition("adventure"); };
+      document.getElementById("save-profile").onclick = saveProfile;
+      document.getElementById("post-score").onclick = postScore;
+      document.getElementById("close-board").onclick = closeBoard;
+      loadBoard();
 
       var video = document.getElementById("intro-video");
       video.addEventListener("error", function () {
