@@ -69,19 +69,23 @@ https://justonejewelry.github.io/Chicas-Map/atlas/
 
 ## Structure
 
+One core platform. City rules stay in config. Atlas is a sister product, not a sales layer.
+
+Full map: [docs/REPO.md](docs/REPO.md). Do not move `scripts/`, `data/`, `city-configs/`, or `.github/workflows/` — the daily pipeline calls those paths.
+
 ```text
-maps/
-  san-antonio/              # KML / GeoJSON layers
-city-configs/               # Per-city rules (YAML authoritative)
-forecast/                   # Forecast and local intelligence data
-templates/                  # Reusable data templates
-scripts/                    # Collection, verification, enrichment, and publishing tools
-docs/                       # Project rules, technical notes, and operating guidance
-social/                     # Community-ready posts and updates
-daily-packs/                # Chica updates and local intelligence packs
-reports/                    # Generated community reports
-webapp/                     # Published web application
-webapp/atlas/               # Alamo Atlas civic layer (GitHub Pages)
+webapp/          published site (GitHub Pages)
+  map/           live sale map
+  adventure/     same pins, hop edition
+  atlas/         Alamo Atlas, separate product
+app/             site source
+city-configs/    per-city YAML
+data/            sale feeds
+scripts/         Sentinel, publish, daily
+.github/workflows/  Pages and the 1 AM CT pipeline
+docs/            operating notes
+social/          posts already shipping
+daily-packs/     update packs
 ```
 
 ## Use the Map

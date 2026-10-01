@@ -1,0 +1,75 @@
+/* Phone finish. Overrides injected map chrome. Brand stays #c513af. */
+html { -webkit-text-size-adjust: 100%; }
+body { overflow-x: hidden; }
+
+@media (max-width: 720px) {
+  #chica-home-chip,
+  #chica-adventure-chip {
+    top: max(8px, env(safe-area-inset-top)) !important;
+    height: 44px !important;
+    line-height: 44px !important;
+    padding: 0 12px !important;
+  }
+  #chica-adventure-chip { right: 10px !important; }
+  #chica-home-chip { right: 112px !important; }
+
+  #chica-hunt-bar {
+    top: calc(max(8px, env(safe-area-inset-top)) + 52px) !important;
+    left: 10px !important;
+    right: 10px !important;
+  }
+  #chica-hunt-bar input,
+  #chica-hunt-bar button { height: 44px !important; }
+
+  .leaflet-control-zoom {
+    margin-top: 108px !important;
+    margin-bottom: calc(88px + env(safe-area-inset-bottom)) !important;
+    margin-left: 10px !important;
+  }
+  .leaflet-control-zoom a {
+    width: 44px !important;
+    height: 44px !important;
+    line-height: 44px !important;
+    font-size: 20px !important;
+  }
+  .leaflet-control-attribution {
+    font-size: 10px !important;
+    max-width: 58vw;
+    margin-bottom: env(safe-area-inset-bottom);
+  }
+
+  #chica-listit-btn {
+    width: 64px !important;
+    height: 64px !important;
+    min-width: 64px !important;
+    right: 10px !important;
+    bottom: calc(12px + env(safe-area-inset-bottom)) !important;
+    animation: none !important;
+    border-width: 2px !important;
+    border-radius: 16px !important;
+  }
+  #chica-share-dock {
+    left: 10px !important;
+    right: auto !important;
+    bottom: calc(10px + env(safe-area-inset-bottom)) !important;
+    gap: 8px !important;
+  }
+  #chica-share-dock a,
+  #chica-share-dock button {
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+  }
+
+  header a[data-chica-desk="1"] { display: none !important; }
+  header button { min-height: 44px; min-width: 44px; }
+
+  .topbar { flex-wrap: wrap; row-gap: 8px; }
+  .editions { margin-left: 0; }
+  .sheet, .board article { padding-bottom: max(12px, env(safe-area-inset-bottom)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #chica-listit-btn { animation: none !important; }
+}
