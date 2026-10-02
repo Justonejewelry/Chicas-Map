@@ -33,7 +33,7 @@ Map only shows pins whose listed dates include today.
 ## COMING UP (remembered, not on today's map)
 
 ### Starts 2026-10-03
-- 1970S Time Capsule! — San Antonio, TX 78216 [2026-10-03 → 2026-10-04]
+- 1970S Time Capsule! — 138 Shannon Lee St, San Antonio, TX 78216 [2026-10-03 → 2026-10-04] | 2026-10-03 9:00 am-3:00 pm; 2026-10-04 9:00 am-3:00 pm
 - Huge Multi-Family Garage Sale | Tools, Collectibles & Deals! — 7927 Avellano, San Antonio, TX 78250 [2026-10-03 → 2026-10-03]
 - The Acorn - Tall Oaks School 2Nd Annual Rummage Sale — 419 E Magnolia Ave, San Antonio, TX 78212 [2026-10-03 → 2026-10-03]
 - Terrell Heights Neighborhood Yard Sale — Larchmont Dr, San Antonio, TX 78209 [2026-10-03 → 2026-10-03]
@@ -51,7 +51,6 @@ Map only shows pins whose listed dates include today.
 - Vintage and Household Sale!! — 3838 Lariat Way, Bulverde, TX 78163 [2026-10-03 → 2026-10-03]
 - Wasser Ranch Community Sale - 3022 Alster — 3022 Alster, New Braunfels, TX 78130 [2026-10-03 → 2026-10-04]
 - This is the River Chase community yardsale — 144 Oak Pointe, New Braunfels, TX 78132 [2026-10-03 → 2026-10-03]
-- 1970s Time Capsule! — hidden, San Antonio, TX 78216 [2026-10-03 → 2026-10-04] | 2026-10-03 9:00 am-3:00 pm; 2026-10-04 9:00 am-3:00 pm
 - DECK YARD SALE — OAKBLOOM, San Antonio, TX [2026-10-03 → 2026-10-03]
 - GARAGE SALE 281N @ 1604; Collectibles, Wall Art, Dual Light Fixture — 1923 Parhaven Dr. near Hwy 281, San Antonio, TX [2026-10-03 → 2026-10-04]
 
