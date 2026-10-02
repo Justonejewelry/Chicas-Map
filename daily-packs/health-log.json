@@ -28,5 +28,15 @@
     "geocoding_success_rate": "100.0%",
     "status": "FAILED",
     "notes": "Gmail 401 reauth. No inbox parse, no OCR, no city-file write. chica-daily.yml 36847439210 in_progress after 3x5s polls. community-events-swarm.yml not triggered. Live public[] 26/26 geocoded. schema/city.schema.json absent."
+  },
+  {
+    "timestamp": "2026-10-02T05:20:00-05:00",
+    "target_date": "2026-10-02",
+    "actions_run_id": "36994336434",
+    "emails_scanned": 0,
+    "net_new_added": 0,
+    "geocoding_success_rate": "0.0%",
+    "status": "FAILED",
+    "notes": "First dispatch rejected: workflow has no city input. Retry queued chica-daily.yml 36994336434 (cities=san-antonio, target_date=2026-10-02), still in_progress after 3x5s polls. community-events-swarm.yml not triggered. Gmail token permanently revoked. No inbox parse, no OCR, no CITY_FILE write. Staging holds unchanged. Live public[] 15/15 have coordinates; 2 are city-center below 0.70 (Haynes San Marcos, no-street barndominium). schema/city.schema.json absent. Pack and social written from live feed."
   }
 ]
