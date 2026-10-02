@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-02",
+  "city": "san-antonio",
+  "confidence_floor": 0.70,
+  "pii_stripped": true,
+  "source": "webapp/data/cities/san-antonio.json public[] at main d311b6f52e8ac16a410ea6510a7de7ce4b325bd5",
+  "emails_used": 0,
+  "facebook": "Hey pack \u2014 Chica just finished sniffing the trails for Friday.\n\nLive map still shows the Thursday window. I am not adding new email pins this morning. Gmail is locked. These are the stops already on the feed that are actually in Greater San Antonio.\n\n\ud83d\udccd Worth the drive\n\u2022 Estate, tools and furniture \u2014 11319 Par One. https://chicasmap.com/sa?id=cl-tesaletoolscar6c3ps3ctygcgthp3jgh7md\n\u2022 Moving sale, furniture and appliances \u2014 8811 Braun Mesa. https://chicasmap.com/sa?id=cl-movingsalehigh9hueatyfeupn163ktddtps\n\u2022 Friday and Saturday 8\u20132, clothes and some jewelry \u2014 13202 Hunters Spring. https://chicasmap.com/sa?id=cl-leoctoberfriday4rawzaykwps29nski69cfw\n\u2022 Schertz estate on Jonas Dr, with the Jonas Woods subdivision sale. Street pin. https://chicasmap.com/sa?id=cl-hertzestatesalew6ijmb5guswk8b1ctk3s7h\n\u2022 Saturday only \u2014 Gold Canyon community, 17611 Diamond Canyon. https://chicasmap.com/sa?id=cl-garagesalethis2c7ndqsvrrpfzybcddw4u6\n\u2022 Vintage shop, not a driveway \u2014 Alamo Craft Co., 6151 NW Loop 410 #302, 10\u20136. https://chicasmap.com/sa?id=cl-coantiquesmoremj6fcrd4zdr7zwawc4pwwa\n\nSaturday market, from the community file, not a new swarm: Schertz Hometown Harvest, 703 Oak, 9\u20131.\n\nThe 78216 time-capsule estate is still address-hidden. It is not on the map.\n\nOpen the free map: https://justonejewelry.github.io/Chicas-Map/\nNear Me sorts by distance. Routes open in Google Maps, Apple Maps, or Waze.\nIf you know a sale I missed, list it free on the site.\n\n#SanAntonioGarageSales #SATXThrifting #ChicaMap",
+  "nextdoor": "Neighbors \u2014 Friday map check for San Antonio, Alamo Heights, Helotes, Schertz, and the close-in cities.\n\nNo new email listings this morning. These are already on the free map:\n\n\u2022 11319 Par One \u2014 estate with tools, furniture, a car\n\u2022 8811 Braun Mesa \u2014 moving sale, furniture and appliances\n\u2022 13202 Hunters Spring \u2014 Friday and Saturday 8 to 2, clothes and some jewelry\n\u2022 Jonas Dr, Schertz \u2014 estate plus the Jonas Woods subdivision sale. Street pin only\n\u2022 17611 Diamond Canyon \u2014 community sale, title says Saturday only\n\u2022 Schertz Hometown Harvest \u2014 Saturday 9 to 1, 703 Oak Street\n\nI am not posting Bandera, Lytle, or San Marcos as San Antonio stops.\n\nMap: https://justonejewelry.github.io/Chicas-Map/\nNear Me, then Google, Apple, or Waze. List a sale if the pack missed your street.",
+  "tiktok": {
+    "caption": "Friday sniff. Par One estate, Braun Mesa moving sale, Hunters Spring 8 to 2, Schertz on Jonas, Diamond Canyon Saturday. 78216 estate still has no street. Free map. Near Me.",
+    "tags": ["#SanAntonioEstateSales", "#SATXThrifting", "#SanAntonioGarageSales", "#ChicaMap"],
+    "on_screen": "Par One \u00b7 Braun Mesa \u00b7 Hunters Spring \u00b7 Schertz \u00b7 Diamond Canyon"
+  }
+}
