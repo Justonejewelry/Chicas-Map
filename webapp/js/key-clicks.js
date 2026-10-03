@@ -73,12 +73,37 @@
       var html = glyph
         ? '<div class="chica-overlay-mark">' + glyph + "</div>"
         : '<div class="chica-overlay-mark" style="width:16px;height:16px;border-radius:999px;background:' + color + ';border:2px solid #121212"></div>';
-      L.marker(ll, {
-        icon: L.divIcon({ className: "chica-overlay-pin", html: html, iconSize: [18, 18], iconAnchor: [9, 9] }),
+      var mk = L.marker(ll, {
+        icon: L.divIcon({ className: "chica-overlay-pin", html: html, iconSize: [22, 22], iconAnchor: [11, 11] }),
         title: name,
         alt: name + " \u2014 " + id,
-        keyboard: false
-      }).addTo(g);
+        keyboard: true
+      });
+      mk.__chicaOverlay = { id: id, props: props, lat: ll[0], lon: ll[1] };
+      mk.on("click", function (layerId, item, lat, lon) {
+        return function (ev) {
+          if (ev && ev.originalEvent) ev.originalEvent._chicaPin = true;
+          if (typeof window.__chicaOpenIntel !== "function") return;
+          var lines = [];
+          var skip = { name: 1, title: 1, address: 1 };
+          Object.keys(item).forEach(function (k) {
+            if (skip[k] || item[k] == null || item[k] === "") return;
+            lines.push(k.replace(/_/g, " ") + ": " + item[k]);
+          });
+          window.__chicaOpenIntel({
+            title: item.name || item.title || layerId,
+            address: item.address || item.street || "",
+            dates: layerId === "resale" ? "Resale Trail" : layerId,
+            hours: item.hours || item.open || "",
+            details: lines.join("\n"),
+            source: item.source || item.category || layerId,
+            type: item.type || layerId,
+            lat: lat,
+            lon: lon
+          });
+        };
+      }(id, props, ll[0], ll[1]));
+      mk.addTo(g);
       if (id === "schools" && Number(props.radius_ft) > 0) {
         L.circle(ll, {
           radius: Number(props.radius_ft) * 0.3048,
