@@ -75,7 +75,10 @@
 
   function escapeHtml(s) {
     return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) {
-      return c === "&" ? "&" : c === "<" ? "<" : c === ">" ? ">" : """;
+      if (c === "&") return "&" + "amp;";
+      if (c === "<") return "&" + "lt;";
+      if (c === ">") return "&" + "gt;";
+      return "&" + "quot;";
     });
   }
 
