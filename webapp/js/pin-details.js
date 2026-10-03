@@ -1,4 +1,4 @@
-/* Pin details. Directions + Claim. Driveway notes are off the sale card. */
+/* Pin details. Directions + list/claim/feature. Pack notes stay 200 ft and on-device. */
 (function () {
   var p = location.pathname || "";
   if (!(/\/map\/?$/.test(p) || p.indexOf("/map/") !== -1 || /map\.html$/.test(p))) return;
@@ -6,10 +6,10 @@
 
   function esc(s) {
     return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
-      if (c === "&") return "&" + "amp;";
-      if (c === "<") return "&" + "lt;";
-      if (c === ">") return "&" + "gt;";
-      if (c === '"') return "&" + "quot;";
+      if (c === "&") return "&";
+      if (c === "<") return "<";
+      if (c === ">") return ">";
+      if (c === '"') return """;
       return "&#39;";
     });
   }
@@ -23,6 +23,12 @@
     if (isFinite(Number(sale.lat))) q.push("lat=" + encodeURIComponent(String(sale.lat)));
     if (isFinite(Number(sale.lon))) q.push("lon=" + encodeURIComponent(String(sale.lon)));
     return BASE + "/claim/" + (q.length ? "?" + q.join("&") : "");
+  }
+  function miles(lat, lon) {
+    if (typeof window.__chicaMiles !== "function") return "";
+    var n = window.__chicaMiles(Number(lat), Number(lon));
+    if (n == null) return "";
+    return (n < 10 ? n.toFixed(1) : String(Math.round(n))) + " miles away";
   }
   function actions(lat, lon) {
     var pair = ll(lat, lon);
@@ -41,15 +47,17 @@
     var s = document.createElement("style");
     s.id = "chica-pin-details-css";
     s.textContent =
-      "#chica-intel-card{display:none;position:fixed!important;left:12px!important;top:64px!important;z-index:2147483647!important;width:min(360px,calc(100vw - 24px))!important;max-height:min(78dvh,620px)!important;overflow:auto!important;background:#fffdf8!important;color:#1a1714!important;border:2px solid #c513af!important;border-radius:14px!important;box-shadow:0 16px 40px rgba(18,18,18,.45)!important;padding:14px!important;font:500 13px/1.35 Inter,system-ui,sans-serif!important}" +
-      "#chica-intel-card .x{position:absolute;top:4px;right:4px;border:0;background:transparent;font:800 22px/1 Inter,system-ui,sans-serif;min-width:36px;min-height:36px}" +
-      "#chica-intel-card h3{margin:0 32px 6px 0;font:800 16px/1.2 Inter,system-ui,sans-serif}" +
+      "#chica-intel-card{display:none;position:fixed!important;left:12px!important;top:108px!important;z-index:2147483600!important;width:min(360px,calc(100vw - 24px))!important;max-height:min(70dvh,620px)!important;overflow:auto!important;background:#fffdf8!important;color:#1a1714!important;border:2px solid #c513af!important;border-radius:14px!important;box-shadow:0 16px 40px rgba(18,18,18,.45)!important;padding:14px!important;font:500 13px/1.35 Inter,system-ui,sans-serif!important}" +
+      "#chica-intel-card .x{position:absolute;top:4px;right:4px;border:0;background:transparent;font:800 22px/1 Inter,system-ui,sans-serif;min-width:44px;min-height:44px}" +
+      "#chica-intel-card h3{margin:0 44px 6px 0;font:800 16px/1.2 Inter,system-ui,sans-serif}" +
       "#chica-intel-card .meta{margin:0;color:#5c5348;font-size:12px}" +
       "#chica-intel-card .gold-tag{display:inline-block;margin:0 0 6px;padding:2px 8px;border-radius:999px;background:#f4c430;color:#1a1714;font:800 10px/1.4 Inter,system-ui,sans-serif;letter-spacing:.06em}" +
+      "#chica-intel-card .signal{margin:8px 0 0;padding:8px;border-radius:10px;background:#f6f1e8;font-size:12px}" +
       "#chica-intel-card .chica-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0 0}" +
-      "#chica-intel-card .chica-actions a.go-nav{display:flex;align-items:center;justify-content:center;min-height:40px;border:2px solid #c513af;border-radius:10px;padding:8px 10px;font:800 13px/1 Inter,system-ui,sans-serif;color:#7a0f6c;text-decoration:none;background:#fff}" +
+      "#chica-intel-card .chica-actions a.go-nav{display:flex;align-items:center;justify-content:center;min-height:44px;border:2px solid #c513af;border-radius:10px;padding:8px 10px;font:800 13px/1 Inter,system-ui,sans-serif;color:#7a0f6c;text-decoration:none;background:#fff}" +
       "#chica-intel-card .chica-actions a.go-street{background:#c513af;color:#fffdf8;border-color:#c513af}" +
-      "#chica-intel-card a.claim{display:flex;align-items:center;justify-content:center;margin:12px 0 0;min-height:44px;border:0;border-radius:10px;background:#c513af;color:#fff;font:800 14px/1 Inter,system-ui,sans-serif;text-decoration:none;padding:12px}";
+      "#chica-intel-card a.claim{display:flex;align-items:center;justify-content:center;margin:8px 0 0;min-height:44px;border:0;border-radius:10px;background:#c513af;color:#fff;font:800 14px/1 Inter,system-ui,sans-serif;text-decoration:none;padding:12px}" +
+      "#chica-intel-card a.secondary{display:flex;align-items:center;justify-content:center;margin:8px 0 0;min-height:44px;border:2px solid #c513af;border-radius:10px;background:#fff;color:#7a0f6c;font:800 14px/1 Inter,system-ui,sans-serif;text-decoration:none;padding:12px}";
     (document.head || document.documentElement).appendChild(s);
   }
   function cardEl() {
@@ -70,16 +78,30 @@
     var lat = Number(sale.lat), lon = Number(sale.lon);
     var when = [sale.dates, sale.hours].filter(Boolean).join(" \u00b7 ");
     var gold = !!(sale.gold || sale.boost || sale.preferred);
+    var away = miles(lat, lon);
     var bits = esc(sale.address || "") + (when ? "<br>" + esc(when) : "");
+    if (away) bits += "<br>" + esc(away);
+    if (sale.source) bits += "<br>Source: " + esc(sale.source);
     if (sale.details) bits += "<br>" + esc(sale.details);
-    if (gold) bits = '<span class="gold-tag">GOLD PULSE</span><br>' + bits;
+    if (gold) bits = '<span class="gold-tag">FEATURED</span><br>' + bits;
+    var verified = String(sale.status || "").toLowerCase() === "verified";
+    var signal = "<div class=\"signal\"><strong>Why this pin</strong><br>" +
+      (verified ? "Verified source" : "Posted listing") +
+      (sale.source ? " \u00b7 " + esc(sale.source) : "") +
+      (away ? "<br>" + esc(away) : "<br>Turn on Near me for distance") +
+      "<br>Pack notes stay on this phone until you are within 200 feet. Shared feed is off.</div>";
+    var share = "https://justonejewelry.github.io/Chicas-Map/map/?sale=" + encodeURIComponent(sale.id || "");
     el.innerHTML =
-      '<button type="button" class="x" aria-label="Close">\u00d7</button>' +
+      '<button type="button" class="x" aria-label="Close sale details">\u00d7</button>' +
       '<div class="chica-opt">' +
       "<h3>" + esc(sale.title || "Sale") + "</h3>" +
       '<p class="meta">' + bits + "</p>" +
+      signal +
       actions(lat, lon) +
-      '<a class="claim" href="' + esc(claimHref(sale)) + '">Claim My Garage Sale</a>' +
+      '<a class="secondary" href="' + BASE + '/submit/">List a sale \u2014 free</a>' +
+      '<a class="claim" href="' + esc(claimHref(sale)) + '">Claim this pin \u2014 $5</a>' +
+      '<a class="secondary" href="' + BASE + '/boost/">Feature this sale</a>' +
+      '<a class="secondary" href="' + esc(share) + '">Share this sale</a>' +
       "</div>";
     var x = el.querySelector(".x");
     if (x) x.onclick = function (ev) { ev.preventDefault(); ev.stopPropagation(); el.style.display = "none"; };
@@ -91,6 +113,7 @@
     var llng = ly.getLatLng();
     var item = ly.__chicaSale || {};
     return {
+      id: item.id || "",
       title: item.title || (ly.options && ly.options.title) || "Sale",
       address: item.address || "",
       dates: item.dates || "",
@@ -99,6 +122,8 @@
       boost: !!item.boost,
       preferred: !!item.preferred,
       gold: !!item.gold,
+      source: item.source || "",
+      status: item.status || "",
       lat: llng.lat,
       lon: llng.lng
     };
@@ -110,9 +135,7 @@
       if (!ly.getLatLng || ly.__chicaDetailsHook) return;
       ly.__chicaDetailsHook = true;
       ly.on("click", function (ev) {
-        if (ev && ev.originalEvent) {
-          ev.originalEvent._chicaPin = true;
-        }
+        if (ev && ev.originalEvent) ev.originalEvent._chicaPin = true;
         var sale = saleFromLayer(ly);
         if (sale) render(sale);
       });
@@ -133,7 +156,7 @@
   document.addEventListener("click", function (ev) {
     var t = ev.target;
     if (!t || !t.closest) return;
-    if (t.closest("#chica-force-key,#chica-hunt-bar,#chica-listit-btn,#chica-home-chip,#chica-intel-card")) return;
+    if (t.closest("#chica-force-key,#chica-hunt-bar,#chica-filters,#chica-sale-sheet,#chica-listit-btn,#chica-home-chip,#chica-intel-card")) return;
     var icon = t.closest(".leaflet-marker-icon");
     if (!icon || icon.classList.contains("chica-overlay-pin") || icon.querySelector(".chica-overlay-mark")) return;
     var map = window.__chicaLeaflet;
