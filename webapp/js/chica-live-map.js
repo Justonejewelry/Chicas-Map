@@ -6,8 +6,8 @@
   var probed = false;
   var PIN = 40;
   var HALF = PIN / 2;
-  var GLYPH = 28;
   var bootHidden = false;
+  var markers = [];
 
   function onMapPath() {
     var p = location.pathname || "";
@@ -69,7 +69,7 @@
   }
 
   function iconFor(type, pack, gold, L) {
-    var kind = type === "estate" || type === "permit" ? type : "garage";
+    var kind = type === "estate" || type === "permit" ? type : (type === "yard" ? "yard" : "garage");
     var html;
     var fill = gold ? "#f4c430" : "#c513af";
     if (kind === "estate") {
@@ -95,6 +95,7 @@
   function salesFrom(data) {
     var out = [];
     if (!data) return out;
+    if (data.status === "empty") return out;
     if (Array.isArray(data)) return data;
     var bags = [data.public, data.permits, data.sales, data.listings];
     for (var i = 0; i < bags.length; i++) {
@@ -110,49 +111,137 @@
     return out;
   }
 
+  function zipOf(address) {
+    var m = String(address || "").match(/\b78\d{3}\b/);
+    return m ? m[0] : "";
+  }
+
+  function saleKey(s, lat, lon) {
+    return s.external_id || s.id || s.sale_id || (lat.toFixed(5) + "," + lon.toFixed(5) + "|" + (s.title || s.address || ""));
+  }
+
+  function normalize(s) {
+    var lat = Number(s.lat != null ? s.lat : s.latitude);
+    var lon = Number(s.lon != null ? s.lon : s.lng != null ? s.lng : s.longitude);
+    if (!isFinite(lat) || !isFinite(lon)) return null;
+    var gold = isGold(s);
+    var pack = isPack(s);
+    return {
+      id: saleKey(s, lat, lon),
+      title: s.title || s.address || "Sale",
+      address: s.address || "",
+      dates: s.dates || "",
+      hours: s.hours || "",
+      details: s.details || s.description || "",
+      type: s.type || s.kind || "garage",
+      lat: lat,
+      lon: lon,
+      pack: pack,
+      boost: !!(s.boost || gold),
+      preferred: !!s.preferred,
+      gold: gold,
+      source: s.source || "",
+      sourceUrl: s.url || s.original_url || "",
+      confidence: s.confidence,
+      status: s.status || "",
+      date_start: s.date_start || s.date_from || "",
+      date_end: s.date_end || s.date_to || s.end_date || s.date_start || s.date_from || "",
+      zip: s.zip || zipOf(s.address),
+      categories: Array.isArray(s.categories) ? s.categories : []
+    };
+  }
+
   function addPins(map, L, sales) {
+    var seen = {};
+    var published = [];
+    markers = [];
     var n = 0;
     for (var i = 0; i < sales.length; i++) {
-      var s = sales[i];
-      var lat = Number(s.lat != null ? s.lat : s.latitude);
-      var lon = Number(s.lon != null ? s.lon : s.lng != null ? s.lng : s.longitude);
-      if (!isFinite(lat) || !isFinite(lon)) continue;
-      var gold = isGold(s);
-      var pack = isPack(s);
-      var sale = {
-        title: s.title || s.address || "Sale",
-        address: s.address || "",
-        dates: s.dates || "",
-        hours: s.hours || "",
-        details: s.details || s.description || "",
-        type: s.type || s.kind || "garage",
-        lat: lat,
-        lon: lon,
-        pack: pack,
-        boost: !!(s.boost || gold),
-        preferred: !!s.preferred,
-        gold: gold,
-        source: s.source || ""
-      };
-      (function (item) {
-        var mk = L.marker([item.lat, item.lon], {
-          icon: iconFor(item.type, item.pack, item.gold, L),
-          title: item.gold ? "Gold pulse \u00b7 " + item.title : (item.pack ? "Pack point \u00b7 " + item.title : item.title),
-          alt: item.title + " \u2014 tap for details",
+      var item = normalize(sales[i]);
+      if (!item || seen[item.id]) continue;
+      seen[item.id] = 1;
+      published.push(item);
+      (function (sale) {
+        var mk = L.marker([sale.lat, sale.lon], {
+          icon: iconFor(sale.type, sale.pack, sale.gold, L),
+          title: sale.gold ? "Gold pulse \u00b7 " + sale.title : (sale.pack ? "Pack point \u00b7 " + sale.title : sale.title),
+          alt: sale.title + " \u2014 tap for details",
           keyboard: true,
           riseOnHover: true,
-          zIndexOffset: item.gold ? 800 : (item.pack ? 600 : 0)
+          zIndexOffset: sale.gold ? 800 : (sale.pack ? 600 : 0)
         });
-        mk.__chicaSale = item;
+        mk.__chicaSale = sale;
         mk.on("click", function () {
-          if (typeof w.__chicaOpenIntel === "function") w.__chicaOpenIntel(item);
+          if (typeof w.__chicaOpenIntel === "function") w.__chicaOpenIntel(sale);
         });
         mk.addTo(map);
-      })(sale);
+        if (mk._icon) mk._icon.setAttribute("data-chica-id", sale.id);
+        markers.push(mk);
+      })(item);
       n += 1;
     }
+    w.__chicaSales = published;
+    w.__chicaMarkers = markers;
+    w.__chicaSalesReady = true;
+    try { w.dispatchEvent(new Event("chica-sales")); } catch (e) {}
     return n;
   }
+
+  function milesBetween(a, b, c, d) {
+    var R = 3958.8;
+    var p1 = a * Math.PI / 180, p2 = c * Math.PI / 180;
+    var dp = (c - a) * Math.PI / 180, dl = (d - b) * Math.PI / 180;
+    var h = Math.sin(dp / 2) * Math.sin(dp / 2) + Math.cos(p1) * Math.cos(p2) * Math.sin(dl / 2) * Math.sin(dl / 2);
+    return 2 * R * Math.asin(Math.min(1, Math.sqrt(h)));
+  }
+
+  w.__chicaMiles = function (lat, lon) {
+    var here = w.__chicaHere;
+    if (!here || !isFinite(lat) || !isFinite(lon)) return null;
+    return milesBetween(here.lat, here.lon, lat, lon);
+  };
+
+  w.__chicaVisibleSales = function (filter) {
+    var sales = w.__chicaSales || [];
+    var f = filter || w.__chicaFilter || {};
+    var q = String(f.q || "").toLowerCase();
+    var out = [];
+    for (var i = 0; i < sales.length; i++) {
+      var s = sales[i];
+      if (f.type && s.type !== f.type) continue;
+      if (f.day && s.date_start && (f.day < s.date_start || f.day > (s.date_end || s.date_start))) continue;
+      if (f.verified && String(s.status).toLowerCase() !== "verified") continue;
+      if (f.miles && w.__chicaHere) {
+        var mi = milesBetween(w.__chicaHere.lat, w.__chicaHere.lon, s.lat, s.lon);
+        if (mi > f.miles) continue;
+      }
+      if (q) {
+        var blob = [s.title, s.address, s.zip, s.type, s.source, (s.categories || []).join(" ")].join(" ").toLowerCase();
+        if (blob.indexOf(q) === -1) continue;
+      }
+      out.push(s);
+    }
+    if (w.__chicaHere) {
+      out.sort(function (a, b) {
+        return milesBetween(w.__chicaHere.lat, w.__chicaHere.lon, a.lat, a.lon) - milesBetween(w.__chicaHere.lat, w.__chicaHere.lon, b.lat, b.lon);
+      });
+    }
+    return out;
+  };
+
+  w.__chicaApplyFilter = function (filter) {
+    w.__chicaFilter = filter || {};
+    var visible = {};
+    var rows = w.__chicaVisibleSales(w.__chicaFilter);
+    for (var i = 0; i < rows.length; i++) visible[rows[i].id] = 1;
+    for (var j = 0; j < markers.length; j++) {
+      var mk = markers[j];
+      var show = !!(mk.__chicaSale && visible[mk.__chicaSale.id]);
+      if (mk._icon) mk._icon.style.opacity = show ? "1" : "0.15";
+      if (typeof mk.setOpacity === "function") mk.setOpacity(show ? 1 : 0.15);
+    }
+    return rows;
+  };
 
   function injectCss() {
     if (document.getElementById("chica-live-intel-css")) return;
@@ -294,25 +383,32 @@
     map.on("load", size);
     map.on("click", function (ev) {
       var tgt = ev.originalEvent && ev.originalEvent.target;
-      if (tgt && tgt.closest && tgt.closest(".leaflet-marker-icon, .chica-pin, .leaflet-popup, #chica-intel-card")) return;
+      if (tgt && tgt.closest && tgt.closest(".leaflet-marker-icon, .chica-pin, .leaflet-popup, #chica-intel-card, #chica-hunt-bar, #chica-sale-sheet")) return;
       if (typeof w.__chicaHideIntel === "function") w.__chicaHideIntel();
     });
     var feedUrls = [
-      BASE + "/data/cities/san-antonio.json?v=37",
-      BASE + "/data/cities/san-antonio-email.json?v=37",
-      BASE + "/data/cities/san-antonio-user.json?v=37",
-      BASE + "/data/cities/san-antonio-permits-a.json?v=37",
-      BASE + "/data/cities/san-antonio-permits-b.json?v=37"
+      BASE + "/data/cities/san-antonio.json?v=38",
+      BASE + "/data/cities/san-antonio-email.json?v=38",
+      BASE + "/data/cities/san-antonio-user.json?v=38",
+      BASE + "/data/cities/san-antonio-permits-a.json?v=38",
+      BASE + "/data/cities/san-antonio-permits-b.json?v=38"
     ];
     Promise.all(feedUrls.map(function (u) {
       return fetch(u, { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
     })).then(function (bags) {
       var sales = [];
       for (var i = 0; i < bags.length; i++) sales = sales.concat(salesFrom(bags[i]));
-      addPins(map, L, sales);
+      var nPins = addPins(map, L, sales);
+      if (!nPins) {
+        var boot = document.getElementById("chica-map-boot-copy");
+        if (boot) boot.textContent = "No sales in the feed.";
+      }
       size();
       hideBoot();
+      if (typeof w.__chicaApplyFilter === "function" && w.__chicaFilter) w.__chicaApplyFilter(w.__chicaFilter);
     }).catch(function () {
+      var boot = document.getElementById("chica-map-boot-copy");
+      if (boot) boot.textContent = "Feed did not load.";
       hideBoot();
     });
     setTimeout(hideBoot, 6000);
