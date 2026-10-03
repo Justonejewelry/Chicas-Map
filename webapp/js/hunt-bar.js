@@ -32,7 +32,6 @@
     var rows = [];
     if (typeof window.__chicaApplyFilter === "function") rows = window.__chicaApplyFilter(state) || [];
     else if (typeof window.__chicaVisibleSales === "function") rows = window.__chicaVisibleSales(state) || [];
-    renderSheet(rows);
     var map = findMap();
     if (map && rows.length === 1) {
       try { map.flyTo([rows[0].lat, rows[0].lon], Math.max(map.getZoom(), 15), { duration: 0.6 }); } catch (e) {}
@@ -107,6 +106,8 @@
   }
 
   function mount() {
+    var oldSheet = document.getElementById("chica-sale-sheet");
+    if (oldSheet && oldSheet.parentNode) oldSheet.parentNode.removeChild(oldSheet);
     if (document.getElementById("chica-hunt-bar")) return;
     if (!document.getElementById("chica-hunt-css")) {
       var s = document.createElement("style");
@@ -148,10 +149,6 @@
       '<button type="button" data-miles="10">10 mi</button>' +
       '<button type="button" data-miles="20">20 mi</button>';
     document.documentElement.appendChild(filters);
-    var sheet = document.createElement("section");
-    sheet.id = "chica-sale-sheet";
-    sheet.innerHTML = '<h2 id="chica-sale-count">Sales</h2><div id="chica-sale-list"></div>';
-    document.documentElement.appendChild(sheet);
     var q = bar.querySelector("#chica-hunt-q");
     var t = null;
     q.addEventListener("input", function () {
@@ -187,22 +184,6 @@
         if (mi && !window.__chicaHere) nearMe();
       }
       apply();
-    });
-    sheet.addEventListener("click", function (ev) {
-      var btn = ev.target.closest("button[data-id]");
-      if (!btn) return;
-      var id = btn.getAttribute("data-id");
-      var sales = window.__chicaSales || [];
-      for (var i = 0; i < sales.length; i++) {
-        if (sales[i].id === id && typeof window.__chicaOpenIntel === "function") {
-          window.__chicaOpenIntel(sales[i]);
-          var map = findMap();
-          if (map) {
-            try { map.flyTo([sales[i].lat, sales[i].lon], 16, { duration: 0.5 }); } catch (e) {}
-          }
-          break;
-        }
-      }
     });
     window.addEventListener("chica-sales", apply);
     apply();
