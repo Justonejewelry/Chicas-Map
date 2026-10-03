@@ -6,11 +6,11 @@
 
   function esc(s) {
     return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
-      if (c === "&") return "&";
-      if (c === "<") return "<";
-      if (c === ">") return ">";
-      if (c === '"') return """;
-      return "&#39;";
+      if (c === "&") return "&" + "amp;";
+      if (c === "<") return "&" + "lt;";
+      if (c === ">") return "&" + "gt;";
+      if (c === '"') return "&" + "quot;";
+      return "&" + "#39;";
     });
   }
   function ll(lat, lon) {
