@@ -27,30 +27,6 @@
       "external_id": "cl-ygaragesalesoncscufy6gupm82vta9y51hd"
     },
     {
-      "address": "Hidden until oct 1, Austin, TX",
-      "dates": "2026-10-02 – 2026-10-02",
-      "date_from": "2026-10-02",
-      "date_to": "2026-10-02",
-      "end_date": "2026-10-02",
-      "hours": null,
-      "title": "Wimberley Texas 3 day Estate Sale October 2-4",
-      "details": "QR Code Link to This Post Wimberley Estate Sale October 2-4th (address hidden until October 1st) This home has unique and vintage finds. Fantastic mix of antiques, primitives, and unusual collectibles. Rare Attic babies, vintage Ethan Allen furniture, Oklahoma Joe smoker, vintage rattan patio furniture, and so much more. October 2 10am-4 pm October 3rd 10am-4 pm October 4th 11am -3pm Sunday all it",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/wimberley-wimberley-texas-day-estate/sTGGGRfSvyeeWCgEESSxcU",
-      "photos": 0,
-      "type": "estate",
-      "categories": [
-        "estate-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.031727,
-      "lon": -98.108425,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-texasdayestatestgggrfsvyeewcgeessxcu"
-    },
-    {
       "address": "145 Summer Night Cv, Buda, TX 78610",
       "dates": "2026-10-03 – 2026-10-03",
       "date_from": "2026-10-03",
@@ -1036,9 +1012,9 @@
     "gsalr.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 45,
+  "total_locations": 44,
   "status": "live",
-  "date": "2026-10-02",
-  "last_refresh": "2026-10-02T11:33:23-05:00",
+  "date": "2026-10-03",
+  "last_refresh": "2026-10-03T05:13:19-05:00",
   "permits": []
 }
