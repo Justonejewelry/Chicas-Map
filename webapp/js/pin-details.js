@@ -47,8 +47,8 @@
     var s = document.createElement("style");
     s.id = "chica-pin-details-css";
     s.textContent =
-      "#chica-intel-card{display:none;position:fixed!important;left:12px!important;top:108px!important;z-index:2147483600!important;width:min(360px,calc(100vw - 24px))!important;max-height:min(70dvh,620px)!important;overflow:auto!important;background:#fffdf8!important;color:#1a1714!important;border:2px solid #c513af!important;border-radius:14px!important;box-shadow:0 16px 40px rgba(18,18,18,.45)!important;padding:14px!important;font:500 13px/1.35 Inter,system-ui,sans-serif!important}" +
-      "#chica-intel-card .x{position:absolute;top:4px;right:4px;border:0;background:transparent;font:800 22px/1 Inter,system-ui,sans-serif;min-width:44px;min-height:44px}" +
+      "#chica-intel-card{display:none;position:fixed!important;left:12px!important;right:12px!important;top:auto!important;bottom:max(12px,env(safe-area-inset-bottom))!important;z-index:2147483646!important;width:min(360px,calc(100vw - 24px))!important;max-height:min(70dvh,620px)!important;overflow:auto!important;background:#fffdf8!important;color:#1a1714!important;border:2px solid #c513af!important;border-radius:14px!important;box-shadow:0 16px 40px rgba(18,18,18,.45)!important;padding:14px!important;font:500 13px/1.35 Inter,system-ui,sans-serif!important}" +
+      "#chica-intel-card .x{position:absolute;top:8px;right:8px;z-index:5;width:36px;height:36px;min-width:36px;min-height:36px;border:0;border-radius:50%;background:#c513af;color:#fff;font:800 22px/36px Inter,system-ui,sans-serif;text-align:center;padding:0;cursor:pointer}" +
       "#chica-intel-card h3{margin:0 44px 6px 0;font:800 16px/1.2 Inter,system-ui,sans-serif}" +
       "#chica-intel-card .meta{margin:0;color:#5c5348;font-size:12px}" +
       "#chica-intel-card .gold-tag{display:inline-block;margin:0 0 6px;padding:2px 8px;border-radius:999px;background:#f4c430;color:#1a1714;font:800 10px/1.4 Inter,system-ui,sans-serif;letter-spacing:.06em}" +
@@ -103,9 +103,8 @@
       '<a class="secondary" href="' + BASE + '/boost/">Feature this sale</a>' +
       '<a class="secondary" href="' + esc(share) + '">Share this sale</a>' +
       "</div>";
-    var x = el.querySelector(".x");
-    if (x) x.onclick = function (ev) { ev.preventDefault(); ev.stopPropagation(); el.style.display = "none"; };
     el.style.display = "block";
+    el.setAttribute("data-open", "1");
   }
   function saleFromLayer(ly) {
     if (!ly || !ly.getLatLng) return null;
@@ -159,6 +158,36 @@
     if (t.closest("#chica-force-key,#chica-hunt-bar,#chica-filters,#chica-sale-sheet,#chica-listit-btn,#chica-home-chip,#chica-intel-card")) return;
     var icon = t.closest(".leaflet-marker-icon");
     if (!icon || icon.classList.contains("chica-overlay-pin") || icon.querySelector(".chica-overlay-mark")) return;
+    var map = window.__chicaLeaflet;
+    if (!map || !map.eachLayer) return;
+    map.eachLayer(function (ly) {
+      if (ly._icon === icon || (ly._icon && ly._icon.contains && ly._icon.contains(t))) {
+        var sale = saleFromLayer(ly);
+        if (sale) render(sale);
+      }
+    });
+  }, true);
+  document.addEventListener("click", function (ev) {
+    var t = ev.target;
+    if (!t || !t.closest) return;
+    var x = t.closest("#chica-intel-card .x");
+    if (!x) return;
+    ev.preventDefault();
+    ev.stopPropagation();
+    var el = document.getElementById("chica-intel-card");
+    if (el) el.style.display = "none";
+  }, true);
+  document.addEventListener("touchend", function (ev) {
+    var t = ev.target;
+    if (!t || !t.closest) return;
+    if (t.closest("#chica-intel-card .x")) {
+      var el = document.getElementById("chica-intel-card");
+      if (el) el.style.display = "none";
+      return;
+    }
+    if (t.closest("#chica-force-key,#chica-hunt-bar,#chica-filters,#chica-sale-sheet,#chica-listit-btn,#chica-home-chip,#chica-intel-card")) return;
+    var icon = t.closest(".leaflet-marker-icon");
+    if (!icon || icon.classList.contains("chica-overlay-pin")) return;
     var map = window.__chicaLeaflet;
     if (!map || !map.eachLayer) return;
     map.eachLayer(function (ly) {
