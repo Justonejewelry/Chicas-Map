@@ -41,7 +41,7 @@ Map only shows pins whose listed dates include today.
 - Garage Sale!! — 15823 Tampke Pl, San Antonio, TX 78247 [2026-10-03 → 2026-10-04]
 - New Movies And Car Detailing And More — 18506 Paloma Wood, San Antonio, TX 78259 [2026-10-03 → 2026-10-03]
 - Art Lovers Yard Sale — Framed Art Mostly $20–$200 — 24603 Maple Crst, San Antonio, TX 78261 [2026-10-03 → 2026-10-03]
-- Fall Community Garage Sale at Redbird Ranch 10/03/2026 8am-3pm — 410 Hollimon Pkwy, San Antonio, TX 78253 [2026-10-03 → 2026-10-03]
+- Fall Community Garage Sale at Redbird Ranch 10/03/2026 8am-3pm — 410 Hollimon Pkwy, Redbird Ranch, San Antonio, TX 78253 [2026-10-03 → 2026-10-17] | 8:00 am – 3:00 pm
 - Moving Sale — 26726 Sierra Holw, San Antonio, TX 78261 [2026-10-03 → 2026-10-03]
 - Community Garage Sale In Napa Oaks — 8722 Elkhorn Knl, Boerne, TX 78015 [2026-10-03 → 2026-10-03]
 - Vintage and Household Sale!! — 3838 Lariat Way, Bulverde, TX 78163 [2026-10-03 → 2026-10-03]
@@ -53,6 +53,131 @@ Map only shows pins whose listed dates include today.
 - DECK YARD SALE — OAKBLOOM, San Antonio, TX [2026-10-03 → 2026-10-03]
 - GARAGE SALE 281N @ 1604; Collectibles, Wall Art, Dual Light Fixture — 1923 Parhaven Dr. near Hwy 281, San Antonio, TX [2026-10-03 → 2026-10-04]
 - GARAGE SALE OLYMPIA — BLACKSTONE near UNIVERSAL CIYY BLVD, San Antonio, TX [2026-10-03 → 2026-10-03]
+- Redbird Ranch community garage sale — 139 Reeves Garden, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 113 Elisabeth Run, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 126 Ground Dove, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 15118 Wing Heart, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 14525 Tundra Swan, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 1160 Andean Emerald, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 839 Brown Thrasher, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 176 Scarlet Macaw, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 123 Cardinal Way, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 422 Eastern Phoebe, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 230 Perch Mdw, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 166 Perch Horizon, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 179 Scarlet Macaw, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 163 Cuban Emerald, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 1422 Brown Pelican Wy, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 15302 Smoky Honeyeater, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 15422 Crimson Topaz, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 1123 Western Whipbird, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 14827 Horned Lark, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Everything $1 — Redbird Ranch community garage sale — 15358 Brown Violetear, San Antonio, TX 78253 [2026-10-03 → 2026-10-17] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 158 Sage Sparrow, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 114 Cackling Goose, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 714 Broad Elk, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 481 Eastern Phoebe, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 107 Grey Woodpecker, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 519 Red Quill Nest, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 15722 Smoky Honeyeater, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 611 Rose Spoonbill, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 188 Tufted Crest, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 101 Brazilian Ruby, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 802 Sage Thrasher, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 15557 Gray Catbird, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 507 Perch Mdw, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 15203 Field Sparrow, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 807 Red Crossbill, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 427 Redbird Chase, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 1731 Great Bittern, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 338 Redbird Song, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 15038 Redbird Pass, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 108 Sabine Gull, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 14911 Harlequin Duck, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 15706 Smoky Honeyeater, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 117 Gilded Sapphire, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 926 Andean Emerald, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 511 Perch Mdw, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 111 Nesting Garden, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 403 Redbird Chase, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 943 Red Crossbill, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 1314 Brown Pelican Wy, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 169 Golden Wren, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 318 Perch Mdw, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 14823 Goldfinch Wy, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 423 Perch Mdw, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 119 Sage Sparrow, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 319 Cardinal Way, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 277 Elisabeth Run, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 15430 Canada Goose Wy, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 315 Perch Mdw, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 207 Coopers Hawk, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 15227 Wingstar, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 15246 McKays Lark, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 714 Sage Thrasher, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 14711 Hooded Merganser, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 132 Imperial Bill, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 241 Kildeer Creek, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 176 Cita Roost, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 15550 Crimson Topaz, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 15226 Field Sparrow, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 330 Pigeon Grn, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 15235 McKays Lark, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 14711 Lesser Scaup, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 1926 Andean Emerald, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 1129 Barn Swallow Wy, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 1243 Barn Swallow Wy, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 15414 Bobwhite Quail, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 15422 Bobwhite Quail, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 15449 Bobwhite Quail, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 117 Cackling Goose, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 239 Cardinal Way, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 14846 Cave Swallow, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 15202 Cedar Waxwing, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 407 Cheeked Pintail, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 506 Cheeked Pintail, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 15230 Cinnamon Teal, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — Cooks Petrel, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 15634 Crimson Topaz, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 15639 Crimson Topaz, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 453 Eastern Phoebe, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 180 Empress Brilliant, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 15406 Finch Cir, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 193 Finch Knoll, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 148 Golden Wren, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 191 Grey Woodpecker, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 15419 Grosbeak Pass, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 14807 Harlequin Duck, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 159 Hooded Dotterel, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 14858 Horned Lark, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 14862 Horned Lark, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 1608 House Finch Dr, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 321 Kildeer Creek, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 196 Nesting Canyon, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 102 Nesting Tree, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 15307 Olive Pigeon, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 15342 Olive Pigeon, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 1143 Pacific Monarch, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 453 Perch Horizon, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 318 Perch Horizon, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 410 Perch Mdw, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 947 Red Merganser, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 230 Redbird Cir, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 144 Ringed Plover, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 148 Sage Sparrow, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 125 Trumpeter Swan, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 123 Tufted Crest, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 15235 Wingstar, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 141 Wood Pigeon, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 168 Scarlet Macaw, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Redbird Ranch community garage sale — 166 Scarlet Macaw, San Antonio, TX 78253 [2026-10-03 → 2026-10-03] | 8:00 am – 3:00 pm
+- Willis Ranch community garage sale — Willis Ranch subdivision, off Borgfeld Dr, San Antonio, TX 78260 [2026-10-03 → 2026-10-03] | 7:00 am – 2:00 pm
+- Good stuff that's got to go — 15543 Knollglade, San Antonio, TX 78247 [2026-10-03 → 2026-10-03]
+- GARAGE / YARD SALE — 16442 Blanco Ky, San Antonio, TX 78247 [2026-10-03 → 2026-10-03]
+- Lots Of Nice Curated Items — 7714 Avery Rd, Live Oak, TX 78233 [2026-10-03 → 2026-10-03]
+- Fall Community Garage Sale at Redbird Ranch 10/03/2026 8am-3pm — 410 Hollimon Pkwy, San Antonio, TX 78253 [2026-10-03 → 2026-10-03]
+- Moving Sale! Today only 10/3 12 pm to 5 pm — 1219 Zane Grey Lane, San Antonio, TX [2026-10-03 → 2026-10-05]
+- Clothing Give A Way Day — 1907 NE Loop 410, San Antonio, TX [2026-10-03 → 2026-10-05]
 
 ## ONLINE / UNPLOTTABLE
 
