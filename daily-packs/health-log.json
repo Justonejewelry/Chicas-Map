@@ -38,5 +38,15 @@
     "geocoding_success_rate": "0.0%",
     "status": "FAILED",
     "notes": "First dispatch rejected: workflow has no city input. Retry queued chica-daily.yml 36994336434 (cities=san-antonio, target_date=2026-10-02), still in_progress after 3x5s polls. community-events-swarm.yml not triggered. Gmail token permanently revoked. No inbox parse, no OCR, no CITY_FILE write. Staging holds unchanged. Live public[] 15/15 have coordinates; 2 are city-center below 0.70 (Haynes San Marcos, no-street barndominium). schema/city.schema.json absent. Pack and social written from live feed."
+  },
+  {
+    "timestamp": "2026-10-03T05:22:00-05:00",
+    "target_date": "2026-10-03",
+    "actions_run_id": "37115653128",
+    "emails_scanned": 0,
+    "net_new_added": 0,
+    "geocoding_success_rate": "0.0%",
+    "status": "FAILED",
+    "notes": "chica-daily.yml 37115653128 completed success. cities=san-antonio (no city input). community-events-swarm.yml not triggered. Gmail token permanently revoked. Email net-new 0. CITY_FILE written by populate, not by this email pass. Post-populate public[] 48/48 have coordinates; 6 city-center below 0.70; 9 zip centroids. 78216 time capsule now on feed at 138 Shannon Lee (YSS, source geocode). schema/city.schema.json absent."
   }
 ]

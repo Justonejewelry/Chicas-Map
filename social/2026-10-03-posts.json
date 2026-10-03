@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-03",
+  "city": "san-antonio",
+  "confidence_floor": 0.70,
+  "pii_stripped": true,
+  "source": "webapp/data/cities/san-antonio.json public[] at main 6af6452332d80123c9f187e0cf68d71136e5c093",
+  "emails_used": 0,
+  "facebook": "Hey pack — Chica just finished sniffing the trails for Saturday.\n\nGmail is still locked, so these are the stops already on the live map. Greater San Antonio only.\n\n📍 Worth the drive\n• 9 to 3, time capsule — 138 Shannon Lee, 78216. https://chicasmap.com/sa?id=yss-138shannonleestsanantoniotx78216-2026-10-03\n• Saturday only, Gold Canyon — 17611 Diamond Canyon. https://chicasmap.com/sa?id=cl-garagesalethis2c7ndqsvrrpfzybcddw4u6\n• Tools, multi-family — 7927 Avellano. https://chicasmap.com/sa?id=yss-7927avellanosanantoniotx78250-2026-10-03\n• Moving sale, appliances — 8811 Braun Mesa. https://chicasmap.com/sa?id=cl-movingsalehigh9hueatyfeupn163ktddtps\n• Airbnb closeout — 11319 Par One. https://chicasmap.com/sa?id=cl-rbnbgaragesalef8hxa3nqp25ybdtpsjqdd5\n• 8 to 2, clothes and some jewelry — 13202 Hunters Spring. https://chicasmap.com/sa?id=cl-leoctoberfriday4rawzaykwps29nski69cfw\n• Framed art — 24603 Maple Crst. https://chicasmap.com/sa?id=yss-24603maplecrstsanantoniotx78261-2026-10-03\n• Collectibles — 1923 Parhaven. https://chicasmap.com/sa?id=yss-1923parhavendrsanantoniotx78232-2026-10-03\n\nI am not sending you to Bandera, Lytle, Boerne, Bulverde, or New Braunfels.\n\nOpen the free map: https://justonejewelry.github.io/Chicas-Map/\nNear Me sorts by distance. Routes open in Google Maps, Apple Maps, or Waze.\nIf you know a sale I missed, list it free on the site.\n\n#SanAntonioGarageSales #SATXThrifting #ChicaMap",
+  "nextdoor": "Neighbors — Saturday map check for San Antonio, Alamo Heights, Helotes, Schertz, and the close-in cities.\n\nNo new email listings this morning. These are already on the free map:\n\n• 138 Shannon Lee — time capsule, 9 to 3 today and Sunday\n• 17611 Diamond Canyon — Gold Canyon, title says Saturday only\n• 7927 Avellano — multi-family, tools\n• 8811 Braun Mesa — moving sale, appliances\n• 11319 Par One — Airbnb closeout\n• 13202 Hunters Spring — 8 to 2, clothes and some jewelry\n• 503 Antler — Castle Hills, Saturday and Sunday\n• 2823 Quail Oak — title says 9 to 1\n\nI am not posting Bandera, Lytle, Boerne, Bulverde, or New Braunfels as San Antonio stops.\n\nMap: https://justonejewelry.github.io/Chicas-Map/\nNear Me, then Google, Apple, or Waze. List a sale if the pack missed your street.",
+  "tiktok": {
+    "caption": "Saturday sniff. Shannon Lee time capsule, 9 to 3. Diamond Canyon is today only. Avellano has the tools. Braun Mesa is the moving sale. Par One is the Airbnb closeout. Free map. Near Me.",
+    "tags": ["#SanAntonioEstateSales", "#SATXThrifting", "#SanAntonioGarageSales", "#ChicaMap"],
+    "on_screen": "Shannon Lee · Diamond Canyon · Avellano · Braun Mesa · Par One"
+  }
+}
