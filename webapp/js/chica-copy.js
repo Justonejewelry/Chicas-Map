@@ -1,16 +1,15 @@
 (function () {
   var pairs = [
-    ["Come hunt with me.", "Find what\u2019s happening."],
-    [
-      "I found",
-      "POSTED_LEAD",
-    ],
+    ["Find what\u2019s happening.", "Find the sales worth stopping for."],
+    ["Come hunt with me.", "Find the sales worth stopping for."],
+    ["I found", "POSTED_LEAD"],
     ["Share a sale", "Share with the pack"],
     ["Three I\u2019d start with", "Where the pack is active"],
     ["Why I\u2019m here", "Pack principle"],
     ["I watched too many wasted Saturdays.", "Loyalty. Duty. Respect. Service. Honor. Integrity. Courage."],
     ["I\u2019m Chica. Come find something good with us.", "Chica listens. Send a tip. Your time matters."],
-    ["Ven a buscar conmigo.", "Encuentra lo que est\u00e1 pasando."],
+    ["Encuentra lo que est\u00e1 pasando.", "Encuentra las ventas que valen el viaje."],
+    ["Ven a buscar conmigo.", "Encuentra las ventas que valen el viaje."],
     ["Compartir una venta", "Comparte con la manada"],
     ["Tres con las que yo empezar\u00eda", "Donde se mueve la manada"],
     ["Por qu\u00e9 estoy aqu\u00ed", "Principio de la manada"],
@@ -19,9 +18,9 @@
   ];
 
   var ledeEn =
-    "Chica\u2019s Map brings San Antonio neighbors useful local information in one place \u2014 sales, events, community resources, and the details that help you plan your day.";
+    "San Antonio\u2019s free garage, yard, and estate sale map. Free to see. Free to list.";
   var ledeEs =
-    "El Mapa de Chica junta informaci\u00f3n \u00fatil del vecindario en un solo lugar \u2014 ventas, eventos, recursos y lo que necesitas para armar el d\u00eda.";
+    "Mapa gratis de ventas de garaje, patio y bienes en San Antonio. Ver es gratis. Publicar es gratis.";
   var whyEn =
     "Those Army values are useful in any neighborhood: keep your word, respect people\u2019s time, serve where you can, be honest about what you know, and have the courage to make the community better.";
   var whyEs =
@@ -29,11 +28,11 @@
 
   function swapText(t) {
     if (!t) return t;
-    if (t.indexOf("My person is a veteran") !== -1 || t.indexOf("verified sales for this weekend") !== -1) {
-      return t.replace(/I found \d+ verified sales[\s\S]*?ride along\./, ledeEn).replace(/^I found[\s\S]*$/, ledeEn);
+    if (t.indexOf("My person is a veteran") !== -1 || t.indexOf("verified sales for this weekend") !== -1 || t.indexOf("useful local information") !== -1) {
+      return ledeEn;
     }
-    if (t.indexOf("Mi persona es veterano") !== -1 || t.indexOf("ventas verificadas para este fin") !== -1) {
-      return t.replace(/Encontr[\s\S]*?manada\./, ledeEs);
+    if (t.indexOf("Mi persona es veterano") !== -1 || t.indexOf("ventas verificadas para este fin") !== -1 || t.indexOf("informaci\u00f3n \u00fatil del vecindario") !== -1) {
+      return ledeEs;
     }
     if (t.indexOf("Empty driveways. Dead pins.") !== -1) return whyEn;
     if (t.indexOf("Entradas vac\u00edas. Pines muertos.") !== -1) return whyEs;
