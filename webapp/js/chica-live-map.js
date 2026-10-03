@@ -387,11 +387,11 @@
       if (typeof w.__chicaHideIntel === "function") w.__chicaHideIntel();
     });
     var feedUrls = [
-      BASE + "/data/cities/san-antonio.json?v=38",
-      BASE + "/data/cities/san-antonio-email.json?v=38",
-      BASE + "/data/cities/san-antonio-user.json?v=38",
-      BASE + "/data/cities/san-antonio-permits-a.json?v=38",
-      BASE + "/data/cities/san-antonio-permits-b.json?v=38"
+      BASE + "/data/cities/san-antonio.json?v=39",
+      BASE + "/data/cities/san-antonio-email.json?v=39",
+      BASE + "/data/cities/san-antonio-user.json?v=39",
+      BASE + "/data/cities/san-antonio-permits-a.json?v=39",
+      BASE + "/data/cities/san-antonio-permits-b.json?v=39"
     ];
     Promise.all(feedUrls.map(function (u) {
       return fetch(u, { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
