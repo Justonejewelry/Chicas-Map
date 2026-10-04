@@ -37,6 +37,8 @@ Map only shows pins whose listed dates include today.
 - Oakhaven Heights community garage sale — Parhaven near 281, San Antonio, TX [2026-10-04 → 2026-10-06]
 - Wasser Ranch Community Yard Sale — 3022 Alster, San Antonio, TX [2026-10-04 → 2026-10-06]
 - 50% Sunday!*  1970s Time Capsule! — San Antonio, TX [2026-10-03 → 2026-10-04]
+- Garage Sale — 16642 Blanco Ky, San Antonio, TX 78247 [2026-10-04 → 2026-10-04]
+- Multi familt yard sale 1144 ruiz st — Ruiz st near Calaveras st, San Antonio, TX [2026-10-04 → 2026-10-06]
 
 ## COMING UP (remembered, not on today's map)
 

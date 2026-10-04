@@ -65,8 +65,8 @@
       "in_person": false,
       "external_id": "eso-2465557",
       "categories": [
-        "estate-sale",
-        "online-auction"
+        "online-auction",
+        "estate-sale"
       ]
     },
     {
@@ -159,13 +159,13 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.221963587890766,
-      "lon": -97.93780122971263,
+      "lat": 30.22161324653252,
+      "lon": -97.93815470380504,
       "geocode": "source",
       "company": "Creative Estate Sales",
       "in_person": true,
@@ -185,8 +185,8 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
@@ -199,10 +199,10 @@
     },
     {
       "address": "438 Pear Tree Ln, Austin, TX",
-      "dates": "2026-10-03 – 2026-10-05",
-      "date_from": "2026-10-03",
-      "date_to": "2026-10-05",
-      "end_date": "2026-10-05",
+      "dates": "2026-10-04 – 2026-10-06",
+      "date_from": "2026-10-04",
+      "date_to": "2026-10-06",
+      "end_date": "2026-10-06",
       "hours": null,
       "title": "Moving Sale! Rain or Shine! 438 Pear Tree Ln",
       "details": "QR Code Link to This Post Three car garage packed with fabulous finds! Tools, games, fine art, plants, furniture, bike, housewares, and more! Come Saturday for best selection. Everything is high quality and in immaculate condition. These folks are downsizing to live in their 2nd home full time, and they have excellent taste. Cash, Venmo, and credit cards all accepted. Sale hosted by Hannan Home He",
@@ -248,10 +248,10 @@
     },
     {
       "address": "Moscow Trail near Parmer, Austin, TX",
-      "dates": "2026-10-03 – 2026-10-05",
-      "date_from": "2026-10-03",
-      "date_to": "2026-10-05",
-      "end_date": "2026-10-05",
+      "dates": "2026-10-04 – 2026-10-06",
+      "date_from": "2026-10-04",
+      "date_to": "2026-10-06",
+      "end_date": "2026-10-06",
       "hours": null,
       "title": "GUITARS",
       "details": "QR Code Link to This Post GUITARS AND OTHER ITEMS FOR SALE",
@@ -320,13 +320,13 @@
     },
     {
       "address": "105 Canyon View Rd, Austin, TX",
-      "dates": "2026-10-03 – 2026-10-05",
-      "date_from": "2026-10-03",
-      "date_to": "2026-10-05",
-      "end_date": "2026-10-05",
+      "dates": "2026-10-04 – 2026-10-06",
+      "date_from": "2026-10-04",
+      "date_to": "2026-10-06",
+      "end_date": "2026-10-06",
       "hours": null,
-      "title": "Part of Wolf Ranch Neighborhood Garage Sale on 10/3/2026 Saturday",
-      "details": "QR Code Link to This Post RAIN or SHINE -- 4 Family Garage Sale!! * Lots of Women &amp;Men's Clothes (Mostly $1, Few $2 &amp; $3) * Children Clothes (50 cents) * Shoes * Purses * Jewelry * Toys * Children Books * Kitchen Items (Pots &amp; Pans) * Wall Deco Items * Blankets * Towels * CD's &amp; Books * Plus Much More.... * COME AND FIND YOUR SURPRISES/TREASURES!!",
+      "title": "Part of Wolf Ranch Neighborhood Garage Sale on 10/4/2026 Sunday",
+      "details": "QR Code Link to This Post 4 Family Garage Sale - Our adult children brought more stuff to our garage sale for 10/4 Sunday!! * Lots of Women &amp; Men's Clothes (Mostly $1, A few items are $2) * Children Clothes (50 cents) * Shoes * Purses * Jewelry * Toys * Children Books * Kitchen Items (Pots &amp; Pans) * Wall Deco Items * Blankets * Towels * CD's &amp; Books * Plus Much More.... * COME AND FIND",
       "source": "Craigslist",
       "url": "https://www.craigslist.org/view/d/georgetown-part-of-wolf-ranch/vZunW6on22WwYG2tUVCgog",
       "photos": 0,
@@ -416,15 +416,15 @@
     },
     {
       "address": "1112 Smith Dr near wood, Austin, TX",
-      "dates": "2026-10-02 – 2026-10-04",
-      "date_from": "2026-10-02",
-      "date_to": "2026-10-04",
-      "end_date": "2026-10-04",
+      "dates": "2026-10-04 – 2026-10-06",
+      "date_from": "2026-10-04",
+      "date_to": "2026-10-06",
+      "end_date": "2026-10-06",
       "hours": null,
       "title": "Selling OUT ALL 42'' Club Cadet xt-1 AND much to go with it",
       "details": "QR Code Link to This Post SELLING OUT ALL ( Stop And SEE OR CALL AT show contact info Before You Say No way or Call ) Please call me first Selling ALL that goes with this 42'' cub cadet xt 1 1-full set of tires and rims a homemade wagon with all new parts for the deck, new blades and good ones also, belts, Selling for 1,550.00 Cash only Price is FIRM, and with a spreader a blade stand to sharping ",
       "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/killeen-selling-out-all-42-club-cadet/jbx8fiy4FWGWJtjHBJSUb6",
+      "url": "https://www.craigslist.org/view/d/killeen-selling-out-all-42-club-cadet/pbEvBajzKk5qPjNXoNC7mR",
       "photos": 0,
       "type": "garage",
       "categories": [
@@ -436,7 +436,7 @@
       "lon": -97.713567,
       "geocode": "source",
       "in_person": true,
-      "external_id": "cl-all42clubcadetjbx8fiy4fwgwjtjhbjsub6"
+      "external_id": "cl-all42clubcadetpbevbajzkk5qpjnxonc7mr"
     },
     {
       "address": "Parmer Lane near Ranch Trails, Austin, TX",
@@ -488,10 +488,10 @@
     },
     {
       "address": "3609 E4th st, Austin, TX",
-      "dates": "2026-10-02 – 2026-10-04",
-      "date_from": "2026-10-02",
-      "date_to": "2026-10-04",
-      "end_date": "2026-10-04",
+      "dates": "2026-10-04 – 2026-10-06",
+      "date_from": "2026-10-04",
+      "date_to": "2026-10-06",
+      "end_date": "2026-10-06",
       "hours": null,
       "title": "sliding barn door",
       "details": "QR Code Link to This Post like new never installed. heavy duty solid wood door stored in dry area.all hardware included. $375.00",
@@ -552,10 +552,10 @@
     },
     {
       "address": "Austin near Lakeline, Austin, TX",
-      "dates": "2026-10-03 – 2026-10-05",
-      "date_from": "2026-10-03",
-      "date_to": "2026-10-05",
-      "end_date": "2026-10-05",
+      "dates": "2026-10-04 – 2026-10-06",
+      "date_from": "2026-10-04",
+      "date_to": "2026-10-06",
+      "end_date": "2026-10-06",
       "hours": null,
       "title": "MOVING SALE! EVERYTHING MUST GO!!!",
       "details": "QR Code Link to This Post World Market Countertop Stools $200 Z Gallery Decor Pillow Set $150 Black &amp; White Art (60X40) $200 Pier 1 Crystal Lamp $80 Black Writing Desk $100 Crystal hanging light fixture $100 Mosaic Rectangle Mirror $100 Square Mosaic Mirror $100 Dolly Parton Frame Art $60 Brand New Grey Sectional $800 Pier 1 3- Drawer Mirror Chest (2) $300 IKEA Clear Storage Containers $50 Cry",
@@ -577,10 +577,10 @@
     },
     {
       "address": "6801 Beckett Road, Austin, 78749 near William Cannon, Austin, TX",
-      "dates": "2026-10-03 – 2026-10-05",
-      "date_from": "2026-10-03",
-      "date_to": "2026-10-05",
-      "end_date": "2026-10-05",
+      "dates": "2026-10-04 – 2026-10-06",
+      "date_from": "2026-10-04",
+      "date_to": "2026-10-06",
+      "end_date": "2026-10-06",
       "hours": null,
       "title": "Cottage Courts Community Garage Sale",
       "details": "QR Code Link to This Post Come one come all. Community garage sale. It's a gated community but gates will be open from 7-11 am. 30 homes will be participating. Lots of great items for sale. Hope to see you!",
@@ -666,8 +666,8 @@
       "in_person": false,
       "external_id": "eso-2466209",
       "categories": [
-        "estate-sale",
-        "online-auction"
+        "online-auction",
+        "estate-sale"
       ]
     },
     {
@@ -694,10 +694,10 @@
     },
     {
       "address": "3306 Reta Cove, Austin, TX",
-      "dates": "2026-10-03 – 2026-10-05",
-      "date_from": "2026-10-03",
-      "date_to": "2026-10-05",
-      "end_date": "2026-10-05",
+      "dates": "2026-10-04 – 2026-10-06",
+      "date_from": "2026-10-04",
+      "date_to": "2026-10-06",
+      "end_date": "2026-10-06",
       "hours": null,
       "title": "Estate Sale!! One Day Only!!",
       "details": "QR Code Link to This Post Oct 4th. 8am to 8pm",
@@ -814,10 +814,10 @@
     },
     {
       "address": "1202 fm 685, Austin, TX",
-      "dates": "2026-10-03 – 2026-10-05",
-      "date_from": "2026-10-03",
-      "date_to": "2026-10-05",
-      "end_date": "2026-10-05",
+      "dates": "2026-10-04 – 2026-10-06",
+      "date_from": "2026-10-04",
+      "date_to": "2026-10-06",
+      "end_date": "2026-10-06",
       "hours": null,
       "title": "Huge Weekend Sale! New Merchandise!",
       "details": "QR Code Link to This Post ‼️🛍️📣 Join us at Lots4Less this Weekend for Amazing Deals! 🏃🏻‍♀️🏃🏻‍♂️💨 This weekend, Saturday and Sunday, we open 9am - 5pm! 💥👗🚀➡️ All new clothes &amp; merchandise for only $5! 🌟👟👢➡️ All new shoes, sneakers, boots, etc will be only $10! 🟢 We do have some merchandise with an individual sticker price, up to 90% off retail! 💙 You don’t want to miss this sale! 🏢 Store name: ",
@@ -835,6 +835,150 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "cl-weekendsalenewfughhty7yjlakuycajubqk"
+    },
+    {
+      "address": "9503 Ramblewood Dr, Austin, TX 78748",
+      "dates": "2026-10-10 – 2026-10-10",
+      "date_from": "2026-10-10",
+      "date_to": "2026-10-10",
+      "end_date": "2026-10-10",
+      "hours": "2026-10-10 8:00 am-1:00 am",
+      "title": "**ESTATE SALE-Austin, Texas **",
+      "details": "We're having a 50% OFF Estate Sale Saturday, October 10th 8 AM - 1 PM Some of the items available include: Vintage furniture Vintage/Classic children's books Autographed books and artwork Marbles Spode and Mandarin China Women's and men's gently...",
+      "source": "EstateSales.org",
+      "url": "https://estatesales.org/estate-sales/tx/austin/78748/estate-saleaustin-texas-2466347",
+      "photos": 0,
+      "type": "estate",
+      "categories": [
+        "estate-sale",
+        "in-person"
+      ],
+      "confidence": 0.9,
+      "status": "verified",
+      "lat": 30.180318,
+      "lon": -97.829177,
+      "geocode": "source",
+      "company": null,
+      "in_person": true,
+      "external_id": "eso-2466347"
+    },
+    {
+      "address": "101 Lost Oaks Dr near Bluff View Dr, Austin, TX",
+      "dates": "2026-10-04 – 2026-10-06",
+      "date_from": "2026-10-04",
+      "date_to": "2026-10-06",
+      "end_date": "2026-10-06",
+      "hours": null,
+      "title": "Kay's Estate Sales",
+      "details": "QR Code Link to This Post Terms &amp; Conditions ⛔ We do not provide price / other information by phone, email or questions from this site.⛔ *Cash,Checks and Credit Cards accepted. *Buyers are responsible for removal of items purchased. We do not have people to help load items. *Pre-sale and early shopping are not allowed; please do not visit sale sites until listed start times. *Items shown are o",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/waco-kays-estate-sales/d3gXtqrM7dPRD2gceiaiUA",
+      "photos": 0,
+      "type": "estate",
+      "categories": [
+        "estate-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 31.626169,
+      "lon": -97.132429,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-kaysestatesalesd3gxtqrm7dprd2gceiaiua"
+    },
+    {
+      "address": "6207 La Naranja lane, Austin, TX",
+      "dates": "2026-10-04 – 2026-10-06",
+      "date_from": "2026-10-04",
+      "date_to": "2026-10-06",
+      "end_date": "2026-10-06",
+      "hours": null,
+      "title": "Oak Hill Garage Sale",
+      "details": "QR Code Link to This Post Kids clothes - boy and girl- sizes up to 8T Kids shoes Toys Stroller High end high chair Men’s and women’s clothing/shoes Bike trailer Misc items",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/austin-oak-hill-garage-sale/8Wh9qP5WW8ZQgUAf2bjED3",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 30.215208,
+      "lon": -97.874586,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-hillgaragesale8wh9qp5ww8zqguaf2bjed3"
+    },
+    {
+      "address": "3300 Hemlock Avenue, Austin, TX",
+      "dates": "2026-10-03 – 2026-10-04",
+      "date_from": "2026-10-03",
+      "date_to": "2026-10-04",
+      "end_date": "2026-10-04",
+      "hours": null,
+      "title": "SUPER SOMETHING SURPRISE - RAIN PROOF YARD SALE",
+      "details": "QR Code Link to This Post buffet of art+toys+books+collectibles+fun junk&amp; more set up under a covered deck create your own prices and search for treasures Saturday, October3 and Sunday, October 4 10 am until 6pm",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/austin-super-something-surprise-rain/f9kBKf9WzeHTHJFitbs5PQ",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 30.2875,
+      "lon": -97.71509,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-ingsurpriserainf9kbkf9wzehthjfitbs5pq"
+    },
+    {
+      "address": "13401 Caballero Cove near Equestrian Trail, Austin, TX",
+      "dates": "2026-10-04 – 2026-10-06",
+      "date_from": "2026-10-04",
+      "date_to": "2026-10-06",
+      "end_date": "2026-10-06",
+      "hours": null,
+      "title": "YARD SALE @ THE RIDGE SCOFIELD FARMS",
+      "details": "QR Code Link to This Post YARD SALE 10 - 4 Women’s clothing size small/medium Coats Shoes size 8 Boots approximately size 8-8 1/2 Electronic Keyboard Queen base w/drawers &amp; mattress Bedside tables Lamps Various kitchen items",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/austin-yard-sale-the-ridge-scofield/ci4oBoFqcgyYA4ePehw2Ut",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 30.284,
+      "lon": -97.786,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-heridgescofieldci4obofqcgyya4epehw2ut"
+    },
+    {
+      "address": "Austin, TX",
+      "dates": "2026-10-01 – 2026-10-04",
+      "date_from": "2026-10-01",
+      "date_to": "2026-10-04",
+      "end_date": "2026-10-04",
+      "title": "TREF’S TREASURE BOX OF TANTALIZING TRINKETS",
+      "details": "Moved Offsite To Warehouse",
+      "source": "EstateSales.net",
+      "url": "https://www.estatesales.net/TX/Columbus/78934/5090976",
+      "photos": 0,
+      "type": "estate",
+      "categories": [
+        "estate-sale"
+      ],
+      "confidence": 0.65,
+      "status": "verified",
+      "lat": 30.2672,
+      "lon": -97.7431,
+      "geocode": "city-center",
+      "company": null
     }
   ],
   "hot_zones": [
@@ -853,9 +997,9 @@
     "gsalr.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 36,
+  "total_locations": 42,
   "status": "live",
   "date": "2026-10-04",
-  "last_refresh": "2026-10-04T05:12:26-05:00",
+  "last_refresh": "2026-10-04T10:42:37-05:00",
   "permits": []
 }
