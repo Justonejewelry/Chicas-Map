@@ -48,5 +48,15 @@
     "geocoding_success_rate": "0.0%",
     "status": "FAILED",
     "notes": "chica-daily.yml 37115653128 completed success. cities=san-antonio (no city input). community-events-swarm.yml not triggered. Gmail token permanently revoked. Email net-new 0. CITY_FILE written by populate, not by this email pass. Post-populate public[] 48/48 have coordinates; 6 city-center below 0.70; 9 zip centroids. 78216 time capsule now on feed at 138 Shannon Lee (YSS, source geocode). schema/city.schema.json absent."
+  },
+  {
+    "timestamp": "2026-10-04T05:22:00-05:00",
+    "target_date": "2026-10-04",
+    "actions_run_id": "37194581274",
+    "emails_scanned": 0,
+    "net_new_added": 0,
+    "geocoding_success_rate": "0.0%",
+    "status": "FAILED",
+    "notes": "First dispatch rejected: no city input. Retry chica-daily.yml 37194581274 completed success after the 3x5s polls (cities=san-antonio, target_date=2026-10-04). community-events-swarm.yml not triggered. Gmail token permanently revoked. Email net-new 0. CITY_FILE written by populate, not by this email pass. schema/city.schema.json absent. Manual Sunday pack is daily-packs/2026-10-04-chica-update.md; workflow also wrote 2026-10-04-chica-update-pack.md."
   }
 ]
