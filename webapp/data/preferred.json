@@ -1,33 +1,5 @@
 {
-  "updated": "2026-09-27T06:20:00-05:00",
-  "note": "Chica preferred / gold pulse pins. Chica on site Sunday afternoon at 1207 Fulton.",
-  "preferred": [
-    {
-      "address": "1207 Fulton Ave, San Antonio, TX 78201",
-      "dates": "Sun Sep 27, 2026 — afternoon",
-      "date_from": "2026-09-27",
-      "date_to": "2026-09-27",
-      "end_date": "2026-09-27",
-      "hours": "Afternoon — Chica on site",
-      "title": "Garage sale — antique furniture, odds & ends + Chica",
-      "details": "Antique furniture, lots of odds and ends. Chica on site this afternoon.",
-      "source": "Pack / operator",
-      "url": "",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.95,
-      "status": "verified",
-      "lat": 29.46166,
-      "lon": -98.51473,
-      "geocode": "census-tiger",
-      "external_id": "pack-1207-fulton-ave-2026-09-27",
-      "categories": ["garage-sale", "antiques", "furniture", "preferred", "boost"],
-      "boost": true,
-      "boost_until": "2026-09-28",
-      "preferred": true,
-      "gold_pulse": true,
-      "pack": true,
-      "note": "Gold pulse pack pin — Chica on site Sunday afternoon"
-    }
-  ]
+  "updated": "2026-10-04T06:00:00-05:00",
+  "note": "No preferred pins. 1207 Fulton Ave gold pulse removed 2026-10-04.",
+  "preferred": []
 }
