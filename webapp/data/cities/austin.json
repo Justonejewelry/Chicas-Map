@@ -27,28 +27,6 @@
       "external_id": "cl-ygaragesalesoncscufy6gupm82vta9y51hd"
     },
     {
-      "address": "145 Summer Night Cv, Buda, TX 78610",
-      "dates": "2026-10-03 – 2026-10-03",
-      "date_from": "2026-10-03",
-      "date_to": "2026-10-03",
-      "end_date": "2026-10-03",
-      "title": "Summer Pointe Neighborhood Garage Sale - Lots Of Great Stuff",
-      "details": "",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196401031",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.88,
-      "status": "verified",
-      "lat": 30.086485,
-      "lon": -97.864333,
-      "geocode": "source",
-      "external_id": "yss-145summernightcvbudatx78610-2026-10-03",
-      "categories": [
-        "garage-sale"
-      ]
-    },
-    {
       "address": "San Marcos, TX 78666",
       "dates": "Thu Oct 1 – Tue Oct 13",
       "date_from": "10/01/2026",
@@ -128,116 +106,6 @@
       "geocode": "city-center"
     },
     {
-      "address": "911 Rocking Spur Cv, Pflugerville, TX 78660",
-      "dates": "2026-10-03 – 2026-10-03",
-      "date_from": "2026-10-03",
-      "date_to": "2026-10-03",
-      "end_date": "2026-10-03",
-      "title": "Neighborhood Garage Sale",
-      "details": "",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196400955",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.88,
-      "status": "verified",
-      "lat": 30.432967,
-      "lon": -97.635008,
-      "geocode": "source",
-      "external_id": "yss-911rockingspurcvpflugervilletx78660-2026-10-03",
-      "categories": [
-        "garage-sale"
-      ]
-    },
-    {
-      "address": "12502 Burlywood Trl, Austin, TX 78750",
-      "dates": "2026-10-03 – 2026-10-03",
-      "date_from": "2026-10-03",
-      "date_to": "2026-10-03",
-      "end_date": "2026-10-03",
-      "title": "Big Unique Sale",
-      "details": "",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196398611",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.88,
-      "status": "verified",
-      "lat": 30.463975,
-      "lon": -97.806728,
-      "geocode": "source",
-      "external_id": "yss-12502burlywoodtrlaustintx78750-2026-10-03",
-      "categories": [
-        "garage-sale"
-      ]
-    },
-    {
-      "address": "541 Summer Pointe Dr, Buda, TX 78610",
-      "dates": "2026-10-03 – 2026-10-03",
-      "date_from": "2026-10-03",
-      "date_to": "2026-10-03",
-      "end_date": "2026-10-03",
-      "title": "Garage Sale - Multiple Families",
-      "details": "",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196409947",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.88,
-      "status": "verified",
-      "lat": 30.086947,
-      "lon": -97.866319,
-      "geocode": "source",
-      "external_id": "yss-541summerpointedrbudatx78610-2026-10-03",
-      "categories": [
-        "garage-sale"
-      ]
-    },
-    {
-      "address": "2502 Silver Spur Ln, Leander, TX 78641",
-      "dates": "2026-10-03 – 2026-10-03",
-      "date_from": "2026-10-03",
-      "date_to": "2026-10-03",
-      "end_date": "2026-10-03",
-      "title": "🏡 Estate Downsizing Garage Sale — Rain Or Shine!! Saturday, October 3! 🏡",
-      "details": "",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196407167",
-      "photos": 0,
-      "type": "estate",
-      "confidence": 0.88,
-      "status": "verified",
-      "lat": 30.540178,
-      "lon": -97.860392,
-      "geocode": "source",
-      "external_id": "yss-2502silverspurlnleandertx78641-2026-10-03",
-      "categories": [
-        "estate-sale"
-      ]
-    },
-    {
-      "address": "3218 Port Anne Way, Leander, TX 78641",
-      "dates": "2026-10-03 – 2026-10-03",
-      "date_from": "2026-10-03",
-      "date_to": "2026-10-03",
-      "end_date": "2026-10-03",
-      "title": "Multi Family Garage Sale",
-      "details": "",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196405599",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.88,
-      "status": "verified",
-      "lat": 30.553407,
-      "lon": -97.829338,
-      "geocode": "source",
-      "external_id": "yss-3218portannewayleandertx78641-2026-10-03",
-      "categories": [
-        "garage-sale"
-      ]
-    },
-    {
       "address": "101 River Overlook Rd, Georgetown, TX 78628",
       "dates": "2026-10-03 – 2026-10-04",
       "date_from": "2026-10-03",
@@ -269,24 +137,6 @@
       "details": "",
       "source": "GarageSaleFinder",
       "url": "https://garagesalefinder.com/s/N96wn/1005-haynes-st-san-marcos-tx-78666",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.65,
-      "status": "verified",
-      "lat": 30.2672,
-      "lon": -97.7431,
-      "geocode": "city-center"
-    },
-    {
-      "address": "144 Oak Pointe, New Braunfels, TX 78132",
-      "dates": "Sat Oct 3 – Sat Oct 3",
-      "date_from": "10/03/2026",
-      "date_to": "10/03/2026",
-      "end_date": "2026-10-03",
-      "title": "This is the River Chase community yardsale",
-      "details": "",
-      "source": "GarageSaleFinder",
-      "url": "https://garagesalefinder.com/s/N96Er/144-oak-pointe-new-braunfels-tx-78132",
       "photos": 0,
       "type": "garage",
       "confidence": 0.65,
@@ -371,30 +221,6 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "cl-rainorshine438q6mhffmefvpzm8u2xugt6g"
-    },
-    {
-      "address": "Silver Spur Lane near Osage, Austin, TX",
-      "dates": "2026-10-03 – 2026-10-03",
-      "date_from": "2026-10-03",
-      "date_to": "2026-10-03",
-      "end_date": "2026-10-03",
-      "hours": null,
-      "title": "🏡 ESTATE DOWNSIZING GARAGE SALE — RAIN OR SHINE!! SAT, OCTOBER 3!",
-      "details": "QR Code Link to This Post THE SHOW MUST GO ON! We will have the sale, rain or shine AND we've extended the time just in case the rain lingers in the AM - OPEN UNTIL 2P! :*) Come browse, visit, and find a few treasures! We’re parting with belongings from two different households owned by loved ones that can no longer live alone. 📅 Saturday, October 3 ⏰ 7:00 AM – 2:00 PM &lt;=== EXTENDED THE TIME!!!",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/leander-estate-downsizing-garage-sale/nf4VALMxKdXMWbqsc7o4yn",
-      "photos": 0,
-      "type": "estate",
-      "categories": [
-        "estate-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.54019,
-      "lon": -97.860727,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-izinggaragesalenf4valmxkdxmwbqsc7o4yn"
     },
     {
       "address": "Chestnut near MLK, Austin, TX",
@@ -685,28 +511,6 @@
       "external_id": "cl-slidingbarndoor785jz4d2hbjqwrb57fbcbr"
     },
     {
-      "address": "Austin, TX",
-      "dates": "2026-10-01 – 2026-10-03",
-      "date_from": "2026-10-01",
-      "date_to": "2026-10-03",
-      "end_date": "2026-10-03",
-      "title": "50% OFF 3 DAY 7000 SQ FT BARNDOMINIUM SALE-ART, FURNITURE, INDUSTRIAL",
-      "details": "Estate Sale",
-      "source": "EstateSales.net",
-      "url": "https://www.estatesales.net/TX/Somerset/78069/5046063",
-      "photos": 0,
-      "type": "estate",
-      "categories": [
-        "estate-sale"
-      ],
-      "confidence": 0.65,
-      "status": "verified",
-      "lat": 30.2672,
-      "lon": -97.7431,
-      "geocode": "city-center",
-      "company": null
-    },
-    {
       "address": "438 Pear Tree Ln, Austin, TX 78737",
       "dates": "2026-10-03 – 2026-10-04",
       "date_from": "2026-10-03",
@@ -724,182 +528,6 @@
       "lon": -97.972788,
       "geocode": "source",
       "external_id": "yss-438peartreelnaustintx78737-2026-10-03",
-      "categories": [
-        "garage-sale"
-      ]
-    },
-    {
-      "address": "15413 Brodick Dr, Austin, TX 78717",
-      "dates": "2026-10-03 – 2026-10-03",
-      "date_from": "2026-10-03",
-      "date_to": "2026-10-03",
-      "end_date": "2026-10-03",
-      "title": "Huge Clothing Sample Sale For Hurley And Oakley",
-      "details": "",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196412159",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.88,
-      "status": "verified",
-      "lat": 30.50074,
-      "lon": -97.766391,
-      "geocode": "source",
-      "external_id": "yss-15413brodickdraustintx78717-2026-10-03",
-      "categories": [
-        "garage-sale"
-      ]
-    },
-    {
-      "address": "3102 Pecan Crest Cv, Round Rock, TX 78681",
-      "dates": "2026-10-03 – 2026-10-03",
-      "date_from": "2026-10-03",
-      "date_to": "2026-10-03",
-      "end_date": "2026-10-03",
-      "title": "Neighborhood Sale Behrens Ranch",
-      "details": "",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196413125",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.88,
-      "status": "verified",
-      "lat": 30.532585,
-      "lon": -97.726104,
-      "geocode": "source",
-      "external_id": "yss-3102pecancrestcvroundrocktx78681-2026-10-03",
-      "categories": [
-        "garage-sale"
-      ]
-    },
-    {
-      "address": "2713 Cedar Springs Pl, Round Rock, TX 78681",
-      "dates": "2026-10-03 – 2026-10-03",
-      "date_from": "2026-10-03",
-      "date_to": "2026-10-03",
-      "end_date": "2026-10-03",
-      "title": "Neighborhood Garage Sale",
-      "details": "",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196413093",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.88,
-      "status": "verified",
-      "lat": 30.535813,
-      "lon": -97.724232,
-      "geocode": "source",
-      "external_id": "yss-2713cedarspringsplroundrocktx78681-2026-10-03",
-      "categories": [
-        "garage-sale"
-      ]
-    },
-    {
-      "address": "3113 Golden Oak Cir, Round Rock, TX 78681",
-      "dates": "2026-10-03 – 2026-10-03",
-      "date_from": "2026-10-03",
-      "date_to": "2026-10-03",
-      "end_date": "2026-10-03",
-      "title": "Neighborhood Yard Sale This Saturday",
-      "details": "",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196413115",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.88,
-      "status": "verified",
-      "lat": 30.538461,
-      "lon": -97.726917,
-      "geocode": "source",
-      "external_id": "yss-3113goldenoakcirroundrocktx78681-2026-10-03",
-      "categories": [
-        "garage-sale"
-      ]
-    },
-    {
-      "address": "2973 Agave Loop, Round Rock, TX 78681",
-      "dates": "Sat Oct 3 – Sat Oct 3",
-      "date_from": "10/03/2026",
-      "date_to": "10/03/2026",
-      "end_date": "2026-10-03",
-      "title": "Neighborhood sale",
-      "details": "",
-      "source": "GarageSaleFinder",
-      "url": "https://garagesalefinder.com/s/N90bF/2973-agave-loop-round-rock-tx-78681",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.88,
-      "status": "verified",
-      "lat": 30.539152,
-      "lon": -97.721404,
-      "geocode": "source",
-      "external_id": "yss-2973agavelooproundrocktx78681-2026-10-03",
-      "categories": [
-        "garage-sale"
-      ]
-    },
-    {
-      "address": "3017 Portulaca Dr, Round Rock, TX 78681",
-      "dates": "Sat Oct 3 – Sat Oct 3",
-      "date_from": "10/03/2026",
-      "date_to": "10/03/2026",
-      "end_date": "2026-10-03",
-      "title": "Rain or Shine Neighborhood garage sale!",
-      "details": "",
-      "source": "GarageSaleFinder",
-      "url": "https://garagesalefinder.com/s/N90Zr/3017-portulaca-dr-round-rock-tx-78681",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.88,
-      "status": "verified",
-      "lat": 30.542116,
-      "lon": -97.719808,
-      "geocode": "source",
-      "external_id": "yss-3017portulacadrroundrocktx78681-2026-10-03",
-      "categories": [
-        "garage-sale"
-      ]
-    },
-    {
-      "address": "609 Longhorn Cavern Rd, Leander, TX 78641",
-      "dates": "2026-10-03 – 2026-10-03",
-      "date_from": "2026-10-03",
-      "date_to": "2026-10-03",
-      "end_date": "2026-10-03",
-      "title": "Massive Multiplayer Yard Sale",
-      "details": "",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196412201",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.88,
-      "status": "verified",
-      "lat": 30.586403,
-      "lon": -97.865354,
-      "geocode": "source",
-      "external_id": "yss-609longhorncavernrdleandertx78641-2026-10-03",
-      "categories": [
-        "garage-sale"
-      ]
-    },
-    {
-      "address": "608 Longhorn Cavern Rd, Leander, TX 78641",
-      "dates": "2026-10-03 – 2026-10-03",
-      "date_from": "2026-10-03",
-      "date_to": "2026-10-03",
-      "end_date": "2026-10-03",
-      "title": "Massive Multiplayer Yard Sale For Everyone",
-      "details": "",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196412213",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.88,
-      "status": "verified",
-      "lat": 30.586403,
-      "lon": -97.865354,
-      "geocode": "source",
-      "external_id": "yss-608longhorncavernrdleandertx78641-2026-10-03",
       "categories": [
         "garage-sale"
       ]
@@ -1018,24 +646,6 @@
       ]
     },
     {
-      "address": "13525 Lyndon B Johnson St, Manor, TX 78653",
-      "dates": "Sat Oct 3 – Sat Oct 3",
-      "date_from": "10/03/2026",
-      "date_to": "10/03/2026",
-      "end_date": "2026-10-03",
-      "title": "Neighborhood Garage Sale Barbacoa 3 families",
-      "details": "",
-      "source": "GarageSaleFinder",
-      "url": "https://garagesalefinder.com/s/N90ex/13525-lyndon-b-johnson-st-manor-tx-78653",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.85,
-      "status": "verified",
-      "lat": 30.3,
-      "lon": -97.52,
-      "geocode": "zip-centroid"
-    },
-    {
       "address": "Austin, TX 78734",
       "dates": "2026-10-02 – 2026-10-12",
       "date_from": "2026-10-02",
@@ -1081,24 +691,6 @@
       "categories": [
         "garage-sale"
       ]
-    },
-    {
-      "address": "467 Oak Brook Dr, New Braunfels, TX 78132",
-      "dates": "Sat Oct 3 – Sat Oct 3",
-      "date_from": "10/03/2026",
-      "date_to": "10/03/2026",
-      "end_date": "2026-10-03",
-      "title": "Golden Heart Gifts",
-      "details": "",
-      "source": "GarageSaleFinder",
-      "url": "https://garagesalefinder.com/s/N90QJ/467-oak-brook-dr-new-braunfels-tx-78132",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.65,
-      "status": "verified",
-      "lat": 30.2672,
-      "lon": -97.7431,
-      "geocode": "city-center"
     },
     {
       "address": "3306 Reta Cove, Austin, TX",
@@ -1261,9 +853,9 @@
     "gsalr.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 55,
+  "total_locations": 36,
   "status": "live",
-  "date": "2026-10-03",
-  "last_refresh": "2026-10-03T10:05:35-05:00",
+  "date": "2026-10-04",
+  "last_refresh": "2026-10-04T05:12:26-05:00",
   "permits": []
 }
