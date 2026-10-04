@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-04",
+  "city": "san-antonio",
+  "confidence_floor": 0.70,
+  "pii_stripped": true,
+  "source": "webapp/data/cities/san-antonio.json public[] at main 3eac46fe4fd45453e8691cac692571386c859d76",
+  "emails_used": 0,
+  "gmail": "token_revoked",
+  "facebook": "Hey pack \u2014 Chica just finished sniffing the trails for Sunday.\n\nGmail is still locked, so these are the stops already on the live map. Greater San Antonio only.\n\n\ud83d\udccd Worth the drive\n\u2022 9 to 3, time capsule \u2014 138 Shannon Lee, 78216. https://chicasmap.com/sa?id=yss-138shannonleestsanantoniotx78216-2026-10-03\n\u2022 9 to 4, collectibles and wall art \u2014 1923 Parhaven. https://chicasmap.com/sa?id=cl-garagesale281ntbwei1qakdhothgs5urrga\n\u2022 Castle Hills, Sat and Sun \u2014 503 Antler. https://chicasmap.com/sa?id=yss-503antlerdrsanantoniotx78213-2026-10-03\n\u2022 Inside the garage \u2014 14315 Indian Woods. https://chicasmap.com/sa?id=yss-14315indianwoodssanantoniotx78249-2026-10-03\n\u2022 Moving sale, appliances \u2014 8811 Braun Mesa. https://chicasmap.com/sa?id=cl-movingsalehigh9hueatyfeupn163ktddtps\n\u2022 Airbnb closeout \u2014 11319 Par One. https://chicasmap.com/sa?id=cl-rbnbgaragesalef8hxa3nqp25ybdtpsjqdd5\n\nRedbird Ranch is not today. The official dates on the feed are Saturday 10/3 and Saturday 10/17.\n\nI am not sending you to Bandera, Lytle, Bulverde, New Braunfels, or San Marcos.\n\nOpen the free map: https://justonejewelry.github.io/Chicas-Map/\nNear Me sorts by distance. Routes open in Google Maps, Apple Maps, or Waze.\nIf you know a sale I missed, list it free on the site.\n\n#SanAntonioGarageSales #SATXThrifting #ChicaMap",
+  "nextdoor": "Neighbors \u2014 Sunday map check for San Antonio, Alamo Heights, Helotes, Schertz, and the close-in cities.\n\nNo new email listings this morning. These are already on the free map:\n\n\u2022 138 Shannon Lee \u2014 time capsule, 9 to 3 today\n\u2022 1923 Parhaven \u2014 post says 9 to 4 Saturday and Sunday, collectibles\n\u2022 503 Antler \u2014 Castle Hills, Saturday and Sunday\n\u2022 14315 Indian Woods \u2014 October 3\u20134, inside the garage\n\u2022 8811 Braun Mesa \u2014 moving sale, appliances\n\u2022 11319 Par One \u2014 Airbnb closeout, weekend window\n\nRedbird Ranch is on the map for Saturday 10/3 and Saturday 10/17, not today.\n\nI am not posting Bandera, Lytle, Bulverde, New Braunfels, or San Marcos as San Antonio stops.\n\nMap: https://justonejewelry.github.io/Chicas-Map/\nNear Me, then Google, Apple, or Waze. List a sale if the pack missed your street.",
+  "tiktok": {
+    "caption": "Sunday sniff. Shannon Lee time capsule, 9 to 3. Parhaven is 9 to 4, collectibles. Antler is Castle Hills. Indian Woods is inside. Braun Mesa is the moving sale. Par One is the Airbnb closeout. Redbird is not today. Free map. Near Me.",
+    "tags": ["#SanAntonioEstateSales", "#SATXThrifting", "#SanAntonioGarageSales", "#ChicaMap"],
+    "on_screen": "Shannon Lee \u00b7 Parhaven \u00b7 Antler \u00b7 Indian Woods \u00b7 Braun Mesa \u00b7 Par One"
+  }
+}
