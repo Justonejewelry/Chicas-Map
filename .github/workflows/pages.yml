@@ -65,6 +65,17 @@ jobs:
             echo "custom domain ${{ vars.CUSTOM_DOMAIN }}"
           fi
           node scripts/stamp-pages.mjs _site
+          # Tip-only prune. These files are not referenced by the live map or adventure page.
+          # alamo-atlas-demo.mp4 stays: home-atlas.js links it.
+          find _site -type f \( \
+            -name 'chica-atlas-reel.mp4' -o \
+            -name 'chica-intro.mp4' -o \
+            -name 'ee1f65c66a08901e41638ce959cb3fd1.mp4' -o \
+            -name 'coin-ching-burst.mp4' -o \
+            -name 'leaflet-src-*.js' -o \
+            -name 'index-DY1xcPah.js' \
+          \) -print -delete
+          echo "site bytes $(du -sb _site | cut -f1)"
           ls -la _site
           ls -la _site/es || true
           ls -la _site/.well-known || true
