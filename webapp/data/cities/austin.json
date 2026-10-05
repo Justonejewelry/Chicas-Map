@@ -45,31 +45,6 @@
       "geocode": "city-center"
     },
     {
-      "address": "Georgetown, TX 78633",
-      "dates": "2026-09-29 – 2026-10-04",
-      "date_from": "2026-09-29",
-      "date_to": "2026-10-04",
-      "end_date": "2026-10-04",
-      "title": "Georgetown Estate: Fine Art, Sterling Jewelry, Coins, Quilts & Furniture",
-      "details": "Caring Transitions of West Austin and Georgetown. Online Estate Auction: Featured Colt Revolver, Collectibles, Western Wear, Sterling Jewelry & Antiques Welcome to this extensive online estate auction offering antique militaria, vintage games, handcrafted textiles, fine Western apparel, sterling si...",
-      "source": "EstateSales.org",
-      "url": "https://estatesales.org/estate-sales/tx/georgetown/78633/georgetown-estate-fine-art-sterling-2465557",
-      "photos": 0,
-      "type": "estate",
-      "confidence": 0.65,
-      "status": "verified",
-      "lat": 30.7216604,
-      "lon": -97.7525352,
-      "geocode": "source",
-      "company": "Caring Transitions of West Austin and Georgetown",
-      "in_person": false,
-      "external_id": "eso-2465557",
-      "categories": [
-        "online-auction",
-        "estate-sale"
-      ]
-    },
-    {
       "address": "New Braunfels, TX 78133",
       "dates": "Wed Sep 30 – Wed Oct 7",
       "date_from": "09/30/2026",
@@ -104,28 +79,6 @@
       "lat": 30.2672,
       "lon": -97.7431,
       "geocode": "city-center"
-    },
-    {
-      "address": "101 River Overlook Rd, Georgetown, TX 78628",
-      "dates": "2026-10-03 – 2026-10-04",
-      "date_from": "2026-10-03",
-      "date_to": "2026-10-04",
-      "end_date": "2026-10-04",
-      "title": "Community-Wid Fall Garage Sale",
-      "details": "",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196409069",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.88,
-      "status": "verified",
-      "lat": 30.621089,
-      "lon": -97.707455,
-      "geocode": "source",
-      "external_id": "yss-101riveroverlookrdgeorgetowntx78628-2026-10-03",
-      "categories": [
-        "garage-sale"
-      ]
     },
     {
       "address": "1005 Haynes St, San Marcos, TX 78666",
@@ -223,30 +176,6 @@
       "external_id": "cl-rainorshine438q6mhffmefvpzm8u2xugt6g"
     },
     {
-      "address": "Chestnut near MLK, Austin, TX",
-      "dates": "2026-10-04 – 2026-10-04",
-      "date_from": "2026-10-04",
-      "date_to": "2026-10-04",
-      "end_date": "2026-10-04",
-      "hours": null,
-      "title": "EVERYTHING MUST GO VINTAGE/LUXURY YARD SALE",
-      "details": "QR Code Link to This Post ✨ BIG SUNDAY YARD SALE — EVERYTHING MUST GO! ✨🛍️ Sunday, October 4 ⏰ Come early, stay awhile, and dig for some treasures! We’re clearing things out and there’s A LOT to see — vintage lovers, bargain hunters, collectors, and curious browsers, this one’s for you! 📚 books 🎨Prints / posters / art 📼 VHS tapes 👑vintage designer 👗 Tons of clothing 🖤 Vintage lingerie 🏠 Vintage kn",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/austin-everything-must-go-vintage/vYTuuBhVdUws5UnmxqGSmd",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.280438,
-      "lon": -97.717271,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-gmustgovintagevytuubhvduws5unmxqgsmd"
-    },
-    {
       "address": "Moscow Trail near Parmer, Austin, TX",
       "dates": "2026-10-04 – 2026-10-06",
       "date_from": "2026-10-04",
@@ -293,30 +222,6 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "cl-nyitemsforsaleav3r9abn3gwrvkyo7usmno"
-    },
-    {
-      "address": "Canyon Lake Ln. near Parkside Parkway/Brantley Lake Ln., Austin, TX",
-      "dates": "2026-10-02 – 2026-10-04",
-      "date_from": "2026-10-02",
-      "date_to": "2026-10-04",
-      "end_date": "2026-10-04",
-      "hours": null,
-      "title": "Parkside at Mayfield Ranch Community Garage Sale",
-      "details": "QR Code Link to This Post Parkside at Mayfield Ranch is having a community-wide garage sale. Several surrounding neighborhoods are also having their community-wide garage sales as well. Check out Canyon Lake Lane for lots of toddler and kids clothes, toys, books, and household items.",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/leander-parkside-at-mayfield-ranch/nYXtVoHHitTpinjrixUTQu",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.575512,
-      "lon": -97.771864,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-atmayfieldranchnyxtvohhittpinjrixutqu"
     },
     {
       "address": "105 Canyon View Rd, Austin, TX",
@@ -367,54 +272,6 @@
       "external_id": "cl-ragesalerainor6dvmme3mlthyxym8bcnyfs"
     },
     {
-      "address": "8901 Bluegrass Drive, Austin, TX",
-      "dates": "2026-10-04 – 2026-10-04",
-      "date_from": "2026-10-04",
-      "date_to": "2026-10-04",
-      "end_date": "2026-10-04",
-      "hours": null,
-      "title": "SUN 10/4: Garage Sale—Furniture, Political Memorabilia, Kids, Misc",
-      "details": "QR Code Link to This Post SUNDAY-ONLY GARAGE SALE Sunday, October 4, 2026 8:00 a.m.–1:00 p.m. 8901 Bluegrass Drive Austin, TX 78759 Prominent Point / Great Hills neighborhood RAIN OR SHINE NO EARLY BIRDS Large assortment of household items, collectibles, furniture, sports stuff, children’s items, home fixtures, art, books, and more. POLITICAL AND CAMPAIGN MEMORABILIA - Extensive collection spannin",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/austin-sun-10-garage-salefurniture/oE18mNmGbEBKhybCkcQFps",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.391848,
-      "lon": -97.769495,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-agesalefurnitureoe18mnmgbebkhybckcqfps"
-    },
-    {
-      "address": "6362 FM 1117, Austin, TX",
-      "dates": "2026-10-02 – 2026-10-04",
-      "date_from": "2026-10-02",
-      "date_to": "2026-10-04",
-      "end_date": "2026-10-04",
-      "hours": null,
-      "title": "Sandhills Trade Day ~ RAIN OR SHINE ~ HUGE OUTDOOR MARKET",
-      "details": "QR Code Link to This Post 🚨 DO NOT BLINK or you’ll miss the best Saturday of the month! 🚨 If your weekend plans don’t involve hunting for one-of-a-kind treasures, eating incredible food, and supporting the absolute best small businesses in town, you’re officially doing it wrong. 🤫✨ The October Sandhills Trade Day is happening THIS SATURDAY, and the vendor lineup is insane. Seriously, if you miss t",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/seguin-sandhills-trade-day-rain-or/2aMSkd3ynZAz1RwKiZFDTG",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 29.5613,
-      "lon": -97.9628,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-tradedayrainor2amskd3ynzaz1rwkizfdtg"
-    },
-    {
       "address": "1112 Smith Dr near wood, Austin, TX",
       "dates": "2026-10-04 – 2026-10-06",
       "date_from": "2026-10-04",
@@ -463,30 +320,6 @@
       "external_id": "cl-brushycreekfallx79jc3nuqfsg7kd8xdgvvf"
     },
     {
-      "address": "3116 Kittowa Cove near N/A, Austin, TX",
-      "dates": "2026-10-02 – 2026-10-04",
-      "date_from": "2026-10-02",
-      "date_to": "2026-10-04",
-      "end_date": "2026-10-04",
-      "hours": null,
-      "title": "Westlake River Oaks Neighborhood Garage Sale- Saturday, 10/3 8 am-2 pm",
-      "details": "QR Code Link to This Post Neighborhood Garage Sale: Furniture, Clothes, Toys, Tools &amp; More! Description: Multi-family neighborhood garage sale! Lots of great finds at great prices. What's for sale: High-end furniture in excellent condition Women's clothing and children's clothing (many sizes, plenty of gently worn favorites) Toys, games, and books for all ages Tools and workshop items Househol",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/austin-westlake-river-oaks-neighborhood/pJHFcoNVfwR8bMnRMoe5vm",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.31719,
-      "lon": -97.782192,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-oaksneighborhoodpjhfconvfwr8bmnrmoe5vm"
-    },
-    {
       "address": "3609 E4th st, Austin, TX",
       "dates": "2026-10-04 – 2026-10-06",
       "date_from": "2026-10-04",
@@ -509,46 +342,6 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "cl-slidingbarndoor785jz4d2hbjqwrb57fbcbr"
-    },
-    {
-      "address": "438 Pear Tree Ln, Austin, TX 78737",
-      "dates": "2026-10-03 – 2026-10-04",
-      "date_from": "2026-10-03",
-      "date_to": "2026-10-04",
-      "end_date": "2026-10-04",
-      "title": "Moving Sale! Rain Or Shine!",
-      "details": "",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196411121",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.88,
-      "status": "verified",
-      "lat": 30.158429,
-      "lon": -97.972788,
-      "geocode": "source",
-      "external_id": "yss-438peartreelnaustintx78737-2026-10-03",
-      "categories": [
-        "garage-sale"
-      ]
-    },
-    {
-      "address": "3022 Alster, New Braunfels, TX 78130",
-      "dates": "Sat Oct 3 – Sun Oct 4",
-      "date_from": "10/03/2026",
-      "date_to": "10/04/2026",
-      "end_date": "2026-10-04",
-      "title": "Wasser Ranch Community Sale - 3022 Alster",
-      "details": "",
-      "source": "GarageSaleFinder",
-      "url": "https://garagesalefinder.com/s/N9000/3022-alster-new-braunfels-tx-78130",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.65,
-      "status": "verified",
-      "lat": 30.2672,
-      "lon": -97.7431,
-      "geocode": "city-center"
     },
     {
       "address": "Austin near Lakeline, Austin, TX",
@@ -624,28 +417,6 @@
       "external_id": "cl-leforhurleyandi3re75xpd2ccb1am5gztns"
     },
     {
-      "address": "2506 Weber Ave, Austin, TX 78722",
-      "dates": "2026-10-04 – 2026-10-04",
-      "date_from": "2026-10-04",
-      "date_to": "2026-10-04",
-      "end_date": "2026-10-04",
-      "title": "Designer & Vintage Clothing",
-      "details": "",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196414431",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.88,
-      "status": "verified",
-      "lat": 30.282574,
-      "lon": -97.715516,
-      "geocode": "source",
-      "external_id": "yss-2506weberaveaustintx78722-2026-10-04",
-      "categories": [
-        "garage-sale"
-      ]
-    },
-    {
       "address": "Austin, TX 78734",
       "dates": "2026-10-02 – 2026-10-12",
       "date_from": "2026-10-02",
@@ -668,28 +439,6 @@
       "categories": [
         "online-auction",
         "estate-sale"
-      ]
-    },
-    {
-      "address": "510 Luther Dr, Georgetown, TX 78628",
-      "dates": "2026-10-02 – 2026-10-04",
-      "date_from": "2026-10-02",
-      "date_to": "2026-10-04",
-      "end_date": "2026-10-04",
-      "title": "Community Garage Sales On October 24, 2026 - Vendors Wanted",
-      "details": "",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196413361",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.88,
-      "status": "verified",
-      "lat": 30.616277,
-      "lon": -97.68995,
-      "geocode": "source",
-      "external_id": "yss-510lutherdrgeorgetowntx78628-2026-10-02",
-      "categories": [
-        "garage-sale"
       ]
     },
     {
@@ -911,30 +660,6 @@
       "external_id": "cl-hillgaragesale8wh9qp5ww8zqguaf2bjed3"
     },
     {
-      "address": "3300 Hemlock Avenue, Austin, TX",
-      "dates": "2026-10-03 – 2026-10-04",
-      "date_from": "2026-10-03",
-      "date_to": "2026-10-04",
-      "end_date": "2026-10-04",
-      "hours": null,
-      "title": "SUPER SOMETHING SURPRISE - RAIN PROOF YARD SALE",
-      "details": "QR Code Link to This Post buffet of art+toys+books+collectibles+fun junk&amp; more set up under a covered deck create your own prices and search for treasures Saturday, October3 and Sunday, October 4 10 am until 6pm",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/austin-super-something-surprise-rain/f9kBKf9WzeHTHJFitbs5PQ",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.2875,
-      "lon": -97.71509,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-ingsurpriserainf9kbkf9wzehthjfitbs5pq"
-    },
-    {
       "address": "13401 Caballero Cove near Equestrian Trail, Austin, TX",
       "dates": "2026-10-04 – 2026-10-06",
       "date_from": "2026-10-04",
@@ -957,28 +682,6 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "cl-heridgescofieldci4obofqcgyya4epehw2ut"
-    },
-    {
-      "address": "Austin, TX",
-      "dates": "2026-10-01 – 2026-10-04",
-      "date_from": "2026-10-01",
-      "date_to": "2026-10-04",
-      "end_date": "2026-10-04",
-      "title": "TREF’S TREASURE BOX OF TANTALIZING TRINKETS",
-      "details": "Moved Offsite To Warehouse",
-      "source": "EstateSales.net",
-      "url": "https://www.estatesales.net/TX/Columbus/78934/5090976",
-      "photos": 0,
-      "type": "estate",
-      "categories": [
-        "estate-sale"
-      ],
-      "confidence": 0.65,
-      "status": "verified",
-      "lat": 30.2672,
-      "lon": -97.7431,
-      "geocode": "city-center",
-      "company": null
     }
   ],
   "hot_zones": [
@@ -997,9 +700,9 @@
     "gsalr.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 42,
+  "total_locations": 29,
   "status": "live",
-  "date": "2026-10-04",
-  "last_refresh": "2026-10-04T10:42:37-05:00",
+  "date": "2026-10-05",
+  "last_refresh": "2026-10-05T03:09:11-05:00",
   "permits": []
 }
