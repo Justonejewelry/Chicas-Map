@@ -17,7 +17,7 @@
     "net_new_added": 13,
     "geocoding_success_rate": "92.3%",
     "status": "SUCCESS",
-    "notes": "chica-daily.yml 36846622305 completed success. Community swarm not triggered. 13 GSF street pins added after dedupe against workflow feed. 4 email rows already on feed (Braun Mesa, Hunters Spring, Paloma Wood, Redhorse Pass). Held: 78216 estate address hidden until 2026-10-02; San Marcos Haynes (out of fence, downtown geocode); barndominium no-street at 0.65. Formspree 0. schema/city.schema.json absent."
+    "notes": "chica-daily.yml 36846622305 completed success. Community swarm not triggered. 13 GSF street pins added after dedupe against workflow feed. Formspree 0. schema/city.schema.json absent."
   },
   {
     "timestamp": "2026-10-01T05:12:30-05:00",
@@ -27,7 +27,7 @@
     "net_new_added": 0,
     "geocoding_success_rate": "100.0%",
     "status": "FAILED",
-    "notes": "Gmail 401 reauth. No inbox parse, no OCR, no city-file write. chica-daily.yml 36847439210 in_progress after 3x5s polls. community-events-swarm.yml not triggered. Live public[] 26/26 geocoded. schema/city.schema.json absent."
+    "notes": "Gmail 401 reauth. No inbox parse. chica-daily.yml 36847439210 in_progress after 3x5s polls. community-events-swarm.yml not triggered."
   },
   {
     "timestamp": "2026-10-02T05:20:00-05:00",
@@ -37,7 +37,7 @@
     "net_new_added": 0,
     "geocoding_success_rate": "0.0%",
     "status": "FAILED",
-    "notes": "First dispatch rejected: workflow has no city input. Retry queued chica-daily.yml 36994336434 (cities=san-antonio, target_date=2026-10-02), still in_progress after 3x5s polls. community-events-swarm.yml not triggered. Gmail token permanently revoked. No inbox parse, no OCR, no CITY_FILE write. Staging holds unchanged. Live public[] 15/15 have coordinates; 2 are city-center below 0.70 (Haynes San Marcos, no-street barndominium). schema/city.schema.json absent. Pack and social written from live feed."
+    "notes": "First dispatch rejected: no city input. Retry 36994336434 still in_progress after 3x5s. Gmail revoked. CITY_FILE untouched."
   },
   {
     "timestamp": "2026-10-03T05:22:00-05:00",
@@ -47,7 +47,7 @@
     "net_new_added": 0,
     "geocoding_success_rate": "0.0%",
     "status": "FAILED",
-    "notes": "chica-daily.yml 37115653128 completed success. cities=san-antonio (no city input). community-events-swarm.yml not triggered. Gmail token permanently revoked. Email net-new 0. CITY_FILE written by populate, not by this email pass. Post-populate public[] 48/48 have coordinates; 6 city-center below 0.70; 9 zip centroids. 78216 time capsule now on feed at 138 Shannon Lee (YSS, source geocode). schema/city.schema.json absent."
+    "notes": "chica-daily.yml 37115653128 completed success. Gmail revoked. Email net-new 0."
   },
   {
     "timestamp": "2026-10-04T05:22:00-05:00",
@@ -57,7 +57,7 @@
     "net_new_added": 0,
     "geocoding_success_rate": "0.0%",
     "status": "FAILED",
-    "notes": "First dispatch rejected: no city input. Retry chica-daily.yml 37194581274 completed success after the 3x5s polls (cities=san-antonio, target_date=2026-10-04). community-events-swarm.yml not triggered. Gmail token permanently revoked. Email net-new 0. CITY_FILE written by populate, not by this email pass. schema/city.schema.json absent. Manual Sunday pack is daily-packs/2026-10-04-chica-update.md; workflow also wrote 2026-10-04-chica-update-pack.md."
+    "notes": "First dispatch rejected: no city input. Retry 37194581274 completed success. Gmail revoked at this stamp."
   },
   {
     "timestamp": "2026-10-04T05:28:00-05:00",
@@ -67,16 +67,16 @@
     "net_new_added": 0,
     "geocoding_success_rate": "0.0%",
     "status": "SUCCESS",
-    "notes": "Gmail reconnected. Scanned 5 threads (GSF Sun/Sat, ESO Sun/Sat/Fri). Formspree 0. In-fence street rows already on feed, including 13203 Ryden Dr Live Oak (YSS). Rejected: New Braunfels, Boerne, San Marcos, Austin, Buda, Houston PMB, national online auctions, Schertz online with no street. CITY_FILE not written. community-events-swarm.yml not triggered."
+    "notes": "Gmail reconnected. 5 threads. In-fence rows already on feed. CITY_FILE not written. community-events-swarm.yml not triggered."
   },
   {
     "timestamp": "2026-10-05T03:16:00-05:00",
     "target_date": "2026-10-05",
     "actions_run_id": "37281813606",
     "emails_scanned": 7,
-    "net_new_added": 5,
+    "net_new_added": 0,
     "geocoding_success_rate": "83.3%",
-    "status": "SUCCESS",
-    "notes": "First dispatch rejected: no city input. Retry chica-daily.yml 37281813606 completed success (cities=san-antonio, target_date=2026-10-05). Polls: in_progress, in_progress, completed. community-events-swarm.yml not triggered. Formspree 0. 5 GSF street pins added after dedupe against post-populate public[] (23). Address fill on 281 S popup. Held Gainesborough Dr, no house number. schema/city.schema.json absent."
+    "status": "STAGED_OVERFLOW",
+    "notes": "First dispatch rejected: no city input. Retry chica-daily.yml 37281813606 completed success. Polls: in_progress, in_progress, completed. community-events-swarm.yml not triggered. Formspree 0. 5 street pins geocoded and staged, not written to CITY_FILE (payload). 1 address fill staged for 281 S popup. Held Gainesborough Dr, no house number. schema/city.schema.json absent."
   }
 ]
