@@ -68,5 +68,15 @@
     "geocoding_success_rate": "0.0%",
     "status": "SUCCESS",
     "notes": "Gmail reconnected. Scanned 5 threads (GSF Sun/Sat, ESO Sun/Sat/Fri). Formspree 0. In-fence street rows already on feed, including 13203 Ryden Dr Live Oak (YSS). Rejected: New Braunfels, Boerne, San Marcos, Austin, Buda, Houston PMB, national online auctions, Schertz online with no street. CITY_FILE not written. community-events-swarm.yml not triggered."
+  },
+  {
+    "timestamp": "2026-10-05T03:16:00-05:00",
+    "target_date": "2026-10-05",
+    "actions_run_id": "37281813606",
+    "emails_scanned": 7,
+    "net_new_added": 5,
+    "geocoding_success_rate": "83.3%",
+    "status": "SUCCESS",
+    "notes": "First dispatch rejected: no city input. Retry chica-daily.yml 37281813606 completed success (cities=san-antonio, target_date=2026-10-05). Polls: in_progress, in_progress, completed. community-events-swarm.yml not triggered. Formspree 0. 5 GSF street pins added after dedupe against post-populate public[] (23). Address fill on 281 S popup. Held Gainesborough Dr, no house number. schema/city.schema.json absent."
   }
 ]

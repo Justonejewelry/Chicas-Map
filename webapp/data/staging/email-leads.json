@@ -1,76 +1,46 @@
 {
-  "target_date": "2026-10-01",
+  "target_date": "2026-10-05",
   "city": "san-antonio",
+  "status": "partial_publish",
+  "net_new_published": 5,
+  "published": [
+    "gsf-8115sawyermeadow-2026-10-10",
+    "gsf-9614waspcreek-2026-10-10",
+    "gsf-2740huntersgreen-2026-10-10",
+    "gsf-2523huntersgreen-2026-10-09",
+    "gsf-5610greengrove-2026-10-09"
+  ],
+  "address_fills": [
+    "cl-toniopopupsale46bu3u7mctrhvxdsi193ni"
+  ],
   "held": [
     {
-      "title": "1970s Time Capsule!",
-      "company": "Caring Transitions of San Antonio North",
-      "address": null,
-      "zip": "78216",
+      "title": "Downsizing Garage Sale",
+      "address": "Gainesborough Dr, San Antonio, TX 78230",
       "dates_iso": [
-        "2026-10-03",
-        "2026-10-04"
+        "2026-10-09",
+        "2026-10-10"
       ],
-      "hours": "9:00 am - 3:00 pm",
-      "source": "Email:EstateSales.org",
-      "also_seen": [
-        "Email:GarageSaleFinder"
-      ],
+      "hours": null,
+      "source": "Email:GarageSaleFinder",
       "confidence": 0.75,
-      "lat": 29.539686,
-      "lon": -98.4967585,
-      "geocode_accuracy": "zip_centroid",
-      "external_id": "email-eso-1970s-time-capsule-san-antonio-tx-78216-20261003",
-      "hold": "address_hidden_until_2026-10-02"
-    },
-    {
-      "address": "1005 Haynes St, San Marcos, TX 78666",
-      "dates": "Tue Sep 29 – Mon Oct 5",
-      "date_from": "09/29/2026",
-      "date_to": "10/05/2026",
-      "end_date": "2026-10-05",
-      "title": "Plants, Tools, Furniture",
-      "details": "",
-      "source": "GarageSaleFinder",
-      "url": "https://garagesalefinder.com/s/N96wn/1005-haynes-st-san-marcos-tx-78666",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.65,
-      "status": "verified",
-      "lat": 29.4241,
-      "lon": -98.4936,
-      "geocode": "city-center",
-      "date_start": "2026-09-29",
-      "date_end": "2026-10-05",
-      "date_bucket": "live",
-      "hold": "out_of_fence_and_bad_geocode",
-      "notes": "San Marcos is outside the SA fence. Listed lat/lon is downtown San Antonio, not the address."
-    },
-    {
-      "address": "San Antonio, TX",
-      "dates": "2026-10-01 – 2026-10-03",
-      "date_from": "2026-10-01",
-      "date_to": "2026-10-03",
-      "end_date": "2026-10-03",
-      "title": "3 DAY 7000 SQ FT BARNDOMINIUM SALE-ART, FURNITURE, INDUSTRIAL",
-      "details": "Estate Sale",
-      "source": "EstateSales.net",
-      "url": "https://www.estatesales.net/TX/Somerset/78069/5046063",
-      "photos": 0,
-      "type": "estate",
-      "categories": [
-        "estate-sale"
-      ],
-      "confidence": 0.65,
-      "status": "verified",
-      "lat": 29.4241,
-      "lon": -98.4936,
-      "geocode": "city-center",
-      "company": null,
-      "date_start": "2026-10-01",
-      "date_end": "2026-10-03",
-      "date_bucket": "live",
-      "hold": "below_confidence_floor_no_street"
+      "lat": null,
+      "lon": null,
+      "geocode_accuracy": null,
+      "hold": "no_house_number",
+      "notes": "Exercise equipment, household, clothing, computers mentioned. Not pin-ready."
     }
+  ],
+  "rejected": [
+    "Boerne online estate, bidding ends 10/7",
+    "New Braunfels vintage Christmas online auction",
+    "New Braunfels waterfront online auction",
+    "San Marcos Hawaii Bound online auction",
+    "1005 Haynes St, San Marcos \u2014 already on feed, out of fence, bad downtown geocode",
+    "1533 River Way, Spring Branch",
+    "6801 Beckett Rd, Austin",
+    "Austin 78737 estate",
+    "ESO national online auctions and PMB ship sales",
+    "1970s Time Capsule, 138 Shannon Lee \u2014 ended 2026-10-04, not on today's public[]"
   ]
 }
