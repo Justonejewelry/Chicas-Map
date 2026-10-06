@@ -81,24 +81,6 @@
       "geocode": "city-center"
     },
     {
-      "address": "1005 Haynes St, San Marcos, TX 78666",
-      "dates": "Tue Sep 29 – Mon Oct 5",
-      "date_from": "09/29/2026",
-      "date_to": "10/05/2026",
-      "end_date": "2026-10-05",
-      "title": "Plants, Tools, Furniture",
-      "details": "",
-      "source": "GarageSaleFinder",
-      "url": "https://garagesalefinder.com/s/N96wn/1005-haynes-st-san-marcos-tx-78666",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.65,
-      "status": "verified",
-      "lat": 30.2672,
-      "lon": -97.7431,
-      "geocode": "city-center"
-    },
-    {
       "address": "hidden, Austin, TX 78737",
       "dates": "2026-10-09 – 2026-10-11",
       "date_from": "2026-10-09",
@@ -200,30 +182,6 @@
       "external_id": "cl-daustinguitarsx9gjk6mk7akpbp72ynmgvk"
     },
     {
-      "address": "412 E William Cannon Dr, Austin, TX",
-      "dates": "2026-10-03 – 2026-10-05",
-      "date_from": "2026-10-03",
-      "date_to": "2026-10-05",
-      "end_date": "2026-10-05",
-      "hours": null,
-      "title": "Many items for sale",
-      "details": "QR Code Link to This Post First come first serve! But please contact me by text only, to give me an ETA to come by for purchase. Location is in South Austin, E William Cannon Dr off I-35S. Items Available: - 6-Quart Crock Pot/Slow Cooker - $25 O.B.O. - Ryobi Drill Corded - $25 O.B.O. - Pruners/Loppers/Tree and plant TRIMMERS - $10 SOLD - School/Writing Supplies - $10 - 1.5ft tall laundry basket/ha",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/austin-many-items-for-sale/aV3R9abn3gwRvkyo7usMno",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.193797,
-      "lon": -97.775166,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-nyitemsforsaleav3r9abn3gwrvkyo7usmno"
-    },
-    {
       "address": "105 Canyon View Rd, Austin, TX",
       "dates": "2026-10-04 – 2026-10-06",
       "date_from": "2026-10-04",
@@ -246,30 +204,6 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "cl-artofwolfranchvzunw6on22wwyg2tuvcgog"
-    },
-    {
-      "address": "OLD BLACK COLONY ROAD near FM 1626, Austin, TX",
-      "dates": "2026-10-03 – 2026-10-05",
-      "date_from": "2026-10-03",
-      "date_to": "2026-10-05",
-      "end_date": "2026-10-05",
-      "hours": null,
-      "title": "SUMMER POINTE GARAGE SALE RAIN OR SUNSHINE",
-      "details": "QR Code Link to This Post WEST BUDA!!! RAIN OR SHINE! SUMMER POINTE SUBDIVISION GARAGE SALE FEATURED HOMES AND MORE! 145 SUMMER NIGHT COVE, 417 SUMMER POINTE, 157 SUMMER VISTA DR &amp; 145 SUMMER VISTA DR BUDA TX AND MORE!",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/buda-summer-pointe-garage-sale-rain-or/6dvMME3mLThYXYM8BCNyFs",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.085524,
-      "lon": -97.872789,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-ragesalerainor6dvmme3mlthyxym8bcnyfs"
     },
     {
       "address": "1112 Smith Dr near wood, Austin, TX",
@@ -393,30 +327,6 @@
       "external_id": "cl-communitygarageutwkdbbr6rzrzigtw4trpp"
     },
     {
-      "address": "Brodick Dr near Rob Roy, Austin, TX",
-      "dates": "2026-10-03 – 2026-10-05",
-      "date_from": "2026-10-03",
-      "date_to": "2026-10-05",
-      "end_date": "2026-10-05",
-      "hours": null,
-      "title": "Huge Sample Sale for Hurley and Oakley Clothing",
-      "details": "QR Code Link to This Post Huge Sample Sale for HURLEY and OAKLEY Clothing including T-Shirts for $10 Boardshorts $10 Golf Polos $15 Hoodys $20 Hats $10 Most items are Mens Large or Womens Small All Items New with Tags From 7:30AM to 1PM, Rain or Shine Look for signs on Avery Ranch",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/austin-huge-sample-sale-for-hurley-and/i3Re75xPD2Ccb1aM5gZTns",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.501206,
-      "lon": -97.766004,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-leforhurleyandi3re75xpd2ccb1am5gztns"
-    },
-    {
       "address": "Austin, TX 78734",
       "dates": "2026-10-02 – 2026-10-12",
       "date_from": "2026-10-02",
@@ -464,102 +374,6 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "cl-saleonedayonly35z5gzef2w8qwvurkbmcxm"
-    },
-    {
-      "address": "1511 Brandi Ln Unit C, Austin, TX",
-      "dates": "2026-10-03 – 2026-10-05",
-      "date_from": "2026-10-03",
-      "date_to": "2026-10-05",
-      "end_date": "2026-10-05",
-      "hours": null,
-      "title": "Comic books, graphic novels, manga, music CDs & More",
-      "details": "QR Code Link to This Post Having another sale at our clearance outlet warehouse location - browse in our climate controlled space. Lots of new stuff added since last time. 1000s of comic books, graphic novels, manga/Anime, and (just in) hundreds of music CDs Sat 10/3 9am-11:30am Address: 1511 Brandi Ln Unit C, Round Rock, TX Pricing: $0.50 each - Music CDs (100s just in!) $1-2 each - individual co",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/round-rock-comic-books-graphic-novels/kmb26hGJgni5vvQaR7uCe3",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.516881,
-      "lon": -97.698799,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-ksgraphicnovelskmb26hgjgni5vvqar7uce3"
-    },
-    {
-      "address": "10948 Colonel Winn Loop, Austin, TX",
-      "dates": "2026-10-03 – 2026-10-05",
-      "date_from": "2026-10-03",
-      "date_to": "2026-10-05",
-      "end_date": "2026-10-05",
-      "hours": null,
-      "title": "Community Garage Sale",
-      "details": "QR Code Link to This Post Multiple households. Wide varity of items. Enter from Wayne Riddell Loop either at S. 1st across from Akins HS OR first light west of S. 1st on 1626. Come on down and drive around!",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/austin-community-garage-sale/tCNz946W5VfnfUAeNpcAq2",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.144806,
-      "lon": -97.808414,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-unitygaragesaletcnz946w5vfnfuaenpcaq2"
-    },
-    {
-      "address": "905 Estate dr near the highway from HEB head East, Austin, TX",
-      "dates": "2026-10-03 – 2026-10-05",
-      "date_from": "2026-10-03",
-      "date_to": "2026-10-05",
-      "end_date": "2026-10-05",
-      "hours": null,
-      "title": "GARAGE SALE",
-      "details": "QR Code Link to This Post GARAGE SALE! COME CHECK OUT ALL OUR GREAT HALLOWEEN DECORATIONS, COSTUMES AND TOY COLLECTABLES!!!! COME CHECK US OUT AND MAKE SOME OFFERS, WE'RE WHEELING AND DEALING TODAY!! Prices negotiable OPENS AT 8:00 AM Monster High Dolls and Barbie (exclusively from Mattel Creations) Pokemon Cards and Collectables (1996-2021) Yu Gi OH Cards Naruto Cards and Swords One Piece Cards F",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/hutto-garage-sale/vzSuyywuUy6q4oyJs1bp5p",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.509179,
-      "lon": -97.570361,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-huttogaragesalevzsuyywuuy6q4oyjs1bp5p"
-    },
-    {
-      "address": "9515 Prince William near Westminster Glen Ave., Austin, TX",
-      "dates": "2026-10-03 – 2026-10-05",
-      "date_from": "2026-10-03",
-      "date_to": "2026-10-05",
-      "end_date": "2026-10-05",
-      "hours": null,
-      "title": "Garage Sale Saturday October 3rd",
-      "details": "QR Code Link to This Post 9515 Prince William, 8:00 am-2:00 pm Lots of different items. All are clean and in good used condition. From 8:00 am until 2:00 pm. Oriental decor, dishes, etc. mostly Japanese Doll stuff: • Clothes &amp; sewing patterns, etc. for 18\" dolls &amp; Barbie dolls • Vintage wooden doll high chair • Götz ballerina doll, new in box Sewing buttons, craft patterns, books, etc. LP'",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/austin-garage-sale-saturday-october-3rd/n2sLbRg6BJcjEwYsBGptGD",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.360064,
-      "lon": -97.831793,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-urdayoctober3rdn2slbrg6bjcjewysbgptgd"
     },
     {
       "address": "1202 fm 685, Austin, TX",
@@ -700,9 +514,9 @@
     "gsalr.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 29,
+  "total_locations": 21,
   "status": "live",
-  "date": "2026-10-05",
-  "last_refresh": "2026-10-05T03:09:11-05:00",
+  "date": "2026-10-06",
+  "last_refresh": "2026-10-06T03:10:00-05:00",
   "permits": []
 }
