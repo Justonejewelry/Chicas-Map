@@ -2,7 +2,7 @@
 
 ## 1. CHICA DAILY RUN
 - **Target date:** Tuesday, October 6, 2026
-- **San Antonio local run time:** 2026-10-06T03:10:00-05:00
+- **San Antonio local run time:** 2026-10-06T12:04:43-05:00
 - **Geographic area:** San Antonio & surrounding communities
 - **Sources searched:** 7
 - **Candidates discovered:** 16
@@ -25,7 +25,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-alamo-craft-co-antiques-more/mj6FcRd4ZDr7zwAwc4pwWa
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.556,-98.6094
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.556,-98.6094
-- **Verified at:** 2026-10-06T03:10:00-05:00
+- **Verified at:** 2026-10-06T12:04:43-05:00
 
 ### 2. Estate sale: Tools, Car, Clothes, Furniture and More!
 - **Type:** estate
@@ -37,7 +37,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-estate-sale-tools-car/6C3pS3CtYGCgtHP3jGH7Md
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.3309,-98.5054
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.3309,-98.5054
-- **Verified at:** 2026-10-06T03:10:00-05:00
+- **Verified at:** 2026-10-06T12:04:43-05:00
 
 ### 3. MASSIVE MOVING SALE - High Quality Furniture, Appliances & Decor!
 - **Type:** garage
@@ -49,7 +49,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-massive-moving-sale-high/9HuEatYfEUpN163kTddTPs
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.541176,-98.655939
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.541176,-98.655939
-- **Verified at:** 2026-10-06T03:10:00-05:00
+- **Verified at:** 2026-10-06T12:04:43-05:00
 
 ### 4. Furniture for Sale ( please read post, ty) (Green Spring Valley)
 - **Type:** garage
@@ -61,7 +61,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-furniture-for-sale-please/84LPLEmaFGUzdHuyK6dFdb
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.5855,-98.4071
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5855,-98.4071
-- **Verified at:** 2026-10-06T03:10:00-05:00
+- **Verified at:** 2026-10-06T12:04:43-05:00
 
 ### 5. HUGE SALE (Lytle Tx)
 - **Type:** garage
@@ -73,7 +73,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/lytle-huge-sale/fZTWSaZSQ72eK45TkHH4z1
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.2366,-98.7945
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.2366,-98.7945
-- **Verified at:** 2026-10-06T03:10:00-05:00
+- **Verified at:** 2026-10-06T12:04:43-05:00
 
 ### 6. Fall Community Garage Sale at Redbird Ranch 10/03/2026 8am-3pm
 - **Type:** garage
@@ -85,7 +85,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N90rv/410-hollimon-pkwy-san-antonio-tx-78253
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.437382,-98.80071
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.437382,-98.80071
-- **Verified at:** 2026-10-06T03:10:00-05:00
+- **Verified at:** 2026-10-06T12:04:43-05:00
 
 ### 7. Everything $1 — Redbird Ranch community garage sale
 - **Type:** garage
@@ -97,7 +97,7 @@
 - **Original listing:** https://www.google.com/maps/d/viewer?mid=1jb4Oxv2jY2KXsyXzFdme42iMI4BtAws&usp=sharing
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.443103,-98.803053
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.443103,-98.803053
-- **Verified at:** 2026-10-06T03:10:00-05:00
+- **Verified at:** 2026-10-06T12:04:43-05:00
 
 ### 8. NOW OPEN! The Collective Boutiques (San Antonio)
 - **Type:** garage
@@ -109,7 +109,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-now-open-the-collective/a9UPVs8b9XgmEsUh6iVZ1m
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.5183,-98.503
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5183,-98.503
-- **Verified at:** 2026-10-06T03:10:00-05:00
+- **Verified at:** 2026-10-06T12:04:43-05:00
 
 ### 9. Oakhaven Heights community garage sale (San Antonio)
 - **Type:** garage
@@ -121,7 +121,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-oakhaven-heights-community/qjaiHdapNRmyRYUuDRPdPD
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.597081,-98.462563
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.597081,-98.462563
-- **Verified at:** 2026-10-06T03:10:00-05:00
+- **Verified at:** 2026-10-06T12:04:43-05:00
 
 ### 10. Wasser Ranch Community Yard Sale (New Braunfels)
 - **Type:** garage
@@ -133,19 +133,19 @@
 - **Original listing:** https://www.craigslist.org/view/d/new-braunfels-wasser-ranch-community/22gy1AHAgcAUjeGy7om1bB
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.7229,-98.0742
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.7229,-98.0742
-- **Verified at:** 2026-10-06T03:10:00-05:00
+- **Verified at:** 2026-10-06T12:04:43-05:00
 
 ### 11. Pop up sale 🌻🌻🌻🌻🌻 (San Antonio)
 - **Type:** garage
 - **Date:** 2026-10-06 → 2026-10-08
-- **Address:** South 281 near South 281, San Antonio, TX, San Antonio 
+- **Address:** 24817 US Highway 281 S, San Antonio, TX 78264, San Antonio 
 - **Notes:** QR Code Link to This Post 10-10-26 8-3 Food trucks welcome Vendors 25$ First in many… Come join the fun 🤗🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻 RSVP 210-six4nine-9954 Norma
 - **Confidence:** 96%
 - **Sources:** Craigslist
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-pop-up-sale/46BU3u7MCtRhvXDsi193Ni
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.166,-98.4798
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.166,-98.4798
-- **Verified at:** 2026-10-06T03:10:00-05:00
+- **Verified at:** 2026-10-06T12:04:43-05:00
 
 ### 12. New matters queen size. 100 (San Antonio)
 - **Type:** garage
@@ -157,7 +157,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-new-matters-queen-size-100/7TT67NyUGAkog5jbWVS2iU
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.5145,-98.35
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5145,-98.35
-- **Verified at:** 2026-10-06T03:10:00-05:00
+- **Verified at:** 2026-10-06T12:04:43-05:00
 
 ## 3. CHICA PICKS
 
