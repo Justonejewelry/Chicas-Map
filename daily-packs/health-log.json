@@ -78,5 +78,15 @@
     "geocoding_success_rate": "83.3%",
     "status": "STAGED_OVERFLOW",
     "notes": "First dispatch rejected: no city input. Retry chica-daily.yml 37281813606 completed success. Polls: in_progress, in_progress, completed. community-events-swarm.yml not triggered. Formspree 0. 5 street pins geocoded and staged, not written to CITY_FILE (payload). 1 address fill staged for 281 S popup. Held Gainesborough Dr, no house number. schema/city.schema.json absent."
+  },
+  {
+    "timestamp": "2026-10-06T03:12:00-05:00",
+    "target_date": "2026-10-06",
+    "actions_run_id": "37434235998",
+    "emails_scanned": 7,
+    "net_new_added": 7,
+    "geocoding_success_rate": "80.0%",
+    "status": "SUCCESS",
+    "notes": "First dispatch rejected unexpected input city. Retry chica-daily.yml 37434235998 completed success. community-events-swarm.yml not triggered. Formspree 0. 7 email streets merged after workflow refresh. 1 address fill on 281 S popup. Held 2 incomplete streets. schema/city.schema.json absent."
   }
 ]
