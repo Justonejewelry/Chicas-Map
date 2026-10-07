@@ -1,6 +1,5 @@
-/* Homepage headset: Come hunt → Sales Map, plus Crime Map → Alamo Atlas. SPA-safe. */
+/* Homepage headset: Come hunt → Sales Map. Crime Map stays off the header. SPA-safe. */
 (function () {
-  var CRIME_HREF = "https://chicas-alamo-atlas.grok.me/";
   var SALES_HREF = "/Chicas-Map/map/";
   var CRIME_ID = "chica-crime-map-btn";
 
@@ -9,8 +8,8 @@
   }
 
   function copy() {
-    if (isEs()) return { sales: "Mapa de ventas", crime: "Mapa del crimen" };
-    return { sales: "Sales Map", crime: "Crime Map" };
+    if (isEs()) return { sales: "Mapa de ventas" };
+    return { sales: "Sales Map" };
   }
 
   function inHeadset(el) {
@@ -64,34 +63,21 @@
     el.textContent = label;
   }
 
-  function addCrime(hunt) {
-    if (document.getElementById(CRIME_ID)) return;
-    var parent = hunt.parentNode;
-    if (!parent) return;
-    var a = document.createElement("a");
-    a.id = CRIME_ID;
-    a.href = CRIME_HREF;
-    a.target = "_blank";
-    a.rel = "noopener noreferrer";
-    a.textContent = copy().crime;
-    a.setAttribute("aria-label", copy().crime);
-    a.className = hunt.className || "inline-flex items-center justify-center rounded-full px-3 py-2 text-sm font-semibold";
-    parent.insertBefore(a, hunt.nextSibling);
+  function removeCrime() {
+    var nodes = document.querySelectorAll("#" + CRIME_ID);
+    for (var i = 0; i < nodes.length; i++) {
+      if (nodes[i].parentNode) nodes[i].parentNode.removeChild(nodes[i]);
+    }
   }
 
   function run() {
+    removeCrime();
     var hunt = findHunt();
     if (!hunt) return;
     var c = copy();
     relabel(hunt, c.sales);
     if (hrefOf(hunt).indexOf("/map") !== -1) hunt.setAttribute("href", SALES_HREF);
     hunt.setAttribute("aria-label", c.sales);
-    addCrime(hunt);
-    var crime = document.getElementById(CRIME_ID);
-    if (crime) {
-      crime.setAttribute("href", CRIME_HREF);
-      if (textOf(crime) !== c.crime) crime.textContent = c.crime;
-    }
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", run);

@@ -34,12 +34,11 @@
       "main{padding-top:28px!important}" +
       "main h1{font-weight:650!important;letter-spacing:-.035em!important;line-height:1.05!important}" +
       "main a[data-chica-keep='1']{display:inline-flex!important;min-height:48px;align-items:center;justify-content:center;padding:0 22px!important;border-radius:980px!important;background:#c513af!important;color:#fff!important;text-decoration:none!important;font:600 16px/1 Inter,system-ui,sans-serif!important;letter-spacing:-.015em!important;box-shadow:none!important}" +
-      "#chica-more{position:relative}" +
-      "#chica-more > summary{list-style:none;cursor:pointer;min-height:44px;display:inline-flex;align-items:center;gap:6px;padding:0 14px;border-radius:999px;border:1px solid rgba(255,255,255,.14);background:transparent;color:inherit;font:600 14px/1 Inter,system-ui,sans-serif;letter-spacing:-.01em}" +
-      "#chica-more > summary::-webkit-details-marker{display:none}" +
-      "#chica-more > summary:after{content:'';width:7px;height:7px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg) translateY(-2px);opacity:.55}" +
-      "#chica-more[open] > summary:after{transform:rotate(225deg) translateY(-1px)}" +
-      "#chica-more > div{position:absolute;right:0;top:calc(100% + 8px);z-index:80;min-width:232px;padding:6px;border-radius:14px;background:#1d1d1f;color:#f5f5f7;border:1px solid rgba(255,255,255,.08);box-shadow:0 16px 40px rgba(0,0,0,.32)}" +
+      "header a[data-chica-mark='1']{cursor:pointer;position:relative}" +
+      "header a[data-chica-mark='1'] span{display:none!important}" +
+      "#chica-more{position:absolute;left:12px;top:58px;z-index:80}" +
+      "#chica-more > summary{display:none}" +
+      "#chica-more > div{position:relative;right:auto;top:auto;z-index:80;min-width:232px;padding:6px;border-radius:14px;background:#1d1d1f;color:#f5f5f7;border:1px solid rgba(255,255,255,.08);box-shadow:0 16px 40px rgba(0,0,0,.32)}" +
       "#chica-more a{display:flex;align-items:center;min-height:44px;padding:0 12px;border-radius:10px;color:#f5f5f7;text-decoration:none;font:500 15px/1.2 Inter,system-ui,sans-serif}" +
       "#chica-more a:hover,#chica-more a:focus-visible{background:rgba(255,255,255,.08);outline:none}" +
       "#chica-more a[data-primary='1']{color:#fff;font-weight:650}" +
@@ -47,22 +46,26 @@
       "@media (prefers-reduced-motion:reduce){#chica-more > div{transition:none}}";
   }
 
-  function ensureMore() {
-    if (document.getElementById("chica-more")) return;
+  function brandLink() {
     var header = document.querySelector("header");
-    if (!header) return;
-    var slot = header.querySelector("div.flex.items-center.gap-2") || header;
-    var details = document.createElement("details");
-    details.id = "chica-more";
-    var summary = document.createElement("summary");
-    summary.textContent = es() ? "Más" : "More";
-    var panel = document.createElement("div");
-    var items = [
+    if (!header) return null;
+    var links = header.querySelectorAll("a");
+    for (var i = 0; i < links.length; i++) {
+      var a = links[i];
+      if (a.closest && a.closest("#chica-more")) continue;
+      if (!a.querySelector("img")) continue;
+      var raw = String(a.textContent || "").replace(/\s+/g, " ").trim().toLowerCase();
+      if (raw.indexOf("chicas map") !== -1 || a.getAttribute("data-chica-mark") === "1") return a;
+    }
+    return null;
+  }
+
+  function items() {
+    return [
       [BASE + "/map/", es() ? "Mapa" : "Map"],
       [BASE + "/submit", es() ? "Publicar una venta" : "Add a sale"],
       [BASE + "/claim/", es() ? "Impulsar · $5" : "Boost · $5"],
-      [BASE + "/atlas/", "Atlas"],
-      ["https://chicas-alamo-atlas.grok.me/", es() ? "Mapa del crimen" : "Crime map"],
+      [BASE + "/atlas/", "Alamo Atlas"],
       [BASE + "/facebook", "Facebook"],
       [BASE + "/media", "Reels"],
       [BASE + "/bulletin", es() ? "Boletín" : "Bulletin"],
@@ -70,37 +73,93 @@
       [BASE + "/sponsors", es() ? "Patrocinios" : "Sponsors"],
       [BASE + "/legal", es() ? "Aviso legal" : "Legal"]
     ];
-    items.forEach(function (item, i) {
+  }
+
+  function fill(panel) {
+    var want = items();
+    var links = panel.querySelectorAll("a");
+    if (links.length === want.length) {
+      var same = true;
+      for (var i = 0; i < want.length; i++) {
+        if (links[i].getAttribute("href") !== want[i][0] || links[i].textContent !== want[i][1]) same = false;
+      }
+      if (same) return;
+    }
+    panel.textContent = "";
+    want.forEach(function (item, i) {
       var a = document.createElement("a");
       a.href = item[0];
       a.textContent = item[1];
       if (i === 0) a.setAttribute("data-primary", "1");
-      if (item[0].indexOf("http") === 0) {
-        a.target = "_blank";
-        a.rel = "noopener noreferrer";
-      }
       panel.appendChild(a);
     });
-    details.appendChild(summary);
-    details.appendChild(panel);
-    details.setAttribute("data-chica-keep", "1");
-    slot.insertBefore(details, slot.firstChild);
-    document.addEventListener("click", function (ev) {
-      if (!details.open) return;
-      if (details.contains(ev.target)) return;
-      details.open = false;
+  }
+
+  function ensureMore() {
+    var header = document.querySelector("header");
+    if (!header) return null;
+    var details = document.getElementById("chica-more");
+    if (!details) {
+      details = document.createElement("details");
+      details.id = "chica-more";
+      var summary = document.createElement("summary");
+      summary.setAttribute("aria-hidden", "true");
+      summary.tabIndex = -1;
+      var panel = document.createElement("div");
+      details.appendChild(summary);
+      details.appendChild(panel);
+      details.setAttribute("data-chica-keep", "1");
+      header.appendChild(details);
+      document.addEventListener("click", function (ev) {
+        if (!details.open) return;
+        if (details.contains(ev.target)) return;
+        if (ev.target && ev.target.closest && ev.target.closest("[data-chica-mark='1']")) return;
+        details.open = false;
+        var mark = brandLink();
+        if (mark) mark.setAttribute("aria-expanded", "false");
+      });
+    }
+    var panel = details.querySelector("div");
+    if (panel) fill(panel);
+    return details;
+  }
+
+  function bindMark(details) {
+    var brand = brandLink();
+    if (!brand || !details) return;
+    brand.setAttribute("data-chica-keep", "1");
+    brand.setAttribute("data-chica-mark", "1");
+    brand.setAttribute("aria-haspopup", "menu");
+    brand.setAttribute("aria-expanded", details.open ? "true" : "false");
+    brand.setAttribute("aria-label", es() ? "Menú" : "Menu");
+    var span = brand.querySelector("span");
+    if (span) hide(span);
+    if (brand.getAttribute("data-chica-menu") === "1") return;
+    brand.setAttribute("data-chica-menu", "1");
+    brand.addEventListener("click", function (ev) {
+      ev.preventDefault();
+      ev.stopPropagation();
+      details.open = !details.open;
+      brand.setAttribute("aria-expanded", details.open ? "true" : "false");
     });
   }
 
   function foldHeader() {
     var header = document.querySelector("header");
     if (!header) return;
+    var crime = document.getElementById("chica-crime-map-btn");
+    if (crime) hide(crime);
     Array.from(header.querySelectorAll("a, button")).forEach(function (el) {
       if (el.closest && el.closest("#chica-more")) return;
+      if (el.getAttribute("data-chica-mark") === "1") return;
       var t = text(el).toLowerCase();
       if (!t) return;
       if (t === "en" || t === "es" || t.indexOf("theme") !== -1 || t.indexOf("tema") !== -1) return;
-      if (t === "chicas map") return;
+      if (t === "chicas map") {
+        var span = el.querySelector("span");
+        if (span) hide(span);
+        return;
+      }
       hide(el);
     });
   }
@@ -159,7 +218,8 @@
   function run() {
     if (!home()) return;
     css();
-    ensureMore();
+    var details = ensureMore();
+    bindMark(details);
     foldHeader();
     foldBody();
     quietChrome();

@@ -24,7 +24,7 @@
         title: "Alamo Atlas",
         body: "Despacho SAPD en vivo y reportes de delitos por vecindario, con datos publicos de la ciudad. La misma manada. Otro trabajo. No es el 911.",
         cta: "Abrir Atlas",
-        nav: "Atlas",
+        nav: "Alamo Atlas",
       };
     }
     return {
@@ -32,7 +32,7 @@
       title: "Alamo Atlas",
       body: "Live SAPD on-scene calls and neighborhood offense reports from public city data. Same pack. Different job. Not 911.",
       cta: "Open Atlas",
-      nav: "Atlas",
+      nav: "Alamo Atlas",
     };
   }
 
