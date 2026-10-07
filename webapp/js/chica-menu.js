@@ -131,8 +131,12 @@
   }
 
   function brandLink() {
-    var header = document.querySelector("header");
-    if (!header || header.id === "chica-site-bar") return null;
+    var headers = document.querySelectorAll("header");
+    var header = null;
+    for (var h = 0; h < headers.length; h++) {
+      if (headers[h].id !== "chica-site-bar") { header = headers[h]; break; }
+    }
+    if (!header) return null;
     var links = header.querySelectorAll("a");
     for (var i = 0; i < links.length; i++) {
       var a = links[i];
@@ -235,7 +239,7 @@
       hideHeaderNoise();
       var bar = document.getElementById("chica-site-bar");
       if (bar && bar.parentNode) bar.parentNode.removeChild(bar);
-      var header = document.querySelector("header");
+      var header = brand.closest("header");
       if (header && details.parentNode !== header) header.appendChild(details);
       return;
     }
