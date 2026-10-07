@@ -218,8 +218,6 @@
   function run() {
     if (!home()) return;
     css();
-    var details = ensureMore();
-    bindMark(details);
     foldHeader();
     foldBody();
     quietChrome();
