@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-07",
+  "city": "san-antonio",
+  "confidence_floor": 0.7,
+  "pii_stripped": true,
+  "source": "webapp/data/cities/san-antonio.json after 2026-10-07 email pass",
+  "emails_used": 3,
+  "net_new": 11,
+  "gmail": "connected",
+  "facebook": "Hey pack \u2014 Chica sniffed Wednesday mail.\n\nThese streets are for Friday and the weekend. Nothing invented.\n\n\ud83d\udccd Next weekend\n\u2022 Oak Meadow, up to 30 homes, Fri\u2013Sat \u2014 2523 Hunters Green. https://chicasmap.com/sa?id=gsf-2523huntersgreen-2026-10-09\n\u2022 Cross Creek, about 18 houses, Sat\u2013Sun \u2014 8115 Sawyer Meadow. https://chicasmap.com/sa?id=gsf-8115sawyermeadow-2026-10-10\n\u2022 Helotes Crossing, Sat 8\u20132 \u2014 9614 Wasp Creek. https://chicasmap.com/sa?id=gsf-9614waspcreek-2026-10-10\n\u2022 Church rummage, jewelry, bag sale at 1 \u2014 2740 Hunters Green. https://chicasmap.com/sa?id=gsf-2740huntersgreen-2026-10-10\n\u2022 Antique furniture, Sat\u2013Sun \u2014 16203 Canyon Shadow. https://chicasmap.com/sa?id=gsf-16203canyonshadow-2026-10-10\n\u2022 Moving sale \u2014 3830 Maiden Way, Converse. https://chicasmap.com/sa?id=gsf-3830maidenway-2026-10-10\n\u2022 Lions Field lot sale \u2014 2809 Broadway. https://chicasmap.com/sa?id=gsf-2809broadway-2026-10-10\n\u2022 Clothes and kitchen \u2014 5610 Green Grove, Fri\u2013Sat. https://chicasmap.com/sa?id=gsf-5610greengrove-2026-10-09\n\n281 S popup is already on the map through Friday. I did not move its dates.\n\nI am not sending you to Boerne, New Braunfels, San Marcos, Spring Branch, Austin, or Buda.\n\nOpen the free map: https://justonejewelry.github.io/Chicas-Map/\nNear Me sorts by distance. Routes open in Google Maps, Apple Maps, or Waze.\nIf you know a sale I missed, list it free on the site.\n\n#SanAntonioGarageSales #SATXThrifting #ChicaMap",
+  "nextdoor": "Neighbors \u2014 Wednesday map check for San Antonio, Helotes, and Converse.\n\nEmail leads came in. Weekend streets with a house number:\n\n\u2022 2523 Hunters Green \u2014 Oak Meadow, up to 30 homes, Friday and Saturday\n\u2022 2740 Hunters Green \u2014 church rummage Saturday, bag sale from 1, some jewelry\n\u2022 8115 Sawyer Meadow \u2014 Cross Creek, about 18 households, Saturday and Sunday\n\u2022 9614 Wasp Creek, Helotes \u2014 Saturday 8 to 2\n\u2022 16203 Canyon Shadow \u2014 moving sale, antique furniture, Saturday and Sunday\n\u2022 3830 Maiden Way, Converse \u2014 moving sale Saturday\n\u2022 2809 Broadway \u2014 Lions Field parking lot sale Saturday\n\u2022 5610 Green Grove \u2014 Friday and Saturday, clothes and kitchen\n\n281 S popup stays on the Craigslist dates already on the map. I am not posting a phone number.\n\nI am not posting Boerne, New Braunfels, San Marcos, Spring Branch, Austin, or Buda as San Antonio stops.\n\nMap: https://justonejewelry.github.io/Chicas-Map/\nNear Me, then Google, Apple, or Waze. List a sale if the pack missed your street.",
+  "tiktok": {
+    "caption": "Wednesday sniff. New trails are next weekend. Oak Meadow, up to 30 homes. Cross Creek, about 18 houses. Helotes Crossing, Saturday 8 to 2. Church rummage at Hunters Green, bag sale at 1. Antique furniture on Canyon Shadow. Maiden Way moving sale in Converse. Lions Field lot on Broadway. Green Grove Friday and Saturday. Free map. Near Me.",
+    "tags": [
+      "#SanAntonioEstateSales",
+      "#SATXThrifting",
+      "#SanAntonioGarageSales",
+      "#ChicaMap"
+    ],
+    "on_screen": "Oak Meadow \u00b7 Cross Creek \u00b7 Wasp Creek \u00b7 Hunters Green \u00b7 Canyon Shadow \u00b7 Maiden Way \u00b7 Broadway \u00b7 Green Grove"
+  }
+}

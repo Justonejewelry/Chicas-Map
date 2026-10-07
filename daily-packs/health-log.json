@@ -88,5 +88,15 @@
     "geocoding_success_rate": "80.0%",
     "status": "SUCCESS",
     "notes": "First dispatch rejected unexpected input city. Retry chica-daily.yml 37434235998 completed success. community-events-swarm.yml not triggered. Formspree 0. 7 email streets merged after workflow refresh. 1 address fill on 281 S popup. Held 2 incomplete streets. schema/city.schema.json absent."
+  },
+  {
+    "timestamp": "2026-10-07T03:20:00-05:00",
+    "target_date": "2026-10-07",
+    "actions_run_id": "37592460051",
+    "emails_scanned": 3,
+    "net_new_added": 11,
+    "geocoding_success_rate": "84.6%",
+    "status": "SUCCESS",
+    "notes": "chica-daily.yml 37592460051 completed success. Polls: queued, in_progress, completed. community-events-swarm.yml not triggered. Formspree 0. 11 Census-rooftop streets merged onto post-populate feed (12 public -> 23). 2 incomplete streets staged. 281 S popup dates not overwritten. schema/city.schema.json absent."
   }
 ]
