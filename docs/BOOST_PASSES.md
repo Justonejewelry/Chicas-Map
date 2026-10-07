@@ -1,12 +1,14 @@
-# Boost pass tracking (6 months)
+# Boost pin ($5)
 
 ## Product rules
 
-- **Price:** $9 one-time (Square Payment Link)
-- **Duration:** 6 calendar months from **payment** date
-- **Scope:** All **approved** listings from the same seller (`contact_key`) while the pass is active
-- **Activation:** Payment completed **and** listing approved (never payment alone)
-- **Processor:** Square only. Do not add Stripe.
+- **Price:** $5 one-time. Square link `https://square.link/u/qjunxHoo`
+- **What it is:** Lights the pin for the sale weekend. Listing the sale stays free.
+- **Map control:** lower right, `Boost · $5`, opens `/claim/`
+- **Activation:** Square payment completed **and** listing approved. Payment alone does not publish a pin.
+- **Processor:** Square only.
+
+The old $9 / 6-month pass is retired. Do not revive it.
 
 ## Source of truth
 
@@ -17,71 +19,31 @@ This is **not** the public map feed. Public listings only expose:
 ```json
 {
   "boost": true,
-  "boost_until": "2027-02-13"
+  "boost_until": "2026-10-11"
 }
 ```
 
 ## How a pass is recorded
 
-### A) Automatic (preferred)
-
-1. Deploy Square webhook worker (`docs/SQUARE_WEBHOOKS.md`).
-2. Worker verifies signature → on ~$9 COMPLETED payment fires GitHub `repository_dispatch`:
-   - `event_type`: `boost_paid`
-   - `client_payload`: payment summary (payment_id, amount, optional buyer_email)
+1. Square webhook worker verifies the signature.
+2. On a COMPLETED payment within 50 cents of $5, it fires `repository_dispatch` `boost_paid`.
 3. Workflow **Boost pass registry** upserts `ops/boost-passes.json`.
+4. A dispatch that is not about $5 is rejected.
 
-If Square does not send buyer email, the row is created with `status: pending_contact`. You edit the row (or re-run the workflow) with the email/phone from the review form.
-
-A `boost_paid` dispatch whose amount is not within 50 cents of $9 is rejected. Missing amount on a dispatch is rejected. Manual `add` can still record a pass.
-
-### B) Manual
-
-GitHub → Actions → **Boost pass registry** → Run workflow:
-
-| Input | Example |
-|-------|---------|
-| action | `add` |
-| contact_key | `seller@email.com` or phone |
-| payment_id | Square payment id |
-| paid_at | `2026-08-13` (optional; defaults to today) |
-| display_name | optional |
-
-`boost_until` is computed as paid_at + 6 months.
-
-### C) Mark refunded / expired
-
-Run workflow with action `set_status`, pass `payment_id` + status `refunded` or `expired`.
+If Square does not send buyer email, the row is `pending_contact`. Attach the email from the claim form before lighting the pin.
 
 ## Approve checklist
 
-When publishing a sale from a Boost buyer:
-
 1. Open `ops/boost-passes.json`.
-2. Find pass where `contact_key` matches submitter email/phone (normalized).
-3. Confirm `status` is `active` and today’s date ≤ `boost_until`.
-4. On the **published** sale record set:
-   - `boost: true`
-   - `boost_until: "<from registry>"`
-5. If no match → free listing only (or ask them to pay / fix contact).
-
-Normalization used by the workflow:
-
-- email: lowercase, trim
-- phone: digits only (optional leading country code kept as digits)
-
-## Expiry
-
-No cron required for correctness: map logic should treat boost as active only if:
-
-```text
-boost === true && boost_until >= today
-```
-
-Optionally run workflow action `expire_stale` to flip old rows to `status: expired` for cleaner ops views.
+2. Match `contact_key` to the submitter email or phone.
+3. Confirm `status` is `active` and today ≤ `boost_until`.
+4. On the approved sale set `boost: true` and `boost_until`.
+5. No match → free listing only.
 
 ## Related
 
-- Payment Link: `https://square.link/u/xiJuZ66C` (`webapp/js/chica-config.js` → `BOOST_PAYMENT_URL`)
-- Webhook worker: `workers/square-boost-webhook/`
+- Claim page: `webapp/claim/`
+- Config: `webapp/js/chica-config.js` → `PIN_CLAIM_PRICE_USD` / `PIN_CLAIM_PAYMENT_URL`
+- Map button: `webapp/js/map-cta.js`
+- Worker: `workers/square-boost-webhook/`
 - Square setup: `docs/SQUARE_WEBHOOKS.md`

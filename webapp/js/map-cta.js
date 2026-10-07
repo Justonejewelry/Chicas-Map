@@ -1,10 +1,10 @@
-/* Bottom-right CTA: Chica face + Boost my Garage Sale. Uses hosted logo — never a broken "?". */
+/* Bottom-right CTA: Chica face + $5 boost. Opens the claim page, not the free promo. */
 (function () {
   var p = location.pathname || "";
   if (!(/\/map\/?$/.test(p) || p.indexOf("/map/") !== -1 || /map\.html$/.test(p))) return;
   var LOGO = "/Chicas-Map/images/chica-logo.png";
   var HERO = "/Chicas-Map/images/chica-hero.jpg";
-  var HREF = "/Chicas-Map/boost/";
+  var HREF = "/Chicas-Map/claim/";
 
   function css() {
     if (document.getElementById("chica-cta-pop")) return;
@@ -37,13 +37,13 @@
     }
     a.setAttribute("href", HREF);
     a.setAttribute("data-cta", "boost");
-    a.setAttribute("aria-label", "Boost my Garage Sale");
-    a.title = "Boost my Garage Sale";
-    if (a.getAttribute("data-painted") !== "11") {
-      a.setAttribute("data-painted", "11");
+    a.setAttribute("aria-label", "Boost my garage sale, $5");
+    a.title = "Boost my garage sale · $5";
+    if (a.getAttribute("data-painted") !== "12") {
+      a.setAttribute("data-painted", "12");
       a.innerHTML =
         '<img alt="Chica" width="64" height="66" src="' + LOGO + '">' +
-        '<span class="chica-cta-label">Boost my Garage Sale</span>';
+        '<span class="chica-cta-label">Boost · $5</span>';
       var img = a.querySelector("img");
       img.onerror = function () {
         if (img.getAttribute("src") !== HERO) img.src = HERO;
