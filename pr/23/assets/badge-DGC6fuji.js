@@ -1,0 +1,1 @@
+import{c as e,g as t}from"./index-BTvXtKNQ.js";var n=t();function r({className:t,...r}){return(0,n.jsx)(`span`,{className:e(`inline-flex items-center gap-2 rounded-full bg-pine-soft px-3.5 py-1.5`,`text-xs font-bold tracking-[0.1em] text-pine-mid uppercase`,`ring-1 ring-pine/30`,t),...r})}export{r as t};

@@ -1,0 +1,64 @@
+{
+  "generated_at": "2026-10-07T12:42:53-05:00",
+  "overall": "critical",
+  "primary_failures": [
+    "estatesales_org",
+    "yardsalesearch",
+    "craigslist"
+  ],
+  "sources": [
+    {
+      "source": "garagesalefinder",
+      "status": "missing",
+      "detail": "no log file",
+      "primary": false
+    },
+    {
+      "source": "permits",
+      "status": "missing",
+      "detail": "no log file",
+      "primary": false
+    },
+    {
+      "source": "estatesales_org",
+      "status": "missing",
+      "detail": "no log file",
+      "primary": true
+    },
+    {
+      "source": "yardsalesearch",
+      "status": "missing",
+      "detail": "no log file",
+      "primary": true
+    },
+    {
+      "source": "gsalr",
+      "status": "missing",
+      "detail": "no log file",
+      "primary": false
+    },
+    {
+      "source": "craigslist",
+      "status": "missing",
+      "detail": "no log file",
+      "primary": true
+    },
+    {
+      "source": "estatesales_net",
+      "status": "missing",
+      "detail": "no log file",
+      "primary": false
+    }
+  ],
+  "json_source_counts": {
+    "craigslist": 39,
+    "garagesalefinder": 24,
+    "estatesales.org": 5,
+    "yardsalesearch": 24,
+    "estatesales.net": 2,
+    "rbr official my maps": 2,
+    "email:garagesalefinder": 7,
+    "aggregators": 2
+  },
+  "notes": "Primary free sources: estatesales_org, yardsalesearch, craigslist. Secondary: gsalr, garagesalefinder, permits, estatesales_net. Scoring: 0 primary problems=healthy, 1=degraded, 2+=critical. merge added=0 is treated as ok (dedupe), not zero. Soft-fail workflow continues; this report only alerts. Apify removed 2026-08-22."
+}

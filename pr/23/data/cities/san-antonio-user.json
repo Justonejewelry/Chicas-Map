@@ -1,0 +1,73 @@
+{
+  "updated": "2026-10-04",
+  "edition": "Oct 4 \u2014 expired overlay cut. Two Redbird 10/17 anchors kept.",
+  "city": "san-antonio",
+  "date": "2026-10-04",
+  "last_refresh": "2026-10-04T06:24:00-05:00",
+  "status": "live",
+  "sentinel": "PASS",
+  "note": "Operator overlay. 118 Saturday pins cut 2026-10-04. Kept Redbird community anchor and 15358 Brown Violetear through Sat 10/17.",
+  "total_locations": 2,
+  "public": [
+    {
+      "address": "410 Hollimon Pkwy, Redbird Ranch, San Antonio, TX 78253",
+      "dates": "Sat Oct 3, 8:00 am \u2013 3:00 pm \u00b7 Sat Oct 17 added",
+      "date_from": "10/03/2026",
+      "date_to": "2026-10-17",
+      "end_date": "2026-10-17",
+      "title": "Fall Community Garage Sale at Redbird Ranch 10/03/2026 8am-3pm",
+      "details": "Start of the Redbird Ranch fall community sale. Official My Maps has 118 participating homes, pinned separately. Hours 8am\u20133pm Sat Oct 3. Yard Sales post also added Sat Oct 17. 15358 Brown Violetear: everything $1. Map: https://www.google.com/maps/d/viewer?mid=1jb4Oxv2jY2KXsyXzFdme42iMI4BtAws&usp=sharing",
+      "source": "GarageSaleFinder",
+      "url": "https://garagesalefinder.com/s/N90rv/410-hollimon-pkwy-san-antonio-tx-78253",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.93,
+      "status": "verified",
+      "lat": 29.437382,
+      "lon": -98.80071,
+      "geocode": "official-mymaps-centroid",
+      "date_start": "2026-10-03",
+      "date_end": "2026-10-17",
+      "date_bucket": "live",
+      "hours": "8:00 am \u2013 3:00 pm",
+      "external_id": "rbr-fall-2026-community",
+      "categories": [
+        "garage-sale",
+        "community",
+        "redbird-ranch"
+      ]
+    },
+    {
+      "address": "15358 Brown Violetear, San Antonio, TX 78253",
+      "dates": "Sat Oct 3, 8:00 am \u2013 3:00 pm \u00b7 Sat Oct 17 added \u00b7 everything $1",
+      "hours": "8:00 am \u2013 3:00 pm",
+      "date_from": "2026-10-03",
+      "date_to": "2026-10-17",
+      "end_date": "2026-10-17",
+      "title": "Everything $1 \u2014 Redbird Ranch community garage sale",
+      "details": "Everything is $1. Participating home on the official Redbird Ranch map. San Antonio Yard Sales post also added Sat Oct 17 as a second date.",
+      "source": "RBR official My Maps",
+      "url": "https://www.google.com/maps/d/viewer?mid=1jb4Oxv2jY2KXsyXzFdme42iMI4BtAws&usp=sharing",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale",
+        "community",
+        "redbird-ranch",
+        "dollar"
+      ],
+      "confidence": 0.92,
+      "status": "verified",
+      "lat": 29.443103,
+      "lon": -98.803053,
+      "geocode": "official-mymaps",
+      "date_start": "2026-10-03",
+      "date_end": "2026-10-17",
+      "date_bucket": "live",
+      "in_person": true,
+      "external_id": "rbr-2026-10-03-15358-brown-violetear",
+      "neighborhood": "Redbird Ranch",
+      "zip": "78253"
+    }
+  ]
+}

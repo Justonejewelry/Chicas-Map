@@ -1,0 +1,887 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.490121,
+          29.426157
+        ]
+      },
+      "properties": {
+        "name": "Houston Street Garage",
+        "address": "111 College St, San Antonio, TX 78205",
+        "type": "garage",
+        "operator": "City of San Antonio",
+        "clearance": "6'8\"",
+        "hours": "Open 24/7",
+        "rates": "$2 / 30 min · $3 first hour",
+        "notes": "Credit cards only. EV charging. 925 spaces.",
+        "free_periods": "Downtown Thursday 5pm–2am at city facilities (check posted signs).",
+        "source": "City of SA Downtown Parking",
+        "hourly": "$2 / 30 min · $3 first hour",
+        "rate_lines": [
+          "0–30 min · $2 (Mon–Fri until noon)",
+          "30–60 min · $3 (Mon–Fri until noon)",
+          "1–1.5 hr · $5 (Mon–Fri until noon)",
+          "1.5–2 hr · $7 (Mon–Fri until noon)",
+          "2–2.5 hr · $8 (Mon–Fri until noon)",
+          "2.5–3 hr · $9 (Mon–Fri until noon)",
+          "Lost ticket · $18",
+          "Flat · $10 (Fri noon–Sunday)",
+          "Event · $15"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.492837,
+          29.431352
+        ]
+      },
+      "properties": {
+        "name": "Central Library Garage",
+        "address": "600 Soledad, San Antonio, TX 78205",
+        "type": "garage",
+        "operator": "City of San Antonio",
+        "clearance": "6'6\"",
+        "hours": "Open Mon thru Sat 5am - 11pm. Closed on Sundays",
+        "rates": "$5 flat",
+        "notes": "Credit cards only. EV charging.",
+        "free_periods": "Downtown Thursday 5pm–2am at city facilities (check posted signs).",
+        "source": "City of SA Downtown Parking",
+        "hourly": "$5 flat",
+        "rate_lines": [
+          "Flat · $5 (library patron validation)",
+          "Lost ticket · $12"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.490839,
+          29.427667
+        ]
+      },
+      "properties": {
+        "name": "St. Mary's Garage",
+        "address": "205 E Travis St, San Antonio, TX 78205",
+        "type": "garage",
+        "operator": "City of San Antonio",
+        "clearance": "8'2\"",
+        "hours": "Open 24/7",
+        "rates": "$10 weekday flat",
+        "notes": "Credit cards only. EV charging.",
+        "free_periods": "Downtown Thursday 5pm–2am at city facilities (check posted signs).",
+        "source": "City of SA Downtown Parking",
+        "hourly": "$10 weekday flat",
+        "rate_lines": [
+          "Weekday flat · $10 (Mon 5am–Fri 5pm)",
+          "Weeknight flat · $5 (Mon–Thu after 5pm)",
+          "Weekend flat · $5 (Fri 5pm–Mon 5am)",
+          "Event · $15",
+          "Lost ticket · $18"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.484087,
+          29.422492
+        ]
+      },
+      "properties": {
+        "name": "Convention Center Garage",
+        "address": "41 S Bowie St, San Antonio, TX 78205 Garage closed to the public Aug. 23rd - Aug. 28th.",
+        "type": "garage",
+        "operator": "City of San Antonio",
+        "clearance": "6'8\"",
+        "hours": "Open 24/7",
+        "rates": "$10 flat",
+        "notes": "Credit cards only. EV charging.",
+        "free_periods": "Downtown Thursday 5pm–2am at city facilities (check posted signs).",
+        "source": "City of SA Downtown Parking",
+        "hourly": "$10 flat",
+        "rate_lines": [
+          "Flat · $10",
+          "Event · $15",
+          "Lost ticket · $18"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.494202,
+          29.425853
+        ]
+      },
+      "properties": {
+        "name": "City Tower Garage",
+        "address": "60 N Flores St, San Antonio, TX 78205",
+        "type": "garage",
+        "operator": "City of San Antonio",
+        "clearance": "6'6\"",
+        "hours": "Open 24/7",
+        "rates": "$2 / 30 min · $3 first hour",
+        "notes": "Credit cards only. Free Parking on Sundays from 7 AM to 11:59 PM",
+        "free_periods": "Free Parking $0 (Parking is Free on Sundays 7:00 AM - 11:59 PM)",
+        "source": "City of SA Downtown Parking",
+        "hourly": "$2 / 30 min · $3 first hour",
+        "rate_lines": [
+          "0–30 min · $2 (Mon–Sat)",
+          "30–60 min · $3 (Mon–Sat)",
+          "1–1.5 hr · $5 (Mon–Sat)",
+          "1.5–2 hr · $7 (Mon–Sat)",
+          "2–2.5 hr · $8 (Mon–Sat)",
+          "2.5–3 hr · $9 (Mon–Sat)",
+          "3.5–24 hr · $10 (Mon–Sat)",
+          "Lost ticket · $18",
+          "Flat · $10",
+          "Event · $15",
+          "Sunday free · Free (7am–midnight)"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.488978,
+          29.418268
+        ]
+      },
+      "properties": {
+        "name": "Martinez Parking Lot",
+        "address": "S Alamo & Martinez Street and at Cesar Chávez and S Presa St.",
+        "type": "lot",
+        "operator": "City of San Antonio",
+        "rates": "$2 / 30 min · $4 first hour",
+        "notes": "Credit cards only. EV charging. Hours of Operation: Monday 12:00 AM - Sunday 11:59 PM",
+        "free_periods": "Downtown Thursday 5pm–2am at city facilities (check posted signs).",
+        "source": "City of SA Downtown Parking",
+        "hourly": "$2 / 30 min · $4 first hour",
+        "rate_lines": [
+          "0–30 min · $2",
+          "30–60 min · $4",
+          "1–2 hr · $6",
+          "2–3 hr · $8",
+          "3–4 hr · $10",
+          "4–5 hr · $12",
+          "5+ hr · $15",
+          "Event · $15"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.487718,
+          29.420305
+        ]
+      },
+      "properties": {
+        "name": "Alamo Lot",
+        "address": "418 S Alamo, San Antonio, TX 78205",
+        "type": "lot",
+        "operator": "City of San Antonio",
+        "rates": "$2 / 30 min · $4 first hour",
+        "notes": "Credit cards only. Hours of Operation: Monday 12:00 AM - Sunday 11:59 PM",
+        "free_periods": "Downtown Thursday 5pm–2am at city facilities (check posted signs).",
+        "source": "City of SA Downtown Parking",
+        "hourly": "$2 / 30 min · $4 first hour",
+        "rate_lines": [
+          "0–30 min · $2",
+          "30–60 min · $4",
+          "1–2 hr · $6",
+          "2–3 hr · $8",
+          "3–4 hr · $10",
+          "4–5 hr · $12",
+          "5+ hr · $15",
+          "Event · $15"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.482092,
+          29.425419
+        ]
+      },
+      "properties": {
+        "name": "Houston / Nolan Lot",
+        "address": "Houston at Elm, parking lot is under the IH 37 underpass",
+        "type": "lot",
+        "operator": "City of San Antonio",
+        "rates": "$3 weekday daily",
+        "notes": "Credit cards only.",
+        "free_periods": "Downtown Thursday 5pm–2am at city facilities (check posted signs).",
+        "source": "City of SA Downtown Parking",
+        "hourly": "$3 weekday daily",
+        "rate_lines": [
+          "Weekday daily · $3 (Mon–Thu)",
+          "Flat · $5 (Fri–Sunday)",
+          "Event · $10"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.500665,
+          29.425194
+        ]
+      },
+      "properties": {
+        "name": "Market Square Lot",
+        "address": "612 W Commerce, San Antonio, TX 78207",
+        "type": "lot",
+        "operator": "City of San Antonio",
+        "clearance": "7'2\"",
+        "rates": "$10 flat",
+        "notes": "Credit cards only.",
+        "free_periods": "Downtown Thursday 5pm–2am at city facilities (check posted signs).",
+        "source": "City of SA Downtown Parking",
+        "hourly": "$10 flat",
+        "rate_lines": [
+          "Flat · $10 (every day)",
+          "Event · $15",
+          "Lost ticket · $14"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.505406,
+          29.422494
+        ]
+      },
+      "properties": {
+        "name": "Municipal Court Lot",
+        "address": "401 S Frio St, San Antonio, TX 78207",
+        "type": "lot",
+        "operator": "City of San Antonio",
+        "hours": "Open Monday thru Friday 8am- 5pm. Closed Saturday-Sunday. Free for Municipal Court Patrons during business hours only. Events:",
+        "rates": "Event · $8",
+        "notes": "Credit cards only.",
+        "free_periods": "Downtown Thursday 5pm–2am at city facilities (check posted signs).",
+        "source": "City of SA Downtown Parking",
+        "hourly": "Event · $8",
+        "rate_lines": [
+          "Event · $8"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.501374,
+          29.428083
+        ]
+      },
+      "properties": {
+        "name": "IH 35 Lots (Between Commerce and Martin)",
+        "address": "Parking Lot is located under the IH 35",
+        "type": "lot",
+        "operator": "City of San Antonio",
+        "rates": "$3 weekday daily",
+        "notes": "Credit cards only. Only Credit Cards Accepted",
+        "free_periods": "Downtown Thursday 5pm–2am at city facilities (check posted signs).",
+        "source": "City of SA Downtown Parking",
+        "hourly": "$3 weekday daily",
+        "rate_lines": [
+          "Weekday daily · $3 (Mon–Thu)",
+          "Flat · $5 (Fri–Sunday)",
+          "Event · $15"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.47963,
+          29.430665
+        ]
+      },
+      "properties": {
+        "name": "IH 37 Lots (Between 9th and Hays St)",
+        "address": "Parking Lot is located under the IH 37",
+        "type": "lot",
+        "operator": "City of San Antonio",
+        "rates": "$2 flat",
+        "notes": "Credit cards only. No Overnight Parking",
+        "free_periods": "Downtown Thursday 5pm–2am at city facilities (check posted signs).",
+        "source": "City of SA Downtown Parking",
+        "hourly": "$2 flat",
+        "rate_lines": [
+          "Flat · $2 (every day)",
+          "Event · $5"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.483213,
+          29.424307
+        ]
+      },
+      "properties": {
+        "name": "Bowie Street Parking Lot",
+        "address": "241S Bowie Street, San Antonio, TX",
+        "type": "lot",
+        "operator": "Platinum Parking",
+        "hours": "24/7",
+        "notes": "Public parking from OpenStreetMap. Confirm hours and rates on-site. Operator: Platinum Parking. Paid.",
+        "source": "OpenStreetMap",
+        "hourly": "Paid lot",
+        "rate_lines": [
+          "Hourly vs event rates on the board."
+        ],
+        "rates": "Paid lot"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.485546,
+          29.42339
+        ]
+      },
+      "properties": {
+        "name": "Rivercenter Parking Garage",
+        "address": "849 East Commerce Street, San Antonio, TX",
+        "type": "garage",
+        "operator": "Platinum Parking",
+        "hours": "24/7",
+        "notes": "Public parking from OpenStreetMap. Confirm hours and rates on-site. Operator: Platinum Parking. Paid.",
+        "source": "OpenStreetMap",
+        "hourly": "About $12 / 2 hr",
+        "rate_lines": [
+          "About $12 / 2 hours drive-up (confirm at the gate)",
+          "Longer stays often $15–$20",
+          "849 E Commerce — pay on exit"
+        ],
+        "rates": "About $12 / 2 hr"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.497721,
+          29.423492
+        ]
+      },
+      "properties": {
+        "name": "Dolorosa Lot",
+        "address": "Downtown San Antonio",
+        "type": "lot",
+        "notes": "Public parking from OpenStreetMap. Confirm hours and rates on-site.",
+        "source": "OpenStreetMap",
+        "hourly": "Paid lot",
+        "rate_lines": [
+          "Rates on the pay station."
+        ],
+        "rates": "Paid lot"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.491589,
+          29.428223
+        ]
+      },
+      "properties": {
+        "name": "Travis Building Garage",
+        "address": "Downtown San Antonio",
+        "type": "garage",
+        "notes": "Public parking from OpenStreetMap. Confirm hours and rates on-site.",
+        "source": "OpenStreetMap",
+        "hourly": "Paid · rates at gate",
+        "rate_lines": [
+          "Hourly rates posted at the Travis Building entrance."
+        ],
+        "rates": "Paid · rates at gate"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.488798,
+          29.423583
+        ]
+      },
+      "properties": {
+        "name": "Riverbend Parking Garage",
+        "address": "Downtown San Antonio",
+        "type": "garage",
+        "notes": "Public parking from OpenStreetMap. Confirm hours and rates on-site.",
+        "source": "OpenStreetMap",
+        "hourly": "Paid · rates at gate",
+        "rate_lines": [
+          "Private garage near Hemisfair / Market St",
+          "Hourly ladder posted at the entrance"
+        ],
+        "rates": "Paid · rates at gate"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.483483,
+          29.417755
+        ]
+      },
+      "properties": {
+        "name": "Hemisfair Tower Parking Lot",
+        "address": "Downtown San Antonio",
+        "type": "lot",
+        "operator": "City of San Antonio",
+        "notes": "Public parking from OpenStreetMap. Confirm hours and rates on-site. 200 spaces. Operator: City of San Antonio. Paid.",
+        "source": "OpenStreetMap",
+        "hourly": "Paid lot",
+        "rate_lines": [
+          "Daily vs event rates posted at the booth."
+        ],
+        "rates": "Paid lot"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.4869,
+          29.4226
+        ]
+      },
+      "properties": {
+        "name": "Grand Hyatt Garage",
+        "address": "600 E Market St, San Antonio, TX 78205",
+        "type": "garage",
+        "notes": "Hotel garage, public paid parking near Convention Center / River Walk. Confirm hours and rates on-site.",
+        "source": "Local downtown list",
+        "hourly": "Overnight $59–$70",
+        "rate_lines": [
+          "Overnight self-park about $59–$70 + tax (hotel posted)",
+          "Hourly drive-up not listed — pay on exit"
+        ],
+        "rates": "Overnight $59–$70"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.4848,
+          29.4239
+        ]
+      },
+      "properties": {
+        "name": "Marriott Rivercenter Garage",
+        "address": "101 Bowie St, San Antonio, TX 78205",
+        "type": "garage",
+        "notes": "Hotel garage. Public paid parking near Rivercenter Mall. Confirm hours and rates on-site.",
+        "source": "Local downtown list",
+        "hourly": "Hotel rates · pay on exit",
+        "rate_lines": [
+          "Hotel/event garage. Third-party stays from about $25",
+          "Hourly drive-up not posted — pay on exit"
+        ],
+        "rates": "Hotel rates · pay on exit"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.4915,
+          29.4247
+        ]
+      },
+      "properties": {
+        "name": "Drury Plaza Hotel Garage",
+        "address": "105 S St Mary's St, San Antonio, TX 78205",
+        "type": "garage",
+        "notes": "Hotel garage in the old Alamo National Bank. Public paid parking. Confirm hours and rates on-site.",
+        "source": "Local downtown list",
+        "hourly": "Paid · rates at gate",
+        "rate_lines": [
+          "Hourly rates on the ticket machine. Pay on exit."
+        ],
+        "rates": "Paid · rates at gate"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.49,
+          29.4268
+        ]
+      },
+      "properties": {
+        "name": "Hotel Valencia Riverwalk Garage",
+        "address": "150 E Houston St, San Antonio, TX 78205",
+        "type": "garage",
+        "notes": "Hotel garage. Public paid parking near Houston St. Confirm hours and rates on-site.",
+        "source": "Local downtown list",
+        "hourly": "Paid · rates at gate",
+        "rate_lines": [
+          "Hourly rates on the ticket machine. Pay on exit."
+        ],
+        "rates": "Paid · rates at gate"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.4922,
+          29.4286
+        ]
+      },
+      "properties": {
+        "name": "Weston Centre / Frost Garage",
+        "address": "112 E Pecan St, San Antonio, TX 78205",
+        "type": "garage",
+        "notes": "Office garage. After-hours public parking common; confirm posted rates. Confirm hours and rates on-site.",
+        "source": "Local downtown list",
+        "hourly": "Office garage · after-hours paid",
+        "rate_lines": [
+          "Weekday office parking; after-hours rates on the board."
+        ],
+        "rates": "Office garage · after-hours paid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.4957,
+          29.4257
+        ]
+      },
+      "properties": {
+        "name": "VIA Centro Plaza Garage",
+        "address": "102 N Flores St, San Antonio, TX 78205",
+        "type": "garage",
+        "notes": "Transit plaza garage west of downtown core. Confirm hours and rates on-site.",
+        "source": "Local downtown list",
+        "hourly": "Paid · rates at gate",
+        "rate_lines": [
+          "Hourly rates posted at the VIA Centro Plaza entrance."
+        ],
+        "rates": "Paid · rates at gate"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.4885,
+          29.4307
+        ]
+      },
+      "properties": {
+        "name": "Tobin Center Garage",
+        "address": "115 Auditorium Cir, San Antonio, TX 78205",
+        "type": "garage",
+        "notes": "Garage at the Tobin Center for the Performing Arts. Confirm hours and rates on-site.",
+        "source": "Local downtown list",
+        "hourly": "Event rates vary",
+        "rate_lines": [
+          "Show nights use event pricing. Other times pay on exit."
+        ],
+        "rates": "Event rates vary"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.4785,
+          29.417
+        ]
+      },
+      "properties": {
+        "name": "Alamodome Lot A",
+        "address": "100 Montana St, San Antonio, TX 78203",
+        "type": "lot",
+        "notes": "Alamodome surface lot. Event rates apply on game/concert days. Confirm hours and rates on-site.",
+        "source": "Local downtown list",
+        "hourly": "Event lot",
+        "rate_lines": [
+          "Non-event days cheaper. Game/concert days use posted event rates."
+        ],
+        "rates": "Event lot"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.4808,
+          29.4164
+        ]
+      },
+      "properties": {
+        "name": "Alamodome Lot B",
+        "address": "S Cherry St & Montana St, San Antonio, TX 78203",
+        "type": "lot",
+        "notes": "Alamodome surface lot. Event rates apply on game/concert days. Confirm hours and rates on-site.",
+        "source": "Local downtown list",
+        "hourly": "Event lot",
+        "rate_lines": [
+          "Non-event days cheaper. Game/concert days use posted event rates."
+        ],
+        "rates": "Event lot"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.4836,
+          29.419
+        ]
+      },
+      "properties": {
+        "name": "Hemisfair Tower / Tower of the Americas Lot",
+        "address": "600 Hemisfair Plaza Way, San Antonio, TX 78205",
+        "type": "lot",
+        "notes": "Surface parking at Hemisfair. Confirm event vs daily rates. Confirm hours and rates on-site.",
+        "source": "Local downtown list",
+        "hourly": "Paid lot",
+        "rate_lines": [
+          "Daily vs event rates posted at the booth."
+        ],
+        "rates": "Paid lot"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.4908,
+          29.4267
+        ]
+      },
+      "properties": {
+        "name": "Houston St meters",
+        "address": "E Houston St corridor, San Antonio, TX 78205",
+        "type": "meters",
+        "hours": "Enforced Mon–Sat 8am–6pm",
+        "rates": "$1.80–$3.00 / hr",
+        "notes": "Time limits usually 1–2 hours. Always check posted signs and event meters.",
+        "free_periods": "Free after 6pm daily and all day Sunday. City meters also free during Downtown Thursday 5pm–2am.",
+        "source": "City meter summary",
+        "hourly": "$1.80–$3.00 / hr",
+        "rate_lines": [
+          "$0.30 / 10 min on most downtown meters ($1.80 / hr)",
+          "Busier blocks about $2–$3 / hr — posted on the meter",
+          "Typical limit 1–2 hours",
+          "Pay coin, card, or SAPark app",
+          "Free after 6pm daily and all day Sunday",
+          "City meters free Downtown Thursday 5pm–2am"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.4915,
+          29.4246
+        ]
+      },
+      "properties": {
+        "name": "Commerce St meters",
+        "address": "E/W Commerce near River Walk, San Antonio, TX 78205",
+        "type": "meters",
+        "hours": "Enforced Mon–Sat 8am–6pm",
+        "rates": "$1.80–$3.00 / hr",
+        "notes": "Time limits usually 1–2 hours. Always check posted signs and event meters.",
+        "free_periods": "Free after 6pm daily and all day Sunday. City meters also free during Downtown Thursday 5pm–2am.",
+        "source": "City meter summary",
+        "hourly": "$1.80–$3.00 / hr",
+        "rate_lines": [
+          "$0.30 / 10 min on most downtown meters ($1.80 / hr)",
+          "Busier blocks about $2–$3 / hr — posted on the meter",
+          "Typical limit 1–2 hours",
+          "Pay coin, card, or SAPark app",
+          "Free after 6pm daily and all day Sunday",
+          "City meters free Downtown Thursday 5pm–2am"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.4864,
+          29.4258
+        ]
+      },
+      "properties": {
+        "name": "Alamo Plaza meters",
+        "address": "Alamo Plaza / Losoya, San Antonio, TX 78205",
+        "type": "meters",
+        "hours": "Enforced Mon–Sat 8am–6pm",
+        "rates": "$1.80–$3.00 / hr",
+        "notes": "Time limits usually 1–2 hours. Always check posted signs and event meters.",
+        "free_periods": "Free after 6pm daily and all day Sunday. City meters also free during Downtown Thursday 5pm–2am.",
+        "source": "City meter summary",
+        "hourly": "$1.80–$3.00 / hr",
+        "rate_lines": [
+          "$0.30 / 10 min on most downtown meters ($1.80 / hr)",
+          "Busier blocks about $2–$3 / hr — posted on the meter",
+          "Typical limit 1–2 hours",
+          "Pay coin, card, or SAPark app",
+          "Free after 6pm daily and all day Sunday",
+          "City meters free Downtown Thursday 5pm–2am"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.4936,
+          29.4266
+        ]
+      },
+      "properties": {
+        "name": "Soledad / Main meters",
+        "address": "Soledad & Main St, San Antonio, TX 78205",
+        "type": "meters",
+        "hours": "Enforced Mon–Sat 8am–6pm",
+        "rates": "$1.80–$3.00 / hr",
+        "notes": "Time limits usually 1–2 hours. Always check posted signs and event meters.",
+        "free_periods": "Free after 6pm daily and all day Sunday. City meters also free during Downtown Thursday 5pm–2am.",
+        "source": "City meter summary",
+        "hourly": "$1.80–$3.00 / hr",
+        "rate_lines": [
+          "$0.30 / 10 min on most downtown meters ($1.80 / hr)",
+          "Busier blocks about $2–$3 / hr — posted on the meter",
+          "Typical limit 1–2 hours",
+          "Pay coin, card, or SAPark app",
+          "Free after 6pm daily and all day Sunday",
+          "City meters free Downtown Thursday 5pm–2am"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.4892,
+          29.4243
+        ]
+      },
+      "properties": {
+        "name": "Market St meters",
+        "address": "Market St near River Walk, San Antonio, TX 78205",
+        "type": "meters",
+        "hours": "Enforced Mon–Sat 8am–6pm",
+        "rates": "$1.80–$3.00 / hr",
+        "notes": "Time limits usually 1–2 hours. Always check posted signs and event meters.",
+        "free_periods": "Free after 6pm daily and all day Sunday. City meters also free during Downtown Thursday 5pm–2am.",
+        "source": "City meter summary",
+        "hourly": "$1.80–$3.00 / hr",
+        "rate_lines": [
+          "$0.30 / 10 min on most downtown meters ($1.80 / hr)",
+          "Busier blocks about $2–$3 / hr — posted on the meter",
+          "Typical limit 1–2 hours",
+          "Pay coin, card, or SAPark app",
+          "Free after 6pm daily and all day Sunday",
+          "City meters free Downtown Thursday 5pm–2am"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.4888,
+          29.4212
+        ]
+      },
+      "properties": {
+        "name": "Presa / Southtown meters",
+        "address": "S Presa / S St. Mary's, San Antonio, TX 78205",
+        "type": "meters",
+        "hours": "Enforced Mon–Sat 8am–6pm",
+        "rates": "$1.80–$3.00 / hr",
+        "notes": "Time limits usually 1–2 hours. Always check posted signs and event meters.",
+        "free_periods": "Free after 6pm daily and all day Sunday. City meters also free during Downtown Thursday 5pm–2am.",
+        "source": "City meter summary",
+        "hourly": "$1.80–$3.00 / hr",
+        "rate_lines": [
+          "$0.30 / 10 min on most downtown meters ($1.80 / hr)",
+          "Busier blocks about $2–$3 / hr — posted on the meter",
+          "Typical limit 1–2 hours",
+          "Pay coin, card, or SAPark app",
+          "Free after 6pm daily and all day Sunday",
+          "City meters free Downtown Thursday 5pm–2am"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "city": "san-antonio",
+  "date": "2026-10-02",
+  "last_refresh": "2026-10-02T11:33:23-05:00",
+  "edition": "Date window 2026-10-01",
+  "canonical_feed": "data/cities/san-antonio.json",
+  "delta_feed": "data/cities/san-antonio-user.json",
+  "note": "Counts live in san-antonio.json. This pointer was stale at 2026-09-27.",
+  "status": "live"
+}

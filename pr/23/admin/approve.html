@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>Desk closed · Chicas Map</title>
+  <link rel="icon" type="image/svg+xml" href="/Chicas-Map/preview/23/favicon.svg" />
+  <style>
+    body { margin: 0; min-height: 100dvh; font: 500 16px/1.45 Inter, system-ui, sans-serif; background: #121212; color: #f3eee4; }
+    main { max-width: 28rem; margin: 14vh auto; padding: 0 18px; }
+    .brand { letter-spacing: .14em; text-transform: uppercase; font-size: 12px; color: #c4b8a8; }
+    a { color: #c513af; }
+    input { width: 100%; box-sizing: border-box; margin-top: 16px; padding: 12px; border-radius: 10px; border: 1px solid #3a342e; background: #1a1714; color: #f3eee4; }
+    button { margin-top: 10px; border: 0; border-radius: 10px; padding: 12px 16px; background: #c513af; color: #fff; font-weight: 800; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="brand">Chicas Map</p>
+    <h1>This desk is closed.</h1>
+    <p>Public map stays public. Approvals are not a GitHub Pages form anymore.</p>
+    <p><a href="/Chicas-Map/preview/23/map">Back to the map</a></p>
+    <form id="gate" hidden>
+      <input id="code" type="password" placeholder="Owner desk" autocomplete="off" />
+      <button type="submit">Open</button>
+    </form>
+  </main>
+  <script>
+    (function () {
+      var form = document.getElementById("gate");
+      if ((location.hash || "") === "#desk") form.hidden = false;
+      form.addEventListener("submit", function (ev) {
+        ev.preventDefault();
+        var v = (document.getElementById("code").value || "").trim();
+        if (v === "sentinel") {
+          sessionStorage.setItem("chica-desk", "1");
+          location.href = "/Chicas-Map/preview/23/map";
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
