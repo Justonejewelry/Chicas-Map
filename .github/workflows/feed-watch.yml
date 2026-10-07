@@ -45,7 +45,7 @@ jobs:
 
       - name: Re-dispatch daily if the feed is stale or empty
         if: steps.watch.outputs.code == '2' && github.event_name == 'schedule'
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           script: |
             const runs = await github.rest.actions.listWorkflowRuns({
@@ -73,7 +73,7 @@ jobs:
 
       - name: Open or update ops issue
         if: steps.watch.outputs.code != '0' || (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion != 'success')
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           script: |
             const title = "[ops] Feed watch";
@@ -120,7 +120,7 @@ jobs:
 
       - name: Close ops issue when the feed is clean
         if: steps.watch.outputs.code == '0' && (github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success')
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           script: |
             const issues = await github.rest.issues.listForRepo({
