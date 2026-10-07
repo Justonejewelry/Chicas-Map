@@ -1,9 +1,11 @@
 name: Boost pass registry
 
 # Upserts ops/boost-passes.json for the $9 / 6-month Boost product.
+# Square is the live source. Stripe uses the same boost_paid dispatch.
+# Payment does not publish a pin.
 #
 # Triggers:
-#   repository_dispatch event_type: boost_paid  (from Square webhook worker)
+#   repository_dispatch event_type: boost_paid
 #   workflow_dispatch: manual add / set_status / expire_stale
 
 on:
@@ -21,7 +23,7 @@ on:
         required: false
         type: string
       payment_id:
-        description: "Square payment id"
+        description: "Square or Stripe payment id"
         required: false
         type: string
       paid_at:
@@ -72,7 +74,6 @@ jobs:
               }
               const day = d.getUTCDate();
               d.setUTCMonth(d.getUTCMonth() + months);
-              // clamp end-of-month overflow (e.g. Jan 31 + 1 month)
               if (d.getUTCDate() < day) d.setUTCDate(0);
               return d.toISOString().slice(0, 10);
             }
@@ -104,6 +105,20 @@ jobs:
               fs.writeFileSync(path, JSON.stringify(data, null, 2) + '\n');
             }
 
+            function stripeEmail(payload) {
+              const details = payload.customer_details || {};
+              return payload.buyer_email || payload.customer_email || payload.receipt_email || details.email || '';
+            }
+
+            function amountCents(payload) {
+              if (payload.amount_cents != null) return Number(payload.amount_cents);
+              if (payload.amount_total != null) return Number(payload.amount_total);
+              if (payload.amount_money && payload.amount_money.amount != null) {
+                return Number(payload.amount_money.amount);
+              }
+              return null;
+            }
+
             const data = load();
             const months = data.duration_months || 6;
             let action = 'add';
@@ -112,6 +127,21 @@ jobs:
             if (context.eventName === 'repository_dispatch') {
               action = 'add';
               payload = context.payload.client_payload || {};
+              payload.buyer_email = stripeEmail(payload);
+              if (!payload.payment_id && payload.payment_intent) payload.payment_id = payload.payment_intent;
+              if (!payload.source && (payload.payment_intent || payload.customer_email || payload.amount_total != null)) {
+                payload.source = 'stripe';
+              }
+              const cents = amountCents(payload);
+              if (cents == null || Math.abs(cents - 900) > 50) {
+                core.setFailed('boost_paid rejected: amount must be the $9 pass, got ' + cents);
+                return;
+              }
+              payload.amount_cents = cents;
+              if (!payload.paid_at && payload.created) {
+                const created = Number(payload.created);
+                if (!Number.isNaN(created)) payload.paid_at = new Date(created * 1000).toISOString();
+              }
             } else {
               action = process.env.WF_ACTION || 'add';
               payload = {
@@ -158,7 +188,6 @@ jobs:
               return;
             }
 
-            // action === add
             const paymentId =
               String(payload.payment_id || payload.id || '').trim() ||
               ('manual_' + Date.now().toString(36));
@@ -184,12 +213,7 @@ jobs:
             let status = 'active';
             if (!contactKey) status = 'pending_contact';
 
-            const amount =
-              payload.amount_cents != null
-                ? Number(payload.amount_cents)
-                : payload.amount_money && payload.amount_money.amount != null
-                  ? Number(payload.amount_money.amount)
-                  : 900;
+            const amount = amountCents(payload) == null ? 900 : amountCents(payload);
 
             const existingIdx = data.passes.findIndex((p) => p.payment_id === paymentId);
             const row = {
@@ -213,7 +237,6 @@ jobs:
               recorded_at: new Date().toISOString(),
             };
 
-            // Prefer non-empty contact_key when updating
             if (existingIdx >= 0) {
               const prev = data.passes[existingIdx];
               if (!row.contact_key && prev.contact_key) row.contact_key = prev.contact_key;
@@ -230,7 +253,6 @@ jobs:
             );
             core.info(JSON.stringify(row, null, 2));
 
-            // Open ops issue when contact missing so you can attach email from the review form
             if (row.status === 'pending_contact') {
               await github.rest.issues.create({
                 owner: context.repo.owner,
@@ -239,7 +261,7 @@ jobs:
                 body: [
                   '## Boost payment recorded without seller contact',
                   '',
-                  'Square (or manual) payment is in `ops/boost-passes.json` but **contact_key** is empty.',
+                  'Payment is in `ops/boost-passes.json` but **contact_key** is empty.',
                   'Match it to the review email / submit form, then either:',
                   '',
                   '1. Edit the JSON row, or',
@@ -250,6 +272,8 @@ jobs:
                   '```',
                   '',
                   '**boost_until:** `' + row.boost_until + '`',
+                  '',
+                  'Do not gold-pin until the listing is approved.',
                 ].join('\n'),
                 labels: ['boost-pending-contact'],
               });
