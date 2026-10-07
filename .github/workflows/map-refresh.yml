@@ -1,9 +1,9 @@
 name: Map feed refresh
 
+# Manual twin of Chica Daily. Do not grow a second scraper chain here.
+# Discovery, permits, purge, health, and the orchestrator live in
+# scripts/master_populate.py. This workflow only dispatches that path.
 on:
-  # Continuous 2-hour schedule REMOVED per Master Workflow.
-  # Discovery now runs via Chica Daily at 11:00 UTC (~5–6 AM CT)
-  # (and can still be triggered manually here).
   workflow_dispatch:
     inputs:
       cities:
@@ -14,6 +14,14 @@ on:
         description: "SA permit lookback days"
         required: false
         default: "14"
+      target_date:
+        description: "Target date YYYY-MM-DD (leave empty = today in America/Chicago)"
+        required: false
+        default: ""
+      dry_run:
+        description: "Dry run (no commit / skip writes where supported)"
+        required: false
+        default: "false"
       reason:
         description: "Why is this manual run?"
         required: false
@@ -23,7 +31,6 @@ permissions:
   contents: write
   issues: write
 
-# Same lock as chica-daily so a manual refresh cannot race the 5 AM populate.
 concurrency:
   group: chica-feed
   cancel-in-progress: false
@@ -31,7 +38,7 @@ concurrency:
 jobs:
   discover-purge-publish:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -42,97 +49,79 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements.txt
 
-      - name: HTTP discover + parse (GarageSaleFinder)
+      - name: Install runtime deps
+        run: |
+          set -euo pipefail
+          python3 -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          if [ -f webapp/scripts/requirements.txt ]; then pip install -r webapp/scripts/requirements.txt; fi
+          pip install "requests>=2.31" "beautifulsoup4>=4.12" "lxml>=5.0" || true
+
+      - name: Master populate
         env:
           CITIES: ${{ github.event.inputs.cities || 'san-antonio,austin' }}
+          PERMIT_DAYS: ${{ github.event.inputs.permit_days || '14' }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PYTHONUNBUFFERED: "1"
         run: |
-          set -e
-          python3 webapp/scripts/discover_sales.py --cities "$CITIES" | tee discover.log
+          set -euo pipefail
+          ARGS=""
+          if [ -n "${{ github.event.inputs.target_date }}" ]; then
+            ARGS="--date ${{ github.event.inputs.target_date }}"
+          fi
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            ARGS="$ARGS --dry-run"
+          fi
+          python3 scripts/master_populate.py \
+            --cities "$CITIES" \
+            --permit-days "$PERMIT_DAYS" \
+            $ARGS | tee daily-run.log
 
-      - name: Fetch SA garage/estate permits (Open Data SA)
-        env:
-          DAYS: ${{ github.event.inputs.permit_days || '14' }}
-        run: |
-          set -e
-          python3 webapp/scripts/fetch_permits.py --days "$DAYS" | tee permits.log
-
-      - name: EstateSales.org free discovery
-        env:
-          CITIES: ${{ github.event.inputs.cities || 'san-antonio,austin' }}
-        run: |
-          set -e
-          python3 webapp/scripts/fetch_estatesales_org.py --cities "$CITIES" | tee estatesales-org.log || true
-
-      - name: YardSaleSearch free discovery
-        env:
-          CITIES: ${{ github.event.inputs.cities || 'san-antonio,austin' }}
-        run: |
-          set -e
-          python3 webapp/scripts/fetch_yardsalesearch.py --cities "$CITIES" | tee yardsalesearch.log || true
-
-      - name: gsalr.com free discovery
-        env:
-          CITIES: ${{ github.event.inputs.cities || 'san-antonio,austin' }}
-        run: |
-          set -e
-          python3 webapp/scripts/fetch_gsalr.py --cities "$CITIES" | tee gsalr.log || true
-
-      - name: Craigslist free discovery
-        env:
-          CITIES: ${{ github.event.inputs.cities || 'san-antonio,austin' }}
-        run: |
-          set -e
-          python3 webapp/scripts/fetch_craigslist.py --cities "$CITIES" | tee craigslist.log || true
-
-      - name: EstateSales.net lightweight discovery
-        env:
-          CITIES: ${{ github.event.inputs.cities || 'san-antonio,austin' }}
-        run: |
-          set -e
-          python3 webapp/scripts/fetch_estatesales.py --cities "$CITIES" | tee estatesales.log || true
-
-      - name: Purge expired listings
-        run: |
-          python3 webapp/scripts/purge_expired.py | tee purge.log
-
-      - name: Scraper health check
-        id: health
-        run: |
-          set +e
-          python3 webapp/scripts/check_scraper_health.py | tee health.log
-          echo "exit_code=$?" >> "$GITHUB_OUTPUT"
-          exit 0
-
-      - name: Detect git changes
+      - name: Detect changes
         id: diff
+        if: github.event.inputs.dry_run != 'true'
         run: |
-          if git diff --quiet -- webapp/data/cities webapp/data/scraper-health.json; then
+          if git diff --quiet -- \
+            data/sales daily-packs social forecast reports \
+            webapp/data/cities webapp/data/community-events.json \
+            webapp/data/scraper-health.json webapp/data/feed.json \
+            2>/dev/null; then
             echo "dirty=false" >> "$GITHUB_OUTPUT"
           else
             echo "dirty=true" >> "$GITHUB_OUTPUT"
-            git diff --stat -- webapp/data/cities webapp/data/scraper-health.json || true
           fi
 
-      - name: Commit and push
-        if: steps.diff.outputs.dirty == 'true'
+      - name: Commit refresh
+        if: steps.diff.outputs.dirty == 'true' && github.event.inputs.dry_run != 'true'
         run: |
           set -euo pipefail
           git config user.name "chicas-map-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add webapp/data/cities/*.json webapp/data/scraper-health.json || true
-          MSG="Map refresh $(date -u +%Y-%m-%dT%H:%MZ) — manual discovery"
-          git commit -m "$MSG" || exit 0
+          git add \
+            data/sales/ daily-packs/ social/ forecast/ reports/ \
+            webapp/data/cities/ webapp/data/community-events.json \
+            webapp/data/scraper-health.json webapp/data/feed.json \
+            || true
+          DATE=$(date -u +%Y-%m-%d)
+          git commit -m "Map refresh ${DATE} — ${{ github.event.inputs.reason || 'manual' }}" || exit 0
           git pull --rebase origin main
           git push origin HEAD:main
 
       - name: Summary
+        if: always()
         run: |
           {
-            echo "### Map refresh (manual only)"
+            echo "### Map refresh"
             echo ""
-            echo "- Trigger: ${{ github.event_name }}"
-            echo "- Continuous 2h schedule: REMOVED"
-            echo "- Lock: chica-feed (shared with Chica Daily)"
-            echo "- Changes committed: ${{ steps.diff.outputs.dirty }}"
+            echo "- Path: scripts/master_populate.py (same as Chica Daily)"
+            echo "- Lock: chica-feed"
+            echo "- Reason: ${{ github.event.inputs.reason || 'manual' }}"
+            echo "- Changes: ${{ steps.diff.outputs.dirty || 'n/a' }}"
+            echo ""
+            echo '```'
+            cat daily-run.log 2>/dev/null || echo "(no log)"
+            echo '```'
           } >> "$GITHUB_STEP_SUMMARY"

@@ -3,6 +3,7 @@ name: Chica Daily (Master Workflow)
 # Unified populate: every map source + orchestrator + events + forecast.
 # One cron. GitHub cron is UTC-only; dual 10/11 UTC was burning two runs/day.
 # 11:00 UTC = 6 AM CDT / 5 AM CST. Close enough. Do not add a second cron.
+# Feed watch (16:00 UTC) re-dispatches this workflow only if the public feed is stale.
 # Do NOT put [skip ci] on the populate commit. That left GitHub Pages
 # serving an empty public[] while main already had pins.
 
@@ -133,6 +134,42 @@ jobs:
           git commit -m "$MSG" || exit 0
           git pull --rebase origin main
           git push origin HEAD:main
+
+      - name: File ops issue on failure
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = "[ops] Chica Daily failed";
+            const body = [
+              "Daily populate failed. Sentinel floor was not changed.",
+              "",
+              `Run: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`,
+              "",
+              "Read the log before re-dispatch. Do not add a second cron."
+            ].join("\n");
+            const issues = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: "open",
+              per_page: 30
+            });
+            const existing = issues.data.find(issue => issue.title === title);
+            if (existing) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: existing.number,
+                body
+              });
+            } else {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title,
+                body
+              });
+            }
 
       - name: Summary
         if: always()

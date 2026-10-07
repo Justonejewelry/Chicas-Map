@@ -1,0 +1,159 @@
+name: Feed watch
+
+# Read-only. Does not write pins.
+# After Chica Daily, and again at 16:00 UTC (11 AM CDT / 10 AM CST) in case
+# the 11:00 UTC cron was delayed or cancelled. A stale/empty San Antonio
+# feed re-dispatches daily once. Quality failures only open an issue.
+on:
+  workflow_run:
+    workflows: ["Chica Daily (Master Workflow)"]
+    types: [completed]
+  schedule:
+    - cron: "0 16 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+  actions: write
+
+concurrency:
+  group: feed-watch
+  cancel-in-progress: false
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Check public feeds
+        id: watch
+        run: |
+          set +e
+          python3 scripts/feed_watch.py | tee watch.log
+          code=$?
+          echo "code=$code" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Re-dispatch daily if the feed is stale or empty
+        if: steps.watch.outputs.code == '2' && github.event_name == 'schedule'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const runs = await github.rest.actions.listWorkflowRuns({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: "chica-daily.yml",
+              status: "in_progress",
+              per_page: 1
+            });
+            if (runs.data.total_count > 0) {
+              core.info("daily already running; skip re-dispatch");
+              return;
+            }
+            await github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: "chica-daily.yml",
+              ref: "main",
+              inputs: {
+                reason: "feed-watch stale or empty catch",
+                dry_run: "false"
+              }
+            });
+            core.info("re-dispatched chica-daily");
+
+      - name: Open or update ops issue
+        if: steps.watch.outputs.code != '0' || (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion != 'success')
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = "[ops] Feed watch";
+            const log = require("fs").readFileSync("watch.log", "utf8").slice(0, 3500);
+            const daily = context.payload.workflow_run
+              ? `${context.payload.workflow_run.conclusion} ${context.payload.workflow_run.html_url}`
+              : "n/a";
+            const body = [
+              "Public feed check failed, or Chica Daily did not succeed.",
+              "",
+              `- Watch exit: ${{ steps.watch.outputs.code }}`,
+              `- Event: ${context.eventName}`,
+              `- Daily: ${daily}`,
+              `- Run: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`,
+              "",
+              "Sentinel floor stays at 70. This job does not publish pins.",
+              "",
+              "```",
+              log,
+              "```"
+            ].join("\n");
+            const issues = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: "open",
+              per_page: 30
+            });
+            const existing = issues.data.find(issue => issue.title === title);
+            if (existing) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: existing.number,
+                body
+              });
+            } else {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title,
+                body
+              });
+            }
+
+      - name: Close ops issue when the feed is clean
+        if: steps.watch.outputs.code == '0' && (github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success')
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issues = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: "open",
+              per_page: 30
+            });
+            const existing = issues.data.find(issue => issue.title === "[ops] Feed watch");
+            if (!existing) return;
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: existing.number,
+              body: `Feed watch clean. Closing. Run ${context.runId}.`
+            });
+            await github.rest.issues.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: existing.number,
+              state: "closed"
+            });
+
+      - name: Summary
+        if: always()
+        run: |
+          {
+            echo "### Feed watch"
+            echo ""
+            echo "- Exit: ${{ steps.watch.outputs.code }}"
+            echo "- 0 ok, 1 quality issue, 2 stale/empty (schedule may re-dispatch daily)"
+            echo ""
+            echo '```'
+            cat watch.log 2>/dev/null || echo "(no log)"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
