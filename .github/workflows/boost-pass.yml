@@ -1,7 +1,6 @@
 name: Boost pass registry
 
-# Upserts ops/boost-passes.json for the $9 / 6-month Boost product.
-# Square is the live source. Stripe uses the same boost_paid dispatch.
+# Upserts ops/boost-passes.json for the $5 Square pin.
 # Payment does not publish a pin.
 #
 # Triggers:
@@ -23,7 +22,7 @@ on:
         required: false
         type: string
       payment_id:
-        description: "Square or Stripe payment id"
+        description: "Square payment id"
         required: false
         type: string
       paid_at:
@@ -65,28 +64,22 @@ jobs:
               return digits || t;
             }
 
-            function addMonths(iso, months) {
+            function comingSunday(iso) {
               const d = new Date(iso);
-              if (Number.isNaN(d.getTime())) {
-                const fallback = new Date();
-                fallback.setUTCMonth(fallback.getUTCMonth() + months);
-                return fallback.toISOString().slice(0, 10);
-              }
-              const day = d.getUTCDate();
-              d.setUTCMonth(d.getUTCMonth() + months);
-              if (d.getUTCDate() < day) d.setUTCDate(0);
+              if (Number.isNaN(d.getTime())) return new Date().toISOString().slice(0, 10);
+              const add = (7 - d.getUTCDay()) % 7;
+              d.setUTCDate(d.getUTCDate() + add);
               return d.toISOString().slice(0, 10);
             }
 
             function load() {
               const empty = {
                 schema_version: 1,
-                product: 'boost_pass_6mo',
-                price_usd: 9,
-                duration_months: 6,
+                product: 'pin_claim_5',
+                price_usd: 5,
+                duration: 'sale_weekend',
                 updated: new Date().toISOString().slice(0, 10),
-                notes:
-                  'Ops registry — not map feed. Match sellers by contact_key.',
+                notes: 'Ops registry — not map feed. $5 Square pin.',
                 passes: [],
               };
               if (!fs.existsSync(path)) return empty;
@@ -105,14 +98,12 @@ jobs:
               fs.writeFileSync(path, JSON.stringify(data, null, 2) + '\n');
             }
 
-            function stripeEmail(payload) {
-              const details = payload.customer_details || {};
-              return payload.buyer_email || payload.customer_email || payload.receipt_email || details.email || '';
+            function buyerEmail(payload) {
+              return payload.buyer_email || payload.email || payload.buyer_email_address || '';
             }
 
             function amountCents(payload) {
               if (payload.amount_cents != null) return Number(payload.amount_cents);
-              if (payload.amount_total != null) return Number(payload.amount_total);
               if (payload.amount_money && payload.amount_money.amount != null) {
                 return Number(payload.amount_money.amount);
               }
@@ -120,28 +111,20 @@ jobs:
             }
 
             const data = load();
-            const months = data.duration_months || 6;
             let action = 'add';
             let payload = {};
 
             if (context.eventName === 'repository_dispatch') {
               action = 'add';
               payload = context.payload.client_payload || {};
-              payload.buyer_email = stripeEmail(payload);
-              if (!payload.payment_id && payload.payment_intent) payload.payment_id = payload.payment_intent;
-              if (!payload.source && (payload.payment_intent || payload.customer_email || payload.amount_total != null)) {
-                payload.source = 'stripe';
-              }
+              payload.buyer_email = buyerEmail(payload);
+              payload.source = 'square';
               const cents = amountCents(payload);
-              if (cents == null || Math.abs(cents - 900) > 50) {
-                core.setFailed('boost_paid rejected: amount must be the $9 pass, got ' + cents);
+              if (cents == null || Math.abs(cents - 500) > 50) {
+                core.setFailed('boost_paid rejected: amount must be the $5 pin, got ' + cents);
                 return;
               }
               payload.amount_cents = cents;
-              if (!payload.paid_at && payload.created) {
-                const created = Number(payload.created);
-                if (!Number.isNaN(created)) payload.paid_at = new Date(created * 1000).toISOString();
-              }
             } else {
               action = process.env.WF_ACTION || 'add';
               payload = {
@@ -165,7 +148,6 @@ jobs:
               }
               save(data);
               core.setOutput('summary', 'expired ' + n + ' passes');
-              core.info('Expired ' + n + ' passes');
               return;
             }
 
@@ -197,24 +179,15 @@ jobs:
               payload.verified_at ||
               new Date().toISOString();
             const paidAtDate = String(paidAtRaw).slice(0, 10);
-            const boostUntil = addMonths(paidAtRaw, months);
-
+            const boostUntil = comingSunday(paidAtRaw);
             let contactKey = normKey(
-              payload.contact_key ||
-                payload.buyer_email ||
-                payload.email ||
-                payload.contact ||
-                ''
+              payload.contact_key || payload.buyer_email || payload.email || payload.contact || ''
             );
             const displayName = String(
               payload.display_name || payload.name || payload.submitter_name || ''
             ).trim();
-
-            let status = 'active';
-            if (!contactKey) status = 'pending_contact';
-
-            const amount = amountCents(payload) == null ? 900 : amountCents(payload);
-
+            let status = contactKey ? 'active' : 'pending_contact';
+            const amount = amountCents(payload) == null ? 500 : amountCents(payload);
             const existingIdx = data.passes.findIndex((p) => p.payment_id === paymentId);
             const row = {
               contact_key: contactKey || (existingIdx >= 0 ? data.passes[existingIdx].contact_key : ''),
@@ -231,7 +204,7 @@ jobs:
                   : status,
               amount_cents: amount,
               currency: payload.currency || 'USD',
-              source: payload.source || (String(paymentId).startsWith('manual_') ? 'manual' : 'square'),
+              source: 'square',
               receipt_url: payload.receipt_url || null,
               event_id: payload.event_id || null,
               recorded_at: new Date().toISOString(),
@@ -241,17 +214,13 @@ jobs:
               const prev = data.passes[existingIdx];
               if (!row.contact_key && prev.contact_key) row.contact_key = prev.contact_key;
               if (row.contact_key) row.status = prev.status === 'refunded' ? 'refunded' : 'active';
-              data.passes[existingIdx] = { ...prev, ...row };
+              data.passes[existingIdx] = Object.assign({}, prev, row);
             } else {
               data.passes.unshift(row);
             }
 
             save(data);
-            core.setOutput(
-              'summary',
-              row.payment_id + ' until ' + row.boost_until + ' status=' + row.status
-            );
-            core.info(JSON.stringify(row, null, 2));
+            core.setOutput('summary', row.payment_id + ' until ' + row.boost_until + ' status=' + row.status);
 
             if (row.status === 'pending_contact') {
               await github.rest.issues.create({
@@ -259,23 +228,16 @@ jobs:
                 repo: context.repo.repo,
                 title: '[boost] needs contact_key — ' + row.payment_id,
                 body: [
-                  '## Boost payment recorded without seller contact',
+                  '## $5 Square pin recorded without seller contact',
                   '',
-                  'Payment is in `ops/boost-passes.json` but **contact_key** is empty.',
-                  'Match it to the review email / submit form, then either:',
-                  '',
-                  '1. Edit the JSON row, or',
-                  '2. Actions → **Boost pass registry** → `add` with same `payment_id` + `contact_key`.',
+                  'Match it to the claim form, then re-run Boost pass registry with the same payment_id and contact_key.',
                   '',
                   '```json',
                   JSON.stringify(row, null, 2),
                   '```',
                   '',
-                  '**boost_until:** `' + row.boost_until + '`',
-                  '',
-                  'Do not gold-pin until the listing is approved.',
+                  'Do not light the pin until the listing is approved.',
                 ].join('\n'),
-                labels: ['boost-pending-contact'],
               });
             }
         env:
