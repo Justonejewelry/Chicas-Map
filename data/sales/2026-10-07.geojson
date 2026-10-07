@@ -2,8 +2,8 @@
   "type": "FeatureCollection",
   "properties": {
     "target_date": "2026-10-07",
-    "generated_at": "2026-10-07T03:15:18-05:00",
-    "count": 8,
+    "generated_at": "2026-10-07T12:43:08-05:00",
+    "count": 9,
     "project": "Chicas-Map"
   },
   "features": [
@@ -43,7 +43,7 @@
           "https://images.craigslist.org/01515_1Xh2ogBe0sZ_0CI0pq_600x450.jpg"
         ],
         "confidence": 96,
-        "verified_at": "2026-10-07T03:15:06-05:00",
+        "verified_at": "2026-10-07T12:42:53-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.556,-98.6094",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.556,-98.6094",
         "status": "verified",
@@ -94,7 +94,7 @@
           "https://images.craigslist.org/00404_jGLAxJTb1o_0t20CI_50x50c.jpg"
         ],
         "confidence": 96,
-        "verified_at": "2026-10-07T03:15:06-05:00",
+        "verified_at": "2026-10-07T12:42:53-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5855,-98.4071",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.5855,-98.4071",
         "status": "verified",
@@ -143,7 +143,7 @@
           "https://gsf.tlstatic.com/images/social/Email.png"
         ],
         "confidence": 97,
-        "verified_at": "2026-10-07T03:15:06-05:00",
+        "verified_at": "2026-10-07T12:42:53-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.437382,-98.80071",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.437382,-98.80071",
         "status": "verified",
@@ -187,7 +187,7 @@
         ],
         "photos": [],
         "confidence": 96,
-        "verified_at": "2026-10-07T03:15:06-05:00",
+        "verified_at": "2026-10-07T12:42:53-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.443103,-98.803053",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.443103,-98.803053",
         "status": "verified",
@@ -233,7 +233,7 @@
           "https://images.craigslist.org/00303_fJujeiiUakX_0CI0eX_600x450.jpg"
         ],
         "confidence": 96,
-        "verified_at": "2026-10-07T03:15:06-05:00",
+        "verified_at": "2026-10-07T12:42:53-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5183,-98.503",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.5183,-98.503",
         "status": "verified",
@@ -277,7 +277,7 @@
         ],
         "photos": [],
         "confidence": 96,
-        "verified_at": "2026-10-07T03:15:06-05:00",
+        "verified_at": "2026-10-07T12:42:53-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.166,-98.4798",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.166,-98.4798",
         "status": "verified",
@@ -321,7 +321,7 @@
         ],
         "photos": [],
         "confidence": 96,
-        "verified_at": "2026-10-07T03:15:06-05:00",
+        "verified_at": "2026-10-07T12:42:53-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5145,-98.35",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.5145,-98.35",
         "status": "verified",
@@ -365,9 +365,53 @@
         ],
         "photos": [],
         "confidence": 96,
-        "verified_at": "2026-10-07T03:15:06-05:00",
+        "verified_at": "2026-10-07T12:42:53-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.658,-98.505",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.658,-98.505",
+        "status": "verified",
+        "geocode_method": "source",
+        "notes": "",
+        "community_source": "",
+        "community_link_or_notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.6861,
+          29.5052
+        ]
+      },
+      "properties": {
+        "sale_id": "2026-10-07_7224-hardesty-near-weybridge-san-antonio-tx",
+        "title": "Garage Sale (San Antonio)",
+        "sale_type": "garage",
+        "date_start": "2026-10-07",
+        "date_end": "2026-10-09",
+        "start_time": "",
+        "end_time": "",
+        "address": "7224 Hardesty near Weybridge, San Antonio, TX",
+        "city": "San Antonio",
+        "state": "TX",
+        "zip": "",
+        "latitude": 29.5052,
+        "longitude": -98.6861,
+        "description": "QR Code Link to This Post Garage Sale. Lots of various household items, new children’s toys, clothing, miscellaneous item.",
+        "highlights": [],
+        "source_urls": [
+          "https://www.craigslist.org/view/d/san-antonio-garage-sale/dV78kegqhSK7a7rDTCFWCA"
+        ],
+        "original_url": "https://www.craigslist.org/view/d/san-antonio-garage-sale/dV78kegqhSK7a7rDTCFWCA",
+        "source_names": [
+          "Craigslist"
+        ],
+        "photos": [],
+        "confidence": 96,
+        "verified_at": "2026-10-07T12:42:53-05:00",
+        "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5052,-98.6861",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.5052,-98.6861",
         "status": "verified",
         "geocode_method": "source",
         "notes": "",
