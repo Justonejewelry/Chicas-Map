@@ -1,9 +1,9 @@
 {
-  "edition": "Oct 7 email leads — weekend streets",
+  "edition": "Oct 7 email leads — days locked",
   "city": "san-antonio",
   "date": "2026-10-07",
-  "last_refresh": "2026-10-07T03:20:00-05:00",
-  "total_locations": 23,
+  "last_refresh": "2026-10-07T08:22:00-05:00",
+  "total_locations": 25,
   "status": "live",
   "public": [
     {
@@ -146,13 +146,13 @@
     },
     {
       "address": "24817 US Highway 281 S, San Antonio, TX 78264",
-      "dates": "2026-10-07 – 2026-10-09",
-      "date_from": "2026-10-07",
-      "date_to": "2026-10-09",
-      "end_date": "2026-10-09",
+      "dates": "2026-10-10",
+      "date_from": "2026-10-10",
+      "date_to": "2026-10-10",
+      "end_date": "2026-10-10",
       "hours": "8:00 am – 3:00 pm",
       "title": "Pop up sale 🌻🌻🌻🌻🌻",
-      "details": "QR Code Link to This Post 10-10-26 8-3 Food trucks welcome Vendors 25$ First in many… Come join the fun 🤗🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻 RSVP 210-six4nine-9954 Norma",
+      "details": "QR Code Link to This Post 10-10-26 8-3 Food trucks welcome Vendors 25$ First in many… Come join the fun 🤗🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻 RSVP 210-six4nine-9954 Norma Email:GarageSaleFinder lists this popup Saturday 10/10, 8–3. Craigslist window 10/07–10/09 was not used.",
       "source": "Craigslist",
       "url": "https://www.craigslist.org/view/d/san-antonio-pop-up-sale/46BU3u7MCtRhvXDsi193Ni",
       "photos": 0,
@@ -167,12 +167,15 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "cl-toniopopupsale46bu3u7mctrhvxdsi193ni",
-      "date_start": "2026-10-07",
-      "date_end": "2026-10-09",
-      "date_bucket": "live",
-      "resolve_note": "Email fill 2026-10-06. Scraper window was wrong; email says 10/10.",
+      "date_start": "2026-10-10",
+      "date_end": "2026-10-10",
+      "date_bucket": "upcoming",
+      "resolve_note": "Email:GarageSaleFinder lists this popup Saturday 10/10, 8–3. Craigslist window 10/07–10/09 was not used.",
       "also_seen": [
         "Email:GarageSaleFinder"
+      ],
+      "dates_iso": [
+        "2026-10-10"
       ]
     },
     {
@@ -680,6 +683,70 @@
       "dates_iso": [
         "2026-10-10"
       ]
+    },
+    {
+      "address": "Gainesborough Dr, San Antonio, TX 78230",
+      "dates": "2026-10-09 – 2026-10-10",
+      "date_from": "2026-10-09",
+      "date_to": "2026-10-10",
+      "end_date": "2026-10-10",
+      "date_start": "2026-10-09",
+      "date_end": "2026-10-10",
+      "date_bucket": "upcoming",
+      "dates_iso": [
+        "2026-10-09",
+        "2026-10-10"
+      ],
+      "hours": null,
+      "title": "Downsizing Garage Sale",
+      "details": "Exercise equipment, household, clothing, computers. House number not listed. Pin is a Gainesborough Dr street anchor, not a driveway. Email:GarageSaleFinder.",
+      "source": "Email:GarageSaleFinder",
+      "url": "https://garagesalefinder.com/",
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.72,
+      "status": "verified",
+      "lat": 29.518475,
+      "lon": -98.543247,
+      "geocode": "street_anchor",
+      "accuracy": "street_anchor",
+      "address_status": "street_only",
+      "in_person": true,
+      "external_id": "gsf-gainesborough-2026-10-09"
+    },
+    {
+      "address": "Newkirk, Helotes, TX 78023",
+      "dates": "2026-10-10",
+      "date_from": "2026-10-10",
+      "date_to": "2026-10-10",
+      "end_date": "2026-10-10",
+      "date_start": "2026-10-10",
+      "date_end": "2026-10-10",
+      "date_bucket": "upcoming",
+      "dates_iso": [
+        "2026-10-10"
+      ],
+      "hours": "8:00 am – 1:00 pm",
+      "title": "Sedona subdivision Community Wide Garage sale",
+      "details": "Sedona subdivision off 1604/Brimhall. Community-wide Saturday 10/10, 8 am to 1 pm. No single house number. Pin is a Newkirk street anchor. Email:GarageSaleFinder.",
+      "source": "Email:GarageSaleFinder",
+      "url": "https://garagesalefinder.com/s/N9siM/newkirk-helotes-tx-78023",
+      "type": "community",
+      "categories": [
+        "garage-sale",
+        "community"
+      ],
+      "confidence": 0.74,
+      "status": "verified",
+      "lat": 29.547555,
+      "lon": -98.67715,
+      "geocode": "street_anchor",
+      "accuracy": "street_anchor",
+      "address_status": "street_only",
+      "in_person": true,
+      "external_id": "gsf-newkirk-helotes-2026-10-10"
     }
   ],
   "date_window": {

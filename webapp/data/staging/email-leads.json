@@ -1,35 +1,5 @@
 {
   "date": "2026-10-07",
-  "reason": "incomplete street \u2014 not published",
-  "leads": [
-    {
-      "title": "Downsizing Garage Sale",
-      "street_address": "Gainesborough Dr, San Antonio, TX 78230",
-      "dates": [
-        "2026-10-09",
-        "2026-10-10"
-      ],
-      "hours": null,
-      "source": "Email:GarageSaleFinder",
-      "lat": 29.545,
-      "lon": -98.565,
-      "accuracy": "zip_centroid",
-      "confidence": 0.75,
-      "hold": "no house number"
-    },
-    {
-      "title": "Sedona subdivision Community Wide Garage sale",
-      "street_address": "Newkirk, Helotes, TX 78023",
-      "dates": [
-        "2026-10-10"
-      ],
-      "hours": "8:00 am \u2013 1:00 pm",
-      "source": "Email:GarageSaleFinder",
-      "lat": 29.578,
-      "lon": -98.69,
-      "accuracy": "zip_centroid",
-      "confidence": 0.75,
-      "hold": "no house number; off 1604/Brimhall"
-    }
-  ]
+  "reason": "published as street anchors on 2026-10-07",
+  "leads": []
 }
