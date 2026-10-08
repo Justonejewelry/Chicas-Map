@@ -217,10 +217,13 @@
   }
 
   function hideLine(sel, needle) {
+    var want = String(needle || "").toLowerCase();
     Array.from(document.querySelectorAll(sel)).forEach(function (el) {
-      if (el.closest && el.closest("#chica-home-reels, #chica-reel-dialog")) return;
-      var t = text(el);
-      if (t && t.indexOf(needle) !== -1 && t.length < 420) hide(el);
+      if (el.closest && el.closest("#chica-home-reels, #chica-reel-dialog, #chica-more")) return;
+      var raw = text(el).toLowerCase();
+      if (!raw || raw.indexOf(want) === -1 || raw.length > 700) return;
+      var section = el.closest("section") || el;
+      hide(section);
     });
   }
 
@@ -230,7 +233,8 @@
     foldHeader();
     foldBody();
     quietChrome();
-    hideLine("main section, main div", "Pack principle");
+    hideLine("main section, main div, main p, main h2", "Pack principle");
+    hideLine("main section, main div, main h2", "Loyalty. Duty.");
     hideLine("main section, main div", "Principio de la manada");
     hideLine("footer p, footer div, footer span", "free Saturday map");
     hideLine("footer p, footer div, footer span", "mapa gratis del sábado");
