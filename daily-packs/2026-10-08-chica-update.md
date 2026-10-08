@@ -79,3 +79,13 @@ OFF MAP  Boerne New Braunfels Austin Spring Branch San Marcos
 - ESO "2 new sales added near San Antonio": (1) Vintage Christmas Collectibles, Caring Transitions of New Braunfels, New Braunfels 78132, online bidding closes Sun Oct 11 — out of fence. (2) Rustic Charm Meets Refined Living, Caring Transitions of Bulverde & Canyon Lake, city line only San Antonio 78259, online bidding closes Wed Oct 14 — no street, online auction. Same 78259 online row is also in today's GSF featured block. Not a pin.
 - GSF 10/08 rows with a house number are already on the feed (including Maiden Way). 24817 US 281 S popup already on the feed; Saturday 10/10 hours not used to overwrite Craigslist dates. Phone in that GSF row stripped from social.
 - Net-new street pins this pass: 0. CITY_FILE not written. Holds stay in staging. schema/city.schema.json still absent.
+
+
+## Pass 3 — 05:16 CT email merge
+- Trigger: weekend master. First `run_workflow` rejected unexpected input `city`. Retry `cities=san-antonio` run `37761818853` completed success. `community-events-swarm.yml` not triggered.
+- Emails scanned: 4 threads (GSF 10/08, GSF 10/07, ESO 10/08, ESO 10/07). Formspree: 0. No attachments. No OCR.
+- Live feed before merge: 20 public, 114 permits. Edition claimed email pins; Alpha Wolf, Wedgewood, Quail Oak, Maiden Way, and the other mailer streets were not in `public[]`.
+- Net-new written: 18 Census rooftop pins. Detail fill only on Booth Dr and Brooks Ave. 281 S popup dates not overwritten. Phone stripped.
+- Holds: Gainesborough Dr, Newkirk/Helotes, 1807 Oakwell Farms Pkwy.
+- Rejected out of fence or online-only: New Braunfels, Austin, Spring Branch, New Berlin, Comfort, San Marcos, Boerne, Houston PMB, national auctions.
+- schema/city.schema.json absent. Root keys including `public[]` and `permits[]` preserved.

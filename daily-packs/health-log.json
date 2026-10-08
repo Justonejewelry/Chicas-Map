@@ -118,5 +118,15 @@
     "geocoding_success_rate": "0.0%",
     "status": "SUCCESS",
     "notes": "First dispatch rejected unexpected input city. Retry chica-daily.yml 37756288362 still in_progress after 3 polls. community-events-swarm.yml not triggered. Formspree 0. ESO 04:22 digest: New Braunfels online and 78259 online, no street. GSF house-number rows already on feed. CITY_FILE not written. Holds appended to staging. schema/city.schema.json absent."
+  },
+  {
+    "timestamp": "2026-10-08T05:16:00-05:00",
+    "target_date": "2026-10-08",
+    "actions_run_id": "37761818853",
+    "emails_scanned": 4,
+    "net_new_added": 18,
+    "geocoding_success_rate": "94.7%",
+    "status": "SUCCESS",
+    "notes": "First dispatch rejected unexpected input city. Retry chica-daily.yml 37761818853 completed success. community-events-swarm.yml not triggered. Formspree 0. No flyer attachments, OCR not needed. 18 Census-rooftop streets merged onto post-populate feed (20 public -> 38). Booth Dr and Brooks Ave details filled, ids kept. 281 S popup dates not overwritten. Held Gainesborough, Newkirk, Oakwell Pkwy. schema/city.schema.json absent. public[] and permits[] preserved."
   }
 ]

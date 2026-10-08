@@ -1,11 +1,16 @@
 {
   "date": "2026-10-08",
   "reason": "incomplete, ungeocoded, or out of fence; not written to public[]",
+  "pass": "weekend-master 2026-10-08 05:16 CT",
+  "actions_run_id": "37761818853",
   "leads": [
     {
       "title": "Downsizing Garage Sale",
       "street_address": "Gainesborough Dr, San Antonio, TX 78230",
-      "dates": ["2026-10-09", "2026-10-10"],
+      "dates": [
+        "2026-10-09",
+        "2026-10-10"
+      ],
       "hours": "not listed",
       "source": "Email:GarageSaleFinder",
       "lat": null,
@@ -15,7 +20,9 @@
     {
       "title": "Sedona subdivision Community Wide Garage sale",
       "street_address": "Newkirk, Helotes, TX 78023",
-      "dates": ["2026-10-10"],
+      "dates": [
+        "2026-10-10"
+      ],
       "hours": "8AM-1PM",
       "source": "Email:GarageSaleFinder",
       "lat": null,
@@ -25,7 +32,9 @@
     {
       "title": "Great Sale with Three Generations of Treasures",
       "street_address": "1807 Oakwell Farms Pkwy, San Antonio, TX 78218",
-      "dates": ["2026-10-10"],
+      "dates": [
+        "2026-10-10"
+      ],
       "hours": "not listed",
       "source": "Email:GarageSaleFinder",
       "lat": null,
@@ -36,7 +45,9 @@
     {
       "title": "Vintage Christmas Collectibles Germany Italy Online Auction",
       "street_address": "New Braunfels, TX 78132",
-      "dates": ["2026-10-11"],
+      "dates": [
+        "2026-10-11"
+      ],
       "hours": "Bidding starts to close Sun. Oct 11 at 7:00PM CST",
       "source": "Email:EstateSales.org",
       "lat": null,
@@ -46,13 +57,33 @@
     {
       "title": "Rustic Charm Meets Refined Living Online Auction",
       "street_address": "San Antonio, TX 78259",
-      "dates": ["2026-10-07", "2026-10-08", "2026-10-09", "2026-10-10", "2026-10-11", "2026-10-12", "2026-10-13", "2026-10-14"],
+      "dates": [
+        "2026-10-07",
+        "2026-10-08",
+        "2026-10-09",
+        "2026-10-10",
+        "2026-10-11",
+        "2026-10-12",
+        "2026-10-13",
+        "2026-10-14"
+      ],
       "hours": "Bidding starts to close Wed. Oct 14 at 7:00PM CST",
       "source": "Email:EstateSales.org",
       "lat": null,
       "lon": null,
-      "accuracy": null,
       "hold": "online auction, no street, company is Bulverde and Canyon Lake"
+    },
+    {
+      "title": "Pop up market",
+      "street_address": "24817 United States Highway 281 S, San Antonio, TX 78264",
+      "dates": [
+        "2026-10-10"
+      ],
+      "hours": "8AM-3PM",
+      "source": "Email:GarageSaleFinder",
+      "lat": null,
+      "lon": null,
+      "hold": "already on feed as Craigslist popup; dates not overwritten; phone stripped"
     }
   ]
 }
