@@ -66,7 +66,7 @@
       var mi = milesLabel(s);
       html += '<button type="button" data-id="' + String(s.id).replace(/"/g, "") + '">' +
         '<strong>' + escapeHtml(s.title) + '</strong>' +
-        '<span>' + escapeHtml(s.type || "sale") + (mi ? " \u00b7 " + mi : "") + '</span>' +
+        '<span>' + escapeHtml(s.type || "sale") + (mi ? " · " + mi : "") + '</span>' +
         '<em>' + escapeHtml(s.address || "") + '</em></button>';
     }
     list.innerHTML = html;
@@ -89,7 +89,7 @@
       return;
     }
     var btn = document.getElementById("chica-near-btn");
-    if (btn) btn.textContent = "\u2026";
+    if (btn) btn.textContent = "…";
     navigator.geolocation.getCurrentPosition(
       function (pos) {
         window.__chicaHere = { lat: pos.coords.latitude, lon: pos.coords.longitude };
@@ -109,16 +109,17 @@
     var oldSheet = document.getElementById("chica-sale-sheet");
     if (oldSheet && oldSheet.parentNode) oldSheet.parentNode.removeChild(oldSheet);
     ["chica-guide", "chica-guide-btn"].forEach(function (id) { var n = document.getElementById(id); if (n && n.parentNode) n.parentNode.removeChild(n); });
-    if (document.getElementById("chica-hunt-bar")) return;
+    if (document.getElementById("chica-hunt-dock")) return;
     if (!document.getElementById("chica-hunt-css")) {
       var s = document.createElement("style");
       s.id = "chica-hunt-css";
       s.textContent =
-        "#chica-hunt-bar{position:fixed!important;top:calc(max(10px,env(safe-area-inset-top)) + 52px)!important;left:10px!important;right:10px!important;width:auto!important;z-index:2147483000!important;display:flex!important;gap:8px;align-items:center;pointer-events:auto!important;box-sizing:border-box}" +
-        "#chica-hunt-bar input{flex:1 1 auto;width:1px;min-width:0;height:44px;border:1px solid #3a342e;border-radius:12px;background:#1a1714f5;color:#f3eee4;padding:0 12px;font:600 14px/1 Inter,system-ui,sans-serif}" +
-        "#chica-hunt-bar button{height:44px;border:0;border-radius:12px;background:#c513af;color:#fff;font:800 12px/1 Inter,system-ui,sans-serif;padding:0 12px;white-space:nowrap;cursor:pointer}" +
-        "#chica-filters{position:fixed;top:62px;left:10px;right:10px;z-index:2147482000;display:flex;gap:6px;overflow:auto;padding-bottom:4px;pointer-events:auto}" +
-        "#chica-filters button{height:36px;border:1px solid #3a342e;border-radius:999px;background:#1a1714ee;color:#f3eee4;font:700 12px/1 Inter,system-ui,sans-serif;padding:0 12px;white-space:nowrap}" +
+        "#chica-hunt-dock{position:fixed!important;top:max(10px,env(safe-area-inset-top))!important;left:62px!important;right:10px!important;width:auto!important;z-index:2147483000!important;display:flex!important;flex-direction:column!important;gap:8px;pointer-events:none!important;box-sizing:border-box}" +
+        "#chica-hunt-bar{position:relative!important;top:auto!important;left:auto!important;right:auto!important;width:auto!important;z-index:2!important;display:flex!important;flex-wrap:nowrap!important;gap:8px;align-items:center;pointer-events:auto!important;box-sizing:border-box}" +
+        "#chica-hunt-bar input{flex:1 1 auto;width:1px;min-width:0;height:44px;border:1px solid #3a342e;border-radius:12px;background:#1a1714;color:#f3eee4;padding:0 12px;font:600 14px/1 Inter,system-ui,sans-serif}" +
+        "#chica-hunt-bar button{flex:0 0 auto;height:44px;border:0;border-radius:12px;background:#c513af;color:#fff;font:800 12px/1 Inter,system-ui,sans-serif;padding:0 12px;white-space:nowrap;cursor:pointer}" +
+        "#chica-filters{position:relative!important;top:auto!important;left:auto!important;right:auto!important;z-index:1!important;display:flex;gap:6px;overflow:auto;margin-left:-52px;width:calc(100% + 52px);padding:0 0 2px;pointer-events:auto;scrollbar-width:none}" +
+        "#chica-filters button{height:36px;border:1px solid #3a342e;border-radius:999px;background:#1a1714;color:#f3eee4;font:700 12px/1 Inter,system-ui,sans-serif;padding:0 12px;white-space:nowrap}" +
         "#chica-filters button.on{background:#c513af;border-color:#c513af;color:#fff}" +
         "#chica-sale-sheet{position:fixed;left:10px;bottom:10px;z-index:2147481000;width:min(360px,calc(100vw - 20px));max-height:38dvh;overflow:auto;background:#1a1714f2;color:#f3eee4;border:1px solid #3a342e;border-radius:14px;padding:10px;pointer-events:auto}" +
         "#chica-sale-sheet h2{margin:0 0 6px;font:800 13px/1.2 Inter,system-ui,sans-serif}" +
@@ -131,10 +132,11 @@
         ".chica-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}";
       (document.head || document.documentElement).appendChild(s);
     }
+    var dock = document.createElement("div");
+    dock.id = "chica-hunt-dock";
     var bar = document.createElement("div");
     bar.id = "chica-hunt-bar";
     bar.innerHTML = '<label class="chica-sr" for="chica-hunt-q">Search sales, streets, or zip</label><input id="chica-hunt-q" type="search" placeholder="Search sales, streets, zip" enterkeyhint="search" autocomplete="off" aria-label="Search sales, streets, or zip" /><button type="button" id="chica-near-btn" aria-label="Find sales near me">Near me</button>';
-    document.documentElement.appendChild(bar);
     var filters = document.createElement("div");
     filters.id = "chica-filters";
     filters.setAttribute("role", "toolbar");
@@ -149,7 +151,9 @@
       '<button type="button" data-miles="5">5 mi</button>' +
       '<button type="button" data-miles="10">10 mi</button>' +
       '<button type="button" data-miles="20">20 mi</button>';
-    document.documentElement.appendChild(filters);
+    dock.appendChild(bar);
+    dock.appendChild(filters);
+    document.documentElement.appendChild(dock);
     var q = bar.querySelector("#chica-hunt-q");
     var t = null;
     q.addEventListener("input", function () {
