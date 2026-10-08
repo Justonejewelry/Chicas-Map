@@ -16,9 +16,10 @@
   }
 
   function hide(el) {
-    if (!el || el.getAttribute("data-chica-keep") === "1") return;
-    el.setAttribute("data-chica-dup", "1");
-    el.setAttribute("hidden", "");
+    if (!el || !el.parentNode) return;
+    if (el.getAttribute && el.getAttribute("data-chica-keep") === "1") return;
+    if (el.id === "chica-home-reels" || el.id === "chica-reel-dialog" || el.id === "chica-more") return;
+    el.parentNode.removeChild(el);
   }
 
   function css() {
@@ -29,13 +30,13 @@
       document.head.appendChild(s);
     }
     s.textContent =
-      "[data-chica-dup='1']{display:none!important}" +
+      
       "header{border-color:rgba(255,255,255,.08)!important;background:rgba(18,18,18,.86)!important}" +
       "main{padding-top:28px!important}" +
       "main h1{font-weight:650!important;letter-spacing:-.035em!important;line-height:1.05!important}" +
       "main a[data-chica-keep='1']{display:inline-flex!important;min-height:48px;align-items:center;justify-content:center;padding:0 22px!important;border-radius:980px!important;background:#c513af!important;color:#fff!important;text-decoration:none!important;font:600 16px/1 Inter,system-ui,sans-serif!important;letter-spacing:-.015em!important;border:1px solid rgba(255,255,255,.4)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.62),inset 0 -2px 0 rgba(0,0,0,.28),0 8px 16px rgba(0,0,0,.28)!important;background-image:linear-gradient(180deg,rgba(255,255,255,.46),rgba(255,255,255,.08) 46%,rgba(0,0,0,.2))!important}" +
       "header a[data-chica-mark='1']{cursor:pointer;position:relative}" +
-      "header a[data-chica-mark='1'] span{display:none!important}" +
+      
       "#chica-more{position:absolute;left:12px;top:58px;z-index:80}" +
       "#chica-more > summary{display:none}" +
       "#chica-more > div{position:relative;right:auto;top:auto;z-index:80;min-width:232px;padding:6px;border-radius:14px;background:rgba(18,18,18,.62);color:#f5f5f7;border:1px solid rgba(255,255,255,.22);box-shadow:0 16px 40px rgba(0,0,0,.32);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}" +
@@ -134,7 +135,7 @@
     brand.setAttribute("aria-expanded", details.open ? "true" : "false");
     brand.setAttribute("aria-label", es() ? "Menú" : "Menu");
     var span = brand.querySelector("span");
-    if (span) hide(span);
+    if (span && span.parentNode) span.parentNode.removeChild(span);
     if (brand.getAttribute("data-chica-menu") === "1") return;
     brand.setAttribute("data-chica-menu", "1");
     brand.addEventListener("click", function (ev) {
@@ -158,7 +159,7 @@
       if (t === "en" || t === "es" || t.indexOf("theme") !== -1 || t.indexOf("tema") !== -1) return;
       if (t === "chicas map") {
         var span = el.querySelector("span");
-        if (span) hide(span);
+        if (span && span.parentNode) span.parentNode.removeChild(span);
         return;
       }
       hide(el);

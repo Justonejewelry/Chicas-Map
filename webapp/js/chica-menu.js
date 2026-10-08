@@ -49,7 +49,7 @@
       "#chica-mark{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;border:0;border-radius:999px;background:transparent;cursor:pointer}" +
       "#chica-mark img,header a[data-chica-mark='1'] img{width:36px;height:36px;border-radius:999px;object-fit:cover;background:#121212}" +
       "header a[data-chica-mark='1']{cursor:pointer}" +
-      "header a[data-chica-mark='1'] span{display:none!important}" +
+      
       "#chica-lang{display:inline-flex;height:52px;align-items:center;padding:4px;border-radius:999px;background:#1c1c1e;border:1px solid rgba(255,255,255,.12)}" +
       "#chica-lang button,#chica-theme{height:44px;min-width:44px;border:0;border-radius:999px;background:transparent;color:#f5f5f7;font:700 12px/1 Inter,system-ui,sans-serif;cursor:pointer}" +
       "#chica-lang button[aria-pressed='true']{background:#c513af;color:#fff}" +
@@ -63,7 +63,7 @@
       "body.chica-map-menu #chica-site-bar{position:fixed;top:max(10px,env(safe-area-inset-top));left:10px;width:auto;height:auto;padding:0;background:transparent;border:0}" +
       "body.chica-map-menu #chica-more{position:fixed;left:10px;top:62px}" +
       "body.chica-map-menu #chica-mark{background:#121212;border:1px solid rgba(255,255,255,.14)}" +
-      "#chica-mini{display:none!important}";
+      "";
   }
 
   function current(href) {
@@ -160,11 +160,10 @@
       if (t === "en" || t === "es" || t.indexOf("theme") !== -1 || t.indexOf("tema") !== -1) return;
       if (t.indexOf("chicas map") !== -1) {
         var span = el.querySelector("span");
-        if (span) span.style.setProperty("display", "none", "important");
+        if (span && span.parentNode) span.parentNode.removeChild(span);
         return;
       }
-      el.setAttribute("hidden", "");
-      el.style.setProperty("display", "none", "important");
+      if (el.parentNode) el.parentNode.removeChild(el);
     });
   }
 
@@ -257,7 +256,7 @@
     ensureMapHeading();
     if (isMap()) document.body.classList.add("chica-map-menu");
     var mini = document.getElementById("chica-mini");
-    if (mini) mini.setAttribute("hidden", "");
+    if (mini && mini.parentNode) mini.parentNode.removeChild(mini);
     var details = menu();
     var brand = brandLink();
     if (brand) {
