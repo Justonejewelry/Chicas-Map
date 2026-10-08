@@ -17,7 +17,10 @@ body { overflow-x: hidden; }
     top: calc(max(8px, env(safe-area-inset-top)) + 52px) !important;
     left: 10px !important;
     right: 10px !important;
+    width: auto !important;
   }
+  #chica-hunt-bar input { flex: 1 1 auto !important; width: 1px !important; min-width: 0 !important; }
+  #chica-guide, #chica-guide-btn { display: none !important; }
   #chica-hunt-bar input,
   #chica-hunt-bar button { height: 44px !important; }
 

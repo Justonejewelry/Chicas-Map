@@ -108,13 +108,14 @@
   function mount() {
     var oldSheet = document.getElementById("chica-sale-sheet");
     if (oldSheet && oldSheet.parentNode) oldSheet.parentNode.removeChild(oldSheet);
+    ["chica-guide", "chica-guide-btn"].forEach(function (id) { var n = document.getElementById(id); if (n && n.parentNode) n.parentNode.removeChild(n); });
     if (document.getElementById("chica-hunt-bar")) return;
     if (!document.getElementById("chica-hunt-css")) {
       var s = document.createElement("style");
       s.id = "chica-hunt-css";
       s.textContent =
-        "#chica-hunt-bar{position:fixed!important;top:max(10px,env(safe-area-inset-top))!important;left:10px!important;right:118px!important;z-index:2147483000!important;display:flex!important;gap:6px;align-items:center;pointer-events:auto!important}" +
-        "#chica-hunt-bar input{flex:1;min-width:0;height:44px;border:1px solid #3a342e;border-radius:12px;background:#1a1714f5;color:#f3eee4;padding:0 12px;font:600 14px/1 Inter,system-ui,sans-serif}" +
+        "#chica-hunt-bar{position:fixed!important;top:calc(max(10px,env(safe-area-inset-top)) + 52px)!important;left:10px!important;right:10px!important;width:auto!important;z-index:2147483000!important;display:flex!important;gap:8px;align-items:center;pointer-events:auto!important;box-sizing:border-box}" +
+        "#chica-hunt-bar input{flex:1 1 auto;width:1px;min-width:0;height:44px;border:1px solid #3a342e;border-radius:12px;background:#1a1714f5;color:#f3eee4;padding:0 12px;font:600 14px/1 Inter,system-ui,sans-serif}" +
         "#chica-hunt-bar button{height:44px;border:0;border-radius:12px;background:#c513af;color:#fff;font:800 12px/1 Inter,system-ui,sans-serif;padding:0 12px;white-space:nowrap;cursor:pointer}" +
         "#chica-filters{position:fixed;top:62px;left:10px;right:10px;z-index:2147482000;display:flex;gap:6px;overflow:auto;padding-bottom:4px;pointer-events:auto}" +
         "#chica-filters button{height:36px;border:1px solid #3a342e;border-radius:999px;background:#1a1714ee;color:#f3eee4;font:700 12px/1 Inter,system-ui,sans-serif;padding:0 12px;white-space:nowrap}" +
