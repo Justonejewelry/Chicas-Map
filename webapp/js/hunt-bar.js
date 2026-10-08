@@ -125,6 +125,14 @@
     });
   }
 
+  function setNear(text) {
+    var near = document.getElementById("chica-near-btn");
+    if (!near) return;
+    var span = near.querySelector("span");
+    if (span) span.textContent = text;
+    else near.textContent = text;
+  }
+
   function paintLabels() {
     var q = document.getElementById("chica-hunt-q");
     if (q) {
@@ -134,9 +142,12 @@
     var lab = document.querySelector("label[for='chica-hunt-q']");
     if (lab) lab.textContent = t("search");
     var near = document.getElementById("chica-near-btn");
-    if (near && near.textContent !== "\u2026") {
-      near.textContent = t("near");
-      near.setAttribute("aria-label", t("nearAria"));
+    if (near) {
+      var span = near.querySelector("span");
+      if (!span || span.textContent !== "\u2026") {
+        setNear(t("near"));
+        near.setAttribute("aria-label", t("nearAria"));
+      }
     }
     var filters = document.getElementById("chica-filters");
     if (!filters) return;
@@ -158,18 +169,17 @@
       try { map.flyTo([SA.lat, SA.lon], 12, { duration: 0.9 }); } catch (e) { map.setView([SA.lat, SA.lon], 12); }
       return;
     }
-    var btn = document.getElementById("chica-near-btn");
-    if (btn) btn.textContent = "\u2026";
+    setNear("\u2026");
     navigator.geolocation.getCurrentPosition(
       function (pos) {
         window.__chicaHere = { lat: pos.coords.latitude, lon: pos.coords.longitude };
         try { map.flyTo([pos.coords.latitude, pos.coords.longitude], 14, { duration: 1 }); } catch (e) { map.setView([pos.coords.latitude, pos.coords.longitude], 14); }
-        if (btn) btn.textContent = t("near");
+        setNear(t("near"));
         apply();
       },
       function () {
         try { map.flyTo([SA.lat, SA.lon], 12, { duration: 0.9 }); } catch (e) { map.setView([SA.lat, SA.lon], 12); }
-        if (btn) btn.textContent = t("near");
+        setNear(t("near"));
       },
       { enableHighAccuracy: true, timeout: 8000, maximumAge: 30000 }
     );
@@ -186,11 +196,15 @@
       s.textContent =
         "#chica-hunt-dock{position:fixed!important;top:max(10px,env(safe-area-inset-top))!important;left:62px!important;right:10px!important;width:auto!important;z-index:2147483000!important;display:flex!important;flex-direction:column!important;gap:8px;pointer-events:none!important;box-sizing:border-box}" +
         "#chica-hunt-bar{position:relative!important;top:auto!important;left:auto!important;right:auto!important;width:auto!important;z-index:2!important;display:flex!important;flex-wrap:nowrap!important;gap:8px;align-items:center;pointer-events:auto!important;box-sizing:border-box}" +
-        "#chica-hunt-bar input{flex:1 1 auto;width:1px;min-width:0;height:44px;border:1px solid #3a342e;border-radius:12px;background:#1a1714;color:#f3eee4;padding:0 12px;font:600 14px/1 Inter,system-ui,sans-serif}" +
-        "#chica-hunt-bar button{flex:0 0 auto;height:44px;border:0;border-radius:12px;background:#c513af;color:#fff;font:800 12px/1 Inter,system-ui,sans-serif;padding:0 12px;white-space:nowrap;cursor:pointer}" +
-        "#chica-filters{position:relative!important;top:auto!important;left:auto!important;right:auto!important;z-index:1!important;display:flex;gap:6px;overflow:auto;margin-left:-52px;width:calc(100% + 52px);padding:0 0 2px;pointer-events:auto;scrollbar-width:none}" +
-        "#chica-filters button{height:36px;border:1px solid #3a342e;border-radius:999px;background:#1a1714;color:#f3eee4;font:700 12px/1 Inter,system-ui,sans-serif;padding:0 12px;white-space:nowrap}" +
-        "#chica-filters button.on{background:#c513af;border-color:#c513af;color:#fff}" +
+        "#chica-hunt-bar input{flex:1 1 auto;width:1px;min-width:0;height:44px;border:1px solid rgba(243,238,228,.16);border-radius:12px;background:rgba(18,18,18,.9);color:#f3eee4;padding:0 14px;font:500 14px/1 Inter,system-ui,sans-serif;box-shadow:0 10px 24px rgba(0,0,0,.28);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}" +
+        "#chica-hunt-bar input::placeholder{color:#b8b0a4}" +
+        "#chica-near-btn{flex:0 0 auto;height:44px;display:inline-flex;align-items:center;gap:6px;border:1px solid #8d0c7c;border-radius:12px;background:#c513af;color:#fff;font:700 12px/1 Inter,system-ui,sans-serif;letter-spacing:.02em;padding:0 12px;white-space:nowrap;cursor:pointer;box-shadow:0 8px 18px rgba(197,19,175,.28)}" +
+        "#chica-near-btn svg{display:block;flex:0 0 auto}" +
+        "#chica-filters{position:relative!important;top:auto!important;left:auto!important;right:auto!important;z-index:1!important;display:flex;gap:8px;align-items:center;width:100%;margin:0;padding:0 0 2px;overflow:auto;pointer-events:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}" +
+        "#chica-filters::-webkit-scrollbar{display:none}" +
+        "#chica-filters .grp{display:flex;gap:2px;flex:0 0 auto;padding:3px;border-radius:12px;background:rgba(18,18,18,.86);border:1px solid rgba(243,238,228,.14);box-shadow:0 10px 24px rgba(0,0,0,.28);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}" +
+        "#chica-filters button{height:30px;border:0;border-radius:9px;background:transparent;background-image:none;color:#f3eee4;font:600 12px/1 Inter,system-ui,sans-serif;letter-spacing:.01em;padding:0 10px;white-space:nowrap;cursor:pointer}" +
+        "#chica-filters button.on{background:#c513af;background-image:none;color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.28)}" +
         "#chica-sale-sheet{position:fixed;left:10px;bottom:10px;z-index:2147481000;width:min(360px,calc(100vw - 20px));max-height:38dvh;overflow:auto;background:#1a1714f2;color:#f3eee4;border:1px solid #3a342e;border-radius:14px;padding:10px;pointer-events:auto}" +
         "#chica-sale-sheet h2{margin:0 0 6px;font:800 13px/1.2 Inter,system-ui,sans-serif}" +
         "#chica-sale-list button{display:block;width:100%;text-align:left;background:#121212;color:#f3eee4;border:1px solid #3a342e;border-radius:10px;padding:8px 10px;margin:0 0 6px}" +
@@ -206,21 +220,27 @@
     dock.id = "chica-hunt-dock";
     var bar = document.createElement("div");
     bar.id = "chica-hunt-bar";
-    bar.innerHTML = '<label class="chica-sr" for="chica-hunt-q">Search sales, streets, or zip</label><input id="chica-hunt-q" type="search" placeholder="Search sales, streets, zip" enterkeyhint="search" autocomplete="off" aria-label="Search sales, streets, or zip" /><button type="button" id="chica-near-btn" aria-label="Find sales near me">Near me</button>';
+    bar.innerHTML = '<label class="chica-sr" for="chica-hunt-q">Search sales, streets, or zip</label><input id="chica-hunt-q" type="search" placeholder="Search sales, streets, zip" enterkeyhint="search" autocomplete="off" aria-label="Search sales, streets, or zip" /><button type="button" id="chica-near-btn" aria-label="Find sales near me"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="2.2" fill="none" stroke="#fff" stroke-width="1.4"/><path d="M7 1.2v2.1M7 10.7v2.1M1.2 7h2.1M10.7 7h2.1" fill="none" stroke="#fff" stroke-width="1.4" stroke-linecap="round"/></svg><span>Near me</span></button>';
     var filters = document.createElement("div");
     filters.id = "chica-filters";
     filters.setAttribute("role", "toolbar");
     filters.setAttribute("aria-label", "Sale filters");
     filters.innerHTML =
-      '<button type="button" data-day="today">Today</button>' +
-      '<button type="button" data-day="sat">Saturday</button>' +
-      '<button type="button" data-day="sun">Sunday</button>' +
-      '<button type="button" data-type="garage">Garage</button>' +
-      '<button type="button" data-type="yard">Yard</button>' +
-      '<button type="button" data-type="estate">Estate</button>' +
-      '<button type="button" data-miles="5">5 mi</button>' +
-      '<button type="button" data-miles="10">10 mi</button>' +
-      '<button type="button" data-miles="20">20 mi</button>';
+      '<div class="grp">' +
+        '<button type="button" data-day="today">Today</button>' +
+        '<button type="button" data-day="sat">Saturday</button>' +
+        '<button type="button" data-day="sun">Sunday</button>' +
+      '</div>' +
+      '<div class="grp">' +
+        '<button type="button" data-type="garage">Garage</button>' +
+        '<button type="button" data-type="yard">Yard</button>' +
+        '<button type="button" data-type="estate">Estate</button>' +
+      '</div>' +
+      '<div class="grp">' +
+        '<button type="button" data-miles="5">5 mi</button>' +
+        '<button type="button" data-miles="10">10 mi</button>' +
+        '<button type="button" data-miles="20">20 mi</button>' +
+      '</div>';
     dock.appendChild(bar);
     dock.appendChild(filters);
     document.documentElement.appendChild(dock);
