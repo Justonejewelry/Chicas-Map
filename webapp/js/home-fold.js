@@ -33,14 +33,14 @@
       "header{border-color:rgba(255,255,255,.08)!important;background:rgba(18,18,18,.86)!important}" +
       "main{padding-top:28px!important}" +
       "main h1{font-weight:650!important;letter-spacing:-.035em!important;line-height:1.05!important}" +
-      "main a[data-chica-keep='1']{display:inline-flex!important;min-height:48px;align-items:center;justify-content:center;padding:0 22px!important;border-radius:980px!important;background:#c513af!important;color:#fff!important;text-decoration:none!important;font:600 16px/1 Inter,system-ui,sans-serif!important;letter-spacing:-.015em!important;box-shadow:none!important}" +
+      "main a[data-chica-keep='1']{display:inline-flex!important;min-height:48px;align-items:center;justify-content:center;padding:0 22px!important;border-radius:980px!important;background:#c513af!important;color:#fff!important;text-decoration:none!important;font:600 16px/1 Inter,system-ui,sans-serif!important;letter-spacing:-.015em!important;border:1px solid rgba(255,255,255,.4)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.62),inset 0 -2px 0 rgba(0,0,0,.28),0 8px 16px rgba(0,0,0,.28)!important;background-image:linear-gradient(180deg,rgba(255,255,255,.46),rgba(255,255,255,.08) 46%,rgba(0,0,0,.2))!important}" +
       "header a[data-chica-mark='1']{cursor:pointer;position:relative}" +
       "header a[data-chica-mark='1'] span{display:none!important}" +
       "#chica-more{position:absolute;left:12px;top:58px;z-index:80}" +
       "#chica-more > summary{display:none}" +
-      "#chica-more > div{position:relative;right:auto;top:auto;z-index:80;min-width:232px;padding:6px;border-radius:14px;background:#1d1d1f;color:#f5f5f7;border:1px solid rgba(255,255,255,.08);box-shadow:0 16px 40px rgba(0,0,0,.32)}" +
+      "#chica-more > div{position:relative;right:auto;top:auto;z-index:80;min-width:232px;padding:6px;border-radius:14px;background:rgba(18,18,18,.62);color:#f5f5f7;border:1px solid rgba(255,255,255,.22);box-shadow:0 16px 40px rgba(0,0,0,.32);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}" +
       "#chica-more a{display:flex;align-items:center;min-height:44px;padding:0 12px;border-radius:10px;color:#f5f5f7;text-decoration:none;font:500 15px/1.2 Inter,system-ui,sans-serif}" +
-      "#chica-more a:hover,#chica-more a:focus-visible{background:rgba(255,255,255,.08);outline:none}" +
+      "#chica-more a:hover,#chica-more a:focus-visible{background:rgba(255,255,255,.08);outline:2px solid #c513af;outline-offset:2px}" +
       "#chica-more a[data-primary='1']{color:#fff;font-weight:650}" +
       "footer{padding-bottom:28px}" +
       "@media (prefers-reduced-motion:reduce){#chica-more > div{transition:none}}";
@@ -70,6 +70,7 @@
       [BASE + "/media", "Reels"],
       [BASE + "/bulletin", es() ? "Boletín" : "Bulletin"],
       [BASE + "/backstory", es() ? "Historia" : "Backstory"],
+      [BASE + "/principle/", es() ? "Principio de la manada" : "Pack principle"],
       [BASE + "/sponsors", es() ? "Patrocinios" : "Sponsors"],
       [BASE + "/legal", es() ? "Aviso legal" : "Legal"]
     ];
@@ -215,12 +216,24 @@
     });
   }
 
+  function hideLine(sel, needle) {
+    Array.from(document.querySelectorAll(sel)).forEach(function (el) {
+      if (el.closest && el.closest("#chica-home-reels, #chica-reel-dialog")) return;
+      var t = text(el);
+      if (t && t.indexOf(needle) !== -1 && t.length < 420) hide(el);
+    });
+  }
+
   function run() {
     if (!home()) return;
     css();
     foldHeader();
     foldBody();
     quietChrome();
+    hideLine("main section, main div", "Pack principle");
+    hideLine("main section, main div", "Principio de la manada");
+    hideLine("footer p, footer div, footer span", "free Saturday map");
+    hideLine("footer p, footer div, footer span", "mapa gratis del sábado");
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", run);

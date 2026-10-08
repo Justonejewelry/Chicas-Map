@@ -53,9 +53,10 @@
   }
 
   function addCard() {
+    var stale = document.getElementById(ID);
+    if (stale && stale.parentNode) stale.parentNode.removeChild(stale);
+    return;
     if (!isHome()) {
-      var stale = document.getElementById(ID);
-      if (stale && stale.parentNode) stale.parentNode.removeChild(stale);
       return;
     }
     if (document.getElementById(ID)) return;
