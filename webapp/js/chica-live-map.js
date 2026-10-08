@@ -1,7 +1,7 @@
 /* Standalone Leaflet boot. Pin card is owned by pin-details.js (GPS-gated pack notes, 200 ft). */
 (function (w) {
   var BASE = "/Chicas-Map";
-  var SA = [29.4241, -98.4936];
+  var START = [29.50, -98.49];
   var mtDead = false;
   var probed = false;
   var PIN = 40;
@@ -351,7 +351,7 @@
       maxZoom: 19,
       attributionControl: true,
       keyboard: true
-    }).setView(SA, 12);
+    }).setView(START, 10);
     L.control.zoom({ position: "bottomright" }).addTo(map);
     var tileOpts = { referrerPolicy: "origin", updateWhenIdle: false, keepBuffer: 6, maxZoom: 19 };
     var street = L.tileLayer(streetUrl(), Object.assign({ attribution: "\u00a9 MapTiler \u00a9 OpenStreetMap contributors" }, tileOpts));
