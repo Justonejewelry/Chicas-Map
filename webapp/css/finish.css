@@ -73,3 +73,8 @@ body { overflow-x: hidden; }
 @media (prefers-reduced-motion: reduce) {
   #chica-listit-btn { animation: none !important; }
 }
+
+a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 2px solid #c513af;
+  outline-offset: 2px;
+}

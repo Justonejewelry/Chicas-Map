@@ -13,10 +13,10 @@
     a { color: #c513af; }
     h1 { font-family: Syne, Inter, sans-serif; margin: 8px 0 6px; }
     .meta { color: #c4b8a8; }
-    .row { display: block; padding: 14px 0; border-bottom: 1px solid #2a2622; text-decoration: none; color: inherit; }
+    .row { display: block; min-height: 44px; padding: 14px 0; border-bottom: 1px solid #2a2622; text-decoration: none; color: inherit; }
     .row:hover { color: #fff; }
     .kind { font-size: 11px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: #c513af; }
-    .nav { display: flex; gap: 14px; margin-top: 8px; }
+    .nav { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; } .nav a { display: inline-flex; align-items: center; min-height: 44px; } a:focus-visible { outline: 2px solid #c513af; outline-offset: 2px; }
   </style>
 </head>
 <body>
@@ -63,12 +63,17 @@
         status.textContent = sales.length
           ? sales.length + " stops in the live San Antonio feed."
           : "Feed loaded but this file is not a listing array. Use the map.";
+        function esc(v) {
+          return String(v == null ? "" : v).replace(/[&<>"']/g, function (c) {
+            return ({ "&": "&", "<": "<", ">": ">", '"': """, "'": "&#39;" })[c];
+          });
+        }
         box.innerHTML = sales.slice(0, 120).map(function (s) {
-          var title = s.title || s.name || "Sale";
-          var kind = s.type || s.kind || "sale";
-          var addr = s.address || s.addr || "";
-          var href = "/Chicas-Map/map";
-          if (s.lat && s.lon) href += "?lat=" + s.lat + "&lon=" + s.lon;
+          var title = esc(s.title || s.name || "Sale");
+          var kind = esc(s.type || s.kind || "sale");
+          var addr = esc(s.address || s.addr || "");
+          var href = "/Chicas-Map/map/";
+          if (s.lat && s.lon) href += "?lat=" + encodeURIComponent(s.lat) + "&lon=" + encodeURIComponent(s.lon);
           return '<a class="row" href="' + href + '"><div class="kind">' + kind + '</div><strong>' + title + '</strong><div class="meta">' + addr + '</div></a>';
         }).join("");
       }).catch(function () {
@@ -76,5 +81,5 @@
       });
     })();
   </script>
-<script src="/Chicas-Map/js/chica-menu.js?v=2" defer></script></body>
+<script src="/Chicas-Map/js/chica-menu.js?v=3" defer></script></body>
 </html>

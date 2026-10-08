@@ -151,6 +151,8 @@ for (const page of PAGES) {
 const today = new Date().toISOString().slice(0, 10);
 let body = "";
 for (const p of PAGES) {
+  const srcIndex = p.path ? join(root, p.path, "index.html") : join(root, "index.html");
+  try { statSync(srcIndex); } catch (e) { continue; }
   const en = origin + (p.path ? "/" + p.path + "/" : "/");
   const es = origin + "/es" + (p.path ? "/" + p.path + "/" : "/");
   body += "  <url>\n    <loc>" + en + "</loc>\n    <lastmod>" + today + "</lastmod>\n    <changefreq>daily</changefreq>\n    <xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"" + en + "\"/>\n    <xhtml:link rel=\"alternate\" hreflang=\"es\" href=\"" + es + "\"/>\n    <xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"" + en + "\"/>\n  </url>\n  <url>\n    <loc>" + es + "</loc>\n    <lastmod>" + today + "</lastmod>\n    <changefreq>weekly</changefreq>\n    <xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"" + en + "\"/>\n    <xhtml:link rel=\"alternate\" hreflang=\"es\" href=\"" + es + "\"/>\n    <xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"" + en + "\"/>\n  </url>\n";

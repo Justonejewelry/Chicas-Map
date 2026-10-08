@@ -49,15 +49,15 @@
       "#chica-mark img,header a[data-chica-mark='1'] img{width:36px;height:36px;border-radius:999px;object-fit:cover;background:#121212}" +
       "header a[data-chica-mark='1']{cursor:pointer}" +
       "header a[data-chica-mark='1'] span{display:none!important}" +
-      "#chica-lang{display:inline-flex;height:44px;align-items:center;padding:4px;border-radius:999px;background:#1c1c1e;border:1px solid rgba(255,255,255,.12)}" +
-      "#chica-lang button,#chica-theme{height:36px;min-width:36px;border:0;border-radius:999px;background:transparent;color:#f5f5f7;font:700 12px/1 Inter,system-ui,sans-serif;cursor:pointer}" +
+      "#chica-lang{display:inline-flex;height:52px;align-items:center;padding:4px;border-radius:999px;background:#1c1c1e;border:1px solid rgba(255,255,255,.12)}" +
+      "#chica-lang button,#chica-theme{height:44px;min-width:44px;border:0;border-radius:999px;background:transparent;color:#f5f5f7;font:700 12px/1 Inter,system-ui,sans-serif;cursor:pointer}" +
       "#chica-lang button[aria-pressed='true']{background:#c513af;color:#fff}" +
       "#chica-theme{width:44px;background:#1c1c1e;border:1px solid rgba(255,255,255,.12)}" +
       "#chica-more{position:absolute;left:12px;top:58px;z-index:120}" +
       "#chica-more > summary{display:none}" +
       "#chica-more > div{min-width:232px;padding:6px;border-radius:14px;background:#1d1d1f;color:#f5f5f7;border:1px solid rgba(255,255,255,.08);box-shadow:0 16px 40px rgba(0,0,0,.32)}" +
       "#chica-more a{display:flex;align-items:center;min-height:44px;padding:0 12px;border-radius:10px;color:#f5f5f7;text-decoration:none;font:500 15px/1.2 Inter,system-ui,sans-serif}" +
-      "#chica-more a:hover,#chica-more a:focus-visible{background:rgba(255,255,255,.08);outline:none}" +
+      "#chica-more a:hover,#chica-more a:focus-visible{background:rgba(255,255,255,.08);outline:2px solid #c513af;outline-offset:2px}" +"#chica-skip{position:absolute;left:8px;top:8px;z-index:300;transform:translateY(-160%);background:#c513af;color:#fff;padding:12px 16px;border-radius:999px;font:700 14px/1 Inter,system-ui,sans-serif;text-decoration:none}" +"#chica-skip:focus{transform:none}" +".chica-vh{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}" +"a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid #c513af;outline-offset:2px}" +
       "#chica-more a[aria-current='page']{color:#fff;font-weight:650}" +
       "body.chica-map-menu #chica-site-bar{position:fixed;top:max(10px,env(safe-area-inset-top));left:10px;width:auto;height:auto;padding:0;background:transparent;border:0}" +
       "body.chica-map-menu #chica-more{position:fixed;left:10px;top:62px}" +
@@ -204,6 +204,7 @@
         b.type = "button";
         b.setAttribute("data-lang", code);
         b.textContent = code.toUpperCase();
+        b.setAttribute("aria-label", code === "es" ? "Español" : "English");
         b.setAttribute("aria-pressed", (es() ? "es" : "en") === code ? "true" : "false");
         b.addEventListener("click", function () { setLang(code); });
         lang.appendChild(b);
@@ -227,8 +228,32 @@
     return bar;
   }
 
+  function ensureSkip() {
+    if (document.getElementById("chica-skip")) return;
+    var target = document.getElementById("main") || document.querySelector("main") || document.getElementById("chica-live-map");
+    if (!target) return;
+    if (!target.id) target.id = "main";
+    if (!target.hasAttribute("tabindex")) target.setAttribute("tabindex", "-1");
+    var a = document.createElement("a");
+    a.id = "chica-skip";
+    a.href = "#" + target.id;
+    a.textContent = es() ? "Saltar al contenido" : "Skip to content";
+    document.body.insertBefore(a, document.body.firstChild);
+  }
+
+  function ensureMapHeading() {
+    if (!isMap()) return;
+    if (document.querySelector("h1")) return;
+    var h = document.createElement("h1");
+    h.className = "chica-vh";
+    h.textContent = es() ? "Mapa de ventas de garage en San Antonio" : "San Antonio garage sale map";
+    document.body.insertBefore(h, document.body.firstChild);
+  }
+
   function run() {
     css();
+    ensureSkip();
+    ensureMapHeading();
     if (isMap()) document.body.classList.add("chica-map-menu");
     var mini = document.getElementById("chica-mini");
     if (mini) mini.setAttribute("hidden", "");
