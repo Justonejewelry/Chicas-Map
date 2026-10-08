@@ -42,7 +42,7 @@
       "#chica-more a{display:flex;align-items:center;min-height:44px;padding:0 12px;border-radius:10px;color:#f5f5f7;text-decoration:none;font:500 15px/1.2 Inter,system-ui,sans-serif}" +
       "#chica-more a:hover,#chica-more a:focus-visible{background:rgba(255,255,255,.08);outline:2px solid #c513af;outline-offset:2px}" +
       "#chica-more a[data-primary='1']{color:#fff;font-weight:650}" +
-      "footer{padding-bottom:28px}" +
+      "footer{padding-bottom:28px}" +"@media (max-width:720px){main a[data-chica-keep='1']{display:flex!important;width:100%!important;max-width:none!important;box-sizing:border-box!important;margin-left:0!important;margin-right:0!important}main a[data-chica-keep='1']{align-self:stretch}main{padding-left:16px!important;padding-right:16px!important}}" +
       "@media (prefers-reduced-motion:reduce){#chica-more > div{transition:none}}";
   }
 
