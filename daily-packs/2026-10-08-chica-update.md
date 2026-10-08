@@ -89,3 +89,11 @@ OFF MAP  Boerne New Braunfels Austin Spring Branch San Marcos
 - Holds: Gainesborough Dr, Newkirk/Helotes, 1807 Oakwell Farms Pkwy.
 - Rejected out of fence or online-only: New Braunfels, Austin, Spring Branch, New Berlin, Comfort, San Marcos, Boerne, Houston PMB, national auctions.
 - schema/city.schema.json absent. Root keys including `public[]` and `permits[]` preserved.
+
+## Pass 4 — 13:05 CT Ancestry ping, zero new street pins
+- Trigger mailbox event: Ancestry.com Operations promo, subject "Fall Family Sale: Up to 65% off Ancestry Offers!". Not a sale source. No attachment. No flyer. OCR not run. Rejected.
+- `chica-daily.yml` dispatched with real input `cities=san-antonio`, `target_date=2026-10-08`. Run `37821132038` queued 18:01 UTC, still `in_progress` after 3 polls at 5 seconds. `community-events-swarm.yml` not triggered.
+- Sale query `newer_than:2d`: 6 threads. GarageSaleFinder daily 10/08 and 10/07. EstateSales.org daily 10/08 (2 near San Antonio) and 10/07. EstateSales.org Belton, SC (216 City Square) rejected. EstateSales.org Houston PMB 16334 rejected. Formspree: 0.
+- ESO 10/08 body re-read: New Braunfels 78132 online auction closes Sun Oct 11; San Antonio 78259 online auction, no street, closes Wed Oct 14. Both already staged. Not pins.
+- GSF 10/08 body re-read: house-number rows already on the feed or staged. Holds unchanged (Gainesborough Dr, Newkirk/Helotes, Oakwell Farms Pkwy). 281 S popup dates not overwritten. Phone stripped.
+- Net-new this pass: 0. CITY_FILE not written. Social copy not rewritten. schema/city.schema.json still absent.

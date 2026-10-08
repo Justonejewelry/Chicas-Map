@@ -4,8 +4,8 @@
   "confidence_floor": 0.7,
   "pii_stripped": true,
   "source": "webapp/data/cities/san-antonio.json after 2026-10-08 pass 3 email merge",
-  "emails_used": 5,
-  "net_new": 18,
+  "emails_used": 6,
+  "net_new": 0,
   "net_new_pass_2": 0,
   "gmail": "connected",
   "eso_digest_2026_10_08_0422": "0 street pins. New Braunfels online auction and 78259 online auction held. Public copy unchanged.",
@@ -23,6 +23,13 @@
   },
   "net_new_pass_3": 18,
   "pins_merged": true,
-  "actions_run_id": "37761818853",
-  "note": "18 GSF street pins merged at Census rooftop. Social copy unchanged. Phone not posted. 281 S dates not overwritten."
+  "actions_run_id": "37821132038",
+  "note": "Pass 4: Ancestry promo rejected. 0 net-new. Public copy unchanged. Phone not posted. 281 S dates not overwritten.",
+  "pass_4": {
+    "timestamp": "2026-10-08T13:05:00-05:00",
+    "trigger": "Ancestry promo, rejected",
+    "net_new": 0,
+    "social_rewritten": false,
+    "pii_stripped": true
+  }
 }
