@@ -1,14 +1,11 @@
 {
   "date": "2026-10-08",
-  "reason": "incomplete or ungeocoded; not written to public[]",
+  "reason": "incomplete, ungeocoded, or out of fence; not written to public[]",
   "leads": [
     {
       "title": "Downsizing Garage Sale",
       "street_address": "Gainesborough Dr, San Antonio, TX 78230",
-      "dates": [
-        "2026-10-09",
-        "2026-10-10"
-      ],
+      "dates": ["2026-10-09", "2026-10-10"],
       "hours": "not listed",
       "source": "Email:GarageSaleFinder",
       "lat": null,
@@ -18,9 +15,7 @@
     {
       "title": "Sedona subdivision Community Wide Garage sale",
       "street_address": "Newkirk, Helotes, TX 78023",
-      "dates": [
-        "2026-10-10"
-      ],
+      "dates": ["2026-10-10"],
       "hours": "8AM-1PM",
       "source": "Email:GarageSaleFinder",
       "lat": null,
@@ -30,15 +25,34 @@
     {
       "title": "Great Sale with Three Generations of Treasures",
       "street_address": "1807 Oakwell Farms Pkwy, San Antonio, TX 78218",
-      "dates": [
-        "2026-10-10"
-      ],
+      "dates": ["2026-10-10"],
       "hours": "not listed",
       "source": "Email:GarageSaleFinder",
       "lat": null,
       "lon": null,
       "accuracy": null,
       "hold": "Census rooftop miss"
+    },
+    {
+      "title": "Vintage Christmas Collectibles Germany Italy Online Auction",
+      "street_address": "New Braunfels, TX 78132",
+      "dates": ["2026-10-11"],
+      "hours": "Bidding starts to close Sun. Oct 11 at 7:00PM CST",
+      "source": "Email:EstateSales.org",
+      "lat": null,
+      "lon": null,
+      "hold": "out of fence, online auction, no street"
+    },
+    {
+      "title": "Rustic Charm Meets Refined Living Online Auction",
+      "street_address": "San Antonio, TX 78259",
+      "dates": ["2026-10-07", "2026-10-08", "2026-10-09", "2026-10-10", "2026-10-11", "2026-10-12", "2026-10-13", "2026-10-14"],
+      "hours": "Bidding starts to close Wed. Oct 14 at 7:00PM CST",
+      "source": "Email:EstateSales.org",
+      "lat": null,
+      "lon": null,
+      "accuracy": null,
+      "hold": "online auction, no street, company is Bulverde and Canyon Lake"
     }
   ]
 }

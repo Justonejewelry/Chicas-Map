@@ -70,3 +70,12 @@ OFF MAP  Boerne New Braunfels Austin Spring Branch San Marcos
 | Tools on a driveway, then Broadway lot | Tools on Wedgewood. Lions Field lot on Broadway. |
 | Phone number blurred, Near Me button | No phone numbers. Open the free map, hit Near Me, then Google, Apple, or Waze. |
 | Watermark bottom-left, map URL | List a sale if I missed your street. |
+
+## Pass 2 — 04:26 CT EstateSales.org digest
+- Trigger: new EstateSales.org daily mail, subject "Your daily estate sales on EstateSales.org", received 04:22 CT. No attachment. No flyer to OCR.
+- `chica-daily.yml` retry: first dispatch rejected unexpected input `city`. Second dispatch `cities=san-antonio` queued run 37756288362. Polls at ~5s: in_progress, in_progress, in_progress. Still running at write time. `community-events-swarm.yml` not triggered.
+- Emails scanned this pass: 5 threads in 2 days (GSF 10/08, GSF 10/07, ESO 10/08, ESO 10/07, one Houston PMB promo). Formspree: 0.
+- Live feed reloaded from `webapp/data/cities/san-antonio.json` at SHA `86fb7af` before this write: 37 public pins, 114 permits. Edition "Oct 8 email leads — 18 street pins". Last refresh 2026-10-08T03:40:00-05:00. Permits not touched.
+- ESO "2 new sales added near San Antonio": (1) Vintage Christmas Collectibles, Caring Transitions of New Braunfels, New Braunfels 78132, online bidding closes Sun Oct 11 — out of fence. (2) Rustic Charm Meets Refined Living, Caring Transitions of Bulverde & Canyon Lake, city line only San Antonio 78259, online bidding closes Wed Oct 14 — no street, online auction. Same 78259 online row is also in today's GSF featured block. Not a pin.
+- GSF 10/08 rows with a house number are already on the feed (including Maiden Way). 24817 US 281 S popup already on the feed; Saturday 10/10 hours not used to overwrite Craigslist dates. Phone in that GSF row stripped from social.
+- Net-new street pins this pass: 0. CITY_FILE not written. Holds stay in staging. schema/city.schema.json still absent.
