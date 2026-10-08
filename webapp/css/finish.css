@@ -13,19 +13,32 @@ body { overflow-x: hidden; }
   #chica-adventure-chip { right: 10px !important; }
   #chica-home-chip { right: 112px !important; }
 
-  #chica-hunt-bar {
-    top: calc(max(8px, env(safe-area-inset-top)) + 52px) !important;
-    left: 10px !important;
+  #chica-hunt-dock {
+    top: max(8px, env(safe-area-inset-top)) !important;
+    left: 62px !important;
     right: 10px !important;
     width: auto !important;
   }
+  #chica-hunt-bar {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    width: auto !important;
+  }
   #chica-hunt-bar input { flex: 1 1 auto !important; width: 1px !important; min-width: 0 !important; }
+  #chica-filters {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+  }
   #chica-guide, #chica-guide-btn { display: none !important; }
   #chica-hunt-bar input,
   #chica-hunt-bar button { height: 44px !important; }
 
   .leaflet-control-zoom {
-    margin-top: 108px !important;
+    margin-top: 168px !important;
     margin-bottom: calc(88px + env(safe-area-inset-bottom)) !important;
     margin-left: 10px !important;
   }
