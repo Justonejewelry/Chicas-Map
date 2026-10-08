@@ -4,6 +4,50 @@
   if (!(/\/map\/?$/.test(p) || p.indexOf("/map/") !== -1 || /map\.html$/.test(p))) return;
   var SA = { lat: 29.4241, lon: -98.4936 };
   var state = { q: "", day: "", type: "", miles: 0 };
+  var COPY = {
+    en: {
+      search: "Search sales, streets, zip",
+      near: "Near me",
+      nearAria: "Find sales near me",
+      filters: "Sale filters",
+      today: "Today",
+      sat: "Saturday",
+      sun: "Sunday",
+      garage: "Garage",
+      yard: "Yard",
+      estate: "Estate",
+      empty: "No sales match. Clear a filter or expand the distance.",
+      sale: " sale",
+      sales: " sales"
+    },
+    es: {
+      search: "Busca ventas, calles o código",
+      near: "Cerca",
+      nearAria: "Ventas cerca de mí",
+      filters: "Filtros de ventas",
+      today: "Hoy",
+      sat: "Sábado",
+      sun: "Domingo",
+      garage: "Garaje",
+      yard: "Patio",
+      estate: "Bienes",
+      empty: "Ninguna venta coincide. Quita un filtro o amplía la distancia.",
+      sale: " venta",
+      sales: " ventas"
+    }
+  };
+
+  function locale() {
+    var lang = "";
+    try { lang = localStorage.getItem("chicas-map-locale") || ""; } catch (e) {}
+    if (!lang) lang = document.documentElement.lang || "en";
+    return String(lang).toLowerCase().indexOf("es") === 0 ? "es" : "en";
+  }
+
+  function t(key) {
+    var pack = COPY[locale()] || COPY.en;
+    return pack[key] || COPY.en[key] || key;
+  }
 
   function findMap() {
     if (typeof window.__chicaFindMap === "function") {
@@ -24,8 +68,8 @@
     var now = new Date();
     if (want < 0) return ymd(now);
     var add = (want - now.getDay() + 7) % 7;
-    var t = new Date(now.getFullYear(), now.getMonth(), now.getDate() + add);
-    return ymd(t);
+    var tDate = new Date(now.getFullYear(), now.getMonth(), now.getDate() + add);
+    return ymd(tDate);
   }
 
   function apply() {
@@ -53,10 +97,10 @@
     if (!sheet) return;
     var list = sheet.querySelector("#chica-sale-list");
     var count = sheet.querySelector("#chica-sale-count");
-    if (count) count.textContent = rows.length + (rows.length === 1 ? " sale" : " sales");
+    if (count) count.textContent = rows.length + (rows.length === 1 ? t("sale") : t("sales"));
     if (!list) return;
     if (!rows.length) {
-      list.innerHTML = '<p class="empty">No sales match. Clear a filter or expand the distance.</p>';
+      list.innerHTML = '<p class="empty">' + escapeHtml(t("empty")) + "</p>";
       return;
     }
     var html = "";
@@ -81,6 +125,32 @@
     });
   }
 
+  function paintLabels() {
+    var q = document.getElementById("chica-hunt-q");
+    if (q) {
+      q.placeholder = t("search");
+      q.setAttribute("aria-label", t("search"));
+    }
+    var lab = document.querySelector("label[for='chica-hunt-q']");
+    if (lab) lab.textContent = t("search");
+    var near = document.getElementById("chica-near-btn");
+    if (near && near.textContent !== "\u2026") {
+      near.textContent = t("near");
+      near.setAttribute("aria-label", t("nearAria"));
+    }
+    var filters = document.getElementById("chica-filters");
+    if (!filters) return;
+    filters.setAttribute("aria-label", t("filters"));
+    filters.querySelectorAll("[data-day]").forEach(function (btn) {
+      var key = btn.getAttribute("data-day");
+      if (key && COPY.en[key]) btn.textContent = t(key);
+    });
+    filters.querySelectorAll("[data-type]").forEach(function (btn) {
+      var key = btn.getAttribute("data-type");
+      if (key && COPY.en[key]) btn.textContent = t(key);
+    });
+  }
+
   function nearMe() {
     var map = findMap();
     if (!map) return;
@@ -89,17 +159,17 @@
       return;
     }
     var btn = document.getElementById("chica-near-btn");
-    if (btn) btn.textContent = "…";
+    if (btn) btn.textContent = "\u2026";
     navigator.geolocation.getCurrentPosition(
       function (pos) {
         window.__chicaHere = { lat: pos.coords.latitude, lon: pos.coords.longitude };
         try { map.flyTo([pos.coords.latitude, pos.coords.longitude], 14, { duration: 1 }); } catch (e) { map.setView([pos.coords.latitude, pos.coords.longitude], 14); }
-        if (btn) btn.textContent = "Near me";
+        if (btn) btn.textContent = t("near");
         apply();
       },
       function () {
         try { map.flyTo([SA.lat, SA.lon], 12, { duration: 0.9 }); } catch (e) { map.setView([SA.lat, SA.lon], 12); }
-        if (btn) btn.textContent = "Near me";
+        if (btn) btn.textContent = t("near");
       },
       { enableHighAccuracy: true, timeout: 8000, maximumAge: 30000 }
     );
@@ -155,11 +225,11 @@
     dock.appendChild(filters);
     document.documentElement.appendChild(dock);
     var q = bar.querySelector("#chica-hunt-q");
-    var t = null;
+    var timer = null;
     q.addEventListener("input", function () {
-      clearTimeout(t);
+      clearTimeout(timer);
       state.q = q.value.trim();
-      t = setTimeout(apply, 160);
+      timer = setTimeout(apply, 160);
     });
     bar.querySelector("#chica-near-btn").addEventListener("click", function (ev) {
       ev.preventDefault();
@@ -192,10 +262,18 @@
     });
     window.addEventListener("chica-sales", apply);
     apply();
+    paintLabels();
   }
 
-  function tick() { mount(); }
+  function tick() {
+    mount();
+    paintLabels();
+  }
   tick();
   setInterval(tick, 1200);
+  window.addEventListener("chica-locale", paintLabels);
+  window.addEventListener("storage", function (ev) {
+    if (!ev || ev.key === "chicas-map-locale") paintLabels();
+  });
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", tick);
 })();
