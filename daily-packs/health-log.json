@@ -98,5 +98,15 @@
     "geocoding_success_rate": "84.6%",
     "status": "SUCCESS",
     "notes": "chica-daily.yml 37592460051 completed success. Polls: queued, in_progress, completed. community-events-swarm.yml not triggered. Formspree 0. 11 Census-rooftop streets merged onto post-populate feed (12 public -> 23). 2 incomplete streets staged. 281 S popup dates not overwritten. schema/city.schema.json absent."
+  },
+  {
+    "timestamp": "2026-10-08T03:40:00-05:00",
+    "target_date": "2026-10-08",
+    "actions_run_id": "37749745018",
+    "emails_scanned": 4,
+    "net_new_added": 18,
+    "geocoding_success_rate": "95.2%",
+    "status": "SUCCESS",
+    "notes": "chica-daily.yml 37749745018 completed success after 3 in_progress polls. community-events-swarm.yml not triggered. Formspree 0. Merged onto post-populate feed (19 public, 114 permits). 18 Census-rooftop streets added. Booth Dr and Brooks Ave YardSaleSearch 0.88 kept, details filled. 281 S popup dates not overwritten. Held Gainesborough, Newkirk, Oakwell Pkwy. schema/city.schema.json absent."
   }
 ]

@@ -1,5 +1,44 @@
 {
-  "date": "2026-10-07",
-  "reason": "published as street anchors on 2026-10-07",
-  "leads": []
+  "date": "2026-10-08",
+  "reason": "incomplete or ungeocoded; not written to public[]",
+  "leads": [
+    {
+      "title": "Downsizing Garage Sale",
+      "street_address": "Gainesborough Dr, San Antonio, TX 78230",
+      "dates": [
+        "2026-10-09",
+        "2026-10-10"
+      ],
+      "hours": "not listed",
+      "source": "Email:GarageSaleFinder",
+      "lat": null,
+      "lon": null,
+      "hold": "no house number"
+    },
+    {
+      "title": "Sedona subdivision Community Wide Garage sale",
+      "street_address": "Newkirk, Helotes, TX 78023",
+      "dates": [
+        "2026-10-10"
+      ],
+      "hours": "8AM-1PM",
+      "source": "Email:GarageSaleFinder",
+      "lat": null,
+      "lon": null,
+      "hold": "no house number"
+    },
+    {
+      "title": "Great Sale with Three Generations of Treasures",
+      "street_address": "1807 Oakwell Farms Pkwy, San Antonio, TX 78218",
+      "dates": [
+        "2026-10-10"
+      ],
+      "hours": "not listed",
+      "source": "Email:GarageSaleFinder",
+      "lat": null,
+      "lon": null,
+      "accuracy": null,
+      "hold": "Census rooftop miss"
+    }
+  ]
 }

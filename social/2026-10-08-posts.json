@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-08",
+  "city": "san-antonio",
+  "confidence_floor": 0.7,
+  "pii_stripped": true,
+  "source": "webapp/data/cities/san-antonio.json after 2026-10-08 workflow + email pass",
+  "emails_used": 3,
+  "net_new": 18,
+  "gmail": "connected",
+  "facebook": "Hey pack — Chica sniffed Thursday mail.\n\nThese streets have a house number. Nothing invented. Online auctions stay off the map.\n\n📍 Today into the weekend\n• Booth Dr multi-family, jewelry, Thu–Fri — 814 Booth Dr. https://chicasmap.com/sa?id=yss-814boothdrsanantoniotx78216-2026-10-08\n• Schertz multi-family, Thu–Sat — 618 Brooks Ave. https://chicasmap.com/sa?id=yss-618brooksaveschertztx78154-2026-10-08\n• Oak Meadow, up to 30 homes, Fri–Sat — 2523 Hunters Green. https://chicasmap.com/sa?id=gsf-2523huntersgreen-2026-10-09\n• Brushy Point, Friday only 7–1 — 9371 Brushy Point St. https://chicasmap.com/sa?id=gsf-9371brushypointst-2026-10-09\n• North Star Mall garage sale, records and Fiesta medals — 511 Stockton Dr. https://chicasmap.com/sa?id=gsf-511stocktondr-2026-10-09\n• Alpha Wolf Bay community yard sale, Fri–Sat — 1911 Alpha Wolf Bay. https://chicasmap.com/sa?id=gsf-1911alphawolfbay-2026-10-09\n• Cross Creek, about 18 houses, Sat–Sun — 8115 Sawyer Meadow. https://chicasmap.com/sa?id=gsf-8115sawyermeadow-2026-10-10\n• Helotes Crossing, Sat 8–2 — 9614 Wasp Creek. https://chicasmap.com/sa?id=gsf-9614waspcreek-2026-10-10\n• Church rummage, jewelry, bag sale at 1 — 2740 Hunters Green. https://chicasmap.com/sa?id=gsf-2740huntersgreen-2026-10-10\n• Tools moving sale — 10815 Wedgewood Dr. https://chicasmap.com/sa?id=gsf-10815wedgewooddr-2026-10-10\n• Antique furniture — 16203 Canyon Shadow. https://chicasmap.com/sa?id=gsf-16203canyonshadow-2026-10-10\n• Moving sale — 3830 Maiden Way, Converse. https://chicasmap.com/sa?id=gsf-3830maidenway-2026-10-10\n\n281 S popup stays on the dates already on the map. I am not posting a phone number.\n\nI am not sending you to Boerne, New Braunfels, San Marcos, Spring Branch, Austin, or Buda.\n\nOpen the free map: https://justonejewelry.github.io/Chicas-Map/\nNear Me sorts by distance. Routes open in Google Maps, Apple Maps, or Waze.\nIf you know a sale I missed, list it free on the site.\n\n#SanAntonioGarageSales #SATXThrifting #ChicaMap",
+  "nextdoor": "Neighbors — Thursday map check for San Antonio, Helotes, Schertz, and Converse.\n\nEmail leads came in. Streets with a house number:\n\n• 814 Booth Dr — multi-family, jewelry, Thursday and Friday\n• 618 Brooks Ave, Schertz — Thursday through Saturday. Hours not listed\n• 2523 Hunters Green — Oak Meadow, up to 30 homes, Friday and Saturday\n• 9371 Brushy Point St — Friday only, 7 to 1\n• 511 Stockton Dr — near North Star Mall, Friday and Saturday\n• 1911 Alpha Wolf Bay — community yard sale, Friday and Saturday\n• 8115 Sawyer Meadow — Cross Creek, about 18 households, Saturday and Sunday\n• 9614 Wasp Creek, Helotes — Saturday 8 to 2\n• 2740 Hunters Green — church rummage Saturday, bag sale from 1, some jewelry\n• 10815 Wedgewood Dr — moving sale, tools, Saturday\n• 16203 Canyon Shadow — antique furniture, Saturday and Sunday\n• 3830 Maiden Way, Converse — moving sale Saturday\n\n281 S popup stays on the dates already on the map. I am not posting a phone number.\n\nI am not posting Boerne, New Braunfels, San Marcos, Spring Branch, Austin, or Buda as San Antonio stops.\n\nMap: https://justonejewelry.github.io/Chicas-Map/\nNear Me, then Google, Apple, or Waze. List a sale if the pack missed your street.",
+  "tiktok": {
+    "caption": "Thursday sniff. Booth Dr is live today, jewelry. Schertz through Saturday. Oak Meadow, up to 30 homes. Brushy Point Friday only, 7 to 1. Helotes Crossing Saturday 8 to 2. Church rummage, bag sale at 1. Tools on Wedgewood. Antiques on Canyon Shadow. Free map. Near Me.",
+    "tags": [
+      "#SanAntonioEstateSales",
+      "#SATXThrifting",
+      "#SanAntonioGarageSales",
+      "#ChicaMap"
+    ],
+    "on_screen": "Booth Dr · Brooks Ave · Oak Meadow · Brushy Point · Wasp Creek · Hunters Green · Wedgewood · Canyon Shadow"
+  }
+}
