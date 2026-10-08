@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-08T05:12:56-05:00",
+  "updated": "2026-10-08T12:48:21-05:00",
   "city": "san-antonio",
   "version": 2.7,
   "horizonDays": 90,
@@ -5313,6 +5313,24 @@
       "reliability": 88,
       "discoveredAt": "2026-10-08T03:27:48-05:00",
       "confidence": 98
+    },
+    {
+      "id": "2026-10-08_let-s-create-craft-time_75bbd7f1a701",
+      "title": "Let's Create: Craft Time",
+      "date": "2026-10-08",
+      "endDate": "",
+      "time": "4:00 PM-5:00 PM",
+      "address": "6307 Sun Valley San Antonio, TX 78227",
+      "lat": null,
+      "lng": null,
+      "category": "other",
+      "description": "",
+      "url": "https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D210832208",
+      "source": "San Antonio Public Library Events",
+      "sourceId": "sapl-trumba-ics",
+      "reliability": 96,
+      "discoveredAt": "2026-10-08T12:47:41-05:00",
+      "confidence": 100
     }
   ]
 }

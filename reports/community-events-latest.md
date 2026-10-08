@@ -1,18 +1,18 @@
 # Chica's Map -- Community Events Swarm v2.7
 
-Run: 2026-10-08T05:12:56-05:00
+Run: 2026-10-08T12:48:21-05:00
 Sources scanned: **48**
 Candidates discovered: **951**
 With parsed dates: **792**
 With street/venue address: **526**
-Promoted this run: **0**
+Promoted this run: **1**
 Kept from prior feed: **295**
 Purged from prior feed: **0**
 Source errors: **2**
-Rejected by Sentinel: **304**
+Rejected by Sentinel: **303**
 
 ## Promoted (passed Events Sentinel)
-_None this run._
+- **Let's Create: Craft Time** -- 2026-10-08 -- 6307 Sun Valley San Antonio, TX 78227 -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D210832208
 
 ## Review Queue
 - **San Antonio Public Library Events** -- conf 100 -- Family Story Time -- 2026-10-08 -- 4134 Harry Wurzbach San Antonio, TX 78209 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D205386300
@@ -24,12 +24,12 @@ _None this run._
 - **San Antonio Public Library Events** -- conf 100 -- Learn Pop-up Information Table -- 2026-10-08 -- 3134 Roosevelt Ave -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D210228695
 - **San Antonio Public Library Events** -- conf 100 -- Let's Move! Yoga for Kids (Ages 3-5) -- 2026-10-08 -- 2515 E. Evans San Antonio, TX 78259 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D210688349
 - **San Antonio Public Library Events** -- conf 100 -- Let's Move! Yoga for Kids (Ages 6-10) -- 2026-10-08 -- 2515 E. Evans San Antonio, TX 78259 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D210688363
+- **San Antonio Public Library Events** -- conf 100 -- Let's Create: Craft Time -- 2026-10-08 -- 6307 Sun Valley San Antonio, TX 78227 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D210832208
 - **City of San Antonio Parks & Recreation** -- conf 100 -- Tennis Clinics -- 2026-08-31 -- 1503 San Pedro Ave -- https://www.sanantonio.gov/ParksAndRec/News-Events/Events/Event-Details/ArtMID/15385/ArticleID/29348/Tennis-Clinics
 - **Bexar County Clerk — Records on the Run** -- conf 99 -- Bexar County Clerk's Mobile Satellite Office will be at Bexar County Precinct 2 Constable's Office of Constable Leticia R. Vazquez -- 2026-11-05 -- 7723 Guilbeau Rd -- https://www.bexar.org/calendar.aspx?EID=7286
 - **Bexar County Clerk — Records on the Run** -- conf 99 -- Bexar County Clerk's Mobile Satellite Office will be at Bexar County Precinct 3 Justice of the Peace Office -- 2026-10-20 -- 320 Interpark Blvd -- https://www.bexar.org/calendar.aspx?EID=7334
 - **Bexar County Clerk — Records on the Run** -- conf 99 -- Bexar County Clerk's Mobile Satellite Office will be at Bexar County Precinct 3 Justice of the Peace Office -- 2026-11-17 -- 320 Interpark Blvd -- https://www.bexar.org/calendar.aspx?EID=7335
 - **Bexar County Events** -- conf 99 -- Technical Advisory Committee for Persons with Disabilities -- 2026-10-27 -- 211 S Flores San Antonio TX 78204 -- https://www.bexar.org/calendar.aspx?EID=7514
-- **Bexar County Clerk — Records on the Run** -- conf 99 -- Bexar County Clerk's Mobile Satellite Office will be at McDonald's on Walzem - The Shields Legacy LLC PCT 4 Community -- 2026-10-08 -- 5700 Walzem Rd -- https://www.bexar.org/calendar.aspx?EID=7680
 - **Bexar County Clerk — Records on the Run** -- conf 99 -- Bexar County Clerk's Mobile Satellite Office will be at McDonald's on Walzem - The Shields Legacy LLC PCT 4 Community -- 2026-11-19 -- 5700 Walzem Rd -- https://www.bexar.org/calendar.aspx?EID=7681
 - **Bexar County Clerk — Records on the Run** -- conf 99 -- Bexar County Clerk's Mobile Satellite Office will be at SBOC-Bexar County Small Business Opportunity Center -- 2026-10-15 -- 8200 Perrin Beitel Rd -- https://www.bexar.org/calendar.aspx?EID=7807
 - **Bexar County Clerk — Records on the Run** -- conf 99 -- Bexar County Clerk's Mobile Satellite Office will be at SBOC-Bexar County Small Business Opportunity Center -- 2026-11-12 -- 8200 Perrin Beitel Rd -- https://www.bexar.org/calendar.aspx?EID=7808
@@ -201,7 +201,6 @@ _None this run._
 - Bexar County Clerk's Mobile Satellite Office will be at Bexar County Precinct 2 Constable's Office of Constable Leticia R. Vazquez -- event_id=2026-11-05_bexar-county-clerk-s-mobile_ed672b3cf582: duplicate id already in feed
 - Bexar County Clerk's Mobile Satellite Office will be at Bexar County Precinct 3 Justice of the Peace Office -- event_id=2026-10-20_bexar-county-clerk-s-mobile_f04a53d8b944: duplicate id already in feed
 - Bexar County Clerk's Mobile Satellite Office will be at SBOC-Bexar County Small Business Opportunity Center -- event_id=2026-10-15_bexar-county-clerk-s-mobile_5768d8e96834: duplicate id already in feed
-- Bexar County Clerk's Mobile Satellite Office will be at McDonald's on Walzem - The Shields Legacy LLC PCT 4 Community -- event_id=2026-10-08_bexar-county-clerk-s-mobile_7af113bedf51: duplicate id already in feed
 - Commissioners Court -- event_id=2027-09-14_commissioners-court_6ddfa6c90dc8: date 2027-09-14 is more than 90 days out
 - Commissioners Court -- event_id=2027-09-07_commissioners-court_fdaca595bc80: date 2027-09-07 is more than 90 days out
 - Commissioners Court -- event_id=2027-08-17_commissioners-court_25bec82a7bd1: date 2027-08-17 is more than 90 days out
@@ -227,6 +226,7 @@ _None this run._
 - First City Council Meeting -- event_id=2029-10-04_first-city-council-meeting_4df14e27a494: date 2029-10-04 is more than 90 days out
 - First City Council Meeting -- event_id=2029-09-06_first-city-council-meeting_603786bf1549: date 2029-09-06 is more than 90 days out
 - First City Council Meeting -- event_id=2029-08-02_first-city-council-meeting_8655d3c4c4f7: date 2029-08-02 is more than 90 days out
+- First City Council Meeting -- event_id=2029-07-05_first-city-council-meeting_ec1cd211df2c: date 2029-07-05 is more than 90 days out
 
 ## Source Errors
 - San Antonio River Authority Events: HTTP 403 Forbidden
