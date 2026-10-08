@@ -6,6 +6,7 @@ on:
     paths:
       - "webapp/**"
       - "scripts/stamp-pages.mjs"
+      - "scripts/root-domain.mjs"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
 
@@ -60,11 +61,13 @@ jobs:
               echo "preview $n"
             done
           fi
-          if [ -n "${{ vars.CUSTOM_DOMAIN }}" ]; then
-            echo "${{ vars.CUSTOM_DOMAIN }}" > _site/CNAME
-            echo "custom domain ${{ vars.CUSTOM_DOMAIN }}"
-          fi
+          DOMAIN="${{ vars.CUSTOM_DOMAIN }}"
+          if [ -z "$DOMAIN" ]; then DOMAIN="www.chicasmap.com"; fi
+          echo "$DOMAIN" > _site/CNAME
+          echo "custom domain $DOMAIN"
+          export SITE_ORIGIN="https://${DOMAIN}"
           node scripts/stamp-pages.mjs _site
+          node scripts/root-domain.mjs _site
           # Tip-only prune. These files are not referenced by the live map or adventure page.
           # alamo-atlas-demo.mp4 stays: home-atlas.js links it.
           find _site -type f \( \
