@@ -3,6 +3,7 @@
   var KEY = "chicas-map-opt-share";
   var PACK = "chicas-map-pack";
   var MAP_URL = "https://justonejewelry.github.io/Chicas-Map/map/";
+  var FB_FOLLOW = "https://www.facebook.com/61593215043603/";
   var shown = false;
   var armed = false;
   var deferred = null;
@@ -31,7 +32,7 @@
         email: "Lista de correo semanal",
         emailNote: "Pines del viernes. Un correo. Sin spam.",
         share: "Compartir en redes",
-        shareNote: "Facebook, Nextdoor o la hoja de compartir de tu teléfono.",
+        shareNote: "Comparte el mapa y sigue a Chica en Facebook.",
         home: "Agregar a la pantalla de inicio",
         homeNote: "Un toque y el mapa está en tu teléfono el sábado.",
         help: "Puedo ayudar",
@@ -41,7 +42,7 @@
         bad: "Ese correo no parece válido.",
         thanks: "Gracias. Eso es todo. No lo volvemos a pedir.",
         ios: "En iPhone: Compartir, luego Agregar a inicio.",
-        shared: "Listo para compartir.",
+        shared: "Facebook está abierto para seguir a Chica. Comparte el mapa ahí también.",
         saved: "Correo guardado en la lista semanal."
       };
     }
@@ -52,7 +53,7 @@
       email: "Weekly email list",
       emailNote: "Friday pins. One email. No spam.",
       share: "Share on social",
-      shareNote: "Facebook, Nextdoor, or your phone’s share sheet.",
+      shareNote: "Share the map, and follow Chica on Facebook.",
       home: "Add to your home screen",
       homeNote: "One tap back to the map on Saturday.",
       help: "I can help",
@@ -62,7 +63,7 @@
       bad: "That email does not look valid.",
       thanks: "Thank you. That is all. We will not ask again.",
       ios: "On iPhone: Share, then Add to Home Screen.",
-      shared: "Ready to share.",
+      shared: "Facebook is open so you can follow Chica. Share the map there too.",
       saved: "Email saved to the weekly list."
     };
   }
@@ -101,13 +102,13 @@
   }
 
   function shareMap() {
+    window.open(FB_FOLLOW, "_blank", "noopener,noreferrer");
     var text = es()
-      ? "Ventas de garaje en San Antonio este fin. Mapa gratis."
-      : "San Antonio garage sales this weekend. Free map.";
+      ? "Ventas de garaje en San Antonio este fin. Mapa gratis. Sigue a Chica: " + FB_FOLLOW
+      : "San Antonio garage sales this weekend. Free map. Follow Chica: " + FB_FOLLOW;
     if (navigator.share) {
       return navigator.share({ title: "Chicas Map", text: text, url: MAP_URL }).catch(function () {});
     }
-    window.open("https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(MAP_URL), "_blank", "noopener,noreferrer");
     return Promise.resolve();
   }
 
@@ -177,7 +178,7 @@
         if (shareOn) bits.push(c.shared);
         if (homeOn && results.indexOf("manual") !== -1) bits.push(c.ios);
         note.textContent = bits.join(" ");
-        setTimeout(function () { close(root); }, homeOn && results.indexOf("manual") !== -1 ? 2600 : 900);
+        setTimeout(function () { close(root); }, homeOn && results.indexOf("manual") !== -1 ? 2600 : 1400);
       });
     });
     var first = root.querySelector(".help");
