@@ -2,84 +2,46 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pin it · $5 · Chicas Map</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Boost My Sale · $5 · Chicas Map</title>
+  <meta name="description" content="Listing is free. Boost My Sale is $5 and lights a gold pin this weekend so the pack can find your driveway." />
   <link rel="icon" type="image/svg+xml" href="/Chicas-Map/favicon.svg" />
   <style>
     :root { color-scheme: dark; }
-    body {
-      margin: 0;
-      min-height: 100dvh;
-      font-family: Inter, system-ui, sans-serif;
-      background: #121212;
-      color: #f3eee4;
-    }
-    main { max-width: 520px; margin: 0 auto; padding: 28px 20px 80px; }
-    a { color: #c513af; }
-    .top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-    .brand { letter-spacing: .18em; text-transform: uppercase; font-size: 12px; color: #c4b8a8; text-decoration: none; }
-    .home { color: #f3eee4; text-decoration: none; font: 800 12px/1 Inter, system-ui, sans-serif; border: 1px solid #3a342e; border-radius: 999px; padding: 8px 12px; }
-    h1 { font-family: Syne, Inter, sans-serif; font-size: 32px; margin: 16px 0 8px; }
-    p { color: #c4b8a8; line-height: 1.5; }
-    .card {
-      margin-top: 24px;
-      padding: 20px;
-      border: 1px solid #2a2622;
-      border-radius: 16px;
-      background: #1a1714;
-      text-align: center;
-    }
-    .logo-wrap {
-      width: 168px;
-      height: 168px;
-      margin: 0 auto 16px;
-      border-radius: 28px;
-      overflow: hidden;
-      background: #c513af;
-      border: 4px solid #fffdf8;
-    }
-    .logo-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 28%;
-      display: block;
-    }
-    .pay {
-      display: inline-flex;
-      margin-top: 8px;
-      padding: 14px 18px;
-      border-radius: 12px;
-      background: #c513af;
-      color: #fff;
-      font-weight: 700;
-      text-decoration: none;
-    }
-    ol { padding-left: 18px; color: #c4b8a8; text-align: left; }
-    .links { margin-top: 16px; }
+    body { margin: 0; min-height: 100dvh; font-family: Inter, system-ui, sans-serif; background: #121212; color: #f3eee4; }
+    main { max-width: 560px; margin: 0 auto; padding: 28px 18px 88px; }
+    a { color: #f3c6ec; }
+    .kicker { letter-spacing: .16em; text-transform: uppercase; font-size: 12px; font-weight: 800; color: #c513af; }
+    h1 { font-family: Syne, Inter, sans-serif; font-size: 2.4rem; line-height: 1.05; margin: 8px 0 8px; }
+    .lede { color: #e7e0d6; line-height: 1.5; }
+    .price { display: flex; align-items: baseline; gap: 8px; margin: 18px 0 8px; }
+    .price b { font-size: 2.6rem; letter-spacing: -.04em; }
+    .price span { color: #c4b8a8; }
+    .pay, .ghost { display: flex; align-items: center; justify-content: center; min-height: 52px; border-radius: 999px; font-weight: 800; text-decoration: none; }
+    .pay { background: #c513af; color: #fff; background-image: linear-gradient(180deg, rgba(255,255,255,.46), rgba(255,255,255,.08) 46%, rgba(0,0,0,.2)); border: 1px solid rgba(255,255,255,.4); box-shadow: inset 0 1px 0 rgba(255,255,255,.62), inset 0 -2px 0 rgba(0,0,0,.28), 0 8px 16px rgba(0,0,0,.28); }
+    .ghost { margin-top: 10px; color: #f3eee4; border: 1px solid rgba(255,255,255,.2); }
+    ul { list-style: none; padding: 0; margin: 18px 0; display: grid; gap: 10px; }
+    li { padding: 12px 14px; border-radius: 14px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); }
+    li b { display: block; margin-bottom: 2px; }
+    .fine { color: #c4b8a8; font-size: 14px; }
   </style>
 </head>
 <body>
-  <main>
-    <div class="top">
-      <a class="brand" href="/Chicas-Map/">Chicas Map · San Antonio</a>
-      <a class="home" href="/Chicas-Map/">Home</a>
-    </div>
-    <h1>Pin it · $5</h1>
-    <p>Hey pack. Putting your sale on the map is free. $5 lights the pin this weekend so hunters can find your driveway. Pay in Square, then tell me which sale to sniff out.</p>
-    <div class="card">
-      <div class="logo-wrap">
-        <img src="/Chicas-Map/images/chica-logo.png" alt="Chica, official Chicas Map logo" />
-      </div>
-      <a class="pay" href="https://square.link/u/qjunxHoo">Pin it · $5</a>
-      <ol>
-        <li>Drop the sale on the map. Free.</li>
-        <li>$5 lights your pin so the pack can find you.</li>
-        <li>Keep the Square receipt and put your street in the note.</li>
-      </ol>
-      <p class="links"><a href="/Chicas-Map/">Home</a> · <a href="/Chicas-Map/submit">Add a sale</a> · <a href="/Chicas-Map/map">See the map</a></p>
-    </div>
+  <main id="main">
+    <p class="kicker">This weekend · San Antonio</p>
+    <h1>Boost My Sale</h1>
+    <p class="lede">The map is free. Boost My Sale is the gold pin. Hunters see a lit driveway before they see a plain one.</p>
+    <p class="price"><b>$5</b><span>this weekend only</span></p>
+    <a class="pay" href="https://square.link/u/qjunxHoo">Boost My Sale · $5</a>
+    <a class="ghost" href="/Chicas-Map/boost/">No cash? Boost it free by sharing</a>
+    <ul>
+      <li><b>Gold pin</b>Your sale gets the lit pin for this weekend, not a gray dot.</li>
+      <li><b>Same map the pack opens</b>Near Me, routes, Google, Apple, Waze. Your street is the stop.</li>
+      <li><b>Listing stays free</b>Pay only if you want the gold pin. Square takes the $5. Put the street in the note.</li>
+    </ul>
+    <p class="fine">Chica lights it after the receipt. Hours and what’s left still change. Check the driveway.</p>
+    <p><a href="/Chicas-Map/">Home</a> · <a href="/Chicas-Map/submit/">List a sale free</a> · <a href="/Chicas-Map/map/">Map</a></p>
   </main>
-  <script src="/Chicas-Map/js/chica-config.js"></script>
-<script src="/Chicas-Map/js/chica-menu.js?v=5" defer></script></body>
+  <script src="/Chicas-Map/js/chica-menu.js?v=6" defer></script>
+</body>
 </html>

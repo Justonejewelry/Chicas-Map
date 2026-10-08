@@ -37,13 +37,13 @@
     }
     a.setAttribute("href", HREF);
     a.setAttribute("data-cta", "boost");
-    a.setAttribute("aria-label", "Boost my garage sale, $5");
-    a.title = "Boost my garage sale · $5";
-    if (a.getAttribute("data-painted") !== "12") {
-      a.setAttribute("data-painted", "12");
+    a.setAttribute("aria-label", "Boost My Sale, $5");
+    a.title = "Boost My Sale · $5";
+    if (a.getAttribute("data-painted") !== "13") {
+      a.setAttribute("data-painted", "13");
       a.innerHTML =
         '<img alt="Chica" width="64" height="66" src="' + LOGO + '">' +
-        '<span class="chica-cta-label">Boost · $5</span>';
+        '<span class="chica-cta-label">Boost My Sale</span>';
       var img = a.querySelector("img");
       img.onerror = function () {
         if (img.getAttribute("src") !== HERO) img.src = HERO;

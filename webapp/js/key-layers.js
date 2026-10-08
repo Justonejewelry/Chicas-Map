@@ -73,7 +73,7 @@
     { id: "wifi", kind: "overlay", label: "Wi-Fi", src: BASE + "/data/san-antonio-public-wifi.geojson" },
     { id: "claimed", kind: "claimed", label: "Chicas Pack" },
     { id: "thrift", kind: "overlay", label: "Resale Trail", src: BASE + "/data/san-antonio-thrift.geojson" },
-    { id: "listit", kind: "cta", label: "Pin it \u00b7 $5", href: BASE + "/claim", hint: "List it. Sell it. Done." }
+    { id: "listit", kind: "cta", label: "Boost My Sale", href: BASE + "/claim", hint: "Gold pin this weekend. $5." }
   ];
   if (emergencyOn()) LAYERS.push({ id: "emergency", kind: "overlay", label: "Emergency hubs", src: BASE + "/data/san-antonio-emergency-info.geojson" });
   var specById = {};

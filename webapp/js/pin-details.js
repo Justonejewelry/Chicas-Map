@@ -99,7 +99,7 @@
       signal +
       actions(lat, lon) +
       '<a class="secondary" href="' + BASE + '/submit/">List a sale \u2014 free</a>' +
-      '<a class="claim" href="' + esc(claimHref(sale)) + '">Claim this pin \u2014 $5</a>' +
+      '<a class="claim" href="' + esc(claimHref(sale)) + '">Boost My Sale · $5</a>' +
       '<a class="secondary" href="' + BASE + '/boost/">Feature this sale</a>' +
       '<a class="secondary" href="' + esc(share) + '">Share this sale</a>' +
       "</div>";

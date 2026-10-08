@@ -38,9 +38,9 @@
     if (last === key && document.getElementById(BAR_ID)) return;
 
     var line = es
-      ? "List it. Sell it. Done. Pin $5 este fin."
-      : "Hey pack. List it. Sell it. Done. — $5 pin.";
-    var payLabel = es ? "Pinar · $5" : "Pin it · $5";
+      ? "Impulsa mi venta. El pin de oro, este fin."
+      : "Boost My Sale. Gold pin this weekend.";
+    var payLabel = es ? "Impulsa mi venta · $5" : "Boost My Sale · $5";
     var moreLabel = es ? "Cómo funciona" : "How it works";
 
     var bar = document.getElementById(BAR_ID);

@@ -24,7 +24,7 @@
     return [
       [BASE + "/map/", es() ? "Mapa" : "Map"],
       [BASE + "/submit", es() ? "Publicar una venta" : "Add a sale"],
-      [BASE + "/claim/", es() ? "Impulsar · $5" : "Boost · $5"],
+      [BASE + "/claim/", es() ? "Impulsa mi venta" : "Boost My Sale"],
       [BASE + "/atlas/", "Alamo Atlas"],
       [BASE + "/facebook", "Facebook"],
       [BASE + "/media", "Reels"],
