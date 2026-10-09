@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-09T05:27:04-05:00",
+  "updated": "2026-10-09T12:26:00-05:00",
   "city": "san-antonio",
   "version": 2.7,
   "horizonDays": 90,
@@ -5277,6 +5277,42 @@
       "reliability": 90,
       "discoveredAt": "2026-10-09T03:35:02-05:00",
       "confidence": 99
+    },
+    {
+      "id": "2026-10-11_diamond-painting-club-ghost_923d2925da0e",
+      "title": "Diamond Painting Club: Ghost Magnets",
+      "date": "2026-10-11",
+      "endDate": "",
+      "time": "2:00 PM-4:00 PM",
+      "address": "1122 W. Pyron Ave",
+      "lat": null,
+      "lng": null,
+      "category": "other",
+      "description": "",
+      "url": "https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D210903603",
+      "source": "San Antonio Public Library Events",
+      "sourceId": "sapl-trumba-ics",
+      "reliability": 96,
+      "discoveredAt": "2026-10-09T12:24:29-05:00",
+      "confidence": 100
+    },
+    {
+      "id": "2026-10-14_toddler-story-time_71887ab99546",
+      "title": "Toddler Story Time",
+      "date": "2026-10-14",
+      "endDate": "",
+      "time": "10:15 AM-11:00 AM",
+      "address": "13330 Kyle Seale Pkwy",
+      "lat": null,
+      "lng": null,
+      "category": "other",
+      "description": "",
+      "url": "https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206289654",
+      "source": "San Antonio Public Library Events",
+      "sourceId": "sapl-trumba-ics",
+      "reliability": 96,
+      "discoveredAt": "2026-10-09T12:24:29-05:00",
+      "confidence": 100
     }
   ]
 }

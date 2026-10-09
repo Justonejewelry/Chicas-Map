@@ -1,22 +1,25 @@
 # Chica's Map -- Community Events Swarm v2.7
 
-Run: 2026-10-09T05:27:04-05:00
+Run: 2026-10-09T12:26:00-05:00
 Sources scanned: **48**
-Candidates discovered: **943**
-With parsed dates: **785**
-With street/venue address: **516**
-Promoted this run: **0**
+Candidates discovered: **945**
+With parsed dates: **787**
+With street/venue address: **518**
+Promoted this run: **2**
 Kept from prior feed: **293**
 Purged from prior feed: **0**
 Source errors: **2**
 Rejected by Sentinel: **296**
 
 ## Promoted (passed Events Sentinel)
-_None this run._
+- **Diamond Painting Club: Ghost Magnets** -- 2026-10-11 -- 1122 W. Pyron Ave -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D210903603
+- **Toddler Story Time** -- 2026-10-14 -- 13330 Kyle Seale Pkwy -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206289654
 
 ## Review Queue
 - **San Antonio Public Library Events** -- conf 100 -- Toddler Story Time! -- 2026-10-14 -- 6111 Rosedale Ct. San Antonio, TX 78201 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206288691
+- **San Antonio Public Library Events** -- conf 100 -- Toddler Story Time -- 2026-10-14 -- 13330 Kyle Seale Pkwy -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206289654
 - **San Antonio Public Library Events** -- conf 100 -- Family Story Time -- 2026-10-11 -- 5110 Walzem Road San -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D207473333
+- **San Antonio Public Library Events** -- conf 100 -- Diamond Painting Club: Ghost Magnets -- 2026-10-11 -- 1122 W. Pyron Ave -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D210903603
 - **City of San Antonio Parks & Recreation** -- conf 100 -- Tennis Clinics -- 2026-08-31 -- 1503 San Pedro Ave -- https://www.sanantonio.gov/ParksAndRec/News-Events/Events/Event-Details/ArtMID/15385/ArticleID/29348/Tennis-Clinics
 - **Bexar County Clerk — Records on the Run** -- conf 99 -- Bexar County Clerk's Mobile Satellite Office will be at Bexar County Precinct 2 Constable's Office of Constable Leticia R. Vazquez -- 2026-11-05 -- 7723 Guilbeau Rd -- https://www.bexar.org/calendar.aspx?EID=7286
 - **Bexar County Clerk — Records on the Run** -- conf 99 -- Bexar County Clerk's Mobile Satellite Office will be at Bexar County Precinct 3 Justice of the Peace Office -- 2026-10-20 -- 320 Interpark Blvd -- https://www.bexar.org/calendar.aspx?EID=7334
@@ -173,8 +176,6 @@ _None this run._
 - **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2029-08-09 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22431
 - **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2029-09-13 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22432
 - **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2029-10-11 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22433
-- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2029-11-08 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22434
-- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2029-12-13 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22435
 
 ## Rejected by Sentinel
 - Teen Time -- event_id=2026-10-09_teen-time_51c9989c29ca: duplicate id already in feed
