@@ -139,30 +139,6 @@
       "external_id": "cl-daustinguitarsx9gjk6mk7akpbp72ynmgvk"
     },
     {
-      "address": "1112 Smith Dr near wood, Austin, TX",
-      "dates": "2026-10-06 – 2026-10-08",
-      "date_from": "2026-10-06",
-      "date_to": "2026-10-08",
-      "end_date": "2026-10-08",
-      "hours": null,
-      "title": "Selling OUT ALL 42'' Club Cadet xt-1 AND much to go with it",
-      "details": "QR Code Link to This Post SELLING OUT ALL ( Stop And SEE OR CALL AT show contact info Before You Say No way or Call ) Please call me first Selling ALL that goes with this 42'' cub cadet xt 1 1-full set of tires and rims a homemade wagon with all new parts for the deck, new blades and good ones also, belts, Selling for 1,550.00 Cash only Price is FIRM, and with a spreader a blade stand to sharping ",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/killeen-selling-out-all-42-club-cadet/pbEvBajzKk5qPjNXoNC7mR",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 31.123235,
-      "lon": -97.713567,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-all42clubcadetpbevbajzkk5qpjnxonc7mr"
-    },
-    {
       "address": "Parmer Lane near Ranch Trails, Austin, TX",
       "dates": "2026-11-14 – 2026-11-14",
       "date_from": "2026-11-14",
@@ -333,28 +309,6 @@
       "categories": [
         "estate-sale",
         "online-auction"
-      ]
-    },
-    {
-      "address": "14806 Arrowhead Dr, Leander, TX 78641",
-      "dates": "2026-10-08 – 2026-10-08",
-      "date_from": "2026-10-08",
-      "date_to": "2026-10-08",
-      "end_date": "2026-10-08",
-      "title": "Treasure Hunters Dream In Volente",
-      "details": "",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196417501",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.88,
-      "status": "verified",
-      "lat": 30.426859,
-      "lon": -97.900177,
-      "geocode": "source",
-      "external_id": "yss-14806arrowheaddrleandertx78641-2026-10-08",
-      "categories": [
-        "garage-sale"
       ]
     },
     {
@@ -752,54 +706,6 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "cl-parkneighborhoodtxnnq46fsrvxiw8micwy7m"
-    },
-    {
-      "address": "Newberry Drive, Austin, TX",
-      "dates": "2026-10-06 – 2026-10-08",
-      "date_from": "2026-10-06",
-      "date_to": "2026-10-08",
-      "end_date": "2026-10-08",
-      "hours": null,
-      "title": "Online Garage Sale For Animal Rescue effort",
-      "details": "QR Code Link to This Post Hello Gang. I’m raising funds and cleaning out my closet with so many brand new Anthropologie dresses/shoes and art. All proceeds are going to an effort to fix about 20 cats in a colony. Thanks for supporting my cause. Sale runs this full week.",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/austin-online-garage-sale-for-animal/4NMtwJfFra75AMhD3Np6jH",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.457603,
-      "lon": -97.781376,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-esaleforanimal4nmtwjffra75amhd3np6jh"
-    },
-    {
-      "address": "1115 Laurelleaf Drive, Austin, TX",
-      "dates": "2026-10-06 – 2026-10-08",
-      "date_from": "2026-10-06",
-      "date_to": "2026-10-08",
-      "end_date": "2026-10-08",
-      "hours": null,
-      "title": "Pflugerville Garage Sale",
-      "details": "QR Code Link to This Post Downsizing. Good condition items: household, kitchen, tools.",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/pflugerville-pflugerville-garage-sale/qDipJhHrphYgYP3SrbcUkT",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.458024,
-      "lon": -97.632836,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-villegaragesaleqdipjhhrphygyp3srbcukt"
     },
     {
       "address": "Austin, TX",
@@ -1240,9 +1146,9 @@
     "gsalr.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 54,
+  "total_locations": 50,
   "status": "live",
-  "date": "2026-10-08",
-  "last_refresh": "2026-10-08T13:02:31-05:00",
+  "date": "2026-10-09",
+  "last_refresh": "2026-10-09T03:33:54-05:00",
   "permits": []
 }
