@@ -2,23 +2,24 @@
   "date": "2026-10-09",
   "persona": "Chica",
   "pii_stripped": true,
-  "map": "https://justonejewelry.github.io/Chicas-Map/",
-  "actions_run_id": "37917466041",
-  "city_file_written": false,
-  "eso_pass": {
-    "timestamp": "2026-10-09T05:28:00-05:00",
-    "net_new": 0,
-    "republish": false,
-    "reason": "EstateSales.org daily: New Braunfels online, Converse online no street, 78259 online no street. GSF streets already on feed or staged."
+  "map": "https://chicasmap.com",
+  "pages_deploy": "37928980956",
+  "city_file_written": true,
+  "facebook_buffer": {
+    "page": "Chica",
+    "friday": "2026-10-09T09:00:00-05:00",
+    "saturday": "2026-10-10T07:00:00-05:00"
   },
-  "facebook": "Hey pack \u2014 Friday trails are up, and Saturday is the big sniff.\n\nOn the map now:\n\u2022 Universal City antiques, 410 E Langley Boulevard \u2014 today and Saturday. https://chicasmap.com/sa?id=yss-410elangleyblvduniversalcitytx78148-2026-10-09\n\u2022 Haltown multi-family, 918 Haltown Drive \u2014 Friday and Saturday, 9 to 1:30\n\u2022 Brushy Point, 9371 \u2014 Friday only, 7 to 1\n\u2022 Oak Meadow, 2523 Hunters Green \u2014 Friday and Saturday, 9 to 3\n\nStaged, not pinned yet. Morning populate is still running:\n\u2022 Helotes Crossing, 9614 Wasp Creek \u2014 Saturday 8 to 2\n\u2022 10815 Wedgewood Drive \u2014 moving sale, tools and furniture, Saturday\n\u2022 16203 Canyon Shadow \u2014 antique furniture, Saturday and Sunday\n\u2022 9411 Hays Point \u2014 tools, Saturday and Sunday\n\u2022 Lions Field lot, 2809 Broadway \u2014 Saturday, jewelry and household\n\nOpen the free map: https://justonejewelry.github.io/Chicas-Map/\nNear Me. Google, Apple, or Waze.\nMissing a sale on your street? List it.\n\n#SanAntonioGarageSales #SATXThrifting #ChicaMap\n",
-  "nextdoor": "Neighbors \u2014 Friday note from Chica Map.\n\nOn the map: Universal City antiques on E Langley today and Saturday, Haltown multi-family 9 to 1:30, and a Friday-only stop on Brushy Point until 1. Oak Meadow at Hunters Green is Friday and Saturday.\n\nNot pinned yet: Helotes Crossing Saturday 8 to 2, a Wedgewood moving sale with tools, and a Broadway lot sale at Lions Field.\n\nMap: https://justonejewelry.github.io/Chicas-Map/\nIf your street sale is missing, list it.\n",
+  "facebook": "Saturday starts at 8 in Helotes. Wasp Creek. If the trunk is empty, that is on you.\n\nOn the map:\n• Helotes Crossing, 9614 Wasp Creek — Saturday 8 to 2\n• Blenhein Ridge, 13903 — Saturday 7 to noon\n• Wedgewood, 10815 — moving sale, tools and furniture, Saturday\n• Canyon Shadow, 16203 — antique furniture, Saturday and Sunday\n• Universal City, 410 E Langley — antiques and ceramics, today and Saturday\n• Timberwood Park, 27035 Vaughns View — Saturday\n• Lions Field lot, 2809 Broadway — Saturday\n• Sawyer Meadow, 8115 — Saturday and Sunday\n\nFree map. Near Me. Google, Apple, or Waze.\nhttps://chicasmap.com\n\nMissing your street? List it.\n",
+  "facebook_friday": "Brushy Point is Friday only, and it closes at 1. After that you are late.\n\nStill open today:\n• 9371 Brushy Point — until 1\n• 918 Haltown Drive — multi-family, 9 to 1:30\n• 410 E Langley, Universal City — antiques, today and Saturday\n• 2523 Hunters Green, Oak Meadow — today and Saturday, 9 to 3\n\nSaturday is already pinned. Helotes Crossing at 8. Wedgewood moving sale. Canyon Shadow antiques.\n\nhttps://chicasmap.com\nNear Me. No account.\n",
+  "nextdoor": "Neighbors — Friday note.\n\nBrushy Point, 9371, is today only until 1. Haltown at 918 is a multi-family until 1:30. Oak Meadow at 2523 Hunters Green is today and Saturday, 9 to 3.\n\nIf you are north or west tomorrow: Helotes Crossing, 9614 Wasp Creek, 8 to 2. Blenhein Ridge, 13903, 7 to noon. Wedgewood moving sale has tools. Canyon Shadow has antique furniture Saturday and Sunday.\n\nUniversal City, Langley, antiques today and Saturday.\n\nMap: https://chicasmap.com\nNear Me. If your street sale is missing, list it.\n",
   "tiktok": {
-    "caption": "Friday nose check. Langley antiques are on the map. Helotes Crossing is Saturday 8 to 2, not pinned yet. Wedgewood moving sale has tools. Free map. Near Me.",
+    "caption": "Saturday starts at 8 in Helotes. Wasp Creek. Brushy Point closes at 1 today. Free map. Near Me.",
     "tags": [
       "#SanAntonioEstateSales",
       "#SATXThrifting",
       "#SanAntonioGarageSales"
-    ]
+    ],
+    "voiceover": "Hey pack. Brushy Point is Friday only, until 1. Tomorrow, Helotes Crossing, 8 to 2. Wedgewood is a moving sale. Canyon Shadow has antique furniture. Open the map. Near Me."
   }
 }
