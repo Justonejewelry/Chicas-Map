@@ -158,5 +158,15 @@
     "geocoding_success_rate": "92.9%",
     "status": "STAGED_CONCURRENT_WORKFLOW",
     "notes": "First dispatch rejected unexpected input city. Retry chica-daily.yml 37916117327 in_progress after 3 polls. community-events-swarm.yml not triggered. Formspree 0. No flyer attachments, OCR not used. 14 net-new vs public[] staged, not written to CITY_FILE. Census rooftop 13/14. Oakwell Farms Pkwy zip centroid only. Held Gainesborough, Newkirk, Larchmont. Date fills for Alpha Wolf Sunday and 281 S Oct 10 not applied. schema/city.schema.json absent. public[] and permits[] untouched."
+  },
+  {
+    "timestamp": "2026-10-09T05:28:00-05:00",
+    "target_date": "2026-10-09",
+    "actions_run_id": "37917466041",
+    "emails_scanned": 6,
+    "net_new_added": 0,
+    "geocoding_success_rate": "0.0%",
+    "status": "SUCCESS",
+    "notes": "Mailbox trigger: EstateSales.org daily, 3 new near San Antonio. First dispatch rejected unexpected input city. Retry chica-daily.yml 37917466041 in_progress after 3 polls. community-events-swarm.yml not triggered. Formspree 0. No flyer attachment, OCR not used. ESO three rows rejected: New Braunfels 78132 online, Converse 78109 online no street, San Antonio 78259 online no street. GSF house-number rows already on feed or in staging. CITY_FILE not written. Social copy not republished. schema/city.schema.json absent. public[] and permits[] untouched."
   }
 ]
