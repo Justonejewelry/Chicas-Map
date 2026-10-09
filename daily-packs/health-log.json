@@ -138,5 +138,15 @@
     "geocoding_success_rate": "0.0%",
     "status": "SUCCESS",
     "notes": "Mailbox trigger was Ancestry promo, rejected. chica-daily.yml 37821132038 in_progress after 3 polls. community-events-swarm.yml not triggered. Formspree 0. GSF and ESO rows already on feed or staged. Belton SC and Houston PMB rejected. CITY_FILE not written. Social copy unchanged. schema/city.schema.json absent."
+  },
+  {
+    "timestamp": "2026-10-09T03:40:00-05:00",
+    "target_date": "2026-10-09",
+    "actions_run_id": "37905660159",
+    "emails_scanned": 6,
+    "net_new_added": 0,
+    "geocoding_success_rate": "0.0%",
+    "status": "STAGED_CONCURRENT_WORKFLOW",
+    "notes": "First dispatch rejected unexpected input city. Retry chica-daily.yml 37905660159 in_progress after 3 polls. community-events-swarm.yml not triggered. Formspree 0. No flyer attachments, OCR not needed. 22 Greater-SA street rows staged, not written to CITY_FILE (concurrent populate). Zip centroids only, not counted as geocode success. Dupes: Booth Dr, Brooks Ave, 281 S popup date-fill staged. Held Gainesborough, Newkirk, Larchmont. Rejected online-only and out-of-fence. schema/city.schema.json absent. public[] untouched."
   }
 ]
