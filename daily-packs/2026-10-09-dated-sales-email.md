@@ -35,7 +35,7 @@ Map only shows pins whose listed dates include today.
 - Something for everyone — 5610 Green Grv, San Antonio, TX 78223 [2026-10-09 → 2026-10-10]
 - Oak Meadow Neighborhood Garage Sale — 2523 Hunters Grn, San Antonio, TX 78231 [2026-10-09 → 2026-10-10]
 - Yard Sale Friday Only 7-1 — 9371 Brushy Point St, San Antonio, TX 78250 [2026-10-09 → 2026-10-09]
-- Garage Sale — 9422 Fairpoint, San Antonio, TX 78250 [2026-10-09 → 2026-10-10]
+- GARAGE SALE — 9422 Fairpoint, San Antonio, TX 78250 [2026-10-09 → 2026-10-10]
 - Large Oriental Antique, Decorative Ceramic, and Rock Memorbillia Sale! — 410 E Langley Blvd, Universal City, TX 78148 [2026-10-09 → 2026-10-10]
 - Neighborhood wide garage sale — 7307 Littlefoot Ln, San Antonio, TX 78253 [2026-10-09 → 2026-10-10]
 - Multi family yard sale! — 132 Heickman Rd, Somerset, TX 78069 [2026-10-09 → 2026-10-10]
@@ -50,32 +50,27 @@ Map only shows pins whose listed dates include today.
 - Classy Crap — 515 Stockton Dr, San Antonio, TX 78216 [2026-10-09 → 2026-10-09]
 - Most Items Are A Dollar — 14318 Chimney House Ln, San Antonio, TX 78231 [2026-10-09 → 2026-10-10]
 - BIG Garage Sale in Live Oak, 8013 Forest Crossing — Forest Crossing near Forest Corner, San Antonio, TX [2026-10-09 → 2026-10-11]
+- 2nd Annual Venado Crossing Community Yard Sale — 713 Moki Place near Venado Crossing, San Antonio, TX [2026-10-09 → 2026-10-11]
+- Big Family Yard Sale beautiful items — 119 Linda Dr near San Pedro, San Antonio, TX [2026-10-09 → 2026-10-11]
 
 ## COMING UP (remembered, not on today's map)
 
 ### Starts 2026-10-10
-- Helotes Crossing Neighborhood Garage Sale — 9614 Wasp Creek, Helotes, TX 78023 [2026-10-10 → 2026-10-10] | 8:00 am – 2:00 pm
-- Moving Sale....all must go! — 10815 Wedgewood Drive, San Antonio, TX 78230 [2026-10-10 → 2026-10-10]
-- Garage SALE — 9411 Hays Point, San Antonio, TX 78250 [2026-10-10 → 2026-10-11]
-- FALL COMMUNITY YARD SALE - 2 DAY EVENT — 8115 Sawyer Meadow, San Antonio, TX 78254 [2026-10-10 → 2026-10-11]
-- Neighborhood Garage Sale — 13903 Blenhein Ridge, San Antonio, TX 78231 [2026-10-10 → 2026-10-10] | 7:00 am – 12:00 pm
-- Moving Sale — 16203 Canyon Shadow, San Antonio, TX 78232 [2026-10-10 → 2026-10-11]
-- YARD/GARAGE SALE — 2822 Quail Oak Street, San Antonio, TX 78232 [2026-10-10 → 2026-10-10]
-- Yard/Garage Sale — 2823 Quail Oak Street, San Antonio, TX 78232 [2026-10-10 → 2026-10-10]
-- Timberwood Park Community Garage Sale — 27035 Vaughns View, San Antonio, TX 78260 [2026-10-10 → 2026-10-10]
-- Church Rummage Sale — 2740 Hunters Green, San Antonio, TX 78231 [2026-10-10 → 2026-10-10]
-- Lions Field parking lot sale — 2809 Broadway Street, San Antonio, TX 78209 [2026-10-10 → 2026-10-10]
-- OWF Neighborhood Harage Sale — 17 Thornhurst, San Antonio, TX 78218 [2026-10-10 → 2026-10-10]
-- Trinity Oaks Community garage sale — 2738 Trinity View, San Antonio, TX 78261 [2026-10-10 → 2026-10-10]
 - Moving Sale....All Must Go! — 10815 Wedgewood Dr, San Antonio, TX 78230 [2026-10-10 → 2026-10-10]
 - Lions Field parking lot sale 30 plus vendors — 2809 Broadway St, San Antonio, TX 78209 [2026-10-10 → 2026-10-10]
+- Garage Sale — 934 W Mariposa Dr, San Antonio, TX 78201 [2026-10-10 → 2026-10-11]
 - Terrell Heights Neighborhood Association Neighborhood Yard Sale! — Larchmont Dr, San Antonio, TX 78209 [2026-10-10 → 2026-10-10]
+- Great Cleanaway Garage Sale — 4419 Hollyridge Dr, San Antonio, TX 78228 [2026-10-10 → 2026-10-11]
+- OWF Neighborhood Harage Sale — 17 Thornhurst, San Antonio, TX 78218 [2026-10-10 → 2026-10-10]
 - Great Sale with Three Generations of Treasures — 1807 Oakwell Farms Pkwy, San Antonio, TX 78218 [2026-10-10 → 2026-10-10]
+- YARD SALE — 5931 Whispering Lake St, San Antonio, TX 78222 [2026-10-10 → 2026-10-11]
 - Garage Sale — 13710 Cedar Cyn, San Antonio, TX 78231 [2026-10-10 → 2026-10-10]
 - Church Rummage Sale — 2740 Hunters Grn, San Antonio, TX 78231 [2026-10-10 → 2026-10-10]
 - Neighborhood Garage Sale- don’t let the construction stop you! — 13903 Blenhein Rdg, San Antonio, TX 78231 [2026-10-10 → 2026-10-10]
+- Moving Sale — 16203 Canyon Shadow, San Antonio, TX 78232 [2026-10-10 → 2026-10-11]
 - Yard/Garage Sale — 2822 Quail Oak St, San Antonio, TX 78232 [2026-10-10 → 2026-10-10]
 - Yard/Garage Sale — 2823 Quail Oak St, San Antonio, TX 78232 [2026-10-10 → 2026-10-10]
+- Garage SALE — 9411 Hays Point, San Antonio, TX 78250 [2026-10-10 → 2026-10-11]
 - Sedona subdivision Community Wide Garage sale — Newkirk, Helotes, TX 78023 [2026-10-10 → 2026-10-10]
 - Helotes Crossing Neighborhood Garage Sale — 9614 Wasp Crk, Helotes, TX 78023 [2026-10-10 → 2026-10-10]
 - Garage Sale — 8011 Saratoga Knoll, Selma, TX 78154 [2026-10-10 → 2026-10-10]
@@ -90,11 +85,15 @@ Map only shows pins whose listed dates include today.
 - 🏡 YARD SALE SATURDAY! Furniture, Dining Set, Home Goods & MORE! — 727 Veloway Trl, New Braunfels, TX 78132 [2026-10-10 → 2026-10-10]
 - Household And Furniture — 2131 Stonehaven, New Braunfels, TX 78130 [2026-10-10 → 2026-10-10]
 - Navarro Ranch Community Garage Sale — 5655 Navarro Rnch, New Berlin, TX 78155 [2026-10-10 → 2026-10-10]
+- Estate Sale — 206 Koehler, San Antonio, TX [2026-10-10 → 2026-10-10]
 - Estate Sale 2 weekends 10/10-10/11 & 10/15-10/18 — 206 Koehler Ct. near S. Presa & S. New Braunfels, San Antonio, TX [2026-10-10 → 2026-10-15]
 - Forest Ridge Community Sale-Schertz Texas — 4490 Brush Creek Drive, San Antonio, TX [2026-10-10 → 2026-10-10]
 
 ### Starts 2026-10-15
 - HUGE ESTATE SALE — SOMETHING FOR EVERYONE! — 2302 Sandy Pass near Hickory Way, San Antonio, TX [2026-10-15 → 2026-10-15]
+
+### Starts 2026-10-17
+- Jolly Old Estate Sale! — hidden, San Antonio, TX 78231 [2026-10-17 → 2026-10-18] | 2026-10-17 9:00 am-3:00 pm; 2026-10-18 9:00 am-3:00 pm
 
 ## ONLINE / UNPLOTTABLE
 
