@@ -2,12 +2,26 @@
   "target_date": "2026-10-09",
   "city": "san-antonio",
   "status": "STAGED_CONCURRENT_WORKFLOW",
-  "reason": "chica-daily.yml run 37905660159 still in_progress after 3 polls. CITY_FILE not written to avoid a double-write.",
+  "reason": "chica-daily.yml run 37916117327 still in_progress after 3 polls. CITY_FILE not written to avoid a double-write.",
   "confidence_floor": 0.7,
   "schema_check": "schema/city.schema.json absent on main. Not applied.",
-  "net_new_street": 22,
+  "emails_scanned": 3,
+  "formspree": 0,
+  "net_new_vs_public": 14,
+  "census_rooftop": 13,
+  "zip_centroid": 1,
   "safety_ceiling": 25,
   "ceiling_hit": false,
+  "city_file_written": false,
+  "community_events_swarm": "not_triggered",
+  "ocr": "no flyer attachments on the 3 threads. OCR not used.",
+  "actions_run_id": "37916117327",
+  "polls": [
+    "in_progress",
+    "in_progress",
+    "in_progress"
+  ],
+  "first_dispatch": "rejected unexpected input city. Retry used cities=san-antonio.",
   "staged": [
     {
       "title": "Helotes Crossing Neighborhood Garage Sale",
@@ -21,39 +35,16 @@
       "source": "Email:GarageSaleFinder",
       "confidence": 0.75,
       "type": "garage",
-      "lat": 29.578,
-      "lon": -98.69,
-      "accuracy": "zip_centroid",
-      "geocode": "zip_centroid",
+      "lat": 29.557527872171,
+      "lon": -98.676761251056,
+      "accuracy": "census_rooftop",
+      "geocode": "census_rooftop",
+      "matched_address": "9614 WASP CREEK, HELOTES, TX, 78023",
       "external_id": "gsf-email-9614waspcreekhelotestx78023-2026-10-10",
-      "details": "Neighborhood sale. Saturday Oct 10, 8 am-2 pm.",
+      "details": "Join the Community - Helotes Crossing Neighborhood Garage Sale",
       "in_person": true,
       "status": "staged",
-      "sentinel": "hold_until_rooftop_or_manual_approve"
-    },
-    {
-      "title": "Fall Yard Sale",
-      "street_address": "1911 Alpha Wolf Bay, San Antonio, TX 78245",
-      "city": "San Antonio",
-      "zip": "78245",
-      "dates": [
-        "2026-10-09",
-        "2026-10-10",
-        "2026-10-11"
-      ],
-      "hours": null,
-      "source": "Email:GarageSaleFinder",
-      "confidence": 0.75,
-      "type": "garage",
-      "lat": 29.423,
-      "lon": -98.702,
-      "accuracy": "zip_centroid",
-      "geocode": "zip_centroid",
-      "external_id": "gsf-email-1911alphawolfbaysanantoniotx78245-2026-10-09",
-      "details": "Community yard sale. Mailer window Oct 9-10; body says Oct 9-11. Expanded to all three.",
-      "in_person": true,
-      "status": "staged",
-      "sentinel": "hold_until_rooftop_or_manual_approve"
+      "sentinel": "hold_until_populate_finishes"
     },
     {
       "title": "Moving Sale....all must go!",
@@ -67,38 +58,16 @@
       "source": "Email:GarageSaleFinder",
       "confidence": 0.75,
       "type": "garage",
-      "lat": 29.548,
-      "lon": -98.563,
-      "accuracy": "zip_centroid",
-      "geocode": "zip_centroid",
+      "lat": 29.539091370892,
+      "lon": -98.530792789082,
+      "accuracy": "census_rooftop",
+      "geocode": "census_rooftop",
+      "matched_address": "10815 WEDGEWOOD DR, SAN ANTONIO, TX, 78230",
       "external_id": "gsf-email-10815wedgewooddrivesanantoniotx78230-2026-10-10",
-      "details": "Furniture, kitchen, home decor, yard items, tools, holiday decor.",
+      "details": "Furniture; kitchen items; home decor ; yard items; tools ; holiday decor",
       "in_person": true,
       "status": "staged",
-      "sentinel": "hold_until_rooftop_or_manual_approve"
-    },
-    {
-      "title": "GARAGE SALE",
-      "street_address": "9422 Fairpoint, San Antonio, TX 78250",
-      "city": "San Antonio",
-      "zip": "78250",
-      "dates": [
-        "2026-10-09",
-        "2026-10-10"
-      ],
-      "hours": null,
-      "source": "Email:GarageSaleFinder",
-      "confidence": 0.75,
-      "type": "garage",
-      "lat": 29.492,
-      "lon": -98.646,
-      "accuracy": "zip_centroid",
-      "geocode": "zip_centroid",
-      "external_id": "gsf-email-9422fairpointsanantoniotx78250-2026-10-09",
-      "details": "Toddler bed, crib, kids toys, girls bikes, puzzles, clothes.",
-      "in_person": true,
-      "status": "staged",
-      "sentinel": "hold_until_rooftop_or_manual_approve"
+      "sentinel": "hold_until_populate_finishes"
     },
     {
       "title": "Garage SALE",
@@ -113,15 +82,16 @@
       "source": "Email:GarageSaleFinder",
       "confidence": 0.75,
       "type": "garage",
-      "lat": 29.492,
-      "lon": -98.646,
-      "accuracy": "zip_centroid",
-      "geocode": "zip_centroid",
+      "lat": 29.522414544888,
+      "lon": -98.682236359731,
+      "accuracy": "census_rooftop",
+      "geocode": "census_rooftop",
+      "matched_address": "9411 HAYS PT, SAN ANTONIO, TX, 78250",
       "external_id": "gsf-email-9411hayspointsanantoniotx78250-2026-10-10",
-      "details": "Street sale. Hours not in mailer.",
+      "details": "Come Shop clothes, shoes, car & motorcycle accessories, tools, musical instruments, books art & crafts, office supplies, CD's, Diecast cars, TY...",
       "in_person": true,
       "status": "staged",
-      "sentinel": "hold_until_rooftop_or_manual_approve"
+      "sentinel": "hold_until_populate_finishes"
     },
     {
       "title": "FALL COMMUNITY YARD SALE - 2 DAY EVENT",
@@ -136,42 +106,20 @@
       "source": "Email:GarageSaleFinder",
       "confidence": 0.75,
       "type": "garage",
-      "lat": 29.498,
-      "lon": -98.718,
-      "accuracy": "zip_centroid",
-      "geocode": "zip_centroid",
+      "lat": 29.515890868874,
+      "lon": -98.718122364977,
+      "accuracy": "census_rooftop",
+      "geocode": "census_rooftop",
+      "matched_address": "8115 SAWYER MEADOW, SAN ANTONIO, TX, 78254",
       "external_id": "gsf-email-8115sawyermeadowsanantoniotx78254-2026-10-10",
-      "details": "Cross Creek community fall yard sale.",
+      "details": "Hello neighbors!",
       "in_person": true,
       "status": "staged",
-      "sentinel": "hold_until_rooftop_or_manual_approve"
+      "sentinel": "hold_until_populate_finishes"
     },
     {
-      "title": "Neighborhood wide garage sale",
-      "street_address": "7307 Littlefoot Lane, San Antonio, TX 78253",
-      "city": "San Antonio",
-      "zip": "78253",
-      "dates": [
-        "2026-10-09",
-        "2026-10-10"
-      ],
-      "hours": null,
-      "source": "Email:GarageSaleFinder",
-      "confidence": 0.75,
-      "type": "garage",
-      "lat": 29.458,
-      "lon": -98.762,
-      "accuracy": "zip_centroid",
-      "geocode": "zip_centroid",
-      "external_id": "gsf-email-7307littlefootlanesanantoniotx78253-2026-10-09",
-      "details": "Winding Brooke subdivision fall garage sale. Several homes.",
-      "in_person": true,
-      "status": "staged",
-      "sentinel": "hold_until_rooftop_or_manual_approve"
-    },
-    {
-      "title": "Neighborhood Garage Sale",
-      "street_address": "13903 Blenheim Ridge, San Antonio, TX 78231",
+      "title": "Neighborhood Garage Sale- don\u2019t let the construction stop you!",
+      "street_address": "13903 Blenhein Ridge, San Antonio, TX 78231",
       "city": "San Antonio",
       "zip": "78231",
       "dates": [
@@ -181,38 +129,16 @@
       "source": "Email:GarageSaleFinder",
       "confidence": 0.75,
       "type": "garage",
-      "lat": 29.584,
-      "lon": -98.528,
-      "accuracy": "zip_centroid",
-      "geocode": "zip_centroid",
-      "external_id": "gsf-email-13903blenheimridgesanantoniotx78231-2026-10-10",
-      "details": "Neighborhood-wide Saturday sale. Mailer truncated at 7 AM-12.",
+      "lat": 29.573447536105,
+      "lon": -98.529378293085,
+      "accuracy": "census_rooftop",
+      "geocode": "census_rooftop",
+      "matched_address": "13903 BLENHEIN RIDGE, SAN ANTONIO, TX, 78231",
+      "external_id": "gsf-email-13903blenheinridgesanantoniotx78231-2026-10-10",
+      "details": "\ud83c\udf83\ud83d\udecd\ufe0f **NEIGHBORHOOD-WIDE GARAGE SALE THIS SATURDAY!** \ud83d\udecd\ufe0f\ud83c\udf83",
       "in_person": true,
       "status": "staged",
-      "sentinel": "hold_until_rooftop_or_manual_approve"
-    },
-    {
-      "title": "Garage Sale - Near North Star Mall",
-      "street_address": "511 Stockton Drive, San Antonio, TX 78216",
-      "city": "San Antonio",
-      "zip": "78216",
-      "dates": [
-        "2026-10-09",
-        "2026-10-10"
-      ],
-      "hours": null,
-      "source": "Email:GarageSaleFinder",
-      "confidence": 0.75,
-      "type": "garage",
-      "lat": 29.548,
-      "lon": -98.485,
-      "accuracy": "zip_centroid",
-      "geocode": "zip_centroid",
-      "external_id": "gsf-email-511stocktondrivesanantoniotx78216-2026-10-09",
-      "details": "Multi-family garage sale near North Star Mall.",
-      "in_person": true,
-      "status": "staged",
-      "sentinel": "hold_until_rooftop_or_manual_approve"
+      "sentinel": "hold_until_populate_finishes"
     },
     {
       "title": "Moving sale",
@@ -227,15 +153,16 @@
       "source": "Email:GarageSaleFinder",
       "confidence": 0.75,
       "type": "garage",
-      "lat": 29.59,
-      "lon": -98.462,
-      "accuracy": "zip_centroid",
-      "geocode": "zip_centroid",
+      "lat": 29.588264445787,
+      "lon": -98.444141467597,
+      "accuracy": "census_rooftop",
+      "geocode": "census_rooftop",
+      "matched_address": "16203 CANYON SHADOW, SAN ANTONIO, TX, 78232",
       "external_id": "gsf-email-16203canyonshadowsanantoniotx78232-2026-10-10",
-      "details": "House goods, antique furniture, lamps, dining tables, fishing gear.",
+      "details": "Moving sale. House goods. Dishes. Kitchen goods. Clothing. Fishing gear. Antique Furniture. Lamps. End tables. Two dining tables w/chairs. Bathroom...",
       "in_person": true,
       "status": "staged",
-      "sentinel": "hold_until_rooftop_or_manual_approve"
+      "sentinel": "hold_until_populate_finishes"
     },
     {
       "title": "YARD/GARAGE SALE",
@@ -249,15 +176,16 @@
       "source": "Email:GarageSaleFinder",
       "confidence": 0.75,
       "type": "garage",
-      "lat": 29.59,
-      "lon": -98.462,
-      "accuracy": "zip_centroid",
-      "geocode": "zip_centroid",
+      "lat": 29.592820464757,
+      "lon": -98.44693783653,
+      "accuracy": "census_rooftop",
+      "geocode": "census_rooftop",
+      "matched_address": "2822 QUAIL OAK ST, SAN ANTONIO, TX, 78232",
       "external_id": "gsf-email-2822quailoakstreetsanantoniotx78232-2026-10-10",
-      "details": "Sheets, clothes, shoes. Adjacent to 2823, kept separate.",
+      "details": "All items are in good condition. King & twin size bed-sheets $2, Clothes (S&M) & shoes good brand Liz Clarborne, eddie Bruer, Columbia, Nautica....",
       "in_person": true,
       "status": "staged",
-      "sentinel": "hold_until_rooftop_or_manual_approve"
+      "sentinel": "hold_until_populate_finishes"
     },
     {
       "title": "Yard/Garage Sale",
@@ -271,15 +199,16 @@
       "source": "Email:GarageSaleFinder",
       "confidence": 0.75,
       "type": "garage",
-      "lat": 29.59,
-      "lon": -98.462,
-      "accuracy": "zip_centroid",
-      "geocode": "zip_centroid",
+      "lat": 29.592922729216,
+      "lon": -98.446878378285,
+      "accuracy": "census_rooftop",
+      "geocode": "census_rooftop",
+      "matched_address": "2823 QUAIL OAK ST, SAN ANTONIO, TX, 78232",
       "external_id": "gsf-email-2823quailoakstreetsanantoniotx78232-2026-10-10",
-      "details": "Sheets, clothes, shoes. Adjacent to 2822, kept separate.",
+      "details": "All items are in good condition. King & twin size bed-sheets $2, Clothes (S&M) & shoes good brand Liz Clarborne, eddie Bruer, Columbia, Nautica....",
       "in_person": true,
       "status": "staged",
-      "sentinel": "hold_until_rooftop_or_manual_approve"
+      "sentinel": "hold_until_populate_finishes"
     },
     {
       "title": "Timberwood Park Community Garage Sale",
@@ -293,60 +222,16 @@
       "source": "Email:GarageSaleFinder",
       "confidence": 0.75,
       "type": "garage",
-      "lat": 29.704,
-      "lon": -98.498,
-      "accuracy": "zip_centroid",
-      "geocode": "zip_centroid",
+      "lat": 29.701557120008,
+      "lon": -98.497837059771,
+      "accuracy": "census_rooftop",
+      "geocode": "census_rooftop",
+      "matched_address": "27035 VAUGHNS VW, SAN ANTONIO, TX, 78260",
       "external_id": "gsf-email-27035vaughnsviewsanantoniotx78260-2026-10-10",
-      "details": "Community sale. Map link in mailer, not a street-level roster.",
+      "details": "https://www.google.com/maps/placelists/list/D7pREbuyfQvagLY-Lmk0VQ?source=sh%2Fx%2Fuk%2Fm0%2F0&kgs=5203b77f6ba4d82c",
       "in_person": true,
       "status": "staged",
-      "sentinel": "hold_until_rooftop_or_manual_approve"
-    },
-    {
-      "title": "Large Oriental Antique, Decorative Ceramic, and Rock Memorabilia Sale",
-      "street_address": "410 E Langley Boulevard, Universal City, TX 78148",
-      "city": "Universal City",
-      "zip": "78148",
-      "dates": [
-        "2026-10-09",
-        "2026-10-10"
-      ],
-      "hours": null,
-      "source": "Email:GarageSaleFinder",
-      "confidence": 0.75,
-      "type": "garage",
-      "lat": 29.548,
-      "lon": -98.305,
-      "accuracy": "zip_centroid",
-      "geocode": "zip_centroid",
-      "external_id": "gsf-email-410elangleyboulevarduniversalcitytx78148-2026-10-09",
-      "details": "Downsizing. Japanese antiques, decorative plates, rock memorabilia.",
-      "in_person": true,
-      "status": "staged",
-      "sentinel": "hold_until_rooftop_or_manual_approve"
-    },
-    {
-      "title": "Yard Sale Friday Only 7-1",
-      "street_address": "9371 Brushy Point Street, San Antonio, TX 78250",
-      "city": "San Antonio",
-      "zip": "78250",
-      "dates": [
-        "2026-10-09"
-      ],
-      "hours": "7:00 am \u2013 1:00 pm",
-      "source": "Email:GarageSaleFinder",
-      "confidence": 0.75,
-      "type": "garage",
-      "lat": 29.492,
-      "lon": -98.646,
-      "accuracy": "zip_centroid",
-      "geocode": "zip_centroid",
-      "external_id": "gsf-email-9371brushypointstreetsanantoniotx78250-2026-10-09",
-      "details": "Friday only. Game chairs.",
-      "in_person": true,
-      "status": "staged",
-      "sentinel": "hold_until_rooftop_or_manual_approve"
+      "sentinel": "hold_until_populate_finishes"
     },
     {
       "title": "Church Rummage Sale",
@@ -360,61 +245,16 @@
       "source": "Email:GarageSaleFinder",
       "confidence": 0.75,
       "type": "garage",
-      "lat": 29.584,
-      "lon": -98.528,
-      "accuracy": "zip_centroid",
-      "geocode": "zip_centroid",
+      "lat": 29.570105242968,
+      "lon": -98.537558193661,
+      "accuracy": "census_rooftop",
+      "geocode": "census_rooftop",
+      "matched_address": "2740 HUNTERS GREEN, SAN ANTONIO, TX, 78231",
       "external_id": "gsf-email-2740huntersgreensanantoniotx78231-2026-10-10",
-      "details": "Thursday GSF digest. Church rummage.",
+      "details": "lots of household items, clothing and shoes, holdiay items, some furniture, some jewelry",
       "in_person": true,
       "status": "staged",
-      "sentinel": "hold_until_rooftop_or_manual_approve"
-    },
-    {
-      "title": "Oak Meadow Neighborhood Garage Sale",
-      "street_address": "2523 Hunters Green, San Antonio, TX 78231",
-      "city": "San Antonio",
-      "zip": "78231",
-      "dates": [
-        "2026-10-09",
-        "2026-10-10"
-      ],
-      "hours": null,
-      "source": "Email:GarageSaleFinder",
-      "confidence": 0.75,
-      "type": "garage",
-      "lat": 29.584,
-      "lon": -98.528,
-      "accuracy": "zip_centroid",
-      "geocode": "zip_centroid",
-      "external_id": "gsf-email-2523huntersgreensanantoniotx78231-2026-10-09",
-      "details": "Thursday GSF digest. Oak Meadow neighborhood.",
-      "in_person": true,
-      "status": "staged",
-      "sentinel": "hold_until_rooftop_or_manual_approve"
-    },
-    {
-      "title": "Neighborhood association garage sale",
-      "street_address": "311 Country Wood Drive, San Antonio, TX 78216",
-      "city": "San Antonio",
-      "zip": "78216",
-      "dates": [
-        "2026-10-09",
-        "2026-10-10"
-      ],
-      "hours": null,
-      "source": "Email:GarageSaleFinder",
-      "confidence": 0.75,
-      "type": "garage",
-      "lat": 29.548,
-      "lon": -98.485,
-      "accuracy": "zip_centroid",
-      "geocode": "zip_centroid",
-      "external_id": "gsf-email-311countrywooddrivesanantoniotx78216-2026-10-09",
-      "details": "Thursday GSF digest.",
-      "in_person": true,
-      "status": "staged",
-      "sentinel": "hold_until_rooftop_or_manual_approve"
+      "sentinel": "hold_until_populate_finishes"
     },
     {
       "title": "Lions Field parking lot sale",
@@ -428,15 +268,16 @@
       "source": "Email:GarageSaleFinder",
       "confidence": 0.75,
       "type": "garage",
-      "lat": 29.488,
-      "lon": -98.458,
-      "accuracy": "zip_centroid",
-      "geocode": "zip_centroid",
+      "lat": 29.452744289591,
+      "lon": -98.472788657542,
+      "accuracy": "census_rooftop",
+      "geocode": "census_rooftop",
+      "matched_address": "2809 BROADWAY, SAN ANTONIO, TX, 78209",
       "external_id": "gsf-email-2809broadwaystreetsanantoniotx78209-2026-10-10",
-      "details": "Thursday GSF digest. Alamo Heights / Broadway corridor.",
+      "details": "Come look \ud83d\udc40 we have so much to offer - from plants to clothes- shoes - plenty of movies, Jewelry- pots, household misc...",
       "in_person": true,
       "status": "staged",
-      "sentinel": "hold_until_rooftop_or_manual_approve"
+      "sentinel": "hold_until_populate_finishes"
     },
     {
       "title": "Great Sale with Three Generations of Treasures",
@@ -454,11 +295,12 @@
       "lon": -98.398,
       "accuracy": "zip_centroid",
       "geocode": "zip_centroid",
+      "matched_address": null,
       "external_id": "gsf-email-1807oakwellfarmsparkwaysanantoniotx78218-2026-10-10",
-      "details": "Thursday GSF digest. Prior run held an incomplete Oakwell row; this has a house number.",
+      "details": "Ladies and Gents clothing, household, furniture, mirrors, bed, kitchen appliances, bedroom furniture, luggage, rugs,",
       "in_person": true,
       "status": "staged",
-      "sentinel": "hold_until_rooftop_or_manual_approve"
+      "sentinel": "hold_until_populate_finishes"
     },
     {
       "title": "OWF Neighborhood Garage Sale",
@@ -472,15 +314,16 @@
       "source": "Email:GarageSaleFinder",
       "confidence": 0.75,
       "type": "garage",
-      "lat": 29.498,
-      "lon": -98.398,
-      "accuracy": "zip_centroid",
-      "geocode": "zip_centroid",
+      "lat": 29.501612110313,
+      "lon": -98.426542711877,
+      "accuracy": "census_rooftop",
+      "geocode": "census_rooftop",
+      "matched_address": "17 THORNHURST, SAN ANTONIO, TX, 78218",
       "external_id": "gsf-email-17thornhurstsanantoniotx78218-2026-10-10",
-      "details": "Thursday GSF digest. Title typo Harage corrected in staging only.",
+      "details": "LOTS of Christmas items; baking, cake decorating",
       "in_person": true,
       "status": "staged",
-      "sentinel": "hold_until_rooftop_or_manual_approve"
+      "sentinel": "hold_until_populate_finishes"
     },
     {
       "title": "Trinity Oaks Community garage sale",
@@ -494,22 +337,23 @@
       "source": "Email:GarageSaleFinder",
       "confidence": 0.75,
       "type": "garage",
-      "lat": 29.655,
-      "lon": -98.442,
-      "accuracy": "zip_centroid",
-      "geocode": "zip_centroid",
+      "lat": 29.70361224666,
+      "lon": -98.444519229161,
+      "accuracy": "census_rooftop",
+      "geocode": "census_rooftop",
+      "matched_address": "2738 TRINITY VW, SAN ANTONIO, TX, 78261",
       "external_id": "gsf-email-2738trinityviewsanantoniotx78261-2026-10-10",
-      "details": "Thursday GSF digest.",
+      "details": "Trinity Oaks Community garage sale",
       "in_person": true,
       "status": "staged",
-      "sentinel": "hold_until_rooftop_or_manual_approve"
+      "sentinel": "hold_until_populate_finishes"
     }
   ],
   "holds_incomplete": [
     {
       "title": "Downsizing Garage Sale",
       "street_address": "Gainesborough Drive, San Antonio, TX 78230",
-      "reason": "no house number",
+      "reason": "no house number; already on public feed without a number",
       "dates": [
         "2026-10-09",
         "2026-10-10"
@@ -536,34 +380,25 @@
       "source": "Email:GarageSaleFinder"
     }
   ],
-  "date_fills": [
+  "date_fills_not_applied": [
+    {
+      "title": "Fall Yard Sale",
+      "street_address": "1911 Alpha Wolf Bay, San Antonio, TX 78245",
+      "note": "On feed as 2026-10-09 to 2026-10-10. Mailer body says Oct 9-11. Not overwritten during concurrent populate."
+    },
     {
       "title": "Pop up market",
       "street_address": "24817 US Highway 281 S, San Antonio, TX 78264",
-      "note": "Already on feed as popup through 2026-10-09. Mailer adds 2026-10-10. Date fill only. Phone in subject stripped.",
-      "dates_suggested": [
-        "2026-10-10"
-      ],
-      "source": "Email:GarageSaleFinder"
+      "note": "On feed through 2026-10-09. Mailer adds 2026-10-10. Not overwritten."
     }
   ],
-  "dupes": [
-    "814 Booth Drive, San Antonio, TX 78216 (on feed, YardSaleSearch)",
-    "618 Brooks Avenue, Schertz, TX 78154 (on feed, YardSaleSearch)",
-    "24817 US Highway 281 S popup (address dupe, date fill staged)"
-  ],
   "rejected": [
-    "Belton, SC estate promo",
-    "Houston PMB 16334 online",
-    "New Braunfels 78132 online auction",
-    "New Braunfels 2131 Stonehaven",
+    "New Braunfels online auction and 2131 Stonehaven",
     "Comfort TX online auction",
     "San Marcos online auction",
-    "Spring Branch River Way and Rolling Creek",
-    "New Berlin Navarro Ranch",
-    "Austin Ste 370",
-    "Converse 78109 online auction, no street",
-    "San Antonio 78259 Caring Transitions online auction, no street",
-    "Tomball and Lewisville ESO rows"
+    "Converse online auction, no street",
+    "San Antonio 78259 online auction, no street",
+    "Austin, Houston PMB, Tomball, Lewisville",
+    "Spring Branch and New Berlin outside Greater SA include list"
   ]
 }
