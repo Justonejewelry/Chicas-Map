@@ -1,7 +1,7 @@
 {
   "target_date": "2026-10-09",
   "city": "san-antonio",
-  "status": "STAGED_CONCURRENT_WORKFLOW",
+  "status": "MERGED_LIVE",
   "reason": "chica-daily.yml run 37916117327 still in_progress after 3 polls. CITY_FILE not written to avoid a double-write.",
   "confidence_floor": 0.7,
   "schema_check": "schema/city.schema.json absent on main. Not applied.",
@@ -12,7 +12,7 @@
   "zip_centroid": 1,
   "safety_ceiling": 25,
   "ceiling_hit": false,
-  "city_file_written": false,
+  "city_file_written": true,
   "community_events_swarm": "not_triggered",
   "ocr": "no flyer attachments on the 3 threads. OCR not used.",
   "actions_run_id": "37916117327",
@@ -31,7 +31,7 @@
       "dates": [
         "2026-10-10"
       ],
-      "hours": "8:00 am \u2013 2:00 pm",
+      "hours": "8:00 am – 2:00 pm",
       "source": "Email:GarageSaleFinder",
       "confidence": 0.75,
       "type": "garage",
@@ -43,8 +43,8 @@
       "external_id": "gsf-email-9614waspcreekhelotestx78023-2026-10-10",
       "details": "Join the Community - Helotes Crossing Neighborhood Garage Sale",
       "in_person": true,
-      "status": "staged",
-      "sentinel": "hold_until_populate_finishes"
+      "status": "published",
+      "sentinel": "merged_to_city_file"
     },
     {
       "title": "Moving Sale....all must go!",
@@ -66,8 +66,8 @@
       "external_id": "gsf-email-10815wedgewooddrivesanantoniotx78230-2026-10-10",
       "details": "Furniture; kitchen items; home decor ; yard items; tools ; holiday decor",
       "in_person": true,
-      "status": "staged",
-      "sentinel": "hold_until_populate_finishes"
+      "status": "published",
+      "sentinel": "merged_to_city_file"
     },
     {
       "title": "Garage SALE",
@@ -90,8 +90,8 @@
       "external_id": "gsf-email-9411hayspointsanantoniotx78250-2026-10-10",
       "details": "Come Shop clothes, shoes, car & motorcycle accessories, tools, musical instruments, books art & crafts, office supplies, CD's, Diecast cars, TY...",
       "in_person": true,
-      "status": "staged",
-      "sentinel": "hold_until_populate_finishes"
+      "status": "published",
+      "sentinel": "merged_to_city_file"
     },
     {
       "title": "FALL COMMUNITY YARD SALE - 2 DAY EVENT",
@@ -114,18 +114,18 @@
       "external_id": "gsf-email-8115sawyermeadowsanantoniotx78254-2026-10-10",
       "details": "Hello neighbors!",
       "in_person": true,
-      "status": "staged",
-      "sentinel": "hold_until_populate_finishes"
+      "status": "published",
+      "sentinel": "merged_to_city_file"
     },
     {
-      "title": "Neighborhood Garage Sale- don\u2019t let the construction stop you!",
+      "title": "Neighborhood Garage Sale- don’t let the construction stop you!",
       "street_address": "13903 Blenhein Ridge, San Antonio, TX 78231",
       "city": "San Antonio",
       "zip": "78231",
       "dates": [
         "2026-10-10"
       ],
-      "hours": "7:00 am \u2013 12:00 pm",
+      "hours": "7:00 am – 12:00 pm",
       "source": "Email:GarageSaleFinder",
       "confidence": 0.75,
       "type": "garage",
@@ -135,10 +135,10 @@
       "geocode": "census_rooftop",
       "matched_address": "13903 BLENHEIN RIDGE, SAN ANTONIO, TX, 78231",
       "external_id": "gsf-email-13903blenheinridgesanantoniotx78231-2026-10-10",
-      "details": "\ud83c\udf83\ud83d\udecd\ufe0f **NEIGHBORHOOD-WIDE GARAGE SALE THIS SATURDAY!** \ud83d\udecd\ufe0f\ud83c\udf83",
+      "details": "🎃🛍️ **NEIGHBORHOOD-WIDE GARAGE SALE THIS SATURDAY!** 🛍️🎃",
       "in_person": true,
-      "status": "staged",
-      "sentinel": "hold_until_populate_finishes"
+      "status": "published",
+      "sentinel": "merged_to_city_file"
     },
     {
       "title": "Moving sale",
@@ -161,8 +161,8 @@
       "external_id": "gsf-email-16203canyonshadowsanantoniotx78232-2026-10-10",
       "details": "Moving sale. House goods. Dishes. Kitchen goods. Clothing. Fishing gear. Antique Furniture. Lamps. End tables. Two dining tables w/chairs. Bathroom...",
       "in_person": true,
-      "status": "staged",
-      "sentinel": "hold_until_populate_finishes"
+      "status": "published",
+      "sentinel": "merged_to_city_file"
     },
     {
       "title": "YARD/GARAGE SALE",
@@ -184,8 +184,8 @@
       "external_id": "gsf-email-2822quailoakstreetsanantoniotx78232-2026-10-10",
       "details": "All items are in good condition. King & twin size bed-sheets $2, Clothes (S&M) & shoes good brand Liz Clarborne, eddie Bruer, Columbia, Nautica....",
       "in_person": true,
-      "status": "staged",
-      "sentinel": "hold_until_populate_finishes"
+      "status": "published",
+      "sentinel": "merged_to_city_file"
     },
     {
       "title": "Yard/Garage Sale",
@@ -207,8 +207,8 @@
       "external_id": "gsf-email-2823quailoakstreetsanantoniotx78232-2026-10-10",
       "details": "All items are in good condition. King & twin size bed-sheets $2, Clothes (S&M) & shoes good brand Liz Clarborne, eddie Bruer, Columbia, Nautica....",
       "in_person": true,
-      "status": "staged",
-      "sentinel": "hold_until_populate_finishes"
+      "status": "published",
+      "sentinel": "merged_to_city_file"
     },
     {
       "title": "Timberwood Park Community Garage Sale",
@@ -230,8 +230,8 @@
       "external_id": "gsf-email-27035vaughnsviewsanantoniotx78260-2026-10-10",
       "details": "https://www.google.com/maps/placelists/list/D7pREbuyfQvagLY-Lmk0VQ?source=sh%2Fx%2Fuk%2Fm0%2F0&kgs=5203b77f6ba4d82c",
       "in_person": true,
-      "status": "staged",
-      "sentinel": "hold_until_populate_finishes"
+      "status": "published",
+      "sentinel": "merged_to_city_file"
     },
     {
       "title": "Church Rummage Sale",
@@ -253,8 +253,8 @@
       "external_id": "gsf-email-2740huntersgreensanantoniotx78231-2026-10-10",
       "details": "lots of household items, clothing and shoes, holdiay items, some furniture, some jewelry",
       "in_person": true,
-      "status": "staged",
-      "sentinel": "hold_until_populate_finishes"
+      "status": "published",
+      "sentinel": "merged_to_city_file"
     },
     {
       "title": "Lions Field parking lot sale",
@@ -274,10 +274,10 @@
       "geocode": "census_rooftop",
       "matched_address": "2809 BROADWAY, SAN ANTONIO, TX, 78209",
       "external_id": "gsf-email-2809broadwaystreetsanantoniotx78209-2026-10-10",
-      "details": "Come look \ud83d\udc40 we have so much to offer - from plants to clothes- shoes - plenty of movies, Jewelry- pots, household misc...",
+      "details": "Come look 👀 we have so much to offer - from plants to clothes- shoes - plenty of movies, Jewelry- pots, household misc...",
       "in_person": true,
-      "status": "staged",
-      "sentinel": "hold_until_populate_finishes"
+      "status": "published",
+      "sentinel": "merged_to_city_file"
     },
     {
       "title": "Great Sale with Three Generations of Treasures",
@@ -299,8 +299,8 @@
       "external_id": "gsf-email-1807oakwellfarmsparkwaysanantoniotx78218-2026-10-10",
       "details": "Ladies and Gents clothing, household, furniture, mirrors, bed, kitchen appliances, bedroom furniture, luggage, rugs,",
       "in_person": true,
-      "status": "staged",
-      "sentinel": "hold_until_populate_finishes"
+      "status": "held_zip_centroid",
+      "sentinel": "zip centroid not published"
     },
     {
       "title": "OWF Neighborhood Garage Sale",
@@ -322,8 +322,8 @@
       "external_id": "gsf-email-17thornhurstsanantoniotx78218-2026-10-10",
       "details": "LOTS of Christmas items; baking, cake decorating",
       "in_person": true,
-      "status": "staged",
-      "sentinel": "hold_until_populate_finishes"
+      "status": "published",
+      "sentinel": "merged_to_city_file"
     },
     {
       "title": "Trinity Oaks Community garage sale",
@@ -345,8 +345,8 @@
       "external_id": "gsf-email-2738trinityviewsanantoniotx78261-2026-10-10",
       "details": "Trinity Oaks Community garage sale",
       "in_person": true,
-      "status": "staged",
-      "sentinel": "hold_until_populate_finishes"
+      "status": "published",
+      "sentinel": "merged_to_city_file"
     }
   ],
   "holds_incomplete": [
@@ -367,7 +367,7 @@
       "dates": [
         "2026-10-10"
       ],
-      "hours": "8:00 am \u2013 1:00 pm",
+      "hours": "8:00 am – 1:00 pm",
       "source": "Email:GarageSaleFinder"
     },
     {
@@ -400,5 +400,11 @@
     "San Antonio 78259 online auction, no street",
     "Austin, Houston PMB, Tomball, Lewisville",
     "Spring Branch and New Berlin outside Greater SA include list"
+  ],
+  "merged_commit": "e34e2f1aec92b3c42a29a53f68a6d5345900a0a0",
+  "merged_at": "2026-10-09T07:16:00-05:00",
+  "merged_count": 13,
+  "held_on_merge": [
+    "1807 Oakwell Farms Parkway zip centroid"
   ]
 }
