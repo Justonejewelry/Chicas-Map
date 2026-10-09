@@ -47,3 +47,16 @@ MAP        justonejewelry.github.io/Chicas-Map
 | Universal City street | Universal City, Langley, antiques and ceramics through Saturday. |
 | Thumb on Near Me | Open the free map. Near Me. Google, Apple, or Waze. |
 | Watermark bottom-left | List a sale if I missed your street. |
+
+## ESO pass — 05:28 CT
+- Trigger: EstateSales.org daily, "3 new sales added near San Antonio." No attachment. OCR not used.
+- Workflow: chica-daily.yml run 37917466041, in_progress after 3 polls. First dispatch rejected unexpected input `city`. Retry used `cities=san-antonio`, target_date 2026-10-09. community-events-swarm.yml not triggered.
+- Live feed reloaded: 41 public pins, edition "Oct 8 email leads — 18 street pins merged", last_refresh 2026-10-09T05:12:38-05:00.
+- Inbox in 2 days: 6 matching threads. Formspree: 0.
+- Net-new written to CITY_FILE: 0.
+- Rejected this pass:
+  1. Vintage Christmas Collectibles — Caring Transitions of New Braunfels — New Braunfels 78132 — bidding closes Sun Oct 11 7:00 PM CDT. Out of fence and online-only.
+  2. Mission of Love, veteran's home — Caring Transitions of San Antonio Central — Converse 78109 — bidding closes Sun Oct 11 8:00 PM CDT. Online-only, no street.
+  3. Rustic Charm online auction — Caring Transitions of Bulverde & Canyon Lake — San Antonio 78259 — bidding closes Wed Oct 14 7:00 PM CDT. Online-only, no street.
+- GSF Friday list already on the public feed or in `webapp/data/staging/email-leads.json` (14 staged streets). Not re-staged.
+- Social copy not republished. Confidence floor 0.70 stands. schema/city.schema.json still absent.
