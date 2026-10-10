@@ -1,14 +1,14 @@
 # Chica's Map -- Community Events Swarm v2.7
 
-Run: 2026-10-10T05:13:23-05:00
+Run: 2026-10-10T11:10:17-05:00
 Sources scanned: **48**
-Candidates discovered: **930**
+Candidates discovered: **934**
 With parsed dates: **776**
 With street/venue address: **521**
 Promoted this run: **0**
 Kept from prior feed: **293**
 Purged from prior feed: **0**
-Source errors: **3**
+Source errors: **2**
 Rejected by Sentinel: **299**
 
 ## Promoted (passed Events Sentinel)
@@ -231,7 +231,6 @@ _None this run._
 ## Source Errors
 - San Antonio River Authority Events: HTTP 403 Forbidden
 - Windcrest Calendar: HTTP 403 Forbidden
-- Hollywood Park Events: timed out
 
 ---
 Notes: v2.7 caps events at 90 days. Backbone is official/public + schools + libraries, then neighborhoods. CivicEngage ICS, Trumba ICS, Tribe ICS, Thrillshare ICS, RSS. 403 retries with a browser UA. No Google Calendar.

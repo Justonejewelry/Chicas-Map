@@ -87,6 +87,15 @@ Map only shows pins whose listed dates include today.
 - Castle Hills Garage Sale — 209 Prinz Drive near Lockhill Selma and Northwest Military, San Antonio, TX [2026-10-10 → 2026-10-12]
 - Community yard sale — Pebble Oak Dr, San Antonio, TX [2026-10-10 → 2026-10-10]
 - Garage Sale 10/10 9a - 3 — 6329 Bowman Rdg, San Antonio, TX 78249 [2026-10-10 → 2026-10-11]
+- 9218 Yett Ave Yard Sale — 9218 Yett Ave, San Antonio, TX 78221 [2026-10-10 → 2026-10-11]
+- YARD SALE — 12280 Whitney Ave, San Antonio, TX 78223 [2026-10-10 → 2026-10-11]
+- Neighborhood Sale — 12323 Stable Square Dr, San Antonio, TX 78249 [2026-10-10 → 2026-10-10]
+- Garage Sale — toys, clothes, furniture, kitchenware 7AM–1PM — 9466 Points Edge, San Antonio, TX 78250 [2026-10-10 → 2026-10-10]
+- De Todo Un Poco — 7703 Cortland Oak, San Antonio, TX 78254 [2026-10-10 → 2026-10-10]
+- MOVING SALE — 24815 Catalan Cliff, San Antonio, TX [2026-10-10 → 2026-10-12]
+- 2 Family Garage Sale Saturday Oct 10 — Taos Valley near San Fidel rio, San Antonio, TX [2026-10-10 → 2026-10-10]
+- 9218 Yett Ave Yard Sale — 9218 Yett Ave near Across from Schultz Elementary School, San Antonio, TX [2026-10-10 → 2026-10-12]
+- Bulverde Village Community Garage Sale — bennington Way, San Antonio, TX [2026-10-10 → 2026-10-12]
 
 ## COMING UP (remembered, not on today's map)
 
