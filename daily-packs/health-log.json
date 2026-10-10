@@ -1,1 +1,11 @@
-PLACEHOLDER
+[
+  {
+    "timestamp": "2026-10-10T08:35:00-05:00",
+    "target_date": "2026-10-10",
+    "actions_run_id": "38038284706",
+    "emails_scanned": 7,
+    "net_new_added": 0,
+    "geocoding_success_rate": "0.0%",
+    "status": "STAGED_OVERFLOW"
+  }
+]

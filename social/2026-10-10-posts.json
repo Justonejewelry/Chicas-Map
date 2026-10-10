@@ -1,1 +1,14 @@
-PLACEHOLDER
+{
+  "date": "2026-10-10",
+  "persona": "Chica",
+  "facebook": {
+    "post": "Hey pack! 🐾 Saturday garage & estate hunts in San Antonio.\n\n🔥 Huge Moving Sale — 4008 Canaleta (high-end furniture + more)\n🔥 Moving Sale all must go — 10815 Wedgewood Dr\n🔥 Community Yard Sale — 8115 Sawyer Mdw (2 days)\n🔥 Helotes Crossing Neighborhood — 9614 Wasp Crk\n🔥 Royal Ridge Garage Sale — 5801 Archwood Dr\n\nFull list + Near Me routes on the map. No spam, just the trails.\nhttps://chicasmap.com/sa\n\n#SanAntonioGarageSales #SATXThrifting #ChicasMap"
+  },
+  "nextdoor": {
+    "post": "Neighbors — Saturday sales in our area. Check Canaleta for the big moving sale, Sawyer Meadows community event, and Helotes Crossing. Map has the pins and directions: https://chicasmap.com/sa"
+  },
+  "tiktok": {
+    "caption": "Saturday pack hunt in SATX 🐶 Canaleta moving sale is the one. Near Me on the map. #SanAntonioEstateSales #SATXThrifting #SanAntonioGarageSales #ChicasMap",
+    "script": "Hey pack. Saturday. Canaleta moving sale — high-end stuff. Sawyer community and Helotes Crossing too. Open the map, hit Near Me, go get it."
+  }
+}
