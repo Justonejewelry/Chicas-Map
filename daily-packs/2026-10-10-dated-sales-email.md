@@ -86,6 +86,7 @@ Map only shows pins whose listed dates include today.
 - Big Multi-Family Garage Sale — 1738 McKinley Ave., San Antonio, TX [2026-10-10 → 2026-10-12]
 - Castle Hills Garage Sale — 209 Prinz Drive near Lockhill Selma and Northwest Military, San Antonio, TX [2026-10-10 → 2026-10-12]
 - Community yard sale — Pebble Oak Dr, San Antonio, TX [2026-10-10 → 2026-10-10]
+- Garage Sale 10/10 9a - 3 — 6329 Bowman Rdg, San Antonio, TX 78249 [2026-10-10 → 2026-10-11]
 
 ## COMING UP (remembered, not on today's map)
 
