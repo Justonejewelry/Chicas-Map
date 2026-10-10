@@ -25,5 +25,15 @@
     "net_new_added": 0,
     "geocoding_success_rate": "0.0%",
     "status": "STAGED_OVERFLOW"
+  },
+  {
+    "timestamp": "2026-10-10T08:26:00-05:00",
+    "target_date": "2026-10-10",
+    "actions_run_id": "38044006138",
+    "emails_scanned": 8,
+    "net_new_added": 15,
+    "geocoding_success_rate": "live via master populate",
+    "status": "SUCCESS",
+    "notes": "Prior GSF email leads (15 full-street Greater SA) confirmed in public feed after master populate. Staging holds 2 incomplete ESO (Converse zip-only + future Oct 17). City file live at 82 pins."
   }
 ]
