@@ -16,5 +16,14 @@
     "net_new_added": 0,
     "geocoding_success_rate": "0.0%",
     "status": "STAGED_OVERFLOW"
+  },
+  {
+    "timestamp": "2026-10-10T05:12:49-05:00",
+    "target_date": "2026-10-10",
+    "actions_run_id": "38044006138",
+    "emails_scanned": 5,
+    "net_new_added": 0,
+    "geocoding_success_rate": "0.0%",
+    "status": "STAGED_OVERFLOW"
   }
 ]
