@@ -2,15 +2,15 @@
   "target_date": "2026-10-10",
   "city": "san-antonio",
   "status": "PARTIAL_STAGED",
-  "reason": "Actions run 38038284706 still in_progress after polls. Staged net-new email leads to avoid double-write with master populate.",
+  "reason": "Actions run 38042861558 in_progress after 3 polls. Staged net-new ESO leads to avoid double-write with master populate. Prior GSF already merged into public.",
   "confidence_floor": 0.7,
-  "emails_scanned": 7,
-  "net_new_vs_public": 15,
+  "emails_scanned": 8,
+  "net_new_vs_public": 2,
   "safety_ceiling": 25,
   "ceiling_hit": false,
   "city_file_written": false,
   "community_events_swarm": "not_triggered",
-  "actions_run_id": "38038284706",
+  "actions_run_id": "38042861558",
   "polls": [
     "queued",
     "in_progress",
@@ -19,136 +19,33 @@
   ],
   "staged": [
     {
-      "title": "Moving Sale....all must go!",
-      "address": "10815 Wedgewood Dr, San Antonio, TX 78230",
+      "title": "Mission of Love: A Veteran's Home Full Of Moder...",
+      "address": "Converse, TX 78109",
       "dates": [
-        "2026-10-10"
-      ],
-      "source": "Email:GarageSaleFinder",
-      "confidence": 0.75
-    },
-    {
-      "title": "Garage SALE",
-      "address": "9411 Hays Point, San Antonio, TX 78250",
-      "dates": [
-        "2026-10-10",
         "2026-10-11"
       ],
-      "source": "Email:GarageSaleFinder",
-      "confidence": 0.75
+      "hours": "Bidding closes Sun Oct 11 8PM CDT",
+      "source": "Email:EstateSales.org",
+      "confidence": 0.75,
+      "lat": null,
+      "lon": null,
+      "accuracy": "zip_centroid",
+      "notes": "In-person estate by Caring Transitions of San Antonio Central. Street not in daily email summary."
     },
     {
-      "title": "FALL COMMUNITY YARD SALE - 2 DAY EVENT",
-      "address": "8115 Sawyer Mdw, San Antonio, TX 78254",
+      "title": "Jolly Old Estate Sale!",
+      "address": "San Antonio, TX 78231",
       "dates": [
-        "2026-10-10",
-        "2026-10-11"
+        "2026-10-17"
       ],
-      "source": "Email:GarageSaleFinder",
-      "confidence": 0.75
-    },
-    {
-      "title": "Helotes Crossing Neighborhood Garage Sale",
-      "address": "9614 Wasp Crk, Helotes, TX 78023",
-      "dates": [
-        "2026-10-10"
-      ],
-      "source": "Email:GarageSaleFinder",
-      "confidence": 0.75
-    },
-    {
-      "title": "Great cleanaway Garage Sale",
-      "address": "4419 Hollyridge Dr, San Antonio, TX 78228",
-      "dates": [
-        "2026-10-10",
-        "2026-10-11"
-      ],
-      "source": "Email:GarageSaleFinder",
-      "confidence": 0.75
-    },
-    {
-      "title": "Neighborhood Garage Sale- don’t let the construction stop you!",
-      "address": "13903 Blenhein Rdg, San Antonio, TX 78231",
-      "dates": [
-        "2026-10-10"
-      ],
-      "source": "Email:GarageSaleFinder",
-      "confidence": 0.75
-    },
-    {
-      "title": "Garage Sale",
-      "address": "13710 Cedar Cyn, San Antonio, TX 78231",
-      "dates": [
-        "2026-10-10"
-      ],
-      "source": "Email:GarageSaleFinder",
-      "confidence": 0.75
-    },
-    {
-      "title": "Moving sale",
-      "address": "16203 Canyon Shadow, San Antonio, TX 78232",
-      "dates": [
-        "2026-10-10",
-        "2026-10-11"
-      ],
-      "source": "Email:GarageSaleFinder",
-      "confidence": 0.75
-    },
-    {
-      "title": "YARD/GARAGE SALE",
-      "address": "2822 Quail Oak St, San Antonio, TX 78232",
-      "dates": [
-        "2026-10-10"
-      ],
-      "source": "Email:GarageSaleFinder",
-      "confidence": 0.75
-    },
-    {
-      "title": "Yard/Garage Sale",
-      "address": "2823 Quail Oak St, San Antonio, TX 78232",
-      "dates": [
-        "2026-10-10"
-      ],
-      "source": "Email:GarageSaleFinder",
-      "confidence": 0.75
-    },
-    {
-      "title": "Garage Sale",
-      "address": "26205 Romance Pt, San Antonio, TX 78260",
-      "dates": [
-        "2026-10-10"
-      ],
-      "source": "Email:GarageSaleFinder",
-      "confidence": 0.75
-    },
-    {
-      "title": "Timberwood Park Community Garage Sale",
-      "address": "27035 Vaughns Vw, San Antonio, TX 78260",
-      "dates": [
-        "2026-10-10"
-      ],
-      "source": "Email:GarageSaleFinder",
-      "confidence": 0.75
-    },
-    {
-      "title": "Garage Sale Royal Ridge",
-      "address": "5801 Archwood Dr, San Antonio, TX 78239",
-      "dates": [
-        "2026-10-10"
-      ],
-      "source": "Email:GarageSaleFinder",
-      "confidence": 0.75
-    },
-    {
-      "title": "YARD SALE",
-      "address": "5931 Whispering Lake St, San Antonio, TX 78222",
-      "dates": [
-        "2026-10-10",
-        "2026-10-11"
-      ],
-      "source": "Email:GarageSaleFinder",
-      "confidence": 0.75
+      "hours": "Sale starts Sat Oct 17 9AM CDT",
+      "source": "Email:EstateSales.org",
+      "confidence": 0.75,
+      "lat": null,
+      "lon": null,
+      "accuracy": "zip_centroid",
+      "notes": "Caring Transitions of San Antonio North. Future date."
     }
   ],
-  "notes": "Canaleta from prior staging retained. 14 additional full-street Greater SA sales for 2026-10-10 staged pending Actions completion and geocode."
+  "notes": "Prior GSF staging confirmed already in public feed. New ESO: 1 Converse (exclude New Braunfels, online auction). Actions concurrent so city file held."
 }
