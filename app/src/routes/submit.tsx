@@ -7,6 +7,7 @@ export const Route = createFileRoute("/submit")({ component: SubmitPage });
 
 const PAY = "https://square.link/u/qjunxHoo";
 const CLAIM = "https://justonejewelry.github.io/Chicas-Map/claim/";
+const INTAKE = "https://formsubmit.co/ajax/mr.jsciaraffa@gmail.com";
 
 function SubmitPage() {
   const navigate = useNavigate();
@@ -58,6 +59,28 @@ function SubmitPage() {
         submitted: true,
       };
       saveSubmission(sale);
+
+      // Email the tip (fire-and-forget; local pin still works)
+      fetch(INTAKE, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          _subject: `Chicas Map — New sale tip: ${title}`,
+          _template: "table",
+          title,
+          address,
+          type,
+          hours,
+          details,
+          lat,
+          lon,
+          source_url: location.href,
+        }),
+      }).catch(() => {});
+
       await navigate({ to: "/map", search: { sale: sale.id } });
     } catch {
       setError("Could not place that address. Try a fuller street address.");
@@ -72,8 +95,7 @@ function SubmitPage() {
       <main className="mx-auto max-w-lg px-4 py-10">
         <h1 className="font-display text-3xl font-bold">List a sale — free</h1>
         <p className="mt-2 text-sm leading-relaxed text-muted">
-          Drop your garage, yard, or estate sale on the map. It stays on this device so you can
-          share the pin with the pack.
+          Drop your garage, yard, or estate sale on the map. We email the tip so it can be reviewed and added for the pack.
         </p>
         <aside className="mt-4 rounded-2xl bg-paper p-4 ring-1 ring-line">
           <p className="font-display text-base font-semibold">Want the weekend highlight?</p>
