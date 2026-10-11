@@ -49,6 +49,9 @@ Map only shows pins whose listed dates include today.
 - Huge Condo Building Garage Sale 15 Family Near the Alamodome Sunday October 11 — 215 Center Street near Chestnut near Commerce, San Antonio, TX [2026-10-11 → 2026-10-11]
 - Multi Family yard sale — 1321 S General McMullen Dr near Aldama, San Antonio, TX [2026-10-11 → 2026-10-13]
 - NOW OPEN! The Collective Boutiques — NW Loop 410 near Blanco Rd., San Antonio, TX [2026-10-11 → 2026-10-13]
+- Yard Sale — 3211 Sagehill, San Antonio, TX 78230 [2026-10-11 → 2026-10-11]
+- Multi-Family Garage Sale — 510 Booth Dr, San Antonio, TX 78216 [2026-10-11 → 2026-10-11]
+- 3 family yard sale huge — Chihuahua st, San Antonio, TX [2026-10-11 → 2026-10-13]
 
 ## COMING UP (remembered, not on today's map)
 
