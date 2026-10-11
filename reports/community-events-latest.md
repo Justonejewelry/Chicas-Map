@@ -1,18 +1,18 @@
 # Chica's Map -- Community Events Swarm v2.7
 
-Run: 2026-10-11T11:10:39-05:00
+Run: 2026-10-11T11:37:26-05:00
 Sources scanned: **48**
 Candidates discovered: **937**
 With parsed dates: **778**
 With street/venue address: **527**
-Promoted this run: **0**
+Promoted this run: **1**
 Kept from prior feed: **288**
 Purged from prior feed: **0**
 Source errors: **2**
-Rejected by Sentinel: **304**
+Rejected by Sentinel: **303**
 
 ## Promoted (passed Events Sentinel)
-_None this run._
+- **Travel the World, Taste the Flavors with Parman.** -- 2026-10-12 -- 20735 Wilderness Oak San Antonio, TX 78258 -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D211074296
 
 ## Review Queue
 - **San Antonio Public Library Events** -- conf 100 -- Family Story Time at Parman -- 2026-10-14 -- 20735 Wilderness Oak San Antonio, TX 78258 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206287023
@@ -20,12 +20,12 @@ _None this run._
 - **San Antonio Public Library Events** -- conf 100 -- Family Story Time -- 2026-10-15 -- 2515 E. Evans San Antonio, TX 78259 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206373085
 - **San Antonio Public Library Events** -- conf 100 -- Preschool Story Time -- 2026-10-14 -- 15060 Judson Rd -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206448255
 - **San Antonio Public Library Events** -- conf 100 -- Baby Story Time -- 2026-10-15 -- 15060 Judson Rd -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206449164
-- **San Antonio Public Library Events** -- conf 100 -- Preschool Story Time -- 2026-10-15 -- 13330 Kyle Seale Pkwy -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206613073
 - **San Antonio Public Library Events** -- conf 100 -- Talking Bees Roadshow -- 2026-10-14 -- 1122 W. Pyron Ave -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206874521
 - **San Antonio Public Library Events** -- conf 100 -- Family Story Time -- 2026-10-14 -- 4618 Thousand Oaks San Antonio, TX 78233 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206913054
 - **San Antonio Public Library Events** -- conf 100 -- Family Story Time -- 2026-10-11 -- 5110 Walzem Road San -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D207473333
 - **San Antonio Public Library Events** -- conf 100 -- Toddler Story Time -- 2026-10-15 -- 9050 Wellwood San Antonio, TX 78250 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D208192338
 - **San Antonio Public Library Events** -- conf 100 -- Let's Build: Lego Time -- 2026-10-14 -- 8765 State Hwy 151 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D209763631
+- **San Antonio Public Library Events** -- conf 100 -- Travel the World, Taste the Flavors with Parman. -- 2026-10-12 -- 20735 Wilderness Oak San Antonio, TX 78258 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D211074296
 - **City of San Antonio Parks & Recreation** -- conf 100 -- Tennis Clinics -- 2026-08-31 -- 1503 San Pedro Ave -- https://www.sanantonio.gov/ParksAndRec/News-Events/Events/Event-Details/ArtMID/15385/ArticleID/29348/Tennis-Clinics
 - **Bexar County Clerk — Records on the Run** -- conf 99 -- Bexar County Clerk's Mobile Satellite Office will be at Bexar County Precinct 2 Constable's Office of Constable Leticia R. Vazquez -- 2026-11-05 -- 7723 Guilbeau Rd -- https://www.bexar.org/calendar.aspx?EID=7286
 - **Bexar County Clerk — Records on the Run** -- conf 99 -- Bexar County Clerk's Mobile Satellite Office will be at Bexar County Precinct 3 Justice of the Peace Office -- 2026-10-20 -- 320 Interpark Blvd -- https://www.bexar.org/calendar.aspx?EID=7334
@@ -192,7 +192,6 @@ _None this run._
 - Toddler Story Time -- event_id=2026-10-15_toddler-story-time_4e74dec4bac0: duplicate id already in feed
 - Family Story Time -- event_id=2026-10-15_family-story-time_da3c45956c67: duplicate id already in feed
 - Baby Story Time -- event_id=2026-10-15_baby-story-time_dad81981cfcb: duplicate id already in feed
-- Preschool Story Time -- event_id=2026-10-15_preschool-story-time_b4b88146e082: duplicate id already in feed
 - Free Family Swim -- event_id=2025-11-18_free-family-swim_3af18a4d5b80: date 2025-11-18 is in the past
 - McFarlin Tennis Center New Hours Free Tuesdays -- event_id=2026-01-01_mcfarlin-tennis-center-new-h_a459cb109fac: date 2026-01-01 is in the past
 - Kindness in Nature Club -- event_id=2026-02-17_kindness-in-nature-club_1e8ebecc94ac: date 2026-02-17 is in the past
@@ -227,6 +226,7 @@ _None this run._
 - Commissioners Court -- event_id=2026-10-13_commissioners-court_62cd564f97c7: duplicate id already in feed
 - First City Council Meeting -- event_id=2029-11-01_first-city-council-meeting_b65fb89bf701: date 2029-11-01 is more than 90 days out
 - First City Council Meeting -- event_id=2029-10-04_first-city-council-meeting_4df14e27a494: date 2029-10-04 is more than 90 days out
+- First City Council Meeting -- event_id=2029-09-06_first-city-council-meeting_603786bf1549: date 2029-09-06 is more than 90 days out
 
 ## Source Errors
 - San Antonio River Authority Events: HTTP 403 Forbidden
