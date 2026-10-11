@@ -172,6 +172,10 @@
       border-radius: 50%;
       background: transparent;
     }
+    .type-pin.catch {
+      object-fit: cover;
+      filter: saturate(1.35) contrast(1.08) drop-shadow(0 2px 0 #c513af);
+    }
     .std-pin {
       width: 28px; height: 28px; margin-left: -14px; margin-top: -14px;
       object-fit: contain;
@@ -811,7 +815,7 @@
           var ring = sniffed ? "#c513af" : "#C47A4A";
           return L.divIcon({
             className: "",
-            html: '<img class="type-pin" style="border:2px solid ' + ring + ';background:#f3eee4" src="' + art + '" alt="" />',
+            html: '<img class="type-pin catch" style="border:3px solid ' + ring + ';background:#fff4d8" src="' + art + '" alt="" />',
             iconSize: [36, 36],
             iconAnchor: [18, 18]
           });
