@@ -498,6 +498,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="chica-hopper.js?v=20261001"></script>
+  <script src="trail-catches.js?v=20261010"></script>
   <script>
     (function () {
       var FEED = "https://justonejewelry.github.io/Chicas-Map/data/cities/san-antonio.json";
@@ -661,7 +662,7 @@
         localStorage.setItem(KEY, JSON.stringify(state));
       }
       function idOf(s) {
-        return [s.address, s.lat, s.lon].join("|");
+        return [s.address, s.lat, s.lon, s.kind === "trail" ? "trail" : "sale"].join("|");
       }
       function todayISO() {
         var d = new Date();
@@ -688,6 +689,7 @@
         return "Pup";
       }
       function questName(s) {
+        if (s && s.catch) return s.catch.name;
         var street = (s.address || "").split(",")[0];
         return "Cache at " + street;
       }
@@ -747,9 +749,15 @@
         var still = document.getElementById("ching-still");
         var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
         document.getElementById("ching-title").textContent = hop ? ("+" + hop.bones + " bones") : "+40 bones";
-        document.getElementById("ching-copy").textContent = hop
-          ? hop.tier.label + " · " + hop.multiplier + "x chain."
-          : "Gold coin chinged from " + ((s && s.address) ? s.address.split(",")[0] : "this driveway") + ".";
+        document.getElementById("ching-copy").textContent = (s && s.catch)
+          ? "Caught " + s.catch.name + ". " + s.catch.line
+          : (hop
+            ? hop.tier.label + " · " + hop.multiplier + "x chain."
+            : "Gold coin chinged from " + ((s && s.address) ? s.address.split(",")[0] : "this driveway") + ".");
+        if (s && s.catch && s.catch.art) {
+          var coin = document.querySelector(".ching-coin");
+          if (coin) coin.src = s.catch.art;
+        }
         el.hidden = false;
         el.classList.add("open");
         if (reduce) {
@@ -798,6 +806,16 @@
       function iconFor(s) {
         var sniffed = (state.sniffed || []).indexOf(idOf(s)) !== -1;
         var isCold = cold(s);
+        if (s && s.kind === "trail") {
+          var art = (s.catch && s.catch.art) || "assets/catch-porch-pup.jpg";
+          var ring = sniffed ? "#c513af" : "#C47A4A";
+          return L.divIcon({
+            className: "",
+            html: '<img class="type-pin" style="border:2px solid ' + ring + ';background:#f3eee4" src="' + art + '" alt="" />',
+            iconSize: [36, 36],
+            iconAnchor: [18, 18]
+          });
+        }
         if (edition === "standard") {
           var typeSrc = TYPE_PIN[typeKey(s)] || "assets/pin-garage.png";
           return L.divIcon({
@@ -834,6 +852,13 @@
           marker.on("click", function () { openSale(s); });
           marker.addTo(layer);
         });
+        if (edition === "adventure") {
+          (window.__chicaTrail || []).forEach(function (s) {
+            var marker = L.marker([s.lat, s.lon], { icon: iconFor(s), title: s.title });
+            marker.on("click", function () { openSale(s); });
+            marker.addTo(layer);
+          });
+        }
       }
 
       function openSale(s) {
@@ -876,12 +901,14 @@
         var n = bones();
         if (!s) {
           kicker.textContent = edition === "adventure" ? "Scent trail" : "This weekend";
-          title.textContent = sales.length + " mirrored pins";
+          var caught = (state.sniffed || []).filter(function (id) { return String(id).slice(-6) === "|trail"; }).length;
+          var trailN = (window.__chicaTrail || []).length;
+          title.textContent = sales.length + " sales · " + trailN + " trail catches";
           meta.textContent = "Feed and adventure use the same coordinates. Rank " + rank(n) + ".";
           var hop = weekendTier();
           status.textContent = n + " bones · " + (state.sniffed || []).length + " sniffed · " + hop.hops + " hops this weekend";
           quest.textContent = edition === "adventure"
-            ? (hop.hops ? hop.tier.label + ". Your trail is the stops you sniffed, not every pin." : "Tap an X. Sniff only counts inside 200 feet. Your trail draws after the second hop.")
+            ? (hop.hops ? hop.tier.label + ". Your trail is the stops you sniffed, not every pin." : "Tap a character to see the catch. Sniff inside 200 feet. Sales stay the weekend hops.")
             : "Same driveways as adventure. Sale-type pins. No quest skin.";
           actions.innerHTML =
             '<button class="primary" type="button" id="near">Near me</button>' +
@@ -893,16 +920,20 @@
           return;
         }
         var isCold = cold(s);
-        kicker.textContent = edition === "adventure" ? (isCold ? "Cold trail" : "Live cache") : (isCold ? "Ended" : "Sale");
+        kicker.textContent = s.catch ? "Catch" : (edition === "adventure" ? (isCold ? "Cold trail" : "Live cache") : (isCold ? "Ended" : "Sale"));
         title.textContent = edition === "adventure" ? questName(s) : (s.title || s.address);
-        meta.textContent = (s.title || "Sale") + " · " + (s.address || "") + (s.hours ? " · " + s.hours : "") + (s.dates ? " · " + s.dates : "") + " · " + typeKey(s);
+        meta.textContent = s.catch
+          ? s.catch.species + " · " + (s.shop || s.address)
+          : (s.title || "Sale") + " · " + (s.address || "") + (s.hours ? " · " + s.hours : "") + (s.dates ? " · " + s.dates : "") + " · " + typeKey(s);
         status.textContent = isCold
           ? "Date window closed. Pin stays so the editions still mirror. Not a live sale."
           : "Same pin in both editions.";
         var sniffed = (state.sniffed || []).indexOf(idOf(s)) !== -1;
-        quest.textContent = edition === "adventure"
-          ? (sniffed ? "Nose already on this driveway. Coin already collected." : "Stand within 200 feet, then sniff. Gold coin chings out. The pin does not move.")
-          : "Open in adventure to run this driveway as a cache.";
+        quest.textContent = s.catch
+          ? (sniffed ? "Caught. " + s.catch.name + " is in the pack." : s.catch.line + " Stand within 200 feet, then sniff.")
+          : (edition === "adventure"
+            ? (sniffed ? "Nose already on this driveway. Coin already collected." : "Stand within 200 feet, then sniff. Gold coin chings out. The pin does not move.")
+            : "Open in adventure to run this driveway as a cache.");
         actions.innerHTML = navLinks(s)
           + (edition === "adventure" && !sniffed ? '<button class="primary" type="button" id="sniff"><img src="assets/icon-sniff.png" alt="" style="width:16px;height:16px;vertical-align:-3px;margin-right:4px" />Sniff · 200 ft</button>' : "")
           + (edition === "adventure" && sniffed ? '<button class="ghost" type="button" id="replay-ching">Replay coin</button>' : "")
@@ -981,6 +1012,23 @@
         }, function () { map.flyTo(SA, 12); }, { enableHighAccuracy: true, timeout: 8000 });
       }
 
+      function loadTrail() {
+        fetch("/Chicas-Map/data/san-antonio-thrift.geojson?v=9", { cache: "no-store" })
+          .then(function (r) { return r.ok ? r.json() : { features: [] }; })
+          .then(function (gj) {
+            window.__chicaTrail = (gj.features || []).filter(function (f) {
+              return f.geometry && f.geometry.type === "Point" && window.ChicaCatches;
+            }).map(function (f) {
+              var pin = ChicaCatches.forFeature(f);
+              pin.kind = "trail";
+              return pin;
+            });
+            draw();
+            if (!selected) renderSheet(null);
+          })
+          .catch(function () { window.__chicaTrail = []; });
+      }
+
       function bootMap() {
         map = L.map("map", { zoomControl: true, attributionControl: true }).setView(SA, 10);
         L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
@@ -989,6 +1037,7 @@
           maxZoom: 19
         }).addTo(map);
         draw();
+        loadTrail();
         if (sales.length) {
           map.fitBounds(sales.map(function (s) { return [s.lat, s.lon]; }), { padding: [40, 80] });
         }
