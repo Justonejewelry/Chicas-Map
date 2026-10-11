@@ -278,3 +278,28 @@
   setInterval(run, 800);
   window.addEventListener("popstate", function () { setTimeout(run, 60); });
 })();
+
+/* Form intake — email submissions. Attached here because this script loads on every page of the custom domain. */
+(function () {
+  var ENDPOINT = "https://formsubmit.co/ajax/mr.jsciaraffa@gmail.com";
+  document.addEventListener("submit", function (e) {
+    var form = e.target;
+    if (!(form instanceof HTMLFormElement)) return;
+    var titleInput = form.querySelector('[name="title"]');
+    var emailInput = form.querySelector('[name="email"], [type="email"]');
+    if (!titleInput && !emailInput) return;
+    var fd = new FormData(form);
+    var data = {};
+    fd.forEach(function (v, k) { data[k] = v; });
+    data._subject = titleInput ? ("Chicas Map — New sale tip: " + (data.title || "untitled")) : "Chicas Map — Pack email signup";
+    data._template = "table";
+    data._captcha = "false";
+    data.source_url = location.href;
+    data.captured_at = new Date().toISOString();
+    fetch(ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify(data)
+    }).catch(function () {});
+  }, true);
+})();
