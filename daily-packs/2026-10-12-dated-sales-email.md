@@ -34,6 +34,9 @@ Map only shows pins whose listed dates include today.
 - GARAGE SALE Oct. 17th — Borgfeld near Bulverde, San Antonio, TX [2026-10-12 → 2026-10-14]
 - HUGE YARD SALE SOMETHING FOR EVERYONE — 122 Meadowland near Old Cimaron Trail, San Antonio, TX [2026-10-12 → 2026-10-14]
 - Wonderful Things in The Colony — San Antonio, TX [2026-10-10 → 2026-10-12]
+- Church rummage sale (Southside) — S. Flores, San Antonio, TX [2026-10-12 → 2026-10-14]
+- Huge Multi-Family Garage Sale — 3610 Devon St near Pickwell, San Antonio, TX [2026-10-12 → 2026-10-14]
+- Monday Halloween costumes garage sale CHEAP!! — 15502 Crimson Topaz, San Antonio, TX [2026-10-12 → 2026-10-14]
 
 ## COMING UP (remembered, not on today's map)
 
@@ -49,6 +52,7 @@ Map only shows pins whose listed dates include today.
 - Jolly Old Estate Sale! — San Antonio, TX 78231 [2026-10-17 → 2026-10-18]
 - Neighborhood Garage Sale! 10/17/26 Over 50 Homes Participating! — 28909 Paloma Oak, Boerne, TX 78006 [2026-10-17 → 2026-10-17]
 - Christmas And. Halloween Sale — 5840 Royal Rdg, San Antonio, TX 78239 [2026-10-17 → 2026-10-18]
+- Preston Hollow Neighborhood Garage Sale — 15237 Preston Pass Dr, San Antonio, TX 78247 [2026-10-17 → 2026-10-18]
 - Community Yard Sale — 244 Bee Caves Cv, Cibolo, TX 78108 [2026-10-17 → 2026-10-18]
 - Jolly Old Estate Sale! — hidden, San Antonio, TX 78231 [2026-10-17 → 2026-10-18] | 2026-10-17 9:00 am-3:00 pm; 2026-10-18 9:00 am-3:00 pm
 - Our Lady of Perpetual Help Catholic Church Rummage Sale — 16075 N. Evan Rd Selma, Tx 78154 near IH35, San Antonio, TX [2026-10-17 → 2026-10-18]
@@ -59,6 +63,7 @@ Map only shows pins whose listed dates include today.
 ## ONLINE / UNPLOTTABLE
 
 - Oak Creek Finds - Bidding ENDS 10/18/26 @ 7 PM! — San Antonio, TX 78251
+- Mission of Love: A Veteran's Home Full Of Modern Treasures - Bidding ends 10/18 — Converse, TX 78109
 - Rustic Charm Meets Refined Living Online Auction by Caring Transitions - Ends 10/14! — San Antonio, TX 78259
 - Curated Across Continents Estate Sale in Boerne, TX. Bidding Ends 10/21 — Boerne, TX 78006
 - Hawaii Bound- Everything must GO!! | Bidding ends Oct. 13 — San Marcos, TX 78666

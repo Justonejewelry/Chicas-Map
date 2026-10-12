@@ -240,14 +240,14 @@
     },
     {
       "address": "Leander, TX 78641",
-      "dates": "2026-10-01 – 2026-10-15",
-      "date_from": "2026-10-01",
-      "date_to": "2026-10-15",
-      "end_date": "2026-10-15",
-      "title": "The Jewelry Box: Curated Collection of Vintage and Sterling Silver - Bidding ends 10/15",
-      "details": "Caring Transitions of North Austin and Cedar Park. Welcome Home to CTBids! We put together an excellent selection of items for you! Start exploring and discover the deals for yourself! Bidding on ALL items starts at $1! Another beautifully curated jewelry collection! Highlights include: Sterling...",
+      "dates": "2026-10-11 – 2026-10-18",
+      "date_from": "2026-10-11",
+      "date_to": "2026-10-18",
+      "end_date": "2026-10-18",
+      "title": "Central and South American Folk Art Collection - Bidding Closes 10/18 - Pickup 10/20",
+      "details": "Caring Transitions of North Austin and Cedar Park. Welcome Home to CTBids! We put together an excellent selection of items for you! Start exploring and discover the deals for yourself! Bidding on ALL items starts at $1! An exceptional collection! Mexican handcrafted terracotta sculpture and pott...",
       "source": "EstateSales.org",
-      "url": "https://estatesales.org/estate-sales/tx/leander/78641/the-jewelry-box-curated-collection-2467394",
+      "url": "https://estatesales.org/estate-sales/tx/leander/78641/central-and-south-american-folk-2467826",
       "photos": 0,
       "type": "estate",
       "confidence": 0.85,
@@ -257,10 +257,10 @@
       "geocode": "source",
       "company": "Caring Transitions of North Austin and Cedar Park",
       "in_person": false,
-      "external_id": "eso-2467394",
+      "external_id": "eso-2467826",
       "categories": [
-        "estate-sale",
-        "online-auction"
+        "online-auction",
+        "estate-sale"
       ]
     },
     {
@@ -469,8 +469,8 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
@@ -1054,7 +1054,7 @@
       "title": "Original Owner | Antiques + More | DOWNSIZING",
       "details": "QR Code Link to This Post Original Owner | Antiques + More | Downsizing. Please see \"more ads by this user\" for more information + additional items.* ANTQ 12\" Large Italian Hammered Brass Pedestal Ornate Bowl w/ Handles 1940s 13-1/4\" Hand-Embroidered Hand-Crocheted Oval Doily TWO RARE UNMARKED Aluminum Pewter Metalware Tavern Beer Ale Mug 1940s Hammersley of England Gold Gilt Floral Dresden Sprays",
       "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/austin-original-owner-antiques-more/cLyYVSEzkyR23NCewqF1G1",
+      "url": "https://www.craigslist.org/view/d/austin-original-owner-antiques-more/nnGKpimEGkWAJXaN7qWnqg",
       "photos": 0,
       "type": "garage",
       "categories": [
@@ -1066,7 +1066,7 @@
       "lon": -97.7967,
       "geocode": "source",
       "in_person": true,
-      "external_id": "cl-nerantiquesmoreclyyvsezkyr23ncewqf1g1"
+      "external_id": "cl-nerantiquesmorenngkpimegkwajxan7qwnqg"
     },
     {
       "address": "1314 E Oltorf St. near Schriber St., Austin, TX",
@@ -1137,6 +1137,148 @@
       "lon": -97.7431,
       "geocode": "city-center",
       "company": null
+    },
+    {
+      "address": "1704 Holly St, Austin, TX 78702",
+      "dates": "2026-10-17 – 2026-10-17",
+      "date_from": "2026-10-17",
+      "date_to": "2026-10-17",
+      "end_date": "2026-10-17",
+      "title": "Plant Garage Sale",
+      "details": "",
+      "source": "YardSaleSearch",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196426965",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.88,
+      "status": "verified",
+      "lat": 30.25432,
+      "lon": -97.727672,
+      "geocode": "source",
+      "external_id": "yss-1704hollystaustintx78702-2026-10-17",
+      "categories": [
+        "garage-sale"
+      ]
+    },
+    {
+      "address": "3416 Lyle Ave. near Landon Branch Rd., Austin, TX",
+      "dates": "2026-10-12 – 2026-10-14",
+      "date_from": "2026-10-12",
+      "date_to": "2026-10-14",
+      "end_date": "2026-10-14",
+      "hours": null,
+      "title": "Kay's Estate Sales",
+      "details": "QR Code Link to This Post Terms &amp; Conditions ⛔ We do not provide price / other information by phone, email or questions from this site.⛔ *Cash,Checks and Credit Cards accepted. *Buyers are responsible for removal of items purchased. We do not have people to help load items. *Pre-sale and early shopping are not allowed; please do not visit sale sites until listed start times. *Items shown are o",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/waco-kays-estate-sales/cdj3YqQ7eSXspzmwjRdcpi",
+      "photos": 0,
+      "type": "estate",
+      "categories": [
+        "estate-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 31.557579,
+      "lon": -97.181034,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-kaysestatesalescdj3yqq7esxspzmwjrdcpi"
+    },
+    {
+      "address": "2021 Wright Street, Austin, TX",
+      "dates": "2026-10-17 – 2026-10-17",
+      "date_from": "2026-10-17",
+      "date_to": "2026-10-17",
+      "end_date": "2026-10-17",
+      "hours": null,
+      "title": "BOO! HUNORMOUS COSTUME + CLOSET CLEAR-OUT SALE",
+      "details": "QR Code Link to This Post 🎃 BOO! HUNORMOUS HALLOWEEN COSTUME + CLOSET CLEAR-OUT SALE! SATURDAY, OCTOBER 17 ONLY 8 AM – 3 PM 📍 2021 Wright Street, Austin, TX 78704 (Zilker) Calling all costume creators, thrifters, treasure hunters, and lovers of fabulous clothing! We’re clearing out an enormous collection of creative clothing, maxi dresses, sequins, velvets, accessories, costume-worthy pieces, and ",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/austin-boo-hunormous-costume-closet/6zSBU4ZtBuqtwPta1YVDCp",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 30.255195,
+      "lon": -97.772086,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-uscostumecloset6zsbu4ztbuqtwpta1yvdcp"
+    },
+    {
+      "address": "1707 Holly St, Austin, TX",
+      "dates": "2026-10-17 – 2026-10-17",
+      "date_from": "2026-10-17",
+      "date_to": "2026-10-17",
+      "end_date": "2026-10-17",
+      "hours": null,
+      "title": "Backyard Plant Sale",
+      "details": "QR Code Link to This Post A backyard sale in East Austin with lots of plants and good things to find! Texas native plants, houseplants, succulents and fall starts. Upcycled clothing, handmade goods, We will have locally forged yaupon tea, too. Saturday, October 17 9am–2pm 1707 Holly St. Free to come browse. All are welcome. Just come around back!",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/austin-backyard-plant-sale/gHVaFR63vGJQ3nkFQy51xi",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 30.254185,
+      "lon": -97.728191,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-ckyardplantsaleghvafr63vgjq3nkfqy51xi"
+    },
+    {
+      "address": "Hazelhurst near Villa Park, Austin, TX",
+      "dates": "2026-10-17 – 2026-10-17",
+      "date_from": "2026-10-17",
+      "date_to": "2026-10-17",
+      "end_date": "2026-10-17",
+      "hours": null,
+      "title": "Garage sales",
+      "details": "QR Code Link to This Post Several families participating in one location 8800 Hazelhurst Drive, Austin, 78729 Saturday October 17 8(gate opens) - 2 pm Please park outside the gate if able and cash only Adult clothes, bras, shoes, purses, jewelry Potted plants, linens, house decor, kitchen items New handmade knitted and crocheted items Special items: camping items, HP Envy 5530 printer, Honeywell t",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/austin-garage-sales/2Y2YWZt1AaaU1Wy2uZQGtX",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 30.461366,
+      "lon": -97.771068,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-stingaragesales2y2ywzt1aaau1wy2uzqgtx"
+    },
+    {
+      "address": "2309 Thornton Road, Austin, TX",
+      "dates": "2026-10-12 – 2026-10-14",
+      "date_from": "2026-10-12",
+      "date_to": "2026-10-14",
+      "end_date": "2026-10-14",
+      "hours": null,
+      "title": "Huge Multi Unit Garage Sale - Thornton Road Studios",
+      "details": "QR Code Link to This Post Local Artists, Woodworker, Musicians, and Vintage Dealers are having a multi-unit sale. - Vintage Items, Music Gear, Art Supplies and Many Other Treasures!",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/austin-huge-multi-unit-garage-sale/up7W6HSpR1Ey6Eow4T9gxH",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 30.245481,
+      "lon": -97.771626,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-unitgaragesaleup7w6hspr1ey6eow4t9gxh"
     }
   ],
   "hot_zones": [
@@ -1155,9 +1297,9 @@
     "gsalr.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 49,
+  "total_locations": 55,
   "status": "live",
   "date": "2026-10-12",
-  "last_refresh": "2026-10-12T04:14:18-05:00",
+  "last_refresh": "2026-10-12T15:10:34-05:00",
   "permits": []
 }
