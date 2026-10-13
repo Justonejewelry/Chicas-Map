@@ -1,18 +1,29 @@
 # Chica's Map -- Community Events Swarm v2.7
 
-Run: 2026-10-13T04:30:17-05:00
+Run: 2026-10-13T13:03:37-05:00
 Sources scanned: **48**
-Candidates discovered: **929**
-With parsed dates: **771**
-With street/venue address: **519**
-Promoted this run: **0**
+Candidates discovered: **930**
+With parsed dates: **772**
+With street/venue address: **542**
+Promoted this run: **12**
 Kept from prior feed: **283**
 Purged from prior feed: **0**
 Source errors: **2**
-Rejected by Sentinel: **305**
+Rejected by Sentinel: **312**
 
 ## Promoted (passed Events Sentinel)
-_None this run._
+- **Titan Volleyball Vs Del Rio High School** -- 2026-10-14 -- 100 Memorial Dr -- conf 98 -- https://www.swisd.net/apps/events/2026/10/13/51671227/
+- **Tara’s Turkey Trot** -- 2026-11-26 -- 8612 Fairway Green Drive Fair -- conf 99 -- https://www.fairoaksranch.gov/calendar.aspx?EID=1602
+- **Holiday Market Day at the Ranch** -- 2026-11-07 -- 30395 Ralph Fair Rd -- conf 99 -- https://www.fairoaksranch.gov/calendar.aspx?EID=1601
+- **Trunk or Treat** -- 2026-10-24 -- 8776 Dietz Elkhorn Rd -- conf 99 -- https://www.fairoaksranch.gov/calendar.aspx?EID=1600
+- **City Council Meeting** -- 2027-01-05 -- 2150 Universal City Blvd Universal -- conf 98 -- https://www.universalcitytexas.gov/calendar.aspx?EID=4528
+- **City Council Meeting** -- 2026-12-15 -- 2150 Universal City Blvd Universal -- conf 98 -- https://www.universalcitytexas.gov/calendar.aspx?EID=4527
+- **Economic Development Corporation Board of Directors** -- 2026-12-10 -- 2150 Universal City Blvd Universal -- conf 98 -- https://www.universalcitytexas.gov/calendar.aspx?EID=4526
+- **City Council Meeting** -- 2026-12-01 -- 2150 Universal City Blvd Universal -- conf 98 -- https://www.universalcitytexas.gov/calendar.aspx?EID=4525
+- **City Council Meeting** -- 2026-11-17 -- 2150 Universal City Blvd Universal -- conf 98 -- https://www.universalcitytexas.gov/calendar.aspx?EID=4524
+- **Economic Development Corporation Board of Directors** -- 2026-11-12 -- 2150 Universal City Blvd Universal -- conf 98 -- https://www.universalcitytexas.gov/calendar.aspx?EID=4523
+- **City Council Meeting** -- 2026-11-04 -- 2150 Universal City Boulevard Universal -- conf 98 -- https://www.universalcitytexas.gov/calendar.aspx?EID=4522
+- **City Council Meeting** -- 2026-11-03 -- 2150 Universal City Blvd Universal -- conf 98 -- https://www.universalcitytexas.gov/calendar.aspx?EID=4521
 
 ## Review Queue
 - **San Antonio Public Library Events** -- conf 100 -- Family Story Time -- 2026-10-15 -- 4134 Harry Wurzbach San Antonio, TX 78209 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D205386302
@@ -76,6 +87,9 @@ _None this run._
 - **Fair Oaks Ranch Calendar** -- conf 99 -- First City Council Meeting -- 2029-10-04 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1596
 - **Fair Oaks Ranch Calendar** -- conf 99 -- First City Council Meeting -- 2029-06-07 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1597
 - **Fair Oaks Ranch Calendar** -- conf 99 -- First City Council Meeting -- 2029-08-02 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1598
+- **Fair Oaks Ranch Calendar** -- conf 99 -- Trunk or Treat -- 2026-10-24 -- 8776 Dietz Elkhorn Rd -- https://www.fairoaksranch.gov/calendar.aspx?EID=1600
+- **Fair Oaks Ranch Calendar** -- conf 99 -- Holiday Market Day at the Ranch -- 2026-11-07 -- 30395 Ralph Fair Rd -- https://www.fairoaksranch.gov/calendar.aspx?EID=1601
+- **Fair Oaks Ranch Calendar** -- conf 99 -- Tara’s Turkey Trot -- 2026-11-26 -- 8612 Fairway Green Drive Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1602
 - **City of Schertz Calendar** -- conf 99 -- Schertz-Seguin Local Government Corporation -- 2026-11-19 -- 108 W. Mountain Street Seguin -- https://www.schertz.com/calendar.aspx?EID=7699
 - **Boerne Calendar** -- conf 98 -- Planning and Zoning Commission Meeting -- 2027-02-01 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=21880
 - **Boerne Calendar** -- conf 98 -- Planning and Zoning Commission Meeting -- 2027-03-01 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=21881
@@ -172,9 +186,6 @@ _None this run._
 - **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2028-10-12 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22421
 - **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2028-11-09 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22422
 - **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2028-12-14 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22423
-- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2029-01-11 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22424
-- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2029-02-08 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22425
-- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2029-03-08 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22426
 
 ## Rejected by Sentinel
 - Baby Time! -- event_id=2026-10-13_baby-time_bc8267a9bc99: duplicate id already in feed
