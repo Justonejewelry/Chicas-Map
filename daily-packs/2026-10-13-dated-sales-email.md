@@ -39,6 +39,8 @@ Map only shows pins whose listed dates include today.
 ### Starts 2026-10-16
 - Moving Sale! — 3830 Maiden Way, Converse, TX 78109 [2026-10-16 → 2026-10-17]
 - Garage Sale ! Oct. 16-18th — 3606 Comal Spgs, Canyon Lake, TX 78133 [2026-10-16 → 2026-10-18]
+- Estate Sale — 242 S Sycamore Ave, New Braunfels, TX 78130 [2026-10-16 → 2026-10-18]
+- Family Yard Sale — 521 Adler Rd, Boerne, TX 78006 [2026-10-16 → 2026-10-17]
 - Airbnb Guesthouse sold so house full for sale! — 1525 Lakeside Dr W, Canyon Lake, TX 78133 [2026-10-16 → 2026-10-17]
 
 ### Starts 2026-10-17
