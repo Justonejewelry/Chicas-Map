@@ -35,5 +35,15 @@
     "geocoding_success_rate": "live via master populate",
     "status": "SUCCESS",
     "notes": "Prior GSF email leads (15 full-street Greater SA) confirmed in public feed after master populate. Staging holds 2 incomplete ESO (Converse zip-only + future Oct 17). City file live at 82 pins."
+  },
+  {
+    "timestamp": "2026-10-13T18:35:00Z",
+    "target_date": "2026-10-13",
+    "actions_run_id": "38447737194",
+    "emails_scanned": 2,
+    "net_new_added": 0,
+    "geocoding_success_rate": "n/a (zip-only online auctions filtered)",
+    "status": "SUCCESS",
+    "notes": "Triggered chica-daily.yml run 38447737194 (in_progress). 2 ESO emails scanned. 4 Greater SA candidates (mostly online auctions/incomplete addresses). 0 net-new manual add to avoid double-write. Live feed: 24 public sales. Master populate handling full ingestion."
   }
 ]
