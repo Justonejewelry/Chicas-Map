@@ -21,6 +21,8 @@ Map only shows pins whose listed dates include today.
 - 2.0 Hawaii Bound- Everything Must Go! Sale Ends 10/20. Pick Up 10/22 10-2 — San Marcos, TX 78666 [2026-10-13 → 2026-10-20]
 - Moving Sale - Oct 14,15,16 (Wed,Thu,Fri) 8:00 till.... — Woodland Blvd., San Antonio, TX [2026-10-14 → 2026-10-14]
 - Huge Neighborhood Garage Sale! — Belclaire, San Antonio, TX [2026-10-14 → 2026-10-16]
+- Multi family YARD SALE — 105 Seguin St, San Antonio, TX [2026-10-14 → 2026-10-16]
+- Yard Sale — 3838 Portsmouth Dr, San Antonio, TX [2026-10-14 → 2026-10-16]
 
 ## COMING UP (remembered, not on today's map)
 
