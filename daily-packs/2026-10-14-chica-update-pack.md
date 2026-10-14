@@ -2,7 +2,7 @@
 
 ## 1. CHICA DAILY RUN
 - **Target date:** Wednesday, October 14, 2026
-- **San Antonio local run time:** 2026-10-14T03:19:45-05:00
+- **San Antonio local run time:** 2026-10-14T04:09:37-05:00
 - **Geographic area:** San Antonio & surrounding communities
 - **Sources searched:** 7
 - **Candidates discovered:** 16
@@ -25,7 +25,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-alamo-craft-co-antiques-more/mj6FcRd4ZDr7zwAwc4pwWa
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.556,-98.6094
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.556,-98.6094
-- **Verified at:** 2026-10-14T03:19:45-05:00
+- **Verified at:** 2026-10-14T04:09:37-05:00
 
 ### 2. Fall Community Garage Sale at Redbird Ranch 10/03/2026 8am-3pm
 - **Type:** garage
@@ -37,7 +37,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N90rv/410-hollimon-pkwy-san-antonio-tx-78253
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.437382,-98.80071
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.437382,-98.80071
-- **Verified at:** 2026-10-14T03:19:45-05:00
+- **Verified at:** 2026-10-14T04:09:37-05:00
 
 ### 3. Everything $1 — Redbird Ranch community garage sale
 - **Type:** garage
@@ -49,7 +49,7 @@
 - **Original listing:** https://www.google.com/maps/d/viewer?mid=1jb4Oxv2jY2KXsyXzFdme42iMI4BtAws&usp=sharing
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.443103,-98.803053
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.443103,-98.803053
-- **Verified at:** 2026-10-14T03:19:45-05:00
+- **Verified at:** 2026-10-14T04:09:37-05:00
 
 ### 4. Estate Sale 2 weekends 10/10-10/11 & 10/15-10/18 (San Antonio)
 - **Type:** estate
@@ -61,7 +61,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-estate-sale-weekends/571FxNdwiHr4BSGJFwDS8y
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.366618,-98.466454
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.366618,-98.466454
-- **Verified at:** 2026-10-14T03:19:45-05:00
+- **Verified at:** 2026-10-14T04:09:37-05:00
 
 ### 5. NOW OPEN! The Collective Boutiques (San Antonio)
 - **Type:** garage
@@ -73,7 +73,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-now-open-the-collective/a9UPVs8b9XgmEsUh6iVZ1m
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.5183,-98.503
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5183,-98.503
-- **Verified at:** 2026-10-14T03:19:45-05:00
+- **Verified at:** 2026-10-14T04:09:37-05:00
 
 ### 6. HUGE YARD SALE SOMETHING FOR EVERYONE (Universal City)
 - **Type:** garage
@@ -85,7 +85,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/universal-city-huge-yard-sale-something/gB6QVjsKKHM3hd5K1FUM9j
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.539526,-98.314208
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.539526,-98.314208
-- **Verified at:** 2026-10-14T03:19:45-05:00
+- **Verified at:** 2026-10-14T04:09:37-05:00
 
 ### 7. Huge Multi-Family Garage Sale (San Antonio)
 - **Type:** garage
@@ -97,7 +97,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-huge-multi-family-garage/sWM66iDXmxivZp2doYCqdk
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.356103,-98.426609
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.356103,-98.426609
-- **Verified at:** 2026-10-14T03:19:45-05:00
+- **Verified at:** 2026-10-14T04:09:37-05:00
 
 ### 8. Monday Halloween costumes garage sale CHEAP!!
 - **Type:** estate
@@ -109,7 +109,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-monday-halloween-costumes/iW24JWy5biRxqctfxqb1gc
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.441217,-98.801723
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.441217,-98.801723
-- **Verified at:** 2026-10-14T03:19:45-05:00
+- **Verified at:** 2026-10-14T04:09:37-05:00
 
 ### 9. *** Multi-Family Garage Sale*** (Saturday Only) (Stillwater Ranch)
 - **Type:** garage
@@ -121,7 +121,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-multi-family-garage-sale/gwrw5d6YuB9yBxaEzDsWQF
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.5551,-98.7442
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5551,-98.7442
-- **Verified at:** 2026-10-14T03:19:45-05:00
+- **Verified at:** 2026-10-14T04:09:37-05:00
 
 ### 10. 2.0 Hawaii Bound- Everything Must Go! Sale Ends 10/20. Pick Up 10/22 10-2
 - **Type:** garage
@@ -134,7 +134,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9Z2Z/san-marcos-tx-78666
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936
-- **Verified at:** 2026-10-14T03:19:45-05:00
+- **Verified at:** 2026-10-14T04:09:37-05:00
 
 ## 3. CHICA PICKS
 
