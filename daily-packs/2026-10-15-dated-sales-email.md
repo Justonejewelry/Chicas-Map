@@ -57,6 +57,7 @@ Map only shows pins whose listed dates include today.
 - CHRISTMAS AND. HALLOWEEN SALE — 5840 Royal Rdg, San Antonio, TX 78239 [2026-10-17 → 2026-10-18]
 - Preston Hollow Neighborhood Garage Sale — 15237 Preston Pass Dr, San Antonio, TX 78247 [2026-10-17 → 2026-10-18]
 - 5-Family Yard Sale — 8938 Rachels Br, San Antonio, TX 78254 [2026-10-17 → 2026-10-17]
+- Big Pre-Moving Sale - Many $1 items — 22234 Pelican Edge, San Antonio, TX 78258 [2026-10-17 → 2026-10-18]
 - COMMUNITY YARD SALE — 846 Maltese Gdn, San Antonio, TX 78260 [2026-10-17 → 2026-10-17]
 - Big Community Yard sale — 244 Bee Caves Cv, Cibolo, TX 78108 [2026-10-17 → 2026-10-18]
 - Garage Sale — 645 Mourning Dove Dr, Mc Queeney, TX 78123 [2026-10-17 → 2026-10-17]
@@ -73,5 +74,6 @@ Map only shows pins whose listed dates include today.
 - Curated Across Continents Estate Sale in Boerne, TX. Bidding Ends 10/21 — Boerne, TX 78006
 - Collectibles, Classics & Tools Online Auction by Caring Transitions - Ends 10/20! — New Braunfels, TX 78132
 - The Great Furniture Find in Comfort, TX. Bidding Ends 10/19 — Comfort, TX 78013
+- Tools, Lighting, Gunsmithing, Gun Parts, Etc Online Only Auction — New Braunfels, TX 78130
 
 — Chica
