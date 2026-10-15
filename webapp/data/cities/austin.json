@@ -100,30 +100,6 @@
       ]
     },
     {
-      "address": "623 Leisure Lane, Austin, TX",
-      "dates": "2026-10-12 – 2026-10-14",
-      "date_from": "2026-10-12",
-      "date_to": "2026-10-14",
-      "end_date": "2026-10-14",
-      "hours": null,
-      "title": "Huge estate sale",
-      "details": "QR Code Link to This Post Heading to assisted living. Must sell almost everything including furniture appliances cookware bedroom sets tools ceramics fine china and much more.",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/cedar-creek-huge-estate-sale/2NyTFK7GJBCh7zFVCDt2xv",
-      "photos": 0,
-      "type": "estate",
-      "categories": [
-        "estate-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.0966,
-      "lon": -97.4976,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-hugeestatesale2nytfk7gjbch7zfvcdt2xv"
-    },
-    {
       "address": "Northwest Austin, Austin, TX 78750",
       "dates": "2026-11-04 – 2026-11-08",
       "date_from": "2026-11-04",
@@ -543,30 +519,6 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "cl-churchyardsale9d1sg7ojpwms1etxuhin4l"
-    },
-    {
-      "address": "23008 Fulkes Road, Austin, TX",
-      "dates": "2026-10-12 – 2026-10-14",
-      "date_from": "2026-10-12",
-      "date_to": "2026-10-14",
-      "end_date": "2026-10-14",
-      "hours": null,
-      "title": "Yard Sale",
-      "details": "QR Code Link to This Post Saturday and Sunday, Oct. 10th &amp; 11th, and Oct. 17th &amp; 18th. For Sale: Horse Tack, Household Items, Appliances, Dishes, Nicknacks, Furniture, Clothing, Tools, Exercise Equipment. Both weekends open from 9:00 a.m. to 5:00 p.m. 23008 Fulkes Rd. Leander, TX 78641",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/leander-yard-sale/9ss4hVXWQp3o5LheLRjwod",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.5835,
-      "lon": -97.8575,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-leanderyardsale9ss4hvxwqp3o5lhelrjwod"
     },
     {
       "address": "1704 Holly St, Austin, TX 78702",
@@ -1258,9 +1210,9 @@
     "gsalr.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 55,
+  "total_locations": 53,
   "status": "live",
-  "date": "2026-10-14",
-  "last_refresh": "2026-10-14T10:44:58-05:00",
+  "date": "2026-10-15",
+  "last_refresh": "2026-10-15T03:27:04-05:00",
   "permits": []
 }
