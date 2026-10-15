@@ -1,9 +1,9 @@
 {
   "target_date": "2026-10-15",
-  "generated_at": "2026-10-15T11:25:23-05:00",
+  "generated_at": "2026-10-15T14:46:42-05:00",
   "city": "san-antonio",
   "area": "San Antonio & surrounding communities",
-  "count": 23,
+  "count": 25,
   "min_confidence": 70,
   "sales": [
     {
@@ -33,7 +33,7 @@
         "https://images.craigslist.org/01515_1Xh2ogBe0sZ_0CI0pq_600x450.jpg"
       ],
       "confidence": 96,
-      "verified_at": "2026-10-15T11:25:23-05:00",
+      "verified_at": "2026-10-15T14:46:42-05:00",
       "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.556,-98.6094",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.556,-98.6094",
       "status": "verified",
@@ -72,7 +72,7 @@
         "https://gsf.tlstatic.com/images/social/Email.png"
       ],
       "confidence": 97,
-      "verified_at": "2026-10-15T11:25:23-05:00",
+      "verified_at": "2026-10-15T14:46:42-05:00",
       "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.437382,-98.80071",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.437382,-98.80071",
       "status": "verified",
@@ -106,7 +106,7 @@
       ],
       "photos": [],
       "confidence": 96,
-      "verified_at": "2026-10-15T11:25:23-05:00",
+      "verified_at": "2026-10-15T14:46:42-05:00",
       "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.443103,-98.803053",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.443103,-98.803053",
       "status": "verified",
@@ -147,7 +147,7 @@
         "https://images.craigslist.org/00909_i6cylFTDhAi_0t20CI_50x50c.jpg"
       ],
       "confidence": 96,
-      "verified_at": "2026-10-15T11:25:23-05:00",
+      "verified_at": "2026-10-15T14:46:42-05:00",
       "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.366618,-98.466454",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.366618,-98.466454",
       "status": "verified",
@@ -183,7 +183,7 @@
         "https://images.craigslist.org/00303_fJujeiiUakX_0CI0eX_600x450.jpg"
       ],
       "confidence": 96,
-      "verified_at": "2026-10-15T11:25:23-05:00",
+      "verified_at": "2026-10-15T14:46:42-05:00",
       "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5183,-98.503",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.5183,-98.503",
       "status": "verified",
@@ -219,7 +219,7 @@
         "https://images.craigslist.org/00p0p_hZ4Ab80ER4i_07E07E_600x450.jpg"
       ],
       "confidence": 96,
-      "verified_at": "2026-10-15T11:25:23-05:00",
+      "verified_at": "2026-10-15T14:46:42-05:00",
       "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.539526,-98.314208",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.539526,-98.314208",
       "status": "verified",
@@ -253,7 +253,7 @@
       ],
       "photos": [],
       "confidence": 96,
-      "verified_at": "2026-10-15T11:25:23-05:00",
+      "verified_at": "2026-10-15T14:46:42-05:00",
       "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.356103,-98.426609",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.356103,-98.426609",
       "status": "verified",
@@ -289,7 +289,7 @@
         "https://images.craigslist.org/00K0K_jEa0nKKz7Hi_0d40t2_600x450.jpg"
       ],
       "confidence": 96,
-      "verified_at": "2026-10-15T11:25:23-05:00",
+      "verified_at": "2026-10-15T14:46:42-05:00",
       "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5551,-98.7442",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.5551,-98.7442",
       "status": "verified",
@@ -330,7 +330,7 @@
         "https://eso-cdn.tlcdn.workers.dev/s-2468136-ihjcb4j9i9k56vo4-t.webp"
       ],
       "confidence": 100,
-      "verified_at": "2026-10-15T11:25:23-05:00",
+      "verified_at": "2026-10-15T14:46:42-05:00",
       "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936",
       "status": "verified",
@@ -364,7 +364,7 @@
       ],
       "photos": [],
       "confidence": 96,
-      "verified_at": "2026-10-15T11:25:23-05:00",
+      "verified_at": "2026-10-15T14:46:42-05:00",
       "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.3509,-98.113",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.3509,-98.113",
       "status": "verified",
@@ -398,7 +398,7 @@
       ],
       "photos": [],
       "confidence": 96,
-      "verified_at": "2026-10-15T11:25:23-05:00",
+      "verified_at": "2026-10-15T14:46:42-05:00",
       "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.357661,-98.421389",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.357661,-98.421389",
       "status": "verified",
@@ -439,7 +439,7 @@
         "https://dop6twngijzdg.cloudfront.net/image/w300-c300:250/2026/10/13/s/y/c/7HPyc/Vda7-0.jpeg"
       ],
       "confidence": 100,
-      "verified_at": "2026-10-15T11:25:23-05:00",
+      "verified_at": "2026-10-15T14:46:42-05:00",
       "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.773914,-98.076383",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.773914,-98.076383",
       "status": "verified",
@@ -454,7 +454,7 @@
       "sale_type": "garage",
       "date_start": "2026-10-15",
       "date_end": "2026-10-16",
-      "start_time": "8:00 AM - 5:00 PM",
+      "start_time": "8:00 am - 5:00 pm",
       "end_time": "",
       "address": "514 Sutton Dr, San Antonio, TX 78228",
       "city": "San Antonio",
@@ -462,24 +462,23 @@
       "zip": "",
       "latitude": 29.470672,
       "longitude": -98.551075,
-      "description": "Find all the garage sales, yard sales, and estate sales on a map! Or place a free ad for your upcoming sale on yardsalesearch.com",
+      "description": "Dates and Times: Thursday, October 15, 2026 8:00 am - 5:00 pm",
       "highlights": [],
       "source_urls": [
-        "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196430373"
+        "https://garagesalefinder.com/s/N9I5U/514-sutton-dr-san-antonio-tx-78228"
       ],
-      "original_url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196430373",
+      "original_url": "https://garagesalefinder.com/s/N9I5U/514-sutton-dr-san-antonio-tx-78228",
       "source_names": [
-        "YardSaleSearch"
+        "GarageSaleFinder"
       ],
       "photos": [
-        "https://d82cz7nyq77ak.cloudfront.net/images/social/Facebook.png",
-        "https://d82cz7nyq77ak.cloudfront.net/images/social/Pinterest.png",
-        "https://d82cz7nyq77ak.cloudfront.net/images/social/Reddit.png",
-        "https://d82cz7nyq77ak.cloudfront.net/images/social/Twitter.png",
-        "https://d82cz7nyq77ak.cloudfront.net/images/social/Email.png"
+        "https://gsf.tlstatic.com/images/social/Facebook.png",
+        "https://gsf.tlstatic.com/images/social/Reddit.png",
+        "https://gsf.tlstatic.com/images/social/Twitter.png",
+        "https://gsf.tlstatic.com/images/social/Email.png"
       ],
       "confidence": 100,
-      "verified_at": "2026-10-15T11:25:23-05:00",
+      "verified_at": "2026-10-15T14:46:42-05:00",
       "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.470672,-98.551075",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.470672,-98.551075",
       "status": "verified",
@@ -518,7 +517,7 @@
         "https://gsf.tlstatic.com/images/social/Email.png"
       ],
       "confidence": 100,
-      "verified_at": "2026-10-15T11:25:23-05:00",
+      "verified_at": "2026-10-15T14:46:42-05:00",
       "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936",
       "status": "verified",
@@ -559,7 +558,7 @@
         "https://ps.tlstatic.com/image/w300-c300:250/2026/10/14/s/0/3/410803/6mugr-0.jpeg"
       ],
       "confidence": 100,
-      "verified_at": "2026-10-15T11:25:23-05:00",
+      "verified_at": "2026-10-15T14:46:42-05:00",
       "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.558145,-98.270368",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.558145,-98.270368",
       "status": "verified",
@@ -600,7 +599,7 @@
         "https://gsf.tlstatic.com/image/w300-c300:250/2026/10/12/s/9/1/21793091/scyv-0.jpeg"
       ],
       "confidence": 100,
-      "verified_at": "2026-10-15T11:25:23-05:00",
+      "verified_at": "2026-10-15T14:46:42-05:00",
       "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.764906,-98.695776",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.764906,-98.695776",
       "status": "verified",
@@ -641,7 +640,7 @@
         "https://gsf.tlstatic.com/image/w300-c300:250/2026/10/14/s/3/1/21794931/ysO6-0.jpeg"
       ],
       "confidence": 100,
-      "verified_at": "2026-10-15T11:25:23-05:00",
+      "verified_at": "2026-10-15T14:46:42-05:00",
       "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.820441,-98.733703",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.820441,-98.733703",
       "status": "verified",
@@ -679,7 +678,7 @@
         "https://images.craigslist.org/00i0i_3kTDuAJS3BG_0hq0hq_50x50c.jpg"
       ],
       "confidence": 100,
-      "verified_at": "2026-10-15T11:25:23-05:00",
+      "verified_at": "2026-10-15T14:46:42-05:00",
       "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.173527,-98.458042",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.173527,-98.458042",
       "status": "verified",
@@ -713,7 +712,7 @@
       ],
       "photos": [],
       "confidence": 100,
-      "verified_at": "2026-10-15T11:25:23-05:00",
+      "verified_at": "2026-10-15T14:46:42-05:00",
       "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4388,-98.4935",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.4388,-98.4935",
       "status": "verified",
@@ -724,7 +723,7 @@
     },
     {
       "sale_id": "2026-10-15_238-coney-near-goliad-san-antonio-tx",
-      "title": "INSIDE SALE (San Antonio)",
+      "title": "INSIDE SALE",
       "sale_type": "garage",
       "date_start": "2026-10-15",
       "date_end": "2026-10-17",
@@ -736,7 +735,7 @@
       "zip": "",
       "latitude": 29.3291,
       "longitude": -98.4363,
-      "description": "QR Code Link to This Post I am having an Inside sale today and tomorrow, lots of nice furniture, Recliners, Computer Desk with chair, Entertainment center, Matching sofa and Loveseat, Coffee table with 2 Matching End tables, Kitchen Island, Dishes, Pots and Pans, Dining Room table, I am moving so Absolutely Everything must go. I also have a Rubbermaid outdoor shed for $60, but you have to take it apart. I will post pictures soon...If you have any questions please call Rebecca at show contact inf",
+      "description": "QR Code Link to This Post I am having an Inside sale today and tomorrow, lots of nice furniture, Recliners, Computer Desk with chair, Entertainment center, Matching sofa and Loveseat, Coffee table with 2 Matching End tables, Kitchen Island, Dishes, Pots and Pans, Dining Room table, I am moving so Absolutely Everything must go. I also have a Rubbermaid outdoor shed for $60, but you have to take it ",
       "highlights": [],
       "source_urls": [
         "https://www.craigslist.org/view/d/san-antonio-inside-sale/hEPFeTQohdYDLGQt1PSuaU"
@@ -745,16 +744,9 @@
       "source_names": [
         "Craigslist"
       ],
-      "photos": [
-        "https://images.craigslist.org/01212_1LFVUaiaXvL_0t20CI_600x450.jpg",
-        "https://images.craigslist.org/01212_1LFVUaiaXvL_0t20CI_50x50c.jpg",
-        "https://images.craigslist.org/00Q0Q_iKtuj30IQQL_0CI0t2_50x50c.jpg",
-        "https://images.craigslist.org/00Z0Z_knTo9cRgxVa_0t20CI_50x50c.jpg",
-        "https://images.craigslist.org/00p0p_7AurOG2TZ2a_0t20CI_50x50c.jpg",
-        "https://images.craigslist.org/00s0s_1gx6BC2hLbG_0t20CI_50x50c.jpg"
-      ],
-      "confidence": 96,
-      "verified_at": "2026-10-15T11:25:23-05:00",
+      "photos": [],
+      "confidence": 92,
+      "verified_at": "2026-10-15T14:46:42-05:00",
       "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.3291,-98.4363",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.3291,-98.4363",
       "status": "verified",
@@ -788,7 +780,7 @@
       ],
       "photos": [],
       "confidence": 96,
-      "verified_at": "2026-10-15T11:25:23-05:00",
+      "verified_at": "2026-10-15T14:46:42-05:00",
       "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4059,-98.5078",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.4059,-98.5078",
       "status": "verified",
@@ -824,7 +816,7 @@
         "https://images.craigslist.org/00505_ix9nUbO3lz8_0dp0t2_600x450.jpg"
       ],
       "confidence": 96,
-      "verified_at": "2026-10-15T11:25:23-05:00",
+      "verified_at": "2026-10-15T14:46:42-05:00",
       "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.458558,-98.578446",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.458558,-98.578446",
       "status": "verified",
@@ -835,39 +827,123 @@
     },
     {
       "sale_id": "2026-10-15_667-w-harlan-ave-san-antonio-tx-78214",
-      "title": "667 W Harlan Ave, San Antonio, TX 78214",
+      "title": "Multi Family Yardsale",
       "sale_type": "garage",
       "date_start": "2026-10-15",
       "date_end": "2026-10-16",
-      "start_time": "8:00 am - 5:00 pm",
+      "start_time": "8:00 AM - 5:00 PM",
       "end_time": "",
       "address": "667 W Harlan Ave, San Antonio, TX 78214",
       "city": "San Antonio",
       "state": "TX",
       "zip": "",
-      "latitude": 29.35,
-      "longitude": -98.49,
-      "description": "Dates and Times: Thursday, October 15, 2026 8:00 am - 5:00 pm",
+      "latitude": 29.372218,
+      "longitude": -98.513938,
+      "description": "Find all the garage sales, yard sales, and estate sales on a map! Or place a free ad for your upcoming sale on yardsalesearch.com",
       "highlights": [],
       "source_urls": [
-        "https://garagesalefinder.com/s/N9IHT/667-w-harlan-ave-san-antonio-tx-78214"
+        "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196430509"
       ],
-      "original_url": "https://garagesalefinder.com/s/N9IHT/667-w-harlan-ave-san-antonio-tx-78214",
+      "original_url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196430509",
       "source_names": [
-        "GarageSaleFinder"
+        "YardSaleSearch"
       ],
       "photos": [
-        "https://gsf.tlstatic.com/images/social/Facebook.png",
-        "https://gsf.tlstatic.com/images/social/Reddit.png",
-        "https://gsf.tlstatic.com/images/social/Twitter.png",
-        "https://gsf.tlstatic.com/images/social/Email.png"
+        "https://d82cz7nyq77ak.cloudfront.net/images/social/Facebook.png",
+        "https://d82cz7nyq77ak.cloudfront.net/images/social/Pinterest.png",
+        "https://d82cz7nyq77ak.cloudfront.net/images/social/Reddit.png",
+        "https://d82cz7nyq77ak.cloudfront.net/images/social/Twitter.png",
+        "https://d82cz7nyq77ak.cloudfront.net/images/social/Email.png",
+        "https://ps.tlstatic.com/image/w300-c300:250/2026/10/15/s/2/9/410829/f8Nf-0.jpeg"
       ],
       "confidence": 100,
-      "verified_at": "2026-10-15T11:25:23-05:00",
-      "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.35,-98.49",
-      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.35,-98.49",
+      "verified_at": "2026-10-15T14:46:42-05:00",
+      "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.372218,-98.513938",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.372218,-98.513938",
       "status": "verified",
-      "geocode_method": "zip-centroid",
+      "geocode_method": "source",
+      "notes": "",
+      "community_source": "",
+      "community_link_or_notes": ""
+    },
+    {
+      "sale_id": "2026-10-15_500-block-prestwick-blvd-near-pecan-valley-dr-sa",
+      "title": "Estate sale (San Antonio Tx)",
+      "sale_type": "estate",
+      "date_start": "2026-10-15",
+      "date_end": "2026-10-17",
+      "start_time": "",
+      "end_time": "",
+      "address": "500 block Prestwick Blvd near Pecan Valley Dr, San Antonio, TX",
+      "city": "San Antonio",
+      "state": "TX",
+      "zip": "",
+      "latitude": 29.375331,
+      "longitude": -98.432783,
+      "description": "QR Code Link to This Post Estate Sale from 9am to 3pm on Oct 16th and 17th. 500 block of Prestwick Blvd and Pecan Valley Dr. San Antonio Tx 78223. Follow posted signs. Items for everyone. Prices start at.10 cents. Several Antiques, Collectibles and New Items. CASH ONLY!! The house is full, so space is tight. Only a few adults will be allowed at a time. More items will be added and discounted on Sat. as space becomes available.",
+      "highlights": [],
+      "source_urls": [
+        "https://www.craigslist.org/view/d/san-antonio-estate-sale/1yNPputzVWwVdGxxF7aHb9"
+      ],
+      "original_url": "https://www.craigslist.org/view/d/san-antonio-estate-sale/1yNPputzVWwVdGxxF7aHb9",
+      "source_names": [
+        "Craigslist"
+      ],
+      "photos": [
+        "https://images.craigslist.org/00S0S_f1Lx6UnrL1a_0Cz0t2_600x450.jpg",
+        "https://images.craigslist.org/00S0S_f1Lx6UnrL1a_0Cz0t2_50x50c.jpg",
+        "https://images.craigslist.org/00I0I_k8HqJp1ekWf_0Cz0t2_50x50c.jpg",
+        "https://images.craigslist.org/00n0n_2GNxXw0gHbp_0Cz0t2_50x50c.jpg",
+        "https://images.craigslist.org/00h0h_kLqOgdKGaQG_0Cz0t2_50x50c.jpg",
+        "https://images.craigslist.org/00D0D_lV5UPnFv8Wg_0Cz0t2_50x50c.jpg"
+      ],
+      "confidence": 96,
+      "verified_at": "2026-10-15T14:46:42-05:00",
+      "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.375331,-98.432783",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.375331,-98.432783",
+      "status": "verified",
+      "geocode_method": "source",
+      "notes": "",
+      "community_source": "",
+      "community_link_or_notes": ""
+    },
+    {
+      "sale_id": "2026-10-15_11970-cink-dr-san-antonio-tx",
+      "title": "Estate sale (San Antonio)",
+      "sale_type": "estate",
+      "date_start": "2026-10-15",
+      "date_end": "2026-10-17",
+      "start_time": "",
+      "end_time": "",
+      "address": "11970 cink dr, San Antonio, TX",
+      "city": "San Antonio",
+      "state": "TX",
+      "zip": "",
+      "latitude": 29.3309,
+      "longitude": -98.5054,
+      "description": "QR Code Link to This Post Selling Beds Dinning set Pictures Sofa set And so much more",
+      "highlights": [],
+      "source_urls": [
+        "https://www.craigslist.org/view/d/san-antonio-estate-sale/7VM1NdKZmKXThxQdgBjFcS"
+      ],
+      "original_url": "https://www.craigslist.org/view/d/san-antonio-estate-sale/7VM1NdKZmKXThxQdgBjFcS",
+      "source_names": [
+        "Craigslist"
+      ],
+      "photos": [
+        "https://images.craigslist.org/00p0p_jbpS8y4VRWF_0MM132_600x450.jpg",
+        "https://images.craigslist.org/00p0p_jbpS8y4VRWF_0MM132_50x50c.jpg",
+        "https://images.craigslist.org/00d0d_gfVfX42zoNo_0MM132_50x50c.jpg",
+        "https://images.craigslist.org/00c0c_aerhFd8tuGZ_0MM132_50x50c.jpg",
+        "https://images.craigslist.org/00d0d_cUnu7TXcrOQ_0MM132_50x50c.jpg",
+        "https://images.craigslist.org/00B0B_aWVQH1t7xai_0MM132_50x50c.jpg"
+      ],
+      "confidence": 96,
+      "verified_at": "2026-10-15T14:46:42-05:00",
+      "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.3309,-98.5054",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.3309,-98.5054",
+      "status": "verified",
+      "geocode_method": "source",
       "notes": "",
       "community_source": "",
       "community_link_or_notes": ""

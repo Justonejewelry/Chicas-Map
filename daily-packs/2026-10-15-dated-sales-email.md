@@ -34,14 +34,18 @@ Map only shows pins whose listed dates include today.
 - King William Annual Yard sale — 128 & 132 City St near Arsenal, San Antonio, TX [2026-10-15 → 2026-10-17]
 - MULTI FAM YARD SALE 230 & 231 Baird st — 231 Baird Street near Roanoke, San Antonio, TX [2026-10-15 → 2026-10-17]
 - VIKINGS, ANTIQUE CLOCKS, A LARGE BARN & ROGER CREAGER! — San Antonio, TX [2026-10-15 → 2026-10-17]
-- Multi family yardsale — 667 W Harlan Ave, San Antonio, TX 78214 [2026-10-15 → 2026-10-16]
+- Multi Family Yardsale — 667 W Harlan Ave, San Antonio, TX 78214 [2026-10-15 → 2026-10-16]
+- Estate sale — 500 block Prestwick Blvd near Pecan Valley Dr, San Antonio, TX [2026-10-15 → 2026-10-17]
+- Estate sale — 11970 cink dr, San Antonio, TX [2026-10-15 → 2026-10-17]
+- Humongous Yard Sale — N Park Blvd near Marian, San Antonio, TX [2026-10-15 → 2026-10-17]
 
 ## COMING UP (remembered, not on today's map)
 
 ### Starts 2026-10-16
 - Retired Shop Owner Garage Sale — 6230 Broadmeadow, San Antonio, TX 78240 [2026-10-16 → 2026-10-17]
+- Apple Creek Community Garage Sale Fri-Sun — 7826 Dashwood, San Antonio, TX 78240 [2026-10-16 → 2026-10-18]
 - Moving Sale! — 3830 Maiden Way, Converse, TX 78109 [2026-10-16 → 2026-10-17]
-- All Clothes 1$ each & Other Stuff — 6118 Rolling Forest Dr, San Antonio, TX 78250 [2026-10-16 → 2026-10-17]
+- Women & Men’s Clothes & Other Stuff — 6118 Rolling Forest Dr, San Antonio, TX 78250 [2026-10-16 → 2026-10-17]
 - Garage Sale ! Oct. 16-18th — 3606 Comal Spgs, Canyon Lake, TX 78133 [2026-10-16 → 2026-10-18]
 - Estate Sale — 242 S Sycamore Ave, New Braunfels, TX 78130 [2026-10-16 → 2026-10-18]
 - Family Yard Sale — 521 Adler Rd, Boerne, TX 78006 [2026-10-16 → 2026-10-17]
@@ -50,19 +54,19 @@ Map only shows pins whose listed dates include today.
 ### Starts 2026-10-17
 - 5 Family Do It Right Garage Sell — 4322 Tallulah Dr, San Antonio, TX 78218 [2026-10-17 → 2026-10-18]
 - Jolly Old Estate Sale! — 13611 Stoney Hill, San Antonio, TX 78231 [2026-10-17 → 2026-10-18] | 2026-10-17 9:00 am-3:00 pm; 2026-10-18 9:00 am-3:00 pm
-- Neighborhood Garage Sale! 10/17/26 Over 50 Homes Participating! — 28909 Paloma Oak, Boerne, TX 78006 [2026-10-17 → 2026-10-17]
+- NEIGHBORHOOD GARAGE SALE! 10/17/26 OVER 50 HOMES PARTICIPATING! — 28909 Paloma Oak, Boerne, TX 78006 [2026-10-17 → 2026-10-17]
 - King William Neighborhood Garage Sale Weekend — 524 King William St, San Antonio, TX 78204 [2026-10-17 → 2026-10-17]
 - General Yard Sale — 3326 Weir Ave, San Antonio, TX 78226 [2026-10-17 → 2026-10-18]
 - Big Yard Sale — 234 Hatcher Ave, San Antonio, TX 78223 [2026-10-17 → 2026-10-17]
 - CHRISTMAS AND. HALLOWEEN SALE — 5840 Royal Rdg, San Antonio, TX 78239 [2026-10-17 → 2026-10-18]
+- Star Trek, Christmas, Halloween And Much More — 5841 Royal Rdg, San Antonio, TX 78239 [2026-10-17 → 2026-10-18]
 - Preston Hollow Neighborhood Garage Sale — 15237 Preston Pass Dr, San Antonio, TX 78247 [2026-10-17 → 2026-10-18]
 - 5-Family Yard Sale — 8938 Rachels Br, San Antonio, TX 78254 [2026-10-17 → 2026-10-17]
 - Big Pre-Moving Sale - Many $1 items — 22234 Pelican Edge, San Antonio, TX 78258 [2026-10-17 → 2026-10-18]
-- COMMUNITY YARD SALE — 846 Maltese Gdn, San Antonio, TX 78260 [2026-10-17 → 2026-10-17]
+- Large Family Garage Sale — 23239 Cardigan Chase, San Antonio, TX 78260 [2026-10-17 → 2026-10-17]
 - Big Community Yard sale — 244 Bee Caves Cv, Cibolo, TX 78108 [2026-10-17 → 2026-10-18]
 - Garage Sale — 645 Mourning Dove Dr, Mc Queeney, TX 78123 [2026-10-17 → 2026-10-17]
 - Hill Country Yard Sale — 212 Majestic Oaks Dr, Boerne, TX 78006 [2026-10-17 → 2026-10-17]
-- Large Hill Country Yard Sale — Majestic Oaks Dr. near Waring Welfare, San Antonio, TX [2026-10-17 → 2026-10-17]
 
 ### Starts 2026-12-02
 - MOVING & GARAGE SALE — River Hollow near Laurel Hollow, San Antonio, TX [2026-12-02 → 2026-12-02]
@@ -72,7 +76,7 @@ Map only shows pins whose listed dates include today.
 - Oak Creek Finds - Bidding ENDS 10/18/26 @ 7 PM! — San Antonio, TX 78251
 - Mission of Love: A Veteran's Home Full Of Modern Treasures - Bidding ends 10/18 — Converse, TX 78109
 - Curated Across Continents Estate Sale in Boerne, TX. Bidding Ends 10/21 — Boerne, TX 78006
-- Collectibles, Classics & Tools Online Auction by Caring Transitions - Ends 10/20! — New Braunfels, TX 78132
+- Sterling Flatware, Heirloom Furniture & More Online Auction by Caring Transitions - Ends 10/25! — New Braunfels, TX 78132
 - The Great Furniture Find in Comfort, TX. Bidding Ends 10/19 — Comfort, TX 78013
 - Tools, Lighting, Gunsmithing, Gun Parts, Etc Online Only Auction — New Braunfels, TX 78130
 
