@@ -2,15 +2,15 @@
 
 ## 1. CHICA DAILY RUN
 - **Target date:** Thursday, October 15, 2026
-- **San Antonio local run time:** 2026-10-15T05:13:28-05:00
+- **San Antonio local run time:** 2026-10-15T10:31:59-05:00
 - **Geographic area:** San Antonio & surrounding communities
 - **Sources searched:** 7
-- **Candidates discovered:** 29
-- **Verified sales:** 22
+- **Candidates discovered:** 30
+- **Verified sales:** 23
 - **Rejected listings:** 7
 - **Duplicates merged:** 0
-- **Successfully geocoded:** 22
-- **Street View links generated:** 22
+- **Successfully geocoded:** 23
+- **Street View links generated:** 23
 - **Sentinel:** PASS
 
 ## 2. VERIFIED SALES
@@ -25,7 +25,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-alamo-craft-co-antiques-more/mj6FcRd4ZDr7zwAwc4pwWa
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.556,-98.6094
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.556,-98.6094
-- **Verified at:** 2026-10-15T05:13:28-05:00
+- **Verified at:** 2026-10-15T10:31:59-05:00
 
 ### 2. Fall Community Garage Sale at Redbird Ranch 10/03/2026 8am-3pm
 - **Type:** garage
@@ -37,7 +37,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N90rv/410-hollimon-pkwy-san-antonio-tx-78253
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.437382,-98.80071
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.437382,-98.80071
-- **Verified at:** 2026-10-15T05:13:28-05:00
+- **Verified at:** 2026-10-15T10:31:59-05:00
 
 ### 3. Everything $1 — Redbird Ranch community garage sale
 - **Type:** garage
@@ -49,7 +49,7 @@
 - **Original listing:** https://www.google.com/maps/d/viewer?mid=1jb4Oxv2jY2KXsyXzFdme42iMI4BtAws&usp=sharing
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.443103,-98.803053
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.443103,-98.803053
-- **Verified at:** 2026-10-15T05:13:28-05:00
+- **Verified at:** 2026-10-15T10:31:59-05:00
 
 ### 4. Estate Sale Discount Weekend 10/15-10/18 (San Antonio)
 - **Type:** estate
@@ -61,7 +61,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-estate-sale-discount/571FxNdwiHr4BSGJFwDS8y
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.366618,-98.466454
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.366618,-98.466454
-- **Verified at:** 2026-10-15T05:13:28-05:00
+- **Verified at:** 2026-10-15T10:31:59-05:00
 
 ### 5. NOW OPEN! The Collective Boutiques (San Antonio)
 - **Type:** garage
@@ -73,7 +73,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-now-open-the-collective/a9UPVs8b9XgmEsUh6iVZ1m
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.5183,-98.503
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5183,-98.503
-- **Verified at:** 2026-10-15T05:13:28-05:00
+- **Verified at:** 2026-10-15T10:31:59-05:00
 
 ### 6. HUGE YARD SALE SOMETHING FOR EVERYONE (Universal City)
 - **Type:** garage
@@ -85,7 +85,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/universal-city-huge-yard-sale-something/gB6QVjsKKHM3hd5K1FUM9j
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.539526,-98.314208
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.539526,-98.314208
-- **Verified at:** 2026-10-15T05:13:28-05:00
+- **Verified at:** 2026-10-15T10:31:59-05:00
 
 ### 7. Huge Multi-Family Garage Sale (San Antonio)
 - **Type:** garage
@@ -97,7 +97,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-huge-multi-family-garage/sWM66iDXmxivZp2doYCqdk
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.356103,-98.426609
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.356103,-98.426609
-- **Verified at:** 2026-10-15T05:13:28-05:00
+- **Verified at:** 2026-10-15T10:31:59-05:00
 
 ### 8. *** Multi-Family Garage Sale*** (Saturday Only) (Stillwater Ranch)
 - **Type:** garage
@@ -109,7 +109,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-multi-family-garage-sale/gwrw5d6YuB9yBxaEzDsWQF
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.5551,-98.7442
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5551,-98.7442
-- **Verified at:** 2026-10-15T05:13:28-05:00
+- **Verified at:** 2026-10-15T10:31:59-05:00
 
 ### 9. 2.0 Hawaii Bound- Everything Must Go! Sale Ends 10/20. Pick Up 10/22 10-2
 - **Type:** garage
@@ -122,7 +122,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9Z2Z/san-marcos-tx-78666
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936
-- **Verified at:** 2026-10-15T05:13:28-05:00
+- **Verified at:** 2026-10-15T10:31:59-05:00
 
 ### 10. Multi family YARD SALE (La Vernia)
 - **Type:** garage
@@ -134,7 +134,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/la-vernia-multi-family-yard-sale/ki2Et7nsi9uRavycppTCg3
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.3509,-98.113
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.3509,-98.113
-- **Verified at:** 2026-10-15T05:13:28-05:00
+- **Verified at:** 2026-10-15T10:31:59-05:00
 
 ### 11. Yard Sale (San Antonio)
 - **Type:** garage
@@ -146,7 +146,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-yard-sale/9gXH2XgNMG6hm5QZHmZkVP
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.357661,-98.421389
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.357661,-98.421389
-- **Verified at:** 2026-10-15T05:13:28-05:00
+- **Verified at:** 2026-10-15T10:31:59-05:00
 
 ### 12. Huge Yard Sale! 1365 Timberhill Drive, New Braunfels Thurs-Sun 8Am-3Pm 10-15/18
 - **Type:** garage
@@ -159,7 +159,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196428323
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.773914,-98.076383
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.773914,-98.076383
-- **Verified at:** 2026-10-15T05:13:28-05:00
+- **Verified at:** 2026-10-15T10:31:59-05:00
 
 ### 13. Multi Family Yard Sale Thursday & Friday
 - **Type:** garage
@@ -172,7 +172,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196430373
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.470672,-98.551075
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.470672,-98.551075
-- **Verified at:** 2026-10-15T05:13:28-05:00
+- **Verified at:** 2026-10-15T10:31:59-05:00
 
 ### 14. 6330 Castle Cove, San Antonio, TX 78242
 - **Type:** garage
@@ -185,20 +185,20 @@
 - **Original listing:** https://garagesalefinder.com/s/N9ZyN/6330-castle-cove-san-antonio-tx-78242
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936
-- **Verified at:** 2026-10-15T05:13:28-05:00
+- **Verified at:** 2026-10-15T10:31:59-05:00
 
-### 15. 618 Brooks Ave, Schertz, TX 78154
+### 15. Multi Family Garage Sale
 - **Type:** garage
 - **Date:** 2026-10-15 → 2026-10-17
-- **Time:** 8:00 am - 4:00 pm – 
+- **Time:** 8:00 AM - 4:00 PM – 
 - **Address:** 618 Brooks Ave, Schertz, TX 78154, San Antonio 
-- **Notes:** Dates and Times: Thursday, October 15, 2026 8:00 am - 4:00 pm
+- **Notes:** Find all the garage sales, yard sales, and estate sales on a map! Or place a free ad for your upcoming sale on yardsalesearch.com
 - **Confidence:** 100%
-- **Sources:** GarageSaleFinder
-- **Original listing:** https://garagesalefinder.com/s/N9Ion/618-brooks-ave-schertz-tx-78154
-- **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936
-- **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936
-- **Verified at:** 2026-10-15T05:13:28-05:00
+- **Sources:** YardSaleSearch
+- **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196430279
+- **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.558145,-98.270368
+- **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.558145,-98.270368
+- **Verified at:** 2026-10-15T10:31:59-05:00
 
 ### 16. Huge Tool Sale And Many Household Items
 - **Type:** garage
@@ -211,7 +211,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196427711
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.764906,-98.695776
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.764906,-98.695776
-- **Verified at:** 2026-10-15T05:13:28-05:00
+- **Verified at:** 2026-10-15T10:31:59-05:00
 
 ### 17. Garage/Estate Sale
 - **Type:** estate
@@ -224,7 +224,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196429553
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.820441,-98.733703
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.820441,-98.733703
-- **Verified at:** 2026-10-15T05:13:28-05:00
+- **Verified at:** 2026-10-15T10:31:59-05:00
 
 ### 18. HUGE ESTATE SALE — SOMETHING FOR EVERYONE! (Hickory Hollow)
 - **Type:** estate
@@ -237,7 +237,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-huge-estate-sale-something/ooivvrdENWJ1NkkzKfYPSv
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.173527,-98.458042
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.173527,-98.458042
-- **Verified at:** 2026-10-15T05:13:28-05:00
+- **Verified at:** 2026-10-15T10:31:59-05:00
 
 ### 19. Huge Fall Garage Sale (San Antonio)
 - **Type:** garage
@@ -250,7 +250,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-huge-fall-garage-sale/bSYULh8SXNVzhjk9vG8gV7
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4388,-98.4935
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4388,-98.4935
-- **Verified at:** 2026-10-15T05:13:28-05:00
+- **Verified at:** 2026-10-15T10:31:59-05:00
 
 ### 20. INSIDE SALE (San Antonio)
 - **Type:** garage
@@ -262,7 +262,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-inside-sale/hEPFeTQohdYDLGQt1PSuaU
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.3291,-98.4363
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.3291,-98.4363
-- **Verified at:** 2026-10-15T05:13:28-05:00
+- **Verified at:** 2026-10-15T10:31:59-05:00
 
 ### 21. King William Annual Yard sale (San Aantonio)
 - **Type:** garage
@@ -274,7 +274,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-king-william-annual-yard/2gyNSnUsynrmLdgU8vDu8Q
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4059,-98.5078
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4059,-98.5078
-- **Verified at:** 2026-10-15T05:13:28-05:00
+- **Verified at:** 2026-10-15T10:31:59-05:00
 
 ### 22. MULTI FAM YARD SALE 230 & 231 Baird st (San antonio)
 - **Type:** garage
@@ -286,7 +286,20 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-multi-fam-yard-sale-baird-st/rRdz2zba2qyns33aQqL2gz
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.458558,-98.578446
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.458558,-98.578446
-- **Verified at:** 2026-10-15T05:13:28-05:00
+- **Verified at:** 2026-10-15T10:31:59-05:00
+
+### 23. 667 W Harlan Ave, San Antonio, TX 78214
+- **Type:** garage
+- **Date:** 2026-10-15 → 2026-10-16
+- **Time:** 8:00 am - 5:00 pm – 
+- **Address:** 667 W Harlan Ave, San Antonio, TX 78214, San Antonio 
+- **Notes:** Dates and Times: Thursday, October 15, 2026 8:00 am - 5:00 pm
+- **Confidence:** 100%
+- **Sources:** GarageSaleFinder
+- **Original listing:** https://garagesalefinder.com/s/N9IHT/667-w-harlan-ave-san-antonio-tx-78214
+- **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.35,-98.49
+- **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.35,-98.49
+- **Verified at:** 2026-10-15T10:31:59-05:00
 
 ## 3. CHICA PICKS
 
