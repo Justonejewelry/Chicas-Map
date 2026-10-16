@@ -49,6 +49,8 @@ Map only shows pins whose listed dates include today.
 - GARAGE  SALE — 9002 Masset Way near Vance Jackson/ whitson lane, San Antonio, TX [2026-10-16 → 2026-10-17]
 - Garage Sale Saturday, October 17th — Santa Anita Rd near Derby Dr, San Antonio, TX [2026-10-16 → 2026-10-18]
 - Garage sale - everything is priced to sell — 10413 Country Breeze, San Antonio, TX [2026-10-16 → 2026-10-18]
+- Garage/Yard Sale — 3239 Morning Crk, San Antonio, TX 78247 [2026-10-16 → 2026-10-17]
+- ESTATE SALE!!!! New Braunfels — 242 S Sycamore Ave near Cross st, San Antonio, TX [2026-10-16 → 2026-10-18]
 
 ## COMING UP (remembered, not on today's map)
 
