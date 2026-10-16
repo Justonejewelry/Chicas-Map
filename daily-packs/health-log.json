@@ -45,5 +45,16 @@
     "geocoding_success_rate": "n/a (zip-only online auctions filtered)",
     "status": "SUCCESS",
     "notes": "Triggered chica-daily.yml run 38447737194 (in_progress). 2 ESO emails scanned. 4 Greater SA candidates (mostly online auctions/incomplete addresses). 0 net-new manual add to avoid double-write. Live feed: 24 public sales. Master populate handling full ingestion."
+  },
+  {
+    "timestamp": "2026-10-16T08:34:00Z",
+    "target_date": "2026-10-16",
+    "actions_run_id": "38874315734",
+    "emails_scanned": 2,
+    "net_new_added": 0,
+    "net_new_staged": 3,
+    "geocoding_success_rate": "0.0%",
+    "status": "STAGED_CONCURRENT",
+    "notes": "3 net-new staged (Tallulah Dr, Stoney Hill, Rachels Br). Concurrent master run 38874315734. City file untouched. Brooks Ave already live."
   }
 ]
