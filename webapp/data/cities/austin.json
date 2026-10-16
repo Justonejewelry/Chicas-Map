@@ -425,78 +425,6 @@
       "external_id": "cl-salemarblefallsfzi87jedeigptjqvzb1tcg"
     },
     {
-      "address": "530 Bastrop Hwy, Austin, TX",
-      "dates": "2026-10-13 – 2026-10-15",
-      "date_from": "2026-10-13",
-      "date_to": "2026-10-15",
-      "end_date": "2026-10-15",
-      "hours": null,
-      "title": "MULTI-UNIT GARAGE SALE!!!",
-      "details": "QR Code Link to This Post 🎃🛍️ IT’S GARAGE SALE TIME! 🛍️🎃 Get ready for Bergstrom Storage’s 4th Annual Multi-Unit Garage Sale! 🎉 📅 Saturday, October 17th ⏰ 10:00 AM – 2:00 PM 📍 Bergstrom Storage 530 Bastrop Hwy SB, Austin, TX 78741 We’re bringing together multiple storage units packed with great finds! 🛒✨ You never know what treasures you’ll discover! 🎃 Halloween fun + amazing garage sale deals! 👕 ",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/austin-multi-unit-garage-sale/wwqHj4kh5LVtw6UHkXtJ8o",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.237148,
-      "lon": -97.687447,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-unitgaragesalewwqhj4kh5lvtw6uhkxtj8o"
-    },
-    {
-      "address": "Pine Needle Circle near Mayfield Ranch Blvd, Austin, TX",
-      "dates": "2026-10-13 – 2026-10-15",
-      "date_from": "2026-10-13",
-      "date_to": "2026-10-15",
-      "end_date": "2026-10-15",
-      "hours": null,
-      "title": "Neighborhood Garage Sale - FM 1431 Mayfield Ranch",
-      "details": "QR Code Link to This Post Mayfield Ranch Neighborhood is having a garage sale this weekend (10/16 and 10/17).",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/round-rock-neighborhood-garage-sale-fm/3rEfHiTPMHQJYrQb39doq8",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.552191,
-      "lon": -97.744095,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-odgaragesalefm3refhitpmhqjyrqb39doq8"
-    },
-    {
-      "address": "Scotland Well, Austin, TX",
-      "dates": "2026-10-13 – 2026-10-15",
-      "date_from": "2026-10-13",
-      "date_to": "2026-10-15",
-      "end_date": "2026-10-15",
-      "hours": null,
-      "title": "Original Owner | Antiques + More | DOWNSIZING",
-      "details": "QR Code Link to This Post Original Owner | Antiques + More | Downsizing. Please see \"more ads by this user\" for more information + additional items.* ANTQ 12\" Large Italian Hammered Brass Pedestal Ornate Bowl w/ Handles 1940s 13-1/4\" Hand-Embroidered Hand-Crocheted Oval Doily TWO RARE UNMARKED Aluminum Pewter Metalware Tavern Beer Ale Mug 1940s Hammersley of England Gold Gilt Floral Dresden Sprays",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/austin-original-owner-antiques-more/nnGKpimEGkWAJXaN7qWnqg",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.4224,
-      "lon": -97.7967,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-nerantiquesmorenngkpimegkwajxan7qwnqg"
-    },
-    {
       "address": "1314 E Oltorf St. near Schriber St., Austin, TX",
       "dates": "2026-10-24 – 2026-10-24",
       "date_from": "2026-10-24",
@@ -795,30 +723,6 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "cl-esaturdayoct17hen4dv8yvfjlvtvx78l1sh"
-    },
-    {
-      "address": "1736 Cricket Hollow Drive near Tappan, Austin, TX",
-      "dates": "2026-10-13 – 2026-10-15",
-      "date_from": "2026-10-13",
-      "date_to": "2026-10-15",
-      "end_date": "2026-10-15",
-      "hours": null,
-      "title": "North Austin Garage Sale",
-      "details": "QR Code Link to This Post Garage Sale for family with 5- and 7-year old, including: - Kids and adults' books - Beer brewing equipment - kids and adult clothes in good condition - gently loved stuffed animals - Coffee Grinder - Nightstand - Humidifier - acoustic and electric guitars - Glass screen door - Cords of Ash wood - large steel storage barrels (unused, weathered) and much more!",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/austin-north-austin-garage-sale/vj7UYrjYVe8K4YryB1Muir",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.387882,
-      "lon": -97.703866,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-ustingaragesalevj7uyrjyve8k4yryb1muir"
     },
     {
       "address": "106 E Highway 79, Austin, TX",
@@ -1426,9 +1330,9 @@
     "gsalr.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 62,
+  "total_locations": 58,
   "status": "live",
-  "date": "2026-10-15",
-  "last_refresh": "2026-10-15T14:46:42-05:00",
+  "date": "2026-10-16",
+  "last_refresh": "2026-10-16T03:32:36-05:00",
   "permits": []
 }
