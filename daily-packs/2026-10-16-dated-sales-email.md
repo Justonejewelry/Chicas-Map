@@ -31,7 +31,7 @@ Map only shows pins whose listed dates include today.
 - King William Annual Yard sale — 128 & 132 City St near Arsenal, San Antonio, TX [2026-10-15 → 2026-10-17]
 - MULTI FAM YARD SALE 230 & 231 Baird st — 231 Baird Street near Roanoke, San Antonio, TX [2026-10-15 → 2026-10-17]
 - VIKINGS, ANTIQUE CLOCKS, A LARGE BARN & ROGER CREAGER! — San Antonio, TX [2026-10-15 → 2026-10-17]
-- Multi Family Yardsale — 667 W Harlan Ave, San Antonio, TX 78214 [2026-10-15 → 2026-10-18]
+- Multi family yardsale — 667 W Harlan Ave, San Antonio, TX 78214 [2026-10-15 → 2026-10-18]
 - Estate sale — 500 block Prestwick Blvd near Pecan Valley Dr, San Antonio, TX [2026-10-16 → 2026-10-18]
 - Estate sale — 11970 cink dr, San Antonio, TX [2026-10-16 → 2026-10-18]
 - Humongous Yard Sale — N Park Blvd near Marian, San Antonio, TX [2026-10-15 → 2026-10-17]
@@ -51,12 +51,14 @@ Map only shows pins whose listed dates include today.
 - Garage sale - everything is priced to sell — 10413 Country Breeze, San Antonio, TX [2026-10-16 → 2026-10-18]
 - Garage/Yard Sale — 3239 Morning Crk, San Antonio, TX 78247 [2026-10-16 → 2026-10-17]
 - ESTATE SALE!!!! New Braunfels — 242 S Sycamore Ave near Cross st, San Antonio, TX [2026-10-16 → 2026-10-18]
+- 11719 La Granja - 8 AM to noon, Sat - Neighborhood Yard Sale — La Granja near Camp Real, San Antonio, TX [2026-10-16 → 2026-10-18]
+- Garage Sale - Morning Creek — Morning Creek near jones maltsberger, San Antonio, TX [2026-10-16 → 2026-10-18]
 
 ## COMING UP (remembered, not on today's map)
 
 ### Starts 2026-10-17
-- 5 Family Do It Right Garage Sell — 4322 Tallulah Dr, San Antonio, TX 78218 [2026-10-17 → 2026-10-18]
 - Jolly Old Estate Sale! — 13611 Stoney Hill, San Antonio, TX 78231 [2026-10-17 → 2026-10-18] | 2026-10-17 9:00 am-3:00 pm; 2026-10-18 9:00 am-3:00 pm
+- 5 Family Do It Right Garage Sell — 4322 Tallulah Dr, San Antonio, TX 78218 [2026-10-17 → 2026-10-18]
 - NEIGHBORHOOD GARAGE SALE! 10/17/26 OVER 50 HOMES PARTICIPATING! — 28909 Paloma Oak, Boerne, TX 78006 [2026-10-17 → 2026-10-17]
 - King William Neighborhood Garage Sale Weekend — 524 King William St, San Antonio, TX 78204 [2026-10-17 → 2026-10-17]
 - Converted Building Goldmine — San Antonio, TX 78225 [2026-10-17 → 2026-10-19]
@@ -67,14 +69,17 @@ Map only shows pins whose listed dates include today.
 - Preston Hollow Neighborhood Garage Sale — 15237 Preston Pass Dr, San Antonio, TX 78247 [2026-10-17 → 2026-10-18]
 - Women & Men’s Clothes & Other Stuff — 6118 Rolling Forest Dr, San Antonio, TX 78250 [2026-10-17 → 2026-10-18]
 - 5-Family Yard Sale — 8938 Rachels Br, San Antonio, TX 78254 [2026-10-17 → 2026-10-17]
+- Multi Family Sale - Kid Stuff Galore — 13203 Lost Lake Dr, San Antonio, TX 78249 [2026-10-17 → 2026-10-17]
 - Retama Springs Neighborhood Garage Sale – Selma 78154 – Sat & Sun — Retama Springs, Selma, TX 78154 [2026-10-17 → 2026-10-18]
-- Big Pre-Moving Sale - Many $1 items — 22234 Pelican Edge, San Antonio, TX 78258 [2026-10-17 → 2026-10-18]
 - Large Family Garage Sale — 23239 Cardigan Chase, San Antonio, TX 78260 [2026-10-17 → 2026-10-17]
 - Big Community Yard sale — 244 Bee Caves Cv, Cibolo, TX 78108 [2026-10-17 → 2026-10-18]
 - Garage Sale — 645 Mourning Dove Dr, Mc Queeney, TX 78123 [2026-10-17 → 2026-10-17]
 - Hill Country Yard Sale — 212 Majestic Oaks Dr, Boerne, TX 78006 [2026-10-17 → 2026-10-17]
 - Converted Building Goldmine — hidden, San Antonio, TX 78225 [2026-10-17 → 2026-10-19] | 2026-10-17 10:00 am-5:00 pm; 2026-10-18 10:00 am-5:00 pm; 2026-10-19 10:00 am-3:00 pm
 - Community Garage Sales - Retama Springs — Retama Springs, San Antonio, TX [2026-10-17 → 2026-10-18]
+
+### Starts 2026-10-18
+- Big church garage sale — 747 SW 39th St, San Antonio, TX 78237 [2026-10-18 → 2026-10-18]
 
 ### Starts 2026-12-02
 - MOVING & GARAGE SALE — River Hollow near Laurel Hollow, San Antonio, TX [2026-12-02 → 2026-12-02]
