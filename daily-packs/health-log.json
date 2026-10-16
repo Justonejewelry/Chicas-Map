@@ -67,5 +67,16 @@
     "geocoding_success_rate": "0.0%",
     "status": "STAGED_CONCURRENT",
     "notes": "Triggered chica-daily.yml run 38885662768 (in_progress after 3 polls). 3 Greater SA net-new already staged. City file untouched. Community swarm not triggered. Live public: 44."
+  },
+  {
+    "timestamp": "2026-10-16T10:43:00Z",
+    "target_date": "2026-10-16",
+    "actions_run_id": "38888915267",
+    "emails_scanned": 6,
+    "net_new_added": 0,
+    "net_new_staged": 3,
+    "geocoding_success_rate": "66% (street approx + zip)",
+    "status": "STAGED_CONCURRENT",
+    "notes": "Triggered chica-daily.yml (cities=san-antonio). In_progress after 3x5s polls. Staged 3 Greater SA (Tallulah, Stoney Hill, Rachels Br). Excluded online auctions, New Braunfels, Boerne. City file untouched to avoid race. No Formspree. Community swarm not triggered."
   }
 ]
