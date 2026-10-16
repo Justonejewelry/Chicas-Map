@@ -1,1 +1,16 @@
-$(cat /tmp/email-leads-updated.json)
+{
+  "target_date": "2026-10-16",
+  "city": "san-antonio",
+  "status": "MERGED_TO_PUBLIC",
+  "reason": "Manually merged after master populate completed. 3 net-new added to public[].",
+  "confidence_floor": 0.7,
+  "emails_scanned": 6,
+  "net_new_vs_public": 3,
+  "safety_ceiling": 25,
+  "ceiling_hit": false,
+  "city_file_written": true,
+  "community_events_swarm": "not_triggered",
+  "actions_run_id": "38944309781",
+  "merged_at": "2026-10-16T18:30:00-05:00",
+  "notes": "Pushed live. Public feed now includes Tallulah, Stoney Hill, Rachels Br."
+}
