@@ -1,16 +1,16 @@
 {
-  "target_date": "2026-10-10",
+  "target_date": "2026-10-16",
   "city": "san-antonio",
-  "status": "PARTIAL_STAGED",
-  "reason": "Actions run 38042861558 in_progress after 3 polls. Staged net-new ESO leads to avoid double-write with master populate. Prior GSF already merged into public.",
+  "status": "STAGED_CONCURRENT",
+  "reason": "chica-daily.yml run 38874315734 in_progress after 3 polls. Staged net-new GSF/ESO leads to avoid race with master populate.",
   "confidence_floor": 0.7,
-  "emails_scanned": 8,
-  "net_new_vs_public": 2,
+  "emails_scanned": 2,
+  "net_new_vs_public": 3,
   "safety_ceiling": 25,
   "ceiling_hit": false,
   "city_file_written": false,
   "community_events_swarm": "not_triggered",
-  "actions_run_id": "38042861558",
+  "actions_run_id": "38874315734",
   "polls": [
     "queued",
     "in_progress",
@@ -19,33 +19,56 @@
   ],
   "staged": [
     {
-      "title": "Mission of Love: A Veteran's Home Full Of Moder...",
-      "address": "Converse, TX 78109",
+      "title": "5 Family Do It Right Garage Sell",
+      "street_address": "4322 Tallulah Dr, San Antonio, TX 78218",
       "dates": [
-        "2026-10-11"
+        "2026-10-17",
+        "2026-10-18"
       ],
-      "hours": "Bidding closes Sun Oct 11 8PM CDT",
-      "source": "Email:EstateSales.org",
+      "hours": "Sat-Sun",
+      "source": "Email:GarageSaleFinder",
       "confidence": 0.75,
       "lat": null,
       "lon": null,
       "accuracy": "zip_centroid",
-      "notes": "In-person estate by Caring Transitions of San Antonio Central. Street not in daily email summary."
+      "notes": "Adult/kids clothes, maternity, purses, jewelry, soaps, dishware. Greater SA."
     },
     {
       "title": "Jolly Old Estate Sale!",
-      "address": "San Antonio, TX 78231",
+      "street_address": "13611 Stoney Hill, San Antonio, TX 78231",
       "dates": [
-        "2026-10-17"
+        "2026-10-17",
+        "2026-10-18"
       ],
-      "hours": "Sale starts Sat Oct 17 9AM CDT",
+      "hours": "Sat Oct 17 9AM CDT",
       "source": "Email:EstateSales.org",
       "confidence": 0.75,
       "lat": null,
       "lon": null,
       "accuracy": "zip_centroid",
-      "notes": "Caring Transitions of San Antonio North. Future date."
+      "notes": "Caring Transitions of San Antonio North. 3/2 home Shavano Park area."
+    },
+    {
+      "title": "5-Family Yard Sale",
+      "street_address": "8938 Rachels Br, San Antonio, TX 78254",
+      "dates": [
+        "2026-10-17"
+      ],
+      "hours": "TBD",
+      "source": "Email:GarageSaleFinder",
+      "confidence": 0.75,
+      "lat": null,
+      "lon": null,
+      "accuracy": "zip_centroid",
+      "notes": "SA address, included."
     }
   ],
-  "notes": "Prior GSF staging confirmed already in public feed. New ESO: 1 Converse (exclude New Braunfels, online auction). Actions concurrent so city file held."
+  "rejected": [
+    "Boerne",
+    "New Braunfels",
+    "Canyon Lake",
+    "online-only auctions",
+    "Selma/Cibolo (not in explicit Greater SA list)"
+  ],
+  "notes": "Brooks Ave Schertz already in public. Online auctions excluded per directive. Master workflow running concurrently so city file not touched."
 }
