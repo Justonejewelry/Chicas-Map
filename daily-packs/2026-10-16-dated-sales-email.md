@@ -53,24 +53,27 @@ Map only shows pins whose listed dates include today.
 - ESTATE SALE!!!! New Braunfels — 242 S Sycamore Ave near Cross st, San Antonio, TX [2026-10-16 → 2026-10-18]
 - 11719 La Granja - 8 AM to noon, Sat - Neighborhood Yard Sale — La Granja near Camp Real, San Antonio, TX [2026-10-16 → 2026-10-18]
 - Garage Sale - Morning Creek — Morning Creek near jones maltsberger, San Antonio, TX [2026-10-16 → 2026-10-18]
+- Yard sale — 326 E Mayfield Blvd, San Antonio, TX 78214 [2026-10-16 → 2026-10-18]
 
 ## COMING UP (remembered, not on today's map)
 
 ### Starts 2026-10-17
-- Jolly Old Estate Sale! — 13611 Stoney Hill, San Antonio, TX 78231 [2026-10-17 → 2026-10-18] | 2026-10-17 9:00 am-3:00 pm; 2026-10-18 9:00 am-3:00 pm
 - 5 Family Do It Right Garage Sell — 4322 Tallulah Dr, San Antonio, TX 78218 [2026-10-17 → 2026-10-18]
+- Jolly Old Estate Sale! — 13611 Stoney Hill, San Antonio, TX 78231 [2026-10-17 → 2026-10-18] | 2026-10-17 9:00 am-3:00 pm; 2026-10-18 9:00 am-3:00 pm
 - NEIGHBORHOOD GARAGE SALE! 10/17/26 OVER 50 HOMES PARTICIPATING! — 28909 Paloma Oak, Boerne, TX 78006 [2026-10-17 → 2026-10-17]
 - King William Neighborhood Garage Sale Weekend — 524 King William St, San Antonio, TX 78204 [2026-10-17 → 2026-10-17]
 - Converted Building Goldmine — San Antonio, TX 78225 [2026-10-17 → 2026-10-19]
 - General Yard Sale — 3326 Weir Ave, San Antonio, TX 78226 [2026-10-17 → 2026-10-18]
 - Big Yard Sale — 234 Hatcher Ave, San Antonio, TX 78223 [2026-10-17 → 2026-10-17]
 - CHRISTMAS AND. HALLOWEEN SALE — 5840 Royal Rdg, San Antonio, TX 78239 [2026-10-17 → 2026-10-18]
-- Star Trek, Christmas, Halloween And Much More — 5841 Royal Rdg, San Antonio, TX 78239 [2026-10-17 → 2026-10-18]
+- Star Trek, Christmas, Halloween and much more — 5841 Royal Rdg, San Antonio, TX 78239 [2026-10-17 → 2026-10-18]
 - Preston Hollow Neighborhood Garage Sale — 15237 Preston Pass Dr, San Antonio, TX 78247 [2026-10-17 → 2026-10-18]
-- Women & Men’s Clothes & Other Stuff — 6118 Rolling Forest Dr, San Antonio, TX 78250 [2026-10-17 → 2026-10-18]
+- Women & Men’S Clothes & Other Stuff — 6118 Rolling Forest Dr, San Antonio, TX 78250 [2026-10-17 → 2026-10-18]
+- Multi Family Yard Sale — 15115 Elm Park, San Antonio, TX 78247 [2026-10-17 → 2026-10-17]
 - 5-Family Yard Sale — 8938 Rachels Br, San Antonio, TX 78254 [2026-10-17 → 2026-10-17]
 - Multi Family Sale - Kid Stuff Galore — 13203 Lost Lake Dr, San Antonio, TX 78249 [2026-10-17 → 2026-10-17]
 - Retama Springs Neighborhood Garage Sale – Selma 78154 – Sat & Sun — Retama Springs, Selma, TX 78154 [2026-10-17 → 2026-10-18]
+- COMMUNITY YARD SALE — 846 Maltese Gdn, San Antonio, TX 78260 [2026-10-17 → 2026-10-17]
 - Large Family Garage Sale — 23239 Cardigan Chase, San Antonio, TX 78260 [2026-10-17 → 2026-10-17]
 - Big Community Yard sale — 244 Bee Caves Cv, Cibolo, TX 78108 [2026-10-17 → 2026-10-18]
 - Garage Sale — 645 Mourning Dove Dr, Mc Queeney, TX 78123 [2026-10-17 → 2026-10-17]

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-16T10:19:50-05:00",
+  "updated": "2026-10-16T13:05:09-05:00",
   "city": "san-antonio",
   "version": 2.7,
   "horizonDays": 90,
@@ -5205,6 +5205,24 @@
       "reliability": 86,
       "discoveredAt": "2026-10-16T03:33:43-05:00",
       "confidence": 98
+    },
+    {
+      "id": "2026-10-20_teen-tuesday-halloween-snack_1f3d755f42c1",
+      "title": "Teen Tuesday: Halloween Snacks!",
+      "date": "2026-10-20",
+      "endDate": "",
+      "time": "4:20 PM-5:40 PM",
+      "address": "600 Soledad San Antonio, TX 78205",
+      "lat": null,
+      "lng": null,
+      "category": "other",
+      "description": "",
+      "url": "https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D211480083",
+      "source": "San Antonio Public Library Events",
+      "sourceId": "sapl-trumba-ics",
+      "reliability": 96,
+      "discoveredAt": "2026-10-16T13:04:24-05:00",
+      "confidence": 100
     }
   ]
 }
