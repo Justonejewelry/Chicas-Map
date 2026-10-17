@@ -44,7 +44,7 @@ Map only shows pins whose listed dates include today.
 - Garage sale - everything is priced to sell — 10413 Country Breeze, San Antonio, TX [2026-10-16 → 2026-10-18]
 - Garage/Yard Sale — 3239 Morning Crk, San Antonio, TX 78247 [2026-10-16 → 2026-10-17]
 - ESTATE SALE!!!! New Braunfels — 242 S Sycamore Ave near Cross st, San Antonio, TX [2026-10-17 → 2026-10-19]
-- 11719 La Granja - 8 AM to noon, Sat - Neighborhood Yard Sale — La Granja near Camp Real, San Antonio, TX [2026-10-17 → 2026-10-19]
+- 11719 La Granja - 9 AM to noon, Sat - Neighborhood Yard Sale — La Granja near Camp Real, San Antonio, TX [2026-10-17 → 2026-10-19]
 - Garage Sale - Morning Creek — Morning Creek near jones maltsberger, San Antonio, TX [2026-10-16 → 2026-10-18]
 - Yard sale — 326 E Mayfield Blvd, San Antonio, TX 78214 [2026-10-16 → 2026-10-18]
 - 5 Family Do It Right Garage Sell — 4322 Tallulah Dr, San Antonio, TX 78218 [2026-10-17 → 2026-10-18] | Sat-Sun
@@ -56,7 +56,7 @@ Map only shows pins whose listed dates include today.
 - General Yard Sale — 3326 Weir Ave, San Antonio, TX 78226 [2026-10-17 → 2026-10-18]
 - Yard sale — 843 McNeel Rd, San Antonio, TX 78228 [2026-10-16 → 2026-10-17]
 - Big Yard Sale — 234 Hatcher Ave, San Antonio, TX 78223 [2026-10-17 → 2026-10-17]
-- Yard Sale: All Reasonable Offers Accepted — 6026 Whitecloud, San Antonio, TX 78238 [2026-10-17 → 2026-10-17]
+- Yard sale: all reasonable offers accepted — 6026 Whitecloud, San Antonio, TX 78238 [2026-10-17 → 2026-10-17]
 - Garage Sale — 7123 Quarter Moon, Converse, TX 78109 [2026-10-17 → 2026-10-18]
 - Palm park area 14431 ideal ave — 14431Adeal ave.and Richter rd corner home, San Antonio, TX 78223 [2026-10-17 → 2026-10-17]
 - Multi Family Garage Sale — 3650 Ridge Cluster St, San Antonio, TX 78247 [2026-10-17 → 2026-10-17]
@@ -66,7 +66,7 @@ Map only shows pins whose listed dates include today.
 - Preston Hollow Neighborhood Garage Sale — 15237 Preston Pass Dr, San Antonio, TX 78247 [2026-10-17 → 2026-10-18]
 - Women & Men’s Clothes & Other Stuff — 6118 Rolling Forest Dr, San Antonio, TX 78250 [2026-10-17 → 2026-10-18]
 - Multi Family Yard Sale — 15115 Elm Park, San Antonio, TX 78247 [2026-10-17 → 2026-10-17]
-- Multi family sale - kid stuff galore — 13203 Lost Lake Dr, San Antonio, TX 78249 [2026-10-17 → 2026-10-17]
+- Multi Family Sale - Kid Stuff Galore — 13203 Lost Lake Dr, San Antonio, TX 78249 [2026-10-17 → 2026-10-17]
 - Garage Sale Tools Galore — 18103 Brookwood Frst, San Antonio, TX 78258 [2026-10-17 → 2026-10-17]
 - Retama Springs Neighborhood Garage Sale – Selma 78154 – Sat & Sun — Retama Springs, Selma, TX 78154 [2026-10-17 → 2026-10-18]
 - Large Family Garage Sale — 23239 Cardigan Chase, San Antonio, TX 78260 [2026-10-17 → 2026-10-17]
@@ -82,6 +82,11 @@ Map only shows pins whose listed dates include today.
 - Moving! Everything must go! — 5708 jayden pass, Saint Hedwig, San Antonio, TX [2026-10-17 → 2026-10-19]
 - 2 Family Garage SALE TODAY 10/17/2026 9:30am-3pm — Limestone Hill near limestone hill, San Antonio, TX [2026-10-17 → 2026-10-17]
 - Alamo Ranch Community Yard Sale — 5826 Ginger Rise near Wild Pine, San Antonio, TX [2026-10-17 → 2026-10-19]
+- Converted Building Goldmine — 509 Gladstone Ave, San Antonio, TX 78225 [2026-10-17 → 2026-10-19]
+- Yard sale from 8am-12pm/community yard sale — 11915 Perla Joy, San Antonio, TX 78253 [2026-10-17 → 2026-10-17]
+- Kensington Ranch Community Yard Sale — 3533 Irish Creek Rd, Schertz, TX 78154 [2026-10-17 → 2026-10-18]
+- 3 house yard sale. Low Oak St 78232 — Low Oak St, San Antonio, TX [2026-10-17 → 2026-10-19]
+- 4 family yard sale — 400 W CR 5719, San Antonio, TX [2026-10-17 → 2026-10-19]
 
 ## COMING UP (remembered, not on today's map)
 
