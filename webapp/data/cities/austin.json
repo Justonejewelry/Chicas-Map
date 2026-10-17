@@ -150,31 +150,6 @@
       "external_id": "cl-valleestatesaless3crdzllbhjrkez18tjju"
     },
     {
-      "address": "Meuller, Austin, TX",
-      "dates": "2026-10-14 – 2026-10-16",
-      "date_from": "2026-10-14",
-      "date_to": "2026-10-16",
-      "end_date": "2026-10-16",
-      "hours": null,
-      "title": "Moving sale - Playmate cooler",
-      "details": "QR Code Link to This Post Playmate cooler. Great for outdoor activities and car rides.$30 Make a a reasonable offer!! Probably will accept, Email me. By appointment.",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/austin-moving-sale-playmate-cooler/3xFWYJHrRxcmdv6x28s9Aa",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale",
-        "moving-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.1743,
-      "lon": -97.8225,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-eplaymatecooler3xfwyjhrrxcmdv6x28s9aa"
-    },
-    {
       "address": "145 Summer Night Cv, Buda, TX 78610",
       "dates": "2026-10-17 – 2026-10-17",
       "date_from": "2026-10-17",
@@ -192,28 +167,6 @@
       "lon": -97.864333,
       "geocode": "source",
       "external_id": "yss-145summernightcvbudatx78610-2026-10-17",
-      "categories": [
-        "garage-sale"
-      ]
-    },
-    {
-      "address": "1 Test St, Austin, TX 78701",
-      "dates": "2026-10-15 – 2026-10-16",
-      "date_from": "2026-10-15",
-      "date_to": "2026-10-16",
-      "end_date": "2026-10-16",
-      "title": "Auto-Idortest",
-      "details": "",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196410283",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.88,
-      "status": "verified",
-      "lat": 30.2672,
-      "lon": -97.7431,
-      "geocode": "source",
-      "external_id": "yss-1teststaustintx78701-2026-10-15",
       "categories": [
         "garage-sale"
       ]
@@ -345,24 +298,6 @@
       "categories": [
         "garage-sale"
       ]
-    },
-    {
-      "address": "2905 County Rd 329, Granger, TX 76530",
-      "dates": "Fri Oct 16 – Fri Oct 16",
-      "date_from": "10/16/2026",
-      "date_to": "10/16/2026",
-      "end_date": "2026-10-16",
-      "title": "Estate Sale 📢📢📢",
-      "details": "",
-      "source": "GarageSaleFinder",
-      "url": "https://garagesalefinder.com/s/N9qLN/2905-county-rd-329-granger-tx-76530",
-      "photos": 0,
-      "type": "estate",
-      "confidence": 0.65,
-      "status": "verified",
-      "lat": 30.2672,
-      "lon": -97.7431,
-      "geocode": "city-center"
     },
     {
       "address": "1525 Lakeside Dr W, Canyon Lake, TX 78133",
@@ -565,30 +500,6 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "cl-stingaragesales2y2ywzt1aaau1wy2uzqgtx"
-    },
-    {
-      "address": "2309 Thornton Road, Austin, TX",
-      "dates": "2026-10-14 – 2026-10-16",
-      "date_from": "2026-10-14",
-      "date_to": "2026-10-16",
-      "end_date": "2026-10-16",
-      "hours": null,
-      "title": "Huge Multi Unit Garage Sale - Thornton Road Studios",
-      "details": "QR Code Link to This Post Local Artists, Woodworker, Musicians, and Vintage Dealers are having a multi-unit sale. - Vintage Items, Music Gear, Art Supplies and Many Other Treasures!",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/austin-huge-multi-unit-garage-sale/up7W6HSpR1Ey6Eow4T9gxH",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.245481,
-      "lon": -97.771626,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-unitgaragesaleup7w6hspr1ey6eow4t9gxh"
     },
     {
       "address": "New Braunfels, TX 78132",
@@ -1048,54 +959,6 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "cl-unitywidegarage8lkpbqu1dvedem9vdx11gb"
-    },
-    {
-      "address": "11013 Prairie Dove Circle near Braker, Austin, TX",
-      "dates": "2026-10-14 – 2026-10-16",
-      "date_from": "2026-10-14",
-      "date_to": "2026-10-16",
-      "end_date": "2026-10-16",
-      "hours": null,
-      "title": "Garage Sale by Q2 Stadium",
-      "details": "QR Code Link to This Post SATURDAY and partial Sunday (after 11 am Sun). 11013 Prairie Dove Circle, off Braker. Antique bed (needs help), new mattress, antique chair, drawing table, portable floor a/c unit, lots of cheap women's clothes. Etc. And Freebies.",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/austin-garage-sale-by-q2-stadium/juTZXQPmqmvgbnLvnGNYqP",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.3875,
-      "lon": -97.7059,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-alebyq2stadiumjutzxqpmqmvgbnlvngnyqp"
-    },
-    {
-      "address": "301 W Covington Dr near Hunters Ln, Austin, TX",
-      "dates": "2026-10-14 – 2026-10-16",
-      "date_from": "2026-10-14",
-      "date_to": "2026-10-16",
-      "end_date": "2026-10-16",
-      "hours": null,
-      "title": "Garage Sale-THIS SATURDAY 8AM-?",
-      "details": "QR Code Link to This Post Men’s slacks 33x32 &amp; shirts- size M &amp; L, Power washer, floor jacks, hand tools, soldering irons, Blacksmith tools &amp; leg vise, old tools, Garden tools, vintage gas space heaters (working and non-working), Whirlpool electric dryer, window unit A/C, Canoe bookshelves, storage chest, movies &amp; CD’s, CAR STUFF: auto waxes, tires cleaner, soaps, jumper cables",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/austin-garage-sale-this-saturday-8am/t6pMQskm7erNR5yQDEMzmQ",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.383248,
-      "lon": -97.680901,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-thissaturday8amt6pmqskm7ernr5yqdemzmq"
     },
     {
       "address": "Austin, TX 78759",
@@ -1732,9 +1595,9 @@
     "gsalr.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 77,
+  "total_locations": 71,
   "status": "live",
-  "date": "2026-10-16",
-  "last_refresh": "2026-10-16T13:03:28-05:00",
+  "date": "2026-10-17",
+  "last_refresh": "2026-10-17T03:33:49-05:00",
   "permits": []
 }
