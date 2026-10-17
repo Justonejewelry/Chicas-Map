@@ -2,7 +2,7 @@
 
 ## 1. CHICA DAILY RUN
 - **Target date:** Saturday, October 17, 2026
-- **San Antonio local run time:** 2026-10-17T03:33:49-05:00
+- **San Antonio local run time:** 2026-10-17T05:13:01-05:00
 - **Geographic area:** San Antonio & surrounding communities
 - **Sources searched:** 7
 - **Candidates discovered:** 77
@@ -25,7 +25,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-alamo-craft-co-antiques-more/mj6FcRd4ZDr7zwAwc4pwWa
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.556,-98.6094
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.556,-98.6094
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 2. Fall Community Garage Sale at Redbird Ranch 10/03/2026 8am-3pm
 - **Type:** garage
@@ -37,7 +37,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N90rv/410-hollimon-pkwy-san-antonio-tx-78253
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.437382,-98.80071
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.437382,-98.80071
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 3. Everything $1 — Redbird Ranch community garage sale
 - **Type:** garage
@@ -49,7 +49,7 @@
 - **Original listing:** https://www.google.com/maps/d/viewer?mid=1jb4Oxv2jY2KXsyXzFdme42iMI4BtAws&usp=sharing
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.443103,-98.803053
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.443103,-98.803053
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 4. HUGE YARD SALE SOMETHING FOR EVERYONE (Universal City)
 - **Type:** garage
@@ -61,7 +61,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/universal-city-huge-yard-sale-something/gB6QVjsKKHM3hd5K1FUM9j
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.539526,-98.314208
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.539526,-98.314208
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 5. Huge Multi-Family Garage Sale (San Antonio)
 - **Type:** garage
@@ -73,7 +73,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-huge-multi-family-garage/sWM66iDXmxivZp2doYCqdk
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.356103,-98.426609
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.356103,-98.426609
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 6. *** Multi-Family Garage Sale*** (Saturday Only) (Stillwater Ranch)
 - **Type:** garage
@@ -85,7 +85,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-multi-family-garage-sale/gwrw5d6YuB9yBxaEzDsWQF
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.5551,-98.7442
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5551,-98.7442
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 7. 2.0 Hawaii Bound- Everything Must Go! Sale Ends 10/20. Pick Up 10/22 10-2
 - **Type:** garage
@@ -98,7 +98,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9Z2Z/san-marcos-tx-78666
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 8. Huge Yard Sale! 1365 Timberhill Drive, New Braunfels Thurs-Sun 8Am-3Pm 10-15/18
 - **Type:** garage
@@ -111,7 +111,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196428323
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.773914,-98.076383
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.773914,-98.076383
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 9. Multi Family Garage Sale
 - **Type:** garage
@@ -124,7 +124,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196430279
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.558145,-98.270368
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.558145,-98.270368
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 10. Huge Tool Sale And Many Household Items
 - **Type:** garage
@@ -137,7 +137,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196427711
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.764906,-98.695776
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.764906,-98.695776
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 11. Huge Fall Garage Sale (San Antonio)
 - **Type:** garage
@@ -150,7 +150,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-huge-fall-garage-sale/bSYULh8SXNVzhjk9vG8gV7
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4388,-98.4935
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4388,-98.4935
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 12. INSIDE SALE
 - **Type:** garage
@@ -162,7 +162,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-inside-sale/hEPFeTQohdYDLGQt1PSuaU
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.3291,-98.4363
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.3291,-98.4363
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 13. King William Annual Yard sale (San Aantonio)
 - **Type:** garage
@@ -174,7 +174,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-king-william-annual-yard/2gyNSnUsynrmLdgU8vDu8Q
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4059,-98.5078
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4059,-98.5078
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 14. MULTI FAM YARD SALE 230 & 231 Baird st (San antonio)
 - **Type:** garage
@@ -186,7 +186,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-multi-fam-yard-sale-baird-st/rRdz2zba2qyns33aQqL2gz
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.458558,-98.578446
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.458558,-98.578446
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 15. 667 W Harlan Ave, San Antonio, TX 78214
 - **Type:** garage
@@ -199,7 +199,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9IHT/667-w-harlan-ave-san-antonio-tx-78214
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.372218,-98.513938
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.372218,-98.513938
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 16. Estate sale (San Antonio Tx)
 - **Type:** estate
@@ -211,7 +211,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-estate-sale/1yNPputzVWwVdGxxF7aHb9
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.375331,-98.432783
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.375331,-98.432783
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 17. Estate sale (San Antonio)
 - **Type:** estate
@@ -223,7 +223,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-estate-sale/7VM1NdKZmKXThxQdgBjFcS
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.3309,-98.5054
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.3309,-98.5054
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 18. 1226 Lee Hall, San Antonio, TX 78201
 - **Type:** garage
@@ -236,7 +236,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9I9x/1226-lee-hall-san-antonio-tx-78201
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.47,-98.53
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.47,-98.53
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 19. Retired Shop Owner Garage Sale
 - **Type:** garage
@@ -249,7 +249,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196430603
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.507752,-98.604908
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.507752,-98.604908
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 20. Apple Creek Community Garage Sale Fri-Sun
 - **Type:** garage
@@ -262,7 +262,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9ImU/7826-dashwood-san-antonio-tx-78240
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.53,-98.59
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.53,-98.59
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 21. Moving Sale!
 - **Type:** garage
@@ -275,7 +275,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196416741
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.464764,-98.331392
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.464764,-98.331392
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 22. 9134 Deer Village, San Antonio, TX 78250
 - **Type:** garage
@@ -288,7 +288,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9ITK/9134-deer-village-san-antonio-tx-78250
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.51,-98.67
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.51,-98.67
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 23. 2204 Calate Rdg, San Antonio, TX 78253
 - **Type:** garage
@@ -301,7 +301,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9IPZ/2204-calate-rdg-san-antonio-tx-78253
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.47,-98.78
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.47,-98.78
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 24. 3606 Comal Spgs, Canyon Lake, TX 78133
 - **Type:** garage
@@ -314,7 +314,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9mYn/3606-comal-spgs-canyon-lake-tx-78133
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 25. 242 S Sycamore Ave, New Braunfels, TX 78130
 - **Type:** estate
@@ -327,7 +327,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9ZOz/242-s-sycamore-ave-new-braunfels-tx-78130
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 26. 521 Adler Rd, Boerne, TX 78006
 - **Type:** garage
@@ -340,7 +340,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9ZOZ/521-adler-rd-boerne-tx-78006
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.79,-98.73
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.79,-98.73
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 27. Airbnb Guesthouse sold so house full for sale!
 - **Type:** garage
@@ -353,7 +353,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9ZHP/1525-lakeside-dr-w-canyon-lake-tx-78133
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 28. "YARD SALE" (Olmos park)
 - **Type:** garage
@@ -365,7 +365,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-yard-sale/gPh9if8s2n5cBvCmTCVt25
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.482183,-98.492594
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.482183,-98.492594
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 29. GARAGE SALE (San Antonio)
 - **Type:** garage
@@ -377,7 +377,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-garage-sale/5dKqNeJQvdUjpc6fqKe3sF
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.5407,-98.5521
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5407,-98.5521
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 30. Garage sale - everything is priced to sell
 - **Type:** garage
@@ -390,7 +390,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-garage-sale-everything-is/cjCyMYLk3ekQm36ijMGWLb
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.539546,-98.621103
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.539546,-98.621103
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 31. 3239 Morning Crk, San Antonio, TX 78247
 - **Type:** garage
@@ -403,7 +403,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9IEJ/3239-morning-crk-san-antonio-tx-78247
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.58,-98.42
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.58,-98.42
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 32. ESTATE SALE!!!! New Braunfels
 - **Type:** estate
@@ -415,7 +415,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/new-braunfels-estate-sale-new-braunfels/7PGbHt6o5RTW4dKcAkMsaC
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.693507,-98.131048
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.693507,-98.131048
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 33. 326 E Mayfield Blvd, San Antonio, TX 78214
 - **Type:** garage
@@ -428,7 +428,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9IAn/326-e-mayfield-blvd-san-antonio-tx-78214
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.35,-98.49
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.35,-98.49
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 34. 5 Family Do It Right Garage Sell
 - **Type:** garage
@@ -441,7 +441,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196428173
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.491346,-98.407807
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.491346,-98.407807
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 35. Jolly Old Estate Sale!
 - **Type:** estate
@@ -454,7 +454,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196423971
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.5639218,-98.5343292
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5639218,-98.5343292
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 36. 5-Family Yard Sale
 - **Type:** garage
@@ -465,7 +465,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196427641
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.541801,-98.660271
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.541801,-98.660271
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 37. NEIGHBORHOOD GARAGE SALE! 10/17/26 OVER 50 HOMES PARTICIPATING!
 - **Type:** garage
@@ -476,7 +476,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9s22/28909-paloma-oak-boerne-tx-78006
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.79,-98.73
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.79,-98.73
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 38. King William Neighborhood Garage Sale Weekend
 - **Type:** garage
@@ -487,7 +487,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9Zqx/524-king-william-st-san-antonio-tx-78204
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.41,-98.5
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.41,-98.5
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 39. Converted Building Goldmine
 - **Type:** garage
@@ -496,9 +496,9 @@
 - **Confidence:** 88%
 - **Sources:** YardSaleSearch
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196432343
-- **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.38324,-98.51357
-- **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.38324,-98.51357
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.38278,-98.51281
+- **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.38278,-98.51281
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 40. General Yard Sale
 - **Type:** garage
@@ -509,7 +509,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9IHG/3326-weir-ave-san-antonio-tx-78226
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 41. Yard sale
 - **Type:** garage
@@ -520,7 +520,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9IKY/843-mcneel-rd-san-antonio-tx-78228
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.46,-98.58
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.46,-98.58
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 42. Big Yard Sale
 - **Type:** garage
@@ -531,7 +531,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9ZnL/234-hatcher-ave-san-antonio-tx-78223
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.36,-98.42
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.36,-98.42
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 43. Yard Sale: All Reasonable Offers Accepted
 - **Type:** garage
@@ -542,7 +542,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196434401
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.470547,-98.60746
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.470547,-98.60746
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 44. Garage Sale
 - **Type:** garage
@@ -553,7 +553,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196434227
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.458326,-98.348203
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.458326,-98.348203
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 45. Palm park area 14431 ideal ave
 - **Type:** garage
@@ -564,7 +564,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N99Hw/14431adeal-aveand-richter-rd-corner-home-san-antonio-tx-78223
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.36,-98.42
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.36,-98.42
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 46. Multi Family Garage Sale
 - **Type:** garage
@@ -575,7 +575,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N99gZ/3650-ridge-cluster-st-san-antonio-tx-78247
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.58,-98.42
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.58,-98.42
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 47. Misc items
 - **Type:** garage
@@ -586,7 +586,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9IdZ/1802-shoal-run-st-san-antonio-tx-78232
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.59,-98.47
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.59,-98.47
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 48. CHRISTMAS AND. HALLOWEEN SALE
 - **Type:** garage
@@ -597,7 +597,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9zAN/5840-royal-rdg-san-antonio-tx-78239
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.52,-98.36
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.52,-98.36
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 49. Star Trek, Christmas, Halloween and much more
 - **Type:** garage
@@ -608,7 +608,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9Imz/5841-royal-rdg-san-antonio-tx-78239
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.52,-98.36
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.52,-98.36
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 50. Preston Hollow Neighborhood Garage Sale
 - **Type:** garage
@@ -619,7 +619,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9ZpL/15237-preston-pass-dr-san-antonio-tx-78247
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.58,-98.42
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.58,-98.42
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 51. Women & Men’s Clothes & Other Stuff
 - **Type:** garage
@@ -630,7 +630,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9Zet/6118-rolling-forest-dr-san-antonio-tx-78250
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.51,-98.67
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.51,-98.67
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 52. Multi Family Yard Sale
 - **Type:** garage
@@ -641,7 +641,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9IBx/15115-elm-park-san-antonio-tx-78247
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.58,-98.42
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.58,-98.42
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 53. Multi family sale - kid stuff galore
 - **Type:** garage
@@ -652,7 +652,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9IMJ/13203-lost-lake-dr-san-antonio-tx-78249
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.57,-98.62
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.57,-98.62
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 54. Garage Sale Tools Galore
 - **Type:** garage
@@ -663,7 +663,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196434397
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.61180802,-98.51199206
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.61180802,-98.51199206
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 55. Retama Springs Neighborhood Garage Sale – Selma 78154 – Sat & Sun
 - **Type:** garage
@@ -674,7 +674,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9IIK/retama-springs-selma-tx-78154
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 56. Large Family Garage Sale
 - **Type:** garage
@@ -685,7 +685,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9IXt/23239-cardigan-chase-san-antonio-tx-78260
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.7,-98.48
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.7,-98.48
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 57. Household Moving Sale | Furniture, Vintage Finds & More
 - **Type:** garage
@@ -696,7 +696,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196434271
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.439042,-98.801038
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.439042,-98.801038
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 58. Big Community Yard sale
 - **Type:** garage
@@ -707,7 +707,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9sVj/244-bee-caves-cv-cibolo-tx-78108
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 59. Community yard sale kinder ranch
 - **Type:** garage
@@ -718,7 +718,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9Iec/29018-talder-way-san-antonio-tx-78260
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.7,-98.48
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.7,-98.48
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 60. Garage Sale
 - **Type:** garage
@@ -729,7 +729,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9ZCL/645-mourning-dove-dr-mc-queeney-tx-78123
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 61. Hill Country Yard Sale
 - **Type:** garage
@@ -740,7 +740,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9ZbJ/212-majestic-oaks-dr-boerne-tx-78006
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.79,-98.73
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.79,-98.73
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 62. Converted Building Goldmine
 - **Type:** estate
@@ -750,9 +750,9 @@
 - **Confidence:** 92%
 - **Sources:** EstateSales.org
 - **Original listing:** https://estatesales.org/estate-sales/tx/san-antonio/78225/converted-building-goldmine-2468683
-- **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.38130183190801,-98.51539796593815
-- **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.38130183190801,-98.51539796593815
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.381238950125763,-98.51133611517112
+- **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.381238950125763,-98.51133611517112
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 63. HUGE ESTATE SALE SAT 10/17 8-5
 - **Type:** estate
@@ -764,7 +764,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/schertz-huge-estate-sale-sat/9tx4K3PhgHXgA51BBTxEXF
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.5907,-98.3188
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5907,-98.3188
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 64. Moving Garage Sale
 - **Type:** garage
@@ -776,7 +776,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-moving-garage-sale/32JE5f2A79K8iTabwXPBzy
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4551,-98.5032
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4551,-98.5032
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 65. Moving! Everything must go!
 - **Type:** garage
@@ -788,7 +788,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/saint-hedwig-moving-everything-must-go/xwDSHDEp4P3VXuw5a6K7f5
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.481,-98.2158
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.481,-98.2158
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ### 66. Alamo Ranch Community Yard Sale
 - **Type:** garage
@@ -800,7 +800,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-alamo-ranch-community-yard/bwSmEe3Po7Ch88qsKBAyP2
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.490533,-98.725029
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.490533,-98.725029
-- **Verified at:** 2026-10-17T03:33:49-05:00
+- **Verified at:** 2026-10-17T05:13:01-05:00
 
 ## 3. CHICA PICKS
 
