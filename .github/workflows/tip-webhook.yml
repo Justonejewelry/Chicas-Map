@@ -35,7 +35,7 @@ jobs:
 
       - name: Resolve payload
         id: payload
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           script: |
             let tip;
@@ -67,7 +67,7 @@ jobs:
 
       - name: Pending queue (tip_submit)
         if: steps.payload.outputs.action == 'tip_submit'
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           script: |
             const fs = require('fs');
@@ -118,7 +118,7 @@ jobs:
 
       - name: Publish (tip_approve)
         if: steps.payload.outputs.action == 'tip_approve'
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           script: |
             const fs = require('fs');
