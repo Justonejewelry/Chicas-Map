@@ -17,7 +17,7 @@
 
 ## Link target
 QR should open the public map:
-https://justonejewelry.github.io/Chicas-Map/
+https://chicasmap.com/
 
 ## ffmpeg example
 ```bash
