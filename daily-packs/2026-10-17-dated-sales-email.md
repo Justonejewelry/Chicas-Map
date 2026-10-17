@@ -23,7 +23,6 @@ Map only shows pins whose listed dates include today.
 - INSIDE SALE — 238 Coney near Goliad, San Antonio, TX [2026-10-15 → 2026-10-17]
 - King William Annual Yard sale — 128 & 132 City St near Arsenal, San Antonio, TX [2026-10-15 → 2026-10-17]
 - MULTI FAM YARD SALE 230 & 231 Baird st — 231 Baird Street near Roanoke, San Antonio, TX [2026-10-15 → 2026-10-17]
-- VIKINGS, ANTIQUE CLOCKS, A LARGE BARN & ROGER CREAGER! — San Antonio, TX [2026-10-15 → 2026-10-17]
 - Multi family yardsale — 667 W Harlan Ave, San Antonio, TX 78214 [2026-10-15 → 2026-10-18]
 - Estate sale — 500 block Prestwick Blvd near Pecan Valley Dr, San Antonio, TX [2026-10-17 → 2026-10-19]
 - Estate sale — 11970 cink dr, San Antonio, TX [2026-10-17 → 2026-10-19]
@@ -31,7 +30,7 @@ Map only shows pins whose listed dates include today.
 - Yard sale — 1226 Lee Hall, San Antonio, TX 78201 [2026-10-16 → 2026-10-17]
 - Retired Shop Owner Garage Sale — 6230 Broadmeadow, San Antonio, TX 78240 [2026-10-16 → 2026-10-17]
 - Apple Creek Community Garage Sale Fri-Sun — 7826 Dashwood, San Antonio, TX 78240 [2026-10-16 → 2026-10-18]
-- Moving Sale! — 3830 Maiden Way, Converse, TX 78109 [2026-10-16 → 2026-10-17]
+- FREE SALE! EVERYTHING FREE! TAKE FROM SIDEWALK! — 3830 Maiden Way, Converse, TX 78109 [2026-10-17 → 2026-10-18]
 - Multi family garage sale — 9134 Deer Village, San Antonio, TX 78250 [2026-10-16 → 2026-10-17]
 - Garage Sale — 2204 Calate Rdg, San Antonio, TX 78253 [2026-10-16 → 2026-10-17]
 - Garage Sale ! Oct. 16-18th — 3606 Comal Spgs, Canyon Lake, TX 78133 [2026-10-16 → 2026-10-18]
@@ -87,6 +86,15 @@ Map only shows pins whose listed dates include today.
 - Kensington Ranch Community Yard Sale — 3533 Irish Creek Rd, Schertz, TX 78154 [2026-10-17 → 2026-10-18]
 - 3 house yard sale. Low Oak St 78232 — Low Oak St, San Antonio, TX [2026-10-17 → 2026-10-19]
 - 4 family yard sale — 400 W CR 5719, San Antonio, TX [2026-10-17 → 2026-10-19]
+- Garage sale — 539 Schmeltzer Ln, San Antonio, TX 78213 [2026-10-17 → 2026-10-18]
+- Yard sale — 3211 Sagehill, San Antonio, TX 78230 [2026-10-17 → 2026-10-17]
+- Yard Sale - Tools-Collectibles-Housegoods-Baked Goods 10/17 & 10/18 - 78251 — 9234 Wind Talker, San Antonio, TX 78251 [2026-10-17 → 2026-10-17]
+- Yard Sale — 8031 Hill Trails St, San Antonio, TX 78250 [2026-10-17 → 2026-10-17]
+- Yard sale — 7734 Coffee Ml, San Antonio, TX 78252 [2026-10-17 → 2026-10-17]
+- Garage Sale — 11614 Tabernas Ln, San Antonio, TX 78253 [2026-10-17 → 2026-10-17]
+- Garage Sale — 210 Ragsdale Way, New Braunfels, TX 78130 [2026-10-17 → 2026-10-17]
+- Estate Sale with unique furniture & appliances — 9532 Griffith Run, San Antonio, TX [2026-10-17 → 2026-10-19]
+- Moving boxes — Evers, San Antonio, TX [2026-10-17 → 2026-10-19]
 
 ## COMING UP (remembered, not on today's map)
 
@@ -98,6 +106,7 @@ Map only shows pins whose listed dates include today.
 
 ## ONLINE / UNPLOTTABLE
 
+- Rustnglow — San Antonio, TX [2026-10-15 → 2026-10-17]
 - Oak Creek Finds - Bidding ENDS 10/18/26 @ 7 PM! — San Antonio, TX 78251
 - Mission of Love: A Veteran's Home Full Of Modern Treasures - Bidding ends 10/18 — Converse, TX 78109
 - Curated Across Continents Estate Sale in Boerne, TX. Bidding Ends 10/21 — Boerne, TX 78006
