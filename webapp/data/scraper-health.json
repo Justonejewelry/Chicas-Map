@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-18T05:15:12-05:00",
+  "generated_at": "2026-10-18T09:21:53-05:00",
   "overall": "critical",
   "primary_failures": [
     "estatesales_org",
@@ -51,10 +51,10 @@
     }
   ],
   "json_source_counts": {
-    "craigslist": 54,
+    "craigslist": 59,
     "estatesales.org": 7,
-    "garagesalefinder": 22,
-    "yardsalesearch": 17,
+    "garagesalefinder": 21,
+    "yardsalesearch": 20,
     "estatesales.net": 2,
     "rbr official my maps": 1,
     "aggregators": 2

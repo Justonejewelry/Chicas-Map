@@ -21,7 +21,7 @@ Map only shows pins whose listed dates include today.
 - Free Sale! Everything Free! Take From Sidewalk! — 3830 Maiden Way, Converse, TX 78109 [2026-10-17 → 2026-10-18]
 - Garage Sale ! Oct. 16-18th — 3606 Comal Spgs, Canyon Lake, TX 78133 [2026-10-16 → 2026-10-18]
 - Estate Sale — 242 S Sycamore Ave, New Braunfels, TX 78130 [2026-10-16 → 2026-10-18]
-- "YARD SALE" — 124 thorain boulevard near McCullough, San Antonio, TX [2026-10-17 → 2026-10-19]
+- "YARD SALE" — 124 thorain boulevard near McCullough, San Antonio, TX [2026-10-18 → 2026-10-20]
 - Garage Sale Saturday, October 17th — Santa Anita Rd near Derby Dr, San Antonio, TX [2026-10-16 → 2026-10-18]
 - Garage sale - everything is priced to sell — 10413 Country Breeze, San Antonio, TX [2026-10-18 → 2026-10-20]
 - ESTATE SALE!!!! New Braunfels — 242 S Sycamore Ave near Cross st, San Antonio, TX [2026-10-18 → 2026-10-20]
@@ -32,7 +32,7 @@ Map only shows pins whose listed dates include today.
 - 50% Off Sunday! Jolly Old Estate Sale! — 13611 Stoney Hill, San Antonio, TX 78231 [2026-10-17 → 2026-10-18] | 2026-10-17 9:00 am-3:00 pm; 2026-10-18 9:00 am-3:00 pm
 - Converted Building Goldmine — San Antonio, TX 78225 [2026-10-17 → 2026-10-19]
 - General Yard Sale — 3326 Weir Ave, San Antonio, TX 78226 [2026-10-17 → 2026-10-18]
-- Garage Sale — 7123 Quarter Moon, Converse, TX 78109 [2026-10-17 → 2026-10-18]
+- Garage Sale — 7123 Quarter Moon, Converse, TX 78109 [2026-10-18 → 2026-10-18]
 - CHRISTMAS AND. HALLOWEEN SALE — 5840 Royal Rdg, San Antonio, TX 78239 [2026-10-17 → 2026-10-18]
 - Star Trek, Christmas, Halloween And Much More — 5841 Royal Rdg, San Antonio, TX 78239 [2026-10-17 → 2026-10-18]
 - Preston Hollow Neighborhood Garage Sale — 15237 Preston Pass Dr, San Antonio, TX 78247 [2026-10-17 → 2026-10-18]
