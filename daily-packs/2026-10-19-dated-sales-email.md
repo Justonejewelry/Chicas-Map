@@ -40,6 +40,7 @@ Map only shows pins whose listed dates include today.
 - RIDGE AT  CAROLINA CROSSING GARAGE SALE SCHERTZ Sat Oct 24th — Savannah near Chapel Hill, San Antonio, TX [2026-10-19 → 2026-10-21]
 - Yard-sale Southside — Bonner Ave, San Antonio, TX [2026-10-19 → 2026-10-21]
 - 50% Off and Basket deals!  Clothes, shoes and decor, Oh My! — San Antonio, TX [2026-10-17 → 2026-10-19]
+- Fantastic deals for cash — Austin Hwy, San Antonio, TX [2026-10-19 → 2026-10-21]
 
 ## COMING UP (remembered, not on today's map)
 
