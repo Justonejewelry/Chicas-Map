@@ -51,31 +51,6 @@
       "external_id": "cl-brushycreekfallx79jc3nuqfsg7kd8xdgvvf"
     },
     {
-      "address": "Leander, TX 78641",
-      "dates": "2026-10-11 – 2026-10-18",
-      "date_from": "2026-10-11",
-      "date_to": "2026-10-18",
-      "end_date": "2026-10-18",
-      "title": "Central and South American Folk Art Collection - Bidding Closes 10/18 - Pickup 10/20",
-      "details": "Caring Transitions of North Austin and Cedar Park. Welcome Home to CTBids! We put together an excellent selection of items for you! Start exploring and discover the deals for yourself! Bidding on ALL items starts at $1! An exceptional collection! Mexican handcrafted terracotta sculpture and pott...",
-      "source": "EstateSales.org",
-      "url": "https://estatesales.org/estate-sales/tx/leander/78641/central-and-south-american-folk-2467826",
-      "photos": 0,
-      "type": "estate",
-      "confidence": 0.85,
-      "status": "verified",
-      "lat": 30.5788055,
-      "lon": -97.8530686,
-      "geocode": "source",
-      "company": "Caring Transitions of North Austin and Cedar Park",
-      "in_person": false,
-      "external_id": "eso-2467826",
-      "categories": [
-        "estate-sale",
-        "online-auction"
-      ]
-    },
-    {
       "address": "Northwest Austin, Austin, TX 78750",
       "dates": "2026-11-04 – 2026-11-08",
       "date_from": "2026-11-04",
@@ -124,24 +99,6 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "cl-valleestatesaless3crdzllbhjrkez18tjju"
-    },
-    {
-      "address": "3606 Comal Spgs, Canyon Lake, TX 78133",
-      "dates": "Fri Oct 16 – Sun Oct 18",
-      "date_from": "10/16/2026",
-      "date_to": "10/18/2026",
-      "end_date": "2026-10-18",
-      "title": "Garage Sale ! Oct. 16-18th",
-      "details": "",
-      "source": "GarageSaleFinder",
-      "url": "https://garagesalefinder.com/s/N9mYn/3606-comal-spgs-canyon-lake-tx-78133",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.65,
-      "status": "verified",
-      "lat": 30.2672,
-      "lon": -97.7431,
-      "geocode": "city-center"
     },
     {
       "address": "1314 E Oltorf St. near Schriber St., Austin, TX",
@@ -210,28 +167,6 @@
       "geocode": "city-center"
     },
     {
-      "address": "1225 Darless Dr, Cedar Park, TX 78613",
-      "dates": "2026-10-17 – 2026-10-18",
-      "date_from": "2026-10-17",
-      "date_to": "2026-10-18",
-      "end_date": "2026-10-18",
-      "title": "Moving Out Of State",
-      "details": "",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196428101",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.88,
-      "status": "verified",
-      "lat": 30.519147,
-      "lon": -97.848889,
-      "geocode": "source",
-      "external_id": "yss-1225darlessdrcedarparktx78613-2026-10-17",
-      "categories": [
-        "garage-sale"
-      ]
-    },
-    {
       "address": "5 Kern Ramble St. near French Place, Austin, TX",
       "dates": "2026-10-18 – 2026-10-20",
       "date_from": "2026-10-18",
@@ -254,30 +189,6 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "cl-amblegaragesalemhv1vfn3uhpz8zp18zgq7c"
-    },
-    {
-      "address": "4520 Destinys Gate Dr, Austin, TX",
-      "dates": "2026-10-17 – 2026-10-18",
-      "date_from": "2026-10-17",
-      "date_to": "2026-10-18",
-      "end_date": "2026-10-18",
-      "hours": null,
-      "title": "5,000+ Vinyl Record Garage Sale 2-Day Sale Oct 17–18",
-      "details": "QR Code Link to This Post Two-day record sale in north Austin! Saturday Oct 17 &amp; Sunday Oct 18, 8am–1pm at 4520 Destinys Gate Dr, Austin TX 78727. Over 5,000 vinyl records from several collections — 52 U-Haul small boxes, all individually priced. No presales — there are just way too many and they aren't sorted. Custom-built record cabinets and storage also for sale. A fully restored Technics S",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/austin-5000-vinyl-record-garage-sale/4cnKeJpF1DAtrXLNoQvs4p",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.430057,
-      "lon": -97.717948,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-ecordgaragesale4cnkejpf1datrxlnoqvs4p"
     },
     {
       "address": "106 E Highway 79, Austin, TX",
@@ -304,55 +215,6 @@
       "external_id": "cl-tagemarketspotsfhab7utjwepuuw5jcarshc"
     },
     {
-      "address": "Austin, TX",
-      "dates": "2026-10-17 – 2026-10-18",
-      "date_from": "2026-10-17",
-      "date_to": "2026-10-18",
-      "end_date": "2026-10-18",
-      "title": "50% Off Sunday! Jolly Old Estate Sale",
-      "details": "Estate Sale",
-      "source": "EstateSales.net",
-      "url": "https://www.estatesales.net/TX/San Antonio/78231/5112837",
-      "photos": 0,
-      "type": "estate",
-      "categories": [
-        "estate-sale"
-      ],
-      "confidence": 0.65,
-      "status": "verified",
-      "lat": 30.2672,
-      "lon": -97.7431,
-      "geocode": "city-center",
-      "company": null
-    },
-    {
-      "address": "2013 Verbena Dr, Austin, TX 78750",
-      "dates": "2026-10-15 – 2026-10-18",
-      "date_from": "2026-10-15",
-      "date_to": "2026-10-18",
-      "end_date": "2026-10-18",
-      "title": "Artifacts Of The World",
-      "details": "",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196428327",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.9,
-      "status": "verified",
-      "lat": 30.4549281,
-      "lon": -97.8094473,
-      "geocode": "source",
-      "hours": "2026-10-15 1:00 pm-3:00 pm; 2026-10-16 10:00 am-3:00 pm; 2026-10-17 9:00 am-3:00 pm; 2026-10-18 9:00 am-3:00 pm",
-      "company": "Estate Sales America",
-      "in_person": true,
-      "external_id": "yss-2013verbenadraustintx78750-2026-10-15",
-      "categories": [
-        "estate-sale",
-        "in-person",
-        "garage-sale"
-      ]
-    },
-    {
       "address": "San Marcos, TX 78666",
       "dates": "Tue Oct 13 – Tue Oct 20",
       "date_from": "10/13/2026",
@@ -364,42 +226,6 @@
       "url": "https://garagesalefinder.com/s/N9Z2Z/san-marcos-tx-78666",
       "photos": 0,
       "type": "garage",
-      "confidence": 0.65,
-      "status": "verified",
-      "lat": 30.2672,
-      "lon": -97.7431,
-      "geocode": "city-center"
-    },
-    {
-      "address": "1365 Timberhill Dr, New Braunfels, TX 78132",
-      "dates": "Thu Oct 15 – Sun Oct 18",
-      "date_from": "10/15/2026",
-      "date_to": "10/18/2026",
-      "end_date": "2026-10-18",
-      "title": "Huge Yard Sale! 1365 Timberhill Drive, New Braunfels Thurs-Sun 8am-3pm 10-15/18",
-      "details": "",
-      "source": "GarageSaleFinder",
-      "url": "https://garagesalefinder.com/s/N9ZTm/1365-timberhill-dr-new-braunfels-tx-78132",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.65,
-      "status": "verified",
-      "lat": 30.2672,
-      "lon": -97.7431,
-      "geocode": "city-center"
-    },
-    {
-      "address": "242 S Sycamore Ave, New Braunfels, TX 78130",
-      "dates": "Fri Oct 16 – Sun Oct 18",
-      "date_from": "10/16/2026",
-      "date_to": "10/18/2026",
-      "end_date": "2026-10-18",
-      "title": "Estate Sale",
-      "details": "",
-      "source": "GarageSaleFinder",
-      "url": "https://garagesalefinder.com/s/N9ZOz/242-s-sycamore-ave-new-braunfels-tx-78130",
-      "photos": 0,
-      "type": "estate",
       "confidence": 0.65,
       "status": "verified",
       "lat": 30.2672,
@@ -429,30 +255,6 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "cl-arageestatesalenhfer7ro3aqssaxupaq3uk"
-    },
-    {
-      "address": "1960 PLEASANT HILL RD, Austin, TX",
-      "dates": "2026-10-17 – 2026-10-18",
-      "date_from": "2026-10-17",
-      "date_to": "2026-10-18",
-      "end_date": "2026-10-18",
-      "hours": null,
-      "title": "Bryson Community Wide Garage Sale",
-      "details": "QR Code Link to This Post Bryson's Fall Community-Wide Garage Sale October 17 &amp; 18 8:00 AM - 1:00 PM Join us for the Bryson Community-Wide Garage Sale on Saturday, October 17, and Sunday, October 18, from 8:00 AM - 1:00 PM. Drive through the community and find a plethora of sales. Who knows, you may find your next favorite thing at this sale! Google Map (Copy and paste in your browser) - https",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/leander-bryson-community-wide-garage/8LKpbQU1DvEdeM9vdx11Gb",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.609431,
-      "lon": -97.854409,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-unitywidegarage8lkpbqu1dvedem9vdx11gb"
     },
     {
       "address": "301 Leanne Dr. near Wildwood Dr, Austin, TX",
@@ -528,30 +330,6 @@
       "external_id": "cl-hillestatesale5u4fpg3gegkt1muk4kgzen"
     },
     {
-      "address": "3704 Lunet Ring Way, Austin, TX",
-      "dates": "2026-10-16 – 2026-10-18",
-      "date_from": "2026-10-16",
-      "date_to": "2026-10-18",
-      "end_date": "2026-10-18",
-      "hours": null,
-      "title": "Avalon Community Garage Sale",
-      "details": "QR Code Link to This Post 3 twin beds, one with mattress, Barbie doll house, bookshelves, clothes, shoes, stuffed animals and many more items.",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/pflugerville-avalon-community-garage/8aNqzvnHmsMyv2epDcP3Y9",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.4421,
-      "lon": -97.6299,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-communitygarage8anqzvnhmsmyv2epdcp3y9"
-    },
-    {
       "address": "Salado, TX 76571",
       "dates": "Thu Oct 15 – Thu Oct 22",
       "date_from": "10/15/2026",
@@ -568,28 +346,6 @@
       "lat": 30.2672,
       "lon": -97.7431,
       "geocode": "city-center"
-    },
-    {
-      "address": "510 Luther Dr, Georgetown, TX 78628",
-      "dates": "2026-10-16 – 2026-10-18",
-      "date_from": "2026-10-16",
-      "date_to": "2026-10-18",
-      "end_date": "2026-10-18",
-      "title": "Community Garage Sales On October 24, 2026 - Vendors Wanted",
-      "details": "",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196431053",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.88,
-      "status": "verified",
-      "lat": 30.616277,
-      "lon": -97.68995,
-      "geocode": "source",
-      "external_id": "yss-510lutherdrgeorgetowntx78628-2026-10-16",
-      "categories": [
-        "garage-sale"
-      ]
     },
     {
       "address": "New Braunfels, TX 78130",
@@ -729,50 +485,6 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "cl-comicstoysvinyln2mw4gqnhzh1lct4bd1upe"
-    },
-    {
-      "address": "5705 Avenue C, Austin, TX 78752",
-      "dates": "2026-10-17 – 2026-10-18",
-      "date_from": "2026-10-17",
-      "date_to": "2026-10-18",
-      "end_date": "2026-10-18",
-      "title": "Gigantic Ten Family Yard Sale",
-      "details": "",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196433937",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.88,
-      "status": "verified",
-      "lat": 30.323563,
-      "lon": -97.720819,
-      "geocode": "source",
-      "external_id": "yss-5705avenuecaustintx78752-2026-10-17",
-      "categories": [
-        "garage-sale"
-      ]
-    },
-    {
-      "address": "1736 Cricket Hollow Dr, Austin, TX 78758",
-      "dates": "2026-10-17 – 2026-10-18",
-      "date_from": "2026-10-17",
-      "date_to": "2026-10-18",
-      "end_date": "2026-10-18",
-      "title": "Moving Garage Sale!",
-      "details": "",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196433985",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.88,
-      "status": "verified",
-      "lat": 30.387783,
-      "lon": -97.70358,
-      "geocode": "source",
-      "external_id": "yss-1736crickethollowdraustintx78758-2026-10-17",
-      "categories": [
-        "garage-sale"
-      ]
     },
     {
       "address": "hidden, Austin, TX 78732",
@@ -923,71 +635,6 @@
       "external_id": "cl-dcedarparksalefwvxrk77zkcath5yihj63e"
     },
     {
-      "address": "13213 Forest Sage St, Manor, TX 78653",
-      "dates": "Sun Oct 18 – Sun Oct 18",
-      "date_from": "10/18/2026",
-      "date_to": "10/18/2026",
-      "end_date": "2026-10-18",
-      "title": "Garage Sale..Lots of stuff (13213 forest sage st)",
-      "details": "",
-      "source": "GarageSaleFinder",
-      "url": "https://garagesalefinder.com/s/N99Hn/13213-forest-sage-st-manor-tx-78653",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.85,
-      "status": "verified",
-      "lat": 30.3,
-      "lon": -97.52,
-      "geocode": "zip-centroid"
-    },
-    {
-      "address": "3316 Taylor Falls Dr, Pflugerville, TX 78660",
-      "dates": "2026-10-18 – 2026-10-18",
-      "date_from": "2026-10-18",
-      "date_to": "2026-10-18",
-      "end_date": "2026-10-18",
-      "title": "Sunday October 18Th 8-4",
-      "details": "",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196435629",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.88,
-      "status": "verified",
-      "lat": 30.456709,
-      "lon": -97.574366,
-      "geocode": "source",
-      "external_id": "yss-3316taylorfallsdrpflugervilletx78660-2026-10-18",
-      "categories": [
-        "garage-sale"
-      ]
-    },
-    {
-      "address": "3316 Taylor Falls Dr, Austin, TX",
-      "dates": "2026-10-18 – 2026-10-18",
-      "date_from": "2026-10-18",
-      "date_to": "2026-10-18",
-      "end_date": "2026-10-18",
-      "hours": null,
-      "title": "MOVING SALE!!! Sunday October 18",
-      "details": "QR Code Link to This Post 3316 Taylor falls dive Pflugerville 78660",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/pflugerville-moving-sale-sunday-october/tT3ch7q9UEyALFY7WF2hzi",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale",
-        "moving-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.4421,
-      "lon": -97.6299,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-lesundayoctobertt3ch7q9ueyalfy7wf2hzi"
-    },
-    {
       "address": "Broadmoor Drive near Cameron Road, Austin, TX",
       "dates": "2026-10-18 – 2026-10-20",
       "date_from": "2026-10-18",
@@ -1012,30 +659,6 @@
       "external_id": "cl-amilygaragesaleqm4m83ebrrpjlrftb69jjc"
     },
     {
-      "address": "9680 Old Lockhart road near Slaughter, Austin, TX",
-      "dates": "2026-10-18 – 2026-10-18",
-      "date_from": "2026-10-18",
-      "date_to": "2026-10-18",
-      "end_date": "2026-10-18",
-      "hours": null,
-      "title": "Big Boy Toys, Golf, Fishing and Lawn equipment",
-      "details": "QR Code Link to This Post The sale is on Sunday Oct. 18 at 9680 Old Lockhart Road. There will be 15 salt and freshwater fishing rods and reels, tackle boxes. 20 bags of golf equipment for men, women and kids' right-handed and left-handed sets. Self-propelled and basic push mowers, Echo weed eater and hedge trimmer. I am having trouble downloading pictures, all this stuff is in great condition no j",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/austin-big-boy-toys-golf-fishing-and/wKbkibKxVBVP9eAXSJUdPx",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.149853,
-      "lon": -97.766489,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-golffishingandwkbkibkxvbvp9eaxsjudpx"
-    },
-    {
       "address": "3450 Flowstone Ln near Blue ridge Drive, Austin, TX",
       "dates": "2026-10-18 – 2026-10-20",
       "date_from": "2026-10-18",
@@ -1058,30 +681,6 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "cl-salewhitestonemaarzk15fw1gvwckxh5ld9"
-    },
-    {
-      "address": "8152 Tockington Way, Austin, TX",
-      "dates": "2026-10-18 – 2026-10-18",
-      "date_from": "2026-10-18",
-      "date_to": "2026-10-18",
-      "end_date": "2026-10-18",
-      "hours": null,
-      "title": "Donate-What-You-Can Garage Sale- Oct 18 @ 78748",
-      "details": "QR Code Link to This Post GOOD FINDS. GOOD CAUSE. YOU PICK THE PRICE! We’re turning our garage sale into something a little more meaningful, and we’d love for you to be part of it! As I navigate cancer treatment (and the not-so-fun medical bills that come with it 😅), we’re hosting a Donate-What-You-Can Garage Sale to help raise funds for my medical expenses. Here’s the fun part: Most items won’t h",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/austin-donate-what-you-can-garage-sale/nM9Z4vFjrrPLdJZWcbQdAG",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.183314,
-      "lon": -97.798587,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-ucangaragesalenm9z4vfjrrpldjzwcbqdag"
     }
   ],
   "hot_zones": [
@@ -1100,9 +699,9 @@
     "gsalr.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 47,
+  "total_locations": 29,
   "status": "live",
-  "date": "2026-10-18",
-  "last_refresh": "2026-10-18T09:32:55-05:00",
+  "date": "2026-10-19",
+  "last_refresh": "2026-10-19T03:07:55-05:00",
   "permits": []
 }
