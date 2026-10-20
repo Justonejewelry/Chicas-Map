@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-20T04:10:33-05:00",
+  "generated_at": "2026-10-20T10:35:31-05:00",
   "overall": "critical",
   "primary_failures": [
     "estatesales_org",
@@ -51,13 +51,13 @@
     }
   ],
   "json_source_counts": {
-    "craigslist": 45,
+    "craigslist": 51,
     "estatesales.org": 3,
     "garagesalefinder": 10,
-    "yardsalesearch": 15,
-    "rbr official my maps": 1,
-    "estatesales.net": 1,
-    "aggregators": 2
+    "yardsalesearch": 21,
+    "estatesales.net": 2,
+    "aggregators": 2,
+    "rbr official my maps": 1
   },
   "notes": "Primary free sources: estatesales_org, yardsalesearch, craigslist. Secondary: gsalr, garagesalefinder, permits, estatesales_net. Scoring: 0 primary problems=healthy, 1=degraded, 2+=critical. merge added=0 is treated as ok (dedupe), not zero. Soft-fail workflow continues; this report only alerts. Apify removed 2026-08-22."
 }

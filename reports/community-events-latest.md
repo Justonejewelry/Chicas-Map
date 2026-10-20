@@ -1,9 +1,9 @@
 # Chica's Map -- Community Events Swarm v2.7
 
-Run: 2026-10-20T04:11:31-05:00
+Run: 2026-10-20T10:36:32-05:00
 Sources scanned: **48**
-Candidates discovered: **886**
-With parsed dates: **729**
+Candidates discovered: **888**
+With parsed dates: **730**
 With street/venue address: **502**
 Promoted this run: **0**
 Kept from prior feed: **282**
@@ -231,7 +231,7 @@ _None this run._
 ## Source Errors
 - San Antonio River Authority Events: HTTP 403 Forbidden
 - Windcrest Calendar: HTTP 403 Forbidden
-- SanAntonio.com Events: HTTP 400 Bad Request
+- SanAntonio.com Events: HTTP 521 <none>
 
 ---
 Notes: v2.7 caps events at 90 days. Backbone is official/public + schools + libraries, then neighborhoods. CivicEngage ICS, Trumba ICS, Tribe ICS, Thrillshare ICS, RSS. 403 retries with a browser UA. No Google Calendar.

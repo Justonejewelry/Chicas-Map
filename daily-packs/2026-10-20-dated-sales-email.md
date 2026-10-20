@@ -30,8 +30,12 @@ Map only shows pins whose listed dates include today.
 - Community Wide Garage Sale - New Braunfels, TX — Morningside Drive near Rueckle Road, San Antonio, TX [2026-10-20 → 2026-10-22]
 - HUGE VARIETY!  Saturday 10/24 ONLY!  9:00-1:00 — 12431 Paige Trail near Blazing Trail, San Antonio, TX [2026-10-20 → 2026-10-22]
 - Treasure Island — San Antonio, TX [2026-10-18 → 2026-10-20]
+- NEIGHBORHOOD GARAGE SALES SATURDAY !!!  Ventas de garaje SÁBADO! — Legend Trail near Moonlit Glade, San Antonio, TX [2026-10-20 → 2026-10-22]
 
 ## COMING UP (remembered, not on today's map)
+
+### Starts 2026-10-22
+- Garage Sale — 4718 Hershey Dr, San Antonio, TX 78220 [2026-10-22 → 2026-10-23]
 
 ### Starts 2026-10-23
 - ‼️Garage Sale‼️ — 1825 Lee Hall, San Antonio, TX 78201 [2026-10-23 → 2026-10-23]
@@ -41,10 +45,11 @@ Map only shows pins whose listed dates include today.
 - Plumbing, Electrical & Misc — 934 W Mariposa Dr, San Antonio, TX 78201 [2026-10-24 → 2026-10-25]
 - Yard Sale — 570 Radiance Dr, San Antonio, TX 78218 [2026-10-24 → 2026-10-25]
 - 🏡🚨 Big Neighborhood Garage Sale – Saturday, October 24Th & Sunday, October 25Th — 7123 Quarter Moon, Converse, TX 78109 [2026-10-24 → 2026-10-25]
+- Indian Hollow Apartments Community Garage Sale — 12701 West Ave, San Antonio, TX 78216 [2026-10-24 → 2026-10-24]
 - Walnut Pass (Leon Springs) Community Garage Sale - Saturday, October 24, 8Am-1Pm — Walnut Pass, San Antonio, TX 78255 [2026-10-24 → 2026-10-24]
 - Landmark Pointe Community Garage Sale — 229 Landmark Park, Cibolo, TX 78108 [2026-10-24 → 2026-10-24]
 - Great Prices at Saturday Moving Sale in Davis Ranch-Everything Goes! — Coppola near Davis Ranch Parkway, San Antonio, TX [2026-10-24 → 2026-10-24]
-- Walnut Pass (Leon Springs) Community Garage Sale - Saturday, Oct. 24 — Walnut Pass near Cross Mountain Trail, San Antonio, TX [2026-10-24 → 2026-10-24]
+- Indian Hollow Apartments Community Garage Sale — 12701 West Avenue near Wurzbach Pkwy, San Antonio, TX [2026-10-24 → 2026-10-24] | 9:00 AM – 1:00 PM
 
 ## ONLINE / UNPLOTTABLE
 
