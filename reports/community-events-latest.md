@@ -1,104 +1,28 @@
 # Chica's Map -- Community Events Swarm v2.7
 
-Run: 2026-10-20T03:11:00-05:00
+Run: 2026-10-20T04:11:31-05:00
 Sources scanned: **48**
-Candidates discovered: **912**
-With parsed dates: **755**
-With street/venue address: **528**
-Promoted this run: **26**
-Kept from prior feed: **256**
-Purged from prior feed: **27**
+Candidates discovered: **886**
+With parsed dates: **729**
+With street/venue address: **502**
+Promoted this run: **0**
+Kept from prior feed: **282**
+Purged from prior feed: **0**
 Source errors: **3**
 Rejected by Sentinel: **299**
 
 ## Promoted (passed Events Sentinel)
-- **Heartfulness Meditation** -- 2026-10-24 -- 13330 Kyle Seale Pkwy -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D203689703
-- **Friends of the Landa Library Book Sale** -- 2026-10-24 -- 233 Bushnell San Antonio, TX 78212 -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D205921179
-- **Introductory ESL** -- 2026-10-24 -- 515 Castroville Rd -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D210315540
-- **Ladies' Choice Book Club** -- 2026-10-24 -- 8700 Mystic Park San Antonio, TX 78254 -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D196069684
-- **Fitness in the Park: Yoga** -- 2026-10-24 -- 2515 E. Evans San Antonio, TX 78259 -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D207413416
-- **Baby Time** -- 2026-10-24 -- 1315 San Pedro Ave -- conf 88 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D210168382
-- **Reading Buddy Zone at Semmes Branch Library** -- 2026-10-24 -- 15060 Judson Rd -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D207633626
-- **Teen Time @ Landa** -- 2026-10-24 -- 233 Bushnell San Antonio, TX 78212 -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D205315329
-- **No Pressure Book Club** -- 2026-10-24 -- 4134 Harry Wurzbach San Antonio, TX 78209 -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D199428916
-- **StandUp for Kids Info Table** -- 2026-10-24 -- 600 Soledad San Antonio, TX 78205 -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D211234185
-- **Tobin Chess Club** -- 2026-10-24 -- 4134 Harry Wurzbach San Antonio, TX 78209 -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D209433679
-- **Dungeons & Dragons** -- 2026-10-24 -- 2515 E. Evans San Antonio, TX 78259 -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D210256734
-- **Sin Vergüenza** -- 2026-10-24 -- 600 Soledad San Antonio, TX 78205 -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D205606551
-- **Lego Time!** -- 2026-10-24 -- 515 Castroville Rd -- conf 88 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206342761
-- **Baby storytime** -- 2026-10-24 -- 8700 Mystic Park San Antonio, TX 78254 -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D210412216
-- **Central Spooktacular** -- 2026-10-24 -- 600 Soledad San Antonio, TX 78205 -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D208844620
-- **Saturday Stitching** -- 2026-10-24 -- 11503 Vance Jackson Rd -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206502864
-- **Alma Gitana's Flamenco** -- 2026-10-24 -- 200 N. Park San Antonio, TX 78204 -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D207128043
-- **MTTC Table Tennis** -- 2026-10-24 -- 3134 Roosevelt Ave -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D179428848
-- **Potranco Writers Group** -- 2026-10-24 -- 8765 State Hwy 151 -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D205648922
-- **Lego Club** -- 2026-10-24 -- 8700 Mystic Park San Antonio, TX 78254 -- conf 88 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D211322738
-- **Borrow a Board Game** -- 2026-10-25 -- 6322 US Hwy 87 -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D209993644
-- **Baby Story Time** -- 2026-10-25 -- 5110 Walzem Road San -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D207473318
-- **Toddler storytime** -- 2026-10-25 -- 8700 Mystic Park San Antonio, TX 78254 -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D210412225
-- **Family Story Time** -- 2026-10-25 -- 2515 E. Evans San Antonio, TX 78259 -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206373498
-- **Dragon Volleyball Vs. United South** -- 2026-10-20 -- 11914 Dragon Ln -- conf 98 -- https://www.swisd.net/apps/events/2026/10/20/51732742/
-
-## Purged (failed re-validation)
-- City Council Meeting -- event_id=2026-10-19_city-council-meeting_ae39b317b9e8: date 2026-10-19 is in the past
-- Sin Vergüenza -- event_id=2026-10-19_sin-verg-enza_a28d9d6dc46c: date 2026-10-19 is in the past
-- Baby Story Time at Landa -- event_id=2026-10-19_baby-story-time-at-landa_f79bcb2a4c71: date 2026-10-19 is in the past
-- Sit and Stitch -- event_id=2026-10-19_sit-and-stitch_93d017a6157c: date 2026-10-19 is in the past
-- Tai Chi -- event_id=2026-10-19_tai-chi_b7cdfaa8062f: date 2026-10-19 is in the past
-- Bingocize! -- event_id=2026-10-19_bingocize_225b954e8a1f: date 2026-10-19 is in the past
-- Let's Build -- event_id=2026-10-19_let-s-build_4f849b120867: date 2026-10-19 is in the past
-- Let's Build: Legos and More -- event_id=2026-10-19_let-s-build-legos-and-more_9cbf552be688: date 2026-10-19 is in the past
-- Teen Fall: Open Play @ Teen Library -- event_id=2026-10-19_teen-fall-open-play-teen-lib_b01ea365b476: date 2026-10-19 is in the past
-- Let's Build: LEGO Time -- event_id=2026-10-19_let-s-build-lego-time_db88cb299231: date 2026-10-19 is in the past
-- Tween Time at Landa -- event_id=2026-10-19_tween-time-at-landa_c9d35a45f81b: date 2026-10-19 is in the past
-- Let's Build: LEGOs & More -- event_id=2026-10-19_let-s-build-legos-more_1c2c67c85d4a: date 2026-10-19 is in the past
-- Tween Time -- event_id=2026-10-19_tween-time_218d00181b0e: date 2026-10-19 is in the past
-- Igo Teen Time -- event_id=2026-10-19_igo-teen-time_49099bcf1d57: date 2026-10-19 is in the past
-- Horror Classics at Las Palmas -- event_id=2026-10-19_horror-classics-at-las-palma_71ed61c1f8b1: date 2026-10-19 is in the past
-- Teen Music Monday on Discord -- event_id=2026-10-19_teen-music-monday-on-discord_f3d6bae01799: date 2026-10-19 is in the past
-- Teen Time @ Bazan -- event_id=2026-10-19_teen-time-bazan_7d3109ca331b: date 2026-10-19 is in the past
-- Yoga Basics -- event_id=2026-10-19_yoga-basics_43b1b1e8bb10: date 2026-10-19 is in the past
-- Papercrafts -- event_id=2026-10-19_papercrafts_e8bef443f595: date 2026-10-19 is in the past
-- Teen Time @ Westfall Library -- event_id=2026-10-19_teen-time-westfall-library_d53712a8c016: date 2026-10-19 is in the past
-- Dreaded Threads -- event_id=2026-10-19_dreaded-threads_bef204601ccc: date 2026-10-19 is in the past
-- Crochet for Adults -- event_id=2026-10-19_crochet-for-adults_6aaf68c48dec: date 2026-10-19 is in the past
-- Spanish/English Conversation Hour -- event_id=2026-10-19_spanish-english-conversation_df2a54982bd6: date 2026-10-19 is in the past
-- Monday Mayhem Book Club -- event_id=2026-10-19_monday-mayhem-book-club_5b8cda561238: date 2026-10-19 is in the past
-- Chess at Westfall -- event_id=2026-10-19_chess-at-westfall_355a7e7be00a: date 2026-10-19 is in the past
-- Pet Loss Support Group -- event_id=2026-10-19_pet-loss-support-group_e5bf4cd16b59: date 2026-10-19 is in the past
-- Hooks & Needles -- event_id=2026-10-19_hooks-needles_bb5e67abb3e1: date 2026-10-19 is in the past
+_None this run._
 
 ## Review Queue
-- **San Antonio Public Library Events** -- conf 100 -- MTTC Table Tennis -- 2026-10-24 -- 3134 Roosevelt Ave -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D179428848
-- **San Antonio Public Library Events** -- conf 100 -- Ladies' Choice Book Club -- 2026-10-24 -- 8700 Mystic Park San Antonio, TX 78254 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D196069684
-- **San Antonio Public Library Events** -- conf 100 -- No Pressure Book Club -- 2026-10-24 -- 4134 Harry Wurzbach San Antonio, TX 78209 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D199428916
-- **San Antonio Public Library Events** -- conf 100 -- Heartfulness Meditation -- 2026-10-24 -- 13330 Kyle Seale Pkwy -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D203689703
-- **San Antonio Public Library Events** -- conf 100 -- Teen Time @ Landa -- 2026-10-24 -- 233 Bushnell San Antonio, TX 78212 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D205315329
 - **San Antonio Public Library Events** -- conf 100 -- SAPL Silent Book Club -- 2026-10-20 -- 1122 W. Pyron Ave -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D205418368
-- **San Antonio Public Library Events** -- conf 100 -- Sin Vergüenza -- 2026-10-24 -- 600 Soledad San Antonio, TX 78205 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D205606551
-- **San Antonio Public Library Events** -- conf 100 -- Potranco Writers Group -- 2026-10-24 -- 8765 State Hwy 151 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D205648922
-- **San Antonio Public Library Events** -- conf 100 -- Friends of the Landa Library Book Sale -- 2026-10-24 -- 233 Bushnell San Antonio, TX 78212 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D205921179
 - **San Antonio Public Library Events** -- conf 100 -- Toddler Story Time! -- 2026-10-21 -- 6111 Rosedale Ct. San Antonio, TX 78201 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206288692
-- **San Antonio Public Library Events** -- conf 100 -- Family Story Time -- 2026-10-25 -- 2515 E. Evans San Antonio, TX 78259 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206373498
 - **San Antonio Public Library Events** -- conf 100 -- Preschool Story Time -- 2026-10-21 -- 15060 Judson Rd -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206448256
 - **San Antonio Public Library Events** -- conf 100 -- Baby Story Time -- 2026-10-22 -- 15060 Judson Rd -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206449165
-- **San Antonio Public Library Events** -- conf 100 -- Saturday Stitching -- 2026-10-24 -- 11503 Vance Jackson Rd -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206502864
 - **San Antonio Public Library Events** -- conf 100 -- Baby Story Time -- 2026-10-22 -- 13330 Kyle Seale Pkwy -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206613050
-- **San Antonio Public Library Events** -- conf 100 -- Alma Gitana's Flamenco -- 2026-10-24 -- 200 N. Park San Antonio, TX 78204 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D207128043
-- **San Antonio Public Library Events** -- conf 100 -- Fitness in the Park: Yoga -- 2026-10-24 -- 2515 E. Evans San Antonio, TX 78259 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D207413416
-- **San Antonio Public Library Events** -- conf 100 -- Baby Story Time -- 2026-10-25 -- 5110 Walzem Road San -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D207473318
 - **San Antonio Public Library Events** -- conf 100 -- Family Story Time -- 2026-10-25 -- 5110 Walzem Road San -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D207473335
-- **San Antonio Public Library Events** -- conf 100 -- Reading Buddy Zone at Semmes Branch Library -- 2026-10-24 -- 15060 Judson Rd -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D207633626
 - **San Antonio Public Library Events** -- conf 100 -- Toddler Story Time -- 2026-10-22 -- 9050 Wellwood San Antonio, TX 78250 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D208192339
-- **San Antonio Public Library Events** -- conf 100 -- Central Spooktacular -- 2026-10-24 -- 600 Soledad San Antonio, TX 78205 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D208844620
-- **San Antonio Public Library Events** -- conf 100 -- Tobin Chess Club -- 2026-10-24 -- 4134 Harry Wurzbach San Antonio, TX 78209 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D209433679
 - **San Antonio Public Library Events** -- conf 100 -- Wowzitude Livestreamed Worldwide Travel -- 2026-10-20 -- 3222 Culebra San Antonio, TX 78228 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D209666767
-- **San Antonio Public Library Events** -- conf 100 -- Borrow a Board Game -- 2026-10-25 -- 6322 US Hwy 87 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D209993644
-- **San Antonio Public Library Events** -- conf 100 -- Dungeons & Dragons -- 2026-10-24 -- 2515 E. Evans San Antonio, TX 78259 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D210256734
-- **San Antonio Public Library Events** -- conf 100 -- Introductory ESL -- 2026-10-24 -- 515 Castroville Rd -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D210315540
-- **San Antonio Public Library Events** -- conf 100 -- Baby storytime -- 2026-10-24 -- 8700 Mystic Park San Antonio, TX 78254 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D210412216
-- **San Antonio Public Library Events** -- conf 100 -- Toddler storytime -- 2026-10-25 -- 8700 Mystic Park San Antonio, TX 78254 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D210412225
-- **San Antonio Public Library Events** -- conf 100 -- StandUp for Kids Info Table -- 2026-10-24 -- 600 Soledad San Antonio, TX 78205 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D211234185
 - **City of San Antonio Parks & Recreation** -- conf 100 -- Tennis Clinics -- 2026-08-31 -- 1503 San Pedro Ave -- https://www.sanantonio.gov/ParksAndRec/News-Events/Events/Event-Details/ArtMID/15385/ArticleID/29348/Tennis-Clinics
 - **City of San Antonio Parks & Recreation** -- conf 100 -- 2026 Fall Tennis Clinics -- 2026-10-06 -- 1503 San Pedro Ave -- https://www.sanantonio.gov/ParksAndRec/News-Events/Events/Event-Details/ArtMID/15385/ArticleID/29370/2026-Fall-Tennis-Clinics
 - **Bexar County Clerk — Records on the Run** -- conf 99 -- Bexar County Clerk's Mobile Satellite Office will be at Bexar County Precinct 2 Constable's Office of Constable Leticia R. Vazquez -- 2026-11-05 -- 7723 Guilbeau Rd -- https://www.bexar.org/calendar.aspx?EID=7286
@@ -229,6 +153,28 @@ Rejected by Sentinel: **299**
 - **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2027-10-14 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22409
 - **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2027-11-11 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22410
 - **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2027-12-09 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22411
+- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2028-01-13 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22412
+- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2028-02-10 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22413
+- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2028-03-09 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22414
+- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2028-04-13 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22415
+- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2028-05-11 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22416
+- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2028-06-08 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22417
+- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2028-07-13 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22418
+- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2028-08-10 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22419
+- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2028-09-14 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22420
+- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2028-10-12 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22421
+- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2028-11-09 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22422
+- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2028-12-14 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22423
+- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2029-01-11 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22424
+- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2029-02-08 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22425
+- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2029-03-08 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22426
+- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2029-04-12 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22427
+- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2029-05-10 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22428
+- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2029-06-14 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22429
+- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2029-07-12 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22430
+- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2029-08-09 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22431
+- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2029-09-13 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22432
+- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2029-10-11 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22433
 
 ## Rejected by Sentinel
 - Baby Time! -- event_id=2026-10-20_baby-time_5542134c5b29: duplicate id already in feed

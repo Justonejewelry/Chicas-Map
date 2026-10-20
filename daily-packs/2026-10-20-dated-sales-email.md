@@ -34,14 +34,14 @@ Map only shows pins whose listed dates include today.
 ## COMING UP (remembered, not on today's map)
 
 ### Starts 2026-10-23
-- ‼️Garage Sale‼️ — 1825 Lee Hall, San Antonio, TX 78201 [2026-10-23 → 2026-10-23] | TBD
+- ‼️Garage Sale‼️ — 1825 Lee Hall, San Antonio, TX 78201 [2026-10-23 → 2026-10-23]
 - Yard Sale in La Vernia/ New Berlin area — 1025 Zuehl Xing, La Vernia, TX 78121 [2026-10-23 → 2026-10-24]
 
 ### Starts 2026-10-24
-- Walnut Pass (Leon Springs) Community Garage Sale - Saturday, October 24, 8Am-1Pm — Walnut Pass, San Antonio, TX 78255 [2026-10-24 → 2026-10-24] | 8AM-1PM
-- Plumbing, Electrical & Misc — 934 W Mariposa Dr, San Antonio, TX 78201 [2026-10-24 → 2026-10-25] | TBD
-- Yard Sale — 570 Radiance Dr, San Antonio, TX 78218 [2026-10-24 → 2026-10-25] | TBD
+- Plumbing, Electrical & Misc — 934 W Mariposa Dr, San Antonio, TX 78201 [2026-10-24 → 2026-10-25]
+- Yard Sale — 570 Radiance Dr, San Antonio, TX 78218 [2026-10-24 → 2026-10-25]
 - 🏡🚨 Big Neighborhood Garage Sale – Saturday, October 24Th & Sunday, October 25Th — 7123 Quarter Moon, Converse, TX 78109 [2026-10-24 → 2026-10-25]
+- Walnut Pass (Leon Springs) Community Garage Sale - Saturday, October 24, 8Am-1Pm — Walnut Pass, San Antonio, TX 78255 [2026-10-24 → 2026-10-24]
 - Landmark Pointe Community Garage Sale — 229 Landmark Park, Cibolo, TX 78108 [2026-10-24 → 2026-10-24]
 - Great Prices at Saturday Moving Sale in Davis Ranch-Everything Goes! — Coppola near Davis Ranch Parkway, San Antonio, TX [2026-10-24 → 2026-10-24]
 - Walnut Pass (Leon Springs) Community Garage Sale - Saturday, Oct. 24 — Walnut Pass near Cross Mountain Trail, San Antonio, TX [2026-10-24 → 2026-10-24]
