@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Sell · Item Listing</title>
 <link rel="icon" type="image/svg+xml" href="/Chicas-Map/favicon.svg">
-<!-- deploy trigger -->
 <style>
 :root { --bg:#0e0e0e; --paper:#1a1a1a; --ink:#f5f5f5; --muted:#a1a1aa; --magenta:#c513af; --ok:#22c55e; --warn:#f59e0b; --border:#2a2a2a; }
 *{box-sizing:border-box}
@@ -36,7 +35,7 @@ button.ghost{background:transparent;border:1px solid var(--border);color:var(--i
 </head>
 <body>
 <h1>Sell</h1>
-<p class="sub">Phone-first listing for Facebook Marketplace, Nextdoor, and Craigslist. Photo + write-up leave together.</p>
+<p class="sub">Upload photos. Fields fill themselves. Share the write-up and cover photo.</p>
 
 <div class="card">
   <label>Photos (1–5)</label>
@@ -44,7 +43,7 @@ button.ghost{background:transparent;border:1px solid var(--border);color:var(--i
   <div class="photos" id="preview"></div>
   <div class="ai-row">
     <button type="button" id="eraseBtn" class="secondary">Erase background</button>
-    <button type="button" id="tagBtn" class="secondary">Auto-tag</button>
+    <button type="button" id="tagBtn" class="secondary">Re-tag</button>
   </div>
 </div>
 
@@ -138,16 +137,26 @@ function renderPreviews(fileList){
   });
 }
 
-$('photos').addEventListener('change', e => {
-  files = Array.from(e.target.files).slice(0,5);
-  processedFiles = [...files];
-  renderPreviews(files);
+function autoTagFromFiles(){
+  if(!files.length) return;
+  const name = files[0].name.toLowerCase();
+  let title = 'Item for sale';
+  let category = 'Home & Garden';
+  let condition = 'Good';
+  let write = 'Cleaned photo. Local pickup. Cash or Zelle.';
+  if(name.includes('lamp') || name.includes('light')){ title = 'Brass lamp, working'; category = 'Home & Garden / Lighting'; write = 'Works great. Minor scuff on rear panel, fully functional. Cash or Zelle, local pickup.'; }
+  else if(name.includes('tool') || name.includes('drill') || name.includes('saw')){ title = 'Power tool, tested'; category = 'Tools'; write = 'Tested and working. Local pickup. Cash or Zelle.'; }
+  else if(name.includes('chair') || name.includes('table') || name.includes('sofa') || name.includes('desk')){ title = 'Furniture piece'; category = 'Furniture'; write = 'Solid condition. Local pickup only.'; }
+  else if(name.includes('phone') || name.includes('laptop') || name.includes('tablet') || name.includes('camera')){ title = 'Electronics, working'; category = 'Electronics'; write = 'Powers on and works. Local pickup. Cash or Zelle.'; }
+  else if(name.includes('bike') || name.includes('bicycle')){ title = 'Bicycle, ready to ride'; category = 'Sports & Outdoors'; write = 'Rides well. Local pickup.'; }
+  else if(name.includes('speaker') || name.includes('receiver') || name.includes('amp')){ title = 'Audio gear, working'; category = 'Electronics / Audio'; write = 'Powers on, tested. Local pickup. Cash or Zelle.'; }
+  $('title').value = title;
+  $('category').value = category;
+  $('condition').value = condition;
+  if(!$('writeup').value.trim()) $('writeup').value = write;
+  if(!$('neighborhood').value.trim()) $('neighborhood').value = 'North San Antonio';
   updateReady();
-});
-
-['title','price','writeup','neighborhood','category','condition'].forEach(id => {
-  $(id).addEventListener('input', () => { updateReady(); if(id==='price') updateSpeed(); });
-});
+}
 
 async function eraseBackground(file){
   return new Promise((resolve) => {
@@ -175,6 +184,25 @@ async function eraseBackground(file){
   });
 }
 
+$('photos').addEventListener('change', async e => {
+  files = Array.from(e.target.files).slice(0,5);
+  processedFiles = [...files];
+  renderPreviews(files);
+  autoTagFromFiles();
+  toast('Fields filled from photo');
+  // auto erase cover
+  try{
+    const cleaned = await eraseBackground(files[0]);
+    processedFiles[0] = cleaned;
+    renderPreviews(processedFiles);
+  }catch(_){}
+  updateReady();
+});
+
+['title','price','writeup','neighborhood','category','condition'].forEach(id => {
+  $(id).addEventListener('input', () => { updateReady(); if(id==='price') updateSpeed(); });
+});
+
 $('eraseBtn').onclick = async () => {
   if(!files.length){ toast('Add a photo first'); return; }
   toast('Erasing background...');
@@ -187,21 +215,8 @@ $('eraseBtn').onclick = async () => {
 };
 
 $('tagBtn').onclick = () => {
-  if(!files.length){ toast('Add a photo first'); return; }
-  const name = files[0].name.toLowerCase();
-  let title = 'Item for sale';
-  let category = 'Home & Garden';
-  let condition = 'Good';
-  if(name.includes('lamp') || name.includes('light')){ title = 'Brass lamp, working'; category = 'Home & Garden / Lighting'; }
-  else if(name.includes('tool') || name.includes('drill')){ title = 'Power tool, tested'; category = 'Tools'; }
-  else if(name.includes('chair') || name.includes('table')){ title = 'Furniture piece'; category = 'Furniture'; }
-  else if(name.includes('phone') || name.includes('laptop')){ title = 'Electronics, working'; category = 'Electronics'; }
-  $('title').value = title;
-  $('category').value = category;
-  $('condition').value = condition;
-  if(!$('writeup').value) $('writeup').value = 'Cleaned photo. Local pickup. Cash or Zelle.';
-  updateReady();
-  toast('Auto-tagged from photo');
+  autoTagFromFiles();
+  toast('Re-tagged');
 };
 
 function buildText(){
