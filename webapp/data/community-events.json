@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-21T04:50:34-05:00",
+  "updated": "2026-10-21T10:53:23-05:00",
   "city": "san-antonio",
   "version": 2.7,
   "horizonDays": 90,
@@ -5024,6 +5024,24 @@
       "sourceId": "universal-city-ics",
       "reliability": 88,
       "discoveredAt": "2026-10-21T03:17:55-05:00",
+      "confidence": 98
+    },
+    {
+      "id": "2026-11-04_board-of-adjustment-meeting_064a9f3706bb",
+      "title": "Board of Adjustment Meeting",
+      "date": "2026-11-04",
+      "endDate": "",
+      "time": "4:30 PM-11:59 PM",
+      "address": "120 W. El Prado Drive Olmos",
+      "lat": null,
+      "lng": null,
+      "category": "other",
+      "description": "",
+      "url": "https://www.olmospark.org/calendar.aspx?EID=481",
+      "source": "Olmos Park Calendar",
+      "sourceId": "olmos-park-ics",
+      "reliability": 88,
+      "discoveredAt": "2026-10-21T10:52:50-05:00",
       "confidence": 98
     }
   ]

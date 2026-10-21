@@ -1,18 +1,18 @@
 # Chica's Map -- Community Events Swarm v2.7
 
-Run: 2026-10-21T04:50:34-05:00
+Run: 2026-10-21T10:53:23-05:00
 Sources scanned: **48**
 Candidates discovered: **885**
 With parsed dates: **728**
-With street/venue address: **495**
-Promoted this run: **0**
+With street/venue address: **496**
+Promoted this run: **1**
 Kept from prior feed: **279**
 Purged from prior feed: **0**
 Source errors: **2**
 Rejected by Sentinel: **294**
 
 ## Promoted (passed Events Sentinel)
-_None this run._
+- **Board of Adjustment Meeting** -- 2026-11-04 -- 120 W. El Prado Drive Olmos -- conf 98 -- https://www.olmospark.org/calendar.aspx?EID=481
 
 ## Review Queue
 - **San Antonio Public Library Events** -- conf 100 -- Toddler Story Time! -- 2026-10-21 -- 6111 Rosedale Ct. San Antonio, TX 78201 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206288692
