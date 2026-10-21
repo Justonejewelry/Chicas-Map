@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>SNAPLOT · Sell</title>
 <link rel="icon" type="image/svg+xml" href="/Chicas-Map/favicon.svg">
+<script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
 <style>
 :root { --bg:#0e0e0e; --paper:#1a1a1a; --ink:#f5f5f5; --muted:#a1a1aa; --magenta:#c513af; --ok:#22c55e; --warn:#f59e0b; --border:#2a2a2a; }
 *{box-sizing:border-box}
@@ -40,7 +41,7 @@ button.generate{width:100%;font-size:1.05rem;margin-top:8px}
 </head>
 <body>
 <h1>SNAPLOT</h1>
-<p class="sub">Upload photos. Hit Generate. Share the write-up and cover photo.</p>
+<p class="sub">Upload photos. Hit Generate. It reads the image and fills the listing.</p>
 
 <div class="card">
   <div style="font-weight:600;margin-bottom:8px">Bench</div>
@@ -119,7 +120,7 @@ function toast(msg){
   const t = $('toast');
   t.textContent = msg;
   t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 2000);
+  setTimeout(() => t.classList.remove('show'), 2200);
 }
 
 function updateReady(){
@@ -159,47 +160,69 @@ function renderPreviews(fileList){
   });
 }
 
-function suggestPrice(name){
-  name = (name || '').toLowerCase();
-  if(name.includes('lamp') || name.includes('light')) return 45;
-  if(name.includes('tool') || name.includes('drill') || name.includes('saw')) return 35;
-  if(name.includes('chair') || name.includes('table') || name.includes('sofa') || name.includes('desk')) return 60;
-  if(name.includes('phone') || name.includes('laptop') || name.includes('tablet') || name.includes('camera')) return 80;
-  if(name.includes('bike') || name.includes('bicycle')) return 50;
-  if(name.includes('speaker') || name.includes('receiver') || name.includes('amp')) return 55;
+function suggestPrice(text){
+  const t = (text || '').toLowerCase();
+  if(t.includes('lamp') || t.includes('light')) return 45;
+  if(t.includes('tool') || t.includes('drill') || t.includes('saw')) return 35;
+  if(t.includes('chair') || t.includes('table') || t.includes('sofa') || t.includes('desk')) return 60;
+  if(t.includes('phone') || t.includes('laptop') || t.includes('tablet') || t.includes('camera')) return 80;
+  if(t.includes('bike') || t.includes('bicycle')) return 50;
+  if(t.includes('speaker') || t.includes('receiver') || t.includes('amp') || t.includes('sony') || t.includes('str-')) return 55;
   return 40;
 }
 
-function autoTagFromFiles(){
-  if(!files.length){
-    // still fill something useful if user hits Generate with no photo
-    $('title').value = $('title').value || 'Item for sale';
-    $('category').value = $('category').value || 'Home & Garden';
-    $('condition').value = $('condition').value || 'Good';
-    $('writeup').value = $('writeup').value || 'Local pickup. Cash or Zelle.';
-    $('neighborhood').value = $('neighborhood').value || 'North San Antonio';
-    if(!$('price').value) $('price').value = 40;
-    updateSpeed();
-    updateReady();
-    return;
-  }
-  const name = (files[0].name || '').toLowerCase();
+async function readImageText(file){
+  if(!window.Tesseract) return '';
+  try{
+    const { data } = await Tesseract.recognize(file, 'eng', { logger: () => {} });
+    return (data && data.text) ? data.text.replace(/\s+/g, ' ').trim() : '';
+  }catch(e){ return ''; }
+}
+
+function applyFromText(ocrText, filename){
+  const combined = ((ocrText || '') + ' ' + (filename || '')).toLowerCase();
   let title = 'Item for sale';
   let category = 'Home & Garden';
   let condition = 'Good';
-  let write = 'Cleaned photo. Local pickup. Cash or Zelle.';
-  if(name.includes('lamp') || name.includes('light')){ title = 'Brass lamp, working'; category = 'Home & Garden / Lighting'; write = 'Works great. Minor scuff on rear panel, fully functional. Cash or Zelle, local pickup.'; }
-  else if(name.includes('tool') || name.includes('drill') || name.includes('saw')){ title = 'Power tool, tested'; category = 'Tools'; write = 'Tested and working. Local pickup. Cash or Zelle.'; }
-  else if(name.includes('chair') || name.includes('table') || name.includes('sofa') || name.includes('desk')){ title = 'Furniture piece'; category = 'Furniture'; write = 'Solid condition. Local pickup only.'; }
-  else if(name.includes('phone') || name.includes('laptop') || name.includes('tablet') || name.includes('camera')){ title = 'Electronics, working'; category = 'Electronics'; write = 'Powers on and works. Local pickup. Cash or Zelle.'; }
-  else if(name.includes('bike') || name.includes('bicycle')){ title = 'Bicycle, ready to ride'; category = 'Sports & Outdoors'; write = 'Rides well. Local pickup.'; }
-  else if(name.includes('speaker') || name.includes('receiver') || name.includes('amp')){ title = 'Audio gear, working'; category = 'Electronics / Audio'; write = 'Powers on, tested. Local pickup. Cash or Zelle.'; }
+  let write = 'Local pickup. Cash or Zelle.';
+  if(combined.includes('lamp') || combined.includes('light')){
+    title = 'Brass lamp, working';
+    category = 'Home & Garden / Lighting';
+    write = 'Works great. Minor scuff on rear panel, fully functional. Cash or Zelle, local pickup.';
+  } else if(combined.includes('tool') || combined.includes('drill') || combined.includes('saw')){
+    title = 'Power tool, tested';
+    category = 'Tools';
+    write = 'Tested and working. Local pickup. Cash or Zelle.';
+  } else if(combined.includes('chair') || combined.includes('table') || combined.includes('sofa') || combined.includes('desk')){
+    title = 'Furniture piece';
+    category = 'Furniture';
+    write = 'Solid condition. Local pickup only.';
+  } else if(combined.includes('phone') || combined.includes('laptop') || combined.includes('tablet') || combined.includes('camera')){
+    title = 'Electronics, working';
+    category = 'Electronics';
+    write = 'Powers on and works. Local pickup. Cash or Zelle.';
+  } else if(combined.includes('bike') || combined.includes('bicycle')){
+    title = 'Bicycle, ready to ride';
+    category = 'Sports & Outdoors';
+    write = 'Rides well. Local pickup.';
+  } else if(combined.includes('speaker') || combined.includes('receiver') || combined.includes('amp') || combined.includes('sony') || combined.includes('str-')){
+    title = 'Audio receiver, working';
+    category = 'Electronics / Audio';
+    write = 'Powers on, tested. Local pickup. Cash or Zelle.';
+  }
+  // pull model-like tokens from OCR
+  const modelMatch = (ocrText || '').match(/[A-Z0-9]{3,}[-\/]?[A-Z0-9]{2,}/g);
+  if(modelMatch && modelMatch.length){
+    title = title.replace('Item for sale', modelMatch[0] + ' — ' + title);
+    if(!title.includes(modelMatch[0])) title = modelMatch[0] + ' — ' + title;
+    write = 'Model: ' + modelMatch.slice(0,2).join(', ') + '. ' + write;
+  }
   $('title').value = title;
   $('category').value = category;
   $('condition').value = condition;
   $('writeup').value = write;
   $('neighborhood').value = $('neighborhood').value.trim() || 'North San Antonio';
-  $('price').value = $('price').value || suggestPrice(name);
+  $('price').value = $('price').value || suggestPrice(combined);
   updateSpeed();
   updateReady();
 }
@@ -235,17 +258,17 @@ async function eraseBackground(file){
 }
 
 async function generateListing(){
-  toast('Generating...');
-  autoTagFromFiles();
-  if(files.length){
-    try{
-      const cleaned = await eraseBackground(files[0]);
-      processedFiles[0] = cleaned;
-      renderPreviews(processedFiles);
-    }catch(e){ /* keep original */ }
-  }
+  if(!files.length){ toast('Add a photo first'); return; }
+  toast('Reading the photo...');
+  const ocrText = await readImageText(files[0]);
+  applyFromText(ocrText, files[0].name);
+  try{
+    const cleaned = await eraseBackground(files[0]);
+    processedFiles[0] = cleaned;
+    renderPreviews(processedFiles);
+  }catch(e){}
   updateReady();
-  toast('Listing generated');
+  toast(ocrText ? 'Generated from image text' : 'Generated');
 }
 
 $('photos').addEventListener('change', e => {
@@ -274,7 +297,7 @@ $('eraseBtn').onclick = async () => {
 };
 
 $('tagBtn').onclick = () => {
-  autoTagFromFiles();
+  applyFromText('', files[0] ? files[0].name : '');
   toast('Re-tagged');
 };
 
@@ -309,7 +332,6 @@ async function copyText(text){
       return true;
     }
   }catch(e){}
-  // fallback
   try{
     const ta = document.createElement('textarea');
     ta.value = text;
