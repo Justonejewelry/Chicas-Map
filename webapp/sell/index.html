@@ -1,1 +1,431 @@
-PLACEHOLDER_FOR_CONTENT
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SNAPLOT · Sell</title>
+<link rel="icon" type="image/svg+xml" href="/Chicas-Map/favicon.svg">
+<script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@latest/vision_bundle.mjs"></script>
+<style>
+:root { --bg:#0e0e0e; --paper:#1a1a1a; --ink:#f5f5f5; --muted:#a1a1aa; --magenta:#c513af; --ok:#22c55e; --warn:#f59e0b; --border:#2a2a2a; }
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--ink);padding:16px 16px 100px;line-height:1.45}
+h1{font-size:1.6rem;margin:0 0 4px}
+.sub{color:var(--muted);font-size:.95rem;margin-bottom:20px}
+.card{background:var(--paper);border:1px solid var(--border);border-radius:16px;padding:16px;margin-bottom:16px}
+label{display:block;font-weight:600;margin:12px 0 6px;font-size:.9rem}
+input,textarea,select{width:100%;padding:12px;border-radius:10px;border:1px solid var(--border);background:#111;color:var(--ink);font-size:1rem}
+textarea{min-height:140px;resize:vertical}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+button{background:var(--magenta);color:#fff;border:0;border-radius:10px;padding:12px 16px;font-weight:600;min-height:44px;cursor:pointer}
+button.secondary{background:#333}
+button.ghost{background:transparent;border:1px solid var(--border);color:var(--ink)}
+button.generate{width:100%;font-size:1.05rem;margin-top:8px}
+.photos{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.thumb{width:72px;height:72px;border-radius:8px;object-fit:cover;border:1px solid var(--border)}
+.ready{font-size:.9rem;margin-top:8px;padding:8px 10px;border-radius:8px;background:#111}
+.ready.ok{color:var(--ok);border:1px solid #14532d}
+.ready.warn{color:var(--warn);border:1px solid #78350f}
+.tier{display:flex;gap:6px;margin-top:6px;flex-wrap:wrap}
+.pill{font-size:.75rem;padding:4px 8px;border-radius:999px;background:#222;color:var(--muted);cursor:pointer}
+.pill.on{background:var(--magenta);color:#fff}
+.speed{font-size:.85rem;color:var(--muted);margin-top:4px}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#222;padding:10px 16px;border-radius:8px;opacity:0;transition:opacity .2s;pointer-events:none;z-index:9}
+.toast.show{opacity:1}
+.ai-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.bench{display:flex;gap:10px;overflow-x:auto;padding-bottom:8px}
+.lot{min-width:140px;background:#111;border:1px solid var(--border);border-radius:12px;padding:10px;cursor:pointer}
+.lot img{width:100%;height:80px;object-fit:cover;border-radius:8px;margin-bottom:6px}
+.lot .speed-pill{font-size:.7rem;padding:2px 6px;border-radius:999px;background:var(--magenta);color:#fff;display:inline-block;margin-top:4px}
+.note{font-size:.8rem;color:var(--muted);margin-top:8px}
+.comps{font-size:.8rem;color:var(--muted);margin-top:6px}
+</style>
+</head>
+<body>
+<h1>SNAPLOT</h1>
+<p class="sub">Upload photos. Hit Generate. Vision ID + live comps.</p>
+
+<div class="card">
+  <div style="font-weight:600;margin-bottom:8px">Bench</div>
+  <div class="bench" id="bench">
+    <div class="lot" data-title="Brass lamp, working" data-price="45" data-cat="Home & Garden / Lighting" data-cond="Good" data-write="Works great. Minor scuff on rear panel, fully functional. Cash or Zelle, local pickup." data-hood="North San Antonio">
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='80'%3E%3Crect fill='%23333' width='140' height='80'/%3E%3Ctext x='50%25' y='50%25' fill='%23aaa' font-size='12' text-anchor='middle' dy='.3em'%3ELamp%3C/text%3E%3C/svg%3E" alt="lamp">
+      <div>Brass lamp</div>
+      <div class="speed-pill">2–3 days</div>
+    </div>
+    <div class="lot" data-title="Power tool, tested" data-price="35" data-cat="Tools" data-cond="Good" data-write="Tested and working. Local pickup. Cash or Zelle." data-hood="North San Antonio">
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='80'%3E%3Crect fill='%23333' width='140' height='80'/%3E%3Ctext x='50%25' y='50%25' fill='%23aaa' font-size='12' text-anchor='middle' dy='.3em'%3ETool%3C/text%3E%3C/svg%3E" alt="tool">
+      <div>Drill</div>
+      <div class="speed-pill">Fast</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <label>Photos (1–5)</label>
+  <input type="file" id="photos" accept="image/*" multiple>
+  <div class="photos" id="preview"></div>
+  <button type="button" id="generateBtn" class="generate">Generate</button>
+  <div class="ai-row">
+    <button type="button" id="eraseBtn" class="secondary">Erase background</button>
+    <button type="button" id="tagBtn" class="secondary">Re-tag</button>
+  </div>
+  <div class="note" id="statusNote">Vision ID (MediaPipe Lite2) + live eBay comps (itemvaluechecker). Both run from the phone.</div>
+  <div class="comps" id="compsNote"></div>
+</div>
+
+<div class="card">
+  <label for="title">Title</label>
+  <input id="title" placeholder="Brass lamp, working, minor scuff">
+
+  <label for="category">Category</label>
+  <input id="category" placeholder="Home & Garden / Lighting">
+
+  <label for="condition">Condition</label>
+  <select id="condition">
+    <option value="">Select</option>
+    <option>New</option>
+    <option>Like New</option>
+    <option>Good</option>
+    <option>Fair</option>
+  </select>
+
+  <label for="price">Asking price</label>
+  <input id="price" type="number" inputmode="decimal" placeholder="45">
+
+  <div class="tier" id="tiers">
+    <span class="pill" data-tier="fast" data-mult="0.85">Fast</span>
+    <span class="pill" data-tier="market" data-mult="1">2–3 days</span>
+    <span class="pill" data-tier="top" data-mult="1.2">Top dollar</span>
+  </div>
+  <div class="speed" id="speed">Set a price to see speed.</div>
+
+  <label for="neighborhood">Pickup neighborhood</label>
+  <input id="neighborhood" placeholder="North San Antonio / 78240">
+
+  <label for="writeup">Write-up</label>
+  <textarea id="writeup" placeholder="Works great. Minor scuff on rear panel, fully functional. Cash or Zelle, local pickup."></textarea>
+</div>
+
+<div class="card">
+  <button id="shareBtn" type="button">Share listing</button>
+  <button id="copyBtn" type="button" class="secondary">Copy write-up</button>
+  <div class="ready warn" id="ready">Missing: photo, title, price, write-up, pickup neighborhood</div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script type="module">
+import { ObjectDetector, FilesetResolver } from 'https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@latest/vision_bundle.mjs';
+
+const $ = id => document.getElementById(id);
+let files = [];
+let processedFiles = [];
+let basePrice = 40;
+let objectDetector = null;
+
+async function initDetector(){
+  if(objectDetector) return;
+  try{
+    const vision = await FilesetResolver.forVisionTasks('https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@latest/wasm');
+    objectDetector = await ObjectDetector.createFromOptions(vision, {
+      baseOptions: { modelAssetPath: 'https://storage.googleapis.com/mediapipe-models/object_detector/efficientdet_lite2/float16/1/efficientdet_lite2.tflite' },
+      scoreThreshold: 0.35,
+      runningMode: 'IMAGE',
+      maxResults: 5
+    });
+  }catch(e){ console.warn('detector init', e); }
+}
+initDetector();
+
+function toast(msg){
+  const t = $('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2200);
+}
+
+function updateReady(){
+  const missing = [];
+  if(!files.length) missing.push('photo');
+  if(!$('title').value.trim()) missing.push('title');
+  if(!$('price').value) missing.push('price');
+  if(!$('writeup').value.trim()) missing.push('write-up');
+  if(!$('neighborhood').value.trim()) missing.push('pickup neighborhood');
+  const el = $('ready');
+  if(!missing.length){
+    el.className = 'ready ok';
+    el.textContent = 'Photo, price, and write-up are in. Ready to share.';
+  } else {
+    el.className = 'ready warn';
+    el.textContent = 'Missing: ' + missing.join(', ');
+  }
+}
+
+function updateSpeed(){
+  const p = parseFloat($('price').value);
+  const speed = $('speed');
+  if(!p){ speed.textContent = 'Set a price to see speed.'; return; }
+  if(p < basePrice * 0.9) speed.textContent = 'Priced for Fast Sale (same day)';
+  else if(p < basePrice * 1.15) speed.textContent = 'Competitive — 2–3 days';
+  else speed.textContent = 'Top dollar — room to negotiate';
+}
+
+function renderPreviews(fileList){
+  const prev = $('preview');
+  prev.innerHTML = '';
+  fileList.forEach(f => {
+    const img = document.createElement('img');
+    img.className = 'thumb';
+    img.src = URL.createObjectURL(f);
+    prev.appendChild(img);
+  });
+}
+
+async function detectObjects(file){
+  if(!objectDetector) return [];
+  try{
+    const img = new Image();
+    img.src = URL.createObjectURL(file);
+    await new Promise(r => { img.onload = r; img.onerror = r; });
+    const result = objectDetector.detect(img);
+    return (result && result.detections) ? result.detections.map(d => (d.categories && d.categories[0] && d.categories[0].categoryName) || '').filter(Boolean) : [];
+  }catch(e){ return []; }
+}
+
+async function getComps(file){
+  try{
+    const b64 = await new Promise((resolve) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(reader.result);
+      reader.readAsDataURL(file);
+    });
+    const res = await fetch('https://itemvaluechecker.com/api/check-by-url', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ image_base64: b64, max_results: 8 })
+    });
+    if(!res.ok) return null;
+    return await res.json();
+  }catch(e){ return null; }
+}
+
+async function readImageText(file){
+  if(!window.Tesseract) return '';
+  try{
+    const { data } = await Tesseract.recognize(file, 'eng', { logger: () => {} });
+    return (data && data.text) ? data.text.replace(/\s+/g, ' ').trim() : '';
+  }catch(e){ return ''; }
+}
+
+function sellWrite(title, objects, comps){
+  let core = `${title}. `;
+  if(objects.length) core += `Detected as ${objects.slice(0,2).join(' / ')}. `;
+  if(comps && comps.listing_samples && comps.listing_samples.length){
+    const samples = comps.listing_samples.slice(0,2).map(s => s.title).filter(Boolean);
+    if(samples.length) core += `Similar listings: ${samples.join('; ')}. `;
+    if(comps.estimated_value) core += `Directional value ~$${comps.estimated_value} (active asking, not sold). `;
+  } else if(comps && comps.estimated_value){
+    core += `Similar items listed around $${comps.estimated_value}. `;
+  }
+  core += 'Good condition. Tested and ready. Local pickup near North San Antonio. Cash or Zelle. No shipping.';
+  return core;
+}
+
+async function generateListing(){
+  if(!files.length){ toast('Add a photo first'); return; }
+  toast('Identifying + comps...');
+  const objects = await detectObjects(files[0]);
+  const ocrText = await readImageText(files[0]);
+  const comps = await getComps(files[0]);
+
+  let title = objects.length ? objects[0].replace(/_/g, ' ') : 'Item for sale';
+  if(comps && comps.listing_samples && comps.listing_samples[0] && comps.listing_samples[0].title){
+    title = comps.listing_samples[0].title.split(' ').slice(0,6).join(' ');
+  }
+  if(ocrText){
+    const model = (ocrText.match(/[A-Z0-9]{3,}[-\/]?[A-Z0-9]{2,}/g) || [])[0];
+    if(model) title = model + ' — ' + title;
+  }
+  let category = 'Home & Garden';
+  const t = title.toLowerCase();
+  if(t.includes('lamp') || t.includes('light') || t.includes('fixture')) category = 'Home & Garden / Lighting';
+  else if(t.includes('tool') || t.includes('drill') || t.includes('saw')) category = 'Tools';
+  else if(t.includes('chair') || t.includes('table') || t.includes('sofa') || t.includes('furniture')) category = 'Furniture';
+  else if(t.includes('phone') || t.includes('laptop') || t.includes('receiver') || t.includes('speaker') || t.includes('tv') || t.includes('electronics')) category = 'Electronics';
+  else if(t.includes('toy') || t.includes('game')) category = 'Toys & Games';
+
+  basePrice = (comps && comps.estimated_value) ? Math.round(comps.estimated_value) : (objects.length ? 45 : 40);
+  const write = sellWrite(title, objects, comps);
+
+  $('title').value = title;
+  $('category').value = category;
+  $('condition').value = 'Good';
+  $('writeup').value = write;
+  $('neighborhood').value = $('neighborhood').value.trim() || 'North San Antonio';
+  $('price').value = basePrice;
+  updateSpeed();
+  updateReady();
+  document.querySelectorAll('.pill').forEach(p => p.classList.remove('on'));
+  const market = document.querySelector('.pill[data-tier="market"]');
+  if(market) market.classList.add('on');
+
+  const note = $('compsNote');
+  if(comps && comps.estimated_value){
+    const range = comps.price_range ? ` ($${comps.price_range.min}–$${comps.price_range.max})` : '';
+    note.textContent = `Comps: ~$${comps.estimated_value}${range} from active eBay listings. Directional only.`;
+  } else {
+    note.textContent = 'No live comps returned. Using vision estimate.';
+  }
+
+  try{
+    const cleaned = await eraseBackground(files[0]);
+    processedFiles[0] = cleaned;
+    renderPreviews(processedFiles);
+  }catch(e){}
+  toast(objects.length ? 'Identified: ' + objects.slice(0,2).join(', ') : (comps ? 'Comps applied' : 'Generated'));
+}
+
+async function eraseBackground(file){
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.onload = () => {
+      try{
+        const canvas = document.createElement('canvas');
+        canvas.width = img.width;
+        canvas.height = img.height;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0);
+        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        const data = imageData.data;
+        for(let i = 0; i < data.length; i += 4){
+          const r = data[i], g = data[i+1], b = data[i+2];
+          const brightness = (r+g+b)/3;
+          if(brightness > 200){ data[i+3] = 0; }
+        }
+        ctx.putImageData(imageData, 0, 0);
+        canvas.toBlob(blob => {
+          if(!blob) return reject(new Error('blob'));
+          const newFile = new File([blob], (file.name || 'cover').replace(/\.[^.]+$/, '.png'), { type: 'image/png' });
+          resolve(newFile);
+        }, 'image/png');
+      }catch(err){ reject(err); }
+    };
+    img.onerror = () => reject(new Error('img'));
+    img.src = URL.createObjectURL(file);
+  });
+}
+
+$('photos').addEventListener('change', e => {
+  files = Array.from(e.target.files || []).slice(0,5);
+  processedFiles = [...files];
+  renderPreviews(files);
+  updateReady();
+});
+
+$('generateBtn').onclick = generateListing;
+
+['title','price','writeup','neighborhood','category','condition'].forEach(id => {
+  const el = $(id);
+  if(el) el.addEventListener('input', () => { updateReady(); if(id==='price') updateSpeed(); });
+});
+
+document.querySelectorAll('.pill').forEach(pill => {
+  pill.onclick = () => {
+    document.querySelectorAll('.pill').forEach(p => p.classList.remove('on'));
+    pill.classList.add('on');
+    const mult = parseFloat(pill.dataset.mult) || 1;
+    $('price').value = Math.round(basePrice * mult);
+    updateSpeed();
+  };
+});
+
+$('eraseBtn').onclick = async () => {
+  if(!files.length){ toast('Add a photo first'); return; }
+  toast('Erasing background...');
+  try{
+    const cleaned = await eraseBackground(files[0]);
+    processedFiles[0] = cleaned;
+    renderPreviews(processedFiles);
+    toast('Background erased on cover photo');
+  }catch(e){ toast('Erase failed'); }
+};
+
+$('tagBtn').onclick = () => { toast('Use Generate for full ID + comps'); };
+
+document.querySelectorAll('.lot').forEach(lot => {
+  lot.onclick = () => {
+    $('title').value = lot.dataset.title || '';
+    $('price').value = lot.dataset.price || '';
+    $('category').value = lot.dataset.cat || '';
+    $('condition').value = lot.dataset.cond || '';
+    $('writeup').value = lot.dataset.write || '';
+    $('neighborhood').value = lot.dataset.hood || '';
+    basePrice = parseFloat(lot.dataset.price) || 40;
+    updateReady();
+    updateSpeed();
+    toast('Lot loaded');
+  };
+});
+
+function buildText(){
+  const title = $('title').value.trim() || 'Item for sale';
+  const price = $('price').value || '40';
+  const hood = $('neighborhood').value.trim() || 'North San Antonio';
+  const body = $('writeup').value.trim() || 'Local pickup. Cash or Zelle.';
+  const cat = $('category').value.trim();
+  const cond = $('condition').value;
+  return `${title}\n$${price}${cond ? ' · ' + cond : ''}${cat ? '\n' + cat : ''}\n\n${body}\n\nLocal pickup near ${hood}. Cash or Zelle.`;
+}
+
+async function copyText(text){
+  try{
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+  }catch(e){}
+  try{
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.left = '-9999px';
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    return true;
+  }catch(e){ return false; }
+}
+
+$('copyBtn').onclick = async () => {
+  const ok = await copyText(buildText());
+  toast(ok ? 'Write-up copied' : 'Copy failed — select the text manually');
+};
+
+$('shareBtn').onclick = async () => {
+  const text = buildText();
+  const shareFiles = processedFiles.length ? processedFiles : files;
+  try{
+    if(navigator.share){
+      const data = { title: $('title').value || 'Listing', text };
+      if(shareFiles.length && navigator.canShare && navigator.canShare({ files: shareFiles })){
+        data.files = shareFiles;
+      }
+      await navigator.share(data);
+      toast(data.files ? 'Shared with photo' : 'Shared');
+      return;
+    }
+  }catch(err){
+    if(err && err.name === 'AbortError') return;
+  }
+  const ok = await copyText(text);
+  toast(ok ? 'Share unavailable — write-up copied' : 'Share failed');
+};
+
+updateReady();
+updateSpeed();
+</script>
+</body>
+</html>
