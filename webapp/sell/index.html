@@ -44,12 +44,12 @@ button.generate{width:100%;font-size:1.05rem;margin-top:8px}
 </head>
 <body>
 <h1>SNAPLOT</h1>
-<p class="sub">Upload photos. Hit Generate. Vision ID + live comps.</p>
+<p class="sub">Upload photos. Hit Generate. Edit the write-up before you post.</p>
 
 <div class="card">
   <div style="font-weight:600;margin-bottom:8px">Bench</div>
   <div class="bench" id="bench">
-    <div class="lot" data-title="Brass lamp, working" data-price="45" data-cat="Home & Garden / Lighting" data-cond="Good" data-write="Works great. Minor scuff on rear panel, fully functional. Cash or Zelle, local pickup." data-hood="North San Antonio">
+    <div class="lot" data-title="Brass lamp, working" data-price="45" data-cat="Home & Garden / Lighting" data-cond="Good" data-write="Working brass lamp. Minor scuff on rear. Local pickup. Cash or Zelle." data-hood="North San Antonio">
       <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='80'%3E%3Crect fill='%23333' width='140' height='80'/%3E%3Ctext x='50%25' y='50%25' fill='%23aaa' font-size='12' text-anchor='middle' dy='.3em'%3ELamp%3C/text%3E%3C/svg%3E" alt="lamp">
       <div>Brass lamp</div>
       <div class="speed-pill">2–3 days</div>
@@ -71,13 +71,13 @@ button.generate{width:100%;font-size:1.05rem;margin-top:8px}
     <button type="button" id="eraseBtn" class="secondary">Erase background</button>
     <button type="button" id="tagBtn" class="secondary">Re-tag</button>
   </div>
-  <div class="note" id="statusNote">Vision ID (MediaPipe Lite2) + live eBay comps (itemvaluechecker). Both run from the phone.</div>
+  <div class="note" id="statusNote">Starting point only. Edit the write-up so it matches the item.</div>
   <div class="comps" id="compsNote"></div>
 </div>
 
 <div class="card">
   <label for="title">Title</label>
-  <input id="title" placeholder="Brass lamp, working, minor scuff">
+  <input id="title" placeholder="Brass lamp, working">
 
   <label for="category">Category</label>
   <input id="category" placeholder="Home & Garden / Lighting">
@@ -105,7 +105,7 @@ button.generate{width:100%;font-size:1.05rem;margin-top:8px}
   <input id="neighborhood" placeholder="North San Antonio / 78240">
 
   <label for="writeup">Write-up</label>
-  <textarea id="writeup" placeholder="Works great. Minor scuff on rear panel, fully functional. Cash or Zelle, local pickup."></textarea>
+  <textarea id="writeup" placeholder="Working brass lamp. Minor scuff. Local pickup. Cash or Zelle."></textarea>
 </div>
 
 <div class="card">
@@ -219,45 +219,57 @@ async function readImageText(file){
   }catch(e){ return ''; }
 }
 
-function sellWrite(title, objects, comps){
-  let core = `${title}. `;
-  if(objects.length) core += `Detected as ${objects.slice(0,2).join(' / ')}. `;
-  if(comps && comps.listing_samples && comps.listing_samples.length){
-    const samples = comps.listing_samples.slice(0,2).map(s => s.title).filter(Boolean);
-    if(samples.length) core += `Similar listings: ${samples.join('; ')}. `;
-    if(comps.estimated_value) core += `Directional value ~$${comps.estimated_value} (active asking, not sold). `;
-  } else if(comps && comps.estimated_value){
-    core += `Similar items listed around $${comps.estimated_value}. `;
+function cleanTitle(raw){
+  if(!raw) return 'Item for sale';
+  let t = raw.replace(/[_|]/g, ' ').replace(/\s+/g, ' ').trim();
+  t = t.replace(/\b(used|refurbished|for sale|great condition|works|working|tested)\b/gi, '').replace(/\s+/g, ' ').trim();
+  const words = t.split(' ').slice(0, 7);
+  return words.join(' ') || 'Item for sale';
+}
+
+function sellWrite(title, comps){
+  let parts = [];
+  parts.push(title + '.');
+  if(comps && comps.estimated_value){
+    const range = comps.price_range ? ` (active asking $${comps.price_range.min}–$${comps.price_range.max})` : '';
+    parts.push(`Similar items currently listed around $${comps.estimated_value}${range}.`);
   }
-  core += 'Good condition. Tested and ready. Local pickup near North San Antonio. Cash or Zelle. No shipping.';
-  return core;
+  parts.push('Local pickup near North San Antonio. Cash or Zelle. No shipping.');
+  return parts.join(' ');
 }
 
 async function generateListing(){
   if(!files.length){ toast('Add a photo first'); return; }
-  toast('Identifying + comps...');
+  toast('Checking comps...');
   const objects = await detectObjects(files[0]);
   const ocrText = await readImageText(files[0]);
   const comps = await getComps(files[0]);
 
-  let title = objects.length ? objects[0].replace(/_/g, ' ') : 'Item for sale';
-  if(comps && comps.listing_samples && comps.listing_samples[0] && comps.listing_samples[0].title){
-    title = comps.listing_samples[0].title.split(' ').slice(0,6).join(' ');
-  }
+  let title = 'Item for sale';
   if(ocrText){
     const model = (ocrText.match(/[A-Z0-9]{3,}[-\/]?[A-Z0-9]{2,}/g) || [])[0];
-    if(model) title = model + ' — ' + title;
+    if(model && model.length < 20) title = model;
   }
-  let category = 'Home & Garden';
-  const t = title.toLowerCase();
-  if(t.includes('lamp') || t.includes('light') || t.includes('fixture')) category = 'Home & Garden / Lighting';
-  else if(t.includes('tool') || t.includes('drill') || t.includes('saw')) category = 'Tools';
-  else if(t.includes('chair') || t.includes('table') || t.includes('sofa') || t.includes('furniture')) category = 'Furniture';
-  else if(t.includes('phone') || t.includes('laptop') || t.includes('receiver') || t.includes('speaker') || t.includes('tv') || t.includes('electronics')) category = 'Electronics';
-  else if(t.includes('toy') || t.includes('game')) category = 'Toys & Games';
+  if(title === 'Item for sale' && objects.length){
+    const obj = objects[0].replace(/_/g, ' ');
+    if(obj && obj.length > 2) title = obj.charAt(0).toUpperCase() + obj.slice(1);
+  }
+  if(title === 'Item for sale' && comps && comps.listing_samples && comps.listing_samples[0]){
+    const sample = comps.listing_samples[0].title || '';
+    if(sample.length < 60) title = cleanTitle(sample);
+  }
+  title = cleanTitle(title);
 
-  basePrice = (comps && comps.estimated_value) ? Math.round(comps.estimated_value) : (objects.length ? 45 : 40);
-  const write = sellWrite(title, objects, comps);
+  let category = 'Home & Garden';
+  const t = (title + ' ' + (objects[0] || '')).toLowerCase();
+  if(t.includes('lamp') || t.includes('light') || t.includes('fixture')) category = 'Home & Garden / Lighting';
+  else if(t.includes('tool') || t.includes('drill') || t.includes('saw') || t.includes('wrench')) category = 'Tools';
+  else if(t.includes('chair') || t.includes('table') || t.includes('sofa') || t.includes('desk') || t.includes('furniture')) category = 'Furniture';
+  else if(t.includes('phone') || t.includes('laptop') || t.includes('receiver') || t.includes('speaker') || t.includes('tv') || t.includes('amp') || t.includes('electronics')) category = 'Electronics';
+  else if(t.includes('toy') || t.includes('game') || t.includes('puzzle')) category = 'Toys & Games';
+
+  basePrice = (comps && comps.estimated_value) ? Math.round(comps.estimated_value) : 40;
+  const write = sellWrite(title, comps);
 
   $('title').value = title;
   $('category').value = category;
@@ -274,9 +286,9 @@ async function generateListing(){
   const note = $('compsNote');
   if(comps && comps.estimated_value){
     const range = comps.price_range ? ` ($${comps.price_range.min}–$${comps.price_range.max})` : '';
-    note.textContent = `Comps: ~$${comps.estimated_value}${range} from active eBay listings. Directional only.`;
+    note.textContent = `Directional comps ~$${comps.estimated_value}${range} from active listings. Edit the write-up.`;
   } else {
-    note.textContent = 'No live comps returned. Using vision estimate.';
+    note.textContent = 'No strong comps. Edit the title and write-up to match the item.';
   }
 
   try{
@@ -284,7 +296,7 @@ async function generateListing(){
     processedFiles[0] = cleaned;
     renderPreviews(processedFiles);
   }catch(e){}
-  toast(objects.length ? 'Identified: ' + objects.slice(0,2).join(', ') : (comps ? 'Comps applied' : 'Generated'));
+  toast('Starting point ready — edit before posting');
 }
 
 async function eraseBackground(file){
@@ -352,7 +364,7 @@ $('eraseBtn').onclick = async () => {
   }catch(e){ toast('Erase failed'); }
 };
 
-$('tagBtn').onclick = () => { toast('Use Generate for full ID + comps'); };
+$('tagBtn').onclick = () => { toast('Use Generate for a starting point'); };
 
 document.querySelectorAll('.lot').forEach(lot => {
   lot.onclick = () => {
