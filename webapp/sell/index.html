@@ -6,6 +6,7 @@
 <title>SNAPLOT · Sell</title>
 <link rel="icon" type="image/svg+xml" href="/Chicas-Map/favicon.svg">
 <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@latest/vision_bundle.mjs"></script>
 <style>
 :root { --bg:#0e0e0e; --paper:#1a1a1a; --ink:#f5f5f5; --muted:#a1a1aa; --magenta:#c513af; --ok:#22c55e; --warn:#f59e0b; --border:#2a2a2a; }
 *{box-sizing:border-box}
@@ -42,7 +43,7 @@ button.generate{width:100%;font-size:1.05rem;margin-top:8px}
 </head>
 <body>
 <h1>SNAPLOT</h1>
-<p class="sub">Upload photos. Hit Generate. Sell-focused write-up and price bands.</p>
+<p class="sub">Upload photos. Hit Generate. Vision ID + live comps.</p>
 
 <div class="card">
   <div style="font-weight:600;margin-bottom:8px">Bench</div>
@@ -69,7 +70,7 @@ button.generate{width:100%;font-size:1.05rem;margin-top:8px}
     <button type="button" id="eraseBtn" class="secondary">Erase background</button>
     <button type="button" id="tagBtn" class="secondary">Re-tag</button>
   </div>
-  <div class="note">Identification uses photo text + category heuristics. Full vision ID and live marketplace comps need a backend.</div>
+  <div class="note" id="statusNote">Vision ID (MediaPipe) + live comps (itemvaluechecker). Both run from the phone.</div>
 </div>
 
 <div class="card">
@@ -113,11 +114,27 @@ button.generate{width:100%;font-size:1.05rem;margin-top:8px}
 
 <div class="toast" id="toast"></div>
 
-<script>
+<script type="module">
+import { ObjectDetector, FilesetResolver } from 'https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@latest/vision_bundle.mjs';
+
 const $ = id => document.getElementById(id);
 let files = [];
 let processedFiles = [];
 let basePrice = 40;
+let objectDetector = null;
+
+async function initDetector(){
+  if(objectDetector) return;
+  try{
+    const vision = await FilesetResolver.forVisionTasks('https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@latest/wasm');
+    objectDetector = await ObjectDetector.createFromOptions(vision, {
+      baseOptions: { modelAssetPath: 'https://storage.googleapis.com/mediapipe-models/object_detector/efficientdet_lite0/float16/1/efficientdet_lite0.tflite' },
+      scoreThreshold: 0.4,
+      runningMode: 'IMAGE'
+    });
+  }catch(e){ console.warn('detector init', e); }
+}
+initDetector();
 
 function toast(msg){
   const t = $('toast');
@@ -163,15 +180,32 @@ function renderPreviews(fileList){
   });
 }
 
-function suggestBasePrice(text){
-  const t = (text || '').toLowerCase();
-  if(t.includes('lamp') || t.includes('light')) return 45;
-  if(t.includes('tool') || t.includes('drill') || t.includes('saw')) return 35;
-  if(t.includes('chair') || t.includes('table') || t.includes('sofa') || t.includes('desk')) return 60;
-  if(t.includes('phone') || t.includes('laptop') || t.includes('tablet') || t.includes('camera')) return 80;
-  if(t.includes('bike') || t.includes('bicycle')) return 50;
-  if(t.includes('speaker') || t.includes('receiver') || t.includes('amp') || t.includes('sony') || t.includes('str-')) return 55;
-  return 40;
+async function detectObjects(file){
+  if(!objectDetector) return [];
+  try{
+    const img = new Image();
+    img.src = URL.createObjectURL(file);
+    await new Promise(r => { img.onload = r; img.onerror = r; });
+    const result = objectDetector.detect(img);
+    return (result && result.detections) ? result.detections.map(d => (d.categories && d.categories[0] && d.categories[0].categoryName) || '').filter(Boolean) : [];
+  }catch(e){ return []; }
+}
+
+async function getComps(file){
+  try{
+    const b64 = await new Promise((resolve) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(reader.result);
+      reader.readAsDataURL(file);
+    });
+    const res = await fetch('https://itemvaluechecker.com/api/check-by-url', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ image_base64: b64, max_results: 8 })
+    });
+    if(!res.ok) return null;
+    return await res.json();
+  }catch(e){ return null; }
 }
 
 async function readImageText(file){
@@ -182,56 +216,55 @@ async function readImageText(file){
   }catch(e){ return ''; }
 }
 
-function sellWrite(title, category, condition, ocrSnippet){
-  const cond = condition || 'Good';
-  let core = `${title}. ${cond} condition. `;
-  if(ocrSnippet) core += `Visible markings: ${ocrSnippet.slice(0,80)}. `;
+function sellWrite(title, objects, comps){
+  let core = `${title}. Good condition. `;
+  if(objects.length) core += `Detected: ${objects.slice(0,3).join(', ')}. `;
+  if(comps && comps.estimated_value){
+    core += `Similar items listed around $${comps.estimated_value}. `;
+  }
   core += 'Tested and ready. Local pickup near North San Antonio. Cash or Zelle. No shipping.';
   return core;
 }
 
-function applyFromText(ocrText, filename){
-  const combined = ((ocrText || '') + ' ' + (filename || '')).toLowerCase();
-  let title = 'Item for sale';
+async function generateListing(){
+  if(!files.length){ toast('Add a photo first'); return; }
+  toast('Identifying...');
+  const objects = await detectObjects(files[0]);
+  const ocrText = await readImageText(files[0]);
+  const comps = await getComps(files[0]);
+
+  let title = objects.length ? objects[0].replace(/_/g, ' ') : 'Item for sale';
+  if(ocrText){
+    const model = (ocrText.match(/[A-Z0-9]{3,}[-\/]?[A-Z0-9]{2,}/g) || [])[0];
+    if(model) title = model + ' — ' + title;
+  }
   let category = 'Home & Garden';
-  let condition = 'Good';
-  if(combined.includes('lamp') || combined.includes('light')){
-    title = 'Brass lamp, working';
-    category = 'Home & Garden / Lighting';
-  } else if(combined.includes('tool') || combined.includes('drill') || combined.includes('saw')){
-    title = 'Power tool, tested';
-    category = 'Tools';
-  } else if(combined.includes('chair') || combined.includes('table') || combined.includes('sofa') || combined.includes('desk')){
-    title = 'Furniture piece';
-    category = 'Furniture';
-  } else if(combined.includes('phone') || combined.includes('laptop') || combined.includes('tablet') || combined.includes('camera')){
-    title = 'Electronics, working';
-    category = 'Electronics';
-  } else if(combined.includes('bike') || combined.includes('bicycle')){
-    title = 'Bicycle, ready to ride';
-    category = 'Sports & Outdoors';
-  } else if(combined.includes('speaker') || combined.includes('receiver') || combined.includes('amp') || combined.includes('sony') || combined.includes('str-')){
-    title = 'Audio receiver, working';
-    category = 'Electronics / Audio';
-  }
-  const modelMatch = (ocrText || '').match(/[A-Z0-9]{3,}[-\/]?[A-Z0-9]{2,}/g);
-  if(modelMatch && modelMatch.length){
-    title = modelMatch[0] + ' — ' + title;
-  }
-  basePrice = suggestBasePrice(combined);
-  const write = sellWrite(title, category, condition, ocrText);
+  if(title.toLowerCase().includes('lamp') || title.toLowerCase().includes('light')) category = 'Home & Garden / Lighting';
+  else if(title.toLowerCase().includes('tool') || title.toLowerCase().includes('drill')) category = 'Tools';
+  else if(title.toLowerCase().includes('chair') || title.toLowerCase().includes('table')) category = 'Furniture';
+  else if(title.toLowerCase().includes('phone') || title.toLowerCase().includes('laptop')) category = 'Electronics';
+
+  basePrice = (comps && comps.estimated_value) ? Math.round(comps.estimated_value) : (objects.length ? 45 : 40);
+  const write = sellWrite(title, objects, comps);
+
   $('title').value = title;
   $('category').value = category;
-  $('condition').value = condition;
+  $('condition').value = 'Good';
   $('writeup').value = write;
   $('neighborhood').value = $('neighborhood').value.trim() || 'North San Antonio';
   $('price').value = basePrice;
   updateSpeed();
   updateReady();
-  // highlight market pill
   document.querySelectorAll('.pill').forEach(p => p.classList.remove('on'));
   const market = document.querySelector('.pill[data-tier="market"]');
   if(market) market.classList.add('on');
+
+  try{
+    const cleaned = await eraseBackground(files[0]);
+    processedFiles[0] = cleaned;
+    renderPreviews(processedFiles);
+  }catch(e){}
+  toast(objects.length ? 'Identified: ' + objects.slice(0,2).join(', ') : 'Generated');
 }
 
 async function eraseBackground(file){
@@ -262,20 +295,6 @@ async function eraseBackground(file){
     img.onerror = () => reject(new Error('img'));
     img.src = URL.createObjectURL(file);
   });
-}
-
-async function generateListing(){
-  if(!files.length){ toast('Add a photo first'); return; }
-  toast('Reading the photo...');
-  const ocrText = await readImageText(files[0]);
-  applyFromText(ocrText, files[0].name);
-  try{
-    const cleaned = await eraseBackground(files[0]);
-    processedFiles[0] = cleaned;
-    renderPreviews(processedFiles);
-  }catch(e){}
-  updateReady();
-  toast('Listing generated');
 }
 
 $('photos').addEventListener('change', e => {
@@ -313,10 +332,7 @@ $('eraseBtn').onclick = async () => {
   }catch(e){ toast('Erase failed'); }
 };
 
-$('tagBtn').onclick = () => {
-  applyFromText('', files[0] ? files[0].name : '');
-  toast('Re-tagged');
-};
+$('tagBtn').onclick = () => { toast('Use Generate for full ID'); };
 
 document.querySelectorAll('.lot').forEach(lot => {
   lot.onclick = () => {
