@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chicas Map · Post Your Sale</title>
+<link rel="icon" type="image/svg+xml" href="/Chicas-Map/favicon.svg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+:root { --magenta: #c513af; --bg: #121212; --ink: #f4f4f5; --paper: #1a1a1a; --border: #333; }
+body { font-family: Inter, system-ui, sans-serif; background: var(--bg); color: var(--ink); margin: 0; padding: 16px; line-height: 1.5; }
+h1 { font-family: Syne, sans-serif; color: var(--magenta); font-size: 1.8rem; margin-bottom: 8px; }
+.note { background: var(--paper); border: 1px solid var(--border); border-radius: 12px; padding: 12px 16px; margin: 16px 0; font-size: 0.95rem; }
+.field { margin-bottom: 20px; }
+label { display: block; font-weight: 600; margin-bottom: 6px; color: var(--magenta); }
+input, textarea { width: 100%; max-width: 480px; padding: 12px; border: 1px solid var(--border); border-radius: 8px; background: var(--paper); color: var(--ink); font-size: 1rem; box-sizing: border-box; }
+textarea { min-height: 100px; resize: vertical; }
+.row { display: flex; gap: 8px; align-items: flex-end; flex-wrap: wrap; }
+button { background: var(--magenta); color: white; border: none; border-radius: 8px; padding: 12px 16px; font-weight: 600; cursor: pointer; min-height: 44px; }
+button:active { opacity: 0.85; }
+.desktop-only { display: none; }
+@media (min-width: 1024px) { .desktop-only { display: block; } .mobile-only { display: none; } }
+.toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: #333; color: white; padding: 10px 20px; border-radius: 8px; opacity: 0; transition: opacity 0.3s; pointer-events: none; }
+.toast.show { opacity: 1; }
+a { color: var(--magenta); }
+</style>
+</head>
+<body>
+<h1>Post Your Sale</h1>
+<p>Fill the details once. On desktop, use a browser extension for fully automated posting to groups and listings. On phone or tablet, tap the button next to each field to copy it, then paste into the form.</p>
+
+<div class="note desktop-only">
+<strong>Desktop — Automated Posting</strong><br>
+Install a Chrome/Firefox extension that supports form auto-fill or multi-group posting (examples: Facebook Auto Poster or similar safe tools). Open the target site, then let the extension populate and submit while you monitor. This page keeps your data ready for the extension to read if it supports custom sources.
+</div>
+
+<div class="note mobile-only">
+<strong>Phone / Tablet</strong><br>
+Tap a field, then tap <strong>Copy</strong>. Paste into the corresponding field on Facebook, Nextdoor, Craigslist, or the Chicas Map submit form.
+</div>
+
+<form id="saleForm">
+  <div class="field">
+    <label for="title">Sale Title</label>
+    <div class="row">
+      <input id="title" type="text" placeholder="Garage Sale — Toys, Furniture, Tools" required>
+      <button type="button" onclick="copyField('title')">Copy</button>
+    </div>
+  </div>
+
+  <div class="field">
+    <label for="address">Address</label>
+    <div class="row">
+      <input id="address" type="text" placeholder="123 Main St, San Antonio, TX" required>
+      <button type="button" onclick="copyField('address')">Copy</button>
+    </div>
+  </div>
+
+  <div class="field">
+    <label for="dates">Dates & Hours</label>
+    <div class="row">
+      <input id="dates" type="text" placeholder="Saturday 8am–2pm, Sunday 9am–1pm" required>
+      <button type="button" onclick="copyField('dates')">Copy</button>
+    </div>
+  </div>
+
+  <div class="field">
+    <label for="description">Description / What’s for sale</label>
+    <div class="row">
+      <textarea id="description" placeholder="Kids clothes, kitchenware, power tools, books…"></textarea>
+      <button type="button" onclick="copyField('description')">Copy</button>
+    </div>
+  </div>
+
+  <div class="field">
+    <label for="contact">Contact (optional)</label>
+    <div class="row">
+      <input id="contact" type="text" placeholder="Text 210-555-1234 or message">
+      <button type="button" onclick="copyField('contact')">Copy</button>
+    </div>
+  </div>
+
+  <button type="button" onclick="generatePost()" style="margin-top:8px; background:#333;">Generate Full Post Text</button>
+</form>
+
+<div id="generated" class="note" style="display:none; margin-top:24px;">
+  <strong>Full post ready to copy</strong>
+  <pre id="postText" style="white-space:pre-wrap; word-break:break-word;"></pre>
+  <button type="button" onclick="copyGenerated()">Copy Full Post</button>
+</div>
+
+<p style="margin-top:32px;"><a href="/Chicas-Map/submit">Also list it on the Chicas Map →</a></p>
+
+<div class="toast" id="toast">Copied!</div>
+
+<script>
+function copyField(id) {
+  const el = document.getElementById(id);
+  const text = el.value || el.textContent || '';
+  if (!text) { showToast('Nothing to copy'); return; }
+  navigator.clipboard.writeText(text).then(() => showToast('Copied ' + id)).catch(() => {
+    el.select(); document.execCommand('copy'); showToast('Copied');
+  });
+}
+function generatePost() {
+  const title = document.getElementById('title').value;
+  const address = document.getElementById('address').value;
+  const dates = document.getElementById('dates').value;
+  const desc = document.getElementById('description').value;
+  const contact = document.getElementById('contact').value;
+  let post = title + '\n\n' + address + '\n' + dates + '\n\n' + desc;
+  if (contact) post += '\n\n' + contact;
+  post += '\n\nFind more on the map: https://chicasmap.com';
+  document.getElementById('postText').textContent = post;
+  document.getElementById('generated').style.display = 'block';
+  showToast('Post generated');
+}
+function copyGenerated() {
+  const text = document.getElementById('postText').textContent;
+  navigator.clipboard.writeText(text).then(() => showToast('Full post copied')).catch(() => showToast('Copy failed'));
+}
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+</script>
+</body>
+</html>
