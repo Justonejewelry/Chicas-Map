@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>SNAPLOT · Sell</title>
 <link rel="icon" type="image/svg+xml" href="/Chicas-Map/favicon.svg">
-<!-- deploy -->
 <style>
 :root { --bg:#0e0e0e; --paper:#1a1a1a; --ink:#f5f5f5; --muted:#a1a1aa; --magenta:#c513af; --ok:#22c55e; --warn:#f59e0b; --border:#2a2a2a; }
 *{box-sizing:border-box}
@@ -20,6 +19,7 @@ textarea{min-height:120px;resize:vertical}
 button{background:var(--magenta);color:#fff;border:0;border-radius:10px;padding:12px 16px;font-weight:600;min-height:44px;cursor:pointer}
 button.secondary{background:#333}
 button.ghost{background:transparent;border:1px solid var(--border);color:var(--ink)}
+button.generate{width:100%;font-size:1.05rem;margin-top:8px}
 .photos{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
 .thumb{width:72px;height:72px;border-radius:8px;object-fit:cover;border:1px solid var(--border)}
 .ready{font-size:.9rem;margin-top:8px;padding:8px 10px;border-radius:8px;background:#111}
@@ -40,7 +40,7 @@ button.ghost{background:transparent;border:1px solid var(--border);color:var(--i
 </head>
 <body>
 <h1>SNAPLOT</h1>
-<p class="sub">Phone-first listing bench. Upload photos → fields fill → share write-up + cover photo.</p>
+<p class="sub">Upload photos. Hit Generate. Share the write-up and cover photo.</p>
 
 <div class="card">
   <div style="font-weight:600;margin-bottom:8px">Bench</div>
@@ -62,6 +62,7 @@ button.ghost{background:transparent;border:1px solid var(--border);color:var(--i
   <label>Photos (1–5)</label>
   <input type="file" id="photos" accept="image/*" multiple>
   <div class="photos" id="preview"></div>
+  <button type="button" id="generateBtn" class="generate">Generate</button>
   <div class="ai-row">
     <button type="button" id="eraseBtn" class="secondary">Erase background</button>
     <button type="button" id="tagBtn" class="secondary">Re-tag</button>
@@ -158,6 +159,16 @@ function renderPreviews(fileList){
   });
 }
 
+function suggestPrice(name){
+  if(name.includes('lamp') || name.includes('light')) return 45;
+  if(name.includes('tool') || name.includes('drill') || name.includes('saw')) return 35;
+  if(name.includes('chair') || name.includes('table') || name.includes('sofa') || name.includes('desk')) return 60;
+  if(name.includes('phone') || name.includes('laptop') || name.includes('tablet') || name.includes('camera')) return 80;
+  if(name.includes('bike') || name.includes('bicycle')) return 50;
+  if(name.includes('speaker') || name.includes('receiver') || name.includes('amp')) return 55;
+  return 40;
+}
+
 function autoTagFromFiles(){
   if(!files.length) return;
   const name = files[0].name.toLowerCase();
@@ -174,8 +185,10 @@ function autoTagFromFiles(){
   $('title').value = title;
   $('category').value = category;
   $('condition').value = condition;
-  if(!$('writeup').value.trim()) $('writeup').value = write;
+  $('writeup').value = write;
   if(!$('neighborhood').value.trim()) $('neighborhood').value = 'North San Antonio';
+  if(!$('price').value) $('price').value = suggestPrice(name);
+  updateSpeed();
   updateReady();
 }
 
@@ -205,19 +218,27 @@ async function eraseBackground(file){
   });
 }
 
-$('photos').addEventListener('change', async e => {
-  files = Array.from(e.target.files).slice(0,5);
-  processedFiles = [...files];
-  renderPreviews(files);
+async function generateListing(){
+  if(!files.length){ toast('Add a photo first'); return; }
+  toast('Generating...');
   autoTagFromFiles();
-  toast('Fields filled from photo');
   try{
     const cleaned = await eraseBackground(files[0]);
     processedFiles[0] = cleaned;
     renderPreviews(processedFiles);
   }catch(_){}
   updateReady();
+  toast('Listing generated');
+}
+
+$('photos').addEventListener('change', e => {
+  files = Array.from(e.target.files).slice(0,5);
+  processedFiles = [...files];
+  renderPreviews(files);
+  updateReady();
 });
+
+$('generateBtn').onclick = generateListing;
 
 ['title','price','writeup','neighborhood','category','condition'].forEach(id => {
   $(id).addEventListener('input', () => { updateReady(); if(id==='price') updateSpeed(); });
