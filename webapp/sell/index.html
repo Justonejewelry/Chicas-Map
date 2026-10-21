@@ -29,7 +29,7 @@ button.generate{width:100%;font-size:1.05rem;margin-top:8px}
 .pill{font-size:.75rem;padding:4px 8px;border-radius:999px;background:#222;color:var(--muted)}
 .pill.on{background:var(--magenta);color:#fff}
 .speed{font-size:.85rem;color:var(--muted);margin-top:4px}
-.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#222;padding:10px 16px;border-radius:8px;opacity:0;transition:opacity .2s;pointer-events:none}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#222;padding:10px 16px;border-radius:8px;opacity:0;transition:opacity .2s;pointer-events:none;z-index:9}
 .toast.show{opacity:1}
 .ai-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
 .bench{display:flex;gap:10px;overflow-x:auto;padding-bottom:8px}
@@ -119,7 +119,7 @@ function toast(msg){
   const t = $('toast');
   t.textContent = msg;
   t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 1600);
+  setTimeout(() => t.classList.remove('show'), 2000);
 }
 
 function updateReady(){
@@ -160,6 +160,7 @@ function renderPreviews(fileList){
 }
 
 function suggestPrice(name){
+  name = (name || '').toLowerCase();
   if(name.includes('lamp') || name.includes('light')) return 45;
   if(name.includes('tool') || name.includes('drill') || name.includes('saw')) return 35;
   if(name.includes('chair') || name.includes('table') || name.includes('sofa') || name.includes('desk')) return 60;
@@ -170,8 +171,19 @@ function suggestPrice(name){
 }
 
 function autoTagFromFiles(){
-  if(!files.length) return;
-  const name = files[0].name.toLowerCase();
+  if(!files.length){
+    // still fill something useful if user hits Generate with no photo
+    $('title').value = $('title').value || 'Item for sale';
+    $('category').value = $('category').value || 'Home & Garden';
+    $('condition').value = $('condition').value || 'Good';
+    $('writeup').value = $('writeup').value || 'Local pickup. Cash or Zelle.';
+    $('neighborhood').value = $('neighborhood').value || 'North San Antonio';
+    if(!$('price').value) $('price').value = 40;
+    updateSpeed();
+    updateReady();
+    return;
+  }
+  const name = (files[0].name || '').toLowerCase();
   let title = 'Item for sale';
   let category = 'Home & Garden';
   let condition = 'Good';
@@ -186,53 +198,58 @@ function autoTagFromFiles(){
   $('category').value = category;
   $('condition').value = condition;
   $('writeup').value = write;
-  if(!$('neighborhood').value.trim()) $('neighborhood').value = 'North San Antonio';
-  if(!$('price').value) $('price').value = suggestPrice(name);
+  $('neighborhood').value = $('neighborhood').value.trim() || 'North San Antonio';
+  $('price').value = $('price').value || suggestPrice(name);
   updateSpeed();
   updateReady();
 }
 
 async function eraseBackground(file){
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
     const img = new Image();
     img.onload = () => {
-      const canvas = document.createElement('canvas');
-      canvas.width = img.width;
-      canvas.height = img.height;
-      const ctx = canvas.getContext('2d');
-      ctx.drawImage(img, 0, 0);
-      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-      const data = imageData.data;
-      for(let i = 0; i < data.length; i += 4){
-        const r = data[i], g = data[i+1], b = data[i+2];
-        const brightness = (r+g+b)/3;
-        if(brightness > 200){ data[i+3] = 0; }
-      }
-      ctx.putImageData(imageData, 0, 0);
-      canvas.toBlob(blob => {
-        const newFile = new File([blob], file.name.replace(/\.[^.]+$/, '.png'), { type: 'image/png' });
-        resolve(newFile);
-      }, 'image/png');
+      try{
+        const canvas = document.createElement('canvas');
+        canvas.width = img.width;
+        canvas.height = img.height;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0);
+        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        const data = imageData.data;
+        for(let i = 0; i < data.length; i += 4){
+          const r = data[i], g = data[i+1], b = data[i+2];
+          const brightness = (r+g+b)/3;
+          if(brightness > 200){ data[i+3] = 0; }
+        }
+        ctx.putImageData(imageData, 0, 0);
+        canvas.toBlob(blob => {
+          if(!blob) return reject(new Error('blob'));
+          const newFile = new File([blob], (file.name || 'cover').replace(/\.[^.]+$/, '.png'), { type: 'image/png' });
+          resolve(newFile);
+        }, 'image/png');
+      }catch(err){ reject(err); }
     };
+    img.onerror = () => reject(new Error('img'));
     img.src = URL.createObjectURL(file);
   });
 }
 
 async function generateListing(){
-  if(!files.length){ toast('Add a photo first'); return; }
   toast('Generating...');
   autoTagFromFiles();
-  try{
-    const cleaned = await eraseBackground(files[0]);
-    processedFiles[0] = cleaned;
-    renderPreviews(processedFiles);
-  }catch(_){}
+  if(files.length){
+    try{
+      const cleaned = await eraseBackground(files[0]);
+      processedFiles[0] = cleaned;
+      renderPreviews(processedFiles);
+    }catch(e){ /* keep original */ }
+  }
   updateReady();
   toast('Listing generated');
 }
 
 $('photos').addEventListener('change', e => {
-  files = Array.from(e.target.files).slice(0,5);
+  files = Array.from(e.target.files || []).slice(0,5);
   processedFiles = [...files];
   renderPreviews(files);
   updateReady();
@@ -241,7 +258,8 @@ $('photos').addEventListener('change', e => {
 $('generateBtn').onclick = generateListing;
 
 ['title','price','writeup','neighborhood','category','condition'].forEach(id => {
-  $(id).addEventListener('input', () => { updateReady(); if(id==='price') updateSpeed(); });
+  const el = $(id);
+  if(el) el.addEventListener('input', () => { updateReady(); if(id==='price') updateSpeed(); });
 });
 
 $('eraseBtn').onclick = async () => {
@@ -275,41 +293,59 @@ document.querySelectorAll('.lot').forEach(lot => {
 });
 
 function buildText(){
-  const title = $('title').value.trim();
-  const price = $('price').value;
-  const hood = $('neighborhood').value.trim();
-  const body = $('writeup').value.trim();
+  const title = $('title').value.trim() || 'Item for sale';
+  const price = $('price').value || '40';
+  const hood = $('neighborhood').value.trim() || 'North San Antonio';
+  const body = $('writeup').value.trim() || 'Local pickup. Cash or Zelle.';
   const cat = $('category').value.trim();
   const cond = $('condition').value;
   return `${title}\n$${price}${cond ? ' · ' + cond : ''}${cat ? '\n' + cat : ''}\n\n${body}\n\nLocal pickup near ${hood}. Cash or Zelle.`;
 }
 
-$('copyBtn').onclick = async () => {
+async function copyText(text){
   try{
-    await navigator.clipboard.writeText(buildText());
-    toast('Write-up copied');
-  }catch(e){ toast('Copy failed'); }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+  }catch(e){}
+  // fallback
+  try{
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.left = '-9999px';
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    return true;
+  }catch(e){ return false; }
+}
+
+$('copyBtn').onclick = async () => {
+  const ok = await copyText(buildText());
+  toast(ok ? 'Write-up copied' : 'Copy failed — select the text manually');
 };
 
 $('shareBtn').onclick = async () => {
   const text = buildText();
   const shareFiles = processedFiles.length ? processedFiles : files;
-  if(!shareFiles.length){ toast('Add a photo first'); return; }
-  const shareData = { title: $('title').value || 'Listing', text };
   try{
-    if(navigator.canShare && navigator.canShare({ files: shareFiles })){
-      shareData.files = shareFiles;
-      await navigator.share(shareData);
-      toast('Shared with photo');
-    } else {
-      await navigator.share({ text });
-      toast('Shared text (photo not supported in this browser)');
+    if(navigator.share){
+      const data = { title: $('title').value || 'Listing', text };
+      if(shareFiles.length && navigator.canShare && navigator.canShare({ files: shareFiles })){
+        data.files = shareFiles;
+      }
+      await navigator.share(data);
+      toast(data.files ? 'Shared with photo' : 'Shared');
+      return;
     }
   }catch(err){
-    if(err.name !== 'AbortError'){
-      try{ await navigator.clipboard.writeText(text); toast('Share blocked — write-up copied'); }catch(_){ toast('Share failed'); }
-    }
+    if(err && err.name === 'AbortError') return;
   }
+  const ok = await copyText(text);
+  toast(ok ? 'Share unavailable — write-up copied' : 'Share failed');
 };
 
 updateReady();
