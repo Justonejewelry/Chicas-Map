@@ -15,7 +15,7 @@ h1{font-size:1.6rem;margin:0 0 4px}
 .card{background:var(--paper);border:1px solid var(--border);border-radius:16px;padding:16px;margin-bottom:16px}
 label{display:block;font-weight:600;margin:12px 0 6px;font-size:.9rem}
 input,textarea,select{width:100%;padding:12px;border-radius:10px;border:1px solid var(--border);background:#111;color:var(--ink);font-size:1rem}
-textarea{min-height:120px;resize:vertical}
+textarea{min-height:140px;resize:vertical}
 .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 button{background:var(--magenta);color:#fff;border:0;border-radius:10px;padding:12px 16px;font-weight:600;min-height:44px;cursor:pointer}
 button.secondary{background:#333}
@@ -27,7 +27,7 @@ button.generate{width:100%;font-size:1.05rem;margin-top:8px}
 .ready.ok{color:var(--ok);border:1px solid #14532d}
 .ready.warn{color:var(--warn);border:1px solid #78350f}
 .tier{display:flex;gap:6px;margin-top:6px;flex-wrap:wrap}
-.pill{font-size:.75rem;padding:4px 8px;border-radius:999px;background:#222;color:var(--muted)}
+.pill{font-size:.75rem;padding:4px 8px;border-radius:999px;background:#222;color:var(--muted);cursor:pointer}
 .pill.on{background:var(--magenta);color:#fff}
 .speed{font-size:.85rem;color:var(--muted);margin-top:4px}
 .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#222;padding:10px 16px;border-radius:8px;opacity:0;transition:opacity .2s;pointer-events:none;z-index:9}
@@ -37,11 +37,12 @@ button.generate{width:100%;font-size:1.05rem;margin-top:8px}
 .lot{min-width:140px;background:#111;border:1px solid var(--border);border-radius:12px;padding:10px;cursor:pointer}
 .lot img{width:100%;height:80px;object-fit:cover;border-radius:8px;margin-bottom:6px}
 .lot .speed-pill{font-size:.7rem;padding:2px 6px;border-radius:999px;background:var(--magenta);color:#fff;display:inline-block;margin-top:4px}
+.note{font-size:.8rem;color:var(--muted);margin-top:8px}
 </style>
 </head>
 <body>
 <h1>SNAPLOT</h1>
-<p class="sub">Upload photos. Hit Generate. It reads the image and fills the listing.</p>
+<p class="sub">Upload photos. Hit Generate. Sell-focused write-up and price bands.</p>
 
 <div class="card">
   <div style="font-weight:600;margin-bottom:8px">Bench</div>
@@ -68,6 +69,7 @@ button.generate{width:100%;font-size:1.05rem;margin-top:8px}
     <button type="button" id="eraseBtn" class="secondary">Erase background</button>
     <button type="button" id="tagBtn" class="secondary">Re-tag</button>
   </div>
+  <div class="note">Identification uses photo text + category heuristics. Full vision ID and live marketplace comps need a backend.</div>
 </div>
 
 <div class="card">
@@ -90,9 +92,9 @@ button.generate{width:100%;font-size:1.05rem;margin-top:8px}
   <input id="price" type="number" inputmode="decimal" placeholder="45">
 
   <div class="tier" id="tiers">
-    <span class="pill" data-tier="fast">Fast</span>
-    <span class="pill" data-tier="market">2–3 days</span>
-    <span class="pill" data-tier="top">Top dollar</span>
+    <span class="pill" data-tier="fast" data-mult="0.85">Fast</span>
+    <span class="pill" data-tier="market" data-mult="1">2–3 days</span>
+    <span class="pill" data-tier="top" data-mult="1.2">Top dollar</span>
   </div>
   <div class="speed" id="speed">Set a price to see speed.</div>
 
@@ -115,6 +117,7 @@ button.generate{width:100%;font-size:1.05rem;margin-top:8px}
 const $ = id => document.getElementById(id);
 let files = [];
 let processedFiles = [];
+let basePrice = 40;
 
 function toast(msg){
   const t = $('toast');
@@ -144,8 +147,8 @@ function updateSpeed(){
   const p = parseFloat($('price').value);
   const speed = $('speed');
   if(!p){ speed.textContent = 'Set a price to see speed.'; return; }
-  if(p < 30) speed.textContent = 'Priced for Fast Sale (same day)';
-  else if(p < 60) speed.textContent = 'Competitive — 2–3 days';
+  if(p < basePrice * 0.9) speed.textContent = 'Priced for Fast Sale (same day)';
+  else if(p < basePrice * 1.15) speed.textContent = 'Competitive — 2–3 days';
   else speed.textContent = 'Top dollar — room to negotiate';
 }
 
@@ -160,7 +163,7 @@ function renderPreviews(fileList){
   });
 }
 
-function suggestPrice(text){
+function suggestBasePrice(text){
   const t = (text || '').toLowerCase();
   if(t.includes('lamp') || t.includes('light')) return 45;
   if(t.includes('tool') || t.includes('drill') || t.includes('saw')) return 35;
@@ -179,52 +182,56 @@ async function readImageText(file){
   }catch(e){ return ''; }
 }
 
+function sellWrite(title, category, condition, ocrSnippet){
+  const cond = condition || 'Good';
+  let core = `${title}. ${cond} condition. `;
+  if(ocrSnippet) core += `Visible markings: ${ocrSnippet.slice(0,80)}. `;
+  core += 'Tested and ready. Local pickup near North San Antonio. Cash or Zelle. No shipping.';
+  return core;
+}
+
 function applyFromText(ocrText, filename){
   const combined = ((ocrText || '') + ' ' + (filename || '')).toLowerCase();
   let title = 'Item for sale';
   let category = 'Home & Garden';
   let condition = 'Good';
-  let write = 'Local pickup. Cash or Zelle.';
   if(combined.includes('lamp') || combined.includes('light')){
     title = 'Brass lamp, working';
     category = 'Home & Garden / Lighting';
-    write = 'Works great. Minor scuff on rear panel, fully functional. Cash or Zelle, local pickup.';
   } else if(combined.includes('tool') || combined.includes('drill') || combined.includes('saw')){
     title = 'Power tool, tested';
     category = 'Tools';
-    write = 'Tested and working. Local pickup. Cash or Zelle.';
   } else if(combined.includes('chair') || combined.includes('table') || combined.includes('sofa') || combined.includes('desk')){
     title = 'Furniture piece';
     category = 'Furniture';
-    write = 'Solid condition. Local pickup only.';
   } else if(combined.includes('phone') || combined.includes('laptop') || combined.includes('tablet') || combined.includes('camera')){
     title = 'Electronics, working';
     category = 'Electronics';
-    write = 'Powers on and works. Local pickup. Cash or Zelle.';
   } else if(combined.includes('bike') || combined.includes('bicycle')){
     title = 'Bicycle, ready to ride';
     category = 'Sports & Outdoors';
-    write = 'Rides well. Local pickup.';
   } else if(combined.includes('speaker') || combined.includes('receiver') || combined.includes('amp') || combined.includes('sony') || combined.includes('str-')){
     title = 'Audio receiver, working';
     category = 'Electronics / Audio';
-    write = 'Powers on, tested. Local pickup. Cash or Zelle.';
   }
-  // pull model-like tokens from OCR
   const modelMatch = (ocrText || '').match(/[A-Z0-9]{3,}[-\/]?[A-Z0-9]{2,}/g);
   if(modelMatch && modelMatch.length){
-    title = title.replace('Item for sale', modelMatch[0] + ' — ' + title);
-    if(!title.includes(modelMatch[0])) title = modelMatch[0] + ' — ' + title;
-    write = 'Model: ' + modelMatch.slice(0,2).join(', ') + '. ' + write;
+    title = modelMatch[0] + ' — ' + title;
   }
+  basePrice = suggestBasePrice(combined);
+  const write = sellWrite(title, category, condition, ocrText);
   $('title').value = title;
   $('category').value = category;
   $('condition').value = condition;
   $('writeup').value = write;
   $('neighborhood').value = $('neighborhood').value.trim() || 'North San Antonio';
-  $('price').value = $('price').value || suggestPrice(combined);
+  $('price').value = basePrice;
   updateSpeed();
   updateReady();
+  // highlight market pill
+  document.querySelectorAll('.pill').forEach(p => p.classList.remove('on'));
+  const market = document.querySelector('.pill[data-tier="market"]');
+  if(market) market.classList.add('on');
 }
 
 async function eraseBackground(file){
@@ -268,7 +275,7 @@ async function generateListing(){
     renderPreviews(processedFiles);
   }catch(e){}
   updateReady();
-  toast(ocrText ? 'Generated from image text' : 'Generated');
+  toast('Listing generated');
 }
 
 $('photos').addEventListener('change', e => {
@@ -283,6 +290,16 @@ $('generateBtn').onclick = generateListing;
 ['title','price','writeup','neighborhood','category','condition'].forEach(id => {
   const el = $(id);
   if(el) el.addEventListener('input', () => { updateReady(); if(id==='price') updateSpeed(); });
+});
+
+document.querySelectorAll('.pill').forEach(pill => {
+  pill.onclick = () => {
+    document.querySelectorAll('.pill').forEach(p => p.classList.remove('on'));
+    pill.classList.add('on');
+    const mult = parseFloat(pill.dataset.mult) || 1;
+    $('price').value = Math.round(basePrice * mult);
+    updateSpeed();
+  };
 });
 
 $('eraseBtn').onclick = async () => {
@@ -309,6 +326,7 @@ document.querySelectorAll('.lot').forEach(lot => {
     $('condition').value = lot.dataset.cond || '';
     $('writeup').value = lot.dataset.write || '';
     $('neighborhood').value = lot.dataset.hood || '';
+    basePrice = parseFloat(lot.dataset.price) || 40;
     updateReady();
     updateSpeed();
     toast('Lot loaded');
