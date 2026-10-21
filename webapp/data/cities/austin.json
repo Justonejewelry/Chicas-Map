@@ -77,30 +77,6 @@
       "external_id": "eso-2467653"
     },
     {
-      "address": "12119 Tavira Dirve lot 688, Austin, TX",
-      "dates": "2026-10-18 – 2026-10-20",
-      "date_from": "2026-10-18",
-      "date_to": "2026-10-20",
-      "end_date": "2026-10-20",
-      "hours": null,
-      "title": "HUGE DEL VALLE ESTATE SALE: Everything must go!",
-      "details": "QR Code Link to This Post This weekend we’re having an estate sale. Everything in the house is for sale from Clothes, electronics books, figurines, kitchenware, tools, and more.",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/del-valle-huge-del-valle-estate-sale/ss3CrDzLLBhJRKez18tjju",
-      "photos": 0,
-      "type": "estate",
-      "categories": [
-        "estate-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.1745,
-      "lon": -97.6134,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-valleestatesaless3crdzllbhjrkez18tjju"
-    },
-    {
       "address": "1314 E Oltorf St. near Schriber St., Austin, TX",
       "dates": "2026-10-24 – 2026-10-24",
       "date_from": "2026-10-24",
@@ -143,30 +119,6 @@
       "geocode": "city-center"
     },
     {
-      "address": "5 Kern Ramble St. near French Place, Austin, TX",
-      "dates": "2026-10-18 – 2026-10-20",
-      "date_from": "2026-10-18",
-      "date_to": "2026-10-20",
-      "end_date": "2026-10-20",
-      "hours": null,
-      "title": "5 Kern Ramble Garage Sale",
-      "details": "QR Code Link to This Post Garage/House Sale, Sunday, 18 October, 11 a.m. - 5 p.m. Please stop by 5 Kern Ramble for a final sale of many valuable, beautiful and functional items, including camping and fishing gear, furniture, appliances, artwork, tools, lawncare items, smart tv, entertainment center, surround sound system, barbeque pit, sofa bed, etc. NO EARLY BIRDS, NO LOWBALLERS",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/austin-kern-ramble-garage-sale/mHv1vFN3UhPZ8Zp18ZGQ7C",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.289547,
-      "lon": -97.717283,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-amblegaragesalemhv1vfn3uhpz8zp18zgq7c"
-    },
-    {
       "address": "106 E Highway 79, Austin, TX",
       "dates": "2026-10-24 – 2026-10-24",
       "date_from": "2026-10-24",
@@ -189,73 +141,6 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "cl-tagemarketspotsfhab7utjwepuuw5jcarshc"
-    },
-    {
-      "address": "San Marcos, TX 78666",
-      "dates": "Tue Oct 13 – Tue Oct 20",
-      "date_from": "10/13/2026",
-      "date_to": "10/20/2026",
-      "end_date": "2026-10-20",
-      "title": "2.0 Hawaii Bound- Everything Must Go! Sale Ends 10/20. Pick Up 10/22 10-2",
-      "details": "",
-      "source": "GarageSaleFinder",
-      "url": "https://garagesalefinder.com/s/N9Z2Z/san-marcos-tx-78666",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.65,
-      "status": "verified",
-      "lat": 30.2672,
-      "lon": -97.7431,
-      "geocode": "city-center"
-    },
-    {
-      "address": "1012 Mountain View, Austin, TX",
-      "dates": "2026-10-18 – 2026-10-20",
-      "date_from": "2026-10-18",
-      "date_to": "2026-10-20",
-      "end_date": "2026-10-20",
-      "hours": null,
-      "title": "Garage/Estate Sale",
-      "details": "QR Code Link to This Post Furniture, etc.",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/pflugerville-garage-estate-sale/nhfeR7ro3aQsSAXupaQ3uk",
-      "photos": 0,
-      "type": "estate",
-      "categories": [
-        "estate-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.4421,
-      "lon": -97.6299,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-arageestatesalenhfer7ro3aqssaxupaq3uk"
-    },
-    {
-      "address": "183A, Austin, TX",
-      "dates": "2026-10-18 – 2026-10-20",
-      "date_from": "2026-10-18",
-      "date_to": "2026-10-20",
-      "end_date": "2026-10-20",
-      "hours": null,
-      "title": "Liberty Hill estate sale - handyman's dream - tools, garden, etc",
-      "details": "QR Code Link to This Post https://www.estatesales.net/TX/Liberty-Hill/78642/5112762 Address: 350 Live Oak Trail Liberty Hill Tx KNOW BEFORE YOU GO: This is a family-operated sale. Please be respectful. ½ off second day. We’re not selling before the event, but you can request information if you want. Please pay attention to parking signs to protect septic system and pipes. Please bring movers - buy",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/liberty-hill-liberty-hill-estate-sale/5U4FPG3GEGKt1mUk4kGZEn",
-      "photos": 0,
-      "type": "estate",
-      "categories": [
-        "estate-sale",
-        "moving-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.741696,
-      "lon": -97.87646,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-hillestatesale5u4fpg3gegkt1muk4kgzen"
     },
     {
       "address": "Salado, TX 76571",
@@ -294,79 +179,6 @@
       "geocode": "city-center"
     },
     {
-      "address": "655 Carmel Creekside Drive near Zimmer Loop, Austin, TX",
-      "dates": "2026-10-18 – 2026-10-20",
-      "date_from": "2026-10-18",
-      "date_to": "2026-10-20",
-      "end_date": "2026-10-20",
-      "hours": null,
-      "title": "25% Off Estate Sale in Hutto",
-      "details": "QR Code Link to This Post 25% Off Friday estate sale in Hutto at 655 Carmel Creekside Drive, 78634. Opens at 930-230 Friday. No checks. All sales are final. Buyers are responsible for packing and loading their own purchases. Look at pictures on countryestateauctions.com Estate sale goes thru Sunday afternoon. Home is smoke and pet free. Follow signs off Zimmer Loop.",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/hutto-25-off-estate-sale-in-hutto/oh82oDaSLMXbb8FsthE1WM",
-      "photos": 0,
-      "type": "estate",
-      "categories": [
-        "estate-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.572596,
-      "lon": -97.587671,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-atesaleinhuttooh82odaslmxbb8fsthe1wm"
-    },
-    {
-      "address": "Cantania cove, Austin, TX",
-      "dates": "2026-10-18 – 2026-10-20",
-      "date_from": "2026-10-18",
-      "date_to": "2026-10-20",
-      "end_date": "2026-10-20",
-      "hours": null,
-      "title": "Moving sell",
-      "details": "QR Code Link to This Post Sectional = $300 Marble coffee table =$250 Rug = $30 TV newer = $135 TV Stand = $45 Dinning set = $300 Crate &amp; Barrel king bed = $350 Lump = $30 Dresser = $130 2 Night stands = $80 Set = $200 King bed light yellow = $250 Twin bed = $150 White dresser = $30 Full bed- dark grey upholstery( Newer) = $250 Dresser = $130 Refrigerator = $350 Washer = $200 Dryer = $200 Barst",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/pflugerville-moving-sell/nmBVEegN4PaN6ysYMgfK9H",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale",
-        "moving-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.447775,
-      "lon": -97.557693,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-villemovingsellnmbveegn4pan6ysymgfk9h"
-    },
-    {
-      "address": "1601 s i35 frontage rd, Austin, TX",
-      "dates": "2026-10-18 – 2026-10-20",
-      "date_from": "2026-10-18",
-      "date_to": "2026-10-20",
-      "end_date": "2026-10-20",
-      "hours": null,
-      "title": "ANTIQUES COMICS TOYS VINYL RECORDS AND MUCH MUCH MORE (Round Rock)",
-      "details": "QR Code Link to This Post Located at round rock antique mall Open m-sat 10am to 6pm Sunday 12-6pm When you walk in turn left and go all the way down to find us!",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/round-rock-antiques-comics-toys-vinyl/n2Mw4gQnHZh1Lct4bD1UpE",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.494235,
-      "lon": -97.676139,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-comicstoysvinyln2mw4gqnhzh1lct4bd1upe"
-    },
-    {
       "address": "hidden, Austin, TX 78732",
       "dates": "2026-10-24 – 2026-10-25",
       "date_from": "2026-10-24",
@@ -391,79 +203,6 @@
       "company": "California Estate Sales and Auction Company",
       "in_person": true,
       "external_id": "eso-2468884"
-    },
-    {
-      "address": "655 Carmel Creekside Dr near Limmer Loop, Austin, TX",
-      "dates": "2026-10-18 – 2026-10-20",
-      "date_from": "2026-10-18",
-      "date_to": "2026-10-20",
-      "end_date": "2026-10-20",
-      "hours": null,
-      "title": "40% Off Estate Sale in Hutto",
-      "details": "QR Code Link to This Post Large estate sale in Hutto at 655 Carmel Creekside Drive, 78634 today from 9-230. Home is smoke and pet free. General household, stain glass material, collection of floral making designs, outdoor decor, antiques and collectibles, vintage toys, plumbing, electrical and carpenter items, school teacher supplies and accessories and much more. Look at pictures on countryestate",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/hutto-40-off-estate-sale-in-hutto/mkMBrRuBAaoopcA9JHGXnz",
-      "photos": 0,
-      "type": "estate",
-      "categories": [
-        "estate-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.572596,
-      "lon": -97.587671,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-atesaleinhuttomkmbrrubaaoopca9jhgxnz"
-    },
-    {
-      "address": "1300 old cedar ln, Austin, TX",
-      "dates": "2026-10-18 – 2026-10-20",
-      "date_from": "2026-10-18",
-      "date_to": "2026-10-20",
-      "end_date": "2026-10-20",
-      "hours": null,
-      "title": "Garage Sale: Boutique Liquidation & Household items moving Sale!",
-      "details": "QR Code Link to This Post Saturday &amp; Sunday (10/17 - 10/18) 10:00 am to 2:00 pm Amazing Prices! ~$10 to $30 price range Join us for a special sale featuring the liquidation of our fine leather handbag and clothing collection, along with carefully selected household items from our move. Discover quality pieces at substantially reduced prices: ✓ Premium leather handbags ✓ Women's clothing and ac",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/austin-garage-sale-boutique-liquidation/sTQZtC4FKTWH9c9DZLZStT",
-      "photos": 0,
-      "type": "estate",
-      "categories": [
-        "estate-sale",
-        "moving-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.40535,
-      "lon": -97.683896,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-tiqueliquidationstqztc4fktwh9c9dzlzstt"
-    },
-    {
-      "address": "Broadmoor Drive near Cameron Road, Austin, TX",
-      "dates": "2026-10-18 – 2026-10-20",
-      "date_from": "2026-10-18",
-      "date_to": "2026-10-20",
-      "end_date": "2026-10-20",
-      "hours": null,
-      "title": "2-Family Garage Sale",
-      "details": "QR Code Link to This Post 2-Family, 2-Day Garage Sale Broadmoor Drive, between Cameron Rd. and Berkman Dr. Variety of Things for Sale: Clothes: Jeans, vintage dresses, t-shirts, sweaters, sweat shirts. women's tops, shorts Large Dog Crate Kayak Kitchenware Books Games Misc. Windsurfing Gear Keurig K-Classic",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/austin-family-garage-sale/qm4M83ebRrpJLrftb69jJc",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.31142,
-      "lon": -97.707005,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-amilygaragesaleqm4m83ebrrpjlrftb69jjc"
     },
     {
       "address": "3450 Flowstone Ln near Blue ridge Drive, Austin, TX",
@@ -1035,28 +774,6 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "cl-amilygaragesale9rugjttmbafcjx9vzvothz"
-    },
-    {
-      "address": "Austin, TX",
-      "dates": "2026-10-18 – 2026-10-20",
-      "date_from": "2026-10-18",
-      "date_to": "2026-10-20",
-      "end_date": "2026-10-20",
-      "title": "Treasure Island",
-      "details": "Business Closing",
-      "source": "EstateSales.net",
-      "url": "https://www.estatesales.net/TX/Austin/78702/5031006",
-      "photos": 0,
-      "type": "estate",
-      "categories": [
-        "estate-sale"
-      ],
-      "confidence": 0.65,
-      "status": "verified",
-      "lat": 30.2672,
-      "lon": -97.7431,
-      "geocode": "city-center",
-      "company": null
     }
   ],
   "hot_zones": [
@@ -1075,9 +792,9 @@
     "gsalr.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 46,
+  "total_locations": 34,
   "status": "live",
-  "date": "2026-10-20",
-  "last_refresh": "2026-10-20T10:35:31-05:00",
+  "date": "2026-10-21",
+  "last_refresh": "2026-10-21T03:17:29-05:00",
   "permits": []
 }
