@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Sell · Item Listing</title>
 <link rel="icon" type="image/svg+xml" href="/Chicas-Map/favicon.svg">
+<!-- deploy trigger -->
 <style>
 :root { --bg:#0e0e0e; --paper:#1a1a1a; --ink:#f5f5f5; --muted:#a1a1aa; --magenta:#c513af; --ok:#22c55e; --warn:#f59e0b; --border:#2a2a2a; }
 *{box-sizing:border-box}
@@ -159,11 +160,10 @@ async function eraseBackground(file){
       ctx.drawImage(img, 0, 0);
       const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
       const data = imageData.data;
-      // simple edge/background lightening for demo (real AI would use segmentation)
       for(let i = 0; i < data.length; i += 4){
         const r = data[i], g = data[i+1], b = data[i+2];
         const brightness = (r+g+b)/3;
-        if(brightness > 200){ data[i+3] = 0; } // make light areas transparent
+        if(brightness > 200){ data[i+3] = 0; }
       }
       ctx.putImageData(imageData, 0, 0);
       canvas.toBlob(blob => {
@@ -188,7 +188,6 @@ $('eraseBtn').onclick = async () => {
 
 $('tagBtn').onclick = () => {
   if(!files.length){ toast('Add a photo first'); return; }
-  // heuristic auto-tag based on common patterns; replace with real vision later
   const name = files[0].name.toLowerCase();
   let title = 'Item for sale';
   let category = 'Home & Garden';
