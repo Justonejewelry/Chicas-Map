@@ -31,6 +31,8 @@ Map only shows pins whose listed dates include today.
 - Garage Sale — 4718 Hershey Dr, San Antonio, TX 78220 [2026-10-22 → 2026-10-23]
 - Eclectic Estate Sale In Oakwood — 420 Mount Joy Dr, New Braunfels, TX 78130 [2026-10-22 → 2026-10-24]
 - 3 Day Yard Sale Friday , Saturday , Sunday in Hondo, Tx — 1300 county rd 241 near Hwy 173, San Antonio, TX [2026-10-22 → 2026-10-24]
+- 101 Cinnabar Trail Cibolo — 101 Cinnabar Trail, San Antonio, TX [2026-10-22 → 2026-10-24]
+- Garage Sale near Madison High School — 5567 Spring Walk near Stahl, San Antonio, TX [2026-10-22 → 2026-10-24]
 
 ## COMING UP (remembered, not on today's map)
 
@@ -38,10 +40,11 @@ Map only shows pins whose listed dates include today.
 - ‼️Garage Sale‼️ — 1825 Lee Hall, San Antonio, TX 78201 [2026-10-23 → 2026-10-23]
 - YARD SALE You Can’t Afford To Miss! — 5731 Gillis Dr, San Antonio, TX 78240 [2026-10-23 → 2026-10-24]
 - Garage Sale — 3211 Morning Crk, San Antonio, TX 78247 [2026-10-23 → 2026-10-24]
-- Garage Sale - 10/23 (Friday)  & 10/24 (Saturday) — 6316 Robinsnest Dr, San Antonio, TX 78249 [2026-10-23 → 2026-10-24]
+- Garage Sale - 10/23 (Friday) & 10/24 (Saturday) — 6316 Robinsnest Dr, San Antonio, TX 78249 [2026-10-23 → 2026-10-24]
 - ‼️MULTI FAMILY YARD SALE‼️ — 26007 Farm To Market Rd 3009, San Antonio, TX 78266 [2026-10-23 → 2026-10-25]
 - Yard Sale in La Vernia/ New Berlin area — 1025 Zuehl Xing, La Vernia, TX 78121 [2026-10-23 → 2026-10-24]
-- HUGE Garage Sale Lots of Great Stuff — 7736 Flower Bluff near Prue rd, San Antonio, TX [2026-10-23 → 2026-10-24]
+- All Kinds of Stuff — 130 E Lincoln St, New Braunfels, TX 78130 [2026-10-23 → 2026-10-24]
+- Garage Sale east of Medical Center,  FRI+SAT OCT 23+24 — Pinebluff near Tioga, San Antonio, TX [2026-10-23 → 2026-10-23]
 
 ### Starts 2026-10-24
 - Cul-De-Sac Garage Sale > Saturday, October 24Th, 9Am — Garden Oaks St, San Antonio, TX 78232 [2026-10-24 → 2026-10-24]
@@ -56,10 +59,10 @@ Map only shows pins whose listed dates include today.
 - Walnut Pass (Leon Springs) Community Garage Sale - Saturday, October 24, 8Am-1Pm — Walnut Pass, San Antonio, TX 78255 [2026-10-24 → 2026-10-24]
 - Landmark Pointe Community Garage Sale — 229 Landmark Park, Cibolo, TX 78108 [2026-10-24 → 2026-10-24]
 - Community Garage Sale — 5853 Homestead Pkwy, Schertz, TX 78108 [2026-10-24 → 2026-10-24]
+- Bulverde Home Garage Sale — 31022 Sunlight Dr, Bulverde, TX 78163 [2026-10-24 → 2026-10-24]
 - Downsized Decorators Sale — hidden, Schertz, TX 78154 [2026-10-24 → 2026-10-25] | 2026-10-24 9:00 am-3:00 pm; 2026-10-25 9:00 am-3:00 pm
 - Great Prices at Saturday Moving Sale in Davis Ranch-Everything Goes! — Coppola near Davis Ranch Parkway, San Antonio, TX [2026-10-24 → 2026-10-24]
 - Community Yard Sale — Talley near Wiseman, San Antonio, TX [2026-10-24 → 2026-10-24]
-- Indian Hollow Apartments Community Garage Sale — 12701 West Avenue near Wurzbach Pkwy, San Antonio, TX [2026-10-24 → 2026-10-24] | 9:00 AM – 1:00 PM
 
 ## ONLINE / UNPLOTTABLE
 

@@ -1,14 +1,14 @@
 # Chica's Map -- Community Events Swarm v2.7
 
-Run: 2026-10-22T05:12:12-05:00
+Run: 2026-10-22T10:50:43-05:00
 Sources scanned: **48**
-Candidates discovered: **879**
-With parsed dates: **722**
-With street/venue address: **495**
+Candidates discovered: **884**
+With parsed dates: **727**
+With street/venue address: **497**
 Promoted this run: **0**
 Kept from prior feed: **281**
 Purged from prior feed: **0**
-Source errors: **2**
+Source errors: **3**
 Rejected by Sentinel: **294**
 
 ## Promoted (passed Events Sentinel)
@@ -231,6 +231,7 @@ _None this run._
 ## Source Errors
 - San Antonio River Authority Events: HTTP 403 Forbidden
 - Windcrest Calendar: HTTP 403 Forbidden
+- Cibolo Trails HOA: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)
 
 ---
 Notes: v2.7 caps events at 90 days. Backbone is official/public + schools + libraries, then neighborhoods. CivicEngage ICS, Trumba ICS, Tribe ICS, Thrillshare ICS, RSS. 403 retries with a browser UA. No Google Calendar.
