@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-22T10:50:43-05:00",
+  "updated": "2026-10-22T18:02:41-05:00",
   "city": "san-antonio",
   "version": 2.7,
   "horizonDays": 90,
@@ -5061,6 +5061,42 @@
       "reliability": 88,
       "discoveredAt": "2026-10-22T03:26:45-05:00",
       "confidence": 98
+    },
+    {
+      "id": "2026-10-27_typing-classes_4ace7d97c7e1",
+      "title": "Typing Classes",
+      "date": "2026-10-27",
+      "endDate": "",
+      "time": "6:30 PM-7:30 PM",
+      "address": "3222 Culebra San Antonio, TX 78228",
+      "lat": null,
+      "lng": null,
+      "category": "other",
+      "description": "",
+      "url": "https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D208972947",
+      "source": "San Antonio Public Library Events",
+      "sourceId": "sapl-trumba-ics",
+      "reliability": 96,
+      "discoveredAt": "2026-10-22T18:01:58-05:00",
+      "confidence": 100
+    },
+    {
+      "id": "2026-10-28_baby-time_5148f793cc8f",
+      "title": "Baby Time!",
+      "date": "2026-10-28",
+      "endDate": "",
+      "time": "10:00 AM-11:00 AM",
+      "address": "515 Castroville Rd",
+      "lat": null,
+      "lng": null,
+      "category": "other",
+      "description": "",
+      "url": "https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D210176142",
+      "source": "San Antonio Public Library Events",
+      "sourceId": "sapl-trumba-ics",
+      "reliability": 96,
+      "discoveredAt": "2026-10-22T18:01:58-05:00",
+      "confidence": 88
     }
   ]
 }

@@ -23,7 +23,6 @@ Map only shows pins whose listed dates include today.
 - NEIGHBORHOOD GARAGE SALE THIS SATURDAY — Legend Trail near Moonlit Glade, San Antonio, TX [2026-10-21 → 2026-10-23]
 - 10/24 - 10/25 TOOLS GALORE!! 2 Family Downsizing SALE — 10722 Saleh Corner near University Way, San Antonio, TX [2026-10-22 → 2026-10-24]
 - Multi-Family Garage Sale — 1638 Copperfield Rd, San Antonio, TX [2026-10-21 → 2026-10-23]
-- Hutto Home Run Sale! — San Antonio, TX [2026-10-21 → 2026-10-24]
 - Garage Cul-de-sac Sale > Saturday, October 24th, 9am — Garden Oaks St near Garden Meadows, San Antonio, TX [2026-10-22 → 2026-10-24]
 - Garage Sale — Morning Creek near Thousand Oaks, San Antonio, TX [2026-10-22 → 2026-10-24]
 - Great Sale in Lewis Ranch — 26037 Lewis Ranch, San Antonio, TX [2026-10-22 → 2026-10-24]
@@ -33,18 +32,27 @@ Map only shows pins whose listed dates include today.
 - 3 Day Yard Sale Friday , Saturday , Sunday in Hondo, Tx — 1300 county rd 241 near Hwy 173, San Antonio, TX [2026-10-22 → 2026-10-24]
 - 101 Cinnabar Trail Cibolo — 101 Cinnabar Trail, San Antonio, TX [2026-10-22 → 2026-10-24]
 - Garage Sale near Madison High School — 5567 Spring Walk near Stahl, San Antonio, TX [2026-10-22 → 2026-10-24]
+- Moving sale. — 6751 Talley Rd, San Antonio, TX 78253 [2026-10-22 → 2026-10-22]
+- Asset purging - JBJ Soul Kitchen style — Will be given 10/24, San Antonio, TX [2026-10-22 → 2026-10-24]
+- Emerald Valley — 9335 Valley Hedge near Near Culebra & Cliffbrier / Emerald Valley Great NW, San Antonio, TX [2026-10-22 → 2026-10-24]
+- GARAGE SALE — Welles Dale near Wellesley Manor, San Antonio, TX [2026-10-22 → 2026-10-24]
 
 ## COMING UP (remembered, not on today's map)
 
 ### Starts 2026-10-23
+- RAIN OUT MAKEUP-NEW ITEMS ADDED PREVIOUS ITEMS START AT 50% OFF — San Antonio, TX [2026-10-23 → 2026-10-24]
 - ‼️Garage Sale‼️ — 1825 Lee Hall, San Antonio, TX 78201 [2026-10-23 → 2026-10-23]
 - YARD SALE You Can’t Afford To Miss! — 5731 Gillis Dr, San Antonio, TX 78240 [2026-10-23 → 2026-10-24]
+- GARAGE SALE — Welles Dale Dr, San Antonio, TX 78240 [2026-10-23 → 2026-10-24]
 - Garage Sale — 3211 Morning Crk, San Antonio, TX 78247 [2026-10-23 → 2026-10-24]
+- Multi Families Yard Sale — 6703 Spring Rose Dr, San Antonio, TX 78249 [2026-10-23 → 2026-10-23]
 - Garage Sale - 10/23 (Friday) & 10/24 (Saturday) — 6316 Robinsnest Dr, San Antonio, TX 78249 [2026-10-23 → 2026-10-24]
+- Big 2 Day Garage Sale Oct 23Rd & 24Th (8-1) — 13402 Demeter, Universal City, TX 78148 [2026-10-23 → 2026-10-24]
+- Multi Family Garage Sale — 14835 St Hedwig Rd, Saint Hedwig, TX 78152 [2026-10-23 → 2026-10-23]
 - ‼️MULTI FAMILY YARD SALE‼️ — 26007 Farm To Market Rd 3009, San Antonio, TX 78266 [2026-10-23 → 2026-10-25]
 - Yard Sale in La Vernia/ New Berlin area — 1025 Zuehl Xing, La Vernia, TX 78121 [2026-10-23 → 2026-10-24]
 - All Kinds of Stuff — 130 E Lincoln St, New Braunfels, TX 78130 [2026-10-23 → 2026-10-24]
-- Garage Sale east of Medical Center,  FRI+SAT OCT 23+24 — Pinebluff near Tioga, San Antonio, TX [2026-10-23 → 2026-10-23]
+- Garage Sale Mostly Inside — 88 Breeze Way, Boerne, TX 78006 [2026-10-23 → 2026-10-24]
 
 ### Starts 2026-10-24
 - Cul-De-Sac Garage Sale > Saturday, October 24Th, 9Am — Garden Oaks St, San Antonio, TX 78232 [2026-10-24 → 2026-10-24]
@@ -63,12 +71,13 @@ Map only shows pins whose listed dates include today.
 - Downsized Decorators Sale — hidden, Schertz, TX 78154 [2026-10-24 → 2026-10-25] | 2026-10-24 9:00 am-3:00 pm; 2026-10-25 9:00 am-3:00 pm
 - Great Prices at Saturday Moving Sale in Davis Ranch-Everything Goes! — Coppola near Davis Ranch Parkway, San Antonio, TX [2026-10-24 → 2026-10-24]
 - Community Yard Sale — Talley near Wiseman, San Antonio, TX [2026-10-24 → 2026-10-24]
+- GARAGE AND YARD SALE - Luckey Ranch Subdivision — 12234 Cashton, San Antonio, TX [2026-10-24 → 2026-10-25]
 
 ## ONLINE / UNPLOTTABLE
 
 - Bulverde Hilltop Estate Online Auction by Caring Transitions - Ends 10/28! — Bulverde, TX 78163
 - A Little Nostalgia, A Lot of Charm in Tapatio Springs Boerne, TX. Bidding Ends 10/27 — Boerne, TX 78006
 - Sterling Flatware, Heirloom Furniture & More Online Auction by Caring Transitions - Ends 10/25! — New Braunfels, TX 78132
-- Tools, Lighting, Gunsmithing, Gun Parts, Etc Online Only Auction — New Braunfels, TX 78130
+- Fantastic Garden Ridge Estate Auction Online Only Auction — online only, New Braunfels, TX 78130
 
 — Chica

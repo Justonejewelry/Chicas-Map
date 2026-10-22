@@ -1,24 +1,26 @@
 # Chica's Map -- Community Events Swarm v2.7
 
-Run: 2026-10-22T10:50:43-05:00
+Run: 2026-10-22T18:02:41-05:00
 Sources scanned: **48**
-Candidates discovered: **884**
-With parsed dates: **727**
-With street/venue address: **497**
-Promoted this run: **0**
+Candidates discovered: **904**
+With parsed dates: **747**
+With street/venue address: **522**
+Promoted this run: **2**
 Kept from prior feed: **281**
 Purged from prior feed: **0**
-Source errors: **3**
+Source errors: **2**
 Rejected by Sentinel: **294**
 
 ## Promoted (passed Events Sentinel)
-_None this run._
+- **Typing Classes** -- 2026-10-27 -- 3222 Culebra San Antonio, TX 78228 -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D208972947
+- **Baby Time!** -- 2026-10-28 -- 515 Castroville Rd -- conf 88 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D210176142
 
 ## Review Queue
 - **San Antonio Public Library Events** -- conf 100 -- Baby Story Time -- 2026-10-22 -- 15060 Judson Rd -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206449165
 - **San Antonio Public Library Events** -- conf 100 -- Baby Story Time -- 2026-10-22 -- 13330 Kyle Seale Pkwy -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206613050
 - **San Antonio Public Library Events** -- conf 100 -- Family Story Time -- 2026-10-25 -- 5110 Walzem Road San -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D207473335
 - **San Antonio Public Library Events** -- conf 100 -- Toddler Story Time -- 2026-10-22 -- 9050 Wellwood San Antonio, TX 78250 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D208192339
+- **San Antonio Public Library Events** -- conf 100 -- Typing Classes -- 2026-10-27 -- 3222 Culebra San Antonio, TX 78228 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D208972947
 - **San Antonio Public Library Events** -- conf 100 -- Teen Club @ Collins Garden -- 2026-10-26 -- 200 N. Park San Antonio, TX 78204 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D211416268
 - **City of San Antonio Parks & Recreation** -- conf 100 -- Tennis Clinics -- 2026-08-31 -- 1503 San Pedro Ave -- https://www.sanantonio.gov/ParksAndRec/News-Events/Events/Event-Details/ArtMID/15385/ArticleID/29348/Tennis-Clinics
 - **City of San Antonio Parks & Recreation** -- conf 100 -- 2026 Fall Tennis Clinics -- 2026-10-06 -- 1503 San Pedro Ave -- https://www.sanantonio.gov/ParksAndRec/News-Events/Events/Event-Details/ArtMID/15385/ArticleID/29370/2026-Fall-Tennis-Clinics
@@ -174,7 +176,6 @@ _None this run._
 - **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2029-11-08 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22434
 - **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2029-12-13 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22435
 - **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2030-01-10 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22436
-- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2030-02-14 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22437
 
 ## Rejected by Sentinel
 - Baby Story Time -- event_id=2026-10-22_baby-story-time_de4d0441ec6a: duplicate id already in feed
@@ -231,7 +232,6 @@ _None this run._
 ## Source Errors
 - San Antonio River Authority Events: HTTP 403 Forbidden
 - Windcrest Calendar: HTTP 403 Forbidden
-- Cibolo Trails HOA: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)
 
 ---
 Notes: v2.7 caps events at 90 days. Backbone is official/public + schools + libraries, then neighborhoods. CivicEngage ICS, Trumba ICS, Tribe ICS, Thrillshare ICS, RSS. 403 retries with a browser UA. No Google Calendar.
