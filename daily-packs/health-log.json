@@ -98,5 +98,16 @@
     "geocoding_success_rate": "100.0%",
     "status": "SUCCESS",
     "notes": "ACTIONS_TRIGGER_MISSING on chica-daily.yml dispatch (HTTP 500). Proceeded with local email ingest. Zip centroids used."
+  },
+  {
+    "timestamp": "2026-10-22T10:12:00Z",
+    "target_date": "2026-10-22",
+    "actions_run_id": "39761189978",
+    "emails_scanned": 6,
+    "net_new_added": 0,
+    "net_new_staged": 6,
+    "geocoding_success_rate": "16.7% (1 full street + zip others)",
+    "status": "STAGED_CONCURRENT",
+    "notes": "Triggered chica-daily.yml (cities=san-antonio). Pending after polls. Staged 6 Greater SA leads (Schertz estate, Indian Hollow, Walnut Pass, Copperfield, Robinsnest, Lee Hall). Excluded New Braunfels/Bulverde/Boerne/online. City file untouched. Community swarm not triggered. Pack written."
   }
 ]
