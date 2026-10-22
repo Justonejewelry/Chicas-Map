@@ -39,6 +39,7 @@ Map only shows pins whose listed dates include today.
 - YARD SALE You Can’t Afford To Miss! — 5731 Gillis Dr, San Antonio, TX 78240 [2026-10-23 → 2026-10-24]
 - Garage Sale — 3211 Morning Crk, San Antonio, TX 78247 [2026-10-23 → 2026-10-24]
 - Garage Sale - 10/23 (Friday)  & 10/24 (Saturday) — 6316 Robinsnest Dr, San Antonio, TX 78249 [2026-10-23 → 2026-10-24]
+- ‼️MULTI FAMILY YARD SALE‼️ — 26007 Farm To Market Rd 3009, San Antonio, TX 78266 [2026-10-23 → 2026-10-25]
 - Yard Sale in La Vernia/ New Berlin area — 1025 Zuehl Xing, La Vernia, TX 78121 [2026-10-23 → 2026-10-24]
 - HUGE Garage Sale Lots of Great Stuff — 7736 Flower Bluff near Prue rd, San Antonio, TX [2026-10-23 → 2026-10-24]
 
