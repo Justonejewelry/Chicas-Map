@@ -1,23 +1,73 @@
 {
-  "target_date": "2026-10-19",
+  "staging_date": "2026-10-22",
   "city": "san-antonio",
-  "status": "COMMITTED_UNDER_CEILING",
-  "reason": "4 net-new email leads under safety ceiling of 25. Gladstone already in public[]. Weekend 10/17-18 sales expired relative to target date and not re-added.",
+  "status": "STAGED_UNDER_CEILING",
+  "reason": "6 net-new email leads under safety ceiling of 25. Master populate in progress; staged to avoid double-write.",
   "confidence_floor": 0.7,
-  "emails_scanned": 4,
-  "net_new_vs_public": 4,
+  "emails_scanned": 6,
+  "net_new_vs_public": 6,
   "safety_ceiling": 25,
   "ceiling_hit": false,
-  "city_file_written": true,
+  "city_file_written": false,
   "community_events_swarm": "not_triggered",
-  "actions_run_id": null,
-  "actions_status": "ACTIONS_TRIGGER_MISSING",
-  "merged_at": "2026-10-19T13:10:00-05:00",
-  "added_external_ids": [
-    "email-gsf-1825-lee-hall-2026-10-23",
-    "email-gsf-walnut-pass-2026-10-24",
-    "email-gsf-934-mariposa-2026-10-24",
-    "email-gsf-570-radiance-2026-10-24"
-  ],
-  "notes": "GSF + ESO scanned. No Formspree in window. New Braunfels/Boerne/Austin excluded. Public Storage lien notice ignored (not a map lead)."
+  "actions_run_id": "39761189978",
+  "actions_status": "PENDING",
+  "merged_at": null,
+  "leads": [
+    {
+      "title": "Downsized Decorators Sale",
+      "street_address": "Schertz, TX 78154",
+      "dates": ["2026-10-24", "2026-10-25"],
+      "hours": "9:00 AM CDT",
+      "source": "Email:EstateSales.org",
+      "confidence": 0.75,
+      "lat": null,
+      "lon": null,
+      "accuracy": "zip_centroid",
+      "type": "estate"
+    },
+    {
+      "title": "Indian Hollow Apartments Community Garage Sale",
+      "street_address": "12701 West Ave, San Antonio, TX 78216",
+      "dates": ["2026-10-24"],
+      "source": "Email:GarageSaleFinder",
+      "confidence": 0.75,
+      "lat": 29.559577,
+      "lon": -98.498385,
+      "type": "community"
+    },
+    {
+      "title": "Walnut Pass (Leon Springs) Community Garage Sale",
+      "street_address": "Walnut Pass, San Antonio, TX 78255",
+      "dates": ["2026-10-24"],
+      "hours": "8AM-1PM",
+      "source": "Email:GarageSaleFinder",
+      "confidence": 0.75,
+      "type": "community"
+    },
+    {
+      "title": "Multi-Family Garage Sale (Oak Creek Estates-San Antonio)",
+      "street_address": "1638 Copperfield, San Antonio, TX 78251",
+      "dates": ["2026-10-24"],
+      "source": "Email:GarageSaleFinder",
+      "confidence": 0.75,
+      "type": "garage"
+    },
+    {
+      "title": "Garage Sale - 10/23 & 10/24",
+      "street_address": "6316 Robinsnest Dr, San Antonio, TX 78249",
+      "dates": ["2026-10-23", "2026-10-24"],
+      "source": "Email:GarageSaleFinder",
+      "confidence": 0.75,
+      "type": "garage"
+    },
+    {
+      "title": "Garage sale",
+      "street_address": "1825 Lee Hall, San Antonio, TX 78201",
+      "dates": ["2026-10-23"],
+      "source": "Email:GarageSaleFinder",
+      "confidence": 0.75,
+      "type": "garage"
+    }
+  ]
 }
