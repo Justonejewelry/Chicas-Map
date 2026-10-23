@@ -15,6 +15,47 @@
     return String(document.documentElement.lang || "").toLowerCase().indexOf("es") === 0;
   }
 
+  function chicagoToday() {
+    try {
+      return new Intl.DateTimeFormat("en-CA", {
+        timeZone: "America/Chicago",
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit"
+      }).format(new Date());
+    } catch (e) {
+      var d = new Date();
+      return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
+    }
+  }
+
+  function addDays(iso, n) {
+    var p = iso.split("-").map(Number);
+    var dt = new Date(Date.UTC(p[0], p[1] - 1, p[2]));
+    dt.setUTCDate(dt.getUTCDate() + n);
+    return dt.toISOString().slice(0, 10);
+  }
+
+  function weekendBounds() {
+    var today = chicagoToday();
+    var wd = "Fri";
+    try {
+      wd = new Intl.DateTimeFormat("en-US", { timeZone: "America/Chicago", weekday: "short" }).format(new Date());
+    } catch (e) {
+      wd = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"][new Date().getDay()];
+    }
+    var day = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 }[wd];
+    if (day == null) day = 5;
+    var sat = addDays(today, day === 0 ? -1 : 6 - day);
+    return { today: today, sat: sat, sun: addDays(sat, 1) };
+  }
+
+  function overlaps(s, sat, sun) {
+    var ds = String(s.date_start || s.date_from || "");
+    var de = String(s.date_end || s.date_to || "");
+    return !!ds && !!de && ds <= sun && de >= sat;
+  }
+
   function buildSection(sales, total) {
     var section = document.createElement("section");
     section.id = "chica-fresh-weekend";
@@ -67,47 +108,79 @@
     return section;
   }
 
+  function patchHero(n) {
+    var root = document.querySelector("main");
+    if (!root) return;
+    var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+    var node;
+    while ((node = walker.nextNode())) {
+      var parent = node.parentElement;
+      if (parent && parent.closest && parent.closest("#chica-fresh-weekend")) continue;
+      var v = node.nodeValue || "";
+      if (!v || v.length > 500) continue;
+      var next = v
+        .replace(/I found \d+ verified sales/, "I found " + n + " verified sales")
+        .replace(/Encontré \d+ ventas verificadas/, "Encontré " + n + " ventas verificadas");
+      if (next !== v) node.nodeValue = next;
+    }
+  }
+
+  function hideStale(main) {
+    Array.from(main.querySelectorAll("h2, p, div")).forEach(function (el) {
+      if (el.closest && el.closest("#chica-fresh-weekend")) return;
+      var t = (el.innerText || "").toLowerCase();
+      if (!t || t.length > 180) return;
+      var stale =
+        t.indexOf("where the pack is active") !== -1 ||
+        t.indexOf("three i’d start") !== -1 ||
+        t.indexOf("three i'd start") !== -1 ||
+        t.indexOf("tres con las que") !== -1 ||
+        (t.indexOf("all ") !== -1 && t.indexOf("this weekend") !== -1) ||
+        (t.indexOf("las ") !== -1 && t.indexOf("este fin") !== -1);
+      if (!stale) return;
+      var sec = el.closest("section") || el.parentElement;
+      if (sec && sec !== main && !(sec.closest && sec.closest("#chica-fresh-weekend"))) sec.style.display = "none";
+    });
+  }
+
+  var cached = null;
+
+  function paint() {
+    if (!isHome() || !cached) return;
+    var main = document.querySelector("main");
+    if (!main) return;
+    patchHero(cached.total);
+    hideStale(main);
+    if (document.getElementById("chica-fresh-weekend")) return;
+    var section = buildSection(cached.sales, cached.total);
+    var heroBtn = main.querySelector("a[data-chica-keep='1']");
+    if (heroBtn && heroBtn.parentNode) heroBtn.parentNode.insertBefore(section, heroBtn.nextSibling);
+    else main.appendChild(section);
+  }
+
   function run() {
     if (!isHome()) return;
-    if (document.getElementById("chica-fresh-weekend")) return;
-
-    fetch(dataUrl())
+    var bounds = weekendBounds();
+    fetch(dataUrl(), { cache: "no-store" })
       .then(function (r) { return r.json(); })
       .then(function (data) {
-        var today = "2026-10-15";
         var weekend = (data.public || []).filter(function (s) {
-          return s.confidence >= 0.7 &&
-                 s.date_end >= today &&
-                 (s.date_start || s.date_from || "") <= "2026-10-18";
+          return (s.confidence || 0) >= 0.7 && overlaps(s, bounds.sat, bounds.sun);
         });
         weekend.sort(function (a, b) { return (b.confidence || 0) - (a.confidence || 0); });
-
-        var main = document.querySelector("main");
-        if (!main) return;
-
-        Array.from(main.querySelectorAll("h2, p, div")).forEach(function (el) {
-          var t = (el.innerText || "").toLowerCase();
-          if (t.indexOf("where the pack is active") !== -1 || (t.indexOf("all ") !== -1 && t.indexOf("this weekend") !== -1)) {
-            var sec = el.closest("section") || el.parentElement;
-            if (sec && sec !== main) sec.style.display = "none";
-          }
-        });
-
-        var section = buildSection(weekend, weekend.length);
-        var heroBtn = main.querySelector("a[data-chica-keep='1']");
-        if (heroBtn && heroBtn.parentNode) {
-          heroBtn.parentNode.insertBefore(section, heroBtn.nextSibling);
-        } else {
-          main.appendChild(section);
-        }
+        cached = { sales: weekend, total: weekend.length };
+        paint();
       })
       .catch(function () {});
   }
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", run);
-  } else {
-    run();
-  }
-  setTimeout(run, 1200);
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", run);
+  else run();
+  setTimeout(run, 400);
+  var ticks = 0;
+  var timer = setInterval(function () {
+    ticks += 1;
+    paint();
+    if (ticks > 40) clearInterval(timer);
+  }, 500);
 })();
