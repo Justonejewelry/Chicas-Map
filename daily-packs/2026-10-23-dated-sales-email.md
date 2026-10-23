@@ -14,7 +14,7 @@ Map only shows pins whose listed dates include today.
 - Community Garage sale — Vineyard Most near Alamosa Fls, San Antonio, TX [2026-10-23 → 2026-10-25]
 - Landmark Pointe Community Garage Sale — 229 Landmark Park, San Antonio, TX [2026-10-21 → 2026-10-23]
 - Multi Family Garage Sale - Saturday, October 24th — 109 Oaklane Dr near North Blvd, San Antonio, TX [2026-10-21 → 2026-10-23]
-- Fantastic deals for cash — Austin Hwy, San Antonio, TX [2026-10-22 → 2026-10-24]
+- Deals for cash Friday Oct 23rd — Austin Hwy, San Antonio, TX [2026-10-23 → 2026-10-25]
 - Community Wide Garage Sale - New Braunfels, TX — Morningside Drive near Rueckle Road, San Antonio, TX [2026-10-23 → 2026-10-25]
 - HUGE VARIETY!  Saturday 10/24 ONLY!  9:00-1:00 — 12431 Paige Trail near Blazing Trail, San Antonio, TX [2026-10-22 → 2026-10-24]
 - NEIGHBORHOOD GARAGE SALE THIS SATURDAY — Legend Trail near Moonlit Glade, San Antonio, TX [2026-10-21 → 2026-10-23]
@@ -52,6 +52,7 @@ Map only shows pins whose listed dates include today.
 - Multi-Family Garage sale! — 1304 Redwood Crk, Seguin, TX 78155 [2026-10-23 → 2026-10-24]
 - Fox Grove garage sale - Bending Grove — Bending Grove near Birds Elm, San Antonio, TX [2026-10-23 → 2026-10-25]
 - RAIN OUT MAKEUP-NEW ITEMS ADDED PREVIOUS ITEMS START AT 50% OFF — San Antonio, TX [2026-10-23 → 2026-10-24]
+- Garage Sale!!! — 8807 Braun Mesa, San Antonio, TX 78254 [2026-10-23 → 2026-10-24]
 
 ## COMING UP (remembered, not on today's map)
 
@@ -66,11 +67,12 @@ Map only shows pins whose listed dates include today.
 - Multi-Family Garage Sale (Oak Creek Estates-San Antonio) — 1638 Copperfield, San Antonio, TX 78251 [2026-10-24 → 2026-10-24]
 - Maternity & baby items galore + more — 11206 Amberina, San Antonio, TX 78245 [2026-10-24 → 2026-10-24]
 - Davis Ranch Neighborhood Garage Sale — 12515 Revolver Run, San Antonio, TX 78254 [2026-10-24 → 2026-10-24]
-- Walnut Pass (Leon Springs) Community Garage Sale - Saturday, October 24, 8Am-1Pm — Walnut Pass, San Antonio, TX 78255 [2026-10-24 → 2026-10-24]
+- Walnut Pass (Leon Springs) Community Garage Sale - Saturday, October 24, 8AM-1PM — Walnut Pass, San Antonio, TX 78255 [2026-10-24 → 2026-10-24]
 - Landmark Pointe Community Garage Sale — 229 Landmark Park, Cibolo, TX 78108 [2026-10-24 → 2026-10-24]
 - Community Garage Sale — 5853 Homestead Pkwy, Schertz, TX 78108 [2026-10-24 → 2026-10-24]
 - Bulverde Home Garage Sale — 31022 Sunlight Dr, Bulverde, TX 78163 [2026-10-24 → 2026-10-24]
 - Bentwood Garage Sale — 334 Deer Creek Dr, Boerne, TX 78006 [2026-10-24 → 2026-10-24]
+- Garage sale — 113 Milagros, Seguin, TX 78155 [2026-10-24 → 2026-10-24]
 - Great Prices at Saturday Moving Sale in Davis Ranch-Everything Goes! — Coppola near Davis Ranch Parkway, San Antonio, TX [2026-10-24 → 2026-10-24]
 - Community Yard Sale — Talley near Wiseman, San Antonio, TX [2026-10-24 → 2026-10-24]
 - GARAGE AND YARD SALE - Luckey Ranch Subdivision — 12234 Cashton, San Antonio, TX [2026-10-24 → 2026-10-25]
