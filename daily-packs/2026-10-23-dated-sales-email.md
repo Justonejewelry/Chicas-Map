@@ -32,10 +32,10 @@ Map only shows pins whose listed dates include today.
 - Asset purging - JBJ Soul Kitchen style — Will be given 10/24, San Antonio, TX [2026-10-23 → 2026-10-25]
 - Emerald Valley — 9335 Valley Hedge near Near Culebra & Cliffbrier / Emerald Valley Great NW, San Antonio, TX [2026-10-23 → 2026-10-25]
 - GARAGE SALE — Welles Dale near Wellesley Manor, San Antonio, TX [2026-10-23 → 2026-10-25]
-- 🏡 Huge Yard Sale! Everything Must Go! 🛍️ — 511 W Mandalay Dr, San Antonio, TX 78212 [2026-10-23 → 2026-10-25]
+- 🏡 HUGE YARD SALE! EVERYTHING MUST GO! 🛍️ — 511 W Mandalay Dr, San Antonio, TX 78212 [2026-10-23 → 2026-10-25]
 - ‼️Garage Sale‼️ — 1825 Lee Hall, San Antonio, TX 78201 [2026-10-23 → 2026-10-23]
 - Huge garage sale — 3635 Azalea Bnd, San Antonio, TX 78223 [2026-10-23 → 2026-10-23]
-- YARD SALE YOU CANT AFFORD TO MISS! — 5731 Gillis Dr, San Antonio, TX 78240 [2026-10-23 → 2026-10-24]
+- Yard Sale You Cant Afford To Miss! — 5731 Gillis Dr, San Antonio, TX 78240 [2026-10-23 → 2026-10-24]
 - GARAGE SALE — Welles Dale Dr, San Antonio, TX 78240 [2026-10-23 → 2026-10-24]
 - Garage Sale — 3211 Morning Crk, San Antonio, TX 78247 [2026-10-23 → 2026-10-24]
 - Multi Families Yard Sale — 6703 Spring Rose Dr, San Antonio, TX 78249 [2026-10-23 → 2026-10-23]
@@ -53,6 +53,8 @@ Map only shows pins whose listed dates include today.
 - Fox Grove garage sale - Bending Grove — Bending Grove near Birds Elm, San Antonio, TX [2026-10-23 → 2026-10-25]
 - RAIN OUT MAKEUP-NEW ITEMS ADDED PREVIOUS ITEMS START AT 50% OFF — San Antonio, TX [2026-10-23 → 2026-10-24]
 - Garage Sale!!! — 8807 Braun Mesa, San Antonio, TX 78254 [2026-10-23 → 2026-10-24]
+- HUGE SALE!! — 7423 Westlyn Dr, San Antonio, TX 78227 [2026-10-23 → 2026-10-24]
+- Dogwear for sale — 1842 w mistletoe, San Antonio, TX [2026-10-23 → 2026-10-25]
 
 ## COMING UP (remembered, not on today's map)
 
@@ -76,8 +78,6 @@ Map only shows pins whose listed dates include today.
 - Great Prices at Saturday Moving Sale in Davis Ranch-Everything Goes! — Coppola near Davis Ranch Parkway, San Antonio, TX [2026-10-24 → 2026-10-24]
 - Community Yard Sale — Talley near Wiseman, San Antonio, TX [2026-10-24 → 2026-10-24]
 - GARAGE AND YARD SALE - Luckey Ranch Subdivision — 12234 Cashton, San Antonio, TX [2026-10-24 → 2026-10-25]
-- GARAGE SALE – SATURDAY 10/24 – 8 AM–2 PM – NEW BRAUNFELS
-ONE-DAY GARAGE — 272 Blacktail Drive near Hwy. 46, San Antonio, TX [2026-10-24 → 2026-10-24]
 
 ## ONLINE / UNPLOTTABLE
 
