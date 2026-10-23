@@ -143,42 +143,6 @@
       "external_id": "cl-tagemarketspotsfhab7utjwepuuw5jcarshc"
     },
     {
-      "address": "Salado, TX 76571",
-      "dates": "Thu Oct 15 – Thu Oct 22",
-      "date_from": "10/15/2026",
-      "date_to": "10/22/2026",
-      "end_date": "2026-10-22",
-      "title": "Curated Salado Estate Sale Online — Jewelry, Art, Décor & Rare Collectibles! - Bidding ends 10/22",
-      "details": "",
-      "source": "GarageSaleFinder",
-      "url": "https://garagesalefinder.com/s/N9IiU/salado-tx-76571",
-      "photos": 0,
-      "type": "estate",
-      "confidence": 0.65,
-      "status": "verified",
-      "lat": 30.2672,
-      "lon": -97.7431,
-      "geocode": "city-center"
-    },
-    {
-      "address": "New Braunfels, TX 78130",
-      "dates": "Thu Oct 15 – Thu Oct 22",
-      "date_from": "10/15/2026",
-      "date_to": "10/22/2026",
-      "end_date": "2026-10-22",
-      "title": "Tools, Lighting, Gunsmithing, Gun Parts, Etc Online Only Auction",
-      "details": "",
-      "source": "GarageSaleFinder",
-      "url": "https://garagesalefinder.com/s/N9ItG/new-braunfels-tx-78130",
-      "photos": 0,
-      "type": "estate",
-      "confidence": 0.65,
-      "status": "verified",
-      "lat": 30.2672,
-      "lon": -97.7431,
-      "geocode": "city-center"
-    },
-    {
       "address": "hidden, Austin, TX 78732",
       "dates": "2026-10-24 – 2026-10-25",
       "date_from": "2026-10-24",
@@ -728,54 +692,6 @@
       "external_id": "cl-huttogaragesalen1qetxjodgtyfsrjatxptd"
     },
     {
-      "address": "602 W Annie Street near South 1st, Austin, TX",
-      "dates": "2026-10-20 – 2026-10-22",
-      "date_from": "2026-10-20",
-      "date_to": "2026-10-22",
-      "end_date": "2026-10-22",
-      "hours": null,
-      "title": "Houseware and kitchen items - no prices, just make an offer",
-      "details": "QR Code Link to This Post Garage sale with household and kitchen items. Some examples of items include: - throw pillows - tons of serving platters, coffee mugs and saucers and kitchenwares - folding tables - wine glasses - steel outdoor dining chairs - microwave oven - portable speakers - plastic tupperware / jugs / containers - high chair Full list of items at https://annie-sale.vercel.app/",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/austin-houseware-and-kitchen-items-no/rTiM69XRjgD4rnG9QCHBDa",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.247457,
-      "lon": -97.755852,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-kitchenitemsnortim69xrjgd4rng9qchbda"
-    },
-    {
-      "address": "Gregg Ranch Boulevard, Austin, TX",
-      "dates": "2026-10-20 – 2026-10-22",
-      "date_from": "2026-10-20",
-      "date_to": "2026-10-22",
-      "end_date": "2026-10-22",
-      "hours": null,
-      "title": "Multi Family Garage Sale Gregg Ranch Neighborhood Marble falls",
-      "details": "QR Code Link to This Post Gregg Ranch Neighborhood Multifamily Garage Sale-Marble Falls •Put Gregg Ranch In Google Maps •South of the US 281/Highway 71 Cloverleaf •Multifamily Garage sale •Cash preferred-digital payments may be accepted ⭐️ This post will be updated with addresses",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/horseshoe-bay-multi-family-garage-sale/9rugjttmBafcJX9vzvothZ",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.499849,
-      "lon": -98.307438,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-amilygaragesale9rugjttmbafcjx9vzvothz"
-    },
-    {
       "address": "36B Country Oaks Dr., Buda, TX 78610",
       "dates": "Fri Oct 23 – Sun Oct 25",
       "date_from": "10/23/2026",
@@ -1268,9 +1184,9 @@
     "gsalr.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 55,
+  "total_locations": 51,
   "status": "live",
-  "date": "2026-10-22",
-  "last_refresh": "2026-10-22T18:01:28-05:00",
+  "date": "2026-10-23",
+  "last_refresh": "2026-10-23T03:32:02-05:00",
   "permits": []
 }
