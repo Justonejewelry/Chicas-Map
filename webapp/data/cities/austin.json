@@ -1285,24 +1285,6 @@
       ]
     },
     {
-      "address": "13213 Forest Sage St, Manor, TX 78653",
-      "dates": "Fri Oct 23 – Fri Oct 23",
-      "date_from": "10/23/2026",
-      "date_to": "10/23/2026",
-      "end_date": "2026-10-23",
-      "title": "Garage Sale..Lots of stuff (13213 forest sage st)",
-      "details": "",
-      "source": "GarageSaleFinder",
-      "url": "https://garagesalefinder.com/s/N9Pwz/13213-forest-sage-st-manor-tx-78653",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.85,
-      "status": "verified",
-      "lat": 30.3,
-      "lon": -97.52,
-      "geocode": "zip-centroid"
-    },
-    {
       "address": "2005 Oxford Blvd, Round Rock, TX 78664",
       "dates": "Sat Oct 24 – Sat Oct 24",
       "date_from": "10/24/2026",
@@ -1359,24 +1341,6 @@
       "categories": [
         "estate-sale"
       ]
-    },
-    {
-      "address": "308 Grasslands Trl, Hutto, TX 78634",
-      "dates": "Fri Oct 23 – Fri Oct 23",
-      "date_from": "10/23/2026",
-      "date_to": "10/23/2026",
-      "end_date": "2026-10-23",
-      "title": "Home run Estate Sale",
-      "details": "",
-      "source": "GarageSaleFinder",
-      "url": "https://garagesalefinder.com/s/N9PwG/308-grasslands-trl-hutto-tx-78634",
-      "photos": 0,
-      "type": "estate",
-      "confidence": 0.65,
-      "status": "verified",
-      "lat": 30.2672,
-      "lon": -97.7431,
-      "geocode": "city-center"
     },
     {
       "address": "2001 Rushing Ranch Path, Georgetown, TX 78628",
@@ -1464,24 +1428,6 @@
       "details": "",
       "source": "GarageSaleFinder",
       "url": "https://garagesalefinder.com/s/N9Pcu/113-milagros-seguin-tx-78155",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.65,
-      "status": "verified",
-      "lat": 30.2672,
-      "lon": -97.7431,
-      "geocode": "city-center"
-    },
-    {
-      "address": "11015 Canterbury Rd, Spring Branch, TX 78070",
-      "dates": "Fri Oct 23 – Fri Oct 23",
-      "date_from": "10/23/2026",
-      "date_to": "10/23/2026",
-      "end_date": "2026-10-23",
-      "title": "Great Stuff !",
-      "details": "",
-      "source": "GarageSaleFinder",
-      "url": "https://garagesalefinder.com/s/N9Po9/11015-canterbury-rd-spring-branch-tx-78070",
       "photos": 0,
       "type": "garage",
       "confidence": 0.65,
@@ -1683,30 +1629,6 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "cl-rdownsizinghuge88jjuxckbgphpz8zqbc29i"
-    },
-    {
-      "address": "1202 fm 685, Austin, TX",
-      "dates": "2026-10-23 – 2026-10-23",
-      "date_from": "2026-10-23",
-      "date_to": "2026-10-23",
-      "end_date": "2026-10-23",
-      "hours": null,
-      "title": "All Brand Name Clothes Sale Only $15 or less! All New!",
-      "details": "QR Code Link to This Post ‼️📣🌟🏆 JOIN US for our Brand Name Clothing Sale at Lots4Less! We only have this Special Sale TWICE A YEAR! 😍🛍️ We will have all your Favorite Brand Name Clothes this week! 🏃🏻‍♀️🏃🏻‍♂️💨 This sale begins Friday, Oct. 23, 9am - 5pm! 💥👗👕 ALL CLOTHING — ONE LOW PRICE EACH DAY! 🏷️ Friday ➡️ $15 🏷️ Saturday ➡️ $12 🏷️ Sunday, Monday &amp; Tuesday ➡️ $10 👟👢 ALL SHOES PRICED AT JUST ",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/pflugerville-all-brand-name-clothes/wXPzLFVf97DGHepk3kA65p",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.4421,
-      "lon": -97.6299,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-randnameclotheswxpzlfvf97dghepk3ka65p"
     }
   ],
   "hot_zones": [
@@ -1725,9 +1647,9 @@
     "gsalr.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 76,
+  "total_locations": 72,
   "status": "live",
-  "date": "2026-10-23",
-  "last_refresh": "2026-10-23T10:40:45-05:00",
+  "date": "2026-10-24",
+  "last_refresh": "2026-10-24T03:32:11-05:00",
   "permits": []
 }

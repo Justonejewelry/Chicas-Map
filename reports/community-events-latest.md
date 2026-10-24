@@ -1,23 +1,88 @@
 # Chica's Map -- Community Events Swarm v2.7
 
-Run: 2026-10-23T10:42:25-05:00
+Run: 2026-10-24T03:33:48-05:00
 Sources scanned: **48**
-Candidates discovered: **919**
-With parsed dates: **762**
-With street/venue address: **523**
-Promoted this run: **0**
-Kept from prior feed: **284**
-Purged from prior feed: **0**
-Source errors: **2**
-Rejected by Sentinel: **293**
+Candidates discovered: **925**
+With parsed dates: **769**
+With street/venue address: **543**
+Promoted this run: **22**
+Kept from prior feed: **259**
+Purged from prior feed: **25**
+Source errors: **3**
+Rejected by Sentinel: **296**
 
 ## Promoted (passed Events Sentinel)
-_None this run._
+- **Family Story Time** -- 2026-10-29 -- 6307 Sun Valley San Antonio, TX 78227 -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D210019041
+- **Sewing Class** -- 2026-10-29 -- 515 Castroville Rd -- conf 88 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206376615
+- **Toddler Story Time** -- 2026-10-29 -- 15060 Judson Rd -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206449100
+- **Let's Play & Read!** -- 2026-10-29 -- 6111 Rosedale Ct. San Antonio, TX 78201 -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206288752
+- **Wowzitude Livestreamed Worldwide Travel** -- 2026-10-29 -- 8765 State Hwy 151 -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D194100384
+- **Halloween Party on the Playground​ at Schaefer** -- 2026-10-29 -- 6322 US Hwy 87 -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D209336112
+- **Baby Story Time** -- 2026-10-29 -- 530 Heimer San Antonio, TX 78232 -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D210680685
+- **Baby Time** -- 2026-10-29 -- 3134 Roosevelt Ave -- conf 88 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D201155528
+- **Let's Play! Toddlers** -- 2026-10-29 -- 600 Soledad San Antonio, TX 78205 -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D207231004
+- **Family Storytime** -- 2026-10-29 -- 200 N. Park San Antonio, TX 78204 -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206413388
+- **Story Time** -- 2026-10-29 -- 2803 Hunter Blvd -- conf 88 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D204763418
+- **Story Time: Movement and Sensory Exploration** -- 2026-10-29 -- 3222 Culebra San Antonio, TX 78228 -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D207350116
+- **Family Story Time @ Forest Hills** -- 2026-10-29 -- 5245 Ingram Rd -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D210082918
+- **Preschool Story Time!** -- 2026-10-29 -- 7978 Military Drive West -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D205024553
+- **Preschool Story Time** -- 2026-10-29 -- 13330 Kyle Seale Pkwy -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206613075
+- **Toddler Time** -- 2026-10-29 -- 3134 Roosevelt Ave -- conf 88 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D201155571
+- **Preschool Play & Explore** -- 2026-10-29 -- 530 Heimer San Antonio, TX 78232 -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D210680839
+- **TMEA MS Choir Clinic & Concert** -- 2026-10-24 -- 4495 Verano Pkwy #100 -- conf 98 -- https://www.swisd.net/apps/events/2026/10/24/48122686/
+- **TMEA MS Region Choir Concert** -- 2026-10-27 -- 4495 Verano Pkwy #100 -- conf 98 -- https://www.swisd.net/apps/events/2026/10/24/60736524/
+- **Penguin Project Rehearsal** -- 2026-10-27 -- 11914 Dragon Ln -- conf 98 -- https://www.swisd.net/apps/events/2026/10/27/52798372/
+- **Resnik Band Fall Concert (Beginner & Symphonic)** -- 2026-10-28 -- 4495 S W Verano Pkwy -- conf 98 -- https://www.swisd.net/apps/events/2026/10/27/57251380/
+- **TMEA HS Mariachi Area Recordings** -- 2026-10-28 -- 11914 Dragon Ln -- conf 98 -- https://www.swisd.net/apps/events/2026/10/28/48122685/
+
+## Purged (failed re-validation)
+- Trunk or Treat -- event_id=2026-10-23_trunk-or-treat_34caa5ea6a7d: date 2026-10-23 is in the past
+- ESL Study Club -- event_id=2026-10-23_esl-study-club_ca717d6605dc: date 2026-10-23 is in the past
+- Line Dancing -- event_id=2026-10-23_line-dancing_5e3c347aa298: date 2026-10-23 is in the past
+- Click and Learn the Computer -- event_id=2026-10-23_click-and-learn-the-computer_2aa8fa016794: date 2026-10-23 is in the past
+- Family Story Time -- event_id=2026-10-23_family-story-time_9bd66ca8feff: date 2026-10-23 is in the past
+- Craft and Chat -- event_id=2026-10-23_craft-and-chat_b29051ee524c: date 2026-10-23 is in the past
+- Tai Chi for Seniors -- event_id=2026-10-23_tai-chi-for-seniors_4aed2d4114ea: date 2026-10-23 is in the past
+- Medicina Alternativa -- event_id=2026-10-23_medicina-alternativa_67f5846c4530: date 2026-10-23 is in the past
+- Sin Vergüenza -- event_id=2026-10-23_sin-verg-enza_5d9dabf0dda1: date 2026-10-23 is in the past
+- PBS presents: NATURE “Sesame Street and the Great Elephant Adventure” -- event_id=2026-10-23_pbs-presents-nature-sesame-s_a173b5e66063: date 2026-10-23 is in the past
+- English for All -- event_id=2026-10-23_english-for-all_c7c78e7702b5: date 2026-10-23 is in the past
+- Teen Time -- event_id=2026-10-23_teen-time_bb1ca0ffc78d: date 2026-10-23 is in the past
+- Let's Create!: Arts & Crafts Fridays -- event_id=2026-10-23_let-s-create-arts-crafts-fri_1eca7a405bfa: date 2026-10-23 is in the past
+- Friends of the Landa Library Book Sale Preview-Friends Members Only -- event_id=2026-10-23_friends-of-the-landa-library_18f319ae74eb: date 2026-10-23 is in the past
+- Teen Fall: Open Play @ Teen Library -- event_id=2026-10-23_teen-fall-open-play-teen-lib_d1a7a53b830c: date 2026-10-23 is in the past
+- LEGO Time -- event_id=2026-10-23_lego-time_e8201ff22f88: date 2026-10-23 is in the past
+- Teen Time on Discord -- event_id=2026-10-23_teen-time-on-discord_c175daabf052: date 2026-10-23 is in the past
+- Mahjong at Pruitt Library -- event_id=2026-10-23_mahjong-at-pruitt-library_c776121e9a50: date 2026-10-23 is in the past
+- Science Night at the Library -- event_id=2026-10-23_science-night-at-the-library_811e45d17068: date 2026-10-23 is in the past
+- Legacy HS Theatre presents "A Night of Stars" Showcase -- event_id=2026-10-23_legacy-hs-theatre-presents-a_27c09fbf2923: date 2026-10-23 is in the past
+- 8TH Grade Night (McNair & Scobee) with Southwest Band -- event_id=2026-10-23_8th-grade-night-mcnair-scobe_f69933fef3e4: date 2026-10-23 is in the past
+- KRSA Thriller in the Park -- event_id=2026-10-23_krsa-thriller-in-the-park_ad048262f566: date 2026-10-23 is in the past
+- Dragon Volleyball Vs Titans -- event_id=2026-10-23_dragon-volleyball-vs-titans_b38e968dcc8f: date 2026-10-23 is in the past
+- Titan Volleyball Vs. Southwest HS -- event_id=2026-10-23_titan-volleyball-vs-southwes_d2ed6b1aa6dd: date 2026-10-23 is in the past
+- Dragon FB Home Game vs Laredo Johnson -- event_id=2026-10-23_dragon-fb-home-game-vs-lared_cfad3a5a6db8: date 2026-10-23 is in the past
 
 ## Review Queue
+- **San Antonio Public Library Events** -- conf 100 -- Wowzitude Livestreamed Worldwide Travel -- 2026-10-29 -- 8765 State Hwy 151 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D194100384
+- **San Antonio Public Library Events** -- conf 100 -- Preschool Story Time! -- 2026-10-29 -- 7978 Military Drive West -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D205024553
 - **San Antonio Public Library Events** -- conf 100 -- Toddler Story Time! -- 2026-10-28 -- 6111 Rosedale Ct. San Antonio, TX 78201 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206288693
+- **San Antonio Public Library Events** -- conf 100 -- Let's Play & Read! -- 2026-10-29 -- 6111 Rosedale Ct. San Antonio, TX 78201 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206288752
+- **San Antonio Public Library Events** -- conf 100 -- Family Story Time -- 2026-10-29 -- 2515 E. Evans San Antonio, TX 78259 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206373087
+- **San Antonio Public Library Events** -- conf 100 -- Family Storytime -- 2026-10-29 -- 200 N. Park San Antonio, TX 78204 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206413388
 - **San Antonio Public Library Events** -- conf 100 -- Preschool Story Time -- 2026-10-28 -- 15060 Judson Rd -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206448257
+- **San Antonio Public Library Events** -- conf 100 -- Toddler Story Time -- 2026-10-29 -- 15060 Judson Rd -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206449100
+- **San Antonio Public Library Events** -- conf 100 -- Baby Story Time -- 2026-10-29 -- 15060 Judson Rd -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206449166
+- **San Antonio Public Library Events** -- conf 100 -- Baby Story Time -- 2026-10-29 -- 13330 Kyle Seale Pkwy -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206613051
+- **San Antonio Public Library Events** -- conf 100 -- Preschool Story Time -- 2026-10-29 -- 13330 Kyle Seale Pkwy -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206613075
+- **San Antonio Public Library Events** -- conf 100 -- Let's Play! Toddlers -- 2026-10-29 -- 600 Soledad San Antonio, TX 78205 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D207231004
+- **San Antonio Public Library Events** -- conf 100 -- Story Time: Movement and Sensory Exploration -- 2026-10-29 -- 3222 Culebra San Antonio, TX 78228 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D207350116
 - **San Antonio Public Library Events** -- conf 100 -- Family Story Time -- 2026-10-25 -- 5110 Walzem Road San -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D207473335
+- **San Antonio Public Library Events** -- conf 100 -- Toddler Story Time -- 2026-10-29 -- 9050 Wellwood San Antonio, TX 78250 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D208192340
+- **San Antonio Public Library Events** -- conf 100 -- Halloween Party on the Playground​ at Schaefer -- 2026-10-29 -- 6322 US Hwy 87 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D209336112
+- **San Antonio Public Library Events** -- conf 100 -- Family Story Time -- 2026-10-29 -- 6307 Sun Valley San Antonio, TX 78227 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D210019041
+- **San Antonio Public Library Events** -- conf 100 -- Family Story Time @ Forest Hills -- 2026-10-29 -- 5245 Ingram Rd -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D210082918
+- **San Antonio Public Library Events** -- conf 100 -- Baby Story Time -- 2026-10-29 -- 530 Heimer San Antonio, TX 78232 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D210680685
+- **San Antonio Public Library Events** -- conf 100 -- Preschool Play & Explore -- 2026-10-29 -- 530 Heimer San Antonio, TX 78232 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D210680839
 - **San Antonio Public Library Events** -- conf 100 -- Teen Club @ Collins Garden -- 2026-10-26 -- 200 N. Park San Antonio, TX 78204 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D211416268
 - **City of San Antonio Parks & Recreation** -- conf 100 -- Tennis Clinics -- 2026-08-31 -- 1503 San Pedro Ave -- https://www.sanantonio.gov/ParksAndRec/News-Events/Events/Event-Details/ArtMID/15385/ArticleID/29348/Tennis-Clinics
 - **City of San Antonio Parks & Recreation** -- conf 100 -- 2026 Fall Tennis Clinics -- 2026-10-06 -- 1503 San Pedro Ave -- https://www.sanantonio.gov/ParksAndRec/News-Events/Events/Event-Details/ArtMID/15385/ArticleID/29370/2026-Fall-Tennis-Clinics
@@ -158,26 +223,8 @@ _None this run._
 - **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2028-09-14 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22420
 - **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2028-10-12 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22421
 - **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2028-11-09 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22422
-- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2028-12-14 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22423
-- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2029-01-11 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22424
-- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2029-02-08 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22425
-- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2029-03-08 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22426
-- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2029-04-12 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22427
-- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2029-05-10 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22428
-- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2029-06-14 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22429
-- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2029-07-12 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22430
-- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2029-08-09 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22431
-- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2029-09-13 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22432
-- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2029-10-11 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22433
-- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2029-11-08 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22434
-- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2029-12-13 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22435
-- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2030-01-10 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22436
-- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2030-02-14 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22437
-- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2030-03-14 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22438
-- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2030-04-11 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22439
 
 ## Rejected by Sentinel
-- Teen Time -- event_id=2026-10-23_teen-time_bb1ca0ffc78d: duplicate id already in feed
 - Family Story Time -- event_id=2026-10-25_family-story-time_d358e6e4611f: duplicate id already in feed
 - Teen Club @ Collins Garden -- event_id=2026-10-26_teen-club-collins-garden_630ebaf66678: duplicate id already in feed
 - Baby Time! -- event_id=2026-10-27_baby-time_f1f201fdb902: duplicate id already in feed
@@ -187,6 +234,10 @@ _None this run._
 - Toddler Story Time! -- event_id=2026-10-28_toddler-story-time_c5cf2e90c91a: duplicate id already in feed
 - Preschool Story Time -- event_id=2026-10-28_preschool-story-time_a9fc1e9f49d8: duplicate id already in feed
 - Tween Time -- event_id=2026-10-28_tween-time_dc3ae569bb73: duplicate id already in feed
+- Baby Story Time -- event_id=2026-10-29_baby-story-time_b9fa28b2449d: duplicate id already in feed
+- Toddler Story Time -- event_id=2026-10-29_toddler-story-time_61af22c2522e: duplicate id already in feed
+- Family Story Time -- event_id=2026-10-29_family-story-time_20b2bb68ce2a: duplicate id already in feed
+- Baby Story Time -- event_id=2026-10-29_baby-story-time_b9fa28b2449d: duplicate id already in feed
 - Free Family Swim -- event_id=2025-11-18_free-family-swim_3af18a4d5b80: date 2025-11-18 is in the past
 - McFarlin Tennis Center New Hours Free Tuesdays -- event_id=2026-01-01_mcfarlin-tennis-center-new-h_a459cb109fac: date 2026-01-01 is in the past
 - Kindness in Nature Club -- event_id=2026-02-17_kindness-in-nature-club_1e8ebecc94ac: date 2026-02-17 is in the past
@@ -224,13 +275,11 @@ _None this run._
 - First City Council Meeting -- event_id=2029-06-07_first-city-council-meeting_03f3d70ca24a: date 2029-06-07 is more than 90 days out
 - First City Council Meeting -- event_id=2029-05-03_first-city-council-meeting_36ea93fcc361: date 2029-05-03 is more than 90 days out
 - First City Council Meeting -- event_id=2029-04-05_first-city-council-meeting_27f20d00d238: date 2029-04-05 is more than 90 days out
-- First City Council Meeting -- event_id=2029-03-01_first-city-council-meeting_e70cf1dd08ac: date 2029-03-01 is more than 90 days out
-- First City Council Meeting -- event_id=2029-02-01_first-city-council-meeting_341b4ac4a2e0: date 2029-02-01 is more than 90 days out
-- First City Council Meeting -- event_id=2029-01-04_first-city-council-meeting_8f0b0266aac4: date 2029-01-04 is more than 90 days out
 
 ## Source Errors
 - San Antonio River Authority Events: HTTP 403 Forbidden
 - Windcrest Calendar: HTTP 403 Forbidden
+- Alamo Heights Calendar: HTTP 403 Forbidden
 
 ---
 Notes: v2.7 caps events at 90 days. Backbone is official/public + schools + libraries, then neighborhoods. CivicEngage ICS, Trumba ICS, Tribe ICS, Thrillshare ICS, RSS. 403 retries with a browser UA. No Google Calendar.
