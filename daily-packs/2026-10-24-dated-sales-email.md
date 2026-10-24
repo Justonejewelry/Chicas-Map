@@ -80,6 +80,7 @@ Map only shows pins whose listed dates include today.
 - Community garage sale — Sandlet trail near Fairlong trail, San Antonio, TX [2026-10-24 → 2026-10-26]
 - GARAGE AND YARD SALE - Luckey Ranch Subdivision — 12234 Cashton, San Antonio, TX [2026-10-24 → 2026-10-25]
 - 4 family yard sale — 400 W CR 5719, San Antonio, TX [2026-10-24 → 2026-10-26]
+- Davis Ranch Community/Neighborhood Garage Sale Saturday October 24 — Coyote Run near Coyote Ranch, San Antonio, TX [2026-10-24 → 2026-10-24]
 
 ## ONLINE / UNPLOTTABLE
 
