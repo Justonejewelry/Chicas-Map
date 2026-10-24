@@ -20,7 +20,7 @@ Map only shows pins whose listed dates include today.
 - Great Sale in Lewis Ranch — 26037 Lewis Ranch, San Antonio, TX [2026-10-22 → 2026-10-24]
 - Huge Multi Family Yard Sale — 1038 Saldana St, San Antonio, TX 78225 [2026-10-22 → 2026-10-24]
 - Eclectic Estate Sale In Oakwood — 420 Mount Joy Dr, New Braunfels, TX 78130 [2026-10-22 → 2026-10-24]
-- 3 Day Yard Sale Friday , Saturday , Sunday in Hondo, Tx — 1300 county rd 241 near Hwy 173, San Antonio, TX [2026-10-24 → 2026-10-26]
+- 2 Day Yard Sale: Saturday & Sunday, from 10-2, in Hondo, Tx — 1300 county rd 241 near Hwy 173, San Antonio, TX [2026-10-24 → 2026-10-26]
 - 101 Cinnabar Trail Cibolo — 101 Cinnabar Trail, San Antonio, TX [2026-10-24 → 2026-10-26]
 - Garage Sale near Madison High School — 5567 Spring Walk near Stahl, San Antonio, TX [2026-10-22 → 2026-10-24]
 - Asset purging - JBJ Soul Kitchen style — Will be given 10/24, San Antonio, TX [2026-10-24 → 2026-10-26]
