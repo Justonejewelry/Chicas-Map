@@ -59,7 +59,7 @@
       b.type = "button";
       b.className = "chica-reel-play chica-glass";
       b.setAttribute("aria-label", (es() ? "Reproducir " : "Play ") + reel.title);
-      b.innerHTML = '<img alt="" src="' + reel.poster + '"><span>' + reel.title + "</span>";
+      b.innerHTML = '<img alt="' + reel.title + ' reel thumbnail" src="' + reel.poster + '"><span>' + reel.title + "</span>";
       b.addEventListener("click", function () { open(reel); });
       rail.appendChild(b);
     });
