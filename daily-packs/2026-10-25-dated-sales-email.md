@@ -44,6 +44,7 @@ Map only shows pins whose listed dates include today.
 - Indoor Outdoor Garage Sale — 1421 Yellow Sky, San Antonio, TX [2026-10-25 → 2026-10-27]
 - Landmark Pointe Community Garage Sale — 229 Landmark Park, San Antonio, TX [2026-10-25 → 2026-10-27]
 - Packed to the Rafters in San Marcos by Golden Bow — San Antonio, TX [2026-10-23 → 2026-10-25]
+- Three Family Yard Sale — 639 El Monte Blvd, San Antonio, TX 78212 [2026-10-25 → 2026-10-25]
 
 ## COMING UP (remembered, not on today's map)
 
