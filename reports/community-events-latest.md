@@ -1,6 +1,6 @@
 # Chica's Map -- Community Events Swarm v2.7
 
-Run: 2026-10-25T05:12:14-05:00
+Run: 2026-10-25T09:56:03-05:00
 Sources scanned: **48**
 Candidates discovered: **914**
 With parsed dates: **757**

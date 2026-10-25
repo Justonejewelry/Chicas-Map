@@ -2,8 +2,8 @@
   "type": "FeatureCollection",
   "properties": {
     "target_date": "2026-10-25",
-    "generated_at": "2026-10-25T05:11:44-05:00",
-    "count": 31,
+    "generated_at": "2026-10-25T09:55:25-05:00",
+    "count": 36,
     "project": "Chicas-Map"
   },
   "features": [
@@ -43,7 +43,7 @@
           "https://images.craigslist.org/01515_1Xh2ogBe0sZ_0CI0pq_600x450.jpg"
         ],
         "confidence": 96,
-        "verified_at": "2026-10-25T05:10:55-05:00",
+        "verified_at": "2026-10-25T09:54:28-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.556,-98.6094",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.556,-98.6094",
         "status": "verified",
@@ -94,7 +94,7 @@
           "https://images.craigslist.org/00B0B_aWVQH1t7xai_0MM132_50x50c.jpg"
         ],
         "confidence": 96,
-        "verified_at": "2026-10-25T05:10:55-05:00",
+        "verified_at": "2026-10-25T09:54:28-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.3309,-98.5054",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.3309,-98.5054",
         "status": "verified",
@@ -145,7 +145,7 @@
           "https://images.craigslist.org/00q0q_4KHDGJNIGZF_13O0Nm_50x50c.jpg"
         ],
         "confidence": 96,
-        "verified_at": "2026-10-25T05:10:55-05:00",
+        "verified_at": "2026-10-25T09:54:28-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.3374,-98.5393",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.3374,-98.5393",
         "status": "verified",
@@ -196,7 +196,7 @@
           "https://images.craigslist.org/00G0G_fu6UZn3Zcfh_0CI0t2_50x50c.jpg"
         ],
         "confidence": 100,
-        "verified_at": "2026-10-25T05:10:55-05:00",
+        "verified_at": "2026-10-25T09:54:28-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.3475,-99.1414",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.3475,-99.1414",
         "status": "verified",
@@ -240,7 +240,7 @@
         ],
         "photos": [],
         "confidence": 92,
-        "verified_at": "2026-10-25T05:10:55-05:00",
+        "verified_at": "2026-10-25T09:54:28-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.582848,-98.253276",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.582848,-98.253276",
         "status": "verified",
@@ -291,7 +291,7 @@
           "https://images.craigslist.org/00H0H_bXJkaF0qjuP_0t20CI_50x50c.jpg"
         ],
         "confidence": 96,
-        "verified_at": "2026-10-25T05:10:55-05:00",
+        "verified_at": "2026-10-25T09:54:28-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4892,-98.3387",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.4892,-98.3387",
         "status": "verified",
@@ -342,7 +342,7 @@
           "https://images.craigslist.org/01111_keWF1anQuM0_0t20CI_50x50c.jpg"
         ],
         "confidence": 96,
-        "verified_at": "2026-10-25T05:10:55-05:00",
+        "verified_at": "2026-10-25T09:54:28-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.502096,-98.687489",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.502096,-98.687489",
         "status": "verified",
@@ -393,7 +393,7 @@
           "https://d3sp8ubbhnru9d.cloudfront.net/image/w300-c300:250/2026/10/22/s/5/1/38977951/eho1-0.jpeg"
         ],
         "confidence": 100,
-        "verified_at": "2026-10-25T05:10:55-05:00",
+        "verified_at": "2026-10-25T09:54:28-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.481544,-98.504862",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.481544,-98.504862",
         "status": "verified",
@@ -444,7 +444,7 @@
           "https://d3sp8ubbhnru9d.cloudfront.net/image/w300-c300:250/2026/10/22/s/9/7/38975697/qctZ-0.jpeg"
         ],
         "confidence": 100,
-        "verified_at": "2026-10-25T05:10:55-05:00",
+        "verified_at": "2026-10-25T09:54:28-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.685278,-98.329349",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.685278,-98.329349",
         "status": "verified",
@@ -495,7 +495,7 @@
           "https://images.craigslist.org/01111_es6kaSLHxzp_0CI0t2_50x50c.jpg"
         ],
         "confidence": 96,
-        "verified_at": "2026-10-25T05:10:55-05:00",
+        "verified_at": "2026-10-25T09:54:28-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.455189,-98.526905",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.455189,-98.526905",
         "status": "verified",
@@ -546,7 +546,7 @@
           "https://eso-cdn.tlcdn.workers.dev/s-2469707-76o6uyp9glyqo2h2-t.webp"
         ],
         "confidence": 100,
-        "verified_at": "2026-10-25T05:10:55-05:00",
+        "verified_at": "2026-10-25T09:54:28-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.571584,-98.2801255",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.571584,-98.2801255",
         "status": "verified",
@@ -596,7 +596,7 @@
           "https://d82cz7nyq77ak.cloudfront.net/images/social/Email.png"
         ],
         "confidence": 100,
-        "verified_at": "2026-10-25T05:10:55-05:00",
+        "verified_at": "2026-10-25T09:54:28-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.480458,-98.511049",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.480458,-98.511049",
         "status": "verified",
@@ -647,7 +647,7 @@
           "https://d3sp8ubbhnru9d.cloudfront.net/image/w300-c300:250/2026/10/23/s/0/5/38979805/7Tq71-0.jpeg"
         ],
         "confidence": 100,
-        "verified_at": "2026-10-25T05:10:55-05:00",
+        "verified_at": "2026-10-25T09:54:28-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.48936,-98.524436",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.48936,-98.524436",
         "status": "verified",
@@ -668,11 +668,11 @@
       },
       "properties": {
         "sale_id": "2026-10-24_570-radiance-dr-san-antonio-tx-78218",
-        "title": "Yard Sale",
+        "title": "570 Radiance Dr, San Antonio, TX 78218",
         "sale_type": "garage",
         "date_start": "2026-10-24",
         "date_end": "2026-10-25",
-        "start_time": "8:00 AM - 5:00 PM",
+        "start_time": "8:00 am - 5:00 pm",
         "end_time": "",
         "address": "570 Radiance Dr, San Antonio, TX 78218",
         "city": "San Antonio",
@@ -680,24 +680,23 @@
         "zip": "",
         "latitude": 29.502182,
         "longitude": -98.402925,
-        "description": "Find all the garage sales, yard sales, and estate sales on a map! Or place a free ad for your upcoming sale on yardsalesearch.com",
+        "description": "Dates and Times: Saturday, October 24, 2026 8:00 am - 5:00 pm",
         "highlights": [],
         "source_urls": [
-          "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196434309"
+          "https://garagesalefinder.com/s/N99wB/570-radiance-dr-san-antonio-tx-78218"
         ],
-        "original_url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196434309",
+        "original_url": "https://garagesalefinder.com/s/N99wB/570-radiance-dr-san-antonio-tx-78218",
         "source_names": [
-          "YardSaleSearch"
+          "GarageSaleFinder"
         ],
         "photos": [
-          "https://d82cz7nyq77ak.cloudfront.net/images/social/Facebook.png",
-          "https://d82cz7nyq77ak.cloudfront.net/images/social/Pinterest.png",
-          "https://d82cz7nyq77ak.cloudfront.net/images/social/Reddit.png",
-          "https://d82cz7nyq77ak.cloudfront.net/images/social/Twitter.png",
-          "https://d82cz7nyq77ak.cloudfront.net/images/social/Email.png"
+          "https://gsf.tlstatic.com/images/social/Facebook.png",
+          "https://gsf.tlstatic.com/images/social/Reddit.png",
+          "https://gsf.tlstatic.com/images/social/Twitter.png",
+          "https://gsf.tlstatic.com/images/social/Email.png"
         ],
         "confidence": 100,
-        "verified_at": "2026-10-25T05:10:55-05:00",
+        "verified_at": "2026-10-25T09:54:28-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.502182,-98.402925",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.502182,-98.402925",
         "status": "verified",
@@ -722,7 +721,7 @@
         "sale_type": "garage",
         "date_start": "2026-10-24",
         "date_end": "2026-10-25",
-        "start_time": "9:00 AM - 3:00 PM",
+        "start_time": "9:00 am - 3:00 pm",
         "end_time": "",
         "address": "10970 Lake Path Dr, San Antonio, TX 78217",
         "city": "San Antonio",
@@ -730,24 +729,23 @@
         "zip": "",
         "latitude": 29.535692,
         "longitude": -98.432797,
-        "description": "Find all the garage sales, yard sales, and estate sales on a map! Or place a free ad for your upcoming sale on yardsalesearch.com",
+        "description": "Dates and Times: Saturday, October 24, 2026 9:00 am - 3:00 pm",
         "highlights": [],
         "source_urls": [
-          "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196444207"
+          "https://garagesalefinder.com/s/N9PMx/10970-lake-path-dr-san-antonio-tx-78217"
         ],
-        "original_url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196444207",
+        "original_url": "https://garagesalefinder.com/s/N9PMx/10970-lake-path-dr-san-antonio-tx-78217",
         "source_names": [
-          "YardSaleSearch"
+          "GarageSaleFinder"
         ],
         "photos": [
-          "https://d82cz7nyq77ak.cloudfront.net/images/social/Facebook.png",
-          "https://d82cz7nyq77ak.cloudfront.net/images/social/Pinterest.png",
-          "https://d82cz7nyq77ak.cloudfront.net/images/social/Reddit.png",
-          "https://d82cz7nyq77ak.cloudfront.net/images/social/Twitter.png",
-          "https://d82cz7nyq77ak.cloudfront.net/images/social/Email.png"
+          "https://gsf.tlstatic.com/images/social/Facebook.png",
+          "https://gsf.tlstatic.com/images/social/Reddit.png",
+          "https://gsf.tlstatic.com/images/social/Twitter.png",
+          "https://gsf.tlstatic.com/images/social/Email.png"
         ],
         "confidence": 100,
-        "verified_at": "2026-10-25T05:10:55-05:00",
+        "verified_at": "2026-10-25T09:54:28-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.535692,-98.432797",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.535692,-98.432797",
         "status": "verified",
@@ -798,7 +796,7 @@
           "https://gsf.tlstatic.com/image/w300-c300:250/2026/10/19/s/8/3/21802183/XblUU-0.jpeg"
         ],
         "confidence": 100,
-        "verified_at": "2026-10-25T05:10:55-05:00",
+        "verified_at": "2026-10-25T09:54:28-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.458326,-98.348203",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.458326,-98.348203",
         "status": "verified",
@@ -844,7 +842,7 @@
           "https://images.craigslist.org/00C0C_7Xim0fZL6q1_0gw0oM_600x450.jpg"
         ],
         "confidence": 96,
-        "verified_at": "2026-10-25T05:10:55-05:00",
+        "verified_at": "2026-10-25T09:54:28-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.275,-98.6677",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.275,-98.6677",
         "status": "verified",
@@ -888,7 +886,7 @@
         ],
         "photos": [],
         "confidence": 96,
-        "verified_at": "2026-10-25T05:10:55-05:00",
+        "verified_at": "2026-10-25T09:54:28-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.515692,-98.6815",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.515692,-98.6815",
         "status": "verified",
@@ -932,7 +930,7 @@
         ],
         "photos": [],
         "confidence": 92,
-        "verified_at": "2026-10-25T05:10:55-05:00",
+        "verified_at": "2026-10-25T09:54:28-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.360577,-98.73647",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.360577,-98.73647",
         "status": "verified",
@@ -976,7 +974,7 @@
         ],
         "photos": [],
         "confidence": 96,
-        "verified_at": "2026-10-25T05:10:55-05:00",
+        "verified_at": "2026-10-25T09:54:28-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.2366,-98.7945",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.2366,-98.7945",
         "status": "verified",
@@ -1027,7 +1025,7 @@
           "https://gsf.tlstatic.com/image/w300-c300:250/2026/10/24/s/5/3/21810553/XTRI1-0.jpeg"
         ],
         "confidence": 100,
-        "verified_at": "2026-10-25T05:10:55-05:00",
+        "verified_at": "2026-10-25T09:54:28-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.527591,-98.646392",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.527591,-98.646392",
         "status": "verified",
@@ -1078,7 +1076,7 @@
           "https://gsf.tlstatic.com/image/w150-h100/2026/10/24/s/7/9/21810779/XA8wD-0.jpeg"
         ],
         "confidence": 100,
-        "verified_at": "2026-10-25T05:10:55-05:00",
+        "verified_at": "2026-10-25T09:54:28-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936",
         "status": "verified",
@@ -1129,7 +1127,7 @@
           "https://images.craigslist.org/00n0n_6yDirIQWY7M_0t20CI_50x50c.jpg"
         ],
         "confidence": 96,
-        "verified_at": "2026-10-25T05:10:55-05:00",
+        "verified_at": "2026-10-25T09:54:28-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.434951,-98.534074",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.434951,-98.534074",
         "status": "verified",
@@ -1180,7 +1178,7 @@
           "https://images.craigslist.org/00C0C_jniZvDk6YAE_0hK0dm_50x50c.jpg"
         ],
         "confidence": 96,
-        "verified_at": "2026-10-25T05:10:55-05:00",
+        "verified_at": "2026-10-25T09:54:28-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.873889,-98.271815",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.873889,-98.271815",
         "status": "verified",
@@ -1213,7 +1211,7 @@
         "zip": "",
         "latitude": 29.502178,
         "longitude": -98.402996,
-        "description": "QR Code Link to This Post Plants, clothes, small dining room table, 110 and 115 dirt bikes, solar panels, round chair, 40 gallon fish tank with cabinet stand, vases, mirrors, lamps, and more",
+        "description": "QR Code Link to This Post Plants, clothes, dining room table, solar panels, 40 gallon fish tank, vases, vanity with chair, jewlery box, and most items $1. We can make a deal! 9am-12pm",
         "highlights": [],
         "source_urls": [
           "https://www.craigslist.org/view/d/san-antonio-garage-sale/mXxrVJEUnMv7LWW1j3DyEJ"
@@ -1223,15 +1221,15 @@
           "Craigslist"
         ],
         "photos": [
-          "https://images.craigslist.org/00T0T_TjP5QxHEFd_0dq0t2_600x450.jpg",
-          "https://images.craigslist.org/00T0T_TjP5QxHEFd_0dq0t2_50x50c.jpg",
-          "https://images.craigslist.org/00a0a_ebdHo19JZqb_0dq0t2_50x50c.jpg",
+          "https://images.craigslist.org/00D0D_fJHj8u1tKmg_0x20fg_600x450.jpg",
           "https://images.craigslist.org/00D0D_fJHj8u1tKmg_0x20fg_50x50c.jpg",
+          "https://images.craigslist.org/00a0a_ebdHo19JZqb_0dq0t2_50x50c.jpg",
           "https://images.craigslist.org/00101_lOmOsoQ0pPc_0dq0t2_50x50c.jpg",
-          "https://images.craigslist.org/00J0J_2WsLkTxlFvt_0dq0t2_50x50c.jpg"
+          "https://images.craigslist.org/00J0J_2WsLkTxlFvt_0dq0t2_50x50c.jpg",
+          "https://images.craigslist.org/00T0T_40VQl8G3pyH_0dq0t2_50x50c.jpg"
         ],
         "confidence": 96,
-        "verified_at": "2026-10-25T05:10:55-05:00",
+        "verified_at": "2026-10-25T09:54:28-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.502178,-98.402996",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.502178,-98.402996",
         "status": "verified",
@@ -1282,7 +1280,7 @@
           "https://images.craigslist.org/00b0b_9OCimHgEU88_0bO0fJ_50x50c.jpg"
         ],
         "confidence": 100,
-        "verified_at": "2026-10-25T05:10:55-05:00",
+        "verified_at": "2026-10-25T09:54:28-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4589,-98.5699",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.4589,-98.5699",
         "status": "verified",
@@ -1333,7 +1331,7 @@
           "https://images.craigslist.org/00q0q_d8QSbJ69BIf_0t20CI_50x50c.jpg"
         ],
         "confidence": 96,
-        "verified_at": "2026-10-25T05:10:55-05:00",
+        "verified_at": "2026-10-25T09:54:28-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5314,-98.699",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.5314,-98.699",
         "status": "verified",
@@ -1377,7 +1375,7 @@
         ],
         "photos": [],
         "confidence": 96,
-        "verified_at": "2026-10-25T05:10:55-05:00",
+        "verified_at": "2026-10-25T09:54:28-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.580195,-98.388129",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.580195,-98.388129",
         "status": "verified",
@@ -1428,7 +1426,7 @@
           "https://images.craigslist.org/00V0V_2iR2OJYScbh_0t20CI_50x50c.jpg"
         ],
         "confidence": 96,
-        "verified_at": "2026-10-25T05:10:55-05:00",
+        "verified_at": "2026-10-25T09:54:28-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.1733,-98.4723",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.1733,-98.4723",
         "status": "verified",
@@ -1474,7 +1472,7 @@
           "https://images.craigslist.org/00f0f_k7XTL1edJqP_0aq0be_600x450.jpg"
         ],
         "confidence": 100,
-        "verified_at": "2026-10-25T05:10:55-05:00",
+        "verified_at": "2026-10-25T09:54:28-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.575,-98.228",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.575,-98.228",
         "status": "verified",
@@ -1499,7 +1497,7 @@
         "sale_type": "garage",
         "date_start": "2026-10-25",
         "date_end": "2026-10-25",
-        "start_time": "10:00 AM - 5:00 PM",
+        "start_time": "8:30 AM - 4:00 PM",
         "end_time": "",
         "address": "639 El Monte Blvd, San Antonio, TX 78212",
         "city": "San Antonio",
@@ -1524,9 +1522,255 @@
           "https://d82cz7nyq77ak.cloudfront.net/images/social/Email.png"
         ],
         "confidence": 100,
-        "verified_at": "2026-10-25T05:10:55-05:00",
+        "verified_at": "2026-10-25T09:54:28-05:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.485431,-98.505983",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.485431,-98.505983",
+        "status": "verified",
+        "geocode_method": "source",
+        "notes": "",
+        "community_source": "",
+        "community_link_or_notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.570779,
+          29.453343
+        ]
+      },
+      "properties": {
+        "sale_id": "2026-10-25_138-globe-ave-san-antonio-tx-78228",
+        "title": "Yard Sale. 10-4",
+        "sale_type": "garage",
+        "date_start": "2026-10-25",
+        "date_end": "2026-10-25",
+        "start_time": "10:00 AM - 4:00 PM",
+        "end_time": "",
+        "address": "138 Globe Ave, San Antonio, TX 78228",
+        "city": "San Antonio",
+        "state": "TX",
+        "zip": "",
+        "latitude": 29.453343,
+        "longitude": -98.570779,
+        "description": "Find all the garage sales, yard sales, and estate sales on a map! Or place a free ad for your upcoming sale on yardsalesearch.com",
+        "highlights": [],
+        "source_urls": [
+          "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196445597"
+        ],
+        "original_url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196445597",
+        "source_names": [
+          "YardSaleSearch"
+        ],
+        "photos": [
+          "https://d82cz7nyq77ak.cloudfront.net/images/social/Facebook.png",
+          "https://d82cz7nyq77ak.cloudfront.net/images/social/Pinterest.png",
+          "https://d82cz7nyq77ak.cloudfront.net/images/social/Reddit.png",
+          "https://d82cz7nyq77ak.cloudfront.net/images/social/Twitter.png",
+          "https://d82cz7nyq77ak.cloudfront.net/images/social/Email.png"
+        ],
+        "confidence": 100,
+        "verified_at": "2026-10-25T09:54:28-05:00",
+        "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.453343,-98.570779",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.453343,-98.570779",
+        "status": "verified",
+        "geocode_method": "source",
+        "notes": "",
+        "community_source": "",
+        "community_link_or_notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.549817,
+          29.530859
+        ]
+      },
+      "properties": {
+        "sale_id": "2026-10-25_3326-old-frg-san-antonio-tx-78230",
+        "title": "Garage Sale, Sun 9Am-3Pm, Prices Marked Down",
+        "sale_type": "garage",
+        "date_start": "2026-10-25",
+        "date_end": "2026-10-25",
+        "start_time": "9:00 AM - 3:00 PM",
+        "end_time": "",
+        "address": "3326 Old Frg, San Antonio, TX 78230",
+        "city": "San Antonio",
+        "state": "TX",
+        "zip": "",
+        "latitude": 29.530859,
+        "longitude": -98.549817,
+        "description": "Find all the garage sales, yard sales, and estate sales on a map! Or place a free ad for your upcoming sale on yardsalesearch.com",
+        "highlights": [],
+        "source_urls": [
+          "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196445579"
+        ],
+        "original_url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196445579",
+        "source_names": [
+          "YardSaleSearch"
+        ],
+        "photos": [
+          "https://d82cz7nyq77ak.cloudfront.net/images/social/Facebook.png",
+          "https://d82cz7nyq77ak.cloudfront.net/images/social/Pinterest.png",
+          "https://d82cz7nyq77ak.cloudfront.net/images/social/Reddit.png",
+          "https://d82cz7nyq77ak.cloudfront.net/images/social/Twitter.png",
+          "https://d82cz7nyq77ak.cloudfront.net/images/social/Email.png"
+        ],
+        "confidence": 100,
+        "verified_at": "2026-10-25T09:54:28-05:00",
+        "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.530859,-98.549817",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.530859,-98.549817",
+        "status": "verified",
+        "geocode_method": "source",
+        "notes": "",
+        "community_source": "",
+        "community_link_or_notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.416691,
+          29.266457
+        ]
+      },
+      "properties": {
+        "sale_id": "2026-10-25_15777-henze-rd-san-antonio-tx-78223",
+        "title": "Yard Sale",
+        "sale_type": "garage",
+        "date_start": "2026-10-25",
+        "date_end": "2026-10-26",
+        "start_time": "11:00 AM - 4:00 PM",
+        "end_time": "",
+        "address": "15777 Henze Rd, San Antonio, TX 78223",
+        "city": "San Antonio",
+        "state": "TX",
+        "zip": "",
+        "latitude": 29.266457,
+        "longitude": -98.416691,
+        "description": "Find all the garage sales, yard sales, and estate sales on a map! Or place a free ad for your upcoming sale on yardsalesearch.com",
+        "highlights": [],
+        "source_urls": [
+          "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196445589"
+        ],
+        "original_url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196445589",
+        "source_names": [
+          "YardSaleSearch"
+        ],
+        "photos": [
+          "https://d82cz7nyq77ak.cloudfront.net/images/social/Facebook.png",
+          "https://d82cz7nyq77ak.cloudfront.net/images/social/Pinterest.png",
+          "https://d82cz7nyq77ak.cloudfront.net/images/social/Reddit.png",
+          "https://d82cz7nyq77ak.cloudfront.net/images/social/Twitter.png",
+          "https://d82cz7nyq77ak.cloudfront.net/images/social/Email.png",
+          "https://ps.tlstatic.com/image/w300-c300:250/2026/10/25/s/0/5/412405/BORY-0.jpeg"
+        ],
+        "confidence": 100,
+        "verified_at": "2026-10-25T09:54:28-05:00",
+        "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.266457,-98.416691",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.266457,-98.416691",
+        "status": "verified",
+        "geocode_method": "source",
+        "notes": "",
+        "community_source": "",
+        "community_link_or_notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.271847,
+          29.375252
+        ]
+      },
+      "properties": {
+        "sale_id": "2026-10-25_1020-bluebonnet-ln-san-antonio-tx",
+        "title": "Blade's Auction * Gaming, Electronics & Toys Tues Night 02/27/26 @ 7pm (1020 Bluebonnet Ln. Adkins, TX)",
+        "sale_type": "estate",
+        "date_start": "2026-10-25",
+        "date_end": "2026-10-27",
+        "start_time": "9:00am - 5:00pm",
+        "end_time": "",
+        "address": "1020 Bluebonnet Ln., San Antonio, TX",
+        "city": "San Antonio",
+        "state": "TX",
+        "zip": "",
+        "latitude": 29.375252,
+        "longitude": -98.271847,
+        "description": "QR Code Link to This Post Tri-County Auctions and Liquidations Presents Blade's October Auction - Gaming, Action Toys & Electronics An \"On-Line Only\" Auction CONTENTS: Nintendo-PS2-PS5-PSP UMD-Sega-Wii-Xbox-Xbox 360 Video Games, Vintage Cast Iron Collectibles, Jewelry, Laptop Computers, Collectible Pins, Baseball Bats, Fishing Tackleboxes, Lodge Cast Iron, Tools, Bradford Exchange Collectibles, Lamps, Marshall Pottery, Rare Old Railroad Lantern, Audio Electronics, Texas Longhorns Helmet, Hand-He",
+        "highlights": [],
+        "source_urls": [
+          "https://www.craigslist.org/view/d/san-antonio-blades-auction-gaming/fRERRuCNfL3h1gFUsqkbai"
+        ],
+        "original_url": "https://www.craigslist.org/view/d/san-antonio-blades-auction-gaming/fRERRuCNfL3h1gFUsqkbai",
+        "source_names": [
+          "Craigslist"
+        ],
+        "photos": [
+          "https://images.craigslist.org/00V0V_doidC4yRKPQ_0gw0co_600x450.jpg",
+          "https://images.craigslist.org/00V0V_doidC4yRKPQ_0gw0co_50x50c.jpg",
+          "https://images.craigslist.org/00P0P_4Pn0Lam12Sk_09i0co_50x50c.jpg",
+          "https://images.craigslist.org/00b0b_5S89YGcMzsD_09i0co_50x50c.jpg",
+          "https://images.craigslist.org/00U0U_3gggJeLmPk6_09i0co_50x50c.jpg",
+          "https://images.craigslist.org/00N0N_9veW3zDyWVO_0gw0co_50x50c.jpg"
+        ],
+        "confidence": 100,
+        "verified_at": "2026-10-25T09:54:28-05:00",
+        "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.375252,-98.271847",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.375252,-98.271847",
+        "status": "verified",
+        "geocode_method": "source",
+        "notes": "",
+        "community_source": "",
+        "community_link_or_notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.550056,
+          29.530932
+        ]
+      },
+      "properties": {
+        "sale_id": "2026-10-25_3326-old-forge-san-antonio-tx",
+        "title": "Garage Sale, Oct 25, Sunday All Prices marked down to Sale",
+        "sale_type": "garage",
+        "date_start": "2026-10-25",
+        "date_end": "2026-10-25",
+        "start_time": "",
+        "end_time": "",
+        "address": "3326 Old Forge, San Antonio, TX",
+        "city": "San Antonio",
+        "state": "TX",
+        "zip": "",
+        "latitude": 29.530932,
+        "longitude": -98.550056,
+        "description": "QR Code Link to This Post Garage Sale on Sunday October 25, 9am - 3pm at 3326 Old Forge, SATX 78230. In Colonies North neighborhood near Colonies North Elementary School. Home Decor (mirrors, photo frames, knickknacks, etc.), Kitchenwares, Small kitchen appliances, Ceramic chicken collection, 4 drawer file cabinet, clothes and other miscellaneous items.",
+        "highlights": [],
+        "source_urls": [
+          "https://www.craigslist.org/view/d/san-antonio-garage-sale-oct-25-sunday/t8c4JXh8eikTFSHgDCnopk"
+        ],
+        "original_url": "https://www.craigslist.org/view/d/san-antonio-garage-sale-oct-25-sunday/t8c4JXh8eikTFSHgDCnopk",
+        "source_names": [
+          "Craigslist"
+        ],
+        "photos": [],
+        "confidence": 92,
+        "verified_at": "2026-10-25T09:54:28-05:00",
+        "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.530932,-98.550056",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.530932,-98.550056",
         "status": "verified",
         "geocode_method": "source",
         "notes": "",

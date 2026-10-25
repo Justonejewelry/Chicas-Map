@@ -25,7 +25,7 @@ Map only shows pins whose listed dates include today.
 - Downsized Decorators Sale — 501 Thurber Dr, Schertz, TX 78154 [2026-10-24 → 2026-10-25] | 2026-10-24 9:00 am-3:00 pm; 2026-10-25 9:00 am-3:00 pm
 - Plumbing, Electrical & Misc — 934 W Mariposa Dr, San Antonio, TX 78201 [2026-10-24 → 2026-10-25]
 - Multi-Family Garage Sale! — 246 Harwood Dr, San Antonio, TX 78213 [2026-10-24 → 2026-10-25]
-- Yard Sale — 570 Radiance Dr, San Antonio, TX 78218 [2026-10-24 → 2026-10-25]
+- Yard sale — 570 Radiance Dr, San Antonio, TX 78218 [2026-10-24 → 2026-10-25]
 - 78217 Garage Sale, Saturday & Sunday, Oct 24-25, 2026 — 10970 Lake Path Dr, San Antonio, TX 78217 [2026-10-24 → 2026-10-25]
 - 🏡🚨 Big Neighborhood Garage Sale – Saturday, October 24Th & Sunday, October 25Th — 7123 Quarter Moon, Converse, TX 78109 [2026-10-24 → 2026-10-25]
 - ESTATE SALE! — 5920 S Loop 1604 W near Prairie Road, San Antonio, TX [2026-10-25 → 2026-10-27]
@@ -45,6 +45,11 @@ Map only shows pins whose listed dates include today.
 - Landmark Pointe Community Garage Sale — 229 Landmark Park, San Antonio, TX [2026-10-25 → 2026-10-27]
 - Packed to the Rafters in San Marcos by Golden Bow — San Antonio, TX [2026-10-23 → 2026-10-25]
 - Three Family Yard Sale — 639 El Monte Blvd, San Antonio, TX 78212 [2026-10-25 → 2026-10-25]
+- Yard Sale. 10-4 — 138 Globe Ave, San Antonio, TX 78228 [2026-10-25 → 2026-10-25]
+- Garage Sale, Sun 9Am-3Pm, Prices Marked Down — 3326 Old Frg, San Antonio, TX 78230 [2026-10-25 → 2026-10-25]
+- Yard Sale — 15777 Henze Rd, San Antonio, TX 78223 [2026-10-25 → 2026-10-26]
+- Blade's Auction * Gaming, Electronics & Toys Tues Night 02/27/26 @ 7pm — 1020 Bluebonnet Ln., San Antonio, TX [2026-10-25 → 2026-10-27]
+- Garage Sale, Oct 25, Sunday All Prices marked down to Sale — 3326 Old Forge, San Antonio, TX [2026-10-25 → 2026-10-25]
 
 ## COMING UP (remembered, not on today's map)
 
