@@ -2,7 +2,7 @@
 
 ## 1. CHICA DAILY RUN
 - **Target date:** Monday, October 26, 2026
-- **San Antonio local run time:** 2026-10-26T12:10:04-05:00
+- **San Antonio local run time:** 2026-10-26T13:28:06-05:00
 - **Geographic area:** San Antonio & surrounding communities
 - **Sources searched:** 7
 - **Candidates discovered:** 28
@@ -25,7 +25,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-alamo-craft-co-antiques-more/mj6FcRd4ZDr7zwAwc4pwWa
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.556,-98.6094
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.556,-98.6094
-- **Verified at:** 2026-10-26T12:10:04-05:00
+- **Verified at:** 2026-10-26T13:28:06-05:00
 
 ### 2. Estate sale (San Antonio)
 - **Type:** estate
@@ -37,7 +37,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-estate-sale/7VM1NdKZmKXThxQdgBjFcS
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.3309,-98.5054
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.3309,-98.5054
-- **Verified at:** 2026-10-26T12:10:04-05:00
+- **Verified at:** 2026-10-26T13:28:06-05:00
 
 ### 3. 10/24 - 10/25 TOOLS GALORE!! 2 Family Downsizing SALE (VIDA Subdivision | Texas A&M at San Antonio)
 - **Type:** garage
@@ -49,7 +49,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-tools-galore-family/hbc9Noat6JL6sFXeZftWri
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.3374,-98.5393
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.3374,-98.5393
-- **Verified at:** 2026-10-26T12:10:04-05:00
+- **Verified at:** 2026-10-26T13:28:06-05:00
 
 ### 4. 2 Day Yard Sale: Saturday & Sunday, from 10-2, in Hondo, Tx (Saint Marteen Hills)
 - **Type:** garage
@@ -62,7 +62,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/hondo-day-yard-sale-saturday-sunday/fY256GAS9PnEQNvYL4VuYN
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.3475,-99.1414
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.3475,-99.1414
-- **Verified at:** 2026-10-26T12:10:04-05:00
+- **Verified at:** 2026-10-26T13:28:06-05:00
 
 ### 5. 101 Cinnabar Trail Cibolo
 - **Type:** garage
@@ -74,7 +74,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/schertz-101-cinnabar-trail-cibolo/keZjyQxNQXAQB4PCokEWwV
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.582848,-98.253276
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.582848,-98.253276
-- **Verified at:** 2026-10-26T12:10:04-05:00
+- **Verified at:** 2026-10-26T13:28:06-05:00
 
 ### 6. Asset purging - JBJ Soul Kitchen style (San Antonio)
 - **Type:** estate
@@ -86,7 +86,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-asset-purging-jbj-soul/f9rbPetzEaBCSkshUXfgJT
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4892,-98.3387
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4892,-98.3387
-- **Verified at:** 2026-10-26T12:10:04-05:00
+- **Verified at:** 2026-10-26T13:28:06-05:00
 
 ### 7. ESTATE SALE! (Von Ormy, TX)
 - **Type:** estate
@@ -98,7 +98,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/von-ormy-estate-sale/85D1jHN8fyRDFBx3sJWk8D
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.275,-98.6677
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.275,-98.6677
-- **Verified at:** 2026-10-26T12:10:04-05:00
+- **Verified at:** 2026-10-26T13:28:06-05:00
 
 ### 8. 9439 Points Edge - BIG Garage Sale
 - **Type:** garage
@@ -110,7 +110,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-9439-points-edge-big-garage/qKX11uVJ8u9XJg3mpXTCvQ
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.515692,-98.6815
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.515692,-98.6815
-- **Verified at:** 2026-10-26T12:10:04-05:00
+- **Verified at:** 2026-10-26T13:28:06-05:00
 
 ### 9. 4 family yard sale (400 W CR 5719)
 - **Type:** garage
@@ -122,7 +122,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/lytle-family-yard-sale/1rhz3uNKUStNCrmrVpTMEt
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.2366,-98.7945
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.2366,-98.7945
-- **Verified at:** 2026-10-26T12:10:04-05:00
+- **Verified at:** 2026-10-26T13:28:06-05:00
 
 ### 10. 4 FAMILY YARD SALE
 - **Type:** garage
@@ -134,7 +134,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-family-yard-sale/4HWHt3VnAN64EXn3JkuK2X
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.434951,-98.534074
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.434951,-98.534074
-- **Verified at:** 2026-10-26T12:10:04-05:00
+- **Verified at:** 2026-10-26T13:28:06-05:00
 
 ### 11. Garage Sale (San Antonio)
 - **Type:** garage
@@ -146,7 +146,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-garage-sale/mXxrVJEUnMv7LWW1j3DyEJ
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.502178,-98.402996
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.502178,-98.402996
-- **Verified at:** 2026-10-26T12:10:04-05:00
+- **Verified at:** 2026-10-26T13:28:06-05:00
 
 ### 12. Garage Sale (Jefferson)
 - **Type:** garage
@@ -159,7 +159,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-garage-sale/8wjgqb76gbzwvYptHHtPRb
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4589,-98.5699
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4589,-98.5699
-- **Verified at:** 2026-10-26T12:10:04-05:00
+- **Verified at:** 2026-10-26T13:28:06-05:00
 
 ### 13. Garage Sale 10/24 & 10/25 8am-2pm 10527 Marigold Bay
 - **Type:** garage
@@ -171,7 +171,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-garage-sale-am-2pm-marigold/grj6RJvteTh6fSp3LiZt8x
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.5314,-98.699
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5314,-98.699
-- **Verified at:** 2026-10-26T12:10:04-05:00
+- **Verified at:** 2026-10-26T13:28:06-05:00
 
 ### 14. Garage Sale near Madison High School
 - **Type:** garage
@@ -183,7 +183,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-garage-sale-near-madison/vmQEuEMWdsDVBfF8ZXKExp
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.580195,-98.388129
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.580195,-98.388129
-- **Verified at:** 2026-10-26T12:10:04-05:00
+- **Verified at:** 2026-10-26T13:28:06-05:00
 
 ### 15. Indoor Outdoor Garage Sale
 - **Type:** garage
@@ -195,7 +195,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-indoor-outdoor-garage-sale/9EnwvkyVegHQxwiYex92EX
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.1733,-98.4723
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.1733,-98.4723
-- **Verified at:** 2026-10-26T12:10:04-05:00
+- **Verified at:** 2026-10-26T13:28:06-05:00
 
 ### 16. Landmark Pointe Community Garage Sale (Landmark Pointe)
 - **Type:** garage
@@ -208,7 +208,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/cibolo-landmark-pointe-community-garage/iRBBv3wCWvzkZD5UYpEzhJ
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.575,-98.228
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.575,-98.228
-- **Verified at:** 2026-10-26T12:10:04-05:00
+- **Verified at:** 2026-10-26T13:28:06-05:00
 
 ### 17. Yard Sale
 - **Type:** garage
@@ -221,7 +221,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196445589
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.266457,-98.416691
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.266457,-98.416691
-- **Verified at:** 2026-10-26T12:10:04-05:00
+- **Verified at:** 2026-10-26T13:28:06-05:00
 
 ### 18. Blade's Auction * Gaming, Electronics & Toys Tues Night 02/27/26 @ 7pm (1020 Bluebonnet Ln. Adkins, TX)
 - **Type:** estate
@@ -234,7 +234,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-blades-auction-gaming/fRERRuCNfL3h1gFUsqkbai
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.375252,-98.271847
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.375252,-98.271847
-- **Verified at:** 2026-10-26T12:10:04-05:00
+- **Verified at:** 2026-10-26T13:28:06-05:00
 
 ### 19. NOW OPEN! The Collective Boutiques (San Antonio)
 - **Type:** garage
@@ -246,7 +246,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-now-open-the-collective/a9UPVs8b9XgmEsUh6iVZ1m
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.5183,-98.503
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5183,-98.503
-- **Verified at:** 2026-10-26T12:10:04-05:00
+- **Verified at:** 2026-10-26T13:28:06-05:00
 
 ### 20. Woodworkers Garage Sale (San Antonio)
 - **Type:** garage
@@ -259,7 +259,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-woodworkers-garage-sale/bBrazbwtT1DFJWnJrzytXy
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.548598,-98.497927
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.548598,-98.497927
-- **Verified at:** 2026-10-26T12:10:04-05:00
+- **Verified at:** 2026-10-26T13:28:06-05:00
 
 ### 21. Yard-sale Southside (San Antonio)
 - **Type:** garage
@@ -271,7 +271,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-yard-sale-southside/4nkuR6GJJdm2asZ5YSxi1H
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.3641,-98.4924
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.3641,-98.4924
-- **Verified at:** 2026-10-26T12:10:04-05:00
+- **Verified at:** 2026-10-26T13:28:06-05:00
 
 ## 3. CHICA PICKS
 
