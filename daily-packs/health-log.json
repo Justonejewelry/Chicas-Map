@@ -109,5 +109,16 @@
     "geocoding_success_rate": "16.7% (1 full street + zip others)",
     "status": "STAGED_CONCURRENT",
     "notes": "Triggered chica-daily.yml (cities=san-antonio). Pending after polls. Staged 6 Greater SA leads (Schertz estate, Indian Hollow, Walnut Pass, Copperfield, Robinsnest, Lee Hall). Excluded New Braunfels/Bulverde/Boerne/online. City file untouched. Community swarm not triggered. Pack written."
+  },
+  {
+    "timestamp": "2026-10-26T11:05:00-05:00",
+    "target_date": "2026-10-26",
+    "actions_run_id": "40294674840",
+    "emails_scanned": 7,
+    "net_new_added": 0,
+    "net_new_staged": 1,
+    "geocoding_success_rate": "0.0% (zip_centroid staged)",
+    "status": "SUCCESS",
+    "notes": "chica-daily.yml run 40294674840 completed success. 1 net-new staged (Fantastic Fall Finds Multi-Estate Auction, 78240, online). Excluded Bulverde/Boerne/New Braunfels/past dates. City file untouched (28 live pins). Community swarm not triggered. Pack + social written."
   }
 ]

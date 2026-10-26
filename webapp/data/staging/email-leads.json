@@ -1,73 +1,31 @@
 {
-  "staging_date": "2026-10-22",
+  "staging_date": "2026-10-26",
   "city": "san-antonio",
   "status": "STAGED_UNDER_CEILING",
-  "reason": "6 net-new email leads under safety ceiling of 25. Master populate in progress; staged to avoid double-write.",
+  "reason": "1 net-new email lead under safety ceiling of 25. Master populate completed; staged to avoid race with live feed.",
   "confidence_floor": 0.7,
-  "emails_scanned": 6,
-  "net_new_vs_public": 6,
+  "emails_scanned": 7,
+  "net_new_vs_public": 1,
   "safety_ceiling": 25,
   "ceiling_hit": false,
   "city_file_written": false,
   "community_events_swarm": "not_triggered",
-  "actions_run_id": "39761189978",
-  "actions_status": "PENDING",
+  "actions_run_id": "40294674840",
+  "actions_status": "SUCCESS",
   "merged_at": null,
   "leads": [
     {
-      "title": "Downsized Decorators Sale",
-      "street_address": "Schertz, TX 78154",
-      "dates": ["2026-10-24", "2026-10-25"],
-      "hours": "9:00 AM CDT",
+      "title": "Fantastic Fall Finds! Multi-Estate Auction #1 - Bidding ends 11/1",
+      "street_address": "San Antonio, TX 78240",
+      "dates": ["2026-10-23", "2026-10-24", "2026-10-25", "2026-10-26", "2026-10-27", "2026-10-28", "2026-10-29", "2026-10-30", "2026-10-31", "2026-11-01"],
+      "hours": "Bidding starts to close Sun. Nov 1 at 7:00PM CDT",
       "source": "Email:EstateSales.org",
       "confidence": 0.75,
       "lat": null,
       "lon": null,
       "accuracy": "zip_centroid",
-      "type": "estate"
-    },
-    {
-      "title": "Indian Hollow Apartments Community Garage Sale",
-      "street_address": "12701 West Ave, San Antonio, TX 78216",
-      "dates": ["2026-10-24"],
-      "source": "Email:GarageSaleFinder",
-      "confidence": 0.75,
-      "lat": 29.559577,
-      "lon": -98.498385,
-      "type": "community"
-    },
-    {
-      "title": "Walnut Pass (Leon Springs) Community Garage Sale",
-      "street_address": "Walnut Pass, San Antonio, TX 78255",
-      "dates": ["2026-10-24"],
-      "hours": "8AM-1PM",
-      "source": "Email:GarageSaleFinder",
-      "confidence": 0.75,
-      "type": "community"
-    },
-    {
-      "title": "Multi-Family Garage Sale (Oak Creek Estates-San Antonio)",
-      "street_address": "1638 Copperfield, San Antonio, TX 78251",
-      "dates": ["2026-10-24"],
-      "source": "Email:GarageSaleFinder",
-      "confidence": 0.75,
-      "type": "garage"
-    },
-    {
-      "title": "Garage Sale - 10/23 & 10/24",
-      "street_address": "6316 Robinsnest Dr, San Antonio, TX 78249",
-      "dates": ["2026-10-23", "2026-10-24"],
-      "source": "Email:GarageSaleFinder",
-      "confidence": 0.75,
-      "type": "garage"
-    },
-    {
-      "title": "Garage sale",
-      "street_address": "1825 Lee Hall, San Antonio, TX 78201",
-      "dates": ["2026-10-23"],
-      "source": "Email:GarageSaleFinder",
-      "confidence": 0.75,
-      "type": "garage"
+      "type": "estate",
+      "notes": "Online multi-estate auction. Caring Transitions of San Antonio Northwest. 177 photos."
     }
   ]
 }
