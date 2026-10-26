@@ -1,18 +1,19 @@
 # Chica's Map -- Community Events Swarm v2.7
 
-Run: 2026-10-26T08:48:02-05:00
+Run: 2026-10-26T12:11:16-05:00
 Sources scanned: **48**
-Candidates discovered: **910**
-With parsed dates: **753**
-With street/venue address: **523**
-Promoted this run: **0**
+Candidates discovered: **907**
+With parsed dates: **751**
+With street/venue address: **520**
+Promoted this run: **2**
 Kept from prior feed: **277**
 Purged from prior feed: **0**
 Source errors: **2**
 Rejected by Sentinel: **296**
 
 ## Promoted (passed Events Sentinel)
-_None this run._
+- **Borrow a Board Game** -- 2026-10-31 -- 6322 US Hwy 87 -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D212169387
+- **Scobee Tigerfest Fall Festival** -- 2026-10-27 -- 10675 Marbach Rd -- conf 98 -- https://www.swisd.net/apps/events/2026/10/27/60743571/
 
 ## Review Queue
 - **San Antonio Public Library Events** -- conf 100 -- Toddler Story Time! -- 2026-10-28 -- 6111 Rosedale Ct. San Antonio, TX 78201 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206288693
@@ -22,6 +23,7 @@ _None this run._
 - **San Antonio Public Library Events** -- conf 100 -- Baby Story Time -- 2026-10-29 -- 13330 Kyle Seale Pkwy -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206613051
 - **San Antonio Public Library Events** -- conf 100 -- Toddler Story Time -- 2026-10-29 -- 9050 Wellwood San Antonio, TX 78250 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D208192340
 - **San Antonio Public Library Events** -- conf 100 -- Teen Club @ Collins Garden -- 2026-10-26 -- 200 N. Park San Antonio, TX 78204 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D211416268
+- **San Antonio Public Library Events** -- conf 100 -- Borrow a Board Game -- 2026-10-31 -- 6322 US Hwy 87 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D212169387
 - **City of San Antonio Parks & Recreation** -- conf 100 -- Tennis Clinics -- 2026-08-31 -- 1503 San Pedro Ave -- https://www.sanantonio.gov/ParksAndRec/News-Events/Events/Event-Details/ArtMID/15385/ArticleID/29348/Tennis-Clinics
 - **City of San Antonio Parks & Recreation** -- conf 100 -- 2026 Fall Tennis Clinics -- 2026-10-06 -- 1503 San Pedro Ave -- https://www.sanantonio.gov/ParksAndRec/News-Events/Events/Event-Details/ArtMID/15385/ArticleID/29370/2026-Fall-Tennis-Clinics
 - **Bexar County Clerk — Records on the Run** -- conf 99 -- Bexar County Clerk's Mobile Satellite Office will be at Bexar County Precinct 2 Constable's Office of Constable Leticia R. Vazquez -- 2026-11-05 -- 7723 Guilbeau Rd -- https://www.bexar.org/calendar.aspx?EID=7286
@@ -174,7 +176,6 @@ _None this run._
 - **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2029-10-11 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22433
 - **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2029-11-08 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22434
 - **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2029-12-13 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22435
-- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2030-01-10 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22436
 
 ## Rejected by Sentinel
 - Teen Club @ Collins Garden -- event_id=2026-10-26_teen-club-collins-garden_630ebaf66678: duplicate id already in feed

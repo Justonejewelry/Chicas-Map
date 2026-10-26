@@ -32,7 +32,7 @@ Map only shows pins whose listed dates include today.
 - NOW OPEN! The Collective Boutiques — NW Loop 410 near Blanco Rd., San Antonio, TX [2026-10-26 → 2026-10-28]
 - Woodworkers Garage Sale — 415 W. Rhapsody near Warfield, San Antonio, TX [2026-10-26 → 2026-10-28]
 - Yard-sale Southside — 542 E Bonner Ave, San Antonio, TX [2026-10-26 → 2026-10-28]
-- FUN and FABULOUS in DRIPPING SPRINGS — San Antonio, TX [2026-10-24 → 2026-10-26]
+- Estate Sale — San Antonio, TX [2026-10-24 → 2026-10-26]
 
 ## COMING UP (remembered, not on today's map)
 

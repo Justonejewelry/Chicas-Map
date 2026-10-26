@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-26T08:48:02-05:00",
+  "updated": "2026-10-26T12:11:16-05:00",
   "city": "san-antonio",
   "version": 2.7,
   "horizonDays": 90,
@@ -4989,6 +4989,42 @@
       "reliability": 96,
       "discoveredAt": "2026-10-26T03:03:24-05:00",
       "confidence": 100
+    },
+    {
+      "id": "2026-10-31_borrow-a-board-game_687dff3f7130",
+      "title": "Borrow a Board Game",
+      "date": "2026-10-31",
+      "endDate": "",
+      "time": "10:00 AM-5:00 PM",
+      "address": "6322 US Hwy 87",
+      "lat": null,
+      "lng": null,
+      "category": "other",
+      "description": "",
+      "url": "https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D212169387",
+      "source": "San Antonio Public Library Events",
+      "sourceId": "sapl-trumba-ics",
+      "reliability": 96,
+      "discoveredAt": "2026-10-26T12:10:35-05:00",
+      "confidence": 100
+    },
+    {
+      "id": "2026-10-27_scobee-tigerfest-fall-festiv_c60f5dee5a96",
+      "title": "Scobee Tigerfest Fall Festival",
+      "date": "2026-10-27",
+      "endDate": "",
+      "time": "5:00 PM–7:00 PM",
+      "address": "10675 Marbach Rd",
+      "lat": null,
+      "lng": null,
+      "category": "other",
+      "description": "",
+      "url": "https://www.swisd.net/apps/events/2026/10/27/60743571/",
+      "source": "Southwest ISD",
+      "sourceId": "swisd-home",
+      "reliability": 86,
+      "discoveredAt": "2026-10-26T12:10:42-05:00",
+      "confidence": 98
     }
   ]
 }
