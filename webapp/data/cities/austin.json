@@ -53,94 +53,6 @@
       "external_id": "eso-2467653"
     },
     {
-      "address": "New Braunfels, TX 78132",
-      "dates": "Thu Oct 15 – Sun Oct 25",
-      "date_from": "10/15/2026",
-      "date_to": "10/25/2026",
-      "end_date": "2026-10-25",
-      "title": "Sterling Flatware, Heirloom Furniture & More Online Auction by Caring Transitions - Ends 10/25!",
-      "details": "",
-      "source": "GarageSaleFinder",
-      "url": "https://garagesalefinder.com/s/N9IXG/new-braunfels-tx-78132",
-      "photos": 0,
-      "type": "estate",
-      "confidence": 0.65,
-      "status": "verified",
-      "lat": 30.2672,
-      "lon": -97.7431,
-      "geocode": "city-center"
-    },
-    {
-      "address": "hidden, Austin, TX 78732",
-      "dates": "2026-10-24 – 2026-10-25",
-      "date_from": "2026-10-24",
-      "date_to": "2026-10-25",
-      "end_date": "2026-10-25",
-      "hours": "2026-10-24 9:00 am-3:00 pm; 2026-10-25 10:00 am-3:00 pm",
-      "title": "SUN 50% Most items All Estate Sales Auctions Austin “ Near Oasis ” Sat Sun Art Collectibles",
-      "details": "California Estate Sales and Auction Company. House full of Louis 14th furniture and antique decor - carpets-clocks-fine art oil paintings,stained glass lamps-bronzes-asian collectibles-patio sculptures and furniture much much more. AD Greer oil on canvas. Oil paintings.",
-      "source": "EstateSales.org",
-      "url": "https://estatesales.org/estate-sales/tx/austin/78732/all-estate-sales-auctions-austin-2468884",
-      "photos": 0,
-      "type": "estate",
-      "categories": [
-        "estate-sale",
-        "in-person"
-      ],
-      "confidence": 0.9,
-      "status": "verified",
-      "lat": 30.4143557,
-      "lon": -97.8884872,
-      "geocode": "source",
-      "company": "California Estate Sales and Auction Company",
-      "in_person": true,
-      "external_id": "eso-2468884"
-    },
-    {
-      "address": "Austin, TX 78732",
-      "dates": "2026-10-24 – 2026-10-25",
-      "date_from": "2026-10-24",
-      "date_to": "2026-10-25",
-      "end_date": "2026-10-25",
-      "title": "All Estate Sales Auctions Austin “ Near Oasis ” Sat Sun Art Collectibles",
-      "details": "",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196434531",
-      "photos": 0,
-      "type": "estate",
-      "confidence": 0.85,
-      "status": "verified",
-      "lat": 30.41485,
-      "lon": -97.88803,
-      "geocode": "source",
-      "external_id": "yss-austintx78732-2026-10-24",
-      "categories": [
-        "estate-sale"
-      ]
-    },
-    {
-      "address": "2508 Lipizzan Dr, Austin, TX 78732",
-      "dates": "2026-10-24 – 2026-10-25",
-      "date_from": "2026-10-24",
-      "date_to": "2026-10-25",
-      "end_date": "2026-10-25",
-      "title": "Huge Baby & Kids Yard Sale + Modern Furniture | Great Brands & Deals!",
-      "details": "",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196435457",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.88,
-      "status": "verified",
-      "lat": 30.368817,
-      "lon": -97.903693,
-      "geocode": "source",
-      "external_id": "yss-2508lipizzandraustintx78732-2026-10-24",
-      "categories": [
-        "garage-sale"
-      ]
-    },
-    {
       "address": "4711 East Riverside Drive near Wickersham, Austin, TX",
       "dates": "2026-10-25 – 2026-10-27",
       "date_from": "2026-10-25",
@@ -164,50 +76,6 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "cl-verythingmustgorlnbroykhgv2zyul49fzaz"
-    },
-    {
-      "address": "801 E 44th St, Austin, TX 78751",
-      "dates": "2026-10-25 – 2026-10-25",
-      "date_from": "2026-10-25",
-      "date_to": "2026-10-25",
-      "end_date": "2026-10-25",
-      "title": "Yard Sale!",
-      "details": "",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196436685",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.88,
-      "status": "verified",
-      "lat": 30.303736,
-      "lon": -97.721859,
-      "geocode": "source",
-      "external_id": "yss-801e44thstaustintx78751-2026-10-25",
-      "categories": [
-        "garage-sale"
-      ]
-    },
-    {
-      "address": "400 Ridgecrest Rd, Georgetown, TX 78628",
-      "dates": "2026-10-24 – 2026-10-25",
-      "date_from": "2026-10-24",
-      "date_to": "2026-10-25",
-      "end_date": "2026-10-25",
-      "title": "Multi-Family Yard Sale",
-      "details": "",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196436675",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.88,
-      "status": "verified",
-      "lat": 30.655211,
-      "lon": -97.699857,
-      "geocode": "source",
-      "external_id": "yss-400ridgecrestrdgeorgetowntx78628-2026-10-24",
-      "categories": [
-        "garage-sale"
-      ]
     },
     {
       "address": "Meuller, Austin, TX",
@@ -260,72 +128,6 @@
       "external_id": "cl-ovinggaragesalesyrqj87ayxgkdbf8cvb8ad"
     },
     {
-      "address": "36B Country Oaks Dr., Buda, TX 78610",
-      "dates": "2026-10-23 – 2026-10-25",
-      "date_from": "2026-10-23",
-      "date_to": "2026-10-25",
-      "end_date": "2026-10-25",
-      "title": "3 Days Of Great Finds!",
-      "details": "",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196437421",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.88,
-      "status": "verified",
-      "lat": 30.122501,
-      "lon": -97.878829,
-      "geocode": "source",
-      "external_id": "yss-36bcountryoaksdrbudatx78610-2026-10-23",
-      "categories": [
-        "garage-sale"
-      ]
-    },
-    {
-      "address": "13113 S Ridge Cir, Leander, TX 78641",
-      "dates": "2026-10-23 – 2026-10-25",
-      "date_from": "2026-10-23",
-      "date_to": "2026-10-25",
-      "end_date": "2026-10-25",
-      "title": "Chantal's **Up To 75%Off**Fabulous Multigenerational. Final Estate Sale Presale Large Items)",
-      "details": "",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196438177",
-      "photos": 0,
-      "type": "estate",
-      "confidence": 0.9,
-      "status": "verified",
-      "lat": 30.506741,
-      "lon": -97.8896481,
-      "geocode": "source",
-      "hours": "2026-10-23 9:00 am-4:00 pm; 2026-10-24 9:00 am-4:00 pm; 2026-10-25 9:00 am-4:00 pm",
-      "company": "Chantal's Estate Sales",
-      "in_person": true,
-      "external_id": "yss-13113sridgecirleandertx78641-2026-10-23",
-      "categories": [
-        "estate-sale",
-        "in-person"
-      ]
-    },
-    {
-      "address": "105 General Johnson Cir, Burnet, TX 78611",
-      "dates": "Sat Oct 24 – Sun Oct 25",
-      "date_from": "10/24/2026",
-      "date_to": "10/25/2026",
-      "end_date": "2026-10-25",
-      "title": "Estate Sale starting 8:00",
-      "details": "",
-      "source": "GarageSaleFinder",
-      "url": "https://garagesalefinder.com/s/N9Ov9/105-general-johnson-cir-burnet-tx-78611",
-      "photos": 0,
-      "type": "estate",
-      "confidence": 0.65,
-      "status": "verified",
-      "lat": 30.2672,
-      "lon": -97.7431,
-      "geocode": "city-center"
-    },
-    {
       "address": "2020 Nestlewood drive, Austin, TX",
       "dates": "2026-10-24 – 2026-10-26",
       "date_from": "2026-10-24",
@@ -373,28 +175,6 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "cl-ysofgreatfindskbddpkwuisrjpas5edkvgn"
-    },
-    {
-      "address": "Austin, TX",
-      "dates": "2026-10-24 – 2026-10-25",
-      "date_from": "2026-10-24",
-      "date_to": "2026-10-25",
-      "end_date": "2026-10-25",
-      "title": "All Estate Sales/Auction , Bronze, Furniture, Collectibles , Rugs,Kurzwell  piano SUN 50% Most All",
-      "details": "Estate Sale",
-      "source": "EstateSales.net",
-      "url": "https://www.estatesales.net/TX/Austin/78732/5122314",
-      "photos": 0,
-      "type": "estate",
-      "categories": [
-        "estate-sale"
-      ],
-      "confidence": 0.65,
-      "status": "verified",
-      "lat": 30.2672,
-      "lon": -97.7431,
-      "geocode": "city-center",
-      "company": null
     },
     {
       "address": "Round Rock, TX 78664",
@@ -494,28 +274,6 @@
       "external_id": "cl-golffishingandwkbkibkxvbvp9eaxsjudpx"
     },
     {
-      "address": "7044 Comanche Trail , Austin, TX 78732",
-      "dates": "2026-10-24 – 2026-10-25",
-      "date_from": "2026-10-24",
-      "date_to": "2026-10-25",
-      "end_date": "2026-10-25",
-      "title": "Sun 50% Most Items All Estate Sales Auctions Austin “ Near Oasis ” Sat Sun Art Collectibles",
-      "details": "",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196434531",
-      "photos": 0,
-      "type": "estate",
-      "confidence": 0.88,
-      "status": "verified",
-      "lat": 30.4143557,
-      "lon": -97.8884872,
-      "geocode": "source",
-      "external_id": "yss-7044comanchetrailaustintx78732-2026-10-24",
-      "categories": [
-        "estate-sale"
-      ]
-    },
-    {
       "address": "Leander, TX 78641",
       "dates": "2026-10-22 – 2026-10-29",
       "date_from": "2026-10-22",
@@ -538,28 +296,6 @@
       "categories": [
         "estate-sale",
         "online-auction"
-      ]
-    },
-    {
-      "address": "11109 Desert Willow Loop, Austin, TX 78748",
-      "dates": "2026-10-23 – 2026-10-25",
-      "date_from": "2026-10-23",
-      "date_to": "2026-10-25",
-      "end_date": "2026-10-25",
-      "title": "Garage Sale Of Your Dreams",
-      "details": "",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196441361",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.88,
-      "status": "verified",
-      "lat": 30.145375,
-      "lon": -97.806327,
-      "geocode": "source",
-      "external_id": "yss-11109desertwillowloopaustintx78748-2026-10-23",
-      "categories": [
-        "garage-sale"
       ]
     },
     {
@@ -603,30 +339,6 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "cl-promotesleanderizlf3ykawzbibq4vbfidzw"
-    },
-    {
-      "address": "30i Grasslands Trail, Austin, TX",
-      "dates": "2026-10-23 – 2026-10-25",
-      "date_from": "2026-10-23",
-      "date_to": "2026-10-25",
-      "end_date": "2026-10-25",
-      "hours": null,
-      "title": "Estate Sale 33% off",
-      "details": "QR Code Link to This Post https://www.EstateSales.NET/TX/Hutto/78634/5128383 All priced items are 33% off Please don't park in the fire zone",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/hutto-estate-sale-33-off/cffkPb1yhwxSKnsP88BeqX",
-      "photos": 0,
-      "type": "estate",
-      "categories": [
-        "estate-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.5266,
-      "lon": -97.5395,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-statesale33offcffkpb1yhwxsknsp88beqx"
     },
     {
       "address": "2930 Grand Oaks Loop, Austin, TX",
@@ -793,110 +505,6 @@
       "external_id": "cl-toffestatesale1cpnpovybvzvrmf5dtw96p"
     },
     {
-      "address": "124 Desert Primrose Dr, Austin, TX 78748",
-      "dates": "2026-10-25 – 2026-10-25",
-      "date_from": "2026-10-25",
-      "date_to": "2026-10-25",
-      "end_date": "2026-10-25",
-      "title": "Large Family Garage Sale",
-      "details": "",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196445557",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.88,
-      "status": "verified",
-      "lat": 30.146118,
-      "lon": -97.805623,
-      "geocode": "source",
-      "external_id": "yss-124desertprimrosedraustintx78748-2026-10-25",
-      "categories": [
-        "garage-sale"
-      ]
-    },
-    {
-      "address": "2930 Grand Oaks Loop, Cedar Park, TX 78613",
-      "dates": "2026-10-25 – 2026-10-25",
-      "date_from": "2026-10-25",
-      "date_to": "2026-10-25",
-      "end_date": "2026-10-25",
-      "title": "Huge \"Manly\" Estate & Garage Sale – Tools, Tech, Rc Cars, , Furniture & More!",
-      "details": "",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196445327",
-      "photos": 0,
-      "type": "estate",
-      "confidence": 0.88,
-      "status": "verified",
-      "lat": 30.460113,
-      "lon": -97.857374,
-      "geocode": "source",
-      "external_id": "yss-2930grandoaksloopcedarparktx78613-2026-10-25",
-      "categories": [
-        "estate-sale"
-      ]
-    },
-    {
-      "address": "308 Grasslands Trl, Hutto, TX 78634",
-      "dates": "Sun Oct 25 – Sun Oct 25",
-      "date_from": "10/25/2026",
-      "date_to": "10/25/2026",
-      "end_date": "2026-10-25",
-      "title": "75% off Estate Sale",
-      "details": "",
-      "source": "GarageSaleFinder",
-      "url": "https://garagesalefinder.com/s/N9VfP/308-grasslands-trl-hutto-tx-78634",
-      "photos": 0,
-      "type": "estate",
-      "confidence": 0.65,
-      "status": "verified",
-      "lat": 30.2672,
-      "lon": -97.7431,
-      "geocode": "city-center"
-    },
-    {
-      "address": "1166 Canyon Lake Dr, Canyon Lake, TX 78133",
-      "dates": "Sun Oct 25 – Sun Oct 25",
-      "date_from": "10/25/2026",
-      "date_to": "10/25/2026",
-      "end_date": "2026-10-25",
-      "title": "FREE EVERYTHING from INSIDE of the house, Canyon Lake, TX 78133",
-      "details": "",
-      "source": "GarageSaleFinder",
-      "url": "https://garagesalefinder.com/s/N9P8B/1166-canyon-lake-dr-canyon-lake-tx-78133",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.65,
-      "status": "verified",
-      "lat": 30.2672,
-      "lon": -97.7431,
-      "geocode": "city-center"
-    },
-    {
-      "address": "36 Country Oaks Dr, Buda, TX 78610",
-      "dates": "2026-10-23 – 2026-10-25",
-      "date_from": "2026-10-23",
-      "date_to": "2026-10-25",
-      "end_date": "2026-10-25",
-      "hours": null,
-      "title": "Multi-Day Yard Sale!",
-      "details": "",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196440545",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale"
-      ],
-      "confidence": 0.88,
-      "status": "verified",
-      "lat": 30.122501,
-      "lon": -97.878829,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "yss-36countryoaksdrbudatx78610-2026-10-23"
-    },
-    {
       "address": "7044 Comanche Trail, Austin, TX",
       "dates": "2026-10-25 – 2026-10-27",
       "date_from": "2026-10-25",
@@ -1034,9 +642,9 @@
     "gsalr.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 44,
+  "total_locations": 26,
   "status": "live",
-  "date": "2026-10-25",
-  "last_refresh": "2026-10-25T09:54:27-05:00",
+  "date": "2026-10-26",
+  "last_refresh": "2026-10-26T03:02:48-05:00",
   "permits": []
 }
