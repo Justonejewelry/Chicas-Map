@@ -1,5 +1,16 @@
 [
   {
+    "timestamp": "2026-10-27T08:10:00Z",
+    "target_date": "2026-10-27",
+    "actions_run_id": "40471077639",
+    "emails_scanned": 1,
+    "net_new_added": 0,
+    "net_new_staged": 1,
+    "geocoding_success_rate": "0.0% (pending)",
+    "status": "STAGED_CONCURRENT",
+    "notes": "Triggered chica-daily.yml (cities=san-antonio) run 40471077639 — still in_progress after polls. GSF daily list: 1 Greater SA candidate (3433 Meadowhead Dr, Cibolo, TX 78108, Oct 30-31). Online auctions / Boerne / Bulverde / New Braunfels excluded. City file untouched (28 pins). Community swarm not triggered. Pack + social written."
+  },
+  {
     "timestamp": "2026-10-10T08:35:00-05:00",
     "target_date": "2026-10-10",
     "actions_run_id": "38038284706",
