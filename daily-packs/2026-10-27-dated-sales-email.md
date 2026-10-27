@@ -24,6 +24,7 @@ Map only shows pins whose listed dates include today.
 - Woodworkers Garage Sale — 415 W. Rhapsody near Warfield, San Antonio, TX [2026-10-27 → 2026-10-29]
 - Yard-sale Southside — 542 E Bonner Ave, San Antonio, TX [2026-10-27 → 2026-10-29]
 - BIG FALL SAVINGS AT AVALON ESTATES — San Antonio, TX [2026-10-27 → 2026-10-30]
+- Aladdin Lamps, Clocks, Radios, and More Auction! — Off of Rebecca Creek Rd Spring Branch, TX 78070, Spring Branch, TX 78070 [2026-10-27 → 2026-11-17]
 
 ## COMING UP (remembered, not on today's map)
 
