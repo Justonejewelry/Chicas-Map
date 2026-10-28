@@ -1,5 +1,15 @@
 [
   {
+    "timestamp": "2026-10-28T08:57:09Z",
+    "target_date": "2026-10-28",
+    "actions_run_id": "40660371197",
+    "emails_scanned": 4,
+    "net_new_added": 0,
+    "geocoding_success_rate": "n/a (existing only)",
+    "status": "SUCCESS",
+    "notes": "Triggered chica-daily.yml run 40660371197 (cities=san-antonio, target_date=2026-10-28). In_progress after polls. 4 emails (2 ESO, 2 GSF). 0 net-new: Deerfield estate + Meadowhead/Northcliffe garage already live. Online auctions and out-of-area (Bulverde, New Braunfels) excluded. No Formspree. City file untouched. Pack + social written. Community swarm not triggered."
+  },
+  {
     "timestamp": "2026-10-27T08:10:00Z",
     "target_date": "2026-10-27",
     "actions_run_id": "40471077639",
