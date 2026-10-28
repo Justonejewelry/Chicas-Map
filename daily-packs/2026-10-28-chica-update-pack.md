@@ -2,7 +2,7 @@
 
 ## 1. CHICA DAILY RUN
 - **Target date:** Wednesday, October 28, 2026
-- **San Antonio local run time:** 2026-10-28T03:10:07-05:00
+- **San Antonio local run time:** 2026-10-28T03:56:38-05:00
 - **Geographic area:** San Antonio & surrounding communities
 - **Sources searched:** 7
 - **Candidates discovered:** 10
@@ -25,7 +25,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-alamo-craft-co-antiques-more/mj6FcRd4ZDr7zwAwc4pwWa
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.556,-98.6094
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.556,-98.6094
-- **Verified at:** 2026-10-28T03:10:07-05:00
+- **Verified at:** 2026-10-28T03:56:38-05:00
 
 ### 2. ESTATE SALE! (Von Ormy, TX)
 - **Type:** estate
@@ -37,7 +37,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/von-ormy-estate-sale/85D1jHN8fyRDFBx3sJWk8D
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.275,-98.6677
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.275,-98.6677
-- **Verified at:** 2026-10-28T03:10:07-05:00
+- **Verified at:** 2026-10-28T03:56:38-05:00
 
 ### 3. Blade's Auction * Gaming, Electronics & Toys Tues Night 02/27/26 @ 7pm
 - **Type:** estate
@@ -49,7 +49,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-blades-auction-gaming/fRERRuCNfL3h1gFUsqkbai
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.375252,-98.271847
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.375252,-98.271847
-- **Verified at:** 2026-10-28T03:10:07-05:00
+- **Verified at:** 2026-10-28T03:56:38-05:00
 
 ### 4. NOW OPEN! The Collective Boutiques (San Antonio)
 - **Type:** garage
@@ -61,7 +61,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-now-open-the-collective/a9UPVs8b9XgmEsUh6iVZ1m
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.5183,-98.503
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5183,-98.503
-- **Verified at:** 2026-10-28T03:10:07-05:00
+- **Verified at:** 2026-10-28T03:56:38-05:00
 
 ### 5. Woodworkers Garage Sale (San Antonio)
 - **Type:** garage
@@ -74,7 +74,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-woodworkers-garage-sale/bBrazbwtT1DFJWnJrzytXy
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.548598,-98.497927
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.548598,-98.497927
-- **Verified at:** 2026-10-28T03:10:07-05:00
+- **Verified at:** 2026-10-28T03:56:38-05:00
 
 ### 6. Yard-sale Southside (San Antonio)
 - **Type:** garage
@@ -86,7 +86,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-yard-sale-southside/4nkuR6GJJdm2asZ5YSxi1H
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.3641,-98.4924
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.3641,-98.4924
-- **Verified at:** 2026-10-28T03:10:07-05:00
+- **Verified at:** 2026-10-28T03:56:38-05:00
 
 ### 7. Off of Rebecca Creek Rd Spring Branch, TX 78070, Spring Branch, TX 78070
 - **Type:** estate
@@ -99,7 +99,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9VGu/off-of-rebecca-creek-rd-spring-branch-tx-78070-spring-branch-tx-78070
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936
-- **Verified at:** 2026-10-28T03:10:07-05:00
+- **Verified at:** 2026-10-28T03:56:38-05:00
 
 ### 8. Fall Garage Sale
 - **Type:** garage
@@ -111,7 +111,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-fall-garage-sale/jzDQDao3qxmZqv3quefVUR
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.362051,-98.434834
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.362051,-98.434834
-- **Verified at:** 2026-10-28T03:10:07-05:00
+- **Verified at:** 2026-10-28T03:56:38-05:00
 
 ### 9. Furniture for Sale ( please read post, ty) (Green Spring Valley)
 - **Type:** garage
@@ -123,7 +123,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-furniture-for-sale-please/fw7d5uK2CFs69vpJ5JFcGY
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.5855,-98.4071
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5855,-98.4071
-- **Verified at:** 2026-10-28T03:10:07-05:00
+- **Verified at:** 2026-10-28T03:56:38-05:00
 
 ## 3. CHICA PICKS
 

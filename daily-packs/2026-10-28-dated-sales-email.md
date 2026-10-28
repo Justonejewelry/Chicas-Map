@@ -22,11 +22,12 @@ Map only shows pins whose listed dates include today.
 - Deals for cash  Oct 29-30th — Austin Hwy, San Antonio, TX [2026-10-29 → 2026-10-29]
 
 ### Starts 2026-10-30
-- 🎉 BIG GARAGE SALE!! 🎉 — 3433 Meadowhead Dr, Cibolo, TX 78108 [2026-10-30 → 2026-10-31]
+- 🎉 BIG GARAGE SALE!! 🎉 — 3433 Meadowhead Dr, Cibolo, TX 78108 [2026-10-30 → 2026-10-31] | 8:00 AM - 3:00 PM
 - 🎉 Big Garage Sale!! 🎉 — 3433 Meadowhead Dr, Cibolo, TX [2026-10-30 → 2026-10-31]
 - 🎉GARAGE SALE! 🎉 — 3433 Meadowhead Dr. near Cherry Tree Dr., San Antonio, TX [2026-10-30 → 2026-10-31]
 
 ### Starts 2026-10-31
+- Dazzling in Deerfield! Fine Art, Sculptures, Home Decor & More! — Deerfield neighborhood, San Antonio, TX 78248 (address available Oct 30) [2026-10-31 → 2026-11-01] | 9:00 AM - 3:00 PM
 - Dazzling in Deerfield! Fine Art, Sculptures, Home Decor & More! — San Antonio, TX 78248 [2026-10-31 → 2026-11-01]
 - Dazzling in Deerfield! Fine Art, Sculptures, Home Decor & More! — hidden, San Antonio, TX 78248 [2026-10-31 → 2026-11-01] | 2026-10-31 9:00 am-3:00 pm; 2026-11-01 9:00 am-3:00 pm
 
