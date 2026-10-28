@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-28T03:57:49-05:00",
+  "updated": "2026-10-28T12:03:27-05:00",
   "city": "san-antonio",
   "version": 2.7,
   "horizonDays": 90,
@@ -5025,6 +5025,24 @@
       "reliability": 86,
       "discoveredAt": "2026-10-28T03:10:36-05:00",
       "confidence": 98
+    },
+    {
+      "id": "2026-11-03_self-care-club-cold-flu-seas_117735647fc8",
+      "title": "Self Care Club: Cold & Flu Season",
+      "date": "2026-11-03",
+      "endDate": "",
+      "time": "1:00 PM-2:00 PM",
+      "address": "5110 Walzem Road San",
+      "lat": null,
+      "lng": null,
+      "category": "other",
+      "description": "",
+      "url": "https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D212322745",
+      "source": "San Antonio Public Library Events",
+      "sourceId": "sapl-trumba-ics",
+      "reliability": 96,
+      "discoveredAt": "2026-10-28T12:02:41-05:00",
+      "confidence": 100
     }
   ]
 }

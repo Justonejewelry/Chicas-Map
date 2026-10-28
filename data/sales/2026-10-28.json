@@ -1,14 +1,14 @@
 {
   "target_date": "2026-10-28",
-  "generated_at": "2026-10-28T03:56:38-05:00",
+  "generated_at": "2026-10-28T12:02:25-05:00",
   "city": "san-antonio",
   "area": "San Antonio & surrounding communities",
-  "count": 9,
+  "count": 11,
   "min_confidence": 70,
   "sales": [
     {
       "sale_id": "2026-10-28_6151-nw-loop-410-san-antonio-tx",
-      "title": "Alamo Craft Co. Antiques & More (San Antonio)",
+      "title": "Alamo Craft Co. Antiques & More                  NOW OPEN SUNDAYS!",
       "sale_type": "garage",
       "date_start": "2026-10-28",
       "date_end": "2026-10-30",
@@ -20,12 +20,12 @@
       "zip": "",
       "latitude": 29.556,
       "longitude": -98.6094,
-      "description": "QR Code Link to This Post OPEN TUES - SAT 10AM-6PM 6151 NW Loop 410, #302 SATX 78238 A hidden gem in San Antonio! Here you'll find unique antiques, vintage items, collectibles, hand-crafted items &amp; so much more. Come by &amp; see all the fun stuff! Ask for your frequent buyer card &amp; get punches with every purchase.",
+      "description": "QR Code Link to This Post NOW OPEN ON SUNDAYS! BEGINNING NOV 1ST OPEN TUES - SUN 10AM-6PM 6151 NW Loop 410, #302 SATX 78238 A hidden gem in San Antonio! Here you'll find unique antiques, vintage items, collectibles, hand-crafted items &amp; so much more. Come by &amp; see all the fun stuff! Ask for your frequent buyer card &amp; get punches with every purchase.",
       "highlights": [],
       "source_urls": [
-        "https://www.craigslist.org/view/d/san-antonio-alamo-craft-co-antiques-more/mj6FcRd4ZDr7zwAwc4pwWa"
+        "https://www.craigslist.org/view/d/san-antonio-alamo-craft-co-antiques/mj6FcRd4ZDr7zwAwc4pwWa"
       ],
-      "original_url": "https://www.craigslist.org/view/d/san-antonio-alamo-craft-co-antiques-more/mj6FcRd4ZDr7zwAwc4pwWa",
+      "original_url": "https://www.craigslist.org/view/d/san-antonio-alamo-craft-co-antiques/mj6FcRd4ZDr7zwAwc4pwWa",
       "source_names": [
         "Craigslist"
       ],
@@ -33,7 +33,7 @@
         "https://images.craigslist.org/01515_1Xh2ogBe0sZ_0CI0pq_600x450.jpg"
       ],
       "confidence": 96,
-      "verified_at": "2026-10-28T03:56:38-05:00",
+      "verified_at": "2026-10-28T12:02:25-05:00",
       "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.556,-98.6094",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.556,-98.6094",
       "status": "verified",
@@ -69,7 +69,7 @@
         "https://images.craigslist.org/00C0C_7Xim0fZL6q1_0gw0oM_600x450.jpg"
       ],
       "confidence": 96,
-      "verified_at": "2026-10-28T03:56:38-05:00",
+      "verified_at": "2026-10-28T12:02:25-05:00",
       "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.275,-98.6677",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.275,-98.6677",
       "status": "verified",
@@ -103,7 +103,7 @@
       ],
       "photos": [],
       "confidence": 92,
-      "verified_at": "2026-10-28T03:56:38-05:00",
+      "verified_at": "2026-10-28T12:02:25-05:00",
       "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.375252,-98.271847",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.375252,-98.271847",
       "status": "verified",
@@ -139,7 +139,7 @@
         "https://images.craigslist.org/00303_fJujeiiUakX_0CI0eX_600x450.jpg"
       ],
       "confidence": 96,
-      "verified_at": "2026-10-28T03:56:38-05:00",
+      "verified_at": "2026-10-28T12:02:25-05:00",
       "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5183,-98.503",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.5183,-98.503",
       "status": "verified",
@@ -180,7 +180,7 @@
         "https://images.craigslist.org/00x0x_jbdhvLFaQ3D_0t20CI_50x50c.jpg"
       ],
       "confidence": 100,
-      "verified_at": "2026-10-28T03:56:38-05:00",
+      "verified_at": "2026-10-28T12:02:25-05:00",
       "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.548598,-98.497927",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.548598,-98.497927",
       "status": "verified",
@@ -221,7 +221,7 @@
         "https://images.craigslist.org/00E0E_5lop8vOHDhb_0t20CI_50x50c.jpg"
       ],
       "confidence": 96,
-      "verified_at": "2026-10-28T03:56:38-05:00",
+      "verified_at": "2026-10-28T12:02:25-05:00",
       "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.3641,-98.4924",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.3641,-98.4924",
       "status": "verified",
@@ -262,7 +262,7 @@
         "https://eso-cdn.tlcdn.workers.dev/s-2470619-ths7mdex6lc929b1-t.webp"
       ],
       "confidence": 100,
-      "verified_at": "2026-10-28T03:56:38-05:00",
+      "verified_at": "2026-10-28T12:02:25-05:00",
       "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936",
       "status": "verified",
@@ -296,7 +296,7 @@
       ],
       "photos": [],
       "confidence": 96,
-      "verified_at": "2026-10-28T03:56:38-05:00",
+      "verified_at": "2026-10-28T12:02:25-05:00",
       "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.362051,-98.434834",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.362051,-98.434834",
       "status": "verified",
@@ -337,9 +337,84 @@
         "https://images.craigslist.org/00404_jGLAxJTb1o_0t20CI_50x50c.jpg"
       ],
       "confidence": 96,
-      "verified_at": "2026-10-28T03:56:38-05:00",
+      "verified_at": "2026-10-28T12:02:25-05:00",
       "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5855,-98.4071",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.5855,-98.4071",
+      "status": "verified",
+      "geocode_method": "source",
+      "notes": "",
+      "community_source": "",
+      "community_link_or_notes": ""
+    },
+    {
+      "sale_id": "2026-10-28_15316-fm-725-near-indian-trail-san-antonio-tx",
+      "title": "AUCTION - Tim's TCA November Specials - Tuesday Night 11/03/26 @ 7pm (15316 FM-725, Seguin, TX)",
+      "sale_type": "estate",
+      "date_start": "2026-10-28",
+      "date_end": "2026-10-30",
+      "start_time": "",
+      "end_time": "",
+      "address": "15316 FM-725 near Indian Trail, San Antonio, TX",
+      "city": "San Antonio",
+      "state": "TX",
+      "zip": "",
+      "latitude": 29.496796,
+      "longitude": -98.026886,
+      "description": "QR Code Link to This Post Tri-County Auctions and Liquidations Presents An \"On-Line Only\" Auction AUCTION - \"Tuesday Night\" 11/03/26 at 7pm CONTENTS: We Have Antique & Vintage Collectibles, Cameras, Jewelry, Coins, Tools, Auto & RV Equipment, Horse Equipment, Electronics & Much More *A N T I Q U E & V I N T A G E C O L L E C T I B L E S* - Silver Jewelry, Fiestaware, Pfalzgraff, Several U.S. & World Coins, Avon Glass Cars, Chalk Car Collection, Die-Cast Cars, Antique Cobbler Shoe Last, Cast Iron",
+      "highlights": [],
+      "source_urls": [
+        "https://www.craigslist.org/view/d/seguin-auction-tims-tca-november/aYLsvWRF4DW2CcJf81nBo9"
+      ],
+      "original_url": "https://www.craigslist.org/view/d/seguin-auction-tims-tca-november/aYLsvWRF4DW2CcJf81nBo9",
+      "source_names": [
+        "Craigslist"
+      ],
+      "photos": [
+        "https://images.craigslist.org/00909_lFbDEJhlyev_09i0co_600x450.jpg",
+        "https://images.craigslist.org/00909_lFbDEJhlyev_09i0co_50x50c.jpg",
+        "https://images.craigslist.org/00707_hdMaAtA3mG1_09i0co_50x50c.jpg",
+        "https://images.craigslist.org/00g0g_lioOne39J8R_0gw0co_50x50c.jpg",
+        "https://images.craigslist.org/00C0C_5d2QZaO7JWy_0co09i_50x50c.jpg",
+        "https://images.craigslist.org/00000_go8IRmTSeBI_0gw0co_50x50c.jpg"
+      ],
+      "confidence": 96,
+      "verified_at": "2026-10-28T12:02:25-05:00",
+      "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.496796,-98.026886",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.496796,-98.026886",
+      "status": "verified",
+      "geocode_method": "source",
+      "notes": "",
+      "community_source": "",
+      "community_link_or_notes": ""
+    },
+    {
+      "sale_id": "2026-10-28_4811-wesleyan-st-san-antonio-tx",
+      "title": "GARAGE SALE",
+      "sale_type": "garage",
+      "date_start": "2026-10-28",
+      "date_end": "2026-10-30",
+      "start_time": "",
+      "end_time": "",
+      "address": "4811 Wesleyan St, San Antonio, TX",
+      "city": "San Antonio",
+      "state": "TX",
+      "zip": "",
+      "latitude": 29.572706,
+      "longitude": -98.581535,
+      "description": "QR Code Link to This Post 9 AM - 2 PM. Come rain or shine. Lots to choose from. Best prices.",
+      "highlights": [],
+      "source_urls": [
+        "https://www.craigslist.org/view/d/san-antonio-garage-sale/h133QVyjtGi3okZgp93Kxk"
+      ],
+      "original_url": "https://www.craigslist.org/view/d/san-antonio-garage-sale/h133QVyjtGi3okZgp93Kxk",
+      "source_names": [
+        "Craigslist"
+      ],
+      "photos": [],
+      "confidence": 96,
+      "verified_at": "2026-10-28T12:02:25-05:00",
+      "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.572706,-98.581535",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.572706,-98.581535",
       "status": "verified",
       "geocode_method": "source",
       "notes": "",
