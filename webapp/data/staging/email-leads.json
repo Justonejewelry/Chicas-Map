@@ -1,31 +1,44 @@
 {
-  "staging_date": "2026-10-26",
+  "staging_date": "2026-10-29",
   "city": "san-antonio",
   "status": "STAGED_UNDER_CEILING",
-  "reason": "1 net-new email lead under safety ceiling of 25. Master populate completed; staged to avoid race with live feed.",
-  "confidence_floor": 0.7,
-  "emails_scanned": 7,
-  "net_new_vs_public": 1,
+  "reason": "2 net-new email leads under safety ceiling of 25. Master populate in_progress; staged to avoid race with live feed. Geocoding incomplete for one.",
+  "confidence_floor": 0.70,
+  "emails_scanned": 2,
+  "net_new_vs_public": 2,
   "safety_ceiling": 25,
   "ceiling_hit": false,
   "city_file_written": false,
   "community_events_swarm": "not_triggered",
-  "actions_run_id": "40294674840",
-  "actions_status": "SUCCESS",
+  "actions_run_id": "40841548615",
+  "actions_status": "in_progress",
   "merged_at": null,
   "leads": [
     {
-      "title": "Fantastic Fall Finds! Multi-Estate Auction #1 - Bidding ends 11/1",
-      "street_address": "San Antonio, TX 78240",
-      "dates": ["2026-10-23", "2026-10-24", "2026-10-25", "2026-10-26", "2026-10-27", "2026-10-28", "2026-10-29", "2026-10-30", "2026-10-31", "2026-11-01"],
-      "hours": "Bidding starts to close Sun. Nov 1 at 7:00PM CDT",
+      "title": "BIG GARAGE SALE!!",
+      "street_address": "3433 Meadowhead Dr, Schertz, TX 78108",
+      "dates": ["2026-10-30", "2026-10-31"],
+      "hours": "8:00 AM - 3:00 PM",
+      "source": "Email:GarageSaleFinder",
+      "confidence": 0.75,
+      "lat": null,
+      "lon": null,
+      "accuracy": "pending",
+      "type": "garage",
+      "notes": "Northcliffe Subdivision. Include Greater SA (Schertz)."
+    },
+    {
+      "title": "Dazzling in Deerfield! Fine Art, Sculptures, Home Decor & More!",
+      "street_address": "San Antonio, TX 78248",
+      "dates": ["2026-10-31", "2026-11-01"],
+      "hours": "Sale starts Sat. Oct 31, 2026 at 9:00 AM CDT",
       "source": "Email:EstateSales.org",
       "confidence": 0.75,
       "lat": null,
       "lon": null,
       "accuracy": "zip_centroid",
       "type": "estate",
-      "notes": "Online multi-estate auction. Caring Transitions of San Antonio Northwest. 177 photos."
+      "notes": "Caring Transitions of San Antonio North. Street address missing from email; zip centroid only. Featured estate."
     }
   ]
 }
