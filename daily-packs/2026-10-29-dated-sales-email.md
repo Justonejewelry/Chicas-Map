@@ -25,6 +25,7 @@ Map only shows pins whose listed dates include today.
 - 🎉 BIG GARAGE SALE!! 🎉 — 3433 Meadowhead Dr, Cibolo, TX 78108 [2026-10-30 → 2026-10-31]
 - 🎉 Big Garage Sale!! 🎉 — 3433 Meadowhead Dr, Cibolo, TX [2026-10-30 → 2026-10-31]
 - Estate/Moving sale - Oct 30 & 31 — 4981 Champlain, San Antonio, TX [2026-10-30 → 2026-10-30]
+- 3 family Garage Sale — Dragway Farms San Antonio Tx 78239, San Antonio, TX [2026-10-30 → 2026-10-30]
 - 🎉GARAGE SALE! 🎉 — 3433 Meadowhead Dr. near Cherry Tree Dr., San Antonio, TX [2026-10-30 → 2026-10-31]
 
 ### Starts 2026-10-31
@@ -35,6 +36,7 @@ Map only shows pins whose listed dates include today.
 
 - Fantastic Fall Finds! Multi-Estate Auction #1 - Bidding ends 11/1 — San Antonio, TX 78240
 - Vintage Treasures: Art, Pottery & More Pt 1 Online Auction by Caring Transitions - Ends 11/8! — New Braunfels, TX 78132
+- Treasures Through Time: Pottery & Collectibles Online Auction by Caring Transitions Ends 11/10! — New Braunfels, TX 78130
 - Fantastic Garden Ridge Estate Auction Online Only Auction — online only, New Braunfels, TX 78130
 
 — Chica
