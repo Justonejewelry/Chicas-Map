@@ -1,15 +1,15 @@
 # Chica's Map -- Community Events Swarm v2.7
 
-Run: 2026-10-29T04:30:59-05:00
+Run: 2026-10-29T05:15:18-05:00
 Sources scanned: **48**
-Candidates discovered: **841**
-With parsed dates: **684**
-With street/venue address: **473**
+Candidates discovered: **902**
+With parsed dates: **745**
+With street/venue address: **529**
 Promoted this run: **0**
 Kept from prior feed: **276**
 Purged from prior feed: **0**
-Source errors: **5**
-Rejected by Sentinel: **242**
+Source errors: **3**
+Rejected by Sentinel: **298**
 
 ## Promoted (passed Events Sentinel)
 _None this run._
@@ -30,6 +30,56 @@ _None this run._
 - **Bexar County Clerk — Records on the Run** -- conf 99 -- Bexar County Clerk's Mobile Satellite Office will be at Bexar County Precinct 3 Justice of the Peace Office -- 2026-11-17 -- 320 Interpark Blvd -- https://www.bexar.org/calendar.aspx?EID=7335
 - **Bexar County Clerk — Records on the Run** -- conf 99 -- Bexar County Clerk's Mobile Satellite Office will be at McDonald's on Walzem - The Shields Legacy LLC PCT 4 Community -- 2026-11-19 -- 5700 Walzem Rd -- https://www.bexar.org/calendar.aspx?EID=7681
 - **Bexar County Clerk — Records on the Run** -- conf 99 -- Bexar County Clerk's Mobile Satellite Office will be at SBOC-Bexar County Small Business Opportunity Center -- 2026-11-12 -- 8200 Perrin Beitel Rd -- https://www.bexar.org/calendar.aspx?EID=7808
+- **Fair Oaks Ranch Calendar** -- conf 99 -- Transportation Safety Advisory Committee Meeting -- 2026-11-04 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1511
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2026-11-05 -- 7286 Dietz Elkhorn Rd -- https://www.fairoaksranch.gov/calendar.aspx?EID=1522
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-02-04 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1558
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-09-02 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1559
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-03-04 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1560
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-10-07 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1561
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-08-05 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1562
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-11-04 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1563
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-12-02 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1564
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-06-03 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1565
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2026-12-03 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1566
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-07-01 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1567
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-04-01 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1568
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-05-06 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1569
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2026-12-17 -- 7286 Dietz Elkhorn Rd -- https://www.fairoaksranch.gov/calendar.aspx?EID=1571
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2026-11-19 -- 7286 Dietz Elkhorn Rd -- https://www.fairoaksranch.gov/calendar.aspx?EID=1572
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-03-18 -- 7286 Dietz Elkhorn Rd -- https://www.fairoaksranch.gov/calendar.aspx?EID=1574
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-05-20 -- 7286 Dietz Elkhorn Rd -- https://www.fairoaksranch.gov/calendar.aspx?EID=1575
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-06-17 -- 7286 Dietz Elkhorn Rd -- https://www.fairoaksranch.gov/calendar.aspx?EID=1576
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-07-15 -- 7286 Dietz Elkhorn Rd -- https://www.fairoaksranch.gov/calendar.aspx?EID=1577
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-08-19 -- 7286 Dietz Elkhorn Rd -- https://www.fairoaksranch.gov/calendar.aspx?EID=1578
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-09-16 -- 7286 Dietz Elkhorn Rd -- https://www.fairoaksranch.gov/calendar.aspx?EID=1579
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-04-15 -- 7286 Dietz Elkhorn Rd -- https://www.fairoaksranch.gov/calendar.aspx?EID=1580
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-11-18 -- 7286 Dietz Elkhorn Rd -- https://www.fairoaksranch.gov/calendar.aspx?EID=1581
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-02-18 -- 7286 Dietz Elkhorn Rd -- https://www.fairoaksranch.gov/calendar.aspx?EID=1582
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-10-21 -- 7286 Dietz Elkhorn Rd -- https://www.fairoaksranch.gov/calendar.aspx?EID=1583
+- **Fair Oaks Ranch Calendar** -- conf 99 -- Special MDD Board of Directors Meeting -- 2026-11-18 -- 7286 Dietz Elkhorn Rd -- https://www.fairoaksranch.gov/calendar.aspx?EID=1585
+- **Fair Oaks Ranch Calendar** -- conf 99 -- Special MDD Board of Directors Meeting -- 2026-12-09 -- 7286 Dietz Elkhorn Rd -- https://www.fairoaksranch.gov/calendar.aspx?EID=1586
+- **Fair Oaks Ranch Calendar** -- conf 99 -- First City Council Meeting -- 2029-05-03 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1587
+- **Fair Oaks Ranch Calendar** -- conf 99 -- First City Council Meeting -- 2029-04-05 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1588
+- **Fair Oaks Ranch Calendar** -- conf 99 -- First City Council Meeting -- 2029-02-01 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1589
+- **Fair Oaks Ranch Calendar** -- conf 99 -- First City Council Meeting -- 2029-07-05 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1590
+- **Fair Oaks Ranch Calendar** -- conf 99 -- First City Council Meeting -- 2029-03-01 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1591
+- **Fair Oaks Ranch Calendar** -- conf 99 -- First City Council Meeting -- 2029-01-04 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1592
+- **Fair Oaks Ranch Calendar** -- conf 99 -- First City Council Meeting -- 2028-12-07 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1593
+- **Fair Oaks Ranch Calendar** -- conf 99 -- First City Council Meeting -- 2029-11-01 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1594
+- **Fair Oaks Ranch Calendar** -- conf 99 -- First City Council Meeting -- 2029-09-06 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1595
+- **Fair Oaks Ranch Calendar** -- conf 99 -- First City Council Meeting -- 2029-10-04 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1596
+- **Fair Oaks Ranch Calendar** -- conf 99 -- First City Council Meeting -- 2029-06-07 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1597
+- **Fair Oaks Ranch Calendar** -- conf 99 -- First City Council Meeting -- 2029-08-02 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1598
+- **Fair Oaks Ranch Calendar** -- conf 99 -- Planning and Zoning Commission -- 2027-05-13 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1603
+- **Fair Oaks Ranch Calendar** -- conf 99 -- Planning and Zoning Commission -- 2027-03-11 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1605
+- **Fair Oaks Ranch Calendar** -- conf 99 -- Planning and Zoning Commission -- 2027-09-09 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1606
+- **Fair Oaks Ranch Calendar** -- conf 99 -- Planning and Zoning Commission -- 2027-06-10 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1607
+- **Fair Oaks Ranch Calendar** -- conf 99 -- Planning and Zoning Commission -- 2027-07-08 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1609
+- **Fair Oaks Ranch Calendar** -- conf 99 -- Planning and Zoning Commission -- 2027-10-14 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1610
+- **Fair Oaks Ranch Calendar** -- conf 99 -- Planning and Zoning Commission -- 2027-02-11 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1611
+- **Fair Oaks Ranch Calendar** -- conf 99 -- Planning and Zoning Commission -- 2027-04-08 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1612
+- **Fair Oaks Ranch Calendar** -- conf 99 -- Planning and Zoning Commission -- 2027-08-12 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1613
+- **Fair Oaks Ranch Calendar** -- conf 99 -- Planning and Zoning Commission -- 2027-11-11 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1615
 - **Boerne Calendar** -- conf 98 -- Planning and Zoning Commission Meeting -- 2027-02-01 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=21880
 - **Boerne Calendar** -- conf 98 -- Planning and Zoning Commission Meeting -- 2027-03-01 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=21881
 - **Boerne Calendar** -- conf 98 -- Planning and Zoning Commission Meeting -- 2027-04-05 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=21882
@@ -125,56 +175,6 @@ _None this run._
 - **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2029-02-08 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22425
 - **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2029-03-08 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22426
 - **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2029-04-12 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22427
-- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2029-05-10 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22428
-- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2029-06-14 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22429
-- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2029-07-12 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22430
-- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2029-08-09 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22431
-- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2029-09-13 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22432
-- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2029-10-11 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22433
-- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2029-11-08 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22434
-- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2029-12-13 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22435
-- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2030-01-10 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22436
-- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2030-02-14 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22437
-- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2030-03-14 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22438
-- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2030-04-11 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22439
-- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2030-05-09 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22440
-- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2030-06-13 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22441
-- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2030-07-11 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22442
-- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2030-08-08 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22443
-- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2030-09-12 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22444
-- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2030-10-10 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22445
-- **Boerne Calendar** -- conf 98 -- Historic Landmark Commission -- 2030-11-14 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22446
-- **Olmos Park Calendar** -- conf 98 -- Regular City Council Meeting -- 2027-02-17 -- 120 W. El Prado Drive Olmos -- https://www.olmospark.org/calendar.aspx?EID=293
-- **Olmos Park Calendar** -- conf 98 -- Regular City Council Meeting -- 2027-03-17 -- 120 W. El Prado Drive Olmos -- https://www.olmospark.org/calendar.aspx?EID=294
-- **Olmos Park Calendar** -- conf 98 -- Regular City Council Meeting -- 2027-04-21 -- 120 W. El Prado Drive Olmos -- https://www.olmospark.org/calendar.aspx?EID=295
-- **Olmos Park Calendar** -- conf 98 -- Regular City Council Meeting -- 2027-05-19 -- 120 W. El Prado Drive Olmos -- https://www.olmospark.org/calendar.aspx?EID=296
-- **Olmos Park Calendar** -- conf 98 -- Regular City Council Meeting -- 2027-06-16 -- 120 W. El Prado Drive Olmos -- https://www.olmospark.org/calendar.aspx?EID=297
-- **Olmos Park Calendar** -- conf 98 -- Regular City Council Meeting -- 2027-07-21 -- 120 W. El Prado Drive Olmos -- https://www.olmospark.org/calendar.aspx?EID=298
-- **Olmos Park Calendar** -- conf 98 -- Regular City Council Meeting -- 2027-08-18 -- 120 W. El Prado Drive Olmos -- https://www.olmospark.org/calendar.aspx?EID=299
-- **Olmos Park Calendar** -- conf 98 -- Regular City Council Meeting -- 2027-09-15 -- 120 W. El Prado Drive Olmos -- https://www.olmospark.org/calendar.aspx?EID=300
-- **Olmos Park Calendar** -- conf 98 -- Regular City Council Meeting -- 2027-10-20 -- 120 W. El Prado Drive Olmos -- https://www.olmospark.org/calendar.aspx?EID=301
-- **Olmos Park Calendar** -- conf 98 -- Regular City Council Meeting -- 2027-11-17 -- 120 W. El Prado Drive Olmos -- https://www.olmospark.org/calendar.aspx?EID=302
-- **Olmos Park Calendar** -- conf 98 -- Regular City Council Meeting -- 2027-12-15 -- 120 W. El Prado Drive Olmos -- https://www.olmospark.org/calendar.aspx?EID=303
-- **Olmos Park Calendar** -- conf 98 -- Regular City Council Meeting -- 2028-01-19 -- 120 W. El Prado Drive Olmos -- https://www.olmospark.org/calendar.aspx?EID=304
-- **Olmos Park Calendar** -- conf 98 -- Regular City Council Meeting -- 2028-02-16 -- 120 W. El Prado Drive Olmos -- https://www.olmospark.org/calendar.aspx?EID=305
-- **Olmos Park Calendar** -- conf 98 -- Regular City Council Meeting -- 2028-03-15 -- 120 W. El Prado Drive Olmos -- https://www.olmospark.org/calendar.aspx?EID=306
-- **Olmos Park Calendar** -- conf 98 -- Regular City Council Meeting -- 2028-04-19 -- 120 W. El Prado Drive Olmos -- https://www.olmospark.org/calendar.aspx?EID=307
-- **Olmos Park Calendar** -- conf 98 -- Regular City Council Meeting -- 2028-05-17 -- 120 W. El Prado Drive Olmos -- https://www.olmospark.org/calendar.aspx?EID=308
-- **Olmos Park Calendar** -- conf 98 -- Regular City Council Meeting -- 2028-06-21 -- 120 W. El Prado Drive Olmos -- https://www.olmospark.org/calendar.aspx?EID=309
-- **Olmos Park Calendar** -- conf 98 -- Regular City Council Meeting -- 2028-07-19 -- 120 W. El Prado Drive Olmos -- https://www.olmospark.org/calendar.aspx?EID=310
-- **Olmos Park Calendar** -- conf 98 -- Regular City Council Meeting -- 2028-08-16 -- 120 W. El Prado Drive Olmos -- https://www.olmospark.org/calendar.aspx?EID=311
-- **Olmos Park Calendar** -- conf 98 -- Regular City Council Meeting -- 2028-09-20 -- 120 W. El Prado Drive Olmos -- https://www.olmospark.org/calendar.aspx?EID=312
-- **Olmos Park Calendar** -- conf 98 -- Regular City Council Meeting -- 2028-10-18 -- 120 W. El Prado Drive Olmos -- https://www.olmospark.org/calendar.aspx?EID=313
-- **Olmos Park Calendar** -- conf 98 -- Regular City Council Meeting -- 2028-11-15 -- 120 W. El Prado Drive Olmos -- https://www.olmospark.org/calendar.aspx?EID=314
-- **Olmos Park Calendar** -- conf 98 -- Regular City Council Meeting -- 2028-12-20 -- 120 W. El Prado Drive Olmos -- https://www.olmospark.org/calendar.aspx?EID=315
-- **Olmos Park Calendar** -- conf 98 -- Regular City Council Meeting -- 2029-01-17 -- 120 W. El Prado Drive Olmos -- https://www.olmospark.org/calendar.aspx?EID=316
-- **Olmos Park Calendar** -- conf 98 -- Regular City Council Meeting -- 2029-02-21 -- 120 W. El Prado Drive Olmos -- https://www.olmospark.org/calendar.aspx?EID=317
-- **Olmos Park Calendar** -- conf 98 -- Regular City Council Meeting -- 2029-03-21 -- 120 W. El Prado Drive Olmos -- https://www.olmospark.org/calendar.aspx?EID=318
-- **Olmos Park Calendar** -- conf 98 -- Regular City Council Meeting -- 2029-04-18 -- 120 W. El Prado Drive Olmos -- https://www.olmospark.org/calendar.aspx?EID=319
-- **Olmos Park Calendar** -- conf 98 -- Regular City Council Meeting -- 2029-05-16 -- 120 W. El Prado Drive Olmos -- https://www.olmospark.org/calendar.aspx?EID=320
-- **Olmos Park Calendar** -- conf 98 -- Regular City Council Meeting -- 2029-06-20 -- 120 W. El Prado Drive Olmos -- https://www.olmospark.org/calendar.aspx?EID=321
-- **Olmos Park Calendar** -- conf 98 -- Regular City Council Meeting -- 2029-07-18 -- 120 W. El Prado Drive Olmos -- https://www.olmospark.org/calendar.aspx?EID=322
-- **Olmos Park Calendar** -- conf 98 -- Regular City Council Meeting -- 2029-08-15 -- 120 W. El Prado Drive Olmos -- https://www.olmospark.org/calendar.aspx?EID=323
 
 ## Rejected by Sentinel
 - Baby Story Time -- event_id=2026-10-29_baby-story-time_b9fa28b2449d: duplicate id already in feed
@@ -215,24 +215,22 @@ _None this run._
 - Commissioners Court -- event_id=2027-02-02_commissioners-court_6e3b8d67eb98: date 2027-02-02 is more than 90 days out
 - Commissioners Court -- event_id=2026-12-15_commissioners-court_b88b8c888e3f: duplicate id already in feed
 - Commissioners Court -- event_id=2026-11-17_commissioners-court_0bc80bf0575a: duplicate id already in feed
-- Regular City Council Meeting -- event_id=2034-03-15_regular-city-council-meeting_c1e002fc2c7f: date 2034-03-15 is more than 90 days out
-- Regular City Council Meeting -- event_id=2034-02-15_regular-city-council-meeting_d5c821251dc8: date 2034-02-15 is more than 90 days out
-- Regular City Council Meeting -- event_id=2034-01-18_regular-city-council-meeting_a3898d6f621e: date 2034-01-18 is more than 90 days out
-- Regular City Council Meeting -- event_id=2033-12-21_regular-city-council-meeting_e8a7e9cd07ca: date 2033-12-21 is more than 90 days out
-- Regular City Council Meeting -- event_id=2033-11-16_regular-city-council-meeting_39927cc15a43: date 2033-11-16 is more than 90 days out
-- Regular City Council Meeting -- event_id=2033-10-19_regular-city-council-meeting_b688bf3203da: date 2033-10-19 is more than 90 days out
-- Regular City Council Meeting -- event_id=2033-09-21_regular-city-council-meeting_41ccbeb8b72f: date 2033-09-21 is more than 90 days out
-- Regular City Council Meeting -- event_id=2033-08-17_regular-city-council-meeting_73edce8f5e77: date 2033-08-17 is more than 90 days out
-- Regular City Council Meeting -- event_id=2033-07-20_regular-city-council-meeting_b20796e251eb: date 2033-07-20 is more than 90 days out
-- Regular City Council Meeting -- event_id=2033-06-15_regular-city-council-meeting_41c067537eab: date 2033-06-15 is more than 90 days out
-- Regular City Council Meeting -- event_id=2033-05-18_regular-city-council-meeting_e3180a757388: date 2033-05-18 is more than 90 days out
-- Regular City Council Meeting -- event_id=2033-04-20_regular-city-council-meeting_ab47492856c2: date 2033-04-20 is more than 90 days out
+- First City Council Meeting -- event_id=2029-11-01_first-city-council-meeting_b65fb89bf701: date 2029-11-01 is more than 90 days out
+- First City Council Meeting -- event_id=2029-10-04_first-city-council-meeting_4df14e27a494: date 2029-10-04 is more than 90 days out
+- First City Council Meeting -- event_id=2029-09-06_first-city-council-meeting_603786bf1549: date 2029-09-06 is more than 90 days out
+- First City Council Meeting -- event_id=2029-08-02_first-city-council-meeting_8655d3c4c4f7: date 2029-08-02 is more than 90 days out
+- First City Council Meeting -- event_id=2029-07-05_first-city-council-meeting_ec1cd211df2c: date 2029-07-05 is more than 90 days out
+- First City Council Meeting -- event_id=2029-06-07_first-city-council-meeting_03f3d70ca24a: date 2029-06-07 is more than 90 days out
+- First City Council Meeting -- event_id=2029-05-03_first-city-council-meeting_36ea93fcc361: date 2029-05-03 is more than 90 days out
+- First City Council Meeting -- event_id=2029-04-05_first-city-council-meeting_27f20d00d238: date 2029-04-05 is more than 90 days out
+- First City Council Meeting -- event_id=2029-03-01_first-city-council-meeting_e70cf1dd08ac: date 2029-03-01 is more than 90 days out
+- First City Council Meeting -- event_id=2029-02-01_first-city-council-meeting_341b4ac4a2e0: date 2029-02-01 is more than 90 days out
+- First City Council Meeting -- event_id=2029-01-04_first-city-council-meeting_8f0b0266aac4: date 2029-01-04 is more than 90 days out
+- First City Council Meeting -- event_id=2028-12-07_first-city-council-meeting_aff45be814ec: date 2028-12-07 is more than 90 days out
 
 ## Source Errors
 - San Antonio River Authority Events: HTTP 403 Forbidden
-- Fair Oaks Ranch Calendar: timed out
 - City of Schertz Calendar: HTTP 404 Not Found
-- Universal City Calendar: timed out
 - Windcrest Calendar: HTTP 403 Forbidden
 
 ---
