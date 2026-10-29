@@ -103,31 +103,6 @@
       "external_id": "cl-eplaymatecoolerqasg2xccveacinw99pxstk"
     },
     {
-      "address": "Round Rock, TX 78664",
-      "dates": "2026-10-21 – 2026-10-28",
-      "date_from": "2026-10-21",
-      "date_to": "2026-10-28",
-      "end_date": "2026-10-28",
-      "title": "October Sale in Round Rock | Ends Oct 28 | Pickup Oct 31 3-4p | 78664",
-      "details": "Caring Transitions of Round Rock. This curated CTBIDS event brings together fall décor, vintage treasures, holiday ornaments, stylish apparel, kitchen essentials, and unique collectibles — all perfect for cozy‑season living. Whether you’re refreshing your home for autumn, prepping ea...",
-      "source": "EstateSales.org",
-      "url": "https://estatesales.org/estate-sales/tx/round-rock/78664/october-sale-in-round-rock-2469716",
-      "photos": 0,
-      "type": "estate",
-      "confidence": 0.85,
-      "status": "verified",
-      "lat": 30.5041381,
-      "lon": -97.6602365,
-      "geocode": "source",
-      "company": "Caring Transitions of Round Rock",
-      "in_person": false,
-      "external_id": "eso-2469716",
-      "categories": [
-        "estate-sale",
-        "online-auction"
-      ]
-    },
-    {
       "address": "Del Webb, Austin, TX",
       "dates": "2026-10-28 – 2026-10-30",
       "date_from": "2026-10-28",
@@ -353,30 +328,6 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "cl-besomethingforkwujs9fcwxsyuzai773wau"
-    },
-    {
-      "address": "30105 Briarcrest Court near Briarcrest Drive, Austin, TX",
-      "dates": "2026-10-26 – 2026-10-28",
-      "date_from": "2026-10-26",
-      "date_to": "2026-10-28",
-      "end_date": "2026-10-28",
-      "hours": null,
-      "title": "Tools & Gadgets Sale",
-      "details": "QR Code Link to This Post Tools &amp; Gadgets Garage Sale, Oct - Nov, 2026, CASH ONLY, 30-day warranty on everything Tools 2 piece ¾” pipe clamp set, 2 sets @ $2 ea. 4.00 Craftsman table saw shield 5.00 fish tape 10.00 ear muffs black or red, $4 ea. 8.00 high pressure water gun (no pump) 2.00 large green shears 3.00 old claw hammer 2.00 bottle jack w handle, 8 ton capacity 15.00 Kobalt drill bit s",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/georgetown-tools-gadgets-sale/cd9zXaQ6SWktkEeHHqoihV",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.709907,
-      "lon": -97.666665,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-oolsgadgetssalecd9zxaq6swktkeehhqoihv"
     },
     {
       "address": "Off of Rebecca Creek Rd Spring Branch, TX 78070, Spring Branch, TX 78070",
@@ -615,9 +566,9 @@
     "gsalr.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 26,
+  "total_locations": 24,
   "status": "live",
-  "date": "2026-10-28",
-  "last_refresh": "2026-10-28T12:02:24-05:00",
+  "date": "2026-10-29",
+  "last_refresh": "2026-10-29T03:22:04-05:00",
   "permits": []
 }
