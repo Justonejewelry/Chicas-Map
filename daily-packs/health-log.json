@@ -1,5 +1,16 @@
 [
   {
+    "timestamp": "2026-10-30T11:03:00Z",
+    "target_date": "2026-10-30",
+    "actions_run_id": "41045015407",
+    "emails_scanned": 4,
+    "net_new_added": 0,
+    "net_new_staged": 2,
+    "geocoding_success_rate": "0.0% (pending)",
+    "status": "STAGED_CONCURRENT",
+    "notes": "Triggered chica-daily.yml (cities=san-antonio) run 41045015407. In_progress after 3x5s polls (ACTIONS_TRIGGER_MISSING per timeout). 2 ESO + 2 GSF emails. 2 net-new staged (Hawks Ridge 1623 full street estate + Ft Belknap 12807 garage). Dups filtered (Ridge Post, Butlers, Meadowhead). New Braunfels/online excluded. No Formspree. City file untouched to avoid race. Community swarm not triggered. Pack/social already live from morning."
+  },
+  {
     "timestamp": "2026-10-28T08:57:09Z",
     "target_date": "2026-10-28",
     "actions_run_id": "40660371197",
@@ -18,7 +29,7 @@
     "net_new_staged": 1,
     "geocoding_success_rate": "0.0% (pending)",
     "status": "STAGED_CONCURRENT",
-    "notes": "Triggered chica-daily.yml (cities=san-antonio) run 40471077639 — still in_progress after polls. GSF daily list: 1 Greater SA candidate (3433 Meadowhead Dr, Cibolo, TX 78108, Oct 30-31). Online auctions / Boerne / Bulverde / New Braunfels excluded. City file untouched (28 pins). Community swarm not triggered. Pack + social written."
+    "notes": "Triggered chica-daily.yml (cities=san-antonio) run 40471077639 \u2014 still in_progress after polls. GSF daily list: 1 Greater SA candidate (3433 Meadowhead Dr, Cibolo, TX 78108, Oct 30-31). Online auctions / Boerne / Bulverde / New Braunfels excluded. City file untouched (28 pins). Community swarm not triggered. Pack + social written."
   },
   {
     "timestamp": "2026-10-10T08:35:00-05:00",
@@ -150,6 +161,6 @@
     "net_new_added": 0,
     "geocoding_success_rate": "n/a",
     "status": "SUCCESS",
-    "notes": "Clowie weekend master. Triggered chica-daily.yml (cities=san-antonio) run 40377913118 — in_progress after 3x5s polls (ACTIONS_TRIGGER_MISSING flag per timeout). 2 ESO emails (newer_than:2d); 0 GSF, 0 Formspree. 0 net-new (Fantastic Fall Finds already staged; Bulverde excluded). Public Storage lien notice ignored (not a sale lead). Live feed 28 pins. Pack/social idempotent. Community swarm not triggered."
+    "notes": "Clowie weekend master. Triggered chica-daily.yml (cities=san-antonio) run 40377913118 \u2014 in_progress after 3x5s polls (ACTIONS_TRIGGER_MISSING flag per timeout). 2 ESO emails (newer_than:2d); 0 GSF, 0 Formspree. 0 net-new (Fantastic Fall Finds already staged; Bulverde excluded). Public Storage lien notice ignored (not a sale lead). Live feed 28 pins. Pack/social idempotent. Community swarm not triggered."
   }
 ]
