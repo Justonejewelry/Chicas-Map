@@ -42,7 +42,6 @@ Map only shows pins whose listed dates include today.
 ## ONLINE / UNPLOTTABLE
 
 - Fantastic Fall Finds! Multi-Estate Auction #1 - Bidding ends 11/1 — San Antonio, TX 78240
-- Vintage Treasures: Art, Pottery & More Pt 1 Online Auction by Caring Transitions - Ends 11/8! — New Braunfels, TX 78132
 - Treasures Through Time: Pottery & Collectibles Online Auction by Caring Transitions - Ends 11/10! — New Braunfels, TX 78130
 - Fantastic Garden Ridge Estate Auction Online Only Auction — online only, New Braunfels, TX 78130
 
