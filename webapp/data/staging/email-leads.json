@@ -1,44 +1,44 @@
 {
-  "staging_date": "2026-10-29",
+  "staging_date": "2026-10-30",
   "city": "san-antonio",
-  "status": "STAGED_UNDER_CEILING",
-  "reason": "2 net-new email leads under safety ceiling of 25. Master populate in_progress; staged to avoid race with live feed. Geocoding incomplete for one.",
+  "status": "STAGED_CONCURRENT",
+  "reason": "2 net-new email leads under safety ceiling of 25. Master populate (run 41045015407) in_progress after polls; staged to avoid race with live feed. Geocoding pending.",
   "confidence_floor": 0.70,
-  "emails_scanned": 2,
+  "emails_scanned": 4,
   "net_new_vs_public": 2,
   "safety_ceiling": 25,
   "ceiling_hit": false,
   "city_file_written": false,
   "community_events_swarm": "not_triggered",
-  "actions_run_id": "40841548615",
+  "actions_run_id": "41045015407",
   "actions_status": "in_progress",
   "merged_at": null,
   "leads": [
     {
-      "title": "BIG GARAGE SALE!!",
-      "street_address": "3433 Meadowhead Dr, Schertz, TX 78108",
-      "dates": ["2026-10-30", "2026-10-31"],
-      "hours": "8:00 AM - 3:00 PM",
-      "source": "Email:GarageSaleFinder",
-      "confidence": 0.75,
-      "lat": null,
-      "lon": null,
-      "accuracy": "pending",
-      "type": "garage",
-      "notes": "Northcliffe Subdivision. Include Greater SA (Schertz)."
-    },
-    {
       "title": "Dazzling in Deerfield! Fine Art, Sculptures, Home Decor & More!",
-      "street_address": "San Antonio, TX 78248",
+      "street_address": "1623 Hawks Ridge St, San Antonio, TX 78248",
       "dates": ["2026-10-31", "2026-11-01"],
       "hours": "Sale starts Sat. Oct 31, 2026 at 9:00 AM CDT",
       "source": "Email:EstateSales.org",
       "confidence": 0.75,
       "lat": null,
       "lon": null,
-      "accuracy": "zip_centroid",
+      "accuracy": "pending",
       "type": "estate",
-      "notes": "Caring Transitions of San Antonio North. Street address missing from email; zip centroid only. Featured estate."
+      "notes": "Caring Transitions of San Antonio North. Full street from email. Featured estate. Multi-source with GSF."
+    },
+    {
+      "title": "Huge Garage Sale (Halloween / Christmas items)",
+      "street_address": "12807 Ft Belknap, San Antonio, TX 78245",
+      "dates": ["2026-10-31", "2026-11-01"],
+      "hours": "See listing",
+      "source": "Email:GarageSaleFinder",
+      "confidence": 0.75,
+      "lat": null,
+      "lon": null,
+      "accuracy": "pending",
+      "type": "garage",
+      "notes": "Halloween costumes, Christmas inflatables, kids items. Greater SA include."
     }
   ]
 }
