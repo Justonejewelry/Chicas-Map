@@ -127,31 +127,6 @@
       "external_id": "cl-etownestatesale7cqrrdl7vkcpxrd1wusuay"
     },
     {
-      "address": "Leander, TX 78641",
-      "dates": "2026-10-22 – 2026-10-29",
-      "date_from": "2026-10-22",
-      "date_to": "2026-10-29",
-      "end_date": "2026-10-29",
-      "title": "October Multi-Family Auction- Variety of Vintage and Household Goods- Ends 10/29, Pickup 10/31",
-      "details": "Caring Transitions of North Austin and Cedar Park. Welcome Home to CTBids! We put together an excellent selection of items for you! Start exploring and discover the deals for yourself! Bidding on ALL items starts at $1! Great finds in this varied sale from multiple estates. Highlights include: M...",
-      "source": "EstateSales.org",
-      "url": "https://estatesales.org/estate-sales/tx/leander/78641/october-multifamily-auction-variety-of-2469980",
-      "photos": 0,
-      "type": "estate",
-      "confidence": 0.85,
-      "status": "verified",
-      "lat": 30.5788055,
-      "lon": -97.8530686,
-      "geocode": "source",
-      "company": "Caring Transitions of North Austin and Cedar Park",
-      "in_person": false,
-      "external_id": "eso-2469980",
-      "categories": [
-        "estate-sale",
-        "online-auction"
-      ]
-    },
-    {
       "address": "online only, New Braunfels, TX 78130",
       "dates": "Thu Oct 15 – Wed Nov 4",
       "date_from": "10/15/2026",
@@ -420,30 +395,6 @@
       "external_id": "cl-yardsale69homes7furbbt4uyws3fa2vsjmye"
     },
     {
-      "address": "1707 Holly St, Austin, TX",
-      "dates": "2026-10-27 – 2026-10-29",
-      "date_from": "2026-10-27",
-      "date_to": "2026-10-29",
-      "end_date": "2026-10-29",
-      "hours": null,
-      "title": "PLANT SALE! DIRT CHEAP! EVERYTHING MUST GO!",
-      "details": "QR Code Link to This Post I’m going traveling and have way too many plants! My overflowing plant collection is your gain. I’m letting everything go for dirt cheap, but I only have two days to sell it all! I have tons of healthy plants, including rosemary, rainbow chard, Texas hibiscus, marigolds, basil, cacti, succulents, lantana, and lots more! The plants pictured are available, plus more that di",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/austin-plant-sale-dirt-cheap-everything/gHVaFR63vGJQ3nkFQy51xi",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.254185,
-      "lon": -97.728191,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-cheapeverythingghvafr63vgjq3nkfqy51xi"
-    },
-    {
       "address": "Austin, TX",
       "dates": "2026-10-29 – 2026-10-31",
       "date_from": "2026-10-29",
@@ -635,30 +586,6 @@
       "external_id": "cl-ustinmovingsalekdb4akqas2gcwmf4mg7gqh"
     },
     {
-      "address": "Klondike & Cattle Trail Way, Austin, TX",
-      "dates": "2026-10-29 – 2026-10-29",
-      "date_from": "2026-10-29",
-      "date_to": "2026-10-29",
-      "end_date": "2026-10-29",
-      "hours": null,
-      "title": "TWO Estate/Garage Sales in Georgetown/Sun City- Oct.29th-31st",
-      "details": "QR Code Link to This Post 🏠⛳Double the Sales, Double the Finds! It's almost Christmas Time!🏠🪴 Two Sun City/Georgetown estate sales, Oct. 29-31, 9am-2pm ADDRESSES: Call (Five-One-Two)515-3737 **Sorry can't post address per Sun City Rules** More Info &amp; Pictures, copy &amp; paste link below👇 2 sales- 2 links https://www.estatesales.net/TX/Georgetown/78633/5133303 https://www.estatesales.net/TX/Ge",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/georgetown-two-estate-garage-sales-in/1hQkMEtamCAWHKCG4URSkB",
-      "photos": 0,
-      "type": "estate",
-      "categories": [
-        "estate-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.7177,
-      "lon": -97.7543,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-egaragesalesin1hqkmetamcawhkcg4urskb"
-    },
-    {
       "address": "1511 Brandi Ln Unit C, Austin, TX",
       "dates": "2026-10-29 – 2026-10-31",
       "date_from": "2026-10-29",
@@ -699,9 +626,9 @@
     "gsalr.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 30,
+  "total_locations": 27,
   "status": "live",
-  "date": "2026-10-29",
-  "last_refresh": "2026-10-29T12:20:36-05:00",
+  "date": "2026-10-30",
+  "last_refresh": "2026-10-30T05:14:29-05:00",
   "permits": []
 }
