@@ -36,6 +36,7 @@ Map only shows pins whose listed dates include today.
 - Moving sale — 2238 Mobeetie Trl, San Antonio, TX [2026-10-31 → 2026-11-02]
 - Community Garage Sale The Greens At Woodlake — Binz Engleman Rd near Greens Lake Dr, San Antonio, TX [2026-10-31 → 2026-10-31]
 - Huge Garage / Yard Sale Today! Saturday 10/31 – San Antonio — 8111 Willow Country, San Antonio, TX [2026-10-31 → 2026-10-31]
+- Fall Cleaning — tbd, San Antonio, TX [2026-10-31 → 2026-11-02]
 
 ## COMING UP (remembered, not on today's map)
 
