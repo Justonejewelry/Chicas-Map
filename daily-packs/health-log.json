@@ -1,5 +1,16 @@
 [
   {
+    "timestamp": "2026-10-31T16:15:00Z",
+    "target_date": "2026-10-31",
+    "actions_run_id": "41218238151",
+    "emails_scanned": 1,
+    "net_new_added": 0,
+    "net_new_staged": 1,
+    "geocoding_success_rate": "100% (street_proxy)",
+    "status": "SUCCESS",
+    "notes": "Triggered chica-daily.yml run 41218238151 (cities=san-antonio, target_date=2026-10-31). Pending after polls. Ingested city permit BLDG-GS-PMT-13821054 for 426 Montrose, SA 78223, Nov 1-2 9am-6pm. Highest-trust source. Staged in webapp/data/staging/email-leads.json. Pack + social written. Community swarm not triggered. City file left to master populate."
+  },
+  {
     "timestamp": "2026-10-30T11:03:00Z",
     "target_date": "2026-10-30",
     "actions_run_id": "41045015407",
@@ -9,158 +20,5 @@
     "geocoding_success_rate": "0.0% (pending)",
     "status": "STAGED_CONCURRENT",
     "notes": "Triggered chica-daily.yml (cities=san-antonio) run 41045015407. In_progress after 3x5s polls (ACTIONS_TRIGGER_MISSING per timeout). 2 ESO + 2 GSF emails. 2 net-new staged (Hawks Ridge 1623 full street estate + Ft Belknap 12807 garage). Dups filtered (Ridge Post, Butlers, Meadowhead). New Braunfels/online excluded. No Formspree. City file untouched to avoid race. Community swarm not triggered. Pack/social already live from morning."
-  },
-  {
-    "timestamp": "2026-10-28T08:57:09Z",
-    "target_date": "2026-10-28",
-    "actions_run_id": "40660371197",
-    "emails_scanned": 4,
-    "net_new_added": 0,
-    "geocoding_success_rate": "n/a (existing only)",
-    "status": "SUCCESS",
-    "notes": "Triggered chica-daily.yml run 40660371197 (cities=san-antonio, target_date=2026-10-28). In_progress after polls. 4 emails (2 ESO, 2 GSF). 0 net-new: Deerfield estate + Meadowhead/Northcliffe garage already live. Online auctions and out-of-area (Bulverde, New Braunfels) excluded. No Formspree. City file untouched. Pack + social written. Community swarm not triggered."
-  },
-  {
-    "timestamp": "2026-10-27T08:10:00Z",
-    "target_date": "2026-10-27",
-    "actions_run_id": "40471077639",
-    "emails_scanned": 1,
-    "net_new_added": 0,
-    "net_new_staged": 1,
-    "geocoding_success_rate": "0.0% (pending)",
-    "status": "STAGED_CONCURRENT",
-    "notes": "Triggered chica-daily.yml (cities=san-antonio) run 40471077639 \u2014 still in_progress after polls. GSF daily list: 1 Greater SA candidate (3433 Meadowhead Dr, Cibolo, TX 78108, Oct 30-31). Online auctions / Boerne / Bulverde / New Braunfels excluded. City file untouched (28 pins). Community swarm not triggered. Pack + social written."
-  },
-  {
-    "timestamp": "2026-10-10T08:35:00-05:00",
-    "target_date": "2026-10-10",
-    "actions_run_id": "38038284706",
-    "emails_scanned": 7,
-    "net_new_added": 0,
-    "geocoding_success_rate": "0.0%",
-    "status": "STAGED_OVERFLOW"
-  },
-  {
-    "timestamp": "2026-10-10T04:52:00-05:00",
-    "target_date": "2026-10-10",
-    "actions_run_id": "38042861558",
-    "emails_scanned": 8,
-    "net_new_added": 0,
-    "geocoding_success_rate": "0.0%",
-    "status": "STAGED_OVERFLOW"
-  },
-  {
-    "timestamp": "2026-10-10T05:12:49-05:00",
-    "target_date": "2026-10-10",
-    "actions_run_id": "38044006138",
-    "emails_scanned": 5,
-    "net_new_added": 0,
-    "geocoding_success_rate": "0.0%",
-    "status": "STAGED_OVERFLOW"
-  },
-  {
-    "timestamp": "2026-10-10T08:26:00-05:00",
-    "target_date": "2026-10-10",
-    "actions_run_id": "38044006138",
-    "emails_scanned": 8,
-    "net_new_added": 15,
-    "geocoding_success_rate": "live via master populate",
-    "status": "SUCCESS",
-    "notes": "Prior GSF email leads (15 full-street Greater SA) confirmed in public feed after master populate. Staging holds 2 incomplete ESO (Converse zip-only + future Oct 17). City file live at 82 pins."
-  },
-  {
-    "timestamp": "2026-10-13T18:35:00Z",
-    "target_date": "2026-10-13",
-    "actions_run_id": "38447737194",
-    "emails_scanned": 2,
-    "net_new_added": 0,
-    "geocoding_success_rate": "n/a (zip-only online auctions filtered)",
-    "status": "SUCCESS",
-    "notes": "Triggered chica-daily.yml run 38447737194 (in_progress). 2 ESO emails scanned. 4 Greater SA candidates (mostly online auctions/incomplete addresses). 0 net-new manual add to avoid double-write. Live feed: 24 public sales. Master populate handling full ingestion."
-  },
-  {
-    "timestamp": "2026-10-16T08:34:00Z",
-    "target_date": "2026-10-16",
-    "actions_run_id": "38874315734",
-    "emails_scanned": 2,
-    "net_new_added": 0,
-    "net_new_staged": 3,
-    "geocoding_success_rate": "0.0%",
-    "status": "STAGED_CONCURRENT",
-    "notes": "3 net-new staged (Tallulah Dr, Stoney Hill, Rachels Br). Concurrent master run 38874315734. City file untouched. Brooks Ave already live."
-  },
-  {
-    "timestamp": "2026-10-16T10:15:00Z",
-    "target_date": "2026-10-16",
-    "actions_run_id": "38885662768",
-    "emails_scanned": 5,
-    "net_new_added": 0,
-    "net_new_staged": 3,
-    "geocoding_success_rate": "0.0%",
-    "status": "STAGED_CONCURRENT",
-    "notes": "Triggered chica-daily.yml run 38885662768 (in_progress after 3 polls). 3 Greater SA net-new already staged. City file untouched. Community swarm not triggered. Live public: 44."
-  },
-  {
-    "timestamp": "2026-10-16T10:43:00Z",
-    "target_date": "2026-10-16",
-    "actions_run_id": "38888915267",
-    "emails_scanned": 6,
-    "net_new_added": 0,
-    "net_new_staged": 3,
-    "geocoding_success_rate": "66% (street approx + zip)",
-    "status": "STAGED_CONCURRENT",
-    "notes": "Triggered chica-daily.yml (cities=san-antonio). In_progress after 3x5s polls. Staged 3 Greater SA (Tallulah, Stoney Hill, Rachels Br). Excluded online auctions, New Braunfels, Boerne. City file untouched to avoid race. No Formspree. Community swarm not triggered."
-  },
-  {
-    "timestamp": "2026-10-18T05:18:00-05:00",
-    "target_date": "2026-10-18",
-    "actions_run_id": "39118469239",
-    "emails_scanned": 7,
-    "net_new_added": 0,
-    "geocoding_success_rate": "100% (existing pins)",
-    "status": "SUCCESS",
-    "notes": "chica-daily.yml run 39118469239 completed success. 0 net-new email leads (Stoney Hill + Tallulah already live). No Formspree. Community swarm not triggered. Pack + social written. Live feed 54 pins."
-  },
-  {
-    "timestamp": "2026-10-19T13:10:00-05:00",
-    "target_date": "2026-10-19",
-    "actions_run_id": null,
-    "emails_scanned": 4,
-    "net_new_added": 4,
-    "geocoding_success_rate": "100.0%",
-    "status": "SUCCESS",
-    "notes": "ACTIONS_TRIGGER_MISSING on chica-daily.yml dispatch (HTTP 500). Proceeded with local email ingest. Zip centroids used."
-  },
-  {
-    "timestamp": "2026-10-22T10:12:00Z",
-    "target_date": "2026-10-22",
-    "actions_run_id": "39761189978",
-    "emails_scanned": 6,
-    "net_new_added": 0,
-    "net_new_staged": 6,
-    "geocoding_success_rate": "16.7% (1 full street + zip others)",
-    "status": "STAGED_CONCURRENT",
-    "notes": "Triggered chica-daily.yml (cities=san-antonio). Pending after polls. Staged 6 Greater SA leads (Schertz estate, Indian Hollow, Walnut Pass, Copperfield, Robinsnest, Lee Hall). Excluded New Braunfels/Bulverde/Boerne/online. City file untouched. Community swarm not triggered. Pack written."
-  },
-  {
-    "timestamp": "2026-10-26T11:05:00-05:00",
-    "target_date": "2026-10-26",
-    "actions_run_id": "40294674840",
-    "emails_scanned": 7,
-    "net_new_added": 0,
-    "net_new_staged": 1,
-    "geocoding_success_rate": "0.0% (zip_centroid staged)",
-    "status": "SUCCESS",
-    "notes": "chica-daily.yml run 40294674840 completed success. 1 net-new staged (Fantastic Fall Finds Multi-Estate Auction, 78240, online). Excluded Bulverde/Boerne/New Braunfels/past dates. City file untouched (28 live pins). Community swarm not triggered. Pack + social written."
-  },
-  {
-    "timestamp": "2026-10-26T13:30:00-05:00",
-    "target_date": "2026-10-26",
-    "actions_run_id": "40377913118",
-    "emails_scanned": 2,
-    "net_new_added": 0,
-    "geocoding_success_rate": "n/a",
-    "status": "SUCCESS",
-    "notes": "Clowie weekend master. Triggered chica-daily.yml (cities=san-antonio) run 40377913118 \u2014 in_progress after 3x5s polls (ACTIONS_TRIGGER_MISSING flag per timeout). 2 ESO emails (newer_than:2d); 0 GSF, 0 Formspree. 0 net-new (Fantastic Fall Finds already staged; Bulverde excluded). Public Storage lien notice ignored (not a sale lead). Live feed 28 pins. Pack/social idempotent. Community swarm not triggered."
   }
 ]
