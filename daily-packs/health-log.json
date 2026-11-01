@@ -1,5 +1,15 @@
 [
   {
+    "timestamp": "2026-11-01T15:50:00Z",
+    "target_date": "2026-11-01",
+    "actions_run_id": "41323150772",
+    "emails_scanned": 4,
+    "net_new_added": 0,
+    "geocoding_success_rate": "0.0%",
+    "status": "SUCCESS",
+    "notes": "Triggered chica-daily.yml run 41323150772 (cities=san-antonio). In_progress after 3x5s polls (ACTIONS_TRIGGER_MISSING). Emails: 2 GSF + 2 ESO dailies (newer_than:2d). 0 net-new — Hawks Ridge & Ft Belknap already live (multi-source), Ridge Post/Redwoods/Butlers/Meadowhead expired for 11/01, New Braunfels/online/out-of-area rejected, no Formspree. Ancestry promo ignored. Pack + social already live from prior run. Community swarm not triggered. City file left to master populate."
+  },
+  {
     "timestamp": "2026-11-01T11:15:53Z",
     "target_date": "2026-11-01",
     "actions_run_id": "41301013158",
