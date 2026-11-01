@@ -1,5 +1,16 @@
 [
   {
+    "timestamp": "2026-11-01T01:41:26Z",
+    "target_date": "2026-10-31",
+    "actions_run_id": "41262081805",
+    "emails_scanned": 5,
+    "net_new_added": 0,
+    "net_new_staged": 1,
+    "geocoding_success_rate": "100% (street_proxy from prior)",
+    "status": "STAGED_OVERFLOW",
+    "notes": "Triggered chica-daily.yml run 41262081805 (cities=san-antonio). In_progress after polls. FormSubmit tip Montrose Market 426 Montrose 2026-10-31 10am-6pm (self-submit, all cats). Matched existing staged permit BLDG-GS-PMT-13821054. Updated staging with title/dates/hours/cats. No auto-commit to CITY_FILE (race + partial address). GSF/ESO dailies reviewed (mostly known/dups/out-of-area). Community swarm not triggered."
+  },
+  {
     "timestamp": "2026-10-31T16:15:00Z",
     "target_date": "2026-10-31",
     "actions_run_id": "41218238151",
