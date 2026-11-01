@@ -29,6 +29,9 @@ Map only shows pins whose listed dates include today.
 - Garage Sale Fair Oaks Ranch — 29521 No Le Hace Dr, Fair Oaks Ranch, TX 78015 [2026-11-01 → 2026-11-01]
 - Garage Sale Fair Oaks Ranch — 29521 No Le Hace Dr, Fair Oaks Ranch, TX [2026-11-01 → 2026-11-01]
 - Big Moving Rug and Home Decor Sale — San Antonio, TX [2026-10-30 → 2026-11-01]
+- Lots of beautiful items — 6015 Windbluff Dr, Windcrest, TX 78239 [2026-11-01 → 2026-11-01]
+- Lots Of Beautiful Items — 6015 Windbluff Dr, Windcrest, TX [2026-11-01 → 2026-11-01]
+- SWAP MEET TODAY SUN NOV 1ST — 2918 Roosevelt Avenue, San Antonio, TX [2026-11-01 → 2026-11-03]
 
 ## COMING UP (remembered, not on today's map)
 
