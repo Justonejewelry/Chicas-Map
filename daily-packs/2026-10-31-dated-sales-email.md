@@ -10,7 +10,6 @@ Map only shows pins whose listed dates include today.
 - NOW OPEN! The Collective Boutiques — NW Loop 410 near Blanco Rd., San Antonio, TX [2026-10-31 → 2026-11-02]
 - Woodworkers Garage Sale — 415 W. Rhapsody near Warfield, San Antonio, TX [2026-10-31 → 2026-11-02]
 - Yard-sale Southside — 542 E Bonner Ave, San Antonio, TX [2026-10-31 → 2026-11-02]
-- Big Moving Rug and Home Decor Sale — San Antonio, TX [2026-10-30 → 2026-11-01]
 - Aladdin Lamps, Clocks, Radios, and More Auction! — Off of Rebecca Creek Rd Spring Branch, TX 78070, Spring Branch, TX 78070 [2026-10-27 → 2026-11-17]
 - Fall Garage Sale — 118 Hatcher Ave near Hatcher, San Antonio, TX [2026-10-29 → 2026-10-31]
 - Furniture for Sale ( please read post, ty) — 3527 Green Spring, San Antonio, TX [2026-10-31 → 2026-11-02]
@@ -37,8 +36,14 @@ Map only shows pins whose listed dates include today.
 - Community Garage Sale The Greens At Woodlake — Binz Engleman Rd near Greens Lake Dr, San Antonio, TX [2026-10-31 → 2026-10-31]
 - Huge Garage / Yard Sale Today! Saturday 10/31 – San Antonio — 8111 Willow Country, San Antonio, TX [2026-10-31 → 2026-10-31]
 - Fall Cleaning — tbd, San Antonio, TX [2026-10-31 → 2026-11-02]
+- San Antonio — 147 Starlight Terrace, San Antonio, TX [2026-10-31 → 2026-11-02]
+- Self Storage Public Auction - 11/3/26, 10:30 a.m. — Eisenhauer Road near Austin Highway, San Antonio, TX [2026-10-31 → 2026-11-02]
 
 ## COMING UP (remembered, not on today's map)
+
+### Starts 2026-11-01
+- Garage Sale Fair Oaks Ranch — 29521 No Le Hace Dr, Fair Oaks Ranch, TX 78015 [2026-11-01 → 2026-11-01]
+- Garage Sale Fair Oaks Ranch — 29521 No Le Hace Dr, Fair Oaks Ranch, TX [2026-11-01 → 2026-11-01]
 
 ### Starts 2026-11-04
 - Self Storage Auctions — 11827 West Avenue near Rhapsody, San Antonio, TX [2026-11-04 → 2026-11-04]
@@ -48,6 +53,7 @@ Map only shows pins whose listed dates include today.
 
 ## ONLINE / UNPLOTTABLE
 
+- DAY 2 | 9AM START EUROPEAN INTERIORS & MORE! — San Antonio, TX [2026-10-30 → 2026-11-01]
 - Fantastic Fall Finds! Multi-Estate Auction #1 - Bidding ends 11/1 — San Antonio, TX 78240
 - Treasures Through Time: Pottery & Collectibles Online Auction by Caring Transitions - Ends 11/10! — New Braunfels, TX 78130
 - Fantastic Garden Ridge Estate Auction Online Only Auction — online only, New Braunfels, TX 78130
