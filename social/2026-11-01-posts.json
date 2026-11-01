@@ -1,0 +1,13 @@
+{
+  "date": "2026-11-01",
+  "city": "san-antonio",
+  "confidence_floor": 0.70,
+  "facebook": "Hey pack 🐶\n\nSunday hunt is live.\n\n📍 Montrose Market — Chica is here (426 Montrose, 78223)\nToday & tomorrow 10am–6pm. Come meet her. Furniture, clothes, kids, tools, antiques.\n\n📍 Dazzling in Deerfield estate — 1623 Hawks Ridge St, 78248\nEnds today at 3pm. Fine art, sculptures, home decor.\n\n📍 Alamo Craft Co. — NW Loop 410 (open Sundays!)\n\nReal pins only. Near Me · multi-stop · Google / Apple / Waze.\n\nMap: https://chicasmap.com/sa\nList a sale if you got one.\n\n#SanAntonioGarageSales #SATXThrifting",
+  "nextdoor": "Neighbors — quick Sunday heads-up for the SA pack.\n\nChica is at Montrose Market today and tomorrow (426 Montrose, 10am-6pm). Good mix of household stuff.\n\nEstate wrapping up today at 1623 Hawks Ridge St (Deerfield / 78248) — ends 3pm.\n\nMore stops on the map if you're stacking routes. Near Me works. https://chicasmap.com/sa\n\nLocal only. No spam.",
+  "tiktok": {
+    "caption": "Sunday SA thrifting with Chica. Montrose Market appearance + estate ending at 3. Open the map, hit Near Me, stack stops. Real pins only. #SanAntonioEstateSales #SATXThrifting #SanAntonioGarageSales",
+    "script_notes": "B-roll map + sale signs. Watermark bottom-left. 15-30s."
+  },
+  "pii_sanitized": true,
+  "sources": ["live feed 2026-11-01", "email ingest 0 net-new"]
+}
