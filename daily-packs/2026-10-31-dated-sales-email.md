@@ -53,9 +53,9 @@ Map only shows pins whose listed dates include today.
 
 ## ONLINE / UNPLOTTABLE
 
-- DAY 2 | 9AM START EUROPEAN INTERIORS & MORE! — San Antonio, TX [2026-10-30 → 2026-11-01]
 - Fantastic Fall Finds! Multi-Estate Auction #1 - Bidding ends 11/1 — San Antonio, TX 78240
 - Treasures Through Time: Pottery & Collectibles Online Auction by Caring Transitions - Ends 11/10! — New Braunfels, TX 78130
 - Fantastic Garden Ridge Estate Auction Online Only Auction — online only, New Braunfels, TX 78130
+- DAY 2 | 9AM START EUROPEAN INTERIORS & MORE! — San Antonio, TX
 
 — Chica
