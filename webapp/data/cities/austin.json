@@ -120,52 +120,6 @@
       "geocode": "city-center"
     },
     {
-      "address": "18312 Wind Valley Way, Pflugerville, TX 78660",
-      "dates": "Sat Oct 31 – Sat Oct 31",
-      "date_from": "10/31/2026",
-      "date_to": "10/31/2026",
-      "end_date": "2026-10-31",
-      "title": "test sale",
-      "details": "",
-      "source": "GarageSaleFinder",
-      "url": "https://garagesalefinder.com/s/N9ZOu/18312-wind-valley-way-pflugerville-tx-78660",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.88,
-      "status": "verified",
-      "lat": 30.455791,
-      "lon": -97.580788,
-      "geocode": "source",
-      "external_id": "yss-18312windvalleywaypflugervilletx78660-2026-10-31",
-      "categories": [
-        "garage-sale"
-      ]
-    },
-    {
-      "address": "West Stassney near Menchaca, Austin, TX",
-      "dates": "2026-10-29 – 2026-10-31",
-      "date_from": "2026-10-29",
-      "date_to": "2026-10-31",
-      "end_date": "2026-10-31",
-      "hours": null,
-      "title": "Garage Sale",
-      "details": "QR Code Link to This Post We are selling all kinds of stuff including: • Halloween Costumes • Halloween Decor • Funko Pops • Toys • Children’s Books • Games • imaginext • And much more!",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/austin-garage-sale/tm6yoCpiVUYQRY5vTT8Ekt",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.218,
-      "lon": -97.8014,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-ustingaragesaletm6yocpivuyqry5vtt8ekt"
-    },
-    {
       "address": "18917 falcon pointe blvd near Kelly Ln, Austin, TX",
       "dates": "2026-10-30 – 2026-11-01",
       "date_from": "2026-10-30",
@@ -280,28 +234,6 @@
       "external_id": "cl-yardsale69homes7furbbt4uyws3fa2vsjmye"
     },
     {
-      "address": "Austin, TX",
-      "dates": "2026-10-29 – 2026-10-31",
-      "date_from": "2026-10-29",
-      "date_to": "2026-10-31",
-      "end_date": "2026-10-31",
-      "title": "HALF-PRICE - Collector's Dream Estate Sale in Temple",
-      "details": "Estate Sale",
-      "source": "EstateSales.net",
-      "url": "https://www.estatesales.net/TX/Temple/76502/5132262",
-      "photos": 0,
-      "type": "estate",
-      "categories": [
-        "estate-sale"
-      ],
-      "confidence": 0.65,
-      "status": "verified",
-      "lat": 30.2672,
-      "lon": -97.7431,
-      "geocode": "city-center",
-      "company": null
-    },
-    {
       "address": "New Braunfels, TX 78132",
       "dates": "Wed Oct 28 – Sun Nov 8",
       "date_from": "10/28/2026",
@@ -320,30 +252,6 @@
       "geocode": "city-center"
     },
     {
-      "address": "18312 Wind Valley Way, Pflugerville, TX",
-      "dates": "2026-10-31 – 2026-10-31",
-      "date_from": "2026-10-31",
-      "date_to": "2026-10-31",
-      "end_date": "2026-10-31",
-      "hours": null,
-      "title": "Test Sale",
-      "details": "",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196428155",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale"
-      ],
-      "confidence": 0.88,
-      "status": "verified",
-      "lat": 30.455791,
-      "lon": -97.580788,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "yss-18312windvalleywaypflugervilletx-2026-10-31"
-    },
-    {
       "address": "New Braunfels, TX 78130",
       "dates": "Thu Oct 29 – Tue Nov 10",
       "date_from": "10/29/2026",
@@ -360,48 +268,6 @@
       "lat": 30.2672,
       "lon": -97.7431,
       "geocode": "city-center"
-    },
-    {
-      "address": "200 Willow St, Pflugerville, TX 78660",
-      "dates": "Sat Oct 31 – Sat Oct 31",
-      "date_from": "10/31/2026",
-      "date_to": "10/31/2026",
-      "end_date": "2026-10-31",
-      "title": "Halloween Garage Sale",
-      "details": "",
-      "source": "GarageSaleFinder",
-      "url": "https://garagesalefinder.com/s/N9V2Z/200-willow-st-pflugerville-tx-78660",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.85,
-      "status": "verified",
-      "lat": 30.44,
-      "lon": -97.62,
-      "geocode": "zip-centroid"
-    },
-    {
-      "address": "200 Willow St, Pflugerville, TX",
-      "dates": "2026-10-31 – 2026-10-31",
-      "date_from": "2026-10-31",
-      "date_to": "2026-10-31",
-      "end_date": "2026-10-31",
-      "hours": null,
-      "title": "Halloween Garage Sale",
-      "details": "",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196447707",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale"
-      ],
-      "confidence": 0.88,
-      "status": "verified",
-      "lat": 30.436904,
-      "lon": -97.617367,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "yss-200willowstpflugervilletx-2026-10-31"
     },
     {
       "address": "3400 Ferguson Lane, Austin, TX",
@@ -451,24 +317,6 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "cl-micbooksgraphicovfjssyvjkrrpzcs7u39b4"
-    },
-    {
-      "address": "1224 Eleanor St, Austin, TX 78721",
-      "dates": "Sat Oct 31 – Sat Oct 31",
-      "date_from": "10/31/2026",
-      "date_to": "10/31/2026",
-      "end_date": "2026-10-31",
-      "title": "East Austin Garage Sale 10/31 - Non-Shitty Stuff :)",
-      "details": "",
-      "source": "GarageSaleFinder",
-      "url": "https://garagesalefinder.com/s/N9V7P/1224-eleanor-st-austin-tx-78721",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.85,
-      "status": "verified",
-      "lat": 30.27,
-      "lon": -97.69,
-      "geocode": "zip-centroid"
     },
     {
       "address": "1224 Eleanor St, Austin, TX",
@@ -568,30 +416,6 @@
       "external_id": "cl-ustingaragesaleodvson3vtwqkssr3vxxfl7"
     },
     {
-      "address": "565 Old HWY 20, Austin, TX",
-      "dates": "2026-10-31 – 2026-10-31",
-      "date_from": "2026-10-31",
-      "date_to": "2026-10-31",
-      "end_date": "2026-10-31",
-      "hours": null,
-      "title": "Sidewalk Sale in downtown McDade, Texas - Sat. 10/31 8am-2pm",
-      "details": "QR Code Link to This Post 🎃 FIRST EVER VENDOR SIDEWALK SALE IN DOWNTOWN MCDADE! 🎃 Kick off your Halloween weekend with a little shopping, treasure hunting, and small-town fun! Join us this Saturday, October 31, from 8 AM to 2 PM for our very first Vendor Sidewalk Sale in Downtown McDade! Come browse a variety of unique finds from our local vendors, including antiques, vintage treasures, home décor",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/mc-dade-sidewalk-sale-in-downtown/enqXci777sXgU4kdtuzT2v",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.2968,
-      "lon": -97.2386,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-saleindowntownenqxci777sxgu4kdtuzt2v"
-    },
-    {
       "address": "San Marcos, TX 78666",
       "dates": "Fri Oct 30 – Tue Nov 10",
       "date_from": "10/30/2026",
@@ -601,60 +425,6 @@
       "details": "",
       "source": "GarageSaleFinder",
       "url": "https://garagesalefinder.com/s/N9TNK/san-marcos-tx-78666",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.65,
-      "status": "verified",
-      "lat": 30.2672,
-      "lon": -97.7431,
-      "geocode": "city-center"
-    },
-    {
-      "address": "8501 Fathom Cir, Austin, TX 78750",
-      "dates": "Sat Oct 31 – Sat Oct 31",
-      "date_from": "10/31/2026",
-      "date_to": "10/31/2026",
-      "end_date": "2026-10-31",
-      "title": "MOVING SALE",
-      "details": "",
-      "source": "GarageSaleFinder",
-      "url": "https://garagesalefinder.com/s/N9Tcj/8501-fathom-cir-austin-tx-78750",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.85,
-      "status": "verified",
-      "lat": 30.44,
-      "lon": -97.8,
-      "geocode": "zip-centroid"
-    },
-    {
-      "address": "905 Estate Dr, Hutto, TX 78634",
-      "dates": "Sat Oct 31 – Sat Oct 31",
-      "date_from": "10/31/2026",
-      "date_to": "10/31/2026",
-      "end_date": "2026-10-31",
-      "title": "Garage sale",
-      "details": "",
-      "source": "GarageSaleFinder",
-      "url": "https://garagesalefinder.com/s/N9Tpw/905-estate-dr-hutto-tx-78634",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.65,
-      "status": "verified",
-      "lat": 30.2672,
-      "lon": -97.7431,
-      "geocode": "city-center"
-    },
-    {
-      "address": "565 Old Highway 20, Mc Dade, TX 78650",
-      "dates": "Sat Oct 31 – Sat Oct 31",
-      "date_from": "10/31/2026",
-      "date_to": "10/31/2026",
-      "end_date": "2026-10-31",
-      "title": "Vendor Sidewalk Sale",
-      "details": "",
-      "source": "GarageSaleFinder",
-      "url": "https://garagesalefinder.com/s/N9TcU/565-old-highway-20-mc-dade-tx-78650",
       "photos": 0,
       "type": "garage",
       "confidence": 0.65,
@@ -688,30 +458,6 @@
       "company": "Estate Sales America",
       "in_person": true,
       "external_id": "eso-2471227"
-    },
-    {
-      "address": "8501 Fathom Cir, Austin, TX",
-      "dates": "2026-10-31 – 2026-10-31",
-      "date_from": "2026-10-31",
-      "date_to": "2026-10-31",
-      "end_date": "2026-10-31",
-      "hours": null,
-      "title": "Moving Sale",
-      "details": "",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196450099",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale"
-      ],
-      "confidence": 0.88,
-      "status": "verified",
-      "lat": 30.435869,
-      "lon": -97.779571,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "yss-8501fathomciraustintx-2026-10-31"
     },
     {
       "address": "1601 s i35 frontage rd, Austin, TX",
@@ -875,9 +621,9 @@
     "gsalr.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 38,
+  "total_locations": 26,
   "status": "live",
-  "date": "2026-10-31",
-  "last_refresh": "2026-10-31T20:41:21-05:00",
+  "date": "2026-11-01",
+  "last_refresh": "2026-11-01T02:13:38-06:00",
   "permits": []
 }
