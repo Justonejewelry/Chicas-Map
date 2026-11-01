@@ -1,1 +1,35 @@
-FULL_CONTENT_FROM_FILE
+{
+  "edition": "2026-11-01 special: Montrose Market — Chica appearance",
+  "city": "san-antonio",
+  "date": "2026-10-31",
+  "last_refresh": "2026-11-01T02:27:32-05:00",
+  "total_locations": 34,
+  "status": "live",
+  "public": [
+    {
+      "address": "426 Montrose, San Antonio, TX 78223",
+      "dates": "2026-11-01 – 2026-11-02",
+      "hours": "10:00am-6:00pm",
+      "title": "Montrose Market — Chica is here",
+      "source": "Chica Special",
+      "type": "community",
+      "lat": 29.3696,
+      "lon": -98.4625,
+      "date_start": "2026-11-01",
+      "date_end": "2026-11-02",
+      "date_bucket": "upcoming",
+      "date_from": "2026-11-01",
+      "date_to": "2026-11-02",
+      "end_date": "2026-11-02",
+      "url": "https://chicasmap.com/sa",
+      "details": "Special appearance. Chica will be at Montrose Market tomorrow. Come meet her, say hi, and hunt the sale together. Furniture, clothes, kids, tools, antiques, housewares, outdoor, electronics.",
+      "geocode": "street_proxy",
+      "external_id": "chica-montrose-market-2026-11-01",
+      "status": "verified",
+      "confidence": 0.95,
+      "categories": ["community", "garage"],
+      "is_special": true,
+      "chica_appearance": true
+    }
+  ]
+}
