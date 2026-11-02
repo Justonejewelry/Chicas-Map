@@ -1,1 +1,16 @@
-PLACEHOLDER_WILL_FAIL
+{
+  "product": "Alamo City Resources",
+  "city": "san-antonio",
+  "status": "live",
+  "last_refresh": "2026-11-02T05:58:31-06:00",
+  "total": 447,
+  "migrated_from": [
+    "san-antonio-public-wifi.geojson",
+    "san-antonio-24h-food-pantries.geojson",
+    "san-antonio-downtown-parking.geojson",
+    "san-antonio-emergency-info.geojson",
+    "san-antonio-thrift.geojson",
+    "zone-aware-schools.geojson (first 200)"
+  ],
+  "resources": []
+}
