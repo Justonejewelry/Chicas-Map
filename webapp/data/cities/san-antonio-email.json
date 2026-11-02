@@ -1,6 +1,6 @@
 {
   "city": "san-antonio-email",
-  "last_refresh": "2026-11-01T11:02:26-06:00",
+  "last_refresh": "2026-11-02T03:06:01-06:00",
   "status": "live",
   "total_locations": 0,
   "public": [],
@@ -11,5 +11,5 @@
     "Email:EstateSales.org"
   ],
   "note": "Incremental email-lead shard. Coords from OSM Nominatim house match or Census TIGER when OSM missed.",
-  "date": "2026-11-01"
+  "date": "2026-11-02"
 }
