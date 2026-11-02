@@ -42,6 +42,7 @@ Map only shows pins whose listed dates include today.
 - Woodthorn & Regency Meadow Multi-Community Garage Sale — Regency Bend near Chasethorn Dr, San Antonio, TX [2026-11-06 → 2026-11-06]
 
 ### Starts 2026-11-07
+- Multiple Garage Sales Canyon Oaks Estates (Off Henderson Pass) 7&8 Nov 8am-4pm — 2459 Rim Oak, San Antonio, TX 78232 [2026-11-07 → 2026-11-08]
 - Community Garage Sale — 329 Washita Riv, Cibolo, TX 78108 [2026-11-07 → 2026-11-07]
 - Community Garage Sale — 317 Tule Canyons, Schertz, TX 78108 [2026-11-07 → 2026-11-07]
 - Community Garage Sale — 128 Grand Rpds, Cibolo, TX 78108 [2026-11-07 → 2026-11-07]
@@ -51,6 +52,7 @@ Map only shows pins whose listed dates include today.
 - Community Garage Sale — 334 Denison Dm, Cibolo, TX 78108 [2026-11-07 → 2026-11-07]
 - Community Garage Sale — 114 Texoma Lk, Cibolo, TX 78108 [2026-11-07 → 2026-11-07]
 - Moving Out Sale! — 26765 Orchid Trl, Boerne, TX 78006 [2026-11-07 → 2026-11-08]
+- Multiple Garage Sales Canyon Oaks Estates (Off Henderson Pass) 7&8 Nov 8Am-4Pm — 2459 Rim Oak, San Antonio, TX [2026-11-07 → 2026-11-08]
 - Moving Out Sale! — 26765 Orchid Trl, Boerne, TX [2026-11-07 → 2026-11-08]
 - Community Garage Sale — 329 Washita Riv, Cibolo, TX [2026-11-07 → 2026-11-07]
 - Community Garage Sale — 317 Tule Canyons, Schertz, TX [2026-11-07 → 2026-11-07]
