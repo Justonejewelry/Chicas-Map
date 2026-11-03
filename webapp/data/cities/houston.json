@@ -1,6 +1,6 @@
 {
   "edition": "Houston Yard-Bird Discovery",
-  "date": "2026-11-02",
+  "date": "2026-11-03",
   "city": "houston",
   "total_locations": 0,
   "status": "live",
@@ -38,5 +38,5 @@
   "permits": [],
   "permit_total": 0,
   "public": [],
-  "last_refresh": "2026-11-02T14:39:30-06:00"
+  "last_refresh": "2026-11-03T12:16:17-06:00"
 }
