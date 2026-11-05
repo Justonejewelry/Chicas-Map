@@ -1,12 +1,12 @@
 {
   "updated": "2026-11-05",
-  "edition": "FB Marketplace + Events pull 2026-11-05",
+  "edition": "FB pull + live date verify 2026-11-05",
   "city": "san-antonio",
   "date": "2026-11-05",
-  "last_refresh": "2026-11-05T11:21:26-06:00",
+  "last_refresh": "2026-11-05T11:45:31-06:00",
   "status": "live",
   "sentinel": "PASS",
-  "note": "Operator overlay. 27 Facebook Marketplace/Events pins geocoded 2026-11-05. Address-required only; DM-for-address listings skipped.",
+  "note": "Operator overlay. 27 Facebook pins. Dates verified live 2026-11-05 against Marketplace/Events (3 Marketplace listings had no date text).",
   "total_locations": 27,
   "public": [
     {
@@ -37,18 +37,19 @@
       ],
       "zip": "78244",
       "in_person": true,
-      "seller": "Zulma Alvarez"
+      "seller": "Zulma Alvarez",
+      "date_note": "No date on listing; kept Fri\u2013Sat default from ingest"
     },
     {
       "address": "5906 FAIRGREEN DR, SAN ANTONIO, TX, 78242",
-      "dates": "Thu Nov 5",
+      "dates": "Thu Nov 5 \u2013 Sat Nov 7, all day",
       "date_from": "2026-11-05",
-      "date_to": "2026-11-05",
-      "end_date": "2026-11-05",
+      "date_to": "2026-11-07",
+      "end_date": "2026-11-07",
       "date_start": "2026-11-05",
-      "date_end": "2026-11-05",
+      "date_end": "2026-11-07",
       "date_bucket": "live",
-      "hours": "",
+      "hours": "all day",
       "title": "YARD SALE 5906 FAIRGREEN 78242",
       "details": "Hoy jueves viernes y sabado todo el dia",
       "source": "Facebook Marketplace",
@@ -67,16 +68,17 @@
       ],
       "zip": "78242",
       "in_person": true,
-      "seller": "Lucy Alaniz"
+      "seller": "Lucy Alaniz",
+      "date_verified": "facebook-live-2026-11-05"
     },
     {
       "address": "7627 GALLOP DR, SAN ANTONIO, TX, 78227",
-      "dates": "Thu Nov 5",
+      "dates": "Thu Nov 5 \u2013 Fri Nov 6",
       "date_from": "2026-11-05",
-      "date_to": "2026-11-05",
-      "end_date": "2026-11-05",
+      "date_to": "2026-11-06",
+      "end_date": "2026-11-06",
       "date_start": "2026-11-05",
-      "date_end": "2026-11-05",
+      "date_end": "2026-11-06",
       "date_bucket": "live",
       "hours": "",
       "title": "Yard Sale 7627 Gallop Dr 78227 (11/05/26)",
@@ -97,15 +99,16 @@
       ],
       "zip": "78227",
       "in_person": true,
-      "seller": "Marycruz Gaytan"
+      "seller": "Marycruz Gaytan",
+      "date_verified": "facebook-live-2026-11-05"
     },
     {
       "address": "600 S C M ALLEN PKWY, SAN MARCOS, TX, 78666",
-      "dates": "Fri Nov 6 \u2013 Sat Nov 7",
-      "date_from": "2026-11-06",
+      "dates": "Thu Nov 5 \u2013 Sat Nov 7",
+      "date_from": "2026-11-05",
       "date_to": "2026-11-07",
       "end_date": "2026-11-07",
-      "date_start": "2026-11-06",
+      "date_start": "2026-11-05",
       "date_end": "2026-11-07",
       "date_bucket": "live",
       "hours": "",
@@ -127,7 +130,8 @@
       ],
       "zip": "78666",
       "in_person": true,
-      "seller": "Sulema Cuevas"
+      "seller": "Sulema Cuevas",
+      "date_verified": "facebook-live-2026-11-05"
     },
     {
       "address": "461 N SAN IGNACIO AVE, SAN ANTONIO, TX, 78228",
@@ -157,16 +161,17 @@
       ],
       "zip": "78228",
       "in_person": true,
-      "seller": "Moreno Garcia"
+      "seller": "Moreno Garcia",
+      "date_note": "No date on listing; kept Fri\u2013Sat default from ingest"
     },
     {
       "address": "723 CIRRUS CANYON, NEW BRAUNFELS, TX, 78130",
-      "dates": "Fri Nov 6",
+      "dates": "Fri Nov 6 \u2013 Sat Nov 7 (postponed)",
       "date_from": "2026-11-06",
-      "date_to": "2026-11-06",
-      "end_date": "2026-11-06",
+      "date_to": "2026-11-07",
+      "end_date": "2026-11-07",
       "date_start": "2026-11-06",
-      "date_end": "2026-11-06",
+      "date_end": "2026-11-07",
       "date_bucket": "live",
       "hours": "",
       "title": "POSTPONED due to rain this weekend Yard sale Friday and Saturday Nov. 6 & 7 723 Cirrus Canyon",
@@ -187,18 +192,19 @@
       ],
       "zip": "78130",
       "in_person": true,
-      "seller": "Cathy Hollifield Consford"
+      "seller": "Cathy Hollifield Consford",
+      "date_verified": "facebook-live-2026-11-05"
     },
     {
       "address": "3654 TWIN DISH WAY, NEW BRAUNFELS, TX, 78130",
-      "dates": "Sat Nov 7",
+      "dates": "Sat Nov 7, 8 AM \u2013 12 PM",
       "date_from": "2026-11-07",
       "date_to": "2026-11-07",
       "end_date": "2026-11-07",
       "date_start": "2026-11-07",
       "date_end": "2026-11-07",
       "date_bucket": "live",
-      "hours": "",
+      "hours": "8 AM \u2013 12 PM",
       "title": "Garage Sale!",
       "details": "Garage Sale on Saturday November 7th, 8-12, 3654 Twin Dish Way, Cloud Country neighborhood",
       "source": "Facebook Marketplace",
@@ -217,16 +223,17 @@
       ],
       "zip": "78130",
       "in_person": true,
-      "seller": "Emma Simmons"
+      "seller": "Emma Simmons",
+      "date_verified": "facebook-live-2026-11-05"
     },
     {
       "address": "1405 GRUENE RD, NEW BRAUNFELS, TX, 78130",
-      "dates": "Sat Nov 7, 9am-4pm",
+      "dates": "Sat Nov 7 \u2013 Sun Nov 8, 9am-4pm",
       "date_from": "2026-11-07",
-      "date_to": "2026-11-07",
-      "end_date": "2026-11-07",
+      "date_to": "2026-11-08",
+      "end_date": "2026-11-08",
       "date_start": "2026-11-07",
-      "date_end": "2026-11-07",
+      "date_end": "2026-11-08",
       "date_bucket": "live",
       "hours": "9am-4pm",
       "title": "YARD SALE THIS WEEKEND!!! 11/7-11/8 Sat & Sun 9am-4pm",
@@ -247,7 +254,8 @@
       ],
       "zip": "78130",
       "in_person": true,
-      "seller": "Dustin Fish"
+      "seller": "Dustin Fish",
+      "date_verified": "facebook-live-2026-11-05"
     },
     {
       "address": "25507 MESA RANCH, SAN ANTONIO, TX, 78258",
@@ -277,7 +285,8 @@
       ],
       "zip": "78258",
       "in_person": true,
-      "seller": "Victoria Caldwell"
+      "seller": "Victoria Caldwell",
+      "date_verified": "facebook-live-2026-11-05"
     },
     {
       "address": "501 STALLION SPRINGS DR, FISCHER, TX, 78623",
@@ -307,18 +316,19 @@
       ],
       "zip": "78623",
       "in_person": true,
-      "seller": "Shannon Coughlin Weil"
+      "seller": "Shannon Coughlin Weil",
+      "date_verified": "facebook-live-2026-11-05"
     },
     {
       "address": "12388 WELCOME DR, LIVE OAK, TX, 78233",
-      "dates": "Fri Nov 6 \u2013 Sat Nov 7",
+      "dates": "Fri Nov 6 \u2013 Sat Nov 7, 9 AM \u2013 3 PM",
       "date_from": "2026-11-06",
       "date_to": "2026-11-07",
       "end_date": "2026-11-07",
       "date_start": "2026-11-06",
       "date_end": "2026-11-07",
       "date_bucket": "live",
-      "hours": "",
+      "hours": "9 AM \u2013 3 PM",
       "title": "6 family garage sale",
       "details": "Fri 6th and Sat 7th, 6 family garage sale, half price items at 330 Shin Oak. 9-3 at both 330 Shin Oak and 12388 Welcome Dr. Tools, clothes, dishes, Christmas decor",
       "source": "Facebook Marketplace",
@@ -337,16 +347,17 @@
       ],
       "zip": "78233",
       "in_person": true,
-      "seller": "Nancy Kossaeth Hernandez"
+      "seller": "Nancy Kossaeth Hernandez",
+      "date_verified": "facebook-live-2026-11-05"
     },
     {
       "address": "1802 FRESNO DR, SAN ANTONIO, TX, 78201",
-      "dates": "Thu Nov 5",
+      "dates": "Thu Nov 5 \u2013 Fri Nov 6",
       "date_from": "2026-11-05",
-      "date_to": "2026-11-05",
-      "end_date": "2026-11-05",
+      "date_to": "2026-11-06",
+      "end_date": "2026-11-06",
       "date_start": "2026-11-05",
-      "date_end": "2026-11-05",
+      "date_end": "2026-11-06",
       "date_bucket": "live",
       "hours": "",
       "title": "Garage sale!",
@@ -367,18 +378,19 @@
       ],
       "zip": "78201",
       "in_person": true,
-      "seller": "Leah Pike"
+      "seller": "Leah Pike",
+      "date_verified": "facebook-live-2026-11-05"
     },
     {
       "address": "702 DONALDSON AVE, SAN ANTONIO, TX, 78201",
-      "dates": "Sat Nov 7, This Saturday 8 AM",
+      "dates": "Sat Nov 7, 8 AM \u2013 2 PM",
       "date_from": "2026-11-07",
       "date_to": "2026-11-07",
       "end_date": "2026-11-07",
       "date_start": "2026-11-07",
       "date_end": "2026-11-07",
       "date_bucket": "live",
-      "hours": "This Saturday 8 AM",
+      "hours": "8 AM \u2013 2 PM",
       "title": "Community Yard Sale",
       "details": "This Saturday 8 AM. 702 Donaldson Ave, San Antonio TX 78201",
       "source": "Facebook Events",
@@ -397,18 +409,19 @@
         "event"
       ],
       "zip": "78201",
-      "in_person": true
+      "in_person": true,
+      "date_verified": "facebook-live-2026-11-05"
     },
     {
       "address": "10623 GREEN ARBOR ST, SAN ANTONIO, TX, 78223",
-      "dates": "Fri Nov 6 \u2013 Sun Nov 8",
+      "dates": "Fri Nov 6 \u2013 Sun Nov 8, 9 AM \u2013 6 PM",
       "date_from": "2026-11-06",
       "date_to": "2026-11-08",
       "end_date": "2026-11-08",
       "date_start": "2026-11-06",
       "date_end": "2026-11-08",
       "date_bucket": "live",
-      "hours": "",
+      "hours": "9 AM \u2013 6 PM",
       "title": "Garage Sale",
       "details": "Fri Nov 6 - Nov 8. 10623 Green Arbor Street, San Antonio TX",
       "source": "Facebook Events",
@@ -427,18 +440,19 @@
         "event"
       ],
       "zip": "78223",
-      "in_person": true
+      "in_person": true,
+      "date_verified": "facebook-live-2026-11-05"
     },
     {
       "address": "7002 EMERALD VALLEY, SAN ANTONIO, TX, 78242",
-      "dates": "Thu Nov 5, Today 1:45 PM",
+      "dates": "Thu Nov 5, from 1:45 PM",
       "date_from": "2026-11-05",
       "date_to": "2026-11-05",
       "end_date": "2026-11-05",
       "date_start": "2026-11-05",
       "date_end": "2026-11-05",
       "date_bucket": "live",
-      "hours": "Today 1:45 PM",
+      "hours": "from 1:45 PM",
       "title": "Garage Sale - Everything Must Go!",
       "details": "Today 1:45 PM. 7002 Emerald Valley",
       "source": "Facebook Events",
@@ -457,18 +471,19 @@
         "event"
       ],
       "zip": "78242",
-      "in_person": true
+      "in_person": true,
+      "date_verified": "facebook-live-2026-11-05"
     },
     {
       "address": "8327 WICKERSHAM ST, SAN ANTONIO, TX, 78254",
-      "dates": "Fri Nov 6, Tomorrow 9 AM",
+      "dates": "Fri Nov 6, from 9 AM",
       "date_from": "2026-11-06",
       "date_to": "2026-11-06",
       "end_date": "2026-11-06",
       "date_start": "2026-11-06",
       "date_end": "2026-11-06",
       "date_bucket": "live",
-      "hours": "Tomorrow 9 AM",
+      "hours": "from 9 AM",
       "title": "Garage/Estate Sale",
       "details": "Tomorrow 9 AM. 8327 Wickersham St 78254",
       "source": "Facebook Events",
@@ -487,18 +502,19 @@
         "event"
       ],
       "zip": "78254",
-      "in_person": true
+      "in_person": true,
+      "date_verified": "facebook-live-2026-11-05"
     },
     {
       "address": "825 SHADY COVE LN, SPRING BRANCH, TX, 78070",
-      "dates": "Sat Nov 7, This Saturday 8 AM",
+      "dates": "Sat Nov 7, 8 AM \u2013 3 PM",
       "date_from": "2026-11-07",
       "date_to": "2026-11-07",
       "end_date": "2026-11-07",
       "date_start": "2026-11-07",
       "date_end": "2026-11-07",
       "date_bucket": "live",
-      "hours": "This Saturday 8 AM",
+      "hours": "8 AM \u2013 3 PM",
       "title": "Garage sale 825 Shady Cove Ln, Spring Branch TX 78070",
       "details": "This Saturday 8 AM. 825 Shady Cove Ln, Spring Branch TX",
       "source": "Facebook Events",
@@ -517,18 +533,19 @@
         "event"
       ],
       "zip": "78070",
-      "in_person": true
+      "in_person": true,
+      "date_verified": "facebook-live-2026-11-05"
     },
     {
       "address": "133 RIVER TRL, BOERNE, TX, 78006",
-      "dates": "Sat Nov 7, This Saturday 9 AM",
+      "dates": "Sat Nov 7, 9 AM \u2013 4 PM",
       "date_from": "2026-11-07",
       "date_to": "2026-11-07",
       "end_date": "2026-11-07",
       "date_start": "2026-11-07",
       "date_end": "2026-11-07",
       "date_bucket": "live",
-      "hours": "This Saturday 9 AM",
+      "hours": "9 AM \u2013 4 PM",
       "title": "Neighborhood Garage Sale",
       "details": "This Saturday 9 AM. 133 River Trail, Boerne TX",
       "source": "Facebook Events",
@@ -547,18 +564,19 @@
         "event"
       ],
       "zip": "78006",
-      "in_person": true
+      "in_person": true,
+      "date_verified": "facebook-live-2026-11-05"
     },
     {
       "address": "1285 CANYON BEND, CANYON LAKE, TX, 78133",
-      "dates": "Sat Nov 7, This Saturday 9 AM",
+      "dates": "Sat Nov 7, 9 AM \u2013 12 PM",
       "date_from": "2026-11-07",
       "date_to": "2026-11-07",
       "end_date": "2026-11-07",
       "date_start": "2026-11-07",
       "date_end": "2026-11-07",
       "date_bucket": "live",
-      "hours": "This Saturday 9 AM",
+      "hours": "9 AM \u2013 12 PM",
       "title": "Indoor Garage Sale",
       "details": "This Saturday 9 AM. Canyon Lake Forest 1285 Canyon Bend 78133",
       "source": "Facebook Events",
@@ -577,18 +595,19 @@
         "event"
       ],
       "zip": "78133",
-      "in_person": true
+      "in_person": true,
+      "date_verified": "facebook-live-2026-11-05"
     },
     {
       "address": "10 IMPALA WAY, SAN ANTONIO, TX, 78258",
-      "dates": "Fri Nov 6 \u2013 Sat Nov 7, This Sunday 9 AM",
-      "date_from": "2026-11-06",
-      "date_to": "2026-11-07",
-      "end_date": "2026-11-07",
-      "date_start": "2026-11-06",
-      "date_end": "2026-11-07",
+      "dates": "Thu Nov 5 \u2013 Sun Nov 8, 9 AM \u2013 5 PM",
+      "date_from": "2026-11-05",
+      "date_to": "2026-11-08",
+      "end_date": "2026-11-08",
+      "date_start": "2026-11-05",
+      "date_end": "2026-11-08",
       "date_bucket": "live",
-      "hours": "This Sunday 9 AM",
+      "hours": "9 AM \u2013 5 PM",
       "title": "HUGE STONE OAK MOVING SALE!",
       "details": "This Sunday 9 AM. 10 Impala Way, San Antonio TX 78258",
       "source": "Facebook Events",
@@ -607,18 +626,19 @@
         "event"
       ],
       "zip": "78258",
-      "in_person": true
+      "in_person": true,
+      "date_verified": "facebook-live-2026-11-05"
     },
     {
       "address": "8826 OAKBROOK ST, SAN ANTONIO, TX, 78221",
-      "dates": "Fri Nov 6 \u2013 Sat Nov 7",
+      "dates": "Fri Nov 6 \u2013 Sat Nov 7, 8 AM \u2013 5 PM",
       "date_from": "2026-11-06",
       "date_to": "2026-11-07",
       "end_date": "2026-11-07",
       "date_start": "2026-11-06",
       "date_end": "2026-11-07",
       "date_bucket": "live",
-      "hours": "",
+      "hours": "8 AM \u2013 5 PM",
       "title": "YARD SALE",
       "details": "Fri Nov 6 - Nov 7. 8826 Oakbrook, San Antonio TX 78221",
       "source": "Facebook Events",
@@ -637,18 +657,19 @@
         "event"
       ],
       "zip": "78221",
-      "in_person": true
+      "in_person": true,
+      "date_verified": "facebook-live-2026-11-05"
     },
     {
       "address": "1106 FIORELLA ST, CASTROVILLE, TX, 78009",
-      "dates": "Sat Nov 7, This Saturday 8:30 AM",
+      "dates": "Sat Nov 7, from 8:30 AM",
       "date_from": "2026-11-07",
       "date_to": "2026-11-07",
       "end_date": "2026-11-07",
       "date_start": "2026-11-07",
       "date_end": "2026-11-07",
       "date_bucket": "live",
-      "hours": "This Saturday 8:30 AM",
+      "hours": "from 8:30 AM",
       "title": "Rummage Sale at Zion Lutheran (Castroville City Wide Yard Sale)",
       "details": "This Saturday 8:30 AM. 1106 Fiorella St, Castroville TX 78009",
       "source": "Facebook Events",
@@ -667,18 +688,19 @@
         "event"
       ],
       "zip": "78009",
-      "in_person": true
+      "in_person": true,
+      "date_verified": "facebook-live-2026-11-05"
     },
     {
       "address": "117 DEER TRL, BOERNE, TX, 78006",
-      "dates": "Sat Nov 7, This Saturday 8 AM",
+      "dates": "Sat Nov 7, 8 AM \u2013 2 PM",
       "date_from": "2026-11-07",
       "date_to": "2026-11-07",
       "end_date": "2026-11-07",
       "date_start": "2026-11-07",
       "date_end": "2026-11-07",
       "date_bucket": "live",
-      "hours": "This Saturday 8 AM",
+      "hours": "8 AM \u2013 2 PM",
       "title": "Estate Sale / Craft Sale",
       "details": "This Saturday 8 AM. 117 Deer Trail, Boerne TX",
       "source": "Facebook Events",
@@ -697,7 +719,8 @@
         "event"
       ],
       "zip": "78006",
-      "in_person": true
+      "in_person": true,
+      "date_verified": "facebook-live-2026-11-05"
     },
     {
       "address": "Kallison Ranch community, San Antonio, TX 78254",
@@ -756,18 +779,19 @@
         "facebook"
       ],
       "zip": "78223",
-      "in_person": true
+      "in_person": true,
+      "date_note": "No date on listing; Thu Nov 5 inferred from list time (~2h ago)"
     },
     {
       "address": "4011 Emory Oak Dr, San Antonio, TX 78223",
-      "dates": "Sat Nov 7, 9 AM",
+      "dates": "Sat Nov 7, 9 AM \u2013 3 PM",
       "date_from": "2026-11-07",
       "date_to": "2026-11-07",
       "end_date": "2026-11-07",
       "date_start": "2026-11-07",
       "date_end": "2026-11-07",
       "date_bucket": "live",
-      "hours": "9 AM",
+      "hours": "9 AM \u2013 3 PM",
       "title": "FALL Community Wide Rummage Sale & Vendor Market",
       "details": "This Saturday 9 AM. 4011 Emory Oak Dr, San Antonio TX 78223",
       "source": "Facebook Events",
@@ -788,18 +812,19 @@
       ],
       "zip": "78223",
       "in_person": true,
-      "resolve_note": "Nominatim street-level (house number not in census)"
+      "resolve_note": "Nominatim street-level (house number not in census)",
+      "date_verified": "facebook-live-2026-11-05"
     },
     {
       "address": "4114 SW Loop 410, San Antonio, TX 78227",
-      "dates": "This Saturday 8 AM",
+      "dates": "Sat Nov 7, 8 AM",
       "date_from": "2026-11-07",
-      "date_to": "2026-11-08",
-      "end_date": "2026-11-08",
+      "date_to": "2026-11-07",
+      "end_date": "2026-11-07",
       "date_start": "2026-11-07",
-      "date_end": "2026-11-08",
+      "date_end": "2026-11-07",
       "date_bucket": "live",
-      "hours": "",
+      "hours": "8 AM",
       "title": "Red Hot Rummage Sale",
       "details": "This Saturday 8 AM. 4114 SW Loop 410, San Antonio TX 78227",
       "source": "Facebook Events",
@@ -819,7 +844,8 @@
       ],
       "zip": "78227",
       "in_person": true,
-      "resolve_note": "Census flipped SW\u2192NW; pinned to SW Loop 410 corridor near listing zip"
+      "resolve_note": "Census flipped SW\u2192NW; pinned to SW Loop 410 corridor near listing zip",
+      "date_verified": "facebook-live-2026-11-05"
     }
   ]
 }
