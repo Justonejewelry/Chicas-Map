@@ -45,6 +45,7 @@
     }
     s.textContent =
       "#chica-site-bar{position:sticky;top:0;z-index:90;display:flex;align-items:center;justify-content:space-between;height:64px;padding:0 12px;background:rgba(18,18,18,.92);border-bottom:1px solid rgba(255,255,255,.08);font-family:Inter,system-ui,sans-serif}" +
+      "body:has(header:not(#chica-site-bar)) #chica-site-bar{display:none!important;visibility:hidden!important;pointer-events:none!important;height:0!important;overflow:hidden!important;border:0!important;padding:0!important;margin:0!important}" +
       "#chica-site-bar .tools{display:flex;align-items:center;gap:8px}" +
       "#chica-mark{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;border:0;border-radius:999px;background:transparent;cursor:pointer}" +
       "#chica-mark img,header a[data-chica-mark='1'] img{width:36px;height:36px;border-radius:999px;object-fit:cover;background:#121212}" +
@@ -183,7 +184,25 @@
     });
   }
 
+  function realHeader() {
+    var headers = document.querySelectorAll("header");
+    for (var i = 0; i < headers.length; i++) {
+      if (headers[i].id !== "chica-site-bar") return headers[i];
+    }
+    return null;
+  }
+
+  function dropInjectedBar() {
+    var bar = document.getElementById("chica-site-bar");
+    if (!bar || !bar.parentNode) return;
+    if (realHeader() || brandLink()) bar.parentNode.removeChild(bar);
+  }
+
   function injectBar() {
+    if (realHeader()) {
+      dropInjectedBar();
+      return null;
+    }
     if (document.getElementById("chica-site-bar")) return document.getElementById("chica-site-bar");
     var bar = document.createElement("header");
     bar.id = "chica-site-bar";
@@ -259,16 +278,21 @@
     if (mini && mini.parentNode) mini.parentNode.removeChild(mini);
     var details = menu();
     var brand = brandLink();
-    if (brand) {
-      bind(brand, details);
-      hideHeaderNoise();
-      var bar = document.getElementById("chica-site-bar");
-      if (bar && bar.parentNode) bar.parentNode.removeChild(bar);
-      var header = brand.closest("header");
-      if (header && details.parentNode !== header) header.appendChild(details);
+    var native = realHeader();
+    if (brand || native) {
+      dropInjectedBar();
+      if (brand) {
+        bind(brand, details);
+        hideHeaderNoise();
+        var header = brand.closest("header") || native;
+        if (header && details.parentNode !== header) header.appendChild(details);
+      } else if (native && details.parentNode !== native) {
+        native.appendChild(details);
+      }
       return;
     }
     var injected = injectBar();
+    if (!injected) return;
     bind(document.getElementById("chica-mark"), details);
     if (details.parentNode !== injected) injected.appendChild(details);
   }

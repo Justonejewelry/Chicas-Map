@@ -33,6 +33,8 @@
     s.textContent =
       
       "header{border-color:rgba(255,255,255,.08)!important;background:rgba(18,18,18,.86)!important}" +
+      "body:has(header:not(#chica-site-bar)) #chica-site-bar{display:none!important;height:0!important;overflow:hidden!important;border:0!important;padding:0!important;margin:0!important}" +
+      "header + header{display:none!important}" +
       "main{padding-top:28px!important}" +
       "main h1{font-weight:650!important;letter-spacing:-.035em!important;line-height:1.05!important}" +
       "main a[data-chica-keep='1']{display:inline-flex!important;min-height:48px;align-items:center;justify-content:center;padding:0 22px!important;border-radius:980px!important;background:#c513af!important;color:#fff!important;text-decoration:none!important;font:600 16px/1 Inter,system-ui,sans-serif!important;letter-spacing:-.015em!important;border:1px solid rgba(255,255,255,.4)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.62),inset 0 -2px 0 rgba(0,0,0,.28),0 8px 16px rgba(0,0,0,.28)!important;background-image:linear-gradient(180deg,rgba(255,255,255,.46),rgba(255,255,255,.08) 46%,rgba(0,0,0,.2))!important}" +
