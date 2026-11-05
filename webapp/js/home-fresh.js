@@ -98,13 +98,6 @@
     });
     section.appendChild(list);
 
-    var cta = document.createElement("a");
-    cta.href = dataUrl().replace("/data/cities/san-antonio.json", "/map/");
-    cta.textContent = es() ? "Abrir el mapa" : "Open the map";
-    cta.setAttribute("data-chica-keep", "1");
-    cta.style.cssText = "display:inline-flex;margin-top:16px;min-height:44px;align-items:center;padding:0 18px;border-radius:980px;background:#c513af;color:#fff;text-decoration:none;font:600 15px/1 Inter,system-ui,sans-serif";
-    section.appendChild(cta);
-
     return section;
   }
 
@@ -153,9 +146,13 @@
     hideStale(main);
     if (document.getElementById("chica-fresh-weekend")) return;
     var section = buildSection(cached.sales, cached.total);
-    var heroBtn = main.querySelector("a[data-chica-keep='1']");
-    if (heroBtn && heroBtn.parentNode) heroBtn.parentNode.insertBefore(section, heroBtn.nextSibling);
-    else main.appendChild(section);
+    var mini = document.getElementById("chica-home-mini-map");
+    if (mini && mini.parentNode) mini.parentNode.insertBefore(section, mini.nextSibling);
+    else {
+      var heroBtn = main.querySelector("a[data-chica-keep='1']");
+      if (heroBtn && heroBtn.parentNode) heroBtn.parentNode.insertBefore(section, heroBtn.nextSibling);
+      else main.appendChild(section);
+    }
   }
 
   function run() {

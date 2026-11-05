@@ -73,11 +73,14 @@
   function run() {
     removeCrime();
     var hunt = findHunt();
-    if (!hunt) return;
-    var c = copy();
-    relabel(hunt, c.sales);
-    if (hrefOf(hunt).indexOf("/map") !== -1) hunt.setAttribute("href", SALES_HREF);
-    hunt.setAttribute("aria-label", c.sales);
+    if (hunt && hunt.parentNode) hunt.parentNode.removeChild(hunt);
+    Array.from(document.querySelectorAll("header a, [role='banner'] a")).forEach(function (el) {
+      var t = textOf(el).toLowerCase();
+      var href = hrefOf(el);
+      if (href.indexOf("/map") === -1) return;
+      if (t.indexOf("map") === -1 && t.indexOf("mapa") === -1 && t.indexOf("hunt") === -1 && t.indexOf("open") === -1) return;
+      if (el.parentNode) el.parentNode.removeChild(el);
+    });
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", run);
