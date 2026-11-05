@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, MapPinned, Route as RouteIcon, Layers, Share2, HeartHandshake, MessageCircle } from "lucide-react";
+import { MapPinned, Route as RouteIcon, Layers, Share2, HeartHandshake, MessageCircle } from "lucide-react";
 import { useEffect, useState } from "react";
 import { SiteFooter, SiteHeader } from "@/components/site-header";
 import {
@@ -41,10 +41,6 @@ function Home() {
               Chica’s Map brings San Antonio neighbors useful local information in one place — sales, events, community resources, and the details that help you plan your day.
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-3">
-              <Link to="/map" className="inline-flex h-12 items-center gap-2 rounded-full bg-pine px-5 text-sm font-semibold text-cream">
-                <MapPinned className="size-4" strokeWidth={1.75} />
-                Open the map
-              </Link>
               <Link to="/submit" className="inline-flex h-12 items-center gap-2 rounded-full bg-paper px-5 text-sm font-semibold text-ink ring-1 ring-line">
                 <HeartHandshake className="size-4" />
                 Share with the pack
@@ -58,6 +54,12 @@ function Home() {
                 Share Chica
               </button>
             </div>
+            {/* Mini map painted by webapp/js/home-mini-map.js; click opens full-screen /map. */}
+            <a id="chica-home-mini-map" href="/Chicas-Map/map/" data-chica-keep="1" className="mt-5 block max-w-xl" aria-label="Open the map full screen">
+              <div className="relative aspect-[16/10] min-h-[200px] max-h-[280px] overflow-hidden rounded-[18px] bg-night ring-1 ring-line">
+                <div id="chica-home-mini-leaflet" className="absolute inset-0" />
+              </div>
+            </a>
             <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted">
               Chica listens. Got a correction, a better source, or a community event we should know about? Send it. Your time matters, and every useful tip makes the map stronger.
             </p>
@@ -83,15 +85,13 @@ function Home() {
                 <p className="text-xs font-bold tracking-[0.16em] text-pine-mid uppercase">Community pulse</p>
                 <h2 className="mt-1 font-display text-2xl font-bold">Where the pack is active</h2>
               </div>
-              <Link to="/map" className="hidden text-sm font-semibold text-pine-mid sm:inline">See it on the map</Link>
             </div>
             <ul className="mt-5 grid gap-2 sm:grid-cols-2 lg:grid-cols-5">
               {HOT_ZONES.map((z) => (
                 <li key={z.name}>
-                  <Link to="/map" search={{ zone: z.name }} className="flex h-full flex-col rounded-2xl bg-bg px-4 py-4 ring-1 ring-line transition-colors hover:ring-pine">
+                  <div className="flex h-full flex-col rounded-2xl bg-bg px-4 py-4 ring-1 ring-line">
                     <span className="font-display text-sm font-semibold text-ink">{z.name}</span>
-                    <span className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-pine-mid">Open map <ArrowRight className="size-3.5" /></span>
-                  </Link>
+                  </div>
                 </li>
               ))}
             </ul>
