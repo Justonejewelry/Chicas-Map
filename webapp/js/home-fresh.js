@@ -80,13 +80,13 @@
       "#chica-fresh-weekend .hd h2{margin:0;font:650 18px/1.1 Syne,system-ui,sans-serif;letter-spacing:-.02em}" +
       "#chica-fresh-weekend .hd p{margin:0;color:#a1a1aa;font:500 13px/1 Inter,system-ui,sans-serif;white-space:nowrap}" +
       "#chica-fresh-weekend .rail{overflow:hidden;border:1px solid rgba(255,255,255,.12);border-radius:14px;background:rgba(255,255,255,.03);-webkit-mask-image:linear-gradient(90deg,transparent,#000 28px,#000 calc(100% - 28px),transparent);mask-image:linear-gradient(90deg,transparent,#000 28px,#000 calc(100% - 28px),transparent)}" +
-      "#chica-fresh-weekend .track{display:flex;width:max-content;gap:10px;padding:12px;animation:chica-fresh-scroll 42s linear infinite;will-change:transform}" +
+      "#chica-fresh-weekend .track{display:flex;width:max-content;gap:14px;padding:14px;animation:chica-fresh-scroll 42s linear infinite;will-change:transform}" +
       "#chica-fresh-weekend .rail:hover .track,#chica-fresh-weekend .rail:focus-within .track{animation-play-state:paused}" +
-      "#chica-fresh-weekend a.chip{flex:0 0 auto;display:flex;flex-direction:column;justify-content:center;gap:4px;min-width:220px;max-width:280px;min-height:72px;padding:12px 14px;border-radius:12px;border:1px solid rgba(197,19,175,.35);background:linear-gradient(180deg,rgba(197,19,175,.16),rgba(255,255,255,.03));color:inherit;text-decoration:none}" +
+      "#chica-fresh-weekend a.chip{flex:0 0 auto;display:flex;flex-direction:column;justify-content:center;gap:6px;min-width:240px;width:240px;max-width:240px;min-height:84px;padding:12px 14px;border-radius:12px;border:1px solid rgba(197,19,175,.35);background:linear-gradient(180deg,rgba(197,19,175,.16),rgba(255,255,255,.03));color:inherit;text-decoration:none;box-sizing:border-box}" +
       "#chica-fresh-weekend a.chip:hover,#chica-fresh-weekend a.chip:focus-visible{border-color:#c513af;outline:2px solid #fffdf8;outline-offset:2px}" +
-      "#chica-fresh-weekend a.chip .t{font:650 14px/1.25 Inter,system-ui,sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}" +
-      "#chica-fresh-weekend a.chip .m{font:500 12px/1.2 Inter,system-ui,sans-serif;color:#a1a1aa;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}" +
-      "#chica-fresh-weekend a.chip .tag{font:700 10px/1 Inter,system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#e879d6}" +
+      "#chica-fresh-weekend a.chip .tag{display:block;margin:0 0 2px;font:700 10px/1.2 Inter,system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#e879d6}" +
+      "#chica-fresh-weekend a.chip .t{display:block;margin:0;font:650 14px/1.3 Inter,system-ui,sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}" +
+      "#chica-fresh-weekend a.chip .m{display:block;margin:0;font:500 12px/1.35 Inter,system-ui,sans-serif;color:#a1a1aa;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}" +
       "@keyframes chica-fresh-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}" +
       "@media (prefers-reduced-motion:reduce){#chica-fresh-weekend .track{animation:none;overflow-x:auto;max-width:100%;width:100%}}" +
       "/* Hide bundled Latest posted sales list */" +
