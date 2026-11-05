@@ -1,18 +1,18 @@
 # Chica's Map -- Community Events Swarm v2.7
 
-Run: 2026-11-05T10:12:32-06:00
+Run: 2026-11-05T12:35:54-06:00
 Sources scanned: **48**
 Candidates discovered: **936**
 With parsed dates: **779**
 With street/venue address: **569**
-Promoted this run: **0**
+Promoted this run: **1**
 Kept from prior feed: **271**
 Purged from prior feed: **0**
 Source errors: **7**
-Rejected by Sentinel: **340**
+Rejected by Sentinel: **339**
 
 ## Promoted (passed Events Sentinel)
-_None this run._
+- **Library Advisory Commission Meeting** -- 2026-11-18 -- 2150 Universal City Boulevard Universal -- conf 98 -- https://www.universalcitytexas.gov/calendar.aspx?EID=4540
 
 ## Review Queue
 - **San Antonio Public Library Events** -- conf 100 -- Adult Poetry Club -- 2026-11-07 -- 15060 Judson Rd -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D194667674
@@ -28,7 +28,6 @@ _None this run._
 - **San Antonio Public Library Events** -- conf 100 -- Preschool Play & Explore -- 2026-11-05 -- 530 Heimer San Antonio, TX 78232 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D212676954
 - **City of San Antonio Parks & Recreation** -- conf 100 -- Tennis Clinics -- 2026-08-31 -- 1503 San Pedro Ave -- https://www.sanantonio.gov/ParksAndRec/News-Events/Events/Event-Details/ArtMID/15385/ArticleID/29348/Tennis-Clinics
 - **City of San Antonio Parks & Recreation** -- conf 100 -- 2026 Fall Tennis Clinics -- 2026-10-06 -- 1503 San Pedro Ave -- https://www.sanantonio.gov/ParksAndRec/News-Events/Events/Event-Details/ArtMID/15385/ArticleID/29370/2026-Fall-Tennis-Clinics
-- **Bexar County Clerk — Records on the Run** -- conf 99 -- Bexar County Clerk's Mobile Satellite Office will be at Bexar County Precinct 2 Constable's Office of Constable Leticia R. Vazquez -- 2026-11-05 -- 7723 Guilbeau Rd -- https://www.bexar.org/calendar.aspx?EID=7286
 - **Bexar County Clerk — Records on the Run** -- conf 99 -- Bexar County Clerk's Mobile Satellite Office will be at Bexar County Precinct 3 Justice of the Peace Office -- 2026-11-17 -- 320 Interpark Blvd -- https://www.bexar.org/calendar.aspx?EID=7335
 - **Bexar County Clerk — Records on the Run** -- conf 99 -- Bexar County Clerk's Mobile Satellite Office will be at McDonald's on Walzem - The Shields Legacy LLC PCT 4 Community -- 2026-11-19 -- 5700 Walzem Rd -- https://www.bexar.org/calendar.aspx?EID=7681
 - **Bexar County Clerk — Records on the Run** -- conf 99 -- Bexar County Clerk's Mobile Satellite Office will be at SBOC-Bexar County Small Business Opportunity Center -- 2026-11-12 -- 8200 Perrin Beitel Rd -- https://www.bexar.org/calendar.aspx?EID=7808
@@ -175,6 +174,7 @@ _None this run._
 - **Boerne Calendar** -- conf 98 -- City Council Meeting -- 2027-09-28 -- 447 N. Main St Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22195
 - **Boerne Calendar** -- conf 98 -- City Council Meeting -- 2027-10-26 -- 447 N. Main St Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22196
 - **Boerne Calendar** -- conf 98 -- City Council Meeting -- 2027-11-23 -- 447 N. Main St Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22197
+- **Boerne Calendar** -- conf 98 -- City Council Meeting -- 2027-12-28 -- 447 N. Main St Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22198
 
 ## Rejected by Sentinel
 - Baby Story Time -- event_id=2026-11-05_baby-story-time_0efcc09a5310: duplicate id already in feed
@@ -200,7 +200,6 @@ _None this run._
 - Bexar County Clerk's Mobile Satellite Office will be at McDonald's on Walzem - The Shields Legacy LLC PCT 4 Community -- event_id=2026-11-19_bexar-county-clerk-s-mobile_d37973340473: duplicate id already in feed
 - Bexar County Clerk's Mobile Satellite Office will be at Bexar County Precinct 3 Justice of the Peace Office -- event_id=2026-11-17_bexar-county-clerk-s-mobile_99f57b061982: duplicate id already in feed
 - Bexar County Clerk's Mobile Satellite Office will be at SBOC-Bexar County Small Business Opportunity Center -- event_id=2026-11-12_bexar-county-clerk-s-mobile_44b406198aa2: duplicate id already in feed
-- Bexar County Clerk's Mobile Satellite Office will be at Bexar County Precinct 2 Constable's Office of Constable Leticia R. Vazquez -- event_id=2026-11-05_bexar-county-clerk-s-mobile_ed672b3cf582: duplicate id already in feed
 - City Council Meeting -- event_id=2030-10-03_city-council-meeting_ef1f6c2ecac6: date 2030-10-03 is more than 90 days out
 - City Council Meeting -- event_id=2030-09-05_city-council-meeting_f23fb16297f8: date 2030-09-05 is more than 90 days out
 - City Council Meeting -- event_id=2030-08-01_city-council-meeting_25fce9f9ca14: date 2030-08-01 is more than 90 days out
@@ -227,6 +226,7 @@ _None this run._
 - City Council Meeting -- event_id=2029-06-07_city-council-meeting_e5dc60650f6b: date 2029-06-07 is more than 90 days out
 - City Council Meeting -- event_id=2029-05-17_city-council-meeting_7d2805569735: date 2029-05-17 is more than 90 days out
 - City Council Meeting -- event_id=2029-05-03_city-council-meeting_aa98323d0cb4: date 2029-05-03 is more than 90 days out
+- City Council Meeting -- event_id=2029-04-19_city-council-meeting_ab3e3bd9eac5: date 2029-04-19 is more than 90 days out
 
 ## Source Errors
 - Bexar County Events: HTTP 429 Too Many Requests

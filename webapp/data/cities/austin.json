@@ -751,8 +751,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.626983937226015,
-      "lon": -97.75224728592573,
+      "lat": 30.630092093891484,
+      "lon": -97.75172530864899,
       "geocode": "source",
       "company": null,
       "in_person": true,
@@ -1607,6 +1607,48 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "cl-andergaragesale1o4vk4xm1puwnhhufuzdaj"
+    },
+    {
+      "address": "200 Valley Vista Rd, Wimberley, TX 78676",
+      "dates": "Sat Nov 7 – Sat Nov 7",
+      "date_from": "11/07/2026",
+      "date_to": "11/07/2026",
+      "end_date": "2026-11-07",
+      "title": "Garage Sale",
+      "details": "",
+      "source": "GarageSaleFinder",
+      "url": "https://garagesalefinder.com/s/N9DGz/200-valley-vista-rd-wimberley-tx-78676",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.65,
+      "status": "verified",
+      "lat": 30.2672,
+      "lon": -97.7431,
+      "geocode": "city-center"
+    },
+    {
+      "address": "303 N. Ave C near Lexington Rd, Austin, TX",
+      "dates": "2026-11-07 – 2026-11-07",
+      "date_from": "2026-11-07",
+      "date_to": "2026-11-07",
+      "end_date": "2026-11-07",
+      "hours": null,
+      "title": "Church Wide Rummage Sale",
+      "details": "QR Code Link to This Post Church Wide Rummage Sale Sat., Nov. 7, starting at 8:00 a.m. First Presbyterian Church - Elgin 303 N. Ave C - corner of Ave C and Lexington Rd Miscellaneous items Come one, come all!",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/elgin-church-wide-rummage-sale/69j44dddmL4AjMsita8r7s",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 30.3231,
+      "lon": -97.3737,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-widerummagesale69j44dddml4ajmsita8r7s"
     }
   ],
   "hot_zones": [
@@ -1625,9 +1667,9 @@
     "gsalr.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 74,
+  "total_locations": 76,
   "status": "live",
   "date": "2026-11-05",
-  "last_refresh": "2026-11-05T10:11:17-06:00",
+  "last_refresh": "2026-11-05T12:34:38-06:00",
   "permits": []
 }

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-05T10:12:32-06:00",
+  "updated": "2026-11-05T12:35:54-06:00",
   "city": "san-antonio",
   "version": 2.7,
   "horizonDays": 90,
@@ -4880,6 +4880,24 @@
       "sourceId": "olmos-park-ics",
       "reliability": 88,
       "discoveredAt": "2026-11-05T05:16:55-06:00",
+      "confidence": 98
+    },
+    {
+      "id": "2026-11-18_library-advisory-commission_f8d7e9eed11c",
+      "title": "Library Advisory Commission Meeting",
+      "date": "2026-11-18",
+      "endDate": "",
+      "time": "5:30 PM-11:59 PM",
+      "address": "2150 Universal City Boulevard Universal",
+      "lat": null,
+      "lng": null,
+      "category": "other",
+      "description": "",
+      "url": "https://www.universalcitytexas.gov/calendar.aspx?EID=4540",
+      "source": "Universal City Calendar",
+      "sourceId": "universal-city-ics",
+      "reliability": 88,
+      "discoveredAt": "2026-11-05T12:35:27-06:00",
       "confidence": 98
     }
   ]

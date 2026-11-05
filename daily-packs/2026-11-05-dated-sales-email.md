@@ -69,9 +69,10 @@ Map only shows pins whose listed dates include today.
 - Moving Out Sale! — 26765 Orchid Trl, Boerne, TX 78006 [2026-11-07 → 2026-11-08]
 - City-wide garage sale — 517 Madrid St St, Castroville, TX 78009 [2026-11-07 → 2026-11-07]
 - not your average garage sale. — 8402 fairway point, Fair Oaks Ranch, TX 78015 [2026-11-07 → 2026-11-07]
+- Garage Sale — 200 Valley Vista Rd, Wimberley, TX 78676 [2026-11-07 → 2026-11-07]
 - Raise a glass for Mr. Mike - Estate Sale! — hidden, Universal City, TX 78233 [2026-11-07 → 2026-11-08] | 2026-11-07 9:00 am-3:00 pm; 2026-11-08 9:00 am-3:00 pm
-- Multiple Garage Sales Canyon Oaks Estates (Off Henderson Pass) 7&8 Nov 8Am-4Pm — 2459 Rim Oak, San Antonio, TX [2026-11-07 → 2026-11-08]
 - Raise A Glass For Mr. Mike - Estate Sale! — Universal City, TX [2026-11-07 → 2026-11-08]
+- Multiple Garage Sales Canyon Oaks Estates (Off Henderson Pass) 7&8 Nov 8Am-4Pm — 2459 Rim Oak, San Antonio, TX [2026-11-07 → 2026-11-08]
 - Epic Yard Sale!!! — 108 Harmon Dr, San Antonio, TX [2026-11-07 → 2026-11-07]
 - Moving Out Sale! — 26765 Orchid Trl, Boerne, TX [2026-11-07 → 2026-11-08]
 - Community Garage Sale — 329 Washita Riv, Cibolo, TX [2026-11-07 → 2026-11-07]
