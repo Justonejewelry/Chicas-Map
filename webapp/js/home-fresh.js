@@ -82,11 +82,11 @@
       "#chica-fresh-weekend .rail{overflow:hidden;border:1px solid rgba(255,255,255,.12);border-radius:14px;background:rgba(255,255,255,.03);-webkit-mask-image:linear-gradient(90deg,transparent,#000 28px,#000 calc(100% - 28px),transparent);mask-image:linear-gradient(90deg,transparent,#000 28px,#000 calc(100% - 28px),transparent)}" +
       "#chica-fresh-weekend .track{display:flex;width:max-content;gap:14px;padding:14px;animation:chica-fresh-scroll 42s linear infinite;will-change:transform}" +
       "#chica-fresh-weekend .rail:hover .track,#chica-fresh-weekend .rail:focus-within .track{animation-play-state:paused}" +
-      "#chica-fresh-weekend a.chip{flex:0 0 auto;display:flex;flex-direction:column;justify-content:center;gap:6px;min-width:240px;width:240px;max-width:240px;min-height:84px;padding:12px 14px;border-radius:12px;border:1px solid rgba(197,19,175,.35);background:linear-gradient(180deg,rgba(197,19,175,.16),rgba(255,255,255,.03));color:inherit;text-decoration:none;box-sizing:border-box}" +
+      "#chica-fresh-weekend a.chip{flex:0 0 auto!important;display:flex!important;flex-direction:column!important;align-items:stretch!important;justify-content:center!important;gap:6px!important;min-width:260px!important;width:260px!important;max-width:260px!important;min-height:92px!important;height:auto!important;padding:14px 16px!important;border-radius:12px!important;border:1px solid rgba(197,19,175,.35)!important;background:linear-gradient(180deg,rgba(197,19,175,.16),rgba(255,255,255,.03))!important;color:inherit!important;text-decoration:none!important;box-sizing:border-box!important;box-shadow:none!important;font:inherit!important;letter-spacing:normal!important;white-space:normal!important}" +
       "#chica-fresh-weekend a.chip:hover,#chica-fresh-weekend a.chip:focus-visible{border-color:#c513af;outline:2px solid #fffdf8;outline-offset:2px}" +
-      "#chica-fresh-weekend a.chip .tag{display:block;margin:0 0 2px;font:700 10px/1.2 Inter,system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#e879d6}" +
-      "#chica-fresh-weekend a.chip .t{display:block;margin:0;font:650 14px/1.3 Inter,system-ui,sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}" +
-      "#chica-fresh-weekend a.chip .m{display:block;margin:0;font:500 12px/1.35 Inter,system-ui,sans-serif;color:#a1a1aa;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}" +
+      "#chica-fresh-weekend a.chip .tag{display:block!important;margin:0 0 4px!important;font:700 10px/1.2 Inter,system-ui,sans-serif!important;letter-spacing:.08em!important;text-transform:uppercase!important;color:#e879d6!important;white-space:nowrap!important}" +
+      "#chica-fresh-weekend a.chip .t{display:block!important;margin:0!important;font:650 14px/1.35 Inter,system-ui,sans-serif!important;letter-spacing:normal!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important;color:inherit!important}" +
+      "#chica-fresh-weekend a.chip .m{display:block!important;margin:2px 0 0!important;font:500 12px/1.4 Inter,system-ui,sans-serif!important;letter-spacing:normal!important;color:#a1a1aa!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important}" +
       "@keyframes chica-fresh-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}" +
       "@media (prefers-reduced-motion:reduce){#chica-fresh-weekend .track{animation:none;overflow-x:auto;max-width:100%;width:100%}}" +
       "/* Hide bundled Latest posted sales list */" +
@@ -98,7 +98,6 @@
     var a = document.createElement("a");
     a.className = "chip";
     a.href = mapHref(sale);
-    a.setAttribute("data-chica-keep", "1");
     var kind = String(sale.type || sale.kind || "garage");
     var tag = document.createElement("span");
     tag.className = "tag";
