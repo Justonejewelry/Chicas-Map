@@ -77,24 +77,6 @@
       "external_id": "cl-etownestatesale7cqrrdl7vkcpxrd1wusuay"
     },
     {
-      "address": "online only, New Braunfels, TX 78130",
-      "dates": "Thu Oct 15 – Wed Nov 4",
-      "date_from": "10/15/2026",
-      "date_to": "11/04/2026",
-      "end_date": "2026-11-04",
-      "title": "Fantastic Garden Ridge Estate Auction Online Only Auction",
-      "details": "",
-      "source": "GarageSaleFinder",
-      "url": "https://garagesalefinder.com/s/N9O3L/online-only-new-braunfels-tx-78130",
-      "photos": 0,
-      "type": "estate",
-      "confidence": 0.65,
-      "status": "verified",
-      "lat": 30.2672,
-      "lon": -97.7431,
-      "geocode": "city-center"
-    },
-    {
       "address": "Off of Rebecca Creek Rd Spring Branch, TX 78070, Spring Branch, TX 78070",
       "dates": "Tue Oct 27 – Tue Nov 17",
       "date_from": "10/27/2026",
@@ -239,54 +221,6 @@
       "company": "Estate Sales America",
       "in_person": true,
       "external_id": "eso-2471227"
-    },
-    {
-      "address": "1601 s i35 frontage rd, Austin, TX",
-      "dates": "2026-11-02 – 2026-11-04",
-      "date_from": "2026-11-02",
-      "date_to": "2026-11-04",
-      "end_date": "2026-11-04",
-      "hours": null,
-      "title": "ANTIQUES COMICS TOYS VINYL RECORDS AND MUCH MUCH MORE",
-      "details": "QR Code Link to This Post Located at round rock antique mall Open m-sat 10am to 6pm Sunday 12-6pm When you walk in turn left and go all the way down to find us!",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/round-rock-antiques-comics-toys-vinyl/gY8eN92b7yrcjenAjbT4xg",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.494235,
-      "lon": -97.676139,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-comicstoysvinylgy8en92b7yrcjenajbt4xg"
-    },
-    {
-      "address": "SPICEWOOD SPRINGS, Austin, TX",
-      "dates": "2026-11-02 – 2026-11-04",
-      "date_from": "2026-11-02",
-      "date_to": "2026-11-04",
-      "end_date": "2026-11-04",
-      "hours": null,
-      "title": "CLOSET CLEAN OUT | New w/ Tags & Pre-owned Vintage Designer Clothing",
-      "details": "QR Code Link to This Post Closet Clean Out | New with Tags and Pre-owned Vintage Designer Women's Clothing * New items added regularly. * All sizes. * Please see \"more ads by this user\" &amp; search \"clothing\" items for specifics, photos + pricing. * Designer brands (some vintage): Free People, Gypsy05, Juicy Couture, Banana Republic, Nordstrom, Neiman Marcus, Saks Fifth Avenue, Prana, TopShop, J.",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/austin-closet-clean-out-new-tags-pre/aKUZ7X6xg7SPyTRMphQhCm",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.430093,
-      "lon": -97.807757,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-outnewtagspreakuz7x6xg7spytrmphqhcm"
     },
     {
       "address": "103 Johnson Cv near FM1660, Austin, TX",
@@ -1364,9 +1298,9 @@
     "gsalr.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 62,
+  "total_locations": 59,
   "status": "live",
-  "date": "2026-11-04",
-  "last_refresh": "2026-11-04T12:31:02-06:00",
+  "date": "2026-11-05",
+  "last_refresh": "2026-11-05T05:16:15-06:00",
   "permits": []
 }
