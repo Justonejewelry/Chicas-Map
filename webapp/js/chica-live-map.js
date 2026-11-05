@@ -2,7 +2,7 @@
 (function (w) {
   var BASE = "/Chicas-Map";
   var START = [29.50, -98.49];
-  var mtDead = false;
+  var mtDead = true; // MapTiler off until probe proves the key works
   var probed = false;
   var PIN = 40;
   var HALF = PIN / 2;
@@ -317,7 +317,8 @@
     var url = streetUrl().replace("{z}", "12").replace("{x}", "963").replace("{y}", "1695");
     fetch(url, { mode: "cors", referrerPolicy: "origin", cache: "no-store" })
       .then(function (r) {
-        mtDead = !r.ok;
+        // 403 still returns a PNG that says "API KEY REQUIRED" — only trust 2xx
+        mtDead = !(r.ok && r.status === 200);
         w.__chicaMtDead = mtDead;
         showBase();
       })

@@ -14,7 +14,7 @@
   var ATTR_MT = "\u00a9 MapTiler \u00a9 OpenStreetMap contributors";
   var ATTR_ESRI = "Tiles \u00a9 Esri";
   var mtFails = 0;
-  var mtBlocked = false;
+  var mtBlocked = true; // until MapTiler key proves good
   var didLocate = false;
   var askedGeo = false;
   var pendingFix = null;
