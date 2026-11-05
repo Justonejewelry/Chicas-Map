@@ -1,6 +1,6 @@
 /* KEY layer actions for the standalone map. force-key owns the panel; this owns the map.
    Intel is driveway notes on the pin (pin-details.js), GPS-gated at 200 ft.
-   It is not a KEY overlay and must not list nearby parking / pantry / Wi-Fi / schools.
+   Resource layers (parking / pantry / Wi-Fi / schools) are removed from this map; they live on Alamo City Resources.
 */
 (function () {
   function onMapPath() {
@@ -21,19 +21,11 @@
   var groups = {};
   var cache = {};
   var SRC = {
-    parking: BASE + "/data/san-antonio-downtown-parking.geojson",
-    pantry: BASE + "/data/san-antonio-24h-food-pantries.geojson",
-    schools: BASE + "/data/zone-aware-schools.geojson",
-    wifi: BASE + "/data/san-antonio-public-wifi.geojson",
     emergency: BASE + "/data/san-antonio-emergency-info.geojson",
     resale: BASE + "/data/san-antonio-thrift.geojson"
   };
-  var COLOR = { parking: "#38bdf8", pantry: "#f5d000", schools: "#f0a500", wifi: "#2dd4bf", emergency: "#ef4444", claimed: "#c513af", resale: "#C47A4A" };
+  var COLOR = { emergency: "#ef4444", claimed: "#c513af", resale: "#C47A4A" };
   var GLYPH = {
-    parking: '<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><circle cx="8" cy="8" r="6.2" fill="#38bdf8" stroke="#121212" stroke-width="1.2"/><text x="8" y="11.2" text-anchor="middle" font-size="8" font-weight="800" font-family="Inter,system-ui,sans-serif" fill="#121212">P</text></svg>',
-    pantry: '<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><circle cx="8" cy="8" r="6.2" fill="#f5d000" stroke="#121212" stroke-width="1.2"/><path d="M4.5 7.2h7v1.4c0 2-1.6 3.6-3.5 3.6S4.5 10.6 4.5 8.6z" fill="#121212"/></svg>',
-    schools: '<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><circle cx="8" cy="8" r="6.2" fill="#f0a500" stroke="#121212" stroke-width="1.2"/><path d="M3.8 8.2 L8 5.4 L12.2 8.2 V12 H3.8z" fill="#121212"/><rect x="7.2" y="9.2" width="1.6" height="2.8" fill="#f0a500"/></svg>',
-    wifi: '<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><circle cx="8" cy="8" r="6.2" fill="#2dd4bf" stroke="#121212" stroke-width="1.2"/><path d="M5 8.2a4 4 0 0 1 6 0 M6.2 9.5a2.2 2.2 0 0 1 3.6 0" fill="none" stroke="#121212" stroke-width="1.3" stroke-linecap="round"/><circle cx="8" cy="11.2" r="0.9" fill="#121212"/></svg>',
     emergency: '<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><circle cx="8" cy="8" r="6.2" fill="#ef4444" stroke="#121212" stroke-width="1.2"/><text x="8" y="11.2" text-anchor="middle" font-size="8" font-weight="800" font-family="Inter,system-ui,sans-serif" fill="#fff">!</text></svg>',
     claimed: '<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><circle cx="8" cy="8" r="6.2" fill="#c513af" stroke="#fffdf8" stroke-width="1.2"/><path d="M8 3.6 L9.2 6.6 H12.4 L9.8 8.5 L10.8 11.6 L8 9.8 L5.2 11.6 L6.2 8.5 L3.6 6.6 H6.8z" fill="#fff"/></svg>',
     resale: '<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><circle cx="8" cy="8" r="5.2" fill="#C47A4A" stroke="#f3eee4" stroke-width="1.3"/><path d="M4.8 9.2 Q8 6.8 11.2 9.2" fill="none" stroke="#f3eee4" stroke-width="1.4" stroke-linecap="round"/><path d="M5.5 10.4 Q8 8.4 10.5 10.4" fill="none" stroke="#f3eee4" stroke-width="1.1" stroke-linecap="round" opacity="0.85"/></svg>'
@@ -216,6 +208,7 @@
     if (id === "intel") return;
     if (id === "listit") { location.href = BASE + "/claim/"; return; }
     if (id === "claimed") { toggleClaimed(); return; }
+    if (id === "parking" || id === "pantry" || id === "schools" || id === "wifi") return;
     if (SRC[id]) { toggleOverlay(id); return; }
     if (id === "garage" || id === "estate" || id === "permit") toggleSaleType(id);
   }
@@ -224,5 +217,5 @@
 
   ["garage", "estate"].forEach(function (id) { dimRow(id, true); });
   dimRow("permit", !document.documentElement.classList.contains("chica-hide-permit"));
-  ["satellite", "parking", "pantry", "schools", "wifi", "claimed", "resale"].forEach(function (id) { dimRow(id, false); });
+  ["satellite", "claimed", "resale"].forEach(function (id) { dimRow(id, false); });
 })();
