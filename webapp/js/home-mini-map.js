@@ -133,6 +133,7 @@
     var host = document.getElementById("chica-home-mini-leaflet");
     if (!host || !window.L || host.getAttribute("data-ready") === "1") return;
     host.setAttribute("data-ready", "1");
+    host.setAttribute("data-chica-home-mini", "1");
     var map = L.map(host, {
       zoomControl: false,
       attributionControl: true,
@@ -143,10 +144,11 @@
       keyboard: false,
       touchZoom: false
     }).setView(SA, 11);
-    L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
-      attribution: "&copy; OSM &copy; CARTO",
+    // Esri — no API key (MapTiler key is restricted and paints "API KEY REQUIRED")
+    L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}", {
+      attribution: "Tiles \u00a9 Esri",
       maxZoom: 18,
-      subdomains: "abcd"
+      referrerPolicy: "origin"
     }).addTo(map);
     var bounds = [];
     var max = Math.min(pins.length, 120);
@@ -173,6 +175,7 @@
       try { map.invalidateSize(); } catch (e) {}
     }, 120);
     window.__chicaHomeMiniMap = map;
+    try { map.getContainer().setAttribute("data-chica-home-mini", "1"); } catch (e) {}
   }
 
   function loadPins(done) {

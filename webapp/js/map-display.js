@@ -143,6 +143,7 @@
     var imgs = document.querySelectorAll(".leaflet-tile-pane img, img.leaflet-tile, .leaflet-tile-container img");
     for (var i = 0; i < imgs.length; i++) {
       var img = imgs[i];
+      if (img.closest && img.closest("#chica-home-mini-map")) continue;
       armTile(img);
       var src = img.getAttribute("src") || img.src || "";
       var next = rewriteSrc(src);
@@ -154,10 +155,11 @@
   }
 
   function findMap() {
-    if (window.__chicaLeaflet && typeof window.__chicaLeaflet.flyTo === "function") return window.__chicaLeaflet;
+    if (window.__chicaLeaflet && typeof window.__chicaLeaflet.flyTo === "function" && !(window.__chicaLeaflet.getContainer && window.__chicaLeaflet.getContainer() && window.__chicaLeaflet.getContainer().closest && window.__chicaLeaflet.getContainer().closest("#chica-home-mini-map"))) return window.__chicaLeaflet;
     var nodes = document.querySelectorAll(".leaflet-container");
     for (var i = 0; i < nodes.length; i++) {
       var el = nodes[i];
+      if (el.closest && el.closest("#chica-home-mini-map")) continue;
       for (var k in el) {
         try {
           var v = el[k];
