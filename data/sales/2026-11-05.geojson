@@ -2,8 +2,8 @@
   "type": "FeatureCollection",
   "properties": {
     "target_date": "2026-11-05",
-    "generated_at": "2026-11-05T05:16:44-06:00",
-    "count": 18,
+    "generated_at": "2026-11-05T10:11:51-06:00",
+    "count": 21,
     "project": "Chicas-Map"
   },
   "features": [
@@ -43,7 +43,7 @@
           "https://images.craigslist.org/01515_1Xh2ogBe0sZ_0CI0pq_600x450.jpg"
         ],
         "confidence": 96,
-        "verified_at": "2026-11-05T05:16:15-06:00",
+        "verified_at": "2026-11-05T10:11:17-06:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.556,-98.6094",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.556,-98.6094",
         "status": "verified",
@@ -89,7 +89,7 @@
           "https://images.craigslist.org/00303_fJujeiiUakX_0CI0eX_600x450.jpg"
         ],
         "confidence": 96,
-        "verified_at": "2026-11-05T05:16:15-06:00",
+        "verified_at": "2026-11-05T10:11:17-06:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5183,-98.503",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.5183,-98.503",
         "status": "verified",
@@ -140,7 +140,7 @@
           "https://images.craigslist.org/00t0t_klmCBTGJqgj_0Bw0t2_50x50c.jpg"
         ],
         "confidence": 96,
-        "verified_at": "2026-11-05T05:16:15-06:00",
+        "verified_at": "2026-11-05T10:11:17-06:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.3641,-98.4924",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.3641,-98.4924",
         "status": "verified",
@@ -191,7 +191,7 @@
           "https://eso-cdn.tlcdn.workers.dev/s-2470619-ths7mdex6lc929b1-t.webp"
         ],
         "confidence": 100,
-        "verified_at": "2026-11-05T05:16:15-06:00",
+        "verified_at": "2026-11-05T10:11:17-06:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936",
         "status": "verified",
@@ -242,7 +242,7 @@
           "https://images.craigslist.org/00404_jGLAxJTb1o_0t20CI_50x50c.jpg"
         ],
         "confidence": 96,
-        "verified_at": "2026-11-05T05:16:15-06:00",
+        "verified_at": "2026-11-05T10:11:17-06:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5855,-98.4071",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.5855,-98.4071",
         "status": "verified",
@@ -286,7 +286,7 @@
         ],
         "photos": [],
         "confidence": 92,
-        "verified_at": "2026-11-05T05:16:15-06:00",
+        "verified_at": "2026-11-05T10:11:17-06:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.496796,-98.026886",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.496796,-98.026886",
         "status": "verified",
@@ -330,7 +330,7 @@
         ],
         "photos": [],
         "confidence": 96,
-        "verified_at": "2026-11-05T05:16:15-06:00",
+        "verified_at": "2026-11-05T10:11:17-06:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.572706,-98.581535",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.572706,-98.581535",
         "status": "verified",
@@ -374,7 +374,7 @@
         ],
         "photos": [],
         "confidence": 96,
-        "verified_at": "2026-11-05T05:16:15-06:00",
+        "verified_at": "2026-11-05T10:11:17-06:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4189,-98.6895",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.4189,-98.6895",
         "status": "verified",
@@ -420,7 +420,7 @@
           "https://images.craigslist.org/00y0y_dCoyCS1p68n_0jm0t2_600x450.jpg"
         ],
         "confidence": 100,
-        "verified_at": "2026-11-05T05:16:15-06:00",
+        "verified_at": "2026-11-05T10:11:17-06:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5613,-97.9628",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.5613,-97.9628",
         "status": "verified",
@@ -468,7 +468,7 @@
           "https://images.craigslist.org/00C0C_2J3VdRf2r7_0bU06G_50x50c.jpg"
         ],
         "confidence": 96,
-        "verified_at": "2026-11-05T05:16:15-06:00",
+        "verified_at": "2026-11-05T10:11:17-06:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.525723,-98.621006",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.525723,-98.621006",
         "status": "verified",
@@ -519,7 +519,7 @@
           "https://images.craigslist.org/00i0i_lUDED2VjbsR_0t20CI_50x50c.jpg"
         ],
         "confidence": 96,
-        "verified_at": "2026-11-05T05:16:15-06:00",
+        "verified_at": "2026-11-05T10:11:17-06:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4793,-98.3476",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.4793,-98.3476",
         "status": "verified",
@@ -563,7 +563,7 @@
         ],
         "photos": [],
         "confidence": 96,
-        "verified_at": "2026-11-05T05:16:15-06:00",
+        "verified_at": "2026-11-05T10:11:17-06:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5394,-98.4979",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.5394,-98.4979",
         "status": "verified",
@@ -614,7 +614,7 @@
           "https://ps.tlstatic.com/image/w150-h100/2026/10/31/s/4/3/412843/65KAt-0.jpeg"
         ],
         "confidence": 100,
-        "verified_at": "2026-11-05T05:16:15-06:00",
+        "verified_at": "2026-11-05T10:11:17-06:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936",
         "status": "verified",
@@ -665,7 +665,7 @@
           "https://ps.tlstatic.com/image/w300-c300:250/2026/10/31/s/4/3/412843/1Clp-0.jpeg"
         ],
         "confidence": 100,
-        "verified_at": "2026-11-05T05:16:15-06:00",
+        "verified_at": "2026-11-05T10:11:17-06:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.677791,-98.073156",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.677791,-98.073156",
         "status": "verified",
@@ -711,7 +711,7 @@
           "https://images.craigslist.org/00q0q_51DXdaOHUwr_05B05B_600x450.jpg"
         ],
         "confidence": 96,
-        "verified_at": "2026-11-05T05:16:15-06:00",
+        "verified_at": "2026-11-05T10:11:17-06:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.578559,-98.576339",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.578559,-98.576339",
         "status": "verified",
@@ -762,7 +762,7 @@
           "https://images.craigslist.org/00c0c_grINmiv8tS3_0t20CI_50x50c.jpg"
         ],
         "confidence": 96,
-        "verified_at": "2026-11-05T05:16:15-06:00",
+        "verified_at": "2026-11-05T10:11:17-06:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.640654,-98.42629",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.640654,-98.42629",
         "status": "verified",
@@ -783,7 +783,7 @@
       },
       "properties": {
         "sale_id": "2026-11-05_339-wren-ln-san-antonio-tx",
-        "title": "Garage sale Friday only 8-1",
+        "title": "Garage sale Vintage Collectables  New Braunfels Friday only 8-1",
         "sale_type": "garage",
         "date_start": "2026-11-05",
         "date_end": "2026-11-07",
@@ -795,12 +795,12 @@
         "zip": "",
         "latitude": 29.709519,
         "longitude": -98.194049,
-        "description": "QR Code Link to This Post Vintage lunch boxes 15$-45$ vintage liscence plates 10 -75vintage decorator guitars 5-50$ vintage decorative band instruments 5-75$ telescope , boombox , dish set kitchen ware,sombreros, $ more keyboard 120 bass accordion",
+        "description": "QR Code Link to This Post Vintage lunch boxes 15$-45$ vintage liscence plates 10 -75vintage decorator guitars 5-50$ vintage decorative band instruments 5-75$ telescope , boombox , dish set kitchen ware,sombreros, $ more accordion 120 bass keyboard, telescope,dishes Cash or Venmo NO EARLY Birds !",
         "highlights": [],
         "source_urls": [
-          "https://www.craigslist.org/view/d/new-braunfels-garage-sale-friday-only-1/tpUM36veB1zYU7yB3W9UES"
+          "https://www.craigslist.org/view/d/new-braunfels-garage-sale-vintage/tpUM36veB1zYU7yB3W9UES"
         ],
-        "original_url": "https://www.craigslist.org/view/d/new-braunfels-garage-sale-friday-only-1/tpUM36veB1zYU7yB3W9UES",
+        "original_url": "https://www.craigslist.org/view/d/new-braunfels-garage-sale-vintage/tpUM36veB1zYU7yB3W9UES",
         "source_names": [
           "Craigslist"
         ],
@@ -813,7 +813,7 @@
           "https://images.craigslist.org/00v0v_aSqHGGGxXDi_0t20CI_50x50c.jpg"
         ],
         "confidence": 96,
-        "verified_at": "2026-11-05T05:16:15-06:00",
+        "verified_at": "2026-11-05T10:11:17-06:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.709519,-98.194049",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.709519,-98.194049",
         "status": "verified",
@@ -857,9 +857,160 @@
         ],
         "photos": [],
         "confidence": 96,
-        "verified_at": "2026-11-05T05:16:15-06:00",
+        "verified_at": "2026-11-05T10:11:17-06:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.577443,-98.456413",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.577443,-98.456413",
+        "status": "verified",
+        "geocode_method": "source",
+        "notes": "",
+        "community_source": "",
+        "community_link_or_notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.4936,
+          29.4241
+        ]
+      },
+      "properties": {
+        "sale_id": "2026-10-30_san-marcos-tx-78666",
+        "title": "Hawaii Equals Paradise -Sale Ends 11/10 Pick Up 11/12 10-2",
+        "sale_type": "garage",
+        "date_start": "2026-10-30",
+        "date_end": "2026-11-10",
+        "start_time": "7:00 am - 11:59 pm",
+        "end_time": "",
+        "address": "San Marcos, TX 78666",
+        "city": "San Antonio",
+        "state": "TX",
+        "zip": "",
+        "latitude": 29.4241,
+        "longitude": -98.4936,
+        "description": "Dates and Times: Friday, October 30, 2026 7:00 am - 11:59 pm",
+        "highlights": [],
+        "source_urls": [
+          "https://garagesalefinder.com/s/N9TNK/san-marcos-tx-78666"
+        ],
+        "original_url": "https://garagesalefinder.com/s/N9TNK/san-marcos-tx-78666",
+        "source_names": [
+          "GarageSaleFinder"
+        ],
+        "photos": [
+          "https://eso-cdn.tlcdn.workers.dev/s-2471192-ulihjtsb36rj8eov-t.webp",
+          "https://eso-cdn.tlcdn.workers.dev/s-2471192-83iy4xygj5yu600s-t.webp",
+          "https://eso-cdn.tlcdn.workers.dev/s-2471192-0f6tlbiqx04lcmnx-t.webp",
+          "https://eso-cdn.tlcdn.workers.dev/s-2471192-9634urivqz7hfh6k-t.webp",
+          "https://eso-cdn.tlcdn.workers.dev/s-2471192-kko3w2977qxa8eit-t.webp",
+          "https://eso-cdn.tlcdn.workers.dev/s-2471192-1yirrdd49hwbj7ca-t.webp"
+        ],
+        "confidence": 100,
+        "verified_at": "2026-11-05T10:11:17-06:00",
+        "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936",
+        "status": "verified",
+        "geocode_method": "city-center",
+        "notes": "",
+        "community_source": "",
+        "community_link_or_notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.48,
+          29.39
+        ]
+      },
+      "properties": {
+        "sale_id": "2026-11-05_207-smallwood-dr-san-antonio-tx-78210",
+        "title": "207 Smallwood Dr, San Antonio, TX 78210",
+        "sale_type": "garage",
+        "date_start": "2026-11-05",
+        "date_end": "2026-11-06",
+        "start_time": "8:00 am - 5:00 pm",
+        "end_time": "",
+        "address": "207 Smallwood Dr, San Antonio, TX 78210",
+        "city": "San Antonio",
+        "state": "TX",
+        "zip": "",
+        "latitude": 29.39,
+        "longitude": -98.48,
+        "description": "Dates and Times: Thursday, November 5, 2026 8:00 am - 5:00 pm",
+        "highlights": [],
+        "source_urls": [
+          "https://garagesalefinder.com/s/N9DpM/207-smallwood-dr-san-antonio-tx-78210"
+        ],
+        "original_url": "https://garagesalefinder.com/s/N9DpM/207-smallwood-dr-san-antonio-tx-78210",
+        "source_names": [
+          "GarageSaleFinder"
+        ],
+        "photos": [
+          "https://gsf.tlstatic.com/images/social/Facebook.png",
+          "https://gsf.tlstatic.com/images/social/Reddit.png",
+          "https://gsf.tlstatic.com/images/social/Twitter.png",
+          "https://gsf.tlstatic.com/images/social/Email.png"
+        ],
+        "confidence": 100,
+        "verified_at": "2026-11-05T10:11:17-06:00",
+        "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.39,-98.48",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.39,-98.48",
+        "status": "verified",
+        "geocode_method": "zip-centroid",
+        "notes": "",
+        "community_source": "",
+        "community_link_or_notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.704877,
+          29.391949
+        ]
+      },
+      "properties": {
+        "sale_id": "2026-11-05_3838-fiesta-trail-near-red-musket-san-antonio-tx",
+        "title": "Garage sale",
+        "sale_type": "garage",
+        "date_start": "2026-11-05",
+        "date_end": "2026-11-05",
+        "start_time": "",
+        "end_time": "",
+        "address": "3838 fiesta Trail near Red musket, San Antonio, TX",
+        "city": "San Antonio",
+        "state": "TX",
+        "zip": "",
+        "latitude": 29.391949,
+        "longitude": -98.704877,
+        "description": "QR Code Link to This Post Having A Yard Sale today November 5 too many items to list Address is 3838 fiesta Trail San Antonio, TX 78245",
+        "highlights": [],
+        "source_urls": [
+          "https://www.craigslist.org/view/d/san-antonio-garage-sale/droF4VryvfbGjrmV8YcDDx"
+        ],
+        "original_url": "https://www.craigslist.org/view/d/san-antonio-garage-sale/droF4VryvfbGjrmV8YcDDx",
+        "source_names": [
+          "Craigslist"
+        ],
+        "photos": [
+          "https://images.craigslist.org/01414_bD5BrFPXLVr_0lM0CI_600x450.jpg",
+          "https://images.craigslist.org/01414_bD5BrFPXLVr_0lM0CI_50x50c.jpg",
+          "https://images.craigslist.org/00F0F_aIekULkvstU_0lM0CI_50x50c.jpg",
+          "https://images.craigslist.org/00b0b_4AFufdySiPw_0lM0CI_50x50c.jpg",
+          "https://images.craigslist.org/00k0k_8jt594nfovj_0lM0CI_50x50c.jpg",
+          "https://images.craigslist.org/00s0s_7V75bBMZ7c0_0lM0CI_50x50c.jpg"
+        ],
+        "confidence": 96,
+        "verified_at": "2026-11-05T10:11:17-06:00",
+        "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.391949,-98.704877",
+        "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.391949,-98.704877",
         "status": "verified",
         "geocode_method": "source",
         "notes": "",

@@ -26,13 +26,16 @@ Map only shows pins whose listed dates include today.
 - Estate Treasures Sale — 165 Trailwood, New Braunfels, TX [2026-11-05 → 2026-11-07]
 - HUGE GARAGE SALE! Saturday, Nov 7th — 4523 Black Hickory Woods St, San Antonio, TX [2026-11-05 → 2026-11-07]
 - Estate Sale -Evans and Bulverde road — 21527 Tenore, San Antonio, TX [2026-11-05 → 2026-11-07]
-- Garage sale Friday only 8-1 — 339 wren ln, San Antonio, TX [2026-11-05 → 2026-11-07]
+- Garage sale Vintage Collectables  New Braunfels Friday only 8-1 — 339 wren ln, San Antonio, TX [2026-11-05 → 2026-11-07]
 - Huge Garage Sale on Saturday, November 7th — 2530 Fall Brook St., San Antonio, TX [2026-11-05 → 2026-11-07]
+- Hawaii Equals Paradise -Sale Ends 11/10 Pick Up 11/12 10-2 — San Marcos, TX 78666 [2026-10-30 → 2026-11-10]
+- Yard Sale — 207 Smallwood Dr, San Antonio, TX 78210 [2026-11-05 → 2026-11-06]
+- Estate Sale - 116 Merry Trail, SA, TX — Merry Trail near Trailcrest St., San Antonio, TX [2026-11-05 → 2026-11-07]
+- Garage sale — 3838 fiesta Trail near Red musket, San Antonio, TX [2026-11-05 → 2026-11-05]
 
 ## COMING UP (remembered, not on today's map)
 
 ### Starts 2026-11-06
-- Vintage Vibes in San Marcos — San Marcos, TX 78666 [2026-11-06 → 2026-11-08]
 - Multi-Family Garage Sale — 1054 Holmgreen Rd, San Antonio, TX 78220 [2026-11-06 → 2026-11-07]
 - 🎉🚨 HUGE 2-DAY GARAGE SALE! EVERYTHING MUST GO! 🚨🎉 — 5026 Timber Trace St, San Antonio, TX 78250 [2026-11-06 → 2026-11-07]
 - Woodthorn & Regency Meadow Multi-Community Garage Sale — Regency Bnd, San Antonio, TX 78249 [2026-11-06 → 2026-11-08]
@@ -42,6 +45,7 @@ Map only shows pins whose listed dates include today.
 - Quality Finds — 2372 Tree Br, Schertz, TX 78154 [2026-11-06 → 2026-11-08]
 - Garage Sale — 121 Rosewood Dr, La Vernia, TX 78121 [2026-11-06 → 2026-11-06]
 - Huge Multi -Family Garage Sale — 10321 Habersang Ln, New Braunfels, TX 78132 [2026-11-06 → 2026-11-07]
+- Vintage Vibes in San Marcos — 111 Manor Park Rd, San Marcos, TX 78666 [2026-11-06 → 2026-11-08]
 - Verde Hills community garage sale Center Point, TX — Verde Hills Dr, Center Point, TX 78010 [2026-11-06 → 2026-11-07]
 - Garage Sale And Fisherman’S Sale — 10402 Rustic Vly, San Antonio, TX [2026-11-06 → 2026-11-07]
 - Quality Finds — 2372 Tree Br, Schertz, TX [2026-11-06 → 2026-11-08]
@@ -64,6 +68,7 @@ Map only shows pins whose listed dates include today.
 - Community Garage Sale — 812 Red Riv, Cibolo, TX 78108 [2026-11-07 → 2026-11-07]
 - Moving Out Sale! — 26765 Orchid Trl, Boerne, TX 78006 [2026-11-07 → 2026-11-08]
 - City-wide garage sale — 517 Madrid St St, Castroville, TX 78009 [2026-11-07 → 2026-11-07]
+- not your average garage sale. — 8402 fairway point, Fair Oaks Ranch, TX 78015 [2026-11-07 → 2026-11-07]
 - Raise a glass for Mr. Mike - Estate Sale! — hidden, Universal City, TX 78233 [2026-11-07 → 2026-11-08] | 2026-11-07 9:00 am-3:00 pm; 2026-11-08 9:00 am-3:00 pm
 - Multiple Garage Sales Canyon Oaks Estates (Off Henderson Pass) 7&8 Nov 8Am-4Pm — 2459 Rim Oak, San Antonio, TX [2026-11-07 → 2026-11-08]
 - Raise A Glass For Mr. Mike - Estate Sale! — Universal City, TX [2026-11-07 → 2026-11-08]

@@ -2,15 +2,15 @@
 
 ## 1. CHICA DAILY RUN
 - **Target date:** Thursday, November 5, 2026
-- **San Antonio local run time:** 2026-11-05T05:16:15-06:00
+- **San Antonio local run time:** 2026-11-05T10:11:17-06:00
 - **Geographic area:** San Antonio & surrounding communities
 - **Sources searched:** 7
-- **Candidates discovered:** 23
-- **Verified sales:** 18
-- **Rejected listings:** 5
+- **Candidates discovered:** 27
+- **Verified sales:** 21
+- **Rejected listings:** 6
 - **Duplicates merged:** 0
-- **Successfully geocoded:** 18
-- **Street View links generated:** 18
+- **Successfully geocoded:** 21
+- **Street View links generated:** 21
 - **Sentinel:** PASS
 
 ## 2. VERIFIED SALES
@@ -25,7 +25,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-alamo-craft-co-antiques/mj6FcRd4ZDr7zwAwc4pwWa
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.556,-98.6094
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.556,-98.6094
-- **Verified at:** 2026-11-05T05:16:15-06:00
+- **Verified at:** 2026-11-05T10:11:17-06:00
 
 ### 2. NOW OPEN! The Collective Boutiques (San Antonio)
 - **Type:** garage
@@ -37,7 +37,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-now-open-the-collective/a9UPVs8b9XgmEsUh6iVZ1m
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.5183,-98.503
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5183,-98.503
-- **Verified at:** 2026-11-05T05:16:15-06:00
+- **Verified at:** 2026-11-05T10:11:17-06:00
 
 ### 3. Yard-sale Southside (San Antonio)
 - **Type:** garage
@@ -49,7 +49,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-yard-sale-southside/4nkuR6GJJdm2asZ5YSxi1H
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.3641,-98.4924
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.3641,-98.4924
-- **Verified at:** 2026-11-05T05:16:15-06:00
+- **Verified at:** 2026-11-05T10:11:17-06:00
 
 ### 4. Off of Rebecca Creek Rd Spring Branch, TX 78070, Spring Branch, TX 78070
 - **Type:** estate
@@ -62,7 +62,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9VGu/off-of-rebecca-creek-rd-spring-branch-tx-78070-spring-branch-tx-78070
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936
-- **Verified at:** 2026-11-05T05:16:15-06:00
+- **Verified at:** 2026-11-05T10:11:17-06:00
 
 ### 5. Furniture for Sale ( please read post, ty) (Green Spring Valley)
 - **Type:** garage
@@ -74,7 +74,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-furniture-for-sale-please/fw7d5uK2CFs69vpJ5JFcGY
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.5855,-98.4071
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5855,-98.4071
-- **Verified at:** 2026-11-05T05:16:15-06:00
+- **Verified at:** 2026-11-05T10:11:17-06:00
 
 ### 6. AUCTION - Tim's TCA November Specials - Tuesday Night 11/03/26 @ 7pm
 - **Type:** estate
@@ -86,7 +86,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/seguin-auction-tims-tca-november/aYLsvWRF4DW2CcJf81nBo9
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.496796,-98.026886
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.496796,-98.026886
-- **Verified at:** 2026-11-05T05:16:15-06:00
+- **Verified at:** 2026-11-05T10:11:17-06:00
 
 ### 7. GARAGE SALE
 - **Type:** garage
@@ -98,7 +98,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-garage-sale/h133QVyjtGi3okZgp93Kxk
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.572706,-98.581535
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.572706,-98.581535
-- **Verified at:** 2026-11-05T05:16:15-06:00
+- **Verified at:** 2026-11-05T10:11:17-06:00
 
 ### 8. Moving sale (San Antonio)
 - **Type:** garage
@@ -110,7 +110,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-moving-sale/ispmC25w6WspsQKWWPewAP
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4189,-98.6895
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4189,-98.6895
-- **Verified at:** 2026-11-05T05:16:15-06:00
+- **Verified at:** 2026-11-05T10:11:17-06:00
 
 ### 9. Sandhills Trade Day ~ RAIN OR SHINE ~ HUGE OUTDOOR MARKET (Seguin)
 - **Type:** garage
@@ -123,7 +123,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/seguin-sandhills-trade-day-rain-or/4nGQFdAwp87q6LoM8PaSs7
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.5613,-97.9628
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5613,-97.9628
-- **Verified at:** 2026-11-05T05:16:15-06:00
+- **Verified at:** 2026-11-05T10:11:17-06:00
 
 ### 10. Community Yard Sale (San Antonio)
 - **Type:** garage
@@ -135,7 +135,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-community-yard-sale/qtw2yWxnsFrUcxvDMQJp6k
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.525723,-98.621006
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.525723,-98.621006
-- **Verified at:** 2026-11-05T05:16:15-06:00
+- **Verified at:** 2026-11-05T10:11:17-06:00
 
 ### 11. Show up and Shop Estate Sale (San Antonio)
 - **Type:** estate
@@ -147,7 +147,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-show-up-and-shop-estate-sale/vxKaruwsRMKfseMr9PfmFy
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4793,-98.3476
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4793,-98.3476
-- **Verified at:** 2026-11-05T05:16:15-06:00
+- **Verified at:** 2026-11-05T10:11:17-06:00
 
 ### 12. Huge Multifamily sale (Harmomy hills)
 - **Type:** garage
@@ -159,7 +159,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-huge-multifamily-sale/m6svLSp5Pah7k71Dt2F9hf
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.5394,-98.4979
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5394,-98.4979
-- **Verified at:** 2026-11-05T05:16:15-06:00
+- **Verified at:** 2026-11-05T10:11:17-06:00
 
 ### 13. 165 Trailwood, New Braunfels, TX 78130
 - **Type:** estate
@@ -172,7 +172,7 @@
 - **Original listing:** https://garagesalefinder.com/s/N9TtL/165-trailwood-new-braunfels-tx-78130
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936
-- **Verified at:** 2026-11-05T05:16:15-06:00
+- **Verified at:** 2026-11-05T10:11:17-06:00
 
 ### 14. Estate Treasures Sale
 - **Type:** estate
@@ -185,7 +185,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196450219
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.677791,-98.073156
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.677791,-98.073156
-- **Verified at:** 2026-11-05T05:16:15-06:00
+- **Verified at:** 2026-11-05T10:11:17-06:00
 
 ### 15. HUGE GARAGE SALE! Saturday, Nov 7th (Woods Of Shavano)
 - **Type:** garage
@@ -197,7 +197,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-huge-garage-sale-saturday/fkDQqVS4T5jhNJy7MigxTp
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.578559,-98.576339
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.578559,-98.576339
-- **Verified at:** 2026-11-05T05:16:15-06:00
+- **Verified at:** 2026-11-05T10:11:17-06:00
 
 ### 16. Estate Sale -Evans and Bulverde road
 - **Type:** estate
@@ -209,19 +209,19 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-estate-sale-evans-and/vKqXMAZM5a1ReVjNjgHHX5
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.640654,-98.42629
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.640654,-98.42629
-- **Verified at:** 2026-11-05T05:16:15-06:00
+- **Verified at:** 2026-11-05T10:11:17-06:00
 
-### 17. Garage sale Friday only 8-1
+### 17. Garage sale Vintage Collectables  New Braunfels Friday only 8-1
 - **Type:** garage
 - **Date:** 2026-11-05 → 2026-11-07
 - **Address:** 339 wren ln, San Antonio, TX, San Antonio 
 - **Notes:** QR Code Link to This Post Vintage lunch boxes 15$-45$ vintage liscence plates 10 -75vintage decorator guitars 5-50$ vintage decorative band instruments 5-75$ telescope , boombox , 
 - **Confidence:** 96%
 - **Sources:** Craigslist
-- **Original listing:** https://www.craigslist.org/view/d/new-braunfels-garage-sale-friday-only-1/tpUM36veB1zYU7yB3W9UES
+- **Original listing:** https://www.craigslist.org/view/d/new-braunfels-garage-sale-vintage/tpUM36veB1zYU7yB3W9UES
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.709519,-98.194049
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.709519,-98.194049
-- **Verified at:** 2026-11-05T05:16:15-06:00
+- **Verified at:** 2026-11-05T10:11:17-06:00
 
 ### 18. Huge Garage Sale on Saturday, November 7th (Thousand Oaks area)
 - **Type:** garage
@@ -233,7 +233,45 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-huge-garage-sale-on/vyit6tFaJqWssZq62pdGrq
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.577443,-98.456413
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.577443,-98.456413
-- **Verified at:** 2026-11-05T05:16:15-06:00
+- **Verified at:** 2026-11-05T10:11:17-06:00
+
+### 19. Hawaii Equals Paradise -Sale Ends 11/10 Pick Up 11/12 10-2
+- **Type:** garage
+- **Date:** 2026-10-30 → 2026-11-10
+- **Time:** 7:00 am - 11:59 pm – 
+- **Address:** San Marcos, TX 78666, San Antonio 
+- **Notes:** Dates and Times: Friday, October 30, 2026 7:00 am - 11:59 pm
+- **Confidence:** 100%
+- **Sources:** GarageSaleFinder
+- **Original listing:** https://garagesalefinder.com/s/N9TNK/san-marcos-tx-78666
+- **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936
+- **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936
+- **Verified at:** 2026-11-05T10:11:17-06:00
+
+### 20. 207 Smallwood Dr, San Antonio, TX 78210
+- **Type:** garage
+- **Date:** 2026-11-05 → 2026-11-06
+- **Time:** 8:00 am - 5:00 pm – 
+- **Address:** 207 Smallwood Dr, San Antonio, TX 78210, San Antonio 
+- **Notes:** Dates and Times: Thursday, November 5, 2026 8:00 am - 5:00 pm
+- **Confidence:** 100%
+- **Sources:** GarageSaleFinder
+- **Original listing:** https://garagesalefinder.com/s/N9DpM/207-smallwood-dr-san-antonio-tx-78210
+- **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.39,-98.48
+- **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.39,-98.48
+- **Verified at:** 2026-11-05T10:11:17-06:00
+
+### 21. Garage sale
+- **Type:** garage
+- **Date:** 2026-11-05
+- **Address:** 3838 fiesta Trail near Red musket, San Antonio, TX, San Antonio 
+- **Notes:** QR Code Link to This Post Having A Yard Sale today November 5 too many items to list Address is 3838 fiesta Trail San Antonio, TX 78245
+- **Confidence:** 96%
+- **Sources:** Craigslist
+- **Original listing:** https://www.craigslist.org/view/d/san-antonio-garage-sale/droF4VryvfbGjrmV8YcDDx
+- **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.391949,-98.704877
+- **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.391949,-98.704877
+- **Verified at:** 2026-11-05T10:11:17-06:00
 
 ## 3. CHICA PICKS
 
@@ -258,7 +296,7 @@
 
 ## 5. REJECTED / EXCLUDED
 
-Total rejected or filtered: **5**
+Total rejected or filtered: **6**
 (Expired, duplicate, outside area, insufficient information, or confidence below threshold.)
 
 ## 6. DATA / MAP OUTPUT
