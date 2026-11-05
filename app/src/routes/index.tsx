@@ -54,12 +54,6 @@ function Home() {
                 Share Chica
               </button>
             </div>
-            {/* Mini map painted by webapp/js/home-mini-map.js; click opens full-screen /map. */}
-            <a id="chica-home-mini-map" href="/Chicas-Map/map/" data-chica-keep="1" className="mt-5 block max-w-xl" aria-label="Open the map full screen">
-              <div className="relative aspect-[16/10] min-h-[200px] max-h-[280px] overflow-hidden rounded-[18px] bg-night ring-1 ring-line">
-                <div id="chica-home-mini-leaflet" className="absolute inset-0" />
-              </div>
-            </a>
             <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted">
               Chica listens. Got a correction, a better source, or a community event we should know about? Send it. Your time matters, and every useful tip makes the map stronger.
             </p>
@@ -77,6 +71,13 @@ function Home() {
             </figcaption>
           </figure>
         </section>
+
+        {/* Mini map painted by webapp/js/home-mini-map.js; click opens full-screen /map. */}
+        <a id="chica-home-mini-map" href="/Chicas-Map/map/" data-chica-keep="1" className="mx-auto my-6 block w-[calc(100%-2rem)] max-w-[560px]" aria-label="Open the map full screen">
+          <div className="relative aspect-[16/10] min-h-[200px] max-h-[280px] overflow-hidden rounded-[18px] bg-night ring-1 ring-line">
+            <div id="chica-home-mini-leaflet" className="absolute inset-0" />
+          </div>
+        </a>
 
         <section className="border-y border-line bg-paper">
           <div className="mx-auto max-w-6xl px-4 py-8">

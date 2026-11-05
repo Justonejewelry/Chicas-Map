@@ -100,7 +100,7 @@
     var s = document.createElement("style");
     s.id = "chica-home-mini-css";
     s.textContent =
-      "#chica-home-mini-map{display:block;margin:20px auto 28px;width:100%;max-width:560px;text-decoration:none;color:inherit}" +
+      "#chica-home-mini-map{display:block!important;margin:24px auto 32px!important;width:calc(100% - 32px)!important;max-width:560px!important;padding:0!important;text-decoration:none!important;color:inherit!important;background:transparent!important;border:0!important;box-shadow:none!important;border-radius:18px!important;min-height:0!important}" +
       "#chica-home-mini-map .frame{position:relative;overflow:hidden;border-radius:18px;border:1px solid rgba(255,255,255,.16);background:#1a1714;box-shadow:0 12px 28px rgba(0,0,0,.28);aspect-ratio:16/10;min-height:200px;max-height:280px}" +
       "#chica-home-mini-map .map{position:absolute;inset:0;z-index:0}" +
       "#chica-home-mini-map .veil{position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(18,18,18,.08),rgba(18,18,18,.55));pointer-events:none}" +
@@ -148,10 +148,7 @@
     return out;
   }
 
-  function placeShell() {
-    if (document.getElementById("chica-home-mini-map")) return document.getElementById("chica-home-mini-map");
-    var main = document.querySelector("main");
-    if (!main) return null;
+  function buildShell() {
     var a = document.createElement("a");
     a.id = "chica-home-mini-map";
     a.href = MAP_HREF;
@@ -166,16 +163,64 @@
       '</b><span class="pill">' +
       (es() ? "Pantalla completa" : "Full screen") +
       "</span></div></div>";
+    return a;
+  }
 
-    var heroBtn = main.querySelector("a[href*='/map']");
-    var h1 = main.querySelector("h1");
-    var anchor = null;
-    if (heroBtn && heroBtn.parentNode) anchor = heroBtn.parentNode;
-    else if (h1 && h1.parentNode) anchor = h1.parentNode;
-    if (anchor && anchor.parentNode) {
-      if (anchor.nextSibling) anchor.parentNode.insertBefore(a, anchor.nextSibling);
-      else anchor.parentNode.appendChild(a);
-    } else {
+  function ensureFrame(a) {
+    if (!a.querySelector("#chica-home-mini-leaflet")) {
+      a.innerHTML =
+        '<div class="frame">' +
+        '<div class="map" id="chica-home-mini-leaflet" role="img" aria-hidden="true"></div>' +
+        '<div class="veil"></div>' +
+        '<div class="cap"><b>' +
+        (es() ? "Mapa en vivo · San Antonio" : "Live map · San Antonio") +
+        '</b><span class="pill">' +
+        (es() ? "Pantalla completa" : "Full screen") +
+        "</span></div></div>";
+    } else if (!a.querySelector(".frame")) {
+      // React placeholder: wrap existing leaflet host
+      var host = a.querySelector("#chica-home-mini-leaflet");
+      a.innerHTML = "";
+      var frame = document.createElement("div");
+      frame.className = "frame";
+      if (!host) {
+        host = document.createElement("div");
+        host.id = "chica-home-mini-leaflet";
+        host.className = "map";
+      } else {
+        host.classList.add("map");
+      }
+      host.setAttribute("role", "img");
+      host.setAttribute("aria-hidden", "true");
+      frame.appendChild(host);
+      var veil = document.createElement("div");
+      veil.className = "veil";
+      frame.appendChild(veil);
+      var cap = document.createElement("div");
+      cap.className = "cap";
+      cap.innerHTML = "<b>" + (es() ? "Mapa en vivo · San Antonio" : "Live map · San Antonio") + '</b><span class="pill">' + (es() ? "Pantalla completa" : "Full screen") + "</span>";
+      frame.appendChild(cap);
+      a.appendChild(frame);
+    }
+    a.href = MAP_HREF;
+    a.setAttribute("data-chica-keep", "1");
+  }
+
+  function placeShell() {
+    var main = document.querySelector("main");
+    if (!main) return null;
+    var a = document.getElementById("chica-home-mini-map");
+    if (!a) a = buildShell();
+    ensureFrame(a);
+
+    // Park it centered under the hero section (not inside the left column)
+    var hero = main.querySelector("section");
+    if (hero && hero.parentNode) {
+      if (a.parentNode !== hero.parentNode || a.previousElementSibling !== hero) {
+        if (hero.nextSibling) hero.parentNode.insertBefore(a, hero.nextSibling);
+        else hero.parentNode.appendChild(a);
+      }
+    } else if (!a.parentNode) {
       main.insertBefore(a, main.firstChild);
     }
     return a;
