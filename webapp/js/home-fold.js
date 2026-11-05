@@ -18,8 +18,8 @@
   function hide(el) {
     if (!el || !el.parentNode) return;
     if (el.getAttribute && el.getAttribute("data-chica-keep") === "1") return;
-    if (el.id === "chica-home-reels" || el.id === "chica-reel-dialog" || el.id === "chica-more" || el.id === "chica-home-mini-map") return;
-    if (el.closest && el.closest("#chica-home-mini-map")) return;
+    if (el.id === "chica-home-reels" || el.id === "chica-reel-dialog" || el.id === "chica-more" || el.id === "chica-home-mini-map" || el.id === "chica-fresh-weekend") return;
+    if (el.closest && el.closest("#chica-home-mini-map, #chica-fresh-weekend")) return;
     el.parentNode.removeChild(el);
   }
 
@@ -216,7 +216,7 @@
 
   function quietChrome() {
     Array.from(document.querySelectorAll("main p, main span, main div, main h2, footer h2, footer p, footer div")).forEach(function (el) {
-      if (el.closest && el.closest("#chica-home-mini-map")) return;
+      if (el.closest && el.closest("#chica-home-mini-map, #chica-fresh-weekend")) return;
       if (el.querySelector && el.querySelector("article, [data-chica-keep], #chica-home-mini-map")) return;
       var t = text(el);
       var low = t.toLowerCase();

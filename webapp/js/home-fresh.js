@@ -1,4 +1,4 @@
-/* Home fresh sales. Replaces stale bundled list with live feed. */
+/* Home verified sales: scrolling clickable banner (no list). */
 (function () {
   function isHome() {
     var p = (location.pathname || "/").replace(/\/+$/, "") || "/";
@@ -9,6 +9,20 @@
     return location.pathname.indexOf("/Chicas-Map") === 0
       ? "/Chicas-Map/data/cities/san-antonio.json"
       : "/data/cities/san-antonio.json";
+  }
+
+  function userUrl() {
+    return dataUrl().replace("san-antonio.json", "san-antonio-user.json");
+  }
+
+  function mapHref(sale) {
+    var base = dataUrl().replace("/data/cities/san-antonio.json", "/map/");
+    var id = sale && (sale.id || sale.external_id);
+    if (id) return base + "?sale=" + encodeURIComponent(String(id));
+    if (sale && isFinite(Number(sale.lat)) && isFinite(Number(sale.lon))) {
+      return base + "?lat=" + Number(sale.lat) + "&lon=" + Number(sale.lon);
+    }
+    return base;
   }
 
   function es() {
@@ -56,48 +70,102 @@
     return !!ds && !!de && ds <= sun && de >= sat;
   }
 
+  function css() {
+    if (document.getElementById("chica-fresh-banner-css")) return;
+    var s = document.createElement("style");
+    s.id = "chica-fresh-banner-css";
+    s.textContent =
+      "#chica-fresh-weekend{margin:22px 0 28px;padding:0;max-width:100%}" +
+      "#chica-fresh-weekend .hd{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:0 4px 10px}" +
+      "#chica-fresh-weekend .hd h2{margin:0;font:650 18px/1.1 Syne,system-ui,sans-serif;letter-spacing:-.02em}" +
+      "#chica-fresh-weekend .hd p{margin:0;color:#a1a1aa;font:500 13px/1 Inter,system-ui,sans-serif;white-space:nowrap}" +
+      "#chica-fresh-weekend .rail{overflow:hidden;border:1px solid rgba(255,255,255,.12);border-radius:14px;background:rgba(255,255,255,.03);-webkit-mask-image:linear-gradient(90deg,transparent,#000 28px,#000 calc(100% - 28px),transparent);mask-image:linear-gradient(90deg,transparent,#000 28px,#000 calc(100% - 28px),transparent)}" +
+      "#chica-fresh-weekend .track{display:flex;width:max-content;gap:10px;padding:12px;animation:chica-fresh-scroll 42s linear infinite;will-change:transform}" +
+      "#chica-fresh-weekend .rail:hover .track,#chica-fresh-weekend .rail:focus-within .track{animation-play-state:paused}" +
+      "#chica-fresh-weekend a.chip{flex:0 0 auto;display:flex;flex-direction:column;justify-content:center;gap:4px;min-width:220px;max-width:280px;min-height:72px;padding:12px 14px;border-radius:12px;border:1px solid rgba(197,19,175,.35);background:linear-gradient(180deg,rgba(197,19,175,.16),rgba(255,255,255,.03));color:inherit;text-decoration:none}" +
+      "#chica-fresh-weekend a.chip:hover,#chica-fresh-weekend a.chip:focus-visible{border-color:#c513af;outline:2px solid #fffdf8;outline-offset:2px}" +
+      "#chica-fresh-weekend a.chip .t{font:650 14px/1.25 Inter,system-ui,sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}" +
+      "#chica-fresh-weekend a.chip .m{font:500 12px/1.2 Inter,system-ui,sans-serif;color:#a1a1aa;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}" +
+      "#chica-fresh-weekend a.chip .tag{font:700 10px/1 Inter,system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#e879d6}" +
+      "@keyframes chica-fresh-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}" +
+      "@media (prefers-reduced-motion:reduce){#chica-fresh-weekend .track{animation:none;overflow-x:auto;max-width:100%;width:100%}}" +
+      "/* Hide bundled Latest posted sales list */" +
+      "main section:has(h2){}" ;
+    document.head.appendChild(s);
+  }
+
+  function chip(sale) {
+    var a = document.createElement("a");
+    a.className = "chip";
+    a.href = mapHref(sale);
+    a.setAttribute("data-chica-keep", "1");
+    var kind = String(sale.type || sale.kind || "garage");
+    var tag = document.createElement("span");
+    tag.className = "tag";
+    tag.textContent = es()
+      ? (kind === "estate" ? "Estate" : kind === "permit" ? "Permiso" : "Garage")
+      : (kind === "estate" ? "Estate" : kind === "permit" ? "Permit" : "Garage");
+    a.appendChild(tag);
+    var title = document.createElement("span");
+    title.className = "t";
+    title.textContent = sale.title || (es() ? "Venta" : "Sale");
+    a.appendChild(title);
+    var meta = document.createElement("span");
+    meta.className = "m";
+    var street = (sale.address || "").split(",")[0];
+    meta.textContent = [street, sale.hours].filter(Boolean).join(" · ");
+    a.appendChild(meta);
+    return a;
+  }
+
   function buildSection(sales, total) {
+    css();
     var section = document.createElement("section");
     section.id = "chica-fresh-weekend";
     section.setAttribute("data-chica-keep", "1");
-    section.style.cssText = "margin:32px 0 48px;padding:0 4px";
+    section.setAttribute("aria-label", es() ? "Ventas verificadas" : "Verified sales");
 
+    var hd = document.createElement("div");
+    hd.className = "hd";
     var h2 = document.createElement("h2");
-    h2.textContent = es() ? "Este fin de semana" : "This weekend";
-    h2.style.cssText = "font:650 22px/1.1 Syne,system-ui,sans-serif;letter-spacing:-.02em;margin:0 0 8px";
-    section.appendChild(h2);
-
+    h2.textContent = es() ? "Ventas verificadas" : "Verified sales";
+    hd.appendChild(h2);
     var count = document.createElement("p");
     count.textContent = es()
-      ? total + " ventas verificadas · actualizado hoy"
-      : total + " verified sales · updated today";
-    count.style.cssText = "margin:0 0 16px;color:#a1a1aa;font:500 14px/1 Inter,system-ui,sans-serif";
-    section.appendChild(count);
+      ? total + " este fin · toca una"
+      : total + " this weekend · tap one";
+    hd.appendChild(count);
+    section.appendChild(hd);
 
-    var list = document.createElement("div");
-    list.style.cssText = "display:grid;gap:12px";
-    sales.slice(0, 8).forEach(function (s) {
-      var card = document.createElement("a");
-      card.href = dataUrl().replace("/data/cities/san-antonio.json", "/map/");
-      card.style.cssText = "display:block;padding:14px 16px;border:1px solid rgba(255,255,255,.1);border-radius:12px;background:rgba(255,255,255,.03);text-decoration:none;color:inherit";
-      var title = document.createElement("div");
-      title.textContent = s.title || "Sale";
-      title.style.cssText = "font:600 15px/1.3 Inter,system-ui,sans-serif;margin-bottom:4px";
-      card.appendChild(title);
-      var addr = document.createElement("div");
-      addr.textContent = (s.address || "").split(",")[0];
-      addr.style.cssText = "font:500 13px/1.3 Inter,system-ui,sans-serif;color:#a1a1aa";
-      card.appendChild(addr);
-      if (s.hours) {
-        var hrs = document.createElement("div");
-        hrs.textContent = s.hours;
-        hrs.style.cssText = "font:500 12px/1 Inter,system-ui,sans-serif;color:#71717a;margin-top:4px";
-        card.appendChild(hrs);
-      }
-      list.appendChild(card);
-    });
-    section.appendChild(list);
+    var rail = document.createElement("div");
+    rail.className = "rail";
+    rail.setAttribute("role", "region");
+    rail.setAttribute("aria-roledescription", "carousel");
+    var track = document.createElement("div");
+    track.className = "track";
 
+    var items = sales.slice(0, 24);
+    if (!items.length) {
+      var empty = document.createElement("p");
+      empty.style.cssText = "margin:0;padding:16px;color:#a1a1aa;font:500 14px/1.3 Inter,system-ui,sans-serif";
+      empty.textContent = es() ? "Sin ventas verificadas este fin todavía." : "No verified sales for this weekend yet.";
+      rail.appendChild(empty);
+      section.appendChild(rail);
+      return section;
+    }
+
+    // Two copies for a seamless loop
+    function fill() {
+      items.forEach(function (s) { track.appendChild(chip(s)); });
+    }
+    fill();
+    fill();
+    rail.appendChild(track);
+    section.appendChild(rail);
+
+    // Scale animation duration with item count
+    var secs = Math.max(28, Math.min(70, items.length * 3.2));
+    track.style.animationDuration = secs + "s";
     return section;
   }
 
@@ -118,9 +186,9 @@
     }
   }
 
-  function hideStale(main) {
+  function hideLists(main) {
     Array.from(main.querySelectorAll("h2, p, div")).forEach(function (el) {
-      if (el.closest && el.closest("#chica-fresh-weekend")) return;
+      if (el.closest && el.closest("#chica-fresh-weekend, #chica-home-mini-map")) return;
       var t = (el.innerText || "").toLowerCase();
       if (!t || t.length > 180) return;
       var stale =
@@ -128,11 +196,26 @@
         t.indexOf("three i’d start") !== -1 ||
         t.indexOf("three i'd start") !== -1 ||
         t.indexOf("tres con las que") !== -1 ||
+        t.indexOf("latest posted sales") !== -1 ||
+        t.indexOf("últimas ventas") !== -1 ||
+        t.indexOf("ultimas ventas") !== -1 ||
+        t === "this weekend" ||
+        t === "este fin de semana" ||
         (t.indexOf("all ") !== -1 && t.indexOf("this weekend") !== -1) ||
         (t.indexOf("las ") !== -1 && t.indexOf("este fin") !== -1);
       if (!stale) return;
       var sec = el.closest("section") || el.parentElement;
       if (sec && sec !== main && !(sec.closest && sec.closest("#chica-fresh-weekend"))) sec.style.display = "none";
+    });
+    // Hide sale list cards that are only "Browse all sales" sections
+    Array.from(main.querySelectorAll("section")).forEach(function (sec) {
+      if (sec.id === "chica-fresh-weekend" || (sec.closest && sec.closest("#chica-fresh-weekend"))) return;
+      var h = sec.querySelector("h2");
+      if (!h) return;
+      var ht = (h.innerText || "").toLowerCase();
+      if (ht.indexOf("latest posted sales") !== -1 || ht.indexOf("this weekend") !== -1 || ht.indexOf("este fin") !== -1) {
+        sec.style.display = "none";
+      }
     });
   }
 
@@ -143,32 +226,47 @@
     var main = document.querySelector("main");
     if (!main) return;
     patchHero(cached.total);
-    hideStale(main);
+    hideLists(main);
     if (document.getElementById("chica-fresh-weekend")) return;
     var section = buildSection(cached.sales, cached.total);
     var mini = document.getElementById("chica-home-mini-map");
     if (mini && mini.parentNode) mini.parentNode.insertBefore(section, mini.nextSibling);
     else {
-      var heroBtn = main.querySelector("a[data-chica-keep='1']");
-      if (heroBtn && heroBtn.parentNode) heroBtn.parentNode.insertBefore(section, heroBtn.nextSibling);
+      var keep = main.querySelector("a[data-chica-keep='1']");
+      if (keep && keep.parentNode) keep.parentNode.insertBefore(section, keep.nextSibling);
       else main.appendChild(section);
     }
+  }
+
+  function normalize(list) {
+    return (list || []).filter(function (s) {
+      return (s.confidence == null || s.confidence >= 0.7);
+    });
   }
 
   function run() {
     if (!isHome()) return;
     var bounds = weekendBounds();
-    fetch(dataUrl(), { cache: "no-store" })
-      .then(function (r) { return r.json(); })
-      .then(function (data) {
-        var weekend = (data.public || []).filter(function (s) {
-          return (s.confidence || 0) >= 0.7 && overlaps(s, bounds.sat, bounds.sun);
-        });
-        weekend.sort(function (a, b) { return (b.confidence || 0) - (a.confidence || 0); });
-        cached = { sales: weekend, total: weekend.length };
-        paint();
-      })
-      .catch(function () {});
+    Promise.all([
+      fetch(dataUrl(), { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }),
+      fetch(userUrl() + "?v=" + Date.now(), { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; })
+    ]).then(function (pair) {
+      var main = pair[0] || {};
+      var user = pair[1] || {};
+      var pool = normalize(main.public).concat(normalize(user.public || user.sales || (Array.isArray(user) ? user : [])));
+      var weekend = pool.filter(function (s) { return overlaps(s, bounds.sat, bounds.sun); });
+      // de-dupe by title+street
+      var seen = {};
+      weekend = weekend.filter(function (s) {
+        var k = String(s.title || "").toLowerCase() + "|" + String(s.address || "").split(",")[0].toLowerCase();
+        if (seen[k]) return false;
+        seen[k] = 1;
+        return true;
+      });
+      weekend.sort(function (a, b) { return (b.confidence || 0) - (a.confidence || 0); });
+      cached = { sales: weekend, total: weekend.length };
+      paint();
+    });
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", run);
