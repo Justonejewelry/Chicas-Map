@@ -1,7 +1,7 @@
 /* Chicas Map KEY.
-   Intel is NOT nearby parking / pantry / Wi-Fi / schools.
+   Sales only. Resources (parking, pantries, Wi-Fi, school zones, thrift, emergency)
+   live on Alamo City Resources — not this map.
    Intel is driveway notes on THAT pin, GPS-gated at 200 ft (pin-details.js).
-   Resale Trail (thrift/resale/flea) auto-enabled Mon–Thu; user toggle still respected.
 */
 (function () {
   function onMapPath() {
@@ -10,15 +10,6 @@
   }
   if (!onMapPath()) return;
   var BASE = "/Chicas-Map";
-  function isWeekday() {
-    // Mon=1 ... Thu=4  (0=Sun, 6=Sat)
-    var d = new Date().getDay();
-    return d >= 1 && d <= 4;
-  }
-  function defaultThrift() {
-    // Prefer Resale Trail Mon-Thu unless user has already toggled it
-    return isWeekday();
-  }
   var SAT_STORE = "chicas-map-layer-sat";
   var KEY_STORE = "chicas-map-key-open-v2";
   var LAYER_STORE = "chicas-map-key-layers";
@@ -37,13 +28,7 @@
         estate: state.estate,
         permit: state.permit,
         satellite: state.satellite,
-        parking: state.parking,
-        pantry: state.pantry,
-        schools: state.schools,
-        wifi: state.wifi,
-        claimed: state.claimed,
-        thrift: state.thrift,
-        emergency: state.emergency
+        claimed: state.claimed
       }));
     } catch (e) {}
   }
@@ -53,29 +38,17 @@
     estate: saved.estate !== false,
     permit: saved.permit !== false,
     satellite: typeof saved.satellite === "boolean" ? saved.satellite : readSat(),
-    parking: saved.parking === true,
-    pantry: saved.pantry === true,
-    schools: saved.schools === true,
-    wifi: saved.wifi === true,
     claimed: saved.claimed !== false,
-    thrift: ("thrift" in saved) ? !!saved.thrift : defaultThrift(),
-    events: false,
-    emergency: saved.emergency === true && emergencyOn()
+    events: false
   };
   var LAYERS = [
     { id: "garage", kind: "sale", label: "Garage sale" },
     { id: "estate", kind: "sale", label: "Estate sale" },
     { id: "permit", kind: "sale", label: "City permit" },
     { id: "satellite", kind: "basemap", label: "Satellite" },
-    { id: "parking", kind: "overlay", label: "Parking", src: BASE + "/data/san-antonio-downtown-parking.geojson" },
-    { id: "pantry", kind: "overlay", label: "Pantries", src: BASE + "/data/san-antonio-24h-food-pantries.geojson" },
-    { id: "schools", kind: "overlay", label: "School zones", src: BASE + "/data/zone-aware-schools.geojson" },
-    { id: "wifi", kind: "overlay", label: "Wi-Fi", src: BASE + "/data/san-antonio-public-wifi.geojson" },
     { id: "claimed", kind: "claimed", label: "Chicas Pack" },
-    { id: "thrift", kind: "overlay", label: "Resale Trail", src: BASE + "/data/san-antonio-thrift.geojson" },
     { id: "listit", kind: "cta", label: "Boost My Sale", href: BASE + "/claim", hint: "Gold pin this weekend. $5." }
   ];
-  if (emergencyOn()) LAYERS.push({ id: "emergency", kind: "overlay", label: "Emergency hubs", src: BASE + "/data/san-antonio-emergency-info.geojson" });
   var specById = {};
   for (var si = 0; si < LAYERS.length; si++) specById[LAYERS[si].id] = LAYERS[si];
   function esc(s) { return String(s == null ? "" : s); }
@@ -290,29 +263,16 @@
       paintRow(row, spec);
     }
   }
-  function hideDup() {
-    var bar = document.getElementById("chica-pin-claim"); if (bar) bar.remove();
-    var a = document.getElementById("chica-intel-btn"); if (a) a.remove();
-  }
-  function restoreMap() {
-    var map = document.querySelector(".leaflet-container") || document.querySelector(".chica-map");
-    if (!map) return;
-    var n = map;
-    while (n && n !== document.body) {
-      if (n.style && n.style.display === "none") n.style.removeProperty("display");
-      n = n.parentElement;
-    }
-    document.documentElement.classList.add("chica-fs-on");
-  }
-  function restoreOverlays() {
-    for (var i = 0; i < LAYERS.length; i++) { var spec = LAYERS[i]; if (spec.kind === "overlay" && state[spec.id]) setOverlay(spec.id, true, spec); }
-  }
-  function wire() {
-    if (!onMapPath()) return;
+  function boot() {
     ensureStyle();
-    var p = ensurePanel(); if (!p) return;
-    ensureOverlays(p); hideDup(); restoreMap(); applyPins(); stripIntelChrome(); applySat(); applyClaimed(); restoreOverlays();
+    var p = ensurePanel();
+    ensureOverlays(p);
+    applyPins();
+    applySat();
+    applyClaimed();
+    stripIntelChrome();
   }
-  function boot() { wire(); setInterval(wire, 900); }
-  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot); else boot();
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
+  else boot();
+  setInterval(function () { if (document.getElementById("chica-key")) return; boot(); }, 1500);
 })();
