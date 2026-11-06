@@ -75,6 +75,7 @@
     var hunt = findHunt();
     if (hunt && hunt.parentNode) hunt.parentNode.removeChild(hunt);
     Array.from(document.querySelectorAll("header a, [role='banner'] a")).forEach(function (el) {
+      if (el.closest && el.closest("#chica-more")) return; /* site menu owns its own Map link */
       var t = textOf(el).toLowerCase();
       var href = hrefOf(el);
       if (href.indexOf("/map") === -1) return;

@@ -65,7 +65,7 @@
           : "Feed loaded but this file is not a listing array. Use the map.";
         function esc(v) {
           return String(v == null ? "" : v).replace(/[&<>"']/g, function (c) {
-            return ({ "&": "&", "<": "<", ">": ">", '"': """, "'": "&#39;" })[c];
+            return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c];
           });
         }
         box.innerHTML = sales.slice(0, 120).map(function (s) {
@@ -81,7 +81,7 @@
       });
     })();
   </script>
-<script src="/Chicas-Map/js/chica-menu.js?v=6" defer></script>
+<script src="/Chicas-Map/js/chica-menu.js?v=8" defer></script>
 <script data-goatcounter="https://chicasmapcom.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
