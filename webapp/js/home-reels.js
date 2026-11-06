@@ -2,11 +2,11 @@
 (function () {
   var BASE = "/Chicas-Map";
   var REELS = [
-    { id: "weekend", title: "This weekend", poster: BASE + "/media/reel-weekend.jpg", url: "https://www.facebook.com/61593215043603/videos/1538315900891586/" },
-    { id: "flys", title: "Weekend fly-by", poster: BASE + "/media/reel-1.jpg", url: "https://www.facebook.com/jay.sciaraffa/videos/1830161145021445/" },
-    { id: "this-is-chica", title: "This is Chica", poster: BASE + "/media/reel-2.jpg", url: "https://www.facebook.com/jay.sciaraffa/videos/1997896027486170/" },
-    { id: "citywide", title: "Citywide", poster: BASE + "/media/reel-citywide.jpg", url: "https://www.facebook.com/jay.sciaraffa/videos/1490119993157202/" },
-    { id: "cape", title: "Cape on", poster: BASE + "/media/reel-cover.jpg", url: "https://www.facebook.com/61593215043603/videos/1538315900891586/" }
+    { id: "montrose", title: "Montrose Market", poster: BASE + "/media/reel-weekend.jpg", url: "https://www.facebook.com/reel/1860708111589364/" },
+    { id: "find-sale", title: "Find the sale", poster: BASE + "/media/reel-1.jpg", url: "https://www.facebook.com/reel/2109875397081152/" },
+    { id: "comedy", title: "Comedy special", poster: BASE + "/media/reel-2.jpg", url: "https://www.facebook.com/reel/1061526163580861/" },
+    { id: "redbird", title: "Redbird Ranch", poster: BASE + "/media/reel-citywide.jpg", url: "https://www.facebook.com/reel/894843870248831/" },
+    { id: "near-me", title: "Near Me", poster: BASE + "/media/reel-cover.jpg", url: "https://www.facebook.com/reel/3632339963583250/" }
   ];
   function home() {
     var p = (location.pathname || "/").replace(/\/+$/, "") || "/";
