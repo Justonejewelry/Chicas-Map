@@ -1258,30 +1258,6 @@
       "external_id": "cl-agesalesaturday5prtubdlxdmckxpkf98bnb"
     },
     {
-      "address": "9790 W RANCH ROAD 1431, Austin, TX",
-      "dates": "2026-11-05 – 2026-11-05",
-      "date_from": "2026-11-05",
-      "date_to": "2026-11-05",
-      "end_date": "2026-11-05",
-      "hours": null,
-      "title": "Huge Dam Barn Sale, Buchanan Dam, TX",
-      "details": "QR Code Link to This Post Need Room in my Barn! Huge Dam Barn Sale. Tons of Tools, Glassware, Power Tools, Small air compressors, Tool Boxes, Jewelry, Canning Supplies, Old Records, Toys, Cookware, Clothing, Kitchen stuff, Collectibles, Antiques, Small Cultivator, Tractor Post Hole Digger, Quilts, Bedding, Shoes, Way too Dam much to list. Priced to SELL. Sale is Thursday-Friday-Saturday, Nov 5,6,7",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/buchanan-dam-huge-dam-barn-sale/uKtv4BwgLV9JfcV3u2PZoE",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.75051,
-      "lon": -98.465223,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-ugedambarnsaleuktv4bwglv9jfcv3u2pzoe"
-    },
-    {
       "address": "2604 Addison Ave, Austin, TX 78757",
       "dates": "Sat Nov 7 – Sat Nov 7",
       "date_from": "11/07/2026",
@@ -1667,9 +1643,9 @@
     "gsalr.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 76,
+  "total_locations": 75,
   "status": "live",
-  "date": "2026-11-05",
-  "last_refresh": "2026-11-05T12:34:38-06:00",
+  "date": "2026-11-06",
+  "last_refresh": "2026-11-06T05:16:32-06:00",
   "permits": []
 }
