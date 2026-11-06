@@ -151,7 +151,45 @@
     };
   }
 
+  /* Auto-hide ended sales (America/Chicago). A sale is ended when its last day
+     is before today, or it is today and its posted closing hour has passed. */
+  function ctNow() {
+    try {
+      var parts = new Intl.DateTimeFormat("en-CA", { timeZone: "America/Chicago", year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", hour12: false }).formatToParts(new Date());
+      var o = {};
+      for (var i = 0; i < parts.length; i++) o[parts[i].type] = parts[i].value;
+      return { ymd: o.year + "-" + o.month + "-" + o.day, mins: (Number(o.hour) % 24) * 60 + Number(o.minute) };
+    } catch (e) {
+      var d = new Date();
+      var m = d.getMonth() + 1, dd = d.getDate();
+      return { ymd: d.getFullYear() + "-" + (m < 10 ? "0" : "") + m + "-" + (dd < 10 ? "0" : "") + dd, mins: d.getHours() * 60 + d.getMinutes() };
+    }
+  }
+  w.__chicaCtNow = ctNow;
+  function closingMins(hours) {
+    var t = String(hours || "").toLowerCase().replace(/\./g, "");
+    var m = t.match(/[\u2013\u2014-]\s*(?:to\s*)?(\d{1,2})(?::(\d{2}))?\s*(am|pm|a|p)\b/) || t.match(/\bto\s*(\d{1,2})(?::(\d{2}))?\s*(am|pm|a|p)\b/);
+    if (!m) return null;
+    var h = Number(m[1]) % 12;
+    if (m[3].charAt(0) === "p") h += 12;
+    return h * 60 + Number(m[2] || 0);
+  }
+  function isEnded(s, now) {
+    var end = String(s.date_end || s.end_date || s.date_to || "").slice(0, 10);
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(end)) return false;
+    now = now || ctNow();
+    if (end < now.ymd) return true;
+    if (end === now.ymd) {
+      var close = closingMins(s.hours);
+      if (close != null && close > 6 * 60 && now.mins > close + 30) return true;
+    }
+    return false;
+  }
+  w.__chicaIsEnded = isEnded;
+
   function addPins(map, L, sales) {
+    var now = ctNow();
+    w.__chicaHiddenEnded = 0;
     var seen = {};
     var published = [];
     markers = [];
@@ -159,6 +197,7 @@
     for (var i = 0; i < sales.length; i++) {
       var item = normalize(sales[i]);
       if (!item || seen[item.id]) continue;
+      if (isEnded(item, now)) { w.__chicaHiddenEnded += 1; continue; }
       seen[item.id] = 1;
       published.push(item);
       (function (sale) {
@@ -209,7 +248,7 @@
     for (var i = 0; i < sales.length; i++) {
       var s = sales[i];
       if (f.type && s.type !== f.type) continue;
-      if (f.day && s.date_start && (f.day < s.date_start || f.day > (s.date_end || s.date_start))) continue;
+      if (f.day && s.date_start && ((f.dayTo || f.day) < s.date_start || f.day > (s.date_end || s.date_start))) continue;
       if (f.verified && String(s.status).toLowerCase() !== "verified") continue;
       if (f.miles && w.__chicaHere) {
         var mi = milesBetween(w.__chicaHere.lat, w.__chicaHere.lon, s.lat, s.lon);
@@ -360,6 +399,17 @@
     var esriStreet = L.tileLayer(ESRI_STREET, Object.assign({ attribution: "Tiles \u00a9 Esri" }, tileOpts));
     var esriSat = L.tileLayer(ESRI_SAT, Object.assign({ attribution: "Tiles \u00a9 Esri" }, tileOpts));
     map._chicaStreet = street; map._chicaSat = sat; map._chicaEsriStreet = esriStreet; map._chicaEsriSat = esriSat;
+    // Last-resort keyless fallback: if Esri also fails, use OpenStreetMap standard tiles
+    // (attribution required; light use per https://operations.osmfoundation.org/policies/tiles/).
+    var esriFails = 0;
+    esriStreet.on("tileerror", function () {
+      esriFails += 1;
+      if (esriFails < 4 || map._chicaOsm) return;
+      map._chicaOsm = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", { attribution: "\u00a9 OpenStreetMap contributors", maxZoom: 19 });
+      map._chicaEsriStreet = map._chicaOsm;
+      try { map.removeLayer(esriStreet); } catch (e) {}
+      showBase();
+    });
     street.on("tileerror", markDead);
     sat.on("tileerror", markDead);
     map.on("tileload", function () { armTiles(el); hideBoot(); });

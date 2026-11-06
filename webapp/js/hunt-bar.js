@@ -11,8 +11,8 @@
       nearAria: "Find sales near me",
       filters: "Sale filters",
       today: "Today",
-      sat: "Saturday",
-      sun: "Sunday",
+      tomorrow: "Tomorrow",
+      weekend: "This weekend",
       garage: "Garage",
       yard: "Yard",
       estate: "Estate",
@@ -26,8 +26,8 @@
       nearAria: "Ventas cerca de mí",
       filters: "Filtros de ventas",
       today: "Hoy",
-      sat: "Sábado",
-      sun: "Domingo",
+      tomorrow: "Mañana",
+      weekend: "Este fin de semana",
       garage: "Garaje",
       yard: "Patio",
       estate: "Bienes",
@@ -62,6 +62,27 @@
     var m = d.getMonth() + 1;
     var day = d.getDate();
     return d.getFullYear() + "-" + (m < 10 ? "0" : "") + m + "-" + (day < 10 ? "0" : "") + day;
+  }
+  function ctToday() {
+    var n = window.__chicaCtNow ? window.__chicaCtNow().ymd : ymd(new Date());
+    var p = n.split("-");
+    return new Date(Number(p[0]), Number(p[1]) - 1, Number(p[2]));
+  }
+  function dayRange(name) {
+    var t = ctToday();
+    if (name === "today") return [ymd(t), ymd(t)];
+    if (name === "tomorrow") { var tm = new Date(t.getFullYear(), t.getMonth(), t.getDate() + 1); return [ymd(tm), ymd(tm)]; }
+    if (name === "weekend") {
+      // Fri-Sun; on Sat/Sun this is the current weekend starting today
+      var dow = t.getDay();
+      var toFri = dow === 6 ? 0 : dow === 0 ? 0 : (5 - dow + 7) % 7;
+      var start = new Date(t.getFullYear(), t.getMonth(), t.getDate() + toFri);
+      var toSun = (7 - dow) % 7;
+      var end = new Date(t.getFullYear(), t.getMonth(), t.getDate() + toSun);
+      return [ymd(start), ymd(end)];
+    }
+    var d = weekday(name);
+    return [d, d];
   }
   function weekday(name) {
     var want = name === "sat" ? 6 : name === "sun" ? 0 : -1;
@@ -228,8 +249,8 @@
     filters.innerHTML =
       '<div class="grp">' +
         '<button type="button" data-day="today">Today</button>' +
-        '<button type="button" data-day="sat">Saturday</button>' +
-        '<button type="button" data-day="sun">Sunday</button>' +
+        '<button type="button" data-day="tomorrow">Tomorrow</button>' +
+        '<button type="button" data-day="weekend">This weekend</button>' +
       '</div>' +
       '<div class="grp">' +
         '<button type="button" data-type="garage">Garage</button>' +
@@ -262,7 +283,9 @@
       if (btn.dataset.day) {
         var next = btn.classList.contains("on") ? "" : btn.dataset.day;
         filters.querySelectorAll("[data-day]").forEach(function (b) { b.classList.remove("on"); });
-        state.day = next ? weekday(next) : "";
+        var rg = next ? dayRange(next) : ["", ""];
+        state.day = rg[0];
+        state.dayTo = rg[1];
         if (next) btn.classList.add("on");
       }
       if (btn.dataset.type) {

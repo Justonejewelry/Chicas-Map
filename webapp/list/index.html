@@ -24,7 +24,7 @@
     <p class="meta">Chicas Map · San Antonio</p>
     <h1>This weekend’s sales</h1>
     <p class="meta" id="status">Loading the live feed…</p>
-    <p class="nav"><a href="/Chicas-Map/map">Open the map</a> · <a href="/Chicas-Map/submit">List a sale</a> · <a href="/Chicas-Map/claim/">Boost My Sale</a></p>
+    <p class="nav"><a href="/Chicas-Map/map">Open the map</a> · <a href="/Chicas-Map/submit">List a sale</a> · <a href="/Chicas-Map/claim/">Boost My Sale</a> · <a href="/Chicas-Map/garage-sales/">By neighborhood</a></p>
     <div id="list"></div>
   </main>
   <script>
@@ -33,7 +33,8 @@
       var status = document.getElementById("status");
       var urls = [
         "/Chicas-Map/data/cities/san-antonio.json",
-        "/Chicas-Map/data/cities/san-antonio-email.json"
+        "/Chicas-Map/data/cities/san-antonio-email.json",
+        "/Chicas-Map/data/cities/san-antonio-user.json"
       ];
       function bag(data) {
         var sales = [];
@@ -60,6 +61,13 @@
       })).then(function (bags) {
         var sales = [];
         for (var i = 0; i < bags.length; i++) sales = sales.concat(bag(bags[i]));
+        // Hide sales whose last day has passed (America/Chicago)
+        var today = "";
+        try { today = new Intl.DateTimeFormat("en-CA", { timeZone: "America/Chicago" }).format(new Date()); } catch (e) {}
+        if (today) sales = sales.filter(function (s) {
+          var end = String(s.date_end || s.end_date || s.date_to || "").slice(0, 10);
+          return !/^\d{4}-\d{2}-\d{2}$/.test(end) || end >= today;
+        });
         status.textContent = sales.length
           ? sales.length + " stops in the live San Antonio feed."
           : "Feed loaded but this file is not a listing array. Use the map.";
@@ -73,7 +81,12 @@
           var kind = esc(s.type || s.kind || "sale");
           var addr = esc(s.address || s.addr || "");
           var href = "/Chicas-Map/map/";
-          if (s.lat && s.lon) href += "?lat=" + encodeURIComponent(s.lat) + "&lon=" + encodeURIComponent(s.lon);
+          var lat = Number(s.lat), lon = Number(s.lon != null ? s.lon : s.lng);
+          if (isFinite(lat) && isFinite(lon) && s.lat != null) {
+            var id = s.external_id || s.id || s.sale_id || (lat.toFixed(5) + "," + lon.toFixed(5) + "|" + (s.title || s.address || ""));
+            href += "?sale=" + encodeURIComponent(id);
+          }
+          if (s.dates) addr += (addr ? " \u00b7 " : "") + esc(s.dates);
           return '<a class="row" href="' + href + '"><div class="kind">' + kind + '</div><strong>' + title + '</strong><div class="meta">' + addr + '</div></a>';
         }).join("");
       }).catch(function () {

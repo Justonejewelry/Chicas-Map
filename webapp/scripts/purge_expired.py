@@ -166,6 +166,38 @@ def process_city(path: Path, today: date) -> tuple[int, int]:
     return removed, after
 
 
+def purge_user_overlay(path: Path, today: date) -> tuple[int, int]:
+    """Hand-curated overlay (-user.json): drop ONLY pins with a structured ISO
+    end date before today (CT). Free-text / undated pins are kept so curated
+    pins are never lost by a bad parse. Other keys are left untouched."""
+    import json
+
+    raw = json.loads(path.read_text(encoding="utf-8"))
+    pins = raw.get("public")
+    if not isinstance(pins, list):
+        return 0, 0
+    keep = []
+    for s in pins:
+        end = None
+        for key in ("end_date", "date_end", "date_to"):
+            v = str(s.get(key) or "").strip()[:10]
+            try:
+                end = date.fromisoformat(v)
+                break
+            except ValueError:
+                continue
+        if end is not None and end < today:
+            continue
+        keep.append(s)
+    removed = len(pins) - len(keep)
+    if removed:
+        raw["public"] = keep
+        if "total_locations" in raw:
+            raw["total_locations"] = len(keep)
+        path.write_text(json.dumps(raw, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    return removed, len(keep)
+
+
 def main() -> int:
     today = today_ct()
     if not CITY_DIR.is_dir():
@@ -175,7 +207,15 @@ def main() -> int:
     total_removed = 0
     total_kept = 0
     for path in sorted(CITY_DIR.glob("*.json")):
-        if path.name.endswith("-clusters.json") or path.name.endswith("-user.json"):
+        if path.name.endswith("-clusters.json"):
+            continue
+        if path.name.endswith("-user.json"):
+            try:
+                removed, kept = purge_user_overlay(path, today)
+                total_removed += removed
+                print(f"{path.name}: removed={removed} kept={kept} (overlay, ISO end dates only)")
+            except Exception as e:
+                print(f"skip {path.name}: {type(e).__name__}: {e}", file=sys.stderr)
             continue
         try:
             removed, kept = process_city(path, today)
