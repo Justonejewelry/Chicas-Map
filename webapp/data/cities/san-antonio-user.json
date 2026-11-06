@@ -7,7 +7,7 @@
   "status": "live",
   "sentinel": "PASS",
   "note": "Operator overlay. 25 Facebook pins after removing 2 stale Marketplace listings (listing gone/sold; sale postponed due to rain).",
-  "total_locations": 25,
+  "total_locations": 23,
   "public": [
     {
       "address": "3625 CANDLEKNOLL CIR, SAN ANTONIO, TX, 78244",
@@ -382,37 +382,6 @@
       "date_verified": "facebook-live-2026-11-05"
     },
     {
-      "address": "7002 EMERALD VALLEY, SAN ANTONIO, TX, 78242",
-      "dates": "Thu Nov 5, from 1:45 PM",
-      "date_from": "2026-11-05",
-      "date_to": "2026-11-05",
-      "end_date": "2026-11-05",
-      "date_start": "2026-11-05",
-      "date_end": "2026-11-05",
-      "date_bucket": "live",
-      "hours": "from 1:45 PM",
-      "title": "Garage Sale - Everything Must Go!",
-      "details": "Today 1:45 PM. 7002 Emerald Valley",
-      "source": "Facebook Events",
-      "url": "https://www.facebook.com/events/1121761440666775/",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.84,
-      "status": "verified",
-      "lat": 29.360067,
-      "lon": -98.602467,
-      "geocode": "census",
-      "external_id": "fb-ev-1121761440666775",
-      "categories": [
-        "garage-sale",
-        "facebook",
-        "event"
-      ],
-      "zip": "78242",
-      "in_person": true,
-      "date_verified": "facebook-live-2026-11-05"
-    },
-    {
       "address": "8327 WICKERSHAM ST, SAN ANTONIO, TX, 78254",
       "dates": "Fri Nov 6, from 9 AM",
       "date_from": "2026-11-06",
@@ -689,36 +658,6 @@
       ],
       "zip": "78254",
       "in_person": true
-    },
-    {
-      "address": "2751 E SOUTHCROSS BLVD, SAN ANTONIO, TX, 78223",
-      "dates": "11/05",
-      "date_from": "2026-11-05",
-      "date_to": "2026-11-05",
-      "end_date": "2026-11-05",
-      "date_start": "2026-11-05",
-      "date_end": "2026-11-05",
-      "date_bucket": "live",
-      "hours": "",
-      "title": "Yard sale 2751 E Southcross 78223",
-      "details": "2751 E Southcross 78223",
-      "source": "Facebook Marketplace",
-      "url": "https://www.facebook.com/marketplace/item/1010952137926291/",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.85,
-      "status": "verified",
-      "lat": 29.37624,
-      "lon": -98.449832,
-      "geocode": "census",
-      "external_id": "fb-1010952137926291",
-      "categories": [
-        "garage-sale",
-        "facebook"
-      ],
-      "zip": "78223",
-      "in_person": true,
-      "date_note": "No date on listing; Thu Nov 5 inferred from list time (~2h ago)"
     },
     {
       "address": "4011 Emory Oak Dr, San Antonio, TX 78223",
