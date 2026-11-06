@@ -7,6 +7,7 @@ on:
       - "webapp/**"
       - "scripts/stamp-pages.mjs"
       - "scripts/root-domain.mjs"
+      - "scripts/build_seo_pages.mjs"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
 
@@ -67,6 +68,8 @@ jobs:
           echo "custom domain $DOMAIN"
           export SITE_ORIGIN="https://${DOMAIN}"
           node scripts/stamp-pages.mjs _site
+          # Neighborhood landing pages + sitemap entries (after stamp so titles stick)
+          node scripts/build_seo_pages.mjs _site
           node scripts/root-domain.mjs _site
           # Tip-only prune. These files are not referenced by the live map or adventure page.
           # alamo-atlas-demo.mp4 stays: home-atlas.js links it.
