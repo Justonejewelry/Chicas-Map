@@ -42,7 +42,10 @@
       s = document.createElement("style");
       s.id = "chica-menu-css";
       document.head.appendChild(s);
+    } else if (s.getAttribute("data-ready") === "1") {
+      return;
     }
+    s.setAttribute("data-ready", "1");
     s.textContent =
       "#chica-site-bar{position:sticky;top:0;z-index:90;display:flex;align-items:center;justify-content:space-between;height:64px;padding:0 12px;background:rgba(18,18,18,.92);border-bottom:1px solid rgba(255,255,255,.08);font-family:Inter,system-ui,sans-serif}" +
       "body:has(header:not(#chica-site-bar)) #chica-site-bar{display:none!important;visibility:hidden!important;pointer-events:none!important;height:0!important;overflow:hidden!important;border:0!important;padding:0!important;margin:0!important}" +
@@ -60,6 +63,7 @@
       "#chica-more > div{min-width:232px;padding:6px;border-radius:14px;background:rgba(18,18,18,.94);color:#f5f5f7;border:1px solid rgba(255,255,255,.14);box-shadow:0 16px 40px rgba(0,0,0,.32);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}" +
       "#chica-more a{display:flex;align-items:center;min-height:44px;padding:0 12px;border-radius:10px;color:#f5f5f7;text-decoration:none;font:500 15px/1.2 Inter,system-ui,sans-serif}" +"button,summary,a[data-chica-keep='1'],.chica-glass{background-color:#c513af;background-image:linear-gradient(180deg,rgba(255,255,255,.46),rgba(255,255,255,.08) 46%,rgba(0,0,0,.2));border:1px solid rgba(255,255,255,.4);box-shadow:inset 0 1px 0 rgba(255,255,255,.62),inset 0 -2px 0 rgba(0,0,0,.28),0 8px 16px rgba(0,0,0,.28);color:#fff}" +"#chica-lang button,#chica-theme{background-color:#1c1c1e;color:#f5f5f7}" +"#chica-lang button[aria-pressed='true']{background-color:#c513af;color:#fff}" +
       "#chica-more a:hover,#chica-more a:focus-visible{background:rgba(255,255,255,.08);outline:2px solid #c513af;outline-offset:2px}" +"#chica-skip{position:absolute;left:8px;top:8px;z-index:300;transform:translateY(-160%);background:#c513af;color:#fff;padding:12px 16px;border-radius:999px;font:700 14px/1 Inter,system-ui,sans-serif;text-decoration:none}" +"#chica-skip:focus{transform:none}" +".chica-vh{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}" +"a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid #c513af;outline-offset:2px}" +
+      "[data-chica-hide='1']{display:none!important}" +
       "#chica-more a[aria-current='page']{color:#fff;font-weight:650}" +
       "body.chica-map-menu #chica-site-bar{position:fixed;top:max(10px,env(safe-area-inset-top));left:10px;width:auto;height:auto;padding:0;background:transparent;border:0}" +
       "body.chica-map-menu #chica-more{position:fixed;left:10px;top:62px}" +
@@ -76,6 +80,9 @@
 
   function fill(panel) {
     var want = items();
+    var sig = (es() ? "es" : "en") + "|" + path();
+    if (panel.getAttribute("data-sig") === sig && panel.children.length === want.length) return;
+    panel.setAttribute("data-sig", sig);
     panel.textContent = "";
     want.forEach(function (item) {
       var a = document.createElement("a");
@@ -95,8 +102,24 @@
       summary.tabIndex = -1;
       summary.setAttribute("aria-hidden", "true");
       var panel = document.createElement("div");
+      panel.setAttribute("role", "navigation");
+      panel.setAttribute("aria-label", "Site");
       details.appendChild(summary);
       details.appendChild(panel);
+      var closeMenu = function (focusMark) {
+        details.open = false;
+        var m = document.querySelector("[data-chica-mark='1'], #chica-mark");
+        if (m) {
+          m.setAttribute("aria-expanded", "false");
+          if (focusMark) m.focus();
+        }
+      };
+      document.addEventListener("keydown", function (ev) {
+        if (details.open && (ev.key === "Escape" || ev.key === "Esc")) closeMenu(true);
+      });
+      panel.addEventListener("click", function (ev) {
+        if (ev.target && ev.target.closest && ev.target.closest("a")) closeMenu(false);
+      });
       document.addEventListener("click", function (ev) {
         if (!details.open) return;
         if (details.contains(ev.target)) return;
@@ -161,10 +184,10 @@
       if (t === "en" || t === "es" || t.indexOf("theme") !== -1 || t.indexOf("tema") !== -1) return;
       if (t.indexOf("chicas map") !== -1) {
         var span = el.querySelector("span");
-        if (span && span.parentNode) span.parentNode.removeChild(span);
+        if (span) span.setAttribute("data-chica-hide", "1");
         return;
       }
-      if (el.parentNode) el.parentNode.removeChild(el);
+      el.setAttribute("data-chica-hide", "1");
     });
   }
 
