@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="{{lang}}">
+<head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>{{title}} · Chicas Map</title>
+<link rel="icon" href="/Chicas-Map/favicon.svg"/>
+<link rel="alternate" type="text/calendar" href="https://www.chicasmap.com/calendar.ics" title="Chica's Map sales"/>
+<link rel="stylesheet" href="/Chicas-Map/css/calendar.css"/>
+</head>
+<body><main>
+<nav aria-label="Navigation"><a href="/Chicas-Map{{prefix}}/">{{home}}</a> · <a href="/Chicas-Map{{prefix}}/list/">{{listing}}</a> · <a href="/Chicas-Map/map/">{{map}}</a> · <a href="/Chicas-Map{{other}}">{{language}}</a></nav>
+<header><p>Chica's Map · San Antonio 🐾</p><h1>{{title}}</h1><p>{{intro}}</p><p id="sale-count">{{count_text}}</p><p class="muted">{{generated}} {{date}} · CT</p></header>
+<section class="subscribe" aria-labelledby="subscribe-title"><h2 id="subscribe-title">{{subscribe}}</h2>
+<div class="actions"><a class="button" href="https://calendar.google.com/calendar/render?cid=webcal://www.chicasmap.com/calendar.ics" target="_blank" rel="noopener">Google Calendar</a><a class="button" href="webcal://www.chicasmap.com/calendar.ics">{{apple}}</a><button id="copy-feed" type="button">{{copy}}</button></div>
+<label class="feed-label" for="feed-url">Feed URL</label><input id="feed-url" type="url" value="https://www.chicasmap.com/calendar.ics" readonly/><span id="copy-status" role="status"></span>
+<p class="muted">{{note}}</p></section>
+<div class="controls"><label for="sale-type">{{filter}}</label> <select id="sale-type">{{options}}</select></div>
+<section id="month-calendar" aria-labelledby="month-title" hidden><div class="month-heading"><button id="previous-month" aria-label="{{previous}}">←</button><h2 id="month-title" aria-live="polite"></h2><button id="next-month" aria-label="{{next}}">→</button></div><button id="this-month">{{today}}</button><div id="month-grid" class="month-grid"></div></section>
+<p id="calendar-status" role="status"></p><h2>{{agenda}}</h2><div id="agenda">{{agenda_html}}</div>
+{{undated_html}}
+</main><script src="/Chicas-Map/js/calendar.js" defer></script></body></html>

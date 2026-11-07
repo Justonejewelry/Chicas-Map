@@ -8,8 +8,15 @@ on:
       - "scripts/stamp-pages.mjs"
       - "scripts/root-domain.mjs"
       - "scripts/build_seo_pages.mjs"
+      - "scripts/build_calendar.py"
+      - "templates/calendar.html"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
+  # GITHUB_TOKEN commits from the daily job do not trigger push workflows.
+  workflow_run:
+    workflows: ["Chica Daily (Master Workflow)"]
+    types: [completed]
+    branches: [main]
 
 permissions:
   contents: read
@@ -27,6 +34,7 @@ env:
 
 jobs:
   build:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout main site
@@ -67,6 +75,8 @@ jobs:
           echo "$DOMAIN" > _site/CNAME
           echo "custom domain $DOMAIN"
           export SITE_ORIGIN="https://${DOMAIN}"
+          # Generate from the same city/email/user feeds as the map on every data deploy.
+          python3 scripts/build_calendar.py _site
           node scripts/stamp-pages.mjs _site
           # Neighborhood landing pages + sitemap entries (after stamp so titles stick)
           node scripts/build_seo_pages.mjs _site

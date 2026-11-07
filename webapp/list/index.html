@@ -24,11 +24,16 @@
     <p class="meta">Chicas Map · San Antonio</p>
     <h1>This weekend’s sales</h1>
     <p class="meta" id="status">Loading the live feed…</p>
-    <p class="nav"><a href="/Chicas-Map/map">Open the map</a> · <a href="/Chicas-Map/submit">List a sale</a> · <a href="/Chicas-Map/claim/">Boost My Sale</a> · <a href="/Chicas-Map/garage-sales/">By neighborhood</a></p>
+    <p class="nav"><a href="/Chicas-Map/calendar/" id="calendar-link">Sales calendar</a> · <a href="/Chicas-Map/map">Open the map</a> · <a href="/Chicas-Map/submit">List a sale</a> · <a href="/Chicas-Map/claim/">Boost My Sale</a> · <a href="/Chicas-Map/garage-sales/">By neighborhood</a></p>
     <div id="list"></div>
   </main>
   <script>
     (function () {
+      var calendarLink = document.getElementById("calendar-link");
+      if (document.documentElement.lang === "es" || location.pathname.indexOf("/es/") !== -1) {
+        calendarLink.href = "/Chicas-Map/es/calendar/";
+        calendarLink.textContent = "Calendario de ventas";
+      }
       var box = document.getElementById("list");
       var status = document.getElementById("status");
       var urls = [

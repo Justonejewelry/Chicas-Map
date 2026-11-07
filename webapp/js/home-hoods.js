@@ -39,6 +39,7 @@
     var h = '<h2 id="chica-hoods-h">' + (es ? "Ventas por vecindario" : "Sales by neighborhood") + "</h2><ul>";
     H.forEach(function (x) { h += '<li><a href="' + B + x[0] + '/">' + x[1].replace(/&/g, "&amp;") + "</a></li>"; });
     h += '</ul><a class="all" href="' + B + '">' + (es ? "Ver todos los vecindarios" : "See all neighborhoods") + "</a>";
+    h += '<a class="all" href="/Chicas-Map' + (es ? '/es' : '') + '/calendar/">' + (es ? 'Calendario de ventas y suscripción' : 'Sales calendar &amp; subscribe') + '</a>';
     sec.innerHTML = h;
     return sec;
   }
