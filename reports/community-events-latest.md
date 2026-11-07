@@ -1,9 +1,9 @@
 # Chica's Map -- Community Events Swarm v2.7
 
-Run: 2026-11-07T06:19:46-06:00
+Run: 2026-11-07T10:48:30-06:00
 Sources scanned: **48**
-Candidates discovered: **923**
-With parsed dates: **766**
+Candidates discovered: **928**
+With parsed dates: **771**
 With street/venue address: **563**
 Promoted this run: **0**
 Kept from prior feed: **274**
@@ -233,9 +233,9 @@ _None this run._
 - Bexar County Veterans Events: HTTP 429 Too Many Requests
 - San Antonio River Authority Events: HTTP 403 Forbidden
 - City of Schertz Calendar: HTTP 404 Not Found
+- Bexar County Public Health: HTTP 429 Too Many Requests
 - Bexar County Animal Care: HTTP 429 Too Many Requests
 - Windcrest Calendar: HTTP 403 Forbidden
-- East Central ISD Events: TimeoutError: The read operation timed out
 
 ---
 Notes: v2.7 caps events at 90 days. Backbone is official/public + schools + libraries, then neighborhoods. CivicEngage ICS, Trumba ICS, Tribe ICS, Thrillshare ICS, RSS. 403 retries with a browser UA. No Google Calendar.

@@ -1,16 +1,16 @@
 {
   "as_of": "2026-11-07",
-  "raw_records": 178,
-  "eligible_before_dedupe": 119,
-  "canonical_sales": 103,
-  "today_sales": 102,
-  "duplicates_merged": 16,
+  "raw_records": 180,
+  "eligible_before_dedupe": 124,
+  "canonical_sales": 106,
+  "today_sales": 105,
+  "duplicates_merged": 18,
   "excluded_by_reason": {
     "recurring_retail": 1,
     "auction_not_in_person_sale": 2,
-    "unconfirmed_sale_date": 14,
+    "unconfirmed_sale_date": 10,
+    "past_sale": 3,
     "outside_metro_city": 1,
-    "past_sale": 2,
     "appointment_or_retail": 1,
     "unconfirmed_permit": 38
   },
@@ -56,7 +56,7 @@
       "url": "https://www.craigslist.org/view/d/san-antonio-moving-sale/ispmC25w6WspsQKWWPewAP"
     },
     {
-      "reason": "unconfirmed_sale_date",
+      "reason": "past_sale",
       "input_file": "san-antonio.json",
       "id": "cl-garageyardsale43a1nrmsd9bivxmyv4dekc",
       "title": "City wide garage/yard sale",
@@ -70,14 +70,6 @@
       "title": "Liquidation Sale of Modern Redux, one of Austin's Premiere MCM Stores",
       "address": "San Antonio, TX",
       "url": "https://www.estatesales.net/TX/Austin/78757/5127603"
-    },
-    {
-      "reason": "unconfirmed_sale_date",
-      "input_file": "san-antonio.json",
-      "id": "cl-mmunityyardsaleqtw2ywxnsfrucxvdmqjp6k",
-      "title": "Community Yard Sale",
-      "address": "9360 Abe Lincoln Rd, San Antonio, TX",
-      "url": "https://www.craigslist.org/view/d/san-antonio-community-yard-sale/qtw2yWxnsFrUcxvDMQJp6k"
     },
     {
       "reason": "past_sale",
@@ -102,14 +94,6 @@
       "title": "Huge Multifamily sale",
       "address": "319 granada, San Antonio, TX",
       "url": "https://www.craigslist.org/view/d/san-antonio-huge-multifamily-sale/m6svLSp5Pah7k71Dt2F9hf"
-    },
-    {
-      "reason": "unconfirmed_sale_date",
-      "input_file": "san-antonio.json",
-      "id": "cl-xpr1000homegymus4cwyrecdjjezsuonkmwh",
-      "title": "Bowflex PR1000 Home Gym",
-      "address": "21527 Tenore, San Antonio, TX",
-      "url": "https://www.craigslist.org/view/d/san-antonio-bowflex-pr1000-home-gym/us4cwyrEcDJjEzsUoNKMwH"
     },
     {
       "reason": "unconfirmed_sale_date",
@@ -162,26 +146,10 @@
     {
       "reason": "unconfirmed_sale_date",
       "input_file": "san-antonio.json",
-      "id": "cl-obiggaragesaleeayfme91gjzsbqvo8fvkrk",
-      "title": "Big garage sale",
-      "address": "DeZavala near Parksite Woods, San Antonio, TX",
-      "url": "https://www.craigslist.org/view/d/san-antonio-big-garage-sale/eayfMe91gjzsbQVo8fvKRk"
-    },
-    {
-      "reason": "unconfirmed_sale_date",
-      "input_file": "san-antonio.json",
       "id": "cl-unitygaragesalei6aivt95segefldqgcwept",
       "title": "Community garage sale Triana subdivisión",
       "address": "Cima Vista, San Antonio, TX",
       "url": "https://www.craigslist.org/view/d/san-antonio-community-garage-sale/i6Aivt95sEgeFLdQgcWEPt"
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
-      "id": "29.32471,-98.55966|City-permitted garage / yard sale",
-      "title": "City-permitted garage / yard sale",
-      "address": "3226 ALGO DULCE, San Antonio, TX 78211",
-      "url": null
     },
     {
       "reason": "unconfirmed_permit",
@@ -194,17 +162,9 @@
     {
       "reason": "unconfirmed_permit",
       "input_file": "san-antonio.json",
-      "id": "29.36250,-98.61449|City-permitted garage / yard sale",
+      "id": "29.32471,-98.55966|City-permitted garage / yard sale",
       "title": "City-permitted garage / yard sale",
-      "address": "5858 LAUREL VALLEY, San Antonio, TX 78242",
-      "url": null
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
-      "id": "29.50944,-98.54380|City-permitted estate sale",
-      "title": "City-permitted estate sale",
-      "address": "7811 ROBIN HILL, San Antonio, TX 78230",
+      "address": "3226 ALGO DULCE, San Antonio, TX 78211",
       "url": null
     },
     {
@@ -218,25 +178,25 @@
     {
       "reason": "unconfirmed_permit",
       "input_file": "san-antonio.json",
+      "id": "29.50944,-98.54380|City-permitted estate sale",
+      "title": "City-permitted estate sale",
+      "address": "7811 ROBIN HILL, San Antonio, TX 78230",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
+      "id": "29.36250,-98.61449|City-permitted garage / yard sale",
+      "title": "City-permitted garage / yard sale",
+      "address": "5858 LAUREL VALLEY, San Antonio, TX 78242",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
       "id": "29.52232,-98.48883|City-permitted garage / yard sale",
       "title": "City-permitted garage / yard sale",
       "address": "506 MARQUIS LANE, San Antonio, TX 78216",
-      "url": null
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
-      "id": "29.40807,-98.48879|Luke Martinez",
-      "title": "Luke Martinez",
-      "address": "531 CEDAR ST, San Antonio, TX 78210",
-      "url": null
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
-      "id": "29.56099,-98.60477|City-permitted garage / yard sale",
-      "title": "City-permitted garage / yard sale",
-      "address": "12503 HART CLIFF, San Antonio, TX 78249",
       "url": null
     },
     {
@@ -258,9 +218,17 @@
     {
       "reason": "unconfirmed_permit",
       "input_file": "san-antonio.json",
-      "id": "29.59382,-98.52323|City-permitted estate sale",
-      "title": "City-permitted estate sale",
-      "address": "1623 HAWKS RIDGE, San Antonio, TX 78248",
+      "id": "29.40807,-98.48879|Luke Martinez",
+      "title": "Luke Martinez",
+      "address": "531 CEDAR ST, San Antonio, TX 78210",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
+      "id": "29.56099,-98.60477|City-permitted garage / yard sale",
+      "title": "City-permitted garage / yard sale",
+      "address": "12503 HART CLIFF, San Antonio, TX 78249",
       "url": null
     },
     {
@@ -269,6 +237,14 @@
       "id": "address|City-permitted garage / yard sale",
       "title": "City-permitted garage / yard sale",
       "address": "13630 Bluffcircle",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
+      "id": "29.59382,-98.52323|City-permitted estate sale",
+      "title": "City-permitted estate sale",
+      "address": "1623 HAWKS RIDGE, San Antonio, TX 78248",
       "url": null
     },
     {
@@ -306,9 +282,97 @@
     {
       "reason": "unconfirmed_permit",
       "input_file": "san-antonio.json",
+      "id": "29.47187,-98.64972|City-permitted garage / yard sale",
+      "title": "City-permitted garage / yard sale",
+      "address": "8307 GRISSOM GATE, San Antonio, TX 78251",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
+      "id": "29.58240,-98.65046|City-permitted garage / yard sale",
+      "title": "City-permitted garage / yard sale",
+      "address": "14803 RIO RANCHO WAY, San Antonio, TX 78023",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
+      "id": "29.56494,-98.54533|City-permitted garage / yard sale",
+      "title": "City-permitted garage / yard sale",
+      "address": "3515 HUNTERS DAWN, San Antonio, TX 78230",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
+      "id": "29.46360,-98.65758|City-permitted garage / yard sale",
+      "title": "City-permitted garage / yard sale",
+      "address": "8302 RIM LINE DR, San Antonio, TX 78251",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
+      "id": "29.48664,-98.43848|City-permitted garage / yard sale",
+      "title": "City-permitted garage / yard sale",
+      "address": "435 BYRNES, San Antonio, TX 78209",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
+      "id": "29.33288,-98.54140|City-permitted garage / yard sale",
+      "title": "City-permitted garage / yard sale",
+      "address": "9106 LYTLE AVE, San Antonio, TX 78224",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
+      "id": "29.42273,-98.53879|City-permitted garage / yard sale",
+      "title": "City-permitted garage / yard sale",
+      "address": "155 HOLLY ST, San Antonio, TX 78207",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
+      "id": "29.45735,-98.54119|2431 MAGNOLIA AVE",
+      "title": "2431 MAGNOLIA AVE",
+      "address": "2431 W MAGNOLIA AVE, San Antonio, TX 78228",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
+      "id": "29.34489,-98.42083|City-permitted garage / yard sale",
+      "title": "City-permitted garage / yard sale",
+      "address": "8103 GLASGOW DR, San Antonio, TX 78223",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
       "id": "29.49332,-98.60340|City-permitted garage / yard sale",
       "title": "City-permitted garage / yard sale",
       "address": "5939 PRENTISS DR, San Antonio, TX 78240",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
+      "id": "29.45247,-98.57514|City-permitted garage / yard sale",
+      "title": "City-permitted garage / yard sale",
+      "address": "258 CONTINENTAL AVE, San Antonio, TX 78228",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
+      "id": "29.62829,-98.45739|City-permitted garage / yard sale",
+      "title": "City-permitted garage / yard sale",
+      "address": "19915 ENCINO BRIAR, San Antonio, TX 78259",
       "url": null
     },
     {
@@ -330,41 +394,9 @@
     {
       "reason": "unconfirmed_permit",
       "input_file": "san-antonio.json",
-      "id": "29.34489,-98.42083|City-permitted garage / yard sale",
+      "id": "29.40153,-98.65722|City-permitted garage / yard sale",
       "title": "City-permitted garage / yard sale",
-      "address": "8103 GLASGOW DR, San Antonio, TX 78223",
-      "url": null
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
-      "id": "29.45735,-98.54119|2431 MAGNOLIA AVE",
-      "title": "2431 MAGNOLIA AVE",
-      "address": "2431 W MAGNOLIA AVE, San Antonio, TX 78228",
-      "url": null
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
-      "id": "29.45247,-98.57514|City-permitted garage / yard sale",
-      "title": "City-permitted garage / yard sale",
-      "address": "258 CONTINENTAL AVE, San Antonio, TX 78228",
-      "url": null
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
-      "id": "29.56494,-98.54533|City-permitted garage / yard sale",
-      "title": "City-permitted garage / yard sale",
-      "address": "3515 HUNTERS DAWN, San Antonio, TX 78230",
-      "url": null
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
-      "id": "29.33288,-98.54140|City-permitted garage / yard sale",
-      "title": "City-permitted garage / yard sale",
-      "address": "9106 LYTLE AVE, San Antonio, TX 78224",
+      "address": "410 CABLE DR, San Antonio, TX 78227",
       "url": null
     },
     {
@@ -378,65 +410,17 @@
     {
       "reason": "unconfirmed_permit",
       "input_file": "san-antonio.json",
-      "id": "29.58240,-98.65046|City-permitted garage / yard sale",
-      "title": "City-permitted garage / yard sale",
-      "address": "14803 RIO RANCHO WAY, San Antonio, TX 78023",
-      "url": null
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
-      "id": "address|City-permitted garage / yard sale",
-      "title": "City-permitted garage / yard sale",
-      "address": "3724 W salinas ST",
-      "url": null
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
-      "id": "29.48664,-98.43848|City-permitted garage / yard sale",
-      "title": "City-permitted garage / yard sale",
-      "address": "435 BYRNES, San Antonio, TX 78209",
-      "url": null
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
-      "id": "29.62829,-98.45739|City-permitted garage / yard sale",
-      "title": "City-permitted garage / yard sale",
-      "address": "19915 ENCINO BRIAR, San Antonio, TX 78259",
-      "url": null
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
-      "id": "29.47187,-98.64972|City-permitted garage / yard sale",
-      "title": "City-permitted garage / yard sale",
-      "address": "8307 GRISSOM GATE, San Antonio, TX 78251",
-      "url": null
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
-      "id": "29.33769,-98.42211|Terry Morales",
-      "title": "Terry Morales",
-      "address": "3500 GOLIAD RD, San Antonio, TX 78223",
-      "url": null
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
-      "id": "29.40153,-98.65722|City-permitted garage / yard sale",
-      "title": "City-permitted garage / yard sale",
-      "address": "410 CABLE DR, San Antonio, TX 78227",
-      "url": null
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
       "id": "29.61542,-98.41914|City-permitted garage / yard sale",
       "title": "City-permitted garage / yard sale",
       "address": "3902 CORDOBA CREEK, San Antonio, TX 78259",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
+      "id": "29.55635,-98.65105|City-permitted garage / yard sale",
+      "title": "City-permitted garage / yard sale",
+      "address": "8419 STREAM RUN, San Antonio, TX 78249",
       "url": null
     },
     {
@@ -450,17 +434,9 @@
     {
       "reason": "unconfirmed_permit",
       "input_file": "san-antonio.json",
-      "id": "29.42273,-98.53879|City-permitted garage / yard sale",
+      "id": "address|City-permitted garage / yard sale",
       "title": "City-permitted garage / yard sale",
-      "address": "155 HOLLY ST, San Antonio, TX 78207",
-      "url": null
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
-      "id": "29.46360,-98.65758|City-permitted garage / yard sale",
-      "title": "City-permitted garage / yard sale",
-      "address": "8302 RIM LINE DR, San Antonio, TX 78251",
+      "address": "3724 W salinas ST",
       "url": null
     },
     {
@@ -474,9 +450,9 @@
     {
       "reason": "unconfirmed_permit",
       "input_file": "san-antonio.json",
-      "id": "29.55635,-98.65105|City-permitted garage / yard sale",
-      "title": "City-permitted garage / yard sale",
-      "address": "8419 STREAM RUN, San Antonio, TX 78249",
+      "id": "29.33769,-98.42211|Terry Morales",
+      "title": "Terry Morales",
+      "address": "3500 GOLIAD RD, San Antonio, TX 78223",
       "url": null
     },
     {
@@ -568,7 +544,7 @@
       ]
     },
     {
-      "kept": "yss-214downshiredrsanantoniotx-2026-11-06",
+      "kept": "yss-214downshiredrsanantoniotx-2026-11-07",
       "address": "214 Downshire Dr, San Antonio, TX",
       "merged_records": 2,
       "source_urls": [
@@ -576,8 +552,8 @@
         "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196455429"
       ],
       "titles": [
-        "Neighborhood Wide Garage Sale - Fri / Sat",
-        "Neighborhood wide Garage Sale - Fri / Sat"
+        "Rain Or Shine Garage Sale (New Items!)",
+        "RAIN OR SHINE Garage Sale (new items!)"
       ]
     },
     {
@@ -682,6 +658,32 @@
       "titles": [
         "Garage Sale - Saturday, Nov 7Th",
         "Garage Sale - Saturday, Nov 7th"
+      ]
+    },
+    {
+      "kept": "yss-11603hiddenterracesanantoniotx-2026-11-07",
+      "address": "11603 Hidden Terrace, San Antonio, TX",
+      "merged_records": 2,
+      "source_urls": [
+        "https://garagesalefinder.com/s/N925U/11603-hidden-terrace-san-antonio-tx-78245",
+        "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196457327"
+      ],
+      "titles": [
+        "Yard Sale 11603 Hidden Terrace",
+        "Yard Sale 11603 Hidden Terrace"
+      ]
+    },
+    {
+      "kept": "yss-9111osagevlysanantoniotx-2026-11-07",
+      "address": "9111 Osage Vly, San Antonio, TX",
+      "merged_records": 2,
+      "source_urls": [
+        "https://garagesalefinder.com/s/N92cG/9111-osage-vly-san-antonio-tx-78251",
+        "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196457757"
+      ],
+      "titles": [
+        "Community Yard Sale Today 9Am-3Pm",
+        "Community Yard Sale TODAY 9AM-3PM"
       ]
     },
     {
