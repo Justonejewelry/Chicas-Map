@@ -44,7 +44,10 @@
     return sec;
   }
   function place() {
-    var p = location.pathname.replace(/^\/Chicas-Map/, "").replace(/^\/es/, "");
+    var p = location.pathname;
+    var base = "/Chicas-Map";
+    if (base && p.indexOf(base) === 0) p = p.slice(base.length);
+    if (p === "/es" || p.indexOf("/es/") === 0) p = p.slice(3);
     if (p !== "/" && p !== "" && p !== "/index.html") return;
     var main = document.querySelector("main");
     if (!main) return;

@@ -1,6 +1,7 @@
 /* Home verified sales: scrolling clickable banner (no list). */
 (function () {
   function isHome() {
+    if (document.documentElement.hasAttribute("data-home-static")) return true;
     var p = (location.pathname || "/").replace(/\/+$/, "") || "/";
     return p === "/" || p === "/index.html" || p === "/Chicas-Map" || p === "/Chicas-Map/index.html";
   }
@@ -224,10 +225,14 @@
     if (!isHome() || !cached) return;
     var main = document.querySelector("main");
     if (!main) return;
-    patchHero(cached.total);
-    hideLists(main);
+    if (!document.documentElement.hasAttribute("data-home-static")) {
+      patchHero(cached.total);
+      hideLists(main);
+    }
     if (document.getElementById("chica-fresh-weekend")) return;
     var section = buildSection(cached.sales, cached.total);
+    var slot = document.getElementById("chica-fresh-slot");
+    if (slot) { slot.appendChild(section); return; }
     var mini = document.getElementById("chica-home-mini-map");
     if (mini && mini.parentNode) mini.parentNode.insertBefore(section, mini.nextSibling);
     else {

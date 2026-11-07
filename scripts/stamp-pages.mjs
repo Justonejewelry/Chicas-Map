@@ -140,7 +140,7 @@ function stampFile(file, opts) {
   html = html.replace(/<title>[^<]*<\/title>/g, "");
   html = html.replace(/<meta name="description"[^>]*>/g, "");
 
-  if (key !== "calendar" && !html.includes('"/es"') && html.indexOf("b+\"/es\"") === -1) html = html.replace("<head>", "<head>" + ES_BOOT);
+  if (key !== "/" && key !== "calendar" && !html.includes('"/es"') && html.indexOf("b+\"/es\"") === -1) html = html.replace("<head>", "<head>" + ES_BOOT);
   html = html.replace("<head>", "<head>" + hrefLang(enPath));
   if (html.indexOf('rel="apple-touch-icon"') === -1) html = html.replace("<head>", '<head><link rel="apple-touch-icon" href="/Chicas-Map/apple-touch-icon.png"/>');
   if (html.indexOf('href="/Chicas-Map/humans.txt"') === -1 && html.indexOf('href="/humans.txt"') === -1) html = html.replace("<head>", '<head><link rel="author" href="/Chicas-Map/humans.txt"/>');
@@ -148,7 +148,7 @@ function stampFile(file, opts) {
   html = html.replace("<head>", "<head><meta name=\"description\" content=\"" + desc + "\"/>");
   html = html.replace("<head>", "<head>" + seoHead({ title: title, desc: desc, canonical: canonical, indexable: indexable, lang: isEs ? "es" : "en" }));
   if (indexable) html = html.replace("</head>", jsonLd(page, canonical) + "</head>");
-  if (html.indexOf('id="chica-crawl"') === -1 && html.indexOf("id='chica-crawl'") === -1) {
+  if (!html.includes("data-home-static") && html.indexOf('id="chica-crawl"') === -1 && html.indexOf("id='chica-crawl'") === -1) {
     const block = noscriptBlock(page, isEs);
     html = html.includes("<body") ? html.replace(/<body([^>]*)>/, "<body$1>" + block) : block + html;
   }
@@ -162,8 +162,8 @@ for (const page of PAGES) {
   try { readFileSync(src, "utf8"); } catch (e) { continue; }
   const dest = page.path ? join(root, "es", page.path, "index.html") : join(root, "es", "index.html");
   ensureDir(dest);
-  // Calendar generator supplies genuinely translated static content for both languages.
-  if (page.path !== "calendar") writeFileSync(dest, readFileSync(src, "utf8"));
+  // Home/calendar generators supply translated static content for both languages.
+  if (page.path !== "" && page.path !== "calendar") writeFileSync(dest, readFileSync(src, "utf8"));
   stampFile(dest, { forceLang: "es" });
 }
 const today = new Date().toISOString().slice(0, 10);

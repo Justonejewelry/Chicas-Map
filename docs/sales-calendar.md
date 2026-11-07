@@ -24,6 +24,7 @@ python3 -m venv /tmp/calendar-check
 /tmp/calendar-check/bin/python -m unittest discover -s tests -v
 mkdir -p /tmp/calendar-site
 cp -R webapp/. /tmp/calendar-site/
+node scripts/build_home.mjs /tmp/calendar-site
 python3 scripts/build_calendar.py /tmp/calendar-site
 node scripts/stamp-pages.mjs /tmp/calendar-site
 node scripts/build_seo_pages.mjs /tmp/calendar-site

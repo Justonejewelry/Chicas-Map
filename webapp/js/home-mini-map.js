@@ -10,6 +10,7 @@
   var mounted = false;
 
   function home() {
+    if (document.documentElement.hasAttribute("data-home-static")) return true;
     var p = (location.pathname || "/").replace(/\/+$/, "") || "/";
     return p === "/" || p === "/index.html" || p === BASE || p === BASE + "/index.html";
   }
@@ -96,6 +97,8 @@
   }
 
   function css() {
+    // Static home.css reserves the final dimensions before the first paint.
+    if (document.documentElement.hasAttribute("data-home-static")) return;
     if (document.getElementById("chica-home-mini-css")) return;
     var s = document.createElement("style");
     s.id = "chica-home-mini-css";

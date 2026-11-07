@@ -30,6 +30,7 @@
     { id: "1603083818016571", title: "Local and veteran owned", poster: BASE + "/media/reels/1603083818016571.jpg", url: "https://www.facebook.com/reel/1603083818016571/" }
   ];
   function home() {
+    if (document.documentElement.hasAttribute("data-home-static")) return true;
     var p = (location.pathname || "/").replace(/\/+$/, "") || "/";
     return p === BASE || p === BASE + "/index.html";
   }

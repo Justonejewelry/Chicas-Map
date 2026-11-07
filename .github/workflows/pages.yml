@@ -9,6 +9,7 @@ on:
       - "scripts/root-domain.mjs"
       - "scripts/build_seo_pages.mjs"
       - "scripts/build_calendar.py"
+      - "scripts/build_home.mjs"
       - "templates/calendar.html"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
@@ -76,6 +77,7 @@ jobs:
           echo "custom domain $DOMAIN"
           export SITE_ORIGIN="https://${DOMAIN}"
           # Generate from the same city/email/user feeds as the map on every data deploy.
+          node scripts/build_home.mjs _site
           python3 scripts/build_calendar.py _site
           node scripts/stamp-pages.mjs _site
           # Neighborhood landing pages + sitemap entries (after stamp so titles stick)
