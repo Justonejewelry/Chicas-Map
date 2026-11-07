@@ -1,0 +1,115 @@
+Subject: Chica Map dates — 2026-11-07
+
+Hey pack — dated sales as of Saturday, November 7.
+Map only shows pins whose listed dates include today.
+
+## ON THE MAP TODAY (2026-11-07)
+
+- Alamo Craft Co. Antiques & More                  NOW OPEN SUNDAYS! — 6151 NW Loop 410, San Antonio, TX [2026-11-07 → 2026-11-09] | 10AM-6PM
+- Aladdin Lamps, Clocks, Radios, and More Auction! — Off of Rebecca Creek Rd Spring Branch, TX 78070, Spring Branch, TX 78070 [2026-10-27 → 2026-11-17]
+- Furniture for Sale ( please read post, ty) — 3527 Green Spring, San Antonio, TX [2026-11-06 → 2026-11-08]
+- GARAGE SALE — 4811 Wesleyan St, San Antonio, TX [2026-11-06 → 2026-11-08]
+- Moving sale — 2238 Mobeetie Trl, San Antonio, TX [2026-11-07 → 2026-11-09]
+- Fall Cleaning — tbd, San Antonio, TX [2026-11-06 → 2026-11-08]
+- City wide garage/yard sale — Houston street near Madrid street, San Antonio, TX [2026-11-07 → 2026-11-09]
+- Liquidation Sale of Modern Redux, one of Austin's Premiere MCM Stores — San Antonio, TX [2026-11-06 → 2026-11-08]
+- Community Yard Sale — 9360 Abe Lincoln Rd, San Antonio, TX [2026-11-07 → 2026-11-09]
+- Moving Sale — Everything Must Go! | 11/4 - 11/5 — Burr Rd, San Antonio, TX [2026-11-05 → 2026-11-07]
+- Show up and Shop Estate Sale — 7227 Hidden Hills North, San Antonio, TX [2026-11-07 → 2026-11-09]
+- Huge Multifamily sale — 319 granada, San Antonio, TX [2026-11-05 → 2026-11-07]
+- Estate Treasures Sale — 165 Trailwood, New Braunfels, TX 78130 [2026-11-05 → 2026-11-07]
+- Estate Treasures Sale — 165 Trailwood, New Braunfels, TX [2026-11-05 → 2026-11-07]
+- Bowflex PR1000 Home Gym — 21527 Tenore, San Antonio, TX [2026-11-07 → 2026-11-09]
+- Garage sale Vintage Collectables  New Braunfels Friday only 8-1 — 339 wren ln, San Antonio, TX [2026-11-05 → 2026-11-07]
+- Huge Garage Sale on Saturday, November 7th — 2530 Fall Brook St., San Antonio, TX [2026-11-05 → 2026-11-07]
+- Hawaii Equals Paradise -Sale Ends 11/10 Pick Up 11/12 10-2 — San Marcos, TX 78666 [2026-10-30 → 2026-11-10]
+- Estate Sale - 116 Merry Trail, SA, TX — Merry Trail near Trailcrest St., San Antonio, TX [2026-11-07 → 2026-11-09]
+- Multi-Family Garage Sale — 1054 Holmgreen Rd, San Antonio, TX 78220 [2026-11-06 → 2026-11-07]
+- Neighborhood wide Garage Sale - Fri / Sat — 214 Downshire Dr, San Antonio, TX 78216 [2026-11-06 → 2026-11-07]
+- Castle Hills Garage Sale — 221 Gardenview Dr, San Antonio, TX 78213 [2026-11-06 → 2026-11-07]
+- Vintage treasure galore — 12063 Stoney Xing, San Antonio, TX 78247 [2026-11-06 → 2026-11-07]
+- 🎉🚨 HUGE 2-DAY GARAGE SALE! EVERYTHING MUST GO! 🚨🎉 — 5026 Timber Trace St, San Antonio, TX 78250 [2026-11-06 → 2026-11-07]
+- Woodthorn & Regency Meadow Multi-Community Garage Sale — Regency Bnd, San Antonio, TX 78249 [2026-11-06 → 2026-11-08]
+- GARAGE SALE AND FISHERMAN’s SALE — 10402 Rustic Vly, San Antonio, TX 78254 [2026-11-06 → 2026-11-07]
+- Yard sale — 14415 Boxer Bay, Live Oak, TX 78233 [2026-11-06 → 2026-11-07]
+- Multi Family Sale — 16230 Bear Run St, San Antonio, TX 78247 [2026-11-06 → 2026-11-07]
+- HUGE GARAGE SALE — 12807 Ft Belknap, San Antonio, TX 78245 [2026-11-07 → 2026-11-08]
+- Yard Sale!! — 1362 Meester Dr, San Antonio, TX 78245 [2026-11-06 → 2026-11-07]
+- Quality Finds LOCATION CHANGED! DATES THE SAME! — 2372 Tree Br, Schertz, TX 78154 [2026-11-06 → 2026-11-08]
+- Yard Sale — 4802 Wedgewood Dr, Schertz, TX 78108 [2026-11-06 → 2026-11-07]
+- Huge Multi -Family Garage Sale — 10321 Habersang Ln, New Braunfels, TX 78132 [2026-11-06 → 2026-11-07]
+- 25% off SATURDAY - Vintage Vibes in San Marcos — 111 Manor Park Rd, San Marcos, TX 78666 [2026-11-06 → 2026-11-08]
+- Verde Hills community garage sale Center Point, TX — Verde Hills Dr, Center Point, TX 78010 [2026-11-06 → 2026-11-07]
+- Vintage Treasure Galore — 12063 Stoney Xing, San Antonio, TX [2026-11-06 → 2026-11-07]
+- Garage Sale And Fisherman’S Sale — 10402 Rustic Vly, San Antonio, TX [2026-11-06 → 2026-11-07]
+- Quality Finds Location Changed! Dates The Same! — 2372 Tree Br, Schertz, TX [2026-11-06 → 2026-11-08]
+- Castle Hills Garage Sale — 221 Gardenview Dr, San Antonio, TX [2026-11-06 → 2026-11-07]
+- Huge Multi -Family Garage Sale — 10321 Habersang Ln, New Braunfels, TX [2026-11-06 → 2026-11-07]
+- Neighborhood Wide Garage Sale - Fri / Sat — 214 Downshire Dr, San Antonio, TX [2026-11-06 → 2026-11-07]
+- Huge Garage Sale — 12807 Ft Belknap, San Antonio, TX [2026-11-07 → 2026-11-08]
+- Deals for cash by appointment — Austin Hwy, San Antonio, TX [2026-11-07 → 2026-11-09]
+- Garage Sale — 15242 Moonlit Grove, San Antonio, TX [2026-11-06 → 2026-11-08]
+- Garage Sale Friday San Antonio — 15911 Kenna Mist, San Antonio, TX [2026-11-06 → 2026-11-08]
+- Garage Sale in NORTHCLIFFE — 4802 Wedgewood Drive, San Antonio, TX [2026-11-06 → 2026-11-08]
+- HUGE SALE!! — 3206 La Violeta St, San Antonio, TX 78211 [2026-11-06 → 2026-11-07]
+- Yard Sale All Designer and Baby things — 6415 Peace Pipe Dr, San Antonio, TX 78238 [2026-11-06 → 2026-11-07]
+- Yard Sale All Designer And Baby Things — 6415 Peace Pipe Dr, San Antonio, TX [2026-11-06 → 2026-11-07]
+- Huge Sale!! — 3206 La Violeta St, San Antonio, TX [2026-11-06 → 2026-11-07]
+- EPIC Yard Sale!!! — 108 Harmon Dr, San Antonio, TX 78209 [2026-11-07 → 2026-11-07]
+- Yard sale — 1907 Perlita St, San Antonio, TX 78224 [2026-11-07 → 2026-11-07]
+- Garage Sale — 15242 Moonlit Grv, San Antonio, TX 78247 [2026-11-07 → 2026-11-07]
+- Garage Sale - Saturday, Nov 7th — 4523 Black Hickory Woods St, San Antonio, TX 78249 [2026-11-07 → 2026-11-07]
+- Multiple Garage Sales Canyon Oaks Estates (Off Henderson Pass) 7&8 Nov 8am-4pm — 2459 Rim Oak, San Antonio, TX 78232 [2026-11-07 → 2026-11-08]
+- Neighborhood Garage Sale — 13131 Regency Trl, San Antonio, TX 78249 [2026-11-07 → 2026-11-07]
+- Yard sale — 6847 knights haven, Live Oak, TX 78233 [2026-11-07 → 2026-11-08]
+- Yard Sale 11603 Hidden Terrace — 11603 Hidden Terrace, San Antonio, TX 78245 [2026-11-07 → 2026-11-07]
+- Enclave at Laurel Canyon Community Garage Sale — 10707 Bramante Ln, Helotes, TX 78023 [2026-11-07 → 2026-11-07]
+- Post Estate Clear Out — 3319 Blackstone Run, San Antonio, TX 78259 [2026-11-07 → 2026-11-07] | 2026-11-07 9:00 am-5:00 am
+- Yard Sale!! — 14227 Laurel Br, San Antonio, TX 78245 [2026-11-07 → 2026-11-07]
+- Community Garage Sale — 133 Loggy Byu, Cibolo, TX 78108 [2026-11-07 → 2026-11-07]
+- Community Garage Sale — 305 Little Wichita, Cibolo, TX 78108 [2026-11-07 → 2026-11-07]
+- Community Garage Sale — 329 Washita Riv, Cibolo, TX 78108 [2026-11-07 → 2026-11-07]
+- Community Garage Sale — 317 Tule Canyons, Schertz, TX 78108 [2026-11-07 → 2026-11-07]
+- Community Garage Sale — 309 Colbert Fry, Cibolo, TX 78108 [2026-11-07 → 2026-11-07]
+- Community Garage Sale — 128 Grand Rpds, Cibolo, TX 78108 [2026-11-07 → 2026-11-07]
+- Community Garage Sale — 312 Piney Woods, Cibolo, TX 78108 [2026-11-07 → 2026-11-07]
+- Community Garage Sale — 309 Piney Woods, Cibolo, TX 78108 [2026-11-07 → 2026-11-07]
+- Amazing Yard Sale — 15602 Selene Vw, San Antonio, TX 78245 [2026-11-07 → 2026-11-07]
+- Red River Ranch Community Garage Sales — 123 Red Riv, Cibolo, TX 78108 [2026-11-07 → 2026-11-07]
+- Community Garage Sale — 325 Denison Dm, Cibolo, TX 78108 [2026-11-07 → 2026-11-07]
+- Community Garage Sale — 508 River Sta, Cibolo, TX 78108 [2026-11-07 → 2026-11-07]
+- Community Garage Sale — 334 Denison Dm, Cibolo, TX 78108 [2026-11-07 → 2026-11-07]
+- Community Garage Sale — 114 Texoma Lk, Cibolo, TX 78108 [2026-11-07 → 2026-11-07]
+- Community Garage Sale — 812 Red Riv, Cibolo, TX 78108 [2026-11-07 → 2026-11-07]
+- Moving Out Sale! — 26765 Orchid Trl, Boerne, TX 78006 [2026-11-07 → 2026-11-08]
+- City-wide garage sale — 517 Madrid St St, Castroville, TX 78009 [2026-11-07 → 2026-11-07]
+- not your average garage sale. — 8402 fairway point, Fair Oaks Ranch, TX 78015 [2026-11-07 → 2026-11-07]
+- Multi family sale — 224 Chaparral Creek Dr, Boerne, TX 78006 [2026-11-07 → 2026-11-07]
+- Garage Sale — 200 Valley Vista Rd, Wimberley, TX 78676 [2026-11-07 → 2026-11-07]
+- Multiple Garage Sales Canyon Oaks Estates (Off Henderson Pass) 7&8 Nov 8Am-4Pm — 2459 Rim Oak, San Antonio, TX [2026-11-07 → 2026-11-08]
+- Post Estate Clear Out — 3319 Blackstone Run, San Antonio, TX [2026-11-07 → 2026-11-07]
+- Epic Yard Sale!!! — 108 Harmon Dr, San Antonio, TX [2026-11-07 → 2026-11-07]
+- Garage Sale - Saturday, Nov 7Th — 4523 Black Hickory Woods St, San Antonio, TX [2026-11-07 → 2026-11-07]
+- !!KALLISON RANCH COMMUNITY YARD SALE!! — Kallison Bend near Culebra, San Antonio, TX [2026-11-07 → 2026-11-09]
+- Big garage sale — DeZavala near Parksite Woods, San Antonio, TX [2026-11-07 → 2026-11-09]
+- Castroville Tx Community Wide Yard Sale Sat Nov 7th — 502 Paris St, San Antonio, TX [2026-11-07 → 2026-11-09]
+- Community Yard Sale, 11/07/26, Saturday — 9215 Osage Valley, San Antonio, TX [2026-11-07 → 2026-11-09]
+- Community garage sale Triana subdivisión — Cima Vista, San Antonio, TX [2026-11-07 → 2026-11-09]
+- EVERYTHING MUST GO! Garage sale — E Mulberry Ave near Tendick St, San Antonio, TX [2026-11-07 → 2026-11-07]
+
+## COMING UP (remembered, not on today's map)
+
+### Starts 2026-11-08
+- Yard Sale — 9360 Abe Lincoln Rd, San Antonio, TX 78240 [2026-11-08 → 2026-11-08]
+
+### Starts 2026-11-14
+- Raise a glass for Mr. Mike - Estate Sale! — hidden, Universal City, TX 78233 [2026-11-14 → 2026-11-15] | 2026-11-14 9:00 am-3:00 pm; 2026-11-15 9:00 am-3:00 pm
+- Moving Out Sale! (14th &15th) — 26765 Orchid Trail, San Antonio, TX [2026-11-14 → 2026-11-14]
+
+## ONLINE / UNPLOTTABLE
+
+- The Analog Age: Vintage Tech Treasures - Bidding ENDS 11/15 @ 7PM! — San Antonio, TX 78240
+- Exceptional Coin Collection & Curiosities Galore in Boerne, TX Bidding Ends 11/11 Pick Up 11/13 — Boerne, TX 78006
+- Treasures Through Time: Pottery & Collectibles Online Auction by Caring Transitions - Ends 11/10! — New Braunfels, TX 78130
+
+— Chica

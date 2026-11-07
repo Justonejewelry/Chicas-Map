@@ -7,7 +7,7 @@
   "status": "live",
   "sentinel": "PASS",
   "note": "Operator overlay. 25 Facebook pins after removing 2 stale Marketplace listings (listing gone/sold; sale postponed due to rain).",
-  "total_locations": 23,
+  "total_locations": 20,
   "public": [
     {
       "address": "3625 CANDLEKNOLL CIR, SAN ANTONIO, TX, 78244",
@@ -69,37 +69,6 @@
       "zip": "78242",
       "in_person": true,
       "seller": "Lucy Alaniz",
-      "date_verified": "facebook-live-2026-11-05"
-    },
-    {
-      "address": "7627 GALLOP DR, SAN ANTONIO, TX, 78227",
-      "dates": "Thu Nov 5 – Fri Nov 6",
-      "date_from": "2026-11-05",
-      "date_to": "2026-11-06",
-      "end_date": "2026-11-06",
-      "date_start": "2026-11-05",
-      "date_end": "2026-11-06",
-      "date_bucket": "live",
-      "hours": "",
-      "title": "Yard Sale 7627 Gallop Dr 78227 (11/05/26)",
-      "details": "Yard sale en 7627 Gallop Dr 78227, hoy 5 de November y mañana viernes. Ropa, bolsas, decoraciones",
-      "source": "Facebook Marketplace",
-      "url": "https://www.facebook.com/marketplace/item/1362998449081012/",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.86,
-      "status": "verified",
-      "lat": 29.409876,
-      "lon": -98.639842,
-      "geocode": "census",
-      "external_id": "fb-1362998449081012",
-      "categories": [
-        "garage-sale",
-        "facebook"
-      ],
-      "zip": "78227",
-      "in_person": true,
-      "seller": "Marycruz Gaytan",
       "date_verified": "facebook-live-2026-11-05"
     },
     {
@@ -289,37 +258,6 @@
       "date_verified": "facebook-live-2026-11-05"
     },
     {
-      "address": "1802 FRESNO DR, SAN ANTONIO, TX, 78201",
-      "dates": "Thu Nov 5 – Fri Nov 6",
-      "date_from": "2026-11-05",
-      "date_to": "2026-11-06",
-      "end_date": "2026-11-06",
-      "date_start": "2026-11-05",
-      "date_end": "2026-11-06",
-      "date_bucket": "live",
-      "hours": "",
-      "title": "Garage sale!",
-      "details": "Garage sale November 5th & 6th! Home items, clothing, etc 1802 Fresno",
-      "source": "Facebook Marketplace",
-      "url": "https://www.facebook.com/marketplace/item/1176859265042698/",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.8,
-      "status": "verified",
-      "lat": 29.474372,
-      "lon": -98.524372,
-      "geocode": "census",
-      "external_id": "fb-1176859265042698",
-      "categories": [
-        "garage-sale",
-        "facebook"
-      ],
-      "zip": "78201",
-      "in_person": true,
-      "seller": "Leah Pike",
-      "date_verified": "facebook-live-2026-11-05"
-    },
-    {
       "address": "702 DONALDSON AVE, SAN ANTONIO, TX, 78201",
       "dates": "Sat Nov 7, 8 AM – 2 PM",
       "date_from": "2026-11-07",
@@ -378,37 +316,6 @@
         "event"
       ],
       "zip": "78223",
-      "in_person": true,
-      "date_verified": "facebook-live-2026-11-05"
-    },
-    {
-      "address": "8327 WICKERSHAM ST, SAN ANTONIO, TX, 78254",
-      "dates": "Fri Nov 6, from 9 AM",
-      "date_from": "2026-11-06",
-      "date_to": "2026-11-06",
-      "end_date": "2026-11-06",
-      "date_start": "2026-11-06",
-      "date_end": "2026-11-06",
-      "date_bucket": "live",
-      "hours": "from 9 AM",
-      "title": "Garage/Estate Sale",
-      "details": "Tomorrow 9 AM. 8327 Wickersham St 78254",
-      "source": "Facebook Events",
-      "url": "https://www.facebook.com/events/1010676082063454/",
-      "photos": 0,
-      "type": "estate",
-      "confidence": 0.84,
-      "status": "verified",
-      "lat": 29.521104,
-      "lon": -98.648812,
-      "geocode": "census",
-      "external_id": "fb-ev-1010676082063454",
-      "categories": [
-        "garage-sale",
-        "facebook",
-        "event"
-      ],
-      "zip": "78254",
       "in_person": true,
       "date_verified": "facebook-live-2026-11-05"
     },
