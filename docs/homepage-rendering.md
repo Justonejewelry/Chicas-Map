@@ -26,3 +26,15 @@ node tests/homepage.cjs
 ```
 
 Uses `/usr/bin/google-chrome` by default (`CHROME_PATH` overrides). Tests English and Spanish at 1280×800 and 390×844, captures 0/300/1000/3000ms frames, records essential-content mutations/layout shifts, checks no horizontal overflow, the above-fold CTA, all neighborhood links, map initialization, theme, and no-JavaScript navigation.
+
+## Shared theme, footer and support card
+
+The home now loads the same `styles-D8YtPAwk.css` used by the pre-static homepage, with the site's exact `--chica-*` dark/cream-light tokens, Syne display headings, Inter body text, pink pill buttons, glossy language/theme controls, 72rem container and rounded paper cards. Header branding opens a native-details version of the same site menu (no late menu injection). Theme preference uses the same `chicas-map-theme` storage key, is applied before paint, and persists across pages/reloads.
+
+Syne/Inter Latin variable fonts are locally embedded in render-blocking `home-fonts.css`, with matching preload hints generated before the CSS links. This avoids an external Google Fonts round-trip and the one-line-to-two-line heading shift. Font licenses are preserved in `webapp/assets/fonts/{syne,inter}/LICENSE`.
+
+`templates/site-footer.html` reuses the rendered shared SiteFooter from the live Backstory/Sponsors pages: Hunt/Pack/Fine print columns, all seven original badge image assets/links (Grok, GitHub, ChatGPT, Leaflet, OpenStreetMap, Veteran owned and WCAG AA), and the original accessibility-claim disclaimer. Build-time text keys translate the footer for Spanish; badge artwork is unchanged. The disclosure also mentions the new third-party GitHub embed.
+
+The bottom support section contains the user-provided `https://github.com/sponsors/Justonejewelry/card` iframe, lazy loaded into a reserved 225px-high, 600px-max-width responsive frame. The site has no CSP header/meta restricting `frame-src`, so no policy weakening was needed. The existing `X-Frame-Options: SAMEORIGIN` entry in `_headers` controls who can frame this site, not its ability to embed GitHub, and was left unchanged. GitHub controls the card's own content/language.
+
+Browser tests additionally verify the seven badges load, the actual Sponsors card returns HTTP 200 and renders Justin's public display name, no 390px overflow, correct loaded fonts, native menu behavior, and persisted light/cream mode. They save full-page screenshots (with the lazy frame painted) plus an above-fold desktop shot.

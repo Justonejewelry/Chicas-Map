@@ -11,6 +11,7 @@ on:
       - "scripts/build_calendar.py"
       - "scripts/build_home.mjs"
       - "templates/calendar.html"
+      - "templates/site-footer.html"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
   # GITHUB_TOKEN commits from the daily job do not trigger push workflows.
