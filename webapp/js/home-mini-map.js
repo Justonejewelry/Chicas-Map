@@ -2,8 +2,7 @@
 (function () {
   var BASE = "/Chicas-Map";
   var MAP_HREF = BASE + "/map/";
-  var DATA = BASE + "/data/cities/san-antonio.json";
-  var USER = BASE + "/data/cities/san-antonio-user.json";
+  var DATA = BASE + "/data/sales-clean.json";
   var SA = [29.4241, -98.4936];
   // Core San Antonio metro — keeps New Braunfels / San Marcos from yanking the view out
   var SA_BOX = { south: 29.22, north: 29.68, west: -98.78, east: -98.22 };
@@ -300,7 +299,7 @@
   function loadPins(done) {
     var bounds = weekendBounds();
     var pins = [];
-    var left = 2;
+    var left = 1;
     function one(url) {
       fetch(url + "?v=" + Date.now(), { cache: "no-store" })
         .then(function (r) { return r.ok ? r.json() : null; })
@@ -314,7 +313,6 @@
         });
     }
     one(DATA);
-    one(USER);
   }
 
   function run() {

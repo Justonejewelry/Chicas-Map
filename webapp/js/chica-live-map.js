@@ -142,6 +142,8 @@
       gold: gold,
       source: s.source || "",
       sourceUrl: s.url || s.original_url || "",
+      aliases: Array.isArray(s.aliases) ? s.aliases : [],
+      source_urls: s.source_urls || [],
       confidence: s.confidence,
       status: s.status || "",
       date_start: s.date_start || s.date_from || "",
@@ -151,8 +153,7 @@
     };
   }
 
-  /* Auto-hide ended sales (America/Chicago). A sale is ended when its last day
-     is before today, or it is today and its posted closing hour has passed. */
+  /* Shared calendar-day policy: hide only dates before today in America/Chicago. */
   function ctNow() {
     try {
       var parts = new Intl.DateTimeFormat("en-CA", { timeZone: "America/Chicago", year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", hour12: false }).formatToParts(new Date());
@@ -166,23 +167,12 @@
     }
   }
   w.__chicaCtNow = ctNow;
-  function closingMins(hours) {
-    var t = String(hours || "").toLowerCase().replace(/\./g, "");
-    var m = t.match(/[\u2013\u2014-]\s*(?:to\s*)?(\d{1,2})(?::(\d{2}))?\s*(am|pm|a|p)\b/) || t.match(/\bto\s*(\d{1,2})(?::(\d{2}))?\s*(am|pm|a|p)\b/);
-    if (!m) return null;
-    var h = Number(m[1]) % 12;
-    if (m[3].charAt(0) === "p") h += 12;
-    return h * 60 + Number(m[2] || 0);
-  }
   function isEnded(s, now) {
     var end = String(s.date_end || s.end_date || s.date_to || "").slice(0, 10);
     if (!/^\d{4}-\d{2}-\d{2}$/.test(end)) return false;
     now = now || ctNow();
     if (end < now.ymd) return true;
-    if (end === now.ymd) {
-      var close = closingMins(s.hours);
-      if (close != null && close > 6 * 60 && now.mins > close + 30) return true;
-    }
+    // Calendar dates, not closing-hour guesses, define the shared daily count.
     return false;
   }
   w.__chicaIsEnded = isEnded;
@@ -437,13 +427,9 @@
       if (tgt && tgt.closest && tgt.closest(".leaflet-marker-icon, .chica-pin, .leaflet-popup, #chica-intel-card, #chica-hunt-bar, #chica-sale-sheet")) return;
       if (typeof w.__chicaHideIntel === "function") w.__chicaHideIntel();
     });
-    var feedUrls = [
-      BASE + "/data/cities/san-antonio.json?v=39",
-      BASE + "/data/cities/san-antonio-email.json?v=39",
-      BASE + "/data/cities/san-antonio-user.json?v=45",
-      BASE + "/data/cities/san-antonio-permits-a.json?v=39",
-      BASE + "/data/cities/san-antonio-permits-b.json?v=39"
-    ];
+    // The 9 AM Facebook ingest bumps this marker; it remains a raw input, not a browser feed.
+    var OVERLAY_VERSION = "san-antonio-user.json?v=46";
+    var feedUrls = [BASE + "/data/sales-clean.json?v=" + OVERLAY_VERSION.split("?v=")[1] + "&t=" + Date.now()];
     Promise.all(feedUrls.map(function (u) {
       return fetch(u, { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
     })).then(function (bags) {

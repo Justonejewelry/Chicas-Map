@@ -36,11 +36,7 @@
       }
       var box = document.getElementById("list");
       var status = document.getElementById("status");
-      var urls = [
-        "/Chicas-Map/data/cities/san-antonio.json",
-        "/Chicas-Map/data/cities/san-antonio-email.json",
-        "/Chicas-Map/data/cities/san-antonio-user.json"
-      ];
+      var urls = ["/Chicas-Map/data/sales-clean.json?v=" + Date.now()];
       function bag(data) {
         var sales = [];
         if (Array.isArray(data)) sales = data;
@@ -81,7 +77,7 @@
             return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c];
           });
         }
-        box.innerHTML = sales.slice(0, 120).map(function (s) {
+        box.innerHTML = sales.map(function (s) {
           var title = esc(s.title || s.name || "Sale");
           var kind = esc(s.type || s.kind || "sale");
           var addr = esc(s.address || s.addr || "");

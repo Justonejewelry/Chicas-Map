@@ -10,7 +10,7 @@
   function load() { try { var a = JSON.parse(localStorage.getItem(KEY) || "[]"); return Array.isArray(a) ? a : []; } catch (e) { return []; } }
   function save(a) { try { localStorage.setItem(KEY, JSON.stringify(a)); } catch (e) {} }
   function sales() { return w.__chicaSales || []; }
-  function byId(id) { var s = sales(); for (var i = 0; i < s.length; i++) if (String(s[i].id) === String(id)) return s[i]; return null; }
+  function byId(id) { var s = sales(); for (var i = 0; i < s.length; i++) if (String(s[i].id) === String(id) || (s[i].aliases || []).indexOf(String(id)) !== -1) return s[i]; return null; }
   function shareUrl(id) { return location.origin + location.pathname.replace(/[^/]*$/, "") + "?sale=" + encodeURIComponent(id); }
 
   function css() {

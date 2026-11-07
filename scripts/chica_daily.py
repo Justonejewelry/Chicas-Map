@@ -73,6 +73,9 @@ def target_date_for_run(now: datetime | None = None) -> date:
 
 
 def load_city_public(slug: str = "san-antonio") -> list[dict]:
+    if slug == "san-antonio":
+        from sales_quality import clean
+        return clean(ROOT / "webapp")[0]["public"]
     candidates = [
         ROOT / "webapp" / "data" / "cities" / f"{slug}.json",
         ROOT / "data" / "cities" / f"{slug}.json",

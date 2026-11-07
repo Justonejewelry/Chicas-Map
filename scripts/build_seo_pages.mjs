@@ -41,8 +41,8 @@ function saleId(s) {
 const today = todayCT();
 const sales = [];
 const seen = new Set();
-for (const f of ["san-antonio.json", "san-antonio-email.json", "san-antonio-user.json"]) {
-  const d = readJson(join(root, "data", "cities", f));
+for (const f of ["sales-clean.json"]) {
+  const d = readJson(join(root, "data", f));
   if (!d || !Array.isArray(d.public)) continue;
   for (const s of d.public) {
     if (!isFinite(Number(s.lat)) || !isFinite(Number(s.lon != null ? s.lon : s.lng))) continue;

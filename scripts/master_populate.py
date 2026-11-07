@@ -102,6 +102,9 @@ def main() -> int:
         run_step("date_window", [PY, "scripts/date_window.py"])
     elif args.dry_run:
         log("SKIP date_window (dry-run)")
+    if not args.dry_run:
+        quality_args = ["--today", args.date] if args.date else []
+        run_step("canonical sale quality", [PY, "scripts/clean_sales.py", "webapp", *quality_args], required=True)
     if not args.skip_orchestrator and (ROOT / "scripts" / "chica_daily.py").exists():
         argv = [PY, "scripts/chica_daily.py", "--date", args.date or datetime.now(CT).date().isoformat()]
         if args.dry_run:
@@ -111,6 +114,9 @@ def main() -> int:
             failed.append(f"chica_daily({code})")
     if not args.skip_events and not args.dry_run and (ROOT / "scripts" / "community_events_swarm.py").exists():
         run_step("community_events_swarm", [PY, "scripts/community_events_swarm.py"])
+    if not args.dry_run:
+        run_step("final canonical sale quality", [PY, "scripts/clean_sales.py", "webapp", *quality_args], required=True)
+        run_step("sale output invariant check", [PY, "scripts/clean_sales.py", "webapp", "--check", *quality_args], required=True)
     log("=== MASTER POPULATE COMPLETE ===")
     log(f"discovery ok={discovery_ok}/{discovery_ran}")
     if discovery_ran > 0 and discovery_ok == 0:

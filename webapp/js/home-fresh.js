@@ -8,16 +8,12 @@
 
   function dataUrl() {
     return location.pathname.indexOf("/Chicas-Map") === 0
-      ? "/Chicas-Map/data/cities/san-antonio.json"
-      : "/data/cities/san-antonio.json";
-  }
-
-  function userUrl() {
-    return dataUrl().replace("san-antonio.json", "san-antonio-user.json");
+      ? "/Chicas-Map/data/sales-clean.json"
+      : "/data/sales-clean.json";
   }
 
   function mapHref(sale) {
-    var base = dataUrl().replace("/data/cities/san-antonio.json", "/map/");
+    var base = dataUrl().replace("/data/sales-clean.json", "/map/");
     var id = sale && (sale.id || sale.external_id);
     if (id) return base + "?sale=" + encodeURIComponent(String(id));
     if (sale && isFinite(Number(sale.lat)) && isFinite(Number(sale.lon))) {
@@ -251,26 +247,16 @@
   function run() {
     if (!isHome()) return;
     var bounds = weekendBounds();
-    Promise.all([
-      fetch(dataUrl(), { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }),
-      fetch(userUrl() + "?v=" + Date.now(), { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; })
-    ]).then(function (pair) {
-      var main = pair[0] || {};
-      var user = pair[1] || {};
-      var pool = normalize(main.public).concat(normalize(user.public || user.sales || (Array.isArray(user) ? user : [])));
+    fetch(dataUrl() + "?v=" + Date.now(), { cache: "no-store" }).then(function (r) {
+      if (!r.ok) throw new Error("sale feed"); return r.json();
+    }).then(function (main) {
+      var pool = normalize(main.public || []);
       var weekend = pool.filter(function (s) { return overlaps(s, bounds.sat, bounds.sun); });
-      // de-dupe by title+street
-      var seen = {};
-      weekend = weekend.filter(function (s) {
-        var k = String(s.title || "").toLowerCase() + "|" + String(s.address || "").split(",")[0].toLowerCase();
-        if (seen[k]) return false;
-        seen[k] = 1;
-        return true;
-      });
+      // Canonical data already deduplicates sources without collapsing units/homes.
       weekend.sort(function (a, b) { return (b.confidence || 0) - (a.confidence || 0); });
       cached = { sales: weekend, total: weekend.length };
       paint();
-    });
+    }).catch(function () {});
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", run);

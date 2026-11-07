@@ -33,6 +33,8 @@ UA = (
 )
 ROOT = Path(__file__).resolve().parents[1]
 CITY_DIR = ROOT / "data" / "cities"
+sys.path.insert(0, str(ROOT.parent / "scripts"))
+from sales_quality import parse_explicit_dates, post_day
 MAX_DETAIL = 18  # polite cap per city per run
 
 CITY_CFG = {
@@ -136,30 +138,15 @@ def enrich_detail(url: str, cfg: dict) -> dict | None:
     bm = re.search(r'id="postingbody"[^>]*>(.*?)</section>', html, re.S)
     if bm:
         body = re.sub(r"<[^>]+>", " ", bm.group(1))
-        body = re.sub(r"\s+", " ", body).strip()[:400]
+        body = html_mod.unescape(re.sub(r"\s+", " ", body).strip())
 
     today = today_ct()
-    start = today
-    end = today + timedelta(days=2)
-    text = f"{title} {body}"
-    months = {
-        "jan": 1, "feb": 2, "mar": 3, "apr": 4, "may": 5, "jun": 6,
-        "jul": 7, "aug": 8, "sep": 9, "oct": 10, "nov": 11, "dec": 12,
-    }
-    found_days: list[date] = []
-    for mon, day in re.findall(
-        r"\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\.?\s*(\d{1,2})\b",
-        text,
-        re.I,
-    ):
-        try:
-            d = date(today.year, months[mon[:3].lower()], int(day))
-            found_days.append(d)
-        except ValueError:
-            pass
-    if found_days:
-        start = min(found_days)
-        end = max(found_days)
+    stamp = re.search(r'<time[^>]*datetime=["\']([^"\']+)', html, re.I)
+    posted_at = stamp.group(1) if stamp else ""
+    reference = post_day({"posted_at": posted_at})
+    start, end, certainty = parse_explicit_dates(f"{title} {body}", reference, reference.year if reference else today.year)
+    if not start or not end or end < today:
+        return None  # Safer policy: no date means no dated sale, never scrape-day + 2.
 
     if not street:
         address = f"{cfg['name']}, {cfg['state']}"
@@ -174,6 +161,7 @@ def enrich_detail(url: str, cfg: dict) -> dict | None:
             geocode = "city-center"
         confidence = 0.82 if geocode == "source" else 0.60
 
+    text = f"{title} {body}"
     is_estate = bool(re.search(r"estate|heirloom|liquidat", text, re.I))
     is_moving = bool(re.search(r"moving", text, re.I))
     sale_type = "estate" if is_estate else "garage"
@@ -187,11 +175,14 @@ def enrich_detail(url: str, cfg: dict) -> dict | None:
         "address": address,
         "dates": f"{start.isoformat()} – {end.isoformat()}",
         "date_from": start.isoformat(),
+        "posted_at": posted_at,
+        "date_certainty": certainty,
         "date_to": end.isoformat(),
         "end_date": end.isoformat(),
         "hours": None,
         "title": title,
-        "details": body,
+        "details": body[:400],
+        "date_evidence": f"{start.isoformat()} – {end.isoformat()}",
         "source": "Craigslist",
         "url": url,
         "photos": 0,
@@ -243,7 +234,7 @@ def merge(slug: str, sales: list[dict], today: date) -> tuple[int, int]:
 
         if existing is not None:
             for f in (
-                "dates", "date_from", "date_to", "end_date", "title", "url",
+                "dates", "date_from", "date_to", "end_date", "posted_at", "date_certainty", "title", "url",
                 "source", "details", "lat", "lon", "geocode", "type", "external_id",
             ):
                 if s.get(f) is not None:

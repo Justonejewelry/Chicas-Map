@@ -27,6 +27,7 @@ class CalendarTests(unittest.TestCase):
                 sale = self.sale()
                 if i == 1:
                     sale['external_id'] = 'email-only'
+                    sale['address'] = '2 Main St'
                 (root / 'data/cities' / name).write_text(json.dumps(dict(public=[sale], permits=[dict(external_id='permit',type='estate',permit_number='123',categories=['permit'],date_from='2026-11-01',date_to='2026-11-15')])) )
             sales, days, undated = b.collect(root, date(2026,11,7))
             self.assertEqual((len(sales), len(days), len(undated)), (2,4,1))

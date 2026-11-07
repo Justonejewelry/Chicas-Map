@@ -42,7 +42,7 @@
     try { await navigator.clipboard.writeText(input.value); status.textContent=es?'¡Enlace copiado!':'Link copied!'; }
     catch(e){input.focus();input.select();status.textContent=es?'Copia el enlace seleccionado.':'Copy the selected link.';}
   });
-  fetch('/Chicas-Map/data/calendar.json',{cache:'no-cache'}).then(function(r){if(!r.ok)throw new Error('feed');return r.json();}).then(function(data){
+  fetch('/Chicas-Map/data/calendar.json?v='+Date.now(),{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error('feed');return r.json();}).then(function(data){
     days=data.days;document.getElementById('month-calendar').hidden=false;render();
   }).catch(function(){document.getElementById('calendar-status').textContent=es?'El calendario mensual no cargó. Consulta la agenda abajo.':'Month view could not load. The agenda is available below.';});
 })();

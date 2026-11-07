@@ -12,6 +12,7 @@ import html
 import json
 import math
 import re
+import sys
 from collections import defaultdict
 from datetime import date, datetime, time, timedelta, timezone
 from pathlib import Path
@@ -19,6 +20,8 @@ from urllib.parse import quote
 from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / 'scripts'))
+import sales_quality as quality
 CT = ZoneInfo('America/Chicago')
 ORIGIN = 'https://www.chicasmap.com'
 SOURCES = ('san-antonio.json', 'san-antonio-email.json', 'san-antonio-user.json')
@@ -63,44 +66,40 @@ def hours_range(value):
 
 def collect(root, today):
     sales, undated, seen = [], [], set()
-    for filename in SOURCES:
-        path = root / 'data' / 'cities' / filename
-        data = json.loads(path.read_text())  # Fail the build on a missing/broken source.
-        for raw in data.get('public', []) + data.get('permits', []):
-            identity = sale_id(raw)
-            if identity in seen:
-                continue
-            seen.add(identity)
-            start = parsed_date(raw.get('date_start') or raw.get('date_from') or raw.get('start_date'))
-            end = parsed_date(raw.get('date_end') or raw.get('date_to') or raw.get('end_date')) or start
-            # Open Data permit issue/expiry dates explicitly do not identify a sale day.
-            is_permit = raw.get('type') == 'permit' or raw.get('permit_number') or 'permit' in (raw.get('categories') or [])
-            uncertain_permit = is_permit and (not raw.get('date_start') or 'permit issued' in str(raw.get('dates') or '').lower())
-            row = {
-                'id': identity,
-                'title': html.unescape(str(raw.get('title') or raw.get('name') or 'Sale')),
-                'kind': str(raw.get('type') or raw.get('kind') or 'garage'),
-                'address': str(raw.get('address') or raw.get('addr') or ''),
-                'neighborhood': str(raw.get('neighborhood') or raw.get('area') or ''),
-                'hours': str(raw.get('hours') or ''),
-                'details': html.unescape(str(raw.get('details') or '')),
-                'dateNote': str(raw.get('date_note') or ''),
-                'source': str(raw.get('source') or ''),
-                'url': ORIGIN + '/map/?sale=' + quote(identity, safe=''),
-            }
-            try:
-                lat, lon = float(raw.get('lat')), float(raw.get('lon', raw.get('lng')))
-                if math.isfinite(lat) and math.isfinite(lon) and -90 <= lat <= 90 and -180 <= lon <= 180:
-                    row.update(lat=lat, lon=lon)
-            except (ValueError, TypeError):
-                pass
-            if end and end < today:
-                continue
-            if not start or not end or end < start or uncertain_permit:
-                undated.append(row)
-                continue
-            row.update(start=start.isoformat(), end=end.isoformat())
-            sales.append(row)
+    dataset, _report = quality.clean(root, today)
+    for raw in dataset['public'] + dataset['unconfirmed']:
+        identity = sale_id(raw)
+        if identity in seen:
+            continue
+        seen.add(identity)
+        start = parsed_date(raw.get('date_start') or raw.get('date_from') or raw.get('start_date'))
+        end = parsed_date(raw.get('date_end') or raw.get('date_to') or raw.get('end_date')) or start
+        uncertain_permit = raw not in dataset['public']
+        row = {
+            'id': identity,
+            'title': html.unescape(str(raw.get('title') or raw.get('name') or 'Sale')),
+            'kind': str(raw.get('type') or raw.get('kind') or 'garage'),
+            'address': str(raw.get('address') or raw.get('addr') or ''),
+            'neighborhood': str(raw.get('neighborhood') or raw.get('area') or ''),
+            'hours': str(raw.get('hours') or ''),
+            'details': html.unescape(str(raw.get('details') or '')),
+            'dateNote': str(raw.get('date_note') or ''),
+            'source': str(raw.get('source') or ''),
+            'url': ORIGIN + '/map/?sale=' + quote(identity, safe=''),
+        }
+        try:
+            lat, lon = float(raw.get('lat')), float(raw.get('lon', raw.get('lng')))
+            if math.isfinite(lat) and math.isfinite(lon) and -90 <= lat <= 90 and -180 <= lon <= 180:
+                row.update(lat=lat, lon=lon)
+        except (ValueError, TypeError):
+            pass
+        if end and end < today:
+            continue
+        if not start or not end or end < start or uncertain_permit:
+            undated.append(row)
+            continue
+        row.update(start=start.isoformat(), end=end.isoformat())
+        sales.append(row)
     days = []
     for sale in sales:
         day, last = max(today, parsed_date(sale['start'])), parsed_date(sale['end'])
@@ -203,6 +202,7 @@ def render(template, lang, sales, days, undated, today):
 
 def build(root, today=None):
     today = today or datetime.now(CT).date()
+    quality.build(root, today)
     sales, days, undated = collect(root, today)
     stamp = datetime.combine(today, time.min, CT).astimezone(timezone.utc).strftime('%Y%m%dT%H%M%SZ')
     (root / 'calendar.ics').write_bytes(build_ics(days, stamp))

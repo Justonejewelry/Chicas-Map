@@ -70,6 +70,9 @@ jobs:
         run: |
           mkdir -p scripts data/sales daily-packs social forecast reports webapp/data/cities
 
+      - name: Sale policy regression tests
+        run: python3 -m unittest discover -s tests -v
+
       - name: Master populate (all source actions)
         id: run
         env:
@@ -91,6 +94,14 @@ jobs:
             --permit-days "$PERMIT_DAYS" \
             $ARGS | tee daily-run.log
 
+      - name: Validate canonical sale output
+        if: github.event.inputs.dry_run != 'true'
+        run: |
+          set -euo pipefail
+          ARGS=""
+          if [ -n "${{ github.event.inputs.target_date }}" ]; then ARGS="--today ${{ github.event.inputs.target_date }}"; fi
+          python3 scripts/clean_sales.py webapp --check $ARGS
+
       - name: Upload run log
         if: always()
         uses: actions/upload-artifact@v4
@@ -107,7 +118,7 @@ jobs:
           if git diff --quiet -- \
             data/sales daily-packs social forecast reports \
             webapp/data/cities webapp/data/community-events.json \
-            webapp/data/scraper-health.json webapp/data/feed.json \
+            webapp/data/scraper-health.json webapp/data/feed.json webapp/data/sales-clean.json webapp/data/sales-quality.json \
             2>/dev/null; then
             echo "dirty=false" >> "$GITHUB_OUTPUT"
           else
@@ -115,7 +126,7 @@ jobs:
             git status --short -- \
               data/sales daily-packs social forecast reports \
               webapp/data/cities webapp/data/community-events.json \
-              webapp/data/scraper-health.json webapp/data/feed.json || true
+              webapp/data/scraper-health.json webapp/data/feed.json webapp/data/sales-clean.json webapp/data/sales-quality.json || true
           fi
 
       - name: Commit daily populate
@@ -127,7 +138,7 @@ jobs:
           git add \
             data/sales/ daily-packs/ social/ forecast/ reports/ \
             webapp/data/cities/ webapp/data/community-events.json \
-            webapp/data/scraper-health.json webapp/data/feed.json \
+            webapp/data/scraper-health.json webapp/data/feed.json webapp/data/sales-clean.json webapp/data/sales-quality.json \
             || true
           DATE=$(ls data/sales/*.json 2>/dev/null | xargs -n1 basename 2>/dev/null | sed 's/.json//' | sort | tail -1 || date -u +%Y-%m-%d)
           MSG="Chica master populate — ${DATE}"

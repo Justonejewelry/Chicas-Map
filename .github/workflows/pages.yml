@@ -9,6 +9,8 @@ on:
       - "scripts/root-domain.mjs"
       - "scripts/build_seo_pages.mjs"
       - "scripts/build_calendar.py"
+      - "scripts/sales_quality.py"
+      - "scripts/clean_sales.py"
       - "scripts/build_home.mjs"
       - "templates/calendar.html"
       - "templates/site-footer.html"
@@ -54,6 +56,9 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
+      - name: Sale policy regression tests
+        run: python3 -m unittest discover -s tests -v
+
       - name: Stage webapp as site root
         run: |
           set -euo pipefail
@@ -78,6 +83,8 @@ jobs:
           echo "custom domain $DOMAIN"
           export SITE_ORIGIN="https://${DOMAIN}"
           # Generate from the same city/email/user feeds as the map on every data deploy.
+          python3 scripts/clean_sales.py _site
+          python3 scripts/clean_sales.py _site --check
           node scripts/build_home.mjs _site
           python3 scripts/build_calendar.py _site
           node scripts/stamp-pages.mjs _site
