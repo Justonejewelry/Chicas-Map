@@ -440,7 +440,7 @@
     var feedUrls = [
       BASE + "/data/cities/san-antonio.json?v=39",
       BASE + "/data/cities/san-antonio-email.json?v=39",
-      BASE + "/data/cities/san-antonio-user.json?v=44",
+      BASE + "/data/cities/san-antonio-user.json?v=45",
       BASE + "/data/cities/san-antonio-permits-a.json?v=39",
       BASE + "/data/cities/san-antonio-permits-b.json?v=39"
     ];
