@@ -22,11 +22,11 @@ for(const [name,width,height] of [['desktop',1280,800],['mobile',390,844]])for(c
  const start=Date.now(),samples=[];
  for(const t of [0,300,1000,3000]){
   await page.waitForTimeout(Math.max(0,t-(Date.now()-start)));
-  samples.push(await page.evaluate(()=>({t:performance.now(),title:document.getElementById('home-title').textContent,cta:document.getElementById('home-add-sale').getBoundingClientRect().toJSON(),hoods:document.querySelectorAll('#chica-hoods li a').length,calendar:document.getElementById('home-calendar').getAttribute('href')})));
+  samples.push(await page.evaluate(()=>({t:performance.now(),title:document.getElementById('home-title').textContent,cta:document.getElementById('home-add-sale').getBoundingClientRect().toJSON(),map:document.getElementById('chica-home-mini-map').getBoundingClientRect().toJSON(),lede:document.querySelector('#chica-home-hero .lede').getBoundingClientRect().toJSON(),mapAfterIntro:document.querySelector('#chica-home-hero .lede').nextElementSibling?.id==='chica-home-mini-map',hoods:document.querySelectorAll('#chica-hoods li a').length,calendar:document.getElementById('home-calendar').getAttribute('href')})));
   await page.screenshot({path:out+'-'+name+'-'+lang+'-'+t+'.png'});
  }
  assert.equal(errors.length,0,errors.join('\n'));assert.equal(new Set(samples.map(s=>s.title)).size,1,'Headline flashes/changes');
- for(const sample of samples){assert(sample.cta.top>=0&&sample.cta.bottom<=height,'Add sale CTA below fold');assert.equal(sample.hoods,13);}
+ for(const sample of samples){assert(sample.cta.top>=0&&sample.cta.bottom<=height,'Add sale CTA below fold');assert.equal(sample.hoods,13);assert(sample.mapAfterIntro,'Map must immediately follow opening paragraph');assert(sample.map.top>=sample.lede.bottom,'Map overlaps intro');assert(sample.map.bottom<=sample.cta.top,'CTA must follow mini-map');}
  assert.equal(await page.locator('#home-add-sale').innerText(),lang==='es'?'Agregar mi venta':'Add my sale');
  assert.equal(await page.locator('#home-add-sale').getAttribute('href'),lang==='es'?'/es/submit/':'/submit/');
  assert.equal(await page.locator('#home-calendar').getAttribute('href'),lang==='es'?'/es/calendar/':'/calendar/');

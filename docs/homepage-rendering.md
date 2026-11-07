@@ -4,7 +4,7 @@ The homepage now serves the actual headline, CTA, calendar link and all 13 neigh
 
 `webapp/index.html` is the English source. `scripts/build_home.mjs` builds the Spanish copy using the `data-home-i18n` keys before SEO stamping. The stamp script preserves both generated languages and their URLs, without the app's old Spanish history rewrite. `home.css` is loaded in the head and reserves the mini-map dimensions, so Leaflet's later tile loading does not shift the layout. Explicit EN/ES links reload the matching static language; the theme preference is applied before paint.
 
-Existing live mini-map/pins, scrolling sale highlights and reels remain progressively enhanced. Their homepage guards recognize both static language variants; highlights go into a reserved slot rather than moving the neighborhood cards. Core navigation continues to work with JavaScript disabled. Map, calendar and all other page bundles are unchanged.
+Existing live mini-map/pins, scrolling sale highlights and reels remain progressively enhanced. Their homepage guards recognize both static language variants; highlights go into a reserved slot rather than moving the neighborhood cards. Core navigation continues to work with JavaScript disabled. The static order is eyebrow, headline, introduction, mini-map, CTA buttons, quick links, then neighborhood cards. The map initializer respects this order instead of re-parking the map after the entire hero. Map, calendar and all other page bundles are unchanged.
 
 ## Root causes fixed
 

@@ -215,6 +215,8 @@
     var a = document.getElementById("chica-home-mini-map");
     if (!a) a = buildShell();
     ensureFrame(a);
+    // Static home owns its first-paint order: intro, map, then actions.
+    if (document.documentElement.hasAttribute("data-home-static") && a.parentNode) return a;
 
     // Park it centered under the hero section (not inside the left column)
     var hero = main.querySelector("section");

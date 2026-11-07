@@ -26,6 +26,10 @@ class HomepageTests(unittest.TestCase):
                 self.assertNotIn('home-fold.js', text)
                 self.assertNotIn('chica-copy.js', text)
                 self.assertNotIn('<noscript>', text)
+                self.assertLess(text.index('class="lede"'), text.index('id="chica-home-mini-map"'))
+                self.assertLess(text.index('id="chica-home-mini-map"'), text.index('class="home-actions"'))
+                self.assertLess(text.index('class="home-actions"'), text.index('class="quick-links"'))
+                self.assertLess(text.index('class="quick-links"'), text.index('id="chica-hoods"'))
             # The old root-domain text replacement broke a regex in home-hoods.js.
             for filename in ['home-hoods.js', 'home.js', 'home-mini-map.js', 'home-fresh.js', 'home-reels.js']:
                 subprocess.run(['node', '--check', str(root / 'js' / filename)], check=True, capture_output=True)
