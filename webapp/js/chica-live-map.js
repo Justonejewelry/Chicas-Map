@@ -284,6 +284,8 @@
     s.id = "chica-live-intel-css";
     s.textContent =
       ".leaflet-container{width:100%!important;height:100%!important}" +
+      /* full-width bottom-right box: attribution text arriving later no longer moves the zoom/attribution (CLS) */
+      "#chica-live-map .leaflet-bottom.leaflet-right{left:0}" +
       ".leaflet-marker-icon.chica-pin,.leaflet-div-icon.chica-pin{width:40px!important;height:40px!important;margin-left:-20px!important;margin-top:-20px!important;padding:0!important;border:0!important;background:transparent!important;display:flex;align-items:center;justify-content:center;overflow:visible!important;box-sizing:border-box}" +
       ".chica-pin .chica-sym{display:block;width:28px;height:28px;flex:0 0 28px;position:relative;z-index:2}" +
       ".chica-pack-halo,.chica-pack-ring{position:absolute;left:20px;top:20px;width:24px;height:24px;margin:0;border-radius:50%;pointer-events:none;transform:translate3d(-50%,-50%,0);backface-visibility:hidden}" +
