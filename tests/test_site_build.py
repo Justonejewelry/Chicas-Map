@@ -164,6 +164,17 @@ class SiteBuildTests(unittest.TestCase):
             self.assertIn('id="hs-em"', html)
         self.assertIn('Busca artículos en las ventas', (self.root / 'es/index.html').read_text())
 
+    def test_leaflet_self_hosted(self):
+        v = self.root / 'vendor/leaflet-1.9.4'
+        for f in ['leaflet.js', 'leaflet.css', 'LICENSE', 'images/layers.png', 'images/marker-icon.png', 'images/marker-shadow.png']:
+            self.assertTrue((v / f).exists(), f)
+        self.assertIn('Leaflet 1.9.4', (v / 'leaflet.js').read_text()[:400])
+        for f in ['map/index.html', 'map.html', 'resources/index.html', 'adventure/index.html', 'js/home-mini-map.js', 'js/leaflet-boot.js']:
+            t = (self.root / f).read_text()
+            self.assertNotIn('cdn.jsdelivr.net/npm/leaflet', t, f)
+        self.assertIn('/vendor/leaflet-1.9.4/leaflet.js', (self.root / 'map/index.html').read_text())
+        self.assertIn('IntersectionObserver', (self.root / 'js/home-mini-map.js').read_text())
+
 
 if __name__ == '__main__':
     unittest.main()

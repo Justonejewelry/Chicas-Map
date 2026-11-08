@@ -7,9 +7,14 @@ const es={"supportLabel":"QUE SIGA LA CAPA","supportTitle":"Apoya a Chica's Map"
 let html=readFileSync(join(root,'index.html'),'utf8');
 const fontCss=readFileSync(join(root,'css/home-fonts.css'),'utf8');
 // Fonts are cacheable WOFF2 files (no base64 duplicated in HTML + CSS). Preload each face once.
-const fontPreloads=[...fontCss.matchAll(/url\(([^)]+\.woff2)\)/g)].map(m=>'<link rel="preload" as="font" type="font/woff2" crossorigin href="'+m[1]+'"/>').join('');
+const fontPreloads=[...fontCss.matchAll(/url\(([^)]+\.woff2)\)/g)].map(m=>'<link rel="preload" as="font" type="font/woff2" crossorigin'+(/syne/.test(m[1])?' fetchpriority="high"':'')+' href="'+m[1]+'"/>').join('');
 if(fontCss.includes('data:font/'))throw new Error('home-fonts.css must not embed base64 fonts');
 html=html.replace('<!--HOME_FONT_PRELOADS-->',fontPreloads);
+// Inline the small home stylesheets (fonts @font-face + home.css, ~10 KB) so the H1 (the LCP element) isn't waiting on extra CSS requests.
+const homeCss=readFileSync(join(root,'css/home.css'),'utf8');
+html=html.replace(/<link rel="stylesheet" href="\/Chicas-Map\/css\/home-fonts\.css[^"]*"\/>/,'<style data-inline="home-fonts">'+fontCss+'</style>');
+html=html.replace(/<link rel="stylesheet" href="\/Chicas-Map\/css\/home\.css[^"]*"\/>/,'<style data-inline="home">'+homeCss+'</style>');
+if(!html.includes('data-inline="home"'))throw new Error('home.css not inlined');
 html=html.replace('<!--HOME_SITE_FOOTER-->',readFileSync(new URL('../templates/site-footer.html',import.meta.url),'utf8'));
 writeFileSync(join(root,'index.html'),html);
 if(!html.includes('data-home-static'))throw new Error('Expected a static homepage');

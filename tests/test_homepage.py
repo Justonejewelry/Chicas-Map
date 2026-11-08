@@ -31,7 +31,7 @@ class HomepageTests(unittest.TestCase):
                 self.assertIn('https://github.com/sponsors/Justonejewelry/card',text)
                 self.assertIn('loading="lazy"',text)
                 self.assertIn('height="225"',text)
-                self.assertIn('home-fonts.css',text)
+                self.assertIn('data-inline="home-fonts"',text); self.assertIn('data-inline="home"',text); self.assertNotIn('cdn.jsdelivr.net/npm/leaflet',text)
                 self.assertIn('font/woff2',text)
                 self.assertLess(text.index('class="lede"'), text.index('id="chica-home-mini-map"'))
                 self.assertLess(text.index('id="chica-home-mini-map"'), text.index('class="home-actions"'))
