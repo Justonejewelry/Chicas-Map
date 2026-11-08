@@ -203,7 +203,7 @@
       var hits = !w.length ? [] : (sales || []).filter(function (s) {
         if ((s.date_to || s.date_end || "9999") < d) return false;
         var h = [s.title, s.details, s.description, (s.categories || []).join(" ")].join(" ").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-        return w.some(function (x) { return h.indexOf(x) !== -1 || (x.length > 4 && h.indexOf(x.replace(/s$/, "")) !== -1); });
+        return w.some(function (x) { return new RegExp("\\b" + x.replace(/s$/, "") + "(s|es)?\\b").test(h); });
       }).slice(0, 6);
       ul.innerHTML = hits.length ? hits.map(function (s) {
         var id = s.external_id || s.id || "";
