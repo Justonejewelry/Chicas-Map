@@ -295,6 +295,7 @@
   }
   function onPhoto(file) {
     var L = t(), out = $("ff-ph-out"); if (!file || !out) return;
+    try{window.goatcounter&&window.goatcounter.count&&window.goatcounter.count({path:"evt-deal-finder-photo",title:"Deal Finder photo check",event:true});}catch(x){}
     var url = URL.createObjectURL(file);
     out.innerHTML = '<div class="ff-sniff"><img class="ff-ph-img" src="' + url + '" alt=""/><div><img class="ff-nose" src="' + BASE + '/images/chica-logo.png" alt=""/><b>' + L.phLoad + '</b><div class="ff-bar"><i id="ff-bar" style="width:4%"></i></div><small>' + (clf ? "" : L.phFirst) + "</small></div></div>";
     var loaded = {}, total = {};

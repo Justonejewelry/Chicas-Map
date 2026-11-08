@@ -164,6 +164,7 @@
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) { f.querySelector("#hs-em").focus(); return; }
       if (f.querySelector(".hs-hp").value) return;
       var terms = saved.map(function (x) { return x.q; }).join(" | "), lang = ES ? "es" : "en";
+      try{window.goatcounter&&window.goatcounter.count&&window.goatcounter.count({path:"evt-alert-signup-submit",title:"Saved-search alert signup submit",event:true});}catch(x){}
       var subj = "Chica alerts SUBSCRIBE", body = "email: " + em + "\nsearches: " + terms + "\nlang: " + lang + "\n";
       if (ALERTS.FORM) {
         var fd = new FormData(); fd.append("email", em); fd.append("searches", terms); fd.append("lang", lang); fd.append("action", "subscribe");

@@ -327,27 +327,112 @@
   window.addEventListener("popstate", function () { setTimeout(run, 60); });
 })();
 
-/* Form intake — email submissions. Attached here because this script loads on every page of the custom domain. */
+/* Form intake — email submissions. Attached here because this script loads on every page of the custom domain.
+   Sponsor + sale-submit forms wait for FormSubmit before the page's own success state runs; others stay fire-and-forget.
+   Forms with data-chica-own handle delivery themselves. */
 (function () {
   var ENDPOINT = "https://formsubmit.co/ajax/mr.jsciaraffa@gmail.com";
+  function cmEvt(p, t) { try { window.goatcounter && window.goatcounter.count && window.goatcounter.count({ path: "evt-" + p, title: t, event: true }); } catch (e) {} }
+  window.chicaEvt = cmEvt;
+  function isEs() {
+    if ((document.documentElement.lang || "").slice(0, 2) === "es") return true;
+    try { return localStorage.getItem("chicas-map-locale") === "es"; } catch (e) { return false; }
+  }
+  document.addEventListener("click", function (e) {
+    var a = e.target && e.target.closest ? e.target.closest('a[href*="square.link"]') : null;
+    if (!a) return;
+    var h = a.href || "";
+    if (/qjunxHoo/.test(h)) cmEvt("square-claim-5", "Square checkout: $5 Boost My Sale");
+    else if (/g3zGY3Hj/.test(h)) cmEvt("square-sponsor-25", "Square checkout: $25 alert sponsor");
+    else cmEvt("square-supporter", "Square checkout: supporter / other");
+  }, true);
+  function sponsorTier(form) {
+    var s = form.querySelector("p span.font-semibold");
+    var t = s ? (s.textContent || "").trim() : "";
+    if (!t) { try { t = new URLSearchParams(location.search).get("tier") || ""; } catch (e) {} }
+    return t || "unspecified";
+  }
+  function msg(form, text, bad) {
+    var el = form.querySelector(".chica-form-msg");
+    if (!text) { if (el) el.remove(); return; }
+    if (!el) {
+      el = document.createElement("p");
+      el.className = "chica-form-msg";
+      el.setAttribute("role", bad ? "alert" : "status");
+      el.setAttribute("aria-live", "polite");
+      form.appendChild(el);
+    }
+    el.style.cssText = "margin-top:12px;padding:12px 14px;border-radius:12px;font-weight:600;" + (bad ? "background:#fde8ec;color:#7a0b2a" : "background:#fff3fb;color:#4a0b41");
+    el.textContent = text;
+  }
+  function failText() {
+    return isEs()
+      ? "¡Ay, guau! Chica no pudo enviar esto 🐾 Revisa tu conexión e inténtalo otra vez, o escríbenos a mr.jsciaraffa@gmail.com."
+      : "Ruh-roh! Chica couldn't send that 🐾 Check your connection and try again, or email mr.jsciaraffa@gmail.com.";
+  }
+  function send(data) {
+    return fetch(ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify(data)
+    }).then(function (r) {
+      if (!r.ok) throw new Error("http " + r.status);
+      return r.json().catch(function () { return {}; });
+    }).then(function (j) {
+      if (j && (j.success === false || j.success === "false")) throw new Error("formsubmit");
+      return j;
+    });
+  }
   document.addEventListener("submit", function (e) {
     var form = e.target;
     if (!(form instanceof HTMLFormElement)) return;
+    if (form.hasAttribute("data-chica-own")) return;
+    if (form.__chicaDelivered) { form.__chicaDelivered = false; return; }
+    if (form.__chicaSending) { e.preventDefault(); e.stopImmediatePropagation(); return; }
     var titleInput = form.querySelector('[name="title"]');
     var emailInput = form.querySelector('[name="email"], [type="email"]');
     if (!titleInput && !emailInput) return;
+    var path = location.pathname || "";
+    var isSponsor = /\/sponsors?(\/|\.html|$)/.test(path) && !!form.querySelector('[name="business"]');
+    var isSale = !!titleInput;
     var fd = new FormData(form);
     var data = {};
     fd.forEach(function (v, k) { data[k] = v; });
-    data._subject = titleInput ? ("Chicas Map — New sale tip: " + (data.title || "untitled")) : "Chicas Map — Pack email signup";
+    if (isSponsor) {
+      data.tier = sponsorTier(form);
+      data._subject = "Chicas Map — Sponsor inquiry: " + data.tier + " — " + (String(data.business || "").trim() || String(data.name || "").trim() || "no business");
+      cmEvt("sponsor-inquiry-submit", "Sponsor inquiry submit (" + data.tier + ")");
+    } else if (isSale) {
+      data._subject = "Chicas Map — New sale tip: " + (data.title || "untitled");
+      cmEvt("sale-submit", "Sale submit");
+    } else {
+      data._subject = "Chicas Map — Pack email signup";
+      cmEvt("email-signup-submit", "Pack email signup submit");
+    }
     data._template = "table";
     data._captcha = "false";
     data.source_url = location.href;
     data.captured_at = new Date().toISOString();
-    fetch(ENDPOINT, {
-      method: "POST",
-      headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify(data)
-    }).catch(function () {});
+    if (!isSponsor && !isSale) { send(data).catch(function () {}); return; }
+    // Hold the page's own success state until FormSubmit confirms delivery.
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    var btn = e.submitter || form.querySelector('[type="submit"]');
+    form.__chicaSending = true;
+    if (btn) btn.disabled = true;
+    msg(form, isEs() ? "Chica está enviando… 🐾" : "Chica is sending it… 🐾", false);
+    send(data).then(function () {
+      form.__chicaSending = false;
+      if (btn) btn.disabled = false;
+      msg(form, "");
+      cmEvt(isSponsor ? "sponsor-inquiry-ok" : "sale-submit-ok", isSponsor ? "Sponsor inquiry delivered" : "Sale submit delivered");
+      form.__chicaDelivered = true;
+      if (form.requestSubmit) form.requestSubmit();
+      else form.dispatchEvent(new Event("submit", { bubbles: true, cancelable: true }));
+    }).catch(function () {
+      form.__chicaSending = false;
+      if (btn) btn.disabled = false;
+      msg(form, failText(), true);
+    });
   }, true);
 })();

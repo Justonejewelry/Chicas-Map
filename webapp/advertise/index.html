@@ -19,7 +19,7 @@
 <p><a class="pay" id="pay" href="#" target="_blank" rel="noopener"><span data-en>Pay <span class="p"></span> for 1 month (Square) →</span><span data-es>Paga <span class="p"></span> por 1 mes (Square) →</span></a></p>
 <p style="font-size:13px;opacity:.75" data-en>Secure checkout by Square. Add your business name and website at checkout, then send your banner (or ask us to make one) with the form below.</p><p style="font-size:13px;opacity:.75" data-es>Pago seguro con Square. Escribe tu negocio y sitio web al pagar, y luego envíanos tu imagen (o pide que la hagamos) con el formulario.</p>
 <h2 data-en>Claim this spot</h2><h2 data-es>Reserva este espacio</h2>
-<form id="f"><input name="business" required placeholder="Business name / Nombre del negocio"><input name="email" type="email" required placeholder="you@business.com"><input name="website" placeholder="Website / Sitio web"><textarea name="message" rows="3" placeholder="Anything else? / ¿Algo más?"></textarea><input class="hp" name="_honey" tabindex="-1" autocomplete="off"><button class="go" type="submit"><span data-en>Claim this spot →</span><span data-es>Reservar →</span></button><p id="r" aria-live="polite"></p></form>
+<form id="f"><input name="business" required placeholder="Business name / Nombre del negocio"><input name="email" type="email" required placeholder="you@business.com"><input name="website" placeholder="Website / Sitio web"><textarea name="message" rows="3" placeholder="Anything else? / ¿Algo más?"></textarea><input class="hp" name="_honey" tabindex="-1" autocomplete="off"><button class="go" id="go" type="submit"><span data-en>Claim this spot →</span><span data-es>Reservar →</span></button><p id="r" aria-live="polite"></p></form>
 <p style="font-size:13px;opacity:.75"><span data-en>We'll reply within 2 days. More sponsor options:</span><span data-es>Te respondemos en 2 días. Más opciones:</span> <a href="/sponsors">/sponsors</a></p>
 </main><script>
 var CFG = { PRICE: "$25", PAY_URL: "https://square.link/u/g3zGY3Hj", FORM: "https://formsubmit.co/ajax/2f6534a8c454b090116f8050045f0e26" };
@@ -27,7 +27,12 @@ document.querySelectorAll(".p").forEach(function (e) { e.textContent = CFG.PRICE
 var pay = document.getElementById("pay"); if (CFG.PAY_URL) pay.href = CFG.PAY_URL; else pay.parentNode.style.display = "none";
 function setL(l) { document.documentElement.lang = l; try { localStorage.setItem("chica-lang", l); } catch (e) {} }
 try { var q = new URLSearchParams(location.search).get("lang") || localStorage.getItem("chica-lang") || (navigator.language || "").slice(0, 2); if (q === "es") setL("es"); } catch (e) {}
-document.getElementById("f").onsubmit = function (e) { e.preventDefault(); var f = e.target, r = document.getElementById("r"); if (f._honey.value) return;
+function cmEvt(p,t){try{window.goatcounter&&window.goatcounter.count&&window.goatcounter.count({path:"evt-"+p,title:t,event:true});}catch(e){}}
+pay.addEventListener("click", function () { cmEvt("square-sponsor-25", "Square checkout: $25 alert sponsor"); });
+function isEs() { return document.documentElement.lang === "es"; }
+var FAIL = function () { return isEs() ? "¡Ay! Chica no pudo enviar tu mensaje 🐾 Revisa tu conexión e inténtalo otra vez, o escríbenos a mr.jsciaraffa@gmail.com." : "Ruh-roh! Chica couldn't send that 🐾 Check your connection and try again, or email mr.jsciaraffa@gmail.com."; };
+document.getElementById("f").onsubmit = function (e) { e.preventDefault(); var f = e.target, r = document.getElementById("r"), go = document.getElementById("go"); if (f._honey.value) return;
+  go.disabled = true; r.textContent = isEs() ? "Enviando…" : "Sending…"; cmEvt("advertise-claim-submit", "Advertise: claim spot submit");
   var fd = new FormData(f); fd.delete("_honey"); fd.append("_subject", "Chicas Map — Alert sponsor claim: " + f.business.value); fd.append("_captcha", "false");
-  fetch(CFG.FORM, { method: "POST", body: fd, headers: { Accept: "application/json" } }).then(function (x) { r.textContent = x.ok ? "¡Gracias! Thanks — Chica will be in touch 💜" : "Oops, try again."; }).catch(function () { r.textContent = "Oops, try again."; }); };
+  fetch(CFG.FORM, { method: "POST", body: fd, headers: { Accept: "application/json" } }).then(function (x) { if (!x.ok) throw new Error("http " + x.status); return x.json().catch(function () { return {}; }); }).then(function (j) { if (j && (j.success === false || j.success === "false")) throw new Error("fs"); r.textContent = isEs() ? "¡Gracias! Chica te escribe pronto 💜" : "Thanks! Chica will be in touch 💜"; f.reset(); cmEvt("advertise-claim-ok", "Advertise: claim delivered"); }).catch(function () { r.textContent = FAIL(); go.disabled = false; }); };
 </script></body></html>
