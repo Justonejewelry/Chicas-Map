@@ -88,6 +88,58 @@ class SiteBuildTests(unittest.TestCase):
         self.assertIn('aria-pressed', fresh)
         self.assertIn('hours can change', fresh)
 
+    def test_event_ld_valid(self):
+        r = subprocess.run(['node', 'scripts/validate_event_ld.mjs', str(self.root)], cwd=ROOT, capture_output=True, text=True)
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        self.assertIn('0 with errors', r.stdout)
+
+    def test_event_ld_helpers(self):
+        js = (
+            "import('./scripts/sale_pages.mjs').then(m=>{"
+            "const o=x=>console.log(JSON.stringify(x));"
+            "o(m.ctOffset('2026-11-14'));o(m.ctOffset('2026-07-04'));o(m.ctOffset('2026-11-01'));o(m.ctOffset('2026-10-31'));"
+            "o(m.parseHours('9 AM – 5 PM'));o(m.parseHours('starting at 8am'));o(m.parseHours('Sat 8 am–3 pm; Sun 8 am–2 pm'));"
+            "const s={title:'X',date_start:'2026-11-14',date_end:'2026-11-15',hours:'9:00 am - 5:00 pm',address:'1 A ST, SAN ANTONIO, TX, 78209',lat:29.4,lon:-98.4};"
+            "o(m.richEventLd(s,{origin:'https://o',path:'/sales/x/',isEnded:false}));o(m.richEventLd(s,{origin:'https://o',path:'/sales/x/',isEnded:true}));})"
+        )
+        out = subprocess.run(['node', '--input-type=module', '-e', js], cwd=ROOT, capture_output=True, text=True, check=True).stdout.split('\n')
+        v = [json.loads(x) for x in out if x]
+        self.assertEqual(v[:4], ['-06:00', '-05:00', '-06:00', '-05:00'])
+        self.assertEqual(v[4], {'start': '09:00:00', 'end': '17:00:00'})
+        self.assertEqual(v[5], {'start': '08:00:00', 'end': None})
+        self.assertIsNone(v[6])
+        ev = v[7]
+        self.assertEqual(ev['startDate'], '2026-11-14T09:00:00-06:00')
+        self.assertEqual(ev['endDate'], '2026-11-15T17:00:00-06:00')
+        self.assertEqual(ev['location']['address']['postalCode'], '78209')
+        self.assertEqual(ev['location']['geo']['latitude'], 29.4)
+        self.assertIsNone(v[8])
+
+    def test_map_quick_filters(self):
+        js = (
+            "const D=require('./webapp/js/chica-dates.js');const o=x=>console.log(JSON.stringify(x));"
+            "o(D.weekendRange('2026-11-09'));o(D.weekendRange('2026-11-13'));o(D.weekendRange('2026-11-14'));o(D.weekendRange('2026-11-15'));"
+            "o(D.range('today','2026-11-08'));o(D.ctToday(new Date('2026-11-09T03:30:00Z')));"
+            "o(D.overlaps({date_start:'2026-11-12',date_end:'2026-11-14'},'2026-11-13','2026-11-15'));o(D.overlaps({date_start:'2026-11-08'},'2026-11-13','2026-11-15'));"
+        )
+        out = subprocess.run(['node', '-e', js], cwd=ROOT, capture_output=True, text=True, check=True).stdout.split('\n')
+        v = [json.loads(x) for x in out if x]
+        self.assertEqual(v[0], ['2026-11-13', '2026-11-15'])
+        self.assertEqual(v[1], ['2026-11-13', '2026-11-15'])
+        self.assertEqual(v[2], ['2026-11-13', '2026-11-15'])
+        self.assertEqual(v[3], ['2026-11-13', '2026-11-15'])
+        self.assertEqual(v[4], ['2026-11-08', '2026-11-08'])
+        self.assertEqual(v[5], '2026-11-08')  # 9:30 PM CT is still Nov 8 in Chicago
+        self.assertEqual(v[6:8], [True, False])
+        hunt = (self.root / 'js/hunt-bar.js').read_text()
+        for needle in ['aria-pressed', 'data-clear', 'Quitar filtros', 'ChicaDates', 'when']:
+            self.assertIn(needle, hunt)
+        mp = (self.root / 'map/index.html').read_text()
+        self.assertLess(mp.index('chica-dates.js'), mp.index('hunt-bar.js'))
+        en = (self.root / 'index.html').read_text(); es = (self.root / 'es/index.html').read_text()
+        self.assertIn('/map/?when=today', en); self.assertIn('/map/?when=weekend', en)
+        self.assertIn('>Hoy en el mapa</a>', es); self.assertIn('>Este fin de semana</a>', es)
+
 
 if __name__ == '__main__':
     unittest.main()

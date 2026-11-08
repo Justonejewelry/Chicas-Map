@@ -7,6 +7,7 @@
  */
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
+import { richEventLd } from "./sale_pages.mjs";
 
 const root = process.argv[2] || "_site";
 const origin = (process.env.SITE_ORIGIN || "https://www.chicasmap.com").replace(/\/$/, "");
@@ -110,7 +111,7 @@ for (const a of AREAS) {
   const desc = list.length
     ? list.length + " garage, yard and estate sale" + (list.length === 1 ? "" : "s") + " in " + a.name + ", San Antonio. Free map, Near Me, and one-tap routes from Chica."
     : "Garage, yard and estate sales in " + a.name + ", San Antonio. Chica updates this page every day.";
-  const events = list.map(eventLd).filter(Boolean);
+  const events = list.map((s) => richEventLd(s, { origin, path: "/sales/" + s._slug + "/", isEnded: false })).filter(Boolean).map((e) => { const { ["@context"]: _c, ...rest } = e; return rest; });
   const ld = { "@context": "https://schema.org", "@type": "CollectionPage", name: title, url: origin + path,
     ...(events.length ? { mainEntity: { "@type": "ItemList", itemListElement: events.map((e, i) => ({ "@type": "ListItem", position: i + 1, item: e })) } } : {}) };
   const body = "<main>" + NAV + "<h1>Garage sales in " + esc(a.name) + " this weekend</h1>" +

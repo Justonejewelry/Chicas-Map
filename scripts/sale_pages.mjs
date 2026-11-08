@@ -47,10 +47,7 @@ export function buildSalePages({ root, origin, BASE, sales, ended, today, esc, e
       const desc = (es
         ? "Venta en San Antonio: " + name + (when ? ", " + when : "") + (s.hours ? ", " + s.hours : "") + (s.address ? ". " + s.address : "") + ". Indicaciones y fuente en Chicas Map."
         : "San Antonio sale: " + name + (when ? ", " + when : "") + (s.hours ? ", " + s.hours : "") + (s.address ? ". " + s.address : "") + ". Directions and source on Chicas Map.").slice(0, 300);
-      const ev = eventLd(s);
-      const ld = ev ? Object.assign({ "@context": "https://schema.org" }, ev, { url: origin + path, description: String(s.details || desc).slice(0, 500),
-        organizer: { "@type": "Organization", name: s.seller || s.poster || "Local seller" } }) : null;
-      if (ld && isEnded) ld.eventStatus = "https://schema.org/EventScheduled";
+      const ld = richEventLd(s, { origin, path, isEnded });
       const chk = checkedDate(s), src = sourceName(s, es), srcUrl = sourceUrl(s);
       const L = es ? {
         crumbs: "Vecindarios", ended: "Esta venta ya terminó. La dejamos aquí para que el enlace no se rompa. Busca ventas nuevas en el mapa. 🐾",
@@ -104,4 +101,58 @@ export function buildSalePages({ root, origin, BASE, sales, ended, today, esc, e
     }
   }
   return { built, indexable };
+}
+
+/* ---------- Event structured data (Google Event requirements) ---------- */
+// CT offset for a calendar date: CDT (-05:00) from 2nd Sunday of March to 1st Sunday of November, else CST (-06:00).
+export function ctOffset(iso) {
+  const [y, m, d] = iso.split("-").map(Number);
+  const nthSunday = (month, n) => { const first = new Date(Date.UTC(y, month - 1, 1)).getUTCDay(); return 1 + ((7 - first) % 7) + (n - 1) * 7; };
+  const start = nthSunday(3, 2), end = nthSunday(11, 1);
+  const dst = (m > 3 && m < 11) || (m === 3 && d >= start) || (m === 11 && d < end);
+  return dst ? "-05:00" : "-06:00";
+}
+const T = "(\\d{1,2})(?::(\\d{2}))?\\s*(a\\.?m\\.?|p\\.?m\\.?)";
+function to24(h, mm, ap) { h = Number(h) % 12; if (/^p/i.test(ap)) h += 12; return String(h).padStart(2, "0") + ":" + (mm || "00") + ":00"; }
+// Only simple, unambiguous single-window hours ("9 AM – 5 PM", "starting at 8am"). Anything else stays date-only.
+export function parseHours(hours) {
+  const h = String(hours || "").trim();
+  let m = h.match(new RegExp("^(?:starting at\\s+)?" + T + "(?:\\s*(?:-|–|to)\\s*" + T + ")?$", "i"));
+  if (!m) return null;
+  return { start: to24(m[1], m[2], m[3]), end: m[4] ? to24(m[4], m[5], m[6]) : null };
+}
+function postalAddress(s) {
+  const raw = String(s.address || "").trim();
+  const parts = raw.split(",").map((x) => x.trim()).filter(Boolean);
+  const zip = (raw.match(/\b(7\d{4})\b/) || [])[1] || String(s.zip || "") || undefined;
+  let street = parts[0] || raw, city = parts[1] || "San Antonio";
+  if (/\bTX\b/i.test(city)) city = city.replace(/\s*TX.*$/i, "") || "San Antonio";
+  const tc = (t) => (/[a-z]/.test(t) ? t : t.toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase()));
+  const a = { "@type": "PostalAddress", streetAddress: tc(street), addressLocality: tc(city), addressRegion: "TX", addressCountry: "US" };
+  if (zip) a.postalCode = zip;
+  return a;
+}
+export function richEventLd(s, { origin, path, isEnded }) {
+  const start = String(s.date_start || s.date_from || "").slice(0, 10);
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(start) || isEnded) return null; // never mark a past sale as an upcoming event
+  const end = String(s.date_end || s.end_date || s.date_to || start).slice(0, 10);
+  const hrs = parseHours(s.hours);
+  const name = String(s.title || "Garage sale");
+  const ev = {
+    "@context": "https://schema.org", "@type": "Event", name,
+    startDate: hrs ? start + "T" + hrs.start + ctOffset(start) : start,
+    eventStatus: "https://schema.org/EventScheduled",
+    eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+    location: { "@type": "Place", name: String(s.address || "San Antonio, TX"), address: postalAddress(s) },
+    image: [origin + "/og.jpg"],
+    description: String(s.details || name + " in San Antonio, TX").slice(0, 500),
+    url: origin + path,
+    isAccessibleForFree: true
+  };
+  if (/^\d{4}-\d{2}-\d{2}$/.test(end)) ev.endDate = hrs && hrs.end ? end + "T" + hrs.end + ctOffset(end) : end;
+  const lat = Number(s.lat), lon = Number(s.lon != null ? s.lon : s.lng);
+  if (isFinite(lat) && isFinite(lon)) ev.location.geo = { "@type": "GeoCoordinates", latitude: lat, longitude: lon };
+  const org = s.seller || s.poster;
+  if (org) ev.organizer = { "@type": "Person", name: String(org) };
+  return ev;
 }
