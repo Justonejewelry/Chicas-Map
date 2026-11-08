@@ -3,7 +3,7 @@
 (function () {
   var BASE = "/Chicas-Map", DATA = BASE + "/data/sales-clean.json", KEY = "chica-saved-searches-v1";
   // Email alerts: sign-ups go to Chica's inbox. Set FORM to a formsubmit.co hashed endpoint once activated; MAILTO is the fallback.
-  var ALERTS = { FORM: "", MAILTO: "" };
+  var ALERTS = { FORM: "https://formsubmit.co/ajax/2f6534a8c454b090116f8050045f0e26", MAILTO: "" };
   var ES = String(document.documentElement.lang || "").toLowerCase().indexOf("es") === 0;
   var T = ES ? {
     label: "Busca artículos en las ventas", ph: "Ej. muebles, herramientas, Lego…", go: "Buscar",

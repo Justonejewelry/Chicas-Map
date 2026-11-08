@@ -4,7 +4,7 @@
 <body><h1>🐾</h1><p id="m">Stop Chica's email alerts for <b id="e"></b>?<br><span lang="es">¿Dejar de recibir las alertas de Chica?</span></p>
 <button id="b">Unsubscribe / Cancelar</button><p id="r" aria-live="polite"></p><p><a href="/">chicasmap.com</a></p>
 <script>
-var FORM = "", MAILTO = ""; // keep in sync with js/home-search.js ALERTS
+var FORM = "https://formsubmit.co/ajax/2f6534a8c454b090116f8050045f0e26", MAILTO = ""; // keep in sync with js/home-search.js ALERTS
 var p = new URLSearchParams(location.search), t = p.get("t") || "", em = p.get("e") || "";
 document.getElementById("e").textContent = em;
 document.getElementById("b").onclick = function () {
