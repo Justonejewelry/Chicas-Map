@@ -25,7 +25,7 @@
       [BASE + "/map/", es() ? "Mapa" : "Map"],
       [BASE + "/submit", es() ? "Publicar una venta" : "Add a sale"],
       [BASE + "/claim/", es() ? "Impulsa mi venta" : "Boost My Sale"],
-      [BASE + "/flip/", es() ? "Flip Finder 💸" : "Flip Finder 💸"],
+      [BASE + "/deals/", es() ? "Buscador de Gangas 💸" : "Deal Finder 💸"],
       [BASE + "/atlas/", "Alamo Atlas"],
       [BASE + "/facebook", "Facebook"],
       [BASE + "/media", "Reels"],

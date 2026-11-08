@@ -1,8 +1,9 @@
-/* Chica's Flip Finder: resale estimates, fee-aware profit, haggle helper, weekend matches, haul tracker.
+/* Chica's Deal Finder: is this garage-sale price a deal? Photo ID on-device (CLIP via transformers.js, lazy), price guide,
+   verdict vs typical used value + new retail, haggle helper, weekend matches, savings tracker, optional resale math.
    100% static. Guide prices are rough ranges, not appraisals. Revenue switches live in js/chica-config.js. */
 (function () {
   "use strict";
-  var BASE = "/Chicas-Map", CFG = window.CHICA_CONFIG || {}, HKEY = "chica-flip-haul-v1";
+  var BASE = "/Chicas-Map", CFG = window.CHICA_CONFIG || {}, HKEY = "chica-flip-haul-v1", TF_URL = "https://cdn.jsdelivr.net/npm/@huggingface/transformers@3/dist/transformers.min.js", CLIP = "Xenova/clip-vit-base-patch32";
   var app = document.getElementById("flip-app");
   var lang = document.documentElement.lang === "es" ? "es" : "en";
   // [id, emoji, en, es, garageLow, garageHigh, resaleLow, resaleHigh, ship(S|M|L), search words]
@@ -58,57 +59,62 @@
     ["patio","🪴","Patio furniture","Muebles de patio",20,60,80,300,"L","patio outdoor furniture"],
     ["other","✨","Something else","Otra cosa",5,20,20,60,"M",""]
   ];
+  var NEW = { castiron: [25, 60], pyrex: [15, 40], console: [300, 500], dewalt: [100, 250], dresser: [300, 900], chair: [100, 400], kitchenaid: [300, 500], lamp: [40, 150], guitar: [150, 600], bike: [250, 700], yeti: [35, 350], mower: [250, 500], electronics: [300, 1100], babygear: [150, 900], sneakers: [90, 180], boots: [180, 450], designer: [200, 600], jeans: [60, 100], watch: [100, 400], sewing: [150, 400], golf: [300, 900], smallappl: [80, 400], saw: [200, 600], exercise: [200, 1500], washer: [200, 700], patio: [200, 900], camera: [400, 900], books: [15, 30], dvd: [10, 25], perfume: [80, 160] };
+  // Extra words that help the photo model recognise each item.
+  var PHOTO = { castiron: "a black cast iron frying pan", pyrex: "a vintage Pyrex glass mixing bowl", lego: "a pile of LEGO bricks", videogame: "video game cartridges", console: "a video game console", dewalt: "a cordless power drill", handtools: "old hand tools like wrenches and planes", dresser: "a wooden dresser with drawers", mcm: "mid-century modern furniture", chair: "an office chair", vinyl: "vinyl records", books: "a stack of books", comics: "comic books", cards: "trading cards", jewelry: "jewelry necklaces and rings", watch: "a wristwatch", camera: "a film camera", audio: "a vintage stereo receiver", guitar: "a guitar", designer: "a designer handbag purse", jeans: "denim jeans", boots: "cowboy boots", sneakers: "sneakers shoes", kitchenaid: "a KitchenAid stand mixer with a tilting head and metal bowl", corningware: "CorningWare casserole dishes", lamp: "a table lamp", art: "a framed painting", toys: "vintage action figures toys", bike: "a bicycle", yeti: "a cooler or insulated tumbler", mower: "a lawn mower", electronics: "a laptop computer or tablet", babygear: "a baby stroller", holiday: "Christmas decorations", mexican: "colorful Talavera Mexican pottery", sewing: "a sewing machine", typewriter: "a typewriter", golf: "golf clubs in a bag", fishing: "a fishing reel and rod", dvd: "DVD movies", perfume: "a perfume bottle", dolls: "a doll", smallappl: "an Instant Pot pressure cooker, a blender jar or an air fryer", hotwheels: "toy die-cast cars", coins: "coins", saw: "a table saw or miter saw", exercise: "exercise equipment dumbbells", washer: "a pressure washer or generator", patio: "outdoor patio furniture" };
   var T = {
     en: {
-      eyebrow: "NEW · BETA · FREE", h1: "Chica's Flip Finder", lede: "Spot a deal at a garage sale? Find out in 10 seconds if it's worth flipping, what to offer, and what to say. Then see which San Antonio sales have more.",
-      hi: "Hola, flipper! 🐾 Pick what you found, punch in the price, and I'll sniff out your profit after fees. I even give you the words to haggle in English and Spanish.",
+      eyebrow: "NEW · BETA · FREE", h1: "Chica's Deal Finder", lede: "Snap a photo or pick the item, enter their price, and Chica tells you in seconds: great deal, fair price, haggle, or pass. Plus what to offer and what to say.",
+      hi: "Hola, treasure hunter! 🐾 Show me what you found and tell me their price. I'll sniff out if it's a real deal, and even give you the words to haggle in English and Spanish.",
       s1: "What did you find?", s1sub: "Tap one, or type your own.", own: "Item name (optional)", ownPh: "e.g. Griswold #8 skillet",
-      s2: "Run the numbers", ask: "Their price", resale: "Est. resale price", plat: "Where you'd sell", cond: "Condition",
-      condOpts: ["Like new", "Good", "Rough"], guide: function (a, b, c, d) { return "Chica's guide: garage sales ask $" + a + "–$" + b + " · usually resells $" + c + "–$" + d + ". Check real sold prices before you buy big."; },
+      s2: "Is it a deal?", ask: "Their price", resale: "Typical used price", plat: "Where you'd sell", cond: "Condition",
+      condOpts: ["Like new", "Good", "Rough"], guide: function (a, b, c, d) { return "Chica's guide: garage sales ask $" + a + "–$" + b + " · usually resells $" + c + "–$" + d + ". Check real sold prices before you buy big."; }, newR: function (a, b) { return " New in store: about $" + a + "–$" + b + "."; },
       plats: { ebay: "eBay (shipped)", mercari: "Mercari (shipped)", fbship: "FB Marketplace (shipped)", fblocal: "FB Marketplace / OfferUp (local cash)", posh: "Poshmark" },
-      ship: "Shipping you pay", flip: "FLIP IT! 🚀", haggle: "HAGGLE FIRST 🤝", pass: "PASS 🙅",
-      sayFlip: function (p) { return "Grab it, neighbor! That's about $" + p + " in your pocket after fees. My tail is wagging. 🐾"; },
-      sayHaggle: function (m) { return "There's money here, but only if you get it to $" + m + " or less. Try my lines below. 😉"; },
-      sayPass: "Ay, no. After fees this one costs you money. Leave it for the next pup. 🐶",
-      profit: "Profit", roi: "ROI", max: "Max offer", byPlat: "Profit by platform", best: "best",
+      ship: "Shipping you pay", great: "GREAT DEAL! 🎉", fair: "FAIR PRICE 👍", haggle: "HAGGLE FIRST 🤝", pass: "PASS 🙅",
+      sayGreat: function (p) { return "Grab it, neighbor! You're saving about $" + p + " vs. what it usually goes for used. My tail is wagging. 🐾"; }, sayFair: "That's a fair garage-sale price. Buy it if you love it, or try a friendly offer. 😊", sayNew: "Careful! That's close to what it costs brand new. 🙅",
+      sayHaggle: function (m) { return "A little high for used. Offer around $" + m + " and see what they say. Try my lines below. 😉"; },
+      sayPass: "Ay, no. That's more than it usually sells for used. Leave it for the next pup. 🐶",
+      profit: "Profit", roi: "ROI", max: "Max offer", save: "You save", pct: "Of used value", offer: "Offer this", resellT: "Want to resell it?", resellSub: "Profit after fees if you flip it online or locally.", byPlat: "Profit by platform", best: "best",
       comps: "Check real sold prices", ebaySold: "eBay sold listings", fb: "FB Marketplace SA", goog: "Google",
-      add: "＋ Add to my haul", added: "Added to your haul! 🎉",
+      add: "＋ Save to my deals", added: "Saved to your deals! 🎉",
       s3: "Haggle helper", s3sub: "Tap a line to copy it. English up top, Spanish below, because this is San Antonio. 💜",
       s4: "More of this at sales this weekend", s4sub: "Upcoming San Antonio sales whose posts mention it.", none: "No upcoming posts mention it yet. Check the full map, new sales land every day!", view: "Map →", openMap: "Open the live map",
-      s5: "My haul tracker", s5sub: "Saved only on this phone. Share your wins!", empty: "Nothing yet. Add a find above and watch your profit grow.", spent: "Spent", worth: "Est. resale", gain: "Est. profit",
-      share: "📸 Share my haul card", clear: "Clear haul", sheet: "🖨️ Print price cheat sheet", copied: "Copied! 🐾", confirm: "Clear your whole haul?",
-      proT: "Chica's Flipper Pack", proB: "Printable bilingual haggle cards, the full San Antonio price cheat sheet, and a Saturday sourcing checklist. Supports the free map!", proL: ["Pocket haggle cards (EN/ES)", "Price cheat sheet for 100+ items", "Route + budget planner sheet"],
-      buy: function (p) { return "Get the pack · $" + p; }, soon: "Coming soon! Tell Chica you want it", sponT: "Sell your finds locally", sponHouse: "Your San Antonio shop here", sponB: "Consignment, vintage, pawn or buy-sell shop? Put your store in front of local flippers right when they're buying.", sponCta: "Sponsor this spot", visit: "Visit",
+      s5: "My deals", s5sub: "Saved only on this phone. Share your wins!", empty: "Nothing yet. Save a find above and watch your savings grow.", spent: "Spent", worth: "Worth", gain: "Saved",
+      share: "📸 Share my deals card", clear: "Clear deals", sheet: "🖨️ Print price cheat sheet", copied: "Copied! 🐾", confirm: "Clear all your saved deals?",
+      proT: "Chica's Deal Hunter Pack", proB: "Printable bilingual haggle cards, the full San Antonio price cheat sheet, and a Saturday sourcing checklist. Supports the free map!", proL: ["Pocket haggle cards (EN/ES)", "Price cheat sheet for 100+ items", "Route + budget planner sheet"],
+      buy: function (p) { return "Get the pack · $" + p; }, soon: "Coming soon! Tell Chica you want it", sponT: "Sell your finds locally", sponHouse: "Your San Antonio shop here", sponB: "Consignment, vintage, pawn or buy-sell shop? Put your store in front of local bargain hunters right when they're buying.", sponCta: "Sponsor this spot", visit: "Visit",
       disc: "Guide prices are rough estimates, not appraisals. Fees are approximate 2026 rates and change. Always check sold listings.", aff: "Some eBay links are affiliate links. If you buy, Chicas Map may earn a small commission at no cost to you.",
       phr: [["Would you take $%o?", "¿Me lo deja en $%o?"], ["If I take all of these, would you do $%b?", "Si me llevo todo, ¿me lo deja en $%b?"], ["Any wiggle room on this one?", "¿Me hace un descuentito?"], ["I've got $%o cash right now.", "Traigo $%o en efectivo ahorita."], ["What's the lowest you'd go?", "¿Cuánto es lo menos?"], ["Thank you! Have a great sale!", "¡Gracias! ¡Que le vaya bonito con la venta!"]],
       tip: "Tip: open low, smile, bundle, and come back after 1 PM when sellers want things gone.",
-      fromSale: "Sniff sniff! 🐾 I picked what this sale mentions. Tap a different item if you spotted something else, and enter their price.",
-      home: "← Chicas Map", cardTag: "MY GARAGE-SALE HAUL", cardFoot: "Find sales + flip smarter: chicasmap.com/flip", items: "items"
+      ph: "Snap a photo 📸", phG: "🖼️ Pick from gallery", phNote: "Your photo stays on your phone. Chica looks at it right here, nothing is uploaded.", phLoad: "Chica is sniffing it out…", phFirst: "First time takes a bit (downloading Chica's nose, ~90 MB, then it's cached).", phPick: "Is it one of these? Tap to confirm:", phFail: "My nose is stuffy on this device. 🤧 Just pick the item from the list below.", or: "or pick it yourself",
+      fromSale: "Sniff sniff! 🐾 I picked what this sale mentions. Snap a photo or tap a different item if you spotted something else, and enter their price.",
+      home: "← Chicas Map", cardTag: "MY GARAGE-SALE DEALS", cardFoot: "Is it a deal? Ask Chica: chicasmap.com/deals", items: "items"
     },
     es: {
-      eyebrow: "NUEVO · BETA · GRATIS", h1: "Flip Finder de Chica", lede: "¿Viste una ganga en una venta de garage? Descubre en 10 segundos si vale la pena revenderla, cuánto ofrecer y qué decir. Y mira qué ventas en San Antonio tienen más.",
-      hi: "¡Hola, revendedor! 🐾 Elige lo que encontraste, pon el precio y yo olfateo tu ganancia después de comisiones. Hasta te doy las frases para regatear en inglés y español.",
+      eyebrow: "NUEVO · BETA · GRATIS", h1: "Buscador de Gangas de Chica", lede: "Toma una foto o elige el artículo, pon su precio y Chica te dice en segundos: gran ganga, precio justo, regatea o pásale. Y qué ofrecer y qué decir.",
+      hi: "¡Hola, cazador de tesoros! 🐾 Enséñame lo que encontraste y dime su precio. Yo olfateo si es una ganga de verdad, y hasta te doy las frases para regatear en inglés y español.",
       s1: "¿Qué encontraste?", s1sub: "Toca uno o escribe el tuyo.", own: "Nombre del artículo (opcional)", ownPh: "ej. Sartén Griswold #8",
-      s2: "Haz las cuentas", ask: "Su precio", resale: "Precio de reventa est.", plat: "Dónde venderías", cond: "Condición",
-      condOpts: ["Como nuevo", "Bueno", "Gastado"], guide: function (a, b, c, d) { return "Guía de Chica: en ventas de garage piden $" + a + "–$" + b + " · normalmente se revende en $" + c + "–$" + d + ". Revisa precios vendidos reales antes de comprar algo grande."; },
+      s2: "¿Es ganga?", ask: "Su precio", resale: "Precio usado típico", plat: "Dónde venderías", cond: "Condición",
+      condOpts: ["Como nuevo", "Bueno", "Gastado"], guide: function (a, b, c, d) { return "Guía de Chica: en ventas de garage piden $" + a + "–$" + b + " · normalmente se revende en $" + c + "–$" + d + ". Revisa precios vendidos reales antes de comprar algo grande."; }, newR: function (a, b) { return " Nuevo en tienda: como $" + a + "–$" + b + "."; },
       plats: { ebay: "eBay (con envío)", mercari: "Mercari (con envío)", fbship: "FB Marketplace (con envío)", fblocal: "FB Marketplace / OfferUp (efectivo local)", posh: "Poshmark" },
-      ship: "Envío que pagas", flip: "¡REVÉNDELO! 🚀", haggle: "REGATEA PRIMERO 🤝", pass: "PÁSALE 🙅",
-      sayFlip: function (p) { return "¡Agárralo, vecino! Son como $" + p + " en tu bolsillo después de comisiones. Mi colita se está moviendo. 🐾"; },
-      sayHaggle: function (m) { return "Aquí hay dinero, pero solo si lo bajas a $" + m + " o menos. Prueba mis frases abajo. 😉"; },
-      sayPass: "Ay, no. Después de comisiones pierdes dinero. Déjalo para el siguiente perrito. 🐶",
-      profit: "Ganancia", roi: "ROI", max: "Oferta máx.", byPlat: "Ganancia por plataforma", best: "mejor",
+      ship: "Envío que pagas", great: "¡GRAN GANGA! 🎉", fair: "PRECIO JUSTO 👍", haggle: "REGATEA PRIMERO 🤝", pass: "PÁSALE 🙅",
+      sayGreat: function (p) { return "¡Agárralo, vecino! Ahorras como $" + p + " contra lo que suele costar usado. Mi colita se está moviendo. 🐾"; }, sayFair: "Es un precio justo de venta de garage. Cómpralo si te encanta, o haz una oferta amable. 😊", sayNew: "¡Cuidado! Eso es casi lo que cuesta nuevo. 🙅",
+      sayHaggle: function (m) { return "Un poco caro para usado. Ofrece como $" + m + " a ver qué dicen. Prueba mis frases abajo. 😉"; },
+      sayPass: "Ay, no. Es más de lo que suele costar usado. Déjalo para el siguiente perrito. 🐶",
+      profit: "Ganancia", roi: "ROI", max: "Oferta máx.", save: "Ahorras", pct: "Del valor usado", offer: "Ofrece esto", resellT: "¿Quieres revenderlo?", resellSub: "Ganancia después de comisiones si lo revendes en línea o local.", byPlat: "Ganancia por plataforma", best: "mejor",
       comps: "Revisa precios vendidos reales", ebaySold: "Vendidos en eBay", fb: "FB Marketplace SA", goog: "Google",
-      add: "＋ Agregar a mi botín", added: "¡Agregado a tu botín! 🎉",
+      add: "＋ Guardar en mis gangas", added: "¡Guardado en tus gangas! 🎉",
       s3: "Ayudante para regatear", s3sub: "Toca una frase para copiarla. Inglés arriba, español abajo, porque esto es San Antonio. 💜",
       s4: "Más de esto en ventas este fin", s4sub: "Ventas próximas en San Antonio que lo mencionan.", none: "Todavía ninguna venta próxima lo menciona. ¡Revisa el mapa, llegan ventas nuevas cada día!", view: "Mapa →", openMap: "Abrir el mapa en vivo",
-      s5: "Mi botín", s5sub: "Se guarda solo en este teléfono. ¡Presume tus logros!", empty: "Nada todavía. Agrega un hallazgo arriba y mira crecer tu ganancia.", spent: "Gastado", worth: "Reventa est.", gain: "Ganancia est.",
-      share: "📸 Compartir mi botín", clear: "Borrar botín", sheet: "🖨️ Imprimir guía de precios", copied: "¡Copiado! 🐾", confirm: "¿Borrar todo tu botín?",
-      proT: "Paquete Flipper de Chica", proB: "Tarjetas bilingües para regatear, la guía completa de precios de San Antonio y una lista para el sábado. ¡Apoya el mapa gratis!", proL: ["Tarjetas de bolsillo para regatear (EN/ES)", "Guía de precios de 100+ artículos", "Hoja de ruta y presupuesto"],
-      buy: function (p) { return "Obtener paquete · $" + p; }, soon: "¡Muy pronto! Dile a Chica que lo quieres", sponT: "Vende tus hallazgos aquí mismo", sponHouse: "Tu tienda de San Antonio aquí", sponB: "¿Consignación, vintage, empeño o compra-venta? Pon tu tienda frente a revendedores locales justo cuando están comprando.", sponCta: "Patrocina este espacio", visit: "Visitar",
+      s5: "Mis gangas", s5sub: "Se guarda solo en este teléfono. ¡Presume tus logros!", empty: "Nada todavía. Guarda un hallazgo arriba y mira crecer tu ahorro.", spent: "Gastado", worth: "Vale", gain: "Ahorrado",
+      share: "📸 Compartir mis gangas", clear: "Borrar gangas", sheet: "🖨️ Imprimir guía de precios", copied: "¡Copiado! 🐾", confirm: "¿Borrar todas tus gangas?",
+      proT: "Paquete Cazagangas de Chica", proB: "Tarjetas bilingües para regatear, la guía completa de precios de San Antonio y una lista para el sábado. ¡Apoya el mapa gratis!", proL: ["Tarjetas de bolsillo para regatear (EN/ES)", "Guía de precios de 100+ artículos", "Hoja de ruta y presupuesto"],
+      buy: function (p) { return "Obtener paquete · $" + p; }, soon: "¡Muy pronto! Dile a Chica que lo quieres", sponT: "Vende tus hallazgos aquí mismo", sponHouse: "Tu tienda de San Antonio aquí", sponB: "¿Consignación, vintage, empeño o compra-venta? Pon tu tienda frente a cazadores de gangas locales justo cuando están comprando.", sponCta: "Patrocina este espacio", visit: "Visitar",
       disc: "Los precios de la guía son estimados, no avalúos. Las comisiones son tarifas aproximadas de 2026 y cambian. Siempre revisa los vendidos.", aff: "Algunos enlaces de eBay son de afiliado. Si compras, Chicas Map puede ganar una pequeña comisión sin costo para ti.",
       phr: null, tip: "Tip: empieza bajo, sonríe, junta varias cosas y regresa después de la 1 PM cuando quieren vaciar.",
-      fromSale: "¡Snif, snif! 🐾 Elegí lo que menciona esta venta. Toca otro artículo si viste algo más y pon su precio.",
-      home: "← Chicas Map", cardTag: "MI BOTÍN DE VENTAS DE GARAGE", cardFoot: "Encuentra ventas y revende mejor: chicasmap.com/flip", items: "artículos"
+      ph: "Toma una foto 📸", phG: "🖼️ Elegir de la galería", phNote: "Tu foto se queda en tu teléfono. Chica la revisa aquí mismo, no se sube nada.", phLoad: "Chica lo está olfateando…", phFirst: "La primera vez tarda un poco (descarga la nariz de Chica, ~90 MB, luego queda guardada).", phPick: "¿Es uno de estos? Toca para confirmar:", phFail: "Mi nariz está tapada en este aparato. 🤧 Elige el artículo de la lista abajo.", or: "o elígelo tú",
+      fromSale: "¡Snif, snif! 🐾 Elegí lo que menciona esta venta. Toma una foto o toca otro artículo si viste algo más y pon su precio.",
+      home: "← Chicas Map", cardTag: "MIS GANGAS DE VENTAS DE GARAGE", cardFoot: "¿Es ganga? Pregúntale a Chica: chicasmap.com/deals", items: "artículos"
     }
   };
   T.es.phr = T.en.phr;
@@ -144,7 +150,7 @@
   function ebayUrl() {
     var u = "https://www.ebay.com/sch/i.html?_nkw=" + encodeURIComponent(q()) + "&LH_Sold=1&LH_Complete=1";
     var c = String(CFG.FLIP_EBAY_CAMPID || "").replace(/\D/g, "");
-    if (c) u += "&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=" + c + "&toolid=10001&customid=flipfinder";
+    if (c) u += "&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=" + c + "&toolid=10001&customid=dealfinder";
     return u;
   }
   function today() { try { return new Intl.DateTimeFormat("en-CA", { timeZone: "America/Chicago" }).format(new Date()); } catch (e) { return new Date().toISOString().slice(0, 10); } }
@@ -167,7 +173,10 @@
       '<section class="ff-hero"><p class="eyebrow">' + L.eyebrow + "</p><h1>" + L.h1 + "</h1><p>" + L.lede + "</p></section>" +
       '<div class="ff-chica"><img src="' + BASE + '/images/chica-logo.png" alt="Chica"/><p>' + (S.fromSale ? L.fromSale : L.hi) + "</p></div>" +
       '<div class="ff-cols"><div>' +
-      '<section class="ff-card"><h2><span class="ff-step">1</span>' + L.s1 + '</h2><p class="sub">' + L.s1sub + '</p><div class="ff-chips" id="ff-chips">' + chips + '</div>' +
+      '<section class="ff-card"><h2><span class="ff-step">1</span>' + L.s1 + '</h2>' +
+      '<div class="ff-photo"><label class="ff-btn pri ff-snap"><input id="ff-cam" type="file" accept="image/*" capture="environment" hidden/>' + L.ph + '</label><label class="ff-btn ff-gal"><input id="ff-gal" type="file" accept="image/*" hidden/>' + L.phG + '</label></div>' +
+      '<p class="ff-hint">🔒 ' + L.phNote + '</p><div id="ff-ph-out"></div>' +
+      '<p class="sub" style="margin-top:12px">' + L.or + ' · ' + L.s1sub + '</p><div class="ff-chips" id="ff-chips">' + chips + '</div>' +
       '<label class="ff-f" style="margin-top:10px">' + L.own + '<input id="ff-name" type="text" maxlength="60" placeholder="' + esc(L.ownPh) + '" value="' + esc(S.name) + '"/></label></section>' +
       '<section class="ff-card"><h2><span class="ff-step">2</span>' + L.s2 + '</h2><div class="ff-grid">' +
       '<label class="ff-f">' + L.ask + '<span class="ff-money"><input id="ff-ask" type="number" inputmode="decimal" min="0" step="0.5" value="' + S.ask + '"/></span></label>' +
@@ -193,21 +202,25 @@
   }
 
   function update() {
-    var L = t(), it = item(), c = calc(S.plat), b = bestPlat();
-    $("ff-guide").textContent = L.guide(it[4], it[5], it[6], it[7]);
-    var kind = c.profit >= 10 && c.roi >= 1 ? "flip" : (c.max >= 1 && c.net >= 2 ? "haggle" : "pass");
-    var say = kind === "flip" ? L.sayFlip(Math.round(c.profit)) : kind === "haggle" ? L.sayHaggle(c.max) : L.sayPass;
+    var L = t(), it = item(), c = calc(S.plat), b = bestPlat(), nw = NEW[it[0]];
+    $("ff-guide").textContent = L.guide(it[4], it[5], it[6], it[7]) + (nw ? L.newR(nw[0], nw[1]) : "");
+    var val = S.resale * [1, 0.85, 0.6][S.cond], ratio = val > 0 ? S.ask / val : 9, offer = Math.max(1, Math.round(val * 0.5));
+    var kind = ratio <= 0.5 ? "great" : ratio <= 0.85 ? "fair" : ratio <= 1.25 ? "haggle" : "pass";
+    var nearNew = nw && S.ask >= nw[0] * 0.8;
+    if (nearNew) kind = "pass";
+    var say = nearNew ? L.sayNew : kind === "great" ? L.sayGreat(Math.round(val - S.ask)) : kind === "fair" ? L.sayFair : kind === "haggle" ? L.sayHaggle(offer) : L.sayPass;
     var plats = Object.keys(L.plats).map(function (p) { var x = calc(p); return '<div class="' + (b && b.p === p ? "best" : "") + '"><span>' + L.plats[p] + (b && b.p === p ? "<em>★ " + L.best + "</em>" : "") + "</span><b>" + money(x.profit) + "</b></div>"; }).join("");
-    $("ff-verdict").innerHTML = '<section class="ff-verdict ' + kind + '"><span class="tag">' + esc(iname(it)) + '</span><div class="big">' + L[kind] + '</div><p class="say">' + say + "</p>" +
-      '<div class="ff-stats"><div><b>' + money(c.profit) + "</b><span>" + L.profit + "</span></div><div><b>" + (S.ask > 0 ? Math.round(c.roi * 100) + "%" : "∞") + "</b><span>" + L.roi + "</span></div><div><b>" + money(c.max) + "</b><span>" + L.max + "</span></div></div>" +
-      '<p class="ff-hint" style="margin-top:12px;font-weight:700">' + L.byPlat + '</p><div class="ff-plat">' + plats + "</div>" +
+    $("ff-verdict").innerHTML = '<section class="ff-verdict ' + (kind === "great" || kind === "fair" ? "flip" : kind) + '"><span class="tag">' + esc(iname(it)) + '</span><div class="big">' + L[kind] + '</div><p class="say">' + say + "</p>" +
+      '<div class="ff-stats"><div><b>' + money(Math.max(0, val - S.ask)) + "</b><span>" + L.save + "</span></div><div><b>" + (val > 0 ? Math.round(ratio * 100) + "%" : "–") + "</b><span>" + L.pct + "</span></div><div><b>" + money(Math.min(offer, S.ask || offer)) + "</b><span>" + L.offer + "</span></div></div>" +
       '<p class="ff-hint" style="margin-top:12px;font-weight:700">' + L.comps + '</p><div class="ff-btns" style="margin-top:6px">' +
       '<a class="ff-btn" target="_blank" rel="noopener' + (CFG.FLIP_EBAY_CAMPID ? " sponsored" : "") + '" href="' + ebayUrl() + '">🛒 ' + L.ebaySold + "</a>" +
       '<a class="ff-btn" target="_blank" rel="noopener" href="https://www.facebook.com/marketplace/sanantonio/search?query=' + encodeURIComponent(q()) + '">🏷️ ' + L.fb + "</a>" +
-      '<a class="ff-btn" target="_blank" rel="noopener" href="https://www.google.com/search?q=' + encodeURIComponent(q() + " sold price") + '">🔎 ' + L.goog + "</a></div>" +
-      '<div class="ff-btns"><button type="button" class="ff-btn pri" id="ff-add">' + L.add + "</button></div></section>";
-    $("ff-add").onclick = function () { haul.unshift({ n: iname(it), p: +S.ask || 0, v: Math.round(c.net * 100) / 100, e: it[1], d: today() }); saveHaul(); renderHaul(); toast(L.added); };
-    var o = Math.max(1, Math.min(c.max || 1, Math.floor(S.ask * 0.6) || 1)), bn = Math.max(1, Math.round(S.ask * 1.6));
+      '<a class="ff-btn" target="_blank" rel="noopener" href="https://www.google.com/search?q=' + encodeURIComponent(q() + " price") + '">🔎 ' + L.goog + "</a></div>" +
+      '<div class="ff-btns"><button type="button" class="ff-btn pri" id="ff-add">' + L.add + "</button></div>" +
+      '<details class="ff-resell"><summary>💸 ' + L.resellT + '</summary><p class="ff-hint">' + L.resellSub + '</p><div class="ff-stats"><div><b>' + money(c.profit) + "</b><span>" + L.profit + "</span></div><div><b>" + (S.ask > 0 ? Math.round(c.roi * 100) + "%" : "∞") + "</b><span>" + L.roi + "</span></div><div><b>" + money(c.max) + "</b><span>" + L.max + "</span></div></div>" +
+      '<p class="ff-hint" style="margin-top:12px;font-weight:700">' + L.byPlat + '</p><div class="ff-plat">' + plats + "</div></details></section>";
+    var o = Math.max(1, Math.min(offer, Math.floor(S.ask * 0.7) || 1)), bn = Math.max(1, Math.round(S.ask * 1.6));
+    $("ff-add").onclick = function () { haul.unshift({ n: iname(it), p: +S.ask || 0, v: Math.round(S.resale * [1, 0.85, 0.6][S.cond] * 100) / 100, e: it[1], d: today() }); saveHaul(); renderHaul(); toast(L.added); };
     $("ff-phr").innerHTML = T.en.phr.map(function (p) { var f = function (s) { return s.replace(/%o/g, o).replace(/%b/g, bn); }; return '<button type="button" data-copy="' + esc(f(p[0]) + " / " + f(p[1])) + '"><b>' + esc(f(p[0])) + "</b><span>" + esc(f(p[1])) + "</span></button>"; }).join("");
     $("ff-phr").querySelectorAll("button").forEach(function (btn) { btn.onclick = function () { try { navigator.clipboard.writeText(btn.dataset.copy); } catch (e) {} toast(L.copied); }; });
   }
@@ -257,20 +270,62 @@
       x.textAlign = "center"; x.fillStyle = "#c513af"; x.fillRect(0, H - 150, W, 150); x.fillStyle = "#fff"; x.font = "800 42px Inter, sans-serif"; x.fillText(L.cardFoot, W / 2, H - 62);
       cv.toBlob(function (blob) {
         if (!blob) return;
-        var file = new File([blob], "chica-haul.png", { type: "image/png" });
+        var file = new File([blob], "chica-deals.png", { type: "image/png" });
         if (navigator.canShare && navigator.canShare({ files: [file] })) { navigator.share({ files: [file], title: L.h1, text: L.cardFoot }).catch(function () {}); return; }
-        var a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = "chica-haul.png"; document.body.appendChild(a); a.click(); a.remove();
+        var a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = "chica-deals.png"; document.body.appendChild(a); a.click(); a.remove();
       }, "image/png");
     }
   }
 
   function sheet() {
     var L = t();
-    $("ff-sheet").innerHTML = "<h2>" + L.h1 + " · San Antonio</h2><table><tr><th></th><th>" + L.ask + "</th><th>" + L.resale + "</th></tr>" + ITEMS.filter(function (i) { return i[0] !== "other"; }).map(function (i) { return "<tr><td>" + i[1] + " " + esc(i[lang === "es" ? 3 : 2]) + "</td><td>$" + i[4] + "–$" + i[5] + "</td><td>$" + i[6] + "–$" + i[7] + "</td></tr>"; }).join("") + "</table><p>" + L.disc + "</p><p>chicasmap.com/flip</p>";
+    $("ff-sheet").innerHTML = "<h2>" + L.h1 + " · San Antonio</h2><table><tr><th></th><th>" + L.ask + "</th><th>" + L.resale + "</th></tr>" + ITEMS.filter(function (i) { return i[0] !== "other"; }).map(function (i) { return "<tr><td>" + i[1] + " " + esc(i[lang === "es" ? 3 : 2]) + "</td><td>$" + i[4] + "–$" + i[5] + "</td><td>$" + i[6] + "–$" + i[7] + "</td></tr>"; }).join("") + "</table><p>" + L.disc + "</p><p>chicasmap.com/deals</p>";
     window.print();
   }
 
+  var clf = null, clfP = null;
+  function loadClf(onProg) {
+    if (clf) return Promise.resolve(clf);
+    if (clfP) return clfP;
+    clfP = import(TF_URL).then(function (tf) {
+      try { tf.env.allowLocalModels = false; } catch (e) {}
+      return tf.pipeline("zero-shot-image-classification", CLIP, { dtype: "q8", progress_callback: onProg });
+    }).then(function (p) { clf = p; return p; }).catch(function (e) { clfP = null; throw e; });
+    return clfP;
+  }
+  function onPhoto(file) {
+    var L = t(), out = $("ff-ph-out"); if (!file || !out) return;
+    var url = URL.createObjectURL(file);
+    out.innerHTML = '<div class="ff-sniff"><img class="ff-ph-img" src="' + url + '" alt=""/><div><img class="ff-nose" src="' + BASE + '/images/chica-logo.png" alt=""/><b>' + L.phLoad + '</b><div class="ff-bar"><i id="ff-bar" style="width:4%"></i></div><small>' + (clf ? "" : L.phFirst) + "</small></div></div>";
+    var loaded = {}, total = {};
+    var timer = setTimeout(function () { if (!clf) fail(); }, 120000);
+    function fail() { clearTimeout(timer); out.innerHTML = '<p class="ff-hint ff-warn">' + L.phFail + "</p>"; }
+    loadClf(function (pr) {
+      if (pr && pr.file && pr.total) { loaded[pr.file] = pr.loaded || 0; total[pr.file] = pr.total; var l = 0, tt = 0; for (var k in total) { l += loaded[k]; tt += total[k]; } var bar = $("ff-bar"); if (bar) bar.style.width = Math.max(4, Math.round(l / tt * 90)) + "%"; }
+    }).then(function (p) {
+      var bar = $("ff-bar"); if (bar) bar.style.width = "95%";
+      var cands = ITEMS.filter(function (i) { return PHOTO[i[0]]; });
+      var labels = cands.map(function (i) { return PHOTO[i[0]]; });
+      return p(url, labels, { hypothesis_template: "a photo of {}" }).then(function (res) {
+        clearTimeout(timer);
+        var top = res.slice(0, 3).map(function (r) { var i = cands[labels.indexOf(r.label)]; return { it: i, s: r.score }; });
+        out.innerHTML = '<div class="ff-sniff"><img class="ff-ph-img" src="' + url + '" alt=""/><div><b>' + L.phPick + '</b><div class="ff-guess">' + top.map(function (g, n) {
+          return '<button type="button" class="ff-chip" data-guess="' + g.it[0] + '" aria-pressed="' + (n === 0) + '">' + g.it[1] + " " + esc(g.it[lang === "es" ? 3 : 2]) + " <small>" + Math.round(g.s * 100) + "%</small></button>";
+        }).join("") + "</div></div></div>";
+        out.querySelectorAll("[data-guess]").forEach(function (b) { b.onclick = function () { out.querySelectorAll("[data-guess]").forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); }); pick(b.dataset.guess, true); }; });
+        if (top[0]) pick(top[0].it[0], true);
+        window.__chicaPhotoTop = top.map(function (g) { return g.it[0] + ":" + g.s.toFixed(3); });
+      });
+    }).catch(function (e) { try { console.warn("Deal Finder photo:", e && e.message); } catch (x) {} fail(); });
+  }
+  function pick(id, focusAsk) {
+    var b = document.querySelector('.ff-chip[data-item="' + id + '"]');
+    if (b) b.click();
+    if (focusAsk) { var a = $("ff-ask"); if (a) { a.scrollIntoView({ behavior: "smooth", block: "center" }); try { a.focus({ preventScroll: true }); a.select(); } catch (e) {} } }
+  }
+
   function bind() {
+    ["ff-cam", "ff-gal"].forEach(function (id) { var el = $(id); if (el) el.addEventListener("change", function () { onPhoto(this.files && this.files[0]); this.value = ""; }); });
     $("ff-chips").addEventListener("click", function (e) {
       var b = e.target.closest(".ff-chip"); if (!b) return;
       S.item = b.dataset.item; var it = item(); S.name = ""; $("ff-name").value = "";

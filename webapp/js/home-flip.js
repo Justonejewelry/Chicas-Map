@@ -1,11 +1,11 @@
-/* Home promo card for Chica's Flip Finder (bilingual). */
+/* Home promo card for Chica's Deal Finder (bilingual). */
 (function () {
   var es = String(document.documentElement.lang || "").indexOf("es") === 0;
   var anchor = document.getElementById("chica-hoods"); if (!anchor || document.getElementById("home-flip")) return;
-  var a = document.createElement("a"); a.id = "home-flip"; a.href = "/Chicas-Map/flip/"; a.setAttribute("data-chica-keep", "1");
+  var a = document.createElement("a"); a.id = "home-flip"; a.href = "/Chicas-Map/deals/"; a.setAttribute("data-chica-keep", "1");
   a.innerHTML = '<img src="/Chicas-Map/images/chica-logo.png" width="56" height="56" alt=""/><span><em>' + (es ? "NUEVO · BETA" : "NEW · BETA") + "</em><b>" +
-    (es ? "Flip Finder de Chica 💸" : "Chica's Flip Finder 💸") + "</b><small>" +
-    (es ? "¿Vale la pena revenderlo? Ganancia después de comisiones, oferta máxima y frases para regatear en inglés y español." : "Is it worth flipping? Profit after fees, your max offer, and haggle lines in English & Spanish.") +
+    (es ? "Buscador de Gangas de Chica 📸" : "Chica's Deal Finder 📸") + "</b><small>" +
+    (es ? "Toma una foto y Chica te dice si es ganga o no. Qué ofrecer y frases para regatear en inglés y español." : "Snap a photo and Chica tells you if it's a deal or not. What to offer, plus haggle lines in English & Spanish.") +
     "</small></span><i>→</i>";
   var st = document.createElement("style");
   st.textContent = "#home-flip{display:flex;align-items:center;gap:14px;max-width:560px;margin:0 auto 28px;padding:14px 16px;border-radius:22px;text-decoration:none;color:#fff;background:linear-gradient(135deg,#c513af,#7b3fe4);box-shadow:0 10px 30px #c513af44;text-align:left}" +
