@@ -13,6 +13,8 @@
       today: "Today",
       tomorrow: "Tomorrow",
       weekend: "This weekend",
+      clear: "✕ Clear filters",
+      showing: "Showing",
       garage: "Garage",
       yard: "Yard",
       estate: "Estate",
@@ -28,6 +30,8 @@
       today: "Hoy",
       tomorrow: "Mañana",
       weekend: "Este fin de semana",
+      clear: "✕ Quitar filtros",
+      showing: "Mostrando",
       garage: "Garaje",
       yard: "Patio",
       estate: "Bienes",
@@ -69,6 +73,7 @@
     return new Date(Number(p[0]), Number(p[1]) - 1, Number(p[2]));
   }
   function dayRange(name) {
+    if (window.ChicaDates) return window.ChicaDates.range(name);
     var t = ctToday();
     if (name === "today") return [ymd(t), ymd(t)];
     if (name === "tomorrow") { var tm = new Date(t.getFullYear(), t.getMonth(), t.getDate() + 1); return [ymd(tm), ymd(tm)]; }
@@ -137,6 +142,8 @@
     list.innerHTML = html;
   }
 
+  function cmEvt(p) { try { window.goatcounter && window.goatcounter.count && window.goatcounter.count({ path: "evt-" + p, title: "Map filter: " + p, event: true }); } catch (e) {} }
+
   function escapeHtml(s) {
     return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) {
       if (c === "&") return "&" + "amp;";
@@ -181,6 +188,8 @@
       var key = btn.getAttribute("data-type");
       if (key && COPY.en[key]) btn.textContent = t(key);
     });
+    var clrBtn = filters.querySelector("[data-clear]");
+    if (clrBtn) clrBtn.textContent = t("clear");
   }
 
   function nearMe() {
@@ -222,10 +231,10 @@
         "#chica-near-btn{flex:0 0 auto;height:44px;display:inline-flex;align-items:center;gap:6px;border:1px solid #8d0c7c;border-radius:12px;background:#c513af;color:#fff;font:700 12px/1 Inter,system-ui,sans-serif;letter-spacing:.02em;padding:0 12px;white-space:nowrap;cursor:pointer;box-shadow:0 8px 18px rgba(197,19,175,.28)}" +
         "#chica-near-btn svg{display:block;flex:0 0 auto}" +
         "#chica-filters{position:relative!important;top:auto!important;left:auto!important;right:auto!important;z-index:1!important;display:flex;gap:8px;align-items:center;width:100%;margin:0;padding:0 0 2px;overflow:auto;pointer-events:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}" +
-        "#chica-filters::-webkit-scrollbar{display:none}" +
+        "#chica-filters::-webkit-scrollbar{display:none}#chica-filters .grp[hidden]{display:none!important}" +
         "#chica-filters .grp{display:flex;gap:2px;flex:0 0 auto;padding:3px;border-radius:12px;background:rgba(18,18,18,.86);border:1px solid rgba(243,238,228,.14);box-shadow:0 10px 24px rgba(0,0,0,.28);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}" +
         "#chica-filters button{height:30px;border:0;border-radius:9px;background:transparent;background-image:none;color:#f3eee4;font:600 12px/1 Inter,system-ui,sans-serif;letter-spacing:.01em;padding:0 10px;white-space:nowrap;cursor:pointer}" +
-        "#chica-filters button.on{background:#c513af;background-image:none;color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.28)}" +
+        "#chica-filters button:focus-visible{outline:2px solid #fffdf8;outline-offset:1px}#chica-filters button.on{text-decoration:underline;text-underline-offset:3px;outline:2px solid #ffd400;outline-offset:-2px;background:#c513af;background-image:none;color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.28)}" +
         "#chica-sale-sheet{position:fixed;left:10px;bottom:10px;z-index:2147481000;width:min(360px,calc(100vw - 20px));max-height:38dvh;overflow:auto;background:#1a1714f2;color:#f3eee4;border:1px solid #3a342e;border-radius:14px;padding:10px;pointer-events:auto}" +
         "#chica-sale-sheet h2{margin:0 0 6px;font:800 13px/1.2 Inter,system-ui,sans-serif}" +
         "#chica-sale-list button{display:block;width:100%;text-align:left;background:#121212;color:#f3eee4;border:1px solid #3a342e;border-radius:10px;padding:8px 10px;margin:0 0 6px}" +
@@ -252,6 +261,7 @@
         '<button type="button" data-day="tomorrow">Tomorrow</button>' +
         '<button type="button" data-day="weekend">This weekend</button>' +
       '</div>' +
+      '<div class="grp clr" hidden><button type="button" data-clear="1">✕ Clear filters</button></div>' +
       '<div class="grp">' +
         '<button type="button" data-type="garage">Garage</button>' +
         '<button type="button" data-type="yard">Yard</button>' +
@@ -280,6 +290,13 @@
     filters.addEventListener("click", function (ev) {
       var btn = ev.target.closest("button");
       if (!btn) return;
+      if (btn.dataset.clear) {
+        state.day = ""; state.dayTo = ""; state.type = ""; state.miles = 0;
+        filters.querySelectorAll("button.on").forEach(function (b) { b.classList.remove("on"); });
+        sync(); apply();
+        var first = filters.querySelector("[data-day]"); if (first) first.focus();
+        return;
+      }
       if (btn.dataset.day) {
         var next = btn.classList.contains("on") ? "" : btn.dataset.day;
         filters.querySelectorAll("[data-day]").forEach(function (b) { b.classList.remove("on"); });
@@ -301,8 +318,25 @@
         if (mi) btn.classList.add("on");
         if (mi && !window.__chicaHere) nearMe();
       }
+      if (btn.dataset.day) cmEvt("map-filter-" + (state.day ? btn.dataset.day : "off"));
+      sync();
       apply();
     });
+    function sync() {
+      var any = false;
+      filters.querySelectorAll("button:not([data-clear])").forEach(function (b) {
+        var on = b.classList.contains("on"); if (on) any = true;
+        b.setAttribute("aria-pressed", on ? "true" : "false");
+      });
+      var clr = filters.querySelector(".clr"); if (clr) clr.hidden = !any;
+    }
+    // Deep link from the home page: /map/?when=today | weekend
+    try {
+      var when = new URLSearchParams(location.search).get("when");
+      var pre = when && filters.querySelector('[data-day="' + (when === "weekend" ? "weekend" : when === "today" ? "today" : "") + '"]');
+      if (pre) { var rg0 = dayRange(pre.dataset.day); state.day = rg0[0]; state.dayTo = rg0[1]; pre.classList.add("on"); }
+    } catch (e) {}
+    sync();
     window.addEventListener("chica-sales", apply);
     apply();
     paintLabels();
