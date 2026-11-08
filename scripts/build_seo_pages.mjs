@@ -38,8 +38,11 @@ function saleId(s) {
   return s.external_id || s.id || s.sale_id || (lat.toFixed(5) + "," + lon.toFixed(5) + "|" + (s.title || s.address || ""));
 }
 
+function slug(id) { return String(id).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 80) || "sale"; }
+
 const today = todayCT();
 const sales = [];
+const ended = [];
 const seen = new Set();
 for (const f of ["sales-clean.json"]) {
   const d = readJson(join(root, "data", f));
@@ -47,11 +50,12 @@ for (const f of ["sales-clean.json"]) {
   for (const s of d.public) {
     if (!isFinite(Number(s.lat)) || !isFinite(Number(s.lon != null ? s.lon : s.lng))) continue;
     const end = String(s.date_end || s.end_date || s.date_to || "").slice(0, 10);
-    if (/^\d{4}-\d{2}-\d{2}$/.test(end) && end < today) continue; // ended
     const id = saleId(s);
     if (seen.has(id)) continue;
     seen.add(id);
-    sales.push(Object.assign({}, s, { _id: id, _zip: zipOf(s) }));
+    const rec = Object.assign({}, s, { _id: id, _zip: zipOf(s), _slug: slug(id) });
+    if (/^\d{4}-\d{2}-\d{2}$/.test(end) && end < today) { ended.push(rec); continue; } // ended: keep a notice page, not listed
+    sales.push(rec);
   }
 }
 
@@ -78,7 +82,7 @@ const FOOT = '<script src="' + BASE + '/js/chica-menu.js?v=8" defer></script></b
 
 function saleCard(s) {
   const when = [s.dates, s.hours].filter(Boolean).join(" · ");
-  return '<a class="sale" href="' + BASE + "/map/?sale=" + encodeURIComponent(s._id) + '"><strong>' + esc(s.title || "Garage sale") + "</strong>" +
+  return '<a class="sale" href="' + BASE + "/sales/" + s._slug + '/"><strong>' + esc(s.title || "Garage sale") + "</strong>" +
     '<span class="m">' + esc(s.address || "") + (when ? "<br>" + esc(when) : "") + "</span></a>";
 }
 function eventLd(s) {
@@ -88,7 +92,7 @@ function eventLd(s) {
   return { "@type": "Event", name: s.title || "Garage sale", startDate: start, endDate: end || start,
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode", eventStatus: "https://schema.org/EventScheduled",
     location: { "@type": "Place", name: s.address || "San Antonio, TX", address: s.address || "San Antonio, TX" },
-    url: origin + "/map/?sale=" + encodeURIComponent(s._id), isAccessibleForFree: true };
+    url: origin + "/sales/" + s._slug + "/", isAccessibleForFree: true };
 }
 function write(path, html) {
   const file = join(root, path.replace(/^\//, ""), "index.html");
@@ -129,12 +133,15 @@ write(hubPath, head(hubTitle, hubDesc, hubPath, true, { "@context": "https://sch
   built.map((b) => '<li><a href="' + BASE + b.path + '">' + esc(AREAS.find((a) => "/garage-sales/" + a.slug + "/" === b.path).name.replace(/^the /, "").replace(/^./, (c) => c.toUpperCase())) + "</a> (" + b.n + ")</li>").join("") +
   '</ul><a class="cta" href="' + BASE + '/map/">Open the live map</a></main>' + FOOT);
 
+// Per-sale detail pages (EN + ES), linked from neighborhood pages, home search and the banner.
+const salePages = (await import("./sale_pages.mjs")).buildSalePages({ root, origin, BASE, sales, ended, today, esc, eventLd, CSS, write });
+console.log("sale pages: " + salePages.built + " (" + salePages.indexable.length + " indexable)");
 // Sitemap: append indexable pages
 const smPath = join(root, "sitemap.xml");
 if (existsSync(smPath)) {
   let sm = readFileSync(smPath, "utf8");
   const day = today;
-  const urls = [hubPath].concat(built.filter((b) => b.indexable).map((b) => b.path));
+  const urls = [hubPath].concat(built.filter((b) => b.indexable).map((b) => b.path), salePages.indexable);
   const add = urls.filter((u) => sm.indexOf("<loc>" + origin + u + "</loc>") === -1)
     .map((u) => "  <url>\n    <loc>" + origin + u + "</loc>\n    <lastmod>" + day + "</lastmod>\n    <changefreq>daily</changefreq>\n  </url>\n").join("");
   sm = sm.replace("</urlset>", add + "</urlset>");

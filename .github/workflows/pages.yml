@@ -8,6 +8,7 @@ on:
       - "scripts/stamp-pages.mjs"
       - "scripts/root-domain.mjs"
       - "scripts/build_seo_pages.mjs"
+      - "scripts/sale_pages.mjs"
       - "scripts/build_calendar.py"
       - "scripts/sales_quality.py"
       - "scripts/clean_sales.py"
