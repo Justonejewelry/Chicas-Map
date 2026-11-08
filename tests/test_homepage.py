@@ -21,7 +21,8 @@ class HomepageTests(unittest.TestCase):
                 self.assertIn('>' + label + '</a>', text)
                 self.assertIn('href="' + submit + '"', text)
                 self.assertIn('href="' + calendar + '"', text)
-                self.assertEqual(text.count('<li><a href="/garage-sales/'), 13)
+                hood = '/es/garage-sales/' if path.startswith('es/') else '/garage-sales/'
+                self.assertEqual(text.count('<li><a href="' + hood), 13)
                 self.assertNotIn('type="module"', text)
                 self.assertNotIn('home-fold.js', text)
                 self.assertNotIn('chica-copy.js', text)

@@ -84,7 +84,7 @@ export function buildSalePages({ root, origin, BASE, sales, ended, today, esc, e
         '<link rel="icon" href="' + BASE + '/favicon.svg"/>' +
         (ld ? '<script type="application/ld+json">' + JSON.stringify(ld).replace(/</g, "\\u003c") + "</script>" : "") +
         "<style>" + CSS + "dl{display:grid;grid-template-columns:max-content 1fr;gap:6px 14px;margin:18px 0}dt{font-weight:700}dd{margin:0}.note{font-size:14px;color:#5b5249;background:#fff;border-left:4px solid #c513af;padding:10px 14px;border-radius:8px}.ended{background:#fff3cd;padding:10px 14px;border-radius:8px}.lang{float:right;font-size:14px}</style></head><body>" +
-        "<main>" + '<nav class="crumbs"><a href="' + BASE + (es ? "/es/" : "/") + '">Chicas Map</a> › <a href="' + BASE + '/garage-sales/">' + L.crumbs + "</a>" +
+        "<main>" + '<nav class="crumbs"><a href="' + BASE + (es ? "/es/" : "/") + '">Chicas Map</a> › <a href="' + BASE + (es ? "/es" : "") + '/garage-sales/">' + L.crumbs + "</a>" +
         '<span class="lang"><a href="' + BASE + "/sales/" + s._slug + '/" lang="en">EN</a> · <a href="' + BASE + "/es/sales/" + s._slug + '/" lang="es">ES</a></span></nav>' +
         "<h1>" + esc(name) + "</h1>" +
         (isEnded ? '<p class="ended">' + L.ended + "</p>" : '<p class="lede">' + L.hi + "</p>") +
