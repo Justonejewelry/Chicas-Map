@@ -343,7 +343,7 @@
     if (!a) return;
     var h = a.href || "";
     if (/qjunxHoo/.test(h)) cmEvt("square-claim-5", "Square checkout: $5 Boost My Sale");
-    else if (/g3zGY3Hj/.test(h)) cmEvt("square-sponsor-25", "Square checkout: $25 alert sponsor");
+    else if (/vELzfnnD/.test(h)) cmEvt("square-sponsor-25", "Square checkout: $25 alert sponsor");
     else cmEvt("square-supporter", "Square checkout: supporter / other");
   }, true);
   function sponsorTier(form) {
