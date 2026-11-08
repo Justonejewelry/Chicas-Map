@@ -5,8 +5,8 @@
   "timezone": "America/Chicago",
   "status": "live",
   "policy": "Explicit sale dates only; uncertain dates excluded. 60-mile SA metro. Raw overlays preserved.",
-  "total_locations": 28,
-  "today_count": 27,
+  "total_locations": 32,
+  "today_count": 30,
   "public": [
     {
       "address": "10 IMPALA WAY, SAN ANTONIO, TX, 78258",
@@ -47,6 +47,49 @@
       ],
       "aliases": [
         "fb-ev-1443986453819948"
+      ]
+    },
+    {
+      "address": "101 HILLTOP DR, SPRING BRANCH, TX, 78070",
+      "source_address": "101 Hilltop Dr., Spring Branch, TX (Twin Sisters Estate)",
+      "dates": "2026-11-06 – 2026-11-08",
+      "date_from": "2026-11-06",
+      "date_to": "2026-11-08",
+      "end_date": "2026-11-08",
+      "date_start": "2026-11-06",
+      "date_end": "2026-11-08",
+      "date_bucket": "live",
+      "hours": "8:00 am - 5:00 pm",
+      "title": "Garage/Yard Sale Extravaganza",
+      "details": "Friday 6th, Saturday 7th & Sunday 8th 8:00 am - 5:00 pm. 101 Hilltop Dr., Spring Branch (Twin Sisters Estate).",
+      "source": "Facebook Events",
+      "url": "https://www.facebook.com/events/1110019495001823/",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.86,
+      "status": "verified",
+      "lat": 29.983879,
+      "lon": -98.432069,
+      "geocode": "census",
+      "external_id": "fb-ev-1110019495001823",
+      "categories": [
+        "garage-sale",
+        "facebook",
+        "event"
+      ],
+      "zip": "78070",
+      "in_person": true,
+      "date_note": "Friday November 6 through Sunday November 8, 2026, 8:00 am–5:00 pm (America/Chicago), as listed on the Facebook event.",
+      "date_verified": "facebook-collected-2026-11-08",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://www.facebook.com/events/1110019495001823/"
+      ],
+      "sources": [
+        "Facebook Events"
+      ],
+      "aliases": [
+        "fb-ev-1110019495001823"
       ]
     },
     {
@@ -1087,6 +1130,90 @@
       ]
     },
     {
+      "address": "1643 BASSE RD, SAN ANTONIO, TX, 78213",
+      "source_address": "1643 Basse Rd, San Antonio, TX 78213",
+      "dates": "2026-11-08",
+      "date_from": "2026-11-08",
+      "date_to": "2026-11-08",
+      "end_date": "2026-11-08",
+      "date_start": "2026-11-08",
+      "date_end": "2026-11-08",
+      "date_bucket": "live",
+      "hours": "until about 3 pm",
+      "title": "Yard Sale — Everything $1",
+      "details": "Had a yard sale yesterday so today getting rid of everything for one dollar each. Address 1643 Basse Rd. 78213 San Antonio. Here till about 3 o'clock.",
+      "source": "Facebook Marketplace",
+      "url": "https://www.facebook.com/marketplace/item/1824932675601276/",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.86,
+      "status": "verified",
+      "lat": 29.48875,
+      "lon": -98.510914,
+      "geocode": "census",
+      "external_id": "fb-1824932675601276",
+      "categories": [
+        "garage-sale",
+        "facebook"
+      ],
+      "zip": "78213",
+      "in_person": true,
+      "date_note": "Sunday, November 8, 2026 (America/Chicago). Collected from Marketplace listings posted within the last day; seller said they had a sale yesterday and are out today until about 3 o'clock.",
+      "date_verified": "facebook-collected-2026-11-08",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://www.facebook.com/marketplace/item/1824932675601276/"
+      ],
+      "sources": [
+        "Facebook Marketplace"
+      ],
+      "aliases": [
+        "fb-1824932675601276"
+      ]
+    },
+    {
+      "address": "332 BLUE BONNET BLVD, ALAMO HEIGHTS, TX, 78209",
+      "source_address": "332 Blue Bonnet Blvd, Alamo Heights (San Antonio), TX",
+      "dates": "2026-11-08",
+      "date_from": "2026-11-08",
+      "date_to": "2026-11-08",
+      "end_date": "2026-11-08",
+      "date_start": "2026-11-08",
+      "date_end": "2026-11-08",
+      "date_bucket": "live",
+      "hours": "starting at 8am",
+      "title": "Mini Estate Sale",
+      "details": "Located at 332 Blue Bonnet Blvd. In Alamo Heights. Various items remaining incl. Christmas, Waterford crystal ornaments $5, Funko pops, trading cards, DVDs/CDs, vintage collectibles. Sunday 8am until unspecified close.",
+      "source": "Facebook Marketplace",
+      "url": "https://www.facebook.com/marketplace/item/2195231558013489/",
+      "photos": 0,
+      "type": "estate",
+      "confidence": 0.86,
+      "status": "verified",
+      "lat": 29.484933,
+      "lon": -98.461585,
+      "geocode": "census",
+      "external_id": "fb-2195231558013489",
+      "categories": [
+        "estate-sale",
+        "facebook"
+      ],
+      "zip": "78209",
+      "in_person": true,
+      "date_note": "Sunday, November 8, 2026 (America/Chicago), as stated in the Marketplace listing (Sunday 8am). Closing time was not given.",
+      "date_verified": "facebook-collected-2026-11-08",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://www.facebook.com/marketplace/item/2195231558013489/"
+      ],
+      "sources": [
+        "Facebook Marketplace"
+      ],
+      "aliases": [
+        "fb-2195231558013489"
+      ]
+    },
+    {
       "address": "9360 ABE LINCOLN, SAN ANTONIO, TX, 78240",
       "source_address": "9360 Abe Lincoln Rd, San Antonio, TX 78240",
       "dates": "2026-11-08",
@@ -1171,6 +1298,49 @@
       ],
       "aliases": [
         "fb-2387076925428692"
+      ]
+    },
+    {
+      "address": "2541 W SOUTHCROSS BLVD, SAN ANTONIO, TX, 78211",
+      "source_address": "2541 W Southcross Blvd, San Antonio, TX 78211",
+      "dates": "2026-11-21",
+      "date_from": "2026-11-21",
+      "date_to": "2026-11-21",
+      "end_date": "2026-11-21",
+      "date_start": "2026-11-21",
+      "date_end": "2026-11-21",
+      "date_bucket": "upcoming",
+      "hours": "12 PM – 3 PM",
+      "title": "Rummage Sale — VFW Post 8397",
+      "details": "Sat Nov 21 12-3 PM. 2541 W Southcross Blvd, San Antonio 78211. Vendor rummage at VFW Post 8397.",
+      "source": "Facebook Events",
+      "url": "https://www.facebook.com/events/29319200317770276/",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.86,
+      "status": "verified",
+      "lat": 29.368758,
+      "lon": -98.553492,
+      "geocode": "census",
+      "external_id": "fb-ev-29319200317770276",
+      "categories": [
+        "garage-sale",
+        "facebook",
+        "event"
+      ],
+      "zip": "78211",
+      "in_person": true,
+      "date_note": "Saturday, November 21, 2026, 12 PM–3 PM (America/Chicago), as listed on the Facebook event. The event page also mentioned November 22; only the explicitly described Saturday window was published as the sale date.",
+      "date_verified": "facebook-collected-2026-11-08",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://www.facebook.com/events/29319200317770276/"
+      ],
+      "sources": [
+        "Facebook Events"
+      ],
+      "aliases": [
+        "fb-ev-29319200317770276"
       ]
     }
   ],
