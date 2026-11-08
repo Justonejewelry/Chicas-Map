@@ -5,8 +5,8 @@
   "timezone": "America/Chicago",
   "status": "live",
   "policy": "Explicit sale dates only; uncertain dates excluded. 60-mile SA metro. Raw overlays preserved.",
-  "total_locations": 32,
-  "today_count": 30,
+  "total_locations": 35,
+  "today_count": 33,
   "public": [
     {
       "address": "10 IMPALA WAY, SAN ANTONIO, TX, 78258",
@@ -719,6 +719,49 @@
       ]
     },
     {
+      "address": "13759 US HWY 87, ADKINS, TX, 78101",
+      "source_address": "13759 US Highway 87 E, Adkins, TX 78101",
+      "dates": "2026-11-07 – 2026-11-08",
+      "date_from": "2026-11-07",
+      "date_to": "2026-11-08",
+      "end_date": "2026-11-08",
+      "date_start": "2026-11-07",
+      "date_end": "2026-11-08",
+      "date_bucket": "live",
+      "hours": "9:00 am – 5:00 pm",
+      "title": "Estate Sale (Adkins)",
+      "details": "Estate sale Saturday and Sunday November 7, 8. 13759 US Highway 87 E, Adkins TX 78101. 9:00 am to 5:00 pm. Cash only.",
+      "source": "Facebook Marketplace",
+      "url": "https://www.facebook.com/marketplace/item/1939407433689276/",
+      "photos": 0,
+      "type": "estate",
+      "confidence": 0.86,
+      "status": "verified",
+      "lat": 29.359923,
+      "lon": -98.211863,
+      "geocode": "census",
+      "external_id": "fb-1939407433689276",
+      "categories": [
+        "estate-sale",
+        "facebook"
+      ],
+      "zip": "78101",
+      "in_person": true,
+      "date_note": "Saturday–Sunday, November 7–8, 2026 (America/Chicago), as stated in the Marketplace listing.",
+      "date_verified": "facebook-collected-2026-11-08-0900",
+      "poster": "James Ervin",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://www.facebook.com/marketplace/item/1939407433689276/"
+      ],
+      "sources": [
+        "Facebook Marketplace"
+      ],
+      "aliases": [
+        "fb-1939407433689276"
+      ]
+    },
+    {
       "address": "1405 GRUENE RD, NEW BRAUNFELS, TX, 78130",
       "dates": "2026-11-07 – 2026-11-08",
       "date_from": "2026-11-07",
@@ -1127,6 +1170,92 @@
       ],
       "aliases": [
         "cl-stgoindoorsalevdwgnv8fyy9ndw2dnsljma"
+      ]
+    },
+    {
+      "address": "13563 MUDSHARK, SAN ANTONIO, TX, 78245",
+      "source_address": "13563 Mudshark, San Antonio, TX",
+      "dates": "2026-11-08",
+      "date_from": "2026-11-08",
+      "date_to": "2026-11-08",
+      "end_date": "2026-11-08",
+      "date_start": "2026-11-08",
+      "date_end": "2026-11-08",
+      "date_bucket": "live",
+      "hours": "10 AM – 3 PM",
+      "title": "Tierra Buena Community Garage Sale — 13563 Mudshark",
+      "details": "Part of the Tierra Buena community garage sale, 13563 Mudshark.",
+      "source": "Facebook Events",
+      "url": "https://www.facebook.com/events/3743918222425718/3743918232425717/",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.86,
+      "status": "verified",
+      "lat": 29.383627,
+      "lon": -98.722402,
+      "geocode": "census",
+      "external_id": "fb-3743918222425718",
+      "categories": [
+        "garage-sale",
+        "facebook"
+      ],
+      "zip": "78245",
+      "in_person": true,
+      "date_note": "Sunday, November 8, 2026, 10 AM–3 PM (America/Chicago), per the Facebook event instance for Sun Nov 8.",
+      "date_verified": "facebook-collected-2026-11-08-0900",
+      "poster": "Emma Hall",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://www.facebook.com/events/3743918222425718/3743918232425717/"
+      ],
+      "sources": [
+        "Facebook Events"
+      ],
+      "aliases": [
+        "fb-3743918222425718"
+      ]
+    },
+    {
+      "address": "14002 FAIROAK CROSSING, SAN ANTONIO, TX, 78231",
+      "source_address": "14002 Fairoak Crossing, San Antonio, TX 78231",
+      "dates": "2026-11-08",
+      "date_from": "2026-11-08",
+      "date_to": "2026-11-08",
+      "end_date": "2026-11-08",
+      "date_start": "2026-11-08",
+      "date_end": "2026-11-08",
+      "date_bucket": "live",
+      "hours": "11 AM – 3 PM",
+      "title": "Garage Sale — West Elm, IKEA & Retro",
+      "details": "Garage sale: West Elm, IKEA, retro pieces, lamps, desk chair, small fridge, frames, other miscellaneous items.",
+      "source": "Facebook Events",
+      "url": "https://www.facebook.com/events/1107917165484166/1107917178817498/",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.86,
+      "status": "verified",
+      "lat": 29.572659,
+      "lon": -98.533667,
+      "geocode": "census",
+      "external_id": "fb-1107917165484166",
+      "categories": [
+        "garage-sale",
+        "facebook"
+      ],
+      "zip": "78231",
+      "in_person": true,
+      "date_note": "Sunday, November 8, 2026, 11 AM–3 PM (America/Chicago), per the Facebook event instance for Sun Nov 8.",
+      "date_verified": "facebook-collected-2026-11-08-0900",
+      "poster": "Eric G Quesada",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://www.facebook.com/events/1107917165484166/1107917178817498/"
+      ],
+      "sources": [
+        "Facebook Events"
+      ],
+      "aliases": [
+        "fb-1107917165484166"
       ]
     },
     {
