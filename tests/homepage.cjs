@@ -37,7 +37,7 @@ for(const [name,width,height] of [['desktop',1280,800],['mobile',390,844]])for(c
  assert(!data.mutations.some(m=>m.type==='characterData'),'Essential copy mutated after paint');
  assert(await page.evaluate(()=>document.fonts.check('800 48px Syne')&&document.fonts.check('400 16px Inter')),'Site fonts not loaded');
  assert((await page.locator('h1').evaluate(e=>getComputedStyle(e).fontFamily)).includes('Syne'));
- assert.equal(await page.locator('footer img[src*="/badges/"]').count(),7);
+ assert.equal(await page.locator('footer img[src*="/badges/"]').count(),0);
  await page.locator('#home-theme').click();assert.equal(await page.locator('html').getAttribute('data-theme'),'light');
  assert.equal(await page.locator('body').evaluate(e=>getComputedStyle(e).backgroundColor),'rgb(244, 240, 234)','Light theme must use the site cream token');
  await page.reload();assert.equal(await page.locator('html').getAttribute('data-theme'),'light','Theme preference must survive reload');

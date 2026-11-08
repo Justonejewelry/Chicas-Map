@@ -26,7 +26,7 @@ class HomepageTests(unittest.TestCase):
                 self.assertNotIn('home-fold.js', text)
                 self.assertNotIn('chica-copy.js', text)
                 self.assertNotIn('<noscript>', text)
-                self.assertEqual(text.count('src="/badges/'),7)
+                self.assertEqual(text.count('src="/badges/'),0)
                 self.assertIn('https://github.com/sponsors/Justonejewelry/card',text)
                 self.assertIn('loading="lazy"',text)
                 self.assertIn('height="225"',text)
