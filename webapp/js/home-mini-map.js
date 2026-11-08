@@ -72,13 +72,13 @@
     if (!document.querySelector('link[data-chica-leaflet]')) {
       var c = document.createElement("link");
       c.rel = "stylesheet";
-      c.href = "https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css";
+      c.href = "/Chicas-Map/vendor/leaflet-1.9.4/leaflet.css";
       c.setAttribute("data-chica-leaflet", "1");
       document.head.appendChild(c);
     }
     if (!document.querySelector('script[data-chica-leaflet]')) {
       var s = document.createElement("script");
-      s.src = "https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js";
+      s.src = "/Chicas-Map/vendor/leaflet-1.9.4/leaflet.js";
       s.async = true;
       s.setAttribute("data-chica-leaflet", "1");
       s.onload = done;
@@ -324,11 +324,19 @@
     var shell = placeShell();
     if (!shell || mounted) return;
     mounted = true;
-    ensureLeaflet(function () {
-      loadPins(function (pins) {
-        paintMap(pins);
+    function go() {
+      ensureLeaflet(function () {
+        loadPins(function (pins) {
+          paintMap(pins);
+        });
       });
-    });
+    }
+    // Leaflet (~150 KB) loads only when the mini-map nears the viewport. The frame's size is reserved in CSS, so no shift.
+    if (!("IntersectionObserver" in window)) { go(); return; }
+    var io = new IntersectionObserver(function (entries) {
+      for (var i = 0; i < entries.length; i++) if (entries[i].isIntersecting) { io.disconnect(); go(); return; }
+    }, { rootMargin: "400px 0px" });
+    io.observe(shell);
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", run);
