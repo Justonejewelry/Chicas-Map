@@ -62,6 +62,7 @@
     if (w.L && w.L.Map) {
       try {
         for (var k in w) {
+          if (k === "fence" || k === "webkitStorageInfo" || k.indexOf("on") === 0) continue; // avoid deprecated getters
           var v = w[k];
           if (v && v instanceof w.L.Map) return capture(v);
         }

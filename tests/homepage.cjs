@@ -22,7 +22,7 @@ for(const [name,width,height] of [['desktop',1280,800],['mobile',390,844]])for(c
  const start=Date.now(),samples=[];
  for(const t of [0,300,1000,3000]){
   await page.waitForTimeout(Math.max(0,t-(Date.now()-start)));
-  samples.push(await page.evaluate(()=>({t:performance.now(),title:document.getElementById('home-title').textContent,cta:document.getElementById('home-add-sale').getBoundingClientRect().toJSON(),map:document.getElementById('chica-home-mini-map').getBoundingClientRect().toJSON(),lede:document.querySelector('#chica-home-hero .lede').getBoundingClientRect().toJSON(),mapAfterIntro:document.querySelector('#chica-home-hero .lede').nextElementSibling?.id==='chica-home-mini-map',hoods:document.querySelectorAll('#chica-hoods li a').length,calendar:document.getElementById('home-calendar').getAttribute('href')})));
+  samples.push(await page.evaluate(()=>({t:performance.now(),title:document.getElementById('home-title').textContent,cta:document.getElementById('home-add-sale').getBoundingClientRect().toJSON(),map:document.getElementById('chica-home-mini-map').getBoundingClientRect().toJSON(),lede:document.querySelector('#chica-home-hero .lede').getBoundingClientRect().toJSON(),mapAfterIntro:['chica-home-mini-map','home-search'].includes(document.querySelector('#chica-home-hero .lede').nextElementSibling?.id),hoods:document.querySelectorAll('#chica-hoods li a').length,calendar:document.getElementById('home-calendar').getAttribute('href')})));
   await page.screenshot({path:out+'-'+name+'-'+lang+'-'+t+'.png'});
  }
  assert.equal(errors.length,0,errors.join('\n'));assert.equal(new Set(samples.map(s=>s.title)).size,1,'Headline flashes/changes');

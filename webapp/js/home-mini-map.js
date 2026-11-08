@@ -292,6 +292,9 @@
     lockSaView();
     setTimeout(lockSaView, 80);
     setTimeout(lockSaView, 280);
+    // The whole card is one link; keep Leaflet's inner links/controls out of the tab order (aria-hidden subtree).
+    function untab() { try { host.removeAttribute("tabindex"); host.querySelectorAll("a,[tabindex],button").forEach(function (n) { n.setAttribute("tabindex", "-1"); }); } catch (e) {} }
+    untab(); setTimeout(untab, 300);
     window.__chicaHomeMiniMap = map;
     try { map.getContainer().setAttribute("data-chica-home-mini", "1"); } catch (e) {}
   }

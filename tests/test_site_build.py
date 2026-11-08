@@ -140,6 +140,30 @@ class SiteBuildTests(unittest.TestCase):
         self.assertIn('/map/?when=today', en); self.assertIn('/map/?when=weekend', en)
         self.assertIn('>Hoy en el mapa</a>', es); self.assertIn('>Este fin de semana</a>', es)
 
+    def test_spanish_neighborhood_pages(self):
+        en = (self.root / 'garage-sales/south-side/index.html').read_text()
+        es = (self.root / 'es/garage-sales/south-side/index.html').read_text()
+        self.assertIn('<html lang="es"', es)
+        self.assertIn('Ventas de garaje en el Lado Sur', es)
+        self.assertIn('og:locale" content="es_US"', es)
+        for page in (en, es):
+            self.assertIn('hreflang="en" href="https://www.chicasmap.com/garage-sales/south-side/"', page)
+            self.assertIn('hreflang="es" href="https://www.chicasmap.com/es/garage-sales/south-side/"', page)
+        self.assertIn('href="/es/sales/', es)
+        self.assertTrue((self.root / 'es/garage-sales/index.html').exists())
+        sm = (self.root / 'sitemap.xml').read_text()
+        self.assertIn('<loc>https://www.chicasmap.com/es/garage-sales/</loc>', sm)
+        home_es = (self.root / 'es/index.html').read_text()
+        self.assertIn('href="/es/garage-sales/stone-oak/"', home_es)
+
+    def test_home_search_is_static(self):
+        for path, ph in [('index.html', 'e.g. furniture'), ('es/index.html', 'Ej. muebles')]:
+            html = (self.root / path).read_text()
+            self.assertLess(html.index('id="home-search"'), html.index('id="chica-home-mini-map"'))
+            self.assertIn(ph, html)
+            self.assertIn('id="hs-em"', html)
+        self.assertIn('Busca artículos en las ventas', (self.root / 'es/index.html').read_text())
+
 
 if __name__ == '__main__':
     unittest.main()

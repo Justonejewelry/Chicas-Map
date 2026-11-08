@@ -93,7 +93,9 @@
   }
 
   function build() {
-    var map = document.getElementById("chica-home-mini-map"); if (!map || document.getElementById("home-search")) return null;
+    var pre = document.getElementById("home-search");
+    if (pre) { if (pre.getAttribute("data-wired")) return null; pre.setAttribute("data-wired", "1"); wireEmail(pre); return pre; }
+    var map = document.getElementById("chica-home-mini-map"); if (!map) return null;
     var box = document.createElement("div"); box.id = "home-search"; box.setAttribute("role", "search");
     box.innerHTML = '<label for="hs-q">' + T.label + '</label><form><input id="hs-q" type="search" autocomplete="off" enterkeyhint="search" placeholder="' + esc(T.ph) +
       '"/><button type="submit">' + T.go + '</button></form><p class="alert-help">' + T.help + '</p><div class="hs-alert">' + emailForm() + '</div><div class="hs-meta" aria-live="polite"></div><ul class="hs-list"></ul><div class="hs-saved"></div>';
