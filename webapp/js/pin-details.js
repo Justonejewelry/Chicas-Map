@@ -98,6 +98,7 @@
       '<p class="meta">' + bits + "</p>" +
       signal +
       actions(lat, lon) +
+      '<a class="secondary chica-flip" href="' + BASE + '/flip/?q=' + encodeURIComponent(String((sale.title || "") + " " + (sale.details || "")).slice(0, 240)) + '">' + (String(document.documentElement.lang).indexOf("es") === 0 ? "¿Vale revender? Flip check 💸" : "Flip check 💸 Worth reselling?") + "</a>" +
       '<a class="secondary" href="' + BASE + '/submit/">List a sale \u2014 free</a>' +
       '<a class="claim" href="' + esc(claimHref(sale)) + '">Boost My Sale · $5</a>' +
       '<a class="secondary" href="' + BASE + '/boost/">Feature this sale</a>' +

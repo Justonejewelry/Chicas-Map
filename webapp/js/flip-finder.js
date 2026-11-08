@@ -42,6 +42,20 @@
     ["babygear","🍼","Baby gear (stroller etc.)","Artículos de bebé",10,30,40,150,"L","stroller uppababy baby car seat bebe"],
     ["holiday","🎄","Vintage holiday decor","Decoración navideña vintage",1,8,15,80,"M","christmas halloween blow mold vintage decor navidad"],
     ["mexican","🌵","Talavera & Mexican folk art","Talavera y arte mexicano",3,20,30,150,"M","talavera mexican folk art pottery tonala"],
+    ["sewing","🧵","Sewing machine","Máquina de coser",10,40,60,250,"L","sewing machine singer bernina"],
+    ["typewriter","⌨️","Typewriter","Máquina de escribir",10,30,50,200,"L","typewriter smith corona olympia"],
+    ["golf","⛳","Golf clubs","Palos de golf",5,30,30,150,"L","golf clubs callaway taylormade ping"],
+    ["fishing","🎣","Fishing reels & lures","Carretes y señuelos",2,15,20,100,"M","fishing reel reels lure lures penn shimano"],
+    ["dvd","📀","DVDs/Blu-rays (bulk)","DVDs/Blu-rays",0.5,2,3,15,"S","dvd dvds blu-ray criterion movies"],
+    ["perfume","🌸","Designer perfume","Perfume de marca",2,10,20,80,"S","perfume cologne chanel dior"],
+    ["dolls","🪆","Vintage dolls/Barbie","Muñecas vintage/Barbie",1,10,15,100,"S","barbie doll dolls american girl muneca"],
+    ["smallappl","🍲","Instant Pot/Vitamix/Ninja","Instant Pot/Vitamix/Ninja",10,40,40,200,"M","instant pot vitamix ninja blender air fryer"],
+    ["hotwheels","🏎️","Hot Wheels/die-cast","Hot Wheels/autitos",0.25,2,3,30,"S","hot wheels matchbox diecast redline"],
+    ["coins","🪙","Coins & silver","Monedas y plata",1,20,15,100,"S","coins coin silver dollar moneda"],
+    ["saw","🪚","Table/miter saw","Sierra de mesa/ingletadora",30,100,100,350,"L","table saw miter saw"],
+    ["exercise","🏋️","Exercise equipment","Equipo de ejercicio",20,80,80,400,"L","peloton bowflex weights dumbbells treadmill gym"],
+    ["washer","💦","Pressure washer/generator","Hidrolavadora/generador",30,100,100,350,"L","pressure washer generator"],
+    ["patio","🪴","Patio furniture","Muebles de patio",20,60,80,300,"L","patio outdoor furniture"],
     ["other","✨","Something else","Otra cosa",5,20,20,60,"M",""]
   ];
   var T = {
@@ -68,6 +82,7 @@
       disc: "Guide prices are rough estimates, not appraisals. Fees are approximate 2026 rates and change. Always check sold listings.", aff: "Some eBay links are affiliate links. If you buy, Chicas Map may earn a small commission at no cost to you.",
       phr: [["Would you take $%o?", "¿Me lo deja en $%o?"], ["If I take all of these, would you do $%b?", "Si me llevo todo, ¿me lo deja en $%b?"], ["Any wiggle room on this one?", "¿Me hace un descuentito?"], ["I've got $%o cash right now.", "Traigo $%o en efectivo ahorita."], ["What's the lowest you'd go?", "¿Cuánto es lo menos?"], ["Thank you! Have a great sale!", "¡Gracias! ¡Que le vaya bonito con la venta!"]],
       tip: "Tip: open low, smile, bundle, and come back after 1 PM when sellers want things gone.",
+      fromSale: "Sniff sniff! 🐾 I picked what this sale mentions. Tap a different item if you spotted something else, and enter their price.",
       home: "← Chicas Map", cardTag: "MY GARAGE-SALE HAUL", cardFoot: "Find sales + flip smarter: chicasmap.com/flip", items: "items"
     },
     es: {
@@ -92,6 +107,7 @@
       buy: function (p) { return "Obtener paquete · $" + p; }, soon: "¡Muy pronto! Dile a Chica que lo quieres", sponT: "Vende tus hallazgos aquí mismo", sponHouse: "Tu tienda de San Antonio aquí", sponB: "¿Consignación, vintage, empeño o compra-venta? Pon tu tienda frente a revendedores locales justo cuando están comprando.", sponCta: "Patrocina este espacio", visit: "Visitar",
       disc: "Los precios de la guía son estimados, no avalúos. Las comisiones son tarifas aproximadas de 2026 y cambian. Siempre revisa los vendidos.", aff: "Algunos enlaces de eBay son de afiliado. Si compras, Chicas Map puede ganar una pequeña comisión sin costo para ti.",
       phr: null, tip: "Tip: empieza bajo, sonríe, junta varias cosas y regresa después de la 1 PM cuando quieren vaciar.",
+      fromSale: "¡Snif, snif! 🐾 Elegí lo que menciona esta venta. Toca otro artículo si viste algo más y pon su precio.",
       home: "← Chicas Map", cardTag: "MI BOTÍN DE VENTAS DE GARAGE", cardFoot: "Encuentra ventas y revende mejor: chicasmap.com/flip", items: "artículos"
     }
   };
@@ -149,7 +165,7 @@
     var proUrl = String(CFG.FLIP_PRO_PAYMENT_URL || "");
     app.innerHTML =
       '<section class="ff-hero"><p class="eyebrow">' + L.eyebrow + "</p><h1>" + L.h1 + "</h1><p>" + L.lede + "</p></section>" +
-      '<div class="ff-chica"><img src="' + BASE + '/images/chica-logo.png" alt="Chica"/><p>' + L.hi + "</p></div>" +
+      '<div class="ff-chica"><img src="' + BASE + '/images/chica-logo.png" alt="Chica"/><p>' + (S.fromSale ? L.fromSale : L.hi) + "</p></div>" +
       '<div class="ff-cols"><div>' +
       '<section class="ff-card"><h2><span class="ff-step">1</span>' + L.s1 + '</h2><p class="sub">' + L.s1sub + '</p><div class="ff-chips" id="ff-chips">' + chips + '</div>' +
       '<label class="ff-f" style="margin-top:10px">' + L.own + '<input id="ff-name" type="text" maxlength="60" placeholder="' + esc(L.ownPh) + '" value="' + esc(S.name) + '"/></label></section>' +
@@ -277,5 +293,23 @@
     b.addEventListener("click", function () { lang = b.dataset.lang; document.documentElement.lang = lang; try { localStorage.setItem("chicas-map-locale", lang); } catch (e) {} shell(); });
   });
   var it0 = item(); S.ask = 5; S.resale = Math.round((it0[6] + it0[7]) / 2);
+  (function fromUrl() {
+    var u; try { u = new URLSearchParams(location.search); } catch (e) { return; }
+    var id = u.get("item"), txt = (u.get("q") || "").slice(0, 300);
+    var hit = null;
+    if (id) ITEMS.forEach(function (i) { if (i[0] === id) hit = i; });
+    if (!hit && (txt || id)) {
+      var h = (txt || id).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""), best = 0;
+      ITEMS.forEach(function (i) {
+        var n = 0; (i[9] || "").split(" ").forEach(function (w) { if (w.length > 2 && new RegExp("\\b" + w + "(s|es)?\\b").test(h)) n++; });
+        if (n > best) { best = n; hit = i; }
+      });
+      if (!hit && id) { hit = ITEMS[ITEMS.length - 1]; S.name = id.slice(0, 60); }
+    }
+    if (!hit) return;
+    S.item = hit[0]; S.ask = Math.round((hit[4] + hit[5]) / 2 * 2) / 2; S.resale = Math.round((hit[6] + hit[7]) / 2);
+    if (hit[8] === "L") S.plat = "fblocal";
+    S.fromSale = !!txt;
+  })();
   shell();
 })();
