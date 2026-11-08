@@ -130,201 +130,9 @@
     {
       "reason": "unconfirmed_permit",
       "input_file": "san-antonio.json",
-      "id": "29.32909,-98.42147|City-permitted garage / yard sale",
-      "title": "City-permitted garage / yard sale",
-      "address": "429 SLIGO ST, San Antonio, TX 78223",
-      "url": null
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
-      "id": "29.36432,-98.49456|City-permitted garage / yard sale",
-      "title": "City-permitted garage / yard sale",
-      "address": "6025 S FLORES ST, San Antonio, TX 78214",
-      "url": null
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
-      "id": "29.56806,-98.56575|City-permitted garage / yard sale",
-      "title": "City-permitted garage / yard sale",
-      "address": "13303 BOW HEIGHTS DR, San Antonio, TX 78230",
-      "url": null
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
-      "id": "29.53393,-98.66952|City-permitted garage / yard sale",
-      "title": "City-permitted garage / yard sale",
-      "address": "9502 SHADOWBROOK, San Antonio, TX 78254",
-      "url": null
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
-      "id": "29.55522,-98.60895|City-permitted garage / yard sale",
-      "title": "City-permitted garage / yard sale",
-      "address": "11915 BRIARPATH, San Antonio, TX 78249",
-      "url": null
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
-      "id": "29.29296,-98.48527|City-permitted garage / yard sale",
-      "title": "City-permitted garage / yard sale",
-      "address": "12043 PEWEE, San Antonio, TX 78221",
-      "url": null
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
-      "id": "29.54772,-98.69736|City-permitted garage / yard sale",
-      "title": "City-permitted garage / yard sale",
-      "address": "11219 BLUE FAX FIELD, San Antonio, TX 78023",
-      "url": null
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
-      "id": "29.54130,-98.55888|City-permitted garage / yard sale",
-      "title": "City-permitted garage / yard sale",
-      "address": "3519 KNOTTYASH, San Antonio, TX 78230",
-      "url": null
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
-      "id": "29.34275,-98.49236|City-permitted garage / yard sale",
-      "title": "City-permitted garage / yard sale",
-      "address": "334 CREATH PLACE, San Antonio, TX 78221",
-      "url": null
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
-      "id": "29.39420,-98.37090|City-permitted garage / yard sale",
-      "title": "City-permitted garage / yard sale",
-      "address": "6011 LAKEFRONT, San Antonio, TX 78222",
-      "url": null
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
-      "id": "29.50937,-98.67542|City-permitted garage / yard sale",
-      "title": "City-permitted garage / yard sale",
-      "address": "9635 DOVER RIDGE, San Antonio, TX 78250",
-      "url": null
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
-      "id": "29.57719,-98.57071|City-permitted garage / yard sale",
-      "title": "City-permitted garage / yard sale",
-      "address": "4323 FIG TREE WOODS, San Antonio, TX 78249",
-      "url": null
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
-      "id": "29.52410,-98.49227|City-permitted garage / yard sale",
-      "title": "City-permitted garage / yard sale",
-      "address": "222 COLWYN PASS, San Antonio, TX 78216",
-      "url": null
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
-      "id": "29.30420,-98.48601|City-permitted garage / yard sale",
-      "title": "City-permitted garage / yard sale",
-      "address": "811 LEE TREVINO, San Antonio, TX 78221",
-      "url": null
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
-      "id": "29.40058,-98.39142|City-permitted garage / yard sale",
-      "title": "City-permitted garage / yard sale",
-      "address": "5054 STONELEIGH DR, San Antonio, TX 78220",
-      "url": null
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
-      "id": "29.34532,-98.41937|City-permitted garage / yard sale",
-      "title": "City-permitted garage / yard sale",
-      "address": "3627 SECO TIERRA, San Antonio, TX 78223",
-      "url": null
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
-      "id": "29.30132,-98.48949|City-permitted garage / yard sale",
-      "title": "City-permitted garage / yard sale",
-      "address": "711 PELICAN BEACH, San Antonio, TX 78221",
-      "url": null
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
       "id": "address|City-permitted garage / yard sale",
       "title": "City-permitted garage / yard sale",
       "address": "3922 Briarcrest ST",
-      "url": null
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
-      "id": "29.44519,-98.69354|City-permitted garage / yard sale",
-      "title": "City-permitted garage / yard sale",
-      "address": "1131 CORAL BAY, San Antonio, TX 78251",
-      "url": null
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
-      "id": "29.44792,-98.59869|City-permitted garage / yard sale",
-      "title": "City-permitted garage / yard sale",
-      "address": "5800 CULEBRA RD, San Antonio, TX 78228",
-      "url": null
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
-      "id": "address|1315 Driver LN",
-      "title": "1315 Driver LN",
-      "address": "1315",
-      "url": null
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
-      "id": "29.43762,-98.67017|City-permitted garage / yard sale",
-      "title": "City-permitted garage / yard sale",
-      "address": "9422 SANTA FE RIDGE, San Antonio, TX 78245",
-      "url": null
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
-      "id": "29.53281,-98.44310|Minerva Stellema",
-      "title": "Minerva Stellema",
-      "address": "10303 SEVERN, San Antonio, TX 78217",
-      "url": null
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
-      "id": "29.36622,-98.53160|City-permitted garage / yard sale",
-      "title": "City-permitted garage / yard sale",
-      "address": "618 VICKERS AVE, San Antonio, TX 78211",
-      "url": null
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
-      "id": "29.41742,-98.64386|City-permitted garage / yard sale",
-      "title": "City-permitted garage / yard sale",
-      "address": "7826 MARBACH RD, San Antonio, TX 78227",
       "url": null
     },
     {
@@ -338,9 +146,9 @@
     {
       "reason": "unconfirmed_permit",
       "input_file": "san-antonio.json",
-      "id": "29.53759,-98.67051|City-permitted garage / yard sale",
-      "title": "City-permitted garage / yard sale",
-      "address": "9510 SUMMERBROOK, San Antonio, TX 78254",
+      "id": "address|1315 Driver LN",
+      "title": "1315 Driver LN",
+      "address": "1315",
       "url": null
     },
     {
@@ -354,25 +162,33 @@
     {
       "reason": "unconfirmed_permit",
       "input_file": "san-antonio.json",
-      "id": "29.52660,-98.45365|City-permitted garage / yard sale",
-      "title": "City-permitted garage / yard sale",
-      "address": "111 EASTLEY, San Antonio, TX 78217",
+      "id": "29.44060,-98.48911|615 EUCLID AVE",
+      "title": "615 EUCLID AVE",
+      "address": "615 E EUCLID AVE, San Antonio, TX 78212",
       "url": null
     },
     {
       "reason": "unconfirmed_permit",
       "input_file": "san-antonio.json",
-      "id": "29.44792,-98.59869|City-permitted garage / yard sale",
+      "id": "29.29296,-98.48527|City-permitted garage / yard sale",
       "title": "City-permitted garage / yard sale",
-      "address": "5800 CULEBRA RD, San Antonio, TX 78228",
+      "address": "12043 PEWEE, San Antonio, TX 78221",
       "url": null
     },
     {
       "reason": "unconfirmed_permit",
       "input_file": "san-antonio.json",
-      "id": "29.46918,-98.37616|City-permitted garage / yard sale",
+      "id": "29.34275,-98.49236|City-permitted garage / yard sale",
       "title": "City-permitted garage / yard sale",
-      "address": "5718 THREE SPRINGS DR, San Antonio, TX 78244",
+      "address": "334 CREATH PLACE, San Antonio, TX 78221",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
+      "id": "29.30132,-98.48949|City-permitted garage / yard sale",
+      "title": "City-permitted garage / yard sale",
+      "address": "711 PELICAN BEACH, San Antonio, TX 78221",
       "url": null
     },
     {
@@ -386,9 +202,57 @@
     {
       "reason": "unconfirmed_permit",
       "input_file": "san-antonio.json",
-      "id": "29.35369,-98.41872|City-permitted garage / yard sale",
+      "id": "29.36622,-98.53160|City-permitted garage / yard sale",
       "title": "City-permitted garage / yard sale",
-      "address": "3915 CAMPO SECO, San Antonio, TX 78223",
+      "address": "618 VICKERS AVE, San Antonio, TX 78211",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
+      "id": "29.40979,-98.49538|City-permitted garage / yard sale",
+      "title": "City-permitted garage / yard sale",
+      "address": "1414 S ALAMO ST, San Antonio, TX 78210",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
+      "id": "29.53281,-98.44310|Minerva Stellema",
+      "title": "Minerva Stellema",
+      "address": "10303 SEVERN, San Antonio, TX 78217",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
+      "id": "29.53759,-98.67051|City-permitted garage / yard sale",
+      "title": "City-permitted garage / yard sale",
+      "address": "9510 SUMMERBROOK, San Antonio, TX 78254",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
+      "id": "29.54130,-98.55888|City-permitted garage / yard sale",
+      "title": "City-permitted garage / yard sale",
+      "address": "3519 KNOTTYASH, San Antonio, TX 78230",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
+      "id": "29.52410,-98.49227|City-permitted garage / yard sale",
+      "title": "City-permitted garage / yard sale",
+      "address": "222 COLWYN PASS, San Antonio, TX 78216",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
+      "id": "29.39420,-98.37090|City-permitted garage / yard sale",
+      "title": "City-permitted garage / yard sale",
+      "address": "6011 LAKEFRONT, San Antonio, TX 78222",
       "url": null
     },
     {
@@ -410,9 +274,41 @@
     {
       "reason": "unconfirmed_permit",
       "input_file": "san-antonio.json",
-      "id": "29.44060,-98.48911|615 EUCLID AVE",
-      "title": "615 EUCLID AVE",
-      "address": "615 E EUCLID AVE, San Antonio, TX 78212",
+      "id": "29.44792,-98.59869|City-permitted garage / yard sale",
+      "title": "City-permitted garage / yard sale",
+      "address": "5800 CULEBRA RD, San Antonio, TX 78228",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
+      "id": "29.55522,-98.60895|City-permitted garage / yard sale",
+      "title": "City-permitted garage / yard sale",
+      "address": "11915 BRIARPATH, San Antonio, TX 78249",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
+      "id": "29.46918,-98.37616|City-permitted garage / yard sale",
+      "title": "City-permitted garage / yard sale",
+      "address": "5718 THREE SPRINGS DR, San Antonio, TX 78244",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
+      "id": "29.30420,-98.48601|City-permitted garage / yard sale",
+      "title": "City-permitted garage / yard sale",
+      "address": "811 LEE TREVINO, San Antonio, TX 78221",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
+      "id": "29.44519,-98.69354|City-permitted garage / yard sale",
+      "title": "City-permitted garage / yard sale",
+      "address": "1131 CORAL BAY, San Antonio, TX 78251",
       "url": null
     },
     {
@@ -426,25 +322,113 @@
     {
       "reason": "unconfirmed_permit",
       "input_file": "san-antonio.json",
-      "id": "29.40979,-98.49538|City-permitted garage / yard sale",
+      "id": "29.44792,-98.59869|City-permitted garage / yard sale",
       "title": "City-permitted garage / yard sale",
-      "address": "1414 S ALAMO ST, San Antonio, TX 78210",
+      "address": "5800 CULEBRA RD, San Antonio, TX 78228",
       "url": null
     },
     {
       "reason": "unconfirmed_permit",
       "input_file": "san-antonio.json",
-      "id": "29.36008,-98.56239|City-permitted garage / yard sale",
+      "id": "29.53393,-98.66952|City-permitted garage / yard sale",
       "title": "City-permitted garage / yard sale",
-      "address": "727 BYNUM AVE, San Antonio, TX 78211",
+      "address": "9502 SHADOWBROOK, San Antonio, TX 78254",
       "url": null
     },
     {
       "reason": "unconfirmed_permit",
       "input_file": "san-antonio.json",
-      "id": "29.37055,-98.44419|City-permitted garage / yard sale",
+      "id": "29.57719,-98.57071|City-permitted garage / yard sale",
       "title": "City-permitted garage / yard sale",
-      "address": "1602 GOLIAD RD, San Antonio, TX 78223",
+      "address": "4323 FIG TREE WOODS, San Antonio, TX 78249",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
+      "id": "29.56806,-98.56575|City-permitted garage / yard sale",
+      "title": "City-permitted garage / yard sale",
+      "address": "13303 BOW HEIGHTS DR, San Antonio, TX 78230",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
+      "id": "29.32909,-98.42147|City-permitted garage / yard sale",
+      "title": "City-permitted garage / yard sale",
+      "address": "429 SLIGO ST, San Antonio, TX 78223",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
+      "id": "29.52660,-98.45365|City-permitted garage / yard sale",
+      "title": "City-permitted garage / yard sale",
+      "address": "111 EASTLEY, San Antonio, TX 78217",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
+      "id": "29.34532,-98.41937|City-permitted garage / yard sale",
+      "title": "City-permitted garage / yard sale",
+      "address": "3627 SECO TIERRA, San Antonio, TX 78223",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
+      "id": "29.43762,-98.67017|City-permitted garage / yard sale",
+      "title": "City-permitted garage / yard sale",
+      "address": "9422 SANTA FE RIDGE, San Antonio, TX 78245",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
+      "id": "29.41742,-98.64386|City-permitted garage / yard sale",
+      "title": "City-permitted garage / yard sale",
+      "address": "7826 MARBACH RD, San Antonio, TX 78227",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
+      "id": "29.40058,-98.39142|City-permitted garage / yard sale",
+      "title": "City-permitted garage / yard sale",
+      "address": "5054 STONELEIGH DR, San Antonio, TX 78220",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
+      "id": "29.35369,-98.41872|City-permitted garage / yard sale",
+      "title": "City-permitted garage / yard sale",
+      "address": "3915 CAMPO SECO, San Antonio, TX 78223",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
+      "id": "29.36432,-98.49456|City-permitted garage / yard sale",
+      "title": "City-permitted garage / yard sale",
+      "address": "6025 S FLORES ST, San Antonio, TX 78214",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
+      "id": "29.50937,-98.67542|City-permitted garage / yard sale",
+      "title": "City-permitted garage / yard sale",
+      "address": "9635 DOVER RIDGE, San Antonio, TX 78250",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
+      "id": "29.54772,-98.69736|City-permitted garage / yard sale",
+      "title": "City-permitted garage / yard sale",
+      "address": "11219 BLUE FAX FIELD, San Antonio, TX 78023",
       "url": null
     },
     {
@@ -453,14 +437,6 @@
       "id": "29.59328,-98.39654|City-permitted garage / yard sale",
       "title": "City-permitted garage / yard sale",
       "address": "15911 KENNA MIST, San Antonio, TX 78247",
-      "url": null
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
-      "id": "29.49428,-98.69530|City-permitted garage / yard sale",
-      "title": "City-permitted garage / yard sale",
-      "address": "9774 HIDDEN FALLS, San Antonio, TX 78250",
       "url": null
     },
     {
@@ -482,9 +458,49 @@
     {
       "reason": "unconfirmed_permit",
       "input_file": "san-antonio.json",
-      "id": "29.34013,-98.49697|City-permitted garage / yard sale",
+      "id": "29.32251,-98.53066|City-permitted garage / yard sale",
       "title": "City-permitted garage / yard sale",
-      "address": "402 KOPPLOW, San Antonio, TX 78221",
+      "address": "1511 OUTRIGGER WAY, San Antonio, TX 78224",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
+      "id": "29.43206,-98.52819|3214 MARTIN ST",
+      "title": "3214 MARTIN ST",
+      "address": "3214 W MARTIN ST, San Antonio, TX 78207",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
+      "id": "29.37055,-98.44419|City-permitted garage / yard sale",
+      "title": "City-permitted garage / yard sale",
+      "address": "1602 GOLIAD RD, San Antonio, TX 78223",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
+      "id": "29.36008,-98.56239|City-permitted garage / yard sale",
+      "title": "City-permitted garage / yard sale",
+      "address": "727 BYNUM AVE, San Antonio, TX 78211",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
+      "id": "29.49428,-98.69530|City-permitted garage / yard sale",
+      "title": "City-permitted garage / yard sale",
+      "address": "9774 HIDDEN FALLS, San Antonio, TX 78250",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
+      "id": "29.57161,-98.61052|City-permitted garage / yard sale",
+      "title": "City-permitted garage / yard sale",
+      "address": "6306 REGENCY WOOD, San Antonio, TX 78249",
       "url": null
     },
     {
@@ -506,81 +522,9 @@
     {
       "reason": "unconfirmed_permit",
       "input_file": "san-antonio.json",
-      "id": "29.43206,-98.52819|3214 MARTIN ST",
-      "title": "3214 MARTIN ST",
-      "address": "3214 W MARTIN ST, San Antonio, TX 78207",
-      "url": null
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
-      "id": "29.32251,-98.53066|City-permitted garage / yard sale",
+      "id": "29.34013,-98.49697|City-permitted garage / yard sale",
       "title": "City-permitted garage / yard sale",
-      "address": "1511 OUTRIGGER WAY, San Antonio, TX 78224",
-      "url": null
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
-      "id": "29.57161,-98.61052|City-permitted garage / yard sale",
-      "title": "City-permitted garage / yard sale",
-      "address": "6306 REGENCY WOOD, San Antonio, TX 78249",
-      "url": null
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
-      "id": "29.47329,-98.55150|455 SUNSHINE DR",
-      "title": "455 SUNSHINE DR",
-      "address": "455 E SUNSHINE DR, San Antonio, TX 78228",
-      "url": null
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
-      "id": "29.46598,-98.60941|City-permitted garage / yard sale",
-      "title": "City-permitted garage / yard sale",
-      "address": "6242 INGRAM RD, San Antonio, TX 78238",
-      "url": null
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
-      "id": "29.37981,-98.43915|City-permitted garage / yard sale",
-      "title": "City-permitted garage / yard sale",
-      "address": "903 GLAMIS AVE, San Antonio, TX 78223",
-      "url": null
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
-      "id": "29.47355,-98.50224|City-permitted garage / yard sale",
-      "title": "City-permitted garage / yard sale",
-      "address": "615 MCILVAINE, San Antonio, TX 78212",
-      "url": null
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
-      "id": "29.43059,-98.52452|City-permitted garage / yard sale",
-      "title": "City-permitted garage / yard sale",
-      "address": "2802 W SALINAS, San Antonio, TX 78207",
-      "url": null
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
-      "id": "address|City-permitted garage / yard sale",
-      "title": "City-permitted garage / yard sale",
-      "address": "13458 EL MIRADOR ST",
-      "url": null
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
-      "id": "29.52293,-98.68200|City-permitted garage / yard sale",
-      "title": "City-permitted garage / yard sale",
-      "address": "9234 ROQUEFORT, San Antonio, TX 78250",
+      "address": "402 KOPPLOW, San Antonio, TX 78221",
       "url": null
     },
     {
@@ -594,33 +538,9 @@
     {
       "reason": "unconfirmed_permit",
       "input_file": "san-antonio.json",
-      "id": "29.38608,-98.40794|City-permitted garage / yard sale",
-      "title": "City-permitted garage / yard sale",
-      "address": "131 MARY HELEN DR, San Antonio, TX 78222",
-      "url": null
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
-      "id": "29.29772,-98.47743|City-permitted garage / yard sale",
-      "title": "City-permitted garage / yard sale",
-      "address": "12538 COURSE VIEW DR, San Antonio, TX 78221",
-      "url": null
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
       "id": "29.54714,-98.64861|City-permitted garage / yard sale",
       "title": "City-permitted garage / yard sale",
       "address": "8207 CREEKRUN TRAIL, San Antonio, TX 78249",
-      "url": null
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
-      "id": "29.36037,-98.52097|City-permitted garage / yard sale",
-      "title": "City-permitted garage / yard sale",
-      "address": "1031 KENDALIA AVE, San Antonio, TX 78221",
       "url": null
     },
     {
@@ -650,9 +570,89 @@
     {
       "reason": "unconfirmed_permit",
       "input_file": "san-antonio.json",
+      "id": "29.47355,-98.50224|City-permitted garage / yard sale",
+      "title": "City-permitted garage / yard sale",
+      "address": "615 MCILVAINE, San Antonio, TX 78212",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
+      "id": "address|City-permitted garage / yard sale",
+      "title": "City-permitted garage / yard sale",
+      "address": "13458 EL MIRADOR ST",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
+      "id": "29.46598,-98.60941|City-permitted garage / yard sale",
+      "title": "City-permitted garage / yard sale",
+      "address": "6242 INGRAM RD, San Antonio, TX 78238",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
+      "id": "29.38608,-98.40794|City-permitted garage / yard sale",
+      "title": "City-permitted garage / yard sale",
+      "address": "131 MARY HELEN DR, San Antonio, TX 78222",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
+      "id": "29.37981,-98.43915|City-permitted garage / yard sale",
+      "title": "City-permitted garage / yard sale",
+      "address": "903 GLAMIS AVE, San Antonio, TX 78223",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
+      "id": "29.52293,-98.68200|City-permitted garage / yard sale",
+      "title": "City-permitted garage / yard sale",
+      "address": "9234 ROQUEFORT, San Antonio, TX 78250",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
+      "id": "29.36037,-98.52097|City-permitted garage / yard sale",
+      "title": "City-permitted garage / yard sale",
+      "address": "1031 KENDALIA AVE, San Antonio, TX 78221",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
       "id": "29.35233,-98.52157|City-permitted garage / yard sale",
       "title": "City-permitted garage / yard sale",
       "address": "1102 SUNGLO DR, San Antonio, TX 78221",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
+      "id": "29.43059,-98.52452|City-permitted garage / yard sale",
+      "title": "City-permitted garage / yard sale",
+      "address": "2802 W SALINAS, San Antonio, TX 78207",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
+      "id": "29.29772,-98.47743|City-permitted garage / yard sale",
+      "title": "City-permitted garage / yard sale",
+      "address": "12538 COURSE VIEW DR, San Antonio, TX 78221",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
+      "id": "29.47329,-98.55150|455 SUNSHINE DR",
+      "title": "455 SUNSHINE DR",
+      "address": "455 E SUNSHINE DR, San Antonio, TX 78228",
       "url": null
     },
     {
@@ -666,17 +666,9 @@
     {
       "reason": "unconfirmed_permit",
       "input_file": "san-antonio.json",
-      "id": "29.57882,-98.57643|City-permitted garage / yard sale",
+      "id": "29.42435,-98.69002|City-permitted garage / yard sale",
       "title": "City-permitted garage / yard sale",
-      "address": "4523 BLACK HICKORY WOODS, San Antonio, TX 78249",
-      "url": null
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
-      "id": "29.46011,-98.61081|City-permitted garage / yard sale",
-      "title": "City-permitted garage / yard sale",
-      "address": "6214 FARRAGUT DR, San Antonio, TX 78238",
+      "address": "1074 FROST FIRE, San Antonio, TX 78245",
       "url": null
     },
     {
@@ -690,6 +682,14 @@
     {
       "reason": "unconfirmed_permit",
       "input_file": "san-antonio.json",
+      "id": "29.57882,-98.57643|City-permitted garage / yard sale",
+      "title": "City-permitted garage / yard sale",
+      "address": "4523 BLACK HICKORY WOODS, San Antonio, TX 78249",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
       "id": "29.49838,-98.57791|City-permitted garage / yard sale",
       "title": "City-permitted garage / yard sale",
       "address": "7015 BAYWATER DR, San Antonio, TX 78229",
@@ -698,9 +698,9 @@
     {
       "reason": "unconfirmed_permit",
       "input_file": "san-antonio.json",
-      "id": "29.42435,-98.69002|City-permitted garage / yard sale",
+      "id": "29.46011,-98.61081|City-permitted garage / yard sale",
       "title": "City-permitted garage / yard sale",
-      "address": "1074 FROST FIRE, San Antonio, TX 78245",
+      "address": "6214 FARRAGUT DR, San Antonio, TX 78238",
       "url": null
     },
     {
@@ -730,6 +730,14 @@
     {
       "reason": "unconfirmed_permit",
       "input_file": "san-antonio.json",
+      "id": "29.41073,-98.40075|City-permitted garage / yard sale",
+      "title": "City-permitted garage / yard sale",
+      "address": "214 GLENOAK DR, San Antonio, TX 78220",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
       "id": "29.37038,-98.61270|City-permitted garage / yard sale",
       "title": "City-permitted garage / yard sale",
       "address": "6019 KNOLL KREST DR, San Antonio, TX 78242",
@@ -746,9 +754,9 @@
     {
       "reason": "unconfirmed_permit",
       "input_file": "san-antonio.json",
-      "id": "29.41073,-98.40075|City-permitted garage / yard sale",
-      "title": "City-permitted garage / yard sale",
-      "address": "214 GLENOAK DR, San Antonio, TX 78220",
+      "id": "29.58789,-98.36551|City-permitted estate sale",
+      "title": "City-permitted estate sale",
+      "address": "16546 HUNTING GLEN, San Antonio, TX 78247",
       "url": null
     },
     {
@@ -762,14 +770,6 @@
     {
       "reason": "unconfirmed_permit",
       "input_file": "san-antonio.json",
-      "id": "29.40826,-98.69588|City-permitted garage / yard sale",
-      "title": "City-permitted garage / yard sale",
-      "address": "10346 LYNWOOD BRANCH, City of San Antonio ETJ, TX 78245",
-      "url": null
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
       "id": "29.36942,-98.46166|City-permitted garage / yard sale",
       "title": "City-permitted garage / yard sale",
       "address": "426 MONTROSE, San Antonio, TX 78223",
@@ -778,17 +778,9 @@
     {
       "reason": "unconfirmed_permit",
       "input_file": "san-antonio.json",
-      "id": "29.58789,-98.36551|City-permitted estate sale",
-      "title": "City-permitted estate sale",
-      "address": "16546 HUNTING GLEN, San Antonio, TX 78247",
-      "url": null
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
-      "id": "29.32471,-98.55966|City-permitted garage / yard sale",
+      "id": "29.40826,-98.69588|City-permitted garage / yard sale",
       "title": "City-permitted garage / yard sale",
-      "address": "3226 ALGO DULCE, San Antonio, TX 78211",
+      "address": "10346 LYNWOOD BRANCH, City of San Antonio ETJ, TX 78245",
       "url": null
     },
     {
@@ -802,17 +794,9 @@
     {
       "reason": "unconfirmed_permit",
       "input_file": "san-antonio.json",
-      "id": "29.50944,-98.54380|City-permitted estate sale",
-      "title": "City-permitted estate sale",
-      "address": "7811 ROBIN HILL, San Antonio, TX 78230",
-      "url": null
-    },
-    {
-      "reason": "unconfirmed_permit",
-      "input_file": "san-antonio.json",
-      "id": "29.36250,-98.61449|City-permitted garage / yard sale",
+      "id": "29.32471,-98.55966|City-permitted garage / yard sale",
       "title": "City-permitted garage / yard sale",
-      "address": "5858 LAUREL VALLEY, San Antonio, TX 78242",
+      "address": "3226 ALGO DULCE, San Antonio, TX 78211",
       "url": null
     },
     {
@@ -834,17 +818,17 @@
     {
       "reason": "unconfirmed_permit",
       "input_file": "san-antonio.json",
-      "id": "29.56099,-98.60477|City-permitted garage / yard sale",
+      "id": "29.36250,-98.61449|City-permitted garage / yard sale",
       "title": "City-permitted garage / yard sale",
-      "address": "12503 HART CLIFF, San Antonio, TX 78249",
+      "address": "5858 LAUREL VALLEY, San Antonio, TX 78242",
       "url": null
     },
     {
       "reason": "unconfirmed_permit",
       "input_file": "san-antonio.json",
-      "id": "29.58112,-98.36523|City-permitted garage / yard sale",
-      "title": "City-permitted garage / yard sale",
-      "address": "15549 TOEPPERWEIN RD, San Antonio, TX 78233",
+      "id": "29.50944,-98.54380|City-permitted estate sale",
+      "title": "City-permitted estate sale",
+      "address": "7811 ROBIN HILL, San Antonio, TX 78230",
       "url": null
     },
     {
@@ -866,17 +850,25 @@
     {
       "reason": "unconfirmed_permit",
       "input_file": "san-antonio.json",
-      "id": "address|City-permitted garage / yard sale",
+      "id": "29.56099,-98.60477|City-permitted garage / yard sale",
       "title": "City-permitted garage / yard sale",
-      "address": "13630 Bluffcircle",
+      "address": "12503 HART CLIFF, San Antonio, TX 78249",
       "url": null
     },
     {
       "reason": "unconfirmed_permit",
       "input_file": "san-antonio.json",
-      "id": "29.59382,-98.52323|City-permitted estate sale",
-      "title": "City-permitted estate sale",
-      "address": "1623 HAWKS RIDGE, San Antonio, TX 78248",
+      "id": "29.58112,-98.36523|City-permitted garage / yard sale",
+      "title": "City-permitted garage / yard sale",
+      "address": "15549 TOEPPERWEIN RD, San Antonio, TX 78233",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
+      "id": "address|City-permitted garage / yard sale",
+      "title": "City-permitted garage / yard sale",
+      "address": "13630 Bluffcircle",
       "url": null
     },
     {
@@ -890,6 +882,14 @@
     {
       "reason": "unconfirmed_permit",
       "input_file": "san-antonio.json",
+      "id": "29.59382,-98.52323|City-permitted estate sale",
+      "title": "City-permitted estate sale",
+      "address": "1623 HAWKS RIDGE, San Antonio, TX 78248",
+      "url": null
+    },
+    {
+      "reason": "unconfirmed_permit",
+      "input_file": "san-antonio.json",
       "id": "29.49663,-98.53775|City-permitted garage / yard sale",
       "title": "City-permitted garage / yard sale",
       "address": "454 BERYL DR, San Antonio, TX 78213",
@@ -898,17 +898,17 @@
     {
       "reason": "unconfirmed_permit",
       "input_file": "san-antonio.json",
-      "id": "29.39275,-98.39651|City-permitted garage / yard sale",
-      "title": "City-permitted garage / yard sale",
-      "address": "2715 SPOKANE RD, San Antonio, TX 78222",
+      "id": "29.54975,-98.49775|415 RHAPSODY",
+      "title": "415 RHAPSODY",
+      "address": "415 W RHAPSODY, San Antonio, TX 78216",
       "url": null
     },
     {
       "reason": "unconfirmed_permit",
       "input_file": "san-antonio.json",
-      "id": "29.54975,-98.49775|415 RHAPSODY",
-      "title": "415 RHAPSODY",
-      "address": "415 W RHAPSODY, San Antonio, TX 78216",
+      "id": "29.39275,-98.39651|City-permitted garage / yard sale",
+      "title": "City-permitted garage / yard sale",
+      "address": "2715 SPOKANE RD, San Antonio, TX 78222",
       "url": null
     }
   ],

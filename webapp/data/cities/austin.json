@@ -40,8 +40,8 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
@@ -120,8 +120,8 @@
     },
     {
       "address": "104 Marcheeta Way, Austin, TX",
-      "dates": "2026-11-06 – 2026-11-08",
-      "date_from": "2026-11-06",
+      "dates": "2026-11-07 – 2026-11-08",
+      "date_from": "2026-11-07",
       "date_to": "2026-11-08",
       "end_date": "2026-11-08",
       "hours": null,
@@ -140,7 +140,9 @@
       "lon": -97.8575,
       "geocode": "source",
       "in_person": true,
-      "external_id": "cl-yardsale69homes7furbbt4uyws3fa2vsjmye"
+      "external_id": "cl-yardsale69homes7furbbt4uyws3fa2vsjmye",
+      "posted_at": "2026-10-27T10:10:10-0500",
+      "date_certainty": "explicit"
     },
     {
       "address": "New Braunfels, TX 78132",
@@ -210,8 +212,8 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
@@ -351,15 +353,15 @@
       "date_to": "2026-11-08",
       "end_date": "2026-11-08",
       "hours": "2026-11-06 9:00 am-3:00 pm; 2026-11-07 9:00 am-3:00 pm; 2026-11-08 10:00 am-3:00 pm",
-      "title": "25% OFF Saturday! Step Back In Time in North Austin!",
-      "details": "Haven Estate Sales, Inc.. 25% OFF Saturday! A beautiful and timeless sale in North Austin! From collectibles to MCM, to beautiful furniture, we have a little bit of everything! MCM furniture Swag lamps Gorgeous collectible table lamps Full kitchen Original artwork - lo...",
+      "title": "50% OFF Sunday! Step Back In Time in North Austin!",
+      "details": "Haven Estate Sales, Inc.. 50% OFF Sunday! A beautiful and timeless sale in North Austin! From collectibles to MCM, to beautiful furniture, we have a little bit of everything! MCM furniture Swag lamps Gorgeous collectible table lamps Full kitchen Original artwork - lots...",
       "source": "EstateSales.org",
-      "url": "https://estatesales.org/estate-sales/tx/austin/78750/25-off-saturday-step-back-2471468",
+      "url": "https://estatesales.org/estate-sales/tx/austin/78750/50-off-sunday-step-back-2471468",
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
@@ -384,8 +386,8 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
@@ -410,13 +412,13 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.630128026338483,
-      "lon": -97.74768520452697,
+      "lat": 30.630101077003236,
+      "lon": -97.75238300001769,
       "geocode": "source",
       "company": null,
       "in_person": true,
@@ -436,8 +438,8 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "garage-sale",
-        "estate-sale"
+        "estate-sale",
+        "garage-sale"
       ],
       "confidence": 0.7,
       "status": "verified",
@@ -519,7 +521,7 @@
       "date_from": "11/06/2026",
       "date_to": "11/08/2026",
       "end_date": "2026-11-08",
-      "title": "25% OFF Saturday! Step Back In Time in North Austin!",
+      "title": "50% OFF Sunday! Step Back In Time in North Austin!",
       "details": "",
       "source": "GarageSaleFinder",
       "url": "https://garagesalefinder.com/s/N9TTK/10600-settlers-trail-austin-tx-78750",
@@ -555,7 +557,7 @@
       "date_from": "11/06/2026",
       "date_to": "11/08/2026",
       "end_date": "2026-11-08",
-      "title": "25% off SATURDAY - Vintage Vibes in San Marcos",
+      "title": "50% off SUNDAY - Vintage Vibes in San Marcos",
       "details": "",
       "source": "GarageSaleFinder",
       "url": "https://garagesalefinder.com/s/N9VhG/111-manor-park-rd-san-marcos-tx-78666",
@@ -573,7 +575,7 @@
       "date_from": "11/06/2026",
       "date_to": "11/08/2026",
       "end_date": "2026-11-08",
-      "title": "SAT 25% OFF @ HUGE TWO-STORY ESTATE SALE IN TAYLOR BY VINTIQUE",
+      "title": "SUN 50% OFF @ HUGE TWO-STORY ESTATE SALE IN TAYLOR BY VINTIQUE",
       "details": "",
       "source": "GarageSaleFinder",
       "url": "https://garagesalefinder.com/s/N99cN/505-big-bend-trail-taylor-tx-76574",
@@ -592,7 +594,7 @@
       "date_to": "2026-11-08",
       "end_date": "2026-11-08",
       "hours": null,
-      "title": "25% Off Saturday! Step Back In Time In North Austin!",
+      "title": "50% Off Sunday! Step Back In Time In North Austin!",
       "details": "",
       "source": "YardSaleSearch",
       "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196451457",
@@ -755,8 +757,8 @@
       "in_person": false,
       "external_id": "eso-2472304",
       "categories": [
-        "online-auction",
-        "estate-sale"
+        "estate-sale",
+        "online-auction"
       ]
     },
     {
@@ -782,7 +784,9 @@
       "lon": -97.692876,
       "geocode": "source",
       "in_person": true,
-      "external_id": "cl-housegaragesaleohbispdzjnzzfiucwkdvqm"
+      "external_id": "cl-housegaragesaleohbispdzjnzzfiucwkdvqm",
+      "posted_at": "2026-11-05T14:26:05-0600",
+      "date_certainty": "explicit"
     },
     {
       "address": "Bailey loop, Austin, TX",
@@ -858,6 +862,87 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "cl-ralaustingaragehznf66vhkvd1ymgjwmxbnd"
+    },
+    {
+      "address": "28900 RR12 near 290, Austin, TX",
+      "dates": "2026-11-08 – 2026-11-08",
+      "date_from": "2026-11-08",
+      "posted_at": "2026-11-07T06:48:41-0600",
+      "date_certainty": "explicit",
+      "date_to": "2026-11-08",
+      "end_date": "2026-11-08",
+      "hours": null,
+      "title": "Holiday Market - 28900 RR12",
+      "details": "QR Code Link to This Post Annual fundraiser at Dripping Springs Methodist Church, sponsored by Women in Mission with proceeds going into the community. We will have Jams, Jellies, Baked Goods, Floral arrangements, Handmade Treasures, Jewelry, Handbags, etc. There are lots of gift items for the Holiday. We will be open Sunday, November 8th from 10:00 to 3:00 in our Fellowship Hall",
+      "date_evidence": "2026-11-08 – 2026-11-08",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/dripping-springs-holiday-market-rr12/vm8GBHb37biC1nEsWFeLHE",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 30.2268,
+      "lon": -98.1029,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-lidaymarketrr12vm8gbhb37bic1neswfelhe"
+    },
+    {
+      "address": "709 East Slaughter Lane 204, Austin, TX",
+      "dates": "2026-11-14 – 2026-11-14",
+      "date_from": "2026-11-14",
+      "posted_at": "2026-11-07T01:09:16-0600",
+      "date_certainty": "explicit",
+      "date_to": "2026-11-14",
+      "end_date": "2026-11-14",
+      "hours": null,
+      "title": "STOP & SHOP VENDOR MARKET – FOOD, SHOPPING & LOCAL VENDORS IN AUSTIN!",
+      "details": "QR Code Link to This Post Come out and support local small businesses at the Holistic Bar & Grill Stop & Shop Vendor Market! Bring your family and friends for a fun day of shopping, delicious food, unique finds, and community support. WHAT YOU CAN EXPECT: Louisiana gumbo and other delicious food vendors Fresh lemonade and refreshing drinks Handmade gifts and custom crafts Handmade keychains Custom",
+      "date_evidence": "2026-11-14 – 2026-11-14",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/austin-stop-shop-vendor-market-food/gCn4neU7freM9ZY8vp6Hxw",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 30.1876,
+      "lon": -97.7472,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-endormarketfoodgcn4neu7frem9zy8vp6hxw"
+    },
+    {
+      "address": "1112 Smith Dr near wood, Austin, TX",
+      "dates": "2026-11-07 – 2026-11-08",
+      "date_from": "2026-11-07",
+      "posted_at": "2026-11-07T17:57:32-0600",
+      "date_certainty": "relative_to_post",
+      "date_to": "2026-11-08",
+      "end_date": "2026-11-08",
+      "hours": null,
+      "title": "SUNDAY  ONLY ALL 42'' Club Cadet xt-1 WITH much to go with it",
+      "details": "QR Code Link to This Post SUNDAY ONLY ALL ( Stop And SEE OR CALL AT show contact info Before You Say No way or Call ) Please call me first Selling ALL that goes with this 42'' cub cadet xt 1 1-full set of tires and rims a homemade wagon with all new parts for the deck, new blades and good ones also, belts, Selling for 1,250.00 Cash only Price is FIRM, and with a spreader a blade stand to sharping ",
+      "date_evidence": "2026-11-07 – 2026-11-08",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/killeen-sunday-only-all-42-club-cadet/1HV21zL1Bcd3a8sifgjsV9",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 31.123235,
+      "lon": -97.713567,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-all42clubcadet1hv21zl1bcd3a8sifgjsv9"
     }
   ],
   "hot_zones": [
@@ -876,9 +961,9 @@
     "gsalr.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 38,
+  "total_locations": 41,
   "status": "live",
   "date": "2026-11-08",
-  "last_refresh": "2026-11-08T03:11:42-06:00",
+  "last_refresh": "2026-11-08T10:57:12-06:00",
   "permits": []
 }

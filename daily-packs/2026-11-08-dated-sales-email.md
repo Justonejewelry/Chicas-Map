@@ -43,6 +43,7 @@ Map only shows pins whose listed dates include today.
 ### Starts 2026-11-14
 - Raise a glass for Mr. Mike - Estate Sale! — hidden, Universal City, TX 78233 [2026-11-14 → 2026-11-15] | 2026-11-14 9:00 am-3:00 pm; 2026-11-15 9:00 am-3:00 pm
 - Moving Out Sale! (14th &15th) — 26765 Orchid Trail, San Antonio, TX [2026-11-14 → 2026-11-15]
+- Community Garage Sale — 18023 Crystal Knoll, San Antonio, TX [2026-11-14 → 2026-11-14]
 - Garage Sale — 5858 Laurel Valley Dr near Five Palms, San Antonio, TX [2026-11-14 → 2026-11-14]
 
 ## ONLINE / UNPLOTTABLE
