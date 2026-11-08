@@ -2,6 +2,8 @@
    No backend: saved searches live only in this browser (localStorage). */
 (function () {
   var BASE = "/Chicas-Map", DATA = BASE + "/data/sales-clean.json", KEY = "chica-saved-searches-v1";
+  // Email alerts: sign-ups go to Chica's inbox. Set FORM to a formsubmit.co hashed endpoint once activated; MAILTO is the fallback.
+  var ALERTS = { FORM: "", MAILTO: "" };
   var ES = String(document.documentElement.lang || "").toLowerCase().indexOf("es") === 0;
   var T = ES ? {
     label: "Busca artículos en las ventas", ph: "Ej. muebles, herramientas, Lego…", go: "Buscar",
@@ -9,6 +11,8 @@
     save: "🔔 Avisarme de nuevas", saved: "✓ Búsqueda guardada", view: "Ver en el mapa", mine: "Mis búsquedas guardadas:",
     fresh: function (n) { return n + " nueva" + (n === 1 ? "" : "s"); }, rm: "Quitar",
     note: "Las alertas se guardan solo en este navegador. Te aviso cuando vuelvas (o con una notificación si la página está abierta).",
+    em: "✉️ Avísame por correo", emPh: "tu@correo.com", emGo: "Enviar", emOk: "¡Listo! Revisa tu correo y confirma (responde SÍ) para empezar. 🐾", emErr: "Ups, no se pudo enviar. Intenta otra vez.",
+    emPriv: "Solo uso tu correo para estas alertas. Nunca lo vendo ni comparto. Cancela cuando quieras con un clic.",
     notifT: "Chica encontró nuevas ventas", notifB: function (q, n) { return n + " nueva(s) para “" + q + "”"; }
   } : {
     label: "Search sales for items", ph: "e.g. furniture, tools, Lego…", go: "Search",
@@ -16,6 +20,8 @@
     save: "🔔 Alert me to new matches", saved: "✓ Search saved", view: "View on map", mine: "My saved searches:",
     fresh: function (n) { return n + " new"; }, rm: "Remove",
     note: "Alerts are saved in this browser only. I'll flag new matches when you come back (or pop a notification while the page is open).",
+    em: "✉️ Email me new matches", emPh: "you@email.com", emGo: "Send", emOk: "Done! Check your inbox and confirm (reply YES) to start. 🐾", emErr: "Oops, that didn't send. Please try again.",
+    emPriv: "I only use your email for these alerts. Never sold or shared. Unsubscribe anytime in one click.",
     notifT: "Chica found new sales", notifB: function (q, n) { return n + " new match" + (n === 1 ? "" : "es") + " for “" + q + "”"; }
   };
   var SYN = {
@@ -79,6 +85,8 @@
       ".hs-chip{display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:0 6px 0 12px;border-radius:999px;border:1px solid var(--line,#3a342e);background:var(--card,#1a1714);color:var(--ink,#f3eee4);cursor:pointer;font:600 13px Inter,system-ui,sans-serif}" +
       ".hs-chip i{font-style:normal;background:#c513af;color:#fff;border-radius:999px;padding:2px 8px;font-size:12px}.hs-chip .x{border:0;background:transparent;color:inherit;min-height:28px;padding:0 6px;cursor:pointer}" +
       "#home-search .hs-note{font-size:12px;color:var(--muted,#bbb);margin:6px 0 0}" +
+      "#home-search .hs-email{margin:10px 0 0;display:flex;flex-wrap:wrap;gap:8px}#home-search .hs-email input[type=email]{flex:1 1 200px}" +
+      "#home-search .hs-email .hs-hp{position:absolute;left:-9999px}#home-search .hs-emmsg{font-size:13px;margin:6px 0 0}" +
       ".chica-home-hit{background:transparent!important;border:0!important}";
     document.head.appendChild(st);
   }
@@ -132,13 +140,41 @@
       var n = fresh(s).length;
       return '<span class="hs-chip" data-i="' + i + '" role="button" tabindex="0">' + esc(s.q) + (n ? " <i>" + T.fresh(n) + "</i>" : "") +
         '<button type="button" class="x" aria-label="' + T.rm + " " + esc(s.q) + '">×</button></span>';
-    }).join("") + '<p class="hs-note">' + T.note + "</p>";
+    }).join("") + '<p class="hs-note">' + T.note + "</p>" + emailForm();
+    wireEmail(box);
     Array.prototype.forEach.call(el.querySelectorAll(".hs-chip"), function (c) {
       var i = +c.getAttribute("data-i");
       function open() { var s = saved[i]; box.querySelector("#hs-q").value = s.q; render(box, s.q); s.seen = match(s.q).map(sid); store(); renderSaved(box); }
       c.onclick = function (e) { if (e.target.classList.contains("x")) { saved.splice(i, 1); store(); renderSaved(box); return; } open(); };
       c.onkeydown = function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); } };
     });
+  }
+
+  function emailForm() {
+    if (!ALERTS.FORM && !ALERTS.MAILTO) return "";
+    return '<form class="hs-email" novalidate><label for="hs-em" style="width:100%;font-size:13px;margin:0">' + T.em + '</label>' +
+      '<input id="hs-em" type="email" required autocomplete="email" placeholder="' + T.emPh + '"/><input class="hs-hp" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true"/>' +
+      '<button type="submit">' + T.emGo + '</button><p class="hs-note" style="width:100%">' + T.emPriv + '</p><p class="hs-emmsg" aria-live="polite"></p></form>';
+  }
+  function wireEmail(box) {
+    var f = box.querySelector(".hs-email"); if (!f) return;
+    f.onsubmit = function (e) {
+      e.preventDefault();
+      var em = f.querySelector("#hs-em").value.trim(), msg = f.querySelector(".hs-emmsg");
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) { f.querySelector("#hs-em").focus(); return; }
+      if (f.querySelector(".hs-hp").value) return;
+      var terms = saved.map(function (x) { return x.q; }).join(" | "), lang = ES ? "es" : "en";
+      var subj = "Chica alerts SUBSCRIBE", body = "email: " + em + "\nsearches: " + terms + "\nlang: " + lang + "\n";
+      if (ALERTS.FORM) {
+        var fd = new FormData(); fd.append("email", em); fd.append("searches", terms); fd.append("lang", lang); fd.append("action", "subscribe");
+        fd.append("_subject", subj); fd.append("_template", "box"); fd.append("_captcha", "false");
+        fetch(ALERTS.FORM, { method: "POST", body: fd, headers: { Accept: "application/json" } })
+          .then(function (r) { msg.textContent = r.ok ? T.emOk : T.emErr; }).catch(function () { msg.textContent = T.emErr; });
+      } else {
+        location.href = "mailto:" + ALERTS.MAILTO + "?subject=" + encodeURIComponent(subj) + "&body=" + encodeURIComponent(body);
+        msg.textContent = T.emOk;
+      }
+    };
   }
 
   function notify() {
