@@ -10,6 +10,7 @@ on:
       - "scripts/build_seo_pages.mjs"
       - "scripts/sale_pages.mjs"
       - "scripts/validate_event_ld.mjs"
+      - "scripts/fill_zips.py"
       - "scripts/build_calendar.py"
       - "scripts/sales_quality.py"
       - "scripts/clean_sales.py"
@@ -91,6 +92,7 @@ jobs:
           python3 scripts/build_calendar.py _site
           node scripts/stamp-pages.mjs _site
           # Neighborhood landing pages + sitemap entries (after stamp so titles stick)
+          python3 scripts/fill_zips.py _site || true
           node scripts/build_seo_pages.mjs _site
           node scripts/validate_event_ld.mjs _site || echo "::warning::Event JSON-LD check found errors"
           node scripts/root-domain.mjs _site
