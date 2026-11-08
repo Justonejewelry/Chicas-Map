@@ -5,7 +5,7 @@
   "timezone": "America/Chicago",
   "status": "live",
   "policy": "Explicit sale dates only; uncertain dates excluded. 60-mile SA metro. Raw overlays preserved.",
-  "total_locations": 106,
+  "total_locations": 107,
   "today_count": 105,
   "public": [
     {
@@ -4051,6 +4051,47 @@
       ],
       "aliases": [
         "cl-niofallcleaninge9qjxeyevje9jfspzocndf"
+      ]
+    },
+    {
+      "address": "9360 ABE LINCOLN, SAN ANTONIO, TX, 78240",
+      "source_address": "9360 Abe Lincoln Rd, San Antonio, TX 78240",
+      "dates": "2026-11-08",
+      "date_from": "2026-11-08",
+      "date_to": "2026-11-08",
+      "end_date": "2026-11-08",
+      "date_start": "2026-11-08",
+      "date_end": "2026-11-08",
+      "date_bucket": "upcoming",
+      "hours": "8:00 am - 4:00 pm",
+      "title": "Yard Sale",
+      "details": "Various families in the congregation will be selling a variety of new and used items including clothing, jewelry, crafts, baked goods, household and decorative items. Proceeds will go toward our new sanctuary. EVERYONE IS INVITED!",
+      "source": "GarageSaleFinder email",
+      "url": "https://garagesalefinder.com/s/N9TAK/9360-abe-lincoln-rd-san-antonio-tx-78240",
+      "photos": 2,
+      "type": "garage",
+      "confidence": 0.86,
+      "status": "verified",
+      "lat": 29.529505,
+      "lon": -98.617348,
+      "geocode": "census",
+      "external_id": "gsf-21817607",
+      "categories": [
+        "garage-sale",
+        "email"
+      ],
+      "zip": "78240",
+      "in_person": true,
+      "date_note": "Date and hours taken from the GarageSaleFinder listing in America/Chicago.",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://garagesalefinder.com/s/N9TAK/9360-abe-lincoln-rd-san-antonio-tx-78240"
+      ],
+      "sources": [
+        "GarageSaleFinder email"
+      ],
+      "aliases": [
+        "gsf-21817607"
       ]
     },
     {

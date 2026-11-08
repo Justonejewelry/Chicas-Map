@@ -1,9 +1,41 @@
 {
   "city": "san-antonio-email",
-  "last_refresh": "2026-11-07T10:46:50-06:00",
+  "last_refresh": "2026-11-07T18:08:24-06:00",
   "status": "live",
-  "total_locations": 0,
-  "public": [],
+  "total_locations": 1,
+  "public": [
+    {
+      "address": "9360 ABE LINCOLN, SAN ANTONIO, TX, 78240",
+      "source_address": "9360 Abe Lincoln Rd, San Antonio, TX 78240",
+      "dates": "Sun Nov 8, 8:00 am – 4:00 pm",
+      "date_from": "2026-11-08",
+      "date_to": "2026-11-08",
+      "end_date": "2026-11-08",
+      "date_start": "2026-11-08",
+      "date_end": "2026-11-08",
+      "date_bucket": "upcoming",
+      "hours": "8:00 am - 4:00 pm",
+      "title": "Yard Sale",
+      "details": "Various families in the congregation will be selling a variety of new and used items including clothing, jewelry, crafts, baked goods, household and decorative items. Proceeds will go toward our new sanctuary. EVERYONE IS INVITED!",
+      "source": "GarageSaleFinder email",
+      "url": "https://garagesalefinder.com/s/N9TAK/9360-abe-lincoln-rd-san-antonio-tx-78240",
+      "photos": 2,
+      "type": "garage",
+      "confidence": 0.86,
+      "status": "verified",
+      "lat": 29.529505,
+      "lon": -98.617348,
+      "geocode": "census",
+      "external_id": "gsf-21817607",
+      "categories": [
+        "garage-sale",
+        "email"
+      ],
+      "zip": "78240",
+      "in_person": true,
+      "date_note": "Date and hours taken from the GarageSaleFinder listing in America/Chicago."
+    }
+  ],
   "permits": [],
   "hot_zones": [],
   "sources": [

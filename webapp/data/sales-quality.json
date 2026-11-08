@@ -1,8 +1,8 @@
 {
   "as_of": "2026-11-07",
-  "raw_records": 180,
-  "eligible_before_dedupe": 124,
-  "canonical_sales": 106,
+  "raw_records": 181,
+  "eligible_before_dedupe": 125,
+  "canonical_sales": 107,
   "today_sales": 105,
   "duplicates_merged": 18,
   "excluded_by_reason": {
