@@ -5,8 +5,8 @@
   "timezone": "America/Chicago",
   "status": "live",
   "policy": "Explicit sale dates only; uncertain dates excluded. 60-mile SA metro. Raw overlays preserved.",
-  "total_locations": 35,
-  "today_count": 33,
+  "total_locations": 39,
+  "today_count": 37,
   "public": [
     {
       "address": "10 IMPALA WAY, SAN ANTONIO, TX, 78258",
@@ -209,6 +209,50 @@
       "external_id": "sale-b9fa450a0e278df750bf"
     },
     {
+      "address": "211 BARBARA DR, SAN ANTONIO, TX, 78216",
+      "source_address": "211 Barbara Dr, San Antonio, TX 78216",
+      "dates": "2026-11-06 – 2026-11-08",
+      "date_from": "2026-11-06",
+      "date_to": "2026-11-08",
+      "end_date": "2026-11-08",
+      "date_start": "2026-11-06",
+      "date_end": "2026-11-08",
+      "date_bucket": "live",
+      "hours": "Fri from noon; ends Sun 3 pm",
+      "title": "Backyard Yard Sale — Barbara Dr",
+      "details": "Backyard yard sale, everything must go: pet items, women's and men's clothes, kitchen items, bedroom furniture, living room décor. Cash is king.",
+      "source": "Facebook Events",
+      "url": "https://www.facebook.com/events/1752742282484478/",
+      "photos": 0,
+      "type": "yard",
+      "confidence": 0.86,
+      "status": "verified",
+      "lat": 29.503438,
+      "lon": -98.491099,
+      "geocode": "census",
+      "external_id": "fb-ev-1752742282484478",
+      "categories": [
+        "yard-sale",
+        "facebook",
+        "event"
+      ],
+      "zip": "78216",
+      "in_person": true,
+      "date_note": "Friday November 6 (from noon) through Sunday November 8, 2026, 3 PM (America/Chicago), as listed on the Facebook event.",
+      "date_verified": "facebook-collected-2026-11-08-1200",
+      "poster": "Margarett Mitchell",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://www.facebook.com/events/1752742282484478/"
+      ],
+      "sources": [
+        "Facebook Events"
+      ],
+      "aliases": [
+        "fb-ev-1752742282484478"
+      ]
+    },
+    {
       "address": "21527 Tenore, San Antonio, TX",
       "dates": "2026-11-06 – 2026-11-08",
       "date_from": "2026-11-06",
@@ -284,6 +328,50 @@
       "aliases": [
         "29.42410,-98.49360|Quality Finds LOCATION CHANGED! DATES THE SAME!",
         "yss-2372treebrschertztx-2026-11-06"
+      ]
+    },
+    {
+      "address": "24206 PECOS SUNSET, SAN ANTONIO, TX, 78255",
+      "source_address": "24206 Pecos Sunset, San Antonio, TX 78255",
+      "dates": "2026-11-06 – 2026-11-08",
+      "date_from": "2026-11-06",
+      "date_to": "2026-11-08",
+      "end_date": "2026-11-08",
+      "date_start": "2026-11-06",
+      "date_end": "2026-11-08",
+      "date_bucket": "live",
+      "hours": "8:00 am – 6:00 pm",
+      "title": "Huge Garage Sale — Pecos Sunset",
+      "details": "Huge garage sale Friday–Sunday, November 6–8, from 8am: tools, furniture, antiques and vintage finds, clothes, accessories, art, DVDs. Look for the signs.",
+      "source": "Facebook Events",
+      "url": "https://www.facebook.com/events/1818418219186146/",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.86,
+      "status": "verified",
+      "lat": 29.666424,
+      "lon": -98.646099,
+      "geocode": "census",
+      "external_id": "fb-ev-1818418219186146",
+      "categories": [
+        "garage-sale",
+        "facebook",
+        "event"
+      ],
+      "zip": "78255",
+      "in_person": true,
+      "date_note": "Friday–Sunday, November 6–8, 2026 (America/Chicago); description says 8am start, Facebook event ends Sunday 6 PM.",
+      "date_verified": "facebook-collected-2026-11-08-1200",
+      "poster": "Jenna Combs Amato",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://www.facebook.com/events/1818418219186146/"
+      ],
+      "sources": [
+        "Facebook Events"
+      ],
+      "aliases": [
+        "fb-ev-1818418219186146"
       ]
     },
     {
@@ -1047,6 +1135,50 @@
       ]
     },
     {
+      "address": "825 SHADY COVE LN, SPRING BRANCH, TX, 78070",
+      "source_address": "825 Shady Cove Ln, Spring Branch, TX 78070",
+      "dates": "2026-11-07 – 2026-11-08",
+      "date_from": "2026-11-07",
+      "date_to": "2026-11-08",
+      "end_date": "2026-11-08",
+      "date_start": "2026-11-07",
+      "date_end": "2026-11-08",
+      "date_bucket": "live",
+      "hours": "Sat 8 am–3 pm; Sun 8 am–2 pm",
+      "title": "Downsizing Sale — Shady Cove (Spring Branch)",
+      "details": "Downsized and done RV-ing: household goods, appliances, décor, RV items, tech items, outdoor canopies, yard care. Sat 8–3, Sun 8–2. Indoor, rain or shine.",
+      "source": "Facebook Events",
+      "url": "https://www.facebook.com/events/2143769986510122/",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.86,
+      "status": "verified",
+      "lat": 29.856122,
+      "lon": -98.45254,
+      "geocode": "census",
+      "external_id": "fb-ev-2143769986510122",
+      "categories": [
+        "garage-sale",
+        "facebook",
+        "event"
+      ],
+      "zip": "78070",
+      "in_person": true,
+      "date_note": "Saturday November 7 (8 am–3 pm) and Sunday November 8 (8 am–2 pm), 2026 (America/Chicago), as listed on the Facebook event.",
+      "date_verified": "facebook-collected-2026-11-08-1200",
+      "poster": "Dale Geiger",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://www.facebook.com/events/2143769986510122/"
+      ],
+      "sources": [
+        "Facebook Events"
+      ],
+      "aliases": [
+        "fb-ev-2143769986510122"
+      ]
+    },
+    {
       "address": "834 THREE IRON, SAN ANTONIO, TX, 78221",
       "source_address": "834 Three Iron, San Antonio, TX 78221",
       "dates": "2026-11-07 – 2026-11-08",
@@ -1256,6 +1388,49 @@
       ],
       "aliases": [
         "fb-1107917165484166"
+      ]
+    },
+    {
+      "address": "15820 FM 539, LA VERNIA, TX, 78121",
+      "source_address": "15820 FM 539, La Vernia, TX 78121",
+      "dates": "2026-11-08",
+      "date_from": "2026-11-08",
+      "date_to": "2026-11-08",
+      "end_date": "2026-11-08",
+      "date_start": "2026-11-08",
+      "date_end": "2026-11-08",
+      "date_bucket": "live",
+      "hours": "8:00 am – 6:00 pm",
+      "title": "Moving Sale (La Vernia)",
+      "details": "Moving out of state: Restoration Hardware sofas, barstools, accent chairs, side tables, desks, home décor, framed art, lamps, kitchenware, glassware, children's books, toys, LEGO sets, vintage finds. Venmo/Zelle preferred. 8am–6pm today 11/8.",
+      "source": "Facebook Marketplace",
+      "url": "https://www.facebook.com/marketplace/item/1874754537222989/",
+      "photos": 0,
+      "type": "moving",
+      "confidence": 0.86,
+      "status": "verified",
+      "lat": 29.375636,
+      "lon": -98.068862,
+      "geocode": "census",
+      "external_id": "fb-1874754537222989",
+      "categories": [
+        "moving-sale",
+        "facebook"
+      ],
+      "zip": "78121",
+      "in_person": true,
+      "date_note": "Sunday, November 8, 2026, 8 am–6 pm (America/Chicago), as stated in the Marketplace listing ('today 11/8/26').",
+      "date_verified": "facebook-collected-2026-11-08-1200",
+      "poster": "Jennifer Foti",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://www.facebook.com/marketplace/item/1874754537222989/"
+      ],
+      "sources": [
+        "Facebook Marketplace"
+      ],
+      "aliases": [
+        "fb-1874754537222989"
       ]
     },
     {
