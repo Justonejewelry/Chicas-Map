@@ -2,7 +2,7 @@
 (function () {
   var p = location.pathname || "";
   if (!(/\/map\/?$/.test(p) || p.indexOf("/map/") !== -1 || /map\.html$/.test(p))) return;
-  var LOGO = "/Chicas-Map/images/chica-logo.png";
+  var LOGO = "/Chicas-Map/images/chica-logo-144.png";
   var HERO = "/Chicas-Map/images/chica-hero.jpg";
   var HREF = "/Chicas-Map/claim/";
 
@@ -16,7 +16,7 @@
       "#chica-listit-btn{position:fixed!important;right:12px!important;bottom:calc(14px + env(safe-area-inset-bottom,0px))!important;left:auto!important;top:auto!important;" +
       "z-index:2147483647!important;display:block!important;width:64px!important;height:66px!important;min-width:64px!important;padding:0!important;" +
       "border:2px solid #fffdf8!important;border-radius:12px!important;overflow:hidden!important;" +
-      "background:#c513af url(/Chicas-Map/images/chica-logo.png) center 36%/cover no-repeat!important;" +
+      "background:#c513af url(/Chicas-Map/images/chica-logo-144.png) center 36%/cover no-repeat!important;" +
       "animation:chica-pop 1.15s ease-in-out infinite,chica-ring 1.6s ease-out infinite!important;text-decoration:none!important;pointer-events:auto!important}" +
       "#chica-listit-btn img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 24%;pointer-events:none;background:transparent}" +
       "#chica-listit-btn .chica-cta-label{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:4px 3px 4px;background:linear-gradient(transparent,#7a0a6c 48%);" +

@@ -4,6 +4,12 @@
   var START = [29.50, -98.49];
   var mtDead = true; // MapTiler off until probe proves the key works
   var probed = false;
+  var decided = false; // add exactly one base layer once we know which provider works (no Esri->MapTiler swap = no tile double-load, no attribution shift)
+  var MT_CACHE = "chica-mt-ok";
+  try {
+    var cached = String(localStorage.getItem(MT_CACHE) || "").split("|");
+    if (cached.length === 2 && Date.now() - Number(cached[1]) < 864e5) { mtDead = cached[0] !== "1"; decided = true; }
+  } catch (e) {}
   var PIN = 40;
   var HALF = PIN / 2;
   var bootHidden = false;
@@ -317,7 +323,7 @@
 
   function showBase() {
     var map = w.__chicaLeaflet;
-    if (!map) return;
+    if (!map || !decided) return;
     var satOn = document.documentElement.classList.contains("chica-sat-on");
     var useMt = !mtDead && key().length > 8;
     var keep = useMt ? (satOn ? map._chicaSat : map._chicaStreet) : (satOn ? map._chicaEsriSat : map._chicaEsriStreet);
@@ -327,9 +333,12 @@
     armTiles(map.getContainer && map.getContainer());
   }
 
+  function remember() { try { localStorage.setItem(MT_CACHE, (mtDead ? "0" : "1") + "|" + Date.now()); } catch (e) {} }
   function markDead() {
     if (mtDead) return;
     mtDead = true;
+    decided = true;
+    remember();
     w.__chicaMtDead = true;
     showBase();
   }
@@ -339,6 +348,7 @@
     probed = true;
     if (key().length < 8) {
       mtDead = true;
+      decided = true;
       w.__chicaMtDead = true;
       showBase();
       return;
@@ -349,11 +359,13 @@
         // 403 still returns a PNG that says "API KEY REQUIRED" — only trust 2xx
         mtDead = !(r.ok && r.status === 200);
         w.__chicaMtDead = mtDead;
+        decided = true; remember();
         showBase();
       })
       .catch(function () {
         mtDead = true;
         w.__chicaMtDead = true;
+        decided = true; remember();
         showBase();
       });
   }
@@ -403,10 +415,12 @@
     street.on("tileerror", markDead);
     sat.on("tileerror", markDead);
     map.on("tileload", function () { armTiles(el); hideBoot(); });
-    showBase();
-    probeMapTiler();
     map._chicaLive = true;
     w.__chicaLeaflet = map;
+    showBase();
+    probeMapTiler();
+    // Never leave the map blank if the probe hangs.
+    setTimeout(function () { if (!decided) { decided = true; showBase(); } }, 1500);
     el.__chicaMap = map;
     function size() {
       try {
@@ -454,6 +468,8 @@
     return true;
   }
 
+  // Start the MapTiler key check right away, in parallel with Leaflet + pin scripts.
+  try { probeMapTiler(); } catch (e) {}
   var n = 0;
   var id = setInterval(function () {
     n += 1;
