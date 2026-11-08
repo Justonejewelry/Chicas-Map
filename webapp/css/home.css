@@ -8,3 +8,10 @@ main{max-width:1152px;margin:0 auto;padding:32px 20px 40px}#chica-home-hero{max-
 
 .eyebrow{display:table;margin-left:auto;margin-right:auto;padding:6px 12px;border:1px solid color-mix(in srgb,var(--accent) 25%,transparent);border-radius:999px;background:var(--chica-pine-soft)}
 .brand:focus-visible{outline:2px solid var(--accent);outline-offset:4px;border-radius:8px}.cta{transition:transform .15s,background-color .15s,box-shadow .15s}.primary:hover{background:var(--chica-pine-mid)}.secondary:hover{background:var(--chica-pine-soft);border-color:var(--accent)}.cta:active{transform:scale(.96)}html[data-theme=light] #chica-fresh-weekend a.chip .tag{color:var(--chica-pine-mid)!important}@media(prefers-reduced-motion:reduce){.cta{transition:none}}
+/* Shopper-first nav: Find sales · List a sale · EN/ES; everything else under the menu's More group. */
+.primary-nav{display:flex;gap:6px;margin-right:auto;margin-left:8px}.primary-nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 12px;border-radius:999px;font:700 14px/1 Inter,sans-serif;text-decoration:none}.primary-nav a:hover{background:var(--card)}.menu-group{margin:8px 12px 2px;font:700 11px/1.2 Inter,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}.menu-panel{max-height:calc(100vh - 80px);overflow:auto}
+.brand picture{display:flex}
+.alert-help{margin:14px 0 0;font-size:14px;color:var(--muted)}#home-search .alert-help{margin:8px 0}
+@media(max-width:600px){.primary-nav{margin-left:2px;gap:0}.primary-nav a{padding:0 8px;font-size:13px}.brand span{display:none}}
+.primary-nav a{white-space:nowrap}
+@media(max-width:420px){.header-inner{gap:6px;padding:0 10px}.primary-nav a{padding:0 6px;font-size:12.5px}.header-tools{gap:6px}}

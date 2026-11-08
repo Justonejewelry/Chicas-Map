@@ -8,7 +8,7 @@
   var T = ES ? {
     label: "Busca artículos en las ventas", ph: "Ej. muebles, herramientas, Lego…", go: "Buscar",
     none: "Ninguna venta próxima menciona eso todavía. ¡Guárdalo y te aviso! 🐾", count: function (n) { return n + (n === 1 ? " venta coincide" : " ventas coinciden"); },
-    save: "🔔 Avisarme de nuevas", saved: "✓ Búsqueda guardada", view: "Ver en el mapa", mine: "Mis búsquedas guardadas:",
+    save: "🔔 Avisarme de nuevas", saved: "✓ Búsqueda guardada", view: "Ver en el mapa", details: "Detalles", help: "¿Buscas algo especial, vecino? Busca, guarda y te aviso por correo cuando aparezcan ventas nuevas que coincidan. 🐾", emNeed: "Escribe primero qué buscas (ej. muebles).", mine: "Mis búsquedas guardadas:",
     fresh: function (n) { return n + " nueva" + (n === 1 ? "" : "s"); }, rm: "Quitar",
     note: "Las alertas se guardan solo en este navegador. Te aviso cuando vuelvas (o con una notificación si la página está abierta).",
     em: "✉️ Avísame por correo", emPh: "tu@correo.com", emGo: "Enviar", emOk: "¡Listo! Revisa tu correo y confirma (responde SÍ) para empezar. 🐾", emErr: "Ups, no se pudo enviar. Intenta otra vez.",
@@ -17,7 +17,7 @@
   } : {
     label: "Search sales for items", ph: "e.g. furniture, tools, Lego…", go: "Search",
     none: "No upcoming sale mentions that yet. Save it and I'll let you know! 🐾", count: function (n) { return n + (n === 1 ? " sale matches" : " sales match"); },
-    save: "🔔 Alert me to new matches", saved: "✓ Search saved", view: "View on map", mine: "My saved searches:",
+    save: "🔔 Alert me to new matches", saved: "✓ Search saved", view: "View on map", details: "Details", help: "Hunting something special, neighbor? Search, save it, and I'll email you when new matching sales show up. 🐾", emNeed: "Type what you're hunting for first (e.g. furniture).", mine: "My saved searches:",
     fresh: function (n) { return n + " new"; }, rm: "Remove",
     note: "Alerts are saved in this browser only. I'll flag new matches when you come back (or pop a notification while the page is open).",
     em: "✉️ Email me new matches", emPh: "you@email.com", emGo: "Send", emOk: "Done! Check your inbox and confirm (reply YES) to start. 🐾", emErr: "Oops, that didn't send. Please try again.",
@@ -46,6 +46,7 @@
   function load() { try { return JSON.parse(localStorage.getItem(KEY)) || []; } catch (e) { return []; } }
   function store() { try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch (e) {} }
   function today() { try { return new Intl.DateTimeFormat("en-CA", { timeZone: "America/Chicago" }).format(new Date()); } catch (e) { return new Date().toISOString().slice(0, 10); } }
+  function slug(id) { return String(id).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 80) || "sale"; }
   function sid(s) { return String(s.external_id || s.id || (s.address + "|" + s.date_start)); }
   function hay(s) { if (!s._h) s._h = norm([s.title, s.details, s.description, s.items, (s.categories || []).join(" "), s.address].join(" ")); return s._h; }
   function terms(q) {
@@ -64,7 +65,7 @@
   }
   function card(s) {
     return '<li class="hs-card"><b>' + esc(s.title || "Sale") + '</b><span>' + when(s) + '</span><span class="hs-addr">' + esc(s.address || "") +
-      '</span><a href="' + BASE + (ES ? "/map/" : "/map/") + "?sale=" + encodeURIComponent(sid(s)) + '">' + T.view + " →</a></li>";
+      '</span><a href="' + BASE + (ES ? "/es" : "") + "/sales/" + slug(sid(s)) + '/">' + T.details + ' →</a> <a href="' + BASE + "/map/?sale=" + encodeURIComponent(sid(s)) + '">' + T.view + " →</a></li>";
   }
 
   function css() {
@@ -95,8 +96,10 @@
     var map = document.getElementById("chica-home-mini-map"); if (!map || document.getElementById("home-search")) return null;
     var box = document.createElement("div"); box.id = "home-search"; box.setAttribute("role", "search");
     box.innerHTML = '<label for="hs-q">' + T.label + '</label><form><input id="hs-q" type="search" autocomplete="off" enterkeyhint="search" placeholder="' + esc(T.ph) +
-      '"/><button type="submit">' + T.go + '</button></form><div class="hs-meta" aria-live="polite"></div><ul class="hs-list"></ul><div class="hs-saved"></div>';
+      '"/><button type="submit">' + T.go + '</button></form><p class="alert-help">' + T.help + '</p><div class="hs-alert">' + emailForm() + '</div><div class="hs-meta" aria-live="polite"></div><ul class="hs-list"></ul><div class="hs-saved"></div>';
     map.parentNode.insertBefore(box, map);
+    var staticHelp = document.getElementById("home-alert-help"); if (staticHelp) staticHelp.hidden = true;
+    wireEmail(box);
     return box;
   }
 
@@ -140,8 +143,7 @@
       var n = fresh(s).length;
       return '<span class="hs-chip" data-i="' + i + '" role="button" tabindex="0">' + esc(s.q) + (n ? " <i>" + T.fresh(n) + "</i>" : "") +
         '<button type="button" class="x" aria-label="' + T.rm + " " + esc(s.q) + '">×</button></span>';
-    }).join("") + '<p class="hs-note">' + T.note + "</p>" + emailForm();
-    wireEmail(box);
+    }).join("") + '<p class="hs-note">' + T.note + "</p>";
     Array.prototype.forEach.call(el.querySelectorAll(".hs-chip"), function (c) {
       var i = +c.getAttribute("data-i");
       function open() { var s = saved[i]; box.querySelector("#hs-q").value = s.q; render(box, s.q); s.seen = match(s.q).map(sid); store(); renderSaved(box); }
@@ -163,7 +165,11 @@
       var em = f.querySelector("#hs-em").value.trim(), msg = f.querySelector(".hs-emmsg");
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) { f.querySelector("#hs-em").focus(); return; }
       if (f.querySelector(".hs-hp").value) return;
-      var terms = saved.map(function (x) { return x.q; }).join(" | "), lang = ES ? "es" : "en";
+      var current = (box.querySelector("#hs-q").value || "").trim();
+      var list = saved.map(function (x) { return x.q; });
+      if (current && !list.some(function (q) { return norm(q) === norm(current); })) list.push(current);
+      if (!list.length) { msg.textContent = T.emNeed; box.querySelector("#hs-q").focus(); return; }
+      var terms = list.join(" | "), lang = ES ? "es" : "en";
       try{window.goatcounter&&window.goatcounter.count&&window.goatcounter.count({path:"evt-alert-signup-submit",title:"Saved-search alert signup submit",event:true});}catch(x){}
       var subj = "Chica alerts SUBSCRIBE", body = "email: " + em + "\nsearches: " + terms + "\nlang: " + lang + "\n";
       if (ALERTS.FORM) {

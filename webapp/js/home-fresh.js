@@ -1,4 +1,4 @@
-/* Home verified sales: scrolling clickable banner (no list). */
+/* Home verified sales: scrolling clickable banner with pause control, source + checked date, and an hours disclaimer. */
 (function () {
   function isHome() {
     if (document.documentElement.hasAttribute("data-home-static")) return true;
@@ -20,6 +20,27 @@
       return base + "?lat=" + Number(sale.lat) + "&lon=" + Number(sale.lon);
     }
     return base;
+  }
+
+  function slug(id) { return String(id).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 80) || "sale"; }
+  function saleHref(sale) {
+    var id = sale && (sale.external_id || sale.id);
+    if (!id) return mapHref(sale);
+    return dataUrl().replace("/data/sales-clean.json", (es() ? "/es" : "") + "/sales/" + slug(id) + "/");
+  }
+  // "facebook-live-2026-11-05" -> "2026-11-05". Only real dates from the feed; nothing invented.
+  function checkedDate(sale) {
+    var m = String(sale.date_verified || "").match(/(\d{4}-\d{2}-\d{2})/);
+    return m ? m[1] : "";
+  }
+  function shortDate(iso) {
+    var p = String(iso || "").split("-").map(Number); if (p.length !== 3 || !p[0]) return "";
+    try { return new Intl.DateTimeFormat(es() ? "es-US" : "en-US", { month: "short", day: "numeric", timeZone: "UTC" }).format(new Date(Date.UTC(p[0], p[1] - 1, p[2]))); } catch (e) { return iso; }
+  }
+  function sourceLabel(sale) {
+    var s = String(sale.source || (sale.sources || [])[0] || "");
+    if (/submit|user|neighbor/i.test(s)) return es() ? "Enviada por un vecino" : "Sent in by a neighbor";
+    return s;
   }
 
   function es() {
@@ -84,6 +105,11 @@
       "#chica-fresh-weekend a.chip .tag{display:block!important;margin:0 0 4px!important;font:700 10px/1.2 Inter,system-ui,sans-serif!important;letter-spacing:.08em!important;text-transform:uppercase!important;color:#e879d6!important;white-space:nowrap!important}" +
       "#chica-fresh-weekend a.chip .t{display:block!important;margin:0!important;font:650 14px/1.35 Inter,system-ui,sans-serif!important;letter-spacing:normal!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important;color:inherit!important}" +
       "#chica-fresh-weekend a.chip .m{display:block!important;margin:2px 0 0!important;font:500 12px/1.4 Inter,system-ui,sans-serif!important;letter-spacing:normal!important;color:#a1a1aa!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important}" +
+      "#chica-fresh-weekend .why{margin:0 4px 10px;font:500 13px/1.45 Inter,system-ui,sans-serif;color:#a1a1aa}" +
+      "#chica-fresh-weekend .pause{min-height:36px;min-width:44px;padding:0 12px;border-radius:999px;border:1px solid rgba(197,19,175,.5);background:transparent;color:inherit;font:600 13px/1 Inter,system-ui,sans-serif;cursor:pointer}" +
+      "#chica-fresh-weekend.paused .track{animation-play-state:paused}" +
+      "#chica-fresh-weekend.paused .rail{overflow-x:auto}" +
+      "#chica-fresh-weekend a.chip .src{font-size:11px!important}" +
       "@keyframes chica-fresh-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}" +
       "@media (prefers-reduced-motion:reduce){#chica-fresh-weekend .track{animation:none;overflow-x:auto;max-width:100%;width:100%}}" +
       "/* Hide bundled Latest posted sales list */" +
@@ -94,7 +120,7 @@
   function chip(sale) {
     var a = document.createElement("a");
     a.className = "chip";
-    a.href = mapHref(sale);
+    a.href = saleHref(sale);
     var kind = String(sale.type || sale.kind || "garage");
     var tag = document.createElement("span");
     tag.className = "tag";
@@ -109,8 +135,15 @@
     var meta = document.createElement("span");
     meta.className = "m";
     var street = (sale.address || "").split(",")[0];
-    meta.textContent = [street, sale.hours].filter(Boolean).join(" · ");
+    var range = sale.date_start && sale.date_end && sale.date_start !== sale.date_end
+      ? shortDate(sale.date_start) + "–" + shortDate(sale.date_end) : shortDate(sale.date_start);
+    meta.textContent = [range, sale.hours, street].filter(Boolean).join(" · ");
     a.appendChild(meta);
+    var src = document.createElement("span");
+    src.className = "m src";
+    var chk = checkedDate(sale), lab = sourceLabel(sale);
+    src.textContent = [lab ? (es() ? "Fuente: " : "Source: ") + lab : "", chk ? (es() ? "revisada " : "checked ") + shortDate(chk) : ""].filter(Boolean).join(" · ");
+    if (src.textContent) a.appendChild(src);
     return a;
   }
 
@@ -132,6 +165,13 @@
       : total + " this weekend · tap one";
     hd.appendChild(count);
     section.appendChild(hd);
+
+    var why = document.createElement("p");
+    why.className = "why";
+    why.innerHTML = es()
+      ? "<b>¿Qué significa “verificada”?</b> Encontré la venta en una fuente pública (grupos y eventos de Facebook, correos de GarageSaleFinder/EstateSales.org, otros sitios de ventas o un vecino que la envió) y confirmé que publica fechas claras. No es garantía: los horarios pueden cambiar, revisa la fuente antes de manejar. 🐾"
+      : "<b>What does “verified” mean?</b> I found the sale in a public source (Facebook groups and events, GarageSaleFinder/EstateSales.org emails, other sale sites, or a neighbor who sent it in) and confirmed it lists clear dates. It’s not a guarantee: hours can change, so check the source before you drive. 🐾";
+    section.appendChild(why);
 
     var rail = document.createElement("div");
     rail.className = "rail";
@@ -157,6 +197,19 @@
     fill();
     fill();
     rail.appendChild(track);
+    var pause = document.createElement("button");
+    pause.type = "button";
+    pause.className = "pause";
+    pause.setAttribute("aria-pressed", "false");
+    function label(paused) { pause.textContent = paused ? (es() ? "▶ Reanudar" : "▶ Play") : (es() ? "⏸ Pausar" : "⏸ Pause"); }
+    label(false);
+    pause.onclick = function () {
+      var paused = pause.getAttribute("aria-pressed") !== "true";
+      pause.setAttribute("aria-pressed", String(paused));
+      section.classList.toggle("paused", paused);
+      label(paused);
+    };
+    hd.appendChild(pause);
     section.appendChild(rail);
 
     // Scale animation duration with item count
