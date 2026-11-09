@@ -16,7 +16,7 @@ const here = dirname(fileURLToPath(import.meta.url));
 const [srcDir, pwFile] = process.argv.slice(2);
 if (!srcDir || !pwFile) { console.error("usage: build.mjs <srcDir> <passwordFile>"); process.exit(2); }
 const password = readFileSync(pwFile, "utf8").trim();
-if (password.length < 16) { console.error("password too short"); process.exit(2); }
+if (password.length < 8) { console.error("password too short"); process.exit(2); }
 const payload = JSON.stringify({
   html: readFileSync(join(srcDir, "app.html"), "utf8"),
   css: readFileSync(join(srcDir, "app.css"), "utf8"),
