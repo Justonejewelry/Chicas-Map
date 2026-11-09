@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#0d0b10">
+<title>Mission Control · Private</title>
+<link rel="icon" type="image/svg+xml" href="/Chicas-Map/favicon.svg">
+<style>
+@font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:swap;src:url(/Chicas-Map/assets/fonts/inter/inter-var.woff2) format('woff2')}
+@font-face{font-family:'Syne';font-style:normal;font-weight:100 900;font-display:swap;src:url(/Chicas-Map/assets/fonts/syne/syne-var.woff2) format('woff2')}
+html,body{margin:0;background:#0d0b10;color:#f6f3f8;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.gate{min-height:100vh;display:grid;place-items:center;padding:24px}
+.gate form{width:min(100%,380px);background:#17141c;border:1px solid #2e2838;border-radius:22px;padding:28px 24px;box-shadow:0 20px 60px #000a}
+.gate h1{font:800 28px/1.1 Syne,Inter,sans-serif;letter-spacing:-.03em;margin:4px 0 6px}
+.gate .eyebrow{margin:0;font-size:11px;letter-spacing:.14em;font-weight:750;color:#e24fd0}
+.gate p{color:#a79fb3;font-size:14px;margin:0 0 16px}
+.gate label{display:block;font-size:13px;font-weight:600;margin-bottom:6px}
+.gate input[type=password],.gate input[type=text]{width:100%;box-sizing:border-box;min-height:48px;border-radius:12px;border:1px solid #2e2838;background:#100d14;color:#f6f3f8;padding:0 14px;font:16px Inter,sans-serif}
+.gate .row{display:flex;align-items:center;gap:8px;margin:12px 0;font-size:13px;color:#a79fb3}
+.gate .row input{width:20px;height:20px}
+.gate button{width:100%;min-height:48px;border:0;border-radius:999px;background:#c513af;color:#fff;font:700 15px Inter,sans-serif;cursor:pointer}
+.gate button:disabled{opacity:.6;cursor:wait}
+.gate .msg{min-height:20px;margin-top:12px;font-size:13px;color:#ff8c9a}
+:focus-visible{outline:2px solid #59a8ff;outline-offset:2px}
+</style>
+</head>
+<body>
+<div class="gate" id="gate">
+  <form id="gate-form" autocomplete="off">
+    <p class="eyebrow">CHICAS MAP</p>
+    <h1>Mission Control</h1>
+    <p>Private dashboard. Enter the password to unlock.</p>
+    <label for="pw">Password</label>
+    <input type="password" id="pw" name="pw" autocomplete="current-password" required autofocus>
+    <div class="row"><input type="checkbox" id="rem" checked><label for="rem" style="margin:0;font-weight:500">Remember until I close this tab</label></div>
+    <button type="submit" id="go">Unlock</button>
+    <div class="msg" id="msg" role="alert" aria-live="assertive"></div>
+  </form>
+  <noscript><p>This page needs JavaScript.</p></noscript>
+</div>
+<script type="application/json" id="mc-blob">@@BLOB@@</script>
+<script>
+(function () {
+  "use strict";
+  var blob = JSON.parse(document.getElementById("mc-blob").textContent);
+  var msg = document.getElementById("msg"), go = document.getElementById("go"), fails = 0;
+  function b64(s) { var bin = atob(s), u = new Uint8Array(bin.length); for (var i = 0; i < bin.length; i++) u[i] = bin.charCodeAt(i); return u; }
+  function b64e(u) { var s = ""; for (var i = 0; i < u.length; i++) s += String.fromCharCode(u[i]); return btoa(s); }
+  async function deriveKey(pw) {
+    var base = await crypto.subtle.importKey("raw", new TextEncoder().encode(pw), "PBKDF2", false, ["deriveKey"]);
+    return crypto.subtle.deriveKey({ name: "PBKDF2", salt: b64(blob.salt), iterations: blob.iter, hash: "SHA-256" }, base, { name: "AES-GCM", length: 256 }, true, ["decrypt"]);
+  }
+  async function open(key) {
+    var pt = await crypto.subtle.decrypt({ name: "AES-GCM", iv: b64(blob.iv) }, key, b64(blob.ct));
+    return JSON.parse(new TextDecoder().decode(pt));
+  }
+  function mount(p) {
+    var st = document.createElement("style"); st.textContent = p.css; document.head.appendChild(st);
+    document.body.innerHTML = '<div id="mc-root">' + p.html + "</div>";
+    document.title = "Mission Control · Chicas Map";
+    var sc = document.createElement("script"); sc.textContent = p.js; document.body.appendChild(sc);
+  }
+  async function unlockWithKey(key, remember) {
+    var p = await open(key);
+    if (remember) { var raw = await crypto.subtle.exportKey("raw", key); try { sessionStorage.setItem("mc.k", b64e(new Uint8Array(raw))); } catch (e) { /* private mode */ } }
+    mount(p);
+  }
+  if (!window.crypto || !crypto.subtle) { msg.textContent = "This page needs a secure (https) browser connection."; go.disabled = true; return; }
+  var saved = null; try { saved = sessionStorage.getItem("mc.k"); } catch (e) { /* ignore */ }
+  if (saved) {
+    crypto.subtle.importKey("raw", b64(saved), { name: "AES-GCM" }, true, ["decrypt"]).then(function (k) { return unlockWithKey(k, false); }).catch(function () { try { sessionStorage.removeItem("mc.k"); } catch (e) { /* ignore */ } });
+  }
+  document.getElementById("gate-form").addEventListener("submit", async function (ev) {
+    ev.preventDefault();
+    var pw = document.getElementById("pw").value;
+    if (!pw) return;
+    go.disabled = true; msg.textContent = "Checking…";
+    try {
+      var key = await deriveKey(pw);
+      await unlockWithKey(key, document.getElementById("rem").checked);
+    } catch (e) {
+      fails++; msg.textContent = "That password didn't work.";
+      document.getElementById("pw").value = "";
+      await new Promise(function (r) { setTimeout(r, Math.min(4000, 400 * fails)); });
+      go.disabled = false; document.getElementById("pw").focus();
+    }
+  });
+})();
+</script>
+</body>
+</html>

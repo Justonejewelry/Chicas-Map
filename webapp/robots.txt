@@ -3,6 +3,7 @@ Allow: /
 Disallow: /admin/
 Disallow: /preview/
 Disallow: /__grok/
+Disallow: /mission-control/
 
 # Alias HTML files canonicalize to slash URLs. Keep them fetchable.
 
