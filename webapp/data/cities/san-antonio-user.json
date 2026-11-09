@@ -1,13 +1,13 @@
 {
-  "updated": "2026-11-08",
+  "updated": "2026-11-09T12:10:00-06:00",
   "edition": "Facebook Marketplace/Events additions 2026-11-08 (noon)",
   "city": "san-antonio",
   "date": "2026-11-08",
-  "last_refresh": "2026-11-08T12:25:00-06:00",
+  "last_refresh": "2026-11-09T12:10:00-06:00",
   "status": "live",
   "sentinel": "PASS",
-  "note": "Operator overlay. Added 4 Facebook Marketplace/Events sales on 2026-11-08 (Chris Ross, Connie Hoover, Margaret Shipp, VFW Post 8397); previous 17 pins preserved. Chapel Hill UMC rummage omitted because Census matched the SW Loop 410 address to NW Loop 410; no approximate pin invented. 9 AM run added 3 more (James Ervin Adkins estate sale, Eric G Quesada Fairoak Crossing, Emma Hall Tierra Buena/Mudshark). Noon run added 4 more (Jennifer Foti La Vernia moving sale, Jenna Combs Amato Pecos Sunset, Dale Geiger Shady Cove Spring Branch, Margarett Mitchell Barbara Dr).",
-  "total_locations": 28,
+  "note": "Operator overlay. Added 4 Facebook Marketplace/Events sales on 2026-11-08 (Chris Ross, Connie Hoover, Margaret Shipp, VFW Post 8397); previous 17 pins preserved. Chapel Hill UMC rummage omitted because Census matched the SW Loop 410 address to NW Loop 410; no approximate pin invented. 9 AM run added 3 more (James Ervin Adkins estate sale, Eric G Quesada Fairoak Crossing, Emma Hall Tierra Buena/Mudshark). Noon run added 4 more (Jennifer Foti La Vernia moving sale, Jenna Combs Amato Pecos Sunset, Dale Geiger Shady Cove Spring Branch, Margarett Mitchell Barbara Dr). Nov 9 noon run added 1 (Congregation Beth Simcha yard sale, rescheduled to Nov 15).",
+  "total_locations": 29,
   "public": [
     {
       "address": "1405 GRUENE RD, NEW BRAUNFELS, TX, 78130",
@@ -937,6 +937,39 @@
       "date_note": "Friday November 6 (from noon) through Sunday November 8, 2026, 3 PM (America/Chicago), as listed on the Facebook event.",
       "date_verified": "facebook-collected-2026-11-08-1200",
       "poster": "Margarett Mitchell"
+    },
+    {
+      "address": "9360 ABE LINCOLN, SAN ANTONIO, TX, 78240",
+      "source_address": "9360 Abe Lincoln Rd, San Antonio, TX 78240",
+      "dates": "Sun Nov 15 (hours not posted)",
+      "date_from": "2026-11-15",
+      "date_to": "2026-11-15",
+      "end_date": "2026-11-15",
+      "date_start": "2026-11-15",
+      "date_end": "2026-11-15",
+      "date_bucket": "upcoming",
+      "hours": "",
+      "title": "Congregation Beth Simcha Yard Sale",
+      "details": "Congregation yard sale, rescheduled to Sunday, November 15. Families selling new and used clothing, jewelry, crafts, baked goods, household and decorative items; proceeds go toward the new sanctuary. Hours not posted on the event yet.",
+      "source": "Facebook Events",
+      "url": "https://www.facebook.com/events/1537923171466566/",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.84,
+      "status": "verified",
+      "lat": 29.529505,
+      "lon": -98.617348,
+      "geocode": "census",
+      "external_id": "fb-1537923171466566",
+      "categories": [
+        "garage-sale",
+        "facebook"
+      ],
+      "zip": "78240",
+      "in_person": true,
+      "date_note": "Sunday, November 15, 2026 (America/Chicago), as stated on the Facebook Event (moved to Sunday Nov 15).",
+      "date_verified": "facebook-collected-2026-11-09-1200",
+      "poster": "Congregation Beth Simcha"
     }
   ]
 }

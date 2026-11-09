@@ -1,15 +1,15 @@
 {
-  "as_of": "2026-11-08",
-  "raw_records": 159,
-  "eligible_before_dedupe": 47,
-  "canonical_sales": 39,
-  "today_sales": 37,
-  "duplicates_merged": 8,
+  "as_of": "2026-11-09",
+  "raw_records": 160,
+  "eligible_before_dedupe": 4,
+  "canonical_sales": 4,
+  "today_sales": 0,
+  "duplicates_merged": 0,
   "excluded_by_reason": {
     "recurring_retail": 1,
     "auction_not_in_person_sale": 2,
     "unconfirmed_sale_date": 7,
-    "past_sale": 2,
+    "past_sale": 46,
     "outside_metro_city": 1,
     "appointment_or_retail": 1,
     "unconfirmed_permit": 98
@@ -80,12 +80,68 @@
       "url": "https://www.craigslist.org/view/d/san-antonio-show-up-and-shop-estate-sale/vxKaruwsRMKfseMr9PfmFy"
     },
     {
+      "reason": "past_sale",
+      "input_file": "san-antonio.json",
+      "id": "cl-xpr1000homegymus4cwyrecdjjezsuonkmwh",
+      "title": "Bowflex PR1000 Home Gym",
+      "address": "21527 Tenore, San Antonio, TX",
+      "url": "https://www.craigslist.org/view/d/san-antonio-bowflex-pr1000-home-gym/us4cwyrEcDJjEzsUoNKMwH"
+    },
+    {
       "reason": "auction_not_in_person_sale",
       "input_file": "san-antonio.json",
       "id": "29.42410,-98.49360|Hawaii Equals Paradise -Sale Ends 11/10 Pick Up 11/12 10-2",
       "title": "Hawaii Equals Paradise -Sale Ends 11/10 Pick Up 11/12 10-2",
       "address": "San Marcos, TX 78666",
       "url": "https://garagesalefinder.com/s/N9TNK/san-marcos-tx-78666"
+    },
+    {
+      "reason": "past_sale",
+      "input_file": "san-antonio.json",
+      "id": "29.57000,-98.62000|Woodthorn & Regency Meadow Multi-Community Garage Sale",
+      "title": "Woodthorn & Regency Meadow Multi-Community Garage Sale",
+      "address": "Regency Bnd, San Antonio, TX 78249",
+      "url": "https://garagesalefinder.com/s/N9Tkr/regency-bnd-san-antonio-tx-78249"
+    },
+    {
+      "reason": "past_sale",
+      "input_file": "san-antonio.json",
+      "id": "29.42000,-98.70000|HUGE GARAGE SALE",
+      "title": "HUGE GARAGE SALE",
+      "address": "12807 Ft Belknap, San Antonio, TX 78245",
+      "url": "https://garagesalefinder.com/s/N9D40/12807-ft-belknap-san-antonio-tx-78245"
+    },
+    {
+      "reason": "past_sale",
+      "input_file": "san-antonio.json",
+      "id": "29.42410,-98.49360|Quality Finds LOCATION CHANGED! DATES THE SAME!",
+      "title": "Quality Finds LOCATION CHANGED! DATES THE SAME!",
+      "address": "2372 Tree Br, Schertz, TX 78154",
+      "url": "https://garagesalefinder.com/s/N9IJe/2372-tree-br-schertz-tx-78154"
+    },
+    {
+      "reason": "past_sale",
+      "input_file": "san-antonio.json",
+      "id": "29.42410,-98.49360|50% off SUNDAY - Vintage Vibes in San Marcos",
+      "title": "50% off SUNDAY - Vintage Vibes in San Marcos",
+      "address": "111 Manor Park Rd, San Marcos, TX 78666",
+      "url": "https://garagesalefinder.com/s/N9VhG/111-manor-park-rd-san-marcos-tx-78666"
+    },
+    {
+      "reason": "past_sale",
+      "input_file": "san-antonio.json",
+      "id": "yss-2372treebrschertztx-2026-11-06",
+      "title": "Quality Finds Location Changed! Dates The Same!",
+      "address": "2372 Tree Br, Schertz, TX",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196431091"
+    },
+    {
+      "reason": "past_sale",
+      "input_file": "san-antonio.json",
+      "id": "yss-12807ftbelknapsanantoniotx-2026-11-07",
+      "title": "Huge Garage Sale",
+      "address": "12807 Ft Belknap, San Antonio, TX",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196456831"
     },
     {
       "reason": "appointment_or_retail",
@@ -120,12 +176,100 @@
       "url": "https://www.craigslist.org/view/d/cibolo-garage-sale-in-northcliffe/wqsxvw9nBgB7QtRhmtKZHw"
     },
     {
+      "reason": "past_sale",
+      "input_file": "san-antonio.json",
+      "id": "29.59000,-98.47000|Multiple Garage Sales Canyon Oaks Estates (Off Henderson Pass) 7&8 Nov 8am-4pm",
+      "title": "Multiple Garage Sales Canyon Oaks Estates (Off Henderson Pass) 7&8 Nov 8am-4pm",
+      "address": "2459 Rim Oak, San Antonio, TX 78232",
+      "url": "https://garagesalefinder.com/s/N9T9U/2459-rim-oak-san-antonio-tx-78232"
+    },
+    {
+      "reason": "past_sale",
+      "input_file": "san-antonio.json",
+      "id": "29.56000,-98.39000|Yard sale",
+      "title": "Yard sale",
+      "address": "6847 knights haven, Live Oak, TX 78233",
+      "url": "https://garagesalefinder.com/s/N9DWT/6847-knights-haven-live-oak-tx-78233"
+    },
+    {
+      "reason": "past_sale",
+      "input_file": "san-antonio.json",
+      "id": "29.79000,-98.73000|Moving Out Sale!",
+      "title": "Moving Out Sale!",
+      "address": "26765 Orchid Trl, Boerne, TX 78006",
+      "url": "https://garagesalefinder.com/s/N9TUr/26765-orchid-trl-boerne-tx-78006"
+    },
+    {
+      "reason": "past_sale",
+      "input_file": "san-antonio.json",
+      "id": "yss-2459rimoaksanantoniotx-2026-11-07",
+      "title": "Multiple Garage Sales Canyon Oaks Estates (Off Henderson Pass) 7&8 Nov 8Am-4Pm",
+      "address": "2459 Rim Oak, San Antonio, TX",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196451177"
+    },
+    {
       "reason": "unconfirmed_sale_date",
       "input_file": "san-antonio.json",
       "id": "cl-unitygaragesalei6aivt95segefldqgcwept",
       "title": "Community garage sale Triana subdivisión",
       "address": "Cima Vista, San Antonio, TX",
       "url": "https://www.craigslist.org/view/d/san-antonio-community-garage-sale/i6Aivt95sEgeFLdQgcWEPt"
+    },
+    {
+      "reason": "past_sale",
+      "input_file": "san-antonio.json",
+      "id": "cl-stgoindoorsalevdwgnv8fyy9ndw2dnsljma",
+      "title": "All MUST GO! Indoor sale, free items",
+      "address": "E Mulberry Ave near Tendick St, San Antonio, TX",
+      "url": "https://www.craigslist.org/view/d/san-antonio-all-must-go-indoor-sale/vDwgNV8fYy9nDw2DNSLjma"
+    },
+    {
+      "reason": "past_sale",
+      "input_file": "san-antonio.json",
+      "id": "29.53000,-98.59000|Yard Sale",
+      "title": "Yard Sale",
+      "address": "9360 Abe Lincoln Rd, San Antonio, TX 78240",
+      "url": "https://garagesalefinder.com/s/N9TAK/9360-abe-lincoln-rd-san-antonio-tx-78240"
+    },
+    {
+      "reason": "past_sale",
+      "input_file": "san-antonio.json",
+      "id": "yss-9360abelincolnrdsanantoniotx-2026-11-08",
+      "title": "Yard Sale",
+      "address": "9360 Abe Lincoln Rd, San Antonio, TX",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196452265"
+    },
+    {
+      "reason": "past_sale",
+      "input_file": "san-antonio.json",
+      "id": "yss-regencybndsanantoniotx-2026-11-06",
+      "title": "Woodthorn & Regency Meadow Multi-Community Garage Sale",
+      "address": "Regency Bnd, San Antonio, TX",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196449587"
+    },
+    {
+      "reason": "past_sale",
+      "input_file": "san-antonio.json",
+      "id": "yss-6847knightshavenliveoaktx-2026-11-07",
+      "title": "Yard Sale",
+      "address": "6847 knights haven, Live Oak, TX",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196456717"
+    },
+    {
+      "reason": "past_sale",
+      "input_file": "san-antonio.json",
+      "id": "cl-canyonlakeeditf2q9c5qv3u3k7i256cklog",
+      "title": "The Canyon Lake Edit: Furniture, Art & Unexpected Finds",
+      "address": "567 Scott Way, San Antonio, TX",
+      "url": "https://www.craigslist.org/view/d/canyon-lake-the-canyon-lake-edit/f2q9c5QV3u3K7i256ckLog"
+    },
+    {
+      "reason": "past_sale",
+      "input_file": "san-antonio.json",
+      "id": "cl-rnregencymeadowfx22fescgxwyofojx5ifnw",
+      "title": "Woodthorn & Regency Meadow Multi-Community Garage Sale",
+      "address": "Regency Bend near Chasethorn Dr, San Antonio, TX",
+      "url": "https://www.craigslist.org/view/d/san-antonio-woodthorn-regency-meadow/fx22FEScGXwYofojx5iFnw"
     },
     {
       "reason": "unconfirmed_permit",
@@ -910,89 +1054,215 @@
       "title": "City-permitted garage / yard sale",
       "address": "2715 SPOKANE RD, San Antonio, TX 78222",
       "url": null
+    },
+    {
+      "reason": "past_sale",
+      "input_file": "san-antonio-email.json",
+      "id": "gsf-21817607",
+      "title": "Yard Sale",
+      "address": "9360 ABE LINCOLN, SAN ANTONIO, TX, 78240",
+      "url": "https://garagesalefinder.com/s/N9TAK/9360-abe-lincoln-rd-san-antonio-tx-78240"
+    },
+    {
+      "reason": "past_sale",
+      "input_file": "san-antonio-user.json",
+      "id": "fb-2102049410680425",
+      "title": "YARD SALE THIS WEEKEND!!! 11/7-11/8 Sat & Sun 9am-4pm",
+      "address": "1405 GRUENE RD, NEW BRAUNFELS, TX, 78130",
+      "url": "https://www.facebook.com/marketplace/item/2102049410680425/"
+    },
+    {
+      "reason": "past_sale",
+      "input_file": "san-antonio-user.json",
+      "id": "fb-ev-1601875867876978",
+      "title": "Garage Sale",
+      "address": "10623 GREEN ARBOR ST, SAN ANTONIO, TX, 78223",
+      "url": "https://www.facebook.com/events/1601875867876978/"
+    },
+    {
+      "reason": "past_sale",
+      "input_file": "san-antonio-user.json",
+      "id": "fb-ev-1443986453819948",
+      "title": "HUGE STONE OAK MOVING SALE!",
+      "address": "10 IMPALA WAY, SAN ANTONIO, TX, 78258",
+      "url": "https://www.facebook.com/events/1443986453819948/"
+    },
+    {
+      "reason": "past_sale",
+      "input_file": "san-antonio-user.json",
+      "id": "fb-2343985993111672",
+      "title": "Schertz Three-Day Garage Sale",
+      "address": "1016 GATE CREEK LN, SCHERTZ, TX, 78154",
+      "url": "https://www.facebook.com/groups/151186965724930/posts/2343985993111672/"
+    },
+    {
+      "reason": "past_sale",
+      "input_file": "san-antonio-user.json",
+      "id": "fb-29655689470689196-1315-driver-lane",
+      "title": "Mission Del Lago Community Garage Sale — 1315 Driver Lane",
+      "address": "1315 DRIVER LN, SAN ANTONIO, TX, 78221",
+      "url": "https://www.facebook.com/groups/3126084497409721/posts/29655689470689196/"
+    },
+    {
+      "reason": "past_sale",
+      "input_file": "san-antonio-user.json",
+      "id": "fb-29655689470689196-1126-par-four",
+      "title": "Mission Del Lago Community Garage Sale — 1126 Par Four",
+      "address": "1126 PAR FOUR, SAN ANTONIO, TX, 78221",
+      "url": "https://www.facebook.com/groups/3126084497409721/posts/29655689470689196/"
+    },
+    {
+      "reason": "past_sale",
+      "input_file": "san-antonio-user.json",
+      "id": "fb-29655689470689196-1222-janzen-rd",
+      "title": "Mission Del Lago Community Garage Sale — 1222 Janzen Rd",
+      "address": "1222 JANZEN RD, SAN ANTONIO, TX, 78221",
+      "url": "https://www.facebook.com/groups/3126084497409721/posts/29655689470689196/"
+    },
+    {
+      "reason": "past_sale",
+      "input_file": "san-antonio-user.json",
+      "id": "fb-29655689470689196-11910-chipper-landing",
+      "title": "Mission Del Lago Community Garage Sale — 11910 Chipper Landing",
+      "address": "11910 CHIPPER LNDG, SAN ANTONIO, TX, 78221",
+      "url": "https://www.facebook.com/groups/3126084497409721/posts/29655689470689196/"
+    },
+    {
+      "reason": "past_sale",
+      "input_file": "san-antonio-user.json",
+      "id": "fb-29655689470689196-1006-cook-bnd",
+      "title": "Mission Del Lago Community Garage Sale — 1006 Cook Bnd",
+      "address": "1006 COOK BEND, SAN ANTONIO, TX, 78221",
+      "url": "https://www.facebook.com/groups/3126084497409721/posts/29655689470689196/"
+    },
+    {
+      "reason": "past_sale",
+      "input_file": "san-antonio-user.json",
+      "id": "fb-29655689470689196-926-albatross-way",
+      "title": "Mission Del Lago Community Garage Sale — 926 Albatross Way",
+      "address": "926 ALBATROSS WAY, SAN ANTONIO, TX, 78221",
+      "url": "https://www.facebook.com/groups/3126084497409721/posts/29655689470689196/"
+    },
+    {
+      "reason": "past_sale",
+      "input_file": "san-antonio-user.json",
+      "id": "fb-29655689470689196-11206-four-iron-way",
+      "title": "Mission Del Lago Community Garage Sale — 11206 Four Iron Way",
+      "address": "11206 FOUR IRON WAY, SAN ANTONIO, TX, 78221",
+      "url": "https://www.facebook.com/groups/3126084497409721/posts/29655689470689196/"
+    },
+    {
+      "reason": "past_sale",
+      "input_file": "san-antonio-user.json",
+      "id": "fb-29655689470689196-834-three-iron",
+      "title": "Mission Del Lago Community Garage Sale — 834 Three Iron",
+      "address": "834 THREE IRON, SAN ANTONIO, TX, 78221",
+      "url": "https://www.facebook.com/groups/3126084497409721/posts/29655689470689196/"
+    },
+    {
+      "reason": "past_sale",
+      "input_file": "san-antonio-user.json",
+      "id": "fb-29655689470689196-730-pelican-pt",
+      "title": "Mission Del Lago Community Garage Sale — 730 Pelican Pt",
+      "address": "730 PELICAN PT, SAN ANTONIO, TX, 78221",
+      "url": "https://www.facebook.com/groups/3126084497409721/posts/29655689470689196/"
+    },
+    {
+      "reason": "past_sale",
+      "input_file": "san-antonio-user.json",
+      "id": "fb-29655689470689196-711-pelican-bch",
+      "title": "Mission Del Lago Community Garage Sale — 711 Pelican Bch",
+      "address": "711 PELICAN BEACH, SAN ANTONIO, TX, 78221",
+      "url": "https://www.facebook.com/groups/3126084497409721/posts/29655689470689196/"
+    },
+    {
+      "reason": "past_sale",
+      "input_file": "san-antonio-user.json",
+      "id": "fb-29655689470689196-718-pelican-landing",
+      "title": "Mission Del Lago Community Garage Sale — 718 Pelican Landing",
+      "address": "718 PELICAN LNDG, SAN ANTONIO, TX, 78221",
+      "url": "https://www.facebook.com/groups/3126084497409721/posts/29655689470689196/"
+    },
+    {
+      "reason": "past_sale",
+      "input_file": "san-antonio-user.json",
+      "id": "fb-29655689470689196-1002-graham-bend",
+      "title": "Mission Del Lago Community Garage Sale — 1002 Graham Bend",
+      "address": "1002 GRAHAM BEND, SAN ANTONIO, TX, 78221",
+      "url": "https://www.facebook.com/groups/3126084497409721/posts/29655689470689196/"
+    },
+    {
+      "reason": "past_sale",
+      "input_file": "san-antonio-user.json",
+      "id": "fb-1824932675601276",
+      "title": "Yard Sale — Everything $1",
+      "address": "1643 BASSE RD, SAN ANTONIO, TX, 78213",
+      "url": "https://www.facebook.com/marketplace/item/1824932675601276/"
+    },
+    {
+      "reason": "past_sale",
+      "input_file": "san-antonio-user.json",
+      "id": "fb-ev-1110019495001823",
+      "title": "Garage/Yard Sale Extravaganza",
+      "address": "101 HILLTOP DR, SPRING BRANCH, TX, 78070",
+      "url": "https://www.facebook.com/events/1110019495001823/"
+    },
+    {
+      "reason": "past_sale",
+      "input_file": "san-antonio-user.json",
+      "id": "fb-1939407433689276",
+      "title": "Estate Sale (Adkins)",
+      "address": "13759 US HWY 87, ADKINS, TX, 78101",
+      "url": "https://www.facebook.com/marketplace/item/1939407433689276/"
+    },
+    {
+      "reason": "past_sale",
+      "input_file": "san-antonio-user.json",
+      "id": "fb-1107917165484166",
+      "title": "Garage Sale — West Elm, IKEA & Retro",
+      "address": "14002 FAIROAK CROSSING, SAN ANTONIO, TX, 78231",
+      "url": "https://www.facebook.com/events/1107917165484166/1107917178817498/"
+    },
+    {
+      "reason": "past_sale",
+      "input_file": "san-antonio-user.json",
+      "id": "fb-3743918222425718",
+      "title": "Tierra Buena Community Garage Sale — 13563 Mudshark",
+      "address": "13563 MUDSHARK, SAN ANTONIO, TX, 78245",
+      "url": "https://www.facebook.com/events/3743918222425718/3743918232425717/"
+    },
+    {
+      "reason": "past_sale",
+      "input_file": "san-antonio-user.json",
+      "id": "fb-1874754537222989",
+      "title": "Moving Sale (La Vernia)",
+      "address": "15820 FM 539, LA VERNIA, TX, 78121",
+      "url": "https://www.facebook.com/marketplace/item/1874754537222989/"
+    },
+    {
+      "reason": "past_sale",
+      "input_file": "san-antonio-user.json",
+      "id": "fb-ev-1818418219186146",
+      "title": "Huge Garage Sale — Pecos Sunset",
+      "address": "24206 PECOS SUNSET, SAN ANTONIO, TX, 78255",
+      "url": "https://www.facebook.com/events/1818418219186146/"
+    },
+    {
+      "reason": "past_sale",
+      "input_file": "san-antonio-user.json",
+      "id": "fb-ev-2143769986510122",
+      "title": "Downsizing Sale — Shady Cove (Spring Branch)",
+      "address": "825 SHADY COVE LN, SPRING BRANCH, TX, 78070",
+      "url": "https://www.facebook.com/events/2143769986510122/"
+    },
+    {
+      "reason": "past_sale",
+      "input_file": "san-antonio-user.json",
+      "id": "fb-ev-1752742282484478",
+      "title": "Backyard Yard Sale — Barbara Dr",
+      "address": "211 BARBARA DR, SAN ANTONIO, TX, 78216",
+      "url": "https://www.facebook.com/events/1752742282484478/"
     }
   ],
-  "merged": [
-    {
-      "kept": "yss-2372treebrschertztx-2026-11-06",
-      "address": "2372 Tree Br, Schertz, TX",
-      "merged_records": 2,
-      "source_urls": [
-        "https://garagesalefinder.com/s/N9IJe/2372-tree-br-schertz-tx-78154",
-        "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196431091"
-      ],
-      "titles": [
-        "Quality Finds Location Changed! Dates The Same!",
-        "Quality Finds LOCATION CHANGED! DATES THE SAME!"
-      ]
-    },
-    {
-      "kept": "yss-12807ftbelknapsanantoniotx-2026-11-07",
-      "address": "12807 Ft Belknap, San Antonio, TX",
-      "merged_records": 2,
-      "source_urls": [
-        "https://garagesalefinder.com/s/N9D40/12807-ft-belknap-san-antonio-tx-78245",
-        "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196456831"
-      ],
-      "titles": [
-        "Huge Garage Sale",
-        "HUGE GARAGE SALE"
-      ]
-    },
-    {
-      "kept": "yss-2459rimoaksanantoniotx-2026-11-07",
-      "address": "2459 Rim Oak, San Antonio, TX",
-      "merged_records": 2,
-      "source_urls": [
-        "https://garagesalefinder.com/s/N9T9U/2459-rim-oak-san-antonio-tx-78232",
-        "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196451177"
-      ],
-      "titles": [
-        "Multiple Garage Sales Canyon Oaks Estates (Off Henderson Pass) 7&8 Nov 8Am-4Pm",
-        "Multiple Garage Sales Canyon Oaks Estates (Off Henderson Pass) 7&8 Nov 8am-4pm"
-      ]
-    },
-    {
-      "kept": "yss-6847knightshavenliveoaktx-2026-11-07",
-      "address": "6847 knights haven, Live Oak, TX",
-      "merged_records": 2,
-      "source_urls": [
-        "https://garagesalefinder.com/s/N9DWT/6847-knights-haven-live-oak-tx-78233",
-        "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196456717"
-      ],
-      "titles": [
-        "Yard Sale",
-        "Yard sale"
-      ]
-    },
-    {
-      "kept": "cl-rnregencymeadowfx22fescgxwyofojx5ifnw",
-      "address": "Regency Bend near Chasethorn Dr, San Antonio, TX",
-      "merged_records": 3,
-      "source_urls": [
-        "https://garagesalefinder.com/s/N9Tkr/regency-bnd-san-antonio-tx-78249",
-        "https://www.craigslist.org/view/d/san-antonio-woodthorn-regency-meadow/fx22FEScGXwYofojx5iFnw",
-        "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196449587"
-      ],
-      "titles": [
-        "Woodthorn & Regency Meadow Multi-Community Garage Sale",
-        "Woodthorn & Regency Meadow Multi-Community Garage Sale",
-        "Woodthorn & Regency Meadow Multi-Community Garage Sale"
-      ]
-    },
-    {
-      "kept": "gsf-21817607",
-      "address": "9360 ABE LINCOLN, SAN ANTONIO, TX, 78240",
-      "merged_records": 3,
-      "source_urls": [
-        "https://garagesalefinder.com/s/N9TAK/9360-abe-lincoln-rd-san-antonio-tx-78240",
-        "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196452265"
-      ],
-      "titles": [
-        "Yard Sale",
-        "Yard Sale",
-        "Yard Sale"
-      ]
-    }
-  ]
+  "merged": []
 }
