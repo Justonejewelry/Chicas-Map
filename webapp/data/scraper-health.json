@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-08T10:57:12-06:00",
+  "generated_at": "2026-11-09T15:20:14-06:00",
   "overall": "critical",
   "primary_failures": [
     "estatesales_org",
@@ -51,16 +51,14 @@
     }
   ],
   "json_source_counts": {
-    "facebook marketplace": 5,
-    "facebook events": 6,
-    "facebook": 13,
+    "facebook marketplace": 2,
+    "facebook events": 2,
+    "yardsalesearch": 19,
     "aggregators": 2,
-    "craigslist": 36,
-    "garagesalefinder": 24,
-    "estatesales.net": 2,
-    "yardsalesearch": 9,
-    "estatesales.org": 10,
-    "garagesalefinder email": 1
+    "craigslist": 16,
+    "garagesalefinder": 21,
+    "estatesales.org": 11,
+    "estatesales.net": 2
   },
   "notes": "Primary free sources: estatesales_org, yardsalesearch, craigslist. Secondary: gsalr, garagesalefinder, permits, estatesales_net. Scoring: 0 primary problems=healthy, 1=degraded, 2+=critical. merge added=0 is treated as ok (dedupe), not zero. Soft-fail workflow continues; this report only alerts. Apify removed 2026-08-22."
 }

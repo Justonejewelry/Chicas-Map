@@ -1,0 +1,51 @@
+{
+  "target_date": "2026-11-09",
+  "generated_at": "2026-11-09T15:20:14-06:00",
+  "city": "san-antonio",
+  "area": "San Antonio & surrounding communities",
+  "count": 1,
+  "min_confidence": 70,
+  "sales": [
+    {
+      "sale_id": "2026-11-09_113-black-walnut-schertz-tx-78154",
+      "title": "Good Goods Inside Sale",
+      "sale_type": "garage",
+      "date_start": "2026-11-09",
+      "date_end": "2026-11-12",
+      "start_time": "3:00 PM - 7:30 PM",
+      "end_time": "",
+      "address": "113 BLACK WALNUT, SCHERTZ, TX, 78154",
+      "city": "San Antonio",
+      "state": "TX",
+      "zip": "78154",
+      "latitude": 29.551369903987,
+      "longitude": -98.256587670159,
+      "description": "Inside sale: kids bike, hoverboard, sound bars, TV, office chair, bed frames, microwave, books, scooters, utility carts, tables, shelves, patio furniture, tiles, clothing and shoes, Coleman lantern and more.",
+      "highlights": [],
+      "source_urls": [
+        "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196458773"
+      ],
+      "original_url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196458773",
+      "source_names": [
+        "YardSaleSearch"
+      ],
+      "photos": [
+        "https://d82cz7nyq77ak.cloudfront.net/images/social/Facebook.png",
+        "https://d82cz7nyq77ak.cloudfront.net/images/social/Pinterest.png",
+        "https://d82cz7nyq77ak.cloudfront.net/images/social/Reddit.png",
+        "https://d82cz7nyq77ak.cloudfront.net/images/social/Twitter.png",
+        "https://d82cz7nyq77ak.cloudfront.net/images/social/Email.png",
+        "https://ps.tlstatic.com/image/w300-c300:250/2026/11/09/s/4/5/413645/TPVE-0.jpeg"
+      ],
+      "confidence": 100,
+      "verified_at": "2026-11-09T15:20:14-06:00",
+      "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.551369903987,-98.256587670159",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.551369903987,-98.256587670159",
+      "status": "verified",
+      "geocode_method": "census",
+      "notes": "",
+      "community_source": "",
+      "community_link_or_notes": ""
+    }
+  ]
+}
