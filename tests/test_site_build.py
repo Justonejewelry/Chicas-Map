@@ -57,7 +57,10 @@ class SiteBuildTests(unittest.TestCase):
         self.assertIn('>Destacar mi venta</a>', es)
         self.assertNotIn('>Boost My Sale</a>', es)
         self.assertIn('Centro Norte y Shavano Park', es)
-        self.assertIn('id="home-alert-help"', en)
+        self.assertIn('id="home-weekly"', en)
+        self.assertIn('Chica\'s weekly garage sale roundup', en)
+        self.assertIn('El resumen semanal de ventas de garage de Chica', es)
+        self.assertNotIn('id="home-alert-help"', en)
 
     def test_sale_pages_from_feed(self):
         feed = json.loads((self.root / 'data/sales-clean.json').read_text())
@@ -161,8 +164,16 @@ class SiteBuildTests(unittest.TestCase):
             html = (self.root / path).read_text()
             self.assertLess(html.index('id="home-search"'), html.index('id="chica-home-mini-map"'))
             self.assertIn(ph, html)
-            self.assertIn('id="hs-em"', html)
+            self.assertNotIn('class="hs-alert"', html)
+            self.assertIn('id="home-weekly"', html)
+            self.assertIn('id="wr-em"', html)
+            self.assertLess(html.index('id="home-weekly"'), html.index('id="home-support"'))
         self.assertIn('Busca artículos en las ventas', (self.root / 'es/index.html').read_text())
+        js = (self.root / 'js/home-search.js').read_text()
+        self.assertIn('evt-alert-after-search', js)
+        self.assertIn('evt-subscribe-weekly', js)
+        self.assertIn('Want Chica to email you when', js)
+        self.assertIn('weekly-roundup', js)
 
     def test_leaflet_self_hosted(self):
         v = self.root / 'vendor/leaflet-1.9.4'

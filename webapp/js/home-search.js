@@ -1,5 +1,6 @@
 /* Home: search upcoming sales for items + saved searches with "new since last visit" alerts.
-   No backend: saved searches live only in this browser (localStorage). */
+   No backend: saved searches live only in this browser (localStorage).
+   Email: after-search saved-search alerts + bottom weekly roundup both use formsubmit.co. */
 (function () {
   var BASE = "/Chicas-Map", DATA = BASE + "/data/sales-clean.json", KEY = "chica-saved-searches-v1";
   // Email alerts: sign-ups go to Chica's inbox. Set FORM to a formsubmit.co hashed endpoint once activated; MAILTO is the fallback.
@@ -13,6 +14,10 @@
     note: "Las alertas se guardan solo en este navegador. Te aviso cuando vuelvas (o con una notificación si la página está abierta).",
     em: "✉️ Avísame por correo", emPh: "tu@correo.com", emGo: "Enviar", emOk: "¡Listo! Revisa tu correo y confirma (responde SÍ) para empezar. 🐾", emErr: "Ups, no se pudo enviar. Intenta otra vez.",
     emPriv: "Solo uso tu correo para estas alertas. Nunca lo vendo ni comparto. Cancela cuando quieras con un clic.",
+    afterAsk: function (q) { return "¿Quieres que Chica te avise por correo cuando aparezca “" + q + "”?"; },
+    afterGo: "Avisarme",
+    weeklyOk: "¡Listo! Revisa tu correo para confirmar la suscripción al resumen semanal. 🐾",
+    weeklyErr: "Ups, no se pudo enviar. Intenta otra vez.",
     notifT: "Chica encontró nuevas ventas", notifB: function (q, n) { return n + " nueva(s) para “" + q + "”"; }
   } : {
     label: "Search sales for items", ph: "e.g. furniture, tools, Lego…", go: "Search",
@@ -22,6 +27,10 @@
     note: "Alerts are saved in this browser only. I'll flag new matches when you come back (or pop a notification while the page is open).",
     em: "✉️ Email me new matches", emPh: "you@email.com", emGo: "Send", emOk: "Done! Check your inbox and confirm (reply YES) to start. 🐾", emErr: "Oops, that didn't send. Please try again.",
     emPriv: "I only use your email for these alerts. Never sold or shared. Unsubscribe anytime in one click.",
+    afterAsk: function (q) { return "Want Chica to email you when “" + q + "” shows up?"; },
+    afterGo: "Email me",
+    weeklyOk: "Done! Check your inbox to confirm the weekly roundup. 🐾",
+    weeklyErr: "Oops, that didn't send. Please try again.",
     notifT: "Chica found new sales", notifB: function (q, n) { return n + " new match" + (n === 1 ? "" : "es") + " for “" + q + "”"; }
   };
   var SYN = {
@@ -68,6 +77,26 @@
       '</span><a href="' + BASE + (ES ? "/es" : "") + "/sales/" + slug(sid(s)) + '/">' + T.details + ' →</a> <a href="' + BASE + "/map/?sale=" + encodeURIComponent(sid(s)) + '">' + T.view + " →</a></li>";
   }
 
+  function goat(path, title) {
+    try { window.goatcounter && window.goatcounter.count && window.goatcounter.count({ path: path, title: title, event: true }); } catch (x) {}
+  }
+
+  function postForm(fields, subj) {
+    if (!ALERTS.FORM && !ALERTS.MAILTO) return Promise.reject(new Error("no endpoint"));
+    if (ALERTS.FORM) {
+      var fd = new FormData();
+      Object.keys(fields).forEach(function (k) { fd.append(k, fields[k]); });
+      fd.append("_subject", subj);
+      fd.append("_template", "box");
+      fd.append("_captcha", "false");
+      return fetch(ALERTS.FORM, { method: "POST", body: fd, headers: { Accept: "application/json" } })
+        .then(function (r) { if (!r.ok) throw new Error("bad"); return r; });
+    }
+    var body = Object.keys(fields).map(function (k) { return k + ": " + fields[k]; }).join("\n") + "\n";
+    location.href = "mailto:" + ALERTS.MAILTO + "?subject=" + encodeURIComponent(subj) + "&body=" + encodeURIComponent(body);
+    return Promise.resolve();
+  }
+
   function css() {
     if (document.getElementById("home-search-css")) return;
     var st = document.createElement("style"); st.id = "home-search-css";
@@ -86,22 +115,22 @@
       ".hs-chip{display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:0 6px 0 12px;border-radius:999px;border:1px solid var(--line,#3a342e);background:var(--card,#1a1714);color:var(--ink,#f3eee4);cursor:pointer;font:600 13px Inter,system-ui,sans-serif}" +
       ".hs-chip i{font-style:normal;background:#c513af;color:#fff;border-radius:999px;padding:2px 8px;font-size:12px}.hs-chip .x{border:0;background:transparent;color:inherit;min-height:28px;padding:0 6px;cursor:pointer}" +
       "#home-search .hs-note{font-size:12px;color:var(--muted,#bbb);margin:6px 0 0}" +
-      "#home-search .hs-email{margin:10px 0 0;display:flex;flex-wrap:wrap;gap:8px}#home-search .hs-email input[type=email]{flex:1 1 200px}" +
-      "#home-search .hs-email .hs-hp{position:absolute;left:-9999px}#home-search .hs-emmsg{font-size:13px;margin:6px 0 0}" +
+      "#home-search .hs-after{margin:12px 0 0;padding:12px 14px;border-radius:14px;border:1px solid var(--line,#3a342e);background:var(--card,#1a1714)}" +
+      "#home-search .hs-after p.hs-ask{margin:0 0 8px;font:600 14px/1.35 Inter,system-ui,sans-serif}" +
+      "#home-search .hs-email{margin:0;display:flex;flex-wrap:wrap;gap:8px;align-items:center}#home-search .hs-email input[type=email]{flex:1 1 200px}" +
+      "#home-search .hs-email .hs-hp,.weekly-form .hs-hp{position:absolute;left:-9999px}#home-search .hs-emmsg,.weekly-form .hs-emmsg{font-size:13px;margin:6px 0 0}" +
       ".chica-home-hit{background:transparent!important;border:0!important}";
     document.head.appendChild(st);
   }
 
   function build() {
     var pre = document.getElementById("home-search");
-    if (pre) { if (pre.getAttribute("data-wired")) return null; pre.setAttribute("data-wired", "1"); wireEmail(pre); return pre; }
+    if (pre) { if (pre.getAttribute("data-wired")) return null; pre.setAttribute("data-wired", "1"); return pre; }
     var map = document.getElementById("chica-home-mini-map"); if (!map) return null;
     var box = document.createElement("div"); box.id = "home-search"; box.setAttribute("role", "search");
     box.innerHTML = '<label for="hs-q">' + T.label + '</label><form><input id="hs-q" type="search" autocomplete="off" enterkeyhint="search" placeholder="' + esc(T.ph) +
-      '"/><button type="submit">' + T.go + '</button></form><p class="alert-help">' + T.help + '</p><div class="hs-alert">' + emailForm() + '</div><div class="hs-meta" aria-live="polite"></div><ul class="hs-list"></ul><div class="hs-saved"></div>';
+      '"/><button type="submit">' + T.go + '</button></form><div class="hs-meta" aria-live="polite"></div><ul class="hs-list"></ul><div class="hs-after" hidden></div><div class="hs-saved"></div>';
     map.parentNode.insertBefore(box, map);
-    var staticHelp = document.getElementById("home-alert-help"); if (staticHelp) staticHelp.hidden = true;
-    wireEmail(box);
     return box;
   }
 
@@ -121,15 +150,41 @@
     if (b.length) try { m.fitBounds(b, { padding: [30, 30], maxZoom: 13 }); } catch (e) {}
   }
 
+  function renderAfter(box, q) {
+    var el = box.querySelector(".hs-after"); if (!el) return;
+    q = (q || "").trim();
+    if (!q) { el.hidden = true; el.innerHTML = ""; return; }
+    el.hidden = false;
+    el.innerHTML = '<p class="hs-ask">' + esc(T.afterAsk(q)) + '</p>' +
+      '<form class="hs-email" novalidate><label for="hs-em" class="visually-hidden">' + T.em + '</label>' +
+      '<input id="hs-em" type="email" required autocomplete="email" placeholder="' + T.emPh + '"/>' +
+      '<input class="hs-hp" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true"/>' +
+      '<button type="submit">' + T.afterGo + '</button>' +
+      '<p class="hs-note" style="width:100%">' + T.emPriv + '</p><p class="hs-emmsg" aria-live="polite"></p></form>';
+    var f = el.querySelector(".hs-email");
+    f.onsubmit = function (e) {
+      e.preventDefault();
+      var em = f.querySelector("#hs-em").value.trim(), msg = f.querySelector(".hs-emmsg");
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) { f.querySelector("#hs-em").focus(); return; }
+      if (f.querySelector(".hs-hp").value) return;
+      var lang = ES ? "es" : "en";
+      goat("evt-alert-after-search", "Saved-search alert after search");
+      postForm({ email: em, searches: q, lang: lang, action: "subscribe", tag: "saved-search" }, "Chica alerts SUBSCRIBE")
+        .then(function () { msg.textContent = T.emOk; })
+        .catch(function () { msg.textContent = T.emErr; });
+    };
+  }
+
   function render(box, q) {
     var meta = box.querySelector(".hs-meta"), ul = box.querySelector(".hs-list");
     q = (q || "").trim();
-    if (!q) { meta.innerHTML = ""; ul.innerHTML = ""; highlight(null); return; }
+    if (!q) { meta.innerHTML = ""; ul.innerHTML = ""; highlight(null); renderAfter(box, ""); return; }
     var hits = match(q);
     var isSaved = saved.some(function (x) { return norm(x.q) === norm(q); });
     meta.innerHTML = "<span>" + (hits.length ? T.count(hits.length) : T.none) + '</span><button type="button" class="hs-ghost hs-save"' + (isSaved ? " disabled" : "") + ">" + (isSaved ? T.saved : T.save) + "</button>";
     ul.innerHTML = hits.slice(0, 30).map(card).join("");
     highlight(hits);
+    renderAfter(box, q);
     meta.querySelector(".hs-save").onclick = function () {
       saved.push({ q: q, seen: hits.map(sid), at: today() }); store(); renderSaved(box); render(box, q);
       if ("Notification" in window && Notification.permission === "default") try { Notification.requestPermission(); } catch (e) {}
@@ -154,35 +209,20 @@
     });
   }
 
-  function emailForm() {
-    if (!ALERTS.FORM && !ALERTS.MAILTO) return "";
-    return '<form class="hs-email" novalidate><label for="hs-em" style="width:100%;font-size:13px;margin:0">' + T.em + '</label>' +
-      '<input id="hs-em" type="email" required autocomplete="email" placeholder="' + T.emPh + '"/><input class="hs-hp" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true"/>' +
-      '<button type="submit">' + T.emGo + '</button><p class="hs-note" style="width:100%">' + T.emPriv + '</p><p class="hs-emmsg" aria-live="polite"></p></form>';
-  }
-  function wireEmail(box) {
-    var f = box.querySelector(".hs-email"); if (!f) return;
+  function wireWeekly() {
+    var f = document.getElementById("home-weekly-form"); if (!f || f.getAttribute("data-wired")) return;
+    f.setAttribute("data-wired", "1");
     f.onsubmit = function (e) {
       e.preventDefault();
-      var em = f.querySelector("#hs-em").value.trim(), msg = f.querySelector(".hs-emmsg");
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) { f.querySelector("#hs-em").focus(); return; }
-      if (f.querySelector(".hs-hp").value) return;
-      var current = (box.querySelector("#hs-q").value || "").trim();
-      var list = saved.map(function (x) { return x.q; });
-      if (current && !list.some(function (q) { return norm(q) === norm(current); })) list.push(current);
-      if (!list.length) { msg.textContent = T.emNeed; box.querySelector("#hs-q").focus(); return; }
-      var terms = list.join(" | "), lang = ES ? "es" : "en";
-      try{window.goatcounter&&window.goatcounter.count&&window.goatcounter.count({path:"evt-alert-signup-submit",title:"Saved-search alert signup submit",event:true});}catch(x){}
-      var subj = "Chica alerts SUBSCRIBE", body = "email: " + em + "\nsearches: " + terms + "\nlang: " + lang + "\n";
-      if (ALERTS.FORM) {
-        var fd = new FormData(); fd.append("email", em); fd.append("searches", terms); fd.append("lang", lang); fd.append("action", "subscribe");
-        fd.append("_subject", subj); fd.append("_template", "box"); fd.append("_captcha", "false");
-        fetch(ALERTS.FORM, { method: "POST", body: fd, headers: { Accept: "application/json" } })
-          .then(function (r) { msg.textContent = r.ok ? T.emOk : T.emErr; }).catch(function () { msg.textContent = T.emErr; });
-      } else {
-        location.href = "mailto:" + ALERTS.MAILTO + "?subject=" + encodeURIComponent(subj) + "&body=" + encodeURIComponent(body);
-        msg.textContent = T.emOk;
-      }
+      var emEl = f.querySelector("#wr-em"), msg = f.querySelector("#wr-msg") || f.querySelector(".hs-emmsg");
+      var em = (emEl && emEl.value || "").trim();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) { if (emEl) emEl.focus(); return; }
+      var hp = f.querySelector(".hs-hp"); if (hp && hp.value) return;
+      var lang = ES ? "es" : "en";
+      goat("evt-subscribe-weekly", "Weekly roundup subscribe");
+      postForm({ email: em, lang: lang, action: "weekly-roundup", tag: "weekly-roundup" }, "Chica weekly-roundup SUBSCRIBE")
+        .then(function () { if (msg) msg.textContent = T.weeklyOk; })
+        .catch(function () { if (msg) msg.textContent = T.weeklyErr; });
     };
   }
 
@@ -203,7 +243,8 @@
   function fetchData() { return fetch(DATA + "?v=" + Date.now(), { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); }
 
   function run() {
-    css(); var box = build(); if (!box) return;
+    css(); wireWeekly();
+    var box = build(); if (!box) return;
     var input = box.querySelector("#hs-q");
     box.querySelector("form").onsubmit = function (e) { e.preventDefault(); render(box, input.value); };
     var tm; input.addEventListener("input", function () { clearTimeout(tm); tm = setTimeout(function () { render(box, input.value); }, 250); });
