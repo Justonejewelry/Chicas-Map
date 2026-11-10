@@ -1,6 +1,6 @@
 # Repo map
 
-Updated 2026-10-01. Paths are the contract. Do not relocate a folder a workflow already calls.
+Updated 2026-11-09. Paths are the contract. Do not relocate a folder a workflow already calls.
 
 ## Public site
 
@@ -26,8 +26,8 @@ Updated 2026-10-01. Paths are the contract. Do not relocate a folder a workflow 
 
 | Path | Job |
 |---|---|
-| `.github/workflows/chica-daily.yml` | 1 AM CT Thu/Fri/Sat |
-| `.github/workflows/pages.yml` | Deploys `webapp/` |
+| `.github/workflows/chica-daily.yml` | Single production pipeline: Mon–Thu 5 AM and 1 PM CT; Fri–Sun 5 AM, 7 AM, 10 AM, and 1 PM CT |
+| `.github/workflows/map-refresh.yml` | Manual-only entry point for the same populate pipeline; no separate schedule |\n| `.github/workflows/pages.yml` | Deploys `webapp/`; also deploys after successful Chica Daily runs because `GITHUB_TOKEN` commits do not trigger push workflows |
 | `scripts/chica_daily.py` | Local orchestrator |
 | `scripts/schema.py` | Sale record. Confidence at least 70 to publish |
 
