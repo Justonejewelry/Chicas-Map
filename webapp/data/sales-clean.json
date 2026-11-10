@@ -1,11 +1,11 @@
 {
   "version": 46,
   "city": "san-antonio",
-  "generated": "2026-11-09",
+  "generated": "2026-11-10",
   "timezone": "America/Chicago",
   "status": "live",
   "policy": "Explicit sale dates only; uncertain dates excluded. 60-mile SA metro. Raw overlays preserved.",
-  "total_locations": 11,
+  "total_locations": 15,
   "today_count": 1,
   "public": [
     {
@@ -94,6 +94,48 @@
       ],
       "aliases": [
         "yss-196458725"
+      ]
+    },
+    {
+      "address": "10041 TROPHY OAKS DR, GARDEN RIDGE, TX, 78266",
+      "source_address": "10041 Trophy Oaks Dr, Garden Ridge, TX 78266",
+      "dates": "2026-11-14",
+      "date_from": "2026-11-14",
+      "date_to": "2026-11-14",
+      "end_date": "2026-11-14",
+      "date_start": "2026-11-14",
+      "date_end": "2026-11-14",
+      "date_bucket": "upcoming",
+      "hours": "8am-4pm",
+      "title": "Trophy Oaks Community Fall Sale",
+      "details": "Sales at multiple homes in gated community. HOME DECOR: Xmas ornaments, designer ribbons galore; wrapping paper; blue-white porcelain; artwork; lamps; candle holders, candles; vases; picture frames; books; Fall flower arrangements; faux flowers. KITCHEN: Dishes, bowls, glasses, placemats, napkins, utensils, paper products. CLOTHES: MEN - Shirts, Jackets, Sports Coat, Neckties, Cowboy Boots, collectible sports caps. WOMEN - Designer pieces of clothes, shoes, handbags; costume jewelry. CHILDREN: Few infants clothes (new). OTHER HOMES: China; Xmas yard decor; fireplace inserts; light fixtures; pool filter; table frame; board games; kids clothing; toys. ELECTRONICS: Speakers; CDs.",
+      "source": "YardSaleSearch",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196447877",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 29.637581119522,
+      "lon": -98.293469486802,
+      "geocode": "census",
+      "external_id": "yss-196447877",
+      "categories": [
+        "garage-sale",
+        "yardsalesearch"
+      ],
+      "zip": "78266",
+      "in_person": true,
+      "date_note": "Dates and hours as posted on the YardSaleSearch and GarageSaleFinder listings (checked 2026-11-10 9:00 AM CT).",
+      "date_verified": "yss-gsf-2026-11-10-0900",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196447877"
+      ],
+      "sources": [
+        "YardSaleSearch"
+      ],
+      "aliases": [
+        "yss-196447877"
       ]
     },
     {
@@ -265,6 +307,52 @@
       ]
     },
     {
+      "address": "2715 SPOKANE RD, SAN ANTONIO, TX, 78222",
+      "source_address": "2715 Spokane Rd, San Antonio, TX 78222",
+      "dates": "2026-11-14",
+      "date_from": "2026-11-14",
+      "date_to": "2026-11-14",
+      "end_date": "2026-11-14",
+      "date_start": "2026-11-14",
+      "date_end": "2026-11-14",
+      "date_bucket": "upcoming",
+      "hours": "",
+      "title": "Garage sale",
+      "details": "We have a little bit of everything. Clothes, books, kitchenware, Christmas decor, dolls etc.",
+      "source": "Neighbor tip",
+      "url": "",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.8,
+      "status": "verified",
+      "lat": 29.393548663828,
+      "lon": -98.396225715184,
+      "geocode": "census",
+      "external_id": "tip-2715spokanerdsanantoniotx-2026-11-14",
+      "categories": [
+        "garage-sale",
+        "furniture",
+        "clothes",
+        "kids",
+        "housewares",
+        "outdoor",
+        "electronics",
+        "neighbor-tip"
+      ],
+      "zip": "78222",
+      "in_person": true,
+      "date_note": "Dates as submitted on the Chicas Map tip form on 2026-11-10 (no hours given).",
+      "date_verified": "formsubmit-2026-11-10",
+      "date_certainty": "published",
+      "source_urls": [],
+      "sources": [
+        "Neighbor tip"
+      ],
+      "aliases": [
+        "tip-2715spokanerdsanantoniotx-2026-11-14"
+      ]
+    },
+    {
       "address": "2806 MAYFAIR DR, SAN ANTONIO, TX, 78217",
       "source_address": "2806 Mayfair Dr, San Antonio, TX 78217",
       "dates": "2026-11-14",
@@ -304,6 +392,49 @@
       ],
       "aliases": [
         "yss-196452281"
+      ]
+    },
+    {
+      "address": "2903 NACOGDOCHES RD, SAN ANTONIO, TX, 78217",
+      "source_address": "2903 Nacogdoches Rd, San Antonio, TX 78217",
+      "dates": "2026-11-14",
+      "date_from": "2026-11-14",
+      "date_to": "2026-11-14",
+      "end_date": "2026-11-14",
+      "date_start": "2026-11-14",
+      "date_end": "2026-11-14",
+      "date_bucket": "upcoming",
+      "hours": "9am-1pm",
+      "title": "Community Garage Sale and Pop-Up market",
+      "details": "Mac Arthur Park Lutheran School is hosting a community garage sale in our parking lot. We are selling spots for $25. We have the permit; just rent a spot and bring your items. This is a fundraiser for a non-profit organization.",
+      "source": "YardSaleSearch",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196459103",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 29.52480395947,
+      "lon": -98.442928410885,
+      "geocode": "census",
+      "external_id": "yss-196459103",
+      "categories": [
+        "garage-sale",
+        "community",
+        "yardsalesearch"
+      ],
+      "zip": "78217",
+      "in_person": true,
+      "date_note": "Dates and hours as posted on the YardSaleSearch and GarageSaleFinder listings (checked 2026-11-10 9:00 AM CT).",
+      "date_verified": "yss-gsf-2026-11-10-0900",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196459103"
+      ],
+      "sources": [
+        "YardSaleSearch"
+      ],
+      "aliases": [
+        "yss-196459103"
       ]
     },
     {
@@ -387,6 +518,48 @@
       ],
       "aliases": [
         "fb-2387076925428692"
+      ]
+    },
+    {
+      "address": "9814 TROPHY OAKS DR, GARDEN RIDGE, TX, 78266",
+      "source_address": "9814 Trophy Oaks Dr, Garden Ridge, TX 78266",
+      "dates": "2026-11-14",
+      "date_from": "2026-11-14",
+      "date_to": "2026-11-14",
+      "end_date": "2026-11-14",
+      "date_start": "2026-11-14",
+      "date_end": "2026-11-14",
+      "date_bucket": "upcoming",
+      "hours": "8am-5pm",
+      "title": "Trophy Oaks Community Fall Sale",
+      "details": "Garage and yard sales in gated community; multi homes participating.",
+      "source": "YardSaleSearch",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196447879",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 29.635133679482,
+      "lon": -98.290958082922,
+      "geocode": "census",
+      "external_id": "yss-196447879",
+      "categories": [
+        "garage-sale",
+        "yardsalesearch"
+      ],
+      "zip": "78266",
+      "in_person": true,
+      "date_note": "Dates and hours as posted on the YardSaleSearch and GarageSaleFinder listings (checked 2026-11-10 9:00 AM CT).",
+      "date_verified": "yss-gsf-2026-11-10-0900",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196447879"
+      ],
+      "sources": [
+        "YardSaleSearch"
+      ],
+      "aliases": [
+        "yss-196447879"
       ]
     },
     {
