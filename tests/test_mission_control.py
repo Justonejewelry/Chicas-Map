@@ -40,16 +40,18 @@ class MissionControlTests(unittest.TestCase):
         if not shutil.which('node'):
             self.skipTest('node required')
         js = r'''
-        const b = JSON.parse(process.argv[2]);
+        const b = JSON.parse((await import("node:fs")).readFileSync(process.argv[2], "utf8"));
         const u = (s) => Uint8Array.from(Buffer.from(s, "base64"));
         const base = await crypto.subtle.importKey("raw", new TextEncoder().encode("definitely-not-it"), "PBKDF2", false, ["deriveKey"]);
         const key = await crypto.subtle.deriveKey({ name: "PBKDF2", salt: u(b.salt), iterations: b.iter, hash: "SHA-256" }, base, { name: "AES-GCM", length: 256 }, false, ["decrypt"]);
         try { await crypto.subtle.decrypt({ name: "AES-GCM", iv: u(b.iv) }, key, u(b.ct)); console.log("DECRYPTED"); } catch (e) { console.log("REJECTED"); }
         '''
-        with tempfile.NamedTemporaryFile('w', suffix='.mjs') as f:
+        with tempfile.NamedTemporaryFile('w', suffix='.mjs') as f, tempfile.NamedTemporaryFile('w', suffix='.json') as blob:
             f.write(js)
             f.flush()
-            out = subprocess.run(['node', f.name, json.dumps(self.blob)], capture_output=True, text=True, check=True).stdout
+            blob.write(json.dumps(self.blob))  # too big for argv, so pass it as a file
+            blob.flush()
+            out = subprocess.run(['node', f.name, blob.name], capture_output=True, text=True, check=True).stdout
         self.assertEqual(out.strip(), 'REJECTED')
 
     def test_status_json_has_no_private_data(self):
