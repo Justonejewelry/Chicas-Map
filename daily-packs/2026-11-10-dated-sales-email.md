@@ -10,12 +10,15 @@ Map only shows pins whose listed dates include today.
 - Good Goods an INSIDE SALE!! — 113 Black Walnut, Schertz, TX 78154 [2026-11-09 → 2026-11-12]
 - Oak Run Furniture And Collectibles Auction — New Braunfels, TX [2026-11-09 → 2026-11-23]
 - Good Goods An Inside Sale!! — 113 Black Walnut, Schertz, TX [2026-11-09 → 2026-11-12]
-- Avalon Estates Big Fall Markdowns — San Antonio, TX [2026-11-10 → 2026-11-13]
+- Kerrville Estate Sale – Gunsmithing Shop, Equipment & Gun Safes – Nov 19–2 — Kerrville TX near Kerville Tx, San Antonio, TX [2026-11-02 → 2026-11-21]
 
 ## COMING UP (remembered, not on today's map)
 
 ### Starts 2026-11-12
+- Marvelous 4 Family pre holiday Garage Sale — 811 Northstar Dr, San Antonio, TX 78216 [2026-11-12 → 2026-11-13]
+- Marvelous 4 Family Pre Holiday Garage Sale — 811 Northstar Dr, San Antonio, TX [2026-11-12 → 2026-11-13]
 - OPEN Thursday & Friday — 1254 Austin Hwy, San Antonio, TX [2026-11-12 → 2026-11-13]
+- Superb Magnificent 4 Family pre holiday Garage Sale — Blanco Road, San Antonio, TX [2026-11-12 → 2026-11-13]
 - YARD SALE — 1303 Roosevelt #2 near Roosevelt and Felisa, San Antonio, TX [2026-11-12 → 2026-11-13]
 
 ### Starts 2026-11-13
@@ -49,6 +52,7 @@ Map only shows pins whose listed dates include today.
 
 ## ONLINE / UNPLOTTABLE
 
+- Treasures Through Time: Pottery & Collectibles Online Auction by Caring Transitions - Ends 11/10! — San Antonio, TX [2026-11-10 → 2026-11-13]
 - The Analog Age: Vintage Tech Treasures - Bidding EXTENDED TO 11/22 @ 7PM! — San Antonio, TX 78240
 - History Meets Holiday: Vintage Gems, Christmas Memories, Coins & Silver in Fair Oaks, TX. — Boerne, TX 78015
 - Exceptional Coin Collection & Curiosities Galore in Boerne, TX Bidding Ends 11/11 Pick Up 11/13 — Boerne, TX 78006

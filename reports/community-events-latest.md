@@ -1,18 +1,18 @@
 # Chica's Map -- Community Events Swarm v2.7
 
-Run: 2026-11-10T13:21:02-06:00
+Run: 2026-11-10T17:58:11-06:00
 Sources scanned: **48**
-Candidates discovered: **934**
-With parsed dates: **777**
-With street/venue address: **567**
-Promoted this run: **1**
-Kept from prior feed: **273**
+Candidates discovered: **955**
+With parsed dates: **798**
+With street/venue address: **586**
+Promoted this run: **0**
+Kept from prior feed: **274**
 Purged from prior feed: **0**
 Source errors: **7**
-Rejected by Sentinel: **338**
+Rejected by Sentinel: **352**
 
 ## Promoted (passed Events Sentinel)
-- **MS4 (Municipal Separate Storm Sewer System) Stakeholders Meeting** -- 2026-11-19 -- 2150 Universal City Boulevard Universal -- conf 98 -- https://www.universalcitytexas.gov/calendar.aspx?EID=4543
+_None this run._
 
 ## Review Queue
 - **San Antonio Public Library Events** -- conf 100 -- Family Story Time -- 2026-11-12 -- 4134 Harry Wurzbach San Antonio, TX 78209 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D205386310
@@ -131,6 +131,20 @@ Rejected by Sentinel: **338**
 - **Fair Oaks Ranch Calendar** -- conf 99 -- Planning and Zoning Commission -- 2029-01-11 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1702
 - **Fair Oaks Ranch Calendar** -- conf 99 -- Planning and Zoning Commission -- 2028-03-09 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1703
 - **Fair Oaks Ranch Calendar** -- conf 99 -- Planning and Zoning Commission -- 2028-12-14 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1704
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2030-07-18 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1705
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2030-11-21 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1706
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2030-01-17 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1707
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2030-04-18 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1708
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2030-08-15 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1709
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2030-09-19 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1710
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2030-02-21 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1711
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2030-06-20 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1712
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2030-03-21 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1713
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2030-05-16 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1714
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2030-10-17 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1715
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2031-01-16 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1716
+- **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2030-12-19 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1717
+- **Fair Oaks Ranch Calendar** -- conf 99 -- Planning and Zoning Commission -- 2027-12-09 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1718
 - **Boerne Calendar** -- conf 98 -- Planning and Zoning Commission Meeting -- 2027-03-01 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=21881
 - **Boerne Calendar** -- conf 98 -- Planning and Zoning Commission Meeting -- 2027-04-05 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=21882
 - **Boerne Calendar** -- conf 98 -- Planning and Zoning Commission Meeting -- 2027-05-03 -- 447 N. Main Street Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=21883
@@ -161,20 +175,6 @@ Rejected by Sentinel: **338**
 - **Boerne Calendar** -- conf 98 -- City Council Meeting -- 2027-03-23 -- 447 N. Main St Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22189
 - **Boerne Calendar** -- conf 98 -- City Council Meeting -- 2027-04-27 -- 447 N. Main St Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22190
 - **Boerne Calendar** -- conf 98 -- City Council Meeting -- 2027-05-25 -- 447 N. Main St Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22191
-- **Boerne Calendar** -- conf 98 -- City Council Meeting -- 2027-06-22 -- 447 N. Main St Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22192
-- **Boerne Calendar** -- conf 98 -- City Council Meeting -- 2027-07-27 -- 447 N. Main St Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22193
-- **Boerne Calendar** -- conf 98 -- City Council Meeting -- 2027-08-24 -- 447 N. Main St Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22194
-- **Boerne Calendar** -- conf 98 -- City Council Meeting -- 2027-09-28 -- 447 N. Main St Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22195
-- **Boerne Calendar** -- conf 98 -- City Council Meeting -- 2027-10-26 -- 447 N. Main St Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22196
-- **Boerne Calendar** -- conf 98 -- City Council Meeting -- 2027-11-23 -- 447 N. Main St Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22197
-- **Boerne Calendar** -- conf 98 -- City Council Meeting -- 2027-12-28 -- 447 N. Main St Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22198
-- **Boerne Calendar** -- conf 98 -- Library Advisory Board Meeting -- 2027-03-11 -- 451 N. Main St -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22284
-- **Boerne Calendar** -- conf 98 -- Library Advisory Board Meeting -- 2027-05-13 -- 451 N. Main St -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22285
-- **Boerne Calendar** -- conf 98 -- Library Advisory Board Meeting -- 2027-07-08 -- 451 N. Main St -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22286
-- **Boerne Calendar** -- conf 98 -- Library Advisory Board Meeting -- 2027-09-09 -- 451 N. Main St -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22287
-- **Boerne Calendar** -- conf 98 -- Library Advisory Board Meeting -- 2027-11-11 -- 451 N. Main St -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22288
-- **Boerne Calendar** -- conf 98 -- Library Advisory Board Meeting -- 2028-01-13 -- 451 N. Main St -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22289
-- **Boerne Calendar** -- conf 98 -- Library Advisory Board Meeting -- 2028-03-09 -- 451 N. Main St -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22290
 
 ## Rejected by Sentinel
 - Baby Time! -- event_id=2026-11-10_baby-time_5f5d805a835a: duplicate id already in feed
@@ -199,34 +199,34 @@ Rejected by Sentinel: **338**
 - Bexar County Clerk's Mobile Satellite Office will be at McDonald's on Walzem - The Shields Legacy LLC PCT 4 Community -- event_id=2026-11-19_bexar-county-clerk-s-mobile_d37973340473: duplicate id already in feed
 - Bexar County Clerk's Mobile Satellite Office will be at Bexar County Precinct 3 Justice of the Peace Office -- event_id=2026-11-17_bexar-county-clerk-s-mobile_99f57b061982: duplicate id already in feed
 - Bexar County Clerk's Mobile Satellite Office will be at SBOC-Bexar County Small Business Opportunity Center -- event_id=2026-11-12_bexar-county-clerk-s-mobile_44b406198aa2: duplicate id already in feed
+- City Council Meeting -- event_id=2031-01-16_city-council-meeting_5d504b2ef027: date 2031-01-16 is more than 90 days out
+- City Council Meeting -- event_id=2030-12-19_city-council-meeting_6313f7d68c65: date 2030-12-19 is more than 90 days out
+- City Council Meeting -- event_id=2030-11-21_city-council-meeting_9ce7619cef68: date 2030-11-21 is more than 90 days out
+- City Council Meeting -- event_id=2030-10-17_city-council-meeting_cd28350cc40a: date 2030-10-17 is more than 90 days out
 - City Council Meeting -- event_id=2030-10-03_city-council-meeting_ef1f6c2ecac6: date 2030-10-03 is more than 90 days out
+- City Council Meeting -- event_id=2030-09-19_city-council-meeting_f46b1349602c: date 2030-09-19 is more than 90 days out
 - City Council Meeting -- event_id=2030-09-05_city-council-meeting_f23fb16297f8: date 2030-09-05 is more than 90 days out
+- City Council Meeting -- event_id=2030-08-15_city-council-meeting_25ec9705460b: date 2030-08-15 is more than 90 days out
 - City Council Meeting -- event_id=2030-08-01_city-council-meeting_25fce9f9ca14: date 2030-08-01 is more than 90 days out
+- City Council Meeting -- event_id=2030-07-18_city-council-meeting_01fb9c19cf39: date 2030-07-18 is more than 90 days out
 - City Council Meeting -- event_id=2030-07-04_city-council-meeting_ee81840bf8b0: date 2030-07-04 is more than 90 days out
+- City Council Meeting -- event_id=2030-06-20_city-council-meeting_994683299188: date 2030-06-20 is more than 90 days out
 - City Council Meeting -- event_id=2030-06-06_city-council-meeting_f18054d28ca2: date 2030-06-06 is more than 90 days out
+- City Council Meeting -- event_id=2030-05-16_city-council-meeting_46468a786c66: date 2030-05-16 is more than 90 days out
 - City Council Meeting -- event_id=2030-05-02_city-council-meeting_2b745a7969b3: date 2030-05-02 is more than 90 days out
+- City Council Meeting -- event_id=2030-04-18_city-council-meeting_645e82343332: date 2030-04-18 is more than 90 days out
 - City Council Meeting -- event_id=2030-04-04_city-council-meeting_1b84d66b58df: date 2030-04-04 is more than 90 days out
+- City Council Meeting -- event_id=2030-03-21_city-council-meeting_a6efb503f2c1: date 2030-03-21 is more than 90 days out
 - City Council Meeting -- event_id=2030-03-07_city-council-meeting_83788460a8ef: date 2030-03-07 is more than 90 days out
+- City Council Meeting -- event_id=2030-02-21_city-council-meeting_fbd0db1c1294: date 2030-02-21 is more than 90 days out
 - City Council Meeting -- event_id=2030-02-07_city-council-meeting_158852934b02: date 2030-02-07 is more than 90 days out
+- City Council Meeting -- event_id=2030-01-17_city-council-meeting_630c4b840a67: date 2030-01-17 is more than 90 days out
 - City Council Meeting -- event_id=2030-01-03_city-council-meeting_a148f70b1301: date 2030-01-03 is more than 90 days out
 - City Council Meeting -- event_id=2029-12-20_city-council-meeting_130beb51a62f: date 2029-12-20 is more than 90 days out
 - City Council Meeting -- event_id=2029-12-06_city-council-meeting_e2a495b6d44d: date 2029-12-06 is more than 90 days out
 - City Council Meeting -- event_id=2029-11-15_city-council-meeting_5d3474b133bb: date 2029-11-15 is more than 90 days out
 - City Council Meeting -- event_id=2029-11-01_city-council-meeting_719d588e64bd: date 2029-11-01 is more than 90 days out
 - City Council Meeting -- event_id=2029-10-18_city-council-meeting_c7de209d6644: date 2029-10-18 is more than 90 days out
-- City Council Meeting -- event_id=2029-10-04_city-council-meeting_558f4f5ed21c: date 2029-10-04 is more than 90 days out
-- City Council Meeting -- event_id=2029-09-20_city-council-meeting_da5cdfbdb6f9: date 2029-09-20 is more than 90 days out
-- City Council Meeting -- event_id=2029-09-06_city-council-meeting_fc2c9d2a8e0e: date 2029-09-06 is more than 90 days out
-- City Council Meeting -- event_id=2029-08-16_city-council-meeting_ff0401707407: date 2029-08-16 is more than 90 days out
-- City Council Meeting -- event_id=2029-08-02_city-council-meeting_1d54d279dc71: date 2029-08-02 is more than 90 days out
-- City Council Meeting -- event_id=2029-07-19_city-council-meeting_5a6f41a53be9: date 2029-07-19 is more than 90 days out
-- City Council Meeting -- event_id=2029-07-05_city-council-meeting_28bb14363c41: date 2029-07-05 is more than 90 days out
-- City Council Meeting -- event_id=2029-06-21_city-council-meeting_ee6232e9a23d: date 2029-06-21 is more than 90 days out
-- City Council Meeting -- event_id=2029-06-07_city-council-meeting_e5dc60650f6b: date 2029-06-07 is more than 90 days out
-- City Council Meeting -- event_id=2029-05-17_city-council-meeting_7d2805569735: date 2029-05-17 is more than 90 days out
-- City Council Meeting -- event_id=2029-05-03_city-council-meeting_aa98323d0cb4: date 2029-05-03 is more than 90 days out
-- City Council Meeting -- event_id=2029-04-19_city-council-meeting_ab3e3bd9eac5: date 2029-04-19 is more than 90 days out
-- City Council Meeting -- event_id=2029-04-05_city-council-meeting_1971be9a1843: date 2029-04-05 is more than 90 days out
 
 ## Source Errors
 - Bexar County Events: HTTP 429 Too Many Requests

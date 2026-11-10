@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-10T13:21:02-06:00",
+  "updated": "2026-11-10T17:58:11-06:00",
   "city": "san-antonio",
   "version": 2.7,
   "horizonDays": 90,
@@ -4923,7 +4923,7 @@
       "title": "MS4 (Municipal Separate Storm Sewer System) Stakeholders Meeting",
       "date": "2026-11-19",
       "endDate": "",
-      "time": "5:00 PM-11:59 PM",
+      "time": "5:00 PM–11:59 PM",
       "address": "2150 Universal City Boulevard Universal",
       "lat": null,
       "lng": null,
