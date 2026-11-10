@@ -218,7 +218,7 @@ jobs:
             echo "- Target input: ${{ github.event.inputs.target_date || 'auto (today CT)' }}"
             echo "- Dry run: ${{ github.event.inputs.dry_run || 'false' }}"
             echo "- Changes: ${{ steps.diff.outputs.dirty || 'n/a' }}"
-            echo "- Cron: 11:00 UTC (5 AM CST / 6 AM CDT) — single shot"
+            echo "- Schedule: Mon–Thu 5 AM and 1 PM CT; Fri–Sun 5 AM, 7 AM, 10 AM, and 1 PM CT"
             echo ""
             echo "#### Run log"
             echo '```'
