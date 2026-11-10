@@ -5,33 +5,34 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
 <meta name="referrer" content="no-referrer">
-<meta name="theme-color" content="#0d0b10">
+<meta name="theme-color" content="#000000">
 <title>Mission Control · Private</title>
 <link rel="icon" type="image/svg+xml" href="/Chicas-Map/favicon.svg">
 <style>
 @font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:swap;src:url(/Chicas-Map/assets/fonts/inter/inter-var.woff2) format('woff2')}
+@font-face{font-family:'Antonio';font-style:normal;font-weight:100 700;font-display:swap;src:url(/Chicas-Map/assets/fonts/antonio/antonio-var.woff2) format('woff2')}
 @font-face{font-family:'Syne';font-style:normal;font-weight:100 900;font-display:swap;src:url(/Chicas-Map/assets/fonts/syne/syne-var.woff2) format('woff2')}
-html,body{margin:0;background:#0d0b10;color:#f6f3f8;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+html,body{margin:0;background:#000;color:#f6f3f8;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 .gate{min-height:100vh;display:grid;place-items:center;padding:24px}
-.gate form{width:min(100%,380px);background:#17141c;border:1px solid #2e2838;border-radius:22px;padding:28px 24px;box-shadow:0 20px 60px #000a}
-.gate h1{font:800 28px/1.1 Syne,Inter,sans-serif;letter-spacing:-.03em;margin:4px 0 6px}
-.gate .eyebrow{margin:0;font-size:11px;letter-spacing:.14em;font-weight:750;color:#e24fd0}
-.gate p{color:#a79fb3;font-size:14px;margin:0 0 16px}
-.gate label{display:block;font-size:13px;font-weight:600;margin-bottom:6px}
-.gate input[type=password],.gate input[type=text]{width:100%;box-sizing:border-box;min-height:48px;border-radius:12px;border:1px solid #2e2838;background:#100d14;color:#f6f3f8;padding:0 14px;font:16px Inter,sans-serif}
-.gate .row{display:flex;align-items:center;gap:8px;margin:12px 0;font-size:13px;color:#a79fb3}
-.gate .row input{width:20px;height:20px}
-.gate button{width:100%;min-height:48px;border:0;border-radius:999px;background:#c513af;color:#fff;font:700 15px Inter,sans-serif;cursor:pointer}
+.gate form{width:min(100%,400px);background:#000;border:0;border-left:14px solid #ff9c3a;border-top:34px solid #ff9c3a;border-radius:56px 0 0 0;padding:18px 22px 24px}
+.gate h1{font:400 38px/1 Antonio,"Arial Narrow",Impact,sans-serif;letter-spacing:.05em;text-transform:uppercase;color:#ffcc66;margin:4px 0 6px}
+.gate .eyebrow{margin:0;font:400 16px Antonio,"Arial Narrow",sans-serif;letter-spacing:.14em;color:#c9b0ff}
+.gate p{color:#b9b1c6;font-size:14px;margin:0 0 16px}
+.gate label{display:block;font:400 15px Antonio,"Arial Narrow",sans-serif;letter-spacing:.09em;text-transform:uppercase;margin-bottom:6px}
+.gate input[type=password],.gate input[type=text]{width:100%;box-sizing:border-box;min-height:48px;border-radius:24px;border:2px solid #c9b0ff;background:#000;color:#f4efe6;padding:0 18px;font:16px Inter,sans-serif}
+.gate .row{display:flex;align-items:center;gap:10px;margin:14px 0;font-size:14px;color:#b9b1c6}
+.gate .row input{width:22px;height:22px}
+.gate button{width:100%;min-height:48px;border:0;border-radius:24px;background:#ffcc66;color:#000;font:400 20px Antonio,"Arial Narrow",sans-serif;letter-spacing:.09em;text-transform:uppercase;cursor:pointer}
 .gate button:disabled{opacity:.6;cursor:wait}
-.gate .msg{min-height:20px;margin-top:12px;font-size:13px;color:#ff8c9a}
-:focus-visible{outline:2px solid #59a8ff;outline-offset:2px}
+.gate .msg{min-height:20px;margin-top:12px;font-size:14px;color:#ff9b94}
+:focus-visible{outline:3px solid #fff;outline-offset:2px}
 </style>
 </head>
 <body>
 <div class="gate" id="gate">
   <form id="gate-form" autocomplete="off">
-    <p class="eyebrow">CHICAS MAP</p>
-    <h1>Mission Control</h1>
+    <p class="eyebrow">CHICA · PRIVATE</p>
+    <h1>Chica Mission Control</h1>
     <p>Private dashboard. Enter the password to unlock.</p>
     <label for="pw">Password</label>
     <input type="password" id="pw" name="pw" autocomplete="current-password" required autofocus>

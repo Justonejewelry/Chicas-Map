@@ -76,6 +76,35 @@ class MissionControlTests(unittest.TestCase):
             stamped = (Path(tmp) / 'mission-control' / 'index.html').read_text()
             self.assertEqual(stamped, self.html)
 
+    def test_palette_meets_wcag_aa(self):
+        """The dashboard palette (kept in sync with the encrypted source) clears WCAG AA."""
+        def lum(h):
+            c = [int(h[i:i + 2], 16) / 255 for i in (1, 3, 5)]
+            c = [x / 12.92 if x <= .03928 else ((x + .055) / 1.055) ** 2.4 for x in c]
+            return .2126 * c[0] + .7152 * c[1] + .0722 * c[2]
+
+        def ratio(a, b):
+            la, lb = sorted((lum(a), lum(b)), reverse=True)
+            return (la + .05) / (lb + .05)
+        fills = ['#ff9c3a', '#ffcc66', '#c9b0ff', '#8fc4ff', '#ff8fb5', '#ff9d85', '#6ee0a8', '#ff6b63', '#ffc233']
+        for f in fills:
+            self.assertGreaterEqual(ratio('#000000', f), 4.5, 'black text on ' + f)
+            self.assertGreaterEqual(ratio(f, '#000000'), 4.5, f + ' text on black')
+        for t in ['#f4efe6', '#b9b1c6']:
+            self.assertGreaterEqual(ratio(t, '#0d0b10'), 4.5, t + ' on card')
+        for ui in ['#7a6c8f', '#6e6280']:
+            self.assertGreaterEqual(ratio(ui, '#000000'), 3.0, 'UI line ' + ui)
+
+    def test_no_borrowed_branding_and_font_is_self_hosted(self):
+        low = self.html.lower()
+        for word in ['lcars', 'star trek', 'startrek', 'starfleet']:
+            self.assertNotIn(word, low)
+        self.assertIn('Chica Mission Control', self.html)
+        font = ROOT / 'webapp' / 'assets' / 'fonts' / 'antonio'
+        self.assertTrue((font / 'antonio-var.woff2').exists())
+        self.assertIn('SIL OPEN FONT LICENSE', (font / 'LICENSE').read_text().upper())
+        self.assertNotIn('fonts.googleapis', self.html)
+
 
 if __name__ == '__main__':
     unittest.main()
