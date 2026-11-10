@@ -4,7 +4,7 @@
 
 | Workflow | File | Schedule | Purpose |
 |----------|------|----------|--------|
-| **Chica Daily (Master)** | `chica-daily.yml` | 1 AM CT Thu/Fri/Sat | Discovery → deep follow → Sentinel → daily pack, social, Update Pack |
+| **Chica Daily (Master)** | `chica-daily.yml` | Mon–Thu 5 AM + 1 PM CT; Fri–Sun 5 AM, 7 AM, 10 AM + 1 PM CT | Single scheduled production pipeline: discovery, validation, daily pack, social, and publishing |
 | **Map feed refresh** | `map-refresh.yml` | Manual only | One-shot multi-source discovery (no schedule) |
 | **Deploy Pages** | `pages.yml` | On push / manual | GitHub Pages for the public map |
 | **Publish tip** | `publish-tip.yml` | Manual | Merge a verified permit/user tip |
@@ -17,7 +17,7 @@
 |----------|-------------|
 | Generate Daily Pack | Chica Daily |
 | Update Chicas-Map feed | Chica Daily discovery + orchestrator |
-| Continuous 2-hour map-refresh schedule | Chica Daily at 1 AM CT |
+| Continuous 2-hour map-refresh schedule | Chica Daily's 14 weekly Central-Time runs; Map Refresh is manual-only |
 
 ## Local test
 
