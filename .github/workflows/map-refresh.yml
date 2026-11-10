@@ -4,15 +4,7 @@ name: Map feed refresh
 # Discovery, permits, purge, health, and the orchestrator live in
 # scripts/master_populate.py. This workflow only dispatches that path.
 on:
-  schedule:
-    # Monday–Thursday: 5 AM and 1 PM Central
-    - cron: "0 5,13 * * 1-4"
-      timezone: "America/Chicago"
-
-    # Friday–Sunday: 5 AM, 7 AM, 10 AM and 1 PM Central
-    - cron: "0 5,7,10,13 * * 5,6,0"
-      timezone: "America/Chicago"
-
+  # Manual-only companion. Scheduled production runs live in chica-daily.yml.
   workflow_dispatch:
     inputs:
       cities:
