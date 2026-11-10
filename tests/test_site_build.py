@@ -186,6 +186,22 @@ class SiteBuildTests(unittest.TestCase):
         self.assertIn('/vendor/leaflet-1.9.4/leaflet.js', (self.root / 'map/index.html').read_text())
         self.assertIn('IntersectionObserver', (self.root / 'js/home-mini-map.js').read_text())
 
+    def test_review_short_link_is_private_redirect(self):
+        review_url = 'https://search.google.com/local/writereview?placeid=ChIJCXJXKn6684sRbFSuZ7Pcw_Q'
+        en = (self.root / 'review/index.html').read_text()
+        es = (self.root / 'es/review/index.html').read_text()
+        sm = (self.root / 'sitemap.xml').read_text()
+        self.assertNotIn('chicasmap.com/review/', sm)
+        self.assertNotIn('/review/', sm)
+        for html, btn in ((en, 'Leave Chica a Google review'), (es, 'Deja a Chica una reseña en Google')):
+            self.assertIn('noindex', html)
+            self.assertIn(review_url, html)
+            self.assertIn('location.replace', html)
+            self.assertIn('http-equiv="refresh"', html)
+            self.assertIn(btn, html)
+            # stamp-pages must not overwrite this utility page with homepage SEO.
+            self.assertNotIn('San Antonio garage sales', html)
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -53,7 +53,7 @@ function noscriptBlock(page, isEs) {
 function walk(dir, acc) {
   acc = acc || [];
   for (const name of readdirSync(dir)) {
-    if (name === "preview" || name === "assets" || name === "node_modules" || name === "admin" || name === "__grok" || name === "mission-control") continue;
+    if (name === "preview" || name === "assets" || name === "node_modules" || name === "admin" || name === "__grok" || name === "mission-control" || name === "review") continue;
     const p = join(dir, name);
     const st = statSync(p);
     if (st.isDirectory()) walk(p, acc);
