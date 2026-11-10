@@ -1,6 +1,6 @@
 {
   "edition": "sunday",
-  "date": "2026-11-09",
+  "date": "2026-11-10",
   "city": "dallas",
   "generated_at": "2026-08-01T16:00:00-05:00",
   "total_locations": 1,
@@ -43,5 +43,5 @@
     }
   ],
   "status": "live",
-  "last_refresh": "2026-11-09T15:20:14-06:00"
+  "last_refresh": "2026-11-10T12:31:27-06:00"
 }
