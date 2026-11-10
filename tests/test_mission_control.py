@@ -78,35 +78,58 @@ class MissionControlTests(unittest.TestCase):
             stamped = (Path(tmp) / 'mission-control' / 'index.html').read_text()
             self.assertEqual(stamped, self.html)
 
-    def test_palette_meets_wcag_aa(self):
-        """The dashboard palette (kept in sync with the encrypted source) clears WCAG AA."""
-        def lum(h):
-            c = [int(h[i:i + 2], 16) / 255 for i in (1, 3, 5)]
+    def test_every_theme_palette_meets_wcag_aa(self):
+        """Palettes of all four themes (kept in sync with the encrypted source) clear WCAG AA."""
+        def rgb(h):
+            return [int(h[i:i + 2], 16) for i in (1, 3, 5)]
+
+        def lum(c):
+            c = [x / 255 for x in c]
             c = [x / 12.92 if x <= .03928 else ((x + .055) / 1.055) ** 2.4 for x in c]
             return .2126 * c[0] + .7152 * c[1] + .0722 * c[2]
 
         def ratio(a, b):
             la, lb = sorted((lum(a), lum(b)), reverse=True)
             return (la + .05) / (lb + .05)
-        fills = ['#ff9c3a', '#ffcc66', '#c9b0ff', '#8fc4ff', '#ff8fb5', '#ff9d85', '#6ee0a8', '#ff6b63', '#ffc233']
-        for f in fills:
-            self.assertGreaterEqual(ratio('#000000', f), 4.5, 'black text on ' + f)
-            self.assertGreaterEqual(ratio(f, '#000000'), 4.5, f + ' text on black')
-        for t in ['#f4efe6', '#b9b1c6']:
-            self.assertGreaterEqual(ratio(t, '#0d0b10'), 4.5, t + ' on card')
-        for ui in ['#7a6c8f', '#6e6280']:
-            self.assertGreaterEqual(ratio(ui, '#000000'), 3.0, 'UI line ' + ui)
 
-    def test_no_borrowed_branding_and_font_is_self_hosted(self):
-        low = self.html.lower()
-        for word in ['lcars', 'star trek', 'startrek', 'starfleet']:
-            self.assertNotIn(word, low)
+        def over(fg, a, bg):
+            return [fg[i] * a + bg[i] * (1 - a) for i in range(3)]
+        themes = {
+            'console': dict(fills='#ff9c3a #ffcc66 #c9b0ff #8fc4ff #ff8fb5 #ff9d85 #6ee0a8 #ff6b63 #ffc233', text='#f4efe6 #b9b1c6', card='#0d0b10', bg='#000000', ui='#7a6c8f #6e6280'),
+            'night': dict(fills='#ffc400 #ffd84a #aeb7c2 #8da2b8 #d9b24c #c98f45 #6fd08c #ff5a4d', text='#ecebe6 #aab0b8', card='#0c0e11', bg='#06070a', ui='#707880 #636a73'),
+            'code': dict(fills='#00ff66 #9dff5c #5cffc8 #4df0ff #7dffb0 #b7ff6a #ff6b63 #ffd24a', text='#c8ffd9 #7fd9a2', card='#020a04', bg='#000000', ui='#2f8f58 #1e6b3f'),
+            'glass': dict(fills='#ff9c3a #ffd27a #c9b0ff #8fc4ff #ff9cc2 #ff9d85 #6ee0a8 #ff7a72 #ffc233', text='#ffffff #d3d9f0', card='#0e1228', bg='#0a0e1f', ui='#9aa6d6 #6b78ad'),
+        }
+        for name, t in themes.items():
+            bg, card = rgb(t['bg']), rgb(t['card'])
+            for f in t['fills'].split():
+                self.assertGreaterEqual(ratio([0, 0, 0], rgb(f)), 4.5, '%s: black text on %s' % (name, f))
+                self.assertGreaterEqual(ratio(rgb(f), bg), 4.5, '%s: %s text on page' % (name, f))
+            for tx in t['text'].split():
+                self.assertGreaterEqual(ratio(rgb(tx), card), 4.5, '%s: %s on card' % (name, tx))
+                self.assertGreaterEqual(ratio(rgb(tx), bg), 4.5, '%s: %s on page' % (name, tx))
+            for ui in t['ui'].split():
+                self.assertGreaterEqual(ratio(rgb(ui), bg), 3.0, '%s: UI line %s' % (name, ui))
+        # glass panels are translucent: text must pass over the brightest colour that can sit behind a 72% tint
+        tint = [14, 18, 40]
+        for blob in ([79, 107, 255], [255, 79, 163], [25, 211, 176], [255, 255, 255]):
+            panel = over(tint, .72, blob)
+            for tx in ('#ffffff', '#d3d9f0'):
+                self.assertGreaterEqual(ratio(rgb(tx), panel), 4.5 if blob != [255, 255, 255] else 3.0, 'glass text %s over %s' % (tx, blob))
+
+    def test_no_borrowed_branding_and_fonts_are_self_hosted(self):
+        page = re.sub(r'<script type="application/json" id="mc-blob">.*?</script>', '', self.html, flags=re.S).lower()
+        for word in ['lcars', 'star trek', 'startrek', 'starfleet', 'batman', 'gotham', 'matrix', 'apple', 'wayne', 'joker', 'bat-signal', 'neo ', 'morpheus', 'cupertino']:
+            self.assertNotIn(word, page, 'borrowed branding in the public gate page: ' + word)
         self.assertIn('Chica Mission Control', self.html)
-        font = ROOT / 'webapp' / 'assets' / 'fonts' / 'antonio'
-        self.assertTrue((font / 'antonio-var.woff2').exists())
-        self.assertIn('SIL OPEN FONT LICENSE', (font / 'LICENSE').read_text().upper())
+        for name, sub in (('antonio', 'antonio-var.woff2'), ('jetbrains-mono', 'jetbrains-mono-var.woff2')):
+            font = ROOT / 'webapp' / 'assets' / 'fonts' / name
+            self.assertTrue((font / sub).exists())
+            self.assertIn('SIL OPEN FONT LICENSE', (font / 'LICENSE').read_text().upper())
         self.assertNotIn('fonts.googleapis', self.html)
-
+        shell = (ROOT / 'scripts' / 'mission-control' / 'shell.html').read_text().lower()
+        for word in ['batman', 'matrix', 'apple', 'lcars', 'gotham']:
+            self.assertNotIn(word, shell)
 
 if __name__ == '__main__':
     unittest.main()
