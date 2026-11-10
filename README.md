@@ -82,7 +82,7 @@ app/             site source
 city-configs/    per-city YAML
 data/            sale feeds
 scripts/         Sentinel, publish, daily
-.github/workflows/  Pages and the 1 AM CT pipeline
+.github/workflows/  Pages and the scheduled Chica Daily pipeline
 docs/            operating notes
 social/          posts already shipping
 daily-packs/     update packs
