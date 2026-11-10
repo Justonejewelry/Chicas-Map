@@ -1,9 +1,9 @@
 name: Feed watch
 
 # Read-only. Does not write pins.
-# After Chica Daily, and again at 16:00 UTC (11 AM CDT / 10 AM CST) in case
-# the 11:00 UTC cron was delayed or cancelled. A stale/empty San Antonio
-# feed re-dispatches daily once. Quality failures only open an issue.
+# Runs after Chica Daily and at 16:00 UTC as a read-only freshness check
+# between scheduled refreshes. A stale/empty San Antonio feed can re-dispatch
+# Chica Daily once. Quality failures only open an issue.
 on:
   workflow_run:
     workflows: ["Chica Daily (Master Workflow)"]
