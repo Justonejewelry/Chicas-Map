@@ -49,10 +49,10 @@ Map only shows pins whose listed dates include today.
 
 ## ONLINE / UNPLOTTABLE
 
-- Ninety Nine And Still Going - Bidding ends 11/17 — San Marcos, TX 78666 [2026-10-30 → 2026-11-10]
 - The Analog Age: Vintage Tech Treasures - Bidding EXTENDED TO 11/22 @ 7PM! — San Antonio, TX 78240
 - History Meets Holiday: Vintage Gems, Christmas Memories, Coins & Silver in Fair Oaks, TX. — Boerne, TX 78015
 - Exceptional Coin Collection & Curiosities Galore in Boerne, TX Bidding Ends 11/11 Pick Up 11/13 — Boerne, TX 78006
 - Vintage Collectibles: Decor, Tableware, & More Online Auction by Caring Transitions - Ends 11/19! — New Braunfels, TX 78132
+- Ninety Nine And Still Going - Bidding ends 11/17 — San Marcos, TX 78666
 
 — Chica
