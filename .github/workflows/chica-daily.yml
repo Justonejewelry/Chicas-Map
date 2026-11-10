@@ -1,15 +1,21 @@
 name: Chica Daily (Master Workflow)
 
-# Unified populate: every map source + orchestrator + events + forecast.
-# One cron. GitHub cron is UTC-only; dual 10/11 UTC was burning two runs/day.
-# 11:00 UTC = 6 AM CDT / 5 AM CST. Close enough. Do not add a second cron.
-# Feed watch (16:00 UTC) re-dispatches this workflow only if the public feed is stale.
+# Single scheduled production pipeline for all map sources, events, and forecast.
+# All schedule times use America/Chicago so daylight saving changes are automatic.
+# Map Refresh remains available for manual runs only; do not add a second scraper schedule.
+# Feed Watch may re-dispatch this workflow if the public feed is stale.
 # Do NOT put [skip ci] on the populate commit. That left GitHub Pages
 # serving an empty public[] while main already had pins.
 
 on:
   schedule:
-    - cron: "0 11 * * *"
+    # Monday–Thursday: 5 AM and 1 PM Central
+    - cron: "0 5,13 * * 1-4"
+      timezone: "America/Chicago"
+
+    # Friday–Sunday: 5 AM, 7 AM, 10 AM and 1 PM Central
+    - cron: "0 5,7,10,13 * * 5,6,0"
+      timezone: "America/Chicago"
   workflow_dispatch:
     inputs:
       target_date:
