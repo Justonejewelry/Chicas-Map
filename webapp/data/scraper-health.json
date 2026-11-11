@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T20:49:47-06:00",
+  "generated_at": "2026-11-11T03:20:53-06:00",
   "overall": "critical",
   "primary_failures": [
     "estatesales_org",
@@ -58,7 +58,7 @@
     "nextdoor": 2,
     "aggregators": 2,
     "garagesalefinder": 27,
-    "craigslist": 19,
+    "craigslist": 18,
     "estatesales.org": 15,
     "estatesales.net": 2
   },

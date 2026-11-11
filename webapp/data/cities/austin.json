@@ -588,34 +588,6 @@
       "external_id": "eso-2472685"
     },
     {
-      "address": "3400 Ferguson Lane, Austin, TX",
-      "dates": "2026-11-10 – 2026-11-10",
-      "date_from": "2026-11-10",
-      "posted_at": "2026-11-10T10:38:12-0600",
-      "date_certainty": "explicit",
-      "date_to": "2026-11-10",
-      "end_date": "2026-11-10",
-      "hours": null,
-      "title": "Moving Sale",
-      "details": "QR Code Link to This Post Moving sale 11/10. Whole house of things: Piano, handpan, instruments, couch, table, miscellaneous Appliances and kitchen Sauna blanket Cow hide rug Garage tools, toolbox, lawnmower, etc Upright Apollo piano: $800 Healix Sauna blanket: $200 Couch: $375 3400 Ferguson Lane show contact info Come on over",
-      "date_evidence": "2026-11-10 – 2026-11-10",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/austin-moving-sale/w2guZGKTAhqbuwS5bh4m8D",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale",
-        "moving-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.337459,
-      "lon": -97.653668,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-ustinmovingsalew2guzgktahqbuws5bh4m8d"
-    },
-    {
       "address": "Shoal Creek Blvd, Austin, TX",
       "dates": "2026-11-14 – 2026-11-14",
       "date_from": "2026-11-14",
@@ -853,9 +825,9 @@
     "gsalr.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 36,
+  "total_locations": 35,
   "status": "live",
-  "date": "2026-11-10",
-  "last_refresh": "2026-11-10T20:49:47-06:00",
+  "date": "2026-11-11",
+  "last_refresh": "2026-11-11T03:20:53-06:00",
   "permits": []
 }
