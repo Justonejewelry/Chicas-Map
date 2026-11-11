@@ -5,7 +5,7 @@
   "timezone": "America/Chicago",
   "status": "live",
   "policy": "Explicit sale dates only; uncertain dates excluded. 60-mile SA metro. Raw overlays preserved.",
-  "total_locations": 20,
+  "total_locations": 27,
   "today_count": 3,
   "public": [
     {
@@ -128,6 +128,123 @@
         "29.42410,-98.49360|Estate of Maryland Von Roeder Kunkle"
       ],
       "external_id": "sale-3cfc823a30e74fea75cb"
+    },
+    {
+      "address": "346 Pueblo Pintado, Helotes, TX 78023",
+      "dates": "2026-11-12 – 2026-11-14",
+      "date_from": "2026-11-12",
+      "date_to": "2026-11-14",
+      "date_start": "2026-11-12",
+      "date_end": "2026-11-14",
+      "end_date": "2026-11-14",
+      "hours": "8am-1pm, 8am-noon",
+      "title": "Estate Sale in Sonoma Ranch",
+      "details": "Estate Sale in Sonoma Ranch\r\nMoving Estate Sale lots of great items! Furniture, artwork, yard items, green egg grill, chandeliers, jewelry, etc!\r\nThursday 11/12/26 8 am-1 pm\r\nFriday 11/13/26 8 am-1 pm\r\nSaturday 11/14/26 8 am-Noon\r\nCash or Venmo only. Must load items purchased.\r\n346 Pueblo Pintado, Helotes 78023",
+      "source": "Express-News Marketplace",
+      "url": "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/advert/estate-sale-in-sonoma-ranch-general_1012",
+      "photos": 0,
+      "type": "estate",
+      "categories": [
+        "estate-sale"
+      ],
+      "confidence": 0.86,
+      "status": "verified",
+      "lat": 29.588104523478,
+      "lon": -98.663187157125,
+      "geocode": "census",
+      "in_person": true,
+      "external_id": "exn-ipcsae00229431",
+      "refcode": "IPCSAE00229431",
+      "posted_at": "2026-11-05",
+      "date_certainty": "published",
+      "date_bucket": "upcoming",
+      "source_urls": [
+        "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/advert/estate-sale-in-sonoma-ranch-general_1012"
+      ],
+      "sources": [
+        "Express-News Marketplace"
+      ],
+      "aliases": [
+        "exn-ipcsae00229431"
+      ]
+    },
+    {
+      "address": "4119 Spring View Dr, San Antonio, TX 78222",
+      "dates": "2026-11-12 – 2026-11-13",
+      "date_from": "2026-11-12",
+      "date_to": "2026-11-13",
+      "date_start": "2026-11-12",
+      "date_end": "2026-11-13",
+      "end_date": "2026-11-13",
+      "hours": "8:00am-4pm",
+      "title": "SOUTHEAST - GARAGE SALE",
+      "details": "SOUTHEAST - GARAGE SALE\r\n4119 Spring View Dr., 78222.\r\n2 sewing machines, furniture,\r\n$1 items & much more!\r\nNOV. 12-13 8:00am- 4pm",
+      "source": "Express-News Marketplace",
+      "url": "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/advert/southeast-garage-sale-general_1036",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.86,
+      "status": "verified",
+      "lat": 29.378802190687,
+      "lon": -98.417306910705,
+      "geocode": "census",
+      "in_person": true,
+      "external_id": "exn-ipcsae00230481",
+      "refcode": "IPCSAE00230481",
+      "posted_at": "2026-11-05",
+      "date_certainty": "published",
+      "date_bucket": "upcoming",
+      "source_urls": [
+        "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/advert/southeast-garage-sale-general_1036"
+      ],
+      "sources": [
+        "Express-News Marketplace"
+      ],
+      "aliases": [
+        "exn-ipcsae00230481"
+      ]
+    },
+    {
+      "address": "6727 Glen Fair, San Antonio, TX 78239",
+      "dates": "2026-11-12 – 2026-11-14",
+      "date_from": "2026-11-12",
+      "date_to": "2026-11-14",
+      "date_start": "2026-11-12",
+      "date_end": "2026-11-14",
+      "end_date": "2026-11-14",
+      "hours": "starting at 9am",
+      "title": "GARAGE SALE!",
+      "details": "GARAGE SALE!\r\n6727 GLEN FAIR 78239, Huge Garage Sale, small kitch. appliances, gadgets, glass ware, misc. house hold Items, iron wood carvings, clothes, books, radial arm saw, shop tools, nails, bolts, and screws, and much more! Thur-Sat Nov 12-14. Starting at 9am.",
+      "source": "Express-News Marketplace",
+      "url": "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/advert/garage-sale-general_1046",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.86,
+      "status": "verified",
+      "lat": 29.517994035186,
+      "lon": -98.354717873467,
+      "geocode": "census",
+      "in_person": true,
+      "external_id": "exn-ipcsae00231261",
+      "refcode": "IPCSAE00231261",
+      "posted_at": "2026-11-10",
+      "date_certainty": "published",
+      "date_bucket": "upcoming",
+      "source_urls": [
+        "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/advert/garage-sale-general_1046"
+      ],
+      "sources": [
+        "Express-News Marketplace"
+      ],
+      "aliases": [
+        "exn-ipcsae00231261"
+      ]
     },
     {
       "address": "811 NORTHSTAR DR, SAN ANTONIO, TX, 78216",
@@ -295,6 +412,45 @@
       ],
       "aliases": [
         "yss-196447877"
+      ]
+    },
+    {
+      "address": "1102 Dwyerbrook, San Antonio, TX 78253",
+      "dates": "2026-11-14",
+      "date_from": "2026-11-14",
+      "date_to": "2026-11-14",
+      "date_start": "2026-11-14",
+      "date_end": "2026-11-14",
+      "end_date": "2026-11-14",
+      "hours": null,
+      "title": "FANTASTIC GARAGE SALE",
+      "details": "FANTASTIC GARAGE SALE\r\nNOVEMBER 14, 1102 DWYERBROOK, HAMMOND KEYBOARD VINTAGE GLASS, ANTIQUES, WALL ART AND MORE\nlocation\n78253",
+      "source": "Express-News Marketplace",
+      "url": "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/advert/fantastic-garage-sale-general_1026",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.86,
+      "status": "verified",
+      "lat": 29.439210159182,
+      "lon": -98.723652638342,
+      "geocode": "census",
+      "in_person": true,
+      "external_id": "exn-ipcsae00230060",
+      "refcode": "IPCSAE00230060",
+      "posted_at": "2026-11-07",
+      "date_certainty": "published",
+      "date_bucket": "upcoming",
+      "source_urls": [
+        "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/advert/fantastic-garage-sale-general_1026"
+      ],
+      "sources": [
+        "Express-News Marketplace"
+      ],
+      "aliases": [
+        "exn-ipcsae00230060"
       ]
     },
     {
@@ -722,6 +878,45 @@
       ]
     },
     {
+      "address": "5858 Laurel Valley, San Antonio, TX 78242",
+      "dates": "2026-11-14 – 2026-11-15",
+      "date_from": "2026-11-14",
+      "date_to": "2026-11-15",
+      "date_start": "2026-11-14",
+      "date_end": "2026-11-15",
+      "end_date": "2026-11-15",
+      "hours": "10am-7pm",
+      "title": "GARAGE SALE",
+      "details": "GARAGE SALE\r\n5858 Laurel Valley,78242\r\nNov. 14-15, 10am-7pm.",
+      "source": "Express-News Marketplace",
+      "url": "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/advert/garage-sale-general_1044",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.86,
+      "status": "verified",
+      "lat": 29.361777429644,
+      "lon": -98.613260548042,
+      "geocode": "census",
+      "in_person": true,
+      "external_id": "exn-ipcsae00231141",
+      "refcode": "IPCSAE00231141",
+      "posted_at": "2026-11-10",
+      "date_certainty": "published",
+      "date_bucket": "upcoming",
+      "source_urls": [
+        "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/advert/garage-sale-general_1044"
+      ],
+      "sources": [
+        "Express-News Marketplace"
+      ],
+      "aliases": [
+        "exn-ipcsae00231141"
+      ]
+    },
+    {
       "address": "9814 TROPHY OAKS DR, GARDEN RIDGE, TX, 78266",
       "source_address": "9814 Trophy Oaks Dr, Garden Ridge, TX 78266",
       "dates": "2026-11-14",
@@ -761,6 +956,84 @@
       ],
       "aliases": [
         "yss-196447879"
+      ]
+    },
+    {
+      "address": "Leon Valley citywide, Leon Valley, TX 78238",
+      "dates": "2026-11-14",
+      "date_from": "2026-11-14",
+      "date_to": "2026-11-14",
+      "date_start": "2026-11-14",
+      "date_end": "2026-11-14",
+      "end_date": "2026-11-14",
+      "hours": "8:00am-6:00pm",
+      "title": "CITY OF LEON VALLEY – CITYWIDE GARAGE SALE",
+      "details": "CITY OF LEON VALLEY –\r\nCITYWIDE GARAGE SALE\r\nSaturday, November 14, 2026 | 8:00 a.m.–6:00 p.m.\r\nShop throughout Leon Valley.\r\nA list of participating addresses will be available at\r\nwww.leonvalleytexas.gov and at City Hall prior\r\nto the event.",
+      "source": "Express-News Marketplace",
+      "url": "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/advert/city-of-leon-valley-citywide-garage-sale-general_1003",
+      "photos": 0,
+      "type": "community",
+      "categories": [
+        "community-sale"
+      ],
+      "confidence": 0.72,
+      "status": "verified",
+      "lat": 29.4952307,
+      "lon": -98.6186317,
+      "geocode": "nominatim-place",
+      "in_person": true,
+      "external_id": "exn-ipcsae00228491",
+      "refcode": "IPCSAE00228491",
+      "posted_at": "2026-11-01",
+      "date_certainty": "published",
+      "date_bucket": "upcoming",
+      "source_urls": [
+        "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/advert/city-of-leon-valley-citywide-garage-sale-general_1003"
+      ],
+      "sources": [
+        "Express-News Marketplace"
+      ],
+      "aliases": [
+        "exn-ipcsae00228491"
+      ]
+    },
+    {
+      "address": "Shavano Ridge community, San Antonio, TX 78230",
+      "dates": "2026-11-14 – 2026-11-15",
+      "date_from": "2026-11-14",
+      "date_to": "2026-11-15",
+      "date_start": "2026-11-14",
+      "date_end": "2026-11-15",
+      "end_date": "2026-11-15",
+      "hours": "8am-2pm",
+      "title": "COMMUNITY YARD SALE-SHAVANO RIDGE",
+      "details": "COMMUNITY YARD SALE-SHAVANO RIDGE\r\n300+ homes in the community - SAT/SUN Nov. 14/15 8AM-2PM\nlocation\n78230",
+      "source": "Express-News Marketplace",
+      "url": "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/advert/community-yard-sale-shavano-ridge-general_1019",
+      "photos": 0,
+      "type": "community",
+      "categories": [
+        "community-sale"
+      ],
+      "confidence": 0.72,
+      "status": "verified",
+      "lat": 29.5692373,
+      "lon": -98.5719205,
+      "geocode": "nominatim-place",
+      "in_person": true,
+      "external_id": "exn-ipcsae00229611",
+      "refcode": "IPCSAE00229611",
+      "posted_at": "2026-10-30",
+      "date_certainty": "published",
+      "date_bucket": "upcoming",
+      "source_urls": [
+        "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/advert/community-yard-sale-shavano-ridge-general_1019"
+      ],
+      "sources": [
+        "Express-News Marketplace"
+      ],
+      "aliases": [
+        "exn-ipcsae00229611"
       ]
     },
     {

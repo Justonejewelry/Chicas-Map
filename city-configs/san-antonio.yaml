@@ -1,7 +1,7 @@
 # San Antonio — Reference City Config (YAML)
 # Project YardBird / GSIN
 # Machine-readable. Prefer this over the .md version for scripts and agents.
-# Updated 2026-08-01: full public source inventory included.
+# Updated 2026-11-11: full public source inventory included.
 
 slug: san-antonio
 name: San Antonio
@@ -84,8 +84,8 @@ sources:
     priority: medium
 
   express_news:
-    url: https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio
-    notes: "San Antonio Express-News / Hearst Marketplace. Dedicated Estate-Garage Sales category. Public classifieds."
+    url: https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/category/estate-garage-sales
+    notes: "San Antonio Express-News / Hearst Marketplace. Estate & Garage Sales classifieds. Public HTML; fetch_express_news.py."
     agents: [Press]
     priority: medium
 
@@ -146,4 +146,4 @@ map_defaults:
   priority_badges: ["early-start", "high-value", "estate"]
 
 status: reference
-last_updated: "2026-08-01"
+last_updated: "2026-11-11"

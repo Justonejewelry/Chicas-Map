@@ -1,0 +1,77 @@
+<!DOCTYPE html><html><head><title>fixture</title></head><body><div id="details"><div class="sr_ad_frame" id="advert_1019" itemscope="itemscope" itemtype="http://schema.org/Offer"><div class="sr_ad_content panel panel-details"><div class="panel-heading"><h1><span class="sr_ad_title" itemprop="name"><a href="https://hearst-mp.ipublishmarketplace.com/marketplacehttps://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/advert/community-yard-sale-shavano-ridge-general_1019" itemprop="url">COMMUNITY YARD SALE-SHAVANO RIDGE</a></span></h1></div><div class="panel-body"><div class="d-flex align-items-start gap-2"><div class="flex-grow-1"><div class="linkify adDescDetails" itemprop="description">COMMUNITY YARD SALE-SHAVANO RIDGE
+300+ homes in the community - SAT/SUN Nov. 14/15 8AM-2PM</div></div></div><dl class="enhDetails dl-horizontal"><dt>location</dt><dd>78230</dd></dl></div><div class="panel-footer"><div class="panel-footer-controls"><span class="time-stamp"><time datetime="2026-10-30 00:00:00.0">Post Date: 10/30 12:00 AM</time></span><div class="btn-group"></div><div class="print"><span class="refcode">Refcode: #IPCSAE00229611 
+								</span><div class="btn-group"><div class="inner btn-group-xs"><a class="print_button" href="https://hearst-mp.ipublishmarketplace.com/marketplacehttps://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/advert/community-yard-sale-shavano-ridge-general_1019#print">Print <span class="glyphicon glyphicon-print"></span></a></div></div></div></div></div></div><div><form class="form-horizontal" id="respond"><input name="searchProfile" type="hidden" value="general"/><input name="advertId" type="hidden" value="1019"/><input name="" type="hidden" value=""/><div class="panel panel-respond"><div class="panel-heading"><h4>Respond to this ad</h4></div><div class="panel-body"><div class="col-md-6"><div class="input-group"><label class="sr-only" for="name">Your Name</label><span class="input-group-addon input-group-text"><span class="glyphicon glyphicon-user"></span></span><input class="form-control" name="name" placeholder="Your Name" type="text" value=""/></div><div class="input-group"><label class="sr-only" for="email">Your Email</label><span class="input-group-addon input-group-text"><span class="glyphicon glyphicon-envelope"></span></span><input class="form-control" name="email" placeholder="Your Email" type="email" value=""/></div><div class="input-group"><label class="sr-only" for="phone">Your Phone</label><span class="input-group-addon input-group-text"><span class="glyphicon glyphicon-earphone"></span></span><input class="form-control" name="phone" placeholder="Your Phone" type="tel" value=""/></div><div class="input-group"><label class="sr-only" for="emailMessage">Your Message</label><span class="input-group-addon input-group-text"><span class="glyphicon glyphicon-comment"></span></span><textarea class="emailInput form-control" name="emailMessage" placeholder="Your Message"></textarea></div><div class="input-group"><div class="g-recaptcha" data-sitekey="6LfgoQkUAAAAAEQFQX3OMfrxtHBu0GyCR-VLmDKP"></div></div></div></div><div class="panel-footer"><div class="panel-footer-controls"><div class="btn-group-sm"><button class="btn btn-default left" onclick="form.reset()">Reset</button><button class="btn btn-primary right" type="submit">Send Your Message</button></div></div></div></div></form><script type="text/javascript">
+	    $jq(document).on('change', ':file', function() {
+	        var input = $jq(this),
+	            numFiles = input.get(0).files ? input.get(0).files.length : 1,
+	            label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+	        input.trigger('fileselect', [numFiles, label]);
+	    });
+    
+	    $jq(document).ready( function() {
+	        $jq(':file').on('fileselect', function(event, numFiles, label) {
+	        	$jq('.btn-file > span').html(label);
+	        });
+	    });
+	    
+		$jq(document).ready(function(){
+			var validator = $jq("#respond").validate({
+				rules: {
+					
+						recaptcha_response_field: "required",
+					
+					name: "required",
+					email: {
+						required: true,
+						email: true
+					},
+					emailMessage: "required",
+				},
+				messages: {
+				},
+				errorPlacement: qtipErrorPlacement,						
+		        // set this class to error-labels to indicate valid fields 
+		        success: function(label) { 
+		        	$jq.noop();
+		        },
+		        highlight: function (element) {
+		        	$jq(element).closest('.input-group').addClass('has-error');
+		        },		        
+		        unhighlight: function (element) {
+		        	$jq(element).closest('.input-group').removeClass('has-error');
+		        }	 						
+			});
+		
+			$jq("#respond").ajaxForm({
+				type: "POST",
+				dataType: "html",
+				url: '/marketplace/sanantonio/advert/respond',
+				data: $jq("#respond").serialize(), // serializes the form's elements.
+				success: function(data) {
+					setInfo(data);
+					if (data.indexOf("-success") != -1) {
+						$jq("#respond").hide();	
+					}
+					else if (typeof Recaptcha != 'undefined') {
+						Recaptcha.reload();
+					}
+				},
+				failure: function(jqXHR, textStatus) {
+					var info = '<div class="message"><div class="message error">'+textStatus+'</div></div>';
+					setInfo(info);
+				},
+				beforeSubmit: function(){
+					return $jq("#respond").valid();
+				},
+                beforeSend: function(jqXHR) {
+                    jqXHR.setRequestHeader("X-CSRF-TOKEN", "");
+                },
+		        highlight: function (element) {
+		        	$jq(element).closest('.form-group').addClass('has-error');
+		        },		        
+		        unhighlight: function (element) {
+		        	$jq(element).closest('.form-group').removeClass('has-error');
+		        }	
+			});
+		});			
+	</script></div></div></div></body></html>

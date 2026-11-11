@@ -1,6 +1,6 @@
 # Estate sale data sources — YardBird / GSIN
 
-Last updated: 2026-08-22
+Last updated: 2026-11-11
 
 ## Policy
 
@@ -16,6 +16,7 @@ Apify was removed 2026-08-22. Do not add `APIFY_TOKEN` or `fetch_estatesales_api
 | **EstateSales.org** | `webapp/scripts/fetch_estatesales_org.py` | **Free** | **High** | Embedded sale JSON (address, lat/lon, hours) |
 | **YardSaleSearch** | `webapp/scripts/fetch_yardsalesearch.py` | **Free** | **High** | schema.org Place + PostalAddress + lat/lon |
 | **Craigslist** | `webapp/scripts/fetch_craigslist.py` | **Free** | Medium | Static search results + detail enrichment |
+| **SA Express-News Marketplace** | `webapp/scripts/fetch_express_news.py` | **Free** | Medium | Public Estate & Garage Sales classifieds; detail pages for full ad text |
 | EstateSales.net lightweight | `webapp/scripts/fetch_estatesales.py` | Free | Low–medium | SPA-heavy; often thin |
 
 ## Not used (blocked from CI)
@@ -65,6 +66,16 @@ python3 webapp/scripts/fetch_estatesales.py --city san-antonio
 Probes internal endpoints + ld+json. Often returns zero because the site is a client SPA.
 Primary estate coverage is EstateSales.org, not this file.
 
+
+## SA Express-News Marketplace (free local classifieds)
+
+```bash
+python3 webapp/scripts/fetch_express_news.py --city san-antonio
+python3 webapp/scripts/fetch_express_news.py --city san-antonio --dry-run
+```
+
+Fetches `https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/category/estate-garage-sales`, follows each ad’s detail page, and merges into `public[]` with `external_id: exn-<refcode>` (for example `exn-ipcsae00229431`). Citywide and named community sales (Leon Valley, Shavano Ridge) are kept as area pins. Online-only auctions and ended ads are skipped.
+
 ## Populate workflow order (5 AM CT master)
 
 1. GarageSaleFinder
@@ -73,14 +84,15 @@ Primary estate coverage is EstateSales.org, not this file.
 4. **YardSaleSearch free**
 5. gsalr.com
 6. **Craigslist free**
-7. EstateSales.net lightweight free
-8. Purge expired
-9. **Scraper health check** → writes `webapp/data/scraper-health.json`
-10. Orchestrator + events + forecast
-11. Commit if dirty
+7. **SA Express-News Marketplace free**
+8. EstateSales.net lightweight free
+9. Purge expired
+10. **Scraper health check** → writes `webapp/data/scraper-health.json`
+11. Orchestrator + events + forecast
+12. Commit if dirty
 
 ## Scraper health monitoring
 
 - Script: `webapp/scripts/check_scraper_health.py`
 - Primary (critical) sources: EstateSales.org, YardSaleSearch, Craigslist
-- Secondary: GSF, permits, EstateSales.net lightweight, gsalr
+- Secondary: GSF, permits, EstateSales.net lightweight, gsalr, SA Express-News Marketplace

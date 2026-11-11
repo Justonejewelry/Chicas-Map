@@ -1,5 +1,5 @@
 # Project YardBird — Full Public Information Sources
-San Antonio reference  •  Updated 2026-08-01
+San Antonio reference  •  Updated 2026-11-11
 
 All sources below are public or government-published. Private Facebook Groups, login-walled Marketplace bulk access, and ToS-violating scrapers are out of scope.
 
@@ -22,7 +22,7 @@ All sources below are public or government-published. Private Facebook Groups, l
 | Source | Access | Agent(s) | Notes |
 |--------|--------|----------|-------|
 | Craigslist (gms) | RSS + public pages (constrained) | Mercury Swarm | Rate-limited / blocked for heavy automation; multi-path resilience in place |
-| SA Express-News / Hearst Marketplace | Public classifieds | Press | Dedicated Estate-Garage Sales category |
+| SA Express-News / Hearst Marketplace | Public classifieds | Press | Estate & Garage Sales category at hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/category/estate-garage-sales. Script: `webapp/scripts/fetch_express_news.py` |
 | Facebook (public only) | Public pages, events, hashtags, tips | Echo Swarm | No Graph API for Marketplace or Groups |
 
 ## Tier 3 — Community & supporting
