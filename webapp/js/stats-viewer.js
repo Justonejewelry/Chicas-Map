@@ -271,7 +271,11 @@
 
   function setText(id, text) {
     var el = document.getElementById(id);
-    if (el) el.textContent = text;
+    if (!el) return;
+    el.textContent = text;
+    if (el.classList.contains("stat-value")) {
+      el.classList.toggle("is-phrase", !/^\d[\d,]*$/.test(String(text).trim()));
+    }
   }
   function bars(items, hrefFor) {
     var max = 0;
