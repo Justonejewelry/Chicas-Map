@@ -354,6 +354,51 @@ class SiteBuildTests(unittest.TestCase):
         self.assertIn('data-goatcounter="https://chicasmapcom.goatcounter.com/count"', page)
         self.assertIn('data-goatcounter="https://chicasmapcom.goatcounter.com/count"', page_es)
 
+        js = (self.root / 'js/stats-viewer.js').read_text()
+        self.assertIn('id="countdown-panel"', page)
+        self.assertIn('id="heatmap-panel"', page)
+        self.assertIn('data-tip-copy="countdown"', page)
+        self.assertIn('data-tip-copy="heatmap"', page)
+        self.assertIn('Weekend starts in', js)
+        self.assertIn('El fin de semana empieza en', js)
+        self.assertIn('Open right now', page)
+        self.assertIn('Still ahead this weekend', page)
+        self.assertIn('This weekend by area', page)
+        self.assertIn('vendor/leaflet-1.9.4/leaflet.js', js)
+        self.assertNotIn('mission-control', js)
+        self.assertIn('countdownTitle', js)
+        self.assertIn('heatmapTitle', js)
+
+        # Hours parsing + weekday headline stay honest in Central Time.
+        script = (
+            "const S=require('./webapp/js/stats-viewer.js');"
+            "const o=x=>console.log(JSON.stringify(x));"
+            "o(S.parseHoursForDay('Fri 9am-5pm, Sat 8am-5pm','2026-11-13'));"
+            "o(S.parseHoursForDay('Fri 9am-5pm, Sat 8am-5pm','2026-11-15'));"
+            "o(S.parseHoursForDay('starting at 8am','2026-11-14'));"
+            "o(S.parseHoursForDay('Mon 3-7:30pm, Tue-Thu 3-7pm','2026-11-11'));"
+            "const wed=new Date('2026-11-11T19:15:00Z');"
+            "o(S.ctToday(wed));o(S.weekendRange('2026-11-11'));o(S.ctOffset('2026-11-11'));"
+            "const sales=[{title:'A',date_start:'2026-11-13',date_end:'2026-11-14',hours:'Fri 9am-5pm, Sat 8am-5pm'},"
+            "{title:'B',date_start:'2026-11-14',date_end:'2026-11-14',hours:''}];"
+            "const st=S.classifyWeekend(sales,wed);o(S.weekendHeadline(st));o(st.open.length);o(st.ahead.length);"
+            "o(st.nextTimed&&st.nextTimed.minutes);o(st.nextTimed&&st.nextTimed.iso);"
+        )
+        out = subprocess.run(['node', '-e', script], cwd=ROOT, capture_output=True, text=True, check=True).stdout.split('\n')
+        v = [json.loads(x) for x in out if x]
+        self.assertEqual(v[0], {'start': 9 * 60, 'end': 17 * 60})
+        self.assertIsNone(v[1])
+        self.assertEqual(v[2], {'start': 8 * 60, 'end': 24 * 60 - 1})
+        self.assertEqual(v[3], {'start': 15 * 60, 'end': 19 * 60})
+        self.assertEqual(v[4], '2026-11-11')
+        self.assertEqual(v[5], ['2026-11-13', '2026-11-15'])
+        self.assertEqual(v[6], '-06:00')
+        self.assertEqual(v[7], 'Weekend starts in 2 days')
+        self.assertEqual(v[8], 0)
+        self.assertEqual(v[9], 2)
+        self.assertEqual(v[10], 9 * 60)
+        self.assertEqual(v[11], '2026-11-13')
+
 
 
 

@@ -12,9 +12,9 @@
 <link rel="stylesheet" href="/Chicas-Map/css/home-fonts.css?v=2"/>
 <link rel="stylesheet" href="/Chicas-Map/assets/styles-D8YtPAwk.css"/>
 <link rel="stylesheet" href="/Chicas-Map/css/home.css?v=5"/>
-<link rel="stylesheet" href="/Chicas-Map/css/stats.css?v=2"/>
+<link rel="stylesheet" href="/Chicas-Map/css/stats.css?v=3"/>
 <script src="/Chicas-Map/js/home.js?v=2" defer></script>
-<script src="/Chicas-Map/js/stats-viewer.js?v=2" defer></script>
+<script src="/Chicas-Map/js/stats-viewer.js?v=3" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -52,6 +52,45 @@
     <p class="tip" id="tip-traffic" role="tooltip" data-tip-copy="traffic">Visit counts would come from the public GoatCounter for chicasmap.com. That public counter is not switched on yet, so this card stays on “Coming soon” instead of inventing a number.</p>
   </article>
 </div>
+
+<section class="stats-panel" id="countdown-panel" aria-labelledby="countdown-title">
+  <div class="panel-head">
+    <div>
+      <h2 id="countdown-title">Weekend countdown</h2>
+      <p class="section-intro" id="countdown-intro">What’s open right now, what’s still ahead this Friday–Sunday, and when the next sale opens. Times are Central Time.</p>
+    </div>
+    <button type="button" class="stat-tip" aria-expanded="false" aria-controls="tip-countdown" aria-describedby="tip-countdown" title="What this means">?</button>
+  </div>
+  <p class="tip" id="tip-countdown" role="tooltip" data-tip-copy="countdown">Open now means this sale is on today’s calendar and Chica has posted hours that include the current Central Time. Sales without hours are not marked open. Still ahead are this weekend’s sales that have not started yet. The countdown uses the next posted opening time. Monday through Thursday, this panel also tells you when Friday arrives.</p>
+  <p class="ticker-status" id="ticker-status" aria-live="polite"></p>
+  <p class="ticker-next" id="ticker-next"></p>
+  <div class="ticker-split">
+    <div class="ticker-col">
+      <div class="stat-value" id="ticker-open">—</div>
+      <div class="stat-label" id="ticker-open-label">Open right now</div>
+      <div id="ticker-open-list"></div>
+    </div>
+    <div class="ticker-col">
+      <div class="stat-value" id="ticker-ahead">—</div>
+      <div class="stat-label" id="ticker-ahead-label">Still ahead this weekend</div>
+      <div id="ticker-ahead-list"></div>
+    </div>
+  </div>
+</section>
+<section class="stats-panel" id="heatmap-panel" aria-labelledby="heatmap-title">
+  <div class="panel-head">
+    <div>
+      <h2 id="heatmap-title">This weekend by area</h2>
+      <p class="section-intro" id="heatmap-intro">Neighborhoods shaded by how many sales are on the map this Friday–Sunday. Darker pink means more pins.</p>
+    </div>
+    <button type="button" class="stat-tip" aria-expanded="false" aria-controls="tip-heatmap" aria-describedby="tip-heatmap" title="What this means">?</button>
+  </div>
+  <p class="tip" id="tip-heatmap" role="tooltip" data-tip-copy="heatmap">A weekend heat map of the same neighborhoods used on Chica’s map, based on each sale’s ZIP code and the live sales feed. Circle size and color follow the pin count. Some sales sit outside this city view and are listed under Other area. The map uses the same map library as the rest of the site.</p>
+  <div class="heat-layout">
+    <div id="stats-heatmap" class="heat-map" role="img" aria-label="Weekend sales by neighborhood"></div>
+    <div id="stats-heat-list"></div>
+  </div>
+</section>
 <section class="stats-panel" aria-labelledby="hoods-title">
   <div class="panel-head">
     <div>
