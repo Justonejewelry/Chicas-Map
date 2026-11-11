@@ -2,7 +2,7 @@
 
 ## 1. CHICA DAILY RUN
 - **Target date:** Wednesday, November 11, 2026
-- **San Antonio local run time:** 2026-11-11T12:36:54-06:00
+- **San Antonio local run time:** 2026-11-11T15:23:07-06:00
 - **Geographic area:** San Antonio & surrounding communities
 - **Sources searched:** 7
 - **Candidates discovered:** 20
@@ -26,7 +26,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196458773
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.551369903987,-98.256587670159
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.551369903987,-98.256587670159
-- **Verified at:** 2026-11-11T12:36:54-06:00
+- **Verified at:** 2026-11-11T15:23:07-06:00
 
 ## 3. CHICA PICKS
 
