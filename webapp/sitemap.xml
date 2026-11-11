@@ -18,4 +18,14 @@
   <url><loc>https://www.chicasmap.com/legal/</loc><changefreq>monthly</changefreq></url>
   <url><loc>https://www.chicasmap.com/privacy/</loc><changefreq>monthly</changefreq></url>
   <url><loc>https://www.chicasmap.com/terms/</loc><changefreq>monthly</changefreq></url>
+  <url>
+    <loc>https://www.chicasmap.com/adventure/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.chicasmap.com/resources/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
 </urlset>
