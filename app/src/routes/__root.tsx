@@ -49,7 +49,7 @@ export const Route = createRootRoute({
           }}
         />
         <script
-          data-goatcounter="https://chicasmap.goatcounter.com/count"
+          data-goatcounter="https://chicasmapcom.goatcounter.com/count"
           async
           src="https://gc.zgo.at/count.js"
         />

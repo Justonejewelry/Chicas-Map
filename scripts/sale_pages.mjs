@@ -1,3 +1,4 @@
+import { GOATCOUNTER } from "./goatcounter.mjs";
 /**
  * Per-sale detail pages: /sales/<slug>/ and /es/sales/<slug>/.
  * Built from data/sales-clean.json on every deploy by build_seo_pages.mjs, so new sales get a page automatically.
@@ -5,7 +6,6 @@
  */
 // Same analytics + Follow Chica row as stamp-pages.mjs (sale pages are built after stamping).
 const SOCIALS = '<script src="/Chicas-Map/js/chica-socials.js?v=2" defer></script>';
-const GOATCOUNTER = '<script>(function(){window.goatcounter=window.goatcounter||{};window.goatcounter.path=function(p){var path=(p||location.pathname||"/").replace(/^\\/Chicas-Map(?=\\/|$)/, "")||"/";if(path.indexOf("/admin")===0||path.indexOf("/__grok")===0||path.indexOf("/google")===0)return;return path;};})();</script><script data-goatcounter="https://chicasmap.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>';
 const DAY_EN = new Intl.DateTimeFormat("en-US", { weekday: "short", month: "short", day: "numeric", year: "numeric", timeZone: "UTC" });
 const DAY_ES = new Intl.DateTimeFormat("es-US", { weekday: "short", month: "short", day: "numeric", year: "numeric", timeZone: "UTC" });
 function fmt(iso, es) {

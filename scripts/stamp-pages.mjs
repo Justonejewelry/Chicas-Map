@@ -5,6 +5,7 @@
  */
 import { mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from "node:fs";
 import { basename, dirname, join } from "node:path";
+import { withGoatCounter } from "./goatcounter.mjs";
 
 const root = process.argv[2] || "_site";
 const origin = "https://www.chicasmap.com";
@@ -37,7 +38,6 @@ const PAGES = [
 const PAGE_BY_PATH = Object.fromEntries(PAGES.map((p) => [p.path || "/", p]));
 const ES_BOOT = '<script>(function(){try{var b="/Chicas-Map";var p=location.pathname;var es=b+"/es";if(p===es||p.indexOf(es+"/")===0){localStorage.setItem("chicas-map-locale","es");document.documentElement.lang="es";var rest=p.slice(es.length)||"/";history.replaceState(null,"",b+(rest.charAt(0)==="/"?rest:"/"+rest)+location.search+location.hash);}}catch(e){}})();</script>';
 const SOCIALS = '<script src="/Chicas-Map/js/chica-socials.js?v=2" defer></script>';
-const GOATCOUNTER = '<script>(function(){window.goatcounter=window.goatcounter||{};window.goatcounter.path=function(p){var path=(p||location.pathname||"/").replace(/^\\/Chicas-Map(?=\\/|$)/, "")||"/";if(path.indexOf("/admin")===0||path.indexOf("/__grok")===0||path.indexOf("/google")===0)return;return path;};})();</script><script data-goatcounter="https://chicasmap.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>';
 
 function noscriptBlock(page, isEs) {
   const title = isEs ? page.titleEs : page.title;
@@ -156,7 +156,7 @@ function stampFile(file, opts) {
     html = html.includes("<body") ? html.replace(/<body([^>]*)>/, "<body$1>" + block) : block + html;
   }
   if (html.indexOf("chica-socials.js") === -1) html = html.includes("</body>") ? html.replace("</body>", SOCIALS + "</body>") : html + SOCIALS;
-  if (html.indexOf("data-goatcounter") === -1) html = html.includes("</body>") ? html.replace("</body>", GOATCOUNTER + "</body>") : html + GOATCOUNTER;
+  html = withGoatCounter(html);
   writeFileSync(file, html);
 }
 const htmlFiles = walk(root);

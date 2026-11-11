@@ -8,6 +8,7 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { richEventLd } from "./sale_pages.mjs";
+import { GOATCOUNTER } from "./goatcounter.mjs";
 
 const root = process.argv[2] || "_site";
 const origin = (process.env.SITE_ORIGIN || "https://www.chicasmap.com").replace(/\/$/, "");
@@ -85,7 +86,7 @@ function head(title, desc, path, indexable, ld, lang) {
     (ld ? '<script type="application/ld+json">' + JSON.stringify(ld).replace(/</g, "\\u003c") + "</script>" : "") +
     "<style>" + CSS + "</style></head><body>";
 }
-const FOOT = '<script src="' + BASE + '/js/chica-menu.js?v=8" defer></script></body></html>';
+const FOOT = '<script src="' + BASE + '/js/chica-menu.js?v=8" defer></script>' + GOATCOUNTER + "</body></html>";
 
 function saleCard(s, es) {
   const when = [s.dates, s.hours].filter(Boolean).join(" · ");

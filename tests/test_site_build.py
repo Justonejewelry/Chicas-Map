@@ -202,6 +202,40 @@ class SiteBuildTests(unittest.TestCase):
             # stamp-pages must not overwrite this utility page with homepage SEO.
             self.assertNotIn('San Antonio garage sales', html)
 
+    def test_goatcounter_current_property_once_on_public_pages(self):
+        """Home, Spanish home, and other public pages get one chicasmapcom snippet, never the legacy code."""
+        current = 'data-goatcounter="https://chicasmapcom.goatcounter.com/count"'
+        script = 'gc.zgo.at/count.js'
+        legacy = 'https://chicasmap.goatcounter.com/'
+        must_have = [
+            'index.html', 'es/index.html', 'advertise/index.html', 'calendar/index.html',
+            'claim/index.html', 'boost/index.html', 'deals/index.html', 'map/index.html',
+            'list/index.html', 'submit/index.html', 'privacy/index.html', 'garage-sales/index.html',
+            'garage-sales/south-side/index.html', 'es/garage-sales/index.html', 'es/advertise/index.html',
+        ]
+        for rel in must_have:
+            html = (self.root / rel).read_text()
+            self.assertEqual(html.count(script), 1, rel + ' should have exactly one GoatCounter script')
+            self.assertEqual(html.count(current), 1, rel + ' should use the current chicasmapcom property')
+            self.assertNotIn(legacy, html, rel + ' must not send hits to the legacy property')
+        # A sale page, if the feed produced any.
+        sales = list((self.root / 'sales').glob('*/index.html')) if (self.root / 'sales').exists() else []
+        self.assertTrue(sales, 'expected at least one sale page')
+        for page in sales[:3] + (list((self.root / 'es' / 'sales').glob('*/index.html'))[:1] if (self.root / 'es' / 'sales').exists() else []):
+            html = page.read_text()
+            self.assertEqual(html.count(script), 1, str(page))
+            self.assertIn(current, html)
+            self.assertNotIn(legacy, html)
+        skip = {'mission-control', 'review', 'admin', '__grok'}
+        for html_path in self.root.rglob('*.html'):
+            rel = html_path.relative_to(self.root).as_posix()
+            if rel.split('/')[0] in skip:
+                continue
+            html = html_path.read_text()
+            self.assertNotIn(legacy, html, rel)
+            self.assertLessEqual(html.count(script), 1, rel + ' must not double the GoatCounter script')
+
+
 
 if __name__ == '__main__':
     unittest.main()
