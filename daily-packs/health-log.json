@@ -1,5 +1,15 @@
 [
   {
+    "timestamp": "2026-11-11T02:50:20Z",
+    "target_date": "2026-11-10",
+    "actions_run_id": "42948583844",
+    "emails_scanned": 1,
+    "net_new_added": 0,
+    "geocoding_success_rate": "0.0%",
+    "status": "SUCCESS",
+    "notes": "Triggered chica-daily.yml run 42948583844 (cities=san-antonio). In_progress after 3x5s polls. ESO daily reviewed: 3 'new' near SA are online auctions (Caring Transitions Boerne/SA NW, no street address, bidding closes Nov 16/18/22). Boerne outside listed Greater SA, New Braunfels excluded. 0 net-new. Community swarm not triggered. City file left to master populate."
+  },
+  {
     "timestamp": "2026-11-01T15:50:00Z",
     "target_date": "2026-11-01",
     "actions_run_id": "41323150772",
