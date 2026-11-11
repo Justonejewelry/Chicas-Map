@@ -22,7 +22,6 @@
     secMascot: "Fotos de la mascota",
     secPosters: "Pósters y cierre",
     secCampaign: "Campaña y producto",
-    secAdventure: "Edición Adventure",
     swCape: "Rosa de la capa",
     swMid: "Rosa medio",
     swDeep: "Rosa profundo",
@@ -64,11 +63,7 @@
       s4: "Still de campaña de una ruta de cacería",
       s5: "Still de campaña con la mascota",
       atlas: "Tarjeta de título de Alamo Atlas",
-      atlasReel: "Promo vertical de Alamo Atlas",
-      advMascot: "Mascota ilustrada de la edición Adventure",
-      advBadge: "Insignia de la mascota en Adventure",
-      advCoin: "Moneda de la mascota en Adventure",
-      advHero: "Banner de la edición Adventure"
+      atlasReel: "Promo vertical de Alamo Atlas"
     },
     menu: {
       navFind: "Encontrar ventas",
@@ -137,7 +132,6 @@
     set("#sec-mascot", ES.secMascot);
     set("#sec-posters", ES.secPosters);
     set("#sec-campaign", ES.secCampaign);
-    set("#sec-adventure", ES.secAdventure);
     document.querySelectorAll("[data-swatch]").forEach(function (el) {
       var key = el.getAttribute("data-swatch");
       if (ES[key]) el.textContent = ES[key];
