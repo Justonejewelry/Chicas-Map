@@ -184,6 +184,11 @@ for (const p of PAGES) {
   const es = origin + "/es" + (p.path ? "/" + p.path + "/" : "/");
   body += "  <url>\n    <loc>" + en + "</loc>\n    <lastmod>" + today + "</lastmod>\n    <changefreq>daily</changefreq>\n    <xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"" + en + "\"/>\n    <xhtml:link rel=\"alternate\" hreflang=\"es\" href=\"" + es + "\"/>\n    <xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"" + en + "\"/>\n  </url>\n  <url>\n    <loc>" + es + "</loc>\n    <lastmod>" + today + "</lastmod>\n    <changefreq>weekly</changefreq>\n    <xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"" + en + "\"/>\n    <xhtml:link rel=\"alternate\" hreflang=\"es\" href=\"" + es + "\"/>\n    <xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"" + en + "\"/>\n  </url>\n";
 }
+// English-only public pages (no Spanish shell) that still belong in the sitemap.
+for (const extra of ["adventure", "resources"]) {
+  try { statSync(join(root, extra, "index.html")); } catch (e) { continue; }
+  body += "  <url>\n    <loc>" + origin + "/" + extra + "/</loc>\n    <lastmod>" + today + "</lastmod>\n    <changefreq>weekly</changefreq>\n  </url>\n";
+}
 writeFileSync(join(root, "sitemap.xml"), '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' + body + "</urlset>\n");
 const robotsPath = join(root, "robots.txt");
 if (existsSync(robotsPath)) {
