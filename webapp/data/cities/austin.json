@@ -45,8 +45,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.387324612756018,
-      "lon": -97.80401339349223,
+      "lat": 30.38719884919152,
+      "lon": -97.80319069659707,
       "geocode": "source",
       "company": "Golden Soul Estate Sales",
       "in_person": true,
@@ -125,8 +125,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.626669528314768,
-      "lon": -97.74749729270734,
+      "lat": 30.62638206873877,
+      "lon": -97.7522055277436,
       "geocode": "source",
       "company": null,
       "in_person": true,
@@ -179,8 +179,8 @@
       "in_person": false,
       "external_id": "eso-2472304",
       "categories": [
-        "estate-sale",
-        "online-auction"
+        "online-auction",
+        "estate-sale"
       ]
     },
     {
@@ -395,8 +395,8 @@
       ],
       "confidence": 0.7,
       "status": "verified",
-      "lat": 30.62917,
-      "lon": -97.74978,
+      "lat": 30.6285,
+      "lon": -97.74994,
       "geocode": "source",
       "in_person": true,
       "external_id": "yss-georgetowntx-2026-11-13"
@@ -478,24 +478,24 @@
     },
     {
       "address": "Austin, TX",
-      "dates": "2026-10-31 – 2026-11-11",
-      "date_from": "2026-10-31",
-      "date_to": "2026-11-11",
-      "end_date": "2026-11-11",
-      "title": "Treasures Through Time: Pottery & Collectibles Online Auction by Caring Transitions - Ends 11/10!",
-      "details": "Online Only Auction",
+      "dates": "2026-11-11 – 2026-11-14",
+      "date_from": "2026-11-11",
+      "date_to": "2026-11-14",
+      "end_date": "2026-11-14",
+      "title": "AMAZING OLD CUERO HOME - FULL OF ANTIQUES!",
+      "details": "Estate Sale",
       "source": "EstateSales.net",
-      "url": "https://www.estatesales.net/TX/New Braunfels/78130/5139336",
+      "url": "https://www.estatesales.net/TX/Cuero/77954/5142378",
       "photos": 0,
       "type": "estate",
       "categories": [
-        "garage-sale",
-        "estate-sale"
+        "estate-sale",
+        "garage-sale"
       ],
       "confidence": 0.7,
       "status": "verified",
-      "lat": 30.33473,
-      "lon": -97.76621,
+      "lat": 30.33441,
+      "lon": -97.76648,
       "geocode": "source",
       "company": null,
       "external_id": "yss-austintx-2026-11-13"
@@ -521,8 +521,8 @@
       "in_person": false,
       "external_id": "eso-2472711",
       "categories": [
-        "estate-sale",
-        "online-auction"
+        "online-auction",
+        "estate-sale"
       ]
     },
     {
@@ -580,8 +580,8 @@
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.335262640962988,
-      "lon": -97.76878659863085,
+      "lat": 30.33313364347826,
+      "lon": -97.76914047176376,
       "geocode": "source",
       "company": "Gone For Good",
       "in_person": true,
@@ -707,8 +707,8 @@
       "in_person": false,
       "external_id": "eso-2473080",
       "categories": [
-        "estate-sale",
-        "online-auction"
+        "online-auction",
+        "estate-sale"
       ]
     },
     {
@@ -732,8 +732,8 @@
       "in_person": false,
       "external_id": "eso-2473069",
       "categories": [
-        "estate-sale",
-        "online-auction"
+        "online-auction",
+        "estate-sale"
       ]
     },
     {
@@ -807,6 +807,93 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "yss-2412lynxcourtpflugervilletx-2026-11-10"
+    },
+    {
+      "address": "Austin, TX 78750",
+      "dates": "Sat Nov 14 – Sun Nov 15",
+      "date_from": "11/14/2026",
+      "date_to": "11/15/2026",
+      "end_date": "2026-11-15",
+      "title": "A Northwest Austin Treasure Trove!",
+      "details": "",
+      "source": "GarageSaleFinder",
+      "url": "https://garagesalefinder.com/s/N9qjn/austin-tx-78750",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.85,
+      "status": "verified",
+      "lat": 30.44,
+      "lon": -97.8,
+      "geocode": "zip-centroid"
+    },
+    {
+      "address": "207 Tillery Sq, Austin, TX 78702",
+      "dates": "Sat Nov 14 – Sat Nov 14",
+      "date_from": "11/14/2026",
+      "date_to": "11/14/2026",
+      "end_date": "2026-11-14",
+      "title": "Govalle Yard Sale",
+      "details": "",
+      "source": "GarageSaleFinder",
+      "url": "https://garagesalefinder.com/s/N92nx/207-tillery-sq-austin-tx-78702",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.85,
+      "status": "verified",
+      "lat": 30.26,
+      "lon": -97.72,
+      "geocode": "zip-centroid"
+    },
+    {
+      "address": "207 Tillery Sq, Austin, TX",
+      "dates": "2026-11-14 – 2026-11-14",
+      "date_from": "2026-11-14",
+      "date_to": "2026-11-14",
+      "end_date": "2026-11-14",
+      "hours": null,
+      "title": "Govalle Yard Sale",
+      "details": "",
+      "source": "YardSaleSearch",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196460101",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.88,
+      "status": "verified",
+      "lat": 30.253178,
+      "lon": -97.708887,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "yss-207tillerysqaustintx-2026-11-14"
+    },
+    {
+      "address": "110 Whirlwind Cove, Austin, TX",
+      "dates": "2026-11-12 – 2026-11-14",
+      "date_from": "2026-11-12",
+      "posted_at": "2026-11-10T20:12:03-0600",
+      "date_certainty": "explicit",
+      "date_to": "2026-11-14",
+      "end_date": "2026-11-14",
+      "hours": null,
+      "title": "Estate Sale in Georgetown/Sun City",
+      "details": "QR Code Link to This Post 🏠🖼️Fine Art & Vintage Elegance Estate Sale in Sun City! Discover beautiful art, fine vintage/ current furniture and upscale finds.🏠🖼️ November 12-14 (Thursday-Saturday) TIME: 9-2pm ADDRESS: Call (Five-One-Two)515-3737 More Info & Pics Copy and Paste link👇👇 https://www.estatesales.net/TX/Georgetown/78633/5148930",
+      "date_evidence": "2026-11-12 – 2026-11-14",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/georgetown-estate-sale-in-georgetown/xqPTtkCUg7y5Kvsro6ZLiG",
+      "photos": 0,
+      "type": "estate",
+      "categories": [
+        "estate-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 30.726372,
+      "lon": -97.734461,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-aleingeorgetownxqpttkcug7y5kvsro6zlig"
     }
   ],
   "hot_zones": [
@@ -825,9 +912,9 @@
     "gsalr.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 35,
+  "total_locations": 39,
   "status": "live",
   "date": "2026-11-11",
-  "last_refresh": "2026-11-11T03:20:53-06:00",
+  "last_refresh": "2026-11-11T12:28:37-06:00",
   "permits": []
 }

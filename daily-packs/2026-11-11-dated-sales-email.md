@@ -18,13 +18,16 @@ Map only shows pins whose listed dates include today.
 ### Starts 2026-11-12
 - Marvelous 4 Family pre holiday Garage Sale — 811 Northstar Dr, San Antonio, TX 78216 [2026-11-12 → 2026-11-13]
 - Marvelous 4 Family Pre Holiday Garage Sale — 811 Northstar Dr, San Antonio, TX [2026-11-12 → 2026-11-13]
+- Deals for cash Thurs Fri Nov 12-13 — Austin Hwy, San Antonio, TX [2026-11-12 → 2026-11-13]
 - OPEN Thursday & Friday — 1254 Austin Hwy, San Antonio, TX [2026-11-12 → 2026-11-13]
 - Superb Magnificent 4 Family pre holiday Garage Sale — Blanco Road, San Antonio, TX [2026-11-12 → 2026-11-13]
 - YARD SALE — 1303 Roosevelt #2 near Roosevelt and Felisa, San Antonio, TX [2026-11-12 → 2026-11-13]
 
 ### Starts 2026-11-13
 - Garage Sale — 5802 Grandwood Dr, San Antonio, TX 78239 [2026-11-13 → 2026-11-14]
+- Lots of Great Stuff — 2914 Rocky Oak St, San Antonio, TX 78232 [2026-11-13 → 2026-11-14]
 - Garage Sale — 5802 Grandwood Dr, San Antonio, TX [2026-11-13 → 2026-11-14]
+- Lots Of Great Stuff — 2914 Rocky Oak St, San Antonio, TX [2026-11-13 → 2026-11-14]
 - Multi-Family Garage Sale — 5802 Grandwood Drive near Weidner Rd, San Antonio, TX [2026-11-13 → 2026-11-14]
 
 ### Starts 2026-11-14

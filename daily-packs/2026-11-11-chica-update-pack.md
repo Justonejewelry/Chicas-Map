@@ -2,12 +2,12 @@
 
 ## 1. CHICA DAILY RUN
 - **Target date:** Wednesday, November 11, 2026
-- **San Antonio local run time:** 2026-11-11T03:20:54-06:00
+- **San Antonio local run time:** 2026-11-11T12:28:37-06:00
 - **Geographic area:** San Antonio & surrounding communities
 - **Sources searched:** 7
-- **Candidates discovered:** 19
+- **Candidates discovered:** 20
 - **Verified sales:** 1
-- **Rejected listings:** 18
+- **Rejected listings:** 19
 - **Duplicates merged:** 0
 - **Successfully geocoded:** 1
 - **Street View links generated:** 1
@@ -18,7 +18,7 @@
 ### 1. Good Goods Inside Sale
 - **Type:** garage
 - **Date:** 2026-11-09 → 2026-11-12
-- **Time:** 3:00 PM - 7:30 PM – 
+- **Time:** 8:00 AM - 5:00 PM – 
 - **Address:** 113 BLACK WALNUT, SCHERTZ, TX, 78154, San Antonio 78154
 - **Notes:** Inside sale: kids bike, hoverboard, sound bars, TV, office chair, bed frames, microwave, books, scooters, utility carts, tables, shelves, patio furniture, tiles, clothing and shoes
 - **Confidence:** 100%
@@ -26,7 +26,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196458773
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.551369903987,-98.256587670159
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.551369903987,-98.256587670159
-- **Verified at:** 2026-11-11T03:20:54-06:00
+- **Verified at:** 2026-11-11T12:28:37-06:00
 
 ## 3. CHICA PICKS
 
@@ -44,7 +44,7 @@
 
 ## 5. REJECTED / EXCLUDED
 
-Total rejected or filtered: **18**
+Total rejected or filtered: **19**
 (Expired, duplicate, outside area, insufficient information, or confidence below threshold.)
 
 ## 6. DATA / MAP OUTPUT
