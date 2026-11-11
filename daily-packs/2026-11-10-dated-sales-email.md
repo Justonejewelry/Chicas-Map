@@ -14,6 +14,9 @@ Map only shows pins whose listed dates include today.
 
 ## COMING UP (remembered, not on today's map)
 
+### Starts 2026-11-11
+- Estate of Maryland Von Roeder Kunkle — San Antonio, TX [2026-11-11 → 2026-11-14]
+
 ### Starts 2026-11-12
 - Marvelous 4 Family pre holiday Garage Sale — 811 Northstar Dr, San Antonio, TX 78216 [2026-11-12 → 2026-11-13]
 - Marvelous 4 Family Pre Holiday Garage Sale — 811 Northstar Dr, San Antonio, TX [2026-11-12 → 2026-11-13]
@@ -29,6 +32,7 @@ Map only shows pins whose listed dates include today.
 ### Starts 2026-11-14
 - Community Garage Sale and Pop-Up market — 2903 Nacogdoches Rd, San Antonio, TX 78217 [2026-11-14 → 2026-11-14]
 - Neighborhood-Wide Garage Sale — 2806 Mayfair Dr, San Antonio, TX 78217 [2026-11-14 → 2026-11-14]
+- Southern Hills Community Yard Sale — Southern Blf, San Antonio, TX 78222 [2026-11-14 → 2026-11-14]
 - 🚨 MULTI-SELLER GARAGE SALE AT STORAGE FACILITY! 🚨 — 12241 US-181, San Antonio, TX 78223 [2026-11-14 → 2026-11-14]
 - Raise a glass for Mr. Mike - Estate Sale! — Universal City, TX 78233 [2026-11-14 → 2026-11-15]
 - Trophy Oaks Community Fall Sale — 20544 Wahl Ln, Garden Ridge, TX 78266 [2026-11-14 → 2026-11-14]
@@ -40,11 +44,16 @@ Map only shows pins whose listed dates include today.
 - Moving Out Sale! (14Th & 15Th) — 26765 Orchid Trl, Boerne, TX [2026-11-14 → 2026-11-15]
 - Neighborhood-Wide Garage Sale — 2806 Mayfair Dr, San Antonio, TX [2026-11-14 → 2026-11-14]
 - Community Garage Sale And Pop-Up Market — 2903 Nacogdoches Rd, San Antonio, TX [2026-11-14 → 2026-11-14]
+- Southern Hills Community Yard Sale — Southern Blf, San Antonio, TX [2026-11-14 → 2026-11-14]
 - 🚨 Multi-Seller Garage Sale At Storage Facility! 🚨 — 12241 US-181, San Antonio, TX [2026-11-14 → 2026-11-14]
 - Moving Out Sale! (14th &15th) — 26765 Orchid Trail, San Antonio, TX [2026-11-14 → 2026-11-15]
 - Community Garage Sale — 18023 Crystal Knoll, San Antonio, TX [2026-11-14 → 2026-11-14]
 - Garage Sale — 5858 Laurel Valley Dr near Five Palms, San Antonio, TX [2026-11-14 → 2026-11-14]
+- Southern Hills Community Yard Sale — Southern Bluff near Sinclair Rd, San Antonio, TX [2026-11-14 → 2026-11-14]
 - 🚨 MULTI-SELLER GARAGE SALE AT STORAGE FACILITY! 🚨 — 12241 Hwy 181, San Antonio, TX [2026-11-14 → 2026-11-14]
+
+### Starts 2026-11-19
+- Alamo Ranch Estate Sale – Furniture, Danish China, Clocks & Artwork – — Alamo ranch, San Antonio, TX [2026-11-19 → 2026-11-22]
 
 ### Starts 2026-11-20
 - Analog Age Flash Sale — hidden, San Antonio, TX 78240 [2026-11-20 → 2026-11-20] | 2026-11-20 9:00 am-3:00 pm
@@ -52,7 +61,6 @@ Map only shows pins whose listed dates include today.
 
 ## ONLINE / UNPLOTTABLE
 
-- Treasures Through Time: Pottery & Collectibles Online Auction by Caring Transitions - Ends 11/10! — San Antonio, TX [2026-11-10 → 2026-11-13]
 - The Analog Age: Vintage Tech Treasures - Bidding EXTENDED TO 11/22 @ 7PM! — San Antonio, TX 78240
 - History Meets Holiday: Vintage Gems, Christmas Memories, Coins & Silver in Fair Oaks, TX. — Boerne, TX 78015
 - Exceptional Coin Collection & Curiosities Galore in Boerne, TX Bidding Ends 11/11 Pick Up 11/13 — Boerne, TX 78006
