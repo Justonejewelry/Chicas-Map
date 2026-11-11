@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
 """Date-window pins + dated email list.
 
-If a listing has parseable dates, it is only shown on the map while
-today (America/Chicago) is inside [date_start, date_end].
-Upcoming dated sales stay in the calendar/email pack, not on today's map.
-Undated / recurring (Tue-Sat, ongoing shop) stay visible.
+Classify each pin as live / upcoming / undated / expired / hidden and
+write the dated email pack plus sale-calendar.json.
+
+The city feed (and therefore the public map) keeps live, upcoming, and
+undated pins. Only expired and hidden pins are removed. A previous
+version wrote only "live today" pins back to san-antonio.json, which
+wiped weekend and later sales on every scheduled populate.
 """
 from __future__ import annotations
 
@@ -102,12 +105,12 @@ def email_body(today: date, groups: dict[str, list]) -> str:
         f"Subject: Chica Map dates — {today.isoformat()}",
         "",
         f"Hey pack — dated sales as of {today.strftime('%A, %B %-d')}.",
-        "Map only shows pins whose listed dates include today.",
+        "The map keeps both today's sales and upcoming dated sales.",
         "",
     ]
     labels = {
         "live": f"ON THE MAP TODAY ({today.isoformat()})",
-        "upcoming": "COMING UP (remembered, not on today's map)",
+        "upcoming": "COMING UP (on the map)",
         "undated": "NO HARD DATES (shops / recurring — still on map)",
         "expired": "ENDED (off the map)",
         "hidden": "ONLINE / UNPLOTTABLE",
@@ -139,8 +142,11 @@ def _slim(p: dict[str, Any]) -> dict[str, Any]:
     return {k: p.get(k) for k in ("title", "address", "dates", "date_start", "date_end", "hours", "type", "source", "lat", "lon", "status")}
 
 
-def run(today: date, dry_run: bool = False) -> int:
-    data = json.loads(CITY.read_text(encoding="utf-8"))
+KEEP_ON_MAP = ("live", "upcoming", "undated")
+
+
+def apply_window(data: dict[str, Any], today: date) -> dict[str, list]:
+    """Annotate pins and keep live, upcoming, and undated ones in public[]."""
     groups = {k: [] for k in ("live", "upcoming", "undated", "expired", "hidden")}
     annotated = []
     for pin in data.get("public") or []:
@@ -148,25 +154,36 @@ def run(today: date, dry_run: bool = False) -> int:
         pin["date_bucket"] = bucket
         groups[bucket].append(pin)
         annotated.append(pin)
-    live_map = [p for p in annotated if p.get("date_bucket") in ("live", "undated")]
-    data["public"] = live_map
-    data["total_locations"] = len(live_map)
+    data["public"] = [p for p in annotated if p.get("date_bucket") in KEEP_ON_MAP]
+    data["total_locations"] = len(data["public"])
     data["date"] = today.isoformat()
     data["last_refresh"] = datetime.now(CT).isoformat(timespec="seconds")
     data["date_window"] = {"today": today.isoformat(), **{k: len(groups[k]) for k in groups}}
+    return groups
+
+
+def run(today: date, dry_run: bool = False, city_path: Path | None = None) -> int:
+    city_path = Path(city_path) if city_path else CITY
+    data = json.loads(city_path.read_text(encoding="utf-8"))
+    groups = apply_window(data, today)
     calendar = {"generated": data["last_refresh"], "today": today.isoformat(), **{k: [_slim(p) for p in groups[k]] for k in groups}}
     body = email_body(today, groups)
     print(f"today={today} live={len(groups['live'])} undated={len(groups['undated'])} upcoming={len(groups['upcoming'])} expired={len(groups['expired'])} hidden={len(groups['hidden'])}")
     if dry_run:
         print(body)
         return 0
-    CITY.write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
+    if city_path.resolve() == CITY.resolve():
+        sys.path.insert(0, str(ROOT / "webapp" / "scripts"))
+        from city_io import safe_write_city  # noqa: E402
+        safe_write_city("san-antonio", data)
+    else:
+        city_path.write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
     CAL.parent.mkdir(parents=True, exist_ok=True)
     CAL.write_text(json.dumps(calendar, indent=2) + "\n", encoding="utf-8")
     PACK.mkdir(parents=True, exist_ok=True)
     mail = PACK / f"{today.isoformat()}-dated-sales-email.md"
     mail.write_text(body, encoding="utf-8")
-    print(f"wrote {CITY}\nwrote {CAL}\nwrote {mail}")
+    print(f"wrote {city_path}\nwrote {CAL}\nwrote {mail}")
     return 0
 
 

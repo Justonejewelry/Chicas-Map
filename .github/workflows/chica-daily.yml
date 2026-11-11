@@ -108,6 +108,12 @@ jobs:
           if [ -n "${{ github.event.inputs.target_date }}" ]; then ARGS="--today ${{ github.event.inputs.target_date }}"; fi
           python3 scripts/clean_sales.py webapp --check $ARGS
 
+      - name: Guard against a sharp drop in upcoming sales
+        if: github.event.inputs.dry_run != 'true'
+        run: |
+          set -euo pipefail
+          python3 scripts/guard_populate_feed.py --git-ref origin/main
+
       - name: Upload run log
         if: always()
         uses: actions/upload-artifact@v4

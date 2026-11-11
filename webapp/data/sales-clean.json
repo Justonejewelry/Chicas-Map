@@ -5,7 +5,7 @@
   "timezone": "America/Chicago",
   "status": "live",
   "policy": "Explicit sale dates only; uncertain dates excluded. 60-mile SA metro. Raw overlays preserved.",
-  "total_locations": 20,
+  "total_locations": 40,
   "today_count": 3,
   "public": [
     {
@@ -130,6 +130,160 @@
       "external_id": "sale-3cfc823a30e74fea75cb"
     },
     {
+      "address": "211 S Flores St, San Antonio, TX 78204",
+      "dates": "2026-11-12 – 2026-11-15",
+      "date_from": "2026-11-12",
+      "date_to": "2026-11-15",
+      "date_start": "2026-11-12",
+      "date_end": "2026-11-15",
+      "end_date": "2026-11-15",
+      "hours": null,
+      "title": "LUXURY, LUXURY, LUXURY!  Estate Sale",
+      "details": "",
+      "source": "AllEvents",
+      "url": "https://allevents.in/san-antonio/luxury-luxury-luxury-estate-sale/200031017025850",
+      "photos": 0,
+      "type": "estate",
+      "categories": [
+        "estate-sale"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "lat": 29.422029,
+      "lon": -98.496071,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "ae-200031017025850",
+      "date_bucket": "upcoming",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://allevents.in/san-antonio/luxury-luxury-luxury-estate-sale/200031017025850"
+      ],
+      "sources": [
+        "AllEvents"
+      ],
+      "aliases": [
+        "ae-200031017025850"
+      ]
+    },
+    {
+      "address": "346 Pueblo Pintado, Helotes, TX 78023",
+      "dates": "2026-11-12 – 2026-11-14",
+      "date_from": "2026-11-12",
+      "date_to": "2026-11-14",
+      "date_start": "2026-11-12",
+      "date_end": "2026-11-14",
+      "end_date": "2026-11-14",
+      "hours": "8am-1pm, 8am-noon",
+      "title": "Estate Sale in Sonoma Ranch",
+      "details": "Estate Sale in Sonoma Ranch\r\nMoving Estate Sale lots of great items! Furniture, artwork, yard items, green egg grill, chandeliers, jewelry, etc!\r\nThursday 11/12/26 8 am-1 pm\r\nFriday 11/13/26 8 am-1 pm\r\nSaturday 11/14/26 8 am-Noon\r\nCash or Venmo only. Must load items purchased.\r\n346 Pueblo Pintado, Helotes 78023",
+      "source": "Express-News Marketplace",
+      "url": "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/advert/estate-sale-in-sonoma-ranch-general_1012",
+      "photos": 0,
+      "type": "estate",
+      "categories": [
+        "estate-sale"
+      ],
+      "confidence": 0.86,
+      "status": "verified",
+      "lat": 29.588104523478,
+      "lon": -98.663187157125,
+      "geocode": "census",
+      "in_person": true,
+      "external_id": "exn-ipcsae00229431",
+      "refcode": "IPCSAE00229431",
+      "posted_at": "2026-11-05",
+      "date_bucket": "upcoming",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/advert/estate-sale-in-sonoma-ranch-general_1012"
+      ],
+      "sources": [
+        "Express-News Marketplace"
+      ],
+      "aliases": [
+        "exn-ipcsae00229431"
+      ]
+    },
+    {
+      "address": "4119 Spring View Dr, San Antonio, TX 78222",
+      "dates": "2026-11-12 – 2026-11-13",
+      "date_from": "2026-11-12",
+      "date_to": "2026-11-13",
+      "date_start": "2026-11-12",
+      "date_end": "2026-11-13",
+      "end_date": "2026-11-13",
+      "hours": "8:00am-4pm",
+      "title": "SOUTHEAST - GARAGE SALE",
+      "details": "SOUTHEAST - GARAGE SALE\r\n4119 Spring View Dr., 78222.\r\n2 sewing machines, furniture,\r\n$1 items & much more!\r\nNOV. 12-13 8:00am- 4pm",
+      "source": "Express-News Marketplace",
+      "url": "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/advert/southeast-garage-sale-general_1036",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.86,
+      "status": "verified",
+      "lat": 29.378802190687,
+      "lon": -98.417306910705,
+      "geocode": "census",
+      "in_person": true,
+      "external_id": "exn-ipcsae00230481",
+      "refcode": "IPCSAE00230481",
+      "posted_at": "2026-11-05",
+      "date_bucket": "upcoming",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/advert/southeast-garage-sale-general_1036"
+      ],
+      "sources": [
+        "Express-News Marketplace"
+      ],
+      "aliases": [
+        "exn-ipcsae00230481"
+      ]
+    },
+    {
+      "address": "6727 Glen Fair, San Antonio, TX 78239",
+      "dates": "2026-11-12 – 2026-11-14",
+      "date_from": "2026-11-12",
+      "date_to": "2026-11-14",
+      "date_start": "2026-11-12",
+      "date_end": "2026-11-14",
+      "end_date": "2026-11-14",
+      "hours": "starting at 9am",
+      "title": "GARAGE SALE!",
+      "details": "GARAGE SALE!\r\n6727 GLEN FAIR 78239, Huge Garage Sale, small kitch. appliances, gadgets, glass ware, misc. house hold Items, iron wood carvings, clothes, books, radial arm saw, shop tools, nails, bolts, and screws, and much more! Thur-Sat Nov 12-14. Starting at 9am.",
+      "source": "Express-News Marketplace",
+      "url": "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/advert/garage-sale-general_1046",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.86,
+      "status": "verified",
+      "lat": 29.517994035186,
+      "lon": -98.354717873467,
+      "geocode": "census",
+      "in_person": true,
+      "external_id": "exn-ipcsae00231261",
+      "refcode": "IPCSAE00231261",
+      "posted_at": "2026-11-10",
+      "date_bucket": "upcoming",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/advert/garage-sale-general_1046"
+      ],
+      "sources": [
+        "Express-News Marketplace"
+      ],
+      "aliases": [
+        "exn-ipcsae00231261"
+      ]
+    },
+    {
       "address": "811 NORTHSTAR DR, SAN ANTONIO, TX, 78216",
       "source_address": "811 Northstar Dr, San Antonio, TX 78216",
       "dates": "2026-11-12 – 2026-11-13",
@@ -172,6 +326,117 @@
       ]
     },
     {
+      "address": "127 Placid Heights, Seguin, TX",
+      "dates": "2026-11-13 – 2026-11-14",
+      "date_from": "2026-11-13",
+      "date_to": "2026-11-14",
+      "date_start": "2026-11-13",
+      "date_end": "2026-11-14",
+      "end_date": "2026-11-14",
+      "hours": "8am-5pm",
+      "title": "127 & 192 PLACID HEIGHTS, 19 & 23",
+      "details": "127 & 192 PLACID HEIGHTS, 19 & 23 Arrowhead Bluff Nov. 13th & 14th, 8AM-5PM. Rain or shine! 127 & 192 PLACID HEIGHTS, 19 & 23 Arrowhead Bluff Nov. 13th & 14th, 8AM-5PM. Rain or shine! 127 & 192 PLACID HEIGHTS, 19 & 23",
+      "source": "Seguin Gazette",
+      "url": "https://seguingazette.com/classifieds/garage_sales/garage_sales/127-192-placid-heights-19-23/ad_93554d78-57f0-582d-a8a7-c966514cef19.html",
+      "photos": 0,
+      "type": "community",
+      "categories": [
+        "community-sale"
+      ],
+      "confidence": 0.72,
+      "status": "verified",
+      "lat": 29.535505734708,
+      "lon": -98.000065823026,
+      "geocode": "census",
+      "in_person": true,
+      "external_id": "sgx-93554d78",
+      "date_bucket": "upcoming",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://seguingazette.com/classifieds/garage_sales/garage_sales/127-192-placid-heights-19-23/ad_93554d78-57f0-582d-a8a7-c966514cef19.html"
+      ],
+      "sources": [
+        "Seguin Gazette"
+      ],
+      "aliases": [
+        "sgx-93554d78"
+      ]
+    },
+    {
+      "address": "2914 Rocky Oak St, San Antonio, TX",
+      "dates": "2026-11-13 – 2026-11-14",
+      "date_from": "2026-11-13",
+      "date_to": "2026-11-14",
+      "date_start": "2026-11-13",
+      "date_end": "2026-11-14",
+      "end_date": "2026-11-14",
+      "hours": null,
+      "title": "Lots Of Great Stuff",
+      "details": "jewelry, artwork, Windberg framed prints, southern living items, books, fine China set (100 pieces) glassware, Le Creuset pans, cloths, sports illustrated (1950's-forward) tools, bookcase, garage shelves, fishing rods, tackle, Vintage patches (Vietnam, POW, Space) Christmas items, vinyl records, massage table, electronics, speakers (Bose).  Also, Desert…",
+      "source": "yardsales.net",
+      "url": "https://yardsales.net/s/7HDgU",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "lat": 29.590406948955,
+      "lon": -98.445532807682,
+      "geocode": "census",
+      "in_person": true,
+      "external_id": "ysn-7HDgU",
+      "date_bucket": "upcoming",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://yardsales.net/s/7HDgU"
+      ],
+      "sources": [
+        "yardsales.net"
+      ],
+      "aliases": [
+        "ysn-7HDgU"
+      ]
+    },
+    {
+      "address": "293 Saddle Lane, Floresville, TX",
+      "dates": "2026-11-13 – 2026-11-14",
+      "date_from": "2026-11-13",
+      "date_to": "2026-11-14",
+      "date_start": "2026-11-13",
+      "date_end": "2026-11-14",
+      "end_date": "2026-11-14",
+      "hours": "8am-4pm",
+      "title": "Floresville Huge garage sale",
+      "details": "Floresville. Huge garage sale, 293 Saddle Lane, Cimmaron Subdivision, Fri.-Sat., Nov. 13-14, from 8-4. Lots of jewelry, linens, dishes, wall Read more...",
+      "source": "Wilson County News",
+      "url": "https://www.wilsoncountynews.com/classifieds/garage-sale/385573/",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.86,
+      "status": "verified",
+      "lat": 29.270013560113,
+      "lon": -98.247229219432,
+      "geocode": "census",
+      "in_person": true,
+      "external_id": "wcn-385573",
+      "date_bucket": "upcoming",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://www.wilsoncountynews.com/classifieds/garage-sale/385573/"
+      ],
+      "sources": [
+        "Wilson County News"
+      ],
+      "aliases": [
+        "wcn-385573"
+      ]
+    },
+    {
       "address": "5802 GRANDWOOD DR, SAN ANTONIO, TX, 78239",
       "source_address": "5802 Grandwood Dr, San Antonio, TX 78239",
       "dates": "2026-11-13 – 2026-11-14",
@@ -211,6 +476,43 @@
       ],
       "aliases": [
         "yss-196458725"
+      ]
+    },
+    {
+      "address": "6690 Cooksey Rd, Adkins, TX",
+      "dates": "2026-11-13 – 2026-11-14",
+      "date_from": "2026-11-13",
+      "date_to": "2026-11-14",
+      "date_start": "2026-11-13",
+      "date_end": "2026-11-14",
+      "end_date": "2026-11-14",
+      "hours": "starting at 8am",
+      "title": "Adkins Garage sale",
+      "details": "Adkins. Garage sale, 6690 Cooksey Rd., Fri.-Sat., Nov. 13-14, from 8-? Holiday decor, housewares, jackets, tools and much more!  Read more...",
+      "source": "Wilson County News",
+      "url": "https://www.wilsoncountynews.com/classifieds/garage-sale/385589/",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.86,
+      "status": "verified",
+      "lat": 29.356984629307,
+      "lon": -98.278477051056,
+      "geocode": "census",
+      "in_person": true,
+      "external_id": "wcn-385589",
+      "date_bucket": "upcoming",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://www.wilsoncountynews.com/classifieds/garage-sale/385589/"
+      ],
+      "sources": [
+        "Wilson County News"
+      ],
+      "aliases": [
+        "wcn-385589"
       ]
     },
     {
@@ -298,6 +600,45 @@
       ]
     },
     {
+      "address": "1102 Dwyerbrook, San Antonio, TX 78253",
+      "dates": "2026-11-14",
+      "date_from": "2026-11-14",
+      "date_to": "2026-11-14",
+      "date_start": "2026-11-14",
+      "date_end": "2026-11-14",
+      "end_date": "2026-11-14",
+      "hours": null,
+      "title": "FANTASTIC GARAGE SALE",
+      "details": "FANTASTIC GARAGE SALE\r\nNOVEMBER 14, 1102 DWYERBROOK, HAMMOND KEYBOARD VINTAGE GLASS, ANTIQUES, WALL ART AND MORE\nlocation\n78253",
+      "source": "Express-News Marketplace",
+      "url": "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/advert/fantastic-garage-sale-general_1026",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.86,
+      "status": "verified",
+      "lat": 29.439210159182,
+      "lon": -98.723652638342,
+      "geocode": "census",
+      "in_person": true,
+      "external_id": "exn-ipcsae00230060",
+      "refcode": "IPCSAE00230060",
+      "posted_at": "2026-11-07",
+      "date_bucket": "upcoming",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/advert/fantastic-garage-sale-general_1026"
+      ],
+      "sources": [
+        "Express-News Marketplace"
+      ],
+      "aliases": [
+        "exn-ipcsae00230060"
+      ]
+    },
+    {
       "address": "12241 US HWY 181, SAN ANTONIO, TX, 78223",
       "source_address": "12241 US Highway 181, San Antonio, TX 78223",
       "dates": "2026-11-14",
@@ -337,6 +678,43 @@
       ],
       "aliases": [
         "yss-196459043"
+      ]
+    },
+    {
+      "address": "12588 FM 537, Stockdale, TX",
+      "dates": "2026-11-14",
+      "date_from": "2026-11-14",
+      "date_to": "2026-11-14",
+      "date_start": "2026-11-14",
+      "date_end": "2026-11-14",
+      "end_date": "2026-11-14",
+      "hours": "8am-1pm",
+      "title": "Stockdale Multi-family yard sale",
+      "details": "Stockdale. Multi-family yard sale, 12588 FM 537, Sat., Nov. 14, from 8-1. Household items, toys, clothes, furniture, Christmas items, and Read more...",
+      "source": "Wilson County News",
+      "url": "https://www.wilsoncountynews.com/classifieds/garage-sale/385601/",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.86,
+      "status": "verified",
+      "lat": 29.200575044502,
+      "lon": -97.958485189533,
+      "geocode": "census",
+      "in_person": true,
+      "external_id": "wcn-385601",
+      "date_bucket": "upcoming",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://www.wilsoncountynews.com/classifieds/garage-sale/385601/"
+      ],
+      "sources": [
+        "Wilson County News"
+      ],
+      "aliases": [
+        "wcn-385601"
       ]
     },
     {
@@ -722,6 +1100,45 @@
       ]
     },
     {
+      "address": "5858 Laurel Valley, San Antonio, TX 78242",
+      "dates": "2026-11-14 – 2026-11-15",
+      "date_from": "2026-11-14",
+      "date_to": "2026-11-15",
+      "date_start": "2026-11-14",
+      "date_end": "2026-11-15",
+      "end_date": "2026-11-15",
+      "hours": "10am-7pm",
+      "title": "GARAGE SALE",
+      "details": "GARAGE SALE\r\n5858 Laurel Valley,78242\r\nNov. 14-15, 10am-7pm.",
+      "source": "Express-News Marketplace",
+      "url": "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/advert/garage-sale-general_1044",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.86,
+      "status": "verified",
+      "lat": 29.361777429644,
+      "lon": -98.613260548042,
+      "geocode": "census",
+      "in_person": true,
+      "external_id": "exn-ipcsae00231141",
+      "refcode": "IPCSAE00231141",
+      "posted_at": "2026-11-10",
+      "date_bucket": "upcoming",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/advert/garage-sale-general_1044"
+      ],
+      "sources": [
+        "Express-News Marketplace"
+      ],
+      "aliases": [
+        "exn-ipcsae00231141"
+      ]
+    },
+    {
       "address": "9814 TROPHY OAKS DR, GARDEN RIDGE, TX, 78266",
       "source_address": "9814 Trophy Oaks Dr, Garden Ridge, TX 78266",
       "dates": "2026-11-14",
@@ -761,6 +1178,158 @@
       ],
       "aliases": [
         "yss-196447879"
+      ]
+    },
+    {
+      "address": "Braunridge community, Helotes, TX",
+      "dates": "2026-11-14",
+      "date_from": "2026-11-14",
+      "date_to": "2026-11-14",
+      "date_start": "2026-11-14",
+      "date_end": "2026-11-14",
+      "end_date": "2026-11-14",
+      "hours": "8:00am-2:00pm",
+      "title": "Braunridge Community Garage Sale",
+      "details": "Braunridge Community Garage Sale is on Saturday, Nov 14, 2026, from 8:00 AM to 2:00 PM. Come shop around!…",
+      "source": "yardsales.net",
+      "url": "https://yardsales.net/s/7HDdF",
+      "photos": 0,
+      "type": "community",
+      "categories": [
+        "community-sale"
+      ],
+      "confidence": 0.68,
+      "status": "verified",
+      "lat": 29.5635688,
+      "lon": -98.6884208,
+      "geocode": "nominatim-city",
+      "in_person": true,
+      "external_id": "ysn-7HDdF",
+      "date_bucket": "upcoming",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://yardsales.net/s/7HDdF"
+      ],
+      "sources": [
+        "yardsales.net"
+      ],
+      "aliases": [
+        "ysn-7HDdF"
+      ]
+    },
+    {
+      "address": "Leon Valley citywide, Leon Valley, TX 78238",
+      "dates": "2026-11-14",
+      "date_from": "2026-11-14",
+      "date_to": "2026-11-14",
+      "date_start": "2026-11-14",
+      "date_end": "2026-11-14",
+      "end_date": "2026-11-14",
+      "hours": "8:00am-6:00pm",
+      "title": "CITY OF LEON VALLEY – CITYWIDE GARAGE SALE",
+      "details": "CITY OF LEON VALLEY –\r\nCITYWIDE GARAGE SALE\r\nSaturday, November 14, 2026 | 8:00 a.m.–6:00 p.m.\r\nShop throughout Leon Valley.\r\nA list of participating addresses will be available at\r\nwww.leonvalleytexas.gov and at City Hall prior\r\nto the event.",
+      "source": "Express-News Marketplace",
+      "url": "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/advert/city-of-leon-valley-citywide-garage-sale-general_1003",
+      "photos": 0,
+      "type": "community",
+      "categories": [
+        "community-sale"
+      ],
+      "confidence": 0.72,
+      "status": "verified",
+      "lat": 29.4952307,
+      "lon": -98.6186317,
+      "geocode": "nominatim-place",
+      "in_person": true,
+      "external_id": "exn-ipcsae00228491",
+      "refcode": "IPCSAE00228491",
+      "posted_at": "2026-11-01",
+      "date_bucket": "upcoming",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/advert/city-of-leon-valley-citywide-garage-sale-general_1003"
+      ],
+      "sources": [
+        "Express-News Marketplace"
+      ],
+      "aliases": [
+        "exn-ipcsae00228491"
+      ]
+    },
+    {
+      "address": "Shavano Ridge community, San Antonio, TX 78230",
+      "dates": "2026-11-14 – 2026-11-15",
+      "date_from": "2026-11-14",
+      "date_to": "2026-11-15",
+      "date_start": "2026-11-14",
+      "date_end": "2026-11-15",
+      "end_date": "2026-11-15",
+      "hours": "8am-2pm",
+      "title": "COMMUNITY YARD SALE-SHAVANO RIDGE",
+      "details": "COMMUNITY YARD SALE-SHAVANO RIDGE\r\n300+ homes in the community - SAT/SUN Nov. 14/15 8AM-2PM\nlocation\n78230",
+      "source": "Express-News Marketplace",
+      "url": "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/advert/community-yard-sale-shavano-ridge-general_1019",
+      "photos": 0,
+      "type": "community",
+      "categories": [
+        "community-sale"
+      ],
+      "confidence": 0.72,
+      "status": "verified",
+      "lat": 29.5692373,
+      "lon": -98.5719205,
+      "geocode": "nominatim-place",
+      "in_person": true,
+      "external_id": "exn-ipcsae00229611",
+      "refcode": "IPCSAE00229611",
+      "posted_at": "2026-10-30",
+      "date_bucket": "upcoming",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/advert/community-yard-sale-shavano-ridge-general_1019"
+      ],
+      "sources": [
+        "Express-News Marketplace"
+      ],
+      "aliases": [
+        "exn-ipcsae00229611"
+      ]
+    },
+    {
+      "address": "Southern Hills community, San Antonio, TX",
+      "dates": "2026-11-14",
+      "date_from": "2026-11-14",
+      "date_to": "2026-11-14",
+      "date_start": "2026-11-14",
+      "date_end": "2026-11-14",
+      "end_date": "2026-11-14",
+      "hours": "8:00am-3:00pm",
+      "title": "Southern Hills Community Yard Sale",
+      "details": "The Southern Hills HOA will have a community-wide yard sale on Saturday, November 14th, from 8:00 AM – 3:00 PM. Whether buying or selling, you won't want to miss it!…",
+      "source": "yardsales.net",
+      "url": "https://yardsales.net/s/7HnrT",
+      "photos": 0,
+      "type": "community",
+      "categories": [
+        "community-sale"
+      ],
+      "confidence": 0.68,
+      "status": "verified",
+      "lat": 29.4246002,
+      "lon": -98.4951405,
+      "geocode": "nominatim-city",
+      "in_person": true,
+      "external_id": "ysn-7HnrT",
+      "date_bucket": "upcoming",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://yardsales.net/s/7HnrT"
+      ],
+      "sources": [
+        "yardsales.net"
+      ],
+      "aliases": [
+        "ysn-7HnrT"
       ]
     },
     {
@@ -807,6 +1376,81 @@
       ]
     },
     {
+      "address": "12503 Sandy Dunes, San Antonio, TX",
+      "dates": "2026-11-20 – 2026-11-22",
+      "date_from": "2026-11-20",
+      "date_to": "2026-11-22",
+      "date_start": "2026-11-20",
+      "date_end": "2026-11-22",
+      "end_date": "2026-11-22",
+      "hours": null,
+      "title": "Alamo Ranch Estate Sale",
+      "details": "Fantastic sale filled with a fun mix of old, new, and somewhere in the middle\n You will find clothing, china, and more from Denmark\n A Stanley dining room furniture set\n A small stein collection\n Several clocks\n Artwork\n and more.\n We will be adding more information once we get into the home\n…",
+      "source": "yardsales.net",
+      "url": "https://yardsales.net/s/7Hnen",
+      "photos": 0,
+      "type": "estate",
+      "categories": [
+        "estate-sale"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "lat": 29.480688063288,
+      "lon": -98.741786963189,
+      "geocode": "census",
+      "in_person": true,
+      "external_id": "ysn-7Hnen",
+      "date_bucket": "upcoming",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://yardsales.net/s/7Hnen"
+      ],
+      "sources": [
+        "yardsales.net"
+      ],
+      "aliases": [
+        "ysn-7Hnen"
+      ]
+    },
+    {
+      "address": "#633: Chase Estate Sale (address posts 9 a.m. CT the day before), San Antonio, TX 78249",
+      "dates": "2026-11-20 – 2026-11-22",
+      "date_from": "2026-11-20",
+      "date_to": "2026-11-22",
+      "date_start": "2026-11-20",
+      "date_end": "2026-11-22",
+      "end_date": "2026-11-22",
+      "hours": null,
+      "title": "#633: Chase Estate Sale",
+      "details": "#633: Chase Estate Sale. The street address posts at 9 a.m. CT the day before the sale begins. This pin is the sale area, not a driveway.",
+      "source": "A Better Estate Sale",
+      "url": "https://www.estatesales.net/TX/San-Antonio/78249/5138061",
+      "photos": 0,
+      "type": "estate",
+      "categories": [
+        "estate-sale",
+        "community-sale"
+      ],
+      "confidence": 0.6,
+      "status": "verified",
+      "lat": 29.4246002,
+      "lon": -98.4951405,
+      "geocode": "nominatim-place",
+      "in_person": true,
+      "external_id": "abes-633",
+      "date_bucket": "upcoming",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://www.estatesales.net/TX/San-Antonio/78249/5138061"
+      ],
+      "sources": [
+        "A Better Estate Sale"
+      ],
+      "aliases": [
+        "abes-633"
+      ]
+    },
+    {
       "address": "2541 W SOUTHCROSS BLVD, SAN ANTONIO, TX, 78211",
       "source_address": "2541 W Southcross Blvd, San Antonio, TX 78211",
       "dates": "2026-11-21",
@@ -847,6 +1491,118 @@
       ],
       "aliases": [
         "fb-ev-29319200317770276"
+      ]
+    },
+    {
+      "address": "4114 SW Loop 410, San Antonio, TX 78227",
+      "dates": "2026-12-05",
+      "date_from": "2026-12-05",
+      "date_to": "2026-12-05",
+      "date_start": "2026-12-05",
+      "date_end": "2026-12-05",
+      "end_date": "2026-12-05",
+      "hours": null,
+      "title": "Red Hot Rummage Sale",
+      "details": "",
+      "source": "AllEvents",
+      "url": "https://allevents.in/san-antonio/red-hot-rummage-sale/200031010681238",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "lat": 29.39222,
+      "lon": -98.646744,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "ae-200031010681238",
+      "date_bucket": "upcoming",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://allevents.in/san-antonio/red-hot-rummage-sale/200031010681238"
+      ],
+      "sources": [
+        "AllEvents"
+      ],
+      "aliases": [
+        "ae-200031010681238"
+      ]
+    },
+    {
+      "address": "Sonte Estate Sale (address posts 9 a.m. CT the day before), San Antonio, TX 78230",
+      "dates": "2026-12-05 – 2026-12-06",
+      "date_from": "2026-12-05",
+      "date_to": "2026-12-06",
+      "date_start": "2026-12-05",
+      "date_end": "2026-12-06",
+      "end_date": "2026-12-06",
+      "hours": null,
+      "title": "Sonte Estate Sale",
+      "details": "Sonte Estate Sale. The street address posts at 9 a.m. CT the day before the sale begins. This pin is the sale area, not a driveway.",
+      "source": "A Better Estate Sale",
+      "url": "https://www.estatesales.net/TX/San-Antonio/78230/5138055",
+      "photos": 0,
+      "type": "estate",
+      "categories": [
+        "estate-sale",
+        "community-sale"
+      ],
+      "confidence": 0.6,
+      "status": "verified",
+      "lat": 29.4246002,
+      "lon": -98.4951405,
+      "geocode": "nominatim-place",
+      "in_person": true,
+      "external_id": "abes-sonte-estate-sale",
+      "date_bucket": "upcoming",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://www.estatesales.net/TX/San-Antonio/78230/5138055"
+      ],
+      "sources": [
+        "A Better Estate Sale"
+      ],
+      "aliases": [
+        "abes-sonte-estate-sale"
+      ]
+    },
+    {
+      "address": "Fairlawn Drive, San Antonio, TX",
+      "dates": "2027-05-01",
+      "date_from": "2027-05-01",
+      "date_to": "2027-05-01",
+      "date_start": "2027-05-01",
+      "date_end": "2027-05-01",
+      "end_date": "2027-05-01",
+      "hours": null,
+      "title": "SPRING Community Wide Rummage Sale",
+      "details": "",
+      "source": "AllEvents",
+      "url": "https://allevents.in/san-antonio/spring-community-wide-rummage-sale/100001993008949418",
+      "photos": 0,
+      "type": "community",
+      "categories": [
+        "community-sale"
+      ],
+      "confidence": 0.68,
+      "status": "verified",
+      "lat": 29.357807,
+      "lon": -98.422523,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "ae-100001993008949418",
+      "date_bucket": "upcoming",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://allevents.in/san-antonio/spring-community-wide-rummage-sale/100001993008949418"
+      ],
+      "sources": [
+        "AllEvents"
+      ],
+      "aliases": [
+        "ae-100001993008949418"
       ]
     }
   ],

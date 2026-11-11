@@ -141,11 +141,69 @@ def _acquire_lock(lock_path: Path):
         return None
 
 
+SHARP_DROP_RATIO = 0.60  # incoming below 60% of existing is a >40% drop
+
+
+def _pin_keys(sale: dict[str, Any]) -> list[str]:
+    keys: list[str] = []
+    eid = (sale.get("external_id") or "").strip()
+    if eid:
+        keys.append(f"id:{eid}")
+    addr = (sale.get("address") or sale.get("title") or "").lower()
+    compact = "".join(ch for ch in addr if ch.isalnum())[:48]
+    if compact:
+        keys.append(f"addr:{compact}")
+    return keys
+
+
+def union_public(existing: list, incoming: list) -> list:
+    """Keep previous pins and layer incoming updates on top."""
+    by_id: dict[int, dict] = {}
+    index: dict[str, int] = {}
+    out: list = []
+    for sale in list(existing or []) + list(incoming or []):
+        if not isinstance(sale, dict):
+            continue
+        keys = _pin_keys(sale)
+        found = None
+        for k in keys:
+            if k in index:
+                found = index[k]
+                break
+        if found is None:
+            idx = len(out)
+            out.append(sale)
+            by_id[idx] = sale
+            for k in keys:
+                index[k] = idx
+        else:
+            out[found] = sale
+            for k in keys:
+                index[k] = found
+    return out
+
+
+def protect_san_antonio_public(existing: list, incoming: list) -> tuple[list, str]:
+    """Return (pins, reason) after empty and sharp-drop guards."""
+    old = [s for s in (existing or []) if isinstance(s, dict)]
+    new = [s for s in (incoming or []) if isinstance(s, dict)]
+    if old and not new:
+        return old, f"refuse empty public overwrite (keeping {len(old)} existing pins)"
+    if old and len(new) < len(old) * SHARP_DROP_RATIO:
+        merged = union_public(old, new)
+        return merged, (
+            f"refuse sharp drop {len(old)} -> {len(new)} "
+            f"(keeping union of {len(merged)} pins)"
+        )
+    return new, ""
+
+
 def safe_write_city(slug_or_path: str | Path, data: dict[str, Any]) -> Path:
     """Write a city feed with atomic + concurrent-safe semantics.
 
     Never writes PLACEHOLDER. Never leaves a partial published file.
-    For san-antonio.json: refuse to replace a non-empty public[] with [].
+    For san-antonio.json: refuse to replace a non-empty public[] with [],
+    and refuse a sudden drop of more than 40% (union the previous pins back in).
     """
     path = _path_for(slug_or_path)
     slug = path.stem
@@ -167,23 +225,19 @@ def safe_write_city(slug_or_path: str | Path, data: dict[str, Any]) -> Path:
 
     if slug == "san-antonio" and path.exists():
         incoming = data.get("public") or []
-        if not incoming:
-            try:
-                existing = json.loads(path.read_text(encoding="utf-8"))
-                old = existing.get("public") or []
-            except Exception:
-                old = []
-                existing = {}
-            if old:
-                print(
-                    f"[city_io] LOCK san-antonio: refuse empty public overwrite "
-                    f"(keeping {len(old)} existing pins)",
-                    file=sys.stderr,
-                )
-                data["public"] = old
-                data["total_locations"] = len(old) + len(data.get("permits") or [])
-                data["status"] = "live"
-                data["edition"] = data.get("edition") or existing.get("edition") or "San Antonio Yard-Bird Discovery"
+        try:
+            existing = json.loads(path.read_text(encoding="utf-8"))
+            old = existing.get("public") or []
+        except Exception:
+            old = []
+            existing = {}
+        protected, reason = protect_san_antonio_public(old, incoming)
+        if reason:
+            print(f"[city_io] LOCK san-antonio: {reason}", file=sys.stderr)
+            data["public"] = protected
+            data["total_locations"] = len(protected) + len(data.get("permits") or [])
+            data["status"] = "live"
+            data["edition"] = data.get("edition") or existing.get("edition") or "San Antonio Yard-Bird Discovery"
 
     path.parent.mkdir(parents=True, exist_ok=True)
     text = json.dumps(data, indent=2, ensure_ascii=False) + "\n"

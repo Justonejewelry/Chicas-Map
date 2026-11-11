@@ -6,6 +6,7 @@ import argparse
 import os
 import subprocess
 import sys
+import tempfile
 from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -63,6 +64,8 @@ def main() -> int:
     log("=== MASTER POPULATE ===")
     for p in (ROOT / "scripts", ROOT / "data" / "sales", ROOT / "daily-packs", ROOT / "social", ROOT / "forecast", ROOT / "reports", ROOT / "webapp" / "data" / "cities"):
         p.mkdir(parents=True, exist_ok=True)
+    baseline_dir = Path(tempfile.mkdtemp(prefix="chica-feed-baseline-"))
+    run_step("snapshot feed baseline", [PY, "scripts/guard_populate_feed.py", "--snapshot-dir", str(baseline_dir)])
     city_env = {"CITIES": cities}
     discovery = [
         ("discover_sales (GarageSaleFinder)", [PY, "webapp/scripts/discover_sales.py", "--cities", cities]),
@@ -123,6 +126,14 @@ def main() -> int:
     if not args.dry_run:
         run_step("final canonical sale quality", [PY, "scripts/clean_sales.py", "webapp", *quality_args], required=True)
         run_step("sale output invariant check", [PY, "scripts/clean_sales.py", "webapp", "--check", *quality_args], required=True)
+    if not args.dry_run and (ROOT / "scripts" / "guard_populate_feed.py").exists():
+        code = run_step(
+            "guard feed size",
+            [PY, "scripts/guard_populate_feed.py", "--baseline-dir", str(baseline_dir), "--restore-on-fail"],
+            required=True,
+        )
+        if code != 0:
+            failed.append(f"guard_feed({code})")
     log("=== MASTER POPULATE COMPLETE ===")
     log(f"discovery ok={discovery_ok}/{discovery_ran}")
     if discovery_ran > 0 and discovery_ok == 0:
