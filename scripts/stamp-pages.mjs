@@ -3,7 +3,7 @@
  * Stamp GitHub Pages output: unique titles, canonicals, Open Graph,
  * JSON-LD, noscript crawl text, Spanish shells, hreflang, sitemap.
  */
-import { mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from "node:fs";
 import { basename, dirname, join } from "node:path";
 import { withGoatCounter } from "./goatcounter.mjs";
 
@@ -12,10 +12,10 @@ const origin = "https://www.chicasmap.com";
 const ogImage = origin + "/og.jpg";
 
 const PAGES = [
-  { path: "", title: "Chicas Map · San Antonio garage sales", desc: "Free San Antonio map of garage sales, yard sales, and estate sales. Near Me, multi-stop routes, and weekend intel.", titleEs: "Chicas Map · Ventas de garage en San Antonio", descEs: "Mapa gratis de ventas de garage, yard sales y estate sales en San Antonio. Cerca de mi, rutas, e intel del fin." },
+  { path: "", title: "San Antonio Garage Sales Map | Chicas Map", desc: "Free San Antonio garage sales map. Find yard sales, estate sales, and garage sales near you this weekend. Browse by neighborhood or list your sale free.", titleEs: "Mapa de ventas de garaje en San Antonio | Chicas Map", descEs: "Mapa gratis de ventas de garaje, patio y bienes en San Antonio. Encuentra ventas cerca de ti este fin de semana, por vecindario, o publica la tuya gratis." },
   { path: "map", title: "Live garage sale map · Chicas Map San Antonio", desc: "Open the live San Antonio garage sale map. Verified pins, Near Me, KEY layers, and one-tap Google, Apple, or Waze routes.", titleEs: "Mapa en vivo · Chicas Map San Antonio", descEs: "Mapa en vivo de ventas de garage en San Antonio. Pines, Cerca de mi, capas KEY, y rutas en Google, Apple o Waze." },
   { path: "calendar", title: "San Antonio sales calendar · Chicas Map", desc: "Every upcoming garage, yard, estate and community sale by date. Subscribe with Google, Apple or Outlook Calendar.", titleEs: "Calendario de ventas de San Antonio · Chicas Map", descEs: "Ventas de garage, patio, liquidación y comunitarias por fecha. Suscríbete con Google, Apple o Outlook Calendar." },
-  { path: "list", title: "This weekend's sales · Chicas Map", desc: "Text list of San Antonio garage, yard, and estate sales for this weekend. Open any stop on the map.", titleEs: "Ventas de este fin · Chicas Map", descEs: "Lista de ventas de garage, yard y estate en San Antonio este fin. Abrela en el mapa." },
+  { path: "list", title: "San Antonio Garage Sales List | Chicas Map", desc: "Every upcoming garage, yard, and estate sale in San Antonio, with addresses and dates. Open a sale for directions or see them all on the live map.", titleEs: "Lista de ventas de garaje en San Antonio | Chicas Map", descEs: "Todas las ventas de garaje, patio y bienes próximas en San Antonio, con direcciones y fechas. Abre una para indicaciones o míralas en el mapa en vivo." },
   { path: "intel", title: "Sale Intel · Chicas Map", desc: "Driveway notes from people standing at the sale. Unlock within 200 feet. GPS, not rumors.", titleEs: "Sale Intel · Chicas Map", descEs: "Notas de quien esta en la venta. Se desbloquean a 200 pies. GPS, no rumores." },
   { path: "atlas", title: "Alamo Atlas · Chicas Map", desc: "SAPD neighborhood offense reports for San Antonio. Search by name, ZIP ranking, public Open Data SA. Grok Build civic proof of concept.", titleEs: "Alamo Atlas · Chicas Map", descEs: "Reportes de delitos por vecindario en San Antonio. Busca por nombre y ZIP. Datos publicos de la ciudad. Prueba civica de Grok Build." },
   { path: "sponsors", title: "Sponsor Chicas Map · San Antonio", desc: "Help keep Chica's cape on. The public garage sale map stays free for San Antonio neighbors.", titleEs: "Patrocinio · Chicas Map", descEs: "Ayuda a Chica a dejar la capa puesta. El mapa publico sigue gratis." },
@@ -24,7 +24,7 @@ const PAGES = [
   { path: "claim", title: "Boost My Sale · $5 · Chicas Map", desc: "Listing is free. Boost My Sale is $5 and lights a gold pin this weekend so the pack can find your driveway.", titleEs: "Impulsa mi venta · $5 · Chicas Map", descEs: "Publicar es gratis. Impulsa mi venta cuesta $5 y enciende un pin de oro este fin." },
   { path: "boost", title: "Boost a sale · Chicas Map", desc: "Boost a San Antonio garage sale pin so more neighbors see it this weekend.", titleEs: "Impulsa una venta · Chicas Map", descEs: "Impulsa un pin de venta en San Antonio para que mas vecinos lo vean este fin." },
   { path: "advertise", og: "/images/alert-ad-default.png", title: "Advertise in Chica's sale alerts · $25/month · Chicas Map", desc: "Put your San Antonio business in front of local garage and estate sale shoppers in Chica's email alerts. One sponsor spot, $25/month.", titleEs: "Anúnciate en las alertas de Chica · $25/mes · Chicas Map", descEs: "Pon tu negocio de San Antonio frente a compradores de ventas de garage en los correos de alertas de Chica. Un espacio, $25/mes." },
-  { path: "facebook", title: "Facebook pack · Chicas Map", desc: "Follow Chica on Facebook for San Antonio weekend sale alerts and hunt photos.", titleEs: "Facebook · Chicas Map", descEs: "La manada en Facebook. Avisos del fin y fotos de la caceria." },
+  { path: "facebook", title: "San Antonio Garage Sale Alerts on Facebook | Chicas Map", desc: "Follow Chica on Facebook for San Antonio garage sale, yard sale, and estate sale alerts, plus hunt photos from the free map.", titleEs: "Alertas de ventas de garaje en Facebook | Chicas Map", descEs: "Sigue a Chica en Facebook para alertas de ventas de garaje, patio y bienes en San Antonio, y fotos de la cacería en el mapa gratis." },
   { path: "media", title: "Reels and videos · Chicas Map", desc: "San Antonio garage-sale reels and hunt clips from Chicas Map.", titleEs: "Reels · Chicas Map", descEs: "Reels y clips de la caceria en San Antonio." },
   { path: "showcase", title: "Showcase · Chicas Map", desc: "Featured San Antonio garage-sale hunts, clips, and pack highlights.", titleEs: "Vitrina · Chicas Map", descEs: "Cacerias destacadas, clips, y la manada en San Antonio." },
   { path: "bulletin", title: "Bulletin · Chicas Map", desc: "Say hi to Chica. Tips, support, and pack notes for the San Antonio map.", titleEs: "Mural · Chicas Map", descEs: "Di hola a Chica. Apoyo, ideas, y la manada." },
@@ -53,7 +53,7 @@ function noscriptBlock(page, isEs) {
 function walk(dir, acc) {
   acc = acc || [];
   for (const name of readdirSync(dir)) {
-    if (name === "preview" || name === "assets" || name === "node_modules" || name === "admin" || name === "__grok" || name === "mission-control" || name === "review") continue;
+    if (name === "preview" || name === "assets" || name === "node_modules" || name === "admin" || name === "__grok" || name === "mission-control" || name === "review" || name === "flip") continue;
     const p = join(dir, name);
     const st = statSync(p);
     if (st.isDirectory()) walk(p, acc);
@@ -85,6 +85,9 @@ function jsonLd(page, canonical) {
     { "@type": "WebSite", "@id": origin + "/#website", name: "Chicas Map", url: origin + "/", inLanguage: ["en", "es"], description: page.desc, publisher: { "@id": origin + "/#org" } },
     { "@type": "Organization", "@id": origin + "/#org", name: "Chicas Map", url: origin + "/", logo: origin + "/images/chica-logo.png" }
   ];
+  if (page.path === "") {
+    graph.push({ "@type": "LocalBusiness", "@id": origin + "/#business", name: "Chicas Map", url: origin + "/", image: ogImage, logo: origin + "/images/chica-logo.png", description: page.desc, areaServed: { "@type": "City", name: "San Antonio", containedInPlace: { "@type": "State", name: "Texas" } }, sameAs: ["https://www.facebook.com/61593215043603/", "https://www.tiktok.com/@chicasmap"], priceRange: "Free" });
+  }
   if (page.path === "" || page.path === "map") {
     graph.push({ "@type": "WebApplication", name: "Chicas Map", url: canonical, applicationCategory: "LifestyleApplication", operatingSystem: "Web", offers: { "@type": "Offer", price: "0", priceCurrency: "USD" }, areaServed: "San Antonio, Texas" });
   }
@@ -143,7 +146,8 @@ function stampFile(file, opts) {
   html = html.replace(/<title>[^<]*<\/title>/g, "");
   html = html.replace(/<meta name="description"[^>]*>/g, "");
 
-  if (key !== "/" && key !== "calendar" && !html.includes('"/es"') && html.indexOf("b+\"/es\"") === -1) html = html.replace("<head>", "<head>" + ES_BOOT);
+  // Keep /es/ URLs in the address bar. Old locale scripts used to strip the prefix.
+  html = html.replace(/var rest=p\.slice\(es\.length\)\|\|\"\/";history\.replaceState\(null,\"\",b\+\(rest\.charAt\(0\)===\"\/\"\?rest:\"\/\"\+rest\)\+location\.search\+location\.hash\);/g, "");
   html = html.replace("<head>", "<head>" + hrefLang(enPath));
   if (html.indexOf('rel="apple-touch-icon"') === -1) html = html.replace("<head>", '<head><link rel="apple-touch-icon" href="/Chicas-Map/apple-touch-icon.png"/>');
   if (html.indexOf('href="/Chicas-Map/humans.txt"') === -1 && html.indexOf('href="/humans.txt"') === -1) html = html.replace("<head>", '<head><link rel="author" href="/Chicas-Map/humans.txt"/>');
@@ -180,4 +184,11 @@ for (const p of PAGES) {
   body += "  <url>\n    <loc>" + en + "</loc>\n    <lastmod>" + today + "</lastmod>\n    <changefreq>daily</changefreq>\n    <xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"" + en + "\"/>\n    <xhtml:link rel=\"alternate\" hreflang=\"es\" href=\"" + es + "\"/>\n    <xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"" + en + "\"/>\n  </url>\n  <url>\n    <loc>" + es + "</loc>\n    <lastmod>" + today + "</lastmod>\n    <changefreq>weekly</changefreq>\n    <xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"" + en + "\"/>\n    <xhtml:link rel=\"alternate\" hreflang=\"es\" href=\"" + es + "\"/>\n    <xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"" + en + "\"/>\n  </url>\n";
 }
 writeFileSync(join(root, "sitemap.xml"), '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' + body + "</urlset>\n");
+const robotsPath = join(root, "robots.txt");
+if (existsSync(robotsPath)) {
+  let robots = readFileSync(robotsPath, "utf8");
+  robots = robots.replace(/Sitemap:\s*\S+/i, "Sitemap: " + origin + "/sitemap.xml");
+  if (!/Sitemap:/i.test(robots)) robots = robots.replace(/\s*$/, "\n\nSitemap: " + origin + "/sitemap.xml\n");
+  writeFileSync(robotsPath, robots);
+}
 console.log("stamped " + htmlFiles.length + " html files, " + PAGES.length + " es shells, sitemap " + PAGES.length * 2 + " urls");

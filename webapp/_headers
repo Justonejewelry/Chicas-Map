@@ -21,3 +21,6 @@
 
 /.well-known/*
   Cache-Control: public, max-age=3600
+
+/sitemap.xml
+  X-Robots-Tag: noindex

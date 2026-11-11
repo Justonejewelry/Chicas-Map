@@ -7,4 +7,4 @@ Disallow: /mission-control/
 
 # Alias HTML files canonicalize to slash URLs. Keep them fetchable.
 
-Sitemap: https://justonejewelry.github.io/Chicas-Map/sitemap.xml
+Sitemap: https://www.chicasmap.com/sitemap.xml

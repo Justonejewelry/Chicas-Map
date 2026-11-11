@@ -235,6 +235,89 @@ class SiteBuildTests(unittest.TestCase):
             self.assertNotIn(legacy, html, rel)
             self.assertLessEqual(html.count(script), 1, rel + ' must not double the GoatCounter script')
 
+    def test_seo_indexable_pages_and_sitemap(self):
+        en = (self.root / 'index.html').read_text()
+        es = (self.root / 'es/index.html').read_text()
+        self.assertIn('<title>San Antonio Garage Sales Map | Chicas Map</title>', en)
+        self.assertIn('>San Antonio Garage Sales</h1>', en)
+        self.assertIn('id="home-seo"', en)
+        self.assertIn('garage sales near you in San Antonio', en)
+        self.assertIn('LocalBusiness', en)
+        self.assertIn('<title>Mapa de ventas de garaje en San Antonio | Chicas Map</title>', es)
+        self.assertIn('>Ventas de garaje en San Antonio</h1>', es)
+        self.assertIn('id="home-seo"', es)
+        self.assertLess(en.index('id="home-seo"'), en.index('id="home-weekly"'))
+
+        stone = (self.root / 'garage-sales/stone-oak/index.html').read_text()
+        self.assertIn('<title>Stone Oak Garage Sales, San Antonio | Chicas Map</title>', stone)
+        self.assertIn('78258', stone)
+        self.assertIn('Stone Oak Parkway', stone)
+        self.assertIn('index,follow', stone)
+        self.assertNotIn('noindex', stone)
+        self.assertIn('rel="canonical" href="https://www.chicasmap.com/garage-sales/stone-oak/"', stone)
+        south_es = (self.root / 'es/garage-sales/south-side/index.html').read_text()
+        self.assertIn('Ventas de garaje en el Lado Sur, San Antonio', south_es)
+        self.assertIn('78221', south_es)
+
+        feed = json.loads((self.root / 'data/sales-clean.json').read_text())
+        active = [s for s in feed['public'] if s.get('external_id')]
+        lst = (self.root / 'list/index.html').read_text()
+        lst_es = (self.root / 'es/list/index.html').read_text()
+        self.assertNotIn('Loading the live feed', lst)
+        self.assertNotIn('Loading the live feed', lst_es)
+        self.assertIn('rel="canonical" href="https://www.chicasmap.com/list/"', lst)
+        self.assertIn('rel="canonical" href="https://www.chicasmap.com/es/list/"', lst_es)
+        self.assertIn('<html lang="es"', lst_es)
+        self.assertIn('/sales/', lst)
+        if active:
+            title = active[-1].get('title') or ''
+            if title:
+                self.assertIn(title.replace('&', '&amp;'), lst)
+
+        fb = (self.root / 'facebook/index.html').read_text()
+        fb_es = (self.root / 'es/facebook/index.html').read_text()
+        self.assertIn('https://www.facebook.com/61593215043603/', fb)
+        self.assertIn('https://www.facebook.com/61593215043603/', fb_es)
+        self.assertIn('ventas de garaje', fb_es)
+        self.assertNotIn('history.replaceState', fb)
+        self.assertNotIn('history.replaceState', fb_es)
+        self.assertIn('rel="canonical" href="https://www.chicasmap.com/es/facebook/"', fb_es)
+        self.assertIn('hreflang="es" href="https://www.chicasmap.com/es/facebook/"', fb)
+        self.assertNotIn('href="https://www.chicasmap.com/es"', fb_es)
+
+        flip = (self.root / 'flip/index.html').read_text()
+        self.assertIn('noindex', flip)
+        self.assertIn('/deals/', flip)
+
+        robots = (self.root / 'robots.txt').read_text()
+        self.assertIn('Sitemap: https://www.chicasmap.com/sitemap.xml', robots)
+        self.assertNotIn('justonejewelry.github.io', robots)
+
+        sm = (self.root / 'sitemap.xml').read_text()
+        self.assertNotIn('justonejewelry.github.io', sm)
+        self.assertNotIn('/sitemap.xml</loc>', sm)
+        self.assertNotIn('/flip/', sm)
+        self.assertNotIn('mission-control', sm)
+        self.assertNotIn('/review/', sm)
+        self.assertNotIn('atlas/hoa', sm)
+        locs = re.findall(r'<loc>([^<]+)</loc>', sm)
+        self.assertGreater(len(locs), 40)
+        for loc in locs:
+            self.assertTrue(loc.startswith('https://www.chicasmap.com/'), loc)
+            self.assertTrue(loc.endswith('/'), loc)
+            self.assertNotEqual(loc, 'https://www.chicasmap.com/es')
+            path = loc[len('https://www.chicasmap.com'):]
+            html_path = self.root / path.lstrip('/') / 'index.html'
+            self.assertTrue(html_path.is_file(), loc)
+            html = html_path.read_text()
+            self.assertNotRegex(html, r'name="robots"[^>]*content="noindex', loc + ' is in the sitemap but noindex')
+            self.assertIn('rel="canonical" href="' + loc + '"', html)
+        # All neighborhood pages, including those with no sales this week, stay indexable.
+        for slug in ['stone-oak', 'alamo-ranch-westover-hills', 'helotes', 'west-side', 'southwest-lackland']:
+            self.assertIn('<loc>https://www.chicasmap.com/garage-sales/' + slug + '/</loc>', sm)
+            self.assertIn('<loc>https://www.chicasmap.com/es/garage-sales/' + slug + '/</loc>', sm)
+
+
 
 
 if __name__ == '__main__':
