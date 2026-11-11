@@ -210,7 +210,7 @@ class SiteBuildTests(unittest.TestCase):
         must_have = [
             'index.html', 'es/index.html', 'advertise/index.html', 'calendar/index.html',
             'claim/index.html', 'boost/index.html', 'deals/index.html', 'map/index.html',
-            'list/index.html', 'stats/index.html', 'es/stats/index.html', 'submit/index.html', 'privacy/index.html', 'garage-sales/index.html',
+            'list/index.html', 'stats/index.html', 'es/stats/index.html', 'press/index.html', 'es/press/index.html', 'submit/index.html', 'privacy/index.html', 'garage-sales/index.html',
             'garage-sales/south-side/index.html', 'es/garage-sales/index.html', 'es/advertise/index.html',
         ]
         for rel in must_have:
@@ -400,6 +400,57 @@ class SiteBuildTests(unittest.TestCase):
         self.assertEqual(v[11], '2026-11-13')
 
 
+
+
+    def test_public_press_kit(self):
+        # Existing Reels page at /media/ must stay in place.
+        media = (self.root / 'media/index.html').read_text()
+        self.assertIn('Reels and videos · Chicas Map', media)
+        self.assertNotIn('Press kit and brand assets', media)
+
+        en = (self.root / 'index.html').read_text()
+        es = (self.root / 'es/index.html').read_text()
+        self.assertIn('href="/press/"', en)
+        self.assertIn('>Press kit</a>', en)
+        self.assertIn('href="/es/press/"', es)
+        self.assertIn('>Kit de prensa</a>', es)
+        self.assertNotIn('>Press kit</a>', es)
+
+        page = (self.root / 'press/index.html').read_text()
+        page_es = (self.root / 'es/press/index.html').read_text()
+        self.assertIn('<title>Press kit and brand assets | Chicas Map</title>', page)
+        self.assertIn('<title>Kit de prensa y marca | Chicas Map</title>', page_es)
+        self.assertIn('role="tooltip"', page)
+        self.assertIn('css/home.css', page)
+        self.assertIn('class="site-header"', page)
+        self.assertIn('/images/chica-logo.png', page)
+        self.assertIn('/favicon.svg', page)
+        self.assertIn('/og.jpg', page)
+        self.assertIn('download="chica-logo.png"', page)
+        self.assertIn('chicas-map-press-kit.zip', page)
+        self.assertTrue((self.root / 'press/chicas-map-press-kit.zip').is_file())
+        self.assertGreater((self.root / 'press/chicas-map-press-kit.zip').stat().st_size, 100000)
+        self.assertIn('href="/bulletin/"', page)
+        self.assertIn('href="/submit/"', page)
+        self.assertNotIn('mr.jsciaraffa', page)
+        self.assertNotIn('@gmail', page.lower())
+        self.assertNotIn('PASSWORD', page)
+        for word in ('Star Trek', 'Batman', 'Matrix', 'iPhone'):
+            self.assertNotIn(word, page)
+        # Third-party and sale-photo folders stay off the kit.
+        self.assertNotIn('/badges/github', page)
+        self.assertNotIn('/media/reels/', page)
+
+        sm = (self.root / 'sitemap.xml').read_text()
+        self.assertIn('<loc>https://www.chicasmap.com/press/</loc>', sm)
+        self.assertIn('<loc>https://www.chicasmap.com/es/press/</loc>', sm)
+        self.assertIn('<loc>https://www.chicasmap.com/media/</loc>', sm)
+        self.assertIn('rel="canonical" href="https://www.chicasmap.com/press/"', page)
+        self.assertIn('rel="canonical" href="https://www.chicasmap.com/es/press/"', page_es)
+        self.assertNotRegex(page, r'name="robots"[^>]*content="noindex')
+        self.assertNotRegex(page_es, r'name="robots"[^>]*content="noindex')
+        self.assertIn('data-goatcounter="https://chicasmapcom.goatcounter.com/count"', page)
+        self.assertIn('data-goatcounter="https://chicasmapcom.goatcounter.com/count"', page_es)
 
 
 if __name__ == '__main__':

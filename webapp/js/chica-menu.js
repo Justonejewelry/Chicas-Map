@@ -24,6 +24,7 @@
     return [
       [BASE + "/map/", es() ? "Mapa" : "Map"],
       [BASE + "/stats/", es() ? "Números del mapa" : "Map stats"],
+      [BASE + "/press/", es() ? "Kit de prensa" : "Press kit"],
       [BASE + "/submit", es() ? "Publicar una venta" : "Add a sale"],
       [BASE + "/claim/", es() ? "Impulsa mi venta" : "Boost My Sale"],
       [BASE + "/deals/", es() ? "Buscador de Gangas 💸" : "Deal Finder 💸"],
