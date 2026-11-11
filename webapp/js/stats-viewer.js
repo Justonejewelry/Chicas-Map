@@ -147,7 +147,7 @@
       upcoming: "Cuántas ventas del feed público aún no terminan. Si la fecha de cierre ya pasó en la hora del Centro, esa venta no cuenta. La fuente es el archivo en vivo de ventas del mapa.",
       weekend: "Cuántas de esas ventas próximas coinciden con el viernes, sábado o domingo de este fin (o del que viene, si hoy es de lunes a jueves). Las fechas se leen en la hora del Centro.",
       updated: "El día en que Chica armó el feed de ventas que ves en el mapa, mostrado en la hora del Centro. Si el feed solo trae una fecha, no inventamos la hora.",
-      traffic: "Las visitas vendrían del contador público de GoatCounter para chicasmap.com. Ese contador aún no está abierto, así que aquí verás “Próximamente” en vez de un número inventado.",
+      traffic: "Visitas únicas de los dos contadores públicos de GoatCounter del sitio, el actual y el anterior, sumadas. Si ninguno responde, verás “Próximamente” en vez de un número inventado.",
       hoods: "Las ventas próximas agrupadas por los mismos vecindarios del mapa, usando el código postal de la venta. Una venta sin código postal conocido entra en “Otra zona”.",
       sources: "Facebook, avisos por correo, Nextdoor y sitios públicos de anuncios, tomados del campo de fuente de cada venta. Chica no inventa estas categorías.",
       newest: "Las ventas con la fecha de alta o de revisión más reciente. Muchos listados no traen esa fecha; esos no aparecen aquí. El enlace abre la venta en el mapa.",
@@ -622,26 +622,26 @@
   }
 
   function loadTraffic() {
-    var urls = [
-      "https://chicasmapcom.goatcounter.com/counter/TOTAL.json",
-      "https://chicasmapcom.goatcounter.com/counter/.json"
-    ];
-    function tryNext(i) {
-      if (i >= urls.length) { showTrafficSoon(); return; }
-      fetch(urls[i], { mode: "cors", credentials: "omit", cache: "no-store" }).then(function (r) {
+    // Adds the current counter (chicasmapcom) and the older one (chicasmap) together.
+    var sites = ["chicasmapcom", "chicasmap"];
+    function one(site) {
+      return fetch("https://" + site + ".goatcounter.com/counter/TOTAL.json", { mode: "cors", credentials: "omit", cache: "no-store" }).then(function (r) {
         if (!r.ok) throw new Error("http");
         return r.json();
       }).then(function (j) {
         var n = j && (j.count_unique != null ? j.count_unique : j.count);
-        if (n == null || n === "") throw new Error("empty");
-        var num = String(n).replace(/[^\d]/g, "");
-        if (!num) throw new Error("empty");
-        setText("stat-traffic", Number(num).toLocaleString(isEs() ? "es" : "en"));
-        var note = document.querySelector('[data-stat="traffic"] .stat-note');
-        if (note) note.textContent = isEs() ? "Visitas únicas (contador público)" : "Unique visits (public counter)";
-      }).catch(function () { tryNext(i + 1); });
+        var num = String(n == null ? "" : n).replace(/[^\d]/g, "");
+        return num ? Number(num) : null;
+      }).catch(function () { return null; });
     }
-    tryNext(0);
+    Promise.all(sites.map(one)).then(function (vals) {
+      var got = vals.filter(function (v) { return v != null; });
+      if (!got.length) { showTrafficSoon(); return; }
+      var total = got.reduce(function (a, v) { return a + v; }, 0);
+      setText("stat-traffic", total.toLocaleString(isEs() ? "es" : "en"));
+      var note = document.querySelector('[data-stat="traffic"] .stat-note');
+      if (note) note.textContent = isEs() ? "Visitas únicas, ambos contadores sumados" : "Unique visits, both counters added together";
+    });
   }
 
   function saleHref(s) {
