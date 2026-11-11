@@ -210,7 +210,7 @@ class SiteBuildTests(unittest.TestCase):
         must_have = [
             'index.html', 'es/index.html', 'advertise/index.html', 'calendar/index.html',
             'claim/index.html', 'boost/index.html', 'deals/index.html', 'map/index.html',
-            'list/index.html', 'submit/index.html', 'privacy/index.html', 'garage-sales/index.html',
+            'list/index.html', 'stats/index.html', 'es/stats/index.html', 'submit/index.html', 'privacy/index.html', 'garage-sales/index.html',
             'garage-sales/south-side/index.html', 'es/garage-sales/index.html', 'es/advertise/index.html',
         ]
         for rel in must_have:
@@ -316,6 +316,43 @@ class SiteBuildTests(unittest.TestCase):
         for slug in ['stone-oak', 'alamo-ranch-westover-hills', 'helotes', 'west-side', 'southwest-lackland']:
             self.assertIn('<loc>https://www.chicasmap.com/garage-sales/' + slug + '/</loc>', sm)
             self.assertIn('<loc>https://www.chicasmap.com/es/garage-sales/' + slug + '/</loc>', sm)
+
+
+    def test_public_stats_viewer(self):
+        en = (self.root / 'index.html').read_text()
+        es = (self.root / 'es/index.html').read_text()
+        self.assertIn('href="/stats/"', en)
+        self.assertIn('>Map stats</a>', en)
+        self.assertIn('href="/es/stats/"', es)
+        self.assertIn('>Números del mapa</a>', es)
+        self.assertNotIn('>Map stats</a>', es)
+
+        page = (self.root / 'stats/index.html').read_text()
+        page_es = (self.root / 'es/stats/index.html').read_text()
+        self.assertIn('<title>San Antonio garage sale map stats | Chicas Map</title>', page)
+        self.assertIn('<title>Números del mapa de ventas de garaje en San Antonio | Chicas Map</title>', page_es)
+        self.assertIn('role="tooltip"', page)
+        self.assertIn('sales-clean.json', page + (self.root / 'js/stats-viewer.js').read_text())
+        self.assertIn('coming soon', page.lower())
+        self.assertIn('css/home.css', page)
+        self.assertIn('class="site-header"', page)
+        self.assertNotIn('mission-control', page)
+        self.assertNotIn('MISSION_CONTROL', page)
+        self.assertNotIn('PASSWORD', page)
+        self.assertNotIn('href="/admin', page)
+        for word in ('Star Trek', 'Batman', 'Matrix', 'iPhone'):
+            self.assertNotIn(word, page)
+
+        sm = (self.root / 'sitemap.xml').read_text()
+        self.assertIn('<loc>https://www.chicasmap.com/stats/</loc>', sm)
+        self.assertIn('<loc>https://www.chicasmap.com/es/stats/</loc>', sm)
+        self.assertNotIn('mission-control', sm)
+        self.assertIn('rel="canonical" href="https://www.chicasmap.com/stats/"', page)
+        self.assertIn('rel="canonical" href="https://www.chicasmap.com/es/stats/"', page_es)
+        self.assertNotRegex(page, r'name="robots"[^>]*content="noindex')
+        self.assertNotRegex(page_es, r'name="robots"[^>]*content="noindex')
+        self.assertIn('data-goatcounter="https://chicasmapcom.goatcounter.com/count"', page)
+        self.assertIn('data-goatcounter="https://chicasmapcom.goatcounter.com/count"', page_es)
 
 
 
