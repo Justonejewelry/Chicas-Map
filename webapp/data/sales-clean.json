@@ -5,7 +5,7 @@
   "timezone": "America/Chicago",
   "status": "live",
   "policy": "Explicit sale dates only; uncertain dates excluded. 60-mile SA metro. Raw overlays preserved.",
-  "total_locations": 40,
+  "total_locations": 42,
   "today_count": 3,
   "public": [
     {
@@ -718,6 +718,50 @@
       ]
     },
     {
+      "address": "18023 CRYSTAL KNOLL, SAN ANTONIO, TX, 78258",
+      "source_address": "18023 Crystal Knoll, San Antonio, TX 78258",
+      "dates": "2026-11-14",
+      "date_from": "2026-11-14",
+      "date_to": "2026-11-14",
+      "end_date": "2026-11-14",
+      "date_start": "2026-11-14",
+      "date_end": "2026-11-14",
+      "date_bucket": "upcoming",
+      "hours": "8am–2pm",
+      "title": "Community Garage Sale (Crystal Knoll)",
+      "details": "Community garage sale this Saturday at 18023 Crystal Knoll, San Antonio 78258. Sale is 8am–2pm; many homes stay open until 3. Toys, sports cards/Pokémon, sports equipment, games, tools, furniture, memorabilia, home/yard decor, books, clothes, antiques, bikes, scooters, Legos, vinyl records, and more.",
+      "source": "Facebook Events",
+      "url": "https://www.facebook.com/events/1634463388423435/",
+      "photos": 0,
+      "type": "community",
+      "confidence": 0.86,
+      "status": "verified",
+      "lat": 29.62895,
+      "lon": -98.488472,
+      "geocode": "census",
+      "external_id": "fb-ev-1634463388423435",
+      "categories": [
+        "garage-sale",
+        "facebook",
+        "event"
+      ],
+      "zip": "78258",
+      "in_person": true,
+      "date_note": "Saturday, November 14, 2026, 8am–2pm (America/Chicago), as stated on the Facebook Event ('THIS SATURDAY AT 8 AM'; description: community sale 8–2, many stay open till 3).",
+      "date_verified": "facebook-collected-2026-11-11",
+      "poster": "Joe Garza",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://www.facebook.com/events/1634463388423435/"
+      ],
+      "sources": [
+        "Facebook Events"
+      ],
+      "aliases": [
+        "fb-ev-1634463388423435"
+      ]
+    },
+    {
       "address": "20418 WAHL LN, GARDEN RIDGE, TX, 78266",
       "source_address": "20418 Wahl Ln, Garden Ridge, TX 78266",
       "dates": "2026-11-14",
@@ -1136,6 +1180,50 @@
       ],
       "aliases": [
         "exn-ipcsae00231141"
+      ]
+    },
+    {
+      "address": "825 SHADY COVE LN, SPRING BRANCH, TX, 78070",
+      "source_address": "825 Shady Cove Ln, Spring Branch, TX 78070",
+      "dates": "2026-11-14",
+      "date_from": "2026-11-14",
+      "date_to": "2026-11-14",
+      "end_date": "2026-11-14",
+      "date_start": "2026-11-14",
+      "date_end": "2026-11-14",
+      "date_bucket": "upcoming",
+      "hours": "8 AM–3 PM",
+      "title": "Garage Sale — Shady Cove (Spring Branch)",
+      "details": "Garage sale Saturday at 825 Shady Cove Ln, Spring Branch. Household and decor items, picture frames, RV items, shelving, pop-up canopies, Blu-ray player with surround sound, small kitchen appliances, and computer/tech items. Hours 8 AM–3 PM.",
+      "source": "Facebook Events",
+      "url": "https://www.facebook.com/events/1150430560823109/",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.86,
+      "status": "verified",
+      "lat": 29.856122,
+      "lon": -98.45254,
+      "geocode": "census",
+      "external_id": "fb-ev-1150430560823109",
+      "categories": [
+        "garage-sale",
+        "facebook",
+        "event"
+      ],
+      "zip": "78070",
+      "in_person": true,
+      "date_note": "Saturday, November 14, 2026, 8 AM–3 PM (America/Chicago), as stated on the Facebook Event ('THIS SATURDAY AT 8 AM'; hours 8 AM–3 PM).",
+      "date_verified": "facebook-collected-2026-11-11",
+      "poster": "Dale Geiger",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://www.facebook.com/events/1150430560823109/"
+      ],
+      "sources": [
+        "Facebook Events"
+      ],
+      "aliases": [
+        "fb-ev-1150430560823109"
       ]
     },
     {

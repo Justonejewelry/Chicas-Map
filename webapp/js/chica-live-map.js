@@ -444,7 +444,7 @@
       if (typeof w.__chicaHideIntel === "function") w.__chicaHideIntel();
     });
     // The 9 AM Facebook ingest bumps this marker; it remains a raw input, not a browser feed.
-    var OVERLAY_VERSION = "san-antonio-user.json?v=55";
+    var OVERLAY_VERSION = "san-antonio-user.json?v=56";
     var feedUrls = [BASE + "/data/sales-clean.json?v=" + OVERLAY_VERSION.split("?v=")[1] + "&t=" + Date.now()];
     Promise.all(feedUrls.map(function (u) {
       return fetch(u, { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
