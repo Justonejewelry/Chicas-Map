@@ -23,6 +23,11 @@ All sources below are public or government-published. Private Facebook Groups, l
 |--------|--------|----------|-------|
 | Craigslist (gms) | RSS + public pages (constrained) | Mercury Swarm | Rate-limited / blocked for heavy automation; multi-path resilience in place |
 | SA Express-News / Hearst Marketplace | Public classifieds | Press | Estate & Garage Sales category at hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/category/estate-garage-sales. Script: `webapp/scripts/fetch_express_news.py` |
+| Wilson County News | Public classifieds | Press | GeoDirectory garage classifieds at wilsoncountynews.com/classifieds/category/garage-sale/. Script: `webapp/scripts/fetch_wilson_county.py` |
+| yardsales.net | Public HTML | Press | SA city page at yardsales.net/san-antonio-tx/. Treasure Listings family — hard-deduped vs YSS/GSF/gsalr; 403 fails soft. Script: `webapp/scripts/fetch_yardsales_net.py` |
+| A Better Estate Sale | Public calendar | Press | Upcoming sales at abetterestatesale.com/upcoming-sales/. Address posts 9 a.m. CT the day before; area pins until then. Script: `webapp/scripts/fetch_abetterestatesale.py` |
+| Herald-Zeitung / Seguin Gazette | Public classifieds | Press | BLOX garage ads (no query strings). 429 backoff. Script: `webapp/scripts/fetch_blox_classifieds.py` |
+| AllEvents / Eventbrite (sale filter) | Public event pages | Press | Strict title filter (garage, yard, estate, rummage, or moving sale) and SA-area locations only. Script: `webapp/scripts/fetch_event_listings.py` |
 | Facebook (public only) | Public pages, events, hashtags, tips | Echo Swarm | No Graph API for Marketplace or Groups |
 
 ## Tier 3 — Community & supporting

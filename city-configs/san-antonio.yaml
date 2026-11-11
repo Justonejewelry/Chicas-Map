@@ -89,6 +89,48 @@ sources:
     agents: [Press]
     priority: medium
 
+  wilson_county_news:
+    url: https://www.wilsoncountynews.com/classifieds/category/garage-sale/
+    notes: "Wilson County News GeoDirectory garage classifieds. Public HTML; fetch_wilson_county.py. Robots allow /classifieds/."
+    agents: [Press]
+    priority: medium
+
+  yardsales_net:
+    url: https://yardsales.net/san-antonio-tx/
+    notes: "Treasure Listings family (with YSS/GSF/gsalr). Hard-deduped at ingest. 403 from Actions runners fails soft. fetch_yardsales_net.py."
+    agents: [Press]
+    priority: medium-low
+
+  abetterestatesale:
+    url: https://www.abetterestatesale.com/upcoming-sales/
+    notes: "A Better Estate Sale calendar. Street address posts 9 a.m. CT the day before; area pins until then. fetch_abetterestatesale.py."
+    agents: [Press]
+    priority: medium
+
+  herald_zeitung:
+    url: https://herald-zeitung.com/classifieds/garage_sales/garage_sales/
+    notes: "BLOX garage classifieds (Herald-Zeitung). No query strings (robots Disallow /classifieds/*?). 429 backoff. fetch_blox_classifieds.py."
+    agents: [Press]
+    priority: low
+
+  seguin_gazette:
+    url: https://seguingazette.com/classifieds/garage_sales/garage_sales/
+    notes: "BLOX garage classifieds (Seguin Gazette). No query strings. 429 backoff. fetch_blox_classifieds.py."
+    agents: [Press]
+    priority: low
+
+  allevents:
+    url: https://allevents.in/san-antonio/garage-sale
+    notes: "AllEvents SA listings with a strict garage/yard/estate/rummage/moving-sale title filter. fetch_event_listings.py."
+    agents: [Press]
+    priority: low
+
+  eventbrite_sales:
+    url: https://www.eventbrite.com/d/tx--san-antonio/rummage-sale/
+    notes: "Eventbrite SA search pages with the same strict sale-title filter. fetch_event_listings.py. Distinct from the disabled community-events Eventbrite entry."
+    agents: [Press]
+    priority: low
+
   facebook_public:
     notes: >
       Public content only (public pages, public events, hashtags, user tips).

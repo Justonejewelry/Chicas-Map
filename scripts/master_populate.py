@@ -72,6 +72,11 @@ def main() -> int:
         ("fetch_gsalr", [PY, "webapp/scripts/fetch_gsalr.py", "--cities", cities]),
         ("fetch_craigslist", [PY, "webapp/scripts/fetch_craigslist.py", "--cities", cities]),
         ("fetch_express_news", [PY, "webapp/scripts/fetch_express_news.py", "--cities", cities]),
+        ("fetch_wilson_county", [PY, "webapp/scripts/fetch_wilson_county.py", "--cities", cities]),
+        ("fetch_yardsales_net", [PY, "webapp/scripts/fetch_yardsales_net.py", "--cities", cities]),
+        ("fetch_abetterestatesale", [PY, "webapp/scripts/fetch_abetterestatesale.py", "--cities", cities]),
+        ("fetch_blox_classifieds", [PY, "webapp/scripts/fetch_blox_classifieds.py", "--cities", cities]),
+        ("fetch_event_listings", [PY, "webapp/scripts/fetch_event_listings.py", "--cities", cities]),
         ("fetch_estatesales.net", [PY, "webapp/scripts/fetch_estatesales.py", "--cities", cities]),
     ]
     failed: list[str] = []
