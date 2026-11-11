@@ -5,7 +5,7 @@
   "timezone": "America/Chicago",
   "status": "live",
   "policy": "Explicit sale dates only; uncertain dates excluded. 60-mile SA metro. Raw overlays preserved.",
-  "total_locations": 19,
+  "total_locations": 20,
   "today_count": 3,
   "public": [
     {
@@ -128,6 +128,48 @@
         "29.42410,-98.49360|Estate of Maryland Von Roeder Kunkle"
       ],
       "external_id": "sale-3cfc823a30e74fea75cb"
+    },
+    {
+      "address": "811 NORTHSTAR DR, SAN ANTONIO, TX, 78216",
+      "source_address": "811 Northstar Dr, San Antonio, TX 78216",
+      "dates": "2026-11-12 – 2026-11-13",
+      "date_from": "2026-11-12",
+      "date_to": "2026-11-13",
+      "end_date": "2026-11-13",
+      "date_start": "2026-11-12",
+      "date_end": "2026-11-13",
+      "date_bucket": "upcoming",
+      "hours": "",
+      "title": "Marvelous 4 Family Pre-Holiday Garage Sale",
+      "details": "Four-family pre-holiday garage sale: jewelry, clothing, shoes, household items, sporting goods and makeup, all out of the garage.",
+      "source": "GarageSaleFinder",
+      "url": "https://www.garagesalefinder.com/",
+      "photos": 2,
+      "type": "garage",
+      "confidence": 0.85,
+      "status": "verified",
+      "lat": 29.532252506662,
+      "lon": -98.504210494488,
+      "geocode": "census",
+      "external_id": "gsf-email-811northstardr-2026-11-12",
+      "categories": [
+        "garage-sale",
+        "garagesalefinder"
+      ],
+      "zip": "78216",
+      "in_person": true,
+      "date_note": "Dates as posted in the GarageSaleFinder daily email of 2026-11-11 (checked 2026-11-11 8:00 AM CT). No hours given.",
+      "date_verified": "gsf-email-2026-11-11-0800",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://www.garagesalefinder.com/"
+      ],
+      "sources": [
+        "GarageSaleFinder"
+      ],
+      "aliases": [
+        "gsf-email-811northstardr-2026-11-12"
+      ]
     },
     {
       "address": "5802 GRANDWOOD DR, SAN ANTONIO, TX, 78239",
