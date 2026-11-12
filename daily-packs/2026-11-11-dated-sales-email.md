@@ -26,6 +26,8 @@ The map keeps both today's sales and upcoming dated sales.
 - OPEN Thursday & Friday — 1254 Austin Hwy, San Antonio, TX [2026-11-12 → 2026-11-13]
 - Superb Magnificent 4 Family pre holiday Garage Sale — Blanco Road, San Antonio, TX [2026-11-12 → 2026-11-13]
 - YARD SALE — 1303 Roosevelt #2 near Roosevelt and Felisa, San Antonio, TX [2026-11-12 → 2026-11-13]
+- HUGE FAMILY YARD SALE — 205 Pollydale Dr, San Antonio, TX 78223 [2026-11-12 → 2026-11-13]
+- Huge Family Yard Sale — 205 Pollydale Dr, San Antonio, TX [2026-11-12 → 2026-11-13]
 
 ### Starts 2026-11-13
 - Adkins Garage sale — 6690 Cooksey Rd, Adkins, TX [2026-11-13 → 2026-11-14] | starting at 8am
@@ -72,6 +74,7 @@ The map keeps both today's sales and upcoming dated sales.
 - Garage Sale — 5858 Laurel Valley Dr near Five Palms, San Antonio, TX [2026-11-14 → 2026-11-14]
 - Southern Hills Community Yard Sale — Southern Bluff near Sinclair Rd, San Antonio, TX [2026-11-14 → 2026-11-14]
 - 🚨 MULTI-SELLER GARAGE SALE AT STORAGE FACILITY! 🚨 — 12241 Hwy 181, San Antonio, TX [2026-11-14 → 2026-11-14]
+- Pool Table, Honda CR-V floor mats, Jeep windows, toys — 2401 Ayers Dr, Seguin, TX 78155 [2026-11-14 → 2026-11-14]
 
 ### Starts 2026-11-19
 - Alamo Ranch Estate Sale – Furniture, Danish China, Clocks & Artwork – — Alamo ranch, San Antonio, TX [2026-11-19 → 2026-11-22]

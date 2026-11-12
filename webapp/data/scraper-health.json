@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T19:24:01-06:00",
+  "generated_at": "2026-11-11T21:51:47-06:00",
   "overall": "critical",
   "primary_failures": [
     "estatesales_org",
@@ -53,10 +53,10 @@
   "json_source_counts": {
     "facebook marketplace": 2,
     "facebook events": 4,
-    "yardsalesearch": 32,
+    "yardsalesearch": 33,
     "neighbor tip": 1,
     "nextdoor": 2,
-    "garagesalefinder": 35,
+    "garagesalefinder": 37,
     "aggregators": 2,
     "craigslist": 21,
     "estatesales.net": 2,
