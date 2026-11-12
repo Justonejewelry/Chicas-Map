@@ -124,6 +124,46 @@
   function t() { return T[lang]; }
   function $(id) { return document.getElementById(id); }
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
+  function safeUrl(u) {
+    var s = String(u == null ? "" : u).trim();
+    if (!s) return "";
+    if (/^blob:/i.test(s)) {
+      try { return new URL(s).protocol === "blob:" ? s : ""; } catch (e) { return ""; }
+    }
+    if (s.slice(0, 2) === "//") return "";
+    if (/^https?:\/\//i.test(s)) return s;
+    if (s.charAt(0) === "/" && s.charAt(1) !== "/") return s;
+    if (s.charAt(0) === ".") return s;
+    if (s.indexOf(":") === -1 && s.indexOf("\\") === -1) return s;
+    return "";
+  }
+  function el(tag, props, kids) {
+    var n = document.createElement(tag), k, u;
+    if (props) {
+      for (k in props) {
+        if (!Object.prototype.hasOwnProperty.call(props, k) || props[k] == null) continue;
+        if (k === "text") n.textContent = props[k];
+        else if (k === "className") n.className = props[k];
+        else if (k === "style") {
+          var st = props[k];
+          for (var sk in st) if (Object.prototype.hasOwnProperty.call(st, sk)) n.style[sk] = st[sk];
+        } else if (k === "src" || k === "href") {
+          u = safeUrl(props[k]);
+          if (u) n.setAttribute(k, u);
+        } else n.setAttribute(k, String(props[k]));
+      }
+    }
+    (kids || []).forEach(function (c) {
+      if (c == null || c === "") return;
+      n.appendChild(typeof c === "string" || typeof c === "number" ? document.createTextNode(String(c)) : c);
+    });
+    return n;
+  }
+  function fill(node, kids) {
+    while (node.firstChild) node.removeChild(node.firstChild);
+    (kids || []).forEach(function (c) { if (c) node.appendChild(c); });
+    return node;
+  }
   function item() { for (var i = 0; i < ITEMS.length; i++) if (ITEMS[i][0] === S.item) return ITEMS[i]; return ITEMS[ITEMS.length - 1]; }
   function iname(it) { return S.name || it[lang === "es" ? 3 : 2]; }
   function money(n) { var r = Math.round(n * 100) / 100; return (r < 0 ? "-$" : "$") + Math.abs(r).toFixed(Math.abs(r) >= 100 || r % 1 === 0 ? 0 : 2); }
@@ -279,7 +319,21 @@
 
   function sheet() {
     var L = t();
-    $("ff-sheet").innerHTML = "<h2>" + L.h1 + " · San Antonio</h2><table><tr><th></th><th>" + L.ask + "</th><th>" + L.resale + "</th></tr>" + ITEMS.filter(function (i) { return i[0] !== "other"; }).map(function (i) { return "<tr><td>" + i[1] + " " + esc(i[lang === "es" ? 3 : 2]) + "</td><td>$" + i[4] + "–$" + i[5] + "</td><td>$" + i[6] + "–$" + i[7] + "</td></tr>"; }).join("") + "</table><p>" + L.disc + "</p><p>chicasmap.com/deals</p>";
+    var rows = [el("tr", null, [el("th"), el("th", { text: L.ask }), el("th", { text: L.resale })])];
+    ITEMS.forEach(function (i) {
+      if (i[0] === "other") return;
+      rows.push(el("tr", null, [
+        el("td", { text: i[1] + " " + i[lang === "es" ? 3 : 2] }),
+        el("td", { text: "$" + i[4] + "–$" + i[5] }),
+        el("td", { text: "$" + i[6] + "–$" + i[7] })
+      ]));
+    });
+    fill($("ff-sheet"), [
+      el("h2", { text: L.h1 + " · San Antonio" }),
+      el("table", null, rows),
+      el("p", { text: L.disc }),
+      el("p", { text: "chicasmap.com/deals" })
+    ]);
     window.print();
   }
 
@@ -297,10 +351,18 @@
     var L = t(), out = $("ff-ph-out"); if (!file || !out) return;
     try{window.goatcounter&&window.goatcounter.count&&window.goatcounter.count({path:"evt-deal-finder-photo",title:"Deal Finder photo check",event:true});}catch(x){}
     var url = URL.createObjectURL(file);
-    out.innerHTML = '<div class="ff-sniff"><img class="ff-ph-img" src="' + url + '" alt=""/><div><img class="ff-nose" src="' + BASE + '/images/chica-logo.png" alt=""/><b>' + L.phLoad + '</b><div class="ff-bar"><i id="ff-bar" style="width:4%"></i></div><small>' + (clf ? "" : L.phFirst) + "</small></div></div>";
+    fill(out, [el("div", { className: "ff-sniff" }, [
+      el("img", { className: "ff-ph-img", src: url, alt: "" }),
+      el("div", null, [
+        el("img", { className: "ff-nose", src: BASE + "/images/chica-logo.png", alt: "" }),
+        el("b", { text: L.phLoad }),
+        el("div", { className: "ff-bar" }, [el("i", { id: "ff-bar", style: { width: "4%" } })]),
+        el("small", { text: clf ? "" : L.phFirst })
+      ])
+    ])]);
     var loaded = {}, total = {};
     var timer = setTimeout(function () { if (!clf) fail(); }, 120000);
-    function fail() { clearTimeout(timer); out.innerHTML = '<p class="ff-hint ff-warn">' + L.phFail + "</p>"; }
+    function fail() { clearTimeout(timer); fill(out, [el("p", { className: "ff-hint ff-warn", text: L.phFail })]); }
     loadClf(function (pr) {
       if (pr && pr.file && pr.total) { loaded[pr.file] = pr.loaded || 0; total[pr.file] = pr.total; var l = 0, tt = 0; for (var k in total) { l += loaded[k]; tt += total[k]; } var bar = $("ff-bar"); if (bar) bar.style.width = Math.max(4, Math.round(l / tt * 90)) + "%"; }
     }).then(function (p) {
@@ -310,9 +372,18 @@
       return p(url, labels, { hypothesis_template: "a photo of {}" }).then(function (res) {
         clearTimeout(timer);
         var top = res.slice(0, 3).map(function (r) { var i = cands[labels.indexOf(r.label)]; return { it: i, s: r.score }; });
-        out.innerHTML = '<div class="ff-sniff"><img class="ff-ph-img" src="' + url + '" alt=""/><div><b>' + L.phPick + '</b><div class="ff-guess">' + top.map(function (g, n) {
-          return '<button type="button" class="ff-chip" data-guess="' + g.it[0] + '" aria-pressed="' + (n === 0) + '">' + g.it[1] + " " + esc(g.it[lang === "es" ? 3 : 2]) + " <small>" + Math.round(g.s * 100) + "%</small></button>";
-        }).join("") + "</div></div></div>";
+        fill(out, [el("div", { className: "ff-sniff" }, [
+          el("img", { className: "ff-ph-img", src: url, alt: "" }),
+          el("div", null, [
+            el("b", { text: L.phPick }),
+            el("div", { className: "ff-guess" }, top.map(function (g, n) {
+              return el("button", { type: "button", className: "ff-chip", "data-guess": g.it[0], "aria-pressed": String(n === 0) }, [
+                g.it[1] + " " + g.it[lang === "es" ? 3 : 2] + " ",
+                el("small", { text: Math.round(g.s * 100) + "%" })
+              ]);
+            }))
+          ])
+        ])]);
         out.querySelectorAll("[data-guess]").forEach(function (b) { b.onclick = function () { out.querySelectorAll("[data-guess]").forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); }); pick(b.dataset.guess, true); }; });
         if (top[0]) pick(top[0].it[0], true);
         window.__chicaPhotoTop = top.map(function (g) { return g.it[0] + ":" + g.s.toFixed(3); });
