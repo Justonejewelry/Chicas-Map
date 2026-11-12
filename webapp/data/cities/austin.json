@@ -184,33 +184,6 @@
       ]
     },
     {
-      "address": "10200 N. Lamar near Masterson, Austin, TX",
-      "dates": "2026-11-11 – 2026-11-11",
-      "date_from": "2026-11-11",
-      "date_to": "2026-11-11",
-      "end_date": "2026-11-11",
-      "hours": null,
-      "title": "Commercial Warehouse Garage Sale- WEDNESDAY, NOV 11",
-      "details": "QR Code Link to This Post Our company is downsizing, moving, and selling off all of our furnishings. Everything must go at low prices! Lighted work stations, office desks, tables, ladders, commercial fans, trash cans, and much more. If you like it, make an offer. No unreasonable offers refused. Cash or Venmo preferred. Address is 10200 N. Lamar, Suite A108, behind Maaco. Bring your truck or traile",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/austin-commercial-warehouse-garage-sale/oHbispDZjNzZfiucWKdvQm",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale",
-        "moving-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 30.371209,
-      "lon": -97.692876,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-housegaragesaleohbispdzjnzzfiucwkdvqm",
-      "posted_at": "2026-11-05T14:26:05-0600",
-      "date_certainty": "explicit"
-    },
-    {
       "address": "709 East Slaughter Lane 204, Austin, TX",
       "dates": "2026-11-14 – 2026-11-14",
       "date_from": "2026-11-14",
@@ -954,9 +927,9 @@
     "gsalr.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 41,
+  "total_locations": 40,
   "status": "live",
-  "date": "2026-11-11",
-  "last_refresh": "2026-11-11T21:51:47-06:00",
+  "date": "2026-11-12",
+  "last_refresh": "2026-11-12T03:27:12-06:00",
   "permits": []
 }

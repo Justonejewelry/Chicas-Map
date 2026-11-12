@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T21:51:47-06:00",
+  "generated_at": "2026-11-12T03:27:12-06:00",
   "overall": "critical",
   "primary_failures": [
     "estatesales_org",
@@ -53,14 +53,14 @@
   "json_source_counts": {
     "facebook marketplace": 2,
     "facebook events": 4,
-    "yardsalesearch": 33,
+    "yardsalesearch": 34,
     "neighbor tip": 1,
     "nextdoor": 2,
-    "garagesalefinder": 37,
+    "garagesalefinder": 39,
     "aggregators": 2,
     "craigslist": 21,
     "estatesales.net": 2,
-    "express-news marketplace": 7,
+    "express-news marketplace": 8,
     "wilson county news": 3,
     "yardsales.net": 3,
     "a better estate sale": 2,
