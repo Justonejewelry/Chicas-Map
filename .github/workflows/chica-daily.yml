@@ -62,7 +62,7 @@ jobs:
           THIS_RUN: ${{ github.run_id }}
         run: |
           set -euo pipefail
-          cutoff=$(date -u -d '3 hours ago' +%Y-%m-%dT%H:%M:%SZ)
+          cutoff=$(date -u -d '90 minutes ago' +%Y-%m-%dT%H:%M:%SZ)
           echo "Looking for a successful Chica Daily run completed after ${cutoff} (excluding this run ${THIS_RUN})"
           if ! json=$(gh api "repos/${GITHUB_REPOSITORY}/actions/workflows/chica-daily.yml/runs?status=success&per_page=20"); then
             echo "skip=false" >> "$GITHUB_OUTPUT"
@@ -75,7 +75,7 @@ jobs:
             '.workflow_runs[] | select(.id != $this and .conclusion == "success" and .updated_at >= $cutoff) | "recent success: id=\(.id) event=\(.event) updated_at=\(.updated_at) \(.html_url)"'
           if [ "$found" -gt 0 ]; then
             echo "skip=true" >> "$GITHUB_OUTPUT"
-            echo "A successful Chica Daily run completed within the last 3 hours; skipping populate and commit."
+            echo "A successful Chica Daily run completed within the last 90 minutes; skipping populate and commit."
           else
             echo "skip=false" >> "$GITHUB_OUTPUT"
             echo "No recent successful run found; continuing with populate."
@@ -261,7 +261,7 @@ jobs:
             echo "- Dry run: ${{ github.event.inputs.dry_run || 'false' }}"
             echo "- Changes: ${{ steps.diff.outputs.dirty || 'n/a' }}"
             echo "- Schedule: Mon–Thu 5:13 AM and 1:13 PM CT; Fri–Sun 5:13 AM, 7:13 AM, 10:13 AM, and 1:13 PM CT"
-            echo "- Scheduled runs skip populate if a successful Chica Daily run (any event) finished in the last 3 hours. Manual dispatches always run."
+            echo "- Scheduled runs skip populate if a successful Chica Daily run (any event) finished in the last 90 minutes. Manual dispatches always run."
             echo ""
             echo "#### Run log"
             echo '```'
