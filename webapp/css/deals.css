@@ -57,3 +57,7 @@ label.ff-f{display:grid;gap:4px;font-size:13px;font-weight:700;color:var(--muted
 @media(prefers-reduced-motion:reduce){.ff-nose{animation:none}}
 .ff-sniff>div{min-width:0}.ff-guess .ff-chip{flex:0 1 auto;max-width:100%;white-space:normal;text-align:left;min-height:38px;padding:6px 10px}
 .ff-verdict .big{font-size:clamp(22px,6vw,48px)}
+.ff-ebay{margin-top:10px;padding:12px;border-radius:18px;background:#15111a;border:1px solid var(--line)}
+.ff-ebay>b{display:block;margin-bottom:8px}.ff-ebay small{display:block;color:var(--muted);font-size:12px;margin-top:6px}
+.ff-ebay .ff-stats{margin:0}.ff-ex{list-style:none;margin:4px 0 0;padding:0}.ff-ex li{font-size:13px;margin:4px 0;overflow-wrap:anywhere}.ff-ex a{color:var(--gold,#f3c15a)}
+.ff-vname{font-size:17px;margin:2px 0 4px}.ff-ebay[hidden]{display:none}

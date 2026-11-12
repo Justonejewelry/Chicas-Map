@@ -14,5 +14,6 @@ window.CHICA_CONFIG = Object.assign({}, window.CHICA_CONFIG, {
   FLIP_EBAY_CAMPID: "5339243224",          // eBay Partner Network campaign ID (numbers only) -> turns "Check sold prices" into affiliate links
   FLIP_PRO_PAYMENT_URL: "",        // Stripe/Square payment link for "Chica's Flipper Pack" (printable haggle cards + price sheet)
   FLIP_PRO_PRICE_USD: 7,
+  DEAL_VISION_URL: "",             // Deal Vision worker URL (https://chicas-deal-vision.<subdomain>.workers.dev). Empty = photo ID stays on-phone (CLIP only).
   FLIP_SPONSOR: null               // e.g. { name: "Alamo Consignment", blurb: "We buy furniture & vintage", url: "https://...", es: "Compramos muebles y vintage" }
 });

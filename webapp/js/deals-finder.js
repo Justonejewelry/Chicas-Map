@@ -88,6 +88,11 @@
       tip: "Tip: open low, smile, bundle, and come back after 1 PM when sellers want things gone.",
       ph: "Snap a photo 📸", phG: "🖼️ Pick from gallery", phNote: "Your photo stays on your phone. Chica looks at it right here, nothing is uploaded.", phLoad: "Chica is sniffing it out…", phFirst: "First time takes a bit (downloading Chica's nose, ~90 MB, then it's cached).", phPick: "Is it one of these? Tap to confirm:", phFail: "My nose is stuffy on this device. 🤧 Just pick the item from the list below.", or: "or pick it yourself",
       fromSale: "Sniff sniff! 🐾 I picked what this sale mentions. Snap a photo or tap a different item if you spotted something else, and enter their price.",
+      visLoad: "Chica is studying your photo…", visSee: "I see:", visBrand: "Brand", visModel: "Model", visSure: "sure", visPick: "Not quite? Tap another guess:", visWhy: "Chica's eyes",
+      eHead: "eBay right now · asking prices (not sold)", eLow: "Low", eMid: "Median", eHigh: "High", eCount: function (n) { return n + " comparable used listings"; },
+      eNote: "These are what sellers are asking, and items usually sell for less. Chica's verdict trims about 15% off the median. Tap \"eBay sold listings\" below for real sold prices.",
+      eLive: function (a, b, c) { return "eBay asking prices right now: $" + a + "–$" + c + ", median $" + b + "."; }, eEx: "A few listings like it:",
+      phNoteCloud: "Your photo is sent to Chica's helper to identify it and look up prices. It isn't stored. If the helper is busy, Chica checks it on your phone instead.",
       home: "← Chicas Map", cardTag: "MY GARAGE-SALE DEALS", cardFoot: "Is it a deal? Ask Chica: chicasmap.com/deals", items: "items"
     },
     es: {
@@ -114,11 +119,16 @@
       phr: null, tip: "Tip: empieza bajo, sonríe, junta varias cosas y regresa después de la 1 PM cuando quieren vaciar.",
       ph: "Toma una foto 📸", phG: "🖼️ Elegir de la galería", phNote: "Tu foto se queda en tu teléfono. Chica la revisa aquí mismo, no se sube nada.", phLoad: "Chica lo está olfateando…", phFirst: "La primera vez tarda un poco (descarga la nariz de Chica, ~90 MB, luego queda guardada).", phPick: "¿Es uno de estos? Toca para confirmar:", phFail: "Mi nariz está tapada en este aparato. 🤧 Elige el artículo de la lista abajo.", or: "o elígelo tú",
       fromSale: "¡Snif, snif! 🐾 Elegí lo que menciona esta venta. Toma una foto o toca otro artículo si viste algo más y pon su precio.",
+      visLoad: "Chica está estudiando tu foto…", visSee: "Veo:", visBrand: "Marca", visModel: "Modelo", visSure: "seguro", visPick: "¿No es? Toca otra opción:", visWhy: "Los ojos de Chica",
+      eHead: "eBay ahorita · precios que piden (no vendidos)", eLow: "Bajo", eMid: "Mediana", eHigh: "Alto", eCount: function (n) { return n + " anuncios usados parecidos"; },
+      eNote: "Esto es lo que piden los vendedores, y casi siempre se vende por menos. El veredicto de Chica le baja como 15% a la mediana. Toca \"Vendidos en eBay\" abajo para ver precios vendidos de verdad.",
+      eLive: function (a, b, c) { return "Precios que piden en eBay ahorita: $" + a + "–$" + c + ", mediana $" + b + "."; }, eEx: "Algunos anuncios parecidos:",
+      phNoteCloud: "Tu foto se envía al ayudante de Chica para identificarla y buscar precios. No se guarda. Si el ayudante está ocupado, Chica la revisa en tu teléfono.",
       home: "← Chicas Map", cardTag: "MIS GANGAS DE VENTAS DE GARAGE", cardFoot: "¿Es ganga? Pregúntale a Chica: chicasmap.com/deals", items: "artículos"
     }
   };
   T.es.phr = T.en.phr;
-  var S = { item: "castiron", name: "", ask: 5, resale: 40, plat: "ebay", cond: 1, ship: null };
+  var S = { item: "castiron", name: "", qry: "", live: null, ask: 5, resale: 40, plat: "ebay", cond: 1, ship: null };
   var sales = null, haul = loadHaul();
 
   function t() { return T[lang]; }
@@ -186,7 +196,7 @@
     var it = item(), w = (S.name ? S.name : it[9] || it[2]).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
     return w.split(/[^a-z0-9]+/).filter(function (x) { return x.length > 3 && ["vintage", "with", "from", "bulk"].indexOf(x) < 0; });
   }
-  function q() { var it = item(); return S.name || (it[0] === "other" ? "" : it[2].replace(/\(.*\)/, "").trim()); }
+  function q() { var it = item(); return S.qry || S.name || (it[0] === "other" ? "" : it[2].replace(/\(.*\)/, "").trim()); }
   function ebayUrl() {
     var u = "https://www.ebay.com/sch/i.html?_nkw=" + encodeURIComponent(q()) + "&LH_Sold=1&LH_Complete=1";
     var c = String(CFG.FLIP_EBAY_CAMPID || "").replace(/\D/g, "");
@@ -215,7 +225,7 @@
       '<div class="ff-cols"><div>' +
       '<section class="ff-card"><h2><span class="ff-step">1</span>' + L.s1 + '</h2>' +
       '<div class="ff-photo"><label class="ff-btn pri ff-snap"><input id="ff-cam" type="file" accept="image/*" capture="environment" hidden/>' + L.ph + '</label><label class="ff-btn ff-gal"><input id="ff-gal" type="file" accept="image/*" hidden/>' + L.phG + '</label></div>' +
-      '<p class="ff-hint">🔒 ' + L.phNote + '</p><div id="ff-ph-out"></div>' +
+      '<p class="ff-hint">🔒 ' + (visionUrl() ? L.phNoteCloud : L.phNote) + '</p><div id="ff-ph-out"></div>' +
       '<p class="sub" style="margin-top:12px">' + L.or + ' · ' + L.s1sub + '</p><div class="ff-chips" id="ff-chips">' + chips + '</div>' +
       '<label class="ff-f" style="margin-top:10px">' + L.own + '<input id="ff-name" type="text" maxlength="60" placeholder="' + esc(L.ownPh) + '" value="' + esc(S.name) + '"/></label></section>' +
       '<section class="ff-card"><h2><span class="ff-step">2</span>' + L.s2 + '</h2><div class="ff-grid">' +
@@ -243,7 +253,7 @@
 
   function update() {
     var L = t(), it = item(), c = calc(S.plat), b = bestPlat(), nw = NEW[it[0]];
-    $("ff-guide").textContent = L.guide(it[4], it[5], it[6], it[7]) + (nw ? L.newR(nw[0], nw[1]) : "");
+    $("ff-guide").textContent = L.guide(it[4], it[5], it[6], it[7]) + (nw ? L.newR(nw[0], nw[1]) : "") + (S.live ? " " + L.eLive(Math.round(S.live.low), Math.round(S.live.median), Math.round(S.live.high)) : "");
     var val = S.resale * [1, 0.85, 0.6][S.cond], ratio = val > 0 ? S.ask / val : 9, offer = Math.max(1, Math.round(val * 0.5));
     var kind = ratio <= 0.5 ? "great" : ratio <= 0.85 ? "fair" : ratio <= 1.25 ? "haggle" : "pass";
     var nearNew = nw && S.ask >= nw[0] * 0.8;
@@ -347,7 +357,7 @@
     }).then(function (p) { clf = p; return p; }).catch(function (e) { clfP = null; throw e; });
     return clfP;
   }
-  function onPhoto(file) {
+  function clipPhoto(file) {
     var L = t(), out = $("ff-ph-out"); if (!file || !out) return;
     try{window.goatcounter&&window.goatcounter.count&&window.goatcounter.count({path:"evt-deal-finder-photo",title:"Deal Finder photo check",event:true});}catch(x){}
     var url = URL.createObjectURL(file);
@@ -390,6 +400,130 @@
       });
     }).catch(function (e) { try { console.warn("Deal Finder photo:", e && e.message); } catch (x) {} fail(); });
   }
+
+  /* ---------- cloud photo ID (Deal Vision worker). Off unless CHICA_CONFIG.DEAL_VISION_URL is set; any failure falls back to the on-phone CLIP path above. ---------- */
+  var VISION_TIMEOUT_MS = 12000, MAX_PX = 768, MAX_BYTES = 300000, COND_IDX = { like_new: 0, good: 1, rough: 2 };
+  function visionUrl() {
+    var u = String(CFG.DEAL_VISION_URL || "").trim();
+    return /^https:\/\//i.test(u) || /^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?(\/|$)/i.test(u) ? u : "";
+  }
+  function ebayHost(u) { try { var x = new URL(u); return x.protocol === "https:" && /(^|\.)ebay\.com$/i.test(x.hostname); } catch (e) { return false; } }
+  function findItem(id) { for (var i = 0; i < ITEMS.length; i++) if (ITEMS[i][0] === id) return ITEMS[i]; return ITEMS[ITEMS.length - 1]; }
+  function realDownscale(file) {
+    return new Promise(function (resolve, reject) {
+      var url = URL.createObjectURL(file), img = new Image();
+      img.onload = function () {
+        try {
+          var w = img.naturalWidth || img.width, h = img.naturalHeight || img.height, k = Math.min(1, MAX_PX / Math.max(w, h));
+          var cv = document.createElement("canvas"); cv.width = Math.max(1, Math.round(w * k)); cv.height = Math.max(1, Math.round(h * k));
+          cv.getContext("2d").drawImage(img, 0, 0, cv.width, cv.height);
+          var q = [0.8, 0.65, 0.5], i = 0, out;
+          do { out = cv.toDataURL("image/jpeg", q[i++]); } while (out.length * 0.75 > MAX_BYTES && i < q.length);
+          URL.revokeObjectURL(url); resolve(out.replace(/^data:image\/jpeg;base64,/, ""));
+        } catch (e) { reject(e); }
+      };
+      img.onerror = function () { URL.revokeObjectURL(url); reject(new Error("decode")); };
+      img.src = url;
+    });
+  }
+  function downscale(file) { var h = window.ChicaDealHooks; return (h && h.downscale) ? Promise.resolve(h.downscale(file)) : realDownscale(file); }
+  function cleanVision(j) {
+    // Re-validate the worker answer on the page too; never trust it blindly.
+    if (!j || j.ok !== true || !j.item || typeof j.item.name !== "string" || !j.item.name.trim()) return null;
+    var i = j.item, num = function (v, d) { v = Number(v); return isFinite(v) ? v : d; };
+    var r = {
+      name: String(i.name).slice(0, 90), brand: String(i.brand || "").slice(0, 40), model: String(i.model || "").slice(0, 40),
+      category: findItem(String(i.category))[0], query: String(i.query || i.name).slice(0, 80),
+      condition: COND_IDX.hasOwnProperty(i.condition) ? i.condition : "unknown", confidence: Math.max(0, Math.min(1, num(i.confidence, 0.5))), alts: [], prices: null
+    };
+    (Array.isArray(i.alternatives) ? i.alternatives : []).slice(0, 3).forEach(function (a) {
+      if (a && typeof a.name === "string" && a.name.trim()) r.alts.push({ name: a.name.slice(0, 90), category: findItem(String(a.category))[0], confidence: Math.max(0, Math.min(1, num(a.confidence, 0))) });
+    });
+    var p = j.prices;
+    if (p && isFinite(+p.median) && +p.median > 0 && +p.n >= 3) {
+      r.prices = { basis: p.basis === "sold" ? "sold" : "asking", n: Math.round(+p.n), low: +p.low || +p.median, median: +p.median, high: +p.high || +p.median, examples: [] };
+      (Array.isArray(p.examples) ? p.examples : []).slice(0, 3).forEach(function (e) {
+        var u = e && typeof e.url === "string" && ebayHost(e.url) ? e.url : "";
+        if (e && u && isFinite(+e.price)) r.prices.examples.push({ title: String(e.title || "").slice(0, 90), price: +e.price, url: u });
+      });
+    }
+    return r;
+  }
+  function cloudIdentify(file) {
+    return downscale(file).then(function (b64) {
+      var ac = typeof AbortController === "function" ? new AbortController() : null, t1, t2;
+      var req = fetch(visionUrl(), { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ image: b64, lang: lang }), signal: ac ? ac.signal : undefined })
+        .then(function (r) { if (!r.ok) throw new Error("vision_" + r.status); return r.json(); });
+      t1 = setTimeout(function () { if (ac) ac.abort(); }, VISION_TIMEOUT_MS);
+      var hard = new Promise(function (_, rej) { t2 = setTimeout(function () { rej(new Error("vision_timeout")); }, VISION_TIMEOUT_MS + 300); });
+      function done() { clearTimeout(t1); clearTimeout(t2); }
+      return Promise.race([req, hard]).then(function (j) { done(); var v = cleanVision(j); if (!v) throw new Error("vision_bad"); return v; }, function (e) { done(); throw e; });
+    });
+  }
+  function pricePanel(v) {
+    var L = t(), p = v.prices; if (!p) return null;
+    var kids = [
+      el("b", { text: L.eHead }),
+      el("div", { className: "ff-stats" }, [["eLow", p.low], ["eMid", p.median], ["eHigh", p.high]].map(function (x) { return el("div", null, [el("b", { text: money(x[1]) }), el("span", { text: L[x[0]] })]); })),
+      el("small", { text: L.eCount(p.n) })
+    ];
+    if (p.examples.length) {
+      kids.push(el("small", { text: L.eEx }));
+      kids.push(el("ul", { className: "ff-ex" }, p.examples.map(function (e) {
+        return el("li", null, [el("a", { href: e.url, target: "_blank", rel: "sponsored noopener", text: e.title || "eBay" }), " · " + money(e.price)]);
+      })));
+    }
+    kids.push(el("small", { className: "ff-eNote", text: L.eNote }));
+    return el("div", { className: "ff-ebay", id: "ff-ebay" }, kids);
+  }
+  function applyGuess(v, g, gi) {
+    pick(g.category, true);                       // resets name/price to the category defaults, then we layer the AI result on top
+    S.name = g.name.slice(0, 60); $("ff-name").value = S.name;
+    var nm = $("ff-ebay"); if (nm) nm.hidden = !g.main;
+    if (g.main) {
+      S.qry = v.query;
+      if (COND_IDX.hasOwnProperty(v.condition)) { S.cond = COND_IDX[v.condition]; $("ff-cond").value = String(S.cond); }
+      if (v.prices) {
+        S.resale = Math.max(1, Math.round(v.prices.median)); $("ff-resale").value = S.resale; S.live = v.prices;
+      }
+    }
+    document.querySelectorAll("#ff-ph-out [data-gi]").forEach(function (x) { x.setAttribute("aria-pressed", String(+x.getAttribute("data-gi") === gi)); }); // the category-chip handler un-presses every .ff-chip
+    update(); clearTimeout(bind._n); bind._n = setTimeout(near, 100);
+  }
+  function renderVision(v, url) {
+    var L = t(), out = $("ff-ph-out"), main = { category: v.category, name: v.name, confidence: v.confidence, main: true }, guesses = [main], seen = {};
+    seen[v.name.toLowerCase()] = 1;
+    v.alts.forEach(function (a) { var k = a.name.toLowerCase(); if (!seen[k] && guesses.length < 3) { seen[k] = 1; guesses.push({ category: a.category, name: a.name, confidence: a.confidence, main: false }); } });
+    var sub = [v.brand ? L.visBrand + ": " + v.brand : "", v.model ? L.visModel + ": " + v.model : ""].filter(Boolean).join(" · ");
+    var chips = guesses.map(function (g, n) {
+      var it = findItem(g.category);
+      return el("button", { type: "button", className: "ff-chip", "data-guess": g.category, "data-gi": String(n), "aria-pressed": String(n === 0) }, [it[1] + " " + g.name + " ", el("small", { text: Math.round(g.confidence * 100) + "%" })]);
+    });
+    var panel = pricePanel(v);
+    fill(out, [el("div", { className: "ff-sniff" }, [
+      el("img", { className: "ff-ph-img", src: url, alt: "" }),
+      el("div", null, [el("small", { text: L.visSee }), el("b", { className: "ff-vname", text: v.name }), sub ? el("small", { text: sub }) : null, el("small", { text: L.visPick }), el("div", { className: "ff-guess" }, chips)])
+    ]), panel]);
+    out.querySelectorAll("[data-gi]").forEach(function (b) {
+      b.onclick = function () { applyGuess(v, guesses[+b.getAttribute("data-gi")], +b.getAttribute("data-gi")); };
+    });
+    applyGuess(v, main, 0);
+    window.__chicaPhotoTop = guesses.map(function (g) { return g.category + ":" + g.confidence.toFixed(3); });
+  }
+  function onPhoto(file) {
+    var L = t(), out = $("ff-ph-out"); if (!file || !out) return;
+    if (!visionUrl()) return clipPhoto(file);
+    try{window.goatcounter&&window.goatcounter.count&&window.goatcounter.count({path:"evt-deal-finder-photo-cloud",title:"Deal Finder cloud photo check",event:true});}catch(x){}
+    var url = URL.createObjectURL(file);
+    fill(out, [el("div", { className: "ff-sniff" }, [
+      el("img", { className: "ff-ph-img", src: url, alt: "" }),
+      el("div", null, [el("img", { className: "ff-nose", src: BASE + "/images/chica-logo.png", alt: "" }), el("b", { text: L.visLoad }), el("div", { className: "ff-bar" }, [el("i", { style: { width: "55%" } })])])
+    ])]);
+    cloudIdentify(file).then(function (v) { renderVision(v, url); }, function (e) {
+      try { console.warn("Deal Finder cloud photo, using on-phone check:", e && e.message); } catch (x) {}
+      clipPhoto(file);
+    });
+  }
   function pick(id, focusAsk) {
     var b = document.querySelector('.ff-chip[data-item="' + id + '"]');
     if (b) b.click();
@@ -400,7 +534,7 @@
     ["ff-cam", "ff-gal"].forEach(function (id) { var el = $(id); if (el) el.addEventListener("change", function () { onPhoto(this.files && this.files[0]); this.value = ""; }); });
     $("ff-chips").addEventListener("click", function (e) {
       var b = e.target.closest(".ff-chip"); if (!b) return;
-      S.item = b.dataset.item; var it = item(); S.name = ""; $("ff-name").value = "";
+      S.item = b.dataset.item; var it = item(); S.name = ""; S.qry = ""; S.live = null; $("ff-name").value = "";
       S.ask = Math.round((it[4] + it[5]) / 2 * 2) / 2; S.resale = Math.round((it[6] + it[7]) / 2); S.ship = null;
       if (it[8] === "L" && S.plat !== "fblocal") S.plat = "fblocal";
       if (it[8] !== "L" && S.plat === "fblocal") S.plat = "ebay";
@@ -408,9 +542,9 @@
       document.querySelectorAll(".ff-chip").forEach(function (c) { c.setAttribute("aria-pressed", String(c === b)); });
       update(); near();
     });
-    $("ff-name").addEventListener("input", function () { S.name = this.value.trim(); update(); clearTimeout(bind._n); bind._n = setTimeout(near, 300); });
+    $("ff-name").addEventListener("input", function () { S.name = this.value.trim(); S.qry = ""; update(); clearTimeout(bind._n); bind._n = setTimeout(near, 300); });
     $("ff-ask").addEventListener("input", function () { S.ask = Math.max(0, parseFloat(this.value) || 0); update(); });
-    $("ff-resale").addEventListener("input", function () { S.resale = Math.max(0, parseFloat(this.value) || 0); update(); });
+    $("ff-resale").addEventListener("input", function () { S.resale = Math.max(0, parseFloat(this.value) || 0); S.live = null; update(); });
     $("ff-ship").addEventListener("input", function () { S.ship = Math.max(0, parseFloat(this.value) || 0); update(); });
     $("ff-plat").addEventListener("change", function () { S.plat = this.value; update(); });
     $("ff-cond").addEventListener("change", function () { S.cond = +this.value; update(); });

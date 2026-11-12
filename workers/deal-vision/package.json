@@ -1,0 +1,16 @@
+{
+  "name": "chicas-deal-vision",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Photo -> item ID (vision model) + eBay asking-price comps for Chicas Map Deal Finder",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "test": "node ../../tests/deal_vision_worker.test.mjs"
+  },
+  "devDependencies": {
+    "wrangler": "^3.99.0"
+  }
+}

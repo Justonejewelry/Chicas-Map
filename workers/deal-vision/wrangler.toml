@@ -1,0 +1,30 @@
+name = "chicas-deal-vision"
+main = "src/index.js"
+compatibility_date = "2024-11-01"
+
+# Non-secret defaults (override in the dashboard or here).
+[vars]
+VISION_PROVIDER = "gemini"
+GEMINI_MODEL = "gemini-3.1-flash-lite"   # cheapest vision-capable Flash tier; change here, no code edit needed
+ALLOWED_ORIGINS = "https://www.chicasmap.com,https://chicasmap.com,http://localhost:8000,http://localhost:8080,http://127.0.0.1:8000"
+EBAY_CAMPAIGN_ID = "5339243224"          # EPN campaign (campid) for itemAffiliateWebUrl
+EBAY_MARKETPLACE = "EBAY_US"
+PER_IP_PER_MIN = "6"
+PER_IP_PER_DAY = "40"
+DAILY_CAP = "1500"                        # total photos per UTC day across everyone
+
+# Secrets (wrangler secret put <NAME>):
+#   GEMINI_API_KEY        (aistudio.google.com -> Get API key; use a billing-enabled key so prompts are not used to improve Google products)
+#   EBAY_CLIENT_ID        (developer.ebay.com, PRODUCTION keyset "App ID")
+#   EBAY_CLIENT_SECRET    (developer.ebay.com, PRODUCTION keyset "Cert ID")
+#
+# Optional bindings (the Worker works without them; it falls back to in-memory + Cache API limits):
+#   [[unsafe.bindings]]
+#   name = "RATE_LIMITER"
+#   type = "ratelimit"
+#   namespace_id = "1001"
+#   simple = { limit = 6, period = 60 }
+#
+#   [[kv_namespaces]]
+#   binding = "DAILY_KV"
+#   id = "<create with: wrangler kv namespace create DAILY_KV>"
