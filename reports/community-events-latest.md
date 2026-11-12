@@ -1,30 +1,20 @@
 # Chica's Map -- Community Events Swarm v2.7
 
-Run: 2026-11-12T03:28:09-06:00
+Run: 2026-11-12T05:19:00-06:00
 Sources scanned: **48**
-Candidates discovered: **954**
-With parsed dates: **798**
-With street/venue address: **584**
-Promoted this run: **4**
-Kept from prior feed: **272**
-Purged from prior feed: **4**
+Candidates discovered: **953**
+With parsed dates: **797**
+With street/venue address: **576**
+Promoted this run: **0**
+Kept from prior feed: **276**
+Purged from prior feed: **0**
 Source errors: **6**
 Rejected by Sentinel: **347**
 
 ## Promoted (passed Events Sentinel)
-- **The Cozy Club** -- 2026-11-17 -- 4134 Harry Wurzbach San Antonio, TX 78209 -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D204015274
-- **Scobee Theatre presents "This Is A Test"** -- 2026-11-13 -- 10675 Marbach Rd -- conf 98 -- https://www.swisd.net/apps/events/2026/11/13/57249622/
-- **TMEA HS Region Jazz Band Clinic** -- 2026-11-13 -- 3000 N Foster Rd -- conf 98 -- https://www.swisd.net/apps/events/2026/11/13/48122694/
-- **TMEA MS Band Clinic** -- 2026-11-14 -- Judson High School, 9142 FM78 -- conf 98 -- https://www.swisd.net/apps/events/2026/11/13/48122691/
-
-## Purged (failed re-validation)
-- Penguin Project Rehearsal -- event_id=2026-11-11_penguin-project-rehearsal_6a926bb53632: date 2026-11-11 is in the past
-- Resnik Choir Veteran's Day Performance -- event_id=2026-11-11_resnik-choir-veteran-s-day-p_7fd732ff7d81: date 2026-11-11 is in the past
-- Food Distribution -- event_id=2026-11-11_food-distribution_06e75d8fce7f: date 2026-11-11 is in the past
-- Resnik Theatre presents "A Midsummer Night's Nap" -- event_id=2026-11-11_resnik-theatre-presents-a-mi_74c30e09b23a: date 2026-11-11 is in the past
+_None this run._
 
 ## Review Queue
-- **San Antonio Public Library Events** -- conf 100 -- The Cozy Club -- 2026-11-17 -- 4134 Harry Wurzbach San Antonio, TX 78209 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D204015274
 - **San Antonio Public Library Events** -- conf 100 -- Family Story Time -- 2026-11-12 -- 4134 Harry Wurzbach San Antonio, TX 78209 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D205386310
 - **San Antonio Public Library Events** -- conf 100 -- Family Story Time -- 2026-11-12 -- 2515 E. Evans San Antonio, TX 78259 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206373089
 - **San Antonio Public Library Events** -- conf 100 -- Baby Story Time -- 2026-11-12 -- 15060 Judson Rd -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206449168
@@ -184,6 +174,7 @@ Rejected by Sentinel: **347**
 - **Boerne Calendar** -- conf 98 -- City Council Meeting -- 2027-03-23 -- 447 N. Main St Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22189
 - **Boerne Calendar** -- conf 98 -- City Council Meeting -- 2027-04-27 -- 447 N. Main St Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22190
 - **Boerne Calendar** -- conf 98 -- City Council Meeting -- 2027-05-25 -- 447 N. Main St Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22191
+- **Boerne Calendar** -- conf 98 -- City Council Meeting -- 2027-06-22 -- 447 N. Main St Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22192
 
 ## Rejected by Sentinel
 - Toddler Story Time -- event_id=2026-11-12_toddler-story-time_84c805f97f48: duplicate id already in feed

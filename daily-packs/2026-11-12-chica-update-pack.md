@@ -2,7 +2,7 @@
 
 ## 1. CHICA DAILY RUN
 - **Target date:** Thursday, November 12, 2026
-- **San Antonio local run time:** 2026-11-12T03:27:12-06:00
+- **San Antonio local run time:** 2026-11-12T05:17:59-06:00
 - **Geographic area:** San Antonio & surrounding communities
 - **Sources searched:** 7
 - **Candidates discovered:** 59
@@ -26,7 +26,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196458773
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.551369903987,-98.256587670159
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.551369903987,-98.256587670159
-- **Verified at:** 2026-11-12T03:27:12-06:00
+- **Verified at:** 2026-11-12T05:17:59-06:00
 
 ### 2. OPEN Thursday & Friday (Austin Highway)
 - **Type:** garage
@@ -38,7 +38,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-open-thursday-friday/sExB2DYDVsvNZe7wmMARQP
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.485811,-98.44471
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.485811,-98.44471
-- **Verified at:** 2026-11-12T03:27:12-06:00
+- **Verified at:** 2026-11-12T05:17:59-06:00
 
 ### 3. YARD SALE (San Antonio)
 - **Type:** garage
@@ -50,7 +50,7 @@
 - **Original listing:** https://www.craigslist.org/view/d/san-antonio-yard-sale/aCtLxMDqpWV28BkZEQ2Lsc
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.391,-98.4866
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.391,-98.4866
-- **Verified at:** 2026-11-12T03:27:12-06:00
+- **Verified at:** 2026-11-12T05:17:59-06:00
 
 ### 4. Huge Family Yard Sale
 - **Type:** garage
@@ -63,7 +63,7 @@
 - **Original listing:** https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196461207
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.375199,-98.43792
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.375199,-98.43792
-- **Verified at:** 2026-11-12T03:27:12-06:00
+- **Verified at:** 2026-11-12T05:17:59-06:00
 
 ### 5. LUXURY, LUXURY, LUXURY!  Estate Sale
 - **Type:** estate
@@ -75,7 +75,7 @@
 - **Original listing:** https://allevents.in/san-antonio/luxury-luxury-luxury-estate-sale/200031017025850
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.422029,-98.496071
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.422029,-98.496071
-- **Verified at:** 2026-11-12T03:27:12-06:00
+- **Verified at:** 2026-11-12T05:17:59-06:00
 
 ### 6. SA Express News Marketplace - Estate Sale in Sonoma Ranch
 - **Type:** estate
@@ -90,7 +90,7 @@ Frida
 - **Original listing:** https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/advert/estate-sale-in-sonoma-ranch-general_1012
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.588104523478,-98.663187157125
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.588104523478,-98.663187157125
-- **Verified at:** 2026-11-12T03:27:12-06:00
+- **Verified at:** 2026-11-12T05:17:59-06:00
 
 ### 7. SA Express News Marketplace - SOUTHEAST - GARAGE SALE
 - **Type:** garage
@@ -106,7 +106,7 @@ NOV. 12-13 8:00am- 4pm
 - **Original listing:** https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/advert/southeast-garage-sale-general_1036
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.378802190687,-98.417306910705
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.378802190687,-98.417306910705
-- **Verified at:** 2026-11-12T03:27:12-06:00
+- **Verified at:** 2026-11-12T05:17:59-06:00
 
 ### 8. GARAGE SALE!
 - **Type:** garage
@@ -119,7 +119,7 @@ NOV. 12-13 8:00am- 4pm
 - **Original listing:** https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/advert/garage-sale-general_1046
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.517994035186,-98.354717873467
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.517994035186,-98.354717873467
-- **Verified at:** 2026-11-12T03:27:12-06:00
+- **Verified at:** 2026-11-12T05:17:59-06:00
 
 ### 9. Find Yard Sales & Garage Sales | Advertise your Sale FREE
 - **Type:** garage
@@ -131,7 +131,7 @@ NOV. 12-13 8:00am- 4pm
 - **Original listing:** https://www.garagesalefinder.com/
 - **Google Maps:** https://www.google.com/maps/search/?api=1&query=29.532252506662,-98.504210494488
 - **Street View:** https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.532252506662,-98.504210494488
-- **Verified at:** 2026-11-12T03:27:12-06:00
+- **Verified at:** 2026-11-12T05:17:59-06:00
 
 ## 3. CHICA PICKS
 

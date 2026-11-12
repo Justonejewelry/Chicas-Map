@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-12T03:28:09-06:00",
+  "updated": "2026-11-12T05:19:00-06:00",
   "city": "san-antonio",
   "version": 2.7,
   "horizonDays": 90,
@@ -4905,7 +4905,7 @@
       "title": "The Cozy Club",
       "date": "2026-11-17",
       "endDate": "",
-      "time": "1:00 PM-2:30 PM",
+      "time": "1:00 PM–2:30 PM",
       "address": "4134 Harry Wurzbach San Antonio, TX 78209",
       "lat": null,
       "lng": null,
