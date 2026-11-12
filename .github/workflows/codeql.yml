@@ -1,0 +1,62 @@
+# Advanced CodeQL setup so data-only populate commits can be skipped.
+# Default setup cannot use paths-ignore, which meant every Chica Daily
+# data update triggered a ~1.5 minute scan.
+name: "CodeQL"
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "data/**"
+      - "webapp/data/**"
+      - "daily-packs/**"
+      - "social/**"
+      - "reports/**"
+      - "forecast/**"
+  pull_request:
+    branches: [main]
+    paths-ignore:
+      - "data/**"
+      - "webapp/data/**"
+      - "daily-packs/**"
+      - "social/**"
+      - "reports/**"
+      - "forecast/**"
+  schedule:
+    # Weekly Sunday 6:17 UTC (12:17 AM CT during CST)
+    - cron: "17 6 * * 0"
+  workflow_dispatch:
+
+jobs:
+  analyze:
+    name: Analyze (${{ matrix.language }})
+    runs-on: ubuntu-latest
+    permissions:
+      security-events: write
+      packages: read
+      actions: read
+      contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - language: actions
+            build-mode: none
+          - language: javascript-typescript
+            build-mode: none
+          - language: python
+            build-mode: none
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v4
+        with:
+          languages: ${{ matrix.language }}
+          build-mode: ${{ matrix.build-mode }}
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v4
+        with:
+          category: "/language:${{ matrix.language }}"
