@@ -23,9 +23,9 @@ class DealVisionTests(unittest.TestCase):
         if 'SKIP' in r.stdout:
             self.skipTest(r.stdout.strip())
 
-    def test_feature_flag_ships_off(self):
+    def test_feature_flag_points_at_worker(self):
         cfg = (ROOT / 'webapp/js/chica-config.js').read_text()
-        self.assertRegex(cfg, r'DEAL_VISION_URL:\s*""')
+        self.assertRegex(cfg, r'DEAL_VISION_URL:\s*"https://chicas-deal-vision\.mr-jsciaraffa\.workers\.dev"')
 
 
 if __name__ == '__main__':

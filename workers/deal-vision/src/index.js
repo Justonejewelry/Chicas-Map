@@ -145,7 +145,7 @@ export default {
 
       const provider = PROVIDERS[env.VISION_PROVIDER || "gemini"];
       if (!provider) throw new HttpError(500, "bad_provider");
-      const ac = new AbortController(), timer = setTimeout(() => ac.abort(), 9000);
+      const ac = new AbortController(), timer = setTimeout(() => ac.abort(), 18000);
       let item;
       try { item = normalizeVision(await provider(env, b64, buildPrompt(), ac.signal)); }
       catch (e) { if (e instanceof HttpError) throw e; throw new HttpError(502, "vision_failed"); }

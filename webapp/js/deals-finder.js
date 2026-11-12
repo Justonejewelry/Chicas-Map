@@ -402,7 +402,7 @@
   }
 
   /* ---------- cloud photo ID (Deal Vision worker). Off unless CHICA_CONFIG.DEAL_VISION_URL is set; any failure falls back to the on-phone CLIP path above. ---------- */
-  var VISION_TIMEOUT_MS = 12000, MAX_PX = 768, MAX_BYTES = 300000, COND_IDX = { like_new: 0, good: 1, rough: 2 };
+  var VISION_TIMEOUT_MS = 20000, MAX_PX = 768, MAX_BYTES = 300000, COND_IDX = { like_new: 0, good: 1, rough: 2 };
   function visionUrl() {
     var u = String(CFG.DEAL_VISION_URL || "").trim();
     return /^https:\/\//i.test(u) || /^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?(\/|$)/i.test(u) ? u : "";

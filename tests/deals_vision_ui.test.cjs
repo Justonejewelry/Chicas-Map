@@ -90,10 +90,10 @@ let n = 0; const ok = (m) => { n++; console.log("ok -", m); };
     await snap(a); await tick(300);
     assert.equal(a.fetches.filter((f) => f.url.includes("workers.dev")).length, 1); assert.match(a.d.getElementById("ff-ph-out").textContent, /nose is stuffy|sniffing|downloading/i, label + ": CLIP fallback took over"); assert.equal(a.d.getElementById("ff-ebay"), null); ok("fallback to on-phone CLIP on " + label); a.w.close(); }
 
-  // 7. 12 s timeout: a worker that never answers is abandoned
+  // 7. 20 s timeout: a worker that never answers is abandoned
   { const a = await boot({ vision: "https://x.workers.dev/", fetchImpl: (u, i) => salesOk(u) || new Promise((_, rej) => { i.signal.addEventListener("abort", () => rej(new Error("aborted"))); }) });
     const real = a.w.setTimeout; let delays = []; a.w.setTimeout = function (f, ms) { delays.push(ms); return real.call(a.w, f, ms > 1000 ? 30 : ms); };
-    await snap(a); await tick(250); assert.ok(delays.includes(12000), "12s abort timer armed"); assert.match(a.d.getElementById("ff-ph-out").textContent, /nose is stuffy|sniffing|downloading/i); ok("12s timeout falls back"); a.w.close(); }
+    await snap(a); await tick(250); assert.ok(delays.includes(20000), "20s abort timer armed"); assert.match(a.d.getElementById("ff-ph-out").textContent, /nose is stuffy|sniffing|downloading/i); ok("20s timeout falls back"); a.w.close(); }
 
   console.log("\n" + n + " UI checks passed"); process.exit(0);
 })().catch((e) => { console.error(e); process.exit(1); });
