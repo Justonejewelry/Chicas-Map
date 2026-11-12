@@ -42,6 +42,7 @@ The map keeps both today's sales and upcoming dated sales.
 - HUGE 3 FAMILY YARD SALE BIGGEST SALE EVER! — 217 Long Cove Dr, Cibolo, TX 78108 [2026-11-13 → 2026-11-15]
 - Garage Sale — 52 Peach Tree Ave, Poteet, TX 78065 [2026-11-13 → 2026-11-15]
 - Huge 3 Family Yard Sale Biggest Sale Ever! — 217 Long Cove Dr, Cibolo, TX [2026-11-13 → 2026-11-15]
+- Garage Sale — 8741 Buckskin Dr, Boerne, TX 78006 [2026-11-13 → 2026-11-14]
 
 ### Starts 2026-11-14
 - GARAGE SALE — 5858 Laurel Valley, San Antonio, TX 78242 [2026-11-14 → 2026-11-15] | 10am-7pm
