@@ -2,6 +2,7 @@ name: Chica Daily (Master Workflow)
 
 # Single scheduled production pipeline for all map sources, events, and forecast.
 # All schedule times use America/Chicago so daylight saving changes are automatic.
+# Minutes are off the top of the hour to reduce GitHub Actions schedule delay.
 # Map Refresh remains available for manual runs only; do not add a second scraper schedule.
 # Feed Watch may re-dispatch this workflow if the public feed is stale.
 # Do NOT put [skip ci] on the populate commit. That left GitHub Pages
@@ -9,12 +10,12 @@ name: Chica Daily (Master Workflow)
 
 on:
   schedule:
-    # Monday–Thursday: 5 AM and 1 PM Central
-    - cron: "0 5,13 * * 1-4"
+    # Monday–Thursday: 5:13 AM and 1:13 PM Central
+    - cron: "13 5,13 * * 1-4"
       timezone: "America/Chicago"
 
-    # Friday–Sunday: 5 AM, 7 AM, 10 AM and 1 PM Central
-    - cron: "0 5,7,10,13 * * 5,6,0"
+    # Friday–Sunday: 5:13 AM, 7:13 AM, 10:13 AM and 1:13 PM Central
+    - cron: "13 5,7,10,13 * * 5,6,0"
       timezone: "America/Chicago"
   workflow_dispatch:
     inputs:
@@ -42,6 +43,7 @@ on:
 permissions:
   contents: write
   issues: write
+  actions: read
 
 concurrency:
   group: chica-feed
@@ -52,12 +54,41 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
+      - name: Skip scheduled run if one just succeeded
+        id: guard
+        if: github.event_name == 'schedule'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          THIS_RUN: ${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          cutoff=$(date -u -d '3 hours ago' +%Y-%m-%dT%H:%M:%SZ)
+          echo "Looking for a successful Chica Daily run completed after ${cutoff} (excluding this run ${THIS_RUN})"
+          if ! json=$(gh api "repos/${GITHUB_REPOSITORY}/actions/workflows/chica-daily.yml/runs?status=success&per_page=20"); then
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+            echo "Could not list recent runs; continuing with populate."
+            exit 0
+          fi
+          found=$(printf '%s' "$json" | jq --arg cutoff "$cutoff" --argjson this "$THIS_RUN" \
+            '[.workflow_runs[] | select(.id != $this and .conclusion == "success" and .updated_at >= $cutoff)] | length')
+          printf '%s' "$json" | jq --arg cutoff "$cutoff" --argjson this "$THIS_RUN" -r \
+            '.workflow_runs[] | select(.id != $this and .conclusion == "success" and .updated_at >= $cutoff) | "recent success: id=\(.id) event=\(.event) updated_at=\(.updated_at) \(.html_url)"'
+          if [ "$found" -gt 0 ]; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            echo "A successful Chica Daily run completed within the last 3 hours; skipping populate and commit."
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+            echo "No recent successful run found; continuing with populate."
+          fi
+
       - name: Checkout
+        if: steps.guard.outputs.skip != 'true'
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - name: Set up Python
+        if: steps.guard.outputs.skip != 'true'
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -65,6 +96,7 @@ jobs:
           cache-dependency-path: requirements.txt
 
       - name: Install runtime deps
+        if: steps.guard.outputs.skip != 'true'
         run: |
           set -euo pipefail
           python3 -m pip install --upgrade pip
@@ -73,14 +105,17 @@ jobs:
           pip install "requests>=2.31" "beautifulsoup4>=4.12" "lxml>=5.0" || true
 
       - name: Ensure directories
+        if: steps.guard.outputs.skip != 'true'
         run: |
           mkdir -p scripts data/sales daily-packs social forecast reports webapp/data/cities
 
       - name: Sale policy regression tests
+        if: steps.guard.outputs.skip != 'true'
         run: python3 -m unittest discover -s tests -v
 
       - name: Master populate (all source actions)
         id: run
+        if: steps.guard.outputs.skip != 'true'
         env:
           CITIES: ${{ github.event.inputs.cities || 'san-antonio,austin' }}
           PERMIT_DAYS: ${{ github.event.inputs.permit_days || '14' }}
@@ -101,7 +136,7 @@ jobs:
             $ARGS | tee daily-run.log
 
       - name: Validate canonical sale output
-        if: github.event.inputs.dry_run != 'true'
+        if: steps.guard.outputs.skip != 'true' && github.event.inputs.dry_run != 'true'
         run: |
           set -euo pipefail
           ARGS=""
@@ -109,13 +144,13 @@ jobs:
           python3 scripts/clean_sales.py webapp --check $ARGS
 
       - name: Guard against a sharp drop in upcoming sales
-        if: github.event.inputs.dry_run != 'true'
+        if: steps.guard.outputs.skip != 'true' && github.event.inputs.dry_run != 'true'
         run: |
           set -euo pipefail
           python3 scripts/guard_populate_feed.py --git-ref origin/main
 
       - name: Upload run log
-        if: always()
+        if: always() && steps.guard.outputs.skip != 'true'
         uses: actions/upload-artifact@v4
         with:
           name: chica-daily-log
@@ -125,7 +160,7 @@ jobs:
 
       - name: Detect changes
         id: diff
-        if: github.event.inputs.dry_run != 'true'
+        if: steps.guard.outputs.skip != 'true' && github.event.inputs.dry_run != 'true'
         run: |
           if git diff --quiet -- \
             data/sales daily-packs social forecast reports \
@@ -142,7 +177,7 @@ jobs:
           fi
 
       - name: Commit daily populate
-        if: steps.diff.outputs.dirty == 'true' && github.event.inputs.dry_run != 'true'
+        if: steps.guard.outputs.skip != 'true' && steps.diff.outputs.dirty == 'true' && github.event.inputs.dry_run != 'true'
         run: |
           set -euo pipefail
           git config user.name "chicas-map-bot"
@@ -220,11 +255,13 @@ jobs:
             echo "### Chica Daily Master Populate"
             echo ""
             echo "- Trigger: ${{ github.event_name }}"
+            echo "- Guard skip: ${{ steps.guard.outputs.skip || 'false' }}"
             echo "- Cities: ${{ github.event.inputs.cities || 'san-antonio,austin' }}"
             echo "- Target input: ${{ github.event.inputs.target_date || 'auto (today CT)' }}"
             echo "- Dry run: ${{ github.event.inputs.dry_run || 'false' }}"
             echo "- Changes: ${{ steps.diff.outputs.dirty || 'n/a' }}"
-            echo "- Schedule: Mon–Thu 5 AM and 1 PM CT; Fri–Sun 5 AM, 7 AM, 10 AM, and 1 PM CT"
+            echo "- Schedule: Mon–Thu 5:13 AM and 1:13 PM CT; Fri–Sun 5:13 AM, 7:13 AM, 10:13 AM, and 1:13 PM CT"
+            echo "- Scheduled runs skip populate if a successful Chica Daily run (any event) finished in the last 3 hours. Manual dispatches always run."
             echo ""
             echo "#### Run log"
             echo '```'
