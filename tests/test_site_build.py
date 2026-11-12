@@ -311,6 +311,9 @@ class SiteBuildTests(unittest.TestCase):
             self.assertTrue(html_path.is_file(), loc)
             html = html_path.read_text()
             self.assertNotRegex(html, r'name="robots"[^>]*content="noindex', loc + ' is in the sitemap but noindex')
+            # React /submit/ is left unstamped so hydration does not throw #418.
+            if path in ('/submit/', '/es/submit/'):
+                continue
             self.assertIn('rel="canonical" href="' + loc + '"', html)
         # All neighborhood pages, including those with no sales this week, stay indexable.
         for slug in ['stone-oak', 'alamo-ranch-westover-hills', 'helotes', 'west-side', 'southwest-lackland']:
@@ -480,10 +483,13 @@ class SiteBuildTests(unittest.TestCase):
             self.assertNotIn('href="./' + name + '"', showcase_es)
         self.assertTrue((self.root / 'favicon.ico').is_file())
         self.assertGreater((self.root / 'favicon.ico').stat().st_size, 16)
-        # React submit shell must not get a noscript first-child or it hydrates badly.
+        # React submit shell must not be rewritten or it hydrates badly (#418).
         submit = (self.root / 'submit/index.html').read_text()
         if '$_TSR' in submit:
             self.assertNotRegex(submit, r'<body[^>]*>\s*<noscript')
+            self.assertNotIn('data-chica-seo', submit)
+            self.assertNotIn('List a garage sale free', submit)
+            self.assertIn('<title>Chicas Map · San Antonio garage sales</title>', submit)
 
 if __name__ == '__main__':
     unittest.main()

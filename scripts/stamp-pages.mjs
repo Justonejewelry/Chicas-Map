@@ -154,6 +154,13 @@ function stampFile(file, opts) {
   let html = readFileSync(file, "utf8");
   const name = basename(file);
   const sitePath = sitePathFromFile(file);
+  // /submit/ is a TanStack SSR document. Rewriting title or injecting
+  // head/body nodes here causes minified React error #418.
+  if (isReactShell(html) && (sitePath === "/submit/" || sitePath === "/es/submit/")) {
+    html = withGoatCounter(html);
+    writeFileSync(file, html);
+    return;
+  }
   const isEs = opts.forceLang === "es" || sitePath.startsWith("/es/") || sitePath === "/es/";
   const key = pageKey(sitePath);
   const known = PAGE_BY_PATH[key];
