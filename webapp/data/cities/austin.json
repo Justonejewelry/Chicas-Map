@@ -33,20 +33,20 @@
       "date_to": "2026-11-15",
       "end_date": "2026-11-15",
       "hours": "2026-11-14 10:00 am-3:00 pm; 2026-11-15 10:00 am-2:00 pm",
-      "title": "A Northwest Austin Treasure Trove!",
-      "details": "Golden Soul Estate Sales. The appt days are Wednesday Nov 4th--WEDNESDAY IS NOW FULL Friday Nov 6th--FRIDAY IS NOW FULL Wednesday Nov 11th--WEDNESDAY IS NOW FULL ***NO KIDS will be allowed in the home or garage. We also request you keep pets at home and bags, boxes an...",
+      "title": "A Northwest Austin Treasure Trove! Saturday is 25% Off",
+      "details": "Golden Soul Estate Sales. APPOINTMENT DAYS ARE NOW OVER! The public sale is here! Saturday is 25% off ***NO KIDS will be allowed in the home or garage. Keep pets at home and bags, boxes and purses in your car. Just bring your wallet and your treasure hunting skills! Th...",
       "source": "EstateSales.org",
       "url": "https://estatesales.org/estate-sales/tx/austin/78750/a-northwest-austin-treasure-trove-2467653",
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.38719884919152,
-      "lon": -97.80319069659707,
+      "lat": 30.387549190549766,
+      "lon": -97.79940004254848,
       "geocode": "source",
       "company": "Golden Soul Estate Sales",
       "in_person": true,
@@ -120,13 +120,13 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.62638206873877,
-      "lon": -97.7522055277436,
+      "lat": 30.626974954114264,
+      "lon": -97.75115113364457,
       "geocode": "source",
       "company": null,
       "in_person": true,
@@ -154,8 +154,8 @@
       "in_person": true,
       "external_id": "eso-2472821",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ]
     },
     {
@@ -259,8 +259,8 @@
       "in_person": true,
       "external_id": "eso-2472679",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ]
     },
     {
@@ -395,8 +395,8 @@
       ],
       "confidence": 0.7,
       "status": "verified",
-      "lat": 30.6285,
-      "lon": -97.74994,
+      "lat": 30.62941,
+      "lon": -97.7496,
       "geocode": "source",
       "in_person": true,
       "external_id": "yss-georgetowntx-2026-11-13"
@@ -482,10 +482,10 @@
       "date_from": "2026-11-11",
       "date_to": "2026-11-14",
       "end_date": "2026-11-14",
-      "title": "AMAZING OLD CUERO HOME - FULL OF ANTIQUES!",
+      "title": "(Opens WED!)Classic Comfort & Heirloom Treasures in Round Rock",
       "details": "Estate Sale",
       "source": "EstateSales.net",
-      "url": "https://www.estatesales.net/TX/Cuero/77954/5142378",
+      "url": "https://www.estatesales.net/TX/Round Rock/78681/5154330",
       "photos": 0,
       "type": "estate",
       "categories": [
@@ -494,8 +494,8 @@
       ],
       "confidence": 0.7,
       "status": "verified",
-      "lat": 30.33441,
-      "lon": -97.76648,
+      "lat": 30.33427,
+      "lon": -97.76654,
       "geocode": "source",
       "company": null,
       "external_id": "yss-austintx-2026-11-13"
@@ -575,13 +575,13 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "estate-sale",
-        "in-person"
+        "in-person",
+        "estate-sale"
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.33313364347826,
-      "lon": -97.76914047176376,
+      "lat": 30.332675504779015,
+      "lon": -97.76886986289742,
       "geocode": "source",
       "company": "Gone For Good",
       "in_person": true,
@@ -814,7 +814,7 @@
       "date_from": "11/14/2026",
       "date_to": "11/15/2026",
       "end_date": "2026-11-15",
-      "title": "A Northwest Austin Treasure Trove!",
+      "title": "A Northwest Austin Treasure Trove! Saturday is 25% Off",
       "details": "",
       "source": "GarageSaleFinder",
       "url": "https://garagesalefinder.com/s/N9qjn/austin-tx-78750",
@@ -894,6 +894,48 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "cl-aleingeorgetownxqpttkcug7y5kvsro6zlig"
+    },
+    {
+      "address": "11312 Fletcher Hall Ln, Austin, TX 78717",
+      "dates": "Sat Nov 14 – Sat Nov 14",
+      "date_from": "11/14/2026",
+      "date_to": "11/14/2026",
+      "end_date": "2026-11-14",
+      "title": "🎄🛍️ GARAGE SALE ALERT!! 🛍️🎄",
+      "details": "",
+      "source": "GarageSaleFinder",
+      "url": "https://garagesalefinder.com/s/N9bo0/11312-fletcher-hall-ln-austin-tx-78717",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.85,
+      "status": "verified",
+      "lat": 30.49,
+      "lon": -97.75,
+      "geocode": "zip-centroid"
+    },
+    {
+      "address": "11312 Fletcher Hall Ln, Austin, TX",
+      "dates": "2026-11-14 – 2026-11-14",
+      "date_from": "2026-11-14",
+      "date_to": "2026-11-14",
+      "end_date": "2026-11-14",
+      "hours": null,
+      "title": "🎄🛍️ Garage Sale Alert!! 🛍️🎄",
+      "details": "",
+      "source": "YardSaleSearch",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196461051",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.88,
+      "status": "verified",
+      "lat": 30.49813235,
+      "lon": -97.79117836,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "yss-11312fletcherhalllnaustintx-2026-11-14"
     }
   ],
   "hot_zones": [
@@ -912,9 +954,9 @@
     "gsalr.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 39,
+  "total_locations": 41,
   "status": "live",
   "date": "2026-11-11",
-  "last_refresh": "2026-11-11T15:23:07-06:00",
+  "last_refresh": "2026-11-11T19:24:01-06:00",
   "permits": []
 }
