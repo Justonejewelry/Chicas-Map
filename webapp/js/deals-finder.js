@@ -75,7 +75,7 @@
       sayHaggle: function (m) { return "A little high for used. Offer around $" + m + " and see what they say. Try my lines below. 😉"; },
       sayPass: "Ay, no. That's more than it usually sells for used. Leave it for the next pup. 🐶",
       profit: "Profit", roi: "ROI", max: "Max offer", save: "You save", pct: "Of used value", offer: "Offer this", resellT: "Want to resell it?", resellSub: "Profit after fees if you flip it online or locally.", byPlat: "Profit by platform", best: "best",
-      comps: "Check real sold prices", ebaySold: "eBay sold listings", fb: "FB Marketplace SA", goog: "Google",
+      comps: "Check real sold prices", ebaySold: "eBay sold listings", fb: "FB Marketplace SA", fbLocal: "Check Facebook Marketplace (local prices)", goog: "Google",
       add: "＋ Save to my deals", added: "Saved to your deals! 🎉",
       s3: "Haggle helper", s3sub: "Tap a line to copy it. English up top, Spanish below, because this is San Antonio. 💜",
       s4: "More of this at sales this weekend", s4sub: "Upcoming San Antonio sales whose posts mention it.", none: "No upcoming posts mention it yet. Check the full map, new sales land every day!", view: "Map →", openMap: "Open the live map",
@@ -107,7 +107,7 @@
       sayHaggle: function (m) { return "Un poco caro para usado. Ofrece como $" + m + " a ver qué dicen. Prueba mis frases abajo. 😉"; },
       sayPass: "Ay, no. Es más de lo que suele costar usado. Déjalo para el siguiente perrito. 🐶",
       profit: "Ganancia", roi: "ROI", max: "Oferta máx.", save: "Ahorras", pct: "Del valor usado", offer: "Ofrece esto", resellT: "¿Quieres revenderlo?", resellSub: "Ganancia después de comisiones si lo revendes en línea o local.", byPlat: "Ganancia por plataforma", best: "mejor",
-      comps: "Revisa precios vendidos reales", ebaySold: "Vendidos en eBay", fb: "FB Marketplace SA", goog: "Google",
+      comps: "Revisa precios vendidos reales", ebaySold: "Vendidos en eBay", fb: "FB Marketplace SA", fbLocal: "Revisar Facebook Marketplace (precios locales)", goog: "Google",
       add: "＋ Guardar en mis gangas", added: "¡Guardado en tus gangas! 🎉",
       s3: "Ayudante para regatear", s3sub: "Toca una frase para copiarla. Inglés arriba, español abajo, porque esto es San Antonio. 💜",
       s4: "Más de esto en ventas este fin", s4sub: "Ventas próximas en San Antonio que lo mencionan.", none: "Todavía ninguna venta próxima lo menciona. ¡Revisa el mapa, llegan ventas nuevas cada día!", view: "Mapa →", openMap: "Abrir el mapa en vivo",
@@ -203,6 +203,23 @@
     if (c) u += "&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=" + c + "&toolid=10001&customid=dealfinder";
     return u;
   }
+  function marketName(v) {
+    var name = String((v && v.name) || S.name || "").trim();
+    var brand = String((v && v.brand) || "").trim();
+    var model = String((v && v.model) || "").trim();
+    if (brand && name.toLowerCase().indexOf(brand.toLowerCase()) === -1) name = brand + (name ? " " + name : "");
+    if (model && name.toLowerCase().indexOf(model.toLowerCase()) === -1) {
+      if (brand && name.toLowerCase().indexOf(brand.toLowerCase()) === 0) name = brand + " " + model + name.slice(brand.length);
+      else name = name ? name + " " + model : model;
+    }
+    return name || q();
+  }
+  function fbMarketUrl(name) {
+    return "https://www.facebook.com/marketplace/sanantonio/search/?query=" + encodeURIComponent(name || q()) + "&sortBy=distance_ascend";
+  }
+  function fbMarketLink(name) {
+    return el("a", { className: "ff-btn", href: fbMarketUrl(name), target: "_blank", rel: "noopener noreferrer", text: t().fbLocal });
+  }
   function today() { try { return new Intl.DateTimeFormat("en-CA", { timeZone: "America/Chicago" }).format(new Date()); } catch (e) { return new Date().toISOString().slice(0, 10); } }
   function loadHaul() { try { return JSON.parse(localStorage.getItem(HKEY)) || []; } catch (e) { return []; } }
   function saveHaul() { try { localStorage.setItem(HKEY, JSON.stringify(haul)); } catch (e) {} }
@@ -262,14 +279,18 @@
     var plats = Object.keys(L.plats).map(function (p) { var x = calc(p); return '<div class="' + (b && b.p === p ? "best" : "") + '"><span>' + L.plats[p] + (b && b.p === p ? "<em>★ " + L.best + "</em>" : "") + "</span><b>" + money(x.profit) + "</b></div>"; }).join("");
     $("ff-verdict").innerHTML = '<section class="ff-verdict ' + (kind === "great" || kind === "fair" ? "flip" : kind) + '"><span class="tag">' + esc(iname(it)) + '</span><div class="big">' + L[kind] + '</div><p class="say">' + say + "</p>" +
       '<div class="ff-stats"><div><b>' + money(Math.max(0, val - S.ask)) + "</b><span>" + L.save + "</span></div><div><b>" + (val > 0 ? Math.round(ratio * 100) + "%" : "–") + "</b><span>" + L.pct + "</span></div><div><b>" + money(Math.min(offer, S.ask || offer)) + "</b><span>" + L.offer + "</span></div></div>" +
-      '<p class="ff-hint" style="margin-top:12px;font-weight:700">' + L.comps + '</p><div class="ff-btns" style="margin-top:6px">' +
+      '<p class="ff-hint" style="margin-top:12px;font-weight:700">' + L.comps + '</p><div class="ff-btns" style="margin-top:6px" id="ff-comps">' +
       '<a class="ff-btn" target="_blank" rel="noopener' + (CFG.FLIP_EBAY_CAMPID ? " sponsored" : "") + '" href="' + ebayUrl() + '">🛒 ' + L.ebaySold + "</a>" +
-      '<a class="ff-btn" target="_blank" rel="noopener" href="https://www.facebook.com/marketplace/sanantonio/search?query=' + encodeURIComponent(q()) + '">🏷️ ' + L.fb + "</a>" +
       '<a class="ff-btn" target="_blank" rel="noopener" href="https://www.google.com/search?q=' + encodeURIComponent(q() + " price") + '">🔎 ' + L.goog + "</a></div>" +
       '<div class="ff-btns"><button type="button" class="ff-btn pri" id="ff-add">' + L.add + "</button></div>" +
       '<details class="ff-resell"><summary>💸 ' + L.resellT + '</summary><p class="ff-hint">' + L.resellSub + '</p><div class="ff-stats"><div><b>' + money(c.profit) + "</b><span>" + L.profit + "</span></div><div><b>" + (S.ask > 0 ? Math.round(c.roi * 100) + "%" : "∞") + "</b><span>" + L.roi + "</span></div><div><b>" + money(c.max) + "</b><span>" + L.max + "</span></div></div>" +
       '<p class="ff-hint" style="margin-top:12px;font-weight:700">' + L.byPlat + '</p><div class="ff-plat">' + plats + "</div></details></section>";
     var o = Math.max(1, Math.min(offer, Math.floor(S.ask * 0.7) || 1)), bn = Math.max(1, Math.round(S.ask * 1.6));
+    var comps = $("ff-comps");
+    if (comps) {
+      var sold = comps.querySelector("a");
+      comps.insertBefore(fbMarketLink(marketName()), sold ? sold.nextSibling : comps.firstChild);
+    }
     $("ff-add").onclick = function () { haul.unshift({ n: iname(it), p: +S.ask || 0, v: Math.round(S.resale * [1, 0.85, 0.6][S.cond] * 100) / 100, e: it[1], d: today() }); saveHaul(); renderHaul(); toast(L.added); };
     $("ff-phr").innerHTML = T.en.phr.map(function (p) { var f = function (s) { return s.replace(/%o/g, o).replace(/%b/g, bn); }; return '<button type="button" data-copy="' + esc(f(p[0]) + " / " + f(p[1])) + '"><b>' + esc(f(p[0])) + "</b><span>" + esc(f(p[1])) + "</span></button>"; }).join("");
     $("ff-phr").querySelectorAll("button").forEach(function (btn) { btn.onclick = function () { try { navigator.clipboard.writeText(btn.dataset.copy); } catch (e) {} toast(L.copied); }; });
@@ -382,6 +403,8 @@
       return p(url, labels, { hypothesis_template: "a photo of {}" }).then(function (res) {
         clearTimeout(timer);
         var top = res.slice(0, 3).map(function (r) { var i = cands[labels.indexOf(r.label)]; return { it: i, s: r.score }; });
+        var clipName = function (id) { var it = findItem(id); return it[lang === "es" ? 3 : 2]; };
+        var mLink = fbMarketLink(top[0] ? clipName(top[0].it[0]) : q());
         fill(out, [el("div", { className: "ff-sniff" }, [
           el("img", { className: "ff-ph-img", src: url, alt: "" }),
           el("div", null, [
@@ -391,10 +414,16 @@
                 g.it[1] + " " + g.it[lang === "es" ? 3 : 2] + " ",
                 el("small", { text: Math.round(g.s * 100) + "%" })
               ]);
-            }))
+            })),
+            el("div", { className: "ff-btns" }, [mLink])
           ])
         ])]);
-        out.querySelectorAll("[data-guess]").forEach(function (b) { b.onclick = function () { out.querySelectorAll("[data-guess]").forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); }); pick(b.dataset.guess, true); }; });
+        out.querySelectorAll("[data-guess]").forEach(function (b) { b.onclick = function () {
+          out.querySelectorAll("[data-guess]").forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); });
+          var u = safeUrl(fbMarketUrl(clipName(b.dataset.guess)));
+          if (u) mLink.setAttribute("href", u);
+          pick(b.dataset.guess, true);
+        }; });
         if (top[0]) pick(top[0].it[0], true);
         window.__chicaPhotoTop = top.map(function (g) { return g.it[0] + ":" + g.s.toFixed(3); });
       });
@@ -474,6 +503,7 @@
       })));
     }
     kids.push(el("small", { className: "ff-eNote", text: L.eNote }));
+    kids.push(el("div", { className: "ff-btns" }, [fbMarketLink(marketName(v))]));
     return el("div", { className: "ff-ebay", id: "ff-ebay" }, kids);
   }
   function applyGuess(v, g, gi) {
@@ -503,7 +533,7 @@
     fill(out, [el("div", { className: "ff-sniff" }, [
       el("img", { className: "ff-ph-img", src: url, alt: "" }),
       el("div", null, [el("small", { text: L.visSee }), el("b", { className: "ff-vname", text: v.name }), sub ? el("small", { text: sub }) : null, el("small", { text: L.visPick }), el("div", { className: "ff-guess" }, chips)])
-    ]), panel]);
+    ]), panel || el("div", { className: "ff-btns" }, [fbMarketLink(marketName(v))])]);
     out.querySelectorAll("[data-gi]").forEach(function (b) {
       b.onclick = function () { applyGuess(v, guesses[+b.getAttribute("data-gi")], +b.getAttribute("data-gi")); };
     });

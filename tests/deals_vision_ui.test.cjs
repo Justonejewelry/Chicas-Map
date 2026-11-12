@@ -59,11 +59,22 @@ let n = 0; const ok = (m) => { n++; console.log("ok -", m); };
     assert.equal(a.d.querySelector(".ff-vname").textContent, "Lodge 10 inch skillet"); assert.match(a.d.querySelector("#ff-ph-out").textContent, /Brand: Lodge/);
     const chips = a.d.querySelectorAll("#ff-ph-out [data-gi]"); assert.equal(chips.length, 3); assert.equal(chips[0].getAttribute("aria-pressed"), "true");
     const panel = a.d.getElementById("ff-ebay"); assert.ok(panel && !panel.hidden); assert.match(panel.textContent, /asking prices \(not sold\)/); assert.match(panel.textContent, /\$22/); assert.match(panel.textContent, /\$40/); assert.match(panel.textContent, /\$65/); assert.match(panel.textContent, /9 comparable/);
-    const links = [...panel.querySelectorAll("a")]; assert.equal(links.length, 1, "javascript: and lookalike-host links dropped"); assert.ok(links[0].href.startsWith("https://www.ebay.com/")); assert.match(links[0].rel, /sponsored/);
+    const links = [...panel.querySelectorAll("a")];
+    const ebayLinks = links.filter((x) => x.href.startsWith("https://www.ebay.com/"));
+    const fbLinks = links.filter((x) => /facebook\.com\/marketplace/.test(x.href));
+    assert.equal(ebayLinks.length, 1, "javascript: and lookalike-host links dropped"); assert.ok(ebayLinks[0].href.startsWith("https://www.ebay.com/")); assert.match(ebayLinks[0].rel, /sponsored/);
+    assert.equal(fbLinks.length, 1, "Marketplace button next to asking-price panel");
+    assert.equal(fbLinks[0].href, "https://www.facebook.com/marketplace/sanantonio/search/?query=Lodge%2010%20inch%20skillet&sortBy=distance_ascend");
+    assert.equal(fbLinks[0].textContent, "Check Facebook Marketplace (local prices)");
+    assert.equal(fbLinks[0].target, "_blank"); assert.equal(fbLinks[0].rel, "noopener noreferrer");
     assert.equal(a.d.getElementById("ff-resale").value, "40", "verdict price uses eBay median"); assert.equal(a.d.getElementById("ff-cond").value, "0", "condition guess applied");
     assert.equal(a.d.getElementById("ff-name").value, "Lodge 10 inch skillet"); assert.match(a.d.getElementById("ff-guide").textContent, /eBay asking prices right now: \$22.\$65, median \$40/);
     assert.match(a.d.getElementById("ff-verdict").textContent, /eBay sold listings/);
+    assert.match(a.d.getElementById("ff-verdict").textContent, /Check Facebook Marketplace \(local prices\)/);
     const sold = [...a.d.querySelectorAll("#ff-verdict a")].find((x) => /LH_Sold=1/.test(x.href)); assert.ok(sold && /campid=5339243224/.test(sold.href) && /lodge%2010%20inch%20cast%20iron%20skillet/.test(sold.href), "sold link uses AI query + campid");
+    const fbVerdict = [...a.d.querySelectorAll("#ff-verdict a")].find((x) => /facebook\.com\/marketplace/.test(x.href));
+    assert.ok(fbVerdict && fbVerdict.href === "https://www.facebook.com/marketplace/sanantonio/search/?query=Lodge%2010%20inch%20skillet&sortBy=distance_ascend");
+    assert.equal(fbVerdict.rel, "noopener noreferrer");
     // tap an alternative: eBay panel hides, price resets to the category guide, chip pressed
     chips[2].click(); await tick(20);
     assert.equal(chips[2].getAttribute("aria-pressed"), "true"); assert.ok(a.d.getElementById("ff-ebay").hidden); assert.notEqual(a.d.getElementById("ff-resale").value, "40"); assert.equal(a.d.getElementById("ff-name").value, "Dutch oven");
@@ -73,11 +84,15 @@ let n = 0; const ok = (m) => { n++; console.log("ok -", m); };
   // 3. Spanish strings
   { const a = await boot({ vision: "https://x.workers.dev/", lang: "es", fetchImpl: (u) => salesOk(u) || Promise.resolve({ ok: true, json: async () => good() }) });
     await snap(a); await tick(200);
-    assert.match(a.d.getElementById("ff-ebay").textContent, /precios que piden \(no vendidos\)/); assert.match(a.d.querySelector("#ff-ph-out").textContent, /Marca: Lodge/); assert.match(a.d.getElementById("ff-guide").textContent, /Precios que piden en eBay/); ok("Spanish copy"); a.w.close(); }
+    assert.match(a.d.getElementById("ff-ebay").textContent, /precios que piden \(no vendidos\)/); assert.match(a.d.querySelector("#ff-ph-out").textContent, /Marca: Lodge/); assert.match(a.d.getElementById("ff-guide").textContent, /Precios que piden en eBay/);
+    assert.match(a.d.getElementById("ff-ebay").textContent, /Revisar Facebook Marketplace \(precios locales\)/); ok("Spanish copy"); a.w.close(); }
 
   // 4. prices null: ID still works, no panel, resale stays on the guide
   { const a = await boot({ vision: "https://x.workers.dev/", fetchImpl: (u) => salesOk(u) || Promise.resolve({ ok: true, json: async () => good({ prices: null }) }) });
-    await snap(a); await tick(200); assert.equal(a.d.getElementById("ff-ebay"), null); assert.equal(a.d.querySelectorAll("#ff-ph-out [data-gi]").length, 3); assert.ok(!/eBay asking prices/.test(a.d.getElementById("ff-guide").textContent)); ok("no eBay comps: ID only"); a.w.close(); }
+    await snap(a); await tick(200); assert.equal(a.d.getElementById("ff-ebay"), null); assert.equal(a.d.querySelectorAll("#ff-ph-out [data-gi]").length, 3); assert.ok(!/eBay asking prices/.test(a.d.getElementById("ff-guide").textContent));
+    const fbOnly = [...a.d.querySelectorAll("#ff-ph-out a")].find((x) => /facebook\.com\/marketplace/.test(x.href));
+    assert.ok(fbOnly && /Lodge%2010%20inch%20skillet/.test(fbOnly.href) && /sortBy=distance_ascend/.test(fbOnly.href), "Marketplace link still shown without eBay comps");
+    ok("no eBay comps: ID only"); a.w.close(); }
 
   // 5. hostile strings render as text only
   { const evil = good(); evil.item.name = '<img src=x onerror="window.__pwn=1">Skillet'; evil.item.brand = "<script>window.__pwn=2</script>";
