@@ -75,6 +75,22 @@
     last = key;
   }
 
+  // Wait for TanStack/React hydration ($_TSR is deleted when the shell is hydrated)
+  // before injecting the claim bar, or React throws hydration error #418.
+  function afterHydrate(fn) {
+    if (window.$_TSR) {
+      var started = Date.now();
+      var id = setInterval(function () {
+        if (!window.$_TSR || Date.now() - started > 4000) {
+          clearInterval(id);
+          fn();
+        }
+      }, 50);
+      return;
+    }
+    fn();
+  }
+
   function schedule() {
     if (queued) return;
     queued = 1;
@@ -82,15 +98,17 @@
       queued = 0;
       paint();
     };
-    if (skipPath(location.pathname || "/")) {
-      run();
-      return;
-    }
-    if (typeof requestIdleCallback === "function") {
-      requestIdleCallback(run, { timeout: 700 });
-    } else {
-      setTimeout(run, 0);
-    }
+    afterHydrate(function () {
+      if (skipPath(location.pathname || "/")) {
+        run();
+        return;
+      }
+      if (typeof requestIdleCallback === "function") {
+        requestIdleCallback(run, { timeout: 700 });
+      } else {
+        setTimeout(run, 0);
+      }
+    });
   }
 
   if (document.readyState === "loading") {

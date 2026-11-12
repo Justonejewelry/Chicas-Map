@@ -452,6 +452,38 @@ class SiteBuildTests(unittest.TestCase):
         self.assertIn('data-goatcounter="https://chicasmapcom.goatcounter.com/count"', page)
         self.assertIn('data-goatcounter="https://chicasmapcom.goatcounter.com/count"', page_es)
 
+    def test_audit_fixes_titles_canonicals_showcase_and_favicon(self):
+        resources = (self.root / 'resources/index.html').read_text()
+        adventure = (self.root / 'adventure/index.html').read_text()
+        intel_es = (self.root / 'es/intel/index.html').read_text()
+        atlas_es = (self.root / 'es/atlas/index.html').read_text()
+        home = (self.root / 'index.html').read_text()
+        self.assertIn('<title>San Antonio pantries, Wi-Fi, and city resources | Chicas Map</title>', resources)
+        self.assertIn('<title>Adventure edition · Chicas Map</title>', adventure)
+        self.assertNotEqual(re.search(r'<title>([^<]+)</title>', resources).group(1),
+                            re.search(r'<title>([^<]+)</title>', home).group(1))
+        self.assertIn('<title>Intel de la venta · Chicas Map</title>', intel_es)
+        self.assertIn('<title>Atlas Álamo · Chicas Map</title>', atlas_es)
+        self.assertNotEqual(re.search(r'<title>([^<]+)</title>', intel_es).group(1),
+                            re.search(r'<title>([^<]+)</title>', (self.root / 'intel/index.html').read_text()).group(1))
+        self.assertNotEqual(re.search(r'<title>([^<]+)</title>', atlas_es).group(1),
+                            re.search(r'<title>([^<]+)</title>', (self.root / 'atlas/index.html').read_text()).group(1))
+        desk = (self.root / 'boost/desk.html').read_text()
+        self.assertIn('rel="canonical" href="https://www.chicasmap.com/boost/desk.html"', desk)
+        self.assertNotIn('rel="canonical" href="https://www.chicasmap.com/boost/desk/"', desk)
+        self.assertIn('Boost desk', desk)
+        showcase = (self.root / 'showcase/index.html').read_text()
+        showcase_es = (self.root / 'es/showcase/index.html').read_text()
+        for name in ('01-come-hunt.png', '02-the-map.png', '03-filters-key.png', '04-build-a-loop.png', '05-take-me-with-you.png'):
+            self.assertIn('href="/showcase/' + name + '"', showcase)
+            self.assertIn('href="/showcase/' + name + '"', showcase_es)
+            self.assertNotIn('href="./' + name + '"', showcase_es)
+        self.assertTrue((self.root / 'favicon.ico').is_file())
+        self.assertGreater((self.root / 'favicon.ico').stat().st_size, 16)
+        # React submit shell must not get a noscript first-child or it hydrates badly.
+        submit = (self.root / 'submit/index.html').read_text()
+        if '$_TSR' in submit:
+            self.assertNotRegex(submit, r'<body[^>]*>\s*<noscript')
 
 if __name__ == '__main__':
     unittest.main()

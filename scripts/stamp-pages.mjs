@@ -18,8 +18,8 @@ const PAGES = [
   { path: "list", title: "San Antonio Garage Sales List | Chicas Map", desc: "Every upcoming garage, yard, and estate sale in San Antonio, with addresses and dates. Open a sale for directions or see them all on the live map.", titleEs: "Lista de ventas de garaje en San Antonio | Chicas Map", descEs: "Todas las ventas de garaje, patio y bienes próximas en San Antonio, con direcciones y fechas. Abre una para indicaciones o míralas en el mapa en vivo." },
   { path: "stats", title: "San Antonio garage sale map stats | Chicas Map", desc: "Live, public numbers from the San Antonio garage sale map: upcoming pins, this weekend’s sales, neighborhoods, and where listings come from.", titleEs: "Números del mapa de ventas de garaje en San Antonio | Chicas Map", descEs: "Cifras públicas y en vivo del mapa de ventas de garaje en San Antonio: pines próximos, ventas de este fin de semana, vecindarios y de dónde salen los listados." },
   { path: "press", title: "Press kit and brand assets | Chicas Map", desc: "Download the Chicas Map logo, mascot art, social cards, and other brand images used on the free San Antonio garage sale map.", titleEs: "Kit de prensa y marca | Chicas Map", descEs: "Descarga el logo de Chicas Map, el arte de la mascota, las tarjetas sociales y otras imágenes de marca del mapa gratis de ventas de garaje en San Antonio." },
-  { path: "intel", title: "Sale Intel · Chicas Map", desc: "Driveway notes from people standing at the sale. Unlock within 200 feet. GPS, not rumors.", titleEs: "Sale Intel · Chicas Map", descEs: "Notas de quien esta en la venta. Se desbloquean a 200 pies. GPS, no rumores." },
-  { path: "atlas", title: "Alamo Atlas · Chicas Map", desc: "SAPD neighborhood offense reports for San Antonio. Search by name, ZIP ranking, public Open Data SA. Grok Build civic proof of concept.", titleEs: "Alamo Atlas · Chicas Map", descEs: "Reportes de delitos por vecindario en San Antonio. Busca por nombre y ZIP. Datos publicos de la ciudad. Prueba civica de Grok Build." },
+  { path: "intel", title: "Sale Intel · Chicas Map", desc: "Driveway notes from people standing at the sale. Unlock within 200 feet. GPS, not rumors.", titleEs: "Intel de la venta · Chicas Map", descEs: "Notas de quien esta en la venta. Se desbloquean a 200 pies. GPS, no rumores." },
+  { path: "atlas", title: "Alamo Atlas · Chicas Map", desc: "SAPD neighborhood offense reports for San Antonio. Search by name, ZIP ranking, public Open Data SA. Grok Build civic proof of concept.", titleEs: "Atlas Álamo · Chicas Map", descEs: "Reportes de delitos por vecindario en San Antonio. Busca por nombre y ZIP. Datos publicos de la ciudad. Prueba civica de Grok Build." },
   { path: "sponsors", title: "Sponsor Chicas Map · San Antonio", desc: "Help keep Chica's cape on. The public garage sale map stays free for San Antonio neighbors.", titleEs: "Patrocinio · Chicas Map", descEs: "Ayuda a Chica a dejar la capa puesta. El mapa publico sigue gratis." },
   { path: "deals", og: "/images/og-deals.jpg", title: "Chica's Deal Finder · Is that garage sale price a deal? · Chicas Map", desc: "Snap a photo or pick the item, enter the asking price, and Chica tells you: great deal, fair price, haggle, or pass. Bilingual haggle lines. Free for San Antonio.", titleEs: "Buscador de Gangas de Chica · ¿Es ganga? · Chicas Map", descEs: "Toma una foto o elige el artículo, pon el precio y Chica te dice: gran ganga, precio justo, regatea o pásale. Gratis en San Antonio." },
   { path: "submit", title: "List a garage sale free · Chicas Map", desc: "Put your San Antonio garage, yard, or estate sale on Chicas Map. Free to list. Reviewed before it goes live.", titleEs: "Agregar venta · Chicas Map", descEs: "Publica tu venta de garage en San Antonio. Gratis. Chica la revisa antes de pincharla." },
@@ -34,7 +34,9 @@ const PAGES = [
   { path: "principle", title: "Pack principle · Chicas Map", desc: "Loyalty, duty, respect, service, honor, integrity, courage.", titleEs: "Principio de la manada · Chicas Map", descEs: "Lealtad, deber, respeto, servicio, honor, integridad, valor." },
   { path: "legal", title: "Legal · Chicas Map", desc: "Legal notice for Chicas Map. Neighbor guide, not a certification. Verify hours on site.", titleEs: "Aviso · Chicas Map", descEs: "Aviso legal. El mapa es una guia de vecinos, no una certificacion." },
   { path: "privacy", title: "Privacy · Chicas Map", desc: "How Chicas Map handles location, notes, and analytics. Privacy-first. No ad trackers.", titleEs: "Privacidad · Chicas Map", descEs: "Como Chicas Map trata ubicacion, notas y analitica. Sin trackers de anuncios." },
-  { path: "terms", title: "Terms · Chicas Map", desc: "Terms for using Chicas Map. Neighbor guide. Verify hours on site.", titleEs: "Terminos · Chicas Map", descEs: "Terminos de uso. Guia de vecinos. Verifica horarios en el lugar." }
+  { path: "terms", title: "Terms · Chicas Map", desc: "Terms for using Chicas Map. Neighbor guide. Verify hours on site.", titleEs: "Terminos · Chicas Map", descEs: "Terminos de uso. Guia de vecinos. Verifica horarios en el lugar." },
+  { path: "resources", noEs: true, title: "San Antonio pantries, Wi-Fi, and city resources | Chicas Map", desc: "Pantries, free Wi-Fi, parking, school zones, and everyday utility pins for San Antonio. Separate from Chicas Map sales." },
+  { path: "adventure", noEs: true, title: "Adventure edition · Chicas Map", desc: "Same San Antonio garage sale pins. Standard edition or Adventure edition. One map, two dimensions." }
 ];
 
 const PAGE_BY_PATH = Object.fromEntries(PAGES.map((p) => [p.path || "/", p]));
@@ -71,6 +73,30 @@ function sitePathFromFile(file) {
   if (rel.endsWith(".html")) rel = rel.replace(/\.html$/, "/");
   if (!rel.endsWith("/")) rel += "/";
   return rel === "//" ? "/" : rel;
+}
+function fileRel(file) {
+  let rel = file.slice(root.length).replace(/\\/g, "/");
+  if (!rel.startsWith("/")) rel = "/" + rel;
+  return rel;
+}
+function isReactShell(html) {
+  return html.includes("$_TSR") || html.includes("$tsr-stream-barrier") || html.includes("self.$_TSR");
+}
+function absolutizeRelativeAssets(html, enDir) {
+  return html.replace(/\b(href|src)=(["'])(\.\/)?([^/"'#?][^"']*)\2/gi, function (m, attr, q, dot, file) {
+    if (/^(https?:|\/\/|\/|mailto:|tel:|#|data:|javascript:)/i.test(file) || file.startsWith("data:")) return m;
+    if (!/\.(png|jpe?g|gif|webp|svg|ico|mp4|webm|pdf)(\?.*)?$/i.test(file)) return m;
+    const dir = enDir.endsWith("/") ? enDir : enDir + "/";
+    return attr + "=" + q + dir + file + q;
+  });
+}
+function existingMeta(html, tag) {
+  if (tag === "title") {
+    const m = html.match(/<title>([^<]*)<\/title>/i);
+    return m ? m[1].trim() : "";
+  }
+  const m = html.match(/<meta\s+name="description"\s+content="([^"]*)"/i);
+  return m ? m[1].trim() : "";
 }
 function pageKey(sitePath) {
   const clean = sitePath.replace(/^\/es\//, "/").replace(/^\/es$/, "/");
@@ -130,14 +156,19 @@ function stampFile(file, opts) {
   const sitePath = sitePathFromFile(file);
   const isEs = opts.forceLang === "es" || sitePath.startsWith("/es/") || sitePath === "/es/";
   const key = pageKey(sitePath);
-  const page = PAGE_BY_PATH[key] || PAGE_BY_PATH["/"];
-  const title = isEs ? page.titleEs : page.title;
-  const desc = isEs ? page.descEs : page.desc;
-  const enPath = key === "/" ? "/" : "/" + (PAGE_BY_PATH[key] ? page.path : key) + "/";
-  const canonical = origin + (isEs ? "/es" + enPath : enPath);
+  const known = PAGE_BY_PATH[key];
+  const fallbackTitle = existingMeta(html, "title") || "Chicas Map";
+  const fallbackDesc = existingMeta(html, "description") || "Free San Antonio garage sale map.";
+  const page = known || { path: key === "/" ? "" : key, title: fallbackTitle, desc: fallbackDesc, titleEs: fallbackTitle, descEs: fallbackDesc };
+  const title = isEs ? (page.titleEs || page.title) : page.title;
+  const desc = isEs ? (page.descEs || page.desc) : page.desc;
+  const enPath = key === "/" ? "/" : "/" + (known ? page.path : key) + "/";
   const isAlias = name !== "index.html" && name !== "404.html" && name !== "_shell.html" && name.endsWith(".html");
   const isUtility = name === "404.html" || name === "_shell.html";
   const indexable = !isAlias && !isUtility;
+  const canonical = isAlias
+    ? origin + (isEs ? fileRel(file) : fileRel(file).replace(/^\/es\//, "/"))
+    : origin + (isEs ? "/es" + enPath : enPath);
 
   html = html.replace(/<meta[^>]*data-chica-seo="1"[^>]*>/g, "");
   html = html.replace(/<link rel="canonical"[^>]*>/g, "");
@@ -152,12 +183,13 @@ function stampFile(file, opts) {
   html = html.replace(/var rest=p\.slice\(es\.length\)\|\|\"\/";history\.replaceState\(null,\"\",b\+\(rest\.charAt\(0\)===\"\/\"\?rest:\"\/\"\+rest\)\+location\.search\+location\.hash\);/g, "");
   html = html.replace("<head>", "<head>" + hrefLang(enPath));
   if (html.indexOf('rel="apple-touch-icon"') === -1) html = html.replace("<head>", '<head><link rel="apple-touch-icon" href="/Chicas-Map/apple-touch-icon.png"/>');
+  if (html.indexOf('favicon.ico') === -1) html = html.replace("<head>", '<head><link rel="icon" href="/Chicas-Map/favicon.ico" sizes="any"/>');
   if (html.indexOf('href="/Chicas-Map/humans.txt"') === -1 && html.indexOf('href="/humans.txt"') === -1) html = html.replace("<head>", '<head><link rel="author" href="/Chicas-Map/humans.txt"/>');
   html = html.replace("<head>", "<head><title>" + title + "</title>");
   html = html.replace("<head>", "<head><meta name=\"description\" content=\"" + desc + "\"/>");
   html = html.replace("<head>", "<head>" + seoHead({ title: title, desc: desc, canonical: canonical, indexable: indexable, lang: isEs ? "es" : "en", og: page.og ? origin + page.og : "" }));
   if (indexable) html = html.replace("</head>", jsonLd(page, canonical) + "</head>");
-  if (!html.includes("data-home-static") && html.indexOf('id="chica-crawl"') === -1 && html.indexOf("id='chica-crawl'") === -1) {
+  if (!isReactShell(html) && !html.includes("data-home-static") && html.indexOf('id="chica-crawl"') === -1 && html.indexOf("id='chica-crawl'") === -1) {
     const block = noscriptBlock(page, isEs);
     html = html.includes("<body") ? html.replace(/<body([^>]*)>/, "<body$1>" + block) : block + html;
   }
@@ -168,17 +200,22 @@ function stampFile(file, opts) {
 const htmlFiles = walk(root);
 for (const file of htmlFiles) stampFile(file);
 for (const page of PAGES) {
+  if (page.noEs) continue;
   const src = page.path ? join(root, page.path, "index.html") : join(root, "index.html");
   try { readFileSync(src, "utf8"); } catch (e) { continue; }
   const dest = page.path ? join(root, "es", page.path, "index.html") : join(root, "es", "index.html");
   ensureDir(dest);
   // Home/calendar generators supply translated static content for both languages.
-  if (page.path !== "" && page.path !== "calendar") writeFileSync(dest, readFileSync(src, "utf8"));
+  if (page.path !== "" && page.path !== "calendar") {
+    const enDir = page.path ? "/" + page.path + "/" : "/";
+    writeFileSync(dest, absolutizeRelativeAssets(readFileSync(src, "utf8"), enDir));
+  }
   stampFile(dest, { forceLang: "es" });
 }
 const today = new Date().toISOString().slice(0, 10);
 let body = "";
 for (const p of PAGES) {
+  if (p.noEs) continue;
   const srcIndex = p.path ? join(root, p.path, "index.html") : join(root, "index.html");
   try { statSync(srcIndex); } catch (e) { continue; }
   const en = origin + (p.path ? "/" + p.path + "/" : "/");

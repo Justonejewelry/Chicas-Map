@@ -204,6 +204,7 @@ def clean(root,today=None):
                 elif end<start:reason='invalid_date_range'
                 elif end<today:reason='past_sale'
                 elif (end-start).days>31:reason='implausible_sale_window'
+                elif start>today+timedelta(days=60):reason='too_far_ahead'
                 else:
                     for k in ('date_start','date_from'):s[k]=start.isoformat()
                     for k in ('date_end','date_to','end_date'):s[k]=end.isoformat()
@@ -226,7 +227,7 @@ def clean(root,today=None):
         for key in list(p):
             if key.startswith('_'):del p[key]
     public.sort(key=lambda p:(p['date_start'],address_key(p['address']),p['external_id']))
-    payload=dict(version=VERSION,city='san-antonio',generated=today_s,timezone='America/Chicago',status='live',policy='Explicit sale dates only; uncertain dates excluded. 60-mile SA metro. Raw overlays preserved.',total_locations=len(public),today_count=sum(p['date_start']<=today_s<=p['date_end'] for p in public),public=public,permits=[],unconfirmed=unconfirmed)
+    payload=dict(version=VERSION,city='san-antonio',generated=today_s,timezone='America/Chicago',status='live',policy='Explicit sale dates only; uncertain dates excluded. Sales starting more than 60 days out are held back. 60-mile SA metro. Raw overlays preserved.',total_locations=len(public),today_count=sum(p['date_start']<=today_s<=p['date_end'] for p in public),public=public,permits=[],unconfirmed=unconfirmed)
     report=dict(as_of=today_s,raw_records=raw_count,eligible_before_dedupe=len(accepted),canonical_sales=len(public),today_sales=payload['today_count'],duplicates_merged=len(accepted)-len(public),excluded_by_reason=dict(by_reason),excluded=excluded,merged=merges)
     validate(payload,today)
     return payload,report

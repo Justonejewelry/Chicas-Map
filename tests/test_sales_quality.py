@@ -106,5 +106,13 @@ class QualityTests(unittest.TestCase):
         master=(ROOT/'scripts/master_populate.py').read_text();self.assertIn('sale output invariant check',master);self.assertIn('required=True',master)
         pages=(ROOT/'.github/workflows/pages.yml').read_text();self.assertLess(pages.index('python3 scripts/clean_sales.py _site'),pages.index('python3 scripts/build_calendar.py _site'))
         self.assertIn('scripts/clean_sales.py webapp --check',(ROOT/'.github/workflows/chica-daily.yml').read_text())
+    def test_sales_more_than_60_days_out_are_held_back(self):
+        soon=self.pin(title='Next month sale',date_start='2026-12-06',date_end='2026-12-06',url='https://example.org/soon')
+        later=self.pin(title='SPRING Community Wide Rummage Sale',date_start='2027-05-01',date_end='2027-05-01',external_id='ae-100001993008949418',url='https://example.org/spring')
+        data,report=self.clean([soon,later])
+        titles={s['title'] for s in data['public']}
+        self.assertIn('Next month sale',titles)
+        self.assertNotIn('SPRING Community Wide Rummage Sale',titles)
+        self.assertEqual(report['excluded_by_reason'].get('too_far_ahead'),1)
 
 if __name__=='__main__':unittest.main()
