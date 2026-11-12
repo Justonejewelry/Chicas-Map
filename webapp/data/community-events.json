@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-12T08:05:40-06:00",
+  "updated": "2026-11-12T11:17:39-06:00",
   "city": "san-antonio",
   "version": 2.7,
   "horizonDays": 90,
@@ -4971,6 +4971,24 @@
       "reliability": 86,
       "discoveredAt": "2026-11-12T03:27:35-06:00",
       "confidence": 98
+    },
+    {
+      "id": "2026-12-11_holiday-night-city-2026_998588157ea2",
+      "title": "Holiday Night City, 2026",
+      "date": "2026-12-11",
+      "endDate": "",
+      "time": "",
+      "address": "Holiday Night City, 2026 Texas Public Radio",
+      "lat": null,
+      "lng": null,
+      "category": "other",
+      "description": "",
+      "url": "https://www.tpr.org/community-calendar/event/holiday-night-city-2026-12-11-2026-11-20-25",
+      "source": "Texas Public Radio Community Calendar",
+      "sourceId": "tpr-community-calendar",
+      "reliability": 88,
+      "discoveredAt": "2026-11-12T11:17:28-06:00",
+      "confidence": 93
     }
   ]
 }

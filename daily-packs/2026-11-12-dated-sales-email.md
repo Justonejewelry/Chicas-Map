@@ -43,6 +43,7 @@ The map keeps both today's sales and upcoming dated sales.
 - Garage Sale — 52 Peach Tree Ave, Poteet, TX 78065 [2026-11-13 → 2026-11-15]
 - Huge 3 Family Yard Sale Biggest Sale Ever! — 217 Long Cove Dr, Cibolo, TX [2026-11-13 → 2026-11-15]
 - Garage Sale — 8741 Buckskin Dr, Boerne, TX 78006 [2026-11-13 → 2026-11-14]
+- Huge Garage Sale - 8919 Shade Tree - Friday & Saturday, Nov 13 & 14 — 8919 SHADE TREE near TEZEL, San Antonio, TX [2026-11-13 → 2026-11-14]
 
 ### Starts 2026-11-14
 - GARAGE SALE — 5858 Laurel Valley, San Antonio, TX 78242 [2026-11-14 → 2026-11-15] | 10am-7pm
@@ -78,6 +79,7 @@ The map keeps both today's sales and upcoming dated sales.
 - Southern Hills Community Yard Sale — Southern Bluff near Sinclair Rd, San Antonio, TX [2026-11-14 → 2026-11-14]
 - 🚨 MULTI-SELLER GARAGE SALE AT STORAGE FACILITY! 🚨 — 12241 Hwy 181, San Antonio, TX [2026-11-14 → 2026-11-14]
 - Pool Table, Honda CR-V floor mats, Jeep windows, toys — 2401 Ayers Dr, Seguin, TX 78155 [2026-11-14 → 2026-11-14]
+- Garage Sale - 281 and Bitters — Indian Paint Brush Rd. near Susancrest, San Antonio, TX [2026-11-14 → 2026-11-14]
 
 ### Starts 2026-11-15
 - ONE-DAY ESTATE SALE! — 104 Ridge Trail, San Antonio, TX 78232 [2026-11-15 → 2026-11-15] | 10am-5pm
@@ -88,7 +90,7 @@ The map keeps both today's sales and upcoming dated sales.
 ### Starts 2026-11-20
 - Alamo Ranch Estate Sale — 12503 Sandy Dunes, San Antonio, TX [2026-11-20 → 2026-11-22]
 - #633: Chase Estate Sale — #633: Chase Estate Sale (address posts 9 a.m. CT the day before), San Antonio, TX 78249 [2026-11-20 → 2026-11-22]
-- Analog Age Flash Sale — hidden, San Antonio, TX 78240 [2026-11-20 → 2026-11-20] | 2026-11-20 9:00 am-3:00 pm
+- Walking in a Vintage Wonderland Flash Sale — hidden, San Antonio, TX 78240 [2026-11-20 → 2026-11-20] | 2026-11-20 9:00 am-3:00 pm
 - Alamo Ranch Estate Sale — 12503 Sandy Dunes, San Antonio, TX 78253 [2026-11-20 → 2026-11-22] | 2026-11-20 10:00 am-5:00 pm; 2026-11-21 10:00 am-5:00 pm; 2026-11-22 10:00 am-3:00 pm
 
 ### Starts 2026-12-05

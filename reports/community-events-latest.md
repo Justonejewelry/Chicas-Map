@@ -1,18 +1,18 @@
 # Chica's Map -- Community Events Swarm v2.7
 
-Run: 2026-11-12T08:05:40-06:00
+Run: 2026-11-12T11:17:39-06:00
 Sources scanned: **48**
-Candidates discovered: **957**
-With parsed dates: **801**
-With street/venue address: **580**
-Promoted this run: **0**
+Candidates discovered: **941**
+With parsed dates: **785**
+With street/venue address: **582**
+Promoted this run: **1**
 Kept from prior feed: **276**
 Purged from prior feed: **0**
 Source errors: **6**
 Rejected by Sentinel: **347**
 
 ## Promoted (passed Events Sentinel)
-_None this run._
+- **Holiday Night City, 2026** -- 2026-12-11 -- Holiday Night City, 2026 Texas Public Radio -- conf 93 -- https://www.tpr.org/community-calendar/event/holiday-night-city-2026-12-11-2026-11-20-25
 
 ## Review Queue
 - **San Antonio Public Library Events** -- conf 100 -- Family Story Time -- 2026-11-12 -- 4134 Harry Wurzbach San Antonio, TX 78209 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D205386310

@@ -2,7 +2,7 @@
   "type": "FeatureCollection",
   "properties": {
     "target_date": "2026-11-12",
-    "generated_at": "2026-11-12T08:05:05-06:00",
+    "generated_at": "2026-11-12T11:16:52-06:00",
     "count": 9,
     "project": "Chicas-Map"
   },
@@ -48,7 +48,7 @@
           "https://ps.tlstatic.com/image/w300-c300:250/2026/11/09/s/4/5/413645/TPVE-0.jpeg"
         ],
         "confidence": 100,
-        "verified_at": "2026-11-12T08:04:50-06:00",
+        "verified_at": "2026-11-12T11:16:34-06:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.551369903987,-98.256587670159",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.551369903987,-98.256587670159",
         "status": "verified",
@@ -99,7 +99,7 @@
           "https://images.craigslist.org/00Q0Q_jun0A3PLX3G_0vd0t2_50x50c.jpg"
         ],
         "confidence": 96,
-        "verified_at": "2026-11-12T08:04:50-06:00",
+        "verified_at": "2026-11-12T11:16:34-06:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.485811,-98.44471",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.485811,-98.44471",
         "status": "verified",
@@ -148,7 +148,7 @@
           "https://images.craigslist.org/01010_gpFkQUIlCrJ_0t20CI_50x50c.jpg"
         ],
         "confidence": 96,
-        "verified_at": "2026-11-12T08:04:50-06:00",
+        "verified_at": "2026-11-12T11:16:34-06:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.391,-98.4866",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.391,-98.4866",
         "status": "verified",
@@ -199,7 +199,7 @@
           "https://d3sp8ubbhnru9d.cloudfront.net/image/w300-c300:250/2026/11/11/s/5/3/38997053/7YQ0O-0.jpeg"
         ],
         "confidence": 100,
-        "verified_at": "2026-11-12T08:04:50-06:00",
+        "verified_at": "2026-11-12T11:16:34-06:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.375199,-98.43792",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.375199,-98.43792",
         "status": "verified",
@@ -250,7 +250,7 @@
           "https://na.allevents.in/matomo.php?idsite=1"
         ],
         "confidence": 96,
-        "verified_at": "2026-11-12T08:04:50-06:00",
+        "verified_at": "2026-11-12T11:16:34-06:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.422029,-98.496071",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.422029,-98.496071",
         "status": "verified",
@@ -299,7 +299,7 @@
           "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/static/images/sponsored/300x250.gif"
         ],
         "confidence": 96,
-        "verified_at": "2026-11-12T08:04:50-06:00",
+        "verified_at": "2026-11-12T11:16:34-06:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.588104523478,-98.663187157125",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.588104523478,-98.663187157125",
         "status": "verified",
@@ -332,7 +332,7 @@
         "zip": "",
         "latitude": 29.378802190687,
         "longitude": -98.417306910705,
-        "description": "CITY OF LEON VALLEY – CITYWIDE GARAGE SALE Saturday, November 14, 2026 | 8:00 a.m.–6:00 p.m. Shop throughout Leon Valley. A list of participating addresses will be available at www.leonvalleytexas.... Show more »",
+        "description": "SOUTHEAST - GARAGE SALE\r\n4119 Spring View Dr., 78222.\r\n2 sewing machines, furniture,\r\n$1 items & much more!\r\nNOV. 12-13 8:00am- 4pm",
         "highlights": [],
         "source_urls": [
           "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/advert/southeast-garage-sale-general_1036"
@@ -344,11 +344,10 @@
         "photos": [
           "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/static/images/sponsored/728x90.gif",
           "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/static/images/publications/sanantonio.png",
-          "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/image/general/IPCSAE00228731/c5dd6ae2e5cf3e3af4d28bf7132886d2_thumb.jpg",
           "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/static/images/sponsored/300x250.gif"
         ],
         "confidence": 96,
-        "verified_at": "2026-11-12T08:04:50-06:00",
+        "verified_at": "2026-11-12T11:16:34-06:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.378802190687,-98.417306910705",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.378802190687,-98.417306910705",
         "status": "verified",
@@ -397,7 +396,7 @@
           "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/static/images/sponsored/300x250.gif"
         ],
         "confidence": 96,
-        "verified_at": "2026-11-12T08:04:50-06:00",
+        "verified_at": "2026-11-12T11:16:34-06:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.517994035186,-98.354717873467",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.517994035186,-98.354717873467",
         "status": "verified",
@@ -441,7 +440,7 @@
         ],
         "photos": [],
         "confidence": 96,
-        "verified_at": "2026-11-12T08:04:50-06:00",
+        "verified_at": "2026-11-12T11:16:34-06:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.532252506662,-98.504210494488",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.532252506662,-98.504210494488",
         "status": "verified",

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T08:04:49-06:00",
+  "generated_at": "2026-11-12T11:16:33-06:00",
   "overall": "critical",
   "primary_failures": [
     "estatesales_org",
@@ -58,7 +58,7 @@
     "nextdoor": 2,
     "garagesalefinder": 40,
     "aggregators": 2,
-    "craigslist": 21,
+    "craigslist": 23,
     "estatesales.net": 2,
     "express-news marketplace": 8,
     "wilson county news": 3,
