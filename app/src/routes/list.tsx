@@ -5,7 +5,6 @@ import {
   allSales,
   fetchFeed,
   kindLabel,
-  loadSubmissions,
   markerColor,
   type CityFeed,
   type Sale,
@@ -17,22 +16,22 @@ function ListPage() {
   const [feed, setFeed] = useState<CityFeed | null>(null);
   const [q, setQ] = useState("");
   const [kind, setKind] = useState<"all" | Sale["type"]>("all");
-  const [local, setLocal] = useState<Sale[]>([]);
 
   useEffect(() => {
     fetchFeed().then(setFeed).catch(() => setFeed(null));
-    setLocal(loadSubmissions());
   }, []);
 
+  // Only the approved city feed is public. Device-local submission previews
+  // must never be mixed into the Live Sales directory.
   const rows = useMemo(() => {
-    const all = [...local, ...(feed ? allSales(feed) : [])];
+    const all = feed ? allSales(feed) : [];
     const needle = q.trim().toLowerCase();
     return all.filter((s) => {
       if (kind !== "all" && s.type !== kind) return false;
       if (!needle) return true;
       return `${s.title} ${s.address} ${s.details}`.toLowerCase().includes(needle);
     });
-  }, [feed, local, q, kind]);
+  }, [feed, q, kind]);
 
   return (
     <div className="min-h-dvh bg-bg">
@@ -40,7 +39,7 @@ function ListPage() {
       <main className="mx-auto max-w-3xl px-4 py-8">
         <h1 className="font-display text-3xl font-bold">Live sales</h1>
         <p className="mt-2 text-sm text-muted">
-          Posted listings first, then city permits. Tap any row to open it on the satellite map.
+          Approved listings first, then city permits. Tap any row to open it on the satellite map.
         </p>
         <div className="mt-5 flex flex-col gap-3 sm:flex-row">
           <input
@@ -76,7 +75,6 @@ function ListPage() {
                 <span className="min-w-0">
                   <span className="text-xs font-bold tracking-wide text-pine-mid uppercase">
                     {kindLabel(s.type)}
-                    {s.submitted ? " · Your listing" : ""}
                   </span>
                   <span className="mt-0.5 block font-medium text-ink">{s.title}</span>
                   <span className="mt-0.5 block text-sm text-muted">{s.address}</span>
