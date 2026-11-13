@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<title>San Antonio garage sale map stats | Chicas Map</title>
+<meta name="description" content="Live, public numbers from the San Antonio garage sale map: upcoming pins, this weekend’s sales, neighborhoods, and where listings come from."/>
+<meta name="theme-color" content="#121212"/>
+<link rel="icon" href="/Chicas-Map/preview/47/favicon.svg"/>
+<script>try{var theme=localStorage.getItem('chicas-map-theme');if(theme==='light'||theme==='dark')document.documentElement.dataset.theme=theme;}catch(e){}</script>
+<script>(function(){try{var p=location.pathname||"";if(/\/es(\/|$)/.test(p))document.documentElement.lang="es";}catch(e){}})();</script>
+<link rel="stylesheet" href="/Chicas-Map/preview/47/css/home-fonts.css?v=2"/>
+<link rel="stylesheet" href="/Chicas-Map/preview/47/assets/styles-D8YtPAwk.css"/>
+<link rel="stylesheet" href="/Chicas-Map/preview/47/css/home.css?v=5"/>
+<link rel="stylesheet" href="/Chicas-Map/preview/47/css/stats.css?v=3"/>
+<script src="/Chicas-Map/preview/47/js/home.js?v=2" defer></script>
+<script src="/Chicas-Map/preview/47/js/stats-viewer.js?v=3" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="header-inner">
+<details id="home-menu"><summary class="brand" aria-label="Menu"><picture><source srcset="/Chicas-Map/preview/47/images/chica-logo-72.webp" type="image/webp"/><img src="/Chicas-Map/preview/47/images/chica-logo-72.png" width="36" height="36" alt=""/></picture><span>Chicas Map</span></summary><nav class="menu-panel" aria-label="Site"><p class="menu-group">Find sales</p><a href="/Chicas-Map/preview/47/map/">Map</a><a href="/Chicas-Map/preview/47/list/">Sale list</a><a href="/Chicas-Map/preview/47/calendar/">Sales calendar</a><a href="/Chicas-Map/preview/47/garage-sales/">Sales by neighborhood</a><p class="menu-group">List a sale</p><a href="/Chicas-Map/preview/47/submit/">Add my sale</a><a href="/Chicas-Map/preview/47/claim/">Boost My Sale</a><p class="menu-group">More</p><a href="/Chicas-Map/preview/47/stats/" aria-current="page">Map stats</a><a href="/Chicas-Map/preview/47/press/">Press kit</a><a href="/Chicas-Map/preview/47/deals/">Deal Finder 💸</a><a href="/Chicas-Map/preview/47/atlas/">Alamo Atlas</a><a href="/Chicas-Map/preview/47/facebook/">Facebook</a><a href="/Chicas-Map/preview/47/media/">Reels</a><a href="/Chicas-Map/preview/47/bulletin/">Contact</a><a href="/Chicas-Map/preview/47/backstory/">Our story</a><a href="/Chicas-Map/preview/47/principle/">Pack principle</a><a href="/Chicas-Map/preview/47/sponsors/">Sponsors</a><a href="/Chicas-Map/preview/47/legal/">Legal</a></nav></details><nav class="primary-nav" aria-label="Main"><a href="/Chicas-Map/preview/47/map/">Find sales</a><a href="/Chicas-Map/preview/47/submit/">List a sale</a></nav>
+<div class="header-tools"><nav class="language-pill" aria-label="Language"><a href="/Chicas-Map/preview/47/stats/" lang="en" data-lang-switch="1" aria-label="EN – English">EN</a><a href="/Chicas-Map/preview/47/es/stats/" lang="es" data-lang-switch="1" aria-label="ES – Español">ES</a></nav><button id="home-theme" type="button" aria-label="Switch to light theme"><svg class="sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg><svg class="moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M20.9 13.3A9 9 0 0 1 10.7 3.1a9 9 0 1 0 10.2 10.2Z"/></svg></button></div>
+</div></header>
+<main id="main">
+<section id="stats-page" aria-labelledby="stats-title">
+<p class="eyebrow">A LOOK AT THE MAP</p>
+<h1 id="stats-title">Map stats</h1>
+<p class="lede" id="stats-lede">Live, public numbers from the San Antonio garage, yard, and estate sale map. Hover, tap, or focus the help button on any figure to see what it means and where it comes from.</p>
+<p id="stats-status">Loading the live map feed…</p>
+<p id="stats-updated"></p>
+<div class="stats-grid">
+  <article class="stat-card" data-stat="weekend">
+    <button type="button" class="stat-tip" aria-expanded="false" aria-controls="tip-weekend" aria-describedby="tip-weekend" title="What this means">?</button>
+    <div class="stat-value" id="stat-weekend">—</div>
+    <div class="stat-label">This weekend</div>
+    <div class="stat-note">Friday–Sunday, Central Time</div>
+    <p class="tip" id="tip-weekend" role="tooltip" data-tip-copy="weekend">How many of those upcoming sales overlap this Friday, Saturday, or Sunday (or the coming weekend, if today is Monday–Thursday). Dates are read in Central Time.</p>
+  </article>
+  <article class="stat-card" data-stat="upcoming">
+    <button type="button" class="stat-tip" aria-expanded="false" aria-controls="tip-upcoming" aria-describedby="tip-upcoming" title="What this means">?</button>
+    <div class="stat-value" id="stat-upcoming">—</div>
+    <div class="stat-label">Upcoming pins</div>
+    <div class="stat-note">Sales that have not ended yet</div>
+    <p class="tip" id="tip-upcoming" role="tooltip" data-tip-copy="upcoming">How many sales in the public feed have not ended yet. If a sale’s last day has already passed in Central Time, it is left out. The source is the live sales file that powers the map.</p>
+  </article>
+  <article class="stat-card" data-stat="traffic">
+    <button type="button" class="stat-tip" aria-expanded="false" aria-controls="tip-traffic" aria-describedby="tip-traffic" title="What this means">?</button>
+    <div class="stat-value" id="stat-traffic" class="is-phrase">Coming soon</div>
+    <div class="stat-label">Site visits</div>
+    <div class="stat-note">Public traffic counter</div>
+    <p class="tip" id="tip-traffic" role="tooltip" data-tip-copy="traffic">Unique visits from both of the site’s public GoatCounter visitor counters, the current one and the older one, added together. If neither counter answers, this card shows “Coming soon” instead of a made-up number.</p>
+  </article>
+</div>
+
+<section class="stats-panel" id="countdown-panel" aria-labelledby="countdown-title">
+  <div class="panel-head">
+    <div>
+      <h2 id="countdown-title">Weekend countdown</h2>
+      <p class="section-intro" id="countdown-intro">What’s open right now, what’s still ahead this Friday–Sunday, and when the next sale opens. Times are Central Time.</p>
+    </div>
+    <button type="button" class="stat-tip" aria-expanded="false" aria-controls="tip-countdown" aria-describedby="tip-countdown" title="What this means">?</button>
+  </div>
+  <p class="tip" id="tip-countdown" role="tooltip" data-tip-copy="countdown">Open now means this sale is on today’s calendar and Chica has posted hours that include the current Central Time. Sales without hours are not marked open. Still ahead are this weekend’s sales that have not started yet. The countdown uses the next posted opening time. Monday through Thursday, this panel also tells you when Friday arrives.</p>
+  <p class="ticker-status" id="ticker-status" aria-live="polite"></p>
+  <p class="ticker-next" id="ticker-next"></p>
+  <div class="ticker-split">
+    <div class="ticker-col">
+      <div class="stat-value" id="ticker-open">—</div>
+      <div class="stat-label" id="ticker-open-label">Open right now</div>
+      <div id="ticker-open-list"></div>
+    </div>
+    <div class="ticker-col">
+      <div class="stat-value" id="ticker-ahead">—</div>
+      <div class="stat-label" id="ticker-ahead-label">Still ahead this weekend</div>
+      <div id="ticker-ahead-list"></div>
+    </div>
+  </div>
+</section>
+<section class="stats-panel" id="heatmap-panel" aria-labelledby="heatmap-title">
+  <div class="panel-head">
+    <div>
+      <h2 id="heatmap-title">This weekend by area</h2>
+      <p class="section-intro" id="heatmap-intro">Neighborhoods shaded by how many sales are on the map this Friday–Sunday. Darker pink means more pins.</p>
+    </div>
+    <button type="button" class="stat-tip" aria-expanded="false" aria-controls="tip-heatmap" aria-describedby="tip-heatmap" title="What this means">?</button>
+  </div>
+  <p class="tip" id="tip-heatmap" role="tooltip" data-tip-copy="heatmap">A weekend heat map of the same neighborhoods used on Chica’s map, based on each sale’s ZIP code and the live sales feed. Circle size and color follow the pin count. Some sales sit outside this city view and are listed under Other area. The map uses the same map library as the rest of the site.</p>
+  <div class="heat-layout">
+    <div id="stats-heatmap" class="heat-map" role="img" aria-label="Weekend sales by neighborhood"></div>
+    <div id="stats-heat-list"></div>
+  </div>
+</section>
+<section class="stats-panel" aria-labelledby="hoods-title">
+  <div class="panel-head">
+    <div>
+      <h2 id="hoods-title">By neighborhood</h2>
+      <p class="section-intro" id="hoods-intro">Upcoming pins in each area, using the sale’s ZIP code.</p>
+    </div>
+    <button type="button" class="stat-tip" aria-expanded="false" aria-controls="tip-hoods" aria-describedby="tip-hoods" title="What this means">?</button>
+  </div>
+  <p class="tip" id="tip-hoods" role="tooltip" data-tip-copy="hoods">Upcoming sales grouped by the same neighborhoods used on the map, based on each sale’s ZIP code. A sale without a known ZIP lands in “Other area.”</p>
+  <div id="stats-hoods"></div>
+</section>
+<section class="stats-panel" aria-labelledby="sources-title">
+  <div class="panel-head">
+    <div>
+      <h2 id="sources-title">Where listings come from</h2>
+      <p class="section-intro" id="sources-intro">How the sales still on the map were found.</p>
+    </div>
+    <button type="button" class="stat-tip" aria-expanded="false" aria-controls="tip-sources" aria-describedby="tip-sources" title="What this means">?</button>
+  </div>
+  <p class="tip" id="tip-sources" role="tooltip" data-tip-copy="sources">Facebook, email leads, Nextdoor, and public listing sites, taken from each sale’s source field in the live feed. Chica does not invent these categories.</p>
+  <div id="stats-sources"></div>
+</section>
+<section class="stats-panel" aria-labelledby="newest-title">
+  <div class="panel-head">
+    <div>
+      <h2 id="newest-title">Newest sales added</h2>
+      <p class="section-intro" id="newest-intro">The most recently posted or reviewed listings that still have an added date.</p>
+    </div>
+    <button type="button" class="stat-tip" aria-expanded="false" aria-controls="tip-newest" aria-describedby="tip-newest" title="What this means">?</button>
+  </div>
+  <p class="tip" id="tip-newest" role="tooltip" data-tip-copy="newest">Sales with the latest posted or reviewed date. Many listings do not include that date, so those are left off this list rather than guessed. Each link opens the sale on the map.</p>
+  <div id="stats-newest"></div>
+</section>
+<div class="home-actions">
+  <a class="cta primary" id="cta-map" href="/Chicas-Map/preview/47/map/">Open the map</a>
+  <a class="cta secondary" id="cta-weekend" href="/Chicas-Map/preview/47/map/?when=weekend">This weekend</a>
+  <a class="cta secondary" id="cta-list" href="/Chicas-Map/preview/47/submit/">List a sale</a>
+</div>
+</section>
+</main>
+<footer class="border-t border-line bg-bg"><div class="mx-auto grid max-w-6xl gap-8 px-5 py-10 sm:grid-cols-2 lg:grid-cols-4"><div class="flex items-start gap-3 sm:col-span-2 lg:col-span-1"><img alt="" class="shrink-0 rounded-full bg-bg object-cover size-10" src="/Chicas-Map/preview/47/images/chica-logo.png"><div><p class="font-display text-lg font-bold tracking-tight">Chicas Map</p><p class="text-sm text-muted">A free Saturday map for San Antonio neighbors.</p><a href="/Chicas-Map/preview/47/sponsors/" class="mt-2 inline-flex text-sm font-semibold text-pine-mid">Help me keep the cape on</a></div></div><nav aria-label="Hunt"><p class="text-xs font-bold tracking-[0.12em] text-pine-mid uppercase">Hunt</p><ul class="mt-3 space-y-2 text-sm font-semibold text-muted"><li><a href="/Chicas-Map/preview/47/map/" class="inline-flex min-h-11 items-center hover:text-pine-mid">Map</a></li><li><a href="/Chicas-Map/preview/47/submit/" class="inline-flex min-h-11 items-center hover:text-pine-mid">Add a sale</a></li><li><a href="/Chicas-Map/preview/47/stats/" class="inline-flex min-h-11 items-center hover:text-pine-mid" aria-current="page">Map stats</a></li><li><a href="/Chicas-Map/preview/47/press/" class="inline-flex min-h-11 items-center hover:text-pine-mid">Press kit</a></li><li><a href="/Chicas-Map/preview/47/facebook/" class="inline-flex min-h-11 items-center hover:text-pine-mid">Facebook</a></li><li><a href="/Chicas-Map/preview/47/media/" class="inline-flex min-h-11 items-center hover:text-pine-mid">Reels</a></li></ul></nav><nav aria-label="Pack"><p class="text-xs font-bold tracking-[0.12em] text-pine-mid uppercase">Pack</p><ul class="mt-3 space-y-2 text-sm font-semibold text-muted"><li><a class="inline-flex min-h-11 items-center hover:text-pine-mid" href="/Chicas-Map/preview/47/backstory/">Backstory</a></li><li><a href="/Chicas-Map/preview/47/bulletin/" class="inline-flex min-h-11 items-center hover:text-pine-mid">Bulletin</a></li><li><a href="/Chicas-Map/preview/47/sponsors/" class="inline-flex min-h-11 items-center hover:text-pine-mid">Sponsors</a></li></ul></nav><nav aria-label="Fine print"><p class="text-xs font-bold tracking-[0.12em] text-pine-mid uppercase">Fine print</p><ul class="mt-3 space-y-2 text-sm font-semibold text-muted"><li><a href="/Chicas-Map/preview/47/legal/" class="inline-flex min-h-11 items-center hover:text-pine-mid">Disclaimer</a></li></ul></nav></div><div class="border-t border-line"><div class="mx-auto max-w-6xl px-5 py-6"><div class="space-y-4"><p class="max-w-xl text-xs text-muted">Veteran-built. We aim for WCAG 2.2 AA on this site. It hasn’t been independently audited and isn’t a Department of Justice ADA certification. Spot a barrier? Tell us on the Contact page. Facebook and GitHub embeds and map tiles are someone else’s house.</p></div></div></div></footer>
+</body>
+</html>
