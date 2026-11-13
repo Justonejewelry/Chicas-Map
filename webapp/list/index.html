@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>This weekend’s sales · Chicas Map</title>
-  <meta name="description" content="San Antonio garage, yard, and estate sales for this weekend. Open a pin on the map." />
+  <meta name="description" content="San Antonio garage sales and estate sales for this weekend. Open a pin on the map." />
   <link rel="icon" type="image/svg+xml" href="/Chicas-Map/favicon.svg" />
   <style>
     :root { color-scheme: dark; }
@@ -79,7 +79,8 @@
         }
         box.innerHTML = sales.map(function (s) {
           var title = esc(s.title || s.name || "Sale");
-          var kind = esc(s.type || s.kind || "sale");
+          var rawKind = String(s.type || s.kind || "garage").toLowerCase().replace(/[\\s_-]+/g, "");
+          var kind = rawKind === "estate" || rawKind === "estatesale" ? "Estate Sale" : rawKind === "permit" ? "City Permit" : "Garage Sale";
           var addr = esc(s.address || s.addr || "");
           var href = "/Chicas-Map/map/";
           var lat = Number(s.lat), lon = Number(s.lon != null ? s.lon : s.lng);
