@@ -237,7 +237,7 @@
   function searchWords(value, queryMode) {
     var text = String(value || "").toLowerCase();
     try { text = text.normalize("NFD"); } catch (e) {}
-    var words = text.replace(/[\\u0300-\\u036f]/g, "").replace(/[^a-z0-9]+/g, " ").trim().split(/\\s+/).filter(Boolean);
+    var words = text.replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, " ").trim().split(/\s+/).filter(Boolean);
     if (queryMode) {
       // Ignore conversational wording so phrases like "garage sales near me" still match.
       var filler = { near: 1, nearby: 1, around: 1, me: 1, my: 1, area: 1, in: 1, the: 1, find: 1, show: 1, looking: 1, for: 1, please: 1, at: 1, on: 1, with: 1 };
