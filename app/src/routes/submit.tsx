@@ -22,9 +22,15 @@ function SubmitPage() {
     const address = String(fd.get("address") || "").trim();
     const hours = String(fd.get("hours") || "").trim();
     const details = String(fd.get("details") || "").trim();
+    const dateFrom = String(fd.get("date_from") || "");
+    const dateTo = String(fd.get("date_to") || "");
     const type = (String(fd.get("type") || "garage") as SaleKind);
-    if (!title || !address) {
-      setError("Title and address are required.");
+    if (!title || !address || !dateFrom || !dateTo) {
+      setError("Please add a title, full address, and both sale dates.");
+      return;
+    }
+    if (dateTo < dateFrom) {
+      setError("The end date can't be earlier than the start date.");
       return;
     }
     setBusy(true);
@@ -34,9 +40,12 @@ function SubmitPage() {
         `https://nominatim.openstreetmap.org/search?format=json&limit=1&q=${q}`,
         { headers: { Accept: "application/json" } },
       );
+      if (!geo.ok) throw new Error("Address lookup failed");
       const hits = (await geo.json()) as { lat: string; lon: string }[];
-      const lat = hits[0] ? Number(hits[0].lat) : 29.4241;
-      const lon = hits[0] ? Number(hits[0].lon) : -98.4936;
+      if (!hits.length) throw new Error("Address not found");
+      const lat = Number(hits[0].lat);
+      const lon = Number(hits[0].lon);
+      if (!Number.isFinite(lat) || !Number.isFinite(lon)) throw new Error("Invalid coordinates");
       const sale: Sale = {
         id: `user-${Date.now()}`,
         title,
@@ -45,9 +54,9 @@ function SubmitPage() {
         lon,
         type,
         hours,
-        dates: "This weekend",
-        date_from: "",
-        date_to: "",
+        dates: dateFrom === dateTo ? dateFrom : `${dateFrom} to ${dateTo}`,
+        date_from: dateFrom,
+        date_to: dateTo,
         details,
         source: "Neighbor tip",
         url: "",
@@ -60,30 +69,22 @@ function SubmitPage() {
       };
       saveSubmission(sale);
 
-      // Email the tip (fire-and-forget; local pin still works)
+      // Email is a review notification; approval is still required before public listing.
       fetch(INTAKE, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
           _subject: `Chicas Map — New sale tip: ${title}`,
           _template: "table",
-          title,
-          address,
-          type,
-          hours,
-          details,
-          lat,
-          lon,
+          title, address, type, hours,
+          date_from: dateFrom, date_to: dateTo, details, lat, lon,
           source_url: location.href,
         }),
       }).catch(() => {});
 
       await navigate({ to: "/map", search: { sale: sale.id } });
     } catch {
-      setError("Could not place that address. Try a fuller street address.");
+      setError("We couldn't verify that address. Enter a complete San Antonio street address and try again.");
     } finally {
       setBusy(false);
     }
@@ -95,48 +96,51 @@ function SubmitPage() {
       <main className="mx-auto max-w-lg px-4 py-10">
         <h1 className="font-display text-3xl font-bold">List a sale — free</h1>
         <p className="mt-2 text-sm leading-relaxed text-muted">
-          Drop your garage, yard, or estate sale on the map. We email the tip so it can be reviewed and added for the pack.
+          Share your garage, yard, or estate sale with San Antonio shoppers. Add the actual dates so visitors know when to stop by.
         </p>
         <aside className="mt-4 rounded-2xl bg-paper p-4 ring-1 ring-line">
+          <p className="font-display text-base font-semibold">What happens after you submit?</p>
+          <p className="mt-1 text-sm text-muted">
+            You'll see a preview pin on this device. Chica receives your tip for review; it is not public until approved. Approved sales are added to the map and sale list.
+          </p>
+        </aside>
+        <aside className="mt-4 rounded-2xl bg-paper p-4 ring-1 ring-line">
           <p className="font-display text-base font-semibold">Want the weekend highlight?</p>
-          <p className="mt-1 text-sm text-muted">Claimed pin is $5. Listing stays free.</p>
+          <p className="mt-1 text-sm text-muted">Claimed pin is $5. A standard listing is free.</p>
           <div className="mt-3 flex flex-wrap gap-2">
-            <a href={PAY} target="_blank" rel="noreferrer" className="inline-flex h-10 items-center rounded-full bg-pine px-4 text-sm font-semibold text-cream">
-              Pay $5
-            </a>
-            <a href={CLAIM} className="inline-flex h-10 items-center rounded-full px-4 text-sm font-semibold ring-1 ring-line">
-              How it works
-            </a>
+            <a href={PAY} target="_blank" rel="noreferrer" className="inline-flex h-10 items-center rounded-full bg-pine px-4 text-sm font-semibold text-cream">Pay $5</a>
+            <a href={CLAIM} className="inline-flex h-10 items-center rounded-full px-4 text-sm font-semibold ring-1 ring-line">How it works</a>
           </div>
         </aside>
         <form onSubmit={onSubmit} className="mt-6 flex flex-col gap-4">
-          <Field label="Title" name="title" placeholder="Tools, vintage, and a riding mower" required />
-          <Field label="Address" name="address" placeholder="1234 Oak St, San Antonio" required />
+          <Field label="Sale title" name="title" placeholder="Tools, vintage, and a riding mower" required />
+          <Field label="Street address" name="address" placeholder="1234 Oak St, San Antonio, TX" required />
           <label className="flex flex-col gap-1.5 text-sm font-medium">
-            Type
+            Sale type
             <select name="type" className="h-11 rounded-xl bg-paper px-3 font-normal ring-1 ring-line">
               <option value="garage">Garage sale</option>
               <option value="yard">Yard sale</option>
               <option value="estate">Estate sale</option>
             </select>
           </label>
-          <Field label="Hours" name="hours" placeholder="Fri–Sat 8am–2pm" />
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <label className="flex flex-col gap-1.5 text-sm font-medium">
+              First day of sale
+              <input name="date_from" type="date" required className="h-11 rounded-xl bg-paper px-3 font-normal ring-1 ring-line" />
+            </label>
+            <label className="flex flex-col gap-1.5 text-sm font-medium">
+              Last day of sale
+              <input name="date_to" type="date" required className="h-11 rounded-xl bg-paper px-3 font-normal ring-1 ring-line" />
+            </label>
+          </div>
+          <Field label="Hours" name="hours" placeholder="8:00 AM–2:00 PM" />
           <label className="flex flex-col gap-1.5 text-sm font-medium">
-            Details
-            <textarea
-              name="details"
-              rows={4}
-              className="rounded-xl bg-paper px-3 py-2 font-normal ring-1 ring-line outline-none focus:ring-2 focus:ring-pine"
-              placeholder="What you're selling, cash/Venmo, parking notes"
-            />
+            Details (optional)
+            <textarea name="details" rows={4} className="rounded-xl bg-paper px-3 py-2 font-normal ring-1 ring-line outline-none focus:ring-2 focus:ring-pine" placeholder="What you're selling, payment methods, parking notes" />
           </label>
-          {error ? <p className="text-sm text-red-700">{error}</p> : null}
-          <button
-            type="submit"
-            disabled={busy}
-            className="h-12 rounded-full bg-pine text-sm font-semibold text-cream disabled:opacity-60"
-          >
-            {busy ? "Pinning…" : "Pin it on the map"}
+          {error ? <p role="alert" className="text-sm text-red-700">{error}</p> : null}
+          <button type="submit" disabled={busy} className="h-12 rounded-full bg-pine text-sm font-semibold text-cream disabled:opacity-60">
+            {busy ? "Submitting…" : "Submit sale for review"}
           </button>
         </form>
       </main>
@@ -145,26 +149,11 @@ function SubmitPage() {
   );
 }
 
-function Field({
-  label,
-  name,
-  placeholder,
-  required,
-}: {
-  label: string;
-  name: string;
-  placeholder?: string;
-  required?: boolean;
-}) {
+function Field({ label, name, placeholder, required }: { label: string; name: string; placeholder?: string; required?: boolean }) {
   return (
     <label className="flex flex-col gap-1.5 text-sm font-medium">
       {label}
-      <input
-        name={name}
-        required={required}
-        placeholder={placeholder}
-        className="h-11 rounded-xl bg-paper px-3 font-normal ring-1 ring-line outline-none focus:ring-2 focus:ring-pine"
-      />
+      <input name={name} required={required} placeholder={placeholder} className="h-11 rounded-xl bg-paper px-3 font-normal ring-1 ring-line outline-none focus:ring-2 focus:ring-pine" />
     </label>
   );
 }
