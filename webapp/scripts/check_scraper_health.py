@@ -83,7 +83,7 @@ def read_log(name: str, log_dir: Path) -> str:
 # Final discovery-stage counts, not merge-added counts or accumulated inventory.
 # Sum once per requested city. Missing markers remain null, not a false zero.
 RECORD_COUNT_PATTERNS = {
-    "garagesalefinder": ("parsed", re.compile(r"^\s*(\d+) parsed\b", re.I | re.M)),
+    "garagesalefinder": ("parsed", re.compile(r"^\s*(?:.*?→\s*)?(\d+) parsed\b", re.I | re.M)),
     "permits": ("permits_in_window", re.compile(r"garage/estate permits in window=(\d+)\b", re.I)),
     "estatesales_org": ("normalized", re.compile(r"^\s*normalized=(\d+)\b", re.I | re.M)),
     "yardsalesearch": ("normalized", re.compile(r"^\s*normalized=(\d+)\b", re.I | re.M)),
