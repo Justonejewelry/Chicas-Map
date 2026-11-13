@@ -41,7 +41,7 @@ def request_json(url: str, params: dict[str, Any] | None = None) -> dict[str, An
 
 
 def fetch_boundaries() -> tuple[list[dict[str, Any]], str]:
-    metadata = request_json(LAYER_URL)
+    metadata = request_json(LAYER_URL, {"f": "json"})
     if metadata.get("error"):
         raise RuntimeError(metadata["error"])
     edit_ms = (metadata.get("editingInfo") or {}).get("lastEditDate")
