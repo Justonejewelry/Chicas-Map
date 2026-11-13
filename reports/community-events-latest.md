@@ -1,18 +1,19 @@
 # Chica's Map -- Community Events Swarm v2.7
 
-Run: 2026-11-12T11:17:39-06:00
+Run: 2026-11-12T18:18:33-06:00
 Sources scanned: **48**
-Candidates discovered: **941**
-With parsed dates: **785**
-With street/venue address: **582**
-Promoted this run: **1**
-Kept from prior feed: **276**
+Candidates discovered: **940**
+With parsed dates: **784**
+With street/venue address: **584**
+Promoted this run: **2**
+Kept from prior feed: **277**
 Purged from prior feed: **0**
 Source errors: **6**
 Rejected by Sentinel: **347**
 
 ## Promoted (passed Events Sentinel)
-- **Holiday Night City, 2026** -- 2026-12-11 -- Holiday Night City, 2026 Texas Public Radio -- conf 93 -- https://www.tpr.org/community-calendar/event/holiday-night-city-2026-12-11-2026-11-20-25
+- **Meet Me at Central Perk: Friends Watch & Craft** -- 2026-11-14 -- 2200 W. Commerce San Antonio, TX 78207 -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D213490165
+- **Teen Time: Squash Day!** -- 2026-11-16 -- 600 Soledad San Antonio, TX 78205 -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D213496269
 
 ## Review Queue
 - **San Antonio Public Library Events** -- conf 100 -- Family Story Time -- 2026-11-12 -- 4134 Harry Wurzbach San Antonio, TX 78209 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D205386310
@@ -21,11 +22,12 @@ Rejected by Sentinel: **347**
 - **San Antonio Public Library Events** -- conf 100 -- Preschool Story Time -- 2026-11-12 -- 13330 Kyle Seale Pkwy -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206613077
 - **San Antonio Public Library Events** -- conf 100 -- Family Story Time -- 2026-11-15 -- 5110 Walzem Road San -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D209993416
 - **San Antonio Public Library Events** -- conf 100 -- Toddler Story Time -- 2026-11-12 -- 9050 Wellwood San Antonio, TX 78250 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D210623936
+- **San Antonio Public Library Events** -- conf 100 -- Meet Me at Central Perk: Friends Watch & Craft -- 2026-11-14 -- 2200 W. Commerce San Antonio, TX 78207 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D213490165
+- **San Antonio Public Library Events** -- conf 100 -- Teen Time: Squash Day! -- 2026-11-16 -- 600 Soledad San Antonio, TX 78205 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D213496269
 - **City of San Antonio Parks & Recreation** -- conf 100 -- Tennis Clinics -- 2026-08-31 -- 1503 San Pedro Ave -- https://www.sanantonio.gov/ParksAndRec/News-Events/Events/Event-Details/ArtMID/15385/ArticleID/29348/Tennis-Clinics
 - **City of San Antonio Parks & Recreation** -- conf 100 -- 2026 Fall Tennis Clinics -- 2026-10-06 -- 1503 San Pedro Ave -- https://www.sanantonio.gov/ParksAndRec/News-Events/Events/Event-Details/ArtMID/15385/ArticleID/29370/2026-Fall-Tennis-Clinics
 - **Bexar County Clerk — Records on the Run** -- conf 99 -- Bexar County Clerk's Mobile Satellite Office will be at Bexar County Precinct 3 Justice of the Peace Office -- 2026-11-17 -- 320 Interpark Blvd -- https://www.bexar.org/calendar.aspx?EID=7335
 - **Bexar County Clerk — Records on the Run** -- conf 99 -- Bexar County Clerk's Mobile Satellite Office will be at McDonald's on Walzem - The Shields Legacy LLC PCT 4 Community -- 2026-11-19 -- 5700 Walzem Rd -- https://www.bexar.org/calendar.aspx?EID=7681
-- **Bexar County Clerk — Records on the Run** -- conf 99 -- Bexar County Clerk's Mobile Satellite Office will be at SBOC-Bexar County Small Business Opportunity Center -- 2026-11-12 -- 8200 Perrin Beitel Rd -- https://www.bexar.org/calendar.aspx?EID=7808
 - **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-09-02 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1559
 - **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-03-04 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1560
 - **Fair Oaks Ranch Calendar** -- conf 99 -- City Council Meeting -- 2027-10-07 -- 7286 Dietz Elkhorn Rd Fair -- https://www.fairoaksranch.gov/calendar.aspx?EID=1561
@@ -174,7 +176,6 @@ Rejected by Sentinel: **347**
 - **Boerne Calendar** -- conf 98 -- City Council Meeting -- 2027-03-23 -- 447 N. Main St Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22189
 - **Boerne Calendar** -- conf 98 -- City Council Meeting -- 2027-04-27 -- 447 N. Main St Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22190
 - **Boerne Calendar** -- conf 98 -- City Council Meeting -- 2027-05-25 -- 447 N. Main St Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22191
-- **Boerne Calendar** -- conf 98 -- City Council Meeting -- 2027-06-22 -- 447 N. Main St Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22192
 
 ## Rejected by Sentinel
 - Toddler Story Time -- event_id=2026-11-12_toddler-story-time_84c805f97f48: duplicate id already in feed
@@ -195,7 +196,6 @@ Rejected by Sentinel: **347**
 - 2026 Fall Tennis Clinics -- event_id=2026-10-06_2026-fall-tennis-clinics_73e2fdb4384e: date 2026-10-06 is in the past
 - Bexar County Clerk's Mobile Satellite Office will be at McDonald's on Walzem - The Shields Legacy LLC PCT 4 Community -- event_id=2026-11-19_bexar-county-clerk-s-mobile_d37973340473: duplicate id already in feed
 - Bexar County Clerk's Mobile Satellite Office will be at Bexar County Precinct 3 Justice of the Peace Office -- event_id=2026-11-17_bexar-county-clerk-s-mobile_99f57b061982: duplicate id already in feed
-- Bexar County Clerk's Mobile Satellite Office will be at SBOC-Bexar County Small Business Opportunity Center -- event_id=2026-11-12_bexar-county-clerk-s-mobile_44b406198aa2: duplicate id already in feed
 - City Council Meeting -- event_id=2031-01-16_city-council-meeting_5d504b2ef027: date 2031-01-16 is more than 90 days out
 - City Council Meeting -- event_id=2030-12-19_city-council-meeting_6313f7d68c65: date 2030-12-19 is more than 90 days out
 - City Council Meeting -- event_id=2030-11-21_city-council-meeting_9ce7619cef68: date 2030-11-21 is more than 90 days out
@@ -227,6 +227,7 @@ Rejected by Sentinel: **347**
 - City Council Meeting -- event_id=2029-10-04_city-council-meeting_558f4f5ed21c: date 2029-10-04 is more than 90 days out
 - City Council Meeting -- event_id=2029-09-20_city-council-meeting_da5cdfbdb6f9: date 2029-09-20 is more than 90 days out
 - City Council Meeting -- event_id=2029-09-06_city-council-meeting_fc2c9d2a8e0e: date 2029-09-06 is more than 90 days out
+- City Council Meeting -- event_id=2029-08-16_city-council-meeting_ff0401707407: date 2029-08-16 is more than 90 days out
 
 ## Source Errors
 - Bexar County Events: HTTP 429 Too Many Requests

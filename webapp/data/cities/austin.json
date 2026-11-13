@@ -40,13 +40,13 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "in-person",
-        "estate-sale"
+        "estate-sale",
+        "in-person"
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.387549190549766,
-      "lon": -97.79940004254848,
+      "lat": 30.387854616349262,
+      "lon": -97.80290952170886,
       "geocode": "source",
       "company": "Golden Soul Estate Sales",
       "in_person": true,
@@ -120,13 +120,13 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "in-person",
-        "estate-sale"
+        "estate-sale",
+        "in-person"
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.626974954114264,
-      "lon": -97.75115113364457,
+      "lat": 30.6284931,
+      "lon": -97.7500863,
       "geocode": "source",
       "company": null,
       "in_person": true,
@@ -154,8 +154,8 @@
       "in_person": true,
       "external_id": "eso-2472821",
       "categories": [
-        "in-person",
-        "estate-sale"
+        "estate-sale",
+        "in-person"
       ]
     },
     {
@@ -179,8 +179,8 @@
       "in_person": false,
       "external_id": "eso-2472304",
       "categories": [
-        "online-auction",
-        "estate-sale"
+        "estate-sale",
+        "online-auction"
       ]
     },
     {
@@ -232,8 +232,8 @@
       "in_person": true,
       "external_id": "eso-2472679",
       "categories": [
-        "in-person",
-        "estate-sale"
+        "estate-sale",
+        "in-person"
       ]
     },
     {
@@ -260,7 +260,7 @@
       "date_from": "11/13/2026",
       "date_to": "11/14/2026",
       "end_date": "2026-11-14",
-      "title": "Huge Toy Sale!",
+      "title": "Huge Toy and Baby Sale!",
       "details": "",
       "source": "GarageSaleFinder",
       "url": "https://garagesalefinder.com/s/N9DuL/1811-indian-lodge-dr-cedar-park-tx-78613",
@@ -292,14 +292,14 @@
     },
     {
       "address": "2121 N Main St, Taylor, TX 76574",
-      "dates": "Mon Nov 9 – Mon Nov 16",
-      "date_from": "11/09/2026",
-      "date_to": "11/16/2026",
-      "end_date": "2026-11-16",
-      "title": "SPORTS MEMORABILIA, AUTOGRAPHED BASEBALLS, YANKEES COLLECTIBLES, RACING MEMORABILIA, DIE-CAST CARS & HESS TRUCK COLLECTION",
+      "dates": "Thu Nov 12 – Tue Nov 17",
+      "date_from": "11/12/2026",
+      "date_to": "11/17/2026",
+      "end_date": "2026-11-17",
+      "title": "Vintiques Ultimate General Merchandise Auction Antiques, Vintage Finds, Collectibles, Jewelry, Sports Memorabilia & More!",
       "details": "",
       "source": "GarageSaleFinder",
-      "url": "https://garagesalefinder.com/s/N92Vv/2121-n-main-st-taylor-tx-76574",
+      "url": "https://garagesalefinder.com/s/N9bgU/2121-n-main-st-taylor-tx-76574",
       "photos": 0,
       "type": "garage",
       "confidence": 0.65,
@@ -405,7 +405,7 @@
       "date_to": "2026-11-14",
       "end_date": "2026-11-14",
       "hours": null,
-      "title": "Huge Toy Sale!",
+      "title": "Huge Toy And Baby Sale!",
       "details": "",
       "source": "YardSaleSearch",
       "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196455565",
@@ -451,14 +451,14 @@
     },
     {
       "address": "Austin, TX",
-      "dates": "2026-11-11 – 2026-11-14",
-      "date_from": "2026-11-11",
+      "dates": "2026-11-12 – 2026-11-14",
+      "date_from": "2026-11-12",
       "date_to": "2026-11-14",
       "end_date": "2026-11-14",
-      "title": "(Opens WED!)Classic Comfort & Heirloom Treasures in Round Rock",
+      "title": "Kay's Estate Sales",
       "details": "Estate Sale",
       "source": "EstateSales.net",
-      "url": "https://www.estatesales.net/TX/Round Rock/78681/5154330",
+      "url": "https://www.estatesales.net/TX/Lorena/76655/5151939",
       "photos": 0,
       "type": "estate",
       "categories": [
@@ -467,11 +467,11 @@
       ],
       "confidence": 0.7,
       "status": "verified",
-      "lat": 30.33427,
-      "lon": -97.76654,
+      "lat": 30.38945,
+      "lon": -97.8012,
       "geocode": "source",
       "company": null,
-      "external_id": "yss-austintx-2026-11-13"
+      "external_id": "yss-austintx-2026-11-14"
     },
     {
       "address": "Round Rock, TX 78664",
@@ -494,8 +494,8 @@
       "in_person": false,
       "external_id": "eso-2472711",
       "categories": [
-        "online-auction",
-        "estate-sale"
+        "estate-sale",
+        "online-auction"
       ]
     },
     {
@@ -548,13 +548,13 @@
       "photos": 0,
       "type": "estate",
       "categories": [
-        "in-person",
-        "estate-sale"
+        "estate-sale",
+        "in-person"
       ],
       "confidence": 0.9,
       "status": "verified",
-      "lat": 30.332675504779015,
-      "lon": -97.76886986289742,
+      "lat": 30.3342206,
+      "lon": -97.7667154,
       "geocode": "source",
       "company": "Gone For Good",
       "in_person": true,
@@ -680,8 +680,8 @@
       "in_person": false,
       "external_id": "eso-2473080",
       "categories": [
-        "online-auction",
-        "estate-sale"
+        "estate-sale",
+        "online-auction"
       ]
     },
     {
@@ -705,8 +705,8 @@
       "in_person": false,
       "external_id": "eso-2473069",
       "categories": [
-        "online-auction",
-        "estate-sale"
+        "estate-sale",
+        "online-auction"
       ]
     },
     {
@@ -909,6 +909,388 @@
       "geocode": "source",
       "in_person": true,
       "external_id": "yss-11312fletcherhalllnaustintx-2026-11-14"
+    },
+    {
+      "address": "4905 Beverly Skyline, Austin, TX 78731",
+      "dates": "Fri Nov 13 – Sun Nov 15",
+      "date_from": "11/13/2026",
+      "date_to": "11/15/2026",
+      "end_date": "2026-11-15",
+      "title": "A WORLD OF TREASURES BEHIND THE DOUBLE DOORS!",
+      "details": "",
+      "source": "GarageSaleFinder",
+      "url": "https://garagesalefinder.com/s/N92uL/4905-beverly-skyline-austin-tx-78731",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.85,
+      "status": "verified",
+      "lat": 30.35,
+      "lon": -97.77,
+      "geocode": "zip-centroid"
+    },
+    {
+      "address": "800 Malden Cv, Pflugerville, TX 78660",
+      "dates": "Sat Nov 14 – Sat Nov 14",
+      "date_from": "11/14/2026",
+      "date_to": "11/14/2026",
+      "end_date": "2026-11-14",
+      "title": "Multifamily Garage Sale",
+      "details": "",
+      "source": "GarageSaleFinder",
+      "url": "https://garagesalefinder.com/s/N9bpT/800-malden-cv-pflugerville-tx-78660",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.85,
+      "status": "verified",
+      "lat": 30.44,
+      "lon": -97.62,
+      "geocode": "zip-centroid"
+    },
+    {
+      "address": "2908 Taku Rd, Cedar Park, TX 78613",
+      "dates": "Sat Nov 14 – Sat Nov 14",
+      "date_from": "11/14/2026",
+      "date_to": "11/14/2026",
+      "end_date": "2026-11-14",
+      "title": "Breakaway & Whippoorwill Neighborhood Garage Sales",
+      "details": "",
+      "source": "GarageSaleFinder",
+      "url": "https://garagesalefinder.com/s/N9bxN/2908-taku-rd-cedar-park-tx-78613",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.85,
+      "status": "verified",
+      "lat": 30.51,
+      "lon": -97.82,
+      "geocode": "zip-centroid"
+    },
+    {
+      "address": "253 Inlet Ln, Leander, TX 78641",
+      "dates": "Sat Nov 14 – Sat Nov 14",
+      "date_from": "11/14/2026",
+      "date_to": "11/14/2026",
+      "end_date": "2026-11-14",
+      "title": "VINTAGE ITEMS AND CLOTHES GARAGE SALE",
+      "details": "",
+      "source": "GarageSaleFinder",
+      "url": "https://garagesalefinder.com/s/N9bJz/253-inlet-ln-leander-tx-78641",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.85,
+      "status": "verified",
+      "lat": 30.56,
+      "lon": -97.86,
+      "geocode": "zip-centroid"
+    },
+    {
+      "address": "105 Red Oak Ct, Georgetown, TX 78628",
+      "dates": "Sat Nov 14 – Sat Nov 14",
+      "date_from": "11/14/2026",
+      "date_to": "11/14/2026",
+      "end_date": "2026-11-14",
+      "title": "multifamily yard sale",
+      "details": "",
+      "source": "GarageSaleFinder",
+      "url": "https://garagesalefinder.com/s/N9b1t/105-red-oak-ct-georgetown-tx-78628",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.65,
+      "status": "verified",
+      "lat": 30.2672,
+      "lon": -97.7431,
+      "geocode": "city-center"
+    },
+    {
+      "address": "509 Fair Oaks Dr, Georgetown, TX 78628",
+      "dates": "Fri Nov 13 – Sun Nov 15",
+      "date_from": "11/13/2026",
+      "date_to": "11/15/2026",
+      "end_date": "2026-11-15",
+      "title": "Walker Estate/Moving Sale",
+      "details": "",
+      "source": "GarageSaleFinder",
+      "url": "https://garagesalefinder.com/s/N9TMC/509-fair-oaks-dr-georgetown-tx-78628",
+      "photos": 0,
+      "type": "estate",
+      "confidence": 0.65,
+      "status": "verified",
+      "lat": 30.2672,
+      "lon": -97.7431,
+      "geocode": "city-center"
+    },
+    {
+      "address": "2401 Ayers Dr, Seguin, TX 78155",
+      "dates": "Sat Nov 14 – Sat Nov 14",
+      "date_from": "11/14/2026",
+      "date_to": "11/14/2026",
+      "end_date": "2026-11-14",
+      "title": "Pool Table, Honda CR-V floor mats, Jeep windows, toys",
+      "details": "",
+      "source": "GarageSaleFinder",
+      "url": "https://garagesalefinder.com/s/N9b5u/2401-ayers-dr-seguin-tx-78155",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.65,
+      "status": "verified",
+      "lat": 30.2672,
+      "lon": -97.7431,
+      "geocode": "city-center"
+    },
+    {
+      "address": "4905 Beverly Skyline, Austin, TX",
+      "dates": "2026-11-13 – 2026-11-15",
+      "date_from": "2026-11-13",
+      "date_to": "2026-11-15",
+      "end_date": "2026-11-15",
+      "hours": null,
+      "title": "A World Of Treasures Behind The Double Doors!",
+      "details": "",
+      "source": "YardSaleSearch",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196459411",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.88,
+      "status": "verified",
+      "lat": 30.3342206,
+      "lon": -97.7667154,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "yss-4905beverlyskylineaustintx-2026-11-13"
+    },
+    {
+      "address": "509 Fair Oaks Dr, Georgetown, TX",
+      "dates": "2026-11-13 – 2026-11-15",
+      "date_from": "2026-11-13",
+      "date_to": "2026-11-15",
+      "end_date": "2026-11-15",
+      "hours": null,
+      "title": "Walker Estate/Moving Sale",
+      "details": "",
+      "source": "YardSaleSearch",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196451939",
+      "photos": 0,
+      "type": "estate",
+      "categories": [
+        "estate-sale"
+      ],
+      "confidence": 0.88,
+      "status": "verified",
+      "lat": 30.6284931,
+      "lon": -97.7500863,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "yss-509fairoaksdrgeorgetowntx-2026-11-13"
+    },
+    {
+      "address": "253 Inlet Ln, Leander, TX",
+      "dates": "2026-11-14 – 2026-11-14",
+      "date_from": "2026-11-14",
+      "date_to": "2026-11-14",
+      "end_date": "2026-11-14",
+      "hours": null,
+      "title": "Vintage Items And Clothes Garage Sale",
+      "details": "",
+      "source": "YardSaleSearch",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196461861",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.88,
+      "status": "verified",
+      "lat": 30.576596,
+      "lon": -97.848432,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "yss-253inletlnleandertx-2026-11-14"
+    },
+    {
+      "address": "2908 Taku Rd, Cedar Park, TX",
+      "dates": "2026-11-14 – 2026-11-14",
+      "date_from": "2026-11-14",
+      "date_to": "2026-11-14",
+      "end_date": "2026-11-14",
+      "hours": null,
+      "title": "Breakaway & Whippoorwill Neighborhood Garage Sales",
+      "details": "",
+      "source": "YardSaleSearch",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196461461",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.88,
+      "status": "verified",
+      "lat": 30.526897,
+      "lon": -97.782199,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "yss-2908takurdcedarparktx-2026-11-14"
+    },
+    {
+      "address": "800 Malden Cv, Pflugerville, TX",
+      "dates": "2026-11-14 – 2026-11-14",
+      "date_from": "2026-11-14",
+      "date_to": "2026-11-14",
+      "end_date": "2026-11-14",
+      "hours": null,
+      "title": "Multifamily Garage Sale",
+      "details": "",
+      "source": "YardSaleSearch",
+      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196461681",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.88,
+      "status": "verified",
+      "lat": 30.452281,
+      "lon": -97.644179,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "yss-800maldencvpflugervilletx-2026-11-14"
+    },
+    {
+      "address": "10407 near Macmora Rd, Austin, TX",
+      "dates": "2026-11-13 – 2026-11-19",
+      "date_from": "2026-11-13",
+      "posted_at": "2026-11-11T22:39:33-0600",
+      "date_certainty": "relative_to_post",
+      "date_to": "2026-11-19",
+      "end_date": "2026-11-19",
+      "hours": null,
+      "title": "Huge Living Estate Sale",
+      "details": "QR Code Link to This Post This is the Big One. A sale for everyone. I am emptying my house to move to NM and 40 plus years of collecting has got to go. Prices so low, I might buy my own stuff back!! We are still setting it up for Friday, but I will post pictures of sale items by Thursday night. Half price on Sunday. Free stuff too.",
+      "date_evidence": "2026-11-13 – 2026-11-19",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/austin-huge-living-estate-sale/pajShDgPhXdjdnEbUkNJEF",
+      "photos": 0,
+      "type": "estate",
+      "categories": [
+        "estate-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 30.3764,
+      "lon": -97.7078,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-ivingestatesalepajshdgphxdjdnebuknjef"
+    },
+    {
+      "address": "1318 E Applegate Dr, Austin, TX",
+      "dates": "2026-11-14 – 2026-11-15",
+      "date_from": "2026-11-14",
+      "posted_at": "2026-11-11T23:03:49-0600",
+      "date_certainty": "relative_to_post",
+      "date_to": "2026-11-15",
+      "end_date": "2026-11-15",
+      "hours": null,
+      "title": "Moving sale almost everything has to go!",
+      "details": "QR Code Link to This Post This Saturday and Sunday we are Moving sale. We will be selling modern nice furniture, Clothes, electronics, kitchenware, outdoor furniture, and yardwork, tools and much more miscellaneous household items",
+      "date_evidence": "2026-11-14 – 2026-11-15",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/austin-moving-sale-almost-everything/4W86nPMkaPsKrmV254ADpJ",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale",
+        "moving-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 30.36307,
+      "lon": -97.671091,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-almosteverything4w86npmkapskrmv254adpj"
+    },
+    {
+      "address": "2908 Taku Road near Yukon Circle, Austin, TX",
+      "dates": "2026-11-14 – 2026-11-14",
+      "date_from": "2026-11-14",
+      "posted_at": "2026-11-12T07:31:22-0600",
+      "date_certainty": "relative_to_post",
+      "date_to": "2026-11-14",
+      "end_date": "2026-11-14",
+      "hours": null,
+      "title": "Breakaway & Whippoorwill Neighborhood Garage Sales",
+      "details": "QR Code Link to This Post Multi-Home Garage Sale This Coming Saturday, the 14th, from 8:00 a.m. til 2:00 p.m. Here's one address to help get you in the right area: 2908 Taku Road, Cedar Park Children's clothes and toys, household items including fine china, and much, much more. You won't want to miss out on all the special finds. If you have any questions, give us a call at show contact info . See",
+      "date_evidence": "2026-11-14 – 2026-11-14",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/spicewood-breakaway-whippoorwill/6VyTMbBnQef3kByqDAJcSG",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 30.377074,
+      "lon": -98.072548,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-awaywhippoorwill6vytmbbnqef3kbyqdajcsg"
+    },
+    {
+      "address": "Forest bluff trail, Austin, TX",
+      "dates": "2026-11-13 – 2026-11-14",
+      "date_from": "2026-11-13",
+      "posted_at": "2026-11-12T12:30:19-0600",
+      "date_certainty": "relative_to_post",
+      "date_to": "2026-11-14",
+      "end_date": "2026-11-14",
+      "hours": null,
+      "title": "Forest Ridge Neighboorhood Garage Sale",
+      "details": "QR Code Link to This Post 1026 Forest Bluff Trail. Will add pics tomorrow. Stop by here before you head to the Forest Ridge community sale down the street. We are near the corner of Hwy 79/Red Bud. Will be open early on Saturday. Should be ready 630 or 7 Lots of stuff here: clothes (boys 3-12, women L/12, men), housewares, vinyl records/laser discs, conspiracy books, DVDs, lots of interesting vint",
+      "date_evidence": "2026-11-13 – 2026-11-14",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/round-rock-forest-ridge-neighboorhood/kQ9Mdt3ziRDMpyj8sLvqyf",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 30.5257,
+      "lon": -97.6157,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-dgeneighboorhoodkq9mdt3zirdmpyj8slvqyf"
+    },
+    {
+      "address": "Wagon Way near Indian Chief, Austin, TX",
+      "dates": "2026-11-14 – 2026-11-14",
+      "date_from": "2026-11-14",
+      "posted_at": "2026-11-11T22:16:26-0600",
+      "date_certainty": "explicit",
+      "date_to": "2026-11-14",
+      "end_date": "2026-11-14",
+      "hours": null,
+      "title": "GARAGE SALE - THIS SATURDAY - 11/14",
+      "details": "QR Code Link to This Post Every room, closet, cabinet, drawer, nook, and cranny got the once-over, and now we're passing the good stuff along! We've got a little bit of everything, so come dig around and see what treasures you can find. Here's a peek at what's up for grabs: - Men's, women's, and girls' clothing - Coats and shoes - Toys and stuffies - Board games and puzzles - Household and kitchen",
+      "date_evidence": "2026-11-14 – 2026-11-14",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/leander-garage-sale-this-saturday/bQWJf494LKV9hgo3o1DBMX",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.82,
+      "status": "verified",
+      "lat": 30.518169,
+      "lon": -97.877502,
+      "geocode": "source",
+      "in_person": true,
+      "external_id": "cl-alethissaturdaybqwjf494lkv9hgo3o1dbmx"
     }
   ],
   "hot_zones": [
@@ -927,9 +1309,9 @@
     "gsalr.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 40,
+  "total_locations": 57,
   "status": "live",
   "date": "2026-11-12",
-  "last_refresh": "2026-11-12T11:16:33-06:00",
+  "last_refresh": "2026-11-12T18:17:30-06:00",
   "permits": []
 }

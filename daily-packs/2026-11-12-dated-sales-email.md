@@ -18,7 +18,7 @@ The map keeps both today's sales and upcoming dated sales.
 - LUXURY, LUXURY, LUXURY!  Estate Sale — 211 S Flores St, San Antonio, TX 78204 [2026-11-12 → 2026-11-15]
 - Marvelous 4 Family pre holiday Garage Sale — 811 Northstar Dr, San Antonio, TX 78216 [2026-11-12 → 2026-11-13]
 - Marvelous 4 Family Pre Holiday Garage Sale — 811 Northstar Dr, San Antonio, TX [2026-11-12 → 2026-11-13]
-- Deals for cash Thurs Fri Nov 12-13 — Austin Hwy, San Antonio, TX [2026-11-12 → 2026-11-13]
+- Deals for cash Friday the 13th of November — Austin Hwy, San Antonio, TX [2026-11-10 → 2026-11-13]
 - OPEN Thursday & Friday — 1254 Austin Hwy, San Antonio, TX [2026-11-12 → 2026-11-13]
 - Superb Magnificent 4 Family pre holiday Garage Sale — Blanco Road, San Antonio, TX [2026-11-12 → 2026-11-13]
 - YARD SALE — 1303 Roosevelt #2 near Roosevelt and Felisa, San Antonio, TX [2026-11-12 → 2026-11-13]
@@ -44,6 +44,13 @@ The map keeps both today's sales and upcoming dated sales.
 - Huge 3 Family Yard Sale Biggest Sale Ever! — 217 Long Cove Dr, Cibolo, TX [2026-11-13 → 2026-11-15]
 - Garage Sale — 8741 Buckskin Dr, Boerne, TX 78006 [2026-11-13 → 2026-11-14]
 - Huge Garage Sale - 8919 Shade Tree - Friday & Saturday, Nov 13 & 14 — 8919 SHADE TREE near TEZEL, San Antonio, TX [2026-11-13 → 2026-11-14]
+- November Semi-Annual Yard Sale-CASH PLEASE — 4802 E Beverly Mae Dr, San Antonio, TX 78229 [2026-11-13 → 2026-11-14]
+- GARAGE SALE LEON VALLEY! — 7603 Linkmeadow St, San Antonio, TX 78240 [2026-11-13 → 2026-11-14]
+- GARAGE SALE TOMORROW AND SATURDAY — 14306 Stoddard Dr, San Antonio, TX 78232 [2026-11-13 → 2026-11-14]
+- Garage Sale Tomorrow And Saturday — 14306 Stoddard Dr, San Antonio, TX [2026-11-13 → 2026-11-14]
+- November Semi-Annual Yard Sale-Cash Please — 4802 E Beverly Mae Dr, San Antonio, TX [2026-11-13 → 2026-11-14]
+- Leon Valley Garage Sale — 7603 Linkmeadow St, San Antonio, TX [2026-11-13 → 2026-11-14]
+- Household goods garage sale! — 16527 drum oak, San Antonio, TX [2026-11-13 → 2026-11-13]
 
 ### Starts 2026-11-14
 - GARAGE SALE — 5858 Laurel Valley, San Antonio, TX 78242 [2026-11-14 → 2026-11-15] | 10am-7pm
@@ -80,6 +87,11 @@ The map keeps both today's sales and upcoming dated sales.
 - 🚨 MULTI-SELLER GARAGE SALE AT STORAGE FACILITY! 🚨 — 12241 Hwy 181, San Antonio, TX [2026-11-14 → 2026-11-14]
 - Pool Table, Honda CR-V floor mats, Jeep windows, toys — 2401 Ayers Dr, Seguin, TX 78155 [2026-11-14 → 2026-11-14]
 - Garage Sale - 281 and Bitters — Indian Paint Brush Rd. near Susancrest, San Antonio, TX [2026-11-14 → 2026-11-14]
+- Community Garage Sale — 5926 Cinnabar Cor, San Antonio, TX 78222 [2026-11-14 → 2026-11-14]
+- Neighbor garage sale — 7710 Linkview Dr, San Antonio, TX 78240 [2026-11-14 → 2026-11-14]
+- Household/Christmas/ Furniture/Pokemon — 13217 Sumara Dr, San Antonio, TX 78254 [2026-11-14 → 2026-11-15]
+- Yard Sale — 1037 E Live Oak Rd, Schertz, TX 78154 [2026-11-14 → 2026-11-14]
+- Community Garage Sale — 5926 Cinnabar Cor, San Antonio, TX [2026-11-14 → 2026-11-14]
 
 ### Starts 2026-11-15
 - ONE-DAY ESTATE SALE! — 104 Ridge Trail, San Antonio, TX 78232 [2026-11-15 → 2026-11-15] | 10am-5pm

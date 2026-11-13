@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-12T11:17:39-06:00",
+  "updated": "2026-11-12T18:18:33-06:00",
   "city": "san-antonio",
   "version": 2.7,
   "horizonDays": 90,
@@ -4989,6 +4989,42 @@
       "reliability": 88,
       "discoveredAt": "2026-11-12T11:17:28-06:00",
       "confidence": 93
+    },
+    {
+      "id": "2026-11-14_meet-me-at-central-perk-frie_8231d8870ec7",
+      "title": "Meet Me at Central Perk: Friends Watch & Craft",
+      "date": "2026-11-14",
+      "endDate": "",
+      "time": "3:30 PM-5:30 PM",
+      "address": "2200 W. Commerce San Antonio, TX 78207",
+      "lat": null,
+      "lng": null,
+      "category": "other",
+      "description": "",
+      "url": "https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D213490165",
+      "source": "San Antonio Public Library Events",
+      "sourceId": "sapl-trumba-ics",
+      "reliability": 96,
+      "discoveredAt": "2026-11-12T18:17:45-06:00",
+      "confidence": 100
+    },
+    {
+      "id": "2026-11-16_teen-time-squash-day_e5a70bd40fde",
+      "title": "Teen Time: Squash Day!",
+      "date": "2026-11-16",
+      "endDate": "",
+      "time": "4:35 PM-5:35 PM",
+      "address": "600 Soledad San Antonio, TX 78205",
+      "lat": null,
+      "lng": null,
+      "category": "other",
+      "description": "",
+      "url": "https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D213496269",
+      "source": "San Antonio Public Library Events",
+      "sourceId": "sapl-trumba-ics",
+      "reliability": 96,
+      "discoveredAt": "2026-11-12T18:17:45-06:00",
+      "confidence": 100
     }
   ]
 }
