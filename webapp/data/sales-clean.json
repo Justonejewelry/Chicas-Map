@@ -5,8 +5,8 @@
   "timezone": "America/Chicago",
   "status": "live",
   "policy": "Explicit sale dates only; uncertain dates excluded. Sales starting more than 60 days out are held back. 60-mile SA metro. Raw overlays preserved.",
-  "total_locations": 72,
-  "today_count": 31,
+  "total_locations": 93,
+  "today_count": 48,
   "public": [
     {
       "address": "Kerrville TX near Kerville Tx, San Antonio, TX",
@@ -162,6 +162,133 @@
       ]
     },
     {
+      "address": "13223 SHORECLIFF ST, SAN ANTONIO, TX, 78248",
+      "dates": "2026-11-12 – 2026-11-14",
+      "date_from": "2026-11-12",
+      "date_to": "2026-11-14",
+      "end_date": "2026-11-14",
+      "date_start": "2026-11-12",
+      "date_end": "2026-11-14",
+      "date_bucket": "live",
+      "hours": "Thu–Fri 9 AM–3 PM; Sat 9 AM–2 PM",
+      "title": "Treasures on Salado Creek",
+      "details": "Moving sale in the Churchill Forest neighborhood (owners are moving). Vintage treasures, antiques, and unique finds. Thu–Fri 9 AM–3 PM; Sat 9 AM–2 PM. Near Blanco and Wurzbach, next to Hardberger Park on the Blanco side.",
+      "source": "EstateSales.net",
+      "url": "https://www.estatesales.net/TX/San-Antonio/78248/5148315",
+      "photos": 0,
+      "type": "moving",
+      "confidence": 0.86,
+      "status": "verified",
+      "lat": 29.566046457271,
+      "lon": -98.525774034893,
+      "geocode": "census",
+      "external_id": "esn-5148315",
+      "categories": [
+        "garage-sale",
+        "estatesales.net"
+      ],
+      "zip": "78248",
+      "in_person": true,
+      "date_note": "Dates and hours as published on EstateSales.net (Thu Nov 12 – Sat Nov 14, 2026; Thu–Fri 9 AM–3 PM; Sat 9 AM–2 PM).",
+      "date_verified": "operator-2026-11-13",
+      "source_address": "13223 Shorecliff Street, San Antonio, TX 78248",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://www.estatesales.net/TX/San-Antonio/78248/5148315"
+      ],
+      "sources": [
+        "EstateSales.net"
+      ],
+      "aliases": [
+        "esn-5148315"
+      ]
+    },
+    {
+      "address": "15247 FALL HAVEN DR, SAN ANTONIO, TX, 78247",
+      "dates": "2026-11-12 – 2026-11-15",
+      "date_from": "2026-11-12",
+      "date_to": "2026-11-15",
+      "end_date": "2026-11-15",
+      "date_start": "2026-11-12",
+      "date_end": "2026-11-15",
+      "date_bucket": "live",
+      "hours": "10 AM–4 PM daily",
+      "title": "LUXURY, LUXURY, LUXURY! Estate Sale",
+      "details": "Estate sale hosted by Bexar County Estate Sales. Designer clothing, luxury jewelry and purses, MCM furniture, Christmas decor, and name-brand accessories. Hours 10 AM–4 PM daily, Thursday Nov 12 through Sunday Nov 15.",
+      "source": "EstateSales.net",
+      "url": "https://www.estatesales.net/TX/San-Antonio/78247/5141958",
+      "photos": 0,
+      "type": "estate",
+      "confidence": 0.86,
+      "status": "verified",
+      "lat": 29.580856696461,
+      "lon": -98.436573493751,
+      "geocode": "census",
+      "external_id": "esn-5141958",
+      "categories": [
+        "estate-sale",
+        "estatesales.net"
+      ],
+      "zip": "78247",
+      "in_person": true,
+      "date_note": "Dates and hours as published on EstateSales.net (Thu Nov 12 – Sun Nov 15, 2026, 10 AM–4 PM daily).",
+      "date_verified": "operator-2026-11-13",
+      "source_address": "15247 Fall Haven, San Antonio, TX 78247",
+      "seller": "Bexar County Estate Sales",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://www.estatesales.net/TX/San-Antonio/78247/5141958"
+      ],
+      "sources": [
+        "EstateSales.net"
+      ],
+      "aliases": [
+        "esn-5141958"
+      ]
+    },
+    {
+      "address": "18302 EMERALD FOREST DR, SAN ANTONIO, TX, 78259",
+      "dates": "2026-11-12 – 2026-11-14",
+      "date_from": "2026-11-12",
+      "date_to": "2026-11-14",
+      "end_date": "2026-11-14",
+      "date_start": "2026-11-12",
+      "date_end": "2026-11-14",
+      "date_bucket": "live",
+      "hours": "9 AM–4 PM daily",
+      "title": "25% Off Stunning Emerald Forest Home",
+      "details": "Estate sale with 25% off. Silver, furniture, kitchenware, patio set and plants, artwork, plus a washer and dryer. Hours 9 AM–4 PM daily, Thursday Nov 12 through Saturday Nov 14.",
+      "source": "EstateSales.net",
+      "url": "https://www.estatesales.net/TX/San-Antonio/78259/5085906",
+      "photos": 0,
+      "type": "estate",
+      "confidence": 0.86,
+      "status": "verified",
+      "lat": 29.612410280837,
+      "lon": -98.431679337222,
+      "geocode": "census",
+      "external_id": "esn-5085906",
+      "categories": [
+        "estate-sale",
+        "estatesales.net"
+      ],
+      "zip": "78259",
+      "in_person": true,
+      "date_note": "Dates and hours as published on EstateSales.net (Thu Nov 12 – Sat Nov 14, 2026, 9 AM–4 PM daily).",
+      "date_verified": "operator-2026-11-13",
+      "source_address": "18302 Emerald Forest, San Antonio, TX 78259",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://www.estatesales.net/TX/San-Antonio/78259/5085906"
+      ],
+      "sources": [
+        "EstateSales.net"
+      ],
+      "aliases": [
+        "esn-5085906"
+      ]
+    },
+    {
       "address": "205 Pollydale Dr, San Antonio, TX",
       "dates": "2026-11-12 – 2026-11-13",
       "date_from": "2026-11-12",
@@ -236,6 +363,49 @@
       ],
       "aliases": [
         "ae-200031017025850"
+      ]
+    },
+    {
+      "address": "21922 DEER CANYON DR, GARDEN RIDGE, TX, 78266",
+      "dates": "2026-11-12 – 2026-11-15",
+      "date_from": "2026-11-12",
+      "date_to": "2026-11-15",
+      "end_date": "2026-11-15",
+      "date_start": "2026-11-12",
+      "date_end": "2026-11-15",
+      "date_bucket": "live",
+      "hours": "Thu–Sat 10 AM–3 PM; Sun 1:15 PM–4 PM",
+      "title": "Legacy in Garden Ridge",
+      "details": "Estate sale hosted by Legacy Estate Sales LLC. Dental collectibles, fabric and quilting, stained glass, Waterford crystal, and coastal artwork. Thu–Sat 10 AM–3 PM; Sun 1:15 PM–4 PM.",
+      "source": "EstateSales.net",
+      "url": "https://www.estatesales.net/TX/Garden-Ridge/78266/5140281",
+      "photos": 0,
+      "type": "estate",
+      "confidence": 0.86,
+      "status": "verified",
+      "lat": 29.644651243296,
+      "lon": -98.309275096479,
+      "geocode": "census",
+      "external_id": "esn-5140281",
+      "categories": [
+        "estate-sale",
+        "estatesales.net"
+      ],
+      "zip": "78266",
+      "in_person": true,
+      "date_note": "Dates and hours as published on EstateSales.net (Thu Nov 12 – Sun Nov 15, 2026).",
+      "date_verified": "operator-2026-11-13",
+      "source_address": "21922 Deer Canyon, Garden Ridge, TX 78266",
+      "seller": "Legacy Estate Sales LLC",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://www.estatesales.net/TX/Garden-Ridge/78266/5140281"
+      ],
+      "sources": [
+        "EstateSales.net"
+      ],
+      "aliases": [
+        "esn-5140281"
       ]
     },
     {
@@ -314,6 +484,92 @@
       ],
       "aliases": [
         "exn-ipcsae00230481"
+      ]
+    },
+    {
+      "address": "6015 WINDBLUFF DR, SAN ANTONIO, TX, 78239",
+      "dates": "2026-11-12 – 2026-11-15",
+      "date_from": "2026-11-12",
+      "date_to": "2026-11-15",
+      "end_date": "2026-11-15",
+      "date_start": "2026-11-12",
+      "date_end": "2026-11-15",
+      "date_bucket": "live",
+      "hours": "9 AM–4 PM daily",
+      "title": "From Travels Around the World, Quilter, Records & So Much More",
+      "details": "Estate sale hosted by From Trash To Treasure. Jewelry, records, vintage electronics and cameras, quilting linens, Christmas and Coke collectibles. Hours 9 AM–4 PM daily, Thursday Nov 12 through Sunday Nov 15.",
+      "source": "EstateSales.net",
+      "url": "https://www.estatesales.net/TX/San-Antonio/78239/5080626",
+      "photos": 0,
+      "type": "estate",
+      "confidence": 0.86,
+      "status": "verified",
+      "lat": 29.522092866602,
+      "lon": -98.370973079598,
+      "geocode": "census",
+      "external_id": "esn-5080626",
+      "categories": [
+        "estate-sale",
+        "estatesales.net"
+      ],
+      "zip": "78239",
+      "in_person": true,
+      "date_note": "Dates and hours as published on EstateSales.net (Thu Nov 12 – Sun Nov 15, 2026, 9 AM–4 PM daily).",
+      "date_verified": "operator-2026-11-13",
+      "source_address": "6015 Windbluff, San Antonio, TX 78239",
+      "seller": "From Trash To Treasure",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://www.estatesales.net/TX/San-Antonio/78239/5080626"
+      ],
+      "sources": [
+        "EstateSales.net"
+      ],
+      "aliases": [
+        "esn-5080626"
+      ]
+    },
+    {
+      "address": "607 BLUFF CLIFF DR, SAN ANTONIO, TX, 78216",
+      "dates": "2026-11-12 – 2026-11-14",
+      "date_from": "2026-11-12",
+      "date_to": "2026-11-14",
+      "end_date": "2026-11-14",
+      "date_start": "2026-11-12",
+      "date_end": "2026-11-14",
+      "date_bucket": "live",
+      "hours": "Thu–Fri 10 AM–4 PM; Sat 10 AM–3 PM",
+      "title": "Fabulous Bluffview Sale",
+      "details": "Estate sale hosted by June Hayes, Heritage Estates. Jewelry and watches (including Rolex and Omega), sterling, Waterford, art, and Spurs memorabilia. Thu–Fri 10 AM–4 PM; Sat 10 AM–3 PM.",
+      "source": "EstateSales.net",
+      "url": "https://www.estatesales.net/TX/San-Antonio/78216/5137293",
+      "photos": 0,
+      "type": "estate",
+      "confidence": 0.86,
+      "status": "verified",
+      "lat": 29.575110450804,
+      "lon": -98.498559758898,
+      "geocode": "census",
+      "external_id": "esn-5137293",
+      "categories": [
+        "estate-sale",
+        "estatesales.net"
+      ],
+      "zip": "78216",
+      "in_person": true,
+      "date_note": "Dates and hours as published on EstateSales.net (Thu Nov 12 – Sat Nov 14, 2026).",
+      "date_verified": "operator-2026-11-13",
+      "source_address": "607 Bluff Cliff, San Antonio, TX 78216",
+      "seller": "June Hayes, Heritage Estates",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://www.estatesales.net/TX/San-Antonio/78216/5137293"
+      ],
+      "sources": [
+        "EstateSales.net"
+      ],
+      "aliases": [
+        "esn-5137293"
       ]
     },
     {
@@ -482,6 +738,49 @@
       ]
     },
     {
+      "address": "1027 MOREY PEAK DR, SAN ANTONIO, TX, 78213",
+      "dates": "2026-11-13",
+      "date_from": "2026-11-13",
+      "date_to": "2026-11-13",
+      "end_date": "2026-11-13",
+      "date_start": "2026-11-13",
+      "date_end": "2026-11-13",
+      "date_bucket": "live",
+      "hours": "Starts 1 PM",
+      "title": "Garage Sale",
+      "details": "Garage sale Friday, November 13, starting at 1 PM (end time not stated). Description says $3, $2, $1 prices; purses and shoes are a slight exception; everything must go.",
+      "source": "Nextdoor",
+      "url": "https://nextdoor.com/local_events/TgYmBCycktrS/",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.86,
+      "status": "verified",
+      "lat": 29.536128529062,
+      "lon": -98.508766658414,
+      "geocode": "census",
+      "external_id": "nd-TgYmBCycktrS",
+      "categories": [
+        "garage-sale",
+        "nextdoor"
+      ],
+      "zip": "78213",
+      "in_person": true,
+      "date_note": "Friday, November 13, 2026, starts 1 PM as listed on the Nextdoor event (no end time stated).",
+      "date_verified": "operator-2026-11-13",
+      "source_address": "1027 Morey Peak Drive, San Antonio, TX",
+      "poster": "Kimberly Soriano",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://nextdoor.com/local_events/TgYmBCycktrS/"
+      ],
+      "sources": [
+        "Nextdoor"
+      ],
+      "aliases": [
+        "nd-TgYmBCycktrS"
+      ]
+    },
+    {
       "address": "127 Placid Heights, Seguin, TX",
       "dates": "2026-11-13 – 2026-11-14",
       "date_from": "2026-11-13",
@@ -516,6 +815,48 @@
       ],
       "aliases": [
         "sgx-93554d78"
+      ]
+    },
+    {
+      "address": "13826 SHAVANO GLENN, SAN ANTONIO, TX, 78230",
+      "dates": "2026-11-13 – 2026-11-15",
+      "date_from": "2026-11-13",
+      "date_to": "2026-11-15",
+      "end_date": "2026-11-15",
+      "date_start": "2026-11-13",
+      "date_end": "2026-11-15",
+      "date_bucket": "live",
+      "hours": "8 AM–5 PM daily",
+      "title": "Three-Family Garage Sale off DeZavala",
+      "details": "Three families selling household items and some estate pieces. Hours 8 AM–5 PM daily, Friday Nov 13 through Sunday Nov 15. ZIP was not stated on the Craigslist post; Census geocoded the street to 78230.",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/san-antonio-garage-sale-off-dezavala/awwZuYgksDW7ccN6HsNcu6",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.86,
+      "status": "verified",
+      "lat": 29.571474863241,
+      "lon": -98.57089965639,
+      "geocode": "census",
+      "external_id": "cl-awwZuYgksDW7ccN6HsNcu6",
+      "categories": [
+        "garage-sale",
+        "craigslist"
+      ],
+      "zip": "78230",
+      "in_person": true,
+      "date_note": "Dates and hours as published on Craigslist (Fri Nov 13 – Sun Nov 15, 2026, 8 AM–5 PM daily).",
+      "date_verified": "operator-2026-11-13",
+      "source_address": "13826 Shavano Glenn, San Antonio, TX",
+      "date_certainty": "explicit",
+      "source_urls": [
+        "https://www.craigslist.org/view/d/san-antonio-garage-sale-off-dezavala/awwZuYgksDW7ccN6HsNcu6"
+      ],
+      "sources": [
+        "Craigslist"
+      ],
+      "aliases": [
+        "cl-awwZuYgksDW7ccN6HsNcu6"
       ]
     },
     {
@@ -628,6 +969,49 @@
         "29.59000,-98.47000|Garage sale"
       ],
       "external_id": "sale-7043336efb55c49d815d"
+    },
+    {
+      "address": "206 OAKLANE DR, UNIVERSAL CITY, TX, 78148",
+      "dates": "2026-11-13 – 2026-11-15",
+      "date_from": "2026-11-13",
+      "date_to": "2026-11-15",
+      "end_date": "2026-11-15",
+      "date_start": "2026-11-13",
+      "date_end": "2026-11-15",
+      "date_bucket": "live",
+      "hours": "Fri 10 AM–3 PM; Sat 10 AM–4 PM; Sun 10 AM–3 PM",
+      "title": "Universal City Estate Sale",
+      "details": "Estate sale hosted by Twice Loved Estate Sales LLC. Comic books and figures, record albums, vintage clothing, china, and outdoor fountains. Fri 10 AM–3 PM; Sat 10 AM–4 PM; Sun 10 AM–3 PM.",
+      "source": "EstateSales.net",
+      "url": "https://www.estatesales.net/TX/Universal-City/78148/5151750",
+      "photos": 0,
+      "type": "estate",
+      "confidence": 0.86,
+      "status": "verified",
+      "lat": 29.550309119953,
+      "lon": -98.291351594658,
+      "geocode": "census",
+      "external_id": "esn-5151750",
+      "categories": [
+        "estate-sale",
+        "estatesales.net"
+      ],
+      "zip": "78148",
+      "in_person": true,
+      "date_note": "Dates and hours as published on EstateSales.net (Fri Nov 13 – Sun Nov 15, 2026).",
+      "date_verified": "operator-2026-11-13",
+      "source_address": "206 Oaklane Dr, Universal City, TX 78148",
+      "seller": "Twice Loved Estate Sales LLC",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://www.estatesales.net/TX/Universal-City/78148/5151750"
+      ],
+      "sources": [
+        "EstateSales.net"
+      ],
+      "aliases": [
+        "esn-5151750"
+      ]
     },
     {
       "address": "217 Long Cove Dr, Cibolo, TX",
@@ -747,6 +1131,49 @@
       ]
     },
     {
+      "address": "305 MOUNTAIN SHADOWS ST, SAN ANTONIO, TX, 78233",
+      "dates": "2026-11-13 – 2026-11-14",
+      "date_from": "2026-11-13",
+      "date_to": "2026-11-14",
+      "end_date": "2026-11-14",
+      "date_start": "2026-11-13",
+      "date_end": "2026-11-14",
+      "date_bucket": "live",
+      "hours": "9 AM–4 PM daily",
+      "title": "Live Oak Estate Sale",
+      "details": "Estate sale hosted by Moved By Grace Estate Sales LLC. Crafting and sewing supplies, gun and reloading accessories, a twin Tempurpedic adjustable bed, and media. Hours 9 AM–4 PM daily, Friday Nov 13 through Saturday Nov 14.",
+      "source": "EstateSales.net",
+      "url": "https://www.estatesales.net/TX/San-Antonio/78233/5151264",
+      "photos": 0,
+      "type": "estate",
+      "confidence": 0.86,
+      "status": "verified",
+      "lat": 29.550879791599,
+      "lon": -98.333224497056,
+      "geocode": "census",
+      "external_id": "esn-5151264",
+      "categories": [
+        "estate-sale",
+        "estatesales.net"
+      ],
+      "zip": "78233",
+      "in_person": true,
+      "date_note": "Dates and hours as published on EstateSales.net (Fri Nov 13 – Sat Nov 14, 2026, 9 AM–4 PM daily).",
+      "date_verified": "operator-2026-11-13",
+      "source_address": "305 Mountain Shadows, San Antonio, TX 78233",
+      "seller": "Moved By Grace Estate Sales LLC",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://www.estatesales.net/TX/San-Antonio/78233/5151264"
+      ],
+      "sources": [
+        "EstateSales.net"
+      ],
+      "aliases": [
+        "esn-5151264"
+      ]
+    },
+    {
       "address": "315 Oak Knoll Dr, San Antonio, TX",
       "dates": "2026-11-13 – 2026-11-15",
       "date_from": "2026-11-13",
@@ -787,6 +1214,48 @@
       ]
     },
     {
+      "address": "319 HYACINTH LN, SAN ANTONIO, TX, 78260",
+      "dates": "2026-11-13 – 2026-11-15",
+      "date_from": "2026-11-13",
+      "date_to": "2026-11-15",
+      "end_date": "2026-11-15",
+      "date_start": "2026-11-13",
+      "date_end": "2026-11-15",
+      "date_bucket": "live",
+      "hours": "Fri–Sat 10 AM–5 PM; Sun 10 AM–6 PM",
+      "title": "Estate Sale – Hyacinth Lane, Woodland Hills North",
+      "details": "Privately listed estate sale in Woodland Hills North. Department 56 Dickens Village, Thomas Kinkade canvases, like-new LG washer and dryer, and a Kimball console piano. Fri–Sat 10 AM–5 PM; Sun 10 AM–6 PM.",
+      "source": "EstateSales.net",
+      "url": "https://www.estatesales.net/TX/San-Antonio/78260/5156361",
+      "photos": 0,
+      "type": "estate",
+      "confidence": 0.86,
+      "status": "verified",
+      "lat": 29.709922564639,
+      "lon": -98.499593142921,
+      "geocode": "census",
+      "external_id": "esn-5156361",
+      "categories": [
+        "estate-sale",
+        "estatesales.net"
+      ],
+      "zip": "78260",
+      "in_person": true,
+      "date_note": "Dates and hours as published on EstateSales.net (Fri Nov 13 – Sun Nov 15, 2026).",
+      "date_verified": "operator-2026-11-13",
+      "source_address": "319 Hyacinth Lane, San Antonio, TX 78260",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://www.estatesales.net/TX/San-Antonio/78260/5156361"
+      ],
+      "sources": [
+        "EstateSales.net"
+      ],
+      "aliases": [
+        "esn-5156361"
+      ]
+    },
+    {
       "address": "3406 Butterleigh near Shire Oak, San Antonio, TX",
       "dates": "2026-11-13",
       "date_from": "2026-11-13",
@@ -823,6 +1292,177 @@
       ],
       "aliases": [
         "cl-onfridaynov139hhjnnsng9cgmyp7k6ax2q"
+      ]
+    },
+    {
+      "address": "4011 OAKHAVEN ST, SAN ANTONIO, TX, 78217",
+      "dates": "2026-11-13 – 2026-11-14",
+      "date_from": "2026-11-13",
+      "date_to": "2026-11-14",
+      "end_date": "2026-11-14",
+      "date_start": "2026-11-13",
+      "date_end": "2026-11-14",
+      "date_bucket": "live",
+      "hours": "Fri 9 AM–Sat 4 PM",
+      "title": "Garage Sale",
+      "details": "Garage sale Friday Nov 13 starting at 9 AM through Saturday Nov 14 at 4 PM. Women's clothes XL, household items, box spring, and mattress. Event location field showed 4010-4020 Oakhaven Street; the host commented that the address is 4011 Oakhaven St.",
+      "source": "Nextdoor",
+      "url": "https://nextdoor.com/local_events/8Ckp6dh3Zcpt/",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.86,
+      "status": "verified",
+      "lat": 29.525545915083,
+      "lon": -98.416933188262,
+      "geocode": "census",
+      "external_id": "nd-8Ckp6dh3Zcpt",
+      "categories": [
+        "garage-sale",
+        "nextdoor"
+      ],
+      "zip": "78217",
+      "in_person": true,
+      "date_note": "Dates and hours as listed on the Nextdoor event (Fri Nov 13–Sat Nov 14, 2026, Fri 9 AM–Sat 4 PM).",
+      "date_verified": "operator-2026-11-13",
+      "source_address": "4011 Oakhaven St, San Antonio, TX",
+      "poster": "Janice Lopez",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://nextdoor.com/local_events/8Ckp6dh3Zcpt/"
+      ],
+      "sources": [
+        "Nextdoor"
+      ],
+      "aliases": [
+        "nd-8Ckp6dh3Zcpt"
+      ]
+    },
+    {
+      "address": "4258 BIRCH TREE, SAN ANTONIO, TX, 78247",
+      "dates": "2026-11-13 – 2026-11-15",
+      "date_from": "2026-11-13",
+      "date_to": "2026-11-15",
+      "end_date": "2026-11-15",
+      "date_start": "2026-11-13",
+      "date_end": "2026-11-15",
+      "date_bucket": "live",
+      "hours": "9 AM–4 PM daily",
+      "title": "European Treasures Sale",
+      "details": "Privately listed estate sale. German antiques and European collectibles, traditional dining furniture, vintage clocks, golf and tennis items. Hours 9 AM–4 PM daily, Friday Nov 13 through Sunday Nov 15.",
+      "source": "EstateSales.net",
+      "url": "https://www.estatesales.net/TX/San-Antonio/78247/5152785",
+      "photos": 0,
+      "type": "estate",
+      "confidence": 0.86,
+      "status": "verified",
+      "lat": 29.589258976779,
+      "lon": -98.408638613326,
+      "geocode": "census",
+      "external_id": "esn-5152785",
+      "categories": [
+        "estate-sale",
+        "estatesales.net"
+      ],
+      "zip": "78247",
+      "in_person": true,
+      "date_note": "Dates and hours as published on EstateSales.net (Fri Nov 13 – Sun Nov 15, 2026, 9 AM–4 PM daily).",
+      "date_verified": "operator-2026-11-13",
+      "source_address": "4258 Birch Tree, San Antonio, TX 78247",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://www.estatesales.net/TX/San-Antonio/78247/5152785"
+      ],
+      "sources": [
+        "EstateSales.net"
+      ],
+      "aliases": [
+        "esn-5152785"
+      ]
+    },
+    {
+      "address": "433 PEABODY AVE, SAN ANTONIO, TX, 78211",
+      "dates": "2026-11-13 – 2026-11-15",
+      "date_from": "2026-11-13",
+      "date_to": "2026-11-15",
+      "end_date": "2026-11-15",
+      "date_start": "2026-11-13",
+      "date_end": "2026-11-15",
+      "date_bucket": "live",
+      "hours": "Fri–Sat 10 AM–4 PM; Sun 10 AM–3 PM",
+      "title": "Peabody Estate Sale",
+      "details": "Estate sale hosted by Casablanca Estate Sale Company. Furniture, Christmas decor, kitchenware, garden items, books, a refrigerator, and jewelry. Fri–Sat 10 AM–4 PM; Sun 10 AM–3 PM.",
+      "source": "EstateSales.net",
+      "url": "https://www.estatesales.net/TX/San-Antonio/78211/5155089",
+      "photos": 0,
+      "type": "estate",
+      "confidence": 0.86,
+      "status": "verified",
+      "lat": 29.364860128333,
+      "lon": -98.552736373704,
+      "geocode": "census",
+      "external_id": "esn-5155089",
+      "categories": [
+        "estate-sale",
+        "estatesales.net"
+      ],
+      "zip": "78211",
+      "in_person": true,
+      "date_note": "Dates and hours as published on EstateSales.net (Fri Nov 13 – Sun Nov 15, 2026).",
+      "date_verified": "operator-2026-11-13",
+      "source_address": "433 Peabody Ave, San Antonio, TX 78211",
+      "seller": "Casablanca Estate Sale Company",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://www.estatesales.net/TX/San-Antonio/78211/5155089"
+      ],
+      "sources": [
+        "EstateSales.net"
+      ],
+      "aliases": [
+        "esn-5155089"
+      ]
+    },
+    {
+      "address": "4621 HOLLYRIDGE DR, SAN ANTONIO, TX, 78228",
+      "dates": "2026-11-13 – 2026-11-15",
+      "date_from": "2026-11-13",
+      "date_to": "2026-11-15",
+      "end_date": "2026-11-15",
+      "date_start": "2026-11-13",
+      "date_end": "2026-11-15",
+      "date_bucket": "live",
+      "hours": "9 AM–4 PM daily",
+      "title": "Vintage, Mid-Century, Japanese, Brass & Furniture",
+      "details": "Moving sale hosted by About Face Estate Sales Service LLC. Mid-century, Japanese, and brass furniture. Hours 9 AM–4 PM daily, Friday Nov 13 through Sunday Nov 15.",
+      "source": "EstateSales.net",
+      "url": "https://www.estatesales.net/TX/San-Antonio/78228/5150550",
+      "photos": 0,
+      "type": "moving",
+      "confidence": 0.86,
+      "status": "verified",
+      "lat": 29.483692303178,
+      "lon": -98.574691846943,
+      "geocode": "census",
+      "external_id": "esn-5150550",
+      "categories": [
+        "garage-sale",
+        "estatesales.net"
+      ],
+      "zip": "78228",
+      "in_person": true,
+      "date_note": "Dates and hours as published on EstateSales.net (Fri Nov 13 – Sun Nov 15, 2026, 9 AM–4 PM daily).",
+      "date_verified": "operator-2026-11-13",
+      "source_address": "4621 Hollyridge, San Antonio, TX 78228",
+      "seller": "About Face Estate Sales Service LLC",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://www.estatesales.net/TX/San-Antonio/78228/5150550"
+      ],
+      "sources": [
+        "EstateSales.net"
+      ],
+      "aliases": [
+        "esn-5150550"
       ]
     },
     {
@@ -983,6 +1623,50 @@
       ]
     },
     {
+      "address": "5903 FOREST CREST ST, SAN ANTONIO, TX, 78240",
+      "dates": "2026-11-13 – 2026-11-14",
+      "date_from": "2026-11-13",
+      "date_to": "2026-11-14",
+      "end_date": "2026-11-14",
+      "date_start": "2026-11-13",
+      "date_end": "2026-11-14",
+      "date_bucket": "live",
+      "hours": "Starts 8:30 AM",
+      "title": "Garage Sale on Forest Crest (Leon Valley)",
+      "details": "Garage sale Friday, November 13 through Saturday, November 14, 2026 in Leon Valley (the poster notes the citywide sale is Saturday). Men's medium/large shirts, pants waist 34 length 30, ladies' size 6 and medium tops, Christmas decorations, and housewares. Starts 8:30 AM; end time was not listed. Census placed the address in San Antonio ZIP 78240 (Leon Valley area).",
+      "source": "Craigslist",
+      "url": "https://www.craigslist.org/view/d/san-antonio-garage-sale-this-weekend/rk2o1vhmKZTD5i26TpMMdK",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.86,
+      "status": "verified",
+      "lat": 29.496493522574,
+      "lon": -98.602536603685,
+      "geocode": "census",
+      "external_id": "cl-salethisweekendrk2o1vhmkztd5i26tpmmdk",
+      "categories": [
+        "garage-sale",
+        "craigslist"
+      ],
+      "zip": "78240",
+      "in_person": true,
+      "date_note": "Corrected from the Craigslist post: the seller is having a sale Friday and Saturday (Nov 13–14), starting 8:30 AM. The previous map pin had been dated Nov 14–20 with no hours.",
+      "date_verified": "operator-2026-11-13",
+      "source_address": "5903 Forest Crest St, Leon Valley, TX",
+      "date_evidence": "2026-11-13 – 2026-11-14",
+      "posted_at": "2026-11-12T21:09:30-0600",
+      "date_certainty": "explicit",
+      "source_urls": [
+        "https://www.craigslist.org/view/d/san-antonio-garage-sale-this-weekend/rk2o1vhmKZTD5i26TpMMdK"
+      ],
+      "sources": [
+        "Craigslist"
+      ],
+      "aliases": [
+        "cl-salethisweekendrk2o1vhmkztd5i26tpmmdk"
+      ]
+    },
+    {
       "address": "623 Blakeley Dr, San Antonio, TX",
       "dates": "2026-11-13 – 2026-11-14",
       "date_from": "2026-11-13",
@@ -1057,6 +1741,49 @@
       ],
       "aliases": [
         "wcn-385589"
+      ]
+    },
+    {
+      "address": "7227 HIDDEN HILL N, SAN ANTONIO, TX, 78244",
+      "dates": "2026-11-13 – 2026-11-15",
+      "date_from": "2026-11-13",
+      "date_to": "2026-11-15",
+      "end_date": "2026-11-15",
+      "date_start": "2026-11-13",
+      "date_end": "2026-11-15",
+      "date_bucket": "live",
+      "hours": "10 AM–5 PM",
+      "title": "Brandi Brown moving sale",
+      "details": "Moving sale — everything must go, no reasonable offers refused. Drill press, clothes, shoes, barn door, and more. Hours 10 AM–5 PM, Friday Nov 13 through Sunday Nov 15.",
+      "source": "Facebook",
+      "url": "https://www.facebook.com/groups/388018294324151/posts/1021414830984491/",
+      "photos": 0,
+      "type": "moving",
+      "confidence": 0.86,
+      "status": "verified",
+      "lat": 29.48205198716,
+      "lon": -98.338996639213,
+      "geocode": "census",
+      "external_id": "fb-1021414830984491",
+      "categories": [
+        "garage-sale",
+        "facebook"
+      ],
+      "zip": "78244",
+      "in_person": true,
+      "date_note": "Dates and hours as published on the Facebook group post (Fri–Sun Nov 13–15, 2026, 10am-5pm).",
+      "date_verified": "operator-2026-11-13",
+      "source_address": "7227 Hidden Hls N, San Antonio, TX 78244",
+      "poster": "Brandi Brown",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://www.facebook.com/groups/388018294324151/posts/1021414830984491/"
+      ],
+      "sources": [
+        "Facebook"
+      ],
+      "aliases": [
+        "fb-1021414830984491"
       ]
     },
     {
@@ -1142,36 +1869,50 @@
       ]
     },
     {
-      "address": "8741 Buckskin Dr, Boerne, TX 78006",
+      "address": "8741 BUCKSKIN DR, BOERNE, TX, 78006",
       "dates": "2026-11-13 – 2026-11-14",
       "date_from": "2026-11-13",
       "date_to": "2026-11-14",
       "end_date": "2026-11-14",
-      "title": "Garage Sale",
-      "details": "",
-      "source": "GarageSaleFinder",
-      "url": "https://garagesalefinder.com/s/N9bvK/8741-buckskin-dr-boerne-tx-78006",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.85,
-      "status": "verified",
-      "lat": 29.79,
-      "lon": -98.73,
-      "geocode": "zip-centroid",
       "date_start": "2026-11-13",
       "date_end": "2026-11-14",
       "date_bucket": "live",
+      "hours": "Fri 8 PM–Sat 4:30 PM",
+      "title": "Garage Sale on Buckskin Drive",
+      "details": "Garage sale Friday Nov 13 through Saturday Nov 14, rain or shine. Nextdoor lists the address as 8740-8750 Buckskin Drive and hours as Friday 8 PM through Saturday 4:30 PM. An existing GarageSaleFinder pin at 8741 Buckskin Dr (same dates) used a ZIP centroid; this overlay keeps 8741 as the merge address and uses a Census geocode of 8740.",
+      "source": "Nextdoor",
+      "url": "https://nextdoor.com/local_events/3gCR8XQ82X88/",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.86,
+      "status": "verified",
+      "lat": 29.696401173627,
+      "lon": -98.656948477555,
+      "geocode": "census",
+      "external_id": "nd-3gCR8XQ82X88",
+      "categories": [
+        "garage-sale",
+        "nextdoor"
+      ],
+      "zip": "78006",
+      "in_person": true,
+      "date_note": "Dates and hours as listed on the Nextdoor event (Fri Nov 13–Sat Nov 14, 2026, Fri 8 PM–Sat 4:30 PM). Rain or shine.",
+      "date_verified": "operator-2026-11-13",
+      "source_address": "8740-8750 Buckskin Drive, Boerne, TX",
+      "poster": "Jana Patrick",
       "date_certainty": "published",
       "source_urls": [
-        "https://garagesalefinder.com/s/N9bvK/8741-buckskin-dr-boerne-tx-78006"
+        "https://garagesalefinder.com/s/N9bvK/8741-buckskin-dr-boerne-tx-78006",
+        "https://nextdoor.com/local_events/3gCR8XQ82X88/"
       ],
       "sources": [
-        "GarageSaleFinder"
+        "GarageSaleFinder",
+        "Nextdoor"
       ],
       "aliases": [
-        "29.79000,-98.73000|Garage Sale"
-      ],
-      "external_id": "sale-126dd7ff68ff0127005f"
+        "29.79000,-98.73000|Garage Sale",
+        "nd-3gCR8XQ82X88"
+      ]
     },
     {
       "address": "8919 SHADE TREE near TEZEL, San Antonio, TX",
@@ -1326,6 +2067,49 @@
       ],
       "aliases": [
         "exn-ipcsae00230060"
+      ]
+    },
+    {
+      "address": "11315 SPRING RAIN DR, SAN ANTONIO, TX, 78249",
+      "dates": "2026-11-14 – 2026-11-15",
+      "date_from": "2026-11-14",
+      "date_to": "2026-11-15",
+      "end_date": "2026-11-15",
+      "date_start": "2026-11-14",
+      "date_end": "2026-11-15",
+      "date_bucket": "upcoming",
+      "hours": null,
+      "title": "Garage Sale (Oxbow)",
+      "details": "Garage sale this weekend at 11315 and 11318 Spring Rain in the Oxbow neighborhood. Times were not listed. Calendar dates were not stated in the post (written as 'this weekend'); treated as Saturday Nov 14 through Sunday Nov 15, 2026. Pin is Census-geocoded at 11315 Spring Rain Dr.",
+      "source": "Nextdoor",
+      "url": "https://nextdoor.com/p/D4HSPfSfc9rc",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.86,
+      "status": "verified",
+      "lat": 29.547379325416,
+      "lon": -98.628873554587,
+      "geocode": "census",
+      "external_id": "nd-D4HSPfSfc9rc",
+      "categories": [
+        "garage-sale",
+        "nextdoor"
+      ],
+      "zip": "78249",
+      "in_person": true,
+      "date_note": "Post said 'this weekend' with no times or exact calendar dates (checked 2026-11-13). Dates recorded as Sat Nov 14 – Sun Nov 15, 2026; hours not listed.",
+      "date_verified": "operator-2026-11-13",
+      "source_address": "11315 and 11318 Spring Rain, San Antonio, TX",
+      "poster": "Krista NeSmith",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://nextdoor.com/p/D4HSPfSfc9rc"
+      ],
+      "sources": [
+        "Nextdoor"
+      ],
+      "aliases": [
+        "nd-D4HSPfSfc9rc"
       ]
     },
     {
@@ -1500,7 +2284,7 @@
       "date_start": "2026-11-14",
       "date_end": "2026-11-14",
       "date_bucket": "upcoming",
-      "hours": "8am–2pm",
+      "hours": "8 AM–3 PM",
       "title": "Community Garage Sale (Crystal Knoll)",
       "details": "QR Code Link to This Post Huge garage sale with everything!! Toys Tools Clothes Baby items Kids stuff TVs Video games Pokémon Electronics Books Shoes Tools YARD tools Power tools Vintage items Antiques Sports cards Memorabilia Furniture Christmas decor Home decor Cooking items Strollers Luggage Brand new items Gifts And lots more! 18023 Crystal Knoll SA, TX 78258 8-3pm Saturday November 14",
       "source": "Facebook Events",
@@ -1520,8 +2304,8 @@
       ],
       "zip": "78258",
       "in_person": true,
-      "date_note": "Saturday, November 14, 2026, 8am–2pm (America/Chicago), as stated on the Facebook Event ('THIS SATURDAY AT 8 AM'; description: community sale 8–2, many stay open till 3).",
-      "date_verified": "facebook-collected-2026-11-11",
+      "date_note": "Saturday, November 14, 2026, 8 AM–3 PM (America/Chicago). Facebook Event listed 8am–2pm with many homes open until 3; Nextdoor event page (QZ-St4FkKSbr, checked 2026-11-13) lists 8 AM–3 PM.",
+      "date_verified": "nextdoor-2026-11-13",
       "poster": "Joe Garza",
       "date_certainty": "published",
       "source_urls": [
@@ -1936,6 +2720,48 @@
       ]
     },
     {
+      "address": "339 FANTASIA ST, SAN ANTONIO, TX, 78216",
+      "dates": "2026-11-14",
+      "date_from": "2026-11-14",
+      "date_to": "2026-11-14",
+      "end_date": "2026-11-14",
+      "date_start": "2026-11-14",
+      "date_end": "2026-11-14",
+      "date_bucket": "upcoming",
+      "hours": "9 AM–2 PM",
+      "title": "Harmony Hills Community Garage Sale",
+      "details": "Garage sale at the Harmony Hills Cabana Club, organized by the Greater Harmony Hills Neighborhood Association. Saturday, November 14, 9 AM–2 PM. Residents can buy and sell various items.",
+      "source": "Nextdoor",
+      "url": "https://nextdoor.com/local_events/X6T-pt_xH_BX/",
+      "photos": 0,
+      "type": "community",
+      "confidence": 0.86,
+      "status": "verified",
+      "lat": 29.542408934221,
+      "lon": -98.498300987651,
+      "geocode": "census",
+      "external_id": "nd-X6T-pt_xH_BX",
+      "categories": [
+        "community-sale",
+        "nextdoor"
+      ],
+      "zip": "78216",
+      "in_person": true,
+      "date_note": "Saturday, November 14, 2026, 9 AM–2 PM as listed on the Nextdoor event.",
+      "date_verified": "operator-2026-11-13",
+      "source_address": "339 Fantasia Street, San Antonio, TX",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://nextdoor.com/local_events/X6T-pt_xH_BX/"
+      ],
+      "sources": [
+        "Nextdoor"
+      ],
+      "aliases": [
+        "nd-X6T-pt_xH_BX"
+      ]
+    },
+    {
       "address": "501 STALLION SPRINGS DR, FISCHER, TX, 78623",
       "dates": "2026-11-14",
       "date_from": "2026-11-14",
@@ -2055,45 +2881,6 @@
       ]
     },
     {
-      "address": "5903 Forest Crest St, San Antonio, TX",
-      "dates": "2026-11-14 – 2026-11-20",
-      "date_from": "2026-11-14",
-      "posted_at": "2026-11-12T21:09:30-0600",
-      "date_certainty": "explicit",
-      "date_to": "2026-11-20",
-      "end_date": "2026-11-20",
-      "hours": null,
-      "title": "Garage Sale This weekend",
-      "details": "QR Code Link to This Post This weekend Leon Valley is have there city wide sale Saturday. I am having my Friday and Saturday. Men's Medium/Large shirts pants waist 34 and length 30. Christmas decorations household ware, ladies size 6 and medium tops.",
-      "date_evidence": "2026-11-14 – 2026-11-20",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/san-antonio-garage-sale-this-weekend/rk2o1vhmKZTD5i26TpMMdK",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 29.496497,
-      "lon": -98.602444,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-salethisweekendrk2o1vhmkztd5i26tpmmdk",
-      "date_start": "2026-11-14",
-      "date_end": "2026-11-20",
-      "date_bucket": "upcoming",
-      "source_urls": [
-        "https://www.craigslist.org/view/d/san-antonio-garage-sale-this-weekend/rk2o1vhmKZTD5i26TpMMdK"
-      ],
-      "sources": [
-        "Craigslist"
-      ],
-      "aliases": [
-        "cl-salethisweekendrk2o1vhmkztd5i26tpmmdk"
-      ]
-    },
-    {
       "address": "5926 Cinnabar Cor, San Antonio, TX",
       "dates": "2026-11-14",
       "date_from": "2026-11-14",
@@ -2134,6 +2921,49 @@
       ]
     },
     {
+      "address": "6231 OZONA MILL, SAN ANTONIO, TX, 78253",
+      "dates": "2026-11-14 – 2026-11-15",
+      "date_from": "2026-11-14",
+      "date_to": "2026-11-15",
+      "end_date": "2026-11-15",
+      "date_start": "2026-11-14",
+      "date_end": "2026-11-15",
+      "date_bucket": "upcoming",
+      "hours": "Starts 7 AM",
+      "title": "Riverstone at Alamo Ranch moving sale",
+      "details": "Moving sale Saturday Nov 14 through Sunday Nov 15, starting at 7 AM until everything is gone. Designer and Arabian perfumes, lamps and lighting, TVs and electronics, furniture, clothes, shoes, jewelry, bicycles, kitchenware, cookware, small appliances, vacuums, and tools. Riverstone at Alamo Ranch.",
+      "source": "Nextdoor",
+      "url": "https://nextdoor.com/for_sale_and_free/5b9dda58-f5a6-4cd0-a67a-4a2bcdfe9179/",
+      "photos": 0,
+      "type": "moving",
+      "confidence": 0.86,
+      "status": "verified",
+      "lat": 29.496236474224,
+      "lon": -98.737495734136,
+      "geocode": "census",
+      "external_id": "nd-5b9dda58-f5a6-4cd0-a67a-4a2bcdfe9179",
+      "categories": [
+        "garage-sale",
+        "nextdoor"
+      ],
+      "zip": "78253",
+      "in_person": true,
+      "date_note": "Dates as posted on Nextdoor (Sat Nov 14–Sun Nov 15, 2026). Starts 7:00 AM until everything is gone; end time not listed.",
+      "date_verified": "operator-2026-11-13",
+      "source_address": "6231 Ozona Mill, San Antonio, TX (Riverstone at Alamo Ranch)",
+      "poster": "Krystal Schrock",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://nextdoor.com/for_sale_and_free/5b9dda58-f5a6-4cd0-a67a-4a2bcdfe9179/"
+      ],
+      "sources": [
+        "Nextdoor"
+      ],
+      "aliases": [
+        "nd-5b9dda58-f5a6-4cd0-a67a-4a2bcdfe9179"
+      ]
+    },
+    {
       "address": "7710 Linkview Dr, San Antonio, TX 78240",
       "dates": "2026-11-14",
       "date_from": "2026-11-14",
@@ -2164,6 +2994,49 @@
         "29.53000,-98.59000|Neighbor garage sale"
       ],
       "external_id": "sale-1d475d093997a98c8cd5"
+    },
+    {
+      "address": "8011 CORAL TRL, SAN ANTONIO, TX, 78244",
+      "dates": "2026-11-14",
+      "date_from": "2026-11-14",
+      "date_to": "2026-11-14",
+      "end_date": "2026-11-14",
+      "date_start": "2026-11-14",
+      "date_end": "2026-11-14",
+      "date_bucket": "upcoming",
+      "hours": "7 AM–3 PM",
+      "title": "Yard Sale",
+      "details": "Yard sale Saturday, November 14, 7 AM–3 PM at 8011 Coral Trail, San Antonio.",
+      "source": "Nextdoor",
+      "url": "https://nextdoor.com/local_events/3jRLG8B98m8c/",
+      "photos": 0,
+      "type": "garage",
+      "confidence": 0.86,
+      "status": "verified",
+      "lat": 29.496135795438,
+      "lon": -98.334002779538,
+      "geocode": "census",
+      "external_id": "nd-3jRLG8B98m8c",
+      "categories": [
+        "garage-sale",
+        "nextdoor"
+      ],
+      "zip": "78244",
+      "in_person": true,
+      "date_note": "Saturday, November 14, 2026, 7 AM–3 PM as listed on the Nextdoor event.",
+      "date_verified": "operator-2026-11-13",
+      "source_address": "8011 Coral Trail, San Antonio, TX",
+      "poster": "Elsa Macdougall",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://nextdoor.com/local_events/3jRLG8B98m8c/"
+      ],
+      "sources": [
+        "Nextdoor"
+      ],
+      "aliases": [
+        "nd-3jRLG8B98m8c"
+      ]
     },
     {
       "address": "825 SHADY COVE LN, SPRING BRANCH, TX, 78070",
@@ -2210,6 +3083,63 @@
       ]
     },
     {
+      "address": "9803 ROSTOCK LN, HELOTES, TX, 78023",
+      "dates": "2026-11-14",
+      "date_from": "2026-11-14",
+      "date_to": "2026-11-14",
+      "end_date": "2026-11-14",
+      "date_start": "2026-11-14",
+      "date_end": "2026-11-14",
+      "date_bucket": "upcoming",
+      "hours": "Starts 6 AM",
+      "title": "Braunridge Community Garage Sale",
+      "details": "Braunridge Subdivision community garage sale Saturday, November 14, at 9803 Rostock Lane, Helotes. Nextdoor event lists a 6 AM start (no end time). Other community listings advertised 8 AM–2 PM.",
+      "source": "Nextdoor",
+      "url": "https://nextdoor.com/local_events/NDhqkf7g3Z-R/",
+      "photos": 0,
+      "type": "community",
+      "confidence": 0.86,
+      "status": "verified",
+      "lat": 29.542615011182,
+      "lon": -98.684321164223,
+      "geocode": "census",
+      "external_id": "nd-NDhqkf7g3Z-R",
+      "categories": [
+        "community-sale",
+        "nextdoor"
+      ],
+      "zip": "78023",
+      "in_person": true,
+      "date_note": "Saturday, November 14, 2026, starts 6 AM as listed on the Nextdoor event (no end time stated).",
+      "date_verified": "operator-2026-11-13",
+      "source_address": "9803 Rostock Lane, Helotes, TX",
+      "poster": "Nathan Cook",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://garagesalefinder.com/s/N92jv/alsfeld-rnch-helotes-tx-78023",
+        "https://nextdoor.com/local_events/NDhqkf7g3Z-R/",
+        "https://www.craigslist.org/view/d/san-antonio-braunridge-community-garage/rFYHaf65UKPTkmkZZFba8z",
+        "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196460723",
+        "https://yardsales.net/s/7HDdF"
+      ],
+      "sources": [
+        "Craigslist",
+        "GarageSaleFinder",
+        "Nextdoor",
+        "YardSaleSearch",
+        "yardsales.net"
+      ],
+      "posted_at": "2026-11-11T12:57:43-0600",
+      "date_evidence": "2026-11-14 – 2026-11-14",
+      "aliases": [
+        "29.42410,-98.49360|Braunridge Community Garage Sale",
+        "cl-communitygaragerfyhaf65ukptkmkzzfba8z",
+        "nd-NDhqkf7g3Z-R",
+        "ysn-7HDdF",
+        "yss-alsfeldrnchhelotestx-2026-11-14"
+      ]
+    },
+    {
       "address": "9814 TROPHY OAKS DR, GARDEN RIDGE, TX, 78266",
       "source_address": "9814 Trophy Oaks Dr, Garden Ridge, TX 78266",
       "dates": "2026-11-14",
@@ -2252,54 +3182,6 @@
       "aliases": [
         "29.42410,-98.49360|Trophy Oaks Community Fall Sale",
         "yss-196447879"
-      ]
-    },
-    {
-      "address": "Braunridge community, Helotes, TX",
-      "dates": "2026-11-14",
-      "date_from": "2026-11-14",
-      "date_to": "2026-11-14",
-      "date_start": "2026-11-14",
-      "date_end": "2026-11-14",
-      "end_date": "2026-11-14",
-      "hours": "8:00am-2:00pm",
-      "title": "Braunridge Community Garage Sale",
-      "details": "QR Code Link to This Post Braunridge Community Garage Sale is on Saturday, November 14, 2026, from 8:00 AM to 2:00 PM. Come shop around!",
-      "source": "yardsales.net",
-      "url": "https://yardsales.net/s/7HDdF",
-      "photos": 0,
-      "type": "community",
-      "categories": [
-        "community-sale"
-      ],
-      "confidence": 0.68,
-      "status": "verified",
-      "lat": 29.5635688,
-      "lon": -98.6884208,
-      "geocode": "nominatim-city",
-      "in_person": true,
-      "external_id": "ysn-7HDdF",
-      "date_bucket": "upcoming",
-      "date_certainty": "published",
-      "source_urls": [
-        "https://garagesalefinder.com/s/N92jv/alsfeld-rnch-helotes-tx-78023",
-        "https://www.craigslist.org/view/d/san-antonio-braunridge-community-garage/rFYHaf65UKPTkmkZZFba8z",
-        "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196460723",
-        "https://yardsales.net/s/7HDdF"
-      ],
-      "sources": [
-        "Craigslist",
-        "GarageSaleFinder",
-        "YardSaleSearch",
-        "yardsales.net"
-      ],
-      "posted_at": "2026-11-11T12:57:43-0600",
-      "date_evidence": "2026-11-14 – 2026-11-14",
-      "aliases": [
-        "29.42410,-98.49360|Braunridge Community Garage Sale",
-        "cl-communitygaragerfyhaf65ukptkmkzzfba8z",
-        "ysn-7HDdF",
-        "yss-alsfeldrnchhelotestx-2026-11-14"
       ]
     },
     {
@@ -2464,31 +3346,36 @@
       ]
     },
     {
-      "address": "Southern Hills community, San Antonio, TX",
+      "address": "SOUTHERN BLUFF, SAN ANTONIO, TX, 78222",
       "dates": "2026-11-14",
       "date_from": "2026-11-14",
       "date_to": "2026-11-14",
+      "end_date": "2026-11-14",
       "date_start": "2026-11-14",
       "date_end": "2026-11-14",
-      "end_date": "2026-11-14",
-      "hours": "8:00am-3:00pm",
+      "date_bucket": "upcoming",
+      "hours": "8 AM–3 PM",
       "title": "Southern Hills Community Yard Sale",
-      "details": "QR Code Link to This Post The Southern Hills HOA will have a community-wide yard sale on Saturday, November 14th, from 8:00 AM – 3:00 PM. Whether buying or selling, you won't want to miss it!",
-      "source": "yardsales.net",
-      "url": "https://yardsales.net/s/7HnrT",
+      "details": "The Southern Hills HOA community-wide yard sale on Saturday, November 14, from 8 AM–3 PM. Listings pin the neighborhood on Southern Bluff without a house number. Pin is at street level on Southern Bluff in 78222 (Nominatim); no house number was published.",
+      "source": "GarageSaleFinder",
+      "url": "https://garagesalefinder.com/s/N92Rr/southern-blf-san-antonio-tx-78222",
       "photos": 0,
       "type": "community",
-      "categories": [
-        "community-sale"
-      ],
-      "confidence": 0.68,
+      "confidence": 0.72,
       "status": "verified",
-      "lat": 29.4246002,
-      "lon": -98.4951405,
-      "geocode": "nominatim-city",
+      "lat": 29.3835716,
+      "lon": -98.3683337,
+      "geocode": "nominatim",
+      "external_id": "gsf-N92Rr-southern-bluff",
+      "categories": [
+        "community-sale",
+        "garagesalefinder"
+      ],
+      "zip": "78222",
       "in_person": true,
-      "external_id": "ysn-7HnrT",
-      "date_bucket": "upcoming",
+      "date_note": "Saturday, November 14, 2026, 8 AM–3 PM, as published on GarageSaleFinder and yardsales.net.",
+      "date_verified": "operator-2026-11-13",
+      "source_address": "Southern Blf (street number not listed), San Antonio, TX 78222",
       "date_certainty": "published",
       "source_urls": [
         "https://garagesalefinder.com/s/N92Rr/southern-blf-san-antonio-tx-78222",
@@ -2507,6 +3394,7 @@
       "aliases": [
         "29.39000,-98.39000|Southern Hills Community Yard Sale",
         "cl-nhillscommunity6np9nvg39lznd4cpuzc8n6",
+        "gsf-N92Rr-southern-bluff",
         "ysn-7HnrT",
         "yss-southernblfsanantoniotx-2026-11-14"
       ]
@@ -2825,6 +3713,49 @@
       ],
       "aliases": [
         "fb-ev-29319200317770276"
+      ]
+    },
+    {
+      "address": "402 RUSTIC GATE, SAN ANTONIO, TX, 78227",
+      "dates": "2026-11-21",
+      "date_from": "2026-11-21",
+      "date_to": "2026-11-21",
+      "end_date": "2026-11-21",
+      "date_start": "2026-11-21",
+      "date_end": "2026-11-21",
+      "date_bucket": "upcoming",
+      "hours": "9 AM–3 PM",
+      "title": "Stablewood HOA Community Rummage Sale",
+      "details": "Stablewood HOA community rummage sale Saturday, November 21, 9 AM–3 PM, at 402 Rustic Gate. The HOA has 22 tables available for residents to sell items. Census did not match house number 402; the pin is on Rustic Gate in Stablewood Farms / Valley Hi (Nominatim, ZIP 78227).",
+      "source": "Nextdoor",
+      "url": "https://nextdoor.com/local_events/4m2kQTKH7PC4/",
+      "photos": 0,
+      "type": "community",
+      "confidence": 0.72,
+      "status": "verified",
+      "lat": 29.3897133,
+      "lon": -98.6484456,
+      "geocode": "nominatim",
+      "external_id": "nd-4m2kQTKH7PC4",
+      "categories": [
+        "community-sale",
+        "nextdoor"
+      ],
+      "zip": "78227",
+      "in_person": true,
+      "date_note": "Saturday, November 21, 2026, 9 AM–3 PM as listed on the Nextdoor event.",
+      "date_verified": "operator-2026-11-13",
+      "source_address": "402 Rustic Gate, San Antonio, TX",
+      "poster": "Miguel Sepulveda",
+      "date_certainty": "published",
+      "source_urls": [
+        "https://nextdoor.com/local_events/4m2kQTKH7PC4/"
+      ],
+      "sources": [
+        "Nextdoor"
+      ],
+      "aliases": [
+        "nd-4m2kQTKH7PC4"
       ]
     },
     {

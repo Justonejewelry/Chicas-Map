@@ -1,10 +1,10 @@
 {
   "as_of": "2026-11-13",
-  "raw_records": 197,
-  "eligible_before_dedupe": 108,
-  "canonical_sales": 72,
-  "today_sales": 31,
-  "duplicates_merged": 36,
+  "raw_records": 222,
+  "eligible_before_dedupe": 133,
+  "canonical_sales": 93,
+  "today_sales": 48,
+  "duplicates_merged": 40,
   "excluded_by_reason": {
     "auction_not_in_person_sale": 3,
     "too_far_ahead": 1,
@@ -779,40 +779,6 @@
       ]
     },
     {
-      "kept": "ysn-7HDdF",
-      "address": "Braunridge community, Helotes, TX",
-      "merged_records": 4,
-      "source_urls": [
-        "https://garagesalefinder.com/s/N92jv/alsfeld-rnch-helotes-tx-78023",
-        "https://www.craigslist.org/view/d/san-antonio-braunridge-community-garage/rFYHaf65UKPTkmkZZFba8z",
-        "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196460723",
-        "https://yardsales.net/s/7HDdF"
-      ],
-      "titles": [
-        "Braunridge Community Garage Sale",
-        "Braunridge Community Garage Sale",
-        "Braunridge Community Garage Sale",
-        "Braunridge Community Garage Sale"
-      ]
-    },
-    {
-      "kept": "ysn-7HnrT",
-      "address": "Southern Hills community, San Antonio, TX",
-      "merged_records": 4,
-      "source_urls": [
-        "https://garagesalefinder.com/s/N92Rr/southern-blf-san-antonio-tx-78222",
-        "https://www.craigslist.org/view/d/san-antonio-southern-hills-community/6NP9nvG39LzNd4cpUzC8N6",
-        "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196460077",
-        "https://yardsales.net/s/7HnrT"
-      ],
-      "titles": [
-        "Southern Hills Community Yard Sale",
-        "Southern Hills Community Yard Sale",
-        "Southern Hills Community Yard Sale",
-        "Southern Hills Community Yard Sale"
-      ]
-    },
-    {
       "kept": "yss-205pollydaledrsanantoniotx-2026-11-12",
       "address": "205 Pollydale Dr, San Antonio, TX",
       "merged_records": 2,
@@ -1066,6 +1032,68 @@
       "titles": [
         "Community Garage Sale (Crystal Knoll)",
         "Community Garage Sale"
+      ]
+    },
+    {
+      "kept": "cl-salethisweekendrk2o1vhmkztd5i26tpmmdk",
+      "address": "5903 FOREST CREST ST, SAN ANTONIO, TX, 78240",
+      "merged_records": 2,
+      "source_urls": [
+        "https://www.craigslist.org/view/d/san-antonio-garage-sale-this-weekend/rk2o1vhmKZTD5i26TpMMdK"
+      ],
+      "titles": [
+        "Garage Sale on Forest Crest (Leon Valley)",
+        "Garage Sale This weekend"
+      ]
+    },
+    {
+      "kept": "gsf-N92Rr-southern-bluff",
+      "address": "SOUTHERN BLUFF, SAN ANTONIO, TX, 78222",
+      "merged_records": 5,
+      "source_urls": [
+        "https://garagesalefinder.com/s/N92Rr/southern-blf-san-antonio-tx-78222",
+        "https://www.craigslist.org/view/d/san-antonio-southern-hills-community/6NP9nvG39LzNd4cpUzC8N6",
+        "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196460077",
+        "https://yardsales.net/s/7HnrT"
+      ],
+      "titles": [
+        "Southern Hills Community Yard Sale",
+        "Southern Hills Community Yard Sale",
+        "Southern Hills Community Yard Sale",
+        "Southern Hills Community Yard Sale",
+        "Southern Hills Community Yard Sale"
+      ]
+    },
+    {
+      "kept": "nd-NDhqkf7g3Z-R",
+      "address": "9803 ROSTOCK LN, HELOTES, TX, 78023",
+      "merged_records": 5,
+      "source_urls": [
+        "https://garagesalefinder.com/s/N92jv/alsfeld-rnch-helotes-tx-78023",
+        "https://nextdoor.com/local_events/NDhqkf7g3Z-R/",
+        "https://www.craigslist.org/view/d/san-antonio-braunridge-community-garage/rFYHaf65UKPTkmkZZFba8z",
+        "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196460723",
+        "https://yardsales.net/s/7HDdF"
+      ],
+      "titles": [
+        "Braunridge Community Garage Sale",
+        "Braunridge Community Garage Sale",
+        "Braunridge Community Garage Sale",
+        "Braunridge Community Garage Sale",
+        "Braunridge Community Garage Sale"
+      ]
+    },
+    {
+      "kept": "nd-3gCR8XQ82X88",
+      "address": "8741 BUCKSKIN DR, BOERNE, TX, 78006",
+      "merged_records": 2,
+      "source_urls": [
+        "https://garagesalefinder.com/s/N9bvK/8741-buckskin-dr-boerne-tx-78006",
+        "https://nextdoor.com/local_events/3gCR8XQ82X88/"
+      ],
+      "titles": [
+        "Garage Sale on Buckskin Drive",
+        "Garage Sale"
       ]
     }
   ]
