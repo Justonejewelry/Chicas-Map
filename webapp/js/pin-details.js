@@ -112,6 +112,7 @@
       '<a class="secondary" href="' + BASE + '/submit/">List a sale \u2014 free</a>' +
       '<a class="claim" href="' + esc(claimHref(sale)) + '">Boost My Sale · $5</a>' +
       '<a class="secondary" href="' + BASE + '/boost/">Feature this sale</a>' +
+      '<a class="secondary" href="' + BASE + '/report/?id=' + encodeURIComponent(sale.id || "") + '&title=' + encodeURIComponent(sale.title || "") + '&address=' + encodeURIComponent(sale.address || "") + '&source=' + encodeURIComponent(sale.sourceUrl || "") + '">Report an issue with this listing</a>' +
       '<a class="secondary" href="' + esc(share) + '">Share this sale</a>' +
       "</div>";
     el.style.display = "block";
