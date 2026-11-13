@@ -139,6 +139,16 @@ def analyze_log(key: str, text: str) -> dict:
             result.update(status="fail", detail=match.group(0)[:120])
             return result
 
+    # Craigslist's static search count is only an intermediate stage. The
+    # final enriched count determines whether usable sale records were found.
+    if key == "craigslist" and records_found is not None:
+        if records_found == 0:
+            result.update(status="zero", detail="source returned zero enriched listings")
+        else:
+            result.update(status="ok", detail=f"enriched={records_found}")
+        result["last_successful_retrieval"] = finished_at
+        return result
+
     for pat in OK_PATTERNS:
         match = pat.search(text)
         if match:
