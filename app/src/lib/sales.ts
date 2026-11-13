@@ -52,7 +52,6 @@ export function allSales(feed: CityFeed): Sale[] {
 export function kindLabel(kind: string): string {
   if (kind === "estate") return "Estate";
   if (kind === "permit") return "Permit";
-  if (kind === "yard") return "Yard";
   return "Garage";
 }
 
@@ -60,7 +59,6 @@ export function markerColor(kind: string, boost?: boolean): string {
   if (boost) return "#f4c430";
   if (kind === "estate") return "#7c3aed";
   if (kind === "permit") return "#2563eb";
-  if (kind === "yard") return "#0f766e";
   return "#c513af";
 }
 
