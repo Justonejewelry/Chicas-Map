@@ -230,6 +230,19 @@
     return 2 * R * Math.asin(Math.min(1, Math.sqrt(h)));
   }
 
+  function searchWords(value) {
+    var text = String(value || "").toLowerCase();
+    try { text = text.normalize("NFD"); } catch (e) {}
+    return text.replace(/[\\u0300-\\u036f]/g, "").replace(/[^a-z0-9]+/g, " ").trim().split(/\\s+/).filter(Boolean);
+  }
+
+  function searchText(s) {
+    return searchWords([
+      s.title, s.address, s.zip, s.type, s.source, s.details, s.description, s.items,
+      (s.categories || []).join(" "), (s.aliases || []).join(" ")
+    ].join(" ")).join(" ");
+  }
+
   w.__chicaMiles = function (lat, lon) {
     var here = w.__chicaHere;
     if (!here || !isFinite(lat) || !isFinite(lon)) return null;
@@ -239,7 +252,7 @@
   w.__chicaVisibleSales = function (filter) {
     var sales = w.__chicaSales || [];
     var f = filter || w.__chicaFilter || {};
-    var q = String(f.q || "").toLowerCase();
+    var query = searchWords(f.q);
     var out = [];
     for (var i = 0; i < sales.length; i++) {
       var s = sales[i];
@@ -250,9 +263,9 @@
         var mi = milesBetween(w.__chicaHere.lat, w.__chicaHere.lon, s.lat, s.lon);
         if (mi > f.miles) continue;
       }
-      if (q) {
-        var blob = [s.title, s.address, s.zip, s.type, s.source, (s.categories || []).join(" ")].join(" ").toLowerCase();
-        if (blob.indexOf(q) === -1) continue;
+      if (query.length) {
+        var blob = searchText(s);
+        if (!query.every(function (word) { return blob.indexOf(word) !== -1; })) continue;
       }
       out.push(s);
     }
