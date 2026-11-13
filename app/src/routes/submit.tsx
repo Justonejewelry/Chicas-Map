@@ -34,6 +34,7 @@ function SubmitPage() {
       return;
     }
     setBusy(true);
+    let stage: "address" | "submission" = "address";
     try {
       const q = encodeURIComponent(`${address}, San Antonio TX`);
       const geo = await fetch(
@@ -67,10 +68,9 @@ function SubmitPage() {
         permit_number: "",
         submitted: true,
       };
-      saveSubmission(sale);
 
-      // Email is a review notification; approval is still required before public listing.
-      fetch(INTAKE, {
+      stage = "submission";
+      const response = await fetch(INTAKE, {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
@@ -80,11 +80,14 @@ function SubmitPage() {
           date_from: dateFrom, date_to: dateTo, details, lat, lon,
           source_url: location.href,
         }),
-      }).catch(() => {});
-
+      });
+      if (!response.ok) throw new Error("Review email could not be sent");
+      saveSubmission(sale);
       await navigate({ to: "/map", search: { sale: sale.id } });
     } catch {
-      setError("We couldn't verify that address. Enter a complete San Antonio street address and try again.");
+      setError(stage === "address"
+        ? "We couldn't verify that address. Enter a complete San Antonio street address and try again."
+        : "We couldn't send your sale for review. Check your connection and try again.");
     } finally {
       setBusy(false);
     }
@@ -101,7 +104,7 @@ function SubmitPage() {
         <aside className="mt-4 rounded-2xl bg-paper p-4 ring-1 ring-line">
           <p className="font-display text-base font-semibold">What happens after you submit?</p>
           <p className="mt-1 text-sm text-muted">
-            You'll see a preview pin on this device. Chica receives your tip for review; it is not public until approved. Approved sales are added to the map and sale list.
+            Your tip is sent to Chica for review. A preview pin is saved on this device; it is not public until approved. Approved sales are added to the map and sale list.
           </p>
         </aside>
         <aside className="mt-4 rounded-2xl bg-paper p-4 ring-1 ring-line">
