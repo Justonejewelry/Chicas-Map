@@ -30,6 +30,9 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.sha }}
 
+      - name: Scraper health regression tests
+        run: python3 -m unittest discover -s tests -p 'test_scraper_health.py' -v
+
       - name: Stage preview
         run: |
           set -euo pipefail
