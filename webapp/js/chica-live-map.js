@@ -234,15 +234,25 @@
     return 2 * R * Math.asin(Math.min(1, Math.sqrt(h)));
   }
 
-  function searchWords(value) {
+  function searchWords(value, queryMode) {
     var text = String(value || "").toLowerCase();
     try { text = text.normalize("NFD"); } catch (e) {}
-    return text.replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, " ").trim().split(/\s+/).filter(Boolean);
+    var words = text.replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, " ").trim().split(/\s+/).filter(Boolean);
+    if (queryMode) {
+      // Ignore conversational wording so phrases like "garage sales near me" still match.
+      var filler = { near: 1, nearby: 1, around: 1, me: 1, my: 1, area: 1, in: 1, the: 1, find: 1, show: 1, looking: 1, for: 1, please: 1, at: 1, on: 1, with: 1 };
+      words = words.filter(function (word) { return !filler[word]; }).map(function (word) {
+        return word.length > 4 && /s$/.test(word) ? word.slice(0, -1) : word;
+      });
+    }
+    return words;
   }
 
   function searchText(s) {
     return searchWords([
-      s.title, s.address, s.zip, s.type, s.source, s.details, s.description, s.items,
+      s.title, s.address, s.source_address, s.zip, s.zip_code, s.zipcode, s.postal_code,
+      s.neighborhood, s.city, s.locality, s.type, s.source, s.seller, s.company, s.poster,
+      s.details, s.description, s.items,
       (s.categories || []).join(" "), (s.aliases || []).join(" ")
     ].join(" ")).join(" ");
   }
@@ -256,7 +266,7 @@
   w.__chicaVisibleSales = function (filter) {
     var sales = w.__chicaSales || [];
     var f = filter || w.__chicaFilter || {};
-    var query = searchWords(f.q);
+    var query = searchWords(f.q, true);
     var out = [];
     for (var i = 0; i < sales.length; i++) {
       var s = sales[i];

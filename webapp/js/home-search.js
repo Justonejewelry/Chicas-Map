@@ -57,7 +57,7 @@
   function today() { try { return new Intl.DateTimeFormat("en-CA", { timeZone: "America/Chicago" }).format(new Date()); } catch (e) { return new Date().toISOString().slice(0, 10); } }
   function slug(id) { return String(id).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 80) || "sale"; }
   function sid(s) { return String(s.external_id || s.id || (s.address + "|" + s.date_start)); }
-  function hay(s) { if (!s._h) s._h = norm([s.title, s.details, s.description, s.items, (s.categories || []).join(" "), s.address].join(" ")); return s._h; }
+  function hay(s) { if (!s._h) s._h = norm([s.title, s.details, s.description, s.items, (s.categories || []).join(" "), s.address, s.source_address, s.zip, s.zip_code, s.zipcode, s.postal_code, s.neighborhood, s.city, s.locality, s.source, s.seller, s.company, s.poster, (s.aliases || []).join(" ")].join(" ")); return s._h; }
   function terms(q) {
     return norm(q).split(/[\s,]+/).filter(function (w) { return w.length > 1; }).map(function (w) {
       var alts = SYN[w] || [w]; if (!SYN[w] && w.length > 3 && /s$/.test(w)) alts = [w, w.replace(/e?s$/, "")];
