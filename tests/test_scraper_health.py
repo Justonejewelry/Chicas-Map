@@ -54,12 +54,22 @@ class ScraperHealthTests(unittest.TestCase):
         result = health.analyze_log("craigslist", self.log("enriched=0"))
         self.assertEqual(result["status"], "zero")
 
+    def test_craigslist_static_results_but_zero_enriched_is_zero(self):
+        result = health.analyze_log("craigslist", self.log("static results=25\nenriched=0"))
+        self.assertEqual(result["status"], "zero")
+        self.assertEqual(result["records_found"], 0)
+
+    def test_craigslist_positive_enriched_count_is_ok(self):
+        result = health.analyze_log("craigslist", self.log("static results=25\nenriched=8"))
+        self.assertEqual(result["status"], "ok")
+        self.assertEqual(result["records_found"], 8)
+
     def test_garage_sale_finder_zero_parsed_is_successful_empty_retrieval(self):
         result = health.analyze_log("garagesalefinder", self.log("0 parsed"))
         self.assertEqual(result["status"], "zero")
 
     def test_garage_sale_finder_mixed_city_results_are_nonempty(self):
-        result = health.analyze_log("garagesalefinder", self.log("0 parsed\n12 parsed\nmerge added=0"))
+        result = health.analyze_log("garagesalefinder", self.log("  https://example.test/a → 0 parsed\n  https://example.test/b → 12 parsed\n  merge added=0"))
         self.assertEqual(result["status"], "ok")
         self.assertEqual(result["detail"], "12 parsed")
 
@@ -67,6 +77,37 @@ class ScraperHealthTests(unittest.TestCase):
         result = health.analyze_log("permits", self.log("garage/estate permits in window=0"))
         self.assertEqual(result["status"], "zero")
 
+    def test_structured_source_record_counts_use_final_discovery_metrics(self):
+        cases = [
+            ("garagesalefinder", "  https://example.test/a → 1 parsed\n  https://example.test/b → 2 parsed", 3, "parsed"),
+            ("permits", "garage/estate permits in window=4 (estate-tagged=2)", 4, "permits_in_window"),
+            ("estatesales_org", "normalized=5", 5, "normalized"),
+            ("yardsalesearch", "normalized=6", 6, "normalized"),
+            ("gsalr", "normalized=7", 7, "normalized"),
+            ("craigslist", "static results=9\nenriched=8", 8, "enriched"),
+            ("estatesales_net", "normalized=10", 10, "normalized"),
+        ]
+        for source, output, expected, metric in cases:
+            with self.subTest(source=source):
+                result = health.analyze_log(source, self.log(output))
+                self.assertEqual(result["records_found"], expected)
+                self.assertEqual(result["records_found_metric"], metric)
+
+    def test_structured_counts_sum_cities_and_do_not_use_merge_added_or_inventory(self):
+        output = "[san-antonio]\nnormalized=3\nmerge added=1 public_live=50\n[austin]\nnormalized=4\nmerge added=0 public_live=40"
+        result = health.analyze_log("yardsalesearch", self.log(output))
+        self.assertEqual(result["records_found"], 7)
+        self.assertEqual(result["records_found_metric"], "normalized")
+
+    def test_unrecognized_count_is_null_not_zero(self):
+        result = health.analyze_log("craigslist", self.log("Finished without count details"))
+        self.assertIsNone(result["records_found"])
+        self.assertEqual(result["records_found_metric"], "enriched")
+
+    def test_missing_log_has_null_count(self):
+        result = health.analyze_log("craigslist", "")
+        self.assertIsNone(result.get("records_found"))
+        self.assertEqual(result.get("records_found_metric"), "enriched")
 
 if __name__ == "__main__":
     unittest.main()
