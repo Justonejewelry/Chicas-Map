@@ -123,7 +123,7 @@ function SubmitPage() {
       <main className="mx-auto max-w-lg px-4 py-10">
         <h1 className="font-display text-3xl font-bold">List a sale — free</h1>
         <p className="mt-2 text-sm leading-relaxed text-muted">
-          Share your garage, yard, or estate sale with the pack. Your dates and address are sent for review before the sale is added to the public map.
+          Share your garage or estate sale with the pack. Your dates and address are sent for review before the sale is added to the public map.
         </p>
         <aside className="mt-4 rounded-2xl bg-paper p-4 ring-1 ring-line">
           <p className="font-display text-base font-semibold">Want the weekend highlight?</p>
@@ -144,7 +144,6 @@ function SubmitPage() {
             Type
             <select name="type" className="h-11 rounded-xl bg-paper px-3 font-normal ring-1 ring-line">
               <option value="garage">Garage sale</option>
-              <option value="yard">Yard sale</option>
               <option value="estate">Estate sale</option>
             </select>
           </label>
