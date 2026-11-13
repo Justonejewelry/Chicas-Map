@@ -116,7 +116,7 @@ class QualityTests(unittest.TestCase):
         self.assertEqual(report['excluded_by_reason'].get('too_far_ahead'),1)
 
     def test_confidence_labels_explain_provenance_and_age(self):
-        source=self.pin(source='Craigslist',url='https://craigslist.org/post/1')
+        source=self.pin(source='GarageSaleFinder',url='https://garagesalefinder.com/post/1')
         data,_=self.clean([source])
         self.assertEqual(data['public'][0]['confidence_label'],'source_confirmed')
         self.assertIn('does not mean',data['public'][0]['confidence_note'])
@@ -127,11 +127,11 @@ class QualityTests(unittest.TestCase):
         missing=self.pin(source='Unknown',url=None)
         data,_=self.clean([missing])
         self.assertEqual(data['public'][0]['confidence_label'],'unconfirmed')
-        old=self.pin(source='Craigslist',url='https://craigslist.org/post/old',posted_at='2026-10-20T09:00:00-05:00')
+        old=self.pin(source='GarageSaleFinder',url='https://garagesalefinder.com/post/old',posted_at='2026-10-20T09:00:00-05:00')
         data,_=self.clean([old])
         self.assertEqual(data['public'][0]['confidence_label'],'potentially_outdated')
         self.assertIn('18 days old',data['public'][0]['confidence_note'])
-        no_post_date=self.pin(source='Craigslist',url='https://craigslist.org/post/no-date')
+        no_post_date=self.pin(source='GarageSaleFinder',url='https://garagesalefinder.com/post/no-date')
         data,_=self.clean([no_post_date])
         self.assertEqual(data['public'][0]['confidence_label'],'source_confirmed')
 
