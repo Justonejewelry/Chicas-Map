@@ -55,12 +55,12 @@ class ScraperHealthTests(unittest.TestCase):
         self.assertEqual(result["status"], "zero")
 
     def test_craigslist_static_results_but_zero_enriched_is_zero(self):
-        result = health.analyze_log("craigslist", self.log("static results=25\\nenriched=0"))
+        result = health.analyze_log("craigslist", self.log("static results=25\nenriched=0"))
         self.assertEqual(result["status"], "zero")
         self.assertEqual(result["records_found"], 0)
 
     def test_craigslist_positive_enriched_count_is_ok(self):
-        result = health.analyze_log("craigslist", self.log("static results=25\\nenriched=8"))
+        result = health.analyze_log("craigslist", self.log("static results=25\nenriched=8"))
         self.assertEqual(result["status"], "ok")
         self.assertEqual(result["records_found"], 8)
 
@@ -69,7 +69,7 @@ class ScraperHealthTests(unittest.TestCase):
         self.assertEqual(result["status"], "zero")
 
     def test_garage_sale_finder_mixed_city_results_are_nonempty(self):
-        result = health.analyze_log("garagesalefinder", self.log("0 parsed\n12 parsed\nmerge added=0"))
+        result = health.analyze_log("garagesalefinder", self.log("  https://example.test/a → 0 parsed\n  https://example.test/b → 12 parsed\n  merge added=0"))
         self.assertEqual(result["status"], "ok")
         self.assertEqual(result["detail"], "12 parsed")
 
@@ -79,7 +79,7 @@ class ScraperHealthTests(unittest.TestCase):
 
     def test_structured_source_record_counts_use_final_discovery_metrics(self):
         cases = [
-            ("garagesalefinder", "1 parsed\n2 parsed", 3, "parsed"),
+            ("garagesalefinder", "  https://example.test/a → 1 parsed\n  https://example.test/b → 2 parsed", 3, "parsed"),
             ("permits", "garage/estate permits in window=4 (estate-tagged=2)", 4, "permits_in_window"),
             ("estatesales_org", "normalized=5", 5, "normalized"),
             ("yardsalesearch", "normalized=6", 6, "normalized"),
