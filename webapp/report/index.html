@@ -87,7 +87,7 @@
     try{
       var response=await fetch("https://formsubmit.co/ajax/mr.jsciaraffa@gmail.com",{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(Object.fromEntries(new FormData(form).entries()))});
       var result=await response.json();
-      if(!response.ok||result.success===false)throw new Error("Delivery failed");
+      if(!response.ok||result.success===false||result.success==="false")throw new Error("Delivery failed");
       form.reset();
       ["listing-id","listing-title","listing-address","listing-source"].forEach(function(key){var el=document.getElementById(key);if(el)el.value=key==="listing-id"?id:key==="listing-title"?title:key==="listing-address"?address:source;});
       status.textContent=es?"Gracias. Recibimos tu reporte para revisión.":"Thank you. Your report was received for review.";
