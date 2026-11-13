@@ -97,6 +97,7 @@ class ScraperHealthTests(unittest.TestCase):
     def test_missing_log_has_null_count(self):
         result = health.analyze_log("craigslist", "")
         self.assertIsNone(result.get("records_found"))
+        self.assertEqual(result.get("records_found_metric"), "enriched")
 
 if __name__ == "__main__":
     unittest.main()
