@@ -21,17 +21,37 @@ def log(msg: str) -> None:
     print(f"[{ts}] {msg}", flush=True)
 
 
-def run_step(name: str, argv: list[str], env: dict | None = None, required: bool = False) -> int:
+def run_step(name: str, argv: list[str], env: dict | None = None, required: bool = False, log_path: Path | None = None) -> int:
     log(f"START {name}: {' '.join(argv)}")
     merged = os.environ.copy()
     if env:
         merged.update(env)
+    started_at = datetime.now(CT).isoformat(timespec="seconds")
+    output = ""
     try:
-        proc = subprocess.run(argv, cwd=str(ROOT), env=merged, check=False)
+        proc = subprocess.run(
+            argv, cwd=str(ROOT), env=merged, check=False,
+            capture_output=log_path is not None, text=True,
+        )
         code = proc.returncode
+        if log_path is not None:
+            output = (proc.stdout or "") + (proc.stderr or "")
     except FileNotFoundError as exc:
         log(f"MISS {name}: {exc}")
         code = 127
+        output = str(exc)
+    finished_at = datetime.now(CT).isoformat(timespec="seconds")
+    if log_path is not None:
+        log_path.parent.mkdir(parents=True, exist_ok=True)
+        log_path.write_text(
+            output
+            + f"\\n__CHICA_EXIT_CODE={code}\\n"
+            + f"__CHICA_STARTED_AT={started_at}\\n"
+            + f"__CHICA_FINISHED_AT={finished_at}\\n",
+            encoding="utf-8",
+        )
+        if output:
+            print(output, end="" if output.endswith("\\n") else "\\n", flush=True)
     if code == 0:
         log(f"OK   {name}")
     else:
@@ -84,6 +104,16 @@ def main() -> int:
     ]
     failed: list[str] = []
     discovery_ok = discovery_ran = 0
+    source_log_dir = Path(tempfile.mkdtemp(prefix="chica-source-logs-"))
+    source_log_names = {
+        "discover_sales (GarageSaleFinder)": "discover.log",
+        "fetch_permits (Open Data SA)": "permits.log",
+        "fetch_estatesales_org": "estatesales-org.log",
+        "fetch_yardsalesearch": "yardsalesearch.log",
+        "fetch_gsalr": "gsalr.log",
+        "fetch_craigslist": "craigslist.log",
+        "fetch_estatesales.net": "estatesales.log",
+    }
     for name, argv in discovery:
         script = Path(argv[1])
         if not (ROOT / script).exists():
@@ -91,17 +121,26 @@ def main() -> int:
             failed.append(f"{name}(missing)")
             continue
         discovery_ran += 1
-        code = run_step(name, argv, env=city_env)
+        filename = source_log_names.get(name)
+        log_path = source_log_dir / filename if filename else None
+        code = run_step(name, argv, env=city_env, log_path=log_path)
         if code == 0:
             discovery_ok += 1
         else:
             failed.append(f"{name}({code})")
-    for name, argv, required in (("purge_expired", [PY, "webapp/scripts/purge_expired.py"], True), ("check_scraper_health", [PY, "webapp/scripts/check_scraper_health.py"], False)):
+    for name, argv, required in (("purge_expired", [PY, "webapp/scripts/purge_expired.py"], True),):
         if not (ROOT / Path(argv[1])).exists():
             continue
         code = run_step(name, argv, env=city_env, required=required)
         if code != 0:
             failed.append(f"{name}({code})")
+    health_script = ROOT / "webapp" / "scripts" / "check_scraper_health.py"
+    if health_script.exists():
+        run_step(
+            "check_scraper_health",
+            [PY, "webapp/scripts/check_scraper_health.py", "--log-dir", str(source_log_dir)],
+            env=city_env,
+        )
     rebuild = ROOT / "webapp" / "scripts" / "rebuild_feed.py"
     if rebuild.exists():
         run_step("rebuild_feed", [PY, "webapp/scripts/rebuild_feed.py"])
