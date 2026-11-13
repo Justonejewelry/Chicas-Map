@@ -80,12 +80,36 @@ def read_log(name: str, log_dir: Path) -> str:
     return p.read_text(encoding="utf-8", errors="replace")
 
 
+# Final discovery-stage counts, not merge-added counts or accumulated inventory.
+# Sum once per requested city. Missing markers remain null, not a false zero.
+RECORD_COUNT_PATTERNS = {
+    "garagesalefinder": ("parsed", re.compile(r"^\s*(?:.*?→\s*)?(\d+) parsed\b", re.I | re.M)),
+    "permits": ("permits_in_window", re.compile(r"garage/estate permits in window=(\d+)\b", re.I)),
+    "estatesales_org": ("normalized", re.compile(r"^\s*normalized=(\d+)\b", re.I | re.M)),
+    "yardsalesearch": ("normalized", re.compile(r"^\s*normalized=(\d+)\b", re.I | re.M)),
+    "gsalr": ("normalized", re.compile(r"^\s*normalized=(\d+)\b", re.I | re.M)),
+    "craigslist": ("enriched", re.compile(r"^\s*enriched=(\d+)\b", re.I | re.M)),
+    "estatesales_net": ("normalized", re.compile(r"^\s*normalized=(\d+)\b", re.I | re.M)),
+}
+
+def extract_records_found(key: str, text: str) -> tuple[int | None, str | None]:
+    spec = RECORD_COUNT_PATTERNS.get(key)
+    if not spec:
+        return None, None
+    metric, pattern = spec
+    values = [int(value) for value in pattern.findall(text)]
+    if not values:
+        return None, metric
+    return sum(values), metric
+
 def analyze_log(key: str, text: str) -> dict:
     primary = key in PRIMARY
     if not text.strip():
+        metric = RECORD_COUNT_PATTERNS.get(key, (None, None))[0]
         return {
             "source": key, "status": "not_run",
             "detail": "no source log captured for this run", "primary": primary,
+            "records_found": None, "records_found_metric": metric,
         }
 
     def marker(name: str) -> str | None:
@@ -95,11 +119,14 @@ def analyze_log(key: str, text: str) -> dict:
     exit_code = marker("EXIT_CODE")
     started_at = marker("STARTED_AT")
     finished_at = marker("FINISHED_AT")
+    records_found, records_metric = extract_records_found(key, text)
     result = {
         "source": key, "primary": primary,
         "last_attempt_at": started_at,
         "finished_at": finished_at,
         "exit_code": int(exit_code) if exit_code and exit_code.isdigit() else None,
+        "records_found": records_found,
+        "records_found_metric": records_metric,
     }
 
     if result["exit_code"] not in (None, 0):
@@ -111,6 +138,16 @@ def analyze_log(key: str, text: str) -> dict:
         if match:
             result.update(status="fail", detail=match.group(0)[:120])
             return result
+
+    # Craigslist's static search count is only an intermediate stage. The
+    # final enriched count determines whether usable sale records were found.
+    if key == "craigslist" and records_found is not None:
+        if records_found == 0:
+            result.update(status="zero", detail="source returned zero enriched listings")
+        else:
+            result.update(status="ok", detail=f"enriched={records_found}")
+        result["last_successful_retrieval"] = finished_at
+        return result
 
     for pat in OK_PATTERNS:
         match = pat.search(text)
@@ -221,11 +258,11 @@ def main() -> int:
     print(f"- Primary sources without verified retrieval evidence: {len(uncertain_primary)}")
     print(f"- Sources with zero listings: {len(zero_sources)}")
     print("")
-    print("| Source | Status | Detail |")
-    print("|--------|--------|--------|")
+    print("| Source | Status | Records found | Detail |")
+    print("|--------|--------|--------------:|--------|")
     for r in results:
         flag = "🔴" if r["status"] == "fail" else ("🟡" if r["status"] in ("zero", "not_run", "unknown", "completed_unverified") else "🟢")
-        print(f"| {r['source']} | {flag} {r['status']} | {r['detail'][:60]} |")
+        print(f"| {r['source']} | {flag} {r['status']} | {r.get('records_found') if r.get('records_found') is not None else '—'} | {r['detail'][:60]} |")
     print("")
     if json_counts:
         print("#### Live public counts by source (from city JSON)")
