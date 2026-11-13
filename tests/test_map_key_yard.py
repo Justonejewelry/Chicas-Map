@@ -12,6 +12,10 @@ def test_yard_and_garage_sales_share_one_garage_category():
     assert 'id === "yard"' not in actions
     assert 't === "yard" || t === "yardsale" || t === "garagesale" ? "garage"' in live_map
     assert '"garage sale yard sale"' in live_map
+    submit = (ROOT / "app/src/routes/submit.tsx").read_text()
+    sales = (ROOT / "app/src/lib/sales.ts").read_text()
+    assert '"yard">Yard sale' not in submit
+    assert 'kind === "yard"' not in sales
     assert '".leaflet-marker-icon.chica-type-" + id' in actions
 
 
