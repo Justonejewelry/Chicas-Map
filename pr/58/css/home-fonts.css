@@ -1,0 +1,3 @@
+/* Syne and Inter: same site fonts, served as cacheable WOFF2 files and preloaded to avoid font-swap CLS. SIL Open Font License: /assets/fonts/{syne,inter}/LICENSE. */
+@font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:block;src:url(/Chicas-Map/preview/58/assets/fonts/inter/inter-var.woff2) format('woff2');}
+@font-face{font-family:'Syne';font-style:normal;font-weight:100 900;font-display:block;src:url(/Chicas-Map/preview/58/assets/fonts/syne/syne-var.woff2) format('woff2');}
