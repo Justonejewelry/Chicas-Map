@@ -8,6 +8,7 @@ on:
       - "scripts/**"
       - ".github/workflows/pages.yml"
       - ".github/workflows/preview.yml"
+      - "tests/**"
 
 concurrency:
   group: preview-${{ github.event.number }}
@@ -30,8 +31,8 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.sha }}
 
-      - name: Scraper health regression tests
-        run: python3 -m unittest discover -s tests -p 'test_scraper_health.py' -v
+      - name: Full regression test suite
+        run: python3 -m unittest discover -s tests -v
 
       - name: Stage preview
         run: |
