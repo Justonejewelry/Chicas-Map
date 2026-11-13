@@ -87,7 +87,6 @@
       <label for="type">Type</label>
       <select id="type" name="type">
         <option value="garage">Garage sale</option>
-        <option value="yard">Yard sale</option>
         <option value="estate">Estate sale</option>
         <option value="moving">Moving sale</option>
       </select>
@@ -146,7 +145,7 @@
         LB("sat_hours", "Horario del sábado"); LB("sun_hours", "Horario del domingo");
         LB("hours", "Horario si es igual los dos días"); PH("hours", "Sáb–Dom 8am–2pm");
         LB("type", "Tipo");
-        var opts = { garage: "Venta de garage", yard: "Venta de patio (yard sale)", estate: "Venta de patrimonio (estate sale)", moving: "Venta por mudanza" };
+        var opts = { garage: "Venta de garage", estate: "Venta de patrimonio (estate sale)", moving: "Venta por mudanza" };
         Array.prototype.forEach.call(document.getElementById("type").options, function (o) { if (opts[o.value]) o.textContent = opts[o.value]; });
         LB("email", "Correo o teléfono (opcional, para darte las gracias)"); PH("email", "Si quieres un aviso cuando se prenda el pin");
         LB("notes", "¿Qué vas a vender? (opcional)"); PH("notes", "Herramientas, ropa de niños, muebles…");
