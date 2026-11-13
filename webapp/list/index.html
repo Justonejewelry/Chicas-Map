@@ -52,16 +52,24 @@
               lat: c[1], lon: c[0]
             };
           });
-        } else if (data && Array.isArray(data.public)) {
+        } else if (data && (Array.isArray(data.public) || Array.isArray(data.permits))) {
           sales = [].concat(data.public || [], data.permits || []);
         }
-        return sales;
+        if (Array.isArray(data) || (data && Array.isArray(data.sales)) ||
+            (data && Array.isArray(data.features)) ||
+            (data && (Array.isArray(data.public) || Array.isArray(data.permits))) {
+          return sales;
+        }
+        return null;
       }
-      Promise.all(urls.map(function (u) {
-        return fetch(u, { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
-      })).then(function (bags) {
-        var sales = [];
-        for (var i = 0; i < bags.length; i++) sales = sales.concat(bag(bags[i]));
+      fetch(urls[0], { cache: "no-store" })
+        .then(function (r) {
+          if (!r.ok) throw new Error("Feed request failed: " + r.status);
+          return r.json();
+        })
+        .then(function (data) {
+        var sales = bag(data);
+        if (!sales) throw new Error("Feed data has an unexpected format");
         // Hide sales whose last day has passed (America/Chicago)
         var today = "";
         try { today = new Intl.DateTimeFormat("en-CA", { timeZone: "America/Chicago" }).format(new Date()); } catch (e) {}
@@ -71,7 +79,7 @@
         });
         status.textContent = sales.length
           ? sales.length + " stops in the live San Antonio feed."
-          : "Feed loaded but this file is not a listing array. Use the map.";
+          : "No upcoming garage or estate sales are currently in the live feed.";
         function esc(v) {
           return String(v == null ? "" : v).replace(/[&<>"']/g, function (c) {
             return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c];
@@ -92,7 +100,8 @@
           return '<a class="row" href="' + href + '"><div class="kind">' + kind + '</div><strong>' + title + '</strong><div class="meta">' + addr + '</div></a>';
         }).join("");
       }).catch(function () {
-        status.textContent = "Could not load the feed. Open the map instead.";
+        status.textContent = "Live sales are temporarily unavailable. Please try again or open the map.";
+        box.innerHTML = '<a class="row" href="/Chicas-Map/list/">Try loading the sales list again</a>';
       });
     })();
   </script>
