@@ -18,7 +18,8 @@
       garage: "Garage",
       yard: "Yard",
       estate: "Estate",
-      empty: "No sales match. Clear a filter or expand the distance.",
+      empty: "No sales match. Try fewer words or clear a filter.",
+      showing: "Showing",
       sale: " sale",
       sales: " sales"
     },
@@ -35,7 +36,8 @@
       garage: "Garaje",
       yard: "Patio",
       estate: "Bienes",
-      empty: "Ninguna venta coincide. Quita un filtro o amplía la distancia.",
+      empty: "Ninguna venta coincide. Prueba con menos palabras o quita un filtro.",
+      showing: "Mostrando",
       sale: " venta",
       sales: " ventas"
     }
@@ -102,6 +104,7 @@
     var rows = [];
     if (typeof window.__chicaApplyFilter === "function") rows = window.__chicaApplyFilter(state) || [];
     else if (typeof window.__chicaVisibleSales === "function") rows = window.__chicaVisibleSales(state) || [];
+    updateStatus(rows);
     var map = findMap();
     if (map && rows.length === 1) {
       try { map.flyTo([rows[0].lat, rows[0].lon], Math.max(map.getZoom(), 15), { duration: 0.6 }); } catch (e) {}
@@ -109,6 +112,15 @@
       try { map.fitBounds(window.L.latLngBounds(rows.map(function (s) { return [s.lat, s.lon]; })).pad(0.25)); } catch (e) {}
     }
     return rows.length;
+  }
+
+  function updateStatus(rows) {
+    var el = document.getElementById("chica-hunt-status");
+    if (!el) return;
+    var active = !!(state.q || state.day || state.dayTo || state.type || state.miles);
+    if (!active) { el.textContent = ""; return; }
+    if (!rows.length) { el.textContent = t("empty"); return; }
+    el.textContent = t("showing") + " " + rows.length + (rows.length === 1 ? t("sale") : t("sales"));
   }
 
   function milesLabel(s) {
@@ -232,6 +244,8 @@
         "#chica-near-btn svg{display:block;flex:0 0 auto}" +
         "#chica-filters{position:relative!important;top:auto!important;left:auto!important;right:auto!important;z-index:1!important;display:flex;gap:8px;align-items:center;width:100%;margin:0;padding:0 0 2px;overflow:auto;pointer-events:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}" +
         "#chica-filters::-webkit-scrollbar{display:none}#chica-filters .grp[hidden]{display:none!important}" +
+        "#chica-hunt-status{align-self:flex-start;max-width:100%;margin:0;padding:6px 10px;border:1px solid rgba(243,238,228,.14);border-radius:9px;background:rgba(18,18,18,.9);color:#f3eee4;font:600 12px/1.3 Inter,system-ui,sans-serif;box-shadow:0 8px 18px rgba(0,0,0,.22);pointer-events:none;box-sizing:border-box}" +
+        "#chica-hunt-status:empty{display:none}" +
         "#chica-filters .grp{display:flex;gap:2px;flex:0 0 auto;padding:3px;border-radius:12px;background:rgba(18,18,18,.86);border:1px solid rgba(243,238,228,.14);box-shadow:0 10px 24px rgba(0,0,0,.28);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}" +
         "#chica-filters button{height:30px;border:0;border-radius:9px;background:transparent;background-image:none;color:#f3eee4;font:600 12px/1 Inter,system-ui,sans-serif;letter-spacing:.01em;padding:0 10px;white-space:nowrap;cursor:pointer}" +
         "#chica-filters button:focus-visible{outline:2px solid #fffdf8;outline-offset:1px}#chica-filters button.on{text-decoration:underline;text-underline-offset:3px;outline:2px solid #ffd400;outline-offset:-2px;background:#c513af;background-image:none;color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.28)}" +
@@ -272,8 +286,13 @@
         '<button type="button" data-miles="10">10 mi</button>' +
         '<button type="button" data-miles="20">20 mi</button>' +
       '</div>';
+    var status = document.createElement("div");
+    status.id = "chica-hunt-status";
+    status.setAttribute("role", "status");
+    status.setAttribute("aria-live", "polite");
     dock.appendChild(bar);
     dock.appendChild(filters);
+    dock.appendChild(status);
     document.documentElement.appendChild(dock);
     var q = bar.querySelector("#chica-hunt-q");
     var timer = null;
