@@ -18,4 +18,20 @@ assert.equal(window.__chicaVisibleSales({day:feed.generated,dayTo:feed.generated
 assert.equal(window.__chicaIsEnded({date_end:feed.generated,hours:'9am - 10am'}),false,'Closing-hour guesses must not change calendar-day counts');
 assert.equal(window.__chicaIsEnded({date_end:'2000-01-01'}),true);
 for(const sale of window.__chicaSales)assert(Array.isArray(sale.aliases));
-console.log('Map module PASS: '+count+' upcoming, '+feed.today_count+' today (CT), stable IDs and same-day closing policy');
+
+// Search words can match across the title, address, ZIP and description.
+window.__testAddPins({},L,[{
+  title:'Antique dining table',
+  address:'123 Oak Ridge Drive, San Antonio, TX 78209',
+  details:'Mid-century modern solid oak',
+  type:'yard',
+  categories:['furniture','vintage'],
+  lat:29.4241,
+  lon:-98.4936
+}]);
+assert.equal(window.__chicaVisibleSales({q:'dining Oak'}).length,1,'Search must match separate words across listing fields');
+assert.equal(window.__chicaVisibleSales({q:'MID century'}).length,1,'Search must include details and ignore case');
+assert.equal(window.__chicaVisibleSales({q:'78209 vintage'}).length,1,'Search must combine ZIP and category matches');
+assert.equal(window.__chicaVisibleSales({q:'dining 78201'}).length,0,'Search must not return unrelated listings');
+
+console.log('Map module PASS: '+count+' upcoming, '+feed.today_count+' today (CT), stable IDs, date policy and multi-word search');
