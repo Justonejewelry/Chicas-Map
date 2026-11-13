@@ -1,0 +1,50 @@
+/* Claimed $5 pin — overlay on live Leaflet */
+#chica-claimed-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 650;
+  pointer-events: none;
+  overflow: hidden;
+}
+.chica-claimed-wrap {
+  position: absolute;
+  transform: translate(-50%, -100%);
+  pointer-events: auto;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  z-index: 651;
+}
+.chica-claimed-pin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.45));
+}
+.chica-claimed-head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 34px;
+  height: 34px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #f4c430 0%, #e0a106 100%);
+  color: #1a1204;
+  font: 800 12px/1 Inter, system-ui, sans-serif;
+  border: 2px solid #fffdf8;
+  box-shadow: 0 0 0 2px #c513af;
+}
+.chica-claimed-tail {
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 10px solid #c513af;
+  margin-top: -1px;
+}
+.chica-claimed-wrap.is-preview .chica-claimed-head {
+  background: linear-gradient(180deg, #e8b4e0 0%, #c513af 100%);
+  color: #fffdf8;
+}
