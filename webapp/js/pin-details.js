@@ -47,7 +47,7 @@
     var s = document.createElement("style");
     s.id = "chica-pin-details-css";
     s.textContent =
-      "#chica-intel-card{display:none;position:fixed!important;left:12px!important;right:12px!important;top:auto!important;bottom:max(12px,env(safe-area-inset-bottom))!important;z-index:2147483646!important;width:min(360px,calc(100vw - 24px))!important;max-height:min(70dvh,620px)!important;overflow:auto!important;background:#fffdf8!important;color:#1a1714!important;border:2px solid #c513af!important;border-radius:14px!important;box-shadow:0 16px 40px rgba(18,18,18,.45)!important;padding:14px!important;font:500 13px/1.35 Inter,system-ui,sans-serif!important}" +
+      "#chica-intel-card{display:none;position:fixed!important;left:12px!important;right:12px!important;top:auto!important;bottom:max(12px,env(safe-area-inset-bottom))!important;z-index:2147483646!important;width:min(360px,calc(100vw - 24px))!important;max-height:min(70vh,620px)!important;max-height:min(70dvh,620px)!important;overflow:auto!important;background:#fffdf8!important;color:#1a1714!important;border:2px solid #c513af!important;border-radius:14px!important;box-shadow:0 16px 40px rgba(18,18,18,.45)!important;padding:14px!important;font:500 13px/1.35 Inter,system-ui,sans-serif!important}" +
       "#chica-intel-card .x{position:absolute;top:8px;right:8px;z-index:5;width:36px;height:36px;min-width:36px;min-height:36px;border:0;border-radius:50%;background:#c513af;color:#fff;font:800 22px/36px Inter,system-ui,sans-serif;text-align:center;padding:0;cursor:pointer}" +
       "#chica-intel-card h3{margin:0 44px 6px 0;font:800 16px/1.2 Inter,system-ui,sans-serif}" +
       "#chica-intel-card .meta{margin:0;color:#5c5348;font-size:12px}" +
