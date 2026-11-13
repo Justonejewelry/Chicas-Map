@@ -97,6 +97,10 @@ def analyze_log(key: str, text: str) -> dict:
         "exit_code": int(exit_code) if exit_code and exit_code.isdigit() else None,
     }
 
+    if result["exit_code"] not in (None, 0):
+        result.update(status="fail", detail=f"source script exited {result['exit_code']}")
+        return result
+
     for pat in FAIL_PATTERNS:
         match = pat.search(text)
         if match:
@@ -116,9 +120,7 @@ def analyze_log(key: str, text: str) -> dict:
             result["last_successful_retrieval"] = finished_at
             return result
 
-    if result["exit_code"] not in (None, 0):
-        result.update(status="fail", detail=f"source script exited {result['exit_code']}")
-    elif result["exit_code"] == 0:
+    if result["exit_code"] == 0:
         result.update(
             status="completed_unverified",
             detail="script exited successfully but emitted no recognized retrieval/result marker",
