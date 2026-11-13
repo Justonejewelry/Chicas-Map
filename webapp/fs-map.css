@@ -94,6 +94,7 @@
 html.chica-fs-on,
 html.chica-fs-on body {
   overflow: hidden !important;
+  height: 100vh !important;
   height: 100dvh !important;
 }
 
@@ -103,7 +104,9 @@ html.chica-fs-on :has(> .leaflet-container) {
   inset: 0 !important;
   z-index: 99990 !important;
   width: 100vw !important;
+  height: 100vh !important;
   height: 100dvh !important;
+  min-height: 100vh !important;
   min-height: 100dvh !important;
   max-width: none !important;
   max-height: none !important;
