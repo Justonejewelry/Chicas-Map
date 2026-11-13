@@ -45,13 +45,13 @@ def run_step(name: str, argv: list[str], env: dict | None = None, required: bool
         log_path.parent.mkdir(parents=True, exist_ok=True)
         log_path.write_text(
             output
-            + f"\\n__CHICA_EXIT_CODE={code}\\n"
-            + f"__CHICA_STARTED_AT={started_at}\\n"
-            + f"__CHICA_FINISHED_AT={finished_at}\\n",
+            + f"\n__CHICA_EXIT_CODE={code}\n"
+            + f"__CHICA_STARTED_AT={started_at}\n"
+            + f"__CHICA_FINISHED_AT={finished_at}\n",
             encoding="utf-8",
         )
         if output:
-            print(output, end="" if output.endswith("\\n") else "\\n", flush=True)
+            print(output, end="" if output.endswith("\n") else "\n", flush=True)
     if code == 0:
         log(f"OK   {name}")
     else:
