@@ -84,7 +84,7 @@ class ScraperHealthTests(unittest.TestCase):
                 self.assertEqual(result["records_found_metric"], metric)
 
     def test_structured_counts_sum_cities_and_do_not_use_merge_added_or_inventory(self):
-        output = "[san-antonio]\\nnormalized=3\\nmerge added=1 public_live=50\\n[austin]\\nnormalized=4\\nmerge added=0 public_live=40"
+        output = "[san-antonio]\nnormalized=3\nmerge added=1 public_live=50\n[austin]\nnormalized=4\nmerge added=0 public_live=40"
         result = health.analyze_log("yardsalesearch", self.log(output))
         self.assertEqual(result["records_found"], 7)
         self.assertEqual(result["records_found_metric"], "normalized")
