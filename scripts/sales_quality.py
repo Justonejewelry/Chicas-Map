@@ -12,7 +12,7 @@ CT = ZoneInfo('America/Chicago')
 SOURCES = ('san-antonio.json', 'san-antonio-email.json', 'san-antonio-user.json')
 CENTER = (29.4241, -98.4936)
 RADIUS_M = 60 * 1609.344
-VERSION = 46
+VERSION = 47
 ALIASES = dict(street='st', avenue='ave', drive='dr', road='rd', lane='ln', boulevard='blvd', court='ct', circle='cir', parkway='pkwy', place='pl', terrace='ter', trail='trl', view='vw', vista='vis', landing='lndg', bend='bnd', beach='bch', crossing='xing', grove='grv', branch='br', river='riv', fort='ft', north='n', south='s', east='e', west='w')
 MONTHS = {name:i for i,names in enumerate(['jan january','feb february','mar march','apr april','may','jun june','jul july','aug august','sep sept september','oct october','nov november','dec december'],1) for name in names.split()}
 MONTH_RE = '(?:'+'|'.join(sorted(MONTHS,key=len,reverse=True))+')'
@@ -180,6 +180,34 @@ def merge(group):
     if not base.get('external_id'):base['external_id']='sale-'+hashlib.sha256((address_key(base.get('address'))+'|'+base['date_start']).encode()).hexdigest()[:20]
     return base
 
+def confidence_metadata(s,today=None):
+    """Explain listing provenance without claiming the sale was independently verified.
+
+    A post age of 14+ days is a caution, not proof that the sale is inactive.
+    """
+    today=today or today_ct()
+    sources=[str(x) for x in (s.get('sources') or [])+[s.get('source') or ''] if x]
+    source_text=' '.join(sources).lower()
+    community=bool(re.search(r'facebook|nextdoor|neighbor tip|community submission|user submission|email submission',source_text))
+    urls=source_urls(s)
+    known_source=any(x.strip().lower() not in ('','unknown','none') for x in sources)
+    posted=post_day(s)
+    age=(today-posted).days if posted else None
+    if age is not None and age>=14:
+        label='potentially_outdated'
+        note=f'Original post is {age} days old. Confirm the sale is still active before traveling.'
+    elif community:
+        label='community_submitted'
+        note='Shared by a community member or community platform. Details have not been independently confirmed at the address.'
+    elif urls and known_source:
+        label='source_confirmed'
+        note='A public listing link is available from this source. This does not mean Chica’s Map independently confirmed the sale.'
+    else:
+        label='unconfirmed'
+        note='No traceable original listing link is available. Confirm details before traveling.'
+    return {'confidence_label':label,'confidence_note':note}
+
+
 def clean(root,today=None):
     today=today or today_ct();today_s=today.isoformat();accepted=[];excluded=[];unconfirmed=[];raw_count=0;by_reason=Counter()
     for filename in SOURCES:
@@ -222,6 +250,7 @@ def clean(root,today=None):
         for i in reversed(hits):group+=groups.pop(i)
         groups.append(group)
     public=[merge(g) for g in groups]
+    for p in public:p.update(confidence_metadata(p,today))
     merges=[dict(kept=identity(p),address=p.get('address'),merged_records=len(g),source_urls=p['source_urls'],titles=[x.get('title') for x in g]) for p,g in zip(public,groups) if len(g)>1]
     for p in public+unconfirmed:
         for key in list(p):

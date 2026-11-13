@@ -52,7 +52,7 @@
       "#chica-intel-card h3{margin:0 44px 6px 0;font:800 16px/1.2 Inter,system-ui,sans-serif}" +
       "#chica-intel-card .meta{margin:0;color:#5c5348;font-size:12px}" +
       "#chica-intel-card .gold-tag{display:inline-block;margin:0 0 6px;padding:2px 8px;border-radius:999px;background:#f4c430;color:#1a1714;font:800 10px/1.4 Inter,system-ui,sans-serif;letter-spacing:.06em}" +
-      "#chica-intel-card .signal{margin:8px 0 0;padding:8px;border-radius:10px;background:#f6f1e8;font-size:12px}" +
+      "#chica-intel-card .signal{margin:8px 0 0;padding:8px;border-radius:10px;background:#f6f1e8;font-size:12px}" + " #chica-intel-card .confidence-label{display:inline-block;margin:3px 0;padding:3px 8px;border-radius:999px;background:#eee5f2;color:#54204e;font-weight:800;font-size:11px}" +
       "#chica-intel-card .chica-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0 0}" +
       "#chica-intel-card .chica-actions a.go-nav{display:flex;align-items:center;justify-content:center;min-height:44px;border:2px solid #c513af;border-radius:10px;padding:8px 10px;font:800 13px/1 Inter,system-ui,sans-serif;color:#7a0f6c;text-decoration:none;background:#fff}" +
       "#chica-intel-card .chica-actions a.go-street{background:#c513af;color:#fffdf8;border-color:#c513af}" +
@@ -84,12 +84,22 @@
     if (sale.source) bits += "<br>Source: " + esc(sale.source);
     if (sale.details) bits += "<br>" + esc(sale.details);
     if (gold) bits = '<span class="gold-tag">FEATURED</span><br>' + bits;
-    var verified = String(sale.status || "").toLowerCase() === "verified";
-    var signal = "<div class=\"signal\"><strong>Why this pin</strong><br>" +
-      (verified ? "Verified source" : "Posted listing") +
-      (sale.source ? " \u00b7 " + esc(sale.source) : "") +
+    var confidenceLabels = {
+      source_confirmed: "Source listing",
+      community_submitted: "Community submitted",
+      unconfirmed: "Unconfirmed",
+      potentially_outdated: "Potentially outdated"
+    };
+    var confidenceLabel = confidenceLabels[sale.confidence_label] || "Unconfirmed";
+    var confidenceNote = sale.confidence_note || "No confidence information is available. Confirm details before traveling.";
+    var signal = "<div class=\"signal\"><strong>Listing confidence</strong><br><span class=\"confidence-label\">" + esc(confidenceLabel) + "</span><br>" +
+      esc(confidenceNote) +
+      (sale.source ? "<br>Source: " + esc(sale.source) : "") +
       (away ? "<br>" + esc(away) : "<br>Turn on Near me for distance") +
       "<br>Pack notes stay on this phone until you are within 200 feet. Shared feed is off.</div>";
+    var sourceLink = sale.sourceUrl && /^https?:\/\//i.test(String(sale.sourceUrl))
+      ? '<a class="secondary" target="_blank" rel="noopener noreferrer" href="' + esc(sale.sourceUrl) + '">View original listing</a>'
+      : "";
     var share = "https://justonejewelry.github.io/Chicas-Map/map/?sale=" + encodeURIComponent(sale.id || "");
     el.innerHTML =
       '<button type="button" class="x" aria-label="Close sale details">\u00d7</button>' +
@@ -97,7 +107,7 @@
       "<h3>" + esc(sale.title || "Sale") + "</h3>" +
       '<p class="meta">' + bits + "</p>" +
       signal +
-      actions(lat, lon) +
+      sourceLink + actions(lat, lon) +
       '<a class="secondary chica-flip" href="' + BASE + '/deals/?q=' + encodeURIComponent(String((sale.title || "") + " " + (sale.details || "")).slice(0, 240)) + '">' + (String(document.documentElement.lang).indexOf("es") === 0 ? "¿Es ganga? Deal check 💸" : "Deal check 💸 Is it a deal?") + "</a>" +
       '<a class="secondary" href="' + BASE + '/submit/">List a sale \u2014 free</a>' +
       '<a class="claim" href="' + esc(claimHref(sale)) + '">Boost My Sale · $5</a>' +
@@ -123,6 +133,9 @@
       preferred: !!item.preferred,
       gold: !!item.gold,
       source: item.source || "",
+      sourceUrl: item.sourceUrl || "",
+      confidence_label: item.confidence_label || "unconfirmed",
+      confidence_note: item.confidence_note || "",
       status: item.status || "",
       lat: llng.lat,
       lon: llng.lng

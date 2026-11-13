@@ -115,4 +115,33 @@ class QualityTests(unittest.TestCase):
         self.assertNotIn('SPRING Community Wide Rummage Sale',titles)
         self.assertEqual(report['excluded_by_reason'].get('too_far_ahead'),1)
 
+    def test_confidence_labels_explain_provenance_and_age(self):
+        source=self.pin(source='Craigslist',url='https://craigslist.org/post/1')
+        data,_=self.clean([source])
+        self.assertEqual(data['public'][0]['confidence_label'],'source_confirmed')
+        self.assertIn('does not mean',data['public'][0]['confidence_note'])
+        community=self.pin(source='Facebook Marketplace',url='https://facebook.com/marketplace/item/1')
+        data,_=self.clean([], [community])
+        self.assertEqual(data['public'][0]['confidence_label'],'community_submitted')
+        self.assertIn('not been independently confirmed',data['public'][0]['confidence_note'])
+        missing=self.pin(source='Unknown',url=None)
+        data,_=self.clean([missing])
+        self.assertEqual(data['public'][0]['confidence_label'],'unconfirmed')
+        old=self.pin(source='Craigslist',url='https://craigslist.org/post/old',posted_at='2026-10-20T09:00:00-05:00')
+        data,_=self.clean([old])
+        self.assertEqual(data['public'][0]['confidence_label'],'potentially_outdated')
+        self.assertIn('18 days old',data['public'][0]['confidence_note'])
+        no_post_date=self.pin(source='Craigslist',url='https://craigslist.org/post/no-date')
+        data,_=self.clean([no_post_date])
+        self.assertEqual(data['public'][0]['confidence_label'],'source_confirmed')
+
+    def test_map_surfaces_confidence_and_original_listing_link(self):
+        live=(ROOT/'webapp/js/chica-live-map.js').read_text()
+        details=(ROOT/'webapp/js/pin-details.js').read_text()
+        self.assertIn('confidence_label: s.confidence_label',live)
+        self.assertIn('confidence_note: s.confidence_note',live)
+        self.assertIn('View original listing',details)
+        self.assertIn('Listing confidence',details)
+        self.assertNotIn('Verified source',details)
+
 if __name__=='__main__':unittest.main()
