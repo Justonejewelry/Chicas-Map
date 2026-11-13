@@ -20,3 +20,8 @@ main{max-width:1152px;margin:0 auto;padding:32px 20px 40px}#chica-home-hero{max-
 #home-weekly{max-width:1152px;margin:0 auto;padding:32px 20px 40px;text-align:center;border-top:1px solid var(--line)}#home-weekly h2{font-size:28px;margin:8px 0 12px}#home-weekly>p:not(.eyebrow){color:var(--muted);margin:0 auto 20px;max-width:560px}#home-weekly .weekly-form{max-width:480px;margin:0 auto;text-align:left}#home-weekly .weekly-form>label{display:block;font:700 14px/1.3 Inter,system-ui,sans-serif;margin:0 0 8px}#home-weekly .weekly-row{display:flex;gap:8px;flex-wrap:wrap}#home-weekly .weekly-row input[type=email]{flex:1 1 200px;min-height:44px;padding:0 14px;border-radius:999px;border:1px solid var(--line,#3a342e);background:var(--card,#1a1714);color:var(--ink,#f3eee4);font:16px Inter,system-ui,sans-serif}#home-weekly .weekly-row button{min-height:44px;padding:0 18px;border-radius:999px;border:1px solid #ffffff59;background:#c513af;color:#fff;font:700 14px/1 Inter,system-ui,sans-serif;cursor:pointer}
 
 #home-seo{max-width:720px;margin:16px auto 8px;color:var(--muted);font-size:15px;line-height:1.6;text-align:left}#home-seo h2{font-size:22px;color:var(--ink);margin:0 0 10px}#home-seo p{margin:0 0 12px}
+
+/* Three shopper-first actions: Find a Sale, List a Sale, Plan Your Hunt. */
+.home-actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));max-width:680px;margin:0 auto;gap:10px}
+.home-actions .cta{min-width:0}
+@media(max-width:600px){.home-actions{gap:8px}.home-actions .cta{padding:10px 8px;font-size:13px;line-height:1.2;min-height:54px}}

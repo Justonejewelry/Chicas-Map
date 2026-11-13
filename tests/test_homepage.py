@@ -21,6 +21,13 @@ class HomepageTests(unittest.TestCase):
                 self.assertIn('>' + label + '</a>', text)
                 self.assertIn('href="' + submit + '"', text)
                 self.assertIn('href="' + calendar + '"', text)
+                self.assertIn('id="home-find-sale"', text)
+                self.assertIn('id="home-add-sale"', text)
+                self.assertIn('id="home-calendar"', text)
+                self.assertIn('Find a Sale' if path == 'index.html' else 'Encontrar ventas', text)
+                self.assertIn('List a Sale' if path == 'index.html' else 'Publicar una venta', text)
+                self.assertIn('Plan Your Hunt' if path == 'index.html' else 'Planea tu búsqueda', text)
+                self.assertIn('href="/map/"' if path == 'index.html' else 'href="/es/map/"', text)
                 hood = '/es/garage-sales/' if path.startswith('es/') else '/garage-sales/'
                 self.assertEqual(text.count('<li><a href="' + hood), 13)
                 self.assertNotIn('type="module"', text)
