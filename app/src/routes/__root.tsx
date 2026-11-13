@@ -14,7 +14,7 @@ export const Route = createRootRoute({
       {
         name: "description",
         content:
-          "Find verified garage sales, yard sales, and estate sales in San Antonio. Live satellite map with Near Me and weekend intel.",
+          "Find verified garage sales and estate sales in San Antonio. Live satellite map with Near Me and weekend intel.",
       },
       { name: "theme-color", content: "#c513af" },
       { name: "apple-mobile-web-app-title", content: "Chicas Map" },
