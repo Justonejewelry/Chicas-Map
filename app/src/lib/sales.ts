@@ -46,7 +46,7 @@ export const HOT_ZONES: { name: string; lat: number; lon: number; zoom: number }
 const SUBMIT_KEY = "chicas-map-submissions";
 
 function normalizeSale(sale: Sale): Sale {
-  const raw = String(sale.type || "garage").toLowerCase().replace(/[\\s_-]+/g, "");
+  const raw = String(sale.type || "garage").toLowerCase().replace(/[\s_-]+/g, "");
   const type: SaleKind = raw === "estate" || raw === "estatesale"
     ? "estate"
     : raw === "permit" ? "permit" : "garage";
