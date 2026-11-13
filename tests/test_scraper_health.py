@@ -45,5 +45,28 @@ class ScraperHealthTests(unittest.TestCase):
         self.assertEqual(result["status"], "completed_unverified")
 
 
+    def test_craigslist_zero_static_results_is_successful_empty_retrieval(self):
+        result = health.analyze_log("craigslist", self.log("static results=0"))
+        self.assertEqual(result["status"], "zero")
+        self.assertEqual(result["last_successful_retrieval"], "2026-11-13T05:01:00-06:00")
+
+    def test_craigslist_zero_enriched_results_is_successful_empty_retrieval(self):
+        result = health.analyze_log("craigslist", self.log("enriched=0"))
+        self.assertEqual(result["status"], "zero")
+
+    def test_garage_sale_finder_zero_parsed_is_successful_empty_retrieval(self):
+        result = health.analyze_log("garagesalefinder", self.log("0 parsed"))
+        self.assertEqual(result["status"], "zero")
+
+    def test_garage_sale_finder_mixed_city_results_are_nonempty(self):
+        result = health.analyze_log("garagesalefinder", self.log("0 parsed\n12 parsed\nmerge added=0"))
+        self.assertEqual(result["status"], "ok")
+        self.assertEqual(result["detail"], "12 parsed")
+
+    def test_permits_zero_rows_is_successful_empty_retrieval(self):
+        result = health.analyze_log("permits", self.log("garage/estate permits in window=0"))
+        self.assertEqual(result["status"], "zero")
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -51,6 +51,10 @@ ZERO_PATTERNS = [
     re.compile(r"normalized=0\b", re.I),
     re.compile(r"0 listings?\b", re.I),
     re.compile(r"no sales? found\b", re.I),
+    re.compile(r"static results=0\b", re.I),
+    re.compile(r"enriched=0\b", re.I),
+    re.compile(r"\b0 parsed\b", re.I),
+    re.compile(r"garage/estate permits in window=0\b", re.I),
 ]
 
 FAIL_PATTERNS = [
@@ -64,6 +68,7 @@ FAIL_PATTERNS = [
 OK_PATTERNS = [
     re.compile(r"normalized=([1-9]\d*)\b", re.I),
     re.compile(r"(?:parsed|enriched|static results)=([1-9]\d*)\b", re.I),
+    re.compile(r"\b[1-9]\d* parsed\b", re.I),
     re.compile(r"merge added=([1-9]\d*)\b", re.I),
 ]
 
