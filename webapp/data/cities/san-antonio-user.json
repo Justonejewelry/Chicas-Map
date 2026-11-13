@@ -7,7 +7,7 @@
   "status": "live",
   "sentinel": "PASS",
   "note": "Operator overlay. Added 4 Facebook Marketplace/Events sales on 2026-11-08 (Chris Ross, Connie Hoover, Margaret Shipp, VFW Post 8397); previous 17 pins preserved. Chapel Hill UMC rummage omitted because Census matched the SW Loop 410 address to NW Loop 410; no approximate pin invented. 9 AM run added 3 more (James Ervin Adkins estate sale, Eric G Quesada Fairoak Crossing, Emma Hall Tierra Buena/Mudshark). Noon run added 4 more (Jennifer Foti La Vernia moving sale, Jenna Combs Amato Pecos Sunset, Dale Geiger Shady Cove Spring Branch, Margarett Mitchell Barbara Dr). Nov 9 noon run added 1 (Congregation Beth Simcha yard sale, rescheduled to Nov 15). Nov 9 2:30 PM added 7 YardSaleSearch listings for Nov 9-15 (Grandwood, Black Walnut Schertz, Orchid Trl Boerne, Mayfair neighborhood sale, MPS Storage US-181, two Trophy Oaks Garden Ridge homes). Nov 10 morning email ingest added 4 sales: neighbor tip at 2715 Spokane Rd (Nov 14); MacArthur Park Lutheran community garage sale at 2903 Nacogdoches Rd (Nov 14); and two more Trophy Oaks Community Fall Sale homes (10041 and 9814 Trophy Oaks Dr, Nov 14). Raise a glass for Mr. Mike (Universal City, Nov 14–15) was skipped because the street address is hidden until Nov 13. Nov 10 evening Nextdoor ingest added 2 sales: Trophy Oaks community home at 20418 Wahl Ln, Garden Ridge (Nov 14, 8am-4pm); and a garage sale at 774 Pecan Row, New Braunfels (Nov 13–15, hours not posted). A Canyon Lake sale on Krebs was skipped because no exact street address was posted yet. Nov 11 Facebook Events ingest added 2 sales: Joe Garza community garage sale at 18023 Crystal Knoll (Sat Nov 14, 8am–2pm, many until 3); and Dale Geiger garage sale at 825 Shady Cove Ln, Spring Branch (Sat Nov 14, 8 AM–3 PM; new event, separate from the Nov 7–8 sale already ended). Skipped 5802 Grandwood Dr and 2806 Mayfair Dr (already on the map from YardSaleSearch, same addresses and dates); Congregation Beth Simcha at 9360 Abe Lincoln Rd (already on the map as fb-1537923171466566, hours left blank); West Pointe Garden at 11300 Spurs Ranch Rd (community-park landmark only — the Marketplace listing says it is not the exact sale location, and no real street was given); and Meyer Ranch Yard Sale at 9666 W Hwy 46, New Braunfels, Nov 21 (hours would be 11 AM–2 PM from the description, not the 8 AM event card, but Census and Nominatim still cannot precisely geocode house number 9666 — Nominatim only returns Highway 46 road segments — so no pin was invented).",
-  "total_locations": 20,
+  "total_locations": 19,
   "public": [
     {
       "address": "501 STALLION SPRINGS DR, FISCHER, TX, 78623",
@@ -166,38 +166,6 @@
         "yardsalesearch"
       ],
       "zip": "78239",
-      "in_person": true,
-      "date_note": "Dates and hours as posted on the YardSaleSearch listing (checked 2026-11-09 2:30 PM CT).",
-      "date_verified": "yardsalesearch-2026-11-09-1430"
-    },
-    {
-      "address": "113 BLACK WALNUT, SCHERTZ, TX, 78154",
-      "source_address": "113 Black Walnut, Schertz, TX 78154",
-      "dates": "2026-11-09 – 2026-11-12",
-      "date_from": "2026-11-09",
-      "date_to": "2026-11-12",
-      "end_date": "2026-11-12",
-      "date_start": "2026-11-09",
-      "date_end": "2026-11-12",
-      "date_bucket": "upcoming",
-      "hours": "Mon 3-7:30pm, Tue-Thu 3-7pm",
-      "title": "Good Goods Inside Sale",
-      "details": "Inside sale: kids bike, hoverboard, sound bars, TV, office chair, bed frames, microwave, books, scooters, utility carts, tables, shelves, patio furniture, tiles, clothing and shoes, Coleman lantern and more.",
-      "source": "YardSaleSearch",
-      "url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196458773",
-      "photos": 0,
-      "type": "garage",
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 29.551369903987,
-      "lon": -98.256587670159,
-      "geocode": "census",
-      "external_id": "yss-196458773",
-      "categories": [
-        "garage-sale",
-        "yardsalesearch"
-      ],
-      "zip": "78154",
       "in_person": true,
       "date_note": "Dates and hours as posted on the YardSaleSearch listing (checked 2026-11-09 2:30 PM CT).",
       "date_verified": "yardsalesearch-2026-11-09-1430"

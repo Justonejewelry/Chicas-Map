@@ -1,0 +1,1058 @@
+{
+  "target_date": "2026-11-13",
+  "generated_at": "2026-11-13T03:28:37-06:00",
+  "city": "san-antonio",
+  "area": "San Antonio & surrounding communities",
+  "count": 27,
+  "min_confidence": 70,
+  "sales": [
+    {
+      "sale_id": "2026-11-12_1254-austin-hwy-san-antonio-tx",
+      "title": "OPEN & selling Friday November 13th (Austin Highway)",
+      "sale_type": "garage",
+      "date_start": "2026-11-12",
+      "date_end": "2026-11-13",
+      "start_time": "",
+      "end_time": "",
+      "address": "1254 Austin Hwy, San Antonio, TX",
+      "city": "San Antonio",
+      "state": "TX",
+      "zip": "",
+      "latitude": 29.485811,
+      "longitude": -98.44471,
+      "description": "QR Code Link to This Post Recently started selling STUFF on Austin Hwy 1254 Austin Hwy is the address Open for business Friday Nov 13th 10 am to 4 pm Park in front walk through the door This is a safe secure public location Thousands of dollars worth of merchandise Bring cash and carry out your purchases No need to email or try calling Reply here with a day and time OPEN: November 12th & 13th 10 am to 4 pm Thursday & Friday Your convenience",
+      "highlights": [],
+      "source_urls": [
+        "https://www.craigslist.org/view/d/san-antonio-open-thursday-friday/sExB2DYDVsvNZe7wmMARQP"
+      ],
+      "original_url": "https://www.craigslist.org/view/d/san-antonio-open-thursday-friday/sExB2DYDVsvNZe7wmMARQP",
+      "source_names": [
+        "Craigslist"
+      ],
+      "photos": [
+        "https://images.craigslist.org/00o0o_fMlEMDHUiLj_0BQ0t2_600x450.jpg",
+        "https://images.craigslist.org/00o0o_fMlEMDHUiLj_0BQ0t2_50x50c.jpg",
+        "https://images.craigslist.org/00l0l_fYHfkJPor0u_0t20Cz_50x50c.jpg",
+        "https://images.craigslist.org/00303_4Eyv7OgllOq_0kg0t2_50x50c.jpg",
+        "https://images.craigslist.org/00H0H_e96yflKPZil_0oJ0t2_50x50c.jpg",
+        "https://images.craigslist.org/00Q0Q_jun0A3PLX3G_0vd0t2_50x50c.jpg"
+      ],
+      "confidence": 96,
+      "verified_at": "2026-11-13T03:28:37-06:00",
+      "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.485811,-98.44471",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.485811,-98.44471",
+      "status": "verified",
+      "geocode_method": "source",
+      "notes": "",
+      "community_source": "",
+      "community_link_or_notes": ""
+    },
+    {
+      "sale_id": "2026-11-12_1303-roosevelt-2-near-roosevelt-and-felisa-san-a",
+      "title": "YARD SALE",
+      "sale_type": "garage",
+      "date_start": "2026-11-12",
+      "date_end": "2026-11-13",
+      "start_time": "",
+      "end_time": "",
+      "address": "1303 Roosevelt #2 near Roosevelt and Felisa, San Antonio, TX",
+      "city": "San Antonio",
+      "state": "TX",
+      "zip": "",
+      "latitude": 29.391,
+      "longitude": -98.4866,
+      "description": "QR Code Link to This Post If weather permits I will be having a yard sale Thursday and Friday. I have a lot of New, Used, and Vintage stuff. I have 2 New Electric Heaters, and a few Used ones, different sizes, different prices. I have hanging Wall pictures, battery operated clocks, and so much more, too much to mention. I will post more pictures the day I set up..I will start at 9:30am. My address",
+      "highlights": [],
+      "source_urls": [
+        "https://www.craigslist.org/view/d/san-antonio-yard-sale/aCtLxMDqpWV28BkZEQ2Lsc"
+      ],
+      "original_url": "https://www.craigslist.org/view/d/san-antonio-yard-sale/aCtLxMDqpWV28BkZEQ2Lsc",
+      "source_names": [
+        "Craigslist"
+      ],
+      "photos": [],
+      "confidence": 92,
+      "verified_at": "2026-11-13T03:28:37-06:00",
+      "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.391,-98.4866",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.391,-98.4866",
+      "status": "verified",
+      "geocode_method": "source",
+      "notes": "",
+      "community_source": "",
+      "community_link_or_notes": ""
+    },
+    {
+      "sale_id": "2026-11-12_205-pollydale-dr-san-antonio-tx",
+      "title": "Huge Family Yard Sale",
+      "sale_type": "garage",
+      "date_start": "2026-11-12",
+      "date_end": "2026-11-13",
+      "start_time": "8:00 AM - 5:00 PM",
+      "end_time": "",
+      "address": "205 Pollydale Dr, San Antonio, TX",
+      "city": "San Antonio",
+      "state": "TX",
+      "zip": "",
+      "latitude": 29.375199,
+      "longitude": -98.43792,
+      "description": "Find all the garage sales, yard sales, and estate sales on a map! Or place a free ad for your upcoming sale on yardsalesearch.com",
+      "highlights": [],
+      "source_urls": [
+        "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196461207"
+      ],
+      "original_url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196461207",
+      "source_names": [
+        "YardSaleSearch"
+      ],
+      "photos": [
+        "https://d82cz7nyq77ak.cloudfront.net/images/social/Facebook.png",
+        "https://d82cz7nyq77ak.cloudfront.net/images/social/Pinterest.png",
+        "https://d82cz7nyq77ak.cloudfront.net/images/social/Reddit.png",
+        "https://d82cz7nyq77ak.cloudfront.net/images/social/Twitter.png",
+        "https://d82cz7nyq77ak.cloudfront.net/images/social/Email.png",
+        "https://d3sp8ubbhnru9d.cloudfront.net/image/w300-c300:250/2026/11/11/s/5/3/38997053/7YQ0O-0.jpeg"
+      ],
+      "confidence": 100,
+      "verified_at": "2026-11-13T03:28:37-06:00",
+      "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.375199,-98.43792",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.375199,-98.43792",
+      "status": "verified",
+      "geocode_method": "source",
+      "notes": "",
+      "community_source": "",
+      "community_link_or_notes": ""
+    },
+    {
+      "sale_id": "2026-11-12_211-s-flores-st-san-antonio-tx-78204",
+      "title": "LUXURY, LUXURY, LUXURY!  Estate Sale",
+      "sale_type": "estate",
+      "date_start": "2026-11-12",
+      "date_end": "2026-11-15",
+      "start_time": "",
+      "end_time": "",
+      "address": "211 S Flores St, San Antonio, TX 78204",
+      "city": "San Antonio",
+      "state": "TX",
+      "zip": "",
+      "latitude": 29.422029,
+      "longitude": -98.496071,
+      "description": "LUXURY, LUXURY, LUXURY! Estate Sale https://www.estatesales.net/TX/San-Antonio/78247/5141958 Come check us out Luxury designer women’s clothes and shoes Purses Jewelry Furniture Collectibles Lots of fun stuff and holiday cheer Incredible wreaths for every occasion MCM furniture A lot of Brass Some great paintings Also check out other Arts events in San Antonio , Fine Arts events in San Antonio .",
+      "highlights": [],
+      "source_urls": [
+        "https://allevents.in/san-antonio/luxury-luxury-luxury-estate-sale/200031017025850"
+      ],
+      "original_url": "https://allevents.in/san-antonio/luxury-luxury-luxury-estate-sale/200031017025850",
+      "source_names": [
+        "AllEvents"
+      ],
+      "photos": [
+        "https://cdn2.allevents.in/transup/ab/ced64bf76d429aaa513418ff72f873/profile.png",
+        "https://dyn-image.allevents.in/generate-image?v=4&title=LUXURY%2C+LUXURY%2C+LUXURY%21++Estate+Sale&date=Thu%2C+12+Nov%2C+2026+at+10%3A00+am&bg=1",
+        "https://graph.facebook.com/61596516324622/picture?height=512",
+        "https://cdn2.allevents.in/transup/5d/b09f642bed44b1912993d7d1a437e8/google_ai_mode.png",
+        "https://googleads.g.doubleclick.net/pagead/viewthroughconversion/994326962/?guid=ON&amp;script=0",
+        "https://na.allevents.in/matomo.php?idsite=1"
+      ],
+      "confidence": 96,
+      "verified_at": "2026-11-13T03:28:37-06:00",
+      "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.422029,-98.496071",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.422029,-98.496071",
+      "status": "verified",
+      "geocode_method": "source",
+      "notes": "",
+      "community_source": "",
+      "community_link_or_notes": ""
+    },
+    {
+      "sale_id": "2026-11-12_346-pueblo-pintado-helotes-tx-78023",
+      "title": "SA Express News Marketplace - Estate Sale in Sonoma Ranch",
+      "sale_type": "estate",
+      "date_start": "2026-11-12",
+      "date_end": "2026-11-14",
+      "start_time": "",
+      "end_time": "",
+      "address": "346 Pueblo Pintado, Helotes, TX 78023",
+      "city": "San Antonio",
+      "state": "TX",
+      "zip": "",
+      "latitude": 29.588104523478,
+      "longitude": -98.663187157125,
+      "description": "Estate Sale in Sonoma Ranch\r\nMoving Estate Sale lots of great items! Furniture, artwork, yard items, green egg grill, chandeliers, jewelry, etc!\r\nThursday 11/12/26 8 am-1 pm\r\nFriday 11/13/26 8 am-1 pm\r\nSaturday 11/14/26 8 am-Noon\r\nCash or Venmo only. Must load items purchased.\r\n346 Pueblo Pintado, Helotes 78023",
+      "highlights": [],
+      "source_urls": [
+        "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/advert/estate-sale-in-sonoma-ranch-general_1012"
+      ],
+      "original_url": "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/advert/estate-sale-in-sonoma-ranch-general_1012",
+      "source_names": [
+        "Express-News Marketplace"
+      ],
+      "photos": [
+        "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/static/images/sponsored/728x90.gif",
+        "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/static/images/publications/sanantonio.png",
+        "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/image/general/IPCSAE00228731/c5dd6ae2e5cf3e3af4d28bf7132886d2_thumb.jpg",
+        "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/static/images/sponsored/300x250.gif"
+      ],
+      "confidence": 96,
+      "verified_at": "2026-11-13T03:28:37-06:00",
+      "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.588104523478,-98.663187157125",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.588104523478,-98.663187157125",
+      "status": "verified",
+      "geocode_method": "census",
+      "notes": "",
+      "community_source": "",
+      "community_link_or_notes": ""
+    },
+    {
+      "sale_id": "2026-11-12_4119-spring-view-dr-san-antonio-tx-78222",
+      "title": "SA Express News Marketplace - SOUTHEAST - GARAGE SALE",
+      "sale_type": "garage",
+      "date_start": "2026-11-12",
+      "date_end": "2026-11-13",
+      "start_time": "",
+      "end_time": "",
+      "address": "4119 Spring View Dr, San Antonio, TX 78222",
+      "city": "San Antonio",
+      "state": "TX",
+      "zip": "",
+      "latitude": 29.378802190687,
+      "longitude": -98.417306910705,
+      "description": "SOUTHEAST - GARAGE SALE\r\n4119 Spring View Dr., 78222.\r\n2 sewing machines, furniture,\r\n$1 items & much more!\r\nNOV. 12-13 8:00am- 4pm",
+      "highlights": [],
+      "source_urls": [
+        "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/advert/southeast-garage-sale-general_1036"
+      ],
+      "original_url": "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/advert/southeast-garage-sale-general_1036",
+      "source_names": [
+        "Express-News Marketplace"
+      ],
+      "photos": [
+        "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/static/images/sponsored/728x90.gif",
+        "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/static/images/publications/sanantonio.png",
+        "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/static/images/sponsored/300x250.gif"
+      ],
+      "confidence": 96,
+      "verified_at": "2026-11-13T03:28:37-06:00",
+      "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.378802190687,-98.417306910705",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.378802190687,-98.417306910705",
+      "status": "verified",
+      "geocode_method": "census",
+      "notes": "",
+      "community_source": "",
+      "community_link_or_notes": ""
+    },
+    {
+      "sale_id": "2026-11-12_6727-glen-fair-san-antonio-tx-78239",
+      "title": "GARAGE SALE!",
+      "sale_type": "garage",
+      "date_start": "2026-11-12",
+      "date_end": "2026-11-14",
+      "start_time": "",
+      "end_time": "",
+      "address": "6727 Glen Fair, San Antonio, TX 78239",
+      "city": "San Antonio",
+      "state": "TX",
+      "zip": "",
+      "latitude": 29.517994035186,
+      "longitude": -98.354717873467,
+      "description": "GARAGE SALE!\r\n6727 GLEN FAIR 78239, Huge Garage Sale, small kitch. appliances, gadgets, glass ware, misc. house hold Items, iron wood carvings, clothes, books, radial arm saw, shop tools, nails, bolts, and screws, and much more! Thur-Sat Nov 12-14. Starting at 9am.",
+      "highlights": [],
+      "source_urls": [
+        "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/advert/garage-sale-general_1046"
+      ],
+      "original_url": "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/advert/garage-sale-general_1046",
+      "source_names": [
+        "Express-News Marketplace"
+      ],
+      "photos": [
+        "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/static/images/sponsored/728x90.gif",
+        "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/static/images/publications/sanantonio.png",
+        "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/static/images/sponsored/300x250.gif"
+      ],
+      "confidence": 96,
+      "verified_at": "2026-11-13T03:28:37-06:00",
+      "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.517994035186,-98.354717873467",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.517994035186,-98.354717873467",
+      "status": "verified",
+      "geocode_method": "census",
+      "notes": "",
+      "community_source": "",
+      "community_link_or_notes": ""
+    },
+    {
+      "sale_id": "2026-11-12_811-northstar-dr-san-antonio-tx-78216",
+      "title": "Find Yard Sales & Garage Sales | Advertise your Sale FREE",
+      "sale_type": "garage",
+      "date_start": "2026-11-12",
+      "date_end": "2026-11-13",
+      "start_time": "",
+      "end_time": "",
+      "address": "811 NORTHSTAR DR, SAN ANTONIO, TX, 78216",
+      "city": "San Antonio",
+      "state": "TX",
+      "zip": "78216",
+      "latitude": 29.532252506662,
+      "longitude": -98.504210494488,
+      "description": "Four-family pre-holiday garage sale: jewelry, clothing, shoes, household items, sporting goods and makeup, all out of the garage.",
+      "highlights": [],
+      "source_urls": [
+        "https://www.garagesalefinder.com/"
+      ],
+      "original_url": "https://www.garagesalefinder.com/",
+      "source_names": [
+        "GarageSaleFinder"
+      ],
+      "photos": [],
+      "confidence": 96,
+      "verified_at": "2026-11-13T03:28:37-06:00",
+      "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.532252506662,-98.504210494488",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.532252506662,-98.504210494488",
+      "status": "verified",
+      "geocode_method": "census",
+      "notes": "",
+      "community_source": "",
+      "community_link_or_notes": ""
+    },
+    {
+      "sale_id": "2026-11-13_127-placid-heights-seguin-tx",
+      "title": "127 & 192 PLACID HEIGHTS, 19 & 23",
+      "sale_type": "community",
+      "date_start": "2026-11-13",
+      "date_end": "2026-11-14",
+      "start_time": "",
+      "end_time": "",
+      "address": "127 Placid Heights, Seguin, TX",
+      "city": "San Antonio",
+      "state": "TX",
+      "zip": "",
+      "latitude": 29.535505734708,
+      "longitude": -98.000065823026,
+      "description": "127 & 192 PLACID HEIGHTS, 19 & 23 Arrowhead Bluff Nov. 13th & 14th, 8AM-5PM. Rain or shine! 127 & 192 PLACID HEIGHTS, 19 & 23 Arrowhead Bluff Nov. 13th & 14th, 8AM-5PM. Rain or shine! 127 & 192 PLACID HEIGHTS, 19 & 23",
+      "highlights": [],
+      "source_urls": [
+        "https://seguingazette.com/classifieds/garage_sales/garage_sales/127-192-placid-heights-19-23/ad_93554d78-57f0-582d-a8a7-c966514cef19.html"
+      ],
+      "original_url": "https://seguingazette.com/classifieds/garage_sales/garage_sales/127-192-placid-heights-19-23/ad_93554d78-57f0-582d-a8a7-c966514cef19.html",
+      "source_names": [
+        "Seguin Gazette"
+      ],
+      "photos": [],
+      "confidence": 92,
+      "verified_at": "2026-11-13T03:28:37-06:00",
+      "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.535505734708,-98.000065823026",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.535505734708,-98.000065823026",
+      "status": "verified",
+      "geocode_method": "census",
+      "notes": "",
+      "community_source": "",
+      "community_link_or_notes": ""
+    },
+    {
+      "sale_id": "2026-11-13_14306-stoddard-dr-san-antonio-tx",
+      "title": "Garage Sale Tomorrow And Saturday",
+      "sale_type": "garage",
+      "date_start": "2026-11-13",
+      "date_end": "2026-11-14",
+      "start_time": "9:00 AM - 2:00 PM",
+      "end_time": "",
+      "address": "14306 Stoddard Dr, San Antonio, TX",
+      "city": "San Antonio",
+      "state": "TX",
+      "zip": "",
+      "latitude": 29.576915,
+      "longitude": -98.471777,
+      "description": "Find all the garage sales, yard sales, and estate sales on a map! Or place a free ad for your upcoming sale on yardsalesearch.com",
+      "highlights": [],
+      "source_urls": [
+        "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196461853"
+      ],
+      "original_url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196461853",
+      "source_names": [
+        "YardSaleSearch"
+      ],
+      "photos": [
+        "https://d82cz7nyq77ak.cloudfront.net/images/social/Facebook.png",
+        "https://d82cz7nyq77ak.cloudfront.net/images/social/Pinterest.png",
+        "https://d82cz7nyq77ak.cloudfront.net/images/social/Reddit.png",
+        "https://d82cz7nyq77ak.cloudfront.net/images/social/Twitter.png",
+        "https://d82cz7nyq77ak.cloudfront.net/images/social/Email.png",
+        "https://gsf.tlstatic.com/image/w300-c300:250/2026/11/12/s/8/1/21827181/Buyt-0.jpeg"
+      ],
+      "confidence": 100,
+      "verified_at": "2026-11-13T03:28:37-06:00",
+      "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.576915,-98.471777",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.576915,-98.471777",
+      "status": "verified",
+      "geocode_method": "source",
+      "notes": "",
+      "community_source": "",
+      "community_link_or_notes": ""
+    },
+    {
+      "sale_id": "2026-11-13_16527-drum-oak-san-antonio-tx",
+      "title": "Household goods garage sale! (San Antonio)",
+      "sale_type": "garage",
+      "date_start": "2026-11-13",
+      "date_end": "2026-11-13",
+      "start_time": "",
+      "end_time": "",
+      "address": "16527 drum oak, San Antonio, TX",
+      "city": "San Antonio",
+      "state": "TX",
+      "zip": "",
+      "latitude": 29.5966,
+      "longitude": -98.4572,
+      "description": "QR Code Link to This Post Calling everything cheap!! 16527 drum oak Satx 78232 November 13,14 Fri till 2 Saturday till 2",
+      "highlights": [],
+      "source_urls": [
+        "https://www.craigslist.org/view/d/san-antonio-household-goods-garage-sale/eY2Yh6DqVWuFSivSn9Jj62"
+      ],
+      "original_url": "https://www.craigslist.org/view/d/san-antonio-household-goods-garage-sale/eY2Yh6DqVWuFSivSn9Jj62",
+      "source_names": [
+        "Craigslist"
+      ],
+      "photos": [],
+      "confidence": 96,
+      "verified_at": "2026-11-13T03:28:37-06:00",
+      "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.5966,-98.4572",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.5966,-98.4572",
+      "status": "verified",
+      "geocode_method": "source",
+      "notes": "",
+      "community_source": "",
+      "community_link_or_notes": ""
+    },
+    {
+      "sale_id": "2026-11-13_1711-searcy-dr-san-antonio-tx-78232",
+      "title": "1711 Searcy Dr, San Antonio, TX 78232",
+      "sale_type": "garage",
+      "date_start": "2026-11-13",
+      "date_end": "2026-11-14",
+      "start_time": "8:00 am - 5:00 pm",
+      "end_time": "",
+      "address": "1711 Searcy Dr, San Antonio, TX 78232",
+      "city": "San Antonio",
+      "state": "TX",
+      "zip": "",
+      "latitude": 29.59,
+      "longitude": -98.47,
+      "description": "Dates and Times: Friday, November 13, 2026 8:00 am - 5:00 pm",
+      "highlights": [],
+      "source_urls": [
+        "https://garagesalefinder.com/s/N9bsx/1711-searcy-dr-san-antonio-tx-78232"
+      ],
+      "original_url": "https://garagesalefinder.com/s/N9bsx/1711-searcy-dr-san-antonio-tx-78232",
+      "source_names": [
+        "GarageSaleFinder"
+      ],
+      "photos": [
+        "https://gsf.tlstatic.com/images/social/Facebook.png",
+        "https://gsf.tlstatic.com/images/social/Reddit.png",
+        "https://gsf.tlstatic.com/images/social/Twitter.png",
+        "https://gsf.tlstatic.com/images/social/Email.png"
+      ],
+      "confidence": 100,
+      "verified_at": "2026-11-13T03:28:37-06:00",
+      "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.59,-98.47",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.59,-98.47",
+      "status": "verified",
+      "geocode_method": "zip-centroid",
+      "notes": "",
+      "community_source": "",
+      "community_link_or_notes": ""
+    },
+    {
+      "sale_id": "2026-11-13_217-long-cove-dr-cibolo-tx",
+      "title": "Rain Forecast,. Date Has Changed. Huge 3 Family Yard Sale Biggest Sale Ever!",
+      "sale_type": "garage",
+      "date_start": "2026-11-13",
+      "date_end": "2026-11-15",
+      "start_time": "8:00 AM - 2:00 PM",
+      "end_time": "",
+      "address": "217 Long Cove Dr, Cibolo, TX",
+      "city": "San Antonio",
+      "state": "TX",
+      "zip": "",
+      "latitude": 29.584328,
+      "longitude": -98.242459,
+      "description": "Find all the garage sales, yard sales, and estate sales on a map! Or place a free ad for your upcoming sale on yardsalesearch.com",
+      "highlights": [],
+      "source_urls": [
+        "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196461255"
+      ],
+      "original_url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196461255",
+      "source_names": [
+        "YardSaleSearch"
+      ],
+      "photos": [
+        "https://d82cz7nyq77ak.cloudfront.net/images/social/Facebook.png",
+        "https://d82cz7nyq77ak.cloudfront.net/images/social/Pinterest.png",
+        "https://d82cz7nyq77ak.cloudfront.net/images/social/Reddit.png",
+        "https://d82cz7nyq77ak.cloudfront.net/images/social/Twitter.png",
+        "https://d82cz7nyq77ak.cloudfront.net/images/social/Email.png",
+        "https://d3sp8ubbhnru9d.cloudfront.net/image/w300-c300:250/2026/11/11/s/0/1/38997101/9655-0.jpeg"
+      ],
+      "confidence": 100,
+      "verified_at": "2026-11-13T03:28:37-06:00",
+      "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.584328,-98.242459",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.584328,-98.242459",
+      "status": "verified",
+      "geocode_method": "source",
+      "notes": "",
+      "community_source": "",
+      "community_link_or_notes": ""
+    },
+    {
+      "sale_id": "2026-11-13_2914-rocky-oak-st-san-antonio-tx",
+      "title": "Lots Of Great Stuff",
+      "sale_type": "garage",
+      "date_start": "2026-11-13",
+      "date_end": "2026-11-14",
+      "start_time": "9:00 AM - 6:00 PM",
+      "end_time": "",
+      "address": "2914 Rocky Oak St, San Antonio, TX",
+      "city": "San Antonio",
+      "state": "TX",
+      "zip": "",
+      "latitude": 29.589932,
+      "longitude": -98.445069,
+      "description": "Find all the garage sales, yard sales, and estate sales on a map! Or place a free ad for your upcoming sale on yardsalesearch.com",
+      "highlights": [],
+      "source_urls": [
+        "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196460595"
+      ],
+      "original_url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196460595",
+      "source_names": [
+        "YardSaleSearch"
+      ],
+      "photos": [
+        "https://d82cz7nyq77ak.cloudfront.net/images/social/Facebook.png",
+        "https://d82cz7nyq77ak.cloudfront.net/images/social/Pinterest.png",
+        "https://d82cz7nyq77ak.cloudfront.net/images/social/Reddit.png",
+        "https://d82cz7nyq77ak.cloudfront.net/images/social/Twitter.png",
+        "https://d82cz7nyq77ak.cloudfront.net/images/social/Email.png",
+        "https://dop6twngijzdg.cloudfront.net/image/w300-c300:250/2026/11/11/s/g/U/7HDgU/Va7c-0.jpeg"
+      ],
+      "confidence": 100,
+      "verified_at": "2026-11-13T03:28:37-06:00",
+      "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.589932,-98.445069",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.589932,-98.445069",
+      "status": "verified",
+      "geocode_method": "source",
+      "notes": "",
+      "community_source": "",
+      "community_link_or_notes": ""
+    },
+    {
+      "sale_id": "2026-11-13_293-saddle-lane-floresville-tx",
+      "title": "Floresville Huge garage sale",
+      "sale_type": "garage",
+      "date_start": "2026-11-13",
+      "date_end": "2026-11-14",
+      "start_time": "",
+      "end_time": "",
+      "address": "293 Saddle Lane, Floresville, TX",
+      "city": "San Antonio",
+      "state": "TX",
+      "zip": "",
+      "latitude": 29.270013560113,
+      "longitude": -98.247229219432,
+      "description": "Floresville. Huge garage sale, 293 Saddle Lane, Cimmaron Subdivision, Fri.-Sat., Nov. 13-14, from 8-4. Lots of jewelry, linens, dishes, wall decor, decorative items, tons of household items, men's and women's clothes, lots of Christmas, 2 antique tractors, and furniture.",
+      "highlights": [],
+      "source_urls": [
+        "https://www.wilsoncountynews.com/classifieds/garage-sale/385573/"
+      ],
+      "original_url": "https://www.wilsoncountynews.com/classifieds/garage-sale/385573/",
+      "source_names": [
+        "Wilson County News"
+      ],
+      "photos": [
+        "https://www.wilsoncountynews.com/wp-content/uploads/svgs/buzzsprout-2.svg",
+        "https://www.wilsoncountynews.com/wp-content/uploads/svgs/soundcloud-1.svg",
+        "https://www.wilsoncountynews.com/wp-content/uploads/2025/07/ancira-global.gif",
+        "https://d2x67q1m9cxoc8.cloudfront.net/geodirectory/assets/images/pin.png",
+        "https://www.wilsoncountynews.com/wp-content/uploads/2022/05/app-header-wcn-1-1.png",
+        "https://www.wilsoncountynews.com/wp-content/uploads/2023/08/friday-night-scores-global.gif"
+      ],
+      "confidence": 96,
+      "verified_at": "2026-11-13T03:28:37-06:00",
+      "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.270013560113,-98.247229219432",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.270013560113,-98.247229219432",
+      "status": "verified",
+      "geocode_method": "census",
+      "notes": "",
+      "community_source": "",
+      "community_link_or_notes": ""
+    },
+    {
+      "sale_id": "2026-11-13_315-oak-knoll-dr-san-antonio-tx",
+      "title": "Garage Sale",
+      "sale_type": "garage",
+      "date_start": "2026-11-13",
+      "date_end": "2026-11-15",
+      "start_time": "9:00 AM - 6:00 PM",
+      "end_time": "",
+      "address": "315 Oak Knoll Dr, San Antonio, TX",
+      "city": "San Antonio",
+      "state": "TX",
+      "zip": "",
+      "latitude": 29.4745114,
+      "longitude": -98.58603887,
+      "description": "Find all the garage sales, yard sales, and estate sales on a map! Or place a free ad for your upcoming sale on yardsalesearch.com",
+      "highlights": [],
+      "source_urls": [
+        "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196462597"
+      ],
+      "original_url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196462597",
+      "source_names": [
+        "YardSaleSearch"
+      ],
+      "photos": [
+        "https://d82cz7nyq77ak.cloudfront.net/images/social/Facebook.png",
+        "https://d82cz7nyq77ak.cloudfront.net/images/social/Pinterest.png",
+        "https://d82cz7nyq77ak.cloudfront.net/images/social/Reddit.png",
+        "https://d82cz7nyq77ak.cloudfront.net/images/social/Twitter.png",
+        "https://d82cz7nyq77ak.cloudfront.net/images/social/Email.png",
+        "https://gsf.tlstatic.com/image/w300-c300:250/2026/11/12/s/2/5/21827925/XtjMN-0.jpeg"
+      ],
+      "confidence": 100,
+      "verified_at": "2026-11-13T03:28:37-06:00",
+      "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4745114,-98.58603887",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.4745114,-98.58603887",
+      "status": "verified",
+      "geocode_method": "source",
+      "notes": "",
+      "community_source": "",
+      "community_link_or_notes": ""
+    },
+    {
+      "sale_id": "2026-11-13_3406-butterleigh-near-shire-oak-san-antonio-tx",
+      "title": "Garage sale on Friday Nov 13 (Eden Subdivison)",
+      "sale_type": "garage",
+      "date_start": "2026-11-13",
+      "date_end": "2026-11-13",
+      "start_time": "",
+      "end_time": "",
+      "address": "3406 Butterleigh near Shire Oak, San Antonio, TX",
+      "city": "San Antonio",
+      "state": "TX",
+      "zip": "",
+      "latitude": 29.572579,
+      "longitude": -98.420737,
+      "description": "QR Code Link to This Post Garage Sale this Friday November 13. Will be selling furniture, household items, clothes, toys, and misc item.",
+      "highlights": [],
+      "source_urls": [
+        "https://www.craigslist.org/view/d/san-antonio-garage-sale-on-friday-nov-13/9HHJnNSng9Cgmyp7k6ax2q"
+      ],
+      "original_url": "https://www.craigslist.org/view/d/san-antonio-garage-sale-on-friday-nov-13/9HHJnNSng9Cgmyp7k6ax2q",
+      "source_names": [
+        "Craigslist"
+      ],
+      "photos": [],
+      "confidence": 96,
+      "verified_at": "2026-11-13T03:28:37-06:00",
+      "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.572579,-98.420737",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.572579,-98.420737",
+      "status": "verified",
+      "geocode_method": "source",
+      "notes": "",
+      "community_source": "",
+      "community_link_or_notes": ""
+    },
+    {
+      "sale_id": "2026-11-13_4802-e-beverly-mae-dr-san-antonio-tx",
+      "title": "November Semi-Annual Yard Sale-Cash Please",
+      "sale_type": "garage",
+      "date_start": "2026-11-13",
+      "date_end": "2026-11-14",
+      "start_time": "9:00 AM - 3:30 PM",
+      "end_time": "",
+      "address": "4802 E Beverly Mae Dr, San Antonio, TX",
+      "city": "San Antonio",
+      "state": "TX",
+      "zip": "",
+      "latitude": 29.498455,
+      "longitude": -98.579406,
+      "description": "Find all the garage sales, yard sales, and estate sales on a map! Or place a free ad for your upcoming sale on yardsalesearch.com",
+      "highlights": [],
+      "source_urls": [
+        "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196462087"
+      ],
+      "original_url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196462087",
+      "source_names": [
+        "YardSaleSearch"
+      ],
+      "photos": [
+        "https://d82cz7nyq77ak.cloudfront.net/images/social/Facebook.png",
+        "https://d82cz7nyq77ak.cloudfront.net/images/social/Pinterest.png",
+        "https://d82cz7nyq77ak.cloudfront.net/images/social/Reddit.png",
+        "https://d82cz7nyq77ak.cloudfront.net/images/social/Twitter.png",
+        "https://d82cz7nyq77ak.cloudfront.net/images/social/Email.png",
+        "https://gsf.tlstatic.com/image/w300-c300:250/2026/11/12/s/1/3/21827413/XxdJr-0.jpeg"
+      ],
+      "confidence": 100,
+      "verified_at": "2026-11-13T03:28:37-06:00",
+      "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.498455,-98.579406",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.498455,-98.579406",
+      "status": "verified",
+      "geocode_method": "source",
+      "notes": "",
+      "community_source": "",
+      "community_link_or_notes": ""
+    },
+    {
+      "sale_id": "2026-11-13_52-peach-tree-ave-poteet-tx-78065",
+      "title": "52 Peach Tree Ave, Poteet, TX 78065",
+      "sale_type": "garage",
+      "date_start": "2026-11-13",
+      "date_end": "2026-11-15",
+      "start_time": "8:00 am - 4:00 pm",
+      "end_time": "",
+      "address": "52 Peach Tree Ave, Poteet, TX 78065",
+      "city": "San Antonio",
+      "state": "TX",
+      "zip": "",
+      "latitude": 29.4241,
+      "longitude": -98.4936,
+      "description": "Dates and Times: Friday, November 13, 2026 8:00 am - 4:00 pm",
+      "highlights": [],
+      "source_urls": [
+        "https://garagesalefinder.com/s/N9bvw/52-peach-tree-ave-poteet-tx-78065"
+      ],
+      "original_url": "https://garagesalefinder.com/s/N9bvw/52-peach-tree-ave-poteet-tx-78065",
+      "source_names": [
+        "GarageSaleFinder"
+      ],
+      "photos": [
+        "https://gsf.tlstatic.com/images/social/Facebook.png",
+        "https://gsf.tlstatic.com/images/social/Reddit.png",
+        "https://gsf.tlstatic.com/images/social/Twitter.png",
+        "https://gsf.tlstatic.com/images/social/Email.png"
+      ],
+      "confidence": 100,
+      "verified_at": "2026-11-13T03:28:37-06:00",
+      "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.4241,-98.4936",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.4241,-98.4936",
+      "status": "verified",
+      "geocode_method": "city-center",
+      "notes": "",
+      "community_source": "",
+      "community_link_or_notes": ""
+    },
+    {
+      "sale_id": "2026-11-13_5802-grandwood-dr-san-antonio-tx-78239",
+      "title": "Big Garage Sale (Christmas Decor & More)",
+      "sale_type": "garage",
+      "date_start": "2026-11-13",
+      "date_end": "2026-11-14",
+      "start_time": "9:00 AM - 5:00 PM",
+      "end_time": "",
+      "address": "5802 GRANDWOOD DR, SAN ANTONIO, TX, 78239",
+      "city": "San Antonio",
+      "state": "TX",
+      "zip": "78239",
+      "latitude": 29.531991060015,
+      "longitude": -98.374283945444,
+      "description": "Christmas decorations (incl. Jim Shore Heartwood Creek Santa), ribbon and craft supplies, women's and toddler clothing, kids' toys, boom boxes and stereo receivers, vintage sewing basket, furniture and household items, costume jewelry.",
+      "highlights": [],
+      "source_urls": [
+        "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196458725"
+      ],
+      "original_url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196458725",
+      "source_names": [
+        "YardSaleSearch"
+      ],
+      "photos": [
+        "https://d82cz7nyq77ak.cloudfront.net/images/social/Facebook.png",
+        "https://d82cz7nyq77ak.cloudfront.net/images/social/Pinterest.png",
+        "https://d82cz7nyq77ak.cloudfront.net/images/social/Reddit.png",
+        "https://d82cz7nyq77ak.cloudfront.net/images/social/Twitter.png",
+        "https://d82cz7nyq77ak.cloudfront.net/images/social/Email.png",
+        "https://d3sp8ubbhnru9d.cloudfront.net/image/w300-c300:250/2026/11/08/s/6/5/38994565/RSj5-0.jpeg"
+      ],
+      "confidence": 100,
+      "verified_at": "2026-11-13T03:28:37-06:00",
+      "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.531991060015,-98.374283945444",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.531991060015,-98.374283945444",
+      "status": "verified",
+      "geocode_method": "census",
+      "notes": "",
+      "community_source": "",
+      "community_link_or_notes": ""
+    },
+    {
+      "sale_id": "2026-11-13_5802-grandwood-drive-near-weidner-rd-san-antonio",
+      "title": "Multi-Family Garage Sale (Royal Ridge)",
+      "sale_type": "garage",
+      "date_start": "2026-11-13",
+      "date_end": "2026-11-14",
+      "start_time": "9:00 AM – 5:00 PM",
+      "end_time": "",
+      "address": "5802 Grandwood Drive near Weidner Rd, San Antonio, TX",
+      "city": "San Antonio",
+      "state": "TX",
+      "zip": "",
+      "latitude": 29.532047,
+      "longitude": -98.374447,
+      "description": "QR Code Link to This Post 🛍️ BIG GARAGE SALE! 🛍️ Friday, November 13 & Saturday, November 14 📍 5802 Grandwood Dr. ⏰ 9:00 AM – 5:00 PM BOTH DAYS! 🎄 CHRISTMAS DECOR & SO MUCH MORE! 🎄 We're cleaning out tubs, closets, and more! Lots of great finds and treasures looking for new homes! Some of the items for sale include: 🎅 Christmas decorations, including a beautiful Jim Shore Heartwood Creek Santa holding a lantern 🎀 LOTS of ribbon, decorative mesh, craft ribbon rolls & mini Christmas lights 👚 LOTS ",
+      "highlights": [],
+      "source_urls": [
+        "https://www.craigslist.org/view/d/san-antonio-multi-family-garage-sale/97xrYys2ZGym1YmSq3RMnL"
+      ],
+      "original_url": "https://www.craigslist.org/view/d/san-antonio-multi-family-garage-sale/97xrYys2ZGym1YmSq3RMnL",
+      "source_names": [
+        "Craigslist"
+      ],
+      "photos": [
+        "https://images.craigslist.org/01414_6RdILrvtpZz_0t20CI_600x450.jpg",
+        "https://images.craigslist.org/01414_6RdILrvtpZz_0t20CI_50x50c.jpg",
+        "https://images.craigslist.org/00L0L_8Q8RDoiaUIE_0t20CI_50x50c.jpg",
+        "https://images.craigslist.org/00c0c_1sdmFrRLA2q_0CI0t2_50x50c.jpg",
+        "https://images.craigslist.org/00n0n_gUUVxf8IbQy_0t20CI_50x50c.jpg",
+        "https://images.craigslist.org/00303_aVd7HBjzoNS_0CI0t2_50x50c.jpg"
+      ],
+      "confidence": 100,
+      "verified_at": "2026-11-13T03:28:37-06:00",
+      "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.532047,-98.374447",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.532047,-98.374447",
+      "status": "verified",
+      "geocode_method": "source",
+      "notes": "",
+      "community_source": "",
+      "community_link_or_notes": ""
+    },
+    {
+      "sale_id": "2026-11-13_623-blakeley-dr-san-antonio-tx",
+      "title": "Yard Sale",
+      "sale_type": "garage",
+      "date_start": "2026-11-13",
+      "date_end": "2026-11-14",
+      "start_time": "9:00 AM - 2:00 PM",
+      "end_time": "",
+      "address": "623 Blakeley Dr, San Antonio, TX",
+      "city": "San Antonio",
+      "state": "TX",
+      "zip": "",
+      "latitude": 29.485837,
+      "longitude": -98.434211,
+      "description": "Find all the garage sales, yard sales, and estate sales on a map! Or place a free ad for your upcoming sale on yardsalesearch.com",
+      "highlights": [],
+      "source_urls": [
+        "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196460879"
+      ],
+      "original_url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196460879",
+      "source_names": [
+        "YardSaleSearch"
+      ],
+      "photos": [
+        "https://d82cz7nyq77ak.cloudfront.net/images/social/Facebook.png",
+        "https://d82cz7nyq77ak.cloudfront.net/images/social/Pinterest.png",
+        "https://d82cz7nyq77ak.cloudfront.net/images/social/Reddit.png",
+        "https://d82cz7nyq77ak.cloudfront.net/images/social/Twitter.png",
+        "https://d82cz7nyq77ak.cloudfront.net/images/social/Email.png"
+      ],
+      "confidence": 100,
+      "verified_at": "2026-11-13T03:28:37-06:00",
+      "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.485837,-98.434211",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.485837,-98.434211",
+      "status": "verified",
+      "geocode_method": "source",
+      "notes": "",
+      "community_source": "",
+      "community_link_or_notes": ""
+    },
+    {
+      "sale_id": "2026-11-13_6690-cooksey-rd-adkins-tx",
+      "title": "Adkins Garage sale",
+      "sale_type": "garage",
+      "date_start": "2026-11-13",
+      "date_end": "2026-11-14",
+      "start_time": "",
+      "end_time": "",
+      "address": "6690 Cooksey Rd, Adkins, TX",
+      "city": "San Antonio",
+      "state": "TX",
+      "zip": "",
+      "latitude": 29.356984629307,
+      "longitude": -98.278477051056,
+      "description": "Adkins. Garage sale, 6690 Cooksey Rd., Fri.-Sat., Nov. 13-14, from 8-? Holiday decor, housewares, jackets, tools and much more!  Read more...",
+      "highlights": [],
+      "source_urls": [
+        "https://www.wilsoncountynews.com/classifieds/garage-sale/385589/"
+      ],
+      "original_url": "https://www.wilsoncountynews.com/classifieds/garage-sale/385589/",
+      "source_names": [
+        "Wilson County News"
+      ],
+      "photos": [
+        "https://www.wilsoncountynews.com/wp-content/uploads/svgs/buzzsprout-2.svg",
+        "https://www.wilsoncountynews.com/wp-content/uploads/svgs/soundcloud-1.svg",
+        "https://www.wilsoncountynews.com/wp-content/uploads/2025/07/ancira-global.gif",
+        "https://d2x67q1m9cxoc8.cloudfront.net/geodirectory/assets/images/pin.png",
+        "https://www.wilsoncountynews.com/wp-content/uploads/2022/05/app-header-wcn-1-1.png",
+        "https://www.wilsoncountynews.com/wp-content/uploads/2026/10/ed-of-quarter-global-third-coast.gif"
+      ],
+      "confidence": 96,
+      "verified_at": "2026-11-13T03:28:37-06:00",
+      "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.356984629307,-98.278477051056",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.356984629307,-98.278477051056",
+      "status": "verified",
+      "geocode_method": "census",
+      "notes": "",
+      "community_source": "",
+      "community_link_or_notes": ""
+    },
+    {
+      "sale_id": "2026-11-13_7603-linkmeadow-st-san-antonio-tx",
+      "title": "Leon Valley Garage Sale",
+      "sale_type": "garage",
+      "date_start": "2026-11-13",
+      "date_end": "2026-11-14",
+      "start_time": "8:00 AM - 2:00 PM",
+      "end_time": "",
+      "address": "7603 Linkmeadow St, San Antonio, TX",
+      "city": "San Antonio",
+      "state": "TX",
+      "zip": "",
+      "latitude": 29.508337,
+      "longitude": -98.621936,
+      "description": "Find all the garage sales, yard sales, and estate sales on a map! Or place a free ad for your upcoming sale on yardsalesearch.com",
+      "highlights": [],
+      "source_urls": [
+        "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196462039"
+      ],
+      "original_url": "https://www.yardsalesearch.com/yss-garage-sale.jsp?id=196462039",
+      "source_names": [
+        "YardSaleSearch"
+      ],
+      "photos": [
+        "https://d82cz7nyq77ak.cloudfront.net/images/social/Facebook.png",
+        "https://d82cz7nyq77ak.cloudfront.net/images/social/Pinterest.png",
+        "https://d82cz7nyq77ak.cloudfront.net/images/social/Reddit.png",
+        "https://d82cz7nyq77ak.cloudfront.net/images/social/Twitter.png",
+        "https://d82cz7nyq77ak.cloudfront.net/images/social/Email.png",
+        "https://ps.tlstatic.com/image/w300-c300:250/2026/11/12/s/3/5/413935/6uxVW-0.jpeg"
+      ],
+      "confidence": 100,
+      "verified_at": "2026-11-13T03:28:37-06:00",
+      "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.508337,-98.621936",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.508337,-98.621936",
+      "status": "verified",
+      "geocode_method": "source",
+      "notes": "",
+      "community_source": "",
+      "community_link_or_notes": ""
+    },
+    {
+      "sale_id": "2026-11-13_774-pecan-row-new-braunfels-tx-78132",
+      "title": "Canyon Lake, Texas",
+      "sale_type": "garage",
+      "date_start": "2026-11-13",
+      "date_end": "2026-11-15",
+      "start_time": "",
+      "end_time": "",
+      "address": "774 PECAN ROW, NEW BRAUNFELS, TX, 78132",
+      "city": "San Antonio",
+      "state": "TX",
+      "zip": "78132",
+      "latitude": 29.841221526501,
+      "longitude": -98.173029717147,
+      "description": "Join Nextdoor, an app for neighborhoods where you can get local tips, buy and sell items, and more",
+      "highlights": [],
+      "source_urls": [
+        "https://nextdoor.com/p/wQ8CBQCLYSNL"
+      ],
+      "original_url": "https://nextdoor.com/p/wQ8CBQCLYSNL",
+      "source_names": [
+        "Nextdoor"
+      ],
+      "photos": [
+        "https://us1-photo.nextdoor.com/post_photos/a7/56/a756e643eca965573599fb3f91734906.jpeg?request_version=v2&amp;output_type=jpeg&amp;sizing=linear",
+        "https://d33c41ebahvfs6.cloudfront.net/static/images/reactions/next_expl_2_heart-1ea1823eb3c4d4a150405fe9f2f823a7.svg"
+      ],
+      "confidence": 100,
+      "verified_at": "2026-11-13T03:28:37-06:00",
+      "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.841221526501,-98.173029717147",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.841221526501,-98.173029717147",
+      "status": "verified",
+      "geocode_method": "census",
+      "notes": "",
+      "community_source": "",
+      "community_link_or_notes": ""
+    },
+    {
+      "sale_id": "2026-11-13_8741-buckskin-dr-boerne-tx-78006",
+      "title": "8741 Buckskin Dr, Boerne, TX 78006",
+      "sale_type": "garage",
+      "date_start": "2026-11-13",
+      "date_end": "2026-11-14",
+      "start_time": "8:00 am - 4:00 pm",
+      "end_time": "",
+      "address": "8741 Buckskin Dr, Boerne, TX 78006",
+      "city": "San Antonio",
+      "state": "TX",
+      "zip": "",
+      "latitude": 29.79,
+      "longitude": -98.73,
+      "description": "Dates and Times: Friday, November 13, 2026 8:00 am - 4:00 pm",
+      "highlights": [],
+      "source_urls": [
+        "https://garagesalefinder.com/s/N9bvK/8741-buckskin-dr-boerne-tx-78006"
+      ],
+      "original_url": "https://garagesalefinder.com/s/N9bvK/8741-buckskin-dr-boerne-tx-78006",
+      "source_names": [
+        "GarageSaleFinder"
+      ],
+      "photos": [
+        "https://gsf.tlstatic.com/images/social/Facebook.png",
+        "https://gsf.tlstatic.com/images/social/Reddit.png",
+        "https://gsf.tlstatic.com/images/social/Twitter.png",
+        "https://gsf.tlstatic.com/images/social/Email.png"
+      ],
+      "confidence": 100,
+      "verified_at": "2026-11-13T03:28:37-06:00",
+      "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.79,-98.73",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.79,-98.73",
+      "status": "verified",
+      "geocode_method": "zip-centroid",
+      "notes": "",
+      "community_source": "",
+      "community_link_or_notes": ""
+    },
+    {
+      "sale_id": "2026-11-13_8919-shade-tree-near-tezel-san-antonio-tx",
+      "title": "Huge Garage Sale - 8919 Shade Tree - Friday & Saturday, Nov 13 & 14",
+      "sale_type": "garage",
+      "date_start": "2026-11-13",
+      "date_end": "2026-11-14",
+      "start_time": "",
+      "end_time": "",
+      "address": "8919 SHADE TREE near TEZEL, San Antonio, TX",
+      "city": "San Antonio",
+      "state": "TX",
+      "zip": "",
+      "latitude": 29.538416,
+      "longitude": -98.659766,
+      "description": "QR Code Link to This Post Huge sale this Friday & Saturday, November 13 & 14th - 9 am - 4 pm 8919 Shade Tree, 78254 No early birds, please! If you love vintage and want to do some early Christmas shopping…this is the sale for you! Lots of vintage items from purging my vintage booth stock and many new toys never opened! 2 Bicycles, tea pots & tea cups, vintage collectibles, garden items, Christmas decorations, dish ware, household goods, boys clothes (mostly size 14-16), women’s clothes, furnitur",
+      "highlights": [],
+      "source_urls": [
+        "https://www.craigslist.org/view/d/san-antonio-huge-garage-sale-shade-tree/qAexdiWvRDi5fz4b7rzEnr"
+      ],
+      "original_url": "https://www.craigslist.org/view/d/san-antonio-huge-garage-sale-shade-tree/qAexdiWvRDi5fz4b7rzEnr",
+      "source_names": [
+        "Craigslist"
+      ],
+      "photos": [
+        "https://images.craigslist.org/00J0J_dkiZf7DcI77_0li0i5_600x450.jpg"
+      ],
+      "confidence": 96,
+      "verified_at": "2026-11-13T03:28:37-06:00",
+      "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.538416,-98.659766",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.538416,-98.659766",
+      "status": "verified",
+      "geocode_method": "source",
+      "notes": "",
+      "community_source": "",
+      "community_link_or_notes": ""
+    }
+  ]
+}

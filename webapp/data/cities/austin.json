@@ -159,31 +159,6 @@
       ]
     },
     {
-      "address": "Austin, TX 78753",
-      "dates": "2026-10-26 – 2026-11-12",
-      "date_from": "2026-10-26",
-      "date_to": "2026-11-12",
-      "end_date": "2026-11-12",
-      "title": "Tech, Tools, and Household + Bundles of New Items - Bidding ends 11/12",
-      "details": "Caring Transitions of North Austin and Cedar Park. Welcome Home to CTBids! We put together an excellent selection of items for you! Start exploring and discover the deals for yourself! Bidding on ALL items starts at $1! Lots of tech, gadgets, tools and useful household items. Many bundles of new...",
-      "source": "EstateSales.org",
-      "url": "https://estatesales.org/estate-sales/tx/austin/78753/tech-tools-and-household-bundles-2472304",
-      "photos": 0,
-      "type": "estate",
-      "confidence": 0.85,
-      "status": "verified",
-      "lat": 30.3889868,
-      "lon": -97.6710889,
-      "geocode": "source",
-      "company": "Caring Transitions of North Austin and Cedar Park",
-      "in_person": false,
-      "external_id": "eso-2472304",
-      "categories": [
-        "estate-sale",
-        "online-auction"
-      ]
-    },
-    {
       "address": "709 East Slaughter Lane 204, Austin, TX",
       "dates": "2026-11-14 – 2026-11-14",
       "date_from": "2026-11-14",
@@ -1309,9 +1284,9 @@
     "gsalr.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 57,
+  "total_locations": 56,
   "status": "live",
-  "date": "2026-11-12",
-  "last_refresh": "2026-11-12T20:22:58-06:00",
+  "date": "2026-11-13",
+  "last_refresh": "2026-11-13T03:28:36-06:00",
   "permits": []
 }
