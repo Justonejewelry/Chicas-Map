@@ -27,7 +27,7 @@ class HomepageTests(unittest.TestCase):
                 self.assertIn('Find a Sale' if path == 'index.html' else 'Encontrar ventas', text)
                 self.assertIn('List a Sale' if path == 'index.html' else 'Publicar una venta', text)
                 self.assertIn('Plan Your Hunt' if path == 'index.html' else 'Planea tu búsqueda', text)
-                self.assertIn('href="/Chicas-Map/map/"' if path == 'index.html' else 'href="/Chicas-Map/es/map/"', text)
+                self.assertIn('href="/map/"' if path == 'index.html' else 'href="/es/map/"', text)
                 hood = '/es/garage-sales/' if path.startswith('es/') else '/garage-sales/'
                 self.assertEqual(text.count('<li><a href="' + hood), 13)
                 self.assertNotIn('type="module"', text)
