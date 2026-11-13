@@ -1,5 +1,16 @@
 [
   {
+    "timestamp": "2026-11-13T09:30:00Z",
+    "target_date": "2026-11-13",
+    "actions_run_id": "43401416091",
+    "emails_scanned": 3,
+    "net_new_added": 0,
+    "net_new_staged": 1,
+    "geocoding_success_rate": "100% (approximate)",
+    "status": "STAGED",
+    "notes": "Triggered chica-daily.yml run 43401416091 (cities=san-antonio, target_date=2026-11-13). In_progress after 3x5s polls (ACTIONS_TRIGGER_MISSING). Emails: 2 GSF + 1 ESO. 1 net-new staged (315 Oak Knoll Dr SA 78228 clothes/toys Nov 13-15, Email:GarageSaleFinder, approx lat/lon). All other local physical sales already in feed (Leon Valley citywide, Braunridge, Sonoma Ranch, Nacogdoches, Blakeley, etc.). Online auctions and out-of-area (Boerne, New Braunfels, Austin, Kerrville, San Marcos) rejected. No Formspree. City file left to running master populate to avoid race. Pack and social written. Community swarm not triggered."
+  },
+  {
     "timestamp": "2026-11-11T18:37:27Z",
     "target_date": "2026-11-11",
     "actions_run_id": "43079348926",
@@ -8,78 +19,5 @@
     "geocoding_success_rate": "0.0%",
     "status": "SUCCESS",
     "notes": "Triggered chica-daily.yml run 43079348926 (cities=san-antonio). In_progress after 3x5s polls. Emails: 2 GSF + 1 ESO daily (newer_than:2d). 0 net-new — all online auctions (CTBids SA 78240 / Boerne) or out-of-area (Boerne, New Braunfels, Kerrville, San Marcos). No Formspree. Trigger promo (Output) ignored. Community swarm not triggered. City file left to master populate. Pack/social already live."
-  },
-  {
-    "timestamp": "2026-11-11T02:50:20Z",
-    "target_date": "2026-11-10",
-    "actions_run_id": "42948583844",
-    "emails_scanned": 1,
-    "net_new_added": 0,
-    "geocoding_success_rate": "0.0%",
-    "status": "SUCCESS",
-    "notes": "Triggered chica-daily.yml run 42948583844 (cities=san-antonio). In_progress after 3x5s polls. ESO daily reviewed: 3 'new' near SA are online auctions (Caring Transitions Boerne/SA NW, no street address, bidding closes Nov 16/18/22). Boerne outside listed Greater SA, New Braunfels excluded. 0 net-new. Community swarm not triggered. City file left to master populate."
-  },
-  {
-    "timestamp": "2026-11-01T15:50:00Z",
-    "target_date": "2026-11-01",
-    "actions_run_id": "41323150772",
-    "emails_scanned": 4,
-    "net_new_added": 0,
-    "geocoding_success_rate": "0.0%",
-    "status": "SUCCESS",
-    "notes": "Triggered chica-daily.yml run 41323150772 (cities=san-antonio). In_progress after 3x5s polls (ACTIONS_TRIGGER_MISSING). Emails: 2 GSF + 2 ESO dailies (newer_than:2d). 0 net-new — Hawks Ridge & Ft Belknap already live (multi-source), Ridge Post/Redwoods/Butlers/Meadowhead expired for 11/01, New Braunfels/online/out-of-area rejected, no Formspree. Ancestry promo ignored. Pack + social already live from prior run. Community swarm not triggered. City file left to master populate."
-  },
-  {
-    "timestamp": "2026-11-01T11:15:53Z",
-    "target_date": "2026-11-01",
-    "actions_run_id": "41301013158",
-    "emails_scanned": 4,
-    "net_new_added": 0,
-    "geocoding_success_rate": "0.0%",
-    "status": "SUCCESS",
-    "notes": "Triggered chica-daily.yml run 41301013158 (cities=san-antonio). In_progress after polls. Emails: 2 GSF + 2 ESO dailies reviewed — 0 net-new (Hawks Ridge & Ft Belknap dups, Ridge Post/Redwoods/Butlers/Meadowhead expired for 11/01, New Braunfels/online excluded, no Formspree). Pack + social already live from prior run. Community swarm not triggered. City file left to master populate."
-  },
-  {
-    "timestamp": "2026-11-01T09:22:35Z",
-    "target_date": "2026-11-01",
-    "actions_run_id": "41292702528",
-    "emails_scanned": 5,
-    "net_new_added": 0,
-    "geocoding_success_rate": "0.0%",
-    "status": "SUCCESS",
-    "notes": "Triggered chica-daily.yml run 41292702528 (cities=san-antonio, target_date=2026-11-01). In_progress after 3x5s polls (ACTIONS_TRIGGER_MISSING). Emails: GSF+ESO dailies reviewed — 0 net-new (Hawks Ridge dup, online auctions excluded, New Braunfels/out-of-area rejected, no Formspree). Pack + social written. Community swarm not triggered. City file left to master populate."
-  },
-  {
-    "timestamp": "2026-11-01T01:41:26Z",
-    "target_date": "2026-10-31",
-    "actions_run_id": "41262081805",
-    "emails_scanned": 5,
-    "net_new_added": 0,
-    "net_new_staged": 1,
-    "geocoding_success_rate": "100% (street_proxy from prior)",
-    "status": "STAGED_OVERFLOW",
-    "notes": "Triggered chica-daily.yml run 41262081805 (cities=san-antonio). In_progress after polls. FormSubmit tip Montrose Market 426 Montrose 2026-10-31 10am-6pm (self-submit, all cats). Matched existing staged permit BLDG-GS-PMT-13821054. Updated staging with title/dates/hours/cats. No auto-commit to CITY_FILE (race + partial address). GSF/ESO dailies reviewed (mostly known/dups/out-of-area). Community swarm not triggered."
-  },
-  {
-    "timestamp": "2026-10-31T16:15:00Z",
-    "target_date": "2026-10-31",
-    "actions_run_id": "41218238151",
-    "emails_scanned": 1,
-    "net_new_added": 0,
-    "net_new_staged": 1,
-    "geocoding_success_rate": "100% (street_proxy)",
-    "status": "SUCCESS",
-    "notes": "Triggered chica-daily.yml run 41218238151 (cities=san-antonio, target_date=2026-10-31). Pending after polls. Ingested city permit BLDG-GS-PMT-13821054 for 426 Montrose, SA 78223, Nov 1-2 9am-6pm. Highest-trust source. Staged in webapp/data/staging/email-leads.json. Pack + social written. Community swarm not triggered. City file left to master populate."
-  },
-  {
-    "timestamp": "2026-10-30T11:03:00Z",
-    "target_date": "2026-10-30",
-    "actions_run_id": "41045015407",
-    "emails_scanned": 4,
-    "net_new_added": 0,
-    "net_new_staged": 2,
-    "geocoding_success_rate": "0.0% (pending)",
-    "status": "STAGED_CONCURRENT",
-    "notes": "Triggered chica-daily.yml (cities=san-antonio) run 41045015407. In_progress after 3x5s polls (ACTIONS_TRIGGER_MISSING per timeout). 2 ESO + 2 GSF emails. 2 net-new staged (Hawks Ridge 1623 full street estate + Ft Belknap 12807 garage). Dups filtered (Ridge Post, Butlers, Meadowhead). New Braunfels/online excluded. No Formspree. City file untouched to avoid race. Community swarm not triggered. Pack/social already live from morning."
   }
 ]
