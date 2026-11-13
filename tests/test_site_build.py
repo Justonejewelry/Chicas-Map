@@ -492,6 +492,21 @@ class SiteBuildTests(unittest.TestCase):
             self.assertIn('<title>Chicas Map · San Antonio garage sales</title>', submit)
 
 
+    def test_listing_issue_report_is_reachable_and_carries_listing_context(self):
+        report = (self.root / 'report/index.html').read_text()
+        details = (ROOT / 'webapp/js/pin-details.js').read_text()
+        self.assertIn('<form id="report-form">', report)
+        self.assertIn('name="listing_id"', report)
+        self.assertIn('name="listing_title"', report)
+        self.assertIn('name="listing_address"', report)
+        self.assertIn('name="listing_source_url"', report)
+        self.assertIn('name="reason"', report)
+        self.assertIn('https://formsubmit.co/ajax/mr.jsciaraffa@gmail.com', report)
+        self.assertIn("'/report/?id='", details)
+        self.assertIn('Report an issue with this listing', details)
+        self.assertIn('Reports are reviewed', report)
+        self.assertIn('response.ok', report)
+
     def test_map_viewport_and_sale_sheet_have_legacy_height_fallbacks(self):
         map_page = (ROOT / 'webapp/map/index.html').read_text()
         legacy_map = (ROOT / 'webapp/map.html').read_text()
