@@ -43,7 +43,7 @@
       '<h2>How this map works</h2>' +
       '<p>Find the sales worth stopping for. Tap a pin for the address, hours, and directions.</p>' +
       '<ul>' +
-      '<li><span class="mark"></span><span><b>Magenta circle</b> — garage or yard sale.</span></li>' +
+      '<li><span class="mark"></span><span><b>Magenta circle</b> — garage sale.</span></li>' +
       '<li><span class="mark estate"></span><span><b>White diamond</b> — estate sale.</span></li>' +
       '<li><span class="mark gold"></span><span><b>Gold pin</b> — featured sale.</span></li>' +
       '<li><span class="mark resale"></span><span><b>Brown pin</b> — Resale Trail. Turn it on in KEY.</span></li>' +
