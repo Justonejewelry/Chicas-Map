@@ -153,14 +153,14 @@ def enrich_pins(pins: list[dict[str, Any]], features: list[dict[str, Any]], upda
     for pin in pins:
         # Recompute only our own earlier assignments; never overwrite a manual label.
         if pin.get("neighborhood_source") == SOURCE_TAG:
+            old_aliases = set(pin.get("neighborhood_aliases") or [])
+            pin["aliases"] = [
+                value for value in (pin.get("aliases") or []) if value not in old_aliases
+            ]
             pin.pop("neighborhood", None)
             pin.pop("neighborhood_aliases", None)
             pin.pop("neighborhood_source", None)
             pin.pop("neighborhood_dataset_updated_at", None)
-            old_aliases = set(pin.get("aliases") or [])
-            old_aliases.discard(pin.get("_auto_neighborhood_alias", ""))
-            pin.pop("_auto_neighborhood_alias", None)
-            pin["aliases"] = sorted(old_aliases)
         if pin.get("neighborhood"):
             counts["ineligible"] += 1
             continue
@@ -177,7 +177,6 @@ def enrich_pins(pins: list[dict[str, Any]], features: list[dict[str, Any]], upda
             pin["neighborhood_dataset_updated_at"] = updated
             existing = list(pin.get("aliases") or [])
             pin["aliases"] = sorted(set(existing + aliases), key=str.casefold)
-            pin["_auto_neighborhood_alias"] = name
             counts["assigned"] += 1
         elif len(names) > 1:
             counts["ambiguous"] += 1
