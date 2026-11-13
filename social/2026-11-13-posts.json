@@ -1,0 +1,20 @@
+{
+  "date": "2026-11-13",
+  "city": "san-antonio",
+  "posts": {
+    "facebook": {
+      "text": "🐾 Hey pack! Friday Nov 13 and the map is live for the weekend hunt.\n\n📍 Leon Valley citywide tomorrow — whole town is open.\n📍 Helotes: Sonoma Ranch estate (Pueblo Pintado) + Braunridge community.\n📍 Universal City: Raise a glass for Mr. Mike estate Sat-Sun.\n📍 New pin: 315 Oak Knoll Dr (78228) clothes & toys Fri-Sun.\n📍 Nacogdoches school community + pop-up Sat.\n\nHit the free map, Near Me, multi-stop it. One-tap Google / Apple / Waze.\nhttps://chicasmap.com/sa\n\n#SanAntonioGarageSales #SATXThrifting #EstateSales",
+      "link": "https://justonejewelry.github.io/Chicas-Map/"
+    },
+    "nextdoor": {
+      "text": "Neighbor note from Chica: Leon Valley has a citywide garage sale tomorrow (Nov 14). If you're in Helotes, check Sonoma Ranch estate and the Braunridge community sale. Universal City has the Mr. Mike estate this weekend. Fresh pin on Oak Knoll for clothes and toys. Free map with pins and directions: chicasmap.com/sa — list yours free if you're hosting.",
+      "tags": ["Leon Valley", "Helotes", "Universal City", "San Antonio"]
+    },
+    "tiktok": {
+      "caption": "Friday hunt mode on. Leon Valley citywide tomorrow, Helotes estates + community, new Oak Knoll pin for clothes & toys. Free map, Near Me, multi-stop. 🐾 #SanAntonioEstateSales #SATXThrifting #SanAntonioGarageSales #ChicasMap",
+      "script_notes": "30s: map pins pop, cape snap, CTA to map link in bio."
+    }
+  },
+  "pii_sanitized": true,
+  "confidence_floor": 0.70
+}
