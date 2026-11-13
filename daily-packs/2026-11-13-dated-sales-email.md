@@ -94,6 +94,8 @@ The map keeps both today's sales and upcoming dated sales.
 - Community Garage Sale — 5926 Cinnabar Cor, San Antonio, TX [2026-11-14 → 2026-11-14]
 - Community Garage Sale Household/Christmas/ Furniture/Pokemon — 13217 Sumara Dr, San Antonio, TX [2026-11-14 → 2026-11-15]
 - Garage Sale This weekend — 5903 Forest Crest St, San Antonio, TX [2026-11-14 → 2026-11-20]
+- Household Treasures & Delightful Decor in Hills & Dales! — 7726 Green Glen Dr, San Antonio, TX 78255 [2026-11-14 → 2026-11-15] | 2026-11-14 9:00 am-3:00 pm; 2026-11-15 9:00 am-3:00 pm
+- Household Treasures & Delightful Decor In Hills & Dales! — 7726 Green Glen Dr, San Antonio, TX [2026-11-14 → 2026-11-15]
 
 ### Starts 2026-11-15
 - ONE-DAY ESTATE SALE! — 104 Ridge Trail, San Antonio, TX 78232 [2026-11-15 → 2026-11-15] | 10am-5pm
