@@ -25,11 +25,13 @@ window.__testAddPins({},L,[{
   address:'123 Oak Ridge Drive, San Antonio, TX 78209',
   details:'Mid-century modern solid oak',
   type:'yard',
-  categories:['furniture','vintage'],
+  categories:['furniture','vintage','garage-sale'],
   lat:29.4241,
   lon:-98.4936
 }]);
 assert.equal(window.__chicaVisibleSales({q:'dining Oak'}).length,1,'Search must match separate words across listing fields');
+assert.equal(window.__chicaVisibleSales({q:'yard sales near me'}).length,1,'Natural-language near-me phrases should still match sale types');
+assert.equal(window.__chicaVisibleSales({q:'garage sales near me'}).length,1,'Natural-language garage-sale phrases should still match');
 assert.equal(window.__chicaVisibleSales({q:'MID century'}).length,1,'Search must include details and ignore case');
 assert.equal(window.__chicaVisibleSales({q:'78209 vintage'}).length,1,'Search must combine ZIP and category matches');
 assert.equal(window.__chicaVisibleSales({q:'dining 78201'}).length,0,'Search must not return unrelated listings');
