@@ -75,7 +75,7 @@
   }
 
   function iconFor(type, pack, gold, L) {
-    var kind = type === "estate" || type === "permit" ? type : (type === "yard" ? "yard" : "garage");
+    var kind = type === "estate" || type === "permit" ? type : "garage";
     var html;
     var fill = gold ? "#f4c430" : "#c513af";
     if (kind === "estate") {
@@ -139,7 +139,7 @@
       dates: s.dates || "",
       hours: s.hours || "",
       details: s.details || s.description || "",
-      type: s.type || s.kind || "garage",
+      type: (function () { var t = String(s.type || s.kind || "garage").toLowerCase().replace(/[\\s_-]+/g, ""); return t === "yard" || t === "yardsale" || t === "garagesale" ? "garage" : (t || "garage"); })(),
       lat: lat,
       lon: lon,
       pack: pack,
@@ -252,7 +252,7 @@
     return searchWords([
       s.title, s.address, s.source_address, s.zip, s.zip_code, s.zipcode, s.postal_code,
       s.neighborhood, s.city, s.locality, s.type, s.source, s.seller, s.company, s.poster,
-      s.details, s.description, s.items,
+      s.details, s.description, s.items, "garage sale yard sale",
       (s.categories || []).join(" "), (s.aliases || []).join(" ")
     ].join(" ")).join(" ");
   }
