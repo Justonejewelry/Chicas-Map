@@ -18,9 +18,9 @@
   ];
 
   var ledeEn =
-    "San Antonio\u2019s free garage, yard, and estate sale map. Free to see. Free to list.";
+    "San Antonio\u2019s free garage and estate sale map. Free to see. Free to list.";
   var ledeEs =
-    "Mapa gratis de ventas de garaje, patio y bienes en San Antonio. Ver es gratis. Publicar es gratis.";
+    "Mapa gratis de ventas de garaje y de bienes en San Antonio. Ver es gratis. Publicar es gratis.";
   var whyEn =
     "Those Army values are useful in any neighborhood: keep your word, respect people\u2019s time, serve where you can, be honest about what you know, and have the courage to make the community better.";
   var whyEs =

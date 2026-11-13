@@ -55,10 +55,9 @@ function ListPage() {
             className="h-11 rounded-xl bg-paper px-3 text-sm ring-1 ring-line"
           >
             <option value="all">All types</option>
-            <option value="garage">Garage</option>
-            <option value="estate">Estate</option>
-            <option value="yard">Yard</option>
-            <option value="permit">Permit</option>
+            <option value="garage">Garage Sales</option>
+            <option value="estate">Estate Sales</option>
+            <option value="permit">City Permits</option>
           </select>
         </div>
         <p className="mt-3 text-xs font-semibold text-muted tabular-nums">{rows.length} results</p>

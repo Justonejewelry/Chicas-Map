@@ -1,4 +1,4 @@
-export type SaleKind = "garage" | "yard" | "estate" | "permit";
+export type SaleKind = "garage" | "estate" | "permit";
 
 export type Sale = {
   id: string;
@@ -45,14 +45,22 @@ export const HOT_ZONES: { name: string; lat: number; lon: number; zoom: number }
 
 const SUBMIT_KEY = "chicas-map-submissions";
 
+function normalizeSale(sale: Sale): Sale {
+  const raw = String(sale.type || "garage").toLowerCase().replace(/[\s_-]+/g, "");
+  const type: SaleKind = raw === "estate" || raw === "estatesale"
+    ? "estate"
+    : raw === "permit" ? "permit" : "garage";
+  return { ...sale, type };
+}
+
 export function allSales(feed: CityFeed): Sale[] {
-  return [...feed.public, ...feed.permits];
+  return [...feed.public, ...feed.permits].map(normalizeSale);
 }
 
 export function kindLabel(kind: string): string {
-  if (kind === "estate") return "Estate";
-  if (kind === "permit") return "Permit";
-  return "Garage";
+  if (kind === "estate") return "Estate Sale";
+  if (kind === "permit") return "City Permit";
+  return "Garage Sale";
 }
 
 export function markerColor(kind: string, boost?: boolean): string {
@@ -93,14 +101,15 @@ export function loadSubmissions(): Sale[] {
     const raw = localStorage.getItem(SUBMIT_KEY);
     if (!raw) return [];
     const parsed = JSON.parse(raw) as Sale[];
-    return Array.isArray(parsed) ? parsed : [];
+    return Array.isArray(parsed) ? parsed.map(normalizeSale) : [];
   } catch {
     return [];
   }
 }
 
 export function saveSubmission(sale: Sale) {
-  const next = [sale, ...loadSubmissions().filter((s) => s.id !== sale.id)];
+  const normalized = normalizeSale(sale);
+  const next = [normalized, ...loadSubmissions().filter((s) => s.id !== normalized.id)];
   localStorage.setItem(SUBMIT_KEY, JSON.stringify(next));
 }
 
