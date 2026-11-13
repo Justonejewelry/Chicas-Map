@@ -1,4 +1,6 @@
 """Regression tests for the browser calendar month grid."""
+import shutil
+import subprocess
 import unittest
 from pathlib import Path
 
@@ -15,6 +17,16 @@ class CalendarUiTests(unittest.TestCase):
     def test_calendar_template_busts_cached_script(self):
         template = (ROOT / "templates/calendar.html").read_text()
         self.assertIn("/js/calendar.js?v=47", template)
+
+    @unittest.skipUnless(shutil.which("node"), "node required")
+    def test_month_navigation_keeps_seven_headings_and_correct_day_columns(self):
+        result = subprocess.run(
+            ["node", "tests/calendar_ui_navigation.cjs"],
+            cwd=ROOT,
+            capture_output=True,
+            text=True,
+        )
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
 
 
 if __name__ == "__main__":
