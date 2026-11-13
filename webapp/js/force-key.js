@@ -5,7 +5,6 @@
   var STORE = "chicas-map-key-open-v3";
   var ICO = {
     garage: '<svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="8" cy="8" r="5.2" fill="#c513af" stroke="#f3eee4" stroke-width="1.3"/></svg>',
-    yard: '<svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M8 1.8 14.2 5.3v5.4L8 14.2 1.8 10.7V5.3z" fill="#69a86b" stroke="#f3eee4" stroke-width="1.3"/></svg>'
     estate: '<svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><polygon points="8,1.8 14.4,8 8,14.2 1.6,8" fill="#f4f4f4" stroke="#121212" stroke-width="1.3"/></svg>',
     permit: '<svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><polygon points="8,2.2 14.2,13.6 1.8,13.6" fill="#8a8a8a" stroke="#f3eee4" stroke-width="1.3"/></svg>',
     satellite: '<svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><rect x="3" y="6.2" width="10" height="3.6" rx="1" fill="#7dd3fc"/><circle cx="8" cy="8" r="1.4" fill="#121212"/><path d="M3 5 L1.5 3.5 M13 5 L14.5 3.5 M3 11 L1.5 12.5 M13 11 L14.5 12.5" stroke="#7dd3fc" stroke-width="1.2"/></svg>',
