@@ -3,13 +3,15 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def test_map_key_exposes_yard_sales_and_wires_the_filter():
+def test_yard_and_garage_sales_share_one_garage_category():
     key = (ROOT / "webapp/js/force-key.js").read_text()
     actions = (ROOT / "webapp/js/key-clicks.js").read_text()
-    assert '["yard", "Yard"]' in key
-    assert "yard: '<svg" in key
-    assert 'id === "yard"' in actions
-    assert '"garage", "yard", "estate"' in actions
+    live_map = (ROOT / "webapp/js/chica-live-map.js").read_text()
+    assert '["garage", "Garage"]' in key
+    assert '["yard", "Yard"]' not in key
+    assert 'id === "yard"' not in actions
+    assert 't === "yard" || t === "yardsale" || t === "garagesale" ? "garage"' in live_map
+    assert '"garage sale yard sale"' in live_map
     assert '".leaflet-marker-icon.chica-type-" + id' in actions
 
 
