@@ -182,35 +182,37 @@ jobs:
           set -euo pipefail
           git config user.name "chicas-map-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add \
-            data/sales/ daily-packs/ social/ forecast/ reports/ \
-            webapp/data/cities/ webapp/data/community-events.json \
-            webapp/data/scraper-health.json webapp/data/feed.json webapp/data/sales-clean.json webapp/data/sales-quality.json \
-            || true
           DATE=$(ls data/sales/*.json 2>/dev/null | xargs -n1 basename 2>/dev/null | sed 's/.json//' | sort | tail -1 || date -u +%Y-%m-%d)
           MSG="Chica master populate — ${DATE}"
-          git commit -m "$MSG" || exit 0
-          # Prefer generated data files on conflict (they are fully rewritten by populate)
-          if ! git pull --rebase origin main; then
-            echo "Rebase conflict detected — preferring generated data files"
-            # During rebase: --theirs = the commit being applied (our generate)
-            git checkout --theirs -- webapp/data/feed.json webapp/data/scraper-health.json webapp/data/community-events.json || true
-            git add webapp/data/feed.json webapp/data/scraper-health.json webapp/data/community-events.json || true
-            # Continue or abort if still conflicted
-            if git diff --name-only --diff-filter=U | grep -q .; then
-              echo "Unresolved conflicts remain; aborting rebase and resetting to keep generated files"
-              git rebase --abort
-              git fetch origin
-              git reset --hard origin/main
-              # Re-add and recommit the generated state (working tree still has them if not reset, but reset clears; better re-run is heavy)
-              # Since reset --hard loses the working tree changes, we rely on the checkout --theirs path succeeding for known files.
-              # Fallback: force the known data files from the previous commit if needed.
-              exit 1
-            else
-              GIT_EDITOR=true git rebase --continue
+
+          # Generated files are the intended output of this run. Rebase is unsafe
+          # here because many of those files are rewritten together and can conflict
+          # with concurrent Pages/feed-watch commits. Instead, refresh the base,
+          # preserve the generated working tree, and stage only the generated paths.
+          for attempt in 1 2 3; do
+            echo "Publish attempt ${attempt}/3"
+            git fetch origin main
+            git reset --mixed origin/main
+            git add \
+              data/sales/ daily-packs/ social/ forecast/ reports/ \
+              webapp/data/cities/ webapp/data/community-events.json \
+              webapp/data/scraper-health.json webapp/data/feed.json webapp/data/sales-clean.json webapp/data/sales-quality.json
+
+            if git diff --cached --quiet; then
+              echo "No generated changes remain after refreshing main."
+              exit 0
             fi
-          fi
-          git push origin HEAD:main
+
+            git commit -m "$MSG"
+            if git push origin HEAD:main; then
+              echo "Generated feed successfully published."
+              exit 0
+            fi
+            echo "main moved during push; retrying from the latest main while preserving generated outputs."
+          done
+
+          echo "Could not publish generated feed after three attempts."
+          exit 1
 
       - name: File ops issue on failure
         if: failure()
