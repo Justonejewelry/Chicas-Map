@@ -498,8 +498,8 @@ class SiteBuildTests(unittest.TestCase):
         fullscreen = (ROOT / 'webapp/fs-map.css').read_text()
         details = (ROOT / 'webapp/js/pin-details.js').read_text()
         for html in [map_page, legacy_map]:
-            self.assertRegex(html, r'height:\\s*100vh;\\s*height:\\s*100dvh')
-        self.assertRegex(fullscreen, r'height:\\s*100vh !important;\\s*height:\\s*100dvh !important')
+            self.assertRegex(html, r'height:\s*100vh;\s*height:\s*100dvh')
+        self.assertRegex(fullscreen, r'height:\s*100vh !important;\s*height:\s*100dvh !important')
         self.assertIn('max-height:min(70vh,620px)!important;max-height:min(70dvh,620px)!important;', details)
         self.assertIn('min-height: 100vh !important;', fullscreen)
 
