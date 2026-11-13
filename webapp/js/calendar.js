@@ -19,7 +19,8 @@
     document.getElementById('calendar-status').textContent = total ? '' : (es ? 'No hay ventas para este filtro.' : 'No sales match this filter.');
     document.getElementById('month-title').textContent = month.toLocaleDateString(locale, {month:'long',year:'numeric'});
     var grid = document.getElementById('month-grid'); grid.replaceChildren();
-    for (var w=0;w<7;w++) { var heading = document.createElement('div'); heading.className='weekday'; heading.textContent=new Date(2026,10,1+w).toLocaleDateString(locale,{weekday:'short'}); grid.appendChild(heading); }
+    // Jan 2, 2000 was a Sunday; use it as a stable weekday-label anchor.
+    for (var w=0;w<7;w++) { var heading = document.createElement('div'); heading.className='weekday'; heading.textContent=new Date(2000,0,2+w).toLocaleDateString(locale,{weekday:'short'}); grid.appendChild(heading); }
     for (var blank=0;blank<month.getDay();blank++) { var spacer=document.createElement('div'); spacer.setAttribute('aria-hidden','true'); grid.appendChild(spacer); }
     var last = new Date(month.getFullYear(),month.getMonth()+1,0).getDate();
     for (var i=1;i<=last;i++) {
