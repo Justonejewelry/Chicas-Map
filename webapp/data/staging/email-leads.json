@@ -15,6 +15,20 @@
       "type": "garage",
       "categories": ["Furniture", "Clothes", "Kids", "Tools", "Antiques", "Housewares", "Outdoor", "Electronics"],
       "notes": "Self-submitted tip via formsubmit.co matching existing city permit. Address completed from staging. Date expanded to include tip day."
+    },
+    {
+      "title": "Garage sale",
+      "street_address": "315 Oak Knoll Dr, San Antonio, TX 78228",
+      "dates": ["2026-11-13", "2026-11-14", "2026-11-15"],
+      "hours": "",
+      "source": "Email:GarageSaleFinder",
+      "lat": 29.474,
+      "lon": -98.586,
+      "accuracy": "approximate",
+      "confidence": 0.75,
+      "type": "garage",
+      "notes": "Clothes and toys and a whole Lotta stuff. From daily GSF list. Not found in current public feed.",
+      "external_id": "gsf-oak-knoll-2026-11-13"
     }
   ]
 }
