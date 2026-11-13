@@ -233,7 +233,7 @@
   function searchWords(value) {
     var text = String(value || "").toLowerCase();
     try { text = text.normalize("NFD"); } catch (e) {}
-    return text.replace(/[\\u0300-\\u036f]/g, "").replace(/[^a-z0-9]+/g, " ").trim().split(/\\s+/).filter(Boolean);
+    return text.replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, " ").trim().split(/\s+/).filter(Boolean);
   }
 
   function searchText(s) {
