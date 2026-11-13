@@ -1,0 +1,48 @@
+/* Public press-kit page. Same tokens as the homepage. */
+#press-page{max-width:1040px;margin:0 auto;text-align:left;padding-bottom:24px}
+#press-page .lede{margin-left:0;margin-right:0;max-width:42rem;font-size:18px;line-height:1.55}
+#press-page h1{font-size:clamp(32px,5vw,48px)}
+#press-page h2{font-size:clamp(22px,3vw,28px);margin:0 0 6px}
+#press-page .section-intro{margin:0 0 16px;color:var(--muted);font-size:17px;line-height:1.5}
+#press-page .home-actions{justify-content:flex-start;margin:8px 0 20px}
+.press-panel{margin:8px 0 28px;padding:22px 20px;border:1px solid var(--line);border-radius:24px;background:var(--card);box-shadow:var(--chica-shadow-soft);position:relative}
+.press-panel .panel-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px}
+.press-panel p.body{margin:0;font-size:17px;line-height:1.55;max-width:46rem}
+.press-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:28px 0}
+.stat-tip{position:absolute;top:12px;right:12px;width:36px;height:36px;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:999px;background:var(--bg);color:var(--ink);font:700 16px/1 Inter,system-ui,sans-serif;cursor:help}
+.stat-tip:hover,.stat-tip:focus-visible,.press-panel.is-open .stat-tip,.press-panel:hover .stat-tip,.asset-card.is-open .stat-tip{border-color:var(--accent);color:var(--accent)}
+.press-panel .stat-tip{position:static;flex-shrink:0}
+.tip{position:absolute;z-index:8;left:16px;right:16px;top:auto;padding:12px 14px;border:1px solid var(--line);border-radius:14px;background:var(--bg);color:var(--ink);box-shadow:var(--chica-shadow-lift);font:16px/1.45 Inter,system-ui,sans-serif;text-align:left;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(4px)}
+.press-panel:hover .tip,
+.press-panel:focus-within .tip,
+.press-panel.is-open .tip,
+.asset-card:hover .tip,
+.asset-card:focus-within .tip,
+.asset-card.is-open .tip{opacity:1;visibility:visible;pointer-events:auto;transform:none}
+.swatches{list-style:none;margin:16px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+.swatches li{display:flex;align-items:center;gap:12px;min-height:56px;padding:8px 10px;border:1px solid var(--line);border-radius:16px;background:var(--bg)}
+.swatches .chip{width:40px;height:40px;border-radius:10px;border:1px solid var(--line);flex-shrink:0}
+.swatches .name{display:block;font:650 15px/1.25 Inter,system-ui,sans-serif}
+.swatches code{display:block;font:12px/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--muted)}
+.press-toolbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin:8px 0 8px}
+.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:0 0 36px}
+.asset-card{position:relative;display:flex;flex-direction:column;gap:8px;padding:14px;border:1px solid var(--line);border-radius:20px;background:var(--card);box-shadow:var(--chica-shadow-soft)}
+.asset-preview{display:flex;align-items:center;justify-content:center;height:200px;padding:12px;border-radius:14px;background:#161616;overflow:hidden}
+html[data-theme=light] .asset-preview{background:#ece6de}
+.asset-preview img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
+.asset-card h3{margin:4px 0 0;font:700 1.0625rem/1.3 Inter,system-ui,sans-serif}
+.asset-use{margin:0;font-size:15px;line-height:1.4;color:var(--muted)}
+.asset-meta{margin:0;font:650 13px/1.3 Inter,system-ui,sans-serif;color:var(--ink)}
+.asset-dl{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 14px;margin-top:4px;border-radius:999px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:700 14px/1 Inter,system-ui,sans-serif;text-decoration:none;width:fit-content}
+.asset-dl:hover,.asset-dl:focus-visible{border-color:var(--accent);color:var(--accent)}
+#press-page a.cta{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 16px;border-radius:999px;font:700 15px/1 Inter,system-ui,sans-serif;text-decoration:none}
+@media(max-width:900px){
+  .gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .press-grid{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .gallery{grid-template-columns:1fr}
+  #press-page .lede,.press-panel p.body,.section-intro,.asset-use,.tip{font-size:16px}
+  .asset-preview{height:220px}
+}
+@media(prefers-reduced-motion:reduce){.tip{transition:none;transform:none}}
