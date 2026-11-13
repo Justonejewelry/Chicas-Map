@@ -92,12 +92,12 @@
     };
     var confidenceLabel = confidenceLabels[sale.confidence_label] || "Unconfirmed";
     var confidenceNote = sale.confidence_note || "No confidence information is available. Confirm details before traveling.";
-    var signal = "<div class=\\"signal\\"><strong>Listing confidence</strong><br><span class=\\"confidence-label\\">" + esc(confidenceLabel) + "</span><br>" +
+    var signal = "<div class=\"signal\"><strong>Listing confidence</strong><br><span class=\"confidence-label\">" + esc(confidenceLabel) + "</span><br>" +
       esc(confidenceNote) +
       (sale.source ? "<br>Source: " + esc(sale.source) : "") +
       (away ? "<br>" + esc(away) : "<br>Turn on Near me for distance") +
       "<br>Pack notes stay on this phone until you are within 200 feet. Shared feed is off.</div>";
-    var sourceLink = sale.sourceUrl && /^https?:\\/\\//i.test(String(sale.sourceUrl))
+    var sourceLink = sale.sourceUrl && /^https?:\/\//i.test(String(sale.sourceUrl))
       ? '<a class="secondary" target="_blank" rel="noopener noreferrer" href="' + esc(sale.sourceUrl) + '">View original listing</a>'
       : "";
     var share = "https://justonejewelry.github.io/Chicas-Map/map/?sale=" + encodeURIComponent(sale.id || "");
@@ -133,6 +133,9 @@
       preferred: !!item.preferred,
       gold: !!item.gold,
       source: item.source || "",
+      sourceUrl: item.sourceUrl || "",
+      confidence_label: item.confidence_label || "unconfirmed",
+      confidence_note: item.confidence_note || "",
       status: item.status || "",
       lat: llng.lat,
       lon: llng.lng
