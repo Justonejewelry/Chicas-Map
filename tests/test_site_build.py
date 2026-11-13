@@ -491,5 +491,17 @@ class SiteBuildTests(unittest.TestCase):
             self.assertNotIn('List a garage sale free', submit)
             self.assertIn('<title>Chicas Map · San Antonio garage sales</title>', submit)
 
+
+    def test_map_viewport_and_sale_sheet_have_legacy_height_fallbacks(self):
+        map_page = (ROOT / 'webapp/map/index.html').read_text()
+        legacy_map = (ROOT / 'webapp/map.html').read_text()
+        fullscreen = (ROOT / 'webapp/fs-map.css').read_text()
+        details = (ROOT / 'webapp/js/pin-details.js').read_text()
+        for html in [map_page, legacy_map]:
+            self.assertRegex(html, r'height:\\s*100vh;\\s*height:\\s*100dvh')
+        self.assertRegex(fullscreen, r'height:\\s*100vh !important;\\s*height:\\s*100dvh !important')
+        self.assertIn('max-height:min(70vh,620px)!important;max-height:min(70dvh,620px)!important;', details)
+        self.assertIn('min-height: 100vh !important;', fullscreen)
+
 if __name__ == '__main__':
     unittest.main()
