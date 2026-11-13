@@ -1,62 +1,97 @@
 {
-  "generated_at": "2026-11-13T11:13:25-06:00",
-  "overall": "critical",
-  "primary_failures": [
-    "estatesales_org",
-    "yardsalesearch",
-    "craigslist"
-  ],
+  "generated_at": "2026-11-13T14:54:16-06:00",
+  "overall": "degraded",
+  "primary_failures": [],
   "sources": [
     {
       "source": "garagesalefinder",
-      "status": "missing",
-      "detail": "no log file",
-      "primary": false
+      "primary": false,
+      "last_attempt_at": "2026-11-13T14:53:00-06:00",
+      "finished_at": "2026-11-13T14:53:02-06:00",
+      "exit_code": 0,
+      "records_found": 40,
+      "records_found_metric": "parsed",
+      "status": "ok",
+      "detail": "40 parsed",
+      "last_successful_retrieval": "2026-11-13T14:53:02-06:00"
     },
     {
       "source": "permits",
-      "status": "missing",
-      "detail": "no log file",
-      "primary": false
+      "primary": false,
+      "last_attempt_at": "2026-11-13T14:53:02-06:00",
+      "finished_at": "2026-11-13T14:53:02-06:00",
+      "exit_code": 0,
+      "records_found": 84,
+      "records_found_metric": "permits_in_window",
+      "status": "completed_unverified",
+      "detail": "script exited successfully but emitted no recognized retrieval/result marker"
     },
     {
       "source": "estatesales_org",
-      "status": "missing",
-      "detail": "no log file",
-      "primary": true
+      "primary": true,
+      "last_attempt_at": "2026-11-13T14:53:02-06:00",
+      "finished_at": "2026-11-13T14:53:04-06:00",
+      "exit_code": 0,
+      "records_found": 7,
+      "records_found_metric": "normalized",
+      "status": "ok",
+      "detail": "normalized=7",
+      "last_successful_retrieval": "2026-11-13T14:53:04-06:00"
     },
     {
       "source": "yardsalesearch",
-      "status": "missing",
-      "detail": "no log file",
-      "primary": true
+      "primary": true,
+      "last_attempt_at": "2026-11-13T14:53:04-06:00",
+      "finished_at": "2026-11-13T14:53:05-06:00",
+      "exit_code": 0,
+      "records_found": 14,
+      "records_found_metric": "normalized",
+      "status": "ok",
+      "detail": "normalized=14",
+      "last_successful_retrieval": "2026-11-13T14:53:05-06:00"
     },
     {
       "source": "gsalr",
-      "status": "missing",
-      "detail": "no log file",
-      "primary": false
+      "primary": false,
+      "last_attempt_at": "2026-11-13T14:53:05-06:00",
+      "finished_at": "2026-11-13T14:53:06-06:00",
+      "exit_code": 0,
+      "records_found": null,
+      "records_found_metric": "normalized",
+      "status": "fail",
+      "detail": "HTTP 403"
     },
     {
       "source": "craigslist",
-      "status": "missing",
-      "detail": "no log file",
-      "primary": true
+      "primary": true,
+      "last_attempt_at": "2026-11-13T14:53:06-06:00",
+      "finished_at": "2026-11-13T14:53:22-06:00",
+      "exit_code": 0,
+      "records_found": 9,
+      "records_found_metric": "enriched",
+      "status": "ok",
+      "detail": "enriched=9",
+      "last_successful_retrieval": "2026-11-13T14:53:22-06:00"
     },
     {
       "source": "estatesales_net",
-      "status": "missing",
-      "detail": "no log file",
-      "primary": false
+      "primary": false,
+      "last_attempt_at": "2026-11-13T14:54:16-06:00",
+      "finished_at": "2026-11-13T14:54:16-06:00",
+      "exit_code": 0,
+      "records_found": 0,
+      "records_found_metric": "normalized",
+      "status": "fail",
+      "detail": "HTTP 403"
     }
   ],
   "json_source_counts": {
     "facebook marketplace": 2,
     "facebook events": 4,
-    "yardsalesearch": 44,
+    "yardsalesearch": 45,
     "neighbor tip": 1,
     "nextdoor": 11,
-    "garagesalefinder": 56,
+    "garagesalefinder": 60,
     "estatesales.net": 14,
     "craigslist": 33,
     "facebook": 1,
@@ -69,5 +104,5 @@
     "allevents": 3,
     "estatesales.org": 14
   },
-  "notes": "Primary free sources: estatesales_org, yardsalesearch, craigslist. Secondary: gsalr, garagesalefinder, permits, estatesales_net. Scoring: 0 primary problems=healthy, 1=degraded, 2+=critical. merge added=0 is treated as ok (dedupe), not zero. Soft-fail workflow continues; this report only alerts. Apify removed 2026-08-22."
+  "notes": "Primary free sources: estatesales_org, yardsalesearch, craigslist. Secondary: gsalr, garagesalefinder, permits, estatesales_net. Only explicit source errors/nonzero exits count as failures. Missing logs are not_run, zero listings are a successful empty retrieval, and unrecognized output is unverified. Two or more failed primary sources are critical. Source-attributed JSON counts are inventory evidence, not proof of a fresh retrieval. Apify removed 2026-08-22."
 }

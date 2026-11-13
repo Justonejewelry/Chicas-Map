@@ -49,6 +49,7 @@ The map keeps both today's sales and upcoming dated sales.
 - Garage sale  on Friday Nov 13 — 3406 Butterleigh near Shire Oak, San Antonio, TX [2026-11-13 → 2026-11-13]
 - Garage sale — 315 Oak Knoll Dr, San Antonio, TX 78228 [2026-11-13 → 2026-11-15]
 - Garage Sale — 315 Oak Knoll Dr, San Antonio, TX [2026-11-13 → 2026-11-15]
+- Clothes Garage Sale — 1027 Morey Peak Dr, San Antonio, TX 78213 [2026-11-13 → 2026-11-14]
 
 ## COMING UP (on the map)
 
@@ -96,6 +97,10 @@ The map keeps both today's sales and upcoming dated sales.
 - Garage Sale This weekend — 5903 Forest Crest St, San Antonio, TX [2026-11-14 → 2026-11-20]
 - Household Treasures & Delightful Decor in Hills & Dales! — 7726 Green Glen Dr, San Antonio, TX 78255 [2026-11-14 → 2026-11-15] | 2026-11-14 9:00 am-3:00 pm; 2026-11-15 9:00 am-3:00 pm
 - Household Treasures & Delightful Decor In Hills & Dales! — 7726 Green Glen Dr, San Antonio, TX [2026-11-14 → 2026-11-15]
+- Raise a glass for Mr. Mike - Estate Sale! — 14000 Wenrich , Universal City, TX 78233 [2026-11-14 → 2026-11-15]
+- Huge yard sale! Home decor & collectibles — 6222 Fallow Cv, San Antonio, TX 78252 [2026-11-14 → 2026-11-16]
+- Yard sale!! Everything must go!! Tools, household, clothes — 121 Wind Willow, Cibolo, TX 78108 [2026-11-14 → 2026-11-14]
+- Raise A Glass For Mr. Mike - Estate Sale! — 14000 Wenrich, Universal City, TX [2026-11-14 → 2026-11-15]
 
 ### Starts 2026-11-15
 - ONE-DAY ESTATE SALE! — 104 Ridge Trail, San Antonio, TX 78232 [2026-11-15 → 2026-11-15] | 10am-5pm
