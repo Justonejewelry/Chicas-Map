@@ -22,6 +22,7 @@ Secondary (warn-only):
 """
 from __future__ import annotations
 
+import argparse
 import json
 import re
 import sys
@@ -67,54 +68,64 @@ OK_PATTERNS = [
 ]
 
 
-def read_log(name: str) -> str:
-    p = Path(name)
+def read_log(name: str, log_dir: Path) -> str:
+    p = log_dir / name
     if not p.exists():
         return ""
     return p.read_text(encoding="utf-8", errors="replace")
 
 
 def analyze_log(key: str, text: str) -> dict:
-    status = "missing"
-    detail = "no log file"
+    primary = key in PRIMARY
     if not text.strip():
-        return {"source": key, "status": status, "detail": detail, "primary": key in PRIMARY}
+        return {
+            "source": key, "status": "not_run",
+            "detail": "no source log captured for this run", "primary": primary,
+        }
+
+    def marker(name: str) -> str | None:
+        match = re.search(rf"^__CHICA_{name}=(.+)$", text, re.M)
+        return match.group(1).strip() if match else None
+
+    exit_code = marker("EXIT_CODE")
+    started_at = marker("STARTED_AT")
+    finished_at = marker("FINISHED_AT")
+    result = {
+        "source": key, "primary": primary,
+        "last_attempt_at": started_at,
+        "finished_at": finished_at,
+        "exit_code": int(exit_code) if exit_code and exit_code.isdigit() else None,
+    }
 
     for pat in FAIL_PATTERNS:
-        m = pat.search(text)
-        if m:
-            return {
-                "source": key,
-                "status": "fail",
-                "detail": m.group(0)[:120],
-                "primary": key in PRIMARY,
-            }
+        match = pat.search(text)
+        if match:
+            result.update(status="fail", detail=match.group(0)[:120])
+            return result
 
     for pat in OK_PATTERNS:
-        m = pat.search(text)
-        if m:
-            return {
-                "source": key,
-                "status": "ok",
-                "detail": m.group(0)[:80],
-                "primary": key in PRIMARY,
-            }
+        match = pat.search(text)
+        if match:
+            result.update(status="ok", detail=match.group(0)[:80])
+            result["last_successful_retrieval"] = finished_at
+            return result
 
     for pat in ZERO_PATTERNS:
         if pat.search(text):
-            return {
-                "source": key,
-                "status": "zero",
-                "detail": "normalized/added = 0",
-                "primary": key in PRIMARY,
-            }
+            result.update(status="zero", detail="source returned zero listings")
+            result["last_successful_retrieval"] = finished_at
+            return result
 
-    return {
-        "source": key,
-        "status": "unknown",
-        "detail": "log present but no clear success/fail pattern",
-        "primary": key in PRIMARY,
-    }
+    if result["exit_code"] not in (None, 0):
+        result.update(status="fail", detail=f"source script exited {result['exit_code']}")
+    elif result["exit_code"] == 0:
+        result.update(
+            status="completed_unverified",
+            detail="script exited successfully but emitted no recognized retrieval/result marker",
+        )
+    else:
+        result.update(status="unknown", detail="log present without run metadata or result marker")
+    return result
 
 
 def source_counts_from_json() -> dict[str, int]:
@@ -131,25 +142,32 @@ def source_counts_from_json() -> dict[str, int]:
 
 
 def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--log-dir", type=Path, default=Path.cwd())
+    args = parser.parse_args()
     now = datetime.now(CT).isoformat(timespec="seconds")
     results = []
     for key, logname in LOGS.items():
-        text = read_log(logname)
+        text = read_log(logname, args.log_dir)
         results.append(analyze_log(key, text))
 
     json_counts = source_counts_from_json()
 
     critical_fails = [
-        r for r in results if r["primary"] and r["status"] in ("fail", "zero", "missing")
+        r for r in results if r["primary"] and r["status"] == "fail"
     ]
     warns = [
-        r for r in results if (not r["primary"]) and r["status"] in ("fail", "zero", "missing")
+        r for r in results if (not r["primary"]) and r["status"] in ("fail", "zero", "not_run", "unknown", "completed_unverified")
     ]
+    uncertain_primary = [
+        r for r in results if r["primary"] and r["status"] in ("not_run", "unknown", "completed_unverified")
+    ]
+    zero_sources = [r for r in results if r["status"] == "zero"]
 
     n_primary_problems = len(critical_fails)
     if n_primary_problems >= 2:
         overall = "critical"
-    elif n_primary_problems == 1 or warns:
+    elif n_primary_problems == 1 or warns or uncertain_primary or zero_sources:
         overall = "degraded"
     else:
         overall = "healthy"
@@ -163,9 +181,10 @@ def main() -> int:
         "notes": (
             "Primary free sources: estatesales_org, yardsalesearch, craigslist. "
             "Secondary: gsalr, garagesalefinder, permits, estatesales_net. "
-            "Scoring: 0 primary problems=healthy, 1=degraded, 2+=critical. "
-            "merge added=0 is treated as ok (dedupe), not zero. "
-            "Soft-fail workflow continues; this report only alerts. "
+            "Only explicit source errors/nonzero exits count as failures. Missing logs are not_run, "
+            "zero listings are a successful empty retrieval, and unrecognized output is unverified. "
+            "Two or more failed primary sources are critical. "
+            "Source-attributed JSON counts are inventory evidence, not proof of a fresh retrieval. "
             "Apify removed 2026-08-22."
         ),
     }
@@ -177,12 +196,14 @@ def main() -> int:
     print("")
     print(f"- Overall: **{overall.upper()}**")
     print(f"- Generated: {now}")
-    print(f"- Primary problems: {n_primary_problems}/3")
+    print(f"- Confirmed primary failures: {n_primary_problems}/3")
+    print(f"- Primary sources without verified retrieval evidence: {len(uncertain_primary)}")
+    print(f"- Sources with zero listings: {len(zero_sources)}")
     print("")
     print("| Source | Status | Detail |")
     print("|--------|--------|--------|")
     for r in results:
-        flag = "🔴" if r["status"] in ("fail", "zero", "missing") else ("🟡" if r["status"] == "unknown" else "🟢")
+        flag = "🔴" if r["status"] == "fail" else ("🟡" if r["status"] in ("zero", "not_run", "unknown", "completed_unverified") else "🟢")
         print(f"| {r['source']} | {flag} {r['status']} | {r['detail'][:60]} |")
     print("")
     if json_counts:
@@ -192,7 +213,7 @@ def main() -> int:
         print("")
 
     if overall == "critical":
-        print("#### ⚠️ Critical free-source problems (2+ primaries down)")
+        print("#### ⚠️ Critical — two or more primary source failures confirmed")
         for r in critical_fails:
             print(f"- **{r['source']}**: {r['status']} — {r['detail']}")
         print("")
@@ -200,9 +221,13 @@ def main() -> int:
         return 1
 
     if overall == "degraded":
-        print("#### 🟡 Degraded — single primary issue or secondary warnings")
+        print("#### 🟡 Degraded — source failures, empty results, or incomplete monitoring evidence")
         for r in critical_fails:
             print(f"- **{r['source']}**: {r['status']} — {r['detail']}")
+        for r in uncertain_primary:
+            print(f"- **{r['source']}**: {r['status']} — {r['detail']}")
+        for r in zero_sources:
+            print(f"- {r['source']}: {r['status']} — {r['detail']}")
         for r in warns:
             print(f"- {r['source']}: {r['status']} — {r['detail']}")
         print("")
