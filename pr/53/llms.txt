@@ -1,0 +1,13 @@
+# Chicas Map
+
+Free San Antonio map of verified garage, yard, and estate sales. Near Me, multi-stop routes, and weekend intel.
+
+## Key pages
+- [Live map](https://www.chicasmap.com/map/): Interactive pins and routes
+- [This weekend’s sales](https://www.chicasmap.com/list/): Curated list
+- [List a sale free](https://www.chicasmap.com/submit/): Add your sale
+- [Sale Intel](https://www.chicasmap.com/intel/): Pin-level notes
+- [Alamo Atlas](https://www.chicasmap.com/atlas/): Civic safety layer
+
+## Notes
+Content is updated daily. Always verify times and addresses with the original source.

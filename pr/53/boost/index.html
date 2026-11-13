@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Free pin light · Chicas Map</title>
+  <meta name="description" content="This weekend only: like, follow, and share, then give Chica your address and hours for a free pin light." />
+  <link rel="icon" type="image/svg+xml" href="/Chicas-Map/preview/53/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root { color-scheme: dark; --magenta: #c513af; --ink: #f3eee4; --mute: #c4b8a8; --bg: #121212; --card: #1a1714; --line: #2a2622; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100dvh; font-family: Inter, system-ui, sans-serif; background: var(--bg); color: var(--ink); }
+    main { max-width: 520px; margin: 0 auto; padding: 28px 20px 96px; }
+    a { color: var(--magenta); }
+    .top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .brand { letter-spacing: .18em; text-transform: uppercase; font-size: 12px; color: var(--mute); text-decoration: none; }
+    .home { color: var(--ink); text-decoration: none; font: 800 12px/1 Inter, system-ui, sans-serif; border: 1px solid #3a342e; border-radius: 999px; padding: 8px 12px; }
+    h1 { font-family: Syne, Inter, sans-serif; font-size: 32px; line-height: 1.05; margin: 16px 0 8px; }
+    p { color: var(--mute); line-height: 1.5; }
+    .card { margin-top: 20px; padding: 20px; border: 1px solid var(--line); border-radius: 16px; background: var(--card); }
+    label { display: block; font-size: 13px; font-weight: 700; margin: 14px 0 6px; }
+    input, select, textarea { width: 100%; border: 1px solid #3a342e; border-radius: 12px; background: #121212; color: var(--ink); padding: 12px 14px; font: 500 16px/1.3 Inter, system-ui, sans-serif; }
+    textarea { min-height: 72px; resize: vertical; }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .checks { display: grid; gap: 8px; margin-top: 8px; }
+    .check { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: var(--ink); font-weight: 500; }
+    .check input { width: 20px; height: 20px; margin-top: 1px; accent-color: var(--magenta); flex: none; }
+    .hp { position: absolute; left: -9999px; height: 0; overflow: hidden; }
+    .go { display: block; width: 100%; margin-top: 18px; border: 0; border-radius: 12px; background: var(--magenta); color: #fff; font-weight: 800; font-size: 16px; padding: 14px 16px; cursor: pointer; }
+    .err { color: #ffb4b4; font-size: 14px; margin-top: 10px; }
+    .ok { display: none; }
+    .ok.show { display: block; }
+    form.hide { display: none; }
+    .packet { margin-top: 12px; padding: 12px; border-radius: 12px; background: #121212; border: 1px dashed #c513af; color: var(--ink); font: 700 15px/1.4 Inter, system-ui, sans-serif; word-break: break-word; }
+    .actions { display: grid; gap: 8px; margin-top: 14px; }
+    .btn { display: block; text-align: center; text-decoration: none; border-radius: 12px; padding: 13px 16px; font-weight: 800; }
+    .btn.ghost { border: 1px solid #3a342e; color: var(--ink); }
+    ol { padding-left: 18px; color: var(--mute); }
+    .fine { font-size: 13px; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="top">
+      <a class="brand" href="/Chicas-Map/preview/53/">Chicas Map · San Antonio</a>
+      <a class="home" href="/Chicas-Map/preview/53/">Home</a>
+    </div>
+    <h1>I’ll light your pin. Free.</h1>
+    <p>This weekend only. Like, follow, and share the Facebook post, then give me the driveway and the hours. I approve. I thank you. Hunters find you.</p>
+    <div class="card">
+      <ol>
+        <li>Like the Facebook post</li>
+        <li>Follow the page</li>
+        <li>Share that post to your feed</li>
+        <li>Fill this form — address <em>and</em> hours</li>
+      </ol>
+      <p class="fine">One free light per household. Sale has to be real. After this weekend the $5 light is back. Paid gold pins go live within 24 hours of payment.</p>
+    </div>
+    <form class="card" id="boost-form" data-chica-own novalidate>
+      <label for="name">Your name</label>
+      <input id="name" name="name" autocomplete="name" required placeholder="First name is enough" />
+      <label for="fb">Facebook name on the share</label>
+      <input id="fb" name="fb" required placeholder="So I can thank the right person" />
+      <label for="address">Sale address</label>
+      <input id="address" name="address" autocomplete="street-address" required placeholder="123 Oak St, San Antonio" />
+      <label>Open which days?</label>
+      <div class="checks">
+        <label class="check"><input type="checkbox" name="sat" id="sat" /> Saturday</label>
+        <label class="check"><input type="checkbox" name="sun" id="sun" /> Sunday</label>
+        <label class="check"><input type="checkbox" name="fri" id="fri" /> Friday setup / early</label>
+      </div>
+      <div class="row">
+        <div>
+          <label for="sat_hours">Saturday hours</label>
+          <input id="sat_hours" name="sat_hours" placeholder="8am–2pm" />
+        </div>
+        <div>
+          <label for="sun_hours">Sunday hours</label>
+          <input id="sun_hours" name="sun_hours" placeholder="8am–1pm" />
+        </div>
+      </div>
+      <label for="hours">Hours if they are the same both days</label>
+      <input id="hours" name="hours" placeholder="Sat–Sun 8am–2pm" />
+      <label for="type">Type</label>
+      <select id="type" name="type">
+        <option value="garage">Garage sale</option>
+        <option value="yard">Yard sale</option>
+        <option value="estate">Estate sale</option>
+        <option value="moving">Moving sale</option>
+      </select>
+      <label for="email">Email or phone (optional — for the thank-you)</label>
+      <input id="email" name="email" autocomplete="email" placeholder="If you want a note when the pin lights" />
+      <label for="notes">What are you selling? (optional)</label>
+      <textarea id="notes" name="notes" maxlength="280" placeholder="Tools, kids clothes, furniture…"></textarea>
+      <label>I did the three steps</label>
+      <div class="checks">
+        <label class="check"><input type="checkbox" id="did_like" required /> I liked the post</label>
+        <label class="check"><input type="checkbox" id="did_follow" required /> I follow Chica’s Map</label>
+        <label class="check"><input type="checkbox" id="did_share" required /> I shared the post to my feed</label>
+      </div>
+      <label class="hp" for="company">Company</label>
+      <input class="hp" id="company" name="company" tabindex="-1" autocomplete="off" />
+      <p class="err" id="err" hidden></p>
+      <button class="go" id="go" type="submit">Send boost request</button>
+    </form>
+    <div class="card ok" id="done">
+      <h2 style="font-family:Syne,Inter,sans-serif;margin:0 0 8px">Got it. One more tap.</h2>
+      <p>Paste this on the Facebook post so I can match you and thank you there.</p>
+      <div class="packet" id="packet"></div>
+      <div class="actions">
+        <button class="go" id="copy" type="button">Copy the BOOST comment</button>
+        <a class="btn ghost" href="https://www.facebook.com/Justone.Jewelry.Justin/" target="_blank" rel="noopener">Open Facebook</a>
+        <a class="btn ghost" href="/Chicas-Map/preview/53/map">See the map</a>
+      </div>
+    </div>
+  </main>
+  <script src="/Chicas-Map/preview/53/js/chica-config.js"></script>
+  <script>
+    (function () {
+      function cmEvt(p, t) { try { window.goatcounter && window.goatcounter.count && window.goatcounter.count({ path: "evt-" + p, title: t, event: true }); } catch (e) {} }
+      var ES = (document.documentElement.lang || "").slice(0, 2) === "es" || /^\/(Chicas-Map\/)?es\//.test(location.pathname);
+      var TX = {
+        go: "Enviar solicitud de impulso"
+      };
+      if (ES) {
+        document.documentElement.lang = "es";
+        var T = function (sel, html) { var el = document.querySelector(sel); if (el) el.innerHTML = html; };
+        var PH = function (id, v) { var el = document.getElementById(id); if (el) el.placeholder = v; };
+        var LB = function (id, v) { var el = document.querySelector('label[for="' + id + '"]'); if (el) el.textContent = v; };
+        var CK = function (id, v) { var el = document.getElementById(id); if (el && el.parentNode) el.parentNode.lastChild.textContent = " " + v; };
+        T("a.brand", "Chicas Map · San Antonio"); T("a.home", "Inicio");
+        T("main > h1", "Te prendo tu pin. Gratis.");
+        T("main > h1 + p", "Solo este fin de semana. Dale like, sigue y comparte la publicación de Facebook, y luego dame la dirección y el horario. Yo apruebo. Yo te doy las gracias. Los cazadores te encuentran.");
+        T("main > .card ol", "<li>Dale like a la publicación de Facebook</li><li>Sigue la página</li><li>Comparte esa publicación en tu muro</li><li>Llena este formulario: dirección <em>y</em> horario</li>");
+        T("main > .card .fine", "Un pin gratis por hogar. La venta tiene que ser real. Después de este fin regresa el pin de $5. Los pines dorados pagados se activan dentro de 24 horas después del pago.");
+        LB("name", "Tu nombre"); PH("name", "Con tu primer nombre basta");
+        LB("fb", "Tu nombre en Facebook (el que compartió)"); PH("fb", "Para darle las gracias a la persona correcta");
+        LB("address", "Dirección de la venta"); PH("address", "123 Oak St, San Antonio");
+        var labs = document.getElementById("boost-form").querySelectorAll(":scope > label:not([for])");
+        if (labs[0]) labs[0].textContent = "¿Qué días abres?";
+        if (labs[1]) labs[1].textContent = "Ya hice los tres pasos";
+        CK("sat", "Sábado"); CK("sun", "Domingo"); CK("fri", "Viernes (preparación / temprano)");
+        LB("sat_hours", "Horario del sábado"); LB("sun_hours", "Horario del domingo");
+        LB("hours", "Horario si es igual los dos días"); PH("hours", "Sáb–Dom 8am–2pm");
+        LB("type", "Tipo");
+        var opts = { garage: "Venta de garage", yard: "Venta de patio (yard sale)", estate: "Venta de patrimonio (estate sale)", moving: "Venta por mudanza" };
+        Array.prototype.forEach.call(document.getElementById("type").options, function (o) { if (opts[o.value]) o.textContent = opts[o.value]; });
+        LB("email", "Correo o teléfono (opcional, para darte las gracias)"); PH("email", "Si quieres un aviso cuando se prenda el pin");
+        LB("notes", "¿Qué vas a vender? (opcional)"); PH("notes", "Herramientas, ropa de niños, muebles…");
+        CK("did_like", "Le di like a la publicación"); CK("did_follow", "Sigo a Chica’s Map"); CK("did_share", "Compartí la publicación en mi muro");
+        T("#go", TX.go);
+        T("#done h2", "¡Listo! Un toque más.");
+        T("#done > p", "Pega esto en la publicación de Facebook para que te encuentre y te dé las gracias ahí.");
+        T("#copy", "Copiar el comentario BOOST");
+        var acts = document.querySelectorAll("#done .actions a");
+        if (acts[0]) acts[0].textContent = "Abrir Facebook";
+        if (acts[1]) acts[1].textContent = "Ver el mapa";
+      }
+      var form = document.getElementById("boost-form");
+      var err = document.getElementById("err");
+      var done = document.getElementById("done");
+      var packetEl = document.getElementById("packet");
+      var cfg = window.CHICA_CONFIG || {};
+      var deskEmail = (cfg.BOOST_DESK_EMAIL || "").trim();
+      function hoursFrom() {
+        var same = (document.getElementById("hours").value || "").trim();
+        var satH = (document.getElementById("sat_hours").value || "").trim();
+        var sunH = (document.getElementById("sun_hours").value || "").trim();
+        var sat = document.getElementById("sat").checked;
+        var sun = document.getElementById("sun").checked;
+        var fri = document.getElementById("fri").checked;
+        var parts = [];
+        if (same) return same;
+        if (fri) parts.push("Fri setup");
+        if (sat) parts.push("Sat" + (satH ? " " + satH : ""));
+        if (sun) parts.push("Sun" + (sunH ? " " + sunH : ""));
+        return parts.join(" · ");
+      }
+      function daysFrom() {
+        return ["fri", "sat", "sun"].filter(function (id) {
+          return document.getElementById(id).checked;
+        });
+      }
+      form.addEventListener("submit", function (ev) {
+        ev.preventDefault();
+        err.hidden = true;
+        if ((document.getElementById("company").value || "").trim()) return;
+        var name = (document.getElementById("name").value || "").trim();
+        var fb = (document.getElementById("fb").value || "").trim();
+        var address = (document.getElementById("address").value || "").trim();
+        var days = daysFrom();
+        var hours = hoursFrom();
+        var type = document.getElementById("type").value;
+        var email = (document.getElementById("email").value || "").trim();
+        var notes = (document.getElementById("notes").value || "").trim();
+        if (!name || !fb || !address) { err.hidden = false; err.textContent = (ES ? "Faltan tu nombre, tu nombre en Facebook y la dirección." : "Name, Facebook name, and address are required."); return; }
+        if (!days.length) { err.hidden = false; err.textContent = (ES ? "Marca los días que abres." : "Check the days you are open."); return; }
+        if (!hours || hours === "Fri setup") { err.hidden = false; err.textContent = (ES ? "Faltan los horarios. Ejemplo: sáb 8am–2pm." : "Hours are required. Example: Sat 8am–2pm."); return; }
+        if (!document.getElementById("did_like").checked || !document.getElementById("did_follow").checked || !document.getElementById("did_share").checked) {
+          err.hidden = false; err.textContent = (ES ? "Primero dale like, sigue y comparte. Luego envía." : "Like, follow, and share first — then send."); return;
+        }
+        var packet = "BOOST · " + address + " · " + hours;
+        var rec = { id: "boost-" + Date.now(), status: "pending", created_at: new Date().toISOString(), name: name, fb: fb, address: address, hours: hours, days: days, type: type, email: email, notes: notes, liked: true, followed: true, shared: true, packet: packet, campaign: "fb-free-light-2026-09-12" };
+        try {
+          var key = "chicas-boost-queue-v1";
+          var q = [];
+          try { q = JSON.parse(localStorage.getItem(key) || "[]"); } catch (e) { q = []; }
+          q.unshift(rec);
+          localStorage.setItem(key, JSON.stringify(q.slice(0, 40)));
+        } catch (e) {}
+        packetEl.textContent = packet;
+        cmEvt("boost-free-submit", "Free boost / claim request submit");
+        function showDone() { form.classList.add("hide"); done.classList.add("show"); }
+        if (!deskEmail) { showDone(); return; }
+        var go = document.getElementById("go");
+        go.disabled = true; go.textContent = ES ? "Chica está enviando… 🐾" : "Chica is sending it… 🐾";
+        {
+          var body = ["Chicas Map free pin light request", "Name: " + name, "Facebook: " + fb, "Address: " + address, "Hours: " + hours, "Type: " + type, "Contact: " + (email || "none"), "Notes: " + (notes || "none"), "Liked / followed / shared: yes", "Comment packet: " + packet].join("\n");
+          fetch("https://formsubmit.co/ajax/" + encodeURIComponent(deskEmail), {
+            method: "POST",
+            headers: { "Content-Type": "application/json", Accept: "application/json" },
+            body: JSON.stringify({ _subject: "BOOST request · " + address, _template: "box", name: name, facebook: fb, address: address, hours: hours, type: type, contact: email, notes: notes, packet: packet, message: body })
+          }).then(function (r) {
+            if (!r.ok) throw new Error("http " + r.status);
+            return r.json().catch(function () { return {}; });
+          }).then(function (j) {
+            if (j && (j.success === false || j.success === "false")) throw new Error("formsubmit");
+            go.disabled = false; go.textContent = ES ? TX.go : "Send boost request";
+            cmEvt("boost-free-ok", "Free boost request delivered");
+            showDone();
+          }).catch(function () {
+            go.disabled = false; go.textContent = ES ? TX.go : "Send boost request";
+            err.hidden = false;
+            err.textContent = ES ? "¡Ay, guau! Chica no pudo enviar tu solicitud 🐾 Revisa tu conexión e inténtalo otra vez, o escríbenos a mr.jsciaraffa@gmail.com." : "Ruh-roh! Chica couldn't send your request 🐾 Check your connection and try again, or email mr.jsciaraffa@gmail.com.";
+          });
+        }
+      });
+      document.getElementById("copy").addEventListener("click", function () {
+        var t = packetEl.textContent || "";
+        if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t);
+        this.textContent = ES ? "¡Copiado!" : "Copied";
+      });
+    })();
+  </script>
+<script src="/Chicas-Map/preview/53/js/chica-menu.js?v=11" defer></script></body>
+</html>
