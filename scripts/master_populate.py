@@ -146,6 +146,9 @@ def main() -> int:
         run_step("rebuild_feed", [PY, "webapp/scripts/rebuild_feed.py"])
     if (ROOT / "scripts" / "thin_address_resolve.py").exists() and not args.dry_run:
         run_step("thin_address_resolve", [PY, "scripts/thin_address_resolve.py"])
+    neighborhood_script = ROOT / "scripts" / "enrich_neighborhoods.py"
+    if neighborhood_script.exists() and not args.dry_run:
+        run_step("enrich_neighborhoods", [PY, "scripts/enrich_neighborhoods.py"])
     if (ROOT / "scripts" / "date_window.py").exists() and not args.dry_run:
         run_step("date_window", [PY, "scripts/date_window.py"])
     elif args.dry_run:
