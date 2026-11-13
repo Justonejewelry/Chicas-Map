@@ -1,7 +1,7 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
 import { SiteFooter, SiteHeader } from "@/components/site-header";
-import { saveSubmission, type Sale, type SaleKind } from "@/lib/sales";
+import { haversineMi, SA_CENTER, saveSubmission, type Sale, type SaleKind } from "@/lib/sales";
 
 export const Route = createFileRoute("/submit")({ component: SubmitPage });
 
@@ -22,21 +22,42 @@ function SubmitPage() {
     const address = String(fd.get("address") || "").trim();
     const hours = String(fd.get("hours") || "").trim();
     const details = String(fd.get("details") || "").trim();
+    const date_from = String(fd.get("date_from") || "");
+    const date_to = String(fd.get("date_to") || "");
     const type = (String(fd.get("type") || "garage") as SaleKind);
-    if (!title || !address) {
-      setError("Title and address are required.");
+
+    if (!title || !address || !date_from || !date_to) {
+      setError("Title, address, and both sale dates are required.");
       return;
     }
+    if (date_to < date_from) {
+      setError("The end date cannot be before the start date.");
+      return;
+    }
+    const today = new Date();
+    const todayISO = [today.getFullYear(), String(today.getMonth() + 1).padStart(2, "0"), String(today.getDate()).padStart(2, "0")].join("-");
+    if (date_from < todayISO) {
+      setError("The sale start date cannot be in the past.");
+      return;
+    }
+
     setBusy(true);
     try {
-      const q = encodeURIComponent(`${address}, San Antonio TX`);
+      const q = encodeURIComponent(address + ", San Antonio, Texas");
       const geo = await fetch(
-        `https://nominatim.openstreetmap.org/search?format=json&limit=1&q=${q}`,
+        `https://nominatim.openstreetmap.org/search?format=json&limit=1&countrycodes=us&q=${q}`,
         { headers: { Accept: "application/json" } },
       );
+      if (!geo.ok) throw new Error("geocode");
       const hits = (await geo.json()) as { lat: string; lon: string }[];
-      const lat = hits[0] ? Number(hits[0].lat) : 29.4241;
-      const lon = hits[0] ? Number(hits[0].lon) : -98.4936;
+      if (!hits.length) throw new Error("address");
+      const lat = Number(hits[0].lat);
+      const lon = Number(hits[0].lon);
+      if (!Number.isFinite(lat) || !Number.isFinite(lon) ||
+          haversineMi({ lat, lon }, { lat: SA_CENTER[0], lon: SA_CENTER[1] }) > 60) {
+        throw new Error("address");
+      }
+
       const sale: Sale = {
         id: `user-${Date.now()}`,
         title,
@@ -45,9 +66,9 @@ function SubmitPage() {
         lon,
         type,
         hours,
-        dates: "This weekend",
-        date_from: "",
-        date_to: "",
+        dates: date_from === date_to ? date_from : `${date_from} to ${date_to}`,
+        date_from,
+        date_to,
         details,
         source: "Neighbor tip",
         url: "",
@@ -58,32 +79,39 @@ function SubmitPage() {
         permit_number: "",
         submitted: true,
       };
-      saveSubmission(sale);
 
-      // Email the tip (fire-and-forget; local pin still works)
-      fetch(INTAKE, {
+      // Do not show a successful submission unless the review email is accepted.
+      const response = await fetch(INTAKE, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
           _subject: `Chicas Map — New sale tip: ${title}`,
           _template: "table",
           title,
           address,
           type,
+          date_from,
+          date_to,
           hours,
           details,
           lat,
           lon,
           source_url: location.href,
         }),
-      }).catch(() => {});
+      });
+      if (!response.ok) throw new Error("email");
+      const result = await response.json().catch(() => ({}));
+      if (result && (result.success === false || result.success === "false")) throw new Error("email");
 
+      saveSubmission(sale);
       await navigate({ to: "/map", search: { sale: sale.id } });
-    } catch {
-      setError("Could not place that address. Try a fuller street address.");
+    } catch (err) {
+      const reason = err instanceof Error ? err.message : "";
+      setError(reason === "address"
+        ? "We couldn't verify an address in the San Antonio area. Check the street address and try again."
+        : reason === "email"
+          ? "Your sale details could not be sent for review. Please try again; the listing has not been submitted."
+          : "We couldn't verify the address or send the listing. Please check your connection and try again.");
     } finally {
       setBusy(false);
     }
@@ -95,7 +123,7 @@ function SubmitPage() {
       <main className="mx-auto max-w-lg px-4 py-10">
         <h1 className="font-display text-3xl font-bold">List a sale — free</h1>
         <p className="mt-2 text-sm leading-relaxed text-muted">
-          Drop your garage, yard, or estate sale on the map. We email the tip so it can be reviewed and added for the pack.
+          Share your garage, yard, or estate sale with the pack. Your dates and address are sent for review before the sale is added to the public map.
         </p>
         <aside className="mt-4 rounded-2xl bg-paper p-4 ring-1 ring-line">
           <p className="font-display text-base font-semibold">Want the weekend highlight?</p>
@@ -120,6 +148,10 @@ function SubmitPage() {
               <option value="estate">Estate sale</option>
             </select>
           </label>
+          <div className="grid grid-cols-2 gap-3">
+            <Field label="Sale starts" name="date_from" inputType="date" required />
+            <Field label="Sale ends" name="date_to" inputType="date" required />
+          </div>
           <Field label="Hours" name="hours" placeholder="Fri–Sat 8am–2pm" />
           <label className="flex flex-col gap-1.5 text-sm font-medium">
             Details
@@ -130,14 +162,15 @@ function SubmitPage() {
               placeholder="What you're selling, cash/Venmo, parking notes"
             />
           </label>
-          {error ? <p className="text-sm text-red-700">{error}</p> : null}
+          {error ? <p role="alert" className="text-sm text-red-700">{error}</p> : null}
           <button
             type="submit"
             disabled={busy}
             className="h-12 rounded-full bg-pine text-sm font-semibold text-cream disabled:opacity-60"
           >
-            {busy ? "Pinning…" : "Pin it on the map"}
+            {busy ? "Sending for review…" : "Submit sale for review"}
           </button>
+          <p className="text-xs leading-relaxed text-muted">Submitting is free. Your sale is not published automatically; we review the details first.</p>
         </form>
       </main>
       <SiteFooter />
@@ -150,17 +183,20 @@ function Field({
   name,
   placeholder,
   required,
+  inputType = "text",
 }: {
   label: string;
   name: string;
   placeholder?: string;
   required?: boolean;
+  inputType?: "text" | "date";
 }) {
   return (
     <label className="flex flex-col gap-1.5 text-sm font-medium">
       {label}
       <input
         name={name}
+        type={inputType}
         required={required}
         placeholder={placeholder}
         className="h-11 rounded-xl bg-paper px-3 font-normal ring-1 ring-line outline-none focus:ring-2 focus:ring-pine"
