@@ -54,6 +54,16 @@ class ScraperHealthTests(unittest.TestCase):
         result = health.analyze_log("craigslist", self.log("enriched=0"))
         self.assertEqual(result["status"], "zero")
 
+    def test_craigslist_static_results_but_zero_enriched_is_zero(self):
+        result = health.analyze_log("craigslist", self.log("static results=25\\nenriched=0"))
+        self.assertEqual(result["status"], "zero")
+        self.assertEqual(result["records_found"], 0)
+
+    def test_craigslist_positive_enriched_count_is_ok(self):
+        result = health.analyze_log("craigslist", self.log("static results=25\\nenriched=8"))
+        self.assertEqual(result["status"], "ok")
+        self.assertEqual(result["records_found"], 8)
+
     def test_garage_sale_finder_zero_parsed_is_successful_empty_retrieval(self):
         result = health.analyze_log("garagesalefinder", self.log("0 parsed"))
         self.assertEqual(result["status"], "zero")
