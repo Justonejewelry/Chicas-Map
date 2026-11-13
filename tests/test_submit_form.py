@@ -24,6 +24,13 @@ class SubmitFormTests(unittest.TestCase):
         self.assertNotIn('hits[0] ? Number(hits[0].lat) : 29.4241', self.source)
         self.assertNotIn('hits[0] ? Number(hits[0].lon) : -98.4936', self.source)
 
+    def test_review_email_must_succeed_before_local_success(self):
+        send = self.source.index('const response = await fetch(INTAKE')
+        confirm = self.source.index('if (!response.ok)', send)
+        save = self.source.index('saveSubmission(sale)', send)
+        self.assertLess(send, confirm)
+        self.assertLess(confirm, save)
+
     def test_pending_review_is_explained(self):
         self.assertIn('not public until approved', self.source)
         self.assertIn('Submit sale for review', self.source)
