@@ -59,7 +59,7 @@ class ScraperHealthTests(unittest.TestCase):
         self.assertEqual(result["status"], "zero")
 
     def test_garage_sale_finder_mixed_city_results_are_nonempty(self):
-        result = health.analyze_log("garagesalefinder", self.log("0 parsed\\n12 parsed\\nmerge added=0"))
+        result = health.analyze_log("garagesalefinder", self.log("0 parsed\n12 parsed\nmerge added=0"))
         self.assertEqual(result["status"], "ok")
         self.assertEqual(result["detail"], "12 parsed")
 
