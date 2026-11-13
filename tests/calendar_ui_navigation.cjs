@@ -63,8 +63,8 @@ function firstDateColumn() {
 }
 
 (async () => {
-  await Promise.resolve();
-  await Promise.resolve();
+  // Let fetch().then(...).then(...) finish its asynchronous initialization.
+  await new Promise(resolve => setImmediate(resolve));
   const expected = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   assert.deepEqual(headings(), expected, "initial month has seven Sunday-first headings");
 
