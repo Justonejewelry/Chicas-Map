@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Report a listing issue | Chicas Map</title>
+  <meta name="description" content="Tell Chicas Map if a garage sale listing is incorrect, outdated, or needs attention.">
+  <link rel="canonical" href="https://www.chicasmap.com/report/">
+  <meta name="theme-color" content="#121212">
+  <style>
+    :root{color-scheme:light;font-family:Inter,system-ui,-apple-system,sans-serif;background:#f7f3ed;color:#201b20}
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;padding:24px 16px;display:grid;place-items:center}
+    main{width:min(100%,560px);background:#fff;border:1px solid #e5dce5;border-radius:20px;padding:clamp(20px,5vw,36px);box-shadow:0 12px 36px #24152412}
+    a{color:#861276}h1{font-size:clamp(26px,6vw,34px);line-height:1.1;margin:0 0 10px}p{line-height:1.55;color:#5d535d}
+    label{display:block;font-weight:650;font-size:14px;margin:16px 0 6px}
+    input,select,textarea{width:100%;min-height:46px;padding:11px 12px;border:1px solid #cfc4ce;border-radius:10px;background:#fff;color:#201b20;font:inherit}
+    textarea{min-height:112px;resize:vertical}button{width:100%;min-height:48px;margin-top:20px;border:0;border-radius:999px;background:#a30d91;color:#fff;font:750 15px/1.2 Inter,system-ui,sans-serif;cursor:pointer}
+    button:disabled{opacity:.6;cursor:wait}.context{padding:12px 14px;border-radius:12px;background:#f8eff7;color:#493044;font-size:14px;overflow-wrap:anywhere}
+    .status{min-height:24px;margin-top:14px;font-size:14px} .back{display:inline-block;margin-top:18px;font-weight:650}
+    .small{font-size:12px;color:#746b74} .hidden{display:none!important}
+  </style>
+</head>
+<body>
+<main>
+  <p><a href="/Chicas-Map/preview/65/">Chicas Map</a></p>
+  <h1 id="heading">Report a listing issue</h1>
+  <p id="intro">Help keep the map useful. Tell us if a sale is missing, incorrect, cancelled, or outdated. Reports are reviewed; submitting one does not immediately remove a listing.</p>
+  <div class="context" id="listing-context">No listing was attached. You can still send a general map correction.</div>
+  <form id="report-form">
+    <input type="hidden" name="_subject" value="Chicas Map — listing correction report">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="listing_id" id="listing-id">
+    <input type="hidden" name="listing_title" id="listing-title">
+    <input type="hidden" name="listing_address" id="listing-address">
+    <input type="hidden" name="listing_source_url" id="listing-source">
+    <label for="reason" id="reason-label">What needs attention?</label>
+    <select id="reason" name="reason" required>
+      <option value="">Choose a reason</option>
+      <option value="Sale cancelled or no longer happening">Sale cancelled or no longer happening</option>
+      <option value="Wrong address or map location">Wrong address or map location</option>
+      <option value="Incorrect date or hours">Incorrect date or hours</option>
+      <option value="Duplicate listing">Duplicate listing</option>
+      <option value="Not a garage, yard, or estate sale">Not a garage, yard, or estate sale</option>
+      <option value="Other correction">Other correction</option>
+    </select>
+    <label for="details" id="details-label">More details (optional)</label>
+    <textarea id="details" name="details" maxlength="1500" placeholder="Share what you noticed. Please don't include private or sensitive information."></textarea>
+    <label for="email" id="email-label">Your email (optional)</label>
+    <input id="email" name="email" type="email" autocomplete="email" placeholder="Only if you'd like us to follow up">
+    <p class="small" id="privacy-note">Your report is sent to the Chicas Map team for review. Please don't include private or sensitive information.</p>
+    <button id="send" type="submit">Send report</button>
+    <p class="status" id="status" role="status" aria-live="polite"></p>
+  </form>
+  <a class="back" href="/Chicas-Map/preview/65/map/">← Back to the map</a>
+</main>
+<script>
+(function(){
+  var params=new URLSearchParams(location.search);
+  function set(id,value){var el=document.getElementById(id);if(el)el.value=value||"";}
+  var id=params.get("id")||"",title=params.get("title")||"",address=params.get("address")||"",source=params.get("source")||"";
+  set("listing-id",id);set("listing-title",title);set("listing-address",address);set("listing-source",source);
+  var context=document.getElementById("listing-context");
+  if(title||address||id){context.textContent=[title,address,id?"Listing ID: "+id:""].filter(Boolean).join(" · ");}
+  var es=(document.documentElement.lang||"").slice(0,2)==="es"||params.get("lang")==="es";
+  if(es){
+    document.documentElement.lang="es";
+    document.getElementById("heading").textContent="Reportar un problema";
+    document.getElementById("intro").textContent="Ayúdanos a mantener útil el mapa. Avísanos si una venta está cancelada, incorrecta o desactualizada. Revisamos los reportes; enviarlo no elimina la venta automáticamente.";
+    document.getElementById("reason-label").textContent="¿Qué debemos revisar?";
+    document.getElementById("details-label").textContent="Más detalles (opcional)";
+    document.getElementById("email-label").textContent="Tu correo (opcional)";
+    document.getElementById("privacy-note").textContent="Tu reporte se envía al equipo de Chicas Map. No incluyas información privada o sensible.";
+    document.getElementById("send").textContent="Enviar reporte";
+    document.querySelector('#reason option[value=""]').textContent="Elige un motivo";
+    document.querySelector('#reason option[value="Sale cancelled or no longer happening"]').textContent="La venta fue cancelada";
+    document.querySelector('#reason option[value="Wrong address or map location"]').textContent="Dirección o ubicación incorrecta";
+    document.querySelector('#reason option[value="Incorrect date or hours"]').textContent="Fecha u horario incorrecto";
+    document.querySelector('#reason option[value="Duplicate listing"]').textContent="Anuncio duplicado";
+    document.querySelector('#reason option[value="Not a garage, yard, or estate sale"]').textContent="No es una venta de garaje, patio o herencia";
+    document.querySelector('#reason option[value="Other correction"]').textContent="Otra corrección";
+    document.getElementById("details").placeholder="Cuéntanos qué notaste.";
+  }
+  document.getElementById("report-form").addEventListener("submit",async function(ev){
+    ev.preventDefault();
+    var form=ev.currentTarget,button=document.getElementById("send"),status=document.getElementById("status");
+    button.disabled=true;status.textContent=es?"Enviando…":"Sending…";
+    try{
+      var response=await fetch("https://formsubmit.co/ajax/mr.jsciaraffa@gmail.com",{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(Object.fromEntries(new FormData(form).entries()))});
+      var result=await response.json();
+      if(!response.ok||result.success===false||result.success==="false")throw new Error("Delivery failed");
+      form.reset();
+      ["listing-id","listing-title","listing-address","listing-source"].forEach(function(key){var el=document.getElementById(key);if(el)el.value=key==="listing-id"?id:key==="listing-title"?title:key==="listing-address"?address:source;});
+      status.textContent=es?"Gracias. Recibimos tu reporte para revisión.":"Thank you. Your report was received for review.";
+    }catch(error){
+      status.textContent=es?"No se pudo enviar. Inténtalo de nuevo más tarde.":"We couldn't send the report. Please try again later.";
+      button.disabled=false;
+    }
+  });
+})();
+</script>
+</body>
+</html>
