@@ -79,7 +79,7 @@
         }
         box.innerHTML = sales.map(function (s) {
           var title = esc(s.title || s.name || "Sale");
-          var rawKind = String(s.type || s.kind || "garage").toLowerCase().replace(/[\\s_-]+/g, "");
+          var rawKind = String(s.type || s.kind || "garage").toLowerCase().replace(/[\s_-]+/g, "");
           var kind = rawKind === "estate" || rawKind === "estatesale" ? "Estate Sale" : rawKind === "permit" ? "City Permit" : "Garage Sale";
           var addr = esc(s.address || s.addr || "");
           var href = "/Chicas-Map/map/";
