@@ -24,7 +24,6 @@ The map keeps both today's sales and upcoming dated sales.
 - YARD SALE — 1303 Roosevelt #2 near Roosevelt and Felisa, San Antonio, TX [2026-11-12 → 2026-11-13]
 - HUGE FAMILY YARD SALE — 205 Pollydale Dr, San Antonio, TX 78223 [2026-11-12 → 2026-11-13]
 - Huge Family Yard Sale — 205 Pollydale Dr, San Antonio, TX [2026-11-12 → 2026-11-13]
-- LAST DAY SALE, all must go! Indoors, free items — E Mulberry Ave near Tendick St, San Antonio, TX [2026-11-12 → 2026-11-12]
 
 ## COMING UP (on the map)
 
@@ -42,6 +41,7 @@ The map keeps both today's sales and upcoming dated sales.
 - HUGE 3 FAMILY YARD SALE BIGGEST SALE EVER! — 217 Long Cove Dr, Cibolo, TX 78108 [2026-11-13 → 2026-11-15]
 - Garage Sale — 52 Peach Tree Ave, Poteet, TX 78065 [2026-11-13 → 2026-11-15]
 - Huge 3 Family Yard Sale Biggest Sale Ever! — 217 Long Cove Dr, Cibolo, TX [2026-11-13 → 2026-11-15]
+- LAST DAYs SALE, all must go! Indoors, free items — E Mulberry Ave near Tendick St, San Antonio, TX [2026-11-13 → 2026-11-14]
 - Garage Sale — 8741 Buckskin Dr, Boerne, TX 78006 [2026-11-13 → 2026-11-14]
 - Huge Garage Sale - 8919 Shade Tree - Friday & Saturday, Nov 13 & 14 — 8919 SHADE TREE near TEZEL, San Antonio, TX [2026-11-13 → 2026-11-14]
 - November Semi-Annual Yard Sale-CASH PLEASE — 4802 E Beverly Mae Dr, San Antonio, TX 78229 [2026-11-13 → 2026-11-14]
@@ -51,6 +51,8 @@ The map keeps both today's sales and upcoming dated sales.
 - November Semi-Annual Yard Sale-Cash Please — 4802 E Beverly Mae Dr, San Antonio, TX [2026-11-13 → 2026-11-14]
 - Leon Valley Garage Sale — 7603 Linkmeadow St, San Antonio, TX [2026-11-13 → 2026-11-14]
 - Household goods garage sale! — 16527 drum oak, San Antonio, TX [2026-11-13 → 2026-11-13]
+- Garage sale — 1711 Searcy Dr, San Antonio, TX 78232 [2026-11-13 → 2026-11-14]
+- Garage sale  on Friday Nov 13 — 3406 Butterleigh near Shire Oak, San Antonio, TX [2026-11-13 → 2026-11-13]
 
 ### Starts 2026-11-14
 - GARAGE SALE — 5858 Laurel Valley, San Antonio, TX 78242 [2026-11-14 → 2026-11-15] | 10am-7pm

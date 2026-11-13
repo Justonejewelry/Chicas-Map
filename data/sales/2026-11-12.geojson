@@ -2,7 +2,7 @@
   "type": "FeatureCollection",
   "properties": {
     "target_date": "2026-11-12",
-    "generated_at": "2026-11-12T18:17:45-06:00",
+    "generated_at": "2026-11-12T20:23:13-06:00",
     "count": 9,
     "project": "Chicas-Map"
   },
@@ -48,7 +48,7 @@
           "https://ps.tlstatic.com/image/w300-c300:250/2026/11/09/s/4/5/413645/TPVE-0.jpeg"
         ],
         "confidence": 100,
-        "verified_at": "2026-11-12T18:17:31-06:00",
+        "verified_at": "2026-11-12T20:22:58-06:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.551369903987,-98.256587670159",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.551369903987,-98.256587670159",
         "status": "verified",
@@ -99,7 +99,7 @@
           "https://images.craigslist.org/00Q0Q_jun0A3PLX3G_0vd0t2_50x50c.jpg"
         ],
         "confidence": 96,
-        "verified_at": "2026-11-12T18:17:31-06:00",
+        "verified_at": "2026-11-12T20:22:58-06:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.485811,-98.44471",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.485811,-98.44471",
         "status": "verified",
@@ -120,7 +120,7 @@
       },
       "properties": {
         "sale_id": "2026-11-12_1303-roosevelt-2-near-roosevelt-and-felisa-san-a",
-        "title": "YARD SALE (San Antonio)",
+        "title": "YARD SALE",
         "sale_type": "garage",
         "date_start": "2026-11-12",
         "date_end": "2026-11-13",
@@ -132,7 +132,7 @@
         "zip": "",
         "latitude": 29.391,
         "longitude": -98.4866,
-        "description": "QR Code Link to This Post If weather permits I will be having a yard sale Thursday and Friday. I have a lot of New, Used, and Vintage stuff. I have 2 New Electric Heaters, and a few Used ones, different sizes, different prices. I have hanging Wall pictures, battery operated clocks, and so much more, too much to mention. I will post more pictures the day I set up..I will start at 9:30am. My address is 1303 Roosevelt, big Blue Apartment 4plex, #2, the corner of Roosevelt and Felisa.",
+        "description": "QR Code Link to This Post If weather permits I will be having a yard sale Thursday and Friday. I have a lot of New, Used, and Vintage stuff. I have 2 New Electric Heaters, and a few Used ones, different sizes, different prices. I have hanging Wall pictures, battery operated clocks, and so much more, too much to mention. I will post more pictures the day I set up..I will start at 9:30am. My address",
         "highlights": [],
         "source_urls": [
           "https://www.craigslist.org/view/d/san-antonio-yard-sale/aCtLxMDqpWV28BkZEQ2Lsc"
@@ -141,14 +141,9 @@
         "source_names": [
           "Craigslist"
         ],
-        "photos": [
-          "https://images.craigslist.org/00404_7yU7IzaZWxX_0CI0t2_600x450.jpg",
-          "https://images.craigslist.org/00404_7yU7IzaZWxX_0CI0t2_50x50c.jpg",
-          "https://images.craigslist.org/00U0U_kJRGyzZtGUK_0t20CI_50x50c.jpg",
-          "https://images.craigslist.org/01010_gpFkQUIlCrJ_0t20CI_50x50c.jpg"
-        ],
-        "confidence": 96,
-        "verified_at": "2026-11-12T18:17:31-06:00",
+        "photos": [],
+        "confidence": 92,
+        "verified_at": "2026-11-12T20:22:58-06:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.391,-98.4866",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.391,-98.4866",
         "status": "verified",
@@ -199,7 +194,7 @@
           "https://d3sp8ubbhnru9d.cloudfront.net/image/w300-c300:250/2026/11/11/s/5/3/38997053/7YQ0O-0.jpeg"
         ],
         "confidence": 100,
-        "verified_at": "2026-11-12T18:17:31-06:00",
+        "verified_at": "2026-11-12T20:22:58-06:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.375199,-98.43792",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.375199,-98.43792",
         "status": "verified",
@@ -250,7 +245,7 @@
           "https://na.allevents.in/matomo.php?idsite=1"
         ],
         "confidence": 96,
-        "verified_at": "2026-11-12T18:17:31-06:00",
+        "verified_at": "2026-11-12T20:22:58-06:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.422029,-98.496071",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.422029,-98.496071",
         "status": "verified",
@@ -299,7 +294,7 @@
           "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/static/images/sponsored/300x250.gif"
         ],
         "confidence": 96,
-        "verified_at": "2026-11-12T18:17:31-06:00",
+        "verified_at": "2026-11-12T20:22:58-06:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.588104523478,-98.663187157125",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.588104523478,-98.663187157125",
         "status": "verified",
@@ -347,7 +342,7 @@
           "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/static/images/sponsored/300x250.gif"
         ],
         "confidence": 96,
-        "verified_at": "2026-11-12T18:17:31-06:00",
+        "verified_at": "2026-11-12T20:22:58-06:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.378802190687,-98.417306910705",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.378802190687,-98.417306910705",
         "status": "verified",
@@ -392,10 +387,11 @@
         "photos": [
           "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/static/images/sponsored/728x90.gif",
           "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/static/images/publications/sanantonio.png",
+          "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/image/general/IPCSAE00228731/c5dd6ae2e5cf3e3af4d28bf7132886d2_thumb.jpg",
           "https://hearst-mp.ipublishmarketplace.com/marketplace/sanantonio/static/images/sponsored/300x250.gif"
         ],
         "confidence": 96,
-        "verified_at": "2026-11-12T18:17:31-06:00",
+        "verified_at": "2026-11-12T20:22:58-06:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.517994035186,-98.354717873467",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.517994035186,-98.354717873467",
         "status": "verified",
@@ -439,7 +435,7 @@
         ],
         "photos": [],
         "confidence": 96,
-        "verified_at": "2026-11-12T18:17:31-06:00",
+        "verified_at": "2026-11-12T20:22:58-06:00",
         "street_view_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=29.532252506662,-98.504210494488",
         "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.532252506662,-98.504210494488",
         "status": "verified",

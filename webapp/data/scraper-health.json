@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T18:17:30-06:00",
+  "generated_at": "2026-11-12T20:22:58-06:00",
   "overall": "critical",
   "primary_failures": [
     "estatesales_org",
@@ -51,9 +51,14 @@
     }
   ],
   "json_source_counts": {
-    "garagesalefinder": 54,
+    "facebook marketplace": 2,
+    "facebook events": 4,
     "yardsalesearch": 43,
-    "craigslist": 29,
+    "neighbor tip": 1,
+    "nextdoor": 2,
+    "garagesalefinder": 55,
+    "aggregators": 2,
+    "craigslist": 30,
     "estatesales.net": 2,
     "express-news marketplace": 8,
     "wilson county news": 3,
@@ -61,12 +66,7 @@
     "a better estate sale": 2,
     "seguin gazette": 1,
     "allevents": 3,
-    "estatesales.org": 14,
-    "aggregators": 2,
-    "facebook marketplace": 2,
-    "facebook events": 4,
-    "neighbor tip": 1,
-    "nextdoor": 2
+    "estatesales.org": 14
   },
   "notes": "Primary free sources: estatesales_org, yardsalesearch, craigslist. Secondary: gsalr, garagesalefinder, permits, estatesales_net. Scoring: 0 primary problems=healthy, 1=degraded, 2+=critical. merge added=0 is treated as ok (dedupe), not zero. Soft-fail workflow continues; this report only alerts. Apify removed 2026-08-22."
 }

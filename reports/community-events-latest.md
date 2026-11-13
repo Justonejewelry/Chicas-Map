@@ -1,19 +1,18 @@
 # Chica's Map -- Community Events Swarm v2.7
 
-Run: 2026-11-12T18:18:33-06:00
+Run: 2026-11-12T20:23:56-06:00
 Sources scanned: **48**
-Candidates discovered: **940**
-With parsed dates: **784**
-With street/venue address: **584**
-Promoted this run: **2**
-Kept from prior feed: **277**
+Candidates discovered: **938**
+With parsed dates: **782**
+With street/venue address: **582**
+Promoted this run: **0**
+Kept from prior feed: **279**
 Purged from prior feed: **0**
-Source errors: **6**
+Source errors: **7**
 Rejected by Sentinel: **347**
 
 ## Promoted (passed Events Sentinel)
-- **Meet Me at Central Perk: Friends Watch & Craft** -- 2026-11-14 -- 2200 W. Commerce San Antonio, TX 78207 -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D213490165
-- **Teen Time: Squash Day!** -- 2026-11-16 -- 600 Soledad San Antonio, TX 78205 -- conf 100 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D213496269
+_None this run._
 
 ## Review Queue
 - **San Antonio Public Library Events** -- conf 100 -- Family Story Time -- 2026-11-12 -- 4134 Harry Wurzbach San Antonio, TX 78209 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D205386310
@@ -22,8 +21,6 @@ Rejected by Sentinel: **347**
 - **San Antonio Public Library Events** -- conf 100 -- Preschool Story Time -- 2026-11-12 -- 13330 Kyle Seale Pkwy -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D206613077
 - **San Antonio Public Library Events** -- conf 100 -- Family Story Time -- 2026-11-15 -- 5110 Walzem Road San -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D209993416
 - **San Antonio Public Library Events** -- conf 100 -- Toddler Story Time -- 2026-11-12 -- 9050 Wellwood San Antonio, TX 78250 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D210623936
-- **San Antonio Public Library Events** -- conf 100 -- Meet Me at Central Perk: Friends Watch & Craft -- 2026-11-14 -- 2200 W. Commerce San Antonio, TX 78207 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D213490165
-- **San Antonio Public Library Events** -- conf 100 -- Teen Time: Squash Day! -- 2026-11-16 -- 600 Soledad San Antonio, TX 78205 -- https://www.mysapl.org/Events-News/Events-Calendar?trumbaEmbed=view%3Devent%26eventid%3D213496269
 - **City of San Antonio Parks & Recreation** -- conf 100 -- Tennis Clinics -- 2026-08-31 -- 1503 San Pedro Ave -- https://www.sanantonio.gov/ParksAndRec/News-Events/Events/Event-Details/ArtMID/15385/ArticleID/29348/Tennis-Clinics
 - **City of San Antonio Parks & Recreation** -- conf 100 -- 2026 Fall Tennis Clinics -- 2026-10-06 -- 1503 San Pedro Ave -- https://www.sanantonio.gov/ParksAndRec/News-Events/Events/Event-Details/ArtMID/15385/ArticleID/29370/2026-Fall-Tennis-Clinics
 - **Bexar County Clerk — Records on the Run** -- conf 99 -- Bexar County Clerk's Mobile Satellite Office will be at Bexar County Precinct 3 Justice of the Peace Office -- 2026-11-17 -- 320 Interpark Blvd -- https://www.bexar.org/calendar.aspx?EID=7335
@@ -176,6 +173,8 @@ Rejected by Sentinel: **347**
 - **Boerne Calendar** -- conf 98 -- City Council Meeting -- 2027-03-23 -- 447 N. Main St Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22189
 - **Boerne Calendar** -- conf 98 -- City Council Meeting -- 2027-04-27 -- 447 N. Main St Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22190
 - **Boerne Calendar** -- conf 98 -- City Council Meeting -- 2027-05-25 -- 447 N. Main St Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22191
+- **Boerne Calendar** -- conf 98 -- City Council Meeting -- 2027-06-22 -- 447 N. Main St Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22192
+- **Boerne Calendar** -- conf 98 -- City Council Meeting -- 2027-07-27 -- 447 N. Main St Boerne -- https://www.ci.boerne.tx.us/calendar.aspx?EID=22193
 
 ## Rejected by Sentinel
 - Toddler Story Time -- event_id=2026-11-12_toddler-story-time_84c805f97f48: duplicate id already in feed
@@ -234,6 +233,7 @@ Rejected by Sentinel: **347**
 - Bexar County Veterans Events: HTTP 429 Too Many Requests
 - San Antonio River Authority Events: HTTP 403 Forbidden
 - City of Schertz Calendar: HTTP 404 Not Found
+- Bexar County Public Health: HTTP 429 Too Many Requests
 - Bexar County Animal Care: HTTP 429 Too Many Requests
 - Windcrest Calendar: HTTP 403 Forbidden
 
