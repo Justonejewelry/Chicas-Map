@@ -68,7 +68,7 @@ class EligibilityTests(unittest.TestCase):
 
 class EnrichmentTests(unittest.TestCase):
     def test_unique_match_assigns_neighborhood_and_search_aliases(self):
-        pins = [EligibilityTests().pin()]
+        pins = [EligibilityTests().pin(lat=29.45, lon=-98.45)]
         counts = neighborhoods.enrich_pins(pins, [feature("Terrell Heights", SQUARE)], "2026-11-09T00:00:00+00:00")
         self.assertEqual(counts["assigned"], 1)
         self.assertEqual(pins[0]["neighborhood"], "Terrell Heights")
@@ -76,7 +76,7 @@ class EnrichmentTests(unittest.TestCase):
         self.assertEqual(pins[0]["neighborhood_source"], neighborhoods.SOURCE_TAG)
 
     def test_ambiguous_match_is_left_blank(self):
-        pins = [EligibilityTests().pin()]
+        pins = [EligibilityTests().pin(lat=29.45, lon=-98.45)]
         features = [feature("North", SQUARE), feature("South", SQUARE)]
         counts = neighborhoods.enrich_pins(pins, features, "2026-11-09")
         self.assertEqual(counts["ambiguous"], 1)
