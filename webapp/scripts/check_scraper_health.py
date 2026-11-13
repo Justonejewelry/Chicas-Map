@@ -148,10 +148,24 @@ def main() -> int:
     parser.add_argument("--log-dir", type=Path, default=Path.cwd())
     args = parser.parse_args()
     now = datetime.now(CT).isoformat(timespec="seconds")
+    previous_success = {}
+    try:
+        previous = json.loads(HEALTH_PATH.read_text(encoding="utf-8"))
+        previous_success = {
+            item.get("source"): item.get("last_successful_retrieval")
+            for item in previous.get("sources", [])
+            if item.get("last_successful_retrieval")
+        }
+    except (OSError, json.JSONDecodeError, AttributeError):
+        pass
+
     results = []
     for key, logname in LOGS.items():
         text = read_log(logname, args.log_dir)
-        results.append(analyze_log(key, text))
+        item = analyze_log(key, text)
+        if not item.get("last_successful_retrieval") and key in previous_success:
+            item["last_successful_retrieval"] = previous_success[key]
+        results.append(item)
 
     json_counts = source_counts_from_json()
 
