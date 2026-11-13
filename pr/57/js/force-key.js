@@ -14,7 +14,6 @@
   };
   var ROWS = [
     ["garage", "Garage"],
-    ["yard", "Yard"],
     ["estate", "Estate"],
     ["permit", "Permit"],
     ["satellite", "Satellite"],

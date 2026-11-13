@@ -210,12 +210,12 @@
     if (id === "claimed") { toggleClaimed(); return; }
     if (id === "parking" || id === "pantry" || id === "schools" || id === "wifi") return;
     if (SRC[id]) { toggleOverlay(id); return; }
-    if (id === "garage" || id === "yard" || id === "estate" || id === "permit") toggleSaleType(id);
+    if (id === "garage" || id === "estate" || id === "permit") toggleSaleType(id);
   }
 
   window.__chicaToggleLayer = toggle;
 
-  ["garage", "yard", "estate"].forEach(function (id) { dimRow(id, true); });
+  ["garage", "estate"].forEach(function (id) { dimRow(id, true); });
   dimRow("permit", !document.documentElement.classList.contains("chica-hide-permit"));
   ["satellite", "claimed", "resale"].forEach(function (id) { dimRow(id, false); });
 })();
