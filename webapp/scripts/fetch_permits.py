@@ -176,7 +176,7 @@ def permit_to_sale(row: dict, issued: date) -> dict:
     else:
         title = raw_title or "Permitted garage sale"
         if title.upper() == addr.upper() or title.replace(",", "") == addr.split(",")[0]:
-            title = "City-permitted garage / yard sale"
+            title = "City-permitted garage sale"
         details = (
             "Official City of San Antonio garage-sale permit. "
             "Legal sale hours 9 a.m.–6 p.m. Exact sale day not published in open data — "

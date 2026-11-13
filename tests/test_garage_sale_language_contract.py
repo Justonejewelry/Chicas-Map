@@ -41,3 +41,12 @@ def test_map_guide_and_boost_form_use_garage_sale_as_single_category():
     assert '<option value="yard">' not in boost
     assert 'garage: "venta de garage"' in boost
     assert 'yard: "venta de patio' not in boost
+
+
+def test_app_metadata_and_city_permit_titles_use_garage_sale_wording():
+    app_root = (ROOT / "app/src/routes/__root.tsx").read_text().lower()
+    permit_fetcher = (ROOT / "webapp/scripts/fetch_permits.py").read_text().lower()
+
+    assert "garage sales, yard sales, and estate sales" not in app_root
+    assert 'title = "city-permitted garage / yard sale"' not in permit_fetcher
+    assert 'title = "city-permitted garage sale"' in permit_fetcher
