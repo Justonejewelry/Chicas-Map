@@ -1,5 +1,6 @@
 """Full publish pipeline: per-sale pages, sitemap, lighter home, nav + alert copy."""
 import json
+from html import unescape
 import os
 import re
 import shutil
@@ -74,7 +75,7 @@ class SiteBuildTests(unittest.TestCase):
             self.assertIn('<title>', html)
             self.assertIn('property="og:title"', html)
             self.assertIn('"@type":"Event"', html)
-            self.assertIn('https://www.google.com/maps/dir/?api=1&destination=', html)
+            self.assertIn('https://www.google.com/maps/dir/?api=1&destination=', unescape(html))
             self.assertIn('rel="canonical" href="https://www.chicasmap.com/' + lang + 'sales/' + slug + '/"', html)
             self.assertIn('data-goatcounter', html)
             self.assertIn(('los horarios pueden cambiar' if lang else 'hours can change'), html)
