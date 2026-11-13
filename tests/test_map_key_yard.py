@@ -18,5 +18,5 @@ def test_yard_and_garage_sales_share_one_garage_category():
 def test_both_map_entry_points_use_fresh_key_scripts():
     for path in ("webapp/map/index.html", "webapp/map.html"):
         html = (ROOT / path).read_text()
-        assert "key-clicks.js?v=18" in html
-        assert "force-key.js?v=12" in html
+        assert "key-clicks.js?v=19" in html
+        assert "force-key.js?v=13" in html
