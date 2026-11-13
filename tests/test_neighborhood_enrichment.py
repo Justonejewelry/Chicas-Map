@@ -95,5 +95,5 @@ class EnrichmentTests(unittest.TestCase):
         self.assertEqual(pins[0]["neighborhood"], "Manually verified")
 
 
-if __tests__:
+if __name__ == "__main__":
     unittest.main()
