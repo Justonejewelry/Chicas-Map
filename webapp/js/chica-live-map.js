@@ -139,7 +139,7 @@
       dates: s.dates || "",
       hours: s.hours || "",
       details: s.details || s.description || "",
-      type: (function () { var t = String(s.type || s.kind || "garage").toLowerCase().replace(/[\\s_-]+/g, ""); return t === "yard" || t === "yardsale" || t === "garagesale" ? "garage" : (t || "garage"); })(),
+      type: (function () { var t = String(s.type || s.kind || "garage").toLowerCase().replace(/[\s_-]+/g, ""); return t === "yard" || t === "yardsale" || t === "garagesale" ? "garage" : (t || "garage"); })(),
       lat: lat,
       lon: lon,
       pack: pack,
