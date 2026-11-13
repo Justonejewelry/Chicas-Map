@@ -52,7 +52,7 @@
               lat: c[1], lon: c[0]
             };
           });
-        } else if (data && Array.isArray(data.public)) {
+        } else if (data && (Array.isArray(data.public) || Array.isArray(data.permits))) {
           sales = [].concat(data.public || [], data.permits || []);
         }
         if (Array.isArray(data) || (data && Array.isArray(data.sales)) ||
