@@ -105,9 +105,11 @@ def extract_records_found(key: str, text: str) -> tuple[int | None, str | None]:
 def analyze_log(key: str, text: str) -> dict:
     primary = key in PRIMARY
     if not text.strip():
+        metric = RECORD_COUNT_PATTERNS.get(key, (None, None))[0]
         return {
             "source": key, "status": "not_run",
             "detail": "no source log captured for this run", "primary": primary,
+            "records_found": None, "records_found_metric": metric,
         }
 
     def marker(name: str) -> str | None:
