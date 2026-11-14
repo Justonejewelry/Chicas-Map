@@ -9,7 +9,6 @@ The map keeps both today's sales and upcoming dated sales.
 - Oak Run Furniture And Collectibles Auction — New Braunfels, TX 78130 [2026-11-09 → 2026-11-23]
 - Oak Run Furniture And Collectibles Auction — New Braunfels, TX [2026-11-09 → 2026-11-23]
 - Kerrville Estate Sale – Gunsmithing Shop, Equipment & Gun Safes – Nov 19–2 — Kerrville TX near Kerville Tx, San Antonio, TX [2026-11-02 → 2026-11-21]
-- Grace is Elegance — San Antonio, TX [2026-11-13 → 2026-11-15]
 - Estate Sale in Sonoma Ranch — 346 Pueblo Pintado, Helotes, TX 78023 [2026-11-12 → 2026-11-14] | 8am-1pm, 8am-noon
 - GARAGE SALE! — 6727 Glen Fair, San Antonio, TX 78239 [2026-11-12 → 2026-11-14] | starting at 9am
 - SOUTHEAST - GARAGE SALE — 4119 Spring View Dr, San Antonio, TX 78222 [2026-11-12 → 2026-11-13] | 8:00am-4pm
@@ -128,6 +127,7 @@ The map keeps both today's sales and upcoming dated sales.
 
 ## ONLINE / UNPLOTTABLE
 
+- AUTHENTIQUE LUX: HOLIDAY LUXURY EDIT — San Antonio, TX [2026-11-11 → 2026-11-14]
 - The Analog Age: Vintage Tech Treasures - Bidding EXTENDED TO 11/22 @ 7PM! — San Antonio, TX 78240
 - History Meets Holiday: Vintage Gems, Christmas Memories, Coins & Silver in Fair Oaks, TX. — Boerne, TX 78015
 - Vintage Collectibles: Decor, Tableware, & More Online Auction by Caring Transitions - Ends 11/19! — New Braunfels, TX 78132
