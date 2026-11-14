@@ -13,7 +13,7 @@ class BoostOfferTests(unittest.TestCase):
         self.assertIn('class="price">$5</span>', page)
         self.assertIn("Standout gold map pin", page)
         self.assertIn("Your listing stays free", page)
-        self.assertIn("one-time payment", page)
+        self.assertIn("One-time payment", page)
         self.assertIn("payment note", page)
         self.assertIn("Payment alone does not publish", page)
         self.assertIn("cannot guarantee", page.lower())
