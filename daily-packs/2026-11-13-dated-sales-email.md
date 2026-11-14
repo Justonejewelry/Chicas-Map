@@ -101,12 +101,15 @@ The map keeps both today's sales and upcoming dated sales.
 - Huge yard sale! Home decor & collectibles — 6222 Fallow Cv, San Antonio, TX 78252 [2026-11-14 → 2026-11-16]
 - Yard sale!! Everything must go!! Tools, household, clothes — 121 Wind Willow, Cibolo, TX 78108 [2026-11-14 → 2026-11-14]
 - Raise A Glass For Mr. Mike - Estate Sale! — 14000 Wenrich, Universal City, TX [2026-11-14 → 2026-11-15]
+- Community yard sale — 6511 Trotter Ln, San Antonio, TX 78240 [2026-11-14 → 2026-11-14]
+- Yard sale rain or shine ! — 13347 Tusayan, Universal City, TX 78148 [2026-11-14 → 2026-11-14]
 
 ### Starts 2026-11-15
 - ONE-DAY ESTATE SALE! — 104 Ridge Trail, San Antonio, TX 78232 [2026-11-15 → 2026-11-15] | 10am-5pm
 
 ### Starts 2026-11-19
 - Alamo Ranch Estate Sale – Furniture, Danish China, Clocks & Artwork – — Alamo ranch, San Antonio, TX [2026-11-19 → 2026-11-22]
+- Moving Sale Stone Oak — 21914 Hardy Oak Blvd, San Antonio, TX [2026-11-19 → 2026-11-21]
 
 ### Starts 2026-11-20
 - Alamo Ranch Estate Sale — 12503 Sandy Dunes, San Antonio, TX [2026-11-20 → 2026-11-22]
