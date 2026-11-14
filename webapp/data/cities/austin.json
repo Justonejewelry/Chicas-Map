@@ -1694,33 +1694,6 @@
       "external_id": "cl-lectiblesvintage3krw7goems88wuzalmnc7k"
     },
     {
-      "address": "1112 Smith Dr near wood, Austin, TX",
-      "dates": "2026-11-13 – 2026-11-13",
-      "date_from": "2026-11-13",
-      "posted_at": "2026-11-13T08:36:49-0600",
-      "date_certainty": "relative_to_post",
-      "date_to": "2026-11-13",
-      "end_date": "2026-11-13",
-      "hours": null,
-      "title": "42'' Club Cadet xt-1 WITH much to go with it",
-      "details": "QR Code Link to This Post ( Stop And SEE OR CALL AT show contact info Before You Say No way or Call ) Please call me first Selling ALL that goes with this 42'' cub cadet xt 1 1-full set of tires and rims a homemade wagon with all new parts for the deck, new blades and good ones also, belts, Selling for 1,250.00 Cash only Price is FIRM, and with a spreader a blade stand to sharping them AND A NEW L",
-      "date_evidence": "2026-11-13 – 2026-11-13",
-      "source": "Craigslist",
-      "url": "https://www.craigslist.org/view/d/killeen-42-club-cadet-xt-with-much-to/bjtvyDJHw1G484LRpPfpvF",
-      "photos": 0,
-      "type": "garage",
-      "categories": [
-        "garage-sale"
-      ],
-      "confidence": 0.82,
-      "status": "verified",
-      "lat": 31.123235,
-      "lon": -97.713567,
-      "geocode": "source",
-      "in_person": true,
-      "external_id": "cl-txtwithmuchtobjtvydjhw1g484lrppfpvf"
-    },
-    {
       "address": "2617 Riddle Rd Apt B, Austin, TX",
       "dates": "2026-11-13 – 2026-11-14",
       "date_from": "2026-11-13",
@@ -1845,9 +1818,9 @@
     "gsalr.com",
     "yardsalesearch.com"
   ],
-  "total_locations": 81,
+  "total_locations": 80,
   "status": "live",
-  "date": "2026-11-13",
-  "last_refresh": "2026-11-13T22:36:55-06:00",
+  "date": "2026-11-14",
+  "last_refresh": "2026-11-14T03:29:25-06:00",
   "permits": []
 }
