@@ -35,7 +35,7 @@ class BoostOfferTests(unittest.TestCase):
         self.assertIn('Number(amountCents) || 500', worker)
         self.assertIn('product: "pin_claim_5"', worker)
         self.assertIn('boost_duration: "sale_weekend"', worker)
-        self.assertIn("BOOST PAID ($5", worker)
+        self.assertIn("$5 WEEKEND PIN BOOST PAID", worker)
         self.assertNotIn("900", worker)
         self.assertNotIn("$9", worker)
         self.assertNotIn("6-month", runbook)
