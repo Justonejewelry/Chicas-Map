@@ -86,7 +86,7 @@
       html = '<svg class="chica-sym" viewBox="0 0 28 28" width="28" height="28" aria-hidden="true"><circle cx="14" cy="14" r="10" fill="' + fill + '" stroke="#fffdf8" stroke-width="2.4"/></svg>';
     }
     if (gold) {
-      html = '<span class="chica-gold-halo" aria-hidden="true"></span><span class="chica-gold-ring" aria-hidden="true"></span>' + html;
+      html = '<span class="chica-gold-halo" aria-hidden="true"></span><span class="chica-gold-ring" aria-hidden="true"></span><span class="chica-gold-badge" aria-hidden="true">★</span>' + html;
     } else if (pack) {
       html = '<span class="chica-pack-halo" aria-hidden="true"></span><span class="chica-pack-ring" aria-hidden="true"></span>' + html;
     }
@@ -335,6 +335,7 @@
       ".chica-gold-halo,.chica-gold-ring{position:absolute;left:20px;top:20px;width:24px;height:24px;margin:0;border-radius:50%;pointer-events:none;transform:translate3d(-50%,-50%,0);backface-visibility:hidden}" +
       ".chica-gold-halo{background:#f4c430;opacity:.42}" +
       ".chica-gold-ring{background:#f4c430;opacity:.95;will-change:transform,opacity;animation:chica-gold-pulse 1.35s ease-out infinite}" +
+      ".chica-gold-badge{position:absolute;top:0;right:0;z-index:4;display:flex;align-items:center;justify-content:center;width:16px;height:16px;border:2px solid #fffdf8;border-radius:50%;background:#1a1714;color:#f4c430;font:900 11px/1 system-ui,sans-serif;box-shadow:0 1px 4px rgba(0,0,0,.55);pointer-events:none}" +
       "@keyframes chica-pack-pulse{0%{transform:translate3d(-50%,-50%,0) scale(.7);opacity:.85}100%{transform:translate3d(-50%,-50%,0) scale(2.2);opacity:0}}" +
       "@keyframes chica-gold-pulse{0%{transform:translate3d(-50%,-50%,0) scale(.7);opacity:.9}100%{transform:translate3d(-50%,-50%,0) scale(2.35);opacity:0}}" +
       "@media (prefers-reduced-motion:reduce){.chica-pack-ring,.chica-gold-ring{animation:none;opacity:.45;transform:translate3d(-50%,-50%,0) scale(1.55)}}" +
