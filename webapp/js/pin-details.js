@@ -50,6 +50,7 @@
       "#chica-intel-card{display:none;position:fixed!important;left:12px!important;right:12px!important;top:auto!important;bottom:max(12px,env(safe-area-inset-bottom))!important;z-index:2147483646!important;width:min(360px,calc(100vw - 24px))!important;max-height:min(70vh,620px)!important;max-height:min(70dvh,620px)!important;overflow:auto!important;background:#fffdf8!important;color:#1a1714!important;border:2px solid #c513af!important;border-radius:14px!important;box-shadow:0 16px 40px rgba(18,18,18,.45)!important;padding:14px!important;font:500 13px/1.35 Inter,system-ui,sans-serif!important}" +
       "#chica-intel-card .x{position:absolute;top:8px;right:8px;z-index:5;width:36px;height:36px;min-width:36px;min-height:36px;border:0;border-radius:50%;background:#c513af;color:#fff;font:800 22px/36px Inter,system-ui,sans-serif;text-align:center;padding:0;cursor:pointer}" +
       "#chica-intel-card h3{margin:0 44px 6px 0;font:800 16px/1.2 Inter,system-ui,sans-serif}" +
+      "#chica-intel-card .date-status{display:inline-block;margin:2px 0 8px;padding:4px 9px;border-radius:999px;background:#f4c430;color:#1a1714;font:800 10px/1.3 Inter,system-ui,sans-serif;letter-spacing:.06em}" +
       "#chica-intel-card .meta{margin:0;color:#5c5348;font-size:12px}" +
       "#chica-intel-card .gold-tag{display:inline-block;margin:0 0 6px;padding:2px 8px;border-radius:999px;background:#f4c430;color:#1a1714;font:800 10px/1.4 Inter,system-ui,sans-serif;letter-spacing:.06em}" +
       "#chica-intel-card .signal{margin:8px 0 0;padding:8px;border-radius:10px;background:#f6f1e8;font-size:12px}" + " #chica-intel-card .confidence-label{display:inline-block;margin:3px 0;padding:3px 8px;border-radius:999px;background:#eee5f2;color:#54204e;font-weight:800;font-size:11px}" +
@@ -79,7 +80,7 @@
     var when = [sale.dates, sale.hours].filter(Boolean).join(" \u00b7 ");
     var dateStatus = window.ChicaDates && typeof window.ChicaDates.status === "function"
       ? window.ChicaDates.status(sale) : "";
-    var spanish = String(document.documentElement.lang || "").indexOf("es") === 0;
+    var mapLocale = "";\n    try { mapLocale = localStorage.getItem("chicas-map-locale") || ""; } catch (e) {}\n    if (!mapLocale) mapLocale = document.documentElement.lang || "en";\n    var spanish = String(mapLocale).toLowerCase().indexOf("es") === 0;
     var dateStatusLabels = {
       today: spanish ? "HOY" : "TODAY",
       upcoming: spanish ? "PRÓXIMA" : "UPCOMING",
