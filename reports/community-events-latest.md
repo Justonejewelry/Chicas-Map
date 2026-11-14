@@ -1,15 +1,15 @@
 # Chica's Map -- Community Events Swarm v2.7
 
-Run: 2026-11-13T18:24:03-06:00
+Run: 2026-11-13T19:30:32-06:00
 Sources scanned: **48**
-Candidates discovered: **936**
-With parsed dates: **779**
-With street/venue address: **575**
+Candidates discovered: **934**
+With parsed dates: **777**
+With street/venue address: **572**
 Promoted this run: **0**
 Kept from prior feed: **274**
 Purged from prior feed: **0**
-Source errors: **6**
-Rejected by Sentinel: **341**
+Source errors: **7**
+Rejected by Sentinel: **340**
 
 ## Promoted (passed Events Sentinel)
 _None this run._
@@ -185,7 +185,6 @@ _None this run._
 - Teen Time -- event_id=2026-11-17_teen-time_0b7089d62b13: duplicate id already in feed
 - Free Family Swim -- event_id=2025-11-18_free-family-swim_3af18a4d5b80: date 2025-11-18 is in the past
 - McFarlin Tennis Center New Hours Free Tuesdays -- event_id=2026-01-01_mcfarlin-tennis-center-new-h_a459cb109fac: date 2026-01-01 is in the past
-- Kindness in Nature Club -- event_id=2026-02-17_kindness-in-nature-club_1e8ebecc94ac: date 2026-02-17 is in the past
 - Tennis Clinics -- event_id=2026-08-31_tennis-clinics_686ab8e08aab: date 2026-08-31 is in the past
 - 2026 Fall Swim Lessons Registration September 26 -- event_id=2027-09-26_2026-fall-swim-lessons-regis_36af20f27890: date 2027-09-26 is more than 90 days out
 - 2026 Fall Tennis Clinics -- event_id=2026-10-06_2026-fall-tennis-clinics_73e2fdb4384e: date 2026-10-06 is in the past
@@ -227,12 +226,14 @@ _None this run._
 - City Council Meeting -- event_id=2029-07-19_city-council-meeting_5a6f41a53be9: date 2029-07-19 is more than 90 days out
 - City Council Meeting -- event_id=2029-07-05_city-council-meeting_28bb14363c41: date 2029-07-05 is more than 90 days out
 - City Council Meeting -- event_id=2029-06-21_city-council-meeting_ee6232e9a23d: date 2029-06-21 is more than 90 days out
+- City Council Meeting -- event_id=2029-06-07_city-council-meeting_e5dc60650f6b: date 2029-06-07 is more than 90 days out
 
 ## Source Errors
 - Bexar County Events: HTTP 429 Too Many Requests
 - Bexar County Veterans Events: HTTP 429 Too Many Requests
 - San Antonio River Authority Events: HTTP 403 Forbidden
 - City of Schertz Calendar: HTTP 404 Not Found
+- Bexar County Public Health: HTTP 429 Too Many Requests
 - Bexar County Animal Care: HTTP 429 Too Many Requests
 - Windcrest Calendar: HTTP 403 Forbidden
 

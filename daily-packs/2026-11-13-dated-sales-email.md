@@ -9,7 +9,7 @@ The map keeps both today's sales and upcoming dated sales.
 - Oak Run Furniture And Collectibles Auction — New Braunfels, TX 78130 [2026-11-09 → 2026-11-23]
 - Oak Run Furniture And Collectibles Auction — New Braunfels, TX [2026-11-09 → 2026-11-23]
 - Kerrville Estate Sale – Gunsmithing Shop, Equipment & Gun Safes – Nov 19–2 — Kerrville TX near Kerville Tx, San Antonio, TX [2026-11-02 → 2026-11-21]
-- Estate of Maryland Von Roeder Kunkle — San Antonio, TX [2026-11-11 → 2026-11-14]
+- Grace is Elegance — San Antonio, TX [2026-11-13 → 2026-11-15]
 - Estate Sale in Sonoma Ranch — 346 Pueblo Pintado, Helotes, TX 78023 [2026-11-12 → 2026-11-14] | 8am-1pm, 8am-noon
 - GARAGE SALE! — 6727 Glen Fair, San Antonio, TX 78239 [2026-11-12 → 2026-11-14] | starting at 9am
 - SOUTHEAST - GARAGE SALE — 4119 Spring View Dr, San Antonio, TX 78222 [2026-11-12 → 2026-11-13] | 8:00am-4pm
@@ -103,6 +103,8 @@ The map keeps both today's sales and upcoming dated sales.
 - Raise A Glass For Mr. Mike - Estate Sale! — 14000 Wenrich, Universal City, TX [2026-11-14 → 2026-11-15]
 - Community yard sale — 6511 Trotter Ln, San Antonio, TX 78240 [2026-11-14 → 2026-11-14]
 - Yard sale rain or shine ! — 13347 Tusayan, Universal City, TX 78148 [2026-11-14 → 2026-11-14]
+- Huge sale — 113 Richardson Dr, Schertz, TX 78154 [2026-11-14 → 2026-11-14]
+- Community Yard Sale — 6511 Trotter Ln, San Antonio, TX [2026-11-14 → 2026-11-14]
 
 ### Starts 2026-11-15
 - ONE-DAY ESTATE SALE! — 104 Ridge Trail, San Antonio, TX 78232 [2026-11-15 → 2026-11-15] | 10am-5pm
