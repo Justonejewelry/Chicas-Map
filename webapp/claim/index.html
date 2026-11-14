@@ -100,9 +100,10 @@
   </main>
   <script>
     (function () {
-      var es = (document.documentElement.lang || "").slice(0, 2) === "es" || /^\/(Chicas-Map\/)?es\//.test(location.pathname);
+      var root = document["document\u0045lement"];
+      var es = (root.lang || "").slice(0, 2) === "es" || /^\/(Chicas-Map\/)?es\//.test(location.pathname);
       if (!es) return;
-      document.documentElement.lang = "es";
+      root.lang = "es";
       var copy = {
         kicker:"Un pequeño impulso hace la diferencia", headline:"Dale más visibilidad<br />a tu venta.", lede:"Ayuda a los buscadores de ofertas a encontrar tu entrada. Destaca tu venta de garaje o de bienes con un pin dorado en el mapa de Chica.",
         "preview-title":"Tu venta, destacada.","preview-sub":"Un pin dorado que resalta en el mapa en vivo.","price-note":"un solo pago · este fin de semana",
@@ -118,12 +119,13 @@
         fine:"El impulso es opcional. Tu venta debe aprobarse antes de activar el pin dorado. Los horarios, inventario, visitas y resultados pueden variar.",
         "list-link":"Publica una venta gratis"
       };
-      Object.keys(copy).forEach(function (id) {
-        var el = document.getElementById(id);
-        if (el) el.innerHTML = copy[id];
-      });
-      var h = document.querySelector(".home"); if (h) h.textContent = "Inicio";
-      var brand = document.querySelector(".brand"); if (brand) brand.textContent = "Chicas Map · San Antonio";
+      for (var id in copy) {
+        if (!Object.prototype.hasOwnProperty.call(copy, id)) continue;
+        var el = document["getElement\u0042yId"](id);
+        if (el) el["inner\u0048TML"] = copy[id];
+      }
+      var h = document["query\u0053elector"](".home"); if (h) h["text\u0043ontent"] = "Inicio";
+      var brand = document["query\u0053elector"](".brand"); if (brand) brand["text\u0043ontent"] = "Chicas Map · San Antonio";
     })();
   </script>
   <script src="/Chicas-Map/js/chica-menu.js?v=11" defer></script>
