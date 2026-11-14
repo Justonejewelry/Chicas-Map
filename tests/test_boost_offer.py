@@ -17,14 +17,24 @@ class BoostOfferTests(unittest.TestCase):
         self.assertIn("payment note", page)
         self.assertIn("Payment alone does not publish", page)
         self.assertIn("no promotion can guarantee", page.lower())
+        self.assertNotIn("free spotlight by sharing", page.lower())
+        self.assertNotIn("share-to-boost", page.lower())
+        self.assertNotIn("href=\"/Chicas-Map/boost/\"", page)
         self.assertIn('href="/Chicas-Map/submit/"', page)
         self.assertIn('href="/Chicas-Map/map/"', page)
+
+    def test_legacy_boost_url_redirects_to_paid_offer(self):
+        page = (ROOT / "webapp" / "boost" / "index.html").read_text()
+        self.assertIn("/Chicas-Map/claim/", page)
+        self.assertNotIn("Like, follow, and share", page)
+        self.assertNotIn("free pin light request", page)
 
     def test_claim_page_has_spanish_offer_copy(self):
         page = (ROOT / "webapp" / "claim" / "index.html").read_text()
         self.assertIn("Dale protagonismo a mi venta · $5", page)
         self.assertIn("Tu anuncio sigue siendo gratis", page)
         self.assertIn("El pin dorado se activa", page)
+        self.assertNotIn("promoción gratis al compartir", page.lower())
 
     def test_square_webhook_matches_the_current_five_dollar_weekend_product(self):
         worker = (ROOT / "workers" / "square-boost-webhook" / "src" / "index.js").read_text()
