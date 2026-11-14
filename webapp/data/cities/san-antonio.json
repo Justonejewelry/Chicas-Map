@@ -3,7 +3,7 @@
   "city": "san-antonio",
   "date": "2026-11-14",
   "last_refresh": "2026-11-14T09:58:25-06:00",
-  "total_locations": 189,
+  "total_locations": 190,
   "status": "live",
   "public": [
     {
@@ -2814,11 +2814,37 @@
       "date_start": "2026-11-14",
       "date_end": "2026-11-14",
       "date_bucket": "live"
+    },
+    {
+      "address": "7647 Mustang Meadow, San Antonio, TX 78244",
+      "dates": "2026-11-14 \u2013 2026-11-14",
+      "date_from": "2026-11-14",
+      "date_to": "2026-11-14",
+      "end_date": "2026-11-14",
+      "hours": "8:00am-5:00pm",
+      "title": "Community garage sale",
+      "details": "Outdoor propane heater w cover. New kid clothes w tags. Shoes: boys under size 5, girls under size 8, men 10-11, women 9. Poshmark boutique closing sale variety.",
+      "source": "Email:Formspree",
+      "photos": 0,
+      "type": "garage",
+      "categories": [
+        "garage-sale"
+      ],
+      "confidence": 0.9,
+      "status": "verified",
+      "lat": 29.4752,
+      "lon": -98.3378,
+      "geocode": "street",
+      "in_person": true,
+      "external_id": "form-mustang-meadow-2026-11-14",
+      "date_start": "2026-11-14",
+      "date_end": "2026-11-14",
+      "date_bucket": "live"
     }
   ],
   "date_window": {
     "today": "2026-11-14",
-    "live": 97,
+    "live": 98,
     "upcoming": 10,
     "undated": 0,
     "expired": 0,
