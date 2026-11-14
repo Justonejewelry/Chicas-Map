@@ -3,6 +3,12 @@ const fs=require('fs'),vm=require('vm'),path=require('path'),assert=require('nod
 const feed=JSON.parse(fs.readFileSync(process.argv[2],'utf8'));
 const source=process.argv[3]||path.join(__dirname,'../webapp/js/chica-live-map.js');
 const code=fs.readFileSync(source,'utf8').replace('})(window);','w.__testAddPins=addPins;})(window);');
+assert.match(code,/if \(!response\.ok\) throw new Error\("Feed request failed:/,'HTTP failures must not be converted into empty feeds');
+assert.match(code,/if \(!isRecognizedFeed\(data\)\) throw new Error\("Unexpected feed format"\)/,'Unexpected feed shapes must be treated as failures');
+assert.match(code,/No garage or estate sales are currently available on the map\./,'A valid empty feed must have a distinct empty state');
+assert.match(code,/Live sales couldn't load\. Check your connection and try again\./,'Feed failures must be explained to map users');
+assert.match(code,/button\.textContent = "Retry"/,'Feed failures must provide a retry action');
+assert.doesNotMatch(code,/return r\.ok \? r\.json\(\) : null/,'HTTP failures must not silently become null/empty data');
 const clock=feed.generated+'T20:00:00-06:00';
 class Clock extends Date {constructor(...args){super(...(args.length?args:[clock]));}}
 const noop=()=>{};
