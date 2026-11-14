@@ -17,9 +17,14 @@ class SaleSubmissionTrustTests(unittest.TestCase):
         self.assertIn('date_from,', self.source)
         self.assertIn('date_to,', self.source)
 
-    def test_invalid_or_past_date_ranges_are_rejected(self):
+    def test_invalid_or_past_date_ranges_use_san_antonio_calendar_date(self):
         self.assertIn('date_to < date_from', self.source)
         self.assertIn('date_from < todayISO', self.source)
+        self.assertIn('timeZone: "America/Chicago"', self.source)
+        self.assertIn('formatToParts(new Date())', self.source)
+        self.assertNotIn('today.getFullYear()', self.source)
+        self.assertNotIn('today.getMonth()', self.source)
+        self.assertNotIn('today.getDate()', self.source)
 
     def test_unverified_address_never_falls_back_to_city_center(self):
         self.assertIn('if (!hits.length)', self.source)
