@@ -14,7 +14,8 @@ body { overflow-x: hidden; }
   #chica-home-chip { right: 112px !important; }
 
   /* Leave the top-right map Menu clear of the search/filter dock. */
-  #chica-hunt-dock {
+  /* Two ID selectors override the later injected #chica-hunt-dock!important rule. */
+  #chica-hunt-dock#chica-hunt-dock {
     top: max(8px, env(safe-area-inset-top)) !important;
     left: 62px !important;
     right: 88px !important;
