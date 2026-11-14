@@ -67,6 +67,7 @@ FAIL_PATTERNS = [
 
 OK_PATTERNS = [
     re.compile(r"normalized=([1-9]\d*)\b", re.I),
+    re.compile(r"garage/estate permits in window=([1-9]\d*)\b", re.I),
     re.compile(r"(?:parsed|enriched|static results)=([1-9]\d*)\b", re.I),
     re.compile(r"\b[1-9]\d* parsed\b", re.I),
     re.compile(r"merge added=([1-9]\d*)\b", re.I),
