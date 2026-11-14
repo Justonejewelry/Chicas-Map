@@ -1,0 +1,10 @@
+# Cloudflare Pages / proxied host. GitHub Pages ignores this file.
+/map.html            /map           301
+/sponsor.html        /sponsors      301
+/submit.html         /submit        301
+/disclaimer.html     /legal         301
+/privacy.html        /legal         301
+/terms.html          /legal         301
+/backyard.html       /bulletin      301
+/technical.html      /backstory     301
+/es                  /es/           301
