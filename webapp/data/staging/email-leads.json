@@ -29,6 +29,22 @@
       "type": "garage",
       "notes": "Clothes and toys and a whole Lotta stuff. From daily GSF list. Not found in current public feed.",
       "external_id": "gsf-oak-knoll-2026-11-13"
+    },
+    {
+      "title": "Community garage sale",
+      "street_address": "7647 Mustang Meadow, San Antonio, TX 78244",
+      "dates": ["2026-11-14"],
+      "hours": "8:00-5:00",
+      "source": "Email:Formspree",
+      "lat": 29.4752,
+      "lon": -98.3378,
+      "accuracy": "street",
+      "confidence": 0.90,
+      "type": "garage",
+      "categories": ["Clothes", "Kids", "Tools", "Antiques", "Housewares", "Outdoor", "Electronics"],
+      "details": "Outdoor propane heater w cover. New kid clothes w tags. Shoes: boys under size 5, girls under size 8, men 10-11, women 9. Poshmark boutique closing sale variety.",
+      "notes": "Self-submitted tip via formsubmit.co. Verified address in SA 78244 Judson ISD. No dupe in current public feed. High confidence Formspree source.",
+      "external_id": "form-mustang-meadow-2026-11-14"
     }
   ]
 }
