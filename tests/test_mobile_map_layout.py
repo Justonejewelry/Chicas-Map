@@ -13,8 +13,11 @@ class MobileMapLayoutContractTests(unittest.TestCase):
 
     def test_mobile_search_dock_leaves_room_for_top_right_menu(self):
         css = (ROOT / "webapp/css/finish.css").read_text(encoding="utf-8")
-        self.assertIn("#chica-hunt-dock", css)
-        self.assertRegex(css, r"#chica-hunt-dock\s*\{[^}]*left:\s*62px[^}]*right:\s*88px")
+        self.assertIn("#chica-hunt-dock#chica-hunt-dock", css)
+        self.assertRegex(css, r"#chica-hunt-dock#chica-hunt-dock\s*\{[^}]*left:\s*62px[^}]*right:\s*88px")
+        hunt_bar = (ROOT / "webapp/js/hunt-bar.js").read_text(encoding="utf-8")
+        self.assertIn("#chica-hunt-dock{position:fixed!important", hunt_bar)
+        self.assertIn("right:10px!important", hunt_bar)
         self.assertIn("#chica-mini", (ROOT / "webapp/map/index.html").read_text(encoding="utf-8"))
 
     def test_primary_map_controls_have_touch_sized_targets(self):
