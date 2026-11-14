@@ -2,6 +2,7 @@ import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
 import { SiteFooter, SiteHeader } from "@/components/site-header";
 import { haversineMi, SA_CENTER, saveSubmission, type Sale, type SaleKind } from "@/lib/sales";
+import { sanAntonioTodayISO } from "@/lib/sa-date";
 
 export const Route = createFileRoute("/submit")({ component: SubmitPage });
 
@@ -35,14 +36,7 @@ function SubmitPage() {
       return;
     }
     // Sale dates are interpreted in San Antonio time, regardless of the visitor's device timezone.
-    const dateParts = new Intl.DateTimeFormat("en-US", {
-      timeZone: "America/Chicago",
-      year: "numeric",
-      month: "2-digit",
-      day: "2-digit",
-    }).formatToParts(new Date());
-    const datePart = (type: string) => dateParts.find((part) => part.type === type)?.value || "";
-    const todayISO = `${datePart("year")}-${datePart("month")}-${datePart("day")}`;
+    const todayISO = sanAntonioTodayISO();
     if (date_from < todayISO) {
       setError("The sale start date cannot be in the past.");
       return;
