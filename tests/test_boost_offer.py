@@ -16,7 +16,7 @@ class BoostOfferTests(unittest.TestCase):
         self.assertIn("One-time payment", page)
         self.assertIn("payment note", page)
         self.assertIn("Payment alone does not publish", page)
-        self.assertIn("cannot guarantee", page.lower())
+        self.assertIn("no promotion can guarantee", page.lower())
         self.assertIn('href="/Chicas-Map/submit/"', page)
         self.assertIn('href="/Chicas-Map/map/"', page)
 
