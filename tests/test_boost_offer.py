@@ -26,6 +26,22 @@ class BoostOfferTests(unittest.TestCase):
         self.assertIn("Tu anuncio sigue siendo gratis", page)
         self.assertIn("El pin dorado se activa", page)
 
+    def test_square_webhook_matches_the_current_five_dollar_weekend_product(self):
+        worker = (ROOT / "workers" / "square-boost-webhook" / "src" / "index.js").read_text()
+        config = (ROOT / "workers" / "square-boost-webhook" / "wrangler.toml").read_text()
+        runbook = (ROOT / "docs" / "SQUARE_WEBHOOKS.md").read_text()
+        self.assertIn('BOOST_AMOUNT_CENTS = "500"', config)
+        self.assertIn('env.BOOST_AMOUNT_CENTS || "500"', worker)
+        self.assertIn('Number(amountCents) || 500', worker)
+        self.assertIn('product: "pin_claim_5"', worker)
+        self.assertIn('boost_duration: "sale_weekend"', worker)
+        self.assertIn("$5 WEEKEND PIN BOOST PAID", worker)
+        self.assertNotIn("900", worker)
+        self.assertNotIn("$9", worker)
+        self.assertNotIn("6-month", runbook)
+        self.assertIn('BOOST_AMOUNT_CENTS = "500"', runbook)
+        self.assertIn("payment link", runbook.lower())
+
 
 if __name__ == "__main__":
     unittest.main()

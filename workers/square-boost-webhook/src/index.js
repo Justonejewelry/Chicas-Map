@@ -2,7 +2,7 @@
  * Chicas Map — Square Boost payment webhook
  *
  * Verifies x-square-hmacsha256-signature (URL + raw body, HMAC-SHA256, base64).
- * On COMPLETED ~$9 USD payment, notifies review inbox and optional GitHub dispatch.
+ * On COMPLETED ~$5 USD payment, notifies review inbox and optional GitHub dispatch.
  *
  * Secrets (wrangler secret put):
  *   SQUARE_SIGNATURE_KEY
@@ -11,7 +11,7 @@
  *   GITHUB_TOKEN              // optional PAT for repository_dispatch
  *
  * Vars:
- *   BOOST_AMOUNT_CENTS=900
+ *   BOOST_AMOUNT_CENTS=500
  *   BOOST_CURRENCY=USD
  *   GITHUB_REPO=Justonejewelry/Chicas-Map
  *   NOTIFY_EMAIL_TO=...
@@ -78,7 +78,7 @@ function isBoostPayment(payment, amountCents, currency) {
     centsFromMoney(payment.total_money);
   if (cents == null) return false;
   // Allow exact match or within $0.50 in case of rounding / tax config
-  const target = Number(amountCents) || 900;
+  const target = Number(amountCents) || 500;
   return Math.abs(cents - target) <= 50;
 }
 
@@ -103,8 +103,8 @@ function paymentSummary(event, payment) {
       null,
     note: payment.note || null,
     source_type: payment.source_type || null,
-    product: "boost_pass",
-    boost_months: 6,
+    product: "pin_claim_5",
+    boost_duration: "sale_weekend",
     verified_at: new Date().toISOString(),
   };
 }
@@ -118,7 +118,7 @@ async function notifyFormspree(formId, toEmail, summary) {
       Accept: "application/json",
     },
     body: JSON.stringify({
-      _subject: "Chica Map — BOOST PAID ($9 Square)",
+      _subject: "Chica Map — $5 WEEKEND PIN BOOST PAID",
       to: toEmail || undefined,
       message:
         "Square webhook verified a completed Boost payment.\n\n" +
@@ -221,7 +221,7 @@ export default {
     }
 
     const payment = extractPayment(event);
-    const amountCents = env.BOOST_AMOUNT_CENTS || "900";
+    const amountCents = env.BOOST_AMOUNT_CENTS || "500";
     const currency = env.BOOST_CURRENCY || "USD";
 
     if (!isBoostPayment(payment, amountCents, currency)) {
