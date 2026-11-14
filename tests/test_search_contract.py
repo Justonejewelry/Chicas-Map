@@ -19,6 +19,16 @@ class SearchContractTests(unittest.TestCase):
             with self.subTest(field=field):
                 self.assertIn(field, source)
 
+    def test_map_normalization_preserves_searchable_location_metadata(self):
+        source = (ROOT / "webapp/js/chica-live-map.js").read_text()
+        for field in ("neighborhood: s.neighborhood", "city: s.city",
+                      "locality: s.locality", "source_address: s.source_address",
+                      "seller: s.seller", "company: s.company", "poster: s.poster",
+                      "zip_code: s.zip_code", "zipcode: s.zipcode",
+                      "postal_code: s.postal_code"):
+            with self.subTest(field=field):
+                self.assertIn(field, source)
+
     def test_home_search_indexes_zip_and_location_metadata(self):
         source = (ROOT / "webapp/js/home-search.js").read_text()
         for field in ("s.zip", "s.zip_code", "s.postal_code", "s.neighborhood",
