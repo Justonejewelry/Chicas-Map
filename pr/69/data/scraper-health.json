@@ -1,0 +1,110 @@
+{
+  "generated_at": "2026-11-13T18:22:23-06:00",
+  "overall": "degraded",
+  "primary_failures": [],
+  "sources": [
+    {
+      "source": "garagesalefinder",
+      "primary": false,
+      "last_attempt_at": "2026-11-13T18:20:22-06:00",
+      "finished_at": "2026-11-13T18:20:25-06:00",
+      "exit_code": 0,
+      "records_found": 76,
+      "records_found_metric": "parsed",
+      "status": "ok",
+      "detail": "42 parsed",
+      "last_successful_retrieval": "2026-11-13T18:20:25-06:00"
+    },
+    {
+      "source": "permits",
+      "primary": false,
+      "last_attempt_at": "2026-11-13T18:20:25-06:00",
+      "finished_at": "2026-11-13T18:20:25-06:00",
+      "exit_code": 0,
+      "records_found": 84,
+      "records_found_metric": "permits_in_window",
+      "status": "completed_unverified",
+      "detail": "script exited successfully but emitted no recognized retrieval/result marker"
+    },
+    {
+      "source": "estatesales_org",
+      "primary": true,
+      "last_attempt_at": "2026-11-13T18:20:25-06:00",
+      "finished_at": "2026-11-13T18:20:29-06:00",
+      "exit_code": 0,
+      "records_found": 16,
+      "records_found_metric": "normalized",
+      "status": "ok",
+      "detail": "normalized=7",
+      "last_successful_retrieval": "2026-11-13T18:20:29-06:00"
+    },
+    {
+      "source": "yardsalesearch",
+      "primary": true,
+      "last_attempt_at": "2026-11-13T18:20:29-06:00",
+      "finished_at": "2026-11-13T18:20:31-06:00",
+      "exit_code": 0,
+      "records_found": 29,
+      "records_found_metric": "normalized",
+      "status": "ok",
+      "detail": "normalized=14",
+      "last_successful_retrieval": "2026-11-13T18:20:31-06:00"
+    },
+    {
+      "source": "gsalr",
+      "primary": false,
+      "last_attempt_at": "2026-11-13T18:20:31-06:00",
+      "finished_at": "2026-11-13T18:20:32-06:00",
+      "exit_code": 0,
+      "records_found": 0,
+      "records_found_metric": "normalized",
+      "status": "zero",
+      "detail": "source returned zero listings",
+      "last_successful_retrieval": "2026-11-13T18:20:32-06:00"
+    },
+    {
+      "source": "craigslist",
+      "primary": true,
+      "last_attempt_at": "2026-11-13T18:20:32-06:00",
+      "finished_at": "2026-11-13T18:21:04-06:00",
+      "exit_code": 0,
+      "records_found": 22,
+      "records_found_metric": "enriched",
+      "status": "ok",
+      "detail": "enriched=22",
+      "last_successful_retrieval": "2026-11-13T18:21:04-06:00"
+    },
+    {
+      "source": "estatesales_net",
+      "primary": false,
+      "last_attempt_at": "2026-11-13T18:22:21-06:00",
+      "finished_at": "2026-11-13T18:22:22-06:00",
+      "exit_code": 0,
+      "records_found": 2,
+      "records_found_metric": "normalized",
+      "status": "ok",
+      "detail": "normalized=1",
+      "last_successful_retrieval": "2026-11-13T18:22:22-06:00"
+    }
+  ],
+  "json_source_counts": {
+    "garagesalefinder": 73,
+    "yardsalesearch": 50,
+    "craigslist": 41,
+    "estatesales.net": 14,
+    "express-news marketplace": 8,
+    "wilson county news": 3,
+    "yardsales.net": 4,
+    "a better estate sale": 2,
+    "seguin gazette": 1,
+    "allevents": 3,
+    "estatesales.org": 15,
+    "aggregators": 2,
+    "facebook marketplace": 2,
+    "facebook events": 4,
+    "neighbor tip": 1,
+    "nextdoor": 11,
+    "facebook": 1
+  },
+  "notes": "Primary free sources: estatesales_org, yardsalesearch, craigslist. Secondary: gsalr, garagesalefinder, permits, estatesales_net. Only explicit source errors/nonzero exits count as failures. Missing logs are not_run, zero listings are a successful empty retrieval, and unrecognized output is unverified. Two or more failed primary sources are critical. Source-attributed JSON counts are inventory evidence, not proof of a fresh retrieval. Apify removed 2026-08-22."
+}
