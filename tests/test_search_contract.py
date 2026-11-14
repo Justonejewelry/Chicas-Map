@@ -29,3 +29,11 @@ class SearchContractTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+    def test_home_search_distinguishes_feed_failure_from_empty_results(self):
+        source = (ROOT / "webapp/js/home-search.js").read_text()
+        self.assertIn('feedState === "error" ? T.loadErr : T.loading', source)
+        self.assertIn('if (!r.ok) throw new Error("Sales feed request failed:', source)
+        self.assertIn('throw new Error("Unexpected sales feed format")', source)
+        self.assertIn('retry.onclick = function () { loadData(box); }', source)
+        self.assertIn('feedState = "ready"', source)
