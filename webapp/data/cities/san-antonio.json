@@ -2837,6 +2837,8 @@
       "geocode": "street",
       "in_person": true,
       "external_id": "form-mustang-meadow-2026-11-14",
+      "boost": true,
+      "boost_until": "2026-11-15",
       "date_start": "2026-11-14",
       "date_end": "2026-11-14",
       "date_bucket": "live"
