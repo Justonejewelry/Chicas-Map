@@ -126,6 +126,10 @@
     return s.external_id || s.id || s.sale_id || (lat.toFixed(5) + "," + lon.toFixed(5) + "|" + (s.title || s.address || ""));
   }
 
+  function displayTitle(value) {
+    return String(value || "Sale").replace(/\byard[\s-]*sale\b/gi, "Garage Sale");
+  }
+
   function normalize(s) {
     var lat = Number(s.lat != null ? s.lat : s.latitude);
     var lon = Number(s.lon != null ? s.lon : s.lng != null ? s.lng : s.longitude);
@@ -134,7 +138,7 @@
     var pack = isPack(s);
     return {
       id: saleKey(s, lat, lon),
-      title: s.title || s.address || "Sale",
+      title: displayTitle(s.title || s.address || "Sale"),
       address: s.address || "",
       dates: s.dates || "",
       hours: s.hours || "",
