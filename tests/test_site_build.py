@@ -125,6 +125,10 @@ class SiteBuildTests(unittest.TestCase):
             "o(D.weekendRange('2026-11-09'));o(D.weekendRange('2026-11-13'));o(D.weekendRange('2026-11-14'));o(D.weekendRange('2026-11-15'));"
             "o(D.range('today','2026-11-08'));o(D.ctToday(new Date('2026-11-09T03:30:00Z')));"
             "o(D.overlaps({date_start:'2026-11-12',date_end:'2026-11-14'},'2026-11-13','2026-11-15'));o(D.overlaps({date_start:'2026-11-08'},'2026-11-13','2026-11-15'));"
+            "o(D.status({date_start:'2026-11-13',date_end:'2026-11-13'},'2026-11-13'));"
+            "o(D.status({date_start:'2026-11-15',date_end:'2026-11-16'},'2026-11-13'));"
+            "o(D.status({date_start:'2026-11-10',date_end:'2026-11-13'},'2026-11-13'));"
+            "o(D.status({date_start:'2026-11-10',date_end:'2026-11-12'},'2026-11-13'));"
         )
         out = subprocess.run(['node', '-e', js], cwd=ROOT, capture_output=True, text=True, check=True).stdout.split('\n')
         v = [json.loads(x) for x in out if x]
@@ -135,11 +139,17 @@ class SiteBuildTests(unittest.TestCase):
         self.assertEqual(v[4], ['2026-11-08', '2026-11-08'])
         self.assertEqual(v[5], '2026-11-08')  # 9:30 PM CT is still Nov 8 in Chicago
         self.assertEqual(v[6:8], [True, False])
+        self.assertEqual(v[8:12], ["today", "upcoming", "ends_today", "expired"])
+        pin_details = (self.root / 'js/pin-details.js').read_text()
+        self.assertIn("dateStatusBadge", pin_details)
+        self.assertIn("UPCOMING", pin_details)
+        self.assertIn("PRÓXIMA", pin_details)
         hunt = (self.root / 'js/hunt-bar.js').read_text()
         for needle in ['aria-pressed', 'data-clear', 'Quitar filtros', 'ChicaDates', 'when']:
             self.assertIn(needle, hunt)
         mp = (self.root / 'map/index.html').read_text()
-        self.assertLess(mp.index('chica-dates.js'), mp.index('hunt-bar.js'))
+        self.assertLess(mp.index('chica-dates.js'), mp.index('pin-details.js'))
+        self.assertLess(mp.index('pin-details.js'), mp.index('hunt-bar.js'))
         en = (self.root / 'index.html').read_text(); es = (self.root / 'es/index.html').read_text()
         self.assertIn('/map/?when=today', en); self.assertIn('/map/?when=weekend', en)
         self.assertIn('>Hoy en el mapa</a>', es); self.assertIn('>Este fin de semana</a>', es)

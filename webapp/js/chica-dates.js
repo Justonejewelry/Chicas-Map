@@ -3,7 +3,12 @@
   function pad(n) { return (n < 10 ? "0" : "") + n; }
   function ctToday(now) {
     try {
-      return new Intl.DateTimeFormat("en-CA", { timeZone: "America/Chicago", year: "numeric", month: "2-digit", day: "2-digit" }).format(now || new Date());
+      var parts = new Intl.DateTimeFormat("en-US", {
+        timeZone: "America/Chicago", year: "numeric", month: "2-digit", day: "2-digit"
+      }).formatToParts(now || new Date());
+      var values = {};
+      for (var i = 0; i < parts.length; i++) values[parts[i].type] = parts[i].value;
+      return values.year + "-" + values.month + "-" + values.day;
     } catch (e) { var d = now || new Date(); return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()); }
   }
   function addDays(iso, n) {
@@ -25,6 +30,17 @@
     if (name === "weekend") return weekendRange(today);
     return ["", ""];
   }
+  /* Date status is based on San Antonio's calendar day, never the visitor's device timezone. */
+  function status(sale, today) {
+    today = today || ctToday();
+    var start = String(sale.date_start || sale.date_from || "").slice(0, 10);
+    var end = String(sale.date_end || sale.date_to || sale.end_date || start).slice(0, 10);
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(start)) return "";
+    if (end && end < today) return "expired";
+    if (start > today) return "upcoming";
+    if (end === today && start < today) return "ends_today";
+    return "today";
+  }
   /* A sale matches when its start..end overlaps the range. Undated sales are kept. */
   function overlaps(sale, from, to) {
     var s = String(sale.date_start || sale.date_from || "").slice(0, 10);
@@ -32,7 +48,7 @@
     if (!s) return true;
     return s <= to && (e || s) >= from;
   }
-  var api = { ctToday: ctToday, addDays: addDays, weekendRange: weekendRange, range: range, overlaps: overlaps };
+  var api = { ctToday: ctToday, addDays: addDays, weekendRange: weekendRange, range: range, status: status, overlaps: overlaps };
   if (typeof module === "object" && module.exports) module.exports = api;
   root.ChicaDates = api;
 })(typeof window !== "undefined" ? window : globalThis);
