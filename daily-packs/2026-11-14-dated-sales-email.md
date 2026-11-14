@@ -102,6 +102,7 @@ The map keeps both today's sales and upcoming dated sales.
 - Yard Sale — 2715 Spokane Rd, San Antonio, TX [2026-11-14 → 2026-11-14]
 - GARAGE SALE + VINTAGE CLOTHES DECOR EVERYTHING MUST GO 11/14 — 5914 Lake Nacoma St near Lake Meadow, San Antonio, TX [2026-11-13 → 2026-11-14]
 - Garage Sale in Brook Hollow — 13755 Brook Hollow BLVD, San Antonio, TX [2026-11-14 → 2026-11-14]
+- Community garage sale — 7647 Mustang Meadow, San Antonio, TX 78244 [2026-11-14 → 2026-11-14] | 8:00am-5:00pm
 
 ## COMING UP (on the map)
 

@@ -1,14 +1,14 @@
 # Chica's Map -- Community Events Swarm v2.7
 
-Run: 2026-11-14T10:00:24-06:00
+Run: 2026-11-14T11:00:00-06:00
 Sources scanned: **48**
-Candidates discovered: **925**
-With parsed dates: **768**
-With street/venue address: **571**
+Candidates discovered: **921**
+With parsed dates: **764**
+With street/venue address: **567**
 Promoted this run: **0**
 Kept from prior feed: **271**
 Purged from prior feed: **0**
-Source errors: **6**
+Source errors: **7**
 Rejected by Sentinel: **343**
 
 ## Promoted (passed Events Sentinel)
@@ -233,6 +233,7 @@ _None this run._
 - Bexar County Veterans Events: HTTP 429 Too Many Requests
 - San Antonio River Authority Events: HTTP 403 Forbidden
 - City of Schertz Calendar: HTTP 404 Not Found
+- Bexar County Public Health: HTTP 429 Too Many Requests
 - Bexar County Animal Care: HTTP 429 Too Many Requests
 - Windcrest Calendar: HTTP 403 Forbidden
 
