@@ -147,6 +147,11 @@ class SiteBuildTests(unittest.TestCase):
         hunt = (self.root / 'js/hunt-bar.js').read_text()
         for needle in ['aria-pressed', 'data-clear', 'Quitar filtros', 'ChicaDates', 'when']:
             self.assertIn(needle, hunt)
+        self.assertIn('data-type="garage">Garage Sale', hunt)
+        self.assertIn('data-type="estate">Estate Sale', hunt)
+        self.assertNotIn('data-type="yard"', hunt)
+        self.assertNotIn('yard: "Yard"', hunt)
+        self.assertNotIn('yard: "Patio"', hunt)
         mp = (self.root / 'map/index.html').read_text()
         self.assertLess(mp.index('chica-dates.js'), mp.index('pin-details.js'))
         self.assertLess(mp.index('pin-details.js'), mp.index('hunt-bar.js'))
