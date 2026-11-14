@@ -3,7 +3,22 @@
   "product": "pin_claim_5",
   "price_usd": 5,
   "duration": "sale_weekend",
-  "updated": "2026-10-07",
-  "notes": "Ops registry — not map feed. $5 Square pin (square.link/u/qjunxHoo). Match sellers by contact_key. Stamp boost+boost_until on approved listings only while status=active and today<=boost_until. Repo is public: prefer contact_key over extra PII.",
-  "passes": []
+  "updated": "2026-11-14",
+  "notes": "Ops registry \u2014 not map feed. $5 Square pin (square.link/u/qjunxHoo). Match sellers by contact_key. Stamp boost+boost_until on approved listings only while status=active and today<=boost_until. Repo is public: prefer contact_key over extra PII.",
+  "passes": [
+    {
+      "contact_key": "amandawboullard@gmail.com",
+      "display_name": null,
+      "payment_id": "comp-2026-11-14-mustang-meadow",
+      "paid_at": "2026-11-14",
+      "boost_until": "2026-11-15",
+      "status": "active",
+      "amount_cents": 0,
+      "currency": "USD",
+      "source": "owner_comp",
+      "receipt_url": null,
+      "event_id": null,
+      "recorded_at": "2026-11-14T16:17:41Z"
+    }
+  ]
 }
