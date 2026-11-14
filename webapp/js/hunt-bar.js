@@ -15,9 +15,8 @@
       weekend: "This weekend",
       clear: "✕ Clear filters",
       showing: "Showing",
-      garage: "Garage",
-      yard: "Yard",
-      estate: "Estate",
+      garage: "Garage Sale",
+      estate: "Estate Sale",
       empty: "No sales match. Try fewer words or clear a filter.",
       showing: "Showing",
       sale: " sale",
@@ -33,9 +32,8 @@
       weekend: "Este fin de semana",
       clear: "✕ Quitar filtros",
       showing: "Mostrando",
-      garage: "Garaje",
-      yard: "Patio",
-      estate: "Bienes",
+      garage: "Venta de garaje",
+      estate: "Venta de bienes",
       empty: "Ninguna venta coincide. Prueba con menos palabras o quita un filtro.",
       showing: "Mostrando",
       sale: " venta",
@@ -148,7 +146,7 @@
       var mi = milesLabel(s);
       html += '<button type="button" data-id="' + String(s.id).replace(/"/g, "") + '">' +
         '<strong>' + escapeHtml(s.title) + '</strong>' +
-        '<span>' + escapeHtml(s.type || "sale") + (mi ? " · " + mi : "") + '</span>' +
+        '<span>' + escapeHtml(s.type === "garage" ? t("garage") : s.type === "estate" ? t("estate") : "sale") + (mi ? " · " + mi : "") + '</span>' +
         '<em>' + escapeHtml(s.address || "") + '</em></button>';
     }
     list.innerHTML = html;
@@ -277,9 +275,8 @@
       '</div>' +
       '<div class="grp clr" hidden><button type="button" data-clear="1">✕ Clear filters</button></div>' +
       '<div class="grp">' +
-        '<button type="button" data-type="garage">Garage</button>' +
-        '<button type="button" data-type="yard">Yard</button>' +
-        '<button type="button" data-type="estate">Estate</button>' +
+        '<button type="button" data-type="garage">Garage Sale</button>' +
+        '<button type="button" data-type="estate">Estate Sale</button>' +
       '</div>' +
       '<div class="grp">' +
         '<button type="button" data-miles="5">5 mi</button>' +
