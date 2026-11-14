@@ -99,7 +99,7 @@
     if (away) bits += "<br>" + esc(away);
     if (sale.source) bits += "<br>Source: " + esc(sale.source);
     if (sale.details) bits += "<br>" + esc(sale.details);
-    if (gold) bits = '<span class="gold-tag">FEATURED</span><br>' + bits;
+    if (gold) bits = '<span class="gold-tag">' + (spanish ? "DESTACADA DEL FIN DE SEMANA · $5" : "WEEKEND SPOTLIGHT · $5") + '</span><br>' + bits;
     var confidenceLabels = {
       source_confirmed: "Source listing",
       community_submitted: "Community submitted",
