@@ -34,8 +34,15 @@ function SubmitPage() {
       setError("The end date cannot be before the start date.");
       return;
     }
-    const today = new Date();
-    const todayISO = [today.getFullYear(), String(today.getMonth() + 1).padStart(2, "0"), String(today.getDate()).padStart(2, "0")].join("-");
+    // Sale dates are interpreted in San Antonio time, regardless of the visitor's device timezone.
+    const dateParts = new Intl.DateTimeFormat("en-US", {
+      timeZone: "America/Chicago",
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+    }).formatToParts(new Date());
+    const datePart = (type: string) => dateParts.find((part) => part.type === type)?.value || "";
+    const todayISO = `${datePart("year")}-${datePart("month")}-${datePart("day")}`;
     if (date_from < todayISO) {
       setError("The sale start date cannot be in the past.");
       return;
