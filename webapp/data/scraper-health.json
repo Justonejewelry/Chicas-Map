@@ -1,25 +1,25 @@
 {
-  "generated_at": "2026-11-13T19:32:22-06:00",
+  "generated_at": "2026-11-13T22:36:55-06:00",
   "overall": "degraded",
   "primary_failures": [],
   "sources": [
     {
       "source": "garagesalefinder",
       "primary": false,
-      "last_attempt_at": "2026-11-13T19:30:52-06:00",
-      "finished_at": "2026-11-13T19:30:54-06:00",
+      "last_attempt_at": "2026-11-13T22:35:06-06:00",
+      "finished_at": "2026-11-13T22:35:08-06:00",
       "exit_code": 0,
-      "records_found": 43,
+      "records_found": 46,
       "records_found_metric": "parsed",
       "status": "ok",
-      "detail": "43 parsed",
-      "last_successful_retrieval": "2026-11-13T19:30:54-06:00"
+      "detail": "46 parsed",
+      "last_successful_retrieval": "2026-11-13T22:35:08-06:00"
     },
     {
       "source": "permits",
       "primary": false,
-      "last_attempt_at": "2026-11-13T19:30:54-06:00",
-      "finished_at": "2026-11-13T19:30:55-06:00",
+      "last_attempt_at": "2026-11-13T22:35:08-06:00",
+      "finished_at": "2026-11-13T22:35:09-06:00",
       "exit_code": 0,
       "records_found": 84,
       "records_found_metric": "permits_in_window",
@@ -29,32 +29,32 @@
     {
       "source": "estatesales_org",
       "primary": true,
-      "last_attempt_at": "2026-11-13T19:30:55-06:00",
-      "finished_at": "2026-11-13T19:30:57-06:00",
+      "last_attempt_at": "2026-11-13T22:35:09-06:00",
+      "finished_at": "2026-11-13T22:35:11-06:00",
       "exit_code": 0,
       "records_found": 7,
       "records_found_metric": "normalized",
       "status": "ok",
       "detail": "normalized=7",
-      "last_successful_retrieval": "2026-11-13T19:30:57-06:00"
+      "last_successful_retrieval": "2026-11-13T22:35:11-06:00"
     },
     {
       "source": "yardsalesearch",
       "primary": true,
-      "last_attempt_at": "2026-11-13T19:30:57-06:00",
-      "finished_at": "2026-11-13T19:30:59-06:00",
+      "last_attempt_at": "2026-11-13T22:35:11-06:00",
+      "finished_at": "2026-11-13T22:35:12-06:00",
       "exit_code": 0,
       "records_found": 14,
       "records_found_metric": "normalized",
       "status": "ok",
       "detail": "normalized=14",
-      "last_successful_retrieval": "2026-11-13T19:30:59-06:00"
+      "last_successful_retrieval": "2026-11-13T22:35:12-06:00"
     },
     {
       "source": "gsalr",
       "primary": false,
-      "last_attempt_at": "2026-11-13T19:30:59-06:00",
-      "finished_at": "2026-11-13T19:31:00-06:00",
+      "last_attempt_at": "2026-11-13T22:35:12-06:00",
+      "finished_at": "2026-11-13T22:35:14-06:00",
       "exit_code": 0,
       "records_found": null,
       "records_found_metric": "normalized",
@@ -65,26 +65,26 @@
     {
       "source": "craigslist",
       "primary": true,
-      "last_attempt_at": "2026-11-13T19:31:00-06:00",
-      "finished_at": "2026-11-13T19:31:17-06:00",
+      "last_attempt_at": "2026-11-13T22:35:14-06:00",
+      "finished_at": "2026-11-13T22:35:29-06:00",
       "exit_code": 0,
-      "records_found": 10,
+      "records_found": 9,
       "records_found_metric": "enriched",
       "status": "ok",
-      "detail": "enriched=10",
-      "last_successful_retrieval": "2026-11-13T19:31:17-06:00"
+      "detail": "enriched=9",
+      "last_successful_retrieval": "2026-11-13T22:35:29-06:00"
     },
     {
       "source": "estatesales_net",
       "primary": false,
-      "last_attempt_at": "2026-11-13T19:32:21-06:00",
-      "finished_at": "2026-11-13T19:32:21-06:00",
+      "last_attempt_at": "2026-11-13T22:36:54-06:00",
+      "finished_at": "2026-11-13T22:36:55-06:00",
       "exit_code": 0,
       "records_found": 1,
       "records_found_metric": "normalized",
       "status": "ok",
       "detail": "normalized=1",
-      "last_successful_retrieval": "2026-11-13T19:32:21-06:00"
+      "last_successful_retrieval": "2026-11-13T22:36:55-06:00"
     }
   ],
   "json_source_counts": {
@@ -93,7 +93,7 @@
     "yardsalesearch": 51,
     "neighbor tip": 1,
     "nextdoor": 11,
-    "garagesalefinder": 74,
+    "garagesalefinder": 77,
     "estatesales.net": 14,
     "craigslist": 41,
     "facebook": 1,

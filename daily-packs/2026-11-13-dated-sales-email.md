@@ -104,6 +104,9 @@ The map keeps both today's sales and upcoming dated sales.
 - Yard sale rain or shine ! — 13347 Tusayan, Universal City, TX 78148 [2026-11-14 → 2026-11-14]
 - Huge sale — 113 Richardson Dr, Schertz, TX 78154 [2026-11-14 → 2026-11-14]
 - Community Yard Sale — 6511 Trotter Ln, San Antonio, TX [2026-11-14 → 2026-11-14]
+- Garage Sale — 9322 Bowen Dr, San Antonio, TX 78250 [2026-11-14 → 2026-11-14]
+- Community Wide Garage Sale! — 1419 Peacock Hvn, San Antonio, TX 78260 [2026-11-14 → 2026-11-14]
+- Fundraiser — 618 Main St, Schertz, TX 78154 [2026-11-14 → 2026-11-14]
 
 ### Starts 2026-11-15
 - ONE-DAY ESTATE SALE! — 104 Ridge Trail, San Antonio, TX 78232 [2026-11-15 → 2026-11-15] | 10am-5pm
@@ -127,10 +130,10 @@ The map keeps both today's sales and upcoming dated sales.
 
 ## ONLINE / UNPLOTTABLE
 
-- AUTHENTIQUE LUX: HOLIDAY LUXURY EDIT — San Antonio, TX [2026-11-11 → 2026-11-14]
 - The Analog Age: Vintage Tech Treasures - Bidding EXTENDED TO 11/22 @ 7PM! — San Antonio, TX 78240
 - History Meets Holiday: Vintage Gems, Christmas Memories, Coins & Silver in Fair Oaks, TX. — Boerne, TX 78015
 - Vintage Collectibles: Decor, Tableware, & More Online Auction by Caring Transitions - Ends 11/19! — New Braunfels, TX 78132
 - Ninety Nine And Still Going - Bidding ends 11/17 — San Marcos, TX 78666
+- AUTHENTIQUE LUX: HOLIDAY LUXURY EDIT — San Antonio, TX
 
 — Chica
