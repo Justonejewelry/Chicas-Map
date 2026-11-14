@@ -72,6 +72,13 @@ process.stdout.write(getDate(new Date(process.argv[2])));
         self.assertNotIn('29.4241', self.source)
         self.assertNotIn('-98.4936', self.source)
 
+    def test_optional_photo_link_is_validated_and_forwarded_for_review(self):
+        self.assertIn('const photo_url = String(fd.get("photo_url") || "").trim();', self.source)
+        self.assertIn('new URL(photo_url)', self.source)
+        self.assertIn('parsedPhotoUrl.protocol !== "https:"', self.source)
+        self.assertIn('parsedPhotoUrl.protocol !== "http:"', self.source)
+        self.assertIn('          photo_url,', self.source)
+
     def test_review_email_must_be_accepted_before_local_save(self):
         send = self.source.index('const response = await fetch(INTAKE')
         response_check = self.source.index('if (!response.ok)', send)
