@@ -39,7 +39,7 @@ class BoostOfferTests(unittest.TestCase):
         self.assertNotIn("900", worker)
         self.assertNotIn("$9", worker)
         self.assertNotIn("6-month", runbook)
-        self.assertIn("BOOST_AMOUNT_CENTS = \\"500\\"", runbook)
+        self.assertIn('BOOST_AMOUNT_CENTS = "500"', runbook)
         self.assertIn("payment link", runbook.lower())
 
 
