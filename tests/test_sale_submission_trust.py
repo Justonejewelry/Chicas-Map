@@ -41,7 +41,7 @@ source = source.replace(
   "export function sanAntonioTodayISO(now: Date = new Date()): string {",
   "function sanAntonioTodayISO(now = new Date()) {"
 );
-const getDate = new Function(source + "\\nreturn sanAntonioTodayISO;")();
+const getDate = new Function(source + "\nreturn sanAntonioTodayISO;")();
 process.stdout.write(getDate(new Date(process.argv[2])));
 """
         cases = [
