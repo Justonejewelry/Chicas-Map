@@ -2,6 +2,7 @@ import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
 import { SiteFooter, SiteHeader } from "@/components/site-header";
 import { haversineMi, SA_CENTER, saveSubmission, type Sale, type SaleKind } from "@/lib/sales";
+import { sanAntonioTodayISO } from "@/lib/sa-date";
 
 export const Route = createFileRoute("/submit")({ component: SubmitPage });
 
@@ -34,8 +35,8 @@ function SubmitPage() {
       setError("The end date cannot be before the start date.");
       return;
     }
-    const today = new Date();
-    const todayISO = [today.getFullYear(), String(today.getMonth() + 1).padStart(2, "0"), String(today.getDate()).padStart(2, "0")].join("-");
+    // Sale dates are interpreted in San Antonio time, regardless of the visitor's device timezone.
+    const todayISO = sanAntonioTodayISO();
     if (date_from < todayISO) {
       setError("The sale start date cannot be in the past.");
       return;
