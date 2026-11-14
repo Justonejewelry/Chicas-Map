@@ -77,6 +77,12 @@ class ScraperHealthTests(unittest.TestCase):
         result = health.analyze_log("permits", self.log("garage/estate permits in window=0"))
         self.assertEqual(result["status"], "zero")
 
+    def test_permits_positive_rows_is_successful_retrieval(self):
+        result = health.analyze_log("permits", self.log("garage/estate permits in window=84 (estate-tagged=2)"))
+        self.assertEqual(result["status"], "ok")
+        self.assertEqual(result["records_found"], 84)
+        self.assertEqual(result["last_successful_retrieval"], "2026-11-13T05:01:00-06:00")
+
     def test_structured_source_record_counts_use_final_discovery_metrics(self):
         cases = [
             ("garagesalefinder", "  https://example.test/a → 1 parsed\n  https://example.test/b → 2 parsed", 3, "parsed"),
