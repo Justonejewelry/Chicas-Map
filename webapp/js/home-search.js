@@ -7,7 +7,7 @@
   var ALERTS = { FORM: "https://formsubmit.co/ajax/2f6534a8c454b090116f8050045f0e26", MAILTO: "" };
   var ES = String(document.documentElement.lang || "").toLowerCase().indexOf("es") === 0;
   var T = ES ? {
-    label: "Busca artículos en las ventas", ph: "Ej. muebles, herramientas, Lego…", go: "Buscar",
+    label: "Busca artículos en las ventas", ph: "Ej. muebles, herramientas, Lego…", go: "Buscar", loading: "Cargando ventas…", loadErr: "No se pudieron cargar las ventas en vivo.", retry: "Reintentar",
     none: "Ninguna venta próxima menciona eso todavía. ¡Guárdalo y te aviso! 🐾", count: function (n) { return n + (n === 1 ? " venta coincide" : " ventas coinciden"); },
     save: "🔔 Avisarme de nuevas", saved: "✓ Búsqueda guardada", view: "Ver en el mapa", details: "Detalles", help: "¿Buscas algo especial, vecino? Busca, guarda y te aviso por correo cuando aparezcan ventas nuevas que coincidan. 🐾", emNeed: "Escribe primero qué buscas (ej. muebles).", mine: "Mis búsquedas guardadas:",
     fresh: function (n) { return n + " nueva" + (n === 1 ? "" : "s"); }, rm: "Quitar",
@@ -20,7 +20,7 @@
     weeklyErr: "Ups, no se pudo enviar. Intenta otra vez.",
     notifT: "Chica encontró nuevas ventas", notifB: function (q, n) { return n + " nueva(s) para “" + q + "”"; }
   } : {
-    label: "Search sales for items", ph: "e.g. furniture, tools, Lego…", go: "Search",
+    label: "Search sales for items", ph: "e.g. furniture, tools, Lego…", go: "Search", loading: "Loading live sales…", loadErr: "Live sales could not load.", retry: "Retry",
     none: "No upcoming sale mentions that yet. Save it and I'll let you know! 🐾", count: function (n) { return n + (n === 1 ? " sale matches" : " sales match"); },
     save: "🔔 Alert me to new matches", saved: "✓ Search saved", view: "View on map", details: "Details", help: "Hunting something special, neighbor? Search, save it, and I'll email you when new matching sales show up. 🐾", emNeed: "Type what you're hunting for first (e.g. furniture).", mine: "My saved searches:",
     fresh: function (n) { return n + " new"; }, rm: "Remove",
@@ -33,6 +33,7 @@
     weeklyErr: "Oops, that didn't send. Please try again.",
     notifT: "Chica found new sales", notifB: function (q, n) { return n + " new match" + (n === 1 ? "" : "es") + " for “" + q + "”"; }
   };
+  var feedState = "loading";
   var SYN = {
     furniture: ["furniture", "couch", "sofa", "table", "chair", "dresser", "desk", "bed", "cabinet", "bookcase", "recliner", "mueble"],
     tools: ["tool", "drill", "saw", "wrench", "craftsman", "dewalt", "milwaukee", "compressor", "herramienta"],
@@ -178,6 +179,14 @@
   function render(box, q) {
     var meta = box.querySelector(".hs-meta"), ul = box.querySelector(".hs-list");
     q = (q || "").trim();
+    if (feedState !== "ready") {
+      meta.innerHTML = "<span>" + esc(feedState === "error" ? T.loadErr : T.loading) + "</span>" +
+        (feedState === "error" ? '<button type="button" class="hs-ghost hs-retry">' + T.retry + "</button>" : "");
+      ul.innerHTML = ""; highlight(null); renderAfter(box, "");
+      var retry = meta.querySelector(".hs-retry");
+      if (retry) retry.onclick = function () { loadData(box); };
+      return;
+    }
     if (!q) { meta.innerHTML = ""; ul.innerHTML = ""; highlight(null); renderAfter(box, ""); return; }
     var hits = match(q);
     var isSaved = saved.some(function (x) { return norm(x.q) === norm(q); });
@@ -236,11 +245,30 @@
   }
 
   function setData(d) {
+    if (!d || typeof d !== "object" || (!Array.isArray(d.public) && !Array.isArray(d.sales)))
+      throw new Error("Unexpected sales feed format");
     var t = today(), all = [];
-    ["public", "sales"].forEach(function (k) { if (d && Array.isArray(d[k])) all = all.concat(d[k]); });
+    ["public", "sales"].forEach(function (k) { if (Array.isArray(d[k])) all = all.concat(d[k]); });
     sales = all.filter(function (s) { var end = String(s.date_end || s.date_to || s.date_start || ""); return !end || end >= t; });
   }
-  function fetchData() { return fetch(DATA + "?v=" + Date.now(), { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); }
+  function fetchData() {
+    return fetch(DATA + "?v=" + Date.now(), { cache: "no-store" }).then(function (r) {
+      if (!r.ok) throw new Error("Sales feed request failed: " + r.status);
+      return r.json();
+    }).then(function (d) { setData(d); return d; });
+  }
+  function loadData(box) {
+    feedState = "loading"; render(box, box.querySelector("#hs-q").value);
+    return fetchData().then(function () {
+      feedState = "ready"; renderSaved(box); notify();
+      var input = box.querySelector("#hs-q"), q = "";
+      try { q = new URLSearchParams(location.search).get("q") || ""; } catch (e) {}
+      if (q) input.value = q;
+      render(box, input.value);
+    }).catch(function () {
+      feedState = "error"; render(box, box.querySelector("#hs-q").value);
+    });
+  }
 
   function run() {
     css(); wireWeekly();
@@ -248,13 +276,9 @@
     var input = box.querySelector("#hs-q");
     box.querySelector("form").onsubmit = function (e) { e.preventDefault(); render(box, input.value); };
     var tm; input.addEventListener("input", function () { clearTimeout(tm); tm = setTimeout(function () { render(box, input.value); }, 250); });
-    fetchData().then(function (d) {
-      setData(d); renderSaved(box); notify();
-      var q = ""; try { q = new URLSearchParams(location.search).get("q") || ""; } catch (e) {}
-      if (q) { input.value = q; setTimeout(function () { render(box, q); }, 900); }
-    });
+    loadData(box);
     // While the page stays open, re-check every 30 minutes for new matches.
-    setInterval(function () { if (!saved.length) return; fetchData().then(function (d) { if (d) { setData(d); renderSaved(box); notify(); } }); }, 30 * 60 * 1000);
+    setInterval(function () { if (!saved.length) return; fetchData().then(function () { renderSaved(box); notify(); }).catch(function () {}); }, 30 * 60 * 1000);
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", run); else run();
 })();
