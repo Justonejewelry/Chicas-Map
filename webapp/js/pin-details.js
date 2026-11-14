@@ -80,7 +80,10 @@
     var when = [sale.dates, sale.hours].filter(Boolean).join(" \u00b7 ");
     var dateStatus = window.ChicaDates && typeof window.ChicaDates.status === "function"
       ? window.ChicaDates.status(sale) : "";
-    var mapLocale = "";\n    try { mapLocale = localStorage.getItem("chicas-map-locale") || ""; } catch (e) {}\n    if (!mapLocale) mapLocale = document.documentElement.lang || "en";\n    var spanish = String(mapLocale).toLowerCase().indexOf("es") === 0;
+    var mapLocale = "";
+    try { mapLocale = localStorage.getItem("chicas-map-locale") || ""; } catch (e) {}
+    if (!mapLocale) mapLocale = document.documentElement.lang || "en";
+    var spanish = String(mapLocale).toLowerCase().indexOf("es") === 0;
     var dateStatusLabels = {
       today: spanish ? "HOY" : "TODAY",
       upcoming: spanish ? "PRÓXIMA" : "UPCOMING",
