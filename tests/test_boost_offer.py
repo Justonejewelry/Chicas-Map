@@ -26,6 +26,12 @@ class BoostOfferTests(unittest.TestCase):
         self.assertIn("Tu anuncio sigue siendo gratis", page)
         self.assertIn("El pin dorado se activa", page)
 
+    def test_gold_spotlight_pin_has_a_distinct_star_badge_and_reduced_motion_fallback(self):
+        source = (ROOT / "webapp" / "js" / "chica-live-map.js").read_text()
+        self.assertIn('class="chica-gold-badge" aria-hidden="true">★</span>', source)
+        self.assertIn(".chica-gold-badge{", source)
+        self.assertIn("@media (prefers-reduced-motion:reduce){.chica-pack-ring,.chica-gold-ring{animation:none", source)
+
     def test_square_webhook_matches_the_current_five_dollar_weekend_product(self):
         worker = (ROOT / "workers" / "square-boost-webhook" / "src" / "index.js").read_text()
         config = (ROOT / "workers" / "square-boost-webhook" / "wrangler.toml").read_text()
