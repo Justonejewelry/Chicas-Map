@@ -9,6 +9,7 @@ class SaleSubmissionTrustTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.source = (ROOT / "app/src/routes/submit.tsx").read_text()
+        cls.date_helper = (ROOT / "app/src/lib/sa-date.ts").read_text()
 
     def test_actual_start_and_end_dates_are_required_and_saved(self):
         self.assertIn('name="date_from"', self.source)
@@ -20,11 +21,14 @@ class SaleSubmissionTrustTests(unittest.TestCase):
     def test_invalid_or_past_date_ranges_use_san_antonio_calendar_date(self):
         self.assertIn('date_to < date_from', self.source)
         self.assertIn('date_from < todayISO', self.source)
-        self.assertIn('timeZone: "America/Chicago"', self.source)
-        self.assertIn('formatToParts(new Date())', self.source)
-        self.assertNotIn('today.getFullYear()', self.source)
-        self.assertNotIn('today.getMonth()', self.source)
-        self.assertNotIn('today.getDate()', self.source)
+        self.assertIn('sanAntonioTodayISO', self.source)
+        self.assertIn('from "@/lib/sa-date"', self.source)
+        # Helper must compute via America/Chicago, not device local getters.
+        self.assertIn('timeZone: "America/Chicago"', self.date_helper)
+        self.assertIn('formatToParts', self.date_helper)
+        self.assertNotIn('getFullYear()', self.source)
+        self.assertNotIn('getMonth()', self.source)
+        self.assertNotIn('getDate()', self.source)
 
     def test_unverified_address_never_falls_back_to_city_center(self):
         self.assertIn('if (!hits.length)', self.source)
