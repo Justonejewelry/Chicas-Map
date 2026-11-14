@@ -35,7 +35,7 @@
     today = today || ctToday();
     var start = String(sale.date_start || sale.date_from || "").slice(0, 10);
     var end = String(sale.date_end || sale.date_to || sale.end_date || start).slice(0, 10);
-    if (!/^\\d{4}-\\d{2}-\\d{2}$/.test(start)) return "";
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(start)) return "";
     if (end && end < today) return "expired";
     if (start > today) return "upcoming";
     if (end === today && start < today) return "ends_today";
