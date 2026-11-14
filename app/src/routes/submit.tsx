@@ -25,6 +25,7 @@ function SubmitPage() {
     const details = String(fd.get("details") || "").trim();
     const date_from = String(fd.get("date_from") || "");
     const date_to = String(fd.get("date_to") || "");
+    const photo_url = String(fd.get("photo_url") || "").trim();
     const type = (String(fd.get("type") || "garage") as SaleKind);
 
     if (!title || !address || !date_from || !date_to) {
@@ -34,6 +35,15 @@ function SubmitPage() {
     if (date_to < date_from) {
       setError("The end date cannot be before the start date.");
       return;
+    }
+    if (photo_url) {
+      try {
+        const parsedPhotoUrl = new URL(photo_url);
+        if (parsedPhotoUrl.protocol !== "https:" && parsedPhotoUrl.protocol !== "http:") throw new Error("protocol");
+      } catch {
+        setError("Enter a valid public photo link beginning with https:// or http://.");
+        return;
+      }
     }
     // Sale dates are interpreted in San Antonio time, regardless of the visitor's device timezone.
     const todayISO = sanAntonioTodayISO();
@@ -95,6 +105,7 @@ function SubmitPage() {
           date_to,
           hours,
           details,
+          photo_url,
           lat,
           lon,
           source_url: location.href,
