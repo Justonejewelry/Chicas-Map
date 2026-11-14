@@ -472,23 +472,46 @@
     });
     // The 9 AM Facebook ingest bumps this marker; it remains a raw input, not a browser feed.
     var OVERLAY_VERSION = "san-antonio-user.json?v=56";
-    var feedUrls = [BASE + "/data/sales-clean.json?v=" + OVERLAY_VERSION.split("?v=")[1] + "&t=" + Date.now()];
-    Promise.all(feedUrls.map(function (u) {
-      return fetch(u, { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
-    })).then(function (bags) {
-      var sales = [];
-      for (var i = 0; i < bags.length; i++) sales = sales.concat(salesFrom(bags[i]));
-      var nPins = addPins(map, L, sales);
-      if (!nPins) {
-        var boot = document.getElementById("chica-map-boot-copy");
-        if (boot) boot.textContent = "No sales in the feed.";
+    var feedUrl = BASE + "/data/sales-clean.json?v=" + OVERLAY_VERSION.split("?v=")[1] + "&t=" + Date.now();
+    function showFeedStatus(message, retry) {
+      var status = document.getElementById("chica-map-feed-status");
+      if (!status) {
+        status = document.createElement("div");
+        status.id = "chica-map-feed-status";
+        status.setAttribute("role", "status");
+        status.setAttribute("aria-live", "polite");
+        status.style.cssText = "position:fixed;z-index:2147482999;left:50%;bottom:max(18px,env(safe-area-inset-bottom));transform:translateX(-50%);max-width:calc(100vw - 32px);box-sizing:border-box;padding:12px 14px;border:1px solid #55445a;border-radius:12px;background:#211b24;color:#fff;font:600 13px/1.4 Inter,system-ui,sans-serif;text-align:center;box-shadow:0 4px 20px #0008";
+        document.body.appendChild(status);
       }
+      status.textContent = message;
+      if (retry) {
+        var button = document.createElement("button");
+        button.type = "button";
+        button.textContent = "Retry";
+        button.style.cssText = "margin-left:12px;padding:7px 12px;border:0;border-radius:8px;background:#c513af;color:#fff;font:800 12px Inter,system-ui,sans-serif;cursor:pointer";
+        button.addEventListener("click", function () { w.location.reload(); });
+        status.appendChild(button);
+      }
+    }
+    function isRecognizedFeed(data) {
+      return !!data && (data.status === "empty" || Array.isArray(data) ||
+        Array.isArray(data.public) || Array.isArray(data.permits) ||
+        Array.isArray(data.sales) || Array.isArray(data.listings) ||
+        Array.isArray(data.features));
+    }
+    fetch(feedUrl, { cache: "no-store" }).then(function (response) {
+      if (!response.ok) throw new Error("Feed request failed: " + response.status);
+      return response.json();
+    }).then(function (data) {
+      if (!isRecognizedFeed(data)) throw new Error("Unexpected feed format");
+      var sales = salesFrom(data);
+      var nPins = addPins(map, L, sales);
+      if (!nPins) showFeedStatus("No garage or estate sales are currently available on the map.", false);
       size();
       hideBoot();
       if (typeof w.__chicaApplyFilter === "function" && w.__chicaFilter) w.__chicaApplyFilter(w.__chicaFilter);
     }).catch(function () {
-      var boot = document.getElementById("chica-map-boot-copy");
-      if (boot) boot.textContent = "Feed did not load.";
+      showFeedStatus("Live sales couldn't load. Check your connection and try again.", true);
       hideBoot();
     });
     setTimeout(hideBoot, 6000);
