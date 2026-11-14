@@ -13,10 +13,12 @@ body { overflow-x: hidden; }
   #chica-adventure-chip { right: 10px !important; }
   #chica-home-chip { right: 112px !important; }
 
-  #chica-hunt-dock {
+  /* Leave the top-right map Menu clear of the search/filter dock. */
+  /* Two ID selectors override the later injected #chica-hunt-dock!important rule. */
+  #chica-hunt-dock#chica-hunt-dock {
     top: max(8px, env(safe-area-inset-top)) !important;
     left: 62px !important;
-    right: 10px !important;
+    right: 88px !important;
     width: auto !important;
   }
   #chica-hunt-bar {
