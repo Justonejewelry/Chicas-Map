@@ -94,6 +94,14 @@ The map keeps both today's sales and upcoming dated sales.
 - Fundraiser — 618 Main St, Schertz, TX 78154 [2026-11-14 → 2026-11-14]
 - Garage sale  on Saturday Nov 14 — 3406 Butterleigh near Shire Oak, San Antonio, TX [2026-11-14 → 2026-11-14]
 - TEXAS ESTATE AUCTION Guns Ammo & Texas Pottery — San Antonio, TX [2026-11-14 → 2026-11-15]
+- Yard Sale — 1714 Romero, San Antonio, TX 78237 [2026-11-14 → 2026-11-14]
+- Yard sale — 2715 Spokane Rd, San Antonio, TX 78222 [2026-11-14 → 2026-11-14]
+- Community Garage sale — 6518 Pecan Acres, San Antonio, TX 78240 [2026-11-14 → 2026-11-14]
+- Garage Sale — 1414 Cardinal Hl, San Antonio, TX 78260 [2026-11-14 → 2026-11-14]
+- Interesting Garage Sale — 1304 Belmont Dr, San Marcos, TX 78666 [2026-11-14 → 2026-11-14]
+- Yard Sale — 2715 Spokane Rd, San Antonio, TX [2026-11-14 → 2026-11-14]
+- GARAGE SALE + VINTAGE CLOTHES DECOR EVERYTHING MUST GO 11/14 — 5914 Lake Nacoma St near Lake Meadow, San Antonio, TX [2026-11-13 → 2026-11-14]
+- Garage Sale in Brook Hollow — 13755 Brook Hollow BLVD, San Antonio, TX [2026-11-14 → 2026-11-14]
 
 ## COMING UP (on the map)
 
