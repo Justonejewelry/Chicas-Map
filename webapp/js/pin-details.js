@@ -77,6 +77,18 @@
     var el = cardEl();
     var lat = Number(sale.lat), lon = Number(sale.lon);
     var when = [sale.dates, sale.hours].filter(Boolean).join(" \u00b7 ");
+    var dateStatus = window.ChicaDates && typeof window.ChicaDates.status === "function"
+      ? window.ChicaDates.status(sale) : "";
+    var spanish = String(document.documentElement.lang || "").indexOf("es") === 0;
+    var dateStatusLabels = {
+      today: spanish ? "HOY" : "TODAY",
+      upcoming: spanish ? "PRÓXIMA" : "UPCOMING",
+      ends_today: spanish ? "TERMINA HOY" : "ENDS TODAY"
+    };
+    var dateStatusLabel = dateStatusLabels[dateStatus] || "";
+    var dateStatusBadge = dateStatusLabel
+      ? '<span class="date-status" aria-label="' + esc(dateStatusLabel) + '">' + esc(dateStatusLabel) + '</span><br>'
+      : "";
     var gold = !!(sale.gold || sale.boost || sale.preferred);
     var away = miles(lat, lon);
     var bits = esc(sale.address || "") + (when ? "<br>" + esc(when) : "");
@@ -105,6 +117,7 @@
       '<button type="button" class="x" aria-label="Close sale details">\u00d7</button>' +
       '<div class="chica-opt">' +
       "<h3>" + esc(sale.title || "Sale") + "</h3>" +
+      dateStatusBadge +
       '<p class="meta">' + bits + "</p>" +
       signal +
       sourceLink + actions(lat, lon) +
@@ -128,6 +141,8 @@
       title: item.title || (ly.options && ly.options.title) || "Sale",
       address: item.address || "",
       dates: item.dates || "",
+      date_start: item.date_start || item.date_from || "",
+      date_end: item.date_end || item.date_to || item.end_date || "",
       hours: item.hours || "",
       details: item.details || "",
       boost: !!item.boost,
